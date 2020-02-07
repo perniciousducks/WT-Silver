@@ -7,7 +7,7 @@ label eating_for_pleasure:
     pause 2
 
     narrator "This story is best played when drunk...{w=0.4} or not at all...{w=0.4} it's the worst...{w=0.4} enjoy!"
-    
+
     # Setup
     $ temp_time = daytime
     $ daytime = False
@@ -16,30 +16,26 @@ label eating_for_pleasure:
     call music_block
     call room("main_room")
     with d5
-    
+
+    $ renpy.music.play("music/fluffing-a-duck-by-kevin-macleod.mp3")
     m "Gah... this place is so dull..."
     m "Not a single gambling den or a whore house..."
     m "And even if I don't need to eat I'd do anything for a pizza right about now..."
-    stop music fadeout 1.0
     hat "Just call a pizza place then..."
     if not hat_known:
         $ renpy.play("sounds/MaleGasp.mp3")
         g4 "Did that hat just speak?!" with vpunch
         hat "Of course I speak!"
-        $ renpy.music.play("music/ominous_music.mp3")
         hat "Not only that... I know who you are..."
         g5 "You do?"
         g4 "Then why haven't you said anything until now!"
         g4 "I've been sitting here alone for months!"
         hat "A wise man told me not to speak unless you have something to say."
-        stop music fadeout 1.0
         m "Wait..."
-        $ renpy.music.play("music/fluffing-a-duck-by-kevin-macleod.mp3")
         g9 "The real Dumbledore told you to shut the fuck up?"
         hat "..."
         m "Anyway, what did you mean by \"call\"?"
     else:
-        $ renpy.music.play("music/fluffing-a-duck-by-kevin-macleod.mp3")
         m "What do you mean, call?"
     m "I haven't seen a single phone in this place!"
     hat "Just use the floo-network."
@@ -55,7 +51,7 @@ label eating_for_pleasure:
     hat "There should be some powder in one of the drawers, take it and throw some in the fire and say out loud who you want to call."
     m "Gimme a sec."
     pause 0.5
-    call gen_chibi("jerk_off_behind_desk") 
+    call gen_chibi("jerk_off_behind_desk")
     with d5
     $ renpy.sound.play("sounds/drawer_open.mp3")
     pause 0.75
@@ -120,7 +116,7 @@ label eating_for_pleasure:
     $ flag = None
     menu:
         "What will be your order, sir?"
-        
+
         "-Meat Eater-":
             $ flag = 0
             g16 "{size=+16}I'll have the pepperoni!{/size}" with vpunch
@@ -149,14 +145,14 @@ label eating_for_pleasure:
     if flag == 0:
         g16 "{size=+8}No, just pepperoni thanks!{/size}" with vpunch
     else:
-        g16 "{size=+8}No, just olives thanks!{/size}" with vpunch
+        g16 "{size=+8}No meat please, just olives!{/size}" with vpunch
     "..."
     "Okay then..."
     m "{size=+8}Ten minutes or pizza's free?{/size}"
     "Of course, sir... we've never been late using the floo..."
     "hold on a second..."
     "It seems like your floo-network fireplace has blocked incoming travel."
-    g16 "{size=+8}What a shame... I guess you'll have to make your way here the old fashioned way.{/size}"
+    g9 "{size=+8}What a shame... I guess you'll have to make your way here the old fashioned way.{/size}"
     g9 "{size=+8}Headmasters office is on the seventh floor, enjoy the moving staircases!{/size}"
     "But sir..."
     $ renpy.sound.play("sounds/microphone_feedback.mp3")
@@ -171,33 +167,46 @@ label eating_for_pleasure:
     call gen_chibi("stand", flip=True)
     with d3
     m "(A phone would have been so much easier...)"
+    $ renpy.sound.play("sounds/spit.mp3")
+    m "..."
+    hat "No just use the..."
+    m "Don't worry, I got this..."
+
     call gen_chibi("stand_alt")
     with d3
     pause 0.3
-    call gen_chibi("grab_low")
+    show screen blkfade
+    with d5
+    m "..."
+    $ renpy.sound.play("sounds/zipper.mp3")
+    hat "Wait... what are you..."
+    $ renpy.sound.play("sounds/fuse.mp3")
+    g9 "Ah...{w=0.4} Must've been at least a hundred years..."
+    pause 1.0
+    hide screen blkfade
     pause 1.0
     $ renpy.sound.play("sounds/fire_woosh.mp3")
     hide screen fireplace_greenfire
     with d5
     $ fire_in_fireplace = False
     pause 1.0
-    
+
     show screen blkfade
     with d5
 
     centered "{size=+7}{color=#cbcbcb}Some time later...{/color}{/size}"
-    
+
     call gen_chibi("sit_behind_desk")
     hide screen desk
     hide screen chair_left
-    
+
     hide screen blkfade
     with d5
-    
+
     g4 "They sure are taking their goddamn time!"
     m "..."
     m "Maybe I could jerk-off a little..."
-    call gen_chibi("jerk_off_behind_desk") 
+    call gen_chibi("jerk_off_behind_desk")
     with d5
     pause 1.2
     hat "Eww!"
@@ -205,12 +214,12 @@ label eating_for_pleasure:
     with d5
     $ renpy.play('sounds/MaleGasp.mp3')
     g4 "Ah fuck!"
-    m "I forgot you are still here..."
-    g4 "I can't jerk off... It will never be the same with a pervert hat oggling me!"
+    m "You're still here..."
+    g4 "How am I supposed to jerk off in peace... It will never be the same with a pervert hat ogling me!"
     hat "{size=-4}.....It never seemed to bother you before......{/size}"
     if not hat_known:
         g4 "Because I wasn't aware of your existence!"
-    pause 1.0   
+    pause 1.0
 
     call play_sound("knocking")
     "*knock-knock*"
@@ -257,33 +266,33 @@ label eating_for_pleasure:
     m "..."
     m "These wizard customs... ruining something as holy as pizza..."
     g9 "Mmm... Come to genie you beautiful temptress..."
-    
+
     show screen blkfade
     with d5
-    
+
     "{cps=5}.........{/cps}{nw}"
     pause 1.0
     $ renpy.play('sounds/gltch.mp3')
     "Genie" "Yes.... mhmmmmmmm, just like that."
     hat "By Merlins beard, that's disgusting!"
     "Genie" "Shut up hat! Don't judge me!"
-    
+
     call unlock_clothing(text=">New clothing items for Hermione have been unlocked!", item=her_outfit_pizza)
-    
+
     centered "{size=+7}{color=#cbcbcb}{cps=1}...{/cps}End?{/color}{/size}"
-    
+
     #Reset
     $ daytime = temp_time
     $ hermione.equip(her_outfit_last)
     call hide_screens
     call update_interface_color
     jump enter_room_of_req
-    
+
 screen fireplace_greenfire():
     tag fireplace_fire
     zorder 2
     add "fireplace_greenfire" xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos+25 xanchor 0.5 yanchor 0.5
-    
+
 ### Fireplace ###
 image fireplace_greenfire: #Fireplace fire.
     im.MatrixColor("images/rooms/_objects_/fireplace/fireplace_fire_01.png", im.matrix.hue(100))

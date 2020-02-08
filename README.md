@@ -28,7 +28,7 @@ It combines several mods for Witch Trainer into one game, with new features, bug
 
 You have two options for installing Silver:
 - Download the stable build from the MEGA link in [the pastebin](https://pastebin.com/6zbuZ5gS). *(Recommended)*.
-- For an experimental version of the game you can download the latest build from GitHub, then run it with [the Ren'Py launcher](https://www.renpy.org/).
+- For an experimental version of the game, you can download the latest build from GitHub, then run it with [the Ren'Py launcher](https://www.renpy.org/).
 
 
 ## Where can I support Witch Trainer: Silver?
@@ -69,8 +69,8 @@ You can support us on our official [Witch Trainer: Silver Patreon page](https://
 - **Maverick**:        Miscellaneous.
 - **Cleanzo**:         Coding (Helped with Python methods).
 - **Techy**:           Outfit.
-- **Akabur**:          Creater of Witch Trainer and other awesome games! You can support them [here](https://www.patreon.com/akabur).
-- *(If you feel that you contributed to this project and would like recognition or your work removed, please send an email to <silverstudiogames@gmail.com>)*
+- **Akabur**:          Creator of Witch Trainer and other awesome games! You can support them [here](https://www.patreon.com/akabur).
+- *(If you feel that you contributed to this project and would like recognition or your work removed, please send an email to <silverstudiogamesofficial@gmail.com>)*
 
 ## More Info:
 For more information see [the pastebin](https://pastebin.com/6zbuZ5gS).

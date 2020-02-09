@@ -880,7 +880,6 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
 
 
         else: # Dom choice ?
-            label test:
             call lun_main("...","base","angry","base","mid",xpos="mid",ypos="base")
             call lun_chibi("stand","desk","base")
             call ctc

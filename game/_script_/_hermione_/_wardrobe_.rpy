@@ -190,3 +190,11 @@ default her_neckwear_bioshock = DollCloth("hermione", ("head", "neckwear"), "nec
 default her_robe_bioshock = DollCloth("hermione", ("tops", "robes"), "robe", "bioshock_robe", [[12, 1, 72, 255], [232, 232, 232, 255]])
 
 default her_outfit_bioshock = DollOutfit([her_hair_bioshock, her_robe_bioshock, her_bottom_bioshock, her_top_bioshock, her_neckwear_bioshock], price=250)
+
+##############
+## Swimsuit ##
+##############
+
+default her_top_swimsuit_1 = DollCloth("hermione", ("tops", "school"), "top", "swimsuit_top_1", [[22, 27, 48, 255], [224, 198, 16, 255]], blacklist=["panties", "bra"], zorder=7)
+
+default her_outfit_swimsuit = DollOutfit([her_hair_base, her_top_swimsuit_1], price=250)

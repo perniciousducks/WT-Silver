@@ -173,8 +173,20 @@ default her_outfit_yennefer = DollOutfit([her_hair_base, her_top_yen1, her_botto
 ## Pizza Slut Outfit ##
 #######################
 
-default her_bottom_pizza = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "pizza_slut", [[180, 50, 10, 255], [235, 199, 44, 255]])
-default her_top_pizza = DollCloth("hermione", ("tops", "school"), "top", "pizza_slut", [[180, 50, 10, 255]])
-default her_panties_pizza = DollCloth("hermione", ("panties", "panties"), "panties", "pizza_slut", [[180, 50, 10, 255]])
+default her_bottom_pizza = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "pizza_skirt", [[180, 50, 10, 255], [235, 199, 44, 255]])
+default her_top_pizza = DollCloth("hermione", ("tops", "school"), "top", "pizza_top", [[180, 50, 10, 255]])
+default her_panties_pizza = DollCloth("hermione", ("panties", "panties"), "panties", "pizza_panties", [[180, 50, 10, 255]])
 
 default her_outfit_pizza = DollOutfit([her_hair_base, her_bottom_pizza, her_top_pizza, her_panties_pizza])
+
+#####################
+## Bioshock Outfit ##
+#####################
+
+default her_hair_bioshock = DollCloth("hermione", ("head", "hair"), "hair", "bio_hair", [[31, 29, 27, 255], [54, 50, 48, 255]])
+default her_bottom_bioshock = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "bioshock_skirt", [[12, 1, 72, 255]])
+default her_top_bioshock = DollCloth("hermione", ("tops", "school"), "top", "bioshock_corset", [[225, 224, 232, 255], [46, 46, 48, 255], [232, 232, 232, 255]])
+default her_neckwear_bioshock = DollCloth("hermione", ("head", "neckwear"), "neckwear", "bioshock_choker", [[12, 1, 72, 255]])
+default her_robe_bioshock = DollCloth("hermione", ("tops", "robes"), "robe", "bioshock_robe", [[12, 1, 72, 255], [232, 232, 232, 255]])
+
+default her_outfit_bioshock = DollOutfit([her_hair_bioshock, her_robe_bioshock, her_bottom_bioshock, her_top_bioshock, her_neckwear_bioshock], price=250)

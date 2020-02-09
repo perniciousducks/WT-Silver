@@ -1,9 +1,9 @@
-
-
 label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options for each path. #DONE
 
+    # Setup
     if lun_whoring <= 8:
         $ lun_whoring += 1
+        
     if lun_whoring >= 13:
         m "how do you feel about stripping?"
         call lun_main("really?","normal","angry","angry","mid")
@@ -13,35 +13,37 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
         call lun_main("how about another blowjob?","base","seductive","angry","mid")
         m "well then..."
         jump luna_favour_6
+        
     call play_music("chipper_doodle")
+    
     if lun_whoring < 8:
-        if lun_sub > lun_dom and lun_whoring < 5:
-            m "Have you ever been naked in front of another person [lun_name]?"
-            call lun_main("What?","normal","base","sad","down")
-            call lun_main("Well... um... not really, I suppose.","normal","base","sad","R")
-            m "Well then there's a first time for everything!"
-            call lun_main("...","upset","base","sad","down")
-        elif lun_sub > lun_dom :
-            m "How would you like to step out of those restrictive clothes, [lun_name]?"
-            call lun_main("...","normal","base","sad","down")
-            call lun_main("Well... {size=-3}they're{/size} {size=-4}not{/size} {size=-5}really{/size} {size=-6}that{/size} {size=-7}restrictive.{/size}","normal","base","sad","R")
-            m "..."
-            call lun_main("alright then, [lun_genie_name]...","upset","base","sad","down")
+        if lun_sub > lun_dom:
+            if lun_whoring == 5:
+                m "Have you ever been naked in front of another person [lun_name]?"
+                call lun_main("What?","normal","base","sad","down")
+                call lun_main("Well... um... not really, I suppose.","normal","base","sad","R")
+                m "Well then there's a first time for everything!"
+            else:
+                m "How would you like to step out of those restrictive clothes, [lun_name]?"
+                call lun_main("...","normal","base","sad","down")
+                call lun_main("Well... {size=-3}they're{/size} {size=-4}not{/size} {size=-5}really{/size} {size=-6}that{/size} {size=-7}restrictive.{/size}","normal","base","sad","R")
+                m "..."
+                call lun_main("Alright then, [lun_genie_name]...","upset","base","sad","down")
             hide screen luna_main
             with d3
             $ luna_xpos = 270
-            ">Luna positions herself directly in front of your desk."
+            call lun_walk("desk")
             call lun_main("...","upset","base","sad","R")
         else:
             m "You don't mind taking some of your clothes of do you, [lun_name]?"
             call lun_main("I suppose not...","normal","base","angry","R")
-            call lun_main("So long as your prepared to show some {i}appreciation...{/i}","normal","angry","angry","mid")
+            call lun_main("So long as you're prepared to show some {i}appreciation...{/i}","normal","angry","angry","mid")
             m "yes, [lun_name]..."
             call lun_main("...pervert...","normal","angry","angry","R")
             hide screen luna_main
             with d3
             $ luna_xpos = 270
-            ">Luna positions herself directly in front of your desk."
+            call lun_walk("desk")
             call lun_main("...","normal","angry","angry","R")
 
         menu:
@@ -58,6 +60,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 with d3
 
                 $ luna_wear_bottom = False
+                call update_lun_uniform
                 ">Luna slowly starts to unzip her skirt..."
                 ">She seems very hesitant and takes her time..."
                 ">Finally the zipper is undone and she has no choice but to take the skirt off..."
@@ -74,6 +77,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 with d3
 
                 $ luna_wear_top = False
+                call update_lun_uniform
                 ">Luna starts to unbutton her shirt..."
                 ">She slowly fumbles with the buttons until Finally the last button is undone..."
                 ">Luna begrudgingly takes off her shirt and places it on top of her skirt."
@@ -94,6 +98,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 with d3
 
                 $ luna_wear_top = False
+                call update_lun_uniform
                 ">Luna starts to unbutton her shirt..."
                 ">She slowly fumbles with the buttons until Finally the last button is undone..."
                 ">Luna begrudgingly takes off her shirt and places it on top of your desk."
@@ -110,6 +115,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 with d3
 
                 $ luna_wear_bottom = False
+                call update_lun_uniform
                 ">Luna slowly starts to unzip her skirt..."
                 ">She seems very hesitant and takes her time..."
                 ">Finally the zipper is undone and she has no choice but to take the skirt off..."
@@ -131,6 +137,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 with d3
 
                 $ luna_wear_top = False
+                call update_lun_uniform
                 ">you can hear the soft ruffle of clothes being removed..."
                 ">You hear her softly place her shirt and vest on the table..."
                 m "..."
@@ -155,6 +162,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 with d3
 
                 $ luna_wear_bottom = False
+                call update_lun_uniform
                 ">you can hear the soft ruffle of clothes and zips..."
                 ">You hear her softly place her skirt on the table..."
                 m "..."
@@ -204,6 +212,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     with d3
 
                     $ luna_wear_bra = False
+                    call update_lun_uniform
                     ">Luna slowly unlatches her bra and places it on your desk."
                     show screen luna_main
                     hide screen blkfade
@@ -217,6 +226,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     with d3
 
                     $ luna_wear_panties = False
+                    call update_lun_uniform
                     ">Luna slightly turns to the side so you can't quite make out her crouch..."
                     ">She's very hesitant and takes her time pulling down her panties..."
                     ">Luna slowly steps out of her panties and places them on top of the pile of clothes on your desk."
@@ -302,7 +312,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             with d3
 
             call load_luna_clothing_saves
-
+            call update_lun_uniform
             ">Luna quickly picks her clothes up off your desk and gets dressed."
             hide screen blkfade
 
@@ -343,6 +353,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             else:
                 $ luna_wear_bra = False
 
+            call update_lun_uniform
             call lun_chibi("stand","desk","base")
 
             ">you can hear the soft ruffle of clothes being taken off..."
@@ -386,6 +397,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             else:
                 $ luna_wear_top = False
 
+            call update_lun_uniform
             call lun_chibi("stand","desk","base")
 
             ">you can once more hear the soft ruffle of clothes..."
@@ -456,6 +468,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 ">Luna quickly picks her clothes up off your desk and gets dressed, except for her cum covered panties."
                 $ luna_wear_panties = False
 
+            call update_lun_uniform
             hide screen blkfade
 
             call lun_main("","base","closed","raised","mid",xpos="base",ypos="base")
@@ -495,7 +508,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             hide screen luna_main
             with d3
             $ luna_xpos = 270
-            ">Luna positions herself directly in front of your desk."
+            call lun_walk("desk")
             call lun_main("(Why can't I stand up for myself?)","upset","base","sad","R")
             call lun_main("...","pout","base","sad","down")
         else:
@@ -508,7 +521,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             hide screen luna_main
             with d3
             $ luna_xpos = 270
-            ">Luna positions herself directly in front of your desk."
+            call lun_walk("desk")
             call lun_main("...","base","suspicious","angry","mid")
 
         menu:
@@ -527,6 +540,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 with d3
 
                 $ luna_wear_bottom = False
+                call update_lun_uniform
                 ">Luna slowly starts to unzip her skirt..."
                 ">She doesn't hesitate however, quickly placing the skirt on your desk..."
                 show screen luna_main
@@ -546,6 +560,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 with d3
 
                 $ luna_wear_panties = False
+                call update_lun_uniform
                 ">You hear the soft rustle of clothes..."
                 ">Suddenly something is gently placed on your desk"
                 hide screen blkfade
@@ -576,6 +591,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 with d3
 
                 $ luna_wear_top = False
+                call update_lun_uniform
                 ">Luna starts to unbutton her shirt..."
                 ">She gently undoes the buttons, letting it slide off her shoulders before placing it on your desk."
                 show screen luna_main
@@ -596,6 +612,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 with d3
 
                 $ luna_wear_bra = False
+                call update_lun_uniform
                 ">You hear the soft rustle of clothes..."
                 ">You can hear something being placed softly onto your desk"
                 show screen luna_main
@@ -623,7 +640,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 $ luna_wear_bra = False
                 $ luna_wear_bottom = False
                 $ luna_wear_top = False
-
+                call update_lun_uniform
                 ">you can hear the soft ruffle of clothes being removed..."
                 m "..."
                 m "Can I open my eyes yet, [lun_name]?"
@@ -652,7 +669,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 $ luna_wear_bra = False
                 $ luna_wear_bottom = False
                 $ luna_wear_top = False
-
+                call update_lun_uniform
                 ">you can hear the soft ruffle of clothes and zips..."
                 m "..."
                 m "Can I open my eyes yet, [lun_name]?"
@@ -667,6 +684,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
         if luna_choice <= 2: #luna sub choices
             if lun_sub <= 6:
                 $ lun_sub += 1
+
             m "I am, and I expect you to do it now, [lun_name]."
             call lun_main("[lun_genie_name]... please...","normal","seductive","sad","mid",tears="soft")
             m "Hmmm, well seeing as how I'm in a generous mood, how about we make another deal?"
@@ -675,7 +693,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             m "what's the closest school to Howgsmorts?"
             call lun_main("?...{p}Um, probably Beauxbatons Academy of Magic, [lun_genie_name]...","normal","seductive","sad","R")
             m "Well, how about I send a glowing letter of recommendation to them concerning your father's magazine?"
-            m "I'm sure that will probably boost sales."
+            m "I'm sure it would boost sales.{w=0.4} {size=-4}Probably...{/size}"
             call lun_main("Really sir? You'd do that?","base","wide","base","mid")
             call lun_main("And all I have to do is stand here and...","normal","seductive","sad","R")
             if luna_wear_bottom == False:
@@ -697,7 +715,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             $ luna_wear_bra = False
             $ luna_wear_bottom = False
             $ luna_wear_top = False
-
+            call update_lun_uniform
             ">You hear the soft rustle of clothes..."
             ">Suddenly something is gently placed on your desk"
 
@@ -713,10 +731,9 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             show screen blkfade
             with d3
 
-            #TODO Fix chibi positions
             $ luna_chibi.zorder = 2
-            call gen_chibi("stand_alt","desk","base")
-            call lun_chibi("stand",510,"base")
+            call gen_chibi("stand_alt",400,"base")
+            call lun_chibi("stand",535,"base")
             show screen chair_left
             show screen desk
 
@@ -725,15 +742,18 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             call ctc
 
             m "mmmm..."
-            call lun_main("......","normal","mad","sad","R")
+            call lun_main("......","normal","mad","sad","R", xpos=500)
 
             menu:
                 "-Grab her tits!-":
+                    m "Come closer, [lun_name]."
+                    call lun_main("Okay....","normal","mad","sad","R")
                     $ current_payout = 40
 
                     show screen blkfade
                     with d3
 
+                    call lun_chibi("stand",510,"base")
                     #TODO Add chibi of Genie groping Luna's tits
 
                     ">You reach out swiftly and grab both of her creamy tits..."
@@ -764,7 +784,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     call lun_main("...","normal","suspicious","sad","R",tears="crying")
 
 
-                "-start touching yourself-"if luna_choice == 1:
+                "-start touching yourself-" if luna_choice == 1:
                     $ current_payout = 100
                     m "mmmm..."
                     call lun_main("......","normal","mad","sad","mid")
@@ -774,6 +794,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
 
                     ">You reach into your robe and pull out your cock..."
                     ">You spit on your hand to lube it before you start stroking..."
+                    
                     #TODO Fix chibi position (jerking_off seems to be anchored differently, must remain consistent across events though)
                     call gen_chibi("jerk_off")
                     hide screen blkfade
@@ -819,6 +840,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     call gen_chibi("cum")
                     $ luna_wear_cum = True
                     $ luna_cum = 5
+                    call update_lun_uniform
                     hide screen luna_main
                     with d3
                     call cum_block
@@ -848,7 +870,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             call load_luna_clothing_saves
 
             $ luna_cum = 2
-
+            call update_lun_uniform
             ">Luna quickly picks her clothes up off your desk and gets dressed, putting on her shirt over the cum."
             hide screen blkfade
 
@@ -858,6 +880,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
 
 
         else: # Dom choice ?
+            label test:
             call lun_main("...","base","angry","base","mid",xpos="mid",ypos="base")
             call lun_chibi("stand","desk","base")
             call ctc
@@ -880,18 +903,18 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             ">You stand up and walk in front of luna, feeling the pressure of her gaze."
 
             hide screen bld1
-            #TODO Add Genie chibi?
             show screen chair_left
             show screen desk
-            call lun_chibi("stand","desk","base") #TODO replace "desk" with correct xpos number.
-            with fade
+            hide screen luna_main
+            call gen_chibi("stand_alt",400,"base")
+            call lun_chibi("stand",535,"base")
 
             hide screen blktone
             hide screen blkfade
             with d5
             call ctc
 
-            call lun_main("there we are...","base","mad","sad","mid")
+            call lun_main("there we are...","base","mad","sad","mid", xpos=500)
             call lun_main("Isn't that better?","base","mad","sad","R")
             m "mmmm... yes..."
             call lun_main("Hmmm, that's it just keep looking...","base","mad","mad","R")
@@ -903,10 +926,11 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             m "..."
             call lun_main("be a good boy....","base","seductive","sad","mid")
             show screen blkfade
+            with d5
             ">You take your cock out and start stroking it..."
             call gen_chibi("jerk_off")
             hide screen blkfade
-            with fade
+            with d5
 
             call lun_main("that's it, [lun_genie_name]...","base","suspicious","sad","mid")
             ">you stare at her soft milky tits..."
@@ -949,6 +973,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 $ luna_cum = 11
             else:
                 $ luna_cum = 5
+            call update_lun_uniform
             hide screen luna_main
             with d3
             call cum_block
@@ -957,6 +982,8 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             g4 "Argh! YES!"
             hide screen luna_main
             with d3
+            
+            call ctc
 
             call gen_chibi("jerk_off")
             hide screen bld1
@@ -993,18 +1020,24 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 call lun_main("...","full","seductive","sad","empty")
                 call lun_main("{heart}{heart}{heart}","base","seductive","sad","mid")
                 $ luna_wear_cum = False
+                call update_lun_uniform
                 call lun_main("ah...","base","seductive","sad","mid")
                 call lun_main("amazing...","base","seductive","sad","L")
                 hide screen luna_main
                 with d3
+                
+                show screen blkfade
+                with d5
 
                 ">Luna quickly picks her clothes up off your desk and gets dressed."
 
                 call load_luna_clothing_saves
 
                 $ luna_wear_cum = False
+                call update_lun_uniform
                 call gen_chibi("sit_behind_desk")
                 show screen luna_main
+                hide screen blkfade
                 with d3
 
                 g4 "That was... incredible!"
@@ -1028,16 +1061,18 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 call gen_chibi("hold_dick")
                 call lun_main("Well seeing as how you've ...finished... I suppose I better get dressed.","normal","angry","angry","R")
 
-                hide screen luna_main
-                with d3
-
+                show screen blkfade
+                with d5
                 ">Luna quickly picks her clothes up off your desk and gets dressed, putting her shirt on over her cum covered chest."
+                hide screen luna_main
 
                 call load_luna_clothing_saves
 
                 $ luna_cum = 2
+                call update_lun_uniform
                 call gen_chibi("sit_behind_desk")
                 show screen luna_main
+                hide screen blkfade
                 with d3
 
                 m "That was... amazing"
@@ -1063,12 +1098,6 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 call lun_main("Good boy... now, speaking of payment...","normal","suspicious","angry","mid")
                 $ current_payout = 100
 
-
-
-
-
-
-
     hide screen bld1
     if lun_dom >= lun_sub:
         m "Alright, alright. Here's your gold."
@@ -1076,13 +1105,14 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
         m "well then, Here's your payment, [lun_name]."
     $ gold -= current_payout
     $ luna_gold += current_payout
+    $ renpy.play("sounds/coins.mp3")
     ">You hand Luna {number=current_payout} gold."
     if current_payout <= 40:
         call lun_main("(only {number=current_payout}?) *hmph*","upset","mad","angry","R")
         call lun_main("Thank you, [lun_genie_name].","normal","suspicious","angry","R")
     else:
         call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
-    ">Luna leaves your office."
     $ luna_wear_cum = False
+    call update_lun_uniform
 
     jump luna_away

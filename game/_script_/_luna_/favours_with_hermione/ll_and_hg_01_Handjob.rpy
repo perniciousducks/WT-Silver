@@ -36,7 +36,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("thank you [lun_genie_name]...","normal","angry","sad","R")
         call lun_main("...","normal","angry","raised","mid")
         call lun_main("Well come on then, summon her...","pout","mad","angry","mid")
-        ">You summon Hermione. Somehow..."
+        ">You summon Hermione - somehow..."
 
         call her_walk(action="enter", xpos="right", ypos="base")
 
@@ -98,13 +98,10 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         ">Hermione pulls off her top in a huff."
 
         hide screen hermione_main
-        $ hermione.strip("top")
-        $ hermione.strip("bra")
+        $ hermione.strip("bra", "top")
 
         call her_main("Feel free to humiliate me!", "angry", "base", "angry", "mid",tears="crying")
         ">Hermione angrily removes her skirt."
-
-        call set_her_action("strip")
 
         call her_main("for trying to do what's right!", "annoyed", "narrow", "annoyed", "mid", tears="crying")
         ">Hermione stands naked before you and Luna. Her face is contorted in what seems like an equal mix of rage and embarrassment."
@@ -119,6 +116,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         hide screen luna_main
         hide screen hermione_main
         hide screen bld1
+        # Hermione chibi kneels
         call her_chibi("sit_naked", "mid", "base")
         call lun_chibi("stand", "right", "base")
         with d3
@@ -169,11 +167,11 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ luna_r_arm = 3
         $ luna_zorder = 16
         $ hermione_zorder = 17
-        call her_main(None)
-        call lun_main(None, xpos=390,flip=False)
-        call gen_main(None,"grin",base="open",xpos=300,ypos=0)
+        call her_main()
+        call lun_main(xpos=390, flip=False)
+        call gen_main(face="grin", base="open", xpos=300, ypos=0)
 
-        call gen_chibi("dick_out")
+        call gen_chibi("dick_out", "desk", "base")
 
         hide screen blkfade
         with d3
@@ -216,7 +214,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("...","shock","wide","base","stare")
         call her_main("OK...","soft","happy","base","R")
         ">Hermione opens her mouth and puts out her tongue."
-        call her_main("ah...","open_wide_tongue","happy","base","R",ypos=230)
+        call her_main("ah...","open_wide_tongue","happy","base","R", ypos=230)
         call lun_main("...","upset","angry","angry","mid")
         call lun_main("seems like I have to do everything then...","normal","suspicious","angry","R")
         ">Luna pulls you forward, harshly, by your cock into Hermione's open mouth."
@@ -224,7 +222,6 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
         $ luna_xpos += 50
         $ genie_xpos += 50
-        $ hermione_kneel_cock = True
 
         call her_main("...","open_wide_tongue","narrow","annoyed","up")
         ">Hermione starts running her tongue along the length of your cock, lubricating it while Luna continues to stroke."
@@ -266,8 +263,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         # Reset zorder
         $ hermione_zorder = 15
         $ luna_zorder = 15
-        call lun_main(None)
-        call her_main(None)
+        call lun_main()
+        call her_main()
 
         show screen blkfade
         hide screen bld1
@@ -285,8 +282,6 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("...","base","seductive","sad","mid")
         $ luna_flip = -1
         $ luna_xpos = 300
-
-        #TODO The rest of this event beyond this line still needs fixing for poses and transitions
 
         if luna_addicted == True:
             call lun_main("well it's not over yet...","base","seductive","sad","R")
@@ -345,6 +340,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
             call lun_chibi("leave")
 
             ">Luna quietly exits the room."
+
             call reset_luna
             $ luna_busy = True
 
@@ -388,19 +384,20 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
             call lun_chibi("leave")
 
+            call reset_luna
+            $ luna_busy = True
+
             call her_main("","cum","happyCl","worried","mid")
             ">Hermione swallows the last mouthful of your cum."
             call her_main("*gulp*","cum","happyCl","worried","mid")
             call her_main("mmmm...{heart}{heart}{heart}","grin","narrow","base","dead")
             ">She picks herself up from the floor gracefully. Getting dressed before turning to address you."
 
-        call set_her_action("none","update")
+        $ hermione.wear("bra", "top")
 
         call her_chibi("stand","mid","base")
-        call update_her_uniform
-        hide screen hermione_kneel
-
-        call her_main("[genie_name], what on earth was that all about?!", "scream", "closed", "angry", "mid")
+        
+        call her_main("[genie_name], what on earth was that all about?!", "scream", "closed", "angry", "mid", xpos="mid", ypos="base")
         call her_main("Why on earth was Luna in here?", "annoyed", "narrow", "angry", "R")
         call her_main("how on earth does she know about me selling favours?", "angry", "base", "angry", "mid")
         if luna_addicted == True:
@@ -411,13 +408,13 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("Of course. Everyone knows she's Loony Luna.", "annoyed", "narrow", "angry", "R")
         m "Well I was testing out some new magic..."
         m "And I'm attempting to cure her of her previous condition..."
-        m "(I hope she believes this schlock...)"
+        m "(I hope she believes this crap...)"
         call her_main("Really?", "shock", "wide", "base", "stare")
         call her_main("But isn't messing around with her mind a little...", "soft", "happy", "base", "R")
         call her_main("unethical?", "angry", "narrow", "base", "down")
         m "Yes, well normally you'd be right, but this is more of a curing of an existing mental condition."
-        m "Think about it like I'm trying to cure her of Asperger's disease."
-        call her_main("Actually sir, Asperger's has been reclassified as part of the autism spectrum and is no longer considered it's own disease.", "open", "closed", "base", "mid")
+        m "Think about it like I'm trying to cure her of Asperger syndrome."
+        call her_main("Actually sir, Asperger's has been reclassified as part of the autism spectrum and is no longer considered its own syndrome.", "open", "closed", "base", "mid")
         m "..."
         m "(Of course she'd know that...)"
         m "Well anyway, my point is there's nothing untoward happening."
@@ -429,7 +426,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("But why was she jerking you off?", "open", "narrow", "worried", "down")
         m "Oh um..."
         m "Well that sort of just happened during my evaluation..."
-        m "She wanted to help her fathers magazine anyway possible, and one thing led to another..."
+        m "She wanted to help her father's magazine in any way possible, and one thing led to another..."
         if luna_addicted == True:
             call her_main("what about the her loving the taste of your sperm?", "angry", "squint", "base", "mid",cheeks="blush")
             m "Honestly I'm not really sure about that."
@@ -449,24 +446,12 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("I've always wanted someone to study with! Normally it's only ever Harry and I'm pretty sure he's just there to stare at my boobs...", "annoyed", "narrow", "annoyed", "mid")
         call her_main("(Not that I mind...)", "open", "base", "base", "R")
 
-        menu:
-            "-Encourage friendship-":
-                $ luna_friendship = 1
-                $ luna_hatred = 0
-                m "I'm sure she'd be happy to spend some more time with you."
-                call her_main("Do you think so sir? She seemed pretty mean today.", "open", "narrow", "worried", "down")
-                m "She'll come around, just give it time."
-                call her_main("I hope so sir! A ravenclaw study buddy would be great!", "smile", "happyCl", "base", "mid",emote="06")
-                m "(more like fuck buddy...)"
-                call her_main("...", "base", "happyCl", "base", "mid")
-            "-discourage friendship-":
-                $ luna_friendship = 0
-                $ luna_hatred = 1
-                m "I'm not so sure about that. She seemed pretty harsh today."
-                call her_main("hmmm, you're probably right.", "annoyed", "base", "base", "mid")
-                m "Maybe you should fight fire with fire?"
-                call her_main("And be mean in return?", "disgust", "narrow", "base", "down")
-                call her_main("I don't know, [genie_name]... She is my friend...", "clench", "narrow", "base", "down")
+        m "I'm sure she'd be happy to spend some more time with you."
+        call her_main("Do you think so sir? She seemed pretty mean today.", "open", "narrow", "worried", "down")
+        m "She'll come around, just give it time."
+        call her_main("I hope so sir! A ravenclaw study buddy would be great!", "smile", "happyCl", "base", "mid",emote="06")
+        m "(more like fuck buddy...)"
+        call her_main("...", "base", "happyCl", "base", "mid")
 
         m "Anyway, thanks for your help today."
         call her_main("anything for my friends [genie_name]...", "soft", "happy", "base", "R")
@@ -476,9 +461,6 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("Thank you [genie_name]...", "open", "base", "base", "R")
 
         call her_walk(action="leave")
-
-        $ luna_busy = True
-        $ hermione_busy = True
 
         jump end_hermione_event
 
@@ -496,16 +478,13 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
         ">You summon Hermione to your office."
 
-        call her_walk(action="enter", xpos="mid", ypos="base")
+        call her_walk(action="enter", xpos="right", ypos="base")
 
-        $ luna_flip = -1
         $ luna_r_arm = 2
-        $ luna_xpos = 390
-        call update_her_uniform
 
-        call her_main("Hello [genie_name]...", "base", "base", "base", "mid",xpos="right",ypos="base")
+        call her_main("Hello [genie_name]...", "base", "base", "base", "mid",xpos="base",ypos="base")
         call her_main("Hello Luna...", "open", "squint", "base", "mid")
-        call lun_main("Hermione...","normal","suspicious","angry","mid")
+        call lun_main("Hermione...","normal","suspicious","angry","mid", xpos="mid", flip=True)
         call her_main("What are you doing here?", "annoyed", "narrow", "angry", "R")
         call lun_main("Getting ready to Jerk dumbledore off onto your face...","base","seductive","angry","mid")
         call her_main("Oh...", "annoyed", "base", "base", "mid")
@@ -530,6 +509,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                 call her_main("well hurry up and strip then. I thought you wanted to get this over with?", "smile", "base", "base", "R")
                 call lun_main(".........","normal","angry","mad","mid")
                 call lun_main("Fine... But I expect extra for this [lun_genie_name]!","normal","base","angry","R")
+
             "-agree with Luna-":
                 m "Now, now, Listen to luna [hermione_name]."
                 call her_main("What? Why?", "angry", "base", "angry", "mid")
@@ -539,6 +519,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                 m "I didn't mean it like-"
                 call lun_main("*hmph* I suppose I'll strip then [lun_genie_name]... Just so you remember who has the better body.","normal","seductive","angry","mid")
                 call lun_main("But I expect extra for this [lun_genie_name]!","upset","angry","angry","R")
+        
         m "sure. I'll add another forty gold."
         $ luna_payout += 40
         call her_main("If she's getting extra then I want some more points!", "scream", "closed", "angry", "mid")
@@ -546,50 +527,59 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ hermione_payout += 20
         call her_main("yay!", "smile", "base", "base", "R")
         call lun_main("I still can't believe you get excited over points.","normal","suspicious","angry","up")
-        call her_main("Why? Don't you want to see that look of excitement on your friends faces when they win the house cup?", "base", "happy", "base", "mid")
-        call her_main("and the look of disappointment on those nasty slytherins faces when they lose!", "base", "narrow", "base", "up")
+        call her_main("Why? Don't you want to see that look of excitement on your friends' faces when they win the house cup?", "base", "happy", "base", "mid")
+        call her_main("and the look of disappointment on those nasty slytherins' faces when they lose!", "base", "narrow", "base", "up")
         call lun_main("pfft, friends...","normal","base","mad","R")
         call her_main("aww... Luna...", "open", "base", "worried", "mid")
-        call lun_main("Just shut up and strip slut.","upset","mad","mad","mid")
+        call lun_main("Just shut up and strip, slut.","upset","mad","mad","mid")
         call her_main("fine...", "annoyed", "narrow", "worried", "down")
         show screen blkfade
         with d3
 
-        ">Luna and Hermione both strip in front of you."
-        ">You can hardly believe your eyes as they slowly strip down in front of each other."
-        ">As they're putting their clothes in a pile you slowly get up from your desk and whip your cock out from in between your robes."
-        call lun_main("On your knees then, slut...","base","seductive","angry","mid")
-        hide screen hermione_main
-        $ hermione_xpos=590
-        call her_chibi("sit_naked", 40, 60+186)
-        with d3
-
-        hide screen bld1
-        show screen chair_left
-        show screen desk
-        call gen_chibi("hold_dick")
-        with fade
-
-        $ luna_r_arm = 3
-        $ luna_flip = 1
-        $ luna_xpos = 640
-        $ hermione_xpos = 590
-        $ hermione_ypos = 390
-        $ genie_xpos = 550
-        $ genie_ypos = 0
-        show screen genie_main
+        $ hermione.strip("all")
 
         $ luna_wear_top = False
         $ luna_wear_bra = False
         $ luna_wear_bottom = False
         $ luna_wear_panties = False
+        call update_lun_uniform
+
+        ">Luna and Hermione both strip in front of you."
+        ">You can hardly believe your eyes as they slowly strip down in front of each other."
+        ">As they're putting their clothes in a pile you get up from your desk and whip your cock out from in between your robes."
+        call lun_main("On your knees then, slut...","base","seductive","angry","mid")
+
+        # Hermione chibi kneels
+        hide screen luna_main
+        hide screen hermione_main
+        hide screen bld1
+        call her_chibi("sit_naked", "mid", "base")
+        call lun_chibi("stand", "right", "base")
+
+        show screen chair_left
+        show screen desk
+        call gen_chibi("dick_out", "desk", "base")
+
         hide screen blkfade
+        with d3
+
+        call ctc
+
+        $ luna_r_arm = 3
+        $ luna_flip = 1
+        $ luna_zorder = 16
+        $ hermione_zorder = 17
+
+        # Handjob pose
+        call her_main(xpos="right", ypos=200)
+        call lun_main(xpos=390, flip=False)
+        call gen_main(face="grin", base="open", xpos=300, ypos=0)
+
         with d3
 
         call her_main("...","base","closed","base","mid")
         ">Luna slowly starts jerking your cock in front of Hermione's face."
         ">Her technique is rough and inexperienced, but decent enough."
-        $ luna_r_arm = 3
         call lun_main("mmmm, that's it [lun_genie_name]...","base","seductive","angry","mid")
         call her_main("...","annoyed","base","worried","R")
         call her_main("......","annoyed","base","angry","mid")
@@ -617,15 +607,14 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                 ">Luna gives your cock light squeeze."
                 m "Ah..."
                 call her_main("*hmph* at least let me show you how it's done...","disgust","narrow","base","mid_soft")
-                call her_main("i'm sure you'll find plenty of ways to \'excite\' him from the floor.","annoyed","narrow","annoyed","mid")
+                call her_main("i'm sure you'll find plenty of ways to \"excite\" him from the floor.","annoyed","narrow","annoyed","mid")
             "-Hermione-":
                 call lun_main("WHAT?","upset","wide","base","mid")
                 ">Luna gives your cock a painful squeeze, bordering on bruising it."
-                $ genie_base = "characters/genie/base/hard.png"
-                call gen_main("AH!","angry")
-                call her_main("Don't take it too hard Luna, I just have a \'little\' more experience.","base","happyCl")
+                call gen_main("AH!","angry", base="hard")
+                call her_main("Don't take it too hard Luna, I just have a \"little\" more experience.","base","happyCl")
                 ">Luna lets go of your cock."
-                $ genie_face = "characters/genie/face/base.png"
+                call gen_main(face="base")
                 $ luna_r_arm = 1
                 call lun_main("*hmph*, I suppose you're right. You've probably spent all year with your hands wrapped around any cock you could find.","upset","suspicious","mad","mid")
                 call her_main("Hey!","annoyed","narrow","annoyed","mid")
@@ -635,29 +624,25 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
         call lun_main("whatever...","normal","suspicious","angry","R")
         call her_main("...","base","base","base","R")
+
         show screen blkfade
         with d3
 
-        $ hermione_zorder = 14 #CHANGE BACK TO 5 AFTER THIS
-        hide screen hermione_kneel
-        ">Hermione grabs a hold of your cock as she and Luna switch places."
-        ">You're unable to deny that she's much more experienced that Luna, quickly bringing you to the edge."
-        $ luna_ypos = 250
-        $ hermione_right_arm = "characters/hermione/body/arms/right/dick.png"
-        $ genie_base = "characters/genie/base/open.png"
-        $ genie_face = "characters/genie/face/grin.png"
-        $ hermione_xpos = 590
+        ">Hermione grabs a hold of your cock while she and Luna switch places."
+        ">You're unable to deny that she's much more experienced than Luna, as she is quickly bringing you to the edge."
 
+        # Handjob pose with Luna on knees
+        # Note: chibis can't be posed for this part
+        $ hermione_zorder = 14
+        call lun_main(xpos="right", ypos=200)
+        call her_main(xpos=425, ypos="base", flip=False)
+        call gen_main(face="grin",base="hard",xpos=300,ypos=0)
 
-        call set_her_action("strip")
-        call update_her_uniform
-
-        show screen hermione_main
         hide screen blkfade
         with d3
 
         m "Ah... this is it [hermione_name]... not long now."
-        call her_main("mmm, that's it [genie_name]. just enjoy yourself.", "open", "base", "base", "R")
+        call her_main("mmm, that's it [genie_name]. just enjoy yourself.", "open", "base", "base", "L")
         call lun_main("as if he could...","normal","angry","angry","R")
         g9 "ah..."
         call lun_main("go on [lun_genie_name], tell her i'm better.","normal","mad","angry","up")
@@ -673,26 +658,21 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("...","normal","seductive","sad","R")
         call her_main("See, he likes it when you do this with your palm...", "base", "squint", "base", "mid")
         call cum_block
-
-        $ luna_cum = 12
         $ luna_wear_cum = True
+
         g4 "{size=+5}ARGH! by the gods YES!!!{/size}"
         g4 "{size=+5}WHAT ARE YOU DOING GIRL!?!?!{/size}"
         ">Your cock explodes over Luna's face, covering her until you can barely make out her features."
         $ luna_cum = 12
-        $ luna_wear_cum = True
         call lun_main("mmmmm...","base","wide","sad","mid")
         call her_main("that's it, just let out all that {b}nasty{/b} cum.", "grin", "narrow", "annoyed", "up")
         
-        call gen_chibi("hold_dick")
-        $ genie_base = "characters/genie/base/open.png"
-        $ luna_cum = 12
-        ">Luna then collects a stand of cum on the end of her finger starting at it intently before putting it into her mouth."
+        ">Luna collects a strand of cum on the end of her finger, staring at it intently before putting it into her mouth."
         call lun_main("{heart}{heart}{heart}","base","angry","angry","mid")
         call lun_main("it's not nasty!","base","seductive","angry","mid")
         call her_main("oh that's right... I almost forgot how much of a cumslut you are.", "angry", "narrow", "base", "down")
         call lun_main("I am not!","normal","angry","angry","up")
-        call her_main("so you're not going to eat all of that \'delicious\' cum on your face then?", "base", "squint", "base", "mid")
+        call her_main("so you're not going to eat all of that \"delicious\" cum on your face then?", "base", "squint", "base", "mid")
         call lun_main("...","base","seductive","angry","mid")
         ">You watch in awe as Luna slowly heaps your cum in her mouth and swallows it."
         $ luna_cum = 13
@@ -715,12 +695,12 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("ah...","base","happyCl","sad","mid")
         call lun_main("amazing...","base","seductive","sad","up")
         call lun_main("I didn't know it was possible for someone to cum so much...","base","base","sad","up")
-        call her_main("well of course you didn't. I'm surprised you were able to make [genie_name] cum at all!", "open", "closed", "base", "mid")
+        call her_main("well of course you didn't. I'm surprised you were able to make him cum at all!", "open", "closed", "base", "mid")
         call her_main("what with that shoddy technique of yours...", "annoyed", "squint", "base", "mid")
         call lun_main("it's not that bad...","normal","angry","sad","up")
         call her_main("whatever you have to tell yourself...", "open", "closed", "base", "mid")
         call lun_main("...","normal","mad","angry","up")
-        call lun_main("fine... i'm not as good at giving hand jobs as you...","normal","suspicious","base","R")
+        call lun_main("fine... i'm not as good at giving handjobs as you...","normal","suspicious","base","R")
         call lun_main("but that's only because you've spent the entire year in here Whoring yourself out to our headmaster!","normal","suspicious","mad","up")
         call her_main("well I can teach you a few things if you'd like.", "smile", "base", "base", "R")
         call lun_main("what?","pout","angry","base","up")
@@ -738,25 +718,19 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         with d3
 
         ">You slowly move back to your desk and sit down while hermione and luna continue talking."
-        $ hermione_xpos = 550
-        $ luna_ypos = 0
-        $ luna_xpos = 450
+
         $ luna_l_arm = "1"
         $ luna_r_arm = "1"
-        $ luna_flip = -1
 
-        # TODO: Fix me.
-        #$ hermione_right_arm = "characters/hermione/body/arms/right/right_1.png"
-        $ hermione_zorder = 15
-
-        #call load_hermione_clothing_saves
-        #call update_her_uniform
+        call lun_main(xpos="base", ypos="base")
+        call her_main(xpos="right", ypos="base", flip=True)
 
         call gen_chibi("sit_behind_desk")
-        call her_chibi("stand","mid","base")
-        show screen hermione_main
+        call her_chibi("stand","mid","base", flip=True)
         hide screen blkfade
-        call lun_main("","normal","suspicious","angry","mid",xpos="mid",ypos="base")
+        with d3
+
+        call lun_main("","normal","suspicious","angry","mid")
 
         call her_main("how are your grades?", "soft", "narrow", "base", "mid_soft")
         call lun_main("WHAT?","open","wide","sad","mid")
@@ -769,12 +743,12 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main(".........","normal","angry","angry","mid")
         call lun_main(".............","normal","suspicious","angry","R")
         call lun_main("fine...","normal","suspicious","sad","R")
-        ">Luna slowly lists her marks across all subjects, most of them bordering on a pass and fail with the exception of divination."
+        ">Luna lists her marks across all subjects, most of them bordering on a pass and fail with the exception of divination."
         call her_main("what? so low? How do you expect to get a job at the ministry of magic with marks like that?", "scream", "wide", "base", "mid")
         call lun_main("...","normal","suspicious","sad","down")
         call her_main("at this rate you'll have to get a job in the muggle world.", "disgust", "narrow", "base", "down")
         call lun_main("you think I don't know that? why do you think I agreed to all this in the first place...","upset","angry","angry","mid")
-        call lun_main("Just stop humiliating me and list your stupid demand!","upset","mad","angry","mid")
+        call lun_main("Just stop humiliating me and tell me your stupid demand!","upset","mad","angry","mid")
         call lun_main("What is it anyway? Do you expect me to walk around the school half naked?","upset","suspicious","angry","R")
         call her_main("Of course not...", "open", "base", "worried", "mid")
         call lun_main("then what?","normal","angry","mad","mid")
@@ -785,13 +759,13 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("of course... but that's not why I want a study buddy.", "soft", "base", "base", "R")
         call her_main("It gets lonely in the library sometimes...", "annoyed", "narrow", "angry", "R")
         call her_main("Plus I've always wanted a ravenclaw to study with, but all the other girls refuse to even talk to me.", "open", "base", "worried", "mid")
-        call her_main("and harry and ron have just started staring at my tits the whole time.", "open", "closed", "angry", "mid")
+        call her_main("and harry and ron have just been staring at my tits the whole time.", "open", "closed", "angry", "mid")
         call her_main("{size=-5}not that I really mind...{/size}", "base", "narrow", "base", "up")
         call her_main("but think about all the fun we can have! you can even quiz me on advanced transmogrification spells!", "smile", "happyCl", "base", "mid")
         call lun_main("...","normal","angry","angry","mid")
         call her_main("not to mention we can work on your grades as well!", "base", "happyCl", "base", "mid")
         call her_main("If you work hard we can probably get them up before the O.W.L.s!", "grin", "base", "base", "R")
-        call lun_main("whatever... as long as you teach me how to wring as much gold out of the old man's balls as possible I don't care...","pout","suspicious","angry","R")
+        call lun_main("whatever... as long as you teach me how to wring as much gold out of the old man's balls as possible, I don't care...","pout","suspicious","angry","R")
         call her_main("YAY!", "grin", "happyCl", "worried", "mid")
         m "I'm still here you know!"
         call her_main("of course Professor...", "grin", "base", "base", "R")
@@ -819,7 +793,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         show screen blkfade
         with d3
 
-        ">Luna and hermione quickly get dressed before quickly leaving the room together."
+        ">Luna and hermione quickly get dressed before leaving the room together."
 
         call load_luna_clothing_saves
         call update_lun_uniform
@@ -832,12 +806,10 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         with d3
 
         call her_main("this is going to be so much FUN!", "grin", "narrow", "annoyed", "up")
-
         call her_walk(action="leave")
 
-        call lun_main("(What have I agreed to)","normal","suspicious","sad","down")
-        hide screen luna_main
-        call lun_chibi("leave")
+        call lun_main("(What have I agreed to...)","normal","suspicious","sad","down")
+        call lun_walk(action="leave")
 
         $ luna_busy = True
         $ hermione_busy = True
@@ -853,60 +825,58 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         m "How about another handjob, [lun_name]?"
         call lun_main("sure... do you want hermione here as well?","normal","suspicious","angry","R")
         m "You read my mind!"
-        call lun_main("alright. but I expect to be the one doing the... job.","normal","angry","base","R")
+        call lun_main("alright, but I expect to be the one doing the... job.","normal","angry","base","R")
         m "if you insist."
         call lun_main("...","normal","seductive","base","mid")
         call lun_main("just hurry up and bring her up here...","normal","seductive","base","R")
-        call nar(">You summon hermione to your office.")
+        ">You summon hermione to your office."
         call play_sound("door")
 
-        call her_chibi("stand","mid","base")
+        call her_walk(action="enter", xpos="right", ypos="base")
 
-        $ hermione.wear("all")
+        call lun_main(xpos="mid", ypos="base", flip=True)
 
-        $ luna_flip = -1
-        call lun_main("",xpos="mid",ypos="base")
-
-        call her_main("hello, [genie_name]!", "base", "happyCl", "base", "mid",xpos="base",ypos="base")
+        call her_main("hello, [genie_name]!", "base", "happyCl", "base", "mid", xpos="base", ypos="base")
         call her_main("hello, luna!", "smile", "happyCl", "base", "mid")
         m "You seem cheerful."
         call her_main("why wouldn't I be? are we going to work on handjobs today?", "open", "base", "base", "R")
         call lun_main("just hurry up and get on your knees slut...","upset","seductive","angry","mid")
         call her_main("someone's eager!", "smile", "happyCl", "base", "mid",emote="06")
         call lun_main("...","base","suspicious","angry","mid")
-        hide screen hermione_main
-        hide screen luna_main
-        hide screen bld1
+
         show screen blkfade
         with d3
 
         ">You stand up from your desk while hermione slowly strips and kneels in front of you."
 
-        call set_her_action("strip")
+        $ hermione.strip("all")
 
-        $ luna_r_arm = 2
-        $ luna_flip = 1
-        $ luna_xpos = 640
-        $ hermione_xpos = 590
-        $ hermione_ypos = 390
-        $ genie_xpos = 550
-        $ genie_ypos = 0
-        $ genie_base = "characters/genie/base/hard.png"
-
-        call her_chibi("sit_naked","mid","base")
+        # Hermione chibi kneels
+        hide screen luna_main
+        hide screen hermione_main
+        hide screen bld1
+        call her_chibi("sit_naked", "mid", "base")
+        call lun_chibi("stand", "right", "base")
 
         show screen chair_left
         show screen desk
-        call gen_chibi("jerk_off","desk","base")
+        call gen_chibi("dick_out", "desk", "base")
 
         hide screen blkfade
-        with fade
+        with d3
+
         call ctc
 
-        show screen hermione_kneel
-        show screen luna_main
-        show screen genie_main
-        show screen bld1
+
+        $ luna_zorder = 16
+        $ hermione_zorder = 17
+
+        # Handjob pose
+        $ luna_r_arm = 2
+
+        call her_main(xpos="right", ypos=200)
+        call lun_main(xpos=390, flip=False)
+        call gen_main(face="grin", base="hard", xpos=300, ypos=0)
         with d3
 
         call her_main("Aren't you going to get naked as well Luna?","annoyed","narrow","angry","R")
@@ -918,16 +888,19 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("but I expect extra for this [lun_genie_name]!","normal","seductive","angry","R")
         m "that seems fair."
         call lun_main("...","normal","suspicious","angry","mid")
-        hide screen luna_main
+
         show screen blkfade
         with d3
 
         ">Luna slowly strips as well, carefully putting her clothes in a pile next to hermione's."
-        $ luna_wear_bottom = False
+        
         $ luna_wear_top = False
-        $ luna_wear_panties = False
         $ luna_wear_bra = False
-        show screen luna_main
+        $ luna_wear_bottom = False
+        $ luna_wear_panties = False
+        call update_lun_uniform
+        call lun_main()
+
         hide screen blkfade
         with d3
 
@@ -936,12 +909,12 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("good... let's just get this over with.","normal","angry","mad","R")
         call her_main("...","annoyed","squint","angry","mid")
         call lun_main("what is it now hermione?","normal","suspicious","angry","mid")
-        call her_main("Just try and act like you like it a little more, ok?","open","squint","base","mid")
+        call her_main("Just try and act as if you like it a little more, ok?","open","squint","base","mid")
         call lun_main("whatever...","normal","suspicious","angry","R")
         call her_main("great!","base","narrow","worried","down")
         $ luna_r_arm = 3
         ">Luna spits into her hand before wrapping it around your cock."
-        ">She's barely started to stroke it yet you can already tell her technique has improves significantly."
+        ">She's barely started stroking it, but you can already tell her technique has improved significantly."
         m "Mmmm, yes that's it slut."
         m "just like that."
         call lun_main("...","base","seductive","angry","mid")
@@ -950,9 +923,9 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         ">Luna wraps her hand around the head of your cock, rotating her hand slightly as she pumps her hand."
         m "Ugh... yes..."
         call her_main("good work. now go back to the rest of the shaft.","open","closed","base","mid")
-        call her_main("try no to focus on one area too long...","open","closed","base","mid")
+        call her_main("try not to focus on one area too long...","open","closed","base","mid")
         call lun_main("ok...","base","angry","sad","mid")
-        ">This continues for a while longer, Luna listening intently to hermione's instructions."
+        ">This continues for a while, Luna listening intently to hermione's instructions."
         g9 "Ugh... I'm getting close!"
         call her_main("alright, when this happens you need to slow down a little...","base","narrow","worried","down")
         call lun_main("really? but isn't he about to cum?","upset","wide","sad","mid")
@@ -969,7 +942,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         g4 "ah!"
         $ genie_face = "characters/genie/face/grin.png"
         call her_main("believe me, he'll like this much more...","open","closed","base","mid")
-        call her_main("just wait to you see how much he'll shoot once you finally {i}let{/i} him cum.","grin","narrow","annoyed","up")
+        call her_main("just wait until you see how much he'll shoot once you finally {i}let{/i} him cum.","grin","narrow","annoyed","up")
         call lun_main("mmmmm... I like the sound of that.","base","mad","mad","mid")
         call lun_main("so how much longer should I do this...","base","seductive","base","mid")
         $ genie_face = "characters/genie/face/angry.png"
@@ -1002,27 +975,19 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         m "..."
         call her_main("mmmm... that's it Luna...","soft","narrow","annoyed","up")
         call her_main("he's almost there... do it now.","grin","narrow","base","dead")
-        call her_main("ah...","open_wide_tongue","happy","base","R")
+        call her_main("ah...","open_wide_tongue","happy","base","R", ypos=230)
         ">Hermione opens her mouth as wide as she can while luna pulls you forward by your cock into her eager hole."
-        $ luna_xpos += 45
-        $ genie_xpos += 55
-        $ hermione_kneel_cock = True
+
         $ genie_face = "characters/genie/face/angry.png"
         g4 "!!!"
         call her_main("mmm...","open_wide_tongue","narrow","annoyed","up")
         call lun_main("there we go...","base","seductive","sad","mid")
-        $ hermione_xpos -= 10
-        $ hermione_ypos -= 5
+
         ">Hermione starts eagerly lapping at the head of your cock while luna starts furiously stroking your shaft."
         g4 "{size=+5}FUCK YES!!!{/size}"
         g4 "{size=+5}here it comes sluts!{/size}"
 
         ">Luna continues stroking your cock at a blistering pace while hermione moves backwards slightly, leaving her mouth open and waiting."
-        $ luna_xpos -= 55
-        $ genie_xpos -= 55
-        $ hermione_xpos += 10
-        $ hermione_ypos += 5
-        $ hermione_kneel_cock = False
 
         g4 "{size=+10}ARGHHH!!!!{/size}"
         show screen white
@@ -1044,7 +1009,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("even so...","base","seductive","sad","mid")
         ">Luna stares at hermione with a fierce hunger in her eyes."
         call lun_main("stand up... please...","normal","seductive","sad","mid")
-        ">Exhausted after the marathon handjob you decide to take a seat while hermione and luna clean up."
+        ">Exhausted from the handjob, you decide to take a seat while Hermione and Luna clean up."
         call her_main("only because you asked nicely...","open","base","base","R")
         hide screen genie_main
         hide screen hermione_kneel
@@ -1052,41 +1017,42 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         show screen blkfade
         with d3
 
+        #TODO Fix posing from here
+
         ">Hermione slowly stands up, her face simply drenched in cum..."
 
-        $ luna_flip = -1
-        $ hermione_right_arm = "characters/hermione/body/arms/right/right_1.png"
-        $ genie_base = "characters/genie/base/base.png"
         $ hermione_zorder = 15
         $ luna_r_arm = 1
+
+        call lun_main(xpos="mid", flip=True)
+        call her_main(xpos="right", ypos="base")
+
+        call reset_genie
 
         call gen_chibi("sit_behind_desk")
         call her_chibi("stand","mid","base")
         call update_her_uniform
 
-        show screen luna_main
-        show screen hermione_main
-        show screen bld1
         hide screen blkfade
         with d3
 
         call lun_main("mmmmm... just look at you... you look so... delicious...","base","base","sad","empty", cheeks="blush")
         call her_main("...", "open", "base", "base", "R")
-        $ luna_xpos = 500
+
         $ luna_r_arm = 2
+
         ">Luna moves closer to Hermione before picking up a strand of cum with her finger and moving it to her mouth."
         call her_main("go on...", "soft", "narrow", "annoyed", "up")
         m "(mmmm...)"
-        $ luna_xpos = 530
         call lun_main("mmmmm... you taste even better...","base","happyCl","sad","mid")
         call her_main("...", "grin", "narrow", "base", "dead")
         ">Hermione stands still, letting luna slowly wipe the cum from her face..."
         $ u_sperm = "characters/hermione/face/auto_08.png"
         call her_main("that's it... make sure you get it all...", "base", "narrow", "worried", "down")
         call lun_main("mmmmm...","full","happyCl","sad","mid")
-        ">Luna slowly fills her mouth with cum before eventually swallowing."
+        ">Luna slowly fills her mouth with cum before swallowing all of it."
         call lun_main("*gulp*","base","seductive","sad","empty")
-        ">Eventually she finally gets the last strand into her mouth."
+        ">Eventually she gets the last strand into her mouth."
         $ uni_sperm = False
         call her_main("better?", "base", "narrow", "base", "mid_soft")
         call lun_main("...","full","happyCl","sad","mid")
@@ -1098,40 +1064,37 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
             "-Ask about study sessions-":
                 m "So how have your recent study sessions been going?"
                 $ luna_l_arm = 2
-                $ luna_flip = 1
-                $ luna_xpos = 300
                 call lun_main("they've been OK...","normal","suspicious","sad","R")
-                call her_main("stop being such a negative nancy luna, they have been amazing [genie_name]!", "smile", "happyCl", "base", "mid",emote="06")
+                call her_main("stop being such a negative nancy, Luna. They have been amazing [genie_name]!", "smile", "happyCl", "base", "mid",emote="06")
                 call lun_main("...","normal","suspicious","sad","down")
                 call her_main("Luna quizzed me on advanced transmogrification spells, advanced potion recipes and even complex herbology!", "smile", "happyCl", "base", "mid")
                 call lun_main("I don't even thinks she needs quizzing, she got everything right...","upset","angry","angry","R")
-                call her_main("well the tutoring was even better!", "base", "happyCl", "base", "mid")
+                call her_main("the tutoring was even better!", "base", "happyCl", "base", "mid")
                 call her_main("we studied transfiguration, D.A.D.A, handjobs, potions, titjobs, spells, dirty talk and herbology!", "grin", "base", "base", "R")
                 m "sounds like quite the lesson..."
                 call lun_main("......","normal","seductive","sad","R")
-                call her_main("If we keep these sessions up I'm sure Luna will pass her o.w.l.s with flying colours!", "base", "happy", "base", "mid")
+                call her_main("If we keep these sessions up I'm sure Luna will pass her o.w.l.s. with flying colours!", "base", "happy", "base", "mid")
                 call lun_main(".........","base","seductive","sad","down")
 
                 if not luna_herm_talk:
                     $ luna_herm_talk = True
                     call her_main("I can't wait to see what mark she gets when she has to do them!", "smile", "happyCl", "base", "mid",emote="06")
-                    $ luna_flip = -1
                     call lun_main("I think you mean when {b}we{/b} have to do them...","normal","suspicious","angry","mid")
-                    call her_main("Oh, I don't have to do my o.w.l.s anymore...", "base", "happyCl", "base", "mid")
+                    call her_main("Oh, I don't have to do my o.w.l.s. anymore...", "base", "happyCl", "base", "mid")
                     call lun_main("What? Why not?","normal","wide","sad","mid")
                     call her_main("Do you want to tell her or should I?", "base", "narrow", "worried", "down")
-                    m "(I have no idea what she's talking about.)"
-                    m "Why don't you fill her in."
+                    m "(I have no idea what she's talking about)"
+                    m "Why don't you fill her in?"
                     call her_main("alright then...", "base", "narrow", "base", "mid_soft")
-                    call her_main("I already did my o.w.l.s last year.", "grin", "happyCl", "worried", "mid",emote="05")
+                    call her_main("I already did my o.w.l.s. last year.", "grin", "happyCl", "worried", "mid",emote="05")
                     call lun_main("Really? How?","normal","angry","sad","mid")
-                    call her_main("Well, I'd already been testing myself on past years exams since I was a 3rd year.", "grin", "happyCl", "worried", "mid")
-                    call her_main("Last year I finally felt that I was ready for the real thing. So I spoke to Professor dumbledore and Professor McGonagal.", "base", "base", "base", "R")
+                    call her_main("Well, I'd already been testing myself on past years' exams since I was a third year.", "grin", "happyCl", "worried", "mid")
+                    call her_main("Last year I finally felt that I was ready for the real thing. So I spoke to Professor Dumbledore and Professor McGonagall.", "base", "base", "base", "R")
                     call her_main("I explained my situation and they agreed to test me early.", "base", "base", "base", "R")
                     call her_main("I got the highest mark since dumbledore himself took them!", "smile", "happyCl", "base", "mid",emote="06")
-                    call lun_main("Wait... If you've already completed your o.w.l.s, why are you still at school?","upset","suspicious","angry","mid")
+                    call lun_main("Wait... If you've already completed your o.w.l.s., why are you still at school?","upset","suspicious","angry","mid")
                     call her_main("I didn't want to miss out on school work or spending time with my friends...", "base", "happyCl", "base", "mid")
-                    call her_main("So I've just been doing additional study in the library after classes in exhchange for a special reccomendation from the school.", "smile", "happyCl", "base", "mid")
+                    call her_main("So I've just been doing additional study in the library after classes in exchange for a special recommendation from the school.", "smile", "happyCl", "base", "mid")
                     call her_main("although recently I've been spending most of my free time in here...", "base", "narrow", "worried", "down")
                     call lun_main("but why did you want to study with me then? Surely you don't need the quizzing anymore?","normal","mad","raised","mid")
                     call her_main("I've always wanted to practise teaching and I get to help out my friend while I do it!", "grin", "base", "base", "R")
@@ -1139,14 +1102,14 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                     call her_main("of course we're friends luna! Maybe even best friends after all this...", "base", "happy", "base", "mid")
                     call lun_main("...","normal","seductive","sad","mid")
                     call lun_main("whatever...","normal","angry","angry","R",tears="soft")
-                    $ luna_flip = 1
-                    hide screen luna_main
-
                     call lun_main("if you two are done talking I'm going to class...","normal","mad","angry","mid",tears="soft")
 
-                    call lun_walk(action="leave")
+                    ">Luna quickly gets dressed before leaving."
 
                     call load_luna_clothing_saves
+                    call update_lun_uniform
+
+                    call lun_walk(action="leave")
 
                     call her_main("...", "annoyed", "base", "worried", "R")
                     call her_main("did she seem ok to you sir?", "annoyed", "base", "worried", "R")
@@ -1156,6 +1119,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                     call her_main("thank you, [genie_name].", "base", "happyCl", "worried", "mid")
                     hide screen hermione_main
                     with d3
+
+                    ">Hermione puts her clothes back on and then heads after Luna."
 
                     $ hermione.wear("all")
 
@@ -1168,9 +1133,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                 label luna_her_hj_end:
                     m "Alright, you two can go now."
                     $ luna_l_arm = 2
-                    $ luna_flip = 1
-                    $ luna_xpos = 300
-                    call lun_main("*hmph*, not before you pay us!","normal","angry","angry","mid")
+                    call lun_main("*hmph*, not before you pay us!","normal","angry","angry","R")
                     m "Right, nearly forgot."
                     call her_main("...", "annoyed", "squint", "base", "mid")
                     $ gryffindor += 50
@@ -1196,13 +1159,13 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                     with d3
                     pause.8
 
+                    call lun_chibi("hide")
+                    call her_chibi("hide")
+                    with d3
+                    
+                    call play_sound("door")
 
                     ">You can hear them talking and laughing together as they shut your door."
-
-    call play_sound("door")
-    hide screen luna_main
-    call lun_chibi("hide")
-    call her_chibi("hide")
 
     $ luna_busy = True
     $ hermione_busy = True

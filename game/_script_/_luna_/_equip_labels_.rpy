@@ -29,6 +29,8 @@ label update_lun_uniform:
     $ luna_glasses        = "characters/luna/clothes/glasses/" +str(lun_glasses)+ ".png"
     $ luna_ears           = "characters/luna/clothes/ears/" +str(lun_ears)+ ".png"
 
+    $ update_chibi("luna")
+
     call update_luna_body
 
     return

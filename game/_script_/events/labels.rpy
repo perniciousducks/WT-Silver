@@ -131,8 +131,8 @@ label teleport(position=None,effect=True,poof_label=None):
         $ teleport_zorder = 3
     elif position == "desk":
         $ teleport_xpos = 320
-        $ teleport_ypos = 160
-        $ teleport_zorder = 1
+        $ teleport_ypos = 450
+        $ teleport_zorder = 5
         show screen desk
     else:
         $ teleport_xpos = position[0]

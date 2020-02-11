@@ -5,7 +5,7 @@
 label prev_at_hogwarts:
     #Story Unlock requirements: Finish the first 3 Wizard Cards challenges.
 
-    #Temporarily stored vars
+    # Setup
     $ temp_date = day
     $ temp_gold = gold
     $ temp_day = daytime
@@ -14,8 +14,9 @@ label prev_at_hogwarts:
 
     stop weather
     call play_music("stop")
+    call room("main_room")
     show screen blkfade
-    with d9
+    with d5
 
     $ day = 1
     $ gold = 0
@@ -24,21 +25,18 @@ label prev_at_hogwarts:
     $ weather_gen = 1
     $ show_weather()
 
-    call room("main_room") # Hides all screens too.
+    
     call gen_chibi("hide")
     show screen dumbledore
+    hide screen owl
 
-    pause 2
-
-    centered "{size=+7}{color=#cbcbcb}Previously, at Hogwarts{w} school of Witchcraft and Wizardry...{/color}{/size}"
-
-    pause 2
+    centered "{size=+7}{color=#cbcbcb}Previously, at Hogwarts{w=1.0}\nschool of Witchcraft and Wizardry...{/color}{/size}"
 
     call play_music("day")
     hide screen blkfade
-    with d9
-    call ctc
-
+    with d5
+    
+    pause 3.0
     call play_sound("knocking")
     pause.8
 
@@ -77,7 +75,7 @@ label prev_at_hogwarts:
     dum_[2] "Ah yes... my point."
     dum_[1] "Where was I again..."
     dum_[2] "Ah yes, your stress situation..."
-    call sna_main("\"You're not really helping old man...\"","snape_08")
+    call sna_main("(You're not really helping old man...)","snape_08")
     dum_[1] "Have you tried a draught of peace?"
     call sna_main("What?","snape_03")
     dum_[2] "A draught of peace, it's a potion you know..."
@@ -105,6 +103,8 @@ label prev_at_hogwarts:
 
     hide screen dumbledore
     call gen_chibi("sit_behind_desk")
+    with None
+    
     call teleport("desk")
 
     pause.8

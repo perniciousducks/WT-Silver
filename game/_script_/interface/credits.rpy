@@ -56,6 +56,7 @@ define credits_chibis = (
 label credits:
     if not _menu:
         play music "music/02 - Shanghai Honey.mp3" fadein 1 fadeout 1 noloop
+    call hide_screens
     show screen credits(credits_text)
     with dissolve
     call update_interface_color("gray")
@@ -83,7 +84,6 @@ transform credits_chibi_fade(start, duration):
 screen credits(credits=credits_text, duration=credits_duration, chibis=credits_chibis):
     tag credits
     zorder 20
-    #sensitive False
     
     add Solid("#000")
 

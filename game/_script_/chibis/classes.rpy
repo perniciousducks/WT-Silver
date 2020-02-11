@@ -23,7 +23,7 @@ screen chibi_emote(emote, chibi_object):
         if chibi_object.tag in ("genie", "snape"):
             offset (int(75*ChibiRoom.get().scale), int(-200*ChibiRoom.get().scale))
         else:
-            offset (int(50*ChibiRoom.get().scale), 0)
+            offset (int(50*ChibiRoom.get().scale), int(-170*ChibiRoom.get().scale))
 
 label chibi_emote(emote, name):
     python:

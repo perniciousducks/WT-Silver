@@ -2,6 +2,9 @@
 image spr_hermione blink:
     sprite_blink("characters/hermione/face/eyes/closed.png")
     
+image spr_hermione blink masturbate:
+    sprite_blink("characters/hermione/face/eyes/closed.png")
+    
 # Hermione Solo Animations
 image ch_hem blink:
     random_blink("characters/hermione/chibis/walk/h_walk_a_06.png", "characters/hermione/chibis/walk/h_walk_a_01.png")

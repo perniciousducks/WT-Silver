@@ -55,7 +55,7 @@
             renpy.notify("Saved.")
                         
         def get_new_statement(self):
-            text = "\"\", " if not self.args["text"] else "\"{}\", ".format(self.args["text"])
+            text = "\"\", " if not self.args["text"] else "\"{}\", ".format(self.args["text"].replace("\"", "\\\""))
             
             mouth = "" if self.args["mouth"] == False else "\"{}\", ".format(self.args["mouth"])
             eyes = "" if self.args["eyes"] == False else "\"{}\", ".format(self.args["eyes"])
@@ -63,8 +63,8 @@
             pupils = "" if self.args["pupils"] == False else "\"{}\", ".format(self.args["pupils"])
             hair = "" if self.label != "ton_main" or not self.args["hair"] else "hair=\"{}\", ".format(self.args["hair"])
             
-            cheeks = "" if self.args["cheeks"] == None else "cheeks=\"{}\", ".format(self.args["cheeks"])
-            tears = "" if self.args["tears"] == None else "tears=\"{}\", ".format(self.args["tears"])
+            cheeks = "" if self.args["cheeks"] in (None, "(No change)") else "cheeks=\"{}\", ".format(self.args["cheeks"])
+            tears = "" if self.args["tears"] in (None, "(No change)") else "tears=\"{}\", ".format(self.args["tears"])
             extra = "" if self.args["extra"] == None else "extra=\"{}\", ".format(self.args["extra"])
             emote = "" if self.args["emote"] == None else "emote=\"{}\", ".format(self.args["emote"])
             face = "" if self.args["face"] == None else "face=\"{}\", ".format(self.args["face"])
@@ -96,6 +96,11 @@
             
             self.args = dict([(k, getattr(store, k)) for k in node.parameters.apply(None, None).iterkeys()])
             
+            if self.args["cheeks"] == None:
+                self.args["cheeks"] = "(No change)"
+            if self.args["tears"] == None:
+                self.args["tears"] = "(No change)"
+            
             # Lookup transition name
             if self.args["trans"] != None:
                 _transitions = dict([(obj.callable, name) for (name, obj) in store.__dict__.iteritems() if name in self.transitions])
@@ -123,7 +128,11 @@
             
         def set_expressions(self):
             c = getattr(renpy.store, self.char[self.label])
-            c.set_face(mouth=self.args["mouth"], eyes=self.args["eyes"], eyebrows=self.args["eyebrows"], pupils=self.args["pupils"], cheeks=self.args["cheeks"], tears=self.args["tears"])
+            
+            cheeks = None if self.args["cheeks"] in (None, "(No change)") else self.args["cheeks"]
+            tears = None if self.args["tears"] in (None, "(No change)") else self.args["tears"]
+            
+            c.set_face(mouth=self.args["mouth"], eyes=self.args["eyes"], eyebrows=self.args["eyebrows"], pupils=self.args["pupils"], cheeks=cheeks, tears=tears)
             c.apply_transition()
             
         def get_expressions(self, type):
@@ -135,7 +144,13 @@
                 eyes = tuple(x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/eyes/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x)
                 eyebrows = tuple(x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/eyebrows/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x)
                 pupils = tuple(x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/pupils/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x)
-                return dict([("mouths", mouths), ("eyes", eyes), ("eyebrows", eyebrows), ("pupils", pupils)])
+                
+                cheeks = ["(No change)"]
+                tears = ["(No change)"]
+                cheeks.extend([x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/cheeks/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x])
+                tears.extend([x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/tears/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x])
+                
+                return dict([("mouths", mouths), ("eyes", eyes), ("eyebrows", eyebrows), ("pupils", pupils), ("cheeks", cheeks), ("tears", tears)])
             
             self.expressions = dict([(x, scan_files(x)) for x in self.char.itervalues()])
             
@@ -188,6 +203,12 @@ screen editor():
                 textbutton "Reload" action Function(_reload_game) xanchor 1.0 align (1.0, 1.0)
     
                 if not False in (editor.args["pupils"], editor.args["eyebrows"], editor.args["eyes"], editor.args["mouth"]):
+                    use dropdown_menu(name="Tears: "+str(editor.args["tears"]), pos=(0, 140), items_offset=(0, 0), background="#FFFFFF80"):
+                        for i in editor.get_expressions("tears"):
+                            textbutton "[i]" text_size 10 action [SelectedIf(i==str(editor.args["tears"])), Function(editor.set_data, "tears", i)]
+                    use dropdown_menu(name="Cheeks: "+str(editor.args["cheeks"]), pos=(0, 120), items_offset=(0, 0), background="#FFFFFF80"):
+                        for i in editor.get_expressions("cheeks"):
+                            textbutton "[i]" text_size 10 action [SelectedIf(i==str(editor.args["cheeks"])), Function(editor.set_data, "cheeks", i)]
                     if editor.label == "ton_main":
                         use dropdown_menu(name="Hair: "+str(editor.args["hair"]), pos=(0, 100), items_offset=(0, 0), background="#FFFFFF80"):
                             for i in xrange(0, 10):

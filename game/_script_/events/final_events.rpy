@@ -2,7 +2,7 @@
 #hermione asks genie about who will be in-charge of the ball
 label ball_quest_E1:
     stop music fadeout 1.0
-    
+
     call her_walk(action="enter", xpos="mid", ypos="base")
 
     call play_music("chipper_doodle")
@@ -24,22 +24,22 @@ label ball_quest_E1:
         m "..."
         "\"You shall be in charge, miss Granger.\"":
             call her_main("Thank you, [genie_name].", "base", "base", "base", "mid")
-            
+
         "\"No. Professor Snape shall be in charge!\"":
             call her_main("Professor Snape, sir?", "open", "squint", "angry", "mid")
             call her_main("But, traditionally organizing and hosting the ball is the responsibility of the students...", "normal", "base", "angry", "mid")
             call her_main("Teachers are only present as the guests of honour...", "open", "closed", "angry", "mid")
             m "Of course...{w=0.4} I was just kidding."
             m "You shall be in charge, [hermione_name]..."
-                
+
     m "There is one condition, though..."
     call her_main("Yes, [genie_name]?", "normal", "squint", "angry", "mid")
-    
+
     $ d_flag_01 = False
     $ d_flag_02 = False
-    
+
     label .choices:
-    
+
     menu:
         m "..."
         "\"Take some of those clothes off\"":
@@ -49,7 +49,7 @@ label ball_quest_E1:
         "\"You will have to sleep with me.\"" if not d_flag_02:
             $ her_mood += 10
             $ d_flag_02 = True
-            
+
             call her_main("I will have to... sleep...?", "angry", "wide", "base", "mid")
             call her_main("...................", "angry", "base", "angry", "mid", cheeks="blush")
             call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -66,15 +66,15 @@ label ball_quest_E1:
             call her_main("But sleeping with my headmaster?", "open", "squint", "annoyed", "mid", cheeks="blush")
             call her_main("That is where I draw the line, sir.", "angry", "base", "angry", "mid", cheeks="blush")
             m "Fine... in that case..."
-            
+
             jump ball_quest_E1.choices
 
         "\"Never mind. the Position is yours.\"":
             $ her_mood = 0
-            
+
             call her_main("Really?", "smile", "base", "base", "mid")
             m "Yes."
-            
+
             jump ball_quest_E1.end
 
     if d_flag_02:
@@ -120,11 +120,11 @@ label ball_quest_E1:
         m "People depend on you, girl!"
         call her_main("You... maybe you're right, [genie_name].", "open", "narrow", "worried", "down")
         call her_main("I must do this... Everyone depends on me.", "upset", "closed", "base", "mid")
-        
+
     call her_main("Just give me a second please.", "annoyed", "narrow", "base", "R")
     hide screen hermione_main
     with d5
-        
+
     m "............"
 
     call play_music("playful_tension") # SEX THEME.
@@ -152,60 +152,60 @@ label ball_quest_E1:
     pause.2
 
     call her_main("Just in case...", "annoyed", "narrow", "angry", "R", cheeks="blush")
-    
+
     $ d_flag_01 = False
     $ d_flag_02 = False
 
     m ".........................."
     call her_main("Okay then... what would you have me do?", "normal", "base", "worried", "mid")
-    
+
     label .choices2:
-    
+
     if d_flag_01 and d_flag_02:
         jump ball_quest_E1.after_strip
-    
+
     menu:
         m "..."
         "\"Take your top off.\"" if not d_flag_01:
             $ d_flag_01 = True
-            
+
             call play_music("playful_tension") # SEX THEME.
-            
+
             if not hermione.is_worn("top"):
                 call her_main("Take off my what? I'm not exactly clothed, you know!", "angry", "base", "annoyed", "R")
                 if not hermione.is_worn("bra"):
                     call her_main("Can't you see that my breasts are already on display?", "annoyed", "squint", "angry", "mid")
                     m "Right..."
-                    
+
                     jump ball_quest_E1.choices2
                 else:
                     m "You are still wearing a bra, aren't you?"
-                    
+
                     jump ball_quest_E1.bra
-                    
+
             call her_main("............", "annoyed", "base", "worried", "R_soft", cheeks="blush")
-                
+
             hide screen hermione_main
             with d5
             pause.3
-            
+
             call her_chibi("lift_top","mid","base")
             with d3
             pause 2.0
-            
+
             $ hermione.strip("top")
-            
+
             show screen hermione_main
             with d5
-            
+
             call ctc
 
             if hermione.is_worn("bra"):
                 pause 2.0
                 m "And your bra..."
-                
+
                 label .bra:
-                
+
                 call her_main("...", "annoyed", "base", "angry", "R_soft", cheeks="blush")
                 $ hermione.strip("bra")
                 pause.5
@@ -217,27 +217,27 @@ label ball_quest_E1:
             m "Your ample tits are always a welcome sight..."
             call her_main("....................", "disgust", "narrow", "base", "down", cheeks="blush")
             call her_main("", "normal", "base", "worried", "R_soft", cheeks="blush")
-            
+
             jump ball_quest_E1.choices2
 
         "\"Take your bottoms off.\"" if not d_flag_02:
             $ d_flag_02 = True
-            
+
             call play_music("playful_tension") # SEX THEME.
-            
+
             if not hermione.is_worn("bottom"):
                 call her_main("I would if you'd let me wear any!", "angry", "base", "angry", "mid")
                 if not hermione.is_worn("panties"):
                     call her_main("You have no idea how cold Hogwarts can be this time of year!", "annoyed", "base", "worried", "R")
                     m "......."
-                    
+
                     jump ball_quest_E1.choices2
                 else:
                     g9 "You don't need any, in fact, you don't need your panties either!"
                     m "Take them off..."
-                    
+
                     jump ball_quest_E1.panties
-                
+
             hide screen hermione_main
             with d5
             pause.3
@@ -245,20 +245,20 @@ label ball_quest_E1:
             call her_chibi("lift_skirt","mid","base")
             with d3
             pause 2.0
-            
+
             $ hermione.strip("bottom")
-            
+
             show screen hermione_main
             with d5
-            
+
             call ctc
 
             if hermione.is_worn("panties"):
                 pause 2.0
                 m "And your panties..."
-                
+
                 label .panties:
-                
+
                 call her_main("...", "normal", "base", "low", "R_soft", cheeks="blush")
                 $ hermione.strip("panties")
                 pause.5
@@ -277,127 +277,140 @@ label ball_quest_E1:
             call her_main(".....................................", "annoyed", "base", "worried", "R_soft", cheeks="blush")
             m "I do like your cute little pussy though..."
             call her_main(".....Thank you, sir.", "disgust", "base", "angry", "R_soft", cheeks="blush")
-            
+
             jump ball_quest_E1.choices2
-            
+
         "\"Nevermind. The position is yours.\"" if d_flag_01 or d_flag_02:
             call her_main("Really?", "smile", "base", "base", "mid")
-            
+
             jump ball_quest_E1.end
-            
+
     label .after_strip:
-    
+
     call her_chibi("stand")
     with d5
     pause 1.0
-    
+
     $ d_flag_03 = False
 
     g9 "Looking good [hermione_name]..."
     call her_main("Happy now?", "annoyed", "base", "worried", "R", cheeks="blush")
     call her_main("Will you let me have the \"privilege\" of being in charge of the ABOC this year?", "normal", "base", "worried", "mid")
-    
+
     menu:
         "\"Of course... the Position is yours.\"":
             call her_main("Really?", "smile", "base", "base", "mid")
-            
+
             jump ball_quest_E1.end
-            
+
         "\"Touch yourself for me first...\"":
             $ d_flag_03 = True
             $ her_mood += 5
-            
+
             call her_main("You want me to...", "shock", "wide", "base", "stare")
             m "Flick the bean..."
             m "Fondle those puppies..."
             call her_main("I...", "angry", "wide", "worried", "mid", cheeks="blush")
             m "Or did you not want to be in charge?"
-            call her_main("Of... of course I do!", "angry", "base", "worried", "L", cheeks="blush")
+            call her_main("Of... of course I do!", "angry", "base", "worried", "down", cheeks="blush")
             m "Then get on with it..."
-            call her_main("...", "disgust", "squint", "worried", "down", cheeks="blush") #Blushes
-            
+            call her_main("...", "annoyed", "happyCl", "worried", "down", cheeks="blush") #Blushes
+            call her_main("Fine...", "disgust", "squint", "worried", "down", cheeks="blush") #Blushes
+
             show screen blkfade
             with d5
-            $ renpy.play("sounds/gltch.mp3") 
+            $ renpy.play("sounds/slick_02.mp3")
             with hpunch
             $ hermione_xpos = 270
             $ hermione.body.body["armright"][1] = 3 # Hacky hacky, sucky sucky, CG better.
             $ hermione.set_pose("masturbate")
+            call her_main("", "open", "squint", "worried", "mid")
             hide screen blkfade
             with d5
 
+            pause 0.5
+
             call her_main("*Ah*...", "open", "squint", "worried", "R", cheeks="blush") #disgusted #blushing
             g9 "Ni-i-i-ce!"
-            $ renpy.play("sounds/masturbate.mp3")
+            play bg_sounds "sounds/slickloop.mp3" fadein 2
+            call her_main("*mmmh*...", "open", "happyCl", "worried", "R", cheeks="blush") #disgusted #blushing
+            pause 0.4
             call her_main("", "soft", "closed", "base", "R", cheeks="blush")
+            pause 0.4
             call ctc
             call her_main("*Sob!*", "soft", "squint", "worried", "R_soft", cheeks="blush", tears="soft")
             m "Huh?"
-            call her_main("Oh, please, don't mind me, sir.", "open", "base", "base", "R", cheeks="blush", tears="crying")
-            $ renpy.play("sounds/masturbate.mp3")
-            call her_main("Just enjoy the... {w=0.5}the... {w=0.5}the view...", "upset", "happy", "base", "R", cheeks="blush", tears="soft")
+            call her_main("Oh, please,{w=0.4} don't mind me, sir.", "open", "base", "base", "R", cheeks="blush", tears="crying")
+            call her_main("Just enjoy the... {w=0.5}the view...", "upset", "happy", "base", "R", cheeks="blush", tears="soft")
             m "Are you... crying?"
-            call her_main("*Sob!* No, not really, sir... *sob!*...", "angry", "happyCl", "worried", "mid", cheeks="blush", tears="crying_blink")
-            call her_main("It is just that I am standing here before my headmaster completely naked... touching myself... *SOB!*", "angry", "squint", "worried", "R_soft", cheeks="blush", tears="crying")
-            $ renpy.play("sounds/masturbate.mp3")
-            call her_main("These are the tears of shame, sir.", "open", "narrow", "low", "R", cheeks="blush", tears="messy")
-            call her_main("I can't help it! *Sob!*", "angry", "happyCl", "worried", "mid_soft", cheeks="blush", tears="messy")
-            $ renpy.play("sounds/masturbate.mp3")
+            stop bg_sounds
+            #Have her move her hand off her pussy
+            call her_main("*Sob!* No, sir... *sob!*...", "angry", "happyCl", "worried", "mid", cheeks="blush", tears="crying_blink")
+            call her_main("I... I enjoy touching myself...{w=0.5} In front of my headmaster *SOB!*", "angry", "squint", "worried", "R_soft", cheeks="blush", tears="crying")
+            #Have her go back to masturbating
+            play bg_sounds "sounds/slickloop.mp3" fadein 2
+            call her_main("*Ah*...", "open", "squint", "worried", "R", cheeks="blush")
+            call her_main("These...{w=0.4} *Ah*...{w=0.5} are happy tears, sir.", "open", "narrow", "low", "R", cheeks="blush", tears="messy")
+            call her_main("I...{w=0.5} *Ah*...{w=0.5}... I'm sorry...{w=0.5} I can't help it! *Sob!*", "angry", "happyCl", "worried", "mid_soft", cheeks="blush", tears="messy")
             m "Are you sure that you are ok with this?"
-            call her_main("Yes, yes, sir, please.... *Sob!*", "soft", "squint", "worried", "mid", cheeks="blush", tears="messy")
-            call her_main("Please keep looking as I... pleasure myself *Sob!*", "open", "narrow", "base", "mid_soft", cheeks="blush", tears="messy")
-            $ renpy.play("sounds/masturbate.mp3")
+            call her_main("Yes...{w=0.4} *Ah*...{w=0.5} yes, sir, please.... *Sob!*", "soft", "squint", "worried", "mid", cheeks="blush", tears="messy")
+            call her_main("Please keep looking as I...{w=0.3} pleasure myself *Sob!*", "open", "narrow", "base", "mid_soft", cheeks="blush", tears="messy")
             call her_main("", "open", "narrow", "angry", "stare_soft", cheeks="blush", tears="messy")
             pause.2
 
             g4 "(What the...?)"
-            $ renpy.play("sounds/masturbate.mp3")
             with hpunch
             call her_main("Sir, I am begging you!", "soft", "narrow", "angry", "mid", cheeks="blush", tears="messy")
             m "Kind of sounds like an order--"
+            play bg_sounds "sounds/slickloopfast.mp3"
             call her_main("I need it!", "open", "narrow", "worried", "up_soft", cheeks="blush", tears="messy")
             call her_main("...I need to shamelessly present my naked body before you like this!", "soft", "narrow", "base", "up_soft", cheeks="blush", tears="messy")
-            $ renpy.play("sounds/masturbate.mp3")
             with hpunch
             m ".............?"
             call her_main("I need to feel this embarrassment and humiliation! *SOB!*", "silly", "narrow", "angry", "dead", cheeks="blush", tears="messy")
+            play bg_sounds "sounds/slickloopveryfast.mp3"
             call her_main("The fate of the \"Autumn ball\" depends on this...", "silly", "base", "worried", "mid_soft", cheeks="blush", tears="messy")
             her "So, sir, please..."
             call her_main("Keep looking at my naked breasts, and my pussy...", "silly", "narrow", "worried", "mid", cheeks="blush", tears="messy")
-            $ renpy.play("sounds/masturbate.mp3")
             her "Look at me as I get wet for you..."
-            $ renpy.play("sounds/masturbate.mp3")
+            call her_main("*mmmh*...", "open", "happyCl", "worried", "R", cheeks="blush", tears="messy") #disgusted #blushing
             call ctc
 
-            $ renpy.play("sounds/masturbate.mp3")
+
             with hpunch
-            call her_main("Yes! Make my skin burn with shame, sir... *Sob!*", "open", "narrow", "base", "up", cheeks="blush", tears="messy")
+            call her_main("*Ah*...{w=0.5} Yes! Make my skin burn with shame, sir... *Sob!*", "open", "narrow", "base", "up", cheeks="blush", tears="messy")
             m "Ehm... right... Ok..."
             m "Listen, I think this will do..."
 
-            call her_main("Are you sure, sir?", "open", "narrow", "base", "mid", cheeks="blush", tears="messy")
-            call her_main("Are you sure that you humiliated me enough, sir?", "base", "narrow", "worried", "mid_soft", cheeks="blush", tears="messy")
+            play bg_sounds "sounds/slickloop.mp3" fadein 2
+            call her_main("*Ah*...{w=0.5} Are you sure, sir?", "open", "narrow", "base", "mid", cheeks="blush", tears="messy")
+            call her_main("Are you sure that you've humiliated me enough, sir?", "base", "narrow", "worried", "mid_soft", cheeks="blush", tears="messy")
             m "...................."
             m "(Is she getting off on this or is she being sarcastic? I don't get it...)"
-            her ".........................."
+            call her_main("*mmmh*............", "open", "happyCl", "worried", "R", cheeks="blush", tears="messy")
             call ctc
 
+            m "That's enough..."
+            call her_main("", "annoyed", "base", "base", "mid", cheeks="blush", tears="messy")
             m "Just put your clothes back on, Miss Granger. You're making me feel uncomfortable."
+            stop bg_sounds fadeout 4
+            her "..."
+            #Pose goes back to normal
             call her_main("As you wish, sir...", "annoyed", "narrow", "angry", "R", cheeks="blush", tears="messy")
-            
+
             stop music fadeout 3.0
             show screen blkfade
             with d5
             $ hermione.body.body["armright"][1] = 0 # Hacky hacky, sucky sucky, CG better.
             $ hermione.set_pose(None)
             $ hermione.wear("all")
-            call her_main("", "normal", "base", "worried", "R", xpos="right", ypos="base")
+            call her_main("", "base", "happyCl", "base", "mid", xpos="right", ypos="base")
+            pause 3
             hide screen blkfade
             with d5
-            
-            her "............"
 
-            call blkfade
+
+
 
     call her_chibi("stand","mid","base")
     call hide_blkfade
@@ -406,13 +419,13 @@ label ball_quest_E1:
     call play_music("chipper_doodle")
 
     label .end:
-    call her_main("So I am officially in charge of this year's \"Autumn Ball Organization Committee\" now?", "base", "happyCl", "base", "mid", xpos="right", ypos="base")
+    call her_main("So... does this mean I'm officially in charge of this year's \"Autumn Ball Organization Committee\" now?", "base", "happyCl", "base", "mid", xpos="right", ypos="base")
     m "That you are."
     her "Thank you sir! You will not regret this, I promise!"
     if d_flag_03:
         call blktone
-        m "(*Huh*... It's surprising how fast her mood has changed.)"
-        m "(What do you know, maybe she does get off of humiliation...)"
+        m "(That was weird... she sure changed her mood quick.)"
+        m "(Maybe she gets off from humiliation...)"
         m "(Guess I'll have to find out.)"
         call hide_blktone
     else:
@@ -422,7 +435,7 @@ label ball_quest_E1:
         call hide_blktone
     call her_main("Well, I'd better go now. I have so many arrangements to make!", "grin", "base", "base", "R")
     m "By all means, Miss Granger. Have a nice day."
-    
+
     show screen blkfade
     with d5
     $ hermione.wear("all")

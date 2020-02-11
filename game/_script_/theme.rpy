@@ -112,6 +112,7 @@ style default:
     font "fonts/CREABBB.TTF"
     size 16
     color "#402313"
+    outline_scaling "linear"
 
 style button:
     activate_sound "sounds/click3.mp3"

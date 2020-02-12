@@ -313,26 +313,26 @@ label ball_quest_E1:
             m "Or did you not want to be in charge?"
             call her_main("Of... of course I do!", "angry", "base", "worried", "down", cheeks="blush")
             m "Then get on with it..."
-            call her_main("...", "annoyed", "happyCl", "worried", "down", cheeks="blush") #Blushes
-            call her_main("Fine...", "disgust", "squint", "worried", "down", cheeks="blush") #Blushes
+            call her_main("...", "annoyed", "happyCl", "worried", "down", cheeks="blush")
+            call her_main("Fine...", "disgust", "squint", "worried", "down", cheeks="blush")
 
             show screen blkfade
             with d5
             $ renpy.play("sounds/slick_02.mp3")
             with hpunch
             $ hermione_xpos = 270
-            $ hermione.body.body["armright"][1] = 3 # Hacky hacky, sucky sucky, CG better.
             $ hermione.set_pose("masturbate")
+            $ hermione.set_body(armleft="on_pussy")
             call her_main("", "open", "squint", "worried", "mid")
             hide screen blkfade
             with d5
 
             pause 0.5
 
-            call her_main("*Ah*...", "open", "squint", "worried", "R", cheeks="blush") #disgusted #blushing
+            call her_main("*Ah*...", "open", "squint", "worried", "R", cheeks="blush")
             g9 "Ni-i-i-ce!"
             play bg_sounds "sounds/slickloop.mp3" fadein 2
-            call her_main("*mmmh*...", "open", "happyCl", "worried", "R", cheeks="blush") #disgusted #blushing
+            call her_main("*mmmh*...", "open", "happyCl", "worried", "R", cheeks="blush")
             pause 0.4
             call her_main("", "soft", "closed", "base", "R", cheeks="blush")
             pause 0.4
@@ -343,10 +343,17 @@ label ball_quest_E1:
             call her_main("Just enjoy the... {w=0.5}the view...", "upset", "happy", "base", "R", cheeks="blush", tears="soft")
             m "Are you... crying?"
             stop bg_sounds
-            #Have her move her hand off her pussy
+            
+            # Hand down
+            $ hermione.set_body(armleft="down")
+            
             call her_main("*Sob!* No, sir... *sob!*...", "angry", "happyCl", "worried", "mid", cheeks="blush", tears="crying_blink")
             call her_main("I... I enjoy touching myself...{w=0.5} In front of my headmaster *SOB!*", "angry", "squint", "worried", "R_soft", cheeks="blush", tears="crying")
-            #Have her go back to masturbating
+            
+            # Hands on pussy, tits
+            $ hermione.body.body["armright"][1] = 3 # Hacky hacky, sucky sucky, CG better.
+            $ hermione.set_body(armleft="on_pussy", armright="on_tits")
+            
             play bg_sounds "sounds/slickloop.mp3" fadein 2
             call her_main("*Ah*...", "open", "squint", "worried", "R", cheeks="blush")
             call her_main("These...{w=0.4} *Ah*...{w=0.5} are happy tears, sir.", "open", "narrow", "low", "R", cheeks="blush", tears="messy")
@@ -394,30 +401,29 @@ label ball_quest_E1:
             m "Just put your clothes back on, Miss Granger. You're making me feel uncomfortable."
             stop bg_sounds fadeout 4
             her "..."
-            #Pose goes back to normal
+            
+            # Reset pose
+            $ hermione.body.body["armright"][1] = 0 # Hacky hacky, sucky sucky, CG better.
+            $ hermione.set_body(armleft="down", armright="down")
+            $ hermione.set_pose(None)
+            
             call her_main("As you wish, sir...", "annoyed", "narrow", "angry", "R", cheeks="blush", tears="messy")
 
             stop music fadeout 3.0
-            show screen blkfade
-            with d5
-            $ hermione.body.body["armright"][1] = 0 # Hacky hacky, sucky sucky, CG better.
-            $ hermione.set_pose(None)
-            $ hermione.wear("all")
-            call her_main("", "base", "happyCl", "base", "mid", xpos="right", ypos="base")
-            pause 3
-            hide screen blkfade
-            with d5
 
-
-
-
+    label .end:
+    
+    show screen blkfade
+    with d5
     call her_chibi("stand","mid","base")
-    call hide_blkfade
+    call her_main("", "base", "happyCl", "base", "mid", xpos="right", ypos="base")
+    $ hermione.wear("all")
+    pause 2.0
+    hide screen blkfade
     with d5
 
     call play_music("chipper_doodle")
-
-    label .end:
+    
     call her_main("So... does this mean I'm officially in charge of this year's \"Autumn Ball Organization Committee\" now?", "base", "happyCl", "base", "mid", xpos="right", ypos="base")
     m "That you are."
     her "Thank you sir! You will not regret this, I promise!"
@@ -434,12 +440,6 @@ label ball_quest_E1:
         call hide_blktone
     call her_main("Well, I'd better go now. I have so many arrangements to make!", "grin", "base", "base", "R")
     m "By all means, Miss Granger. Have a nice day."
-
-    show screen blkfade
-    with d5
-    $ hermione.wear("all")
-    hide screen blkfade
-    with d5
 
     call her_walk(action="leave")
     pause.5

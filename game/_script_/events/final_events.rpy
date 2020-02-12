@@ -37,7 +37,8 @@ label ball_quest_E1:
 
     $ d_flag_01 = False
     $ d_flag_02 = False
-
+    $ d_flag_03 = False # Masturbation flag
+    
     label .choices:
 
     menu:
@@ -290,8 +291,6 @@ label ball_quest_E1:
     call her_chibi("stand")
     with d5
     pause 1.0
-
-    $ d_flag_03 = False
 
     g9 "Looking good [hermione_name]..."
     call her_main("Happy now?", "annoyed", "base", "worried", "R", cheeks="blush")

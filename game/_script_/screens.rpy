@@ -430,6 +430,11 @@ screen preferences():
                     textbutton _("Test"):
                         action Play("sound", config.sample_sound)
                         style "soundtest_button"
+            frame:
+                has vbox
+
+                label _("Weather Volume")
+                bar value Preference("weather volume")
 
             if config.has_voice:
                 frame:

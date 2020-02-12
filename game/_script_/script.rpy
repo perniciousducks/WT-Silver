@@ -21,4 +21,4 @@ label game_init:
 
 init python:
     renpy.music.register_channel("bg_sounds", "sfx", True)
-    renpy.music.register_channel("weather", "sfx", True)
+    renpy.music.register_channel("weather", "weather", True)

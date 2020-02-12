@@ -1,7 +1,3 @@
-
-
-#Door Events (Hermione wears random clothing.)
-
 label hermione_summon_setup:
     $ random_number = renpy.random.randint(1, 10)
 
@@ -55,9 +51,6 @@ label hermione_summon_setup:
         call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base",trans=fade)
 
         return
-        
-    if hermione_outfits_schedule:
-        $ hermione.equip_random_outfit()
 
     # weather_gen 1-3   = good weather
     # weather_gen 4     = cloudy weather
@@ -338,10 +331,8 @@ label hermione_summon_setup:
             # #Unlocks rewards.
             # call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_cold_sexy_ITEM)
             
-    # if hermione_outfits_schedule:
-        # $ tmp_outfits = get_character_outfits_schedule("hermione")
-        # if len(tmp_outfits) > 0:
-            # $ hermione.equip(renpy.random.choice(tmp_outfits))
+    if hermione_outfits_schedule:
+        $ hermione.equip_random_outfit()
 
     call play_sound("door")
     call her_chibi("stand","mid","base")
@@ -349,30 +340,28 @@ label hermione_summon_setup:
 
     #Hermione greeting.
     call play_music("hermione")
-    if her_mood >= 1:
-
-        #call set_her_face(change="all")
-        call her_main(xpos="base", ypos="base")
-        if her_mood >=1 and her_mood < 3:
-            ">Looks like Hermione is still a little upset with you..."
-        elif her_mood >=3 and her_mood < 10:
-            ">Hermione is upset with you."
-        elif her_mood >=10 and her_mood < 20:
-            ">Hermione is very upset with you."
-        elif her_mood >=20 and her_mood < 40:
-            ">Hermione is mad at you."
-        elif her_mood >=40 and her_mood < 50:
-            ">Hermione is very mad at you."
-        elif her_mood >=50 and her_mood < 60:
-            ">Hermione is furious at you."
-        elif her_mood >=60:
-            ">Hermione hates your guts."
-
-    else: #Not mad.
-        #call set_her_face(change="all")
-        if not hermione_door_event_happened:
-            call her_main("Yes, [genie_name]?", xpos="base", ypos="base")
+    
+    if her_mood > 0:
+        if 5 > her_mood >= 1:
+            call her_main("Yes, [genie_name]?", "soft", "base", "worried", "mid", xpos="base", ypos="base", trans=d3)
+        elif 10 > her_mood >= 5:
+            call her_main("*sigh*... Yes, [genie_name]?", "annoyed", "base", "base", "mid", xpos="base", ypos="base", trans=d3)
+        elif 20 > her_mood >= 10:
+            call her_main("What is it, [genie_name]?", "open", "closed", "annoyed", "mid", xpos="base", ypos="base", trans=d3)
+            call her_main("", "upset", "base", "annoyed", "mid")
+        elif 30 > her_mood >= 20:
+            call her_main("What do you want, \"[genie_name]\"?", "upset", "squint", "angry", "R", xpos="base", ypos="base", trans=d3)
+        elif 40 > her_mood >= 30:
+            call her_main("*Hmph*...", "normal", "squint", "angry", "R", xpos="base", ypos="base", trans=d3)
+        elif 50 > her_mood >= 40:
+            call her_main("*Tsk*", "angry", "base", "angry", "R", xpos="base", ypos="base", trans=d3)
+        elif her_mood >= 50:
+            call her_main("I have nothing to tell you, sir!", "mad", "narrow", "angry", "L", xpos="base", ypos="base", trans=d3)
+            
+        call describe_mood("Hermione", her_mood)
+    else:
+        if daytime:
+            call her_main("Good morning, [genie_name].", "base", "base", "base", "mid", xpos="base", ypos="base", trans=d3)
         else:
-            call her_main(xpos="base", ypos="base")
-
+             call her_main("Good evening, [genie_name].", "base", "base", "base", "mid", xpos="base", ypos="base", trans=d3)
     return

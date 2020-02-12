@@ -1,6 +1,3 @@
-
-
-
 label tonks_summon_setup:
 
     $ tonks_wardrobe_unlocked = True
@@ -138,8 +135,28 @@ label tonks_summon_setup:
     call play_sound("door")
     call ton_chibi("stand","mid","base")
     with d3
-
+    
+    #Tonks greeting.
     call play_music("tonks")
-    call ton_main("You called, [ton_genie_name]?","base","base","base","mid", xpos="base", ypos="base")
-
+    
+    if ton_mood > 0:
+        if 5 > ton_mood >= 1:
+            call ton_main("Yes, [ton_genie_name]?", "open", "base", "base", "R", xpos="base", ypos="base", trans=d3)
+            call ton_main("", "base", "base", "base", "R")
+        elif 10 > ton_mood >= 5:
+            call ton_main("I have classes to teach, please be quick.", "upset", "base", "base", "mid", xpos="base", ypos="base", trans=d3)
+        elif 20 > ton_mood >= 10:
+            call ton_main("Make it quick, [ton_genie_name]...", "upset", "base", "base", "R", xpos="base", ypos="base", trans=d3)
+        elif 30 > ton_mood >= 20:
+            call ton_main("What do you want, \"[ton_genie_name]\", I'm busy.", "angry", "base", "angry", "mid", xpos="base", ypos="base", trans=d3)
+        elif 40 > ton_mood >= 30:
+            call ton_main("...............", "upset", "base", "angry", "mid", xpos="base", ypos="base", trans=d3)
+        elif 50 > ton_mood >= 40:
+            call ton_main("Please stop wasting my time.", "upset", "closed", "angry", "mid", xpos="base", ypos="base", trans=d3)
+        elif ton_mood >= 50:
+            call ton_main("You have the nerve to call me here after what you did.", "upset", "base", "angry", "mid", xpos="base", ypos="base", trans=d3)
+            
+        call describe_mood("Tonks", ton_mood)
+    else:
+        call ton_main("You called, [ton_genie_name]?","base","base","base","mid", xpos="base", ypos="base", trans=d3)
     return

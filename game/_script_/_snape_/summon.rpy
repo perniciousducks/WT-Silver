@@ -7,7 +7,7 @@ label summon_snape:
     call sna_chibi("stand","mid","base")
     with d3
 
-    call sna_main("Yes, what is it?","snape_01",xpos="base",ypos="base")
+    call sna_main("Yes, what is it?","snape_01",xpos="base",ypos="base", trans=d3)
 
     label snape_ready:
         pass

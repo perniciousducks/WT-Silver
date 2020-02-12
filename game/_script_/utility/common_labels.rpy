@@ -327,7 +327,6 @@ label unlock_clothing(text="",item=None):
 
     return
 
-
 label item_description(item):
 
     $ the_gift = item.get_image() #Prints whole imagepath!
@@ -342,4 +341,26 @@ label item_description(item):
     hide screen gift
     with d3
 
+    return
+
+label describe_mood(name, value):
+    call blktone
+    if 5 > value >= 1:
+        ">[name] is a little upset with you..."
+    elif 10 > value >= 5:
+        ">[name] is upset with you."
+    elif 20 > value >= 10:
+        ">[name] is very upset with you."
+    elif 30 > value >= 20:
+        ">[name] is mad at you."
+    elif 40 > value >= 30:
+        ">[name] is very mad at you."
+    elif 50 > value >= 40:
+        ">[name] is furious at you."
+    elif value >= 50:
+        ">[name] hates your guts."
+    else:
+        ">[name] is calm."
+    call hide_blktone
+    
     return

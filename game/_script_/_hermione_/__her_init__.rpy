@@ -83,9 +83,6 @@ default buttplug_1_question  = False
 default buttplug_2_question  = False
 default buttplug_3_question  = False
 
-# Clothing Events
-default hermione_door_event_happened = False
-
 # Cardgame promotion job
 default her_shop_help       = False
 default her_shop_help_first = True

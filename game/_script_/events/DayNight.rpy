@@ -102,30 +102,18 @@ label update_day_values:
     call set_random_nicknames
 
     # Mood
-    if game_difficulty <= 1:   # Easy difficulty
-        $ her_mood -= 3
-        $ lun_mood -= 3
-        $ cho_mood -= 3
-        $ ast_mood -= 3
-        $ sus_mood -= 3
-    elif game_difficulty == 2: # Normal difficulty
-        $ her_mood -= 2
-        $ lun_mood -= 2
-        $ cho_mood -= 2
-        $ ast_mood -= 2
-        $ sus_mood -= 2
-        # Hardcore # Gifting items is required!
+    if game_difficulty < 3:
+        if game_difficulty == 1:   # Easy difficulty
+            $ val = 3
+        elif game_difficulty == 2: # Normal difficulty
+            $ val = 2
 
-    if her_mood < 0:
-        $ her_mood = 0
-    if lun_mood < 0:
-        $ lun_mood = 0
-    if cho_mood < 0:
-        $ cho_mood = 0
-    if ast_mood < 0:
-        $ ast_mood = 0
-    if sus_mood < 0:
-        $ sus_mood = 0
+        $ ton_mood = max(ton_mood-val, 0)
+        $ her_mood = max(her_mood-val, 0)
+        $ lun_mood = max(lun_mood-val, 0)
+        $ cho_mood = max(cho_mood-val, 0)
+        $ ast_mood = max(ast_mood-val, 0)
+        $ sus_mood = max(sus_mood-val, 0)
 
     # Set randomly awarded house points
     $ generating_snape_bonus = renpy.random.randint(1, 2) #Determines whether ot not Snape bonus will be added to the Slytherin house.
@@ -156,7 +144,7 @@ label update_day_values:
             $ twins_interest = True
 
     $ day_of_week += 1
-    $ day +=1
+    $ day += 1
 
     # Change the weather
     if day > 1:
@@ -195,7 +183,6 @@ label update_day_and_night_values:
     if hg_summon_pause == 0:
         $ hermione_busy = False
     $ chitchated_with_her = False
-    $ hermione_door_event_happened = False
     $ her_random_number = renpy.random.randint(1, 5) #Used for Map screen. Gets defined once during day and night.
     call set_her_map_location()
 

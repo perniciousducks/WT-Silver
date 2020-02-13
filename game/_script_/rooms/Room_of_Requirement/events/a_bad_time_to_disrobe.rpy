@@ -1,7 +1,27 @@
 label a_bad_time_to_disrobe:
-    show screen blkfade
-    call h_equip_temp_outfit(hg_standart_school_ITEM)
+
+    # Setup
+    $ temp_date = day
+    $ temp_gold = gold
+    $ temp_day = daytime
+    $ temp_color = interface_color
+    $ temp_weather = weather_gen
+
+    stop weather
+    call play_music("stop")
     call room("main_room")
+    show screen blkfade
+    with d5
+    hide screen owl
+    
+    $ her_outfit_last.save()
+    $ hermione.equip(her_outfit_default)
+    
+    centered "{size=+7}{color=#cbcbcb}A bad time to disrobe.{/color}{/size}"
+
+    nar "In this story the genie has found an invisibility cloak."
+    nar "And with the cloak come great opportunities."
+    
     menu:
         "Part 1":
             jump a_bad_time_to_disrobe_part_1
@@ -10,25 +30,17 @@ label a_bad_time_to_disrobe:
 
 
 label a_bad_time_to_disrobe_part_1:
-    $ temp_time = daytime
-    $ daytime = True
-    call update_interface_color
-
-    call play_music("stop")
-    nar "In this story the genie has found an invisibility cloak."
-    nar "And with the cloak comes great opportunities"
-    nar "Title: A bad time to disrobe."
 
     call her_chibi("stand","desk","base")
 
     hide screen blkfade
-    with d3
+    with d5
 
     call music_block
     call bld
     m "Miss Granger. Have you ever been excited about the thought of being caught?"
 
-    call her_main("Caught?", "base", "base", "base", "mid",xpos="right",ypos="base")
+    call her_main("Caught?", "soft", "base", "base", "mid", xpos="right",ypos="base", trans=d3)
     call her_main("In what way professor?", "base", "base", "base", "mid")
 
     m "Well, for today's favour I have a prop for you to use."
@@ -38,7 +50,7 @@ label a_bad_time_to_disrobe_part_1:
     m "Yes, I'd like you to put this invisibility cloak on and sneak into one of the boy only areas of the school."
 
     call her_main("Well, I guess that would be fine...", "base", "base", "base", "mid")
-    call her_main("Seems a bit different than your usual requests.", "base", "base", "base", "mid")
+    call her_main("Seems a bit different than your usual requests.", "soft", "base", "base", "R", cheeks="blush")
 
     m "You'd be naked of course."
 
@@ -47,13 +59,13 @@ label a_bad_time_to_disrobe_part_1:
     m "You'll be wearing the cloak..."
     m "No one would even know you were there."
 
-    call her_main("{size=7}Thirty-five points...{/size}", "annoyed", "closed", "angry", "mid")
+    call her_main("{size=-7}Thirty-five points...{/size}", "annoyed", "closed", "angry", "mid")
 
     m "Twenty-five points you said? sounds good to me."
 
     call her_walk("door", "base")
 
-    call her_main("{size=7}You heard what I said...{/size}", "annoyed", "closed", "base", "mid",ypos="head")
+    call her_main("{size=-7}You heard what I said...{/size}", "annoyed", "closed", "base", "mid", flip=True, trans=d3)
     call her_chibi("leave")
 
     g9 "\"Some of that bartering skill put to good use...\""
@@ -73,10 +85,10 @@ label a_bad_time_to_disrobe_part_1:
 
     call bld
     g9 "I'll take that cloak back if you don't mind."
-    call her_main("Certainly.", "base", "base", "base", "mid",xpos="right",ypos="base")
+    call her_main("Certainly.", "base", "base", "base", "mid", xpos="right", ypos="base", flip=False)
     m "Now, spill the beans."
     call her_main("I..I don't have any beans on me sir.", "soft", "slit", "low", "stare")
-    m "\"Is this girl for real?\""
+    m "(Is this girl for real?)"
     m "It's just an expression, tell me... did you complete your assignment?"
     call her_main("I did sir. I snuck into the boys dormitory using the cloak as you suggested.", "soft", "happyCl", "base", "mid")
     m "Naked?"
@@ -117,7 +129,8 @@ label a_bad_time_to_disrobe_part_1:
     m "Indeed, I'm expecting better from you today girl."
     call her_main("I won't disappoint you sir!", "grin", "base", "base", "mid")
     m "I'll be the judge of that..."
-
+    
+    hide screen hermione_main
     show screen day_to_night
     with d3
 
@@ -128,7 +141,7 @@ label a_bad_time_to_disrobe_part_1:
     nar "Later that evening a distraught-looking Hermione enters the office. "
 
     call her_chibi("top_naked","desk","base")
-    call h_equip_temp_outfit(hg_standart_school_noshirt_ITEM)
+    $ hermione.strip("top")
 
     hide screen day_to_night
     with d3
@@ -172,25 +185,24 @@ label a_bad_time_to_disrobe_part_1:
 
     call her_chibi("leave")
 
-    "The End."
+    show screen blkfade
+    with d5
+    
+    centered "{size=+7}{color=#cbcbcb}End of part one.{/color}{/size}"
 
-    $ daytime = temp_time
+    $ daytime = temp_day
+    $ hermione.equip(her_outfit_last)
     call update_interface_color
     call hide_screens
-    call reset_hermione
-    call h_unequip_temp_outfit
+
     jump enter_room_of_req
 
 label a_bad_time_to_disrobe_part_2:
-    $ temp_time = daytime
-    $ daytime = True
-    call update_interface_color
 
-    call play_music("stop")
-    call room("main_room")
     call her_chibi("stand","desk","base")
+    
     hide screen blkfade
-    with d3
+    with d5
 
     call music_block
     call bld
@@ -205,16 +217,16 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("What crime professor, what have you gotten me into?", "upset", "narrow", "annoyed", "mid")
     m "I'm talking about when you went to visit the boys changing room."
     m "Or have you forgotten already?"
-    call her_main("{size=7}I've tried to.{/size}", "upset", "base", "worried", "R")
+    call her_main("{size=-7}I've tried to.{/size}", "upset", "base", "worried", "R")
     m "Sorry?"
     call her_main("I said, I do remember.", "normal", "base", "base", "R")
     m "Right, well. Good invisibility cloaks are pretty hard to come by..."
-    m "\"I think...\""
+    m "(I think...)"
     call her_main("No they're not... they're mass produced as far as I know.", "annoyed", "base", "base", "mid")
     call her_main("By house elves I bet...", "disgust", "closed", "angry", "mid")
     m "Hey now, I know they might be small but I wouldn't call them elves."
     m "In any case, the cloak has more of a sentimental value to me... lots of memories."
-    g9 "\"Like the time where your butt fell out of it.\""
+    g9 "(Like the time where your butt fell out of it.)"
     g9 "Oh, the memories... you must retrieve it for me."
     call her_main("Fine, I'll do it... even though I hold you partly responsible for the situation that lead to me dropping it.", "annoyed", "closed", "angry", "mid")
     m "Great, let's not dwell on the past then."
@@ -236,12 +248,12 @@ label a_bad_time_to_disrobe_part_2:
     m "No, well... yes, but this time you'll be prepared."
     call her_main("But... what if they recognise me sir?", "open", "base", "worried", "mid")
     m "You'd already know if they had recognised you..."
-    call her_main("\"That's true...\"", "soft", "base", "base", "mid_soft", cheeks="blush")
+    call her_main("(That's true...)", "soft", "base", "base", "mid_soft", cheeks="blush")
     call her_main("And then what, you want me to just walk away?", "base", "base", "base", "mid", cheeks="blush")
     m "You can figure it out yourself miss Granger. Once you have the cloak it shouldn't be an issue getting away."
     call her_main("And I want...", "open", "base", "base", "mid")
     m "I'll give you forty house points for it."
-    call her_main("\"I was going to ask for thirty.\"", "soft", "happy", "base", "R", cheeks="blush")
+    call her_main("(I was going to ask for thirty.)", "soft", "happy", "base", "R", cheeks="blush")
     call her_main("I'll do it...", "base", "base", "base", "mid")
     g9 "Great, you're doing a great service to your house and making an old man very happy."
     call her_main("By getting your cloak back right?", "base", "base", "worried", "mid")
@@ -258,9 +270,6 @@ label a_bad_time_to_disrobe_part_2:
 
     nar "Later that evening"
 
-    call h_unequip_temp_outfit()
-    $ hermione_wear_outfit = False #Otherwise the "action" won't show if she's wearing an outfit.
-    call set_her_action("covering_uniform")
     call her_chibi("stand","door","base")
 
     hide screen day_to_night
@@ -334,9 +343,9 @@ label a_bad_time_to_disrobe_part_2:
 
     call her_walk("door", "base")
 
-    call her_main("\"I'm glad I had time to clean the cloak before walking in here...\"", "base", "narrow", "base", "dead", cheeks="blush",ypos="head")
-    call her_main("\"That thing was massive...\"", "normal", "narrow", "worried", "down",ypos="head")
-    call her_main("\"What am I thinking? snap out of it...\"", "base", "happyCl", "worried", "mid", cheeks="blush",ypos="head")
+    call her_main("(I'm glad I had time to clean the cloak before walking in here...)", "base", "narrow", "base", "dead", cheeks="blush", flip=True)
+    call her_main("(That thing was massive...)", "normal", "narrow", "worried", "down", cheeks="blush")
+    call her_main("(What am I thinking? snap out of it...)", "base", "happyCl", "worried", "mid", cheeks="blush")
 
     call her_chibi("leave")
 
@@ -344,9 +353,7 @@ label a_bad_time_to_disrobe_part_2:
     centered "{size=+10}{color=#cbcbcb}The end{/color}{/size}"
 
     call hide_screens
-    $ daytime = temp_time
+    $ daytime = temp_day
     call update_interface_color
-    call music_block
-    call reset_hermione
-    call set_her_action("none")
+
     jump enter_room_of_req

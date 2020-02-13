@@ -354,6 +354,7 @@ label a_bad_time_to_disrobe_part_2:
 
     call hide_screens
     $ daytime = temp_day
+    $ hermione.equip(her_outfit_last)
     call update_interface_color
 
     jump enter_room_of_req

@@ -481,11 +481,11 @@ label use_deco_item(item=None): # Add the 'item' decoration to the room. Remove 
         if owl_OBJ.room_image == item.id:
             $ owl_OBJ.room_image = "owl_idle"
             $ owl_OBJ.idle_image = "owl_letter"
-            $ owl_OBJ.hover_image = "owl_hover"
+            $ owl_OBJ.hover_image = "owl_letter_hover"
             $ item.active = False
         else:
             $ owl_OBJ.room_image = item.id
-            $ owl_OBJ.idle_image = "owl_with_letter_blink_black"
-            $ owl_OBJ.hover_image = "owl_hover_black"
+            $ owl_OBJ.idle_image = "owl_letter_black"
+            $ owl_OBJ.hover_image = "owl_letter_hover_black"
             $ item.active = True
     return

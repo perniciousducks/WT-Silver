@@ -89,6 +89,12 @@ default fireplace_hat_ITEM = Item(id="fireplace_hat", name="Skull Hat", cost=1, 
 
 default owl_black_ITEM = Item(id="owl_idle_black", name="Black Owl", cost=3, type="mail", imagepath="interface/icons/misc/owl_black.png", description="Magically dye your mail courier black!")
 
+# Xmas
+default fireplace_xmas_ITEM = Item(id="fireplace_tree", name="Christmas Decorations", cost=1, type="fireplace", imagepath="interface/icons/misc/fireplace_xmas.png", description="Don't let Johnny get a cold!")
+default phoenix_xmas_ITEM = Item(id="phoenix_xmas", name="Phoenix Christmas Decorations", cost=1, type="phoenix", imagepath="interface/icons/misc/phoenix_xmas.png", description="A little something to make your friend look less depressed.")
+default owl_xmas_ITEM = Item(id="owl_xmas", name="Owl Christmas hat", cost=1, type="owl", imagepath="interface/icons/misc/owl_xmas.png", description="A hat for an owl. Don't ask, just accept it..")
+
+
 default wall_deco_list = [
     poster_agrabah_ITEM,
     poster_gryffindor_ITEM,
@@ -109,12 +115,15 @@ default cupboard_deco_list = [
     pinup_girl_ITEM
 ]
 default misc_deco_list = [
-    owl_black_ITEM
+    owl_black_ITEM,
+    phoenix_xmas_ITEM,
+    fireplace_xmas_ITEM
 ]
 default misc_hat_list = [
     fireplace_hat_ITEM,
     phoenix_hat_ITEM,
     owl_hat_ITEM,
+    owl_xmas_ITEM
 ]
 
 # Scroll Items

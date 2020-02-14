@@ -247,7 +247,14 @@ image owl_letter_hover:
     
     
 #Black owl
-image owl_with_letter_blink_black:
+image owl_idle_black:
+    zoom 0.5
+    
+    "images/rooms/_objects_/mail/owl_idle_black.png"
+    
+image owl_letter_black:
+    zoom 0.5
+    
     "images/rooms/_objects_/mail/owl_01_black.png"
     pause.1
     "images/rooms/_objects_/mail/owl_02_black.png"
@@ -259,3 +266,8 @@ image owl_with_letter_blink_black:
     "images/rooms/_objects_/mail/owl_01_black.png"
     pause 7
     repeat
+    
+image owl_letter_hover_black:
+    zoom 0.5
+    
+    "images/rooms/_objects_/mail/owl_hover_black.png"

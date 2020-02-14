@@ -144,7 +144,7 @@ screen main_room():
 
     # Phoenix deco
     if phoenix_deco_OBJ.room_image:
-        add phoenix_deco_OBJ.get_room_image() xpos phoenix_deco_OBJ.xpos ypos phoenix_deco_OBJ.ypos xanchor 0.5 yanchor 0.5 #xpos 410 ypos 75
+        add phoenix_deco_OBJ.get_room_image() xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
 
     use phoenix_feather
 
@@ -198,7 +198,7 @@ screen phoenix_feather():
 
 screen phoenix_food():
     tag phoenix_food
-    add "images/rooms/_objects_/phoenix/food.png" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5
+    add "images/rooms/_objects_/phoenix/food.png" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
     zorder 2
 
 # Fireplace
@@ -230,7 +230,7 @@ screen fireplace():
     
     # Fireplace deco
     if fireplace_deco_OBJ.room_image:
-        add fireplace_deco_OBJ.get_room_image() xpos fireplace_deco_OBJ.xpos ypos fireplace_deco_OBJ.ypos xanchor 0.5 yanchor 0.5
+        add fireplace_deco_OBJ.get_room_image() xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
 
     # Puzzle box appears in fireplace
     if is_puzzle_box_in_fireplace():
@@ -284,7 +284,7 @@ screen owl():
 
     # Owl deco
     if owl_deco_OBJ.room_image and renpy.get_screen("owl"):
-        add owl_deco_OBJ.get_room_image() xpos owl_deco_OBJ.xpos ypos owl_deco_OBJ.ypos xanchor 0.5 yanchor 1.0
+        add owl_deco_OBJ.get_room_image() xpos owl_OBJ.xpos ypos owl_OBJ.ypos xanchor 0.5 yanchor 1.0 zoom 0.5
 
 # Package
 screen package():

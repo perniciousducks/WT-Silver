@@ -98,7 +98,7 @@ label an_odd_circumstance():
     nar "Even if I were able to respond I had but a seconds notice before her lips had wrapped themselves around my cock."
     call her_chibi_scene("bj")
     her "*Slurp!* *Gulp!* *Slurp!*"
-    nar "Her head, now bobbing back and forwards as if her life depended on it..."
+    nar "Her head, now bobbing back and forth as if her life depended on it..."
     nar "I felt myself growing harder in her mouth as her lips pressed against my skin..."
     her "*Slurp!* *Gobble!*"
     nar "What was it that I had done for this girl, in exchange for her degrading herself in such a manner..."

@@ -1,7 +1,6 @@
 
-
-label luna_favour_4: ###Luna handjob #DONE
-
+# Luna (converted) handjob
+label luna_favour_4:
     m "{size=-4}(I'll just ask for a quick tug...){/size}"
     if lun_whoring > 13:
         jump luna_handjob_hermione_call
@@ -445,10 +444,10 @@ label luna_favour_4: ###Luna handjob #DONE
 
             menu:
                 "-On her face-":
-                    ">You place your hand on the top of Luna's head and slowly try to force it down to be level with your crouch."
+                    ">You place your hand on the top of Luna's head and slowly try to force it down to be level with your crotch."
 
                 "-On her tits-":
-                    ">You place your hand on the top of Luna's should and slowly try to force her down to be level with your crouch."
+                    ">You place your hand on the top of Luna's should and slowly try to force her down to be level with your crotch."
 
             call lun_main("[lun_genie_name]!!!","clench","angry","mad","mid")
             call lun_main("You're not trying to cum on me are you?","upset","mad","mad","mid")
@@ -465,7 +464,7 @@ label luna_favour_4: ###Luna handjob #DONE
             g4 "mmmm"
             call lun_main("Now...","normal","mad","mad","mid")
             call lun_main("Cum.","base","seductive","angry","mid")
-            call gen_chibi("cum_close") #TODO Use "short distance" cumming animation
+            call gen_chibi("cum_close")
             $ luna_wear_cum_under = True
             $ luna_cum = 10
             call cum_block
@@ -664,10 +663,10 @@ label luna_favour_4: ###Luna handjob #DONE
 
             menu:
                 "-On her face-":
-                    ">You place your hand on the top of Luna's head and slowly try to force it down to be level with your crouch."
+                    ">You place your hand on the top of Luna's head and slowly try to force it down to be level with your crotch."
 
                 "-On her tits-":
-                    ">You place your hand on the top of Luna's should and slowly try to force her down to be level with your crouch."
+                    ">You place your hand on the top of Luna's should and slowly try to force her down to be level with your crotch."
 
             call lun_main("[lun_genie_name]!!!","clench","angry","mad","mid")
             call lun_main("You're not trying to cum on me are you?","upset","mad","mad","mid")

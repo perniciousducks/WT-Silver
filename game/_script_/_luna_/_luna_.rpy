@@ -70,7 +70,8 @@ label lun_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
     show screen luna_main
     show screen bld1
 
-    with trans
+    if trans:
+        with trans
 
     if text:
         $ renpy.say(lun, text)

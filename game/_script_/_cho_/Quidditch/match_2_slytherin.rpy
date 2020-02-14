@@ -949,7 +949,7 @@ label slytherin_match:
     show screen blktone5
     with d5
     pause .2
-    "Noticing Hermione's breathing becoming more and more erratic you pick up the pace, moving your middle finger back and forwards across the underside of her wet panties."
+    "Noticing Hermione's breathing becoming more and more erratic you pick up the pace, moving your middle finger back and forth across the underside of her wet panties."
     hide screen blktone5
     with d5
     pause .2

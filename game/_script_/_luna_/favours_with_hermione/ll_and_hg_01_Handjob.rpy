@@ -1,6 +1,6 @@
 
-
-label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
+# Luna (converted) handjob with Hermione
+label luna_favour_5:
 
     if lun_whoring <= 11:
         $ lun_whoring += 1
@@ -243,6 +243,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         pause.2
         $ uni_sperm = True
         $ u_sperm = "characters/hermione/face/auto_07.png"
+        #TODO Cum layer
         show screen white
         pause .1
         hide screen white
@@ -326,6 +327,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
             call lun_main("*gulp*","base","seductive","sad","empty")
             ">Eventually she finally gets the last strand into her mouth."
             $ uni_sperm = False
+            #TODO Remove cum layer
             call her_main("...", "disgust", "narrow", "base", "down")
             call lun_main("...","full","happyCl","sad","mid")
             call lun_main("*gulp*","base","seductive","sad","empty")
@@ -374,6 +376,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
             call her_main("*gulp*","cum","happyCl","worried","mid")
             ">Eventually she finally gets the last strand into her mouth."
             $ uni_sperm = False
+            #TODO Remove cum layer
             call her_main("...","full_cum","narrow","base","dead")
             call lun_main("see, good sluts don't waste anything do they?","grin","seductive","sad","down")
             call her_main("...","full_cum","narrow","base","dead")
@@ -934,7 +937,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         g9 "..."
         ">Luna slows her hand back down, bringing you almost painfully back from the edge of orgasm."
         call her_main("he {b}was{/b} about to cum, but if you build him up and then bring him back down he'll eventually cum much harder.","grin","narrow","base","dead")
-        call her_main("I read about this technique in witches weekly... it's called edging!","base","narrow","worried","down")
+        call her_main("I read about this technique in \"witches weekly\"... it's called edging!","base","narrow","worried","down")
         call lun_main("hmmm, and you're sure it feels better?","normal","seductive","raised","mid")
         call lun_main("he almost seems like he's in pain...","base","seductive","angry","mid")
         ">luna gives your cock a hard squeeze as she looks sadistically at your cock."
@@ -994,6 +997,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         pause.1
         $ uni_sperm = True
         $ u_sperm = "characters/hermione/face/auto_16.png"
+        #TODO Cum layer
         hide screen white
         pause.2
         show screen white
@@ -1016,8 +1020,6 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         hide screen luna_main
         show screen blkfade
         with d3
-
-        #TODO Fix posing from here
 
         ">Hermione slowly stands up, her face simply drenched in cum..."
 
@@ -1054,6 +1056,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("*gulp*","base","seductive","sad","empty")
         ">Eventually she gets the last strand into her mouth."
         $ uni_sperm = False
+        #TODO Remove cum layer
         call her_main("better?", "base", "narrow", "base", "mid_soft")
         call lun_main("...","full","happyCl","sad","mid")
         call lun_main("*gulp*","base","seductive","sad","empty")
@@ -1162,7 +1165,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                     call lun_chibi("hide")
                     call her_chibi("hide")
                     with d3
-                    
+
                     call play_sound("door")
 
                     ">You can hear them talking and laughing together as they shut your door."

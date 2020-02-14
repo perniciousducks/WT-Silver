@@ -264,47 +264,49 @@ label ending_after:
 
                 ">As Snape slides back towards the teachers table, Hermione notices your presence and quickly starts walking towards you."
                 ">Before you can even attempt to slip into the shadows again, she's already come through the doorway with one of her arms held out in front of her."
-                call her_main("Care for a dance?", "base", "base", "base", "mid", xpos="base", ypos="head") # smiles
+                call her_main("Care for a dance?", "base", "happy", "base", "L", cheeks="blush", xpos="base", ypos="head") # smiles
                 m "I...{w=0.4} Oh, what the hell... why not."
                 call her_main("...", "base", "narrow", "base", "down", cheeks="blush", xpos="base", ypos="head") # smiles
                 ">With your arms wrapped around Hermione's waist, the two of you begin moving along with the music."
                 ">After some time passes you can't help but look down on Hermione's butt sticking out below your hands."
                 m "Miss Granger..."
-                call her_main("Yes?", "base", "base", "base", "L", cheeks="blush", xpos="base", ypos="head")
+                call her_main("Yes?", "open", "base", "base", "L", cheeks="blush", xpos="base", ypos="head")
                 ">Hands now wandering down towards Hermione's butt she smiles and tightens her grip around you."
                 ">Gently resting your hands against her cheeks you return to slowly moving along with the music."
-                her "Sir..."
+                call her_main("Sir...", "base", "base", "base", "mid", cheeks="blush")
                 m "Yes Miss Granger?"
-                her "Could..."
-                her "Why can't this moment go on forever?"
+                call her_main("Could...", "normal", "closed", "base", "mid", cheeks="blush")
+                call her_main("Why can't this moment go on forever?", "soft", "base", "worried", "mid", cheeks="blush")
                 m "We both know that everything has to come to an end..."
                 m "But hopefully I've been able to teach you how to cherish every moment."
                 ">Hermione tightens her arms even more as you continue the dance in silence."
                 ">After a while, her grip loosens slightly as she shifts her head to look up at you."
-                her "I..."
-                her "I just wanted to say that...{w=0.5} I'm glad I have you."
+                call her_main("I...", "open", "squint", "base", "mid", cheeks="blush")
+                call her_main("I just wanted to say that...{w=0.5} I'm glad I have you.", "open", "happyCl", "worried", "mid", cheeks="blush")
                 m "Where's this suddenly coming from Miss Granger?"
-                her "I don't know... it's just..."
-                her "I couldn't help having this bad feeling in my stomach the entire day."
-                her "It's stayed there up until now...{w} But now it's finally feeling as if the pain has started to go away..."
+                call her_main("I don't know... it's just...", "upset", "happy", "base", "L", cheeks="blush")
+                call her_main("I couldn't help having this bad feeling in my stomach the entire day.", "soft", "closed", "base", "stare", cheeks="blush")
+                call her_main("It's stayed there up until now...{w} But now it's finally feeling as if the pain has started to go away...", "upset", "happy", "base", "R", cheeks="blush")
                 ">Not knowing how to respond, you stand there in silence for a moment until Hermione pulls you towards her and you both begin moving along with the music once more."
                 ">After what only feels like seconds the music comes to a close and Hermione takes a step back to look up at you."
                 m "You look tired girl, you'd better head off to bed...{w=0.4} there's always tomorrow."
-                her "Oh, yes... I suppose so..."
-                her "Good night then..."
+                call her_main("Oh, yes... I suppose so...", "soft", "base", "base", "mid", cheeks="blush")
+                call her_main("Good night then...", "base", "happy", "base", "R", cheeks="blush")
                 m "Good night."
-                her "Oh... wait,{w=0.3} before you go..."
+                call her_main("Oh... wait,{w=0.3} before you go...", "open", "happyCl", "base", "mid", cheeks="blush")
                 m "Yes?"
                 call play_sound("kiss")
+                with kissiris
                 #Heart animation on screen?
-                her "..."
+                call her_main("...", "base", "narrow", "worried", "mid", cheeks="blush")
                 g9 "What was that for?"
-                her "Nothing, I just felt like you earned it."
-                her "See you tomorrow..."
+                call her_main("Nothing, I just felt like you earned it.", "base", "base", "base", "R", cheeks="blush")
+                call her_main("See you tomorrow...", "base", "base", "worried", "mid", cheeks="blush")
                 m "Good night Miss Granger."
 
                 stop music fadeout 1
-
+                call blkfade
+                pause 3.0
                 # Back in the office
                 call room("main_room")
                 call gen_chibi("hide")

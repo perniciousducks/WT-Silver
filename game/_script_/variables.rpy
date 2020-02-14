@@ -84,7 +84,6 @@ default desk_zorder  = 2
 
 default unlocked_7th       = False
 default charName           = "genie"
-default unlocked_xmas_deco = False
 
 # Phoenix
 default phoenix_is_fed         = False

@@ -1,29 +1,49 @@
 label a_christmas_tale:
+    # Setup
+    $ temp_date = day
+    $ temp_gold = gold
+    $ temp_day = daytime
+    $ temp_color = interface_color
+    $ temp_weather = weather_gen
+    
+    call play_music("stop")
+    call room("main_room")
     show screen blkfade
     with d5
-    pause 2
-
-    call hide_screens
+    hide screen owl
 
     centered "{size=+7}{color=#cbcbcb}A Christmas tale{/color}{/size}"
 
-    pause 2
-
-    $ temp_time = daytime #Switch 'daytime' back to this at the end of the store.
     $ daytime = False #Night
     call update_interface_color
-    $ room_deco = "_deco_1" #Xmas deco
+    
+    stop weather
+    $ weather_gen = 5
+    $ lightning_gen = 0
+    $ snow_gen = 1
+    $ show_weather()
 
-    call room("main_room")
     call gen_chibi("hide")
     show screen chair_left
     show screen desk
     show screen fireplace_fire
+    
+    # unlock decorations and add to room
+    $ fireplace_xmas_ITEM.unlocked = True
+    $ phoenix_xmas_ITEM.unlocked = True
+    $ owl_xmas_ITEM.unlocked = True
+    
+    $ fireplace_deco_OBJ.room_image = fireplace_xmas_ITEM.id
+    $ fireplace_xmas_ITEM.active = True
+    
+    $ phoenix_deco_OBJ.room_image = phoenix_xmas_ITEM.id
+    $ phoenix_xmas_ITEM.active = True
+    
+    $ owl_deco_OBJ.room_image = owl_xmas_ITEM.id
+    $ owl_xmas_ITEM.active = True
 
     hide screen blkfade
-    with d3
-
-    pause 1
+    with d5
 
     call play_music("anguish")
     show screen bld1
@@ -66,7 +86,7 @@ label a_christmas_tale:
     hide screen fireplace_fire
     # Teleport Santa Genie into the fireplace
     show screen genie_santa_chibi(620, 150)
-    call teleport((620+75, 150-15))
+    call teleport((620+75, 420))
     pause.8
 
     nar "A figure appeared, in the most silent of nights."
@@ -107,7 +127,7 @@ label a_christmas_tale:
     hide screen bld1
     # Teleport away
     call gen_chibi("hide")
-    call teleport((620+75, 150-15))
+    call teleport((620+75, 420))
     with d3
     pause.5
 
@@ -180,11 +200,9 @@ label a_christmas_tale:
     call hide_screens
 
     #Reset
-    $ daytime = temp_time
+    $ daytime = temp_day
+    $ weather_gen = temp_weather
     call update_interface_color
-
-    #Unlock Xmas Deco
-    $ unlocked_xmas_deco = True
 
     jump enter_room_of_req
 

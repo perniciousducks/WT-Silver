@@ -109,72 +109,74 @@ label ending_after:
             stop music fadeout 3
 
             if public_whore_ending:
-                ">Arriving at the great hall you glance through the doors and notice some of the other students gawking at Hermione."
-                ">Just as you decide to head back to your office she spots you and begins making her way in your direction."
-                ">Behind Hermione's back a bunch of Slytherin students have turned in her direction, smirking as she approaches you."
-                her "Back so soon?"
+                call play_music("ball")
+                ">Arriving at the great hall you glance through the doors and spot Hermione who's currently enjoying the attention she's receiving from some of the other students."
+                ">You decide it's probably best to head back to your office. But before you get the chance to slip into the shadows Hermione has already begun making her way in your direction."
+                ">As she steps through the door you notice some Slytherin students looking in your direction, smirks spreading across their faces."
+                call her_main("Back so soon?", "base", "happy", "base", "L", cheeks="blush", xpos="base", ypos="head")
                 m "I um...{w=0.4} had a change of heart."
-                her "Cold outside?"
-                m "Yes... that's it."
+                call her_main("Cold outside?", "base", "base", "base", "mid")
+                m "Yes...{w=0.5} that's it."
                 ">Standing there in silence, looking at Hermione, you can't help but struggle with what to say."
-                call play_music("ball") #can this fade in/be a bit lower volume
-                ">But before you get the chance to say anything, music suddenly emerges out the great hall doorway."
-                her "Care for a dance?" # smiles
-                g9 "I... of course!"
-                her "..." # smiles
+                ">Hermione looks at you expectantly and breaks the silence by extending one of her arms to you."
+                call her_main("Care for a dance?", "open", "squint", "base", "mid", cheeks="blush", xpos="base", ypos="head")
+                g9 "I...{w=0.5} of course!"
+                call her_main("...", "base", "base", "base", "mid", cheeks="blush")
                 ">With your arms wrapped around Hermione's waist the two of you begin moving along with the music."
-                ">As some time passes it's very clear that the students are still eyeing Hermione up and are now staring at her through the doorway."
+                ">As some time passes it's very clear that the Slytherin students are looking at you both through the doorway."
                 m "Miss Granger..."
-                her "Yes?"
+                call her_main("Yes?", "base", "narrow", "base", "stare_soft", cheeks="blush")
                 call play_sound("slap_3")
-                her "..." # shocked
-                her "Hey! At least warn me!" # Blush, smiles
+                call her_main("...", "soft", "happyCl", "base", "up", cheeks="blush")
+                call her_main("Hey! At least warn me!", "clench", "narrow", "annoyed", "L", cheeks="blush")
                 ">Swiftly taking your hand away from Hermione's butt you give a quick smirk towards your audience."
-                her "I didn't say stop..."
+                call her_main("I didn't say stop...", "soft", "narrow", "base", "L", cheeks="blush")
                 g9 "Of course..."
                 ">Without a moments hesitation you lift her skirt up, holding it against her back and leaving her panties exposed."
-                her "Sir..." #could change the sirs here to the name that the player has set for hermione to call you
+                call her_main("Sir...", "crooked_smile", "base", "base", "down", cheeks="blush") #could change the sirs here to the name that the player has set for hermione to call you
                 ">Now firmly gripping her butt with your other hand you begin to massage her cheeks whilst moving along with the music."
-                her "..." #Look of pleasure
+                call her_main("...", "grin", "narrow", "worried", "up", cheeks="blush") #Look of pleasure
                 ">Suddenly the feeling of her soft cheeks is interrupted by something hard brushing against he back of your palm..."
                 ">Moving your hand up against her back, you realise Hermione has tucked the letter you gave her firmly in-between the top edge of her skirt..."
                 ">Continuing to move along with the music your hand finds its way back down, pulling Hermione's panties with them."
-                her "Sir...{w=0.4} what are you doing?"
+                call her_main("Sir...{w=0.4} what are you doing?", "open", "happyCl", "base", "stare", cheeks="blush")
                 m "You seem a little bit tense... just giving you a hand..."
-                her "But... What if someone notices..."
+                call her_main("But... What if someone notices...", "annoyed", "base", "base", "R", cheeks="blush")
                 ">Ignoring her pleas you begin rubbing your fingers between her thighs, not bothering to be discreet."
-                her "*Ah*...{w} Sir..."
+                call her_main("*Ah*...{w} Sir...", "open", "happyCl", "base", "mid", cheeks="blush")
                 ">As you move your hand higher up her thighs, Hermione's breathing quickens and a wetness begins to spread across the side of your hand, her legs shaking slightly as she tries to keep it together."
-                her "Sir...{w=0.4} I..."
+                call her_main("Sir...{w=0.4} I...", "open", "happyCl", "base", "down", cheeks="blush")
                 ">With the music soon coming to a close you shift your hand and begin stroking against her vagina with even more vigour than before."
-                her "Sir...{w=0.3} *Ah*...{w=0.5} they'll...{w=0.2} they'll hear me..."
+                call her_main("Sir...{w=0.3} *Ah*...{w=0.5} they'll...{w=0.2} they'll hear me...", "mad", "happyCl", "base", "L", cheeks="blush")
                 m "You better \"come\" quietly then..."
-                her "Sir... this isn't the time for..."
+                call her_main("Sir... this isn't the time for...", "open", "happyCl", "base", "mid", cheeks="blush")
                 ">As the music reaches it's peak, Hermione moves one of her hands off your back and puts it against her mouth to quickly try and stifle herself."
                 her "*Mmmmf*..."
-                stop music fadeout 6
+                with hpunch
+                with kissiris
+                stop music fadeout 6 #It's a bit sudden and quiet but not sure what to do instead
                 ">Hermione shudders in your arms and then quickly lets go as the music comes to an end and you snag the letter from her skirt, pocketing it."
-                her "*Ah*...{w=0.8}*Ah*...{w=0.8}*Ah*..."
+                call her_main("*Ah*...{w=0.8}*Ah*...{w=0.8}*Ah*...", "soft", "happyCl", "base", "mid", cheeks="blush")
                 ">With a quick glance towards the doorway you notice some Slytherin students have blocked it with their backs towards you."
                 m "You look tired girl, you'd better pull yourself together..."
-                her "Yes...{w=0.3} *Ah*...{w=0.6} I just need to...{w=0.3} catch my breath..."
+                call her_main("Yes...{w=0.3} *Ah*...{w=0.6} I just need to...{w=0.3} catch my breath...", "open", "squint", "worried", "L", cheeks="blush")
                 m "Perhaps sooner rather than later, the music has stopped..."
-                her "Oh...{w=0.3} *Ah*...{w=0.3} I didn't even notice..."
+                call her_main("Oh...{w=0.3} *Ah*...{w=0.3} I didn't even notice...", "open", "happy", "worried", "mid", cheeks="blush")
                 ">Hermione moves to stand up but stumbles as she tries to compose herself..."
                 ">As she gets on her feet she looks up and notices the backs of the Slytherins in the doorway. She spins around to look at you, a red colour quickly spreading across her cheeks."
-                her "I...{w=0.3} I think I'd better head off to bed then..." #Worried #Sheepish looking
+                call her_main("I...{w=0.3} I think I'd better head off to bed then...", "mad", "squint", "base", "stare_soft", cheeks="blush") #Worried #Sheepish looking
                 m "Sounds like a good idea..."
-                her "And I'll make sure that I-"
-                her "..." # shocked
-                her "The letter!"
-                her "It's gone!"
+                call her_main("And I'll make sure that I-", "open", "base", "base", "down", cheeks="blush")
+                call her_main("...", "angry", "wide", "base", "stare", cheeks="blush") # shocked
+                call her_main("The letter!", "scream", "wide", "worried", "stare", cheeks="blush")
+                call her_main("It's gone!", "clench", "squint", "base", "mid", cheeks="blush")
                 m "..."
                 m "No matter, it wasn't that important."
                 m "Nothing that you don't already know..."
-                her "You sure?"
+                call her_main("You sure?", "soft", "squint", "base", "mid", cheeks="blush")
                 m "As sure as my name is Albus Dumbledore."
-                her "Okay..." # smiles
-                her "Good night then..."
+                call her_main("Okay...", "soft", "squint", "worried", "R", cheeks="blush") # smiles
+                call her_main("Good night then...", "base", "squint", "worried", "mid", cheeks="blush")
                 m "Good night Miss Granger."
 
 

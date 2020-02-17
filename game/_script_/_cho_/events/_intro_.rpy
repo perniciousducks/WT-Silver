@@ -167,8 +167,8 @@ label cho_intro_E1:
     call play_sound("door")
     call her_chibi("stand","door","base")
 
-    call her_main("Professor I'm sorry to bother you but I wanted to...", "open", "closed", "base", "mid", ypos="head")
-    call her_main("!!!", "normal", "wide", "base", "stare", ypos="head",trans=hpunch)
+    call her_main("Professor I'm sorry to bother you but I wanted to...", "open", "closed", "base", "mid")
+    call her_main("!!!", "normal", "wide", "base", "stare", trans=hpunch)
 
     call her_walk(570, "base")
     call her_chibi("stand",570,"base",flip=True)
@@ -327,11 +327,14 @@ label cho_intro_E1:
         with d3
         pause.8
 
-        call cho_main("Professor, please do consider what we discussed earlier...","soft","closed","base","mid", ypos="head")
+        call cho_main("Professor, please do consider what we discussed earlier...","soft","closed","base","mid", trans=d3)
         m "Of course."
-        call her_main("Hmmm?", "normal", "squint", "base", "mid", ypos="head")
+        call her_main("Hmmm?", "normal", "squint", "base", "mid", trans=d3)
 
-
+    hide screen cho_main
+    hide screen hermione_main
+    with d3
+    
     # Cho leaves
     pause.2
     call cho_chibi("stand","door","base",flip=True)
@@ -342,7 +345,7 @@ label cho_intro_E1:
 
     call her_chibi("stand","mid","base",flip=False)
 
-    call her_main("...", "annoyed", "base", "angry", "mid", xpos="base", ypos="base",flip=False)
+    call her_main("...", "annoyed", "base", "angry", "mid", xpos="base", ypos="base", flip=False, trans=d3)
     m "..."
     call her_main("You’re selling favours to her aren’t you?", "soft", "narrow", "base", "mid_soft")
     m "I’m...{p=0.8}{nw}"
@@ -359,6 +362,8 @@ label cho_intro_E1:
     $ hermione_busy = True
 
     $ cho_intro.E1_complete = True
+    
+    m ".......{w=0.5}women....."
 
     jump main_room
 

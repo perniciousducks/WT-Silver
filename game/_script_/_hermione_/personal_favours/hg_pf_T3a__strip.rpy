@@ -221,6 +221,8 @@ label hg_pf_strip_T1_intro_E1: # Complete
     show screen blktone
     call her_main("{size=-5}(Am I really going to do this?){/size}", "angry", "happyCl", "worried", "mid", cheeks="blush", xpos="base", ypos="base", trans=fade)
     hide screen blktone
+    
+    $ hermione.strip("robe", "accessory")
 
     menu:
         m "......................."
@@ -234,7 +236,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
             call her_main("{size=-5}(For the honour of Gryffindor....){/size}", "angry", "happyCl", "worried", "mid", cheeks="blush")
             pause.2
 
-            $ hermione.strip("bottom")
+            $ hermione.strip("bottom",)
             call ctc
             pause.5
 
@@ -392,6 +394,7 @@ label hg_pf_strip_T1_intro_E2:
 
     call her_main("So be it then!", "scream", "base", "angry", "mid", emote="01")
     call her_main("Just...", "open", "narrow", "worried", "down")
+    $ hermione.strip("robe", "accessory")
     call her_main("*groan*", "clench", "narrow", "base", "down")
 
     if hermione.is_worn("top"):
@@ -711,6 +714,8 @@ label hg_pf_strip_T1_E2:
     call her_main("I still consider this a highly inappropriate favour to be buying from one of your students, [genie_name].", "annoyed", "squint", "base", "mid")
     m "Right. And an equally inappropriate favour to be selling to your headmaster. Wouldn't you agree?"
     call her_main("..........", "annoyed", "narrow", "angry", "R")
+    
+    $ hermione.strip("robe", "accessory")
 
     if hermione.is_worn("top"):
         call nar(">Hermione shifts her body towards you and starts taking off her top...")
@@ -1020,6 +1025,7 @@ label hg_pf_strip_T2:
 
     call play_music("playful_tension") # SEX THEME.
     call her_main("...", "base", "narrow", "base", "mid_soft", xpos="mid", ypos="base")
+    $ hermione.strip("robe", "accessory")
     m "Yes, very nice."
     call her_main("...", "annoyed", "narrow", "worried", "down")
 

@@ -9,15 +9,18 @@ label hg_pf_admire_breasts_transition:
     pause.2
 
     # Setup Pose
-    $ hermione.strip("bra")
+    $ hermione.strip("top", "bra", "robe", "accessory")
     call her_chibi("lift_top","mid","base")
+    
+    pause 2.0
+    
+    call her_main("", "angry", "happyCl", "base", "down", cheeks="blush", trans=d3)
+    
     call ctc
-
-    call bld
-
+    
     m "Hm..."
     if her_tier <= 2:
-        call her_main("{size=-5}(My breasts are completely exposed...){/size}", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
+        call her_main("{size=-5}(My breasts are completely exposed...){/size}", "disgust", "narrow", "base", "down", cheeks="blush")
     m "Come closer [hermione_name], let me take a better look..."
 
     # Move to desk
@@ -28,8 +31,6 @@ label hg_pf_admire_breasts_transition:
 
     call her_walk("desk", "base", reduce=0.8)
     call blkfade
-
-    ">Hermione slowly walks towards your desk."
 
     call her_chibi_scene("behind_desk_show_tits")
     call ctc
@@ -105,15 +106,15 @@ label hg_pf_admire_breasts_T2_touch: # Not a Call label
     # if her_whoring >= 6 and her_whoring <= 8:
     hide screen hermione_main
     call blkfade
+    call bld
 
     ">You reach out and dig your fingers into the girl's ample flesh..."
-    call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
+    call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush")
 
     # Start Groping
     call her_chibi_scene("grope_tits")
     call ctc
 
-    call bld
     m "Relax, [hermione_name]. Just stand still!"
     m "Oh... Those are some nice titties you've got..."
     call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -158,7 +159,7 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
     call blkfade
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("[genie_name]?!!", "angry", "wide", "base", "stare", ypos="head")
+    call her_main("[genie_name]?!!", "angry", "wide", "base", "stare")
     m "Just stand still, [hermione_name]..."
 
     # Start Jerking Off.
@@ -206,6 +207,8 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
             g4 "Come on, now. Just say something dirty! I'm almost there!"
             call her_main("You are a horrible person, [genie_name]...", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
 
+            call her_walk(action="run", xpos="door", speed=2, reduce=True)
+            with hpunch
             call her_walk(action="leave")
 
             jump end_hermione_event
@@ -282,7 +285,7 @@ label hg_pf_admire_breasts_T3_touch:
     call blkfade
 
     ">You reach out and dig your fingers into the girl's ample flesh..."
-    call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
+    call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush")
 
     # Start Groping
     call her_chibi_scene("grope_tits")
@@ -307,11 +310,14 @@ label hg_pf_admire_breasts_T3_touch:
     ">Hermione pulls away from you suddenly and covers up."
 
     $ hermione.wear("all")
+    call her_chibi_scene("reset", "desk", "base")
+    
+    hide screen blkfade
+    with d5
+    
     call her_main("You promised not to touch, [genie_name]...", "annoyed", "narrow", "angry", "R", cheeks="blush")
     m "It was hard to resist..."
 
-    # End Groping
-    call her_chibi_scene("reset", "desk", "base")
     pause.8
 
     call her_main(".............", "soft", "base", "base", "R", cheeks="blush")
@@ -331,7 +337,7 @@ label hg_pf_admire_breasts_T3_masturbate:
 
     ">You take your cock out and start stroking it..."
 
-    call her_main("[genie_name]?", "angry", "wide", "base", "stare", ypos="head")
+    call her_main("[genie_name]?", "angry", "wide", "base", "stare")
     ">You stare at Hermione's breasts with hunger..."
 
     #Start Jerking Off.
@@ -402,8 +408,7 @@ label hg_pf_admire_breasts_T3_masturbate:
 
             call her_main("[genie_name], how could you...?", "angry", "squint", "base", "mid", cheeks="blush")
             m "Oh, this was quite amazing..."
-            show screen blktone8
-            with d3
+
             call her_main("", "disgust", "narrow", "base", "down", xpos="mid", ypos="base")
             call ctc
 
@@ -411,8 +416,6 @@ label hg_pf_admire_breasts_T3_masturbate:
             her "It's been defiled...."
             m "Don't worry, I will give you your house points, [hermione_name]."
             m "You did good."
-            hide screen blktone8
-            with d3
 
             her "................"
             her "I need to clean myself up..."
@@ -502,7 +505,7 @@ label hg_pf_admire_breasts_T4_touch: # Call label
     call blkfade
 
     ">You reach out and dig your fingers into the girl's ample flesh..."
-    call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
+    call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush")
 
     # Start Groping
     call her_chibi_scene("grope_tits")
@@ -554,13 +557,18 @@ label hg_pf_admire_breasts_T4_touch: # Call label
         call her_main("It is getting late...", "open", "base", "base", "R", cheeks="blush")
 
     m "Well, alright..."
-    call blkfade
+    show screen blkfade
+    with d5
 
     ">You let go of the girl's breasts..."
     ">Hermione covers up..."
 
     $ hermione.wear("all")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
+    call her_chibi_scene("reset", "desk", "base")
+    
+    hide screen blkfade
+    with d5
 
     if her_whoring >= 17:
         call her_main("You will have to make it up to me for breaking your promise, [genie_name].", "base", "base", "base", "R", cheeks="blush")
@@ -577,7 +585,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
     call blkfade
 
     ">You take your cock out and start stroking it..."
-    call her_main("[genie_name]?", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
+    call her_main("[genie_name]?", "base", "narrow", "base", "up", cheeks="blush")
     ">You stare at Hermione's breasts with hunger..."
 
     # Start Jerking off.
@@ -635,7 +643,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
         "-Hold it in-":
             m "Oh, alright..."
             m "I'd better stop now I suppose..."
-            call her_main("...............", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
+            call her_main("...............", "disgust", "narrow", "base", "down", cheeks="blush")
             call her_main("Ehm... I read that that is bad for you, [genie_name]...", "disgust", "narrow", "base", "down", cheeks="blush")
             m "Huh?"
             call her_main("It is bad for your health to just hold it in like this...", "shock", "happyCl", "worried", "mid")
@@ -664,8 +672,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
 
             call her_main("Well, what's done is done I suppose...", "base", "base", "base", "R", cheeks="blush")
             m "Oh, this was quite amazing..."
-            show screen blktone8
-            with d3
+
             call her_main("", "disgust", "narrow", "base", "down", xpos="mid", ypos="base")
             call ctc
 
@@ -673,7 +680,6 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             m "Don't worry, I will give you your house points, [hermione_name]."
             m "You did good."
 
-            hide screen blktone8
             call her_main("Thank you [genie_name].", "base", "closed", "base", "mid")
             call her_main("Now I need to clean myself up...", "annoyed", "closed", "base", "mid")
             call ctc
@@ -701,7 +707,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
 
         "-Just start cumming-":
             g4 "Argh! You whore!"
-            call her_main("???", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
+            call her_main("???", "mad", "wide", "base", "stare", cheeks="blush")
 
             call cum_block
 
@@ -725,7 +731,6 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             call her_main("Well, what's done is done I suppose...", "angry", "happyCl", "worried", "mid", cheeks="blush")
             m "Oh, this was quite amazing..."
 
-            show screen blktone8
             call her_main("", "disgust", "narrow", "base", "down", xpos="mid", ypos="base")
             call ctc
 
@@ -733,7 +738,6 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             m "Don't worry, it looks good on you."
             m "You did great."
 
-            hide screen blktone8
             call her_main("Thank you [genie_name].", "base", "closed", "base", "mid")
             call her_main("Now I need to clean myself up...", "annoyed", "closed", "base", "mid")
             call ctc

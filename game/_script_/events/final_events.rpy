@@ -194,7 +194,7 @@ label ball_quest_E1:
             with d3
             pause 2.0
 
-            $ hermione.strip("top")
+            $ hermione.strip("top", "robe", "accessory")
 
             show screen hermione_main
             with d5
@@ -208,7 +208,7 @@ label ball_quest_E1:
                 label .bra:
 
                 call her_main("...", "annoyed", "base", "angry", "R_soft", cheeks="blush")
-                $ hermione.strip("bra")
+                $ hermione.strip("bra", "accessory")
                 pause.5
 
             call her_main("", "soft", "base", "base", "R_soft", cheeks="blush")
@@ -247,7 +247,7 @@ label ball_quest_E1:
             with d3
             pause 2.0
 
-            $ hermione.strip("bottom")
+            $ hermione.strip("bottom", "accessory")
 
             show screen hermione_main
             with d5
@@ -261,7 +261,7 @@ label ball_quest_E1:
                 label .panties:
 
                 call her_main("...", "normal", "base", "low", "R_soft", cheeks="blush")
-                $ hermione.strip("panties")
+                $ hermione.strip("panties", "accessory")
                 pause.5
 
             call her_main("", "annoyed", "base", "base", "R_soft", cheeks="blush")

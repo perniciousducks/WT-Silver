@@ -987,7 +987,8 @@ image grope_tits_cum:
     contains:
         "desk_front_blink"
     contains:
-        pos (540,370)
+        pos (540,346)
+        xzoom -1
         "ch_gen cum_close"
 
 image grope_tits_cum_done:
@@ -1000,7 +1001,8 @@ image grope_tits_cum_done:
     contains:
         "desk_front_blink"
     contains:
-        pos (540,370)
+        pos (540,346)
+        xzoom -1
         "ch_gen cum_close_done"
 
 image bj:

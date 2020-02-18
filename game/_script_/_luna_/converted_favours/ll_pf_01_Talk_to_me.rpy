@@ -4,7 +4,7 @@ label luna_favour_1:
 
     m "{size=-4}(All I'll do is have a nice little conversation with her...){/size}"
 
-    if lun_whoring == 0: 
+    if lun_whoring == 0:
         # First time
         $ lun_whoring += 1
         call play_music("chipper_doodle")
@@ -29,7 +29,7 @@ label luna_favour_1:
                 call lun_main("I suppose so...","normal","suspicious","base","mid")
                 call lun_main("Just don't try anything funny.","upset","angry","angry","R")
                 $ current_payout = 10
-                m "Scouts honour. Now..."
+                m "Scout's honour. Now..."
             "-Fifty gold-":
                 $ current_payout = 50
                 m "How does fifty gold sound [lun_name]?"

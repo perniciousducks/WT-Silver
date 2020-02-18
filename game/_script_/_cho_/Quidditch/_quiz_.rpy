@@ -488,7 +488,7 @@ label cho_quiz_checkpoint:
             $ renpy.sound.play( "sounds/gasp.mp3")
             call cho_main("Yes!", "smile", "wide", "raised", "L")
             call cho_main("That's impressive, how did you know that one?", "open", "wide", "raised", "L")
-            m "I feel like there wasn't that many realistic options available this time..."
+            m "I feel like there weren't that many realistic options available this time..."
             call cho_main("Okay... not sure what that means...", "soft", "narrow", "base", "mid")
             call cho_main("Anyway, final question...", "open", "base", "raised", "down")
             $ cho_quiz.correct_answers += 1

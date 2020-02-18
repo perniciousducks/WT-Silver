@@ -393,7 +393,7 @@ label astoria_intro_E2_snape:
     call sna_main("It's probably just an imperio or crucio that's been cast.","snape_24")
     call sna_main("I'll start the search immediately. In the meantime, just stay here and keep yourself busy.","snape_10")
     m "You don't want my help?"
-    call sna_main("Not really... me and Tonks should be able to find that student in no time.","snape_02")
+    call sna_main("Not really... Tonks and I will get this situation under control.","snape_02")
     if astoria_intro.E2_hermione:
         m "And Granger..."
         call sna_main("Have you told her about this?!","snape_03")

@@ -148,7 +148,7 @@ label luna_revert_1:
 
     ">You stand up and walk around your desk, standing in front of Luna."
     ">You open your cloak and pull out your cock."
-    
+
     call gen_chibi("dick_out")
     with d3
 
@@ -417,7 +417,7 @@ label luna_revert_1:
             call her_main("And let you jerk your disgusting old cock in front of her...", "angry", "base", "angry", "mid")
             call her_main("For free?", "annoyed", "narrow", "annoyed", "mid")
             ">You raise your hand to the air."
-            m "Scouts honour!"
+            m "Scout's honour!"
             call her_main("...", "disgust", "narrow", "base", "mid_soft")
             m "Besides, surely you'd notice a jump in Ravenclaw's points?"
             call her_main("I suppose you're right...", "annoyed", "narrow", "angry", "R")
@@ -676,7 +676,7 @@ label luna_revert_2:
     ">Luna pulls out her wand with surprising speed and paralyses Hermione."
     call her_main("!!!", "soft", "wide", "worried", "shocked")
     m "(Whoa...)"
-    
+
     hide screen luna_main
     $ luna_flip = 1
     show screen luna_main
@@ -719,7 +719,7 @@ label luna_revert_2:
     call lun_main("While you stroked that filthy cock of yours...","clench","mad","mad","mid")
     call lun_main("and all the while you've been throwing your gold away to some \"Gryffin-{size=+5}WHORE{/size}\"!","upset","angry","mad","mid")
     call lun_main("well then, How much have you paid her?","normal","suspicious","angry","mid")
-    
+
     hide screen luna_main
     $ luna_flip = -1
     show screen luna_main
@@ -729,7 +729,7 @@ label luna_revert_2:
 
     $ point_estimate = max(15, gryffindor-200)
     m "All up? probably about [point_estimate] points..."
-    
+
     hide screen luna_main
     $ luna_flip = 1
     show screen luna_main
@@ -741,7 +741,7 @@ label luna_revert_2:
     call lun_main("hahahaha!","smile","happyCl","base","mid")
     call her_main("...", "annoyed", "narrow", "angry", "R")
     m "..."
-    
+
     hide screen luna_main
     $ luna_flip = -1
     show screen luna_main
@@ -782,7 +782,7 @@ label luna_revert_2:
     call her_main("...", "angry", "base", "angry", "mid")
     ">Hermione stares at Luna with a blind rage."
     m "Should you really be doing that?"
-    
+
     hide screen luna_main
     $ luna_flip = 1
     show screen luna_main
@@ -802,7 +802,7 @@ label luna_revert_2:
 
     m "I wasn't... Suppose I should let you get back at her for calling you a-"
     call lun_main("Yes, that's right.","base","seductive","base","down")
-    
+
     hide screen luna_main
     $ luna_flip = -1
     show screen luna_main

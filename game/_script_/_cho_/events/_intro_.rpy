@@ -347,7 +347,7 @@ label cho_intro_E1:
 
     call her_main("...", "annoyed", "base", "angry", "mid", xpos="base", ypos="base", flip=False, trans=d3)
     m "..."
-    call her_main("You’re selling favours to her aren’t you?", "soft", "narrow", "base", "mid_soft")
+    call her_main("You're buying favours from her aren't you?", "soft", "narrow", "base", "mid_soft")
     m "I’m...{p=0.8}{nw}"
     call her_main("I knew it!", "angry", "base", "angry", "mid")
     g4 "Now, if you could just listen for a second!"

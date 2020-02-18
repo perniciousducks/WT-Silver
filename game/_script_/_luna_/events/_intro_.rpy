@@ -84,7 +84,7 @@ label hat_intro_2: #Bringing in Hermione
     m "Nothing of the sort. This is strictly school business."
     call her_main("...", "annoyed", "narrow", "annoyed", "mid")
     call her_main("Fine... Just don't do anything too bad...", "annoyed", "squint", "base", "mid")
-    m "Scouts honour!"
+    m "Scout's honour!"
     call her_main("Well if that's all then, [genie_name], I better head to class.", "open", "closed", "base", "mid")
 
     call her_walk(action="leave")

@@ -162,16 +162,24 @@ init python:
             self.apply_transition()
             update_chibi(self.name)
             
-        def is_worn(self, type):
-            """Takes argument containing string cloth type. Returns True if worn, False if hidden, None if not equipped at all."""
-            if type.startswith(self.blacklist_toggles):
-                for k, v in self.clothes.iteritems():
-                    if k.startswith(type) and v[0]:
-                        return True if v[2] else False
-            else:
-                if self.clothes[type][0]:
-                    return True if self.clothes[type][2] else False
-            return None
+        def is_worn(self, *args):
+            """Takes argument(s) containing string cloth type(s). Returns True if worn, False otherwise."""
+            for arg in args:
+                if arg.startswith(self.blacklist_toggles):
+                    for k, v in self.clothes.iteritems():
+                        if k.startswith(arg) and not v[0] or not v[2]:
+                            return False
+                else:
+                    if not self.clothes[arg][0] or not self.clothes[arg][2]:
+                        return False
+            return True
+                
+        def is_any_worn(self, *args):
+            """Takes arguments containing string cloth types. Returns True if ANY of them is worn, False otherwise."""
+            for arg in args:
+                if self.is_worn(arg):
+                    return True
+            return False
             
         def set_face(self, **kwargs):
             """Takes keyword argument(s) with the string name of expression file(s)."""

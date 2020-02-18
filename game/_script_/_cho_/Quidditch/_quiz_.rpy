@@ -115,7 +115,7 @@ label cho_quiz:
     # Repeat
     else:
         m "I’m ready to make my case on how Quidditch is a knock off of basketball..."
-        call cho_main("Really sir... again?", "open", "angry", "narrow", "L")
+        call cho_main("Really sir... again?", "open", "angry", "angry", "L")
         m "Of course, it’s an important subject for your education..."
         call cho_main("I can't really see how, but I’m sure you know what you’re talking about...", "open", "base", "base", "mid")
         m "Alright, so..."
@@ -277,7 +277,7 @@ label cho_quiz:
         call cho_main("Anyway...", "base", "closed", "base")
         call cho_main("I didn’t come here to listen to you talk about about basketball...", "annoyed", "base", "base", "downR")
         m "Right..."
-        call cho_main("I came for you to tutor me...", "annoyed", "narrow", "narrow", "L")
+        call cho_main("I came for you to tutor me...", "annoyed", "narrow", "angry", "L")
         m "(Perhaps it might be worth trying to learn a bit more about Quidditch before I ruin this whole thing...)"
         g9 "Oh, well... look at the time!"
         call cho_main("What?", "open", "wide", "raised", "mid")
@@ -344,7 +344,7 @@ label cho_quiz:
         g9 "Oh, well... look at the time!"
         call cho_main("What?", "upset", "closed", "worried")
         g9 "You’ve made me go about basketball for such a long time so we’re already at the end of today's session."
-        call cho_main("But we didn’t even get to any tutoring...", "annoyed", "angry", "narrow", "mid")
+        call cho_main("But we didn’t even get to any tutoring...", "annoyed", "angry", "angry", "mid")
         m "We’ll get there, don’t you worry... next time..."
         call cho_main("...{w=0.4}Fine.", "annoyed", "narrow", "base", "mid")
         call cho_main("Bye then professor...", "annoyed", "base", "base", "R")

@@ -19,9 +19,9 @@ label start_slytherin_match:
     g9 "Alright, [cho_name]. Let's do this!"
     g4 "Tomorrow we shall wipe the floor with those Slytherins, and bathe in their salty tears!"
     g9 "(Snape's tears in particular, after I get a hold of all of his gold!)"
-    call cho_main("I'll do my best, Sir.", "soft", "base", "narrow", "mid")
+    call cho_main("I'll do my best, Sir.", "soft", "base", "angry", "mid")
     m "Are you ready?"
-    call cho_main("I am!", "base", "base", "narrow", "mid")
+    call cho_main("I am!", "base", "base", "angry", "mid")
     m "Then show me the money."
     call cho_main("What?", "upset", "base", "raised", "mid")
     g9 "Say it with me,[cho_name]!{w} Show me the money!"
@@ -32,11 +32,11 @@ label start_slytherin_match:
     call cho_main("What?", "angry", "wide", "base", "mid")
     with hpunch
     g4 "{size=+5}Show me the money!{/size}" # loud
-    call cho_main("(He knows I'm a girl...why would he say that?)", "annoyed", "narrow", "narrow", "mid")
+    call cho_main("(He knows I'm a girl...why would he say that?)", "annoyed", "narrow", "angry", "mid")
     with hpunch
     call cho_main("Sir, Are you all right?", "soft", "narrow", "worried", "mid")
     g9 "What you gonna do, [cho_name]?"
-    call cho_main("Get the nurse?", "upset", "narrow", "narrow", "mid")
+    call cho_main("Get the nurse?", "upset", "narrow", "angry", "mid")
     m "You're gonna win that match tomorrow, that's what!"
     call cho_main("If we're going to play tomorrow, I'll first have to prepare my gear and charm my Quidditch googles...", "soft", "base", "base", "R")
     call cho_main("Or they'll just fog-up and not dispel the rain properly...", "soft", "narrow", "base", "mid")
@@ -56,7 +56,7 @@ label start_slytherin_match:
     call cho_main("Let's just hope for the best...", "upset", "narrow", "worried", "down")
     g9 "That we shall."
     g9 "Off you go then. And good luck."
-    call cho_main("(...)", "annoyed", "narrow", "narrow", "R")
+    call cho_main("(...)", "annoyed", "narrow", "angry", "R")
     call cho_main("See you tomorrow, [cho_genie_name].", "soft", "narrow", "worried", "mid")
 
     call cho_walk(action="leave")

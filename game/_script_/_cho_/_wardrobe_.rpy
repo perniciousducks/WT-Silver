@@ -2,7 +2,7 @@
 ## Character ##
 ###############
 
-default cho = Doll(name="cho", 
+default cho = Doll(name="cho",
                         clothes={"hat":        [None, 15, True],
                                  "hair":       [None, 4, True],
                                  "earring":    [None, 14, True],
@@ -43,17 +43,16 @@ default cho = Doll(name="cho",
                               "eyes":     ["base", 8, True],
                               "pupils":   ["mid", 9, True],
                               "mouth":    ["base", 13, True]},
-                        body={"armleft": ["down", 3], 
-                              "armright":["down", 1], 
-                              "base":    ["front", 0], 
+                        body={"armleft": ["down", 3],
+                              "armright":["down", 1],
+                              "base":    ["front", 0],
                               "breasts": ["normal", 2]})
-                              
+
 ################
 ## Schoolgirl ##
 ################
 
 default cho_hair_ponytail1 = DollCloth("cho", ("head", "hair"), "hair", "ponytail", [[52, 59, 80, 255], [70, 90, 147, 255]])
-default cho_hair_ponytail2 = DollCloth("cho", ("head", "hair"), "hair", "ponytail_natural", [[52, 59, 80, 255], [70, 90, 147, 255]])
 default cho_top_school1 = DollCloth("cho", ("tops", "school"), "top", "top_school_1", [[183, 183, 184, 255], [109, 105, 121, 255], [216, 163, 10, 255], [89, 116, 194, 255]])
 default cho_top_school2 = DollCloth("cho", ("tops", "school"), "top", "top_school_2", [[183, 183, 184, 255], [109, 105, 121, 255], [216, 163, 10, 255], [89, 116, 194, 255]], level=4)
 default cho_top_school3 = DollCloth("cho", ("tops", "school"), "top", "top_school_3", [[183, 183, 184, 255], [216, 163, 10, 255], [89, 116, 194, 255]], level=8)
@@ -69,8 +68,8 @@ default cho_panties_basic1 = DollCloth("cho", ("panties", "panties"), "panties",
 default cho_stockings_house = DollCloth("cho", ("legwear", "stockings"), "stockings", "house", [[216, 163, 10, 255], [89, 116, 194, 255]])
 default cho_neckwear_tie1  = DollCloth("cho", ("head", "neckwear"), "neckwear", "tie_1", [[216, 163, 10, 255], [89, 116, 194, 255]])
 
-default cho_outfit_last = DollOutfit([cho_hair_ponytail2])
-default cho_outfit_default = DollOutfit([cho_hair_ponytail2, cho_top_school1, cho_bottom_school1, cho_bra_basic1, cho_panties_basic1, cho_stockings_house], True)
+default cho_outfit_last = DollOutfit([cho_hair_ponytail1])
+default cho_outfit_default = DollOutfit([cho_hair_ponytail1, cho_top_school1, cho_bottom_school1, cho_bra_basic1, cho_panties_basic1, cho_stockings_house], True)
 
 ##################
 ## Misty Outfit ##
@@ -80,7 +79,7 @@ default cho_top_shirt1 = DollCloth("cho", ("tops", "muggle"), "top", "top_shirt_
 default cho_bottom_shorts3 = DollCloth("cho", ("bottoms", "trousers"), "bottom", "pants_short_3", [[47, 150, 136, 255], [175, 220, 191, 255], [247, 152, 38, 255]], level=10, armfix=True)
 default cho_accessory3_suspenders = DollCloth("cho", ("misc", "accessory"), "accessory3", "suspenders", [[137, 22, 17, 255], [229, 140, 33, 255]])
 
-default cho_outfit_misty = DollOutfit([cho_hair_ponytail2, cho_accessory3_suspenders, cho_top_shirt1, cho_bottom_shorts3], price=250)
+default cho_outfit_misty = DollOutfit([cho_hair_ponytail1, cho_accessory3_suspenders, cho_top_shirt1, cho_bottom_shorts3], price=250)
 
 ##################
 ## Party Outfit ##
@@ -89,7 +88,7 @@ default cho_outfit_misty = DollOutfit([cho_hair_ponytail2, cho_accessory3_suspen
 default cho_bottom_skirt2 = DollCloth("cho", ("bottoms", "skirts"), "bottom", "skirt_short_2", [[93, 119, 173, 255]], level=16, armfix=True)
 default cho_bra_bikini1 = DollCloth("cho", ("bras", "bras"), "bra", "bikini_top_1", [[3, 237, 234, 255]], level=10)
 
-default cho_outfit_party = DollOutfit([cho_hair_ponytail2, cho_bottom_skirt2, cho_bra_bikini1], price=250)
+default cho_outfit_party = DollOutfit([cho_hair_ponytail1, cho_bottom_skirt2, cho_bra_bikini1], price=250)
 
 ###################
 ## Sailor Outfit ##
@@ -100,7 +99,7 @@ default cho_top_sailor1 = DollCloth("cho", ("tops", "muggle"), "top", "top_sailo
 default cho_stockings_sailor1 = DollCloth("cho", ("legwear", "stockings"), "stockings", "sailor", [[232, 232, 233, 255]])
 default cho_panties_bikini2 = DollCloth("cho", ("panties", "panties"), "panties", "bikini_bottom_2", [[213, 161, 13, 255]], level=18, armfix=True)
 
-default cho_outfit_sailor = DollOutfit([cho_hair_ponytail2, cho_top_sailor1, cho_bottom_skirt1, cho_stockings_sailor1, cho_panties_bikini2], price=250)
+default cho_outfit_sailor = DollOutfit([cho_hair_ponytail1, cho_top_sailor1, cho_bottom_skirt1, cho_stockings_sailor1, cho_panties_bikini2], price=250)
 
 ###################
 ## Bikini Outfit ##
@@ -109,7 +108,7 @@ default cho_outfit_sailor = DollOutfit([cho_hair_ponytail2, cho_top_sailor1, cho
 default cho_bra_bikini2 = DollCloth("cho", ("bras", "bras"), "bra", "bikini_top_2", [[138, 22, 17, 255]], level=14)
 default cho_panties_bikini1 = DollCloth("cho", ("panties", "panties"), "panties", "bikini_bottom_1", [[213, 161, 13, 255]], level=14, armfix=True)
 
-default cho_outfit_bikini = DollOutfit([cho_hair_ponytail2, cho_bra_bikini2, cho_panties_bikini1])
+default cho_outfit_bikini = DollOutfit([cho_hair_ponytail1, cho_bra_bikini2, cho_panties_bikini1])
 
 ##########################
 ## Lace Lingerie Outfit ##
@@ -122,7 +121,7 @@ default cho_bra_lace1 = DollCloth("cho", ("bras", "bras"), "bra", "lace_bra_1", 
 default cho_panties_lace1 = DollCloth("cho", ("panties", "panties"), "panties", "lace_panties_1", [[100, 100, 255, 255], [220, 220, 221, 255], [89, 116, 194, 255]], level=12)
 default cho_earring_feather = DollCloth("cho", ("head", "earrings"), "earring", "feather", [[232, 232, 232, 255], [70, 90, 147, 255], [136, 91, 34, 255]])
 
-default cho_outfit_lacelingerie = DollOutfit([cho_hair_ponytail2, cho_neckwear_lace1, cho_garterbelt_lace1, cho_panties_lace1, cho_bra_lace1, cho_stockings_lace1, cho_earring_feather], price=250)
+default cho_outfit_lacelingerie = DollOutfit([cho_hair_ponytail1, cho_neckwear_lace1, cho_garterbelt_lace1, cho_panties_lace1, cho_bra_lace1, cho_stockings_lace1, cho_earring_feather], price=250)
 
 ##################
 ## Dress Outfit ##
@@ -130,7 +129,7 @@ default cho_outfit_lacelingerie = DollOutfit([cho_hair_ponytail2, cho_neckwear_l
 
 default cho_top_dress1 = DollCloth("cho", ("tops", "onepieces"), "top", "dress_1", [[231, 29, 41, 255], [242, 162, 73, 255]], armfix=True, level=12, blacklist=["bottom"])
 
-default cho_outfit_dress1 = DollOutfit([cho_hair_ponytail2, cho_top_dress1, cho_panties_basic1, cho_bra_basic1])
+default cho_outfit_dress1 = DollOutfit([cho_hair_ponytail1, cho_top_dress1, cho_panties_basic1, cho_bra_basic1])
 
 ########################
 ## Cheerleader Outfit ##
@@ -156,7 +155,7 @@ default cho_bottom_shorts1 = DollCloth("cho", ("bottoms", "trousers"), "bottom",
 default cho_stockings_pantyhose = DollCloth("cho", ("legwear", "stockings"), "stockings", "pantyhose", [[190, 146, 129, 255]])
 default cho_earring_basic = DollCloth("cho", ("head", "earrings"), "earring", "basic", [[220, 220, 221, 255]])
 
-default cho_outfit_trainee = DollOutfit([cho_hair_ponytail2, cho_bra_basic1, cho_panties_basic1, cho_bottom_shorts1
+default cho_outfit_trainee = DollOutfit([cho_hair_ponytail1, cho_bra_basic1, cho_panties_basic1, cho_bottom_shorts1
 , cho_top_tank2, cho_stockings_pantyhose, cho_earring_basic], price=250)
 
 ###########

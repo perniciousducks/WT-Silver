@@ -80,6 +80,7 @@ label her_chibi_scene(action="reset", xpos="mid", ypos="base", trans=None):
         show screen chair_left
         show screen hermione_chibi_bj(action)
         if "cum" in action:
+            # TODO: CUM LAYERS
             $ uni_sperm = True
             $ u_sperm = "characters/hermione/face/auto_07.png"
 
@@ -194,7 +195,7 @@ screen grope_tits(img):
 screen hermione_chibi_bj(img):
     tag favor
     zorder desk_zorder
-    add img pos desk_scene_position
+    add img pos desk_scene_position xoffset 62
 
 screen hermione_chibi_sex(img):
     tag favor

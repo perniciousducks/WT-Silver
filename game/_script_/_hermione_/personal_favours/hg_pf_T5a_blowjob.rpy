@@ -42,9 +42,15 @@ label hg_pf_blowjob:
 
     hide screen blkfade
     if her_mood != 0:
-        call her_main("", "annoyed", "base", "angry", "mid", xpos="mid", ypos="base", trans=fade)
+        if mouth_full_of_cum:
+            call her_main("", "full_cum", "base", "angry", "mid", cheeks="blush", tears="mascara", xpos="mid", ypos="base", trans=fade)
+        else:
+            call her_main("", "annoyed", "base", "angry", "mid", xpos="mid", ypos="base", trans=fade)
     else:
-        call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
+        if mouth_full_of_cum:
+            call her_main("", "full_cum", "base", "base", "mid", cheeks="blush", tears="mascara", xpos="mid", ypos="base", trans=fade)
+        else:
+            call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
     if her_tier < 6:
         m "Yes, [hermione_name]. {number=current_payout} points to Gryffindor."
@@ -327,7 +333,7 @@ label hg_pf_blowjob_1:
     call her_chibi_scene("bj", trans=d9)
     call ctc
 
-    call her_main("*Slurp!* *Gulp!* *Slurp!*","open_tongue", ypos="head")
+    call her_main("*Slurp!* *Gulp!* *Slurp!*","open_wide_tongue", xpos="base", ypos="head")
     m "Yes..."
     m "Try to take it deeper now..."
     call her_main("*Gulp!* *Gobble!* *Gobble!*")
@@ -345,22 +351,22 @@ label hg_pf_blowjob_1:
             call her_main("We are still active, but...")
 
             call her_chibi_scene("bj")
-            call her_main("*Slurp!* *Gobble!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Slurp!* *Gobble!*", "open_wide_tongue", "narrow", "annoyed", "up")
 
             call her_chibi_scene("bj_pause")
             call her_main("But we are not getting as popular and as much support as I thought we would...", "angry", "wink", "base", "mid")
 
             call her_chibi_scene("bj")
-            call her_main("*Slurp!* *Gulp!* *Gulp!*", "sucking", "narrow", "worried", "down")
+            call her_main("*Slurp!* *Gulp!* *Gulp!*", "open_wide_tongue", "narrow", "worried", "down")
             m "Oh... This is good..."
-            call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "base", "up")
+            call her_main("*Slurp!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "base", "up")
             m "Hm..."
             m "So you don't mind selling me sexual favours, letting me play with your tits and such..."
-            call her_main("*Gobble!* *Gltch!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Gobble!* *Gltch!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
             m "And then condemn such behaviour in front of the other students."
-            call her_main("*Slurp!* *Slurp!* *Gulp!*", "sucking", "narrow", "worried", "down")
+            call her_main("*Slurp!* *Slurp!* *Gulp!*", "open_wide_tongue", "narrow", "worried", "down")
             m "You perverted, little hypocrite."
-            call her_main("*Gulp--", "sucking", "narrow", "base", "up")
+            call her_main("*Gulp--", "open_wide_tongue", "narrow", "base", "up")
 
             call her_chibi_scene("bj_pause")
             call her_main("That's not what we stand for, [genie_name].", "angry", "base", "base", "mid")
@@ -375,10 +381,10 @@ label hg_pf_blowjob_1:
 
             call her_chibi_scene("bj", trans=d3)
             pause.8
-            call her_main("*Gobble!* *Slurp!* *Slurp!*", "sucking", "narrow", "base", "up")
+            call her_main("*Gobble!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "base", "up")
             m "Yes, much better..."
             m "But you still disapprove of selling the favours, right?"
-            call her_main("*Slurp--", "sucking", "narrow", "base", "up")
+            call her_main("*Slurp--", "open_wide_tongue", "narrow", "base", "up")
 
             call her_chibi_scene("bj_pause")
             call her_main("Yes, it is frowned upon...", "upset", "closed", "base", "mid")
@@ -390,8 +396,8 @@ label hg_pf_blowjob_1:
 
             call her_chibi_scene("bj", trans=d3)
             pause.8
-            call her_main("*Slurp!* *Gulp!* *Gltch!*", "sucking", "narrow", "base", "up")
-            call her_main("*Slurp--", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Slurp!* *Gulp!* *Gltch!*", "open_wide_tongue", "narrow", "base", "up")
+            call her_main("*Slurp--", "open_wide_tongue", "narrow", "annoyed", "up")
 
             call her_chibi_scene("bj_pause")
             call her_main("This one time we had a meeting right after I sold you another favour, [genie_name].", "angry", "base", "base", "mid")
@@ -423,12 +429,12 @@ label hg_pf_blowjob_1:
 
             call her_chibi_scene("bj", trans=d3)
             pause.8
-            call her_main("*Slurp!* *Gulp!* *Gobble!*", "sucking", "narrow", "base", "up")
+            call her_main("*Slurp!* *Gulp!* *Gobble!*", "open_wide_tongue", "narrow", "base", "up")
             m "Yes, just keep at it for a while..."
-            call her_main("*Slurp!* *Gltch!* *Gulp!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Slurp!* *Gltch!* *Gulp!*", "open_wide_tongue", "narrow", "annoyed", "up")
             m "Good, good..."
             m "So, what would your folks say if they were to see you now, [hermione_name]?"
-            call her_main("*Slurp--", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Slurp--", "open_wide_tongue", "narrow", "annoyed", "up")
 
             call her_chibi_scene("bj_pause")
             call her_main("They would not understand of course...", "open", "narrow", "worried", "down")
@@ -440,7 +446,7 @@ label hg_pf_blowjob_1:
 
             call her_chibi_scene("bj", trans=d3)
             pause.8
-            call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Slurp!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
 
         "\"Tell me about the Gryffindor house.\"":
             call her_main("*Slurp--")
@@ -455,10 +461,10 @@ label hg_pf_blowjob_1:
 
             call her_chibi_scene("bj", trans=d3)
             pause.8
-            call her_main("*Slurp!* *Slurp!* *Gulp!*", "sucking", "narrow", "base", "up")
+            call her_main("*Slurp!* *Slurp!* *Gulp!*", "open_wide_tongue", "narrow", "base", "up")
             m "Oh, yes... Take as much time as you need, [hermione_name]."
-            call her_main("*Slurp!* *Gulp!* *Slurp!*", "sucking", "narrow", "base", "up")
-            call her_main("*Gulp--", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Slurp!* *Gulp!* *Slurp!*", "open_wide_tongue", "narrow", "base", "up")
+            call her_main("*Gulp--", "open_wide_tongue", "narrow", "annoyed", "up")
 
             call her_chibi_scene("bj_pause")
             call her_main("The Gryffindor house was founded by Godric Gryffindor, thus the name.", "open", "narrow", "worried", "down")
@@ -466,7 +472,7 @@ label hg_pf_blowjob_1:
             call her_main("And it's colours are red and gold.", "open", "closed", "base", "mid")
 
             call her_chibi_scene("bj")
-            call her_main("*Gulp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Gulp!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
 
             call her_chibi_scene("bj_pause")
             call her_main("Professor Minerva McGonagall is the head of our house.", "open", "closed", "base", "mid")
@@ -475,17 +481,17 @@ label hg_pf_blowjob_1:
             call her_main("And thus its members are generally regarded as brave but reckless...")
 
             call her_chibi_scene("bj")
-            call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Slurp!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
 
             call her_chibi_scene("bj_pause")
             call her_main("Gryffindor corresponds roughly to the element of fire...", "open", "closed", "base", "mid")
             call her_main("And for that reason the colours of red and gold were chosen.")
 
             call her_chibi_scene("bj")
-            call her_main("*Slurp!* *Gulp!* *Slurp!*", "sucking", "narrow", "base", "up")
+            call her_main("*Slurp!* *Gulp!* *Slurp!*", "open_wide_tongue", "narrow", "base", "up")
             m "Hm..."
             m "Well, I thought I could turn this around somehow to make fun of you..."
-            call her_main("*Slurp* .....?", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Slurp* .....?", "open_wide_tongue", "narrow", "annoyed", "up")
             m "Well, with your house representing courage and righteousness and such..."
             m "And you being a nasty slut..."
 
@@ -498,22 +504,22 @@ label hg_pf_blowjob_1:
 
             call her_chibi_scene("bj", trans=d3)
             pause.8
-            call her_main("*Gobble!!* *Gltch!!* *Gobble!!!*", "sucking", "narrow", "base", "up")
+            call her_main("*Gobble!!* *Gltch!!* *Gobble!!!*", "open_wide_tongue", "narrow", "base", "up")
             g4 "*Argh* {w=0.5}Good...{w=0.5} girl..."
 
     call bld
     m "Keep going..."
-    call her_main("*Gobble!* *Slurp!* *Slurp!*", ypos="head")
+    call her_main("*Gobble!* *Slurp!* *Slurp!*")
     m "Good... Back and forth, back and forth... slut."
-    call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
-    call her_main("*Slurp--", "sucking", "narrow", "annoyed", "up")
+    call her_main("*Slurp!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
+    call her_main("*Slurp--", "open_wide_tongue", "narrow", "annoyed", "up")
 
     call her_chibi_scene("bj_pause")
     call her_main("[genie_name]... I am a...whore.", "open", "narrow", "worried", "down")
     m "What?"
 
     call her_chibi_scene("bj")
-    call her_main("*Slurp-Slurp-Slurp!*", "sucking", "narrow", "base", "up")
+    call her_main("*Slurp-Slurp-Slurp!*", "open_wide_tongue", "narrow", "base", "up")
 
     call her_chibi_scene("bj_pause")
     call her_main("I truly am a slut and deeply enjoy sucking your cock.", "angry", "base", "base", "mid")
@@ -521,7 +527,7 @@ label hg_pf_blowjob_1:
 
     call her_chibi_scene("bj", trans=d3)
     pause.8
-    call her_main("*Slurp!* *Gulp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
+    call her_main("*Slurp!* *Gulp!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
 
     call her_chibi_scene("bj_pause")
     call her_main("Please, [genie_name]. Cum for me.", "soft", "narrow", "annoyed", "up")
@@ -532,7 +538,7 @@ label hg_pf_blowjob_1:
     menu:
         m "..."
         "-Warn her-":
-            call her_main("Yes, I love to suck and-", "soft", "narrow", "annoyed", "up", ypos="head")
+            call her_main("Yes, I love to suck and-", "soft", "narrow", "annoyed", "up")
             g4 "Heads up, [hermione_name]! Here it comes!"
             call her_main("!!!", "angry", "wide", "base", "stare")
 
@@ -549,10 +555,10 @@ label hg_pf_blowjob_1:
             call cum_block
             call bld
             g4 "{size=+7}ARGH!{/size}"
-            call her_main("*Gulp!-Gulp!-Gulp!*", "cumming", "narrow", "annoyed", "up")
+            call her_main("*Gulp!-Gulp!-Gulp!*", "open_wide_tongue_cum", "narrow", "annoyed", "up")
             with hpunch
             g4 "And some more!"
-            call her_main("*Gulp!* *Gulp!* *Gulp!*", "cumming", "narrow", "annoyed", "up")
+            call her_main("*Gulp!* *Gulp!* *Gulp!*", "open_wide_tongue_cum", "narrow", "annoyed", "up")
             call bld("hide")
             call ctc
 
@@ -585,11 +591,11 @@ label hg_pf_blowjob_1:
             $ achievement.unlock("headlib")
 
         "-Don't bother-":
-            call her_main("Yes, I love to suck and --", "soft", "narrow", "annoyed", "up", ypos="head")
+            call her_main("Yes, I love to suck and --", "soft", "narrow", "annoyed", "up")
 
             call cum_block
             g4 "{size=+7}Whore!{/size}"
-            call her_main("!!?", "cumshot", "wide", "base", "stare")
+            call her_main("!!?", "shock", "wide", "base", "stare")
 
             call her_chibi_scene("bj_cum_out", trans=d5)
             call ctc
@@ -645,13 +651,13 @@ label hg_pf_hidden_blowjob:
     call her_chibi_scene("bj", trans=d9)
     call ctc
 
-    call her_main("*Slurp!* *Slurp!* *Gulp!*", "sucking", "narrow", "annoyed", "up", ypos="head")
+    call her_main("*Slurp!* *Slurp!* *Gulp!*", "open_wide_tongue", "narrow", "annoyed", "up", xpos="base", ypos="head")
     m "Yes, good girl..."
-    call her_main("*Slurp!* *Gobble!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
+    call her_main("*Slurp!* *Gobble!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
 
     call play_sound("knocking")
     "*Knock-knock-knock!*"
-    call her_main("{size=+7}!!!{/size}", "sucking", "narrow", "base", "up")
+    call her_main("{size=+7}!!!{/size}", "open_wide_tongue", "narrow", "base", "up")
     m "Hm?"
 
     if daytime:
@@ -686,7 +692,7 @@ label hg_hidden_blowjob_snape:
     call her_chibi_scene("bj_pause", trans=d5)
     pause.8
 
-    call her_main("([genie_name], what should I do?)", "shock", "wide", "base", "stare", ypos="head")
+    call her_main("([genie_name], what should I do?)", "shock", "wide", "base", "stare")
     m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
     call her_chibi_scene("bj", trans=d5)
     pause.8
@@ -696,7 +702,7 @@ label hg_hidden_blowjob_snape:
     "*Knock-knock-knock!*"
 
     sna "Are you there? I need to talk to you."
-    call her_main("(It's professor Snape!)", "sucking", "base", "base", "mid")
+    call her_main("(It's professor Snape!)", "open_wide_tongue", "base", "base", "mid")
     call her_chibi_scene("bj_pause")
     call her_main("{size=-2}[genie_name], please, send him away, I beg you!{/size}", "angry", "base", "base", "mid")
 
@@ -706,7 +712,7 @@ label hg_hidden_blowjob_snape:
             pass
 
         "\"I am busy right now, Severus.\"":
-            call her_main("{size=-2}Thank you, [genie_name].{/size}", "angry", "base", "base", "mid", ypos="head")
+            call her_main("{size=-2}Thank you, [genie_name].{/size}", "angry", "base", "base", "mid")
             sna "Busy? With what?"
             sna "All you do is sit on you arse all day."
             sna "I really need to talk to you about something."
@@ -721,7 +727,7 @@ label hg_hidden_blowjob_snape:
     $ her_mood = 30
 
     stop music fadeout 1.0
-    call her_main("{size=-2}[genie_name], no!{/size}", "angry", "base", "angry", "mid", emote="01", ypos="head")
+    call her_main("{size=-2}[genie_name], no!{/size}", "angry", "base", "angry", "mid", emote="01")
 
     call nar(">Hermione gives your balls a firm twist full of frustration.")
     g4 "Ouch!"
@@ -736,34 +742,34 @@ label hg_hidden_blowjob_snape:
     pause.2
 
     call play_music("snape")
-    call sna_main("Good, you are here.","snape_01", xpos="base", ypos="base")
+    call sna_main("Good, you are here.","snape_01")
     call her_chibi_scene("bj")
-    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "slit", "worried", "ahegao")
+    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "slit", "worried", "ahegao")
     call sna_main("Listen, there is something I want to discuss...","snape_06")
     call sna_main("Hm...?","snape_05")
     call sna_main("Genie? Are you alright?")
-    call her_main("{size=-4}(Ginny!!? Is she here as well?!){/size}", "sucking", "narrow", "base", "up")
-    call her_main("{size=-4}(No, please! I will die of shame!){/size}", "sucking", "narrow", "annoyed", "up")
+    call her_main("{size=-4}(Ginny!!? Is she here as well?!){/size}", "open_wide_tongue", "narrow", "base", "up")
+    call her_main("{size=-4}(No, please! I will die of shame!){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
     m "Yes, Severus, I am fine..."
-    call her_main("{size=-4}(What? *Slurp...?* *Slurp...?* *Gulp...?*){/size}", "sucking", "narrow", "annoyed", "up")
+    call her_main("{size=-4}(What? *Slurp...?* *Slurp...?* *Gulp...?*){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
     call sna_main("What are you... looking at?","snape_05")
     m "Ehm... Just admiring...{w=0.5} the cupboard."
     m "Please, continue..."
     call sna_main("...............","snape_05")
-    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "base", "up")
+    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "base", "up")
     m "Did you want to discuss something?"
     call sna_main("Yes. That Granger girl.","snape_06")
-    call her_main("{size=-4}(*Slurp...!* *Gobble...!* *Gulp...!*){/size}", "sucking", "narrow", "annoyed", "up")
+    call her_main("{size=-4}(*Slurp...!* *Gobble...!* *Gulp...!*){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
     m "Oh... What about her?"
     call sna_main("You promised that you would take care of the little witch.","snape_04")
-    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "slit", "worried", "ahegao")
+    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "slit", "worried", "ahegao")
     call sna_main("But she is still being a major pain in my arse!","snape_04")
     call sna_main("Her tactics have changed...")
     call sna_main("But the amount of grief she manages to bring me is the same...","snape_03")
     m "I see... ah..."
     call sna_main("I swear, that girl is driving me crazy!","snape_10")
     g4 "Yeah, she is driving me crazy as well... ah..."
-    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "base", "up")
+    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "base", "up")
     call sna_main("Will you take care of this then?","snape_04")
     m "Yes. She'll get what she deserves."
     call sna_main("Good. That is all I wanted to hear.","snape_06")
@@ -799,7 +805,7 @@ label hg_hidden_blowjob_luna:
     call her_chibi_scene("bj_pause", trans=d5)
     pause.8
 
-    call her_main("[genie_name], what should I do?", "shock", "wide", "base", "stare", ypos="head")
+    call her_main("[genie_name], what should I do?", "shock", "wide", "base", "stare")
     m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
     lun "[lun_genie_name]? Are you there? I need to talk to you."
     if lun_genie_name not in ["Sir","Professor","Dumbledore"]:
@@ -815,7 +821,7 @@ label hg_hidden_blowjob_luna:
             pass
 
         "\"I am busy right now, [lun_name].\"":
-            call her_main("Thank you, [genie_name].", "angry", "base", "base", "mid", ypos="head")
+            call her_main("Thank you, [genie_name].", "angry", "base", "base", "mid")
             lun "Oh... well, I'll visit you later then, [lun_genie_name]."
             if daytime:
                 lun "Have a good day!"
@@ -829,27 +835,27 @@ label hg_hidden_blowjob_luna:
     $ her_mood += 30
 
     stop music fadeout 1.0
-    call her_main("{size=-2}[genie_name], no! Why would you let-{/size}", "angry", "base", "angry", "mid", emote="01", ypos="head")
+    call her_main("{size=-2}[genie_name], no! Why would you let-{/size}", "angry", "base", "angry", "mid", emote="01")
     m "Quiet, [hermione_name]! Unless you want to be noticed..."
 
     #Luna comes in
     call lun_walk("mid", action="enter")
 
-    call lun_main("Hello, [lun_genie_name].","soft","base","base","down", xpos="right", ypos="base")
+    call lun_main("Hello, [lun_genie_name].","soft","base","base","down")
     call bld("hide")
     pause.2
 
     call her_chibi_scene("bj", trans=d5)
     pause.8
 
-    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "annoyed", "up")
+    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
     g9 "Miss Lovegood! How can I help you?"
     call lun_main("I have a message for you, [lun_genie_name],... from Professor Sprout.","open","base","base","R")
     m "Professor Sprout?"
     m "(Who was that again?)"
     call lun_main("Yes, she's sent me to inform you about the school's latest yield of Venomous Tentacula.","open","base","raised","mid")
     m "(Venomous Tentacles?)"
-    call her_main("{size=-4}(Those things are nasty... *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "annoyed", "up")
+    call her_main("{size=-4}(Those things are nasty... *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
 
     lun "Very feisty little plants, they are. And still quite young."
     lun "They'll wither if you don't take care of them properly..."
@@ -857,7 +863,7 @@ label hg_hidden_blowjob_luna:
     call lun_main("They have just started sucking!","smile_large","happyCl","raised","mid")
     with hpunch
     m "What?"
-    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "base", "up")
+    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "base", "up")
     call lun_main("Sucking, [lun_genie_name]!","base","seductive","base","mid")
     call lun_main("It's so cute! They suck at each other's tentacles with their little mouths!","soft","base","raised","up")
     m "(Plants with mouths?)"
@@ -884,7 +890,7 @@ label hg_hidden_blowjob_luna:
     m "But now, straight down on the knees... right in front of me."
     g4 "Sucking like crazy!"
     call lun_main("(So they do not only have a head but also knees... I didn't even know that!)","soft","base","raised","up")
-    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "base", "up")
+    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "base", "up")
 
     call lun_main("Sprout told us to be careful, [lun_genie_name]. As you probably know, they like to spit... and bite...","soft","base","base","mid")
     m "Truly?"
@@ -900,18 +906,18 @@ label hg_hidden_blowjob_luna:
     call spit_on_her
 
     g4 "Take that, you nasty little slu-... Uhh, plant."
-    call her_main("{size=-4}(What the... *Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "slit", "worried", "ahegao")
+    call her_main("{size=-4}(What the... *Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "slit", "worried", "ahegao")
     call lun_main("That's right, [lun_genie_name]!","grin","happyCl","raised","mid")
     g4 "This one wants more spit!"
     call spit_on_her
-    call her_main("{size=-4}(Stop it! *Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "base", "up")
+    call her_main("{size=-4}(Stop it! *Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "base", "up")
     call lun_main("Professor Sprout said, sometimes, a bit of tough love is the only thing that can make them behave.","clench","angry","angry","down")
     m "She did?"
     g9 "Oh no, mine is fighting back!"
     call lun_main("Be careful, [lun_genie_name]! Or she'll bite you!","clench","closed","sad","mid")
     g4 "Don't worry, this one's getting a beating!"
     call slap_her
-    call her_main("{size=-4}(Ouch!... *Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "annoyed", "up")
+    call her_main("{size=-4}(Ouch!... *Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
     call slap_her
     call slap_her
     g4 "Had enough, you nasty little thing?"
@@ -937,7 +943,7 @@ label hg_hidden_blowjob_luna:
     stop music fadeout 1.0
     call bld
     m "Well that wasn't too bad, was it?"
-    call her_main("{size=-4}(............................. *Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "annoyed", "up")
+    call her_main("{size=-4}(............................. *Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
 
     call play_music("playful_tension") # SEX THEME.
 
@@ -952,7 +958,7 @@ label hg_hidden_blowjob_tonks:
     call her_chibi_scene("bj_pause", trans=d5)
     pause.8
 
-    call her_main("[genie_name], what should I do?", "shock", "wide", "base", "stare", ypos="head")
+    call her_main("[genie_name], what should I do?", "shock", "wide", "base", "stare")
     m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
     ton "[ton_genie_name]? Is it ok if I come in?"
     call her_main("(It's Professor Tonks!)", "clench", "happyCl", "worried", "mid")
@@ -965,7 +971,7 @@ label hg_hidden_blowjob_tonks:
             pass
 
         "\"I am busy right now, [tonks_name].\"":
-            call her_main("Thank you, [genie_name].", "soft", "base", "base", "mid", ypos="head")
+            call her_main("Thank you, [genie_name].", "soft", "base", "base", "mid")
             ton "Busy?"
             ton "Could it be..."
             ton "Is Snape with you?"
@@ -979,24 +985,24 @@ label hg_hidden_blowjob_tonks:
             call her_chibi_scene("bj", trans=d5)
             pause.8
 
-            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "squint", "worried", "up")
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "squint", "worried", "up")
             m "He isn't here, actually. But I will let him know..."
             ton "So, are you with a student then, hmm?"
-            call her_main("{size=-4}(.......... *Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "annoyed", "up")
+            call her_main("{size=-4}(.......... *Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
             ton "Who is she?"
 
             if ag_st_imperio.tier >= 3:
                 ton "Is it the blonde girl? Or..."
-                call her_main("{size=-4}(Blonde!?! *Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "squint", "worried", "up")
-                call her_main("{size=-4}(*Slurp*... *Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "annoyed", "up")
+                call her_main("{size=-4}(Blonde!?! *Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "squint", "worried", "up")
+                call her_main("{size=-4}(*Slurp*... *Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
             elif ag_st_imperio.tier >= 5:
                 ton "You aren't shagging that busty red head, are you?"
-                call her_main("{size=-4}(Busty who? *Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "squint", "worried", "up")
-                call her_main("{size=-4}(Is she talking about Susan? *Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "annoyed", "up")
+                call her_main("{size=-4}(Busty who? *Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "squint", "worried", "up")
+                call her_main("{size=-4}(Is she talking about Susan? *Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
 
             m "That's non of your concern, Miss Tonks!"
             m "You may leave now..."
-            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "base", "up")
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "base", "up")
 
             if ton_friendship < 50:
                 ton "You sure you don't need my assistance?"
@@ -1006,7 +1012,7 @@ label hg_hidden_blowjob_tonks:
                 m "Maybe later, [tonks_name]."
             ton "Okay, [ton_genie_name]."
             ton "*Giggle...*"
-            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "annoyed", "up")
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
             m "I think she's gone..."
 
             jump hg_pf_blowjob_1
@@ -1019,7 +1025,7 @@ label hg_hidden_blowjob_tonks:
     $ tonks.equip(ton_outfit_default)
 
     stop music fadeout 1.0
-    call her_main("{size=-2}[genie_name], no! Please she will know that-{/size}", "angry", "base", "angry", "mid", emote="01", ypos="head")
+    call her_main("{size=-2}[genie_name], no! Please she will know that-{/size}", "angry", "base", "angry", "mid", emote="01")
     m "*Shhhhsh*... Keep your voice down..."
 
     #Tonks comes in
@@ -1044,12 +1050,12 @@ label hg_hidden_blowjob_tonks:
         call ton_main("Good evening, Sir.","base","base","base","mid", xpos="right", ypos="base")
 
     call her_chibi_scene("bj")
-    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "annoyed", "up")
+    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
     g9 "Tonks! What can I do for you?"
     call ton_main("I was wondering if we could-","open","base","raised","R")
     call ton_main("(...)","base","base","base","mid")
     call ton_main("Am I interrupting something?","horny","base","raised","down")
-    call her_main("(She's going to find out!!!)", "sucking", "narrow", "annoyed", "up")
+    call her_main("(She's going to find out!!!)", "open_wide_tongue", "narrow", "annoyed", "up")
     m "Nothing important..."
 
     menu:
@@ -1065,21 +1071,21 @@ label hg_hidden_blowjob_tonks:
 
             if ton_friendship < 50:
                 call ton_main("Or perhaps somebody else has their tongue wrapped around it?","horny","base","raised","L")
-                call her_main("{size=-4}(*Blergchhhgh...* *Cough...* *Cough...* *Cough...*){/size}", "sucking", "slit", "worried", "ahegao")
+                call her_main("{size=-4}(*Blergchhhgh...* *Cough...* *Cough...* *Cough...*){/size}", "open_wide_tongue", "slit", "worried", "ahegao")
                 call ton_main("What was that?","base","base","raised","mid")
                 call ton_main("Surely there's nobody at this school who would be able to pleasure you properly...","open","base","raised","mid")
             else:
                 call ton_main("Are you stroking your hard, {w=0.3}magnificent, {w=0.3}cock?","open_wide_tongue","base","base","ahegao")
                 with hpunch
-                call her_main("{size=-4}(*Blergchhhgh...* *Cough...* *Cough...* *Cough...*){/size}", "sucking", "slit", "worried", "ahegao")
+                call her_main("{size=-4}(*Blergchhhgh...* *Cough...* *Cough...* *Cough...*){/size}", "open_wide_tongue", "slit", "worried", "ahegao")
                 call her_chibi_scene("bj_pause")
-                call her_main("{size=-4}What??{/size}", "sucking", "narrow", "base", "up")
+                call her_main("{size=-4}What??{/size}", "open_wide_tongue", "narrow", "base", "up")
                 call ton_main("What was that?","base","base","raised","mid")
                 call ton_main("[ton_genie_name]?!","open","base","angry","mid")
                 m "Uhm-{w} My belly?"
                 call ton_main("Sounded like somebody doesn't know how to deepthroat a dick properly...","open","base","base","R")
 
-            call her_main("(Excuse me?!)", "sucking", "narrow", "annoyed", "up")
+            call her_main("(Excuse me?!)", "open_wide_tongue", "narrow", "annoyed", "up")
             m "Don't be mean, she's doing her best..."
             call ton_main("So there is a girl behind you!","horny","base","raised","down")
             call ton_main("Who is it? Tell me!","base","base","base","mid")
@@ -1090,10 +1096,10 @@ label hg_hidden_blowjob_tonks:
 
     if her_reputation <= 15:
         call ton_main("That cute little tease who always hangs out at the library, pretending to study?","open","base","raised","mid")
-        call her_main("(Pretending???)", "sucking", "narrow", "base", "up")
+        call her_main("(Pretending???)", "open_wide_tongue", "narrow", "base", "up")
     else:
         call ton_main("That Gryffindor slut? The one who always hangs around flirting with some Slytherins?","open","base","raised","mid")
-        call her_main("(Gryffindor slut !!?)", "sucking", "narrow", "annoyed", "up")
+        call her_main("(Gryffindor slut !!?)", "open_wide_tongue", "narrow", "annoyed", "up")
         with hpunch
         m "Ouch, I felt that..."
 
@@ -1112,12 +1118,12 @@ label hg_hidden_blowjob_tonks:
     m "Or I fear she will bite me..."
     g4 "Or worse,..."
     m "She'll stop with the sucking..."
-    call her_main("(Damn right I will...)", "sucking", "narrow", "base", "up")
+    call her_main("(Damn right I will...)", "open_wide_tongue", "narrow", "base", "up")
 
     call her_chibi_scene("bj")
-    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "slit", "worried", "ahegao")
+    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "slit", "worried", "ahegao")
     call ton_main("Very well...","base","base","raised","R", xpos="right", ypos="base")
-    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "squint", "worried", "up")
+    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "squint", "worried", "up")
 
     call ton_main("Is that really, {w=0.5}Miss Hermione Granger,{w=0.5} back there?","horny","base","base","mid")
     call ton_main("That's so hard to believe!","open","base","raised","L")
@@ -1125,7 +1131,7 @@ label hg_hidden_blowjob_tonks:
     m "I'm not fucking with you..."
     g9 "...I'm fucking her mouth."
     call ton_main("That's too good to be true!","base","base","base","ahegao")
-    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "annoyed", "up")
+    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
 
     call ton_main("Miss Granger, If that's really you back there, why don't you say hi to your favourite teacher?","horny","base","raised","down")
     m "(...)"
@@ -1133,7 +1139,7 @@ label hg_hidden_blowjob_tonks:
     with hpunch
     g4 "What?!"
     call her_chibi_scene("bj_pause")
-    call her_main("(Oh wow, that's a lot of points!)", "sucking", "narrow", "annoyed", "up")
+    call her_main("(Oh wow, that's a lot of points!)", "open_wide_tongue", "narrow", "annoyed", "up")
 
     call her_chibi_scene("bj")
     g4 "You can't give her that many points, [tonks_name]! She's already getting {number=current_payout} from me!"
@@ -1144,15 +1150,15 @@ label hg_hidden_blowjob_tonks:
     call ton_main("You only have to stick your gorgeous head out and say hi to me, and of course...","open","base","base","R")
     call ton_main("I promise I won't tell anybody.","base","base","base","down")
     call ton_main("It will be our little secret.","horny","base","angry","down")
-    call her_main("(...)", "sucking", "narrow", "annoyed", "up")
+    call her_main("(...)", "open_wide_tongue", "narrow", "annoyed", "up")
     m "Do what you must, girl..."
-    call her_main("(...............)", "sucking", "narrow", "base", "up")
+    call her_main("(...............)", "open_wide_tongue", "narrow", "base", "up")
 
     call her_chibi_scene("bj_pause")
     call ton_main("Oh my!","horny","base","base","down")
 
     $ hermione_flip = -1 #head will be on the left.
-    call her_main("He- Hello, Miss Tonks.", "clench", "happyCl", "worried", "mid", ypos="head")
+    call her_main("He- Hello, Miss Tonks.", "clench", "happyCl", "worried", "mid", xpos="base", ypos="head")
 
     call ton_main("Miss Granger, what a pleasant surprise.","base","base","raised","mid")
     call ton_main("Are you having a good time back there?","open","base","base","down")
@@ -1162,7 +1168,7 @@ label hg_hidden_blowjob_tonks:
     else:
         call ton_main("You nasty little cock sucker.","horny","base","raised","mid")
 
-    call her_main("(........................)", "sucking", "narrow", "annoyed", "up")
+    call her_main("(........................)", "open_wide_tongue", "narrow", "annoyed", "up")
     call her_main("I suppose so...................", "disgust", "narrow", "worried", "down")
     call ton_main("What a sight to see...","base","base","base","mid")
 
@@ -1175,7 +1181,7 @@ label hg_hidden_blowjob_tonks:
     else:
         call ton_main("I'd love to join you back there, Miss Granger...","base","base","base","down")
         call ton_main("Suck your Headmaster's dick with you!","horny","base","angry","mid")
-        call her_main("{size=-4}(She'd do what?... *Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "squint", "worried", "up")
+        call her_main("{size=-4}(She'd do what?... *Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "squint", "worried", "up")
         g9 "You can both have it!"
 
     call ton_main("I'm sorry, [ton_genie_name]... I'm already pre-occupied with something...","open","base","worried","R")
@@ -1189,7 +1195,7 @@ label hg_hidden_blowjob_tonks:
     call ton_main("As a headmaster maybe... I'm sure your private tutelage is very popular...","horny","base","raised","down")
     m "It can get quite hard, taking care of all those girls."
     call ton_main("I can certainly see that...","horny","base","angry","mid")
-    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "annoyed", "up")
+    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
 
     call ton_main("Anyhow...","open","base","raised","R")
     call ton_main("Hermione, for your exceptional and benevolent effort of sucking your headmaster's cock, {w=0.5}I hereby reward the house Gryffindor...","open","base","base","down")
@@ -1198,7 +1204,7 @@ label hg_hidden_blowjob_tonks:
     call ton_main("Sixty-nine points!","horny","base","base","mid")
     $ gryffindor += 69
 
-    call her_main("(Sixty-nine! That's even more than she agreed on!)", "sucking", "narrow", "base", "up")
+    call her_main("(Sixty-nine! That's even more than she agreed on!)", "open_wide_tongue", "narrow", "base", "up")
     m "Didn't you say fifty earlier?"
     call ton_main("Yes, but sixty-nine is so much better!","horny","base","raised","mid")
     call ton_main("Don't you think so too, Miss Granger?","base","base","angry","down")
@@ -1207,7 +1213,7 @@ label hg_hidden_blowjob_tonks:
     call her_main("Sorry, [genie_name]...", "soft", "narrow", "annoyed", "up")
 
     call her_chibi_scene("bj")
-    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "annoyed", "up")
+    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
     call ton_main("I'm going to have to go, [ton_genie_name].","open","base","worried","R")
     call ton_main("Wish I could watch you two a little longer...","base","base","worried","mid")
     call ton_main("But I have to head back to my office.","open","base","worried","L")
@@ -1245,22 +1251,22 @@ label hg_hidden_blowjob_cumming:
     pause.8
 
     $ hermione_flip = 1 #Default
-    call her_main("*Slurp!* *Slurp!* *Gulp!*", "sucking", "squint", "worried", "up", ypos="head")
+    call her_main("*Slurp!* *Slurp!* *Gulp!*", "open_wide_tongue", "squint", "worried", "up")
     ">Hermione keeps sucking on your cock with a rather fierce determination."
     ">Her technique is lacking but she makes up for it with the effort she puts in."
 
     m "Yes... I love your eager, little mouth, girl..."
-    call her_main("*Gobble!* *Gobble!* *Gobble!*", "sucking", "narrow", "annoyed", "up")
+    call her_main("*Gobble!* *Gobble!* *Gobble!*", "open_wide_tongue", "narrow", "annoyed", "up")
 
     call her_chibi_scene("bj_pause")
-    call her_main("[genie_name]?", "soft", "narrow", "annoyed", "up", ypos="head")
+    call her_main("[genie_name]?", "soft", "narrow", "annoyed", "up")
     m "*Hm?*"
     call her_main("Are you going to cum on my face today?", "soft", "narrow", "annoyed", "up")
     call her_main("Or do you plan to cum in my mouth?")
 
     menu:
         "\"I Plan to splatter your face with cum!\"":
-            call her_main("I see...", "soft", "narrow", "annoyed", "up", ypos="head")
+            call her_main("I see...", "soft", "narrow", "annoyed", "up")
             m "Why do you ask?"
             call her_main("Oh... I just read in a book that semen contains a lot of antioxidants...", "grin", "narrow", "base", "dead")
             call her_main("It's good for the skin...")
@@ -1268,7 +1274,7 @@ label hg_hidden_blowjob_cumming:
             m "Back to work now."
 
         "\"I Plan to fill your mouth with cum!\"":
-            call her_main("I see...", "grin", "narrow", "base", "dead", ypos="head")
+            call her_main("I see...", "grin", "narrow", "base", "dead")
             m "Why do you ask?"
             call her_main("Well, I am trying to watch my calorie-intake...", "soft", "narrow", "annoyed", "up")
             call her_main("I just wonder how much calories your load contains, [genie_name].")
@@ -1278,7 +1284,7 @@ label hg_hidden_blowjob_cumming:
             m "Dick back in the mouth."
 
         "\"I don't plan so far ahead.\"":
-            call her_main("I see...", "soft", "narrow", "annoyed", "up", ypos="head")
+            call her_main("I see...", "soft", "narrow", "annoyed", "up")
             m "Don't you like surprises?"
             call her_main("Not really...", "soft", "narrow", "annoyed", "up")
             call her_main("I rather enjoy planning ahead actually...")
@@ -1286,7 +1292,7 @@ label hg_hidden_blowjob_cumming:
             m "There is only one way to find out for sure."
 
         "\"What would you like?\"":
-            call her_main("If it is all the same to you, [genie_name]...", "soft", "narrow", "annoyed", "up", ypos="head")
+            call her_main("If it is all the same to you, [genie_name]...", "soft", "narrow", "annoyed", "up")
 
             $ random_number = renpy.random.randint(1, 2)
             if random_number == 1:
@@ -1304,16 +1310,16 @@ label hg_hidden_blowjob_cumming:
             m "Back to sucking now."
 
     call her_chibi_scene("bj")
-    call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
+    call her_main("*Slurp!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
     m "Hm..."
     m "You are getting better at this [hermione_name]."
-    call her_main("*Slurp!* *Slurp!* *Gulp!*", "sucking", "narrow", "base", "up")
+    call her_main("*Slurp!* *Slurp!* *Gulp!*", "open_wide_tongue", "narrow", "base", "up")
     m "Ok, say something nasty now..."
-    call her_main("*Slurp--?", "sucking", "narrow", "annoyed", "up")
+    call her_main("*Slurp--?", "open_wide_tongue", "narrow", "annoyed", "up")
     call her_chibi_scene("bj_pause")
 
     if her_tier <= 5:
-        call her_main("uhm...", "angry", "narrow", "base", "down", ypos="head")
+        call her_main("uhm...", "angry", "narrow", "base", "down")
         call her_main("I eat cockroaches?", "angry", "base", "base", "mid")
         m "What the fuck?"
         call her_main("T-they are pretty nasty, [genie_name]...", "angry", "base", "base", "mid")
@@ -1326,7 +1332,7 @@ label hg_hidden_blowjob_cumming:
         m "Yeah, whatever. Make it up to me by sucking my cock harder."
         call her_main("Of course, [genie_name].", "upset", "closed", "base", "mid")
     else:
-        call her_main("I'm a cumslut, [genie_name].", "base", "squint", "base", "mid", ypos="head")
+        call her_main("I'm a cumslut, [genie_name].", "base", "squint", "base", "mid")
         call her_main("A slut for your cum.", "base", "narrow", "base", "mid_soft")
         m "That's it, [hermione_name]."
         call her_main("It's all I can think about [genie_name].", "base", "narrow", "worried", "down")
@@ -1337,18 +1343,18 @@ label hg_hidden_blowjob_cumming:
         call her_main("...", "base", "narrow", "base", "up")
 
     call her_chibi_scene("bj")
-    call her_main("*Slurp!* *Gulp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
+    call her_main("*Slurp!* *Gulp!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
     m "Yes, like this... Good..."
-    call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
+    call her_main("*Slurp!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
     m "You know what? I think we are almost there."
-    call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "base", "up")
+    call her_main("*Slurp!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "base", "up")
     m "Yes, definitely."
-    call her_main("*Slurp!* *Gobble!* *Gobble!*", "sucking", "narrow", "base", "up")
+    call her_main("*Slurp!* *Gobble!* *Gobble!*", "open_wide_tongue", "narrow", "base", "up")
     m "Alright, [hermione_name], this is the final stretch."
     g4 "Show me what you've got."
-    call her_main("!!! *Gobble-goble-slurp-goble!* !!!", "sucking", "narrow", "annoyed", "up")
+    call her_main("!!! *Gobble-goble-slurp-goble!* !!!", "open_wide_tongue", "narrow", "annoyed", "up")
     g4 "Yes, like that!"
-    call her_main("{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}", "sucking", "narrow", "base", "up")
+    call her_main("{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}", "open_wide_tongue", "narrow", "base", "up")
     g4 "{size=+5}Yes! Yes! Yes! Yes!{/size}"
     g4 "Ghr!!!"
 
@@ -1356,7 +1362,7 @@ label hg_hidden_blowjob_cumming:
         g4 "!!!"
         "-Cum in her mouth-":
             g4 "Here it comes, [hermione_name]! get ready to swallow, and fast!"
-            call her_main("!!!", "sucking", "narrow", "base", "up")
+            call her_main("!!!", "open_wide_tongue", "narrow", "base", "up")
 
             call cum_block
             call her_chibi_scene("bj_cum_in", trans=d5)
@@ -1365,10 +1371,10 @@ label hg_hidden_blowjob_cumming:
             call bld
             g4 "{size=+7}ARGH!{/size}"
             g4 "Swallow my cum, slut!"
-            call her_main("*Gulp!-Gulp!-Gulp!*", "cumming", "narrow", "annoyed", "up")
+            call her_main("*Gulp!-Gulp!-Gulp!*", "open_wide_tongue_cum", "narrow", "annoyed", "up")
             with hpunch
             g4 "Yes! Down your fucking throat!"
-            call her_main("*Gulp-gulp-gulp-gulp-gulp!*", "cumming", "narrow", "annoyed", "up")
+            call her_main("*Gulp-gulp-gulp-gulp-gulp!*", "open_wide_tongue_cum", "narrow", "annoyed", "up")
 
             stop music fadeout 1.0
             hide screen bld1
@@ -1379,7 +1385,7 @@ label hg_hidden_blowjob_cumming:
             m "You can let go now..."
 
             call her_chibi_scene("bj_pause")
-            call her_main("...........................", "full_cum", "narrow", "base", "dead", xpos="mid", ypos="base")
+            call her_main("...........................", "full_cum", "narrow", "base", "dead")
             call her_main("................")
             call her_main("........")
             $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
@@ -1406,7 +1412,7 @@ label hg_hidden_blowjob_cumming:
         "-Cum on her face-":
             call her_chibi_scene("bj_pause")
             g4 "Ready for your facial, [hermione_name]?"
-            call her_main("Yes, [genie_name]!", "grin", "narrow", "base", "dead", ypos="head")
+            call her_main("Yes, [genie_name]!", "grin", "narrow", "base", "dead")
             g4 "Here it comes then!"
 
             call cum_block
@@ -1415,7 +1421,7 @@ label hg_hidden_blowjob_cumming:
 
             call bld
             g4 "{size=+7}Whore!{/size}"
-            call her_main("!!?", "cumshot", "wide", "base", "stare", ypos="head")
+            call her_main("!!?", "shock", "wide", "base", "stare")
             hide screen bld1
             call ctc
 
@@ -1423,7 +1429,7 @@ label hg_hidden_blowjob_cumming:
             # TODO: CUM LAYERS
             #
 
-            call her_main("[genie_name]...", "cumshot", "wide", "base", "stare")
+            call her_main("[genie_name]...", "shock", "wide", "base", "stare")
             g4 "All over your fucking face!"
             call her_main("*Aaah!*", "grin", "narrow", "base", "dead")
 
@@ -1453,7 +1459,7 @@ label hg_hidden_blowjob_cumming:
             call hide_blkfade
             pause.5
 
-            call her_main("I take it you enjoyed yourself, [genie_name]?", "angry", "wink", "base", "mid", xpos="mid", ypos="base")
+            call her_main("I take it you enjoyed yourself, [genie_name]?", "angry", "wink", "base", "mid")
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             m "Yes I did, [hermione_name]."
             call her_main("Good, so Can I get paid now?", "grin", "narrow", "base", "dead")
@@ -1479,15 +1485,15 @@ label hg_pf_blowjob_2:
     call ctc
 
     call play_music("playful_tension") #HERMIONE
-    call her_main("*Slurp!* *Slurp!* *Gulp!*", "sucking", "narrow", "annoyed", "up", ypos="head")
+    call her_main("*Slurp!* *Slurp!* *Gulp!*", "open_wide_tongue", "narrow", "annoyed", "up", xpos="base", ypos="head")
     m "Yes, good girl..."
-    call her_main("*Slurp!* *Gobble!* *Slurp!*", "sucking", "narrow", "base", "up")
+    call her_main("*Slurp!* *Gobble!* *Slurp!*", "open_wide_tongue", "narrow", "base", "up")
     m "lick the shaft..."
-    call her_main("*lick!* *Slurp!* *lick!*", "sucking", "narrow", "base", "up")
+    call her_main("*lick!* *Slurp!* *lick!*", "open_wide_tongue", "narrow", "base", "up")
     call nar(">Hermione keeps sucking on your cock like her life depends on it.","start")
     call nar(">Her technique is almost perfect and she is incredibly enthusiastic.","end")
     m "Yes... I love your eager, little mouth, slut..."
-    call her_main("*Gobble!* *Gobble!* *Gobble!*", "sucking", "narrow", "base", "up")
+    call her_main("*Gobble!* *Gobble!* *Gobble!*", "open_wide_tongue", "narrow", "base", "up")
 
     call her_chibi_scene("bj_pause", trans=d5)
     pause.8
@@ -1501,72 +1507,72 @@ label hg_pf_blowjob_2:
         #    jump hg_pf_facefuck_1
 
         "\"Pretend I am your father.\"":
-            call her_main("My father?", "angry", "wink", "base", "mid", ypos="head")
+            call her_main("My father?", "angry", "wink", "base", "mid")
             m "Anything wrong with that?"
             call her_main("I suppose not...", "base", "narrow", "worried", "down")
             call her_main("I mean it's just pretending...", "grin", "narrow", "base", "dead")
             m "Great. Get that dick back in your mouth then."
 
             call her_chibi_scene("bj")
-            call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Slurp!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
             m "That's it, princess. Suck daddy's dick."
-            call her_main("*Slurp!* *Gulp!* *Slurp!*", "sucking", "narrow", "base", "up")
+            call her_main("*Slurp!* *Gulp!* *Slurp!*", "open_wide_tongue", "narrow", "base", "up")
             m "Tell me how much you want it."
-            call her_main("*Slurp!* *Gobble!* *Slurp!*", "sucking", "narrow", "base", "up")
+            call her_main("*Slurp!* *Gobble!* *Slurp!*", "open_wide_tongue", "narrow", "base", "up")
             call her_chibi_scene("bj_pause")
             call her_main("So much daddy...", "soft", "narrow", "annoyed", "up")
             call her_chibi_scene("bj")
-            call her_main("*Slurp!* *Gobble!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Slurp!* *Gobble!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
             call her_chibi_scene("bj_pause")
             call her_main("It's all I think about when we're home alone...", "base", "narrow", "base", "up")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *Gulp!* *Gobble!*", "sucking", "narrow", "base", "up")
+            call her_main("*Gobble!* *Gulp!* *Gobble!*", "open_wide_tongue", "narrow", "base", "up")
             call her_chibi_scene("bj_pause")
             call her_main("When we're sitting together on the couch watching T.V...", "base", "narrow", "base", "up")
             call her_main("I just imagine that I am sucking your cock instead...", "base", "narrow", "base", "up")
             call her_chibi_scene("bj")
-            call her_main("*lick!* *Slurp!* *Slurp!*", "sucking", "narrow", "base", "up")
+            call her_main("*lick!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "base", "up")
             call her_chibi_scene("bj_pause")
             call her_main("I even wish that mum left you sometimes...", "annoyed", "narrow", "worried", "down")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *Slurp!* *lick!*", "sucking", "narrow", "base", "dead")
+            call her_main("*Gobble!* *Slurp!* *lick!*", "open_wide_tongue", "narrow", "base", "dead")
             m "Why's that?"
             call her_chibi_scene("bj_pause")
             call her_main("So that I'm the only one to get your dick...", "soft", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "annoyed", "up")
             call her_chibi_scene("bj_pause")
             call her_main("You'll come home every day...", "soft", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "up")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "base", "up")
             call her_chibi_scene("bj_pause")
             call her_main("Throw me onto my bed...", "grin", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "annoyed", "up")
             call her_chibi_scene("bj_pause")
             call her_main("and use me...", "grin", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "up")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "base", "up")
             call her_chibi_scene("bj_pause")
             call her_main("however you want...", "grin", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "annoyed", "up")
             call her_chibi_scene("bj_pause")
             call her_main("for as long as you want...", "grin", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "up")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "base", "up")
             call her_chibi_scene("bj_pause")
             call her_main("you won't even ask...", "grin", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "annoyed", "up")
             call her_chibi_scene("bj_pause")
             call her_main("you'll just take me...", "grin", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "dead")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "base", "dead")
             call her_chibi_scene("bj_pause")
             call her_main("even though I say no...", "grin", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "up")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "base", "up")
             m "That's it princess, Almost there..."
             call her_chibi_scene("bj_pause")
             call her_main("Where do you want to cum today, daddy?", "soft", "narrow", "annoyed", "up")
@@ -1576,18 +1582,18 @@ label hg_pf_blowjob_2:
             m "Let's find out shall we?"
             call her_main("Yes daddy...", "soft", "narrow", "annoyed", "up")
             call her_chibi_scene("bj")
-            call her_main("*Slurp!* *Gulp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Slurp!* *Gulp!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
             m "Yes, like that... Good girl..."
-            call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Slurp!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
             m "Do it for daddy."
-            call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Slurp!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
             m "Come on princess."
-            call her_main("*Slurp!* *Gobble!* *Gobble!*", "sucking", "narrow", "base", "up")
+            call her_main("*Slurp!* *Gobble!* *Gobble!*", "open_wide_tongue", "narrow", "base", "up")
             m "Alright, [hermione_name], almost there."
             g4 "Make daddy proud!"
-            call her_main("!!! *Gobble-goble-slurp-goble!* !!!", "sucking", "narrow", "annoyed", "up")
+            call her_main("!!! *Gobble-goble-slurp-goble!* !!!", "open_wide_tongue", "narrow", "annoyed", "up")
             g4 "Yes, like that!"
-            call her_main("{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}", "sucking", "narrow", "base", "dead")
+            call her_main("{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}", "open_wide_tongue", "narrow", "base", "dead")
             g4 "{size=+5}Yes! Yes! Yes! Yes!{/size}"
             g4 "Grr!!!"
 
@@ -1595,7 +1601,7 @@ label hg_pf_blowjob_2:
                 g4 "!!!"
                 "-Cum in her mouth-":
                     g4 "Here it comes, [hermione_name]! Here comes daddy!"
-                    call her_main("!!!", "sucking", "narrow", "base", "up")
+                    call her_main("!!!", "open_wide_tongue", "narrow", "base", "up")
 
                     call cum_block
                     call her_chibi_scene("bj_cum_in", trans=d5)
@@ -1605,10 +1611,10 @@ label hg_pf_blowjob_2:
                     g4 "{size=+7}ARGH!{/size}"
                     g4 "Drown in my cum, whore!"
 
-                    call her_main("*Gulp!-Gulp!-Gulp!*", "sucking", "narrow", "annoyed", "up")
+                    call her_main("*Gulp!-Gulp!-Gulp!*", "open_wide_tongue", "narrow", "annoyed", "up")
                     with hpunch
                     g4 "Yes! Down your fucking throat, slut!"
-                    call her_main("*Gulp-gulp-gulp-gulp-gulp!*", "sucking", "narrow", "base", "up")
+                    call her_main("*Gulp-gulp-gulp-gulp-gulp!*", "open_wide_tongue", "narrow", "base", "up")
                     stop music fadeout 1.0
                     call ctc
 
@@ -1618,7 +1624,7 @@ label hg_pf_blowjob_2:
                     call bld
                     m "Well, I think that's it."
                     m "You can let go now..."
-                    call her_main("...........................", "full_cum", "narrow", "base", "dead", ypos="head")
+                    call her_main("...........................", "full_cum", "narrow", "base", "dead")
                     call her_main("................")
                     call her_main("........")
 
@@ -1641,7 +1647,7 @@ label hg_pf_blowjob_2:
                 "-Cum on her face-":
                     call her_chibi_scene("bj_pause")
                     g4 "Ready for your cum-load, princess?"
-                    call her_main("Yes daddy!", "grin", "narrow", "base", "dead", ypos="head")
+                    call her_main("Yes daddy!", "grin", "narrow", "base", "dead")
                     g4 "Here it comes then!"
 
                     call cum_block
@@ -1650,14 +1656,14 @@ label hg_pf_blowjob_2:
 
                     call bld
                     g4 "{size=+7}Slut!{/size}"
-                    call her_main("!!?", "cumshot", "narrow", "base", "dead")
+                    call her_main("!!?", "shock", "narrow", "base", "dead")
                     call ctc
 
                     #
                     # TODO: CUM LAYERS
                     #
 
-                    call her_main("Daddy...", "cumshot", "wide", "base", "stare")
+                    call her_main("Daddy...", "shock", "wide", "base", "stare")
                     g4 "That's it, princess!"
                     call her_main("Aaah!", "grin", "narrow", "base", "dead")
 
@@ -1693,89 +1699,89 @@ label hg_pf_blowjob_2:
                     $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
 
         "\"Worship my cock.\"":
-            call her_main("Worship it?", "angry", "wink", "base", "mid", ypos="head")
+            call her_main("Worship it?", "angry", "wink", "base", "mid")
             m "Did I stutter?"
             call her_main("Well...", "base", "narrow", "worried", "down")
             call her_main("ok...", "soft", "narrow", "annoyed", "up")
             m "Great. You can start by putting it back in your mouth."
 
             call her_chibi_scene("bj")
-            call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Slurp!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
             m "That's it.."
-            call her_main("*Slurp!* *Gulp!* *Slurp!*", "sucking", "narrow", "base", "dead")
+            call her_main("*Slurp!* *Gulp!* *Slurp!*", "open_wide_tongue", "narrow", "base", "dead")
             m "Tell me how much you love my cock."
-            call her_main("*Slurp!* *Gobble!* *Slurp!*", "sucking", "narrow", "base", "up")
+            call her_main("*Slurp!* *Gobble!* *Slurp!*", "open_wide_tongue", "narrow", "base", "up")
             call her_chibi_scene("bj_pause")
             call her_main("So much, [genie_name]...", "soft", "narrow", "annoyed", "up")
             call her_chibi_scene("bj")
-            call her_main("*Slurp!* *Gobble!* *Slurp!*", "sucking", "narrow", "base", "up")
+            call her_main("*Slurp!* *Gobble!* *Slurp!*", "open_wide_tongue", "narrow", "base", "up")
             call her_chibi_scene("bj_pause")
             call her_main("It's all I think about when I'm in class...", "base", "narrow", "base", "up")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *Gulp!* *Gobble!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Gobble!* *Gulp!* *Gobble!*", "open_wide_tongue", "narrow", "annoyed", "up")
 
             if hg_pr_blowjob.counter == 0:
                 call her_chibi_scene("bj_pause")
                 call her_main("Sucking your perfect dick.", "base", "narrow", "base", "up")
                 call her_main("No one else's...", "base", "narrow", "base", "up")
                 call her_chibi_scene("bj")
-                call her_main("*lick!* *Slurp!* *Slurp!*", "sucking", "narrow", "base", "up")
+                call her_main("*lick!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "base", "up")
                 call her_chibi_scene("bj_pause")
                 call her_main("Just your {p}perfect, {p}beautiful {p}{size=-4}cock{/size}!", "grin", "narrow", "base", "dead")
                 call her_chibi_scene("bj")
-                call her_main("*Gobble!* *Slurp!* *lick!*", "sucking", "narrow", "annoyed", "up")
+                call her_main("*Gobble!* *Slurp!* *lick!*", "open_wide_tongue", "narrow", "annoyed", "up")
             else:
                 call her_chibi_scene("bj_pause")
                 call her_main("Even when you make me suck another boys dick...", "base", "narrow", "base", "up")
                 call her_main("I still imagine that it's yours...", "base", "narrow", "base", "up")
                 call her_chibi_scene("bj")
-                call her_main("*lick!* *Slurp!* *Slurp!*", "sucking", "narrow", "base", "dead")
+                call her_main("*lick!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "base", "dead")
                 call her_chibi_scene("bj_pause")
                 call her_main("Imagine that it's your cum sliding down my throat...", "soft", "narrow", "annoyed", "up")
                 call her_chibi_scene("bj")
-                call her_main("*Gobble!* *Slurp!* *lick!*", "sucking", "narrow", "base", "dead")
+                call her_main("*Gobble!* *Slurp!* *lick!*", "open_wide_tongue", "narrow", "base", "dead")
                 call her_chibi_scene("bj_pause")
                 call her_main("Or that it's your hot load shot across my face...", "grin", "narrow", "base", "dead")
                 call her_chibi_scene("bj")
-                call her_main("*Gobble!* *Slurp!* *lick!*", "sucking", "narrow", "base", "up")
+                call her_main("*Gobble!* *Slurp!* *lick!*", "open_wide_tongue", "narrow", "base", "up")
 
             m "Is that so?"
             call her_chibi_scene("bj_pause")
             call her_main("Yes [genie_name]...", "soft", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "up")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "base", "up")
             call her_chibi_scene("bj_pause")
             call her_main("Sometimes...", "soft", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "dead")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "base", "dead")
             call her_chibi_scene("bj_pause")
             call her_main("After you make me suck your tasty dick...", "grin", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "up")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "base", "up")
             call her_chibi_scene("bj_pause")
             call her_main("I won't brush my teeth...", "grin", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "up")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "base", "up")
             call her_chibi_scene("bj_pause")
             call her_main("just so I can go to sleep...", "grin", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "annoyed", "up")
             call her_chibi_scene("bj_pause")
             call her_main("with that perfect taste in my mouth...", "grin", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "dead")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "base", "dead")
             call her_chibi_scene("bj_pause")
             call her_main("and when I do brush my teeth...", "grin", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "up")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "base", "up")
             call her_chibi_scene("bj_pause")
             call her_main("Your beautiful cock is all I can think about...", "grin", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "worried", "down")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "worried", "down")
             call her_chibi_scene("bj_pause")
             call her_main("Recently, I even started moaning whenever I'm brushing my teeth...", "grin", "narrow", "base", "dead")
             call her_chibi_scene("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "open_wide_tongue", "narrow", "annoyed", "up")
             m "That's it cock-slut, Almost there..."
             call her_chibi_scene("bj_pause")
             call her_main("Where do you want to cum today [genie_name]?", "soft", "narrow", "annoyed", "up")
@@ -1786,22 +1792,22 @@ label hg_pf_blowjob_2:
             call her_main("Thank you [genie_name]!", "smile", "happyCl", "base", "mid", cheeks="blush", emote="06")
             call her_chibi_scene("bj")
             call nar(">Hermione devours your cock with renewed vigour.")
-            call her_main("*Slurp!* *Gulp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Slurp!* *Gulp!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
             m "Yes, like that... that's a good little slut..."
-            call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
+            call her_main("*Slurp!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")
             m "Deeper now."
-            call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "base", "up")
+            call her_main("*Slurp!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "base", "up")
             m "Come on cum-whore."
-            call her_main("*Slurp!* *Gobble!* *Gobble!*", "sucking", "narrow", "worried", "down")
+            call her_main("*Slurp!* *Gobble!* *Gobble!*", "open_wide_tongue", "narrow", "worried", "down")
             m "Alright, [hermione_name], almost there."
             g4 "Deeper now!"
-            call her_main("!!! *Gobble-goble-slurp-goble!* !!!", "sucking", "narrow", "annoyed", "up")
+            call her_main("!!! *Gobble-goble-slurp-goble!* !!!", "open_wide_tongue", "narrow", "annoyed", "up")
             g4 "Yes, like that!"
-            call her_main("{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}", "sucking", "narrow", "annoyed", "up")
+            call her_main("{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}", "open_wide_tongue", "narrow", "annoyed", "up")
             g4 "{size=+5}Yes! Yes! Yes! Yes!{/size}"
             g4 "Ghr!!!"
             g4 "Here it comes, [hermione_name]! Here's you reward!"
-            call her_main("!!!", "sucking", "narrow", "worried", "down")
+            call her_main("!!!", "open_wide_tongue", "narrow", "worried", "down")
 
             call cum_block
             call her_chibi_scene("bj_cum_in", trans=d5)
@@ -1811,10 +1817,10 @@ label hg_pf_blowjob_2:
             call bld
             g4 "{size=+7}ARGH!{/size}"
             g4 "Take my cum, slut!"
-            call her_main("*Gulp!-Gulp!-Gulp!*", "cumming", "narrow", "annoyed", "up")
+            call her_main("*Gulp!-Gulp!-Gulp!*", "open_wide_tongue_cum", "narrow", "annoyed", "up")
             with hpunch
             g4 "Yes! Down your mouth you fucking cumdumpster!"
-            call her_main("*Gulp-gulp-gulp-gulp-gulp!*", "cumming", "narrow", "annoyed", "up")
+            call her_main("*Gulp-gulp-gulp-gulp-gulp!*", "open_wide_tongue_cum", "narrow", "annoyed", "up")
 
             stop music fadeout 1.0
             call her_chibi_scene("bj", trans=d5)
@@ -1825,11 +1831,11 @@ label hg_pf_blowjob_2:
             m "You can let go now..."
 
             call her_chibi_scene("bj_pause")
-            call her_main("...........................", "full_cum", "narrow", "base", "dead", tears="mascara", xpos="mid", ypos="base", trans=fade)
+            call her_main("...........................", "full_cum", "narrow", "base", "dead", tears="mascara", trans=fade)
             call her_main("................", "full_cum", "narrow", "base", "dead", tears="mascara")
             call her_main("........", "full_cum", "narrow", "base", "dead", tears="mascara")
             m "How was that?"
-            call her_main("...")
+            call her_main("...", tears="mascara")
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             m "Are you going to swallow?"
             call her_main("*Shakes her head side to side*", "full_cum", "narrow", "base", "dead", tears="mascara")
@@ -1846,7 +1852,7 @@ label hg_pf_blowjob_2:
     jump end_hg_pf_blowjob
 
 
-label hg_pf_facefuck_1: # Bondage facefuck scene
+label hg_pf_facefuck_1: # Bondage facefuck scene (NOT IMPLEMENTED)
 
     "Dev Note" "Not in use yet."
 
@@ -2080,7 +2086,7 @@ label hg_pf_facefuck_1: # Bondage facefuck scene
             hide screen hercg
             with fade
             ">You quickly pull your cock out of her throat before placing it up against her left nostril."
-            call her_main("aaaaaaahhh.... *pant*wait...*pant* not there...", "nose_cum", "wide", "base", "stare", ypos="head", tears="mascara")
+            call her_main("aaaaaaahhh.... *pant*wait...*pant* not there...", "nose_cum", "wide", "base", "stare", xpos="base", ypos="head", tears="mascara")
             ">Helpless to stop you, Hermione is unable to prevent you from firing a huge load up her nose."
             g9 "FUCK YES! TAKE THIS, WHORE!"
             call her_main("Ah... no... it's so hot! I can feel it! Ugh... it's coming down my throat...", "nose_cum", "narrow", "annoyed", "up")
@@ -2104,11 +2110,11 @@ label hg_pf_facefuck_1: # Bondage facefuck scene
 
         "Cum on her face":
             ">You pull your cock out and start furiously jerking it in front of her face."
-            call her_main("aaaaaaahhh.... *pant*please...*pant* coat me...", "cumshot", "narrow", "annoyed", "up")
+            call her_main("aaaaaaahhh.... *pant*please...*pant* coat me...", "shock", "narrow", "annoyed", "up")
             g9 "ARGH!!! YOU WHORE!!!"
             $ uni_sperm = True
             $ u_sperm = "characters/hermione/face/auto_07.png"
-            call her_main("*pant*{heart}{heart}{heart}*pant*", "cumshot", "slit", "worried", "ahegao")
+            call her_main("*pant*{heart}{heart}{heart}*pant*", "shock", "slit", "worried", "ahegao")
             g9 "TAKE THIS!!!"
             ">You start unloading onto the girl's waiting face."
             call her_main("{heart}Yesss....{heart}", "soft", "narrow", "base", "up")

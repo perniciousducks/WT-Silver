@@ -236,7 +236,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
             call her_main("{size=-5}(For the honour of Gryffindor....){/size}", "angry", "happyCl", "worried", "mid", cheeks="blush")
             pause.2
 
-            $ hermione.strip("bottom",)
+            $ hermione.strip("bottom")
             call ctc
             pause.5
 

@@ -232,7 +232,7 @@ label hg_pf_handjob_1:
     pause.8
 
     call play_music("playful_tension") # SEX THEME.
-    call her_main("...........", "disgust", "narrow", "worried", "down", ypos="head")
+    call her_main("...........", "disgust", "narrow", "worried", "down", xpos="base", ypos="head")
     m "Whenever you're ready, [hermione_name]."
     call her_main(".......................", "disgust", "happyCl", "worried", "mid", ypos="head")
     pause.1
@@ -618,7 +618,7 @@ label hg_pf_handjob_2:
     call her_chibi_scene("hj", trans=fade)
     pause.8
 
-    call her_main("Do you like it when I do it like this, [genie_name]?", "grin", "base", "base", "R", ypos="head")
+    call her_main("Do you like it when I do it like this, [genie_name]?", "grin", "base", "base", "R", xpos="base", ypos="head")
     g9 "Actually, yes! Very nice!"
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.

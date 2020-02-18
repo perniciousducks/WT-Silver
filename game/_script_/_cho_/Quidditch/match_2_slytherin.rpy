@@ -19,45 +19,45 @@ label start_slytherin_match:
     g9 "Alright, [cho_name]. Let's do this!"
     g4 "Tomorrow we shall wipe the floor with those Slytherins, and bathe in their salty tears!"
     g9 "(Snape's tears in particular, after I get a hold of all of his gold!)"
-    call cho_main("I'll do my best, Sir.", "soft", "base", "angry", "mid")
+    call cho_main("I'll do my best, Sir.", "soft", "base", "narrow", "mid")
     m "Are you ready?"
-    call cho_main("I am!", "base", "base", "angry", "mid")
+    call cho_main("I am!", "base", "base", "narrow", "mid")
     m "Then show me the money."
     call cho_main("What?", "upset", "base", "raised", "mid")
     g9 "Say it with me,[cho_name]!{w} Show me the money!"
-    call cho_main("I don't have any on me, Sir.", "angry", "narrow", "sad", "mid")
+    call cho_main("I don't have any on me, Sir.", "angry", "narrow", "worried", "mid")
     m "..."
     call cho_main("Show me the money?", "open", "narrow", "raised", "mid")
     g9 "Yes! Say it like you mean it, brother!"
     call cho_main("What?", "angry", "wide", "base", "mid")
     with hpunch
     g4 "{size=+5}Show me the money!{/size}" # loud
-    call cho_main("(He knows I'm a girl...why would he say that?)", "annoyed", "narrow", "angry", "mid")
+    call cho_main("(He knows I'm a girl...why would he say that?)", "annoyed", "narrow", "narrow", "mid")
     with hpunch
-    call cho_main("Sir, Are you all right?", "soft", "narrow", "sad", "mid")
+    call cho_main("Sir, Are you all right?", "soft", "narrow", "worried", "mid")
     g9 "What you gonna do, [cho_name]?"
-    call cho_main("Get the nurse?", "upset", "narrow", "angry", "mid")
+    call cho_main("Get the nurse?", "upset", "narrow", "narrow", "mid")
     m "You're gonna win that match tomorrow, that's what!"
     call cho_main("If we're going to play tomorrow, I'll first have to prepare my gear and charm my Quidditch googles...", "soft", "base", "base", "R")
     call cho_main("Or they'll just fog-up and not dispel the rain properly...", "soft", "narrow", "base", "mid")
     m "Hold up!{w=0.3} It's going to rain tomorrow?"
-    call cho_main("Most likely...", "annoyed", "base", "sad", "mid")
+    call cho_main("Most likely...", "annoyed", "base", "worried", "mid")
     g4 "(This might be just what we need!)"
     call cho_main("Professor Trelawney told us to wear our robes tomorrow.", "soft", "base", "base", "R")
     call cho_main("According to her, there are some heavy rain-clouds approaching...", "open", "narrow", "raised", "mid")
-    call cho_main("But that's just Trelawney... She can be a bit inconsistent with her weather forecasts...", "soft", "base", "sad", "down")
+    call cho_main("But that's just Trelawney... She can be a bit inconsistent with her weather forecasts...", "soft", "base", "worried", "down")
     call cho_main("Well, she's quite inconsistent with everything, if we're honest...", "annoyed", "narrow", "base", "R")
     g9 "Let's hope she's right this time!"
-    call cho_main("But, Sir! Wouldn't this put us at a huge disadvantage?", "open", "narrow", "sad", "mid")
+    call cho_main("But, Sir! Wouldn't this put us at a huge disadvantage?", "open", "narrow", "worried", "mid")
     m "Nonsense..."
-    call cho_main("[cho_genie_name], I'm gonna get soaked without my coat on!", "soft", "base", "sad", "mid")
+    call cho_main("[cho_genie_name], I'm gonna get soaked without my coat on!", "soft", "base", "worried", "mid")
     g9 "Counting on it!"
     g9 "I - for one - am quite looking forward to the possibility of you getting wet."
-    call cho_main("Let's just hope for the best...", "upset", "narrow", "sad", "down")
+    call cho_main("Let's just hope for the best...", "upset", "narrow", "worried", "down")
     g9 "That we shall."
     g9 "Off you go then. And good luck."
-    call cho_main("(...)", "annoyed", "narrow", "angry", "R")
-    call cho_main("See you tomorrow, [cho_genie_name].", "soft", "narrow", "sad", "mid")
+    call cho_main("(...)", "annoyed", "narrow", "narrow", "R")
+    call cho_main("See you tomorrow, [cho_genie_name].", "soft", "narrow", "worried", "mid")
 
     call cho_walk(action="leave")
 

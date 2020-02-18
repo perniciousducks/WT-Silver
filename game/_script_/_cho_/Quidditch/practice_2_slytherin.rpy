@@ -80,7 +80,7 @@ label cc_st_start:
         if cho_quid.commentator == "tonks":
             call cho_main("And Professor Tonks will be commentating the match as well?", "soft", "base", "raised", "mid")
             m "That's correct."
-            call cho_main("*Hmm*... I have my doubts about her, if I'm honest...", "annoyed", "base", "sad", "R")
+            call cho_main("*Hmm*... I have my doubts about her, if I'm honest...", "annoyed", "base", "worried", "R")
             m "Why? Even a donkey would be better suited than Hermione."
             call cho_main("There's some truth in that...", "annoyed", "base", "raised", "down")
             m "Tonks is doing her best to help you. You should at least give her a chance."
@@ -97,12 +97,12 @@ label cc_st_start:
     else:
         m "Ready for your next match, [cho_name]?"
         if cho_quid.commentator == "tonks":
-            call cho_main("[cho_genie_name], is Professor Tonks still going to commentate the match?", "soft", "narrow", "sad", "mid")
+            call cho_main("[cho_genie_name], is Professor Tonks still going to commentate the match?", "soft", "narrow", "worried", "mid")
             m "Yes. Hermione still hasn't changed her mind about it."
             call cho_main("Alright...", "annoyed", "base", "raised", "down")
 
         else: # Hermione
-            call cho_main("Yes, [cho_genie_name].", "base", "base", "angry", "mid")
+            call cho_main("Yes, [cho_genie_name].", "base", "base", "narrow", "mid")
             call cho_main("I hope all my recent practice will pay off..", "smile", "base", "base", "R")
 
         call cho_main("I shall be back after the game.", "base", "base", "base", "mid")
@@ -197,7 +197,7 @@ label cc_st_return_E1:
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
     # Cho is furious.
-    call cho_main("", "annoyed", "narrow", "angry", "mid", xpos="mid", ypos="base")
+    call cho_main("", "annoyed", "narrow", "narrow", "mid", xpos="mid", ypos="base")
     m "..."
     m "What are you doing in here? You're not supposed to be back yet..."
     call cho_main("I'm surprised you could tell...", "soft", "wide", "base", "mid")
@@ -212,7 +212,7 @@ label cc_st_return_E1:
             g4 "(Damnit, that naive brattiness of hers is turning me on!)"
 
         "Brats like you need to be punished!":
-            call cho_main("Punished? For what?", "soft", "narrow", "angry", "mid") # angry
+            call cho_main("Punished? For what?", "soft", "narrow", "narrow", "mid") # angry
             g4 "For being a pain in my ass!"
             call cho_main("", "annoyed", "narrow", "base", "mid")
             g4 "And for waking me up in the middle of my nap!"
@@ -229,33 +229,33 @@ label cc_st_return_E1:
     call cho_main("We couldn't play today because the entire Slytherin team didn't even bother to show up!", "annoyed", "narrow", "base", "mid")
     call cho_main("And neither did our commentator!", "soft", "narrow", "base", "mid")
     m "Hermione?"
-    call cho_main("Yes! Where the bloody hell was she?!", "angry", "narrow", "angry", "mid", emote="01")
+    call cho_main("Yes! Where the bloody hell was she?!", "angry", "narrow", "narrow", "mid", emote="01")
     m "The commentator needs to show up for training too?"
     call cho_main("Yes! And she bloody well needs it.", "soft", "narrow", "base", "down")
-    call cho_main("And those braindead Slytherins.", "annoyed", "narrow", "angry", "mid")
+    call cho_main("And those braindead Slytherins.", "annoyed", "narrow", "narrow", "mid")
     call cho_main("Spineless cowards...", "annoyed", "narrow", "base", "R")
     call cho_main("They have no interest in training against us!", "soft", "base", "base", "mid")
     call cho_main("Because why should they... They'll win anyway!", "angry", "wide", "base", "mid")
-    call cho_main("They assured me that they would be there today!", "annoyed", "base", "angry", "R")
-    call cho_main("Such a pathetic bunch of apes!", "angry", "base", "angry", "R")
+    call cho_main("They assured me that they would be there today!", "annoyed", "base", "narrow", "R")
+    call cho_main("Such a pathetic bunch of apes!", "angry", "base", "narrow", "R")
     m "A troop."
     call cho_main("What?", "soft", "narrow", "raised", "mid")
     m "It's called a troop of apes."
-    call cho_main("Whatever...", "annoyed", "narrow", "angry", "R")
-    call cho_main("If I see their captain tomorrow, I'm gonna knee him in the groin!", "soft", "narrow", "angry", "mid")
+    call cho_main("Whatever...", "annoyed", "narrow", "narrow", "R")
+    call cho_main("If I see their captain tomorrow, I'm gonna knee him in the groin!", "soft", "narrow", "narrow", "mid")
     g4 "Yikes!"
     m "I'm afraid I can't have you do that..."
-    call cho_main("Why not? They deserve it!", "annoyed", "base", "angry", "mid")
+    call cho_main("Why not? They deserve it!", "annoyed", "base", "narrow", "mid")
     m "No guy deserves that..."
     m "I'd rather deal with it myself, than let you do that, if you don't mind!"
     call cho_main("Fine...", "annoyed", "base", "base", "down")
-    call cho_main("But you better do something, quickly! Get those idiots to play!", "soft", "narrow", "angry", "mid")
+    call cho_main("But you better do something, quickly! Get those idiots to play!", "soft", "narrow", "narrow", "mid")
     call cho_main("We can't possibly win if we don't know their tactics.", "soft", "base", "base", "R")
     call cho_main("Or know if our tactics work against them, for that matter...", "annoyed", "narrow", "base", "mid")
     m "I'm on it..."
     call cho_main("And what about Granger?", "soft", "narrow", "raised", "mid")
     g4 "*Ugh*... her too?"
-    call cho_main("Yes!", "angry", "base", "angry", "mid")
+    call cho_main("Yes!", "angry", "base", "narrow", "mid")
     m "At least let me finish the first quest - before taking on another one..."
     call cho_main("You better get that spineless mop's ass back behind that podium!", "soft", "narrow", "base", "mid")
     call cho_main("She agreed to do this! We need an announcer!", "annoyed", "narrow", "base", "R")

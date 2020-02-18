@@ -101,16 +101,16 @@ label cho_summon_setup:
         elif 10 > cho_mood >= 5:
             call cho_main("*sigh*... Yes, [cho_genie_name]?", "open", "base", "base", "R", xpos="base", ypos="base", trans=d3)
         elif 20 > cho_mood >= 10:
-            call cho_main("What is it, [cho_genie_name]?", "pout", "base", "angry", "mid", xpos="base", ypos="base", trans=d3)
+            call cho_main("What is it, [cho_genie_name]?", "annoyed", "base", "narrow", "mid", xpos="base", ypos="base", trans=d3)
         elif 30 > cho_mood >= 20:
-            call cho_main("What do you want, \"[cho_genie_name]\"?", "angry", "angry", "angry", "mid", xpos="base", ypos="base", trans=d3)
+            call cho_main("What do you want, \"[cho_genie_name]\"?", "angry", "angry", "narrow", "mid", xpos="base", ypos="base", trans=d3)
         elif 40 > cho_mood >= 30:
-            call cho_main("*Hmph*...", "upset", "base", "angry", "R", xpos="base", ypos="base", trans=d3)
+            call cho_main("*Hmph*...", "upset", "base", "narrow", "R", xpos="base", ypos="base", trans=d3)
         elif 50 > cho_mood >= 40:
-            call cho_main("*Tsk*", "soft", "narrow", "angry", "R", xpos="base", ypos="base", trans=d3)
+            call cho_main("*Tsk*", "soft", "narrow", "narrow", "R", xpos="base", ypos="base", trans=d3)
         elif cho_mood >= 50:
-            call cho_main("I can't believe you've done this!", "scream", "wide", "angry", "mid", xpos="base", ypos="base", trans=d3)
-            call cho_main("", "upset", "wide", "angry", "mid")
+            call cho_main("I can't believe you've done this!", "scream", "wide", "narrow", "mid", xpos="base", ypos="base", trans=d3)
+            call cho_main("", "upset", "wide", "narrow", "mid")
             
         call describe_mood("Cho", cho_mood)
     else:

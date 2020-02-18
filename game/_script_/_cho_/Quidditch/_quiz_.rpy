@@ -115,7 +115,7 @@ label cho_quiz:
     # Repeat
     else:
         m "I’m ready to make my case on how Quidditch is a knock off of basketball..."
-        call cho_main("Really sir... again?", "open", "angry", "angry", "L")
+        call cho_main("Really sir... again?", "open", "angry", "narrow", "L")
         m "Of course, it’s an important subject for your education..."
         call cho_main("I can't really see how, but I’m sure you know what you’re talking about...", "open", "base", "base", "mid")
         m "Alright, so..."
@@ -269,22 +269,22 @@ label cho_quiz:
         call cho_main("And what are the winning conditions?", "base", "base", "base", "mid")
         m "You win by having the most amount of points when the time is over."
         call cho_main("Well, in Quidditch the game doesn’t end until the snitch is caught, so it could technically go on forever.", "open", "narrow", "raised", "mid")
-        call cho_main("So in short... nothing like basketball.", "pout", "closed", "base")
+        call cho_main("So in short... nothing like basketball.", "annoyed", "closed", "base")
         m "The game doesn’t end until the snitch is caught?"
         call cho_main("Yes...", "base", "base", "base", "mid")
         m "Well, that is stupid..."
-        call cho_main("Yes, that bit is kind of stupid...", "pout", "base", "sad", "down")
+        call cho_main("Yes, that bit is kind of stupid...", "annoyed", "base", "worried", "down")
         call cho_main("Anyway...", "base", "closed", "base")
-        call cho_main("I didn’t come here to listen to you talk about about basketball...", "pout", "base", "base", "downR")
+        call cho_main("I didn’t come here to listen to you talk about about basketball...", "annoyed", "base", "base", "downR")
         m "Right..."
-        call cho_main("I came for you to tutor me...", "annoyed", "narrow", "angry", "L")
+        call cho_main("I came for you to tutor me...", "annoyed", "narrow", "narrow", "L")
         m "(Perhaps it might be worth trying to learn a bit more about Quidditch before I ruin this whole thing...)"
         g9 "Oh, well... look at the time!"
-        call cho_main("What?", "open", "shocked", "raised", "mid")
+        call cho_main("What?", "open", "wide", "raised", "mid")
         g9 "You’ve made me go on about basketball for such a long time so we’re already at the end of today's session."
         call cho_main("But we didn’t even get to any tutoring...", "annoyed", "narrow", "base", "mid")
         m "We’ll get there, don’t you worry... next time..."
-        call cho_main("...{w=0.4}Fine.", "pout", "base", "base", "mid")
+        call cho_main("...{w=0.4}Fine.", "annoyed", "base", "base", "mid")
         call cho_main("Bye then professor...", "annoyed", "base", "base", "mid")
 
         # Cho leaves.
@@ -333,21 +333,21 @@ label cho_quiz:
 
     # Failed
     else: # 2-3 answers correct.
-        call cho_main("I guess it has some similarities...", "pout", "narrow", "sad", "mid")
+        call cho_main("I guess it has some similarities...", "annoyed", "narrow", "worried", "mid")
         m "Pretty much the same game I’d say..."
         call cho_main("I wouldn’t say that... You fly for one in quidditch...", "open", "base", "base", "mid")
         g4 "You do?!?"
-        call cho_main("Very funny professor, of course you do...", "pout", "base", "raised", "down")
-        call cho_main("Anyway, weren’t you supposed to tutor me?...", "annoyed", "angry", "base", "L")
+        call cho_main("Very funny professor, of course you do...", "annoyed", "base", "raised", "down")
+        call cho_main("Anyway, weren’t you supposed to tutor me?...", "annoyed", "narrow", "base", "L")
         m "Oh, right..."
         m "(Perhaps it might be worth trying to learn a bit more about Quidditch before I ruin this whole thing...)"
         g9 "Oh, well... look at the time!"
-        call cho_main("What?", "upset", "closed", "sad")
+        call cho_main("What?", "upset", "closed", "worried")
         g9 "You’ve made me go about basketball for such a long time so we’re already at the end of today's session."
-        call cho_main("But we didn’t even get to any tutoring...", "annoyed", "angry", "angry", "mid")
+        call cho_main("But we didn’t even get to any tutoring...", "annoyed", "angry", "narrow", "mid")
         m "We’ll get there, don’t you worry... next time..."
-        call cho_main("...{w=0.4}Fine.", "annoyed", "angry", "base", "mid")
-        call cho_main("Bye then professor...", "pout", "base", "base", "R")
+        call cho_main("...{w=0.4}Fine.", "annoyed", "narrow", "base", "mid")
+        call cho_main("Bye then professor...", "annoyed", "base", "base", "R")
 
         # Cho leaves.
         call cho_walk(action="leave")
@@ -399,7 +399,7 @@ label cho_quiz_checkpoint:
         "Stitch":
             m "Stitch?"
             $ renpy.block_rollback()
-            call cho_main("no...", "soft", "angry", "raised", "R")
+            call cho_main("no...", "soft", "narrow", "raised", "R")
             g4 "Oh wait, that's that blue alien thing isn't it?"
             call cho_main("I don't know what a stitch is, sorry sir...", "annoyed", "narrow", "raised", "mid")
             $ confidence_meter -= 12
@@ -410,7 +410,7 @@ label cho_quiz_checkpoint:
         "Lich":
             m "Lich?"
             $ renpy.block_rollback()
-            call cho_main("the ball is an undead skeletal creature?", "soft", "angry", "raised", "R")
+            call cho_main("the ball is an undead skeletal creature?", "soft", "narrow", "raised", "R")
             g4 "Oh, that's what I said? I must've had a PTSD flashback from my tomb raiding days..."
             call cho_main("You've been tomb raiding?", "annoyed", "narrow", "raised", "mid")
             m "..."
@@ -441,7 +441,7 @@ label cho_quiz_checkpoint:
             call cho_main("Sir?", "annoyed", "narrow", "raised", "mid")
             m "Sorry, I didn't have any lunch..."
             g4 "Actually, I can't even remember the last time I ate..."
-            call cho_main("Well, you're obviously wrong...", "soft", "angry", "raised", "R")
+            call cho_main("Well, you're obviously wrong...", "soft", "narrow", "raised", "R")
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
@@ -461,11 +461,11 @@ label cho_quiz_checkpoint:
         "Quabble and Bluffer":
             m "Quabble and bluffer?"
             $ renpy.block_rollback()
-            call cho_main("I think you got some letters mixed up there...", "soft", "angry", "raised", "R")
+            call cho_main("I think you got some letters mixed up there...", "soft", "narrow", "raised", "R")
             m "Quibble and Blodger?"
-            call cho_main("No, that's also...{w=1.2}{nw}", "open", "angry", "raised", "L")
+            call cho_main("No, that's also...{w=1.2}{nw}", "open", "narrow", "raised", "L")
             m "Qacker and Blugger?"
-            call cho_main("Professor...", "pout", "wide", "raised", "R")
+            call cho_main("Professor...", "annoyed", "wide", "raised", "R")
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
@@ -542,9 +542,9 @@ label cho_quiz_checkpoint:
         "A free shot at the goal":
             m "Free goal shot?"
             $ renpy.block_rollback()
-            call cho_main("No that's not right...", "soft", "angry", "raised", "R")
+            call cho_main("No that's not right...", "soft", "narrow", "raised", "R")
             m "Then what is it?"
-            call cho_main("Well, I don't know...", "annoyed", "angry", "base", "downR")
+            call cho_main("Well, I don't know...", "annoyed", "narrow", "base", "downR")
             g4 "How am I supposed to then?"
             $ confidence_meter -= 12
             call exp_o_meter(fill=confidence_meter)
@@ -589,7 +589,7 @@ label cho_quiz_checkpoint:
         g9 "(Fuck yeah, here we go!)" # Small text.
         call cho_main("And I will stay true to my word... I'll sell you favours...{w} For wins...", "soft", "closed", "base", "mid")
         g4 "(Hell yes!)"
-        call cho_main("But keep it civil. I won't do anything those Slytherin skanks do!", "angry", "angry", "sad", "R")
+        call cho_main("But keep it civil. I won't do anything those Slytherin skanks do!", "angry", "narrow", "worried", "R")
         call cho_main("And should you not be able to help me and my team beat Hufflepuff, this will be over before you can even say Snitch!", "scream", "closed", "raised", "mid")
         g4 "..."
 
@@ -612,11 +612,11 @@ label cho_quiz_checkpoint:
 
     # Failed
     else:
-        call cho_main("You seem to care a lot about basketball sir but I'm not sure if you know that much about Quidditch...", "annoyed", "angry", "base", "downR")
+        call cho_main("You seem to care a lot about basketball sir but I'm not sure if you know that much about Quidditch...", "annoyed", "narrow", "base", "downR")
         m "Or were you asking the wrong questions?"
-        call cho_main("Sorry?", "open", "angry", "raised", "L")
+        call cho_main("Sorry?", "open", "narrow", "raised", "L")
         g9 "Time is just relative... what is the difference between a month or a few minutes really..."
-        call cho_main("Sir, you got bunch of the questions wrong...", "upset", "angry", "raised", "L")
+        call cho_main("Sir, you got bunch of the questions wrong...", "upset", "narrow", "raised", "L")
         m "The truth lies in the eyes of the beholder Miss Chang..."
         call cho_main("I don't...{nw=1.0}", "annoyed", "base", "base", "mid")
         m "You'll see, I'll show you the real truth..."

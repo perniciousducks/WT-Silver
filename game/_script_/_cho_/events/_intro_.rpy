@@ -127,28 +127,28 @@ label cho_intro_E1:
     call cho_main("Not that one, Sir...{w=0.8} The other one...", "open", "narrow", "raised", "L")
     g4 "Oh good...{w=0.5} another one..."
     call cho_main("Yes... And you need to stop it Professor!", "angry", "closed", "raised", "mid")
-    call cho_main("Her{w=0.5} \"Quidditch equality movement\".", "soft", "angry", "angry", "down")
+    call cho_main("Her{w=0.5} \"Quidditch equality movement\".", "soft", "narrow", "angry","down")
     m "Her what now?"
     call cho_main("I know! It's absolutely ridiculous...{w=0.5} It’s going to ruin the sport for all of us!", "open", "narrow", "worried", "mid")
 
     m "Sport? Which sport?"
-    call cho_main("Quidditch!", "scream", "angry", "angry", "mid")
-    call cho_main("", "annoyed", "angry", "angry", "mid")
+    call cho_main("Quidditch!", "scream", "narrow", "angry","mid")
+    call cho_main("", "annoyed", "narrow", "angry","mid")
     m "(Quidditch? What a stupid name for a sport.)"
     call cho_main("The movements' goal is to grant a larger portion of our female students the ability to play.", "open", "narrow", "base", "down")
     m "And...{w} that's a bad thing?"
     call cho_main("Her way of going about to achieve it is...", "open", "narrow", "angry", "R")
     call cho_main("Granger is trying to separate us into male and female teams.", "annoyed", "narrow", "worried", "mid")
     call cho_main("She believes it would put girls on an equal playing field against other girl teams.", "open", "closed", "worried", "mid")
-    call cho_main("But what she’s forgetting is that all the female players who made it into a team are already considered a valuable asset... or they wouldn’t be there!", "open", "angry", "angry", "R")
+    call cho_main("But what she’s forgetting is that all the female players who made it into a team are already considered a valuable asset... or they wouldn’t be there!", "open", "narrow", "angry","R")
     call cho_main("I worked hard to be at the same level as my fellow teammates...", "annoyed", "narrow", "worried", "downR")
-    call cho_main("Splitting us up into a male and female league would just bring on girls that are just there to flaunt their bodies, instead off taking the sport seriously...", "upset", "angry", "angry", "downR")
+    call cho_main("Splitting us up into a male and female league would just bring on girls that are just there to flaunt their bodies, instead off taking the sport seriously...", "upset", "narrow", "angry","downR")
     m "Doesn’t sound like the worst idea honestly..."
     call cho_main("Sir... I’ve trained all my life to be where I’m at.", "open", "narrow", "raised", "mid")
     call cho_main("Just as hard as all the other great female Quidditch players of history!", "scream", "closed", "angry", "mid")
     call cho_main("They played side by side with men... Earning their place amongst the best! It never mattered what gender they were.", "angry", "narrow", "angry", "down")
     call cho_main("And to be shoved aside and forced to play alongside a collection of mediocre amateurs... I won't let that happen!", "angry", "closed", "angry", "down")
-    call cho_main("It would undermine the whole sport, and I’d get even less attention as one of the few girls in the league...", "open", "angry", "angry", "down")
+    call cho_main("It would undermine the whole sport, and I’d get even less attention as one of the few girls in the league...", "open", "narrow", "angry","down")
     m "Ah, so that’s where the problem lies..."
 
     call cho_main("Sir, could you please talk to her?", "upset", "base", "raised", "L")
@@ -183,7 +183,7 @@ label cho_intro_E1:
     call her_main("{size=-5}Bitch...{/size}", "base", "closed", "angry", "mid",trans=hpunch)
 
     $ renpy.sound.play("sounds/card_punch1.mp3")
-    call cho_main("{size=-5}Whore...{/size}", "soft", "angry", "angry", "L",trans=hpunch)
+    call cho_main("{size=-5}Whore...{/size}", "soft", "narrow", "angry", "L",trans=hpunch)
     call her_main("...", "normal", "squint", "angry", "mid", cheeks="blush")
     call cho_main("...", "base", "narrow", "base", "L")
     call her_main("So...{p=0.4}what have you been discussing? Anything I should know?", "open", "squint", "base", "mid", cheeks="blush")
@@ -218,7 +218,7 @@ label cho_intro_E1:
 
         show screen cho_main
         call her_main("Oh yeah, well... I bet it can’t be anything good seeing how you usually act around men...", "mad", "narrow", "angry", "R")
-        call cho_main("What’s that supposed to mean?!?", "scream", "angry", "angry", "L")
+        call cho_main("What’s that supposed to mean?!?", "scream", "narrow", "angry","L")
         call her_main("You know exactly what I mean... I heard about how you were flaunting those...things of yours at Seamus Finnigan.", "crooked_smile", "narrow", "base", "R_soft")
         with hpunch
         call cho_main("Things?", "angry", "wide", "base", "L")
@@ -226,8 +226,8 @@ label cho_intro_E1:
         call her_main("Cho!", "scream", "wide", "base", "stare", cheeks="blush")
         call her_main(".{w=0.3}.{w=0.3}.", "mad", "base", "worried", "mid", cheeks="blush")
         call cho_main("And so what? What’s wrong with being confident about your body... you should try it some time... You might even get a boyfriend one day...", "soft", "wide", "base", "L")
-        call cho_main("Though what do I know? I didn’t need to get my teeth shortened so I wouldn’t be confused as a rabbit!", "base", "angry", "angry", "L")
-        call cho_main("Not that anyone would even see them through that horribly bushy hair of yours...", "smile", "angry", "angry", "L")
+        call cho_main("Though what do I know? I didn’t need to get my teeth shortened so I wouldn’t be confused as a rabbit!", "base", "narrow", "angry","L")
+        call cho_main("Not that anyone would even see them through that horribly bushy hair of yours...", "smile", "narrow", "angry","L")
         call her_main("Well, I heard that you were caught snogging someone in one off the carriages after the triwizard tournament. I’m sure that will go down in the Hogwarts book of history...", "grin", "closed", "base", "mid", cheeks="blush")
         g9 "(How naughty, didn’t expect such indecent behaviour from a girl with such a cute face...)"
         call cho_main("Yeah? You ever even kissed a boy before Granger? And I’m talking about a real kiss and not your daddy kissing you good night...", "soft", "narrow", "raised", "L")

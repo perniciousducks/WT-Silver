@@ -197,7 +197,7 @@ label cc_st_return_E1:
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
     # Cho is furious.
-    call cho_main("", "annoyed", "narrow", "angry", "mid", xpos="mid", ypos="base")
+    call cho_main("", "annoyed", "narrow", "angry", "mid", xpos="mid",ypos="base")
     m "..."
     m "What are you doing in here? You're not supposed to be back yet..."
     call cho_main("I'm surprised you could tell...", "soft", "wide", "base", "mid")

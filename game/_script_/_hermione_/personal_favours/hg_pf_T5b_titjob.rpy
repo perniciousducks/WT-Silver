@@ -353,7 +353,7 @@ label hg_pf_titjob_1:
             call her_main("It was completely empty, except for me and this first year boy sitting right across from me...")
             m "*Heh*... good.{w=0.3} Go on..."
             call her_main("It was quite hot that day, so... I decided to take my vest off.", "base", "happy", "base", "mid")
-            g4 "Yes! And somehow you got hotter..."
+            g9 "Yes! And somehow you got more hot!"
             call her_main("The boy was trying to act all sly about it, but I could tell he snuck a peek at them any chance he got...", "base", "base", "base", "R")
             call her_main("At that point I began undoing a couple of buttons... Slowly at first, not enough for him to suspect anything...", "base", "narrow", "base", "mid_soft")
             g9 "*hmmm*... you little flaunter..."
@@ -366,14 +366,14 @@ label hg_pf_titjob_1:
             call her_main("I'm sure he could get a good glimpse of my bra...", "open", "base", "base", "R")
             g9 "Do you have no shame?"
             $ ccg1 = 5
-            call her_main("[genie_name]! I was just trying to cool down...", "base", "narrow", "worried", "down")
+            call her_main("[genie_name]! I was just trying to cool off...", "base", "narrow", "worried", "down")
             m "I'm just kidding, keep going..."
             call her_main("..............", "base", "narrow", "base", "mid_soft")
             $ ccg1 = 9
             call her_main("By the sixth button my entire bra was unveiled...")
             call her_main("And he must have gotten a real good look of my cleavage...", "base", "base", "base", "mid")
             call her_main("And my...{w=0.3} tits...", "soft", "narrow", "base", "mid_soft")
-            call her_main("At this point he didn't even try and hide what he was and just kept staring at them... touching himself")
+            call her_main("At this point he didn't even try and hide what he was doing and just kept staring... touching himself")
             $ ccg1 = 10
             call her_main("Then suddenly I felt something sticky on my legs as he shot several ropes of cum under the table!", "open_tongue", "narrow", "annoyed", "up")
             g4 "!!!"
@@ -384,7 +384,7 @@ label hg_pf_titjob_1:
             call her_main("[genie_name]?", "open", "wink", "base", "mid")
             g4 "Just do it, slut!"
             $ ccg1 = 11
-            call her_main("*Uhm*...{w=0.4} Ike ees?", "open_wide_tongue", "narrow", "worried", "down")
+            call her_main("*Uhm*...{w=0.4} *Ike *ees?", "open_wide_tongue", "narrow", "worried", "down")
             m "Yes, good..."
             m "Now tilt your head down a bit... as far as it'll go."
             call her_main(".....................", "open_wide_tongue", "base", "base", "mid")
@@ -392,10 +392,10 @@ label hg_pf_titjob_1:
             call her_main("...........", "open_wide_tongue", "base", "base", "mid")
             call her_main("...........")
             $ ccg1 = 9
-            call her_main("I khant eef ay outh oen...", "open_tongue", "base", "base", "mid")
-            call her_main("I eel ool...", "open_wide_tongue", "narrow", "worried", "down")
+            call her_main("I *khant *eef *ay *outh *oen...", "open_tongue", "base", "base", "mid")
+            call her_main("I *eel *ool...", "open_wide_tongue", "narrow", "worried", "down")
             g4 "Yes! Drool all over those perfect tits of yours!"
-            call her_main("Erth-ect?", "open_tongue", "base", "base", "mid")
+            call her_main("*Erth-ect?", "open_tongue", "base", "base", "mid")
             m "As perfect as any mortal, [hermione_name]!"
             $ ccg1 = 11
             call her_main(".......", "base", "narrow", "base", "up")

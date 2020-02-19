@@ -777,7 +777,7 @@ label ll_pf_blowjob_T1_slapping: # Call label
             $ lunCG(pos=6)
             g9 "This should be a good chance to empty them..."
             $ lunCG(pos=3)
-            ">You tighten your grip of her hair, pulling her head back until just the tip of your cock rests in her mouth."
+            ">You tighten your grip on her hair, pulling her head back until just the tip of your cock rests in her mouth."
             $ lunCG(pupil='up', eye='wide', pos=5)
             g9 "Mmmm, this way you should get to taste it too..."
             $ lunCG(pupil='dick')

@@ -675,7 +675,7 @@ label hg_pf_grope_ass_T3_back:
     call nar(">As your hands spread out - you suddenly tighten them firmly around Hermione's Butt cheeks...")
     g9 "..."
 
-    call nar(">Lessening your grip of her cheeks slightly - you then move down towards her inner thighs - and gently begin massaging her with your thumbs...")
+    call nar(">Lessening your grip on her cheeks slightly - you then move down towards her inner thighs - and gently begin massaging her with your thumbs...")
     call her_main("...", "soft", "narrow", "annoyed", "up", cheeks="blush")
 
     if hermione.is_worn("panties"):

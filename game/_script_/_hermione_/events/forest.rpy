@@ -896,7 +896,7 @@ label hermione_map_sex:
     her "Mmmmm...{heart} I'd probably have to... ah{heart} use a pseudonym..."
     m "Really? Worried about people finding out what a dirty little cockslut you are?"
     her "I am not a-"
-    ">You interrupt her ministrations with a forceful thrust deep into her sex."
+    ">You interrupt her ministrations with a forceful thrust deep into her pussy."
     her "{heart}Ah!!!{heart}"
     m "You were saying?"
     her "Ah...{heart}fine..."

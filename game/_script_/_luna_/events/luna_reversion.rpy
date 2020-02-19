@@ -217,7 +217,7 @@ label luna_revert_1:
             m "Almost..."
             call lun_main("...","upset","suspicious","sad","down")
             ">She speeds up the pace."
-            call gen_main("Ah!","base","angry","mid")
+            call gen_main("Ah!","angry","base","mid")
             call lun_main("What?","normal","wide","base","mid")
             m "Well if you go that fast the friction's a little painful"
             call lun_main("Really? I'll slow down then...","upset","suspicious","sad","down")
@@ -252,7 +252,7 @@ label luna_revert_1:
 
     menu:
         "-On her face-":
-            ">You place your hand on the top of Luna's head and slowly force it down to be level with your crotch."
+            ">You place your hand on top of Luna's head and slowly try to force it down to your crotch."
             ">Her slender hands don't stop sliding up and down your length."
             call lun_main("[lun_genie_name]!!!","clench","wide","sad","mid")
             g9  "Shhh, [lun_name], I'm just giving you a closer look."
@@ -571,7 +571,7 @@ label luna_revert_2:
             m "Ah yes..."
             call lun_main("get ready to cum all over your student.","base","angry","sad","mid")
             ">She speeds up the pace."
-            call gen_main("Ah...","base","angry","mid")
+            call gen_main("Ah...","angry","base","mid")
             call lun_main("What's wrong?","normal","angry","raised","mid")
             m "Well if you go that fast the friction's a little painful."
             call lun_main("Really?...","base","mad","angry","mid")
@@ -603,10 +603,10 @@ label luna_revert_2:
 
     menu:
         "-On her face-":
-            ">You place your hand on the top of Luna's head and slowly try to force it down to be level with your crotch."
+            ">You place your hand on top of Luna's head and slowly try to force it down to your crotch."
 
         "-On her tits-":
-            ">You place your hand on the top of Luna's should and slowly try to force her down to be level with your crotch."
+            ">You place your hand on Luna's shoulder and slowly try to force her down to your crotch."
 
     call lun_main("[lun_genie_name]!!!","clench","angry","mad","mid")
     call lun_main("You're not trying to cum on me are you?","upset","mad","mad","mid")
@@ -919,7 +919,7 @@ label luna_revert_2:
             ">You bend her over your desk with her face pointing towards Luna."
             m "There, I trust you're still able to administer your punishment [lun_name]?"
             call lun_main("Mmmm, I think so...","base","seductive","base","down")
-            ">Luna walks over to hermione and presses her sex back onto the girls open tongue."
+            ">Luna walks over to hermione and presses her pussy back onto the girl's open tongue."
             call lun_main("Ah... {heart}","base","seductive","base","down")
             call her_main("...","angry","wink","base","mid")
             ">You slowly lift hermione's skirt."

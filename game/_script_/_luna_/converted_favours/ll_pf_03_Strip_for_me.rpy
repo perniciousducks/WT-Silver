@@ -35,9 +35,8 @@ label luna_favour_3:
                 call lun_main("Alright then, [lun_genie_name]...","upset","base","sad","down")
             hide screen luna_main
             with d3
-            $ luna_xpos = 270
             call lun_walk("desk")
-            call lun_main("...","upset","base","sad","R")
+            call lun_main("...","upset","base","sad","R", xpos=270)
         else:
             m "You don't mind taking some of your clothes off, do you [lun_name]?"
             call lun_main("I suppose not...","normal","base","angry","R")
@@ -324,8 +323,8 @@ label luna_favour_3:
             m "You're free to leave whenever you like, [lun_name]."
             call lun_main("Well I'm certainly not leaving until you pay me!","upset","suspicious","angry","mid")
 
-
         else:
+            $ current_payout = 300
             call lun_main("There... is this what you wanted to see, [lun_genie_name]?","normal","angry","angry","mid")
             g4 "gods yes!"
             if lun_dom <= 5:
@@ -498,8 +497,6 @@ label luna_favour_3:
             call lun_main("I'm glad we could come to an agreement.","base","mad","sad","R")
             m "yes, [lun_name]..."
             call lun_main("Good boy... now, speaking of payment...","normal","suspicious","angry","mid")
-            $ current_payout = 300
-
 
     else: ###THIRD TIME EVENT IS RUN
         if lun_sub > lun_dom :
@@ -748,9 +745,9 @@ label luna_favour_3:
 
             menu:
                 "-Grab her tits-":
+                    $ current_payout = 40
                     m "Come closer, [lun_name]."
                     call lun_main("Okay....","normal","mad","sad","R")
-                    $ current_payout = 40
 
                     show screen blkfade
                     with d3
@@ -883,6 +880,7 @@ label luna_favour_3:
 
 
         else: # Dom choice ?
+            $ current_payout = 100
             call lun_main("...","base","angry","base","mid",xpos="mid",ypos="base")
             call lun_chibi("stand","desk","base")
             call ctc
@@ -1046,7 +1044,6 @@ label luna_favour_3:
                 call lun_main("I'm glad you enjoyed yourself...","base","base","base","mid")
                 m "we need to do this again!"
                 call lun_main("mmmm... but before that, I think we need to discuss payment for this time...","base","seductive","angry","R")
-                $ current_payout = 100
 
             else:
                 call lun_main("That's it, [lun_genie_name], make sure you cover me...","base","suspicious","mad","mid")
@@ -1098,7 +1095,6 @@ label luna_favour_3:
                 call lun_main("I'm glad we could have a happy ending.","base","mad","sad","R")
                 m "yes, [lun_name]..."
                 call lun_main("Good boy... now, speaking of payment...","normal","suspicious","angry","mid")
-                $ current_payout = 100
 
     hide screen bld1
     if lun_dom >= lun_sub:

@@ -157,7 +157,7 @@ label luna_favour_1:
                 call lun_main("I suppose so...","normal","suspicious","base","mid")
                 call lun_main("Just don't expect to get to touch yourself...","upset","angry","angry","R")
                 m "How much would that cost?"
-                call lun_main("...{p}More than twenty gold...","upset","angry","angry","R")
+                call lun_main("...{w=0.5} More than twenty gold...","upset","angry","angry","R")
                 m "Well I might take you up on that at a later date, For now tell me about school."
                 call lun_main("School is boring...","upset","base","angry","mid")
                 m "..."
@@ -338,7 +338,7 @@ label luna_favour_1:
                         m "Ah... I'm not forcing you to do anything..."
                         call lun_main("Hmph well I expect to be paid now...","normal","mad","angry","mid")
                         m "Don't worry, I'll give you your hundred gold."
-                        call lun_main("*Hmph* Fine...{p}(Nothing extra...?)","upset","mad","angry","R")
+                        call lun_main("*Hmph* Fine...{w=0.5} (Nothing extra...?)","upset","mad","angry","R")
 
 
         call lun_main("Speaking of which...","normal","seductive","angry","mid")
@@ -371,7 +371,7 @@ label luna_favour_1:
                 $ current_payout = 150
                 call lun_main("Wait... that's it!","base","seductive","angry","mid")
                 m "what's it?"
-                call lun_main("Why don't you start buying the quibbler [lun_genie_name]?.","base","seductive","base","mid")
+                call lun_main("Why don't you start buying \"the Quibbler\" [lun_genie_name]?.","base","seductive","base","mid")
                 m "I hardly think one more person is going to turn things around."
                 call lun_main("Not you personally [lun_genie_name], hogwarts!","normal","mad","angry","mid")
                 call lun_main("Just imagine how many copies the entire school would buy!","smile","base","angry","R")
@@ -442,8 +442,9 @@ label luna_favour_1:
                 m "Thank you..."
                 call lun_main("Thank you...?","upset","suspicious","mad","mid")
                 m "Thank you princess..."
-                if lun_name == "Miss Lovegood":
-                    $ lun_name = "Princess"
+                
+                $ lun_name = "Princess"
+
                 call lun_main("That's better [lun_genie_name]...","base","angry","angry","mid")
                 call lun_main("Now as a princess I expect a present for having to look at such a filthy act...","base","angry","angry","R")
 
@@ -454,11 +455,9 @@ label luna_favour_1:
                 m "well I'm sure that I could have a few words with the library staff about stocking it..."
                 call lun_main("Really? You'd do that?","base","wide","base","mid")
                 m "Of course."
-                if lun_genie_name == "Old man":
-                    $ lun_genie_name = "Professor"
                 call lun_main("Thank you so much [lun_genie_name]!","base","happyCl","base","mid")
                 m "I was thinking you could thank me for my generous offer another way..."
-                call lun_main("Oh...{p}","upset","angry","mad","R")
+                call lun_main("Oh...","upset","angry","mad","R")
                 m "That's not a problem is it [lun_name]?"
                 call lun_main("Of course not... What did you have in mind?","normal","suspicious","sad","down")
                 m "well for starters..."

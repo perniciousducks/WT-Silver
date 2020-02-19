@@ -152,7 +152,7 @@ label hg_pf_grope_T1_intro_E1:
             jump hg_pf_grope_breasts_T1
 
         "\"I'm gonna play with your butt a little.\"":
-            call nar(">You reach out and place your hand on her buttcheeks...")
+            call nar(">You reach out and place your hand on her butt cheeks...")
 
             jump hg_pf_grope_ass_T1
 
@@ -175,7 +175,7 @@ label hg_pf_grope_T1_E1:
             jump hg_pf_grope_breasts_T1
 
         "\"I'm gonna play with your butt a little.\"":
-            call nar(">You reach out and place your hand on her buttcheeks...")
+            call nar(">You reach out and place your hand on her butt cheeks...")
 
             jump hg_pf_grope_ass_T1
 
@@ -229,7 +229,7 @@ label hg_pf_grope_T2_intro_E1:
             jump hg_pf_grope_breasts_T2
 
         "\"I'm gonna play with your butt a little.\"":
-            call nar(">You reach out and place your hand on her buttcheeks...")
+            call nar(">You reach out and place your hand on her butt cheeks...")
 
             jump hg_pf_grope_ass_T2
 
@@ -255,7 +255,7 @@ label hg_pf_grope_T2_E1:
             jump hg_pf_grope_breasts_T2
 
         "\"I'm gonna play with your butt a little.\"":
-            call nar(">You reach out and place your hand on her buttcheeks...")
+            call nar(">You reach out and place your hand on her butt cheeks...")
 
             jump hg_pf_grope_ass_T2
 
@@ -290,7 +290,7 @@ label hg_pf_grope_T3_intro_E1:
             jump hg_pf_grope_breasts_T3
 
         "\"I'm gonna play with your butt a little.\"":
-            call nar(">You reach out and place your hand on her buttcheeks...")
+            call nar(">You reach out and place your hand on her butt cheeks...")
             jump hg_pf_grope_ass_T3
 
 label hg_pf_grope_T3_intro_E2:
@@ -321,7 +321,7 @@ label hg_pf_grope_T3_intro_E2:
 
         "\"I'm gonna play with your butt today.\"":
             call her_main("Of course, Sir.", "base", "narrow", "worried", "down")
-            call nar(">You reach out and place your hand on her buttcheeks...")
+            call nar(">You reach out and place your hand on her butt cheeks...")
             jump hg_pf_grope_ass_T3
 
 label hg_pf_grope_T3_E2:
@@ -358,6 +358,6 @@ label hg_pf_grope_T3_E2:
 
         "\"I'm gonna play with your butt now.\"":
             call her_main("Yes, Sir.", "soft", "narrow", "annoyed", "up")
-            call nar(">You reach out and place your hand on her buttcheeks...")
+            call nar(">You reach out and place your hand on her butt cheeks...")
 
             jump hg_pf_grope_ass_T3

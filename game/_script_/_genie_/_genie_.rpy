@@ -59,7 +59,8 @@ label gen_main(text="", face=None, base=None, xpos=None, ypos=None, flip=True, t
     show screen genie_main
     show screen bld1
 
-    with trans
+    if trans:
+        with trans
 
     if text:
         $ renpy.say(gen, text)

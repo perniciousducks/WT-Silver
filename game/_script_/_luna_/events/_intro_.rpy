@@ -237,10 +237,8 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
 
     call reset_luna
 
-    $ lun_genie_name = "Professor" #reset genie's name with Luna
-    $ lun_name = "Miss Lovegood" #reset luna's name with genie
-
-
+    # Reset names
+    $ reset_variables("lun_genie_name", "lun_name")
 
     ### Start ###
 
@@ -308,7 +306,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
             call lun_main("Oh please, Sir! You’re the only one powerful enough to help.","open","wide","sad","mid")
             "*You can see Luna is rocking her pelvis as if grinding the air*"
             m "Miss Lovegood, I am afraid I don’t know what a wrackspurt is, let alone how to cure it."
-            call lun_main("Well, professor; wrackspurts are detailed on page 6 of The Quibbler! Here!","normal","base","sad","mid")
+            call lun_main("Well, professor; wrackspurts are detailed on page 6 of \"the Quibbler\"! Here!","normal","base","sad","mid")
             "*Luna hands you a Quibbler*"
             m "*Reading* “Rotfang conspiracy... Three hundred ways to tie up a ghost... “ Ah! Wrackspurts..."
             "\"Invisible creatures which float into a person’s ears, making his/her brain go fuzzy\""
@@ -330,7 +328,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
 
     "*Luna is visibly grinding her pelvis against her thighs.*"
     m "(Is she really?... Ohhh). Miss Lovegood, how exactly do these wickspurts make you feel?"
-    call lun_main("They're Just like the quibbler says sir, except...","normal","seductive","sad","R")
+    call lun_main("They're Just like \"the Quibbler\" says sir, except...","normal","seductive","sad","R")
     m "Go on..."
     call lun_main("Well, it's not my brain they're making fuzzy.","soft","seductive","sad","down")
     m "Where exactly is fuzzy, Miss Lovegood?"

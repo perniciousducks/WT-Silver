@@ -85,6 +85,7 @@ label lun_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
 
 label luna_away:
     call reset_luna
+    call reset_genie
     call gen_chibi("sit_behind_desk")
 
     #TODO Check if Luna stands in the right place at the end of her events (when jumping to luna_away)

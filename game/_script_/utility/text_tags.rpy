@@ -24,9 +24,9 @@ init python:
         ]
     
     def text_tag_number(tag, argument):
-        """Convert a number to words. Usage {number=expression}"""
+        """Convert a number to words if lower than 100 or a multiple of 100. Usage {number=expression}"""
         num = int(renpy.store.eval(argument))
-        words = num_to_word(num)
+        words = num_to_word(num) if num < 100 or num % 100 == 0 else str(num)
         return [(renpy.TEXT_TEXT, words)]
 
 define config.custom_text_tags = {

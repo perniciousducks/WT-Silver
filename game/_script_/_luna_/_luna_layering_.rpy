@@ -62,13 +62,16 @@ screen luna_main():
         if luna_wear_cum:
             add "characters/luna/body/cum/cum_"+str(luna_cum)+".png"
 
+        # Extra stuff (must be part of fixed so it flips correctly...)
+        if genie_base == "characters/genie/base/hard.png" and renpy.get_screen("genie_main"):
+            if not luna_wear_bottom and not luna_wear_panties:
+                # Add the right leg cover for the dick. What's a thigh job called again?
+                add "characters/luna/body/legs/right_1.png"
+
     # Extra stuff
     if genie_base == "characters/genie/base/hard.png" and renpy.get_screen("genie_main"):
         # Genie's dick
         add "characters/genie/dick_1.png" xpos genie_xpos ypos genie_ypos
-        if not luna_wear_bottom and not luna_wear_panties:
-            # Add the right leg cover for the dick. What's a thigh job called again?
-            add "characters/luna/body/legs/right_1.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
         if luna_wear_cum:
             # Cumshot
             add "characters/luna/body/arms/right_4_2.png" xpos 390 ypos 0 xzoom luna_flip zoom (1.0/luna_scaleratio)

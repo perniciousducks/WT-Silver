@@ -81,7 +81,7 @@ label cho_quiz:
         if her_reputation < 16:
             call cho_main("(So nothing sexual, at the very least...)","base","base","base","R")
         else:
-            call cho_main("(I hope it's nothing sexual. I've heard some rumours about Granger...)","quiver","base","sad","R")
+            call cho_main("(I hope it's nothing sexual. I've heard some rumours about Granger...)", "quiver", "base", "worried", "R")
 
         call cho_main("Well... if Granger could do it, so can I!","open","closed","base","mid")
         call cho_main("And better!","soft","narrow","base","mid")
@@ -99,7 +99,7 @@ label cho_quiz:
         m "Okay, so...{w} I'll help you win quidditch matches, and in return, you'll sell me favours..."
         m "Sounds good?"
         call cho_main("Yes, that's the deal.","smile","base","base","mid")
-        call cho_main("Although...","pout","base","sad","down")
+        call cho_main("Although...", "annoyed", "base", "worried", "down")
         m "Although?"
         call cho_main("Well, how do I know that you actually know anything about the game?","open","base","base","mid")
         call cho_main("I mean...{w} I never really saw you showing too much interest before...","soft","narrow","base","mid")
@@ -108,7 +108,7 @@ label cho_quiz:
         g9 "Ah, yes,... Quidditch.{w} It's like the Wizards version of Basketball, right?"
         call cho_main("Basketball?{w} Is that the muggle sport nobody cares about?","annoyed","narrow","raised","mid")
         g4 "Nobody cares?{w} What are you...{w} Haven't you seen \"Space Jam\"?"
-        call cho_main("...","pout","base","raised","mid")
+        call cho_main("...", "annoyed", "base", "raised", "mid")
         g4 "Come on."
         m "Well..."
 

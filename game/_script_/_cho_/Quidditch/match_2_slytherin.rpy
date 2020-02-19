@@ -1276,7 +1276,7 @@ label slytherin_match_return:
 
     call cho_main("I did it! We won the...","smile","closed","base","mid", xpos="base", ypos="base", flip=False)
     call her_main("","upset","base","base","L", xpos="440", ypos="base", flip=True)
-    call cho_main("!!!","pout","wide","base","L", trans=hpunch) #Shocked face
+    call cho_main("!!!", "annoyed", "wide", "base", "L", trans=hpunch) #Shocked face
 
     call play_music("hermione")
     call her_main("Oh, hello there, Miss Chang...","grin","narrow","angry","L")
@@ -1287,8 +1287,8 @@ label slytherin_match_return:
     call her_main("*Hi-Hi-Hi*","base","happyCl","base","mid")
     call her_main("What's wrong sweetie?","soft","narrow","base","L")
     call her_main("Want to find out if Gryffindors taste the same as Ravenclaws?","smile","narrow","base","L")
-    call cho_main("...","angry","base","sad","down") #Blushes
-    call cho_main("*HMPH!*","pout","narrow","angry","L")
+    call cho_main("...", "angry", "base", "worried", "down") #Blushes
+    call cho_main("*HMPH!*", "annoyed", "narrow", "angry", "L")
 
     #Cho walks out and slams the door
     call play_music("stop")

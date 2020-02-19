@@ -105,9 +105,9 @@ label cho_summon_setup:
         elif 30 > cho_mood >= 20:
             call cho_main("What do you want, \"[cho_genie_name]\"?", "angry", "narrow", "angry", "mid", xpos="base", ypos="base",trans=d3)
         elif 40 > cho_mood >= 30:
-            call cho_main("*Hmph*...", "upset", "base", "narrow", "R", xpos="base", ypos="base",trans=d3)
+            call cho_main("*Hmph*...", "upset", "base", "angry", "R", xpos="base", ypos="base",trans=d3)
         elif 50 > cho_mood >= 40:
-            call cho_main("*Tsk*", "soft", "narrow", "narrow", "R", xpos="base", ypos="base",trans=d3)
+            call cho_main("*Tsk*", "soft", "narrow", "angry", "R", xpos="base", ypos="base",trans=d3)
         elif cho_mood >= 50:
             call cho_main("I can't believe you've done this!", "scream", "wide", "angry", "mid", xpos="base", ypos="base",trans=d3)
             call cho_main("", "upset", "wide", "angry", "mid")

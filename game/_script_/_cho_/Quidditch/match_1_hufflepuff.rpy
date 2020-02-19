@@ -5,7 +5,7 @@
 label start_hufflepuff_match:
     call cho_main(xpos="mid", ypos="base", trans=fade)
     m "[cho_name], what do you say... ready for your first game of the season?"
-    call cho_main("To be honest, [cho_genie_name], I'm feeling quite nervous.","soft","base","sad","R")
+    call cho_main("To be honest, [cho_genie_name], I'm feeling quite nervous.", "soft", "base", "worried", "R")
     m "Don't worry. I believe you are ready..."
     m "When are you going to play against Hufflepuff?"
     call cho_main("That's up to you, [cho_genie_name]. As headmaster you decide when the games will be held...","open","base","base","mid")
@@ -838,26 +838,26 @@ label hufflepuff_match_return:
     call cho_walk("desk", "base", action="enter")
 
     $ renpy.sound.play("sounds/punch01.mp3")
-    call cho_main("We beat Hufflepuff!!!","smile","angry","base","mid", ypos="base", trans=hpunch)
+    call cho_main("We beat Hufflepuff!!!", "smile", "narrow", "base", "mid", ypos="base", trans=hpunch)
     $ renpy.sound.play("sounds/MaleGasp.mp3")
     g4 "{size=+10}IT WASN'T ME!{/size}"
     m "..........."
     call cho_main("huh?{w=0.5} Are you okay, [cho_genie_name]?","angry","narrow","base","mid")
     m "Wha-{w=0.5}{nw}"
     g4 "Of course I am!"
-    call cho_main("...","annoyed","angry","raised","R")
-    call cho_main("If you say so.....","annoyed","angry","base","mid")
+    call cho_main("...", "annoyed", "narrow", "raised", "R")
+    call cho_main("If you say so.....", "annoyed", "narrow", "base", "mid")
     call play_music("cho")
     call cho_main("I can't believe that we've broken our 6 year dry streak and won a real game!","smile","base","base","mid")
-    call cho_main("We could actually win the cup!","open","shocked","angry","L")
+    call cho_main("We could actually win the cup!", "open", "wide", "angry", "L")
     m "And you weren't embarrassed?"
-    call cho_main("I was a little at the start of the game...","quiver","narrow","sad","downR")
-    call cho_main("But once I realised how much it was affecting those slack-jawed Hufflepuffs...","smile","angry","angry","R")
-    call cho_main("It was like having my own personal weapon of mass distraction!","smile","shocked","angry","mid")
+    call cho_main("I was a little at the start of the game...", "quiver", "narrow", "worried", "downR")
+    call cho_main("But once I realised how much it was affecting those slack-jawed Hufflepuffs...", "smile", "narrow", "angry", "R")
+    call cho_main("It was like having my own personal weapon of mass distraction!", "smile", "wide", "angry", "mid")
     call cho_main("I don't think Cedric even knew where the snitch was most of the time!","horny","base","base","downR")
-    call cho_main("All he seemed to do was follow me around...","horny","narrow","sad","down")
-    call cho_main("Him {size=-2}and {size=-2}half {size=-2}the {size=-2}team...{/size}","quiver","narrow","sad","downR")
-    call cho_main("This might be the first real chance Ravenclaw has ever had to win the cup.","open","closed","sad","mid")
+    call cho_main("All he seemed to do was follow me around...", "horny", "narrow", "worried", "down")
+    call cho_main("Him {size=-2}and {size=-2}half {size=-2}the {size=-2}team...{/size}", "quiver", "narrow", "worried", "downR")
+    call cho_main("This might be the first real chance Ravenclaw has ever had to win the cup.", "open", "closed", "worried", "mid")
     m "I'm sure this must mean a lot to you..."
     call cho_main("It does... I might even get picked up by a pro team!","smile","base","base","R")
     m "..."

@@ -4,10 +4,10 @@
 
 label cho_panties_response_T2:
     $ has_cho_panties = False
-    call cho_main("Hello, [cho_genie_name].","soft","narrow","sad","mid", xpos="right", ypos="base")
+    call cho_main("Hello, [cho_genie_name].", "soft", "narrow", "worried", "mid", xpos="right", ypos="base")
     m "Sup..."
-    call cho_main("*Uhm*...","annoyed","narrow","sad","R")
-    call cho_main("I forgot to take my underwear with me the last time I was here.","soft","narrow","sad","downR")
+    call cho_main("*Uhm*...", "annoyed", "narrow", "worried", "R")
+    call cho_main("I forgot to take my underwear with me the last time I was here.", "soft", "narrow", "worried", "downR")
 
     if cho_panties_soaked:
         g9 "Your panties! Of course, [cho_name]!{w} I've got them right here..."
@@ -37,7 +37,7 @@ label cho_panties_response_T2:
         call cho_main("Well who's is it then?{w} The house-elves?","soft","narrow","base","mid")
         m "*Uhm*...{w} Yes?"
         call cho_main("It's disgusting!","annoyed","narrow","base","down")
-        call cho_main("I better get them cleaned immediately...","angry","narrow","sad","down")
+        call cho_main("I better get them cleaned immediately...", "angry", "narrow", "worried", "down")
 
         call cho_walk("door","base")
 

@@ -173,7 +173,7 @@ label cho_intro_E1:
     call her_walk(570, "base")
     call her_chibi("stand",570,"base",flip=True)
 
-    call cho_main("","annoyed","angry","angry","R", xpos="base", ypos="base")
+    call cho_main("", "annoyed", "narrow", "angry", "R", xpos="base", ypos="base")
     call her_main("Cho,{w} How nice to see you here...", "open", "base", "base", "R", xpos="mid", ypos="base",flip=True)
     call her_main("And why are you here exactly?", "angry", "narrow", "annoyed", "mid")
 
@@ -265,9 +265,9 @@ label cho_intro_E1:
         with d3
         pause.8
 
-        call cho_main("Sir, I’m sorry about all this... it’s not what I came here for...","open","closed","sad","mid", xpos="base", ypos="base")
+        call cho_main("Sir, I’m sorry about all this... it’s not what I came here for...", "open", "closed", "worried", "mid", xpos="base", ypos="base")
         m "Oh, of course not!"
-        call cho_main("Please consider what we’ve talked about...","base","base","sad","mid")
+        call cho_main("Please consider what we’ve talked about...", "base", "base", "worried", "mid")
         m "Certainly..."
 
         # Cho walks to the door and stops.
@@ -389,7 +389,7 @@ label cho_intro_E2:
     pause.2
 
     call cho_main("I hate her!","scream","closed","angry","mid", xpos="mid", ypos="base",trans=hpunch)
-    call cho_main("","angry","angry","angry","mid")
+    call cho_main("", "angry", "narrow", "angry", "mid")
 
     g9 "Miss Chang! My favourite student!"
     g9 "I'm so glad to see you. Is there something I can-"
@@ -397,18 +397,18 @@ label cho_intro_E2:
     call play_music("hitman")
     call cho_main("Cut the crap, Professor!{p=0.6}I know you've told her!","soft","narrow","angry","mid")
     g4 "{size=-4}Please don't hurt me.{/size}"
-    call cho_main("How could you have done this?{p=0.6}Sending this dim-witted Gryffindor tramp after me?","open","angry","angry","mid")
+    call cho_main("How could you have done this?{p=0.6}Sending this dim-witted Gryffindor tramp after me?", "open", "narrow", "angry", "mid")
     g4 "W-who?"
     call cho_main("Granger!","scream","closed","angry","mid",trans=hpunch)
     g4 "Aaa-h!{p=0.5}{nw}" # Girly scream
-    call cho_main("Gryffindor's role model student.","angry","angry","angry","mid")
+    call cho_main("Gryffindor's role model student.", "angry", "narrow", "angry", "mid")
     call cho_main("She's out there spreading mean rumours about me!","open","narrow","base","R")
     m "How mean are we talking?"
     call cho_main("The worst kind! That I'm cheating at Quidditch!","angry","narrow","angry","down")
-    call cho_main("How am I cheating, Professor? Ravenclaw is always in last place?!","soft","narrow","sad","downR")
+    call cho_main("How am I cheating, Professor? Ravenclaw is always in last place?!", "soft", "narrow", "worried", "downR")
     call cho_main("Not to mention that she's told everyone that I'm whoring myself out to my other classmates, and even my teachers!","open","narrow","angry","L")
     call cho_main("I did none of that, Professor! None!","scream","closed","angry","mid",trans=hpunch)
-    call cho_main("And she still won't lay off her stupid equality movement thing!","angry","angry","angry","mid")
+    call cho_main("And she still won't lay off her stupid equality movement thing!", "angry", "narrow", "angry", "mid")
     m "You need to calm down, girl."
     call cho_main("{size=-4}When I'm out of here I'm going to rip that bitch's head off...{/size}","quiver","narrow","angry","downR")
     g4 "(Yikes!)"
@@ -829,18 +829,18 @@ label cho_intro_E3:
     call cho_main("Granger...","soft","narrow","angry","L")
     call her_main("Chang...", "annoyed", "narrow", "angry", "R")
     m "Go on, girl. Tell her."
-    call cho_main("Tell me what?","smile","angry","angry","mid")
+    call cho_main("Tell me what?", "smile", "narrow", "angry", "mid")
     call her_main("...", "annoyed", "narrow", "base", "up")
     call her_main("About my \"Quidditch equality movement\"...", "normal", "closed", "base", "mid")
     call cho_main("Did our Professor finally convince you what a terrible idea it would be?","soft","narrow","angry","mid")
     m "Actually, I still think granting more people the ability to-"
-    call cho_main("*Shhush!*, Professor!{p=0.6}I’d like to hear it from her.","pout","narrow","angry","mid")
+    call cho_main("*Shhush!*, Professor!{p=0.6}I’d like to hear it from her.", "annoyed", "narrow", "angry", "mid")
     call cho_main("I'm going to enjoy this!","horny","narrow","base","L")
     call her_main("...", "annoyed", "base", "angry", "mid")
     call her_main("*Sigh*{p=0.6}I will end my movement. And I won't interfere with Quidditch again...", "open", "closed", "base", "mid") #[Looking bored]
     call cho_main("This is amazing! I feel as if it's my birthday!","smile","base","base","mid")
     call her_main("After all, Quidditch is a huge waste of everyone's time.{p=0.6}Including mine...", "soft", "narrow", "base", "R_soft") #[Still looking bored]
-    call cho_main("You're just jealous that I’m better than you at something.","smile","angry","angry","L")
+    call cho_main("You're just jealous that I’m better than you at something.", "smile", "narrow", "angry", "L")
     call her_main("I am not jealous!", "angry", "closed", "angry", "mid")
     m "You may go now, Miss Granger."
     call her_main("(...)", "annoyed", "base", "angry", "mid")

@@ -299,7 +299,7 @@ label cc_st_return_E2:
 
         #call cho_main("At the expense of my dignity!","quiver","base","raised","down")
         #m "That's a...{w} yes?"
-        #call cho_main("Lee Jordan only used to say that I had a nice butt! But-","soft","base","sad","down")
+        #call cho_main("Lee Jordan only used to say that I had a nice butt! But-", "soft", "base", "worried", "down")
         #call cho_main("But, Hermione! Her incompetence as a Quidditch commentator is unmeasurable!","open","base","raised","R")
         #call cho_main("I almost miss Jordan's sexist remarks about my body...","open","closed","base","mid")
         #g9 "I could tell Hermione to do the same if you'd like."
@@ -926,7 +926,7 @@ label cc_st_talk:
         call cho_main("Have you gotten those Slytherin pigs to play yet?","open","narrow","base","mid")
         m "Not yet, but I'm on it."
         call cho_main("Please just hurry up, Sir.","annoyed","narrow","base","mid")
-        call cho_main("We need to practise...","annoyed","narrow","sad","R")
+        call cho_main("We need to practise...", "annoyed", "narrow", "worried", "R")
         m "Any ideas on how I would do that?"
         call cho_main("How would I know, I'm not a teacher am I... ask one of them.", "annoyed","base","angry","R")
         if cc_st.snape_E1:

@@ -52,13 +52,13 @@ label cho_quid_E1:
             $ cho_name = "Pilot"
         "\"Maggot\"":
             $ cho_name = "Maggot"
-            call cho_main("(...)","quiver","base","sad","R")
+            call cho_main("(...)", "quiver", "base", "worried", "R")
         "\"Eagle #1\"":
             $ cho_name = "Eagle #1"
         "\"Eagle #2\"":
             $ cho_name = "Eagle #2"
 
-    call cho_main("Yes, Sir!","soft","angry","angry","mid")
+    call cho_main("Yes, Sir!", "soft", "narrow", "angry", "mid")
     g4 "Let's start with your \"Quiddesh\" training!"
     call cho_main("\"Quidditch\", Sir.","soft","narrow","base","mid")
     g4 "Let's start with your \"Quidditch\" training, [cho_name]."
@@ -71,11 +71,11 @@ label cho_quid_E1:
     call cho_main("Very well, [cho_genie_name].","soft","base","base","R")
     m "Tell me, how did you usually play?{w} Why were you always losing?"
     call cho_main("Well, Hufflepuff has a really good seeker!","open","base","base","mid")
-    call cho_main("He's always catching the snitch before me.","quiver","narrow","sad","down")
-    call cho_main("I don't know how he does it, to be honest. It always happens so quick...","open","narrow","sad","mid")
+    call cho_main("He's always catching the snitch before me.", "quiver", "narrow", "worried", "down")
+    call cho_main("I don't know how he does it, to be honest. It always happens so quick...", "open", "narrow", "worried", "mid")
     m "And you are \"both\" looking for that thing? At the same time?"
     call cho_main("Yes, [cho_genie_name].","soft","base","base","mid")
-    call cho_main("I do my best flying around the pitch searching for it. But it's just so small and really tricky to see...","angry","base","sad","down")
+    call cho_main("I do my best flying around the pitch searching for it. But it's just so small and really tricky to see...", "angry", "base", "worried", "down")
     m "Why don't you look for it together? After all there is only one."
     call cho_main("Hmmm?","annoyed","base","base","mid")
     g9 "You just need to grab that Snatch before he does."
@@ -475,9 +475,9 @@ label demonstrate_tactic(position=""):
         call cho_main("How's this? Too close?","soft","wink","raised","mid", ypos="head")
         m "No! It's the perfect distance!"
         m "He should even be able to smell you if you are this close!"
-        call cho_main("I hope not!","quiver","closed","sad","mid", ypos="head")
+        call cho_main("I hope not!", "quiver", "closed", "worried", "mid", ypos="head")
         g9 "Why? You smell lovely, girl!"
-        call cho_main("*Uhm*...{w} Thank you, Sir.","soft","base","sad","mid", ypos="head")
+        call cho_main("*Uhm*...{w} Thank you, Sir.", "soft", "base", "worried", "mid", ypos="head")
 
 
     $ cho_quid.position = position
@@ -489,10 +489,10 @@ label demonstrate_tactic(position=""):
     #m "At the moment panty shot that all the boys are hoping for can only be seen from underneath-"
     #m "-so as a result, most of the boys are hounding you to get a look."
     #m "But if we widen our angle of attack, they won't be forced to chase you to get a look..."
-    #call cho_main("Widen our angle? What do you mean?","pout","wink","raised","mid")
+    #call cho_main("Widen our angle? What do you mean?", "annoyed", "wink", "raised", "mid")
 
     #m "Should we talk strategy for the next game?"
     #m "I can't help but notice your robe stayed on this game..."
     #call cho_main("I'm lucky I kept it on! Can you imagine what Hermione would have said otherwise?","open","closed","raised","mid")
     #g9 "Mmmm, I'm picturing it now..."
-    #call cho_main("Professor!","quiver","shocked","raised","mid")
+    #call cho_main("Professor!", "quiver", "wide", "raised", "mid")

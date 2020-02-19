@@ -78,7 +78,7 @@ label give_cho_gift(gift_item):
         else:
             call cho_main("A toy?",pupils="down",face="horny",xpos="mid",ypos="base")
             call give_gift(">You give the stuffed owl to Cho...",gift_item)
-            call cho_main("Not the kind of Toy I'd like...","horny","angry","raised","mid")
+            call cho_main("Not the kind of Toy I'd like...", "horny", "narrow", "raised", "mid")
             call cho_main("Thank you I suppose.","annoyed","base","base","mid")
             call cho_mood(0)
 
@@ -89,14 +89,14 @@ label give_cho_gift(gift_item):
             call cho_mood(1)
         elif cho_tier == 2:
             call cho_main("Butterbeer?",pupils="down",face="horny",xpos="mid",ypos="base")
-            call cho_main("Yes, I'll take it... turns out my team mates had been lying about the alcohol content to mess with me.","open","angry","base","mid")
+            call cho_main("Yes, I'll take it... turns out my team mates had been lying about the alcohol content to mess with me.", "open", "narrow", "base", "mid")
             call cho_main("I guess I'll finally find out what I've been missing out on!","soft","base","raised","L")
             call give_gift(">You give the Butterbeer to Cho...",gift_item)
             call cho_main("Thank you, [cho_genie_name].",face="neutral")
             call cho_mood(-2)
         elif cho_tier == 3:
             call cho_main("Butterbeer?",pupils="down",face="horny",xpos="mid",ypos="base")
-            call cho_main("It's a bit tame isn't it? I chugged a lot of it after our last win and can't say I felt a buzz even.","open","angry","base","L")
+            call cho_main("It's a bit tame isn't it? I chugged a lot of it after our last win and can't say I felt a buzz even.", "open", "narrow", "base", "L")
             call give_gift(">You give the Butterbeer to Cho...",gift_item)
             call cho_main("Thank you I suppose, [cho_genie_name].",face="neutral")
             call cho_mood(0)
@@ -160,8 +160,8 @@ label give_cho_gift(gift_item):
 
     elif gift_item == adult_mag_ITEM:
         if cho_tier <= 1:
-            call cho_main("Adult magazines?","angry","shocked","raised","mid",xpos="mid",ypos="base")
-            call cho_main("This is highly inappropriate [cho_genie_name]!","scream","angry","raised","mid")
+            call cho_main("Adult magazines?", "angry", "wide", "raised", "mid",xpos="mid",ypos="base")
+            call cho_main("This is highly inappropriate [cho_genie_name]!", "scream", "narrow", "raised", "mid")
             call cho_main("Is this the kind of thing you usually give to people?","angry","base","base","L")
             call cho_mood(1)
         elif cho_tier == 2:
@@ -181,20 +181,20 @@ label give_cho_gift(gift_item):
             call cho_main("Adult magazines?",pupils="down",face="horny",xpos="mid",ypos="base")
             call cho_main("Wow, look at that guys abs...","horny","base","base","down")
             call cho_main("And that girls...","soft","base","raised","down")
-            call cho_main("I'll take it.","open","angry","base","mid")
+            call cho_main("I'll take it.", "open", "narrow", "base", "mid")
             call cho_main("Thank you, [cho_genie_name].",face="neutral")
             call cho_mood(-2)
 
     elif gift_item == porn_mag_ITEM:
         if cho_tier <= 1:
-            call cho_main("What is this!?!","angry","shocked","raised","mid",xpos="mid",ypos="base")
-            call cho_main("Porn magazines?","open","shocked","angry")
-            call cho_main("Sir, why would you even think of giving me something like this?","scream","angry","angry","L",xpos="mid",ypos="base")
+            call cho_main("What is this!?!", "angry", "wide", "raised", "mid",xpos="mid",ypos="base")
+            call cho_main("Porn magazines?", "open", "wide", "angry", "mid")
+            call cho_main("Sir, why would you even think of giving me something like this?", "scream", "narrow", "angry", "L",xpos="mid",ypos="base")
             call cho_main("","angry","base","angry","down")
             call cho_mood(3)
         elif cho_tier == 2:
             call cho_main("What is this?",pupils="down",face="horny",xpos="mid",ypos="base")
-            call cho_main("Porn magazines? Sir, that's too much even for you...","annoyed","angry","base","down")
+            call cho_main("Porn magazines? Sir, that's too much even for you...", "annoyed", "narrow", "base", "down")
             call cho_main("Is that a snitch in her sna... No... just no...","open","wide","raised","down")
             call cho_main("","angry","base","angry","down")
             call cho_mood(2)
@@ -208,7 +208,7 @@ label give_cho_gift(gift_item):
             call cho_main("Porn magazines?",pupils="down",face="horny",xpos="mid",ypos="base")
             call cho_main("Ooh, are those two doing it on a broom? That's impressive...","open","wide","raised","down")
             call cho_main("[cho_genie_name], this is naughty. Even for you...","horny","wink","base","L")
-            call cho_main("I've got my eyes on you.","base","angry","raised","L")
+            call cho_main("I've got my eyes on you.", "base", "narrow", "raised", "L")
             call give_gift(">You give an assortment of porn magazines to Cho...",gift_item)
             call cho_main("Thank you.","smile","base","base","mid")
             call cho_mood(-3)
@@ -217,7 +217,7 @@ label give_cho_gift(gift_item):
         if cho_tier <= 1:
             call cho_main("A viktor Krum poster?",mouth="open",eyes="wide",eyebrows="raised",pupils="mid",xpos="mid",ypos="base")
             call cho_main("Professor, he doesn't have his shirt on!","scream","wide","base","down")
-            call cho_main("That's...{w=0.3} highly inappropriate...","open","angry","base","downR")
+            call cho_main("That's...{w=0.3} highly inappropriate...", "open", "narrow", "base", "downR")
             call cho_main("I can't...{w=0.3} I can't accept this.","upset","closed","base","mid")
             call cho_main("","base","base","base","mid")
             call cho_mood(0)
@@ -247,14 +247,14 @@ label give_cho_gift(gift_item):
 
     elif gift_item == sexy_lingerie_ITEM:
         if cho_tier <= 1:
-            call cho_main("Lingerie?","annoyed","angry","raised","down",xpos="mid",ypos="base")
+            call cho_main("Lingerie?", "annoyed", "narrow", "raised", "down",xpos="mid",ypos="base")
             call cho_main("Sir, are you expecting me to wear this?","open","wide","raised","mid")
             call cho_main("Are you insane?!","scream","wide","raised","L")
             call cho_main("No thank you...","open","base","angry","down")
             call cho_main("","annoyed","base","base","mid")
             call cho_mood(2)
         elif cho_tier == 2:
-            call cho_main("Lingerie?","annoyed","angry","base","down",xpos="mid",ypos="base")
+            call cho_main("Lingerie?", "annoyed", "narrow", "base", "down",xpos="mid",ypos="base")
             call cho_main("Why would I want this? I have plenty of clothes I like already...","open","wide","raised","down")
             call cho_main("I'll pass on that one, thanks.","base","base","base","mid")
             call cho_mood(0)
@@ -268,7 +268,7 @@ label give_cho_gift(gift_item):
             call cho_main("Lingerie?",mouth="open",eyes="wide",eyebrows="raised",pupils="mid",xpos="mid",ypos="base")
             call cho_main("Sexy... Did you pick them out yourself?","horny","wide","base","down")
             call cho_main("You've got good taste... I tore mine last year during the ball...","base","base","raised","mid")
-            call cho_main("Well, they got torn at one point at least...","smile","angry","base","down")
+            call cho_main("Well, they got torn at one point at least...", "smile", "narrow", "base", "down")
             call give_gift(">You give the lingerie to Cho...",gift_item)
             call cho_main("Thank you [cho_genie_name]",face="neutral")
             call cho_mood(-3)
@@ -276,9 +276,9 @@ label give_cho_gift(gift_item):
     elif gift_item == pink_condoms_ITEM:
         if cho_tier <= 1:
             call cho_main("Condoms?",mouth="open",eyes="wide",eyebrows="raised",pupils="mid",xpos="mid",ypos="base")
-            call cho_main("You're expecting me to go and fuck the teachers, is that what you want?","scream","angry","raised","L")
-            call cho_main("I'm not one of those Slytherin skanks that impale themselves on the daily.","angry","angry","base","mid")
-            call cho_main("You can take those and go fuck yourself with them...","soft","angry","angry","mid")
+            call cho_main("You're expecting me to go and fuck the teachers, is that what you want?", "scream", "narrow", "raised", "L")
+            call cho_main("I'm not one of those Slytherin skanks that impale themselves on the daily.", "angry", "narrow", "base", "mid")
+            call cho_main("You can take those and go fuck yourself with them...", "soft", "narrow", "angry", "mid")
             call cho_mood(2)
         elif cho_tier == 2:
             call cho_main("Condoms?",mouth="open",eyes="wide",eyebrows="raised",pupils="mid",xpos="mid",ypos="base")
@@ -312,7 +312,7 @@ label give_cho_gift(gift_item):
             call cho_mood(2)
         elif cho_tier == 3:
             call cho_main("A vibrator?",face="horny",xpos="mid",ypos="base")
-            call cho_main("Sir, I don't think this would be appropriate to bring to my dorm...","soft","angry","base","down")
+            call cho_main("Sir, I don't think this would be appropriate to bring to my dorm...", "soft", "narrow", "base", "down")
             call cho_main("The girls... they'd hear it... not that I want it or anything!","quiver","wide","base","downR")
             call cho_mood(0)
         else:
@@ -326,12 +326,12 @@ label give_cho_gift(gift_item):
         if cho_tier <= 1:
             call cho_main("A lubricant?",face="annoyed",xpos="mid",ypos="base")
             call cho_main("What the hell, why do you think this is an appropriate gift? What's wrong with you...","angry","wide","raised","L")
-            call cho_main("Senile old man...","angry","angry","base","mid")
+            call cho_main("Senile old man...", "angry", "narrow", "base", "mid")
             call cho_mood(4)
         elif cho_tier == 2:
             call cho_main("A lubricant?",face="annoyed",xpos="mid",ypos="base")
             call cho_main("*Ew* Why are you giving me this... when would I ever have the need for lube.","angry","wide","raised","down")
-            call cho_main("Give it to one of those Slytherin skanks, they probably go through a ton of it every week.","base","angry","raised","mid")
+            call cho_main("Give it to one of those Slytherin skanks, they probably go through a ton of it every week.", "base", "narrow", "raised", "mid")
             call cho_mood(3)
         elif cho_tier == 3:
             call cho_main("Anal lube?",face="annoyed",xpos="mid",ypos="base")
@@ -352,7 +352,7 @@ label give_cho_gift(gift_item):
             call cho_mood(4)
         elif cho_tier == 2:
             call cho_main("Ball gag and cuffs?",pupils="down",face="annoyed",xpos="mid",ypos="base")
-            call cho_main("Sir, this is highly inappropriate gift to give to a student!","scream","angry","raised","mid")
+            call cho_main("Sir, this is highly inappropriate gift to give to a student!", "scream", "narrow", "raised", "mid")
             call cho_main("Why would you give me these, how is this going to help me with Quidditch?","angry","base","base","mid")
             call cho_mood(3)
         elif cho_tier == 3:
@@ -371,19 +371,19 @@ label give_cho_gift(gift_item):
         if cho_tier <= 1:
             call cho_main("Anal plugs?",face="annoyed",xpos="mid",ypos="base")
             call cho_main("That's disgusting... why do you think it's a good idea to give these to me?","angry","wide","raised","L")
-            call cho_main("That one has a tail on it...","angry","angry","raised","mid")
+            call cho_main("That one has a tail on it...", "angry", "narrow", "raised", "mid")
             call cho_mood(4)
         elif cho_tier == 2:
             call cho_main("Anal plugs?",face="annoyed",xpos="mid",ypos="base")
             call cho_main("Why do you have these? They're not used are they...","angry","wide","raised","L")
-            call cho_main("*Ew* Just, no...","open","angry","raised","mid")
+            call cho_main("*Ew* Just, no...", "open", "narrow", "raised", "mid")
             call cho_main("","annoyed","base","base","mid")
             call cho_mood(3)
         elif cho_tier == 3:
             call cho_main("Anal plugs?",face="annoyed",xpos="mid",ypos="base")
             call cho_main("Sir, are you expecting me to wear this?","angry","base","base","L")
             call cho_main("During Quidditch?","angry","wide","raised","L")
-            call cho_main("No, no, no, no no.","open","angry","raised","mid")
+            call cho_main("No, no, no, no no.", "open", "narrow", "raised", "mid")
             call cho_main("NO!","scream","wide","raised","mid")
             call cho_main("","annoyed","base","base","mid")
             call cho_mood(2)
@@ -397,24 +397,24 @@ label give_cho_gift(gift_item):
 
     elif gift_item == testral_strapon_ITEM:
         if cho_tier <= 1:
-            call cho_main("Is that a strap-on?",mouth="open",eyes="wide",eyebrows="sad",pupils="down",xpos="mid",ypos="base")
+            call cho_main("Is that a strap-on?", "open", "wide", "worried", "down",xpos="mid",ypos="base")
             call cho_main("It's huge!","scream","wide","raised","L")
-            call cho_main("I mean, why are you showing me this?","annoyed","angry","base","mid")
-            call cho_main("get it away from me.","soft","angry","base","mid")
+            call cho_main("I mean, why are you showing me this?", "annoyed", "narrow", "base", "mid")
+            call cho_main("get it away from me.", "soft", "narrow", "base", "mid")
             call cho_mood(3)
         elif cho_tier == 2:
-            call cho_main("A strap-on?",mouth="open",eyes="wide",eyebrows="sad",pupils="down",xpos="mid",ypos="base")
+            call cho_main("A strap-on?", "open", "wide", "worried", "down",xpos="mid",ypos="base")
             call cho_main("Seriously? Why are you giving me this...","angry","wide","base","down")
-            call cho_main("That's disgusting...","open","angry","base","mid")
+            call cho_main("That's disgusting...", "open", "narrow", "base", "mid")
             call cho_mood(2)
         elif cho_tier == 3:
-            call cho_main("A strap-on?",mouth="open",eyes="wide",eyebrows="sad",pupils="down",xpos="mid",ypos="base")
+            call cho_main("A strap-on?", "open", "wide", "worried", "down",xpos="mid",ypos="base")
             call cho_main("But it's so big...","horny","wide","raised","mid")
-            call cho_main("I.. I don't want it...","open","angry","base","down")
+            call cho_main("I.. I don't want it...", "open", "narrow", "base", "down")
             call cho_main("","base","base","base","mid")
             call cho_mood(0)
         else:
-            call cho_main("A strap-on?",mouth="open",eyes="wide",eyebrows="sad",pupils="down",xpos="mid",ypos="base")
+            call cho_main("A strap-on?", "open", "wide", "worried", "down",xpos="mid",ypos="base")
             call give_gift(">You give the thestral strap-on to Cho...", gift_item)
             call cho_main("How would that even fit in anyone?",mouth="quiver",eyes="wide",eyebrows="raised",pupils="down")
             call cho_mood(-1)
@@ -424,14 +424,14 @@ label give_cho_gift(gift_item):
             call cho_main("A broom... yes! Finally something better than my old-",mouth="scream",eyes="wide",eyebrows="raised",pupils="down",xpos="mid",ypos="base")
             call cho_main("Hold on, is that a double ended dildo sticking out of it?!?","angry","wide","base","mid")
             call cho_main("What's wrong with you?","scream","wide","base","L")
-            call cho_main("Get that away from my... from me!","angry","angry","base","mid")
+            call cho_main("Get that away from my... from me!", "angry", "narrow", "base", "mid")
             call cho_mood(4)
         elif cho_tier == 2:
-            call cho_main("Is that a broom with dildos on it?",mouth="open",eyes="wide",eyebrows="sad",pupils="down",xpos="mid",ypos="base")
-            call cho_main("Professor, seriously... why... just why.","angry","angry","base","mid")
+            call cho_main("Is that a broom with dildos on it?", "open", "wide", "worried", "down",xpos="mid",ypos="base")
+            call cho_main("Professor, seriously... why... just why.", "angry", "narrow", "base", "mid")
             call cho_mood(2)
         elif cho_tier == 3:
-            call cho_main("A broom?",mouth="open",eyes="wide",eyebrows="sad",pupils="down",xpos="mid",ypos="base")
+            call cho_main("A broom?", "open", "wide", "sad", "down",xpos="mid",ypos="base")
             call cho_main("A sex broom? Where did you even get this...","open","wide","raised","mid")
             call cho_main("No..{w=0.3} I don't...{w=0.3} I don't want that.","horny","narrow","base","mid")
             call cho_mood(0)
@@ -448,7 +448,7 @@ label give_cho_gift(gift_item):
             call cho_main("A sex doll? What the heck... why do you have this?",face="annoyed",xpos="mid",ypos="base")
             call cho_main("And more importantly...","smile","closed","base","mid")
             call cho_main("{size=+4}Why are you giving it to me?{/size}","scream","wide","base","L")
-            call cho_main("You disgust me...","open","angry","angry","mid")
+            call cho_main("You disgust me...", "open", "narrow", "angry", "mid")
             call cho_mood(4)
         elif cho_tier == 2:
             call cho_main("A sex doll?",face="annoyed",xpos="mid",ypos="base")
@@ -470,7 +470,7 @@ label give_cho_gift(gift_item):
     elif gift_item == wine_ITEM:
         if cho_tier <= 2:
             call cho_main("A wine bottle?", face="annoyed", xpos="mid", ypos="base")
-            call cho_main("[cho_genie_name], I cannot drink alcohol, it would ruin my career..","open","angry","angry","mid")
+            call cho_main("[cho_genie_name], I cannot drink alcohol, it would ruin my career..", "open", "narrow", "angry", "mid")
             call cho_mood(4)
         else:
             call cho_main("A wine bottle?", face="base", xpos="mid", ypos="base")

@@ -92,7 +92,7 @@ init python:
             else:
                 chibi["robe"] = "cc_robe.png"
 
-        if cho.is_worn("bottom") or cho.is_worn("stockings"):
+        if cho.is_any_worn("bottom", "stockings"):
             if cho.is_worn("gloves") and cho.get_equipped("gloves").id == "quidditch":
                 if chibi.action == "walk":
                     chibi["shoes"] = "ch_cho walk_quid_shoes"

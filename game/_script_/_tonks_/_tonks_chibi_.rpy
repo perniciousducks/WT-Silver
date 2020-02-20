@@ -67,7 +67,7 @@ screen with_tonks_animated():
     
     if tonks.is_worn("bottom"):
         add "ch_ton sit_trousers" xpos 610 ypos 175
-    if tonks.is_worn("bottom") or tonks.is_worn("stockings"):
+    if tonks.is_any_worn("bottom", "stockings"):
         add "ch_ton sit_shoes" xpos 610 ypos 175
     if tonks.is_worn("top"):
         add "ch_ton sit_top" xpos 610 ypos 175

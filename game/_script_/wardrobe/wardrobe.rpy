@@ -340,10 +340,11 @@ screen wardrobe_menu(xx, yy):
             for item in character_toggles:
                 $ _item = item[0]
                 $ _is_worn = char_active.is_worn(_item)
-                $ _is_equipped = True if _is_worn in (True, False) else False
+                $ _is_equipped = char_active.is_equipped(_item)
+                $ _bool = _is_worn if _is_equipped else None
                 textbutton "[_item]":
                     style interface_style+"_dropdown"
-                    background "interface/frames/{}/check_{}.png".format(interface_color, _is_worn)
+                    background "interface/frames/{}/check_{}.png".format(interface_color, _bool)
                     tooltip "Show/hide "+str(_item)
                     action [SensitiveIf(_is_equipped), Return(["toggle", _item])]
         use dropdown_menu(name="Options", pos=(350, 29), items_offset=(-59, 2)):

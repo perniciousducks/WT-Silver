@@ -162,6 +162,16 @@ init python:
             self.apply_transition()
             update_chibi(self.name)
             
+        def is_equipped(self, arg):
+            """Takes argument containing string cloth type. Returns True if slot is occupied, False otherwise."""
+            if arg.startswith(self.blacklist_toggles):
+                for k, v in self.clothes.iteritems():
+                    if k.startswith(arg) and v[0]:
+                        return True
+                return False
+            else:
+                return True if self.clothes[arg][0] else False
+            
         def is_worn(self, *args):
             """Takes argument(s) containing string cloth type(s). Returns True if worn, False otherwise."""
             for arg in args:

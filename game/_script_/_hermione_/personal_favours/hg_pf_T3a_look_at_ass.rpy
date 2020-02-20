@@ -82,7 +82,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
                 jump end_hermione_event
 
         m "Alright, alright..."
-        if hermione.is_worn("top") or hermione.is_worn("bottom") or hermione.is_worn("panties") or hermione.is_worn("bra"):
+        if hermione.is_any_worn("top", "bottom", "panties", "bra"):
             g9 "Just get naked already!"
             call her_main("...","annoyed","narrow", "annoyed", "mid", xpos="mid", ypos="base")
             call her_main("{size=-5}(I can't believe I'm going to strip for him...){/size}", "disgust", "narrow", "base", "down", cheeks="blush")
@@ -151,7 +151,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
         else:
             call her_main("anything for you [genie_name]", "base", "narrow", "base", "up", cheeks="blush")
 
-        if hermione.is_worn("top") or hermione.is_worn("bottom") or hermione.is_worn("panties") or hermione.is_worn("bra"):
+        if hermione.is_any_worn("top", "bottom", "panties", "bra"):
             g9 "Just get naked already!"
             call her_main("...","annoyed","narrow", "annoyed", "mid", xpos="mid", ypos="base")
             call her_main("{size=-5}(I can't believe I'm going to strip for him...){/size}", "disgust", "narrow", "base", "down", cheeks="blush")

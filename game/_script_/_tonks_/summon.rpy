@@ -257,7 +257,7 @@ label tonks_talk:
             call ton_main("I like the way you think, [ton_genie_name]!","horny","base","base","mid")
             jump tonks_requests
 
-        "-Get dressed-" if tonks_strip_happened and not (tonks.is_worn("top") or tonks.is_worn("bottom") or tonks.is_worn("robe")):
+        "-Get dressed-" if tonks_strip_happened and not tonks.is_any_worn("top", "bottom", "robe"):
             m "Put on some clothes, would you..."
             m "This is a school, after all."
             call ton_main("Of course, [ton_genie_name].","base","base","base","mid")

@@ -57,7 +57,7 @@ label hg_ps_get_panties: #(Whoring = 5 - 12)
             $ hermione.strip("panties")
             call nar(">Suddenly Hermione bends forward and takes off her panties...","start")
         else:
-            if hermione.is_worn("top") or hermione.is_worn("bottom"):
+            if hermione.is_any_worn("top", "bottom"):
                 call nar(">Suddenly Hermione reaches inside one of her hidden pockets...","start")
             else:
                 call nar(">Suddenly Hermione reaches inside...","start")
@@ -92,7 +92,7 @@ label hg_ps_get_panties: #(Whoring = 5 - 12)
                 $ hermione.strip("panties")
                 call nar(">Suddenly Hermione bends forward and takes off her panties...")
             else:
-                if hermione.is_worn("top") or hermione.is_worn("bottom"):
+                if hermione.is_any_worn("top", "bottom"):
                     call nar(">Hermione pulls her panties out of her pocket...")
                 else:
                     call nar(">Suddenly Hermione reaches inside...","start")
@@ -104,7 +104,7 @@ label hg_ps_get_panties: #(Whoring = 5 - 12)
             call her_main("Yes, I had a feeling that you might ask for these today, [genie_name].", "base", "base", "base", "mid")
             m "A feeling?"
             call her_main("Well, to be completely honest I just do not bother to wear them much anymore...", "grin", "base", "base", "R")
-            if hermione.is_worn("panties") != None:
+            if hermione.is_equipped("panties"):
                 her "Unless I'm asked to, that is..."
         else:
             hide screen hermione_main
@@ -114,7 +114,7 @@ label hg_ps_get_panties: #(Whoring = 5 - 12)
                 $ hermione.strip("panties")
                 call nar(">Hermione takes off her panties and hands them over to you...")
             else:
-                if hermione.is_worn("top") or hermione.is_worn("bottom"):
+                if hermione.is_any_worn("top", "bottom"):
                     call nar(">Suddenly Hermione reaches inside one of her hidden pockets...")
                 else:
                     call nar(">Suddenly Hermione reaches inside...","start")
@@ -173,7 +173,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 hide screen hermione_main
                 call nar(">Hermione hesitantly puts on her panties...","start")
                 
-                if hermione.is_worn("panties") != None:
+                if hermione.is_equipped("panties"):
                     $ hermione.wear("panties")
                 else:
                     $ hermione.equip(her_panties_base1)
@@ -275,7 +275,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 hide screen hermione_main
                 call nar(">Hermione swiftly slides her drenched panties on...")
 
-                if hermione.is_worn("panties") != None:
+                if hermione.is_equipped("panties"):
                     $ hermione.wear("panties")
                 else:
                     $ hermione.equip(her_panties_base1)

@@ -193,7 +193,7 @@ label hg_pf_grope_breasts_T3:
     call her_main("............", "base", "narrow", "worried", "down", cheeks="blush", ypos="head")
 
     call play_music("playful_tension") # SEX THEME.
-    if hermione.is_worn("top") or hermione.is_worn("bra"):
+    if hermione.is_any_worn("top", "bra"):
         call nar(">Hermione shifts to start undoing her clothes...")
 
         menu:

@@ -1541,7 +1541,7 @@ label cc_pf_strip_T2_E1:
     menu:
         "\"Yes! Make your house proud, you slut! Earn those points!\"":
             call cho_main("Yes, Sir!","base","narrow","angry","mid")
-            g9 "Take of those panties!"
+            g9 "Take off those panties!"
 
         "\"No. You are better than that...\"":
             $ cho_mood += 6

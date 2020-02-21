@@ -33,7 +33,6 @@ label hg_pf_titjob:
     $ hermione.wear("all")
     $ hermione_zorder = 15 # Reset sprite zorder (affected by CGs)
 
-    $ face_on_cg = False
     hide screen ccg
 
     #

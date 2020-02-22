@@ -19,9 +19,9 @@ screen say(who, what, side_image=None):
     if side_image:
         add side_image yalign 1.0 yanchor 1.0 zoom 0.5
     
-    style_prefix "say"
     window:
-        id "window"
+        style ("say_window_day" if interface_color == "gold" else "say_window_night")
+
         if hkey_chat_hidden:
             ypos 1000
         
@@ -32,7 +32,7 @@ screen say(who, what, side_image=None):
 
         if who:
             window:
-                style_prefix "say_who"
+                style ("say_who_window_day" if interface_color == "gold" else "say_who_window_night")
                 text who id "who":
                     color (preferences.text_color_day if interface_color == "gold" else preferences.text_color_night)
                     outlines [(1, preferences.text_outline, 1, 0)]

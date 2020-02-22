@@ -137,15 +137,31 @@ style imagemap:
 style input:
     color "#5c321b"
 
-# Dialogue styles
-style say_window:
-    background Frame(DynamicDisplayable("'interface/frames/[interface_color]/frame.png'"))
+# Dialogue styles    
+style say_window_day:
+    background "interface/frames/gold/frame.png"
     ysize 143
     padding (250, 40, 250, 0)
     top_margin 22
+    yalign 1.0
+    
+style say_window_night:
+    background "interface/frames/gray/frame.png"
+    ysize 143
+    padding (250, 40, 250, 0)
+    top_margin 22
+    yalign 1.0
 
-style say_who_window is default:
-    background Frame(DynamicDisplayable("'interface/frames/[interface_color]/namebox.png'"), 6, 6)
+style say_who_window_day is default:
+    background Frame("interface/frames/gold/namebox.png", 6, 6)
+    xpadding 15
+    pos (-15, -50)
+    ysize 32
+    xminimum 164
+    text_align 0.5
+    
+style say_who_window_night is default:
+    background Frame("interface/frames/gray/namebox.png", 6, 6)
     xpadding 15
     pos (-15, -50)
     ysize 32

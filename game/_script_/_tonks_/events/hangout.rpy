@@ -501,7 +501,7 @@ label nt_he_story_E8:
 label nt_he_story_intro_E9:
     call ton_main("Being an auror was quite a stressful job you know.","open","base","sad","R", ypos="head")
     m "I..."
-    call ton_main("It did have it's privileges...","upset","base","sad","down")
+    call ton_main("It did have its privileges...","upset","base","sad","down")
     call ton_main("The ministry was mostly concerned about the criminals making up for their crimes.","open","base","angry","mid")
     call ton_main("Not necessarily putting them in prison. I had quite a few... more or less successful techniques.","open","closed","base","mid")
     m "Such as?"

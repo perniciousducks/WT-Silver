@@ -959,7 +959,7 @@ label potion_scene_3_4_1:
     $ ccg2 = 18
     her "{size=+10}!!!{/size}"
     $ ccg2 = 19
-    her "its......{heart} {heart} "
+    her "it's......{heart} {heart} "
     $ ccg2 = 20
     pause
     her "my{heart}  whole{heart}  body...{heart}{heart}{heart} "

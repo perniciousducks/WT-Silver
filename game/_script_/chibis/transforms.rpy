@@ -40,6 +40,15 @@ transform chibi_fly_move(start, end, speed):
 transform chibi_wand:
     xoffset -72 # Note: Offset seems to be applied after zoom
 
+transform chibi_lie:
+    rotate 90
+    transform_anchor True
+    anchor (0.5, 0.65)
+    xzoom 1 # Negate flip
+
+transform chibi_float_move(start, end, speed):
+    combine_transforms(chibi_lie, chibi_fly_move(start, end, speed))
+
 transform random_blink(close_image, open_image=Null()):
     close_image
     pause .08

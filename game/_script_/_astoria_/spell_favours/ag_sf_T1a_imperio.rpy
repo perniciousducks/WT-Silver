@@ -1228,7 +1228,7 @@ label hornify_spell_2: #second level hornify spell
     call sus_main("*Slrp{heart}*!!!*{heart}slrp*","base","base","base","base")
     ">Your cock can handle Susan's amateur tongue no longer."
     g4 "AHH TAKE THIS SLUTS!"
-    ">You pull your dick out of Susan's mouth with a satisfying pop as it begins to fire it's load."
+    ">You pull your dick out of Susan's mouth with a satisfying pop as it begins to fire its load."
     call sus_main("!!!","base","base","base","base")
     call ast_main("Told you!","base","base","base","base")
     ">You close your eyes as you furiously jerk your cock off onto Susan's blank face..."

@@ -877,7 +877,7 @@ label hermione_map_sex:
     #Cum in her in front of Moaning myrtle
     #end
     ">This time, the marauders map leads you to Hermione walking through the halls bordering the courtyard."
-    ">You start to stalk her as a lion would it's prey wondering how to best approach the lithe young girl..."
+    ">You start to stalk her as a lion would its prey wondering how to best approach the lithe young girl..."
     menu:
         "-Surprise her-":
             "asd"

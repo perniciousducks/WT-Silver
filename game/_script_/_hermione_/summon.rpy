@@ -780,7 +780,7 @@ label hermione_change:
             call her_main("And I'm definitely not a whore...", "soft", "closed", "base", "mid")
             her "I refuse!"
             menu:
-                "-Say its fine-":
+                "-Say it's fine-":
                     m "Fine, I won't call you that..."
                     call her_main("You won't?", "open", "base", "base", "mid")
                     call her_main("", "soft", "base", "base", "mid")
@@ -850,16 +850,16 @@ label hermione_change:
                             if raining:
                                 call her_main("I was pretty sure you said-...", "open", "base", "base", "mid")
                                 call her_main("", "normal", "base", "base", "R")
-                                m "Look outside the window, its raining is it not?"
+                                m "Look outside the window, it's raining is it not?"
                                 call her_main("I{w=0.5}... {w=0.5}Yes, you are right [genie_name].", "normal", "closed", "base", "mid")
                                 m "Of course I am."
                                 call her_main("So what did you want to talk about?", "base", "base", "base", "mid")
                             else:
-                                call her_main("[genie_name], but its not raining..", "normal", "closed", "base", "mid")
+                                call her_main("[genie_name], but it's not raining..", "normal", "closed", "base", "mid")
                                 call her_main("", "disgust", "narrow", "base", "down", cheeks="blush")
                                 g9 "Last time I had my dick in you it felt like a mass flood."
                                 call her_main("[genie_name]...", "disgust", "closed", "base", "mid", cheeks="blush")
-                                g9 "What? Its true, I swear!"
+                                g9 "What? It's true, I swear!"
                                 call her_main("...", "soft", "narrow", "worried", "down", cheeks="blush")
                         "-Mad stud-":
                             g4 "I said mad stud!"
@@ -914,7 +914,7 @@ label hermione_change:
                     m "And I {b}will{/b} call you however I want!"
                     call her_main("Yes, [genie_name], I understand.", "silly", "narrow", "base", "up", tears="mascara")
                     call her_main("I am your toy{w=0.6}, your fuckslut{w=0.6}, your cocksleeve, your -...", "grin", "narrow", "base", "dead", tears="mascara")
-                    m "Yes, that you are but its enough..."
+                    m "Yes, that you are but it's enough..."
                     call her_main("I fully belong to you... [genie_name].", "silly", "narrow", "base", "dead", tears="mascara")
                     call her_main("", "grin", "narrow", "base", "dead", tears="mascara")
                     $ her_mood = 0
@@ -933,7 +933,7 @@ label hermione_change_fail:
     elif temp_name == "Good Girl":
         call her_main("I'm not letting you call me that, [genie_name]!", "open", "closed", "angry", "mid")
         if her_whoring >= 3:
-            call her_main("\"Although its kinda cute he said that...\"", "base", "base", "base", "R")
+            call her_main("\"Although it's kinda cute he said that...\"", "base", "base", "base", "R")
     elif temp_name == "Little Girl":
         call her_main("I won't let you call me that, [genie_name]!", "open", "closed", "angry", "mid")
         if her_whoring >= 5:

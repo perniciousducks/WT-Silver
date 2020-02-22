@@ -49,7 +49,12 @@ label lun_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=
     return
 
 # Chibi definition
-default luna_chibi = Chibi("luna", ["base"], update_luna_chibi)
+default luna_chibi = Chibi("luna", ["base"], update_luna_chibi, actions=luna_chibi_actions)
+
+define luna_chibi_actions = {
+    "lie": (False, "chibi_lie", "float_move"),
+    "float_move": (False, "chibi_float_move", 0)
+}
 
 init python:
     def update_luna_chibi(chibi):
@@ -62,7 +67,7 @@ init python:
                 chibi["base"] = "ch_lun walk_n"
             elif luna_wear_robe:
                 chibi["base"] = "ch_lun walk_robe"
-        elif not chibi.action or chibi.action == "stand":
+        elif not chibi.action or chibi.action in ("stand", "lie", "float_move"):
             if luna_wear_top and luna_wear_bottom:
                 chibi["base"] = "ch_lun blink_a"
             elif luna_wear_bottom and not luna_wear_top:

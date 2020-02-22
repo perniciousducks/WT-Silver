@@ -350,7 +350,7 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
                 xsize card_width*cardzoom
                 ysize card_height*cardzoom
                 # Set horizontal offset for single digit value
-                # I have no idea why it has to be >= 25 but its the only value that works.
+                # I have no idea why it has to be >= 25 but it's the only value that works.
                 if len(str(card.get_totalvalue())) >= 25:
                     text lefttext+str(card.get_totalvalue())+righttext xalign 0.15 yalign 0.1 size sizetext
                 else:

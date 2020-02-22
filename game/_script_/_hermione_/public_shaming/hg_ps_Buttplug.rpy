@@ -356,7 +356,7 @@ label hg_ps_buttplug:
                     call her_main("{size=+10}It's moving!{/size}", "disgust", "happyCl", "worried", "mid")
                     m "Really?"
                     call her_main("{size=+5}ugh...{/size}", "disgust", "happyCl", "worried", "mid")
-                    call her_main("{size=+5}it's forcing it's way inside me....{/size}", "open", "wide", "worried", "shocked")
+                    call her_main("{size=+5}it's forcing its way inside me....{/size}", "open", "wide", "worried", "shocked")
                     call her_main("ah...", "shock", "happyCl", "worried", "mid")
                     call her_main("it's...{p}it's...", "open", "wide", "base", "stare")
 

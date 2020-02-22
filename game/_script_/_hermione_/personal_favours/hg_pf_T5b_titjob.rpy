@@ -352,7 +352,7 @@ label hg_pf_titjob_1:
             call her_main("It was completely empty, except for me and this first year boy sitting right across from me...")
             m "*Heh*... good.{w=0.3} Go on..."
             call her_main("It was quite hot that day, so... I decided to take my vest off.", "base", "happy", "base", "mid")
-            g9 "Yes! And somehow you got more hot!"
+            g9 "Yes! And somehow you got even hotter!"
             call her_main("The boy was trying to act all sly about it, but I could tell he snuck a peek at them any chance he got...", "base", "base", "base", "R")
             call her_main("At that point I began undoing a couple of buttons... Slowly at first, not enough for him to suspect anything...", "base", "narrow", "base", "mid_soft")
             g9 "*hmmm*... you little flaunter..."
@@ -370,9 +370,9 @@ label hg_pf_titjob_1:
             call her_main("..............", "base", "narrow", "base", "mid_soft")
             $ ccg1 = 9
             call her_main("By the sixth button my entire bra was unveiled...")
-            call her_main("And he must have gotten a real good look of my cleavage...", "base", "base", "base", "mid")
+            call her_main("And he must have had a really good view of my cleavage...", "base", "base", "base", "mid")
             call her_main("And my...{w=0.3} tits...", "soft", "narrow", "base", "mid_soft")
-            call her_main("At this point he didn't even try and hide what he was doing and just kept staring... touching himself")
+            call her_main("He didn't even try to hide what he was doing and just kept staring at them... touching himself...")
             $ ccg1 = 10
             call her_main("Then suddenly I felt something sticky on my legs as he shot several ropes of cum under the table!", "open_tongue", "narrow", "annoyed", "up")
             g4 "!!!"
@@ -630,7 +630,7 @@ label hg_pf_titjob_2:
             call her_main("Listen to me, [genie_name]!", "angry", "closed", "angry", "mid")
             call her_main("I think it should be worshipped as part of the school curriculum!", "soft", "narrow", "annoyed", "up")
             $ ccg1 = 24
-            call her_main("Girls will be required to come in and bask in it's glory!", "open_tongue", "narrow", "annoyed", "up")
+            call her_main("Girls will be required to come in and bask in its glory!", "open_tongue", "narrow", "annoyed", "up")
             m "OK, I think I've heard enough."
             $ ccg1 = 21
 
@@ -728,7 +728,7 @@ label hg_pf_titjob_2:
             with hpunch
             with kissiris
             g4 "Yes, keep going slut!"
-            call her_main("As I \"Practiced\" on her arm, she might have...", "open", "base", "base", "R")
+            call her_main("As I was \"practising\" on her arm, she might have...", "open", "base", "base", "R")
             $ ccg1 = 24
             call her_main("Orgasmed...", "soft", "narrow", "annoyed", "up")
             g4 "[hermione_name], you little slut!"
@@ -811,11 +811,11 @@ label hg_pf_titjob_2_continue:
             call her_main("Other times I'll just wear my top with nothing on underneath...")
             m "And how does that make you feel?"
             call her_main("So good...", "silly", "narrow", "base", "dead")
-            call her_main("There was this one time where I barely covered them when walking back from your office at night...", "angry", "wink", "base", "mid")
+            call her_main("This one time, when walking back from your office at night, I was barely even covering them...", "angry", "wink", "base", "mid")
             call her_main("I rounded a corner and-", "soft", "narrow", "annoyed", "up")
             $ ccg1 = 24
-            call her_main("A second year boy ran head first straight into them...", "grin", "narrow", "annoyed", "up")
-            m "Head first into your first class tits?"
+            call her_main("A second year boy ran headfirst into them...", "grin", "narrow", "annoyed", "up")
+            m "Headfirst into your first class tits?"
             call her_main("All I could see was the top of his head...", "grin", "narrow", "base", "dead")
             m "What did he do?"
             call her_main("He immediately attempted to pull away...")
@@ -825,7 +825,7 @@ label hg_pf_titjob_2_continue:
             call her_main("Just for a little bit...", "base", "narrow", "worried", "down")
             $ ccg1 = 23
             call her_main("To make sure he knew it was okay...", "base", "squint", "base", "mid")
-            m "I'm sure that's why you little slut."
+            m "I'm sure that's why, you little slut."
             $ ccg1 = 22
             call her_main("I think I might have broken him though...", "base", "narrow", "worried", "down")
             $ ccg1 = 21

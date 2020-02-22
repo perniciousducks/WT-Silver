@@ -476,7 +476,7 @@ label ss_he_story_intro_E10:
     m "it's plastic..."
     call sna_main("I don't get it...","snape_25")
     m "This planet plans to evolve into something else in a million years or so..."
-    m "In order to do that it needs a special kind of material that it can't produce on it's own."
+    m "In order to do that it needs a special kind of material that it can't produce on its own."
     m "So it spawns a new form of life - humans."
     call sna_main("..............","snape_11")
     m "You wanted to know the purpose of your existence?"
@@ -648,7 +648,7 @@ label ss_he_story_intro_E15:
 
     ">Your friendship level with professor Snape reached its maximum value."
     ">Congratulations. If this were a \"dating sim\" you would be getting the ending with Severus Snape."
-    ">The Slytherin house point payout has increased greatly and reached it's maximum level as well."
+    ">The Slytherin house point payout has increased greatly and reached its maximum level as well."
 
     call hide_blktone
 

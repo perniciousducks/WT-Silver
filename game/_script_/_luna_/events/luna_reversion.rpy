@@ -441,7 +441,7 @@ label luna_revert_1:
     ">Hermione glares at the still frozen Luna Lovegood."
     call her_main("...", "annoyed", "squint", "angry", "mid")
     call her_main("She needs a punishment.", "smile", "base", "angry", "mid")
-    m "What are you thinking?"
+    m "What are you thinking of?"
     call her_main("Hmmm...", "annoyed", "narrow", "angry", "R")
     call her_main("Sorting hat!", "annoyed", "narrow", "annoyed", "mid")
     hat "W-w-what? I'm trying to go to sleep..."
@@ -536,7 +536,7 @@ label luna_revert_2:
     call lun_main("good...","base","suspicious","sad","mid")
     call lun_main("but...","normal","suspicious","sad","R")
     call lun_main("Do you need a little more encouragement?","base","mad","sad","mid")
-    m "What are you thinking?"
+    m "What are you thinking of?"
     call lun_main("......","base","suspicious","mad","mid")
 
     menu:

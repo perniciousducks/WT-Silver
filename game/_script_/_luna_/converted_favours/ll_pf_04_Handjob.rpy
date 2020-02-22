@@ -61,7 +61,7 @@ label luna_favour_4:
         call lun_main("good...","base","suspicious","sad","mid")
         call lun_main("but...","normal","suspicious","sad","R")
         call lun_main("I think you need a little more encouragement...","base","mad","sad","mid")
-        m "What are you thinking?"
+        m "What are you thinking of?"
         call lun_main("well...","base","suspicious","mad","mid")
 
         hide screen luna_main
@@ -582,7 +582,7 @@ label luna_favour_4:
             call lun_main("good...","base","suspicious","sad","mid")
             call lun_main("but...","normal","suspicious","sad","R")
             call lun_main("Do you need a little more encouragement?","base","mad","sad","mid")
-            m "What are you thinking?"
+            m "What are you thinking of?"
             call lun_main("......","base","suspicious","mad","mid")
 
             menu:

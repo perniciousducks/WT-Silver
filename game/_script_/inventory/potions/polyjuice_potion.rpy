@@ -394,7 +394,7 @@ label potion_scene_1_1_2_alt:
         her "*Slurp?*"
         call her_chibi_scene("bj_pause")
         with d3
-        call her_main("It's because of your stupid potion, it's \nmade my tongue all rough.", "open_wide_tongue", "base", "angry", "mid")
+        call her_main("It's because of your stupid potion, it's made my tongue all rough.", "open_wide_tongue", "base", "angry", "mid")
         call her_main("Do you want to stop?", "grin", "base", "base", "R")
         hide screen hermione_main
         m "No, keep going, just try not to focus on the tongue work too much."
@@ -587,7 +587,7 @@ label potion_scene_1_2:
             her "If they just had one look of my face they'd be able to tell what was up."
             m "Speaking of face..."
         else:
-            her "Well, generally its been quite dull up until now."
+            her "Well, generally it's been quite dull up until now."
             her "I would be lying if I said I wasn't a little bit excited when you called on me."
             m "Oh, you'll be getting your fair share of excitement soon enough... Well, not this version of you."
             her "What version of me will be..."
@@ -757,7 +757,7 @@ label potion_scene_1_2:
     if "luna_polyjuice" in her_potions_drunk:
         m "You look a bit flustered [hermione_name]."
         $ changeLuna("pout","seductive","angry","mid")
-        her "You're staring directly at my chest [genie_name] and I can't help but feel a bit guilty as its not my own..."
+        her "You're staring directly at my chest [genie_name] and I can't help but feel a bit guilty as it's not my own..."
         m "Well, hopefully this should take your mind off that... twenty points to Gryffindor."
         her "Thank you, [genie_name]...."
     else:

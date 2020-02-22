@@ -378,10 +378,10 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
 
                 call her_walk("door", "base")
 
-                m "{size=-4}Ginny..{w=1.0} its time for you to meet 'George'.{/size}{w=0.2}{nw}"
+                m "{size=-4}Ginny..{w=1.0} it's time for you to meet 'George'.{/size}{w=0.2}{nw}"
                 call gen_chibi("jerk_off_behind_desk")
                 $ renpy.play('sounds/zipper.mp3')
-                g9 "{size=-4}Ginny.. Its time for you to meet 'George'.{/size}{fast}"
+                g9 "{size=-4}Ginny.. It's time for you to meet 'George'.{/size}{fast}"
                 call her_main("", "angry", "wide", "worried", "shocked", cheeks="blush", flip=True)
                 pause 0.8
                 call her_main("(I better leave now...)", "disgust", "base", "base", "R", cheeks="blush", flip=True)

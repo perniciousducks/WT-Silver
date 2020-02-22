@@ -856,7 +856,7 @@ label hg_pf_grope_ass_T4_front:
     call nar(">And give her Ass a good squeeze...")
     call her_main(".................", "base", "narrow", "base", "mid_soft")
     m "Don't look away, girl. I want you to look into my eyes."
-    call her_main("but its embarrassing, [genie_name]...", "angry", "narrow", "base", "down")
+    call her_main("but it's embarrassing, [genie_name]...", "angry", "narrow", "base", "down")
     m "..."
     call her_main("...fine, [genie_name]...", "base", "narrow", "base", "up", cheeks="blush")
     m "you're being so quiet."

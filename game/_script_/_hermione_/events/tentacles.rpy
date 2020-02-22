@@ -14,7 +14,7 @@ label tentacle_scene_intro: #Public tentacle scene
     pause 2
 
     spo "Today class, I have been requested by the Headmaster to teach you about a plant called Devil's Snare."
-    spo "This is an incredibly dangerous plant, known to constrict and kill it's prey with it's fast and powerful tendrils."
+    spo "This is an incredibly dangerous plant, known to constrict and kill its prey with its fast and powerful tendrils."
     spo "They are found naturally in caves and swamps as they like dark and damp places and hate sunlight."
     her "Isn't Devil's Snare extremely dangerous?"
     spo "That's correct Miss Granger, that's why Professor Dumbledore has provided us with some freshly grown samples."

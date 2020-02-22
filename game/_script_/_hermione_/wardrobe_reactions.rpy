@@ -15,13 +15,13 @@ label hermione_wardrobe_check(section, arg=None):
 
         # Outfit outrage score check
         if her_whoring < temp_count[0]:
-            call her_main("Its too "+random.choice(("slutty", "revealing", "much", "breezy", "Granger like"))+"...",face="annoyed")
+            call her_main("It's too "+random.choice(("slutty", "revealing", "much", "breezy", "Granger like"))+"...",face="annoyed")
             $ temp_score += 1
         if temp_count[2] < 2 and her_whoring < 10:
             if temp_score > 0:
                 call her_main("...not to mention missing underwear!",face="annoyed")
             else:
-                call her_main("Its missing underwear!",face="annoyed")
+                call her_main("It's missing underwear!",face="annoyed")
             $ temp_score += 1
         elif temp_count[1] > 0:
             call her_main("I have told you before, I'm not letting you pick any underwear for me!",face="annoyed")

@@ -750,7 +750,7 @@ label slytherin_match:
             $ qp_mob_reaction[1] = "qu"
             call gen_main("We can't be consumed by our petty differences anymore.", face="base")
             call gen_main("We will be united in our common interests.", face="open")
-            call gen_main("Perhaps its fate that today is the 4th of July, and you will once again be fighting for our freedom, not from tyranny, oppression, or persecution -- but from annihilation.", face="open")
+            call gen_main("Perhaps it's fate that today is the 4th of July, and you will once again be fighting for our freedom, not from tyranny, oppression, or persecution -- but from annihilation.", face="open")
             call gen_main("We're fighting for our right to live, to exist.", face="angry")
             call gen_main("And should we win the day, the 4th of July will no longer be known as an American holiday, but as the day when the world declared in one voice.", face="open")
             call gen_main("We will not go quietly into the night!", face="base")

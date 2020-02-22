@@ -469,7 +469,7 @@ label hg_pf_blowjob_1:
             call her_chibi_scene("bj_pause")
             call her_main("The Gryffindor house was founded by Godric Gryffindor, thus the name.", "open", "narrow", "worried", "down")
             call her_main("The heraldic animal of Gryffindor is the lion...")
-            call her_main("And it's colours are red and gold.", "open", "closed", "base", "mid")
+            call her_main("And its colours are red and gold.", "open", "closed", "base", "mid")
 
             call her_chibi_scene("bj")
             call her_main("*Gulp!* *Slurp!* *Slurp!*", "open_wide_tongue", "narrow", "annoyed", "up")

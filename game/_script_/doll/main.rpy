@@ -207,7 +207,7 @@ init python:
             self.body.rebuild_image()
             self.rebuild_image()
             
-        def set_body_hue(self, arg)
+        def set_body_hue(self, arg):
             """Takes integer between 0 - 359, rotates the character body colour by given amount."""
             self.body.hue = arg
             self.body.rebuild_image()

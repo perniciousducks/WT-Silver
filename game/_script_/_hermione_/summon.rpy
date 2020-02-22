@@ -3,20 +3,20 @@
 label summon_hermione:
     $ renpy.start_predict(hermione.get_image())
     $ renpy.start_predict("characters/hermione/face/*.png")
-    
+
     #call play_music("hermione")
     #call play_sound("door")
-    
+
     $ active_girl = "hermione"
     $ hermione_busy = True
     call update_hermione
     call update_her_tier
-    
+
     # Clothes Events
     call hermione_summon_setup
 
     label hermione_requests:
-    
+
     # Reset
     call reset_menu_position
     call her_main(xpos="base",ypos="base")
@@ -57,7 +57,7 @@ label summon_hermione:
                 jump hermione_requests
             else:
                 jump l_tutoring_check
-                
+
         "{color=[menu_disabled]}-Tutoring-{/color}{icon=interface/icons/small/book.png}" if daytime and her_tutoring < 14:
             call nar("> Tutoring is available during the night only.")
             jump hermione_requests
@@ -115,7 +115,7 @@ label summon_hermione:
         # Dismiss
         "-Dismiss her-":
             stop music fadeout 3.0
-            
+
             if daytime:
                 if her_mood >=3 and her_mood < 7:
                     her "..............................."
@@ -221,7 +221,7 @@ label hermione_favor_menu:
             "-Level Up-{icon=interface/icons/small/levelup.png}" if her_level_up != None:
                 call hermione_level_up(tier=her_level_up)
                 jump silver_requests_root
-            
+
             "-Personal favours-{icon=interface/icons/small/heart_red.png}":
                 label .personal:
                 python:
@@ -266,7 +266,7 @@ label hermione_favor_menu:
             "{color=[menu_disabled]}-Public Shaming-{/color}{icon=interface/icons/small/star_pink.png}" if not daytime:
                 call nar(">Public Shaming events are available during the day only.")
                 jump silver_requests_root
-                
+
             "-Public Shaming-{icon=interface/icons/small/star_pink.png}"if daytime:
                 label not_now_ps:
                 python:
@@ -463,7 +463,7 @@ label hermione_talk:
             # After talking to Snape.
             jump cho_intro_E3
 
-        "-Ask Hermione to commentate the game-{icon=interface/icons/small/quidditch.png}" if cc_ht.return_E1 and not cc_ht.hermione_commentator:
+        "-Ask Hermione to commentate the game-{icon=interface/icons/small/quidditch.png}" if cc_ht.return_E3 and not cc_ht.hermione_commentator:
             jump cc_ht_hermione_commentator
         "-Ask Hermione to commentate the game again...-\n{size=-5}again...{/size}{icon=interface/icons/small/quidditch.png}" if cc_st.hermione_E1 and not cc_st.hermione_blackmail:
             jump cc_st_hermione_blackmail

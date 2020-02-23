@@ -127,7 +127,7 @@ label popup(string="", title="", icon=None, xpos=0, ypos=60, sound=True, soundfi
 
 screen achievement_window(string="", title="", icon=None, xpos=0, ypos=60):
     tag popup_window
-    zorder 100
+    layer "interface"
 
     frame:
         style "empty"

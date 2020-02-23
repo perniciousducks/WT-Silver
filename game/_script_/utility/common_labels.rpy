@@ -15,11 +15,6 @@ label hide_characters:
 label hide_screens:
     # Remove all displayables on layer 'screens'
     $ renpy.scene("screens")
-
-    # Screens that are never hidden
-    if not renpy.variant('android'):
-        show screen mouse_tooltip
-
     return
 
 label update_interface_color(color=None):

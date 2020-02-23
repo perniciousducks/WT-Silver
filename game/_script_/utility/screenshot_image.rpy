@@ -1,4 +1,6 @@
 
+default screenshot_image = None
+
 init -1 python:
     class ScreenshotImage(im.ImageBase):
         def __init__(self, root, **properties):
@@ -18,10 +20,13 @@ init -1 python:
         def capture(retain=True):
             if renpy.display.interface.surftree:
                 if retain:
-                    # Prevent the image to be recaptured after load
+                    # Prevent the image from being recaptured after load
                     renpy.retain_after_load()
                 # Grab the most recently rendered displayables
-                root = renpy.display.interface.surftree.render_of[0]
+                try:
+                    root = renpy.display.interface.surftree.render_of[0].children[-1].layers["screens"]
+                except:
+                    root = renpy.display.interface.surftree.render_of[0]
                 return ScreenshotImage(root)
             elif config.developer:
                 raise Exception("Root surface tree is not available.")
@@ -29,8 +34,6 @@ init -1 python:
                 return None
 
 # Usage example
-
-default screenshot_image = None
 
 screen screenshot_image():
     zorder 100

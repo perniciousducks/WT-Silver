@@ -41,9 +41,9 @@ define config.screen_height = 600
 define config.save_physical_size = True
 define config.window_icon = "interface/icon.png"
 
-# Say window
+# User interface settings
 define config.window = "hide"
-#define config.window_auto_hide = [ "scene", "menu", "call screen", "show", "call ton_chibi", "call ton_walk"]
+define config.layers = ["master", "transient", "screens", "interface", "overlay"]
 
 # Graphics and cache settings
 define config.gl_enable = True

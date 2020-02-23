@@ -435,7 +435,6 @@ label hermione_talk:
 
         ### Luna ###
         "-Ask for a new student-{icon=interface/icons/small/luna.png}" if hat_known and not luna_known:
-            $ luna_known = True
             jump hat_intro_2
 
 

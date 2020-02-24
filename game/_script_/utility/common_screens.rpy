@@ -8,34 +8,18 @@ screen whitefade():
     zorder 20
     add Color("#fff")
 
-screen blktone():
+screen blktone(alpha=0.5):
     tag blktone
     zorder 10
-    add Color("#000", alpha=0.5)
-
-screen blktone2():
-    zorder 10
-    add Color("#000", alpha=0.2)
+    add Color("#000", alpha=alpha)
 
 screen blktone5(): #For narrator. (label nar) #Don't add tag blktone!
     zorder 20
     add Color("#000", alpha=0.5)
 
-screen blktone8():
-    zorder 10
-    add Color("#000", alpha=0.8)
-
-screen whitetone8():
-    zorder 20
-    add Color("#fff", alpha=0.8)
-
 screen white():
     zorder 20
     add Color("#fff")
-    
-screen blkback():
-    zorder 1
-    add Color("#000")
     
 screen bld1():
     zorder 10
@@ -55,10 +39,9 @@ screen gift(win=False):
     if win:
         use notes
         on "show" action Play("sound", "sounds/win2.mp3")
-    # add "interface/frames/"+str(interface_color)+"/reward_background.png" xalign 0.5 yalign 0.547
     add the_gift align (0.5, 0.4) zoom get_zoom(the_gift, 320,320)
 
 screen clothing_unlock():
     zorder 30
-    add "interface/panels/"+str(interface_color)+"/clothing_panel_B.png" at Position(xalign=0.5, ypos=100)
+    add "interface/panels/"+str(interface_color)+"/clothing_panel.png" at Position(xalign=0.5, ypos=100)
     add mannequin_preview xalign 0.47 ypos 52 zoom 0.6/scaleratio

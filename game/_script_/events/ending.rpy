@@ -412,7 +412,6 @@ label ball_ending_E2:
     hide screen bld1
     hide screen blktone
     call her_chibi("hide")
-    show screen blkback
     call cg_scene(layer="02", folder="ball")
 
 
@@ -523,7 +522,7 @@ label ball_ending_E2:
     mal "Alright, pal! That does it!"
     mal2 "I'm not your \"pal\", buddy!"
     call her_main("..............", "open", "wide", "worried", "stare")
-    show screen blktone8
+    show screen blktone(0.8)
     with d3
 
     stop music fadeout 3.0
@@ -536,7 +535,7 @@ label ball_ending_E2:
     call her_main("Oh?", "open", "base", "base", "mid")
     pause.1
 
-    hide screen blktone8
+    hide screen blktone
     hide screen blktone
     hide screen bld1
     call cg_scene("02", trans=fade)
@@ -2776,7 +2775,7 @@ label ball_ending_E2:
     show screen blktone
     with d7
 
-    show screen blktone8
+    show screen blktone(0.8)
     with d7
     pause .5
 
@@ -2813,7 +2812,7 @@ label ball_ending_E2:
 
     hide screen ccg
     hide screen blktone
-    hide screen blktone8
+    hide screen blktone
     stop bg_sounds #Stops playing the fire SFX.
     stop weather #Stops playing the rain SFX.
     hide screen notes
@@ -2835,7 +2834,6 @@ label ball_ending_E2:
     show screen chair_right
     show screen dumbledore
 
-    hide screen blkback
     hide screen blkfade
     with d9
 

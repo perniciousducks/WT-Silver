@@ -176,7 +176,7 @@ screen stats_menu(xx, yy):
             frame:
                 style "empty"
                 textbutton "Show locked:" style "empty" xsize 195 ysize 32 text_align (0.4, 0.5) text_size 12 hover_background btn_hover action ToggleVariable("stats_show_locked", True, False)
-                add "interface/general/"+str(interface_color)+"/check_"+str(stats_show_locked).lower()+".png" xalign 0.8 yoffset 2
+                add "interface/frames/"+str(interface_color)+"/check_"+str(stats_show_locked).lower()+".png" xalign 0.8 ypos 4
         vbox:
             pos (6, 6)
             for category in stats_categories_sorted:
@@ -464,10 +464,9 @@ screen stats_menuitem(xx, yy):
                             use text_stat("- ", " times -", ag_se_imperio_sb.counter)
 
 screen stat_bar(steps, top_text, buttom_text, stat_number, top_padding = 20):
-    $stateFullImage = "interface/stat_select/"+str(interface_color)+"/StatBar_Full.png"
-    $stateEmptyImage = "interface/stat_select/"+str(interface_color)+"/StatBar_Empty.png"
+    default bar_full = "interface/stats/"+str(interface_color)+"/bar_full.png"
+    default bar_empty = "interface/stats/"+str(interface_color)+"/bar_empty.png"
 
-    # Just some padding
     frame:
         background "#0000"
         ysize top_padding
@@ -478,8 +477,8 @@ screen stat_bar(steps, top_text, buttom_text, stat_number, top_padding = 20):
         xalign 0.5
         ysize 30
         xsize 360
-        add Crop((0, 0, steps*36, 600), stateFullImage)
-        add stateEmptyImage
+        add Crop((0, 0, steps*36, 600), bar_full)
+        add bar_empty
     text "" +buttom_text+ " (lvl " +str(stat_number)+ ")" xalign 0.5 size 20
 
 screen text_stat(startText="", endText="", amount="", top_padding = 20):

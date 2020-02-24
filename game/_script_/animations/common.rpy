@@ -4,10 +4,6 @@
 image blank:
     Null()
 
-image textheart = "interface/textheart.png"
-image check_07 = "interface/check_07.png"
-image check_08 = "interface/check_08.png"
-
 image heart_00 = "interface/heart_00.png"
 image heart_01 = "interface/heart_01.png"
 image heart_02 = "interface/heart_02.png"
@@ -68,25 +64,19 @@ image love_heart:
     "magic/love15.png"
 
 image ctc:
-    pos (0.99, 0.995)
-    anchor (0.8, 1.0)
-    "interface/ctc00.png"
-    pause 0.2
-    "interface/ctc01.png"
-    pause 0.2
-    "interface/ctc02.png"
-    pause 0.2
-    "interface/ctc03.png"
-    pause 0.2
-    "interface/ctc04.png"
-    pause 0.5
-    "interface/ctc03.png"
-    pause 0.2
-    "interface/ctc02.png"
-    pause 0.2
-    "interface/ctc01.png"
-    pause 0.2
-    repeat
+    contains:
+        pos (0.99, 0.995)
+        anchor (0.8, 1.0)
+        "interface/ctc00.png"
+    contains:
+        pos (0.99, 0.995)
+        anchor (0.8, 1.0)
+        "interface/ctc01.png"
+        alpha 0.0
+        linear 1.0 alpha 1.0
+        pause 0.5
+        linear 1.0 alpha 0.0
+        repeat
 
 # Emotions ^_^
 

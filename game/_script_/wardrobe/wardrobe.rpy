@@ -405,7 +405,7 @@ screen wardrobe_menuitem(xx, yy):
         xysize (467, 548)
         background wardrobe_background
    
-        add "interface/panels/{}/icon_panel_1.png".format(interface_color)
+        add "interface/panels/{}/icon_panel.png".format(interface_color)
         
         hbox:
             pos (24, 44)
@@ -557,7 +557,7 @@ screen wardrobe_outfit_menuitem(xx, yy):
         xysize (467, 548)
         background wardrobe_background
    
-        add "interface/panels/"+interface_color+"/icon_panel_2.png"
+        add "interface/panels/"+interface_color+"/icon_panel.png"
             
         hbox:
             pos (24, 44)

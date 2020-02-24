@@ -1,5 +1,3 @@
-
-
 ### House-Points ###
 
 label points_changes: # Gets called every day/night.
@@ -71,48 +69,3 @@ label points_changes: # Gets called every day/night.
             $ slytherin += (ton_support * renpy.random.randint(1, 2))
 
     return
-
-
-
-
-### Old Code ###
-
-#label add_house_points(house, points):
-#    show screen adding_house_points(points, house)
-#    with Dissolve(0.5)
-#    if house == "r":
-#        $ ravenclaw += int(points)
-#    if house == "s":
-#        $ slytherin += int(points)
-#    if house == "g":
-#        $ gryffindor += int(points)
-#    if house == "h":
-#        $ hufflepuff += int(points)
-#    hide screen adding_house_points
-#    with Dissolve(0.5)
-#    return
-
-#label points_animation:
-    #show screen all_house_points
-    #with Dissolve(0.5)
-    #pause 0.75
-    #hide screen all_house_points
-    #with Dissolve(0.5)
-    #return
-
-#screen all_house_points:
-    #$ house_pos = {"r":175,"s":286,"g":393,"h":502}
-    #add "interface/points/TopUI_Bar_Overlay.png" at Position(xpos=140, ypos=1)
-    #text "[gryffindor_p_gain]" at Position(xpos=house_pos["g"], ypos=8)
-    #text "[slytherin_p_gain]" at Position(xpos=house_pos["s"], ypos=8)
-    #text "[hufflepuff_p_gain]" at Position(xpos=house_pos["h"], ypos=8)
-    #text "[ravenclaw_p_gain]" at Position(xpos=house_pos["r"], ypos=8)
-    #hbox:
-    #    spacing 10 xpos 286 ypos 11
-    #    text "{size=-5}[slytherin]{/size}"
-    #zorder 3
-
-#screen adding_house_points(points, house):
-#    $ house_pos = {"r":175,"s":286,"g":393,"h":502}
-#    text "[points]" at Position(xpos=house_pos[house], ypos=8)
-#    zorder 3

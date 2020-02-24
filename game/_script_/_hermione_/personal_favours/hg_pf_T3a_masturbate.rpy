@@ -1,11 +1,9 @@
 ### Masturbate ###
 
 label hg_pf_strip_fingering_intro:
-    # Setup
-    $ hg_masturbated.triggered() # .trigger = True, .counter += 1
-    
-    # Intro
     if hg_masturbated.trigger == False:
+        $ hg_masturbated.triggered() # .trigger = True, .counter += 1
+        
         m "[hermione_name]..."
         call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
         m "Do you ever touch yourself?"

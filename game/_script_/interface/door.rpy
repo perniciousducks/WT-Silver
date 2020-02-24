@@ -73,7 +73,7 @@ screen door_menu(xx, yy):
             frame:
                 style "empty"
                 textbutton "Show Busy:" style "empty" xsize 195 ysize 32 text_align (0.4, 0.5) text_size 12 hover_background btn_hover action ToggleVariable("door_show_busy", True, False)
-                add "interface/general/"+str(interface_color)+"/check_"+str(door_show_busy).lower()+".png" xalign 0.8 yoffset 2
+                add "interface/frames/"+str(interface_color)+"/check_"+str(door_show_busy).lower()+".png" xalign 0.8 ypos 4
         vbox:
             pos (6, 6)
             $ tmp_x = 0

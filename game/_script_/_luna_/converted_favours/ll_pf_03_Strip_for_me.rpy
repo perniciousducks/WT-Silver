@@ -252,7 +252,7 @@ label luna_favour_3:
                     with d3
 
                     ">You reach under the desk and grab your cock..."
-                    hide screen blktone8
+                    hide screen blktone
                     with d3
                     call gen_chibi("jerk_off_behind_desk")
                     with d3

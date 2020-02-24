@@ -275,7 +275,7 @@ label potions_menu:
                 potion_inv.remove(ingredient)
         $ potion_inv.add(potion_choice.id)
     else:
-        show screen blktone8
+        show screen blktone(0.8)
         ">You lack the required materials to make this."
         $ missing_items = []
         $ tmp_txt = "You still need "
@@ -293,7 +293,7 @@ label potions_menu:
         $ tmp_txt += " to craft this"
         $ renpy.say(None, tmp_txt)
         #$ renpy.say(None,"You need {size=+5}{b}"+potion_lib.get_name_by_id(potion_choice[0])+"{/b}{/size} and {size=+5}{b}"+potion_lib.get_name_by_id(potion_choice[1])+"{/b}{/size} to craft this")
-        hide screen blktone8
+        hide screen blktone
     jump potions_menu
 
 

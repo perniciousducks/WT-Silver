@@ -1,6 +1,7 @@
 screen mouse_tooltip():
-    tag tooltip
     layer "interface"
+    tag tooltip
+    zorder 5
 
     $ tooltip = GetTooltip()
 

@@ -164,68 +164,77 @@
 default editor = ExpressionEditor()
 
 screen editor():
+    layer "interface"
     tag editor
-    zorder 999
+    zorder 0
     
-    drag:
-        drag_name "editor"
-        draggable True
-        drag_offscreen False
-        drag_handle (0, 0, 1.0, 0.2)
-        pos (50, 50)
-        frame:
-            xysize (250, 450)
-            button action NullAction() style "empty" xysize (250, 450) ypos 18
-            
-            text "Editor" size 15 color "#FFF" outlines [(1, "#00000080", 1, 0)]
-            
+    default minimised = False
+    default frame_size = (250, 450)
+    
+    if not _menu:
+        drag:
+            drag_name "editor"
+            draggable True
+            drag_offscreen False
+            drag_handle (0, 0, 1.0, 0.2)
+            pos (50, 50)
             frame:
-                style "empty"
-                xysize (236, 2) 
-                pos (0, 18)
-                background "#FFFFFF80"
+                xysize frame_size
+                button action NullAction() style "empty" xysize frame_size ypos 18
+                
+                text "Editor" size 15 color "#FFF" outlines [(1, "#00000080", 1, 0)]
+                
+                textbutton "_" ysize 28 offset (-32, -7) text_size 15 text_yalign 0.5 xalign 1.0 action [ToggleScreenVariable("minimised", True, False), ToggleScreenVariable("frame_size", (250, 450), (250, 28)), SelectedIf(None)] tooltip ("Maximise editor" if minimised else "Minimise editor")
+                textbutton "x" ysize 28 offset (6, -7) text_size 15 text_yalign 0.5 xalign 1.0 action Hide("editor") tooltip "Close editor"
+                
+                frame:
+                    style "empty"
+                    xysize (236, 2) 
+                    pos (0, 18)
+                    background "#FFFFFF80"
+                
+                if not minimised:
+                    if editor.label:
+                        $ f = editor._file.split("/")[-1]
+                        $ l = editor.line
+                        
+                        text "File: [f]\nLine: [l]" size 10 color "#FFF" pos (0, 160) outlines [(1, "#00000080", 1, 0)]
+                        
+                        if editor.changes.get(editor._file, None):
+                            $ n = 0
+                            $ nn = 0
+                            for k, v in editor.changes.iteritems():
+                                $ n += 1
+                                $ nn += len(v)
+                            text "Reload to apply [nn] changes in [n] files" size 10 color "#FFF" align (0.5, 0.9) outlines [(1, "#00000080", 1, 0)]
+                        
+                        textbutton "Save" action Function(editor.overwrite_statement) align (0.0, 1.0)
+                        textbutton "Reload" action Function(_reload_game) xanchor 1.0 align (1.0, 1.0)
             
-            if editor.label:
-                $ f = editor._file.split("/")[-1]
-                $ l = editor.line
-                
-                text "File: [f]\nLine: [l]" size 10 color "#FFF" xpos 60 yoffset -3 outlines [(1, "#00000080", 1, 0)]
-                
-                if editor.changes.get(editor._file, None):
-                    $ n = 0
-                    $ nn = 0
-                    for k, v in editor.changes.iteritems():
-                        $ n += 1
-                        $ nn += len(v)
-                    text "Reload to apply [nn] changes in [n] files" size 10 color "#FFF" align (0.5, 0.9) outlines [(1, "#00000080", 1, 0)]
-                
-                textbutton "Save" action Function(editor.overwrite_statement) align (0.0, 1.0)
-                textbutton "Reload" action Function(_reload_game) xanchor 1.0 align (1.0, 1.0)
-    
-                if not False in (editor.args["pupils"], editor.args["eyebrows"], editor.args["eyes"], editor.args["mouth"]):
-                    use dropdown_menu(name="Tears: "+str(editor.args["tears"]), pos=(0, 140), items_offset=(0, 0), background="#FFFFFF80"):
-                        for i in editor.get_expressions("tears"):
-                            textbutton "[i]" text_size 10 action [SelectedIf(i==str(editor.args["tears"])), Function(editor.set_data, "tears", i)]
-                    use dropdown_menu(name="Cheeks: "+str(editor.args["cheeks"]), pos=(0, 120), items_offset=(0, 0), background="#FFFFFF80"):
-                        for i in editor.get_expressions("cheeks"):
-                            textbutton "[i]" text_size 10 action [SelectedIf(i==str(editor.args["cheeks"])), Function(editor.set_data, "cheeks", i)]
-                    if editor.label == "ton_main":
-                        use dropdown_menu(name="Hair: "+str(editor.args["hair"]), pos=(0, 100), items_offset=(0, 0), background="#FFFFFF80"):
-                            for i in xrange(0, 10):
-                                textbutton "hello world"
-                    use dropdown_menu(name="Pupils: "+str(editor.args["pupils"]), pos=(0, 80), items_offset=(0, 0), background="#FFFFFF80"):
-                        for i in editor.get_expressions("pupils"):
-                            textbutton "[i]" text_size 10 action [SelectedIf(i==str(editor.args["pupils"])), Function(editor.set_data, "pupils", i)]
-                    use dropdown_menu(name="Eyebrows: "+str(editor.args["eyebrows"]), pos=(0, 60), items_offset=(0, 0), background="#FFFFFF80"):
-                        for i in editor.get_expressions("eyebrows"):
-                            textbutton "[i]" text_size 10 action [SelectedIf(i==str(editor.args["eyebrows"])), Function(editor.set_data, "eyebrows", i)]
-                    use dropdown_menu(name="Eyes: "+str(editor.args["eyes"]), pos=(0, 40), items_offset=(0, 0), background="#FFFFFF80"):
-                        for i in editor.get_expressions("eyes"):
-                            textbutton "[i]" text_size 10 action [SelectedIf(i==str(editor.args["eyes"])), Function(editor.set_data, "eyes", i)]
-                    use dropdown_menu(name="Mouth: "+str(editor.args["mouth"]), pos=(0, 20), items_offset=(0, 0), background="#FFFFFF80"):
-                        for i in editor.get_expressions("mouths"):
-                            textbutton "[i]" text_size 10 action [SelectedIf(i==str(editor.args["mouth"])), Function(editor.set_data, "mouth", i)]
-                else:
-                    text "This character line uses unrecognized expression and requires to be changed manually." size 10 color "#FFF" align (0.5, 0.5) outlines [(1, "#00000080", 1, 0)]
-            else:
-                text "Not applicable." size 15 color "#FFF" align (0.5, 0.5) outlines [(1, "#00000080", 1, 0)]
+                        if not False in (editor.args["pupils"], editor.args["eyebrows"], editor.args["eyes"], editor.args["mouth"]):
+                            use dropdown_menu(name="Tears: "+str(editor.args["tears"]), pos=(0, 140), items_offset=(0, 0), background="#FFFFFF80"):
+                                for i in editor.get_expressions("tears"):
+                                    textbutton "[i]" text_size 10 action [SelectedIf(i==str(editor.args["tears"])), Function(editor.set_data, "tears", i)]
+                            use dropdown_menu(name="Cheeks: "+str(editor.args["cheeks"]), pos=(0, 120), items_offset=(0, 0), background="#FFFFFF80"):
+                                for i in editor.get_expressions("cheeks"):
+                                    textbutton "[i]" text_size 10 action [SelectedIf(i==str(editor.args["cheeks"])), Function(editor.set_data, "cheeks", i)]
+                            if editor.label == "ton_main":
+                                use dropdown_menu(name="Hair: "+str(editor.args["hair"]), pos=(0, 100), items_offset=(0, 0), background="#FFFFFF80"):
+                                    for i in xrange(0, 10):
+                                        textbutton "hello world"
+                            use dropdown_menu(name="Pupils: "+str(editor.args["pupils"]), pos=(0, 80), items_offset=(0, 0), background="#FFFFFF80"):
+                                for i in editor.get_expressions("pupils"):
+                                    textbutton "[i]" text_size 10 action [SelectedIf(i==str(editor.args["pupils"])), Function(editor.set_data, "pupils", i)]
+                            use dropdown_menu(name="Eyebrows: "+str(editor.args["eyebrows"]), pos=(0, 60), items_offset=(0, 0), background="#FFFFFF80"):
+                                for i in editor.get_expressions("eyebrows"):
+                                    textbutton "[i]" text_size 10 action [SelectedIf(i==str(editor.args["eyebrows"])), Function(editor.set_data, "eyebrows", i)]
+                            use dropdown_menu(name="Eyes: "+str(editor.args["eyes"]), pos=(0, 40), items_offset=(0, 0), background="#FFFFFF80"):
+                                for i in editor.get_expressions("eyes"):
+                                    textbutton "[i]" text_size 10 action [SelectedIf(i==str(editor.args["eyes"])), Function(editor.set_data, "eyes", i)]
+                            use dropdown_menu(name="Mouth: "+str(editor.args["mouth"]), pos=(0, 20), items_offset=(0, 0), background="#FFFFFF80"):
+                                for i in editor.get_expressions("mouths"):
+                                    textbutton "[i]" text_size 10 action [SelectedIf(i==str(editor.args["mouth"])), Function(editor.set_data, "mouth", i)]
+                        else:
+                            text "This character line uses unrecognized expression and requires to be changed manually." size 10 color "#FFF" align (0.5, 0.5) outlines [(1, "#00000080", 1, 0)]
+                    else:
+                        text "Not applicable." size 15 color "#FFF" align (0.5, 0.5) outlines [(1, "#00000080", 1, 0)]

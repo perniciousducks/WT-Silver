@@ -40,6 +40,13 @@ init python:
 
 
     class event_class(object):
+        """ Handles and tracks event progression.
+
+            `tier` (int): The current tier number, which determines the set of events to run.
+            `counter` (int): The number of successfully completed events.
+            `points` (int): The number of successfully completed events in the current tier.
+        """
+
         def __init__(self, **kwargs):
             self.title     = ""
             self.hint      = ""
@@ -134,7 +141,7 @@ init python:
             return menu_text
 
         def fail(self):
-            self.counter -= max(0, self.counter-1)
+            self.counter = max(0, self.counter-1)
             self.points -= 1
             self.events[self._tier][self._points][1] = False
             return

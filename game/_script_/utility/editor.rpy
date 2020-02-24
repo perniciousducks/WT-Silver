@@ -82,14 +82,17 @@
             return new
             
         def catch(self, label):
-            self.label = label
-            
             # Get file and line number
             stack = renpy.get_return_stack()[-1]
             node = renpy.game.script.namemap.get(stack, None)
+            
+            # Console call fallback
+            if node.filename == "<string>":
+                return
         
             self._file = config.basedir+"/"+node.filename
             self.line = node.linenumber
+            self.label = label
             
             # Get arguments
             node = renpy.game.script.lookup_or_none(self.label)

@@ -303,6 +303,7 @@ label ball_quest_E1:
             jump ball_quest_E1.end
 
         "\"Touch yourself for me first...\"":
+            $ hg_masturbated.triggered()
             $ d_flag_03 = True
             $ her_mood += 5
 

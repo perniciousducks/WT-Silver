@@ -1,5 +1,3 @@
-
-
 ### Hermione Dance ###
 
 label hg_pf_strip:
@@ -39,7 +37,6 @@ label hg_pf_strip:
     # Points
     m "{number=current_payout} points to the Gryffindor house."
     call her_main("Thank you, [genie_name]...", "soft", "base", "base", "R")
-
 
     # Hermione leaves
     call her_walk("door", "base")
@@ -125,7 +122,6 @@ label hg_pf_strip_T0_fail_intro: # Hermione starts dancing, but it will fail any
 
     jump end_hermione_event
 
-
 label hg_pf_strip_T0_fail_repeat:
     call bld
     m "[hermione_name], I need you to dance for me a little."
@@ -144,8 +140,6 @@ label hg_pf_strip_T0_fail_repeat:
     $ hg_pf_strip.counter -= 1
 
     jump end_hermione_event
-
-
 
 ### Tier 1 ###
 
@@ -341,8 +335,6 @@ label hg_pf_strip_T1_intro_E1: # Complete
             $ her_mood += 25
 
             jump end_hermione_event
-
-
 
 label hg_pf_strip_T1_intro_E2:
     call bld
@@ -902,8 +894,6 @@ label hg_pf_strip_T1_masturbate:
 
             jump hg_pf_strip_T1_watch
 
-
-
 ### Tier 2 ###
 
 
@@ -923,8 +913,6 @@ label hg_pf_strip_T2_intro_E1:
 
     jump hg_pf_strip_T2
 
-
-
 label hg_pf_strip_T2_intro_E2:
     m "[hermione_name], would you like to provide me with about another strip show?"
     m "(I'm bored as fuck in here after all...)"
@@ -937,8 +925,6 @@ label hg_pf_strip_T2_intro_E2:
 
     jump hg_pf_strip_T2
 
-
-
 label hg_pf_strip_T2_E2:
     m "[hermione_name], would you like to strip for me again?"
     if her_tier <= 5:
@@ -948,8 +934,6 @@ label hg_pf_strip_T2_E2:
 
     jump hg_pf_strip_T2
 
-
-
 label hg_pf_strip_T2:
     menu:
         m "(...)"
@@ -958,14 +942,11 @@ label hg_pf_strip_T2:
 
         "-Ask her to lock the door.-":
             $ lock_door = True
-            pass
 
         "-Tell her to leave the door open...-":
             $ lock_door = False
-            pass
 
     if lock_door: # Locks door.
-
         if her_tier <= 5:
             call her_main("Of course...", "base", "base", "base", "mid")
         else:
@@ -988,12 +969,8 @@ label hg_pf_strip_T2:
         call her_walk("mid", "base")
         pause.2
 
-        call her_main("All done!", "smile", "closed", "base", "mid", ypos="head")
-
-        pass
-
+        call her_main("All done!", "smile", "closed", "base", "mid", trans=d3)
     else: # Leave door open.
-
         if her_tier <= 4:
             call her_main("But, what if somebody walks in again!", "shock", "wide", "base", "stare")
             m "Nonsense. No such thing will happen..."
@@ -1005,26 +982,23 @@ label hg_pf_strip_T2:
             call her_walk("desk", "base", reduce=0.8)
 
             $ her_mood += 4
-            pass
-
         else:
             call her_main("Yes, [genie_name].", "base", "narrow", "base", "mid_soft")
 
             stop music fadeout 1.0
-            pass
-
 
     # Climb desk
     call blkfade
     call play_sound("climb_desk")
     pause 2
     call her_chibi("dance","on_desk","on_desk")
+    hide screen hermione_main
     hide screen blkfade
     with d5
     call ctc
 
     call play_music("playful_tension") # SEX THEME.
-    call her_main("...", "base", "narrow", "base", "mid_soft", xpos="mid", ypos="base")
+    call her_main("...", "base", "narrow", "base", "mid_soft", xpos="mid", ypos="base", trans=d3)
     $ hermione.strip("robe", "accessory")
     m "Yes, very nice."
     call her_main("...", "annoyed", "narrow", "worried", "down")
@@ -1146,7 +1120,7 @@ label hg_pf_strip_T2:
     call ctc
 
     menu:
-        "-Ask her to masturbate- (UNFINISHED)" if config.developer:
+        "-Ask her to masturbate-":
             if her_tier <= 4:
                 jump hg_pf_strip_T2_fingering
             elif her_tier == 5:

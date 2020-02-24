@@ -234,7 +234,7 @@ label eating_for_pleasure:
     g16 "{size=+4}Come in!{/size}"
     pause 0.5
     call her_walk(action="enter", xpos="desk", ypos="base")
-    call her_main("Your order, sir!", "smile", "happyCl", "base", "mid")
+    call her_main("Your order, sir!", "smile", "happyCl", "base", "mid", trans=d3)
     g5 "What...{w=0.3} the hell...{w=0.3} is this!"
     call her_main("What do you mean... Did we get the wrong toppings?", "annoyed", "base", "worried", "mid")
     g4 "Toppings?!"

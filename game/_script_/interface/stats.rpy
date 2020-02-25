@@ -462,23 +462,26 @@ screen stats_menuitem(xx, yy):
                             use text_stat("Cursed with Imperio:")
                             use text_stat("- ", " times -", ag_se_imperio_sb.counter)
 
-screen stat_bar(steps, top_text, buttom_text, stat_number, top_padding = 20):
-    default bar_full = "interface/stats/"+str(interface_color)+"/bar_full.png"
-    default bar_empty = "interface/stats/"+str(interface_color)+"/bar_empty.png"
-
+screen stat_bar(steps, top_text, bottom_text, stat_number, top_padding=20):
+    sensitive False
+    
     frame:
         background "#0000"
         ysize top_padding
 
-    text top_text xalign 0.5 size 30 bold 0.1
+    text top_text xalign 0.5 size 30
+    
     frame:
         background "#0000"
         xalign 0.5
         ysize 30
         xsize 360
-        add Crop((0, 0, steps*36, 600), bar_full)
-        add bar_empty
-    text "" +buttom_text+ " (lvl " +str(stat_number)+ ")" xalign 0.5 size 20
+        add Crop((0, 0, steps*36, 600), "interface/stats/"+str(interface_color)+"/bar_full.png")
+        add "interface/stats/"+str(interface_color)+"/bar_empty.png"
+        
+    text bottom_text+" (lvl " +str(stat_number)+ ")" xalign 0.5 size 20
 
 screen text_stat(startText="", endText="", amount="", top_padding = 20):
+    sensitive False
+    
     text (startText +str(amount)+ endText) xpos 20 size 14

@@ -483,7 +483,8 @@ screen preferences():
                     textbutton _("Jerk off - [hkey_fap]") action None
     
 screen notify(message):
-    zorder 100
+    layer "interface"
+    sensitive False
 
     # Pass a tuple to customise notify transform (for positioning)
     if isinstance(message, tuple):
@@ -506,7 +507,7 @@ screen notify(message):
             color "#fff" 
             outlines [(1, "#00000080", 1, 0)]
 
-    timer 3.25 action Hide('notify')
+    timer 3.25 action Hide("notify")
     
 screen skip_indicator():
     zorder 100

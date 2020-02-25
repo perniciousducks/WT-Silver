@@ -28,18 +28,17 @@ label door_menu(xx=723, yy=90):
 
     $ current_sorting = door_show_busy
 
-    label .after_init:
-    #$ renpy.block_rollback()
-
     show screen bld1
     show screen door_menu(xx, yy)
+    with d3
 
+    label .after_init:
+    #$ renpy.block_rollback()
     $ _return = ui.interact()
 
-    hide screen bld1
-    hide screen door_menu
-
     if _return[0] == "summon":
+        hide screen bld1
+        hide screen door_menu
         if not _return[2]:
             $ renpy.jump("summon_"+_return[1].lower())
         else:
@@ -48,6 +47,8 @@ label door_menu(xx=723, yy=90):
             else:
                 call nar(">"+_return[1]+" is currently asleep. Try again tomorrow.")
     else:
+        hide screen bld1
+        hide screen door_menu
         $ hide_transitions = False
         jump main_room_menu
 

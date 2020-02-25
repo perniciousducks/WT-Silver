@@ -198,16 +198,13 @@ label achievement_menu(xx=150, yy=90):
     if not renpy.variant("android"):
         show screen mouse_tooltip
 
-    label .after_init:
-    $ renpy.block_rollback()
-
     show screen achievement_menu(xx, yy)
     show screen achievement_menuitem(xx, yy)
+    with d3
 
+    label .after_init:
+    $ renpy.block_rollback()
     $ _return = ui.interact()
-
-    hide screen achievement_menu
-    hide screen achievement_menuitem
 
     if _return[0] == "select":
         if current_item == _return[1]:
@@ -224,7 +221,6 @@ label achievement_menu(xx=150, yy=90):
         $ menu_items_length = len(menu_items)
         $ current_page = 0
         $ current_item = None
-        pass
     elif _return == "inc":
         $ current_page += 1
     elif _return == "dec":
@@ -256,6 +252,8 @@ label achievement_menu(xx=150, yy=90):
         $ current_page = 0
         $ current_item = None
     else:
+        hide screen achievement_menu
+        hide screen achievement_menuitem
         return
 
     jump .after_init

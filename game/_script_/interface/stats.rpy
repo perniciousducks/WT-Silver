@@ -127,17 +127,14 @@ label stats_menu(xx=150, yy=90):
     
     if not renpy.variant("android"):
         show screen mouse_tooltip
-        
-    label .after_init:
-    $ renpy.block_rollback()
 
     show screen stats_menu(xx, yy)
     show screen stats_menuitem(xx, yy)
+    with d3
 
+    label .after_init:
+    $ renpy.block_rollback()
     $ _return = ui.interact()
-
-    hide screen stats_menu
-    hide screen stats_menuitem
 
     if _return[0] == "category":
         $ current_category = _return[1]
@@ -150,6 +147,8 @@ label stats_menu(xx=150, yy=90):
         if _return[1] != current_subcategory:
             $ current_subcategory = _return[1]
     else:
+        hide screen stats_menu
+        hide screen stats_menuitem
         return
 
     jump .after_init

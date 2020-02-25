@@ -50,16 +50,13 @@ label inventory_menu(xx=150, yy=90):
     if not renpy.variant("android"):
         show screen mouse_tooltip
 
-    label .after_init:
-    $ renpy.block_rollback()
-
     show screen inventory_menu(xx, yy)
     show screen inventory_menuitem(xx, yy)
+    with d3
 
+    label .after_init:
+    $ renpy.block_rollback()
     $ _return = ui.interact()
-
-    hide screen inventory_menu
-    hide screen inventory_menuitem
 
     if _return[0] == "select":
         if current_item == _return[1]:
@@ -95,6 +92,8 @@ label inventory_menu(xx=150, yy=90):
         $ current_page = 0
         $ current_item = None
     else:
+        hide screen inventory_menu
+        hide screen inventory_menuitem
         return
 
     jump .after_init

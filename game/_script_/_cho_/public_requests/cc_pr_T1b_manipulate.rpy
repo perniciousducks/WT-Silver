@@ -17,14 +17,14 @@ label cc_pr_manipulate_start:
             m "Right...{w} who was that again?"
             call cho_main("Cedric Diggory. How often do I have to repeat that to you, [cho_genie_name]?","annoyed","narrow","base","mid")
             m "You will know once you get to be my age..."
-            call cho_main("I'm so sorry Sir!{w} I'll try to be more respectful of your age!","angry","closed","sad","mid")
+            call cho_main("I'm so sorry Sir!{w} I'll try to be more respectful of your age!", "angry", "closed", "worried", "mid")
             m "(Because at my age you'll stop giving a damn...)"
             call cho_main("Cedric is a bit of a block head, but he's quite a competent seeker.","soft","base","raised","R")
-            call cho_main("And very popular with the girls...","soft","base","sad","downR")
+            call cho_main("And very popular with the girls...", "soft", "base", "worried", "downR")
             m "Do I sense a little bit of something in your voice?"
             call cho_main("Of course not! We stopped dating ages ago!","angry","base","raised","R")
             call cho_main("I didn't want to be seen with an idiot like him anymore, not if I'm supposed to be a proper Ravenclaw...","soft","narrow","angry","mid")
-            call cho_main("{size=-4}Even if he's cute...{/size}","horny","base","sad","down") # Small text.
+            call cho_main("{size=-4}Even if he's cute...{/size}", "horny", "base", "worried", "down") # Small text.
             m "That's good. We can use this to our advantage."
             call cho_main("We can? How?","soft","wide","base","mid")
             m "You two having history! Which means he'll be much easier to distract during the game."
@@ -52,7 +52,7 @@ label cc_pr_manipulate_start:
             m "And how's that plan been working out so far?"
             call cho_main("*Ugh!* Fine...{w} Point taken...","annoyed","narrow","angry","R")
             call cho_main("So I just have to make him think there's something between us again?","soft","base","base","mid")
-            call cho_main("I think I can do that...{w} For Ravenclaw...","quiver","base","sad","down")
+            call cho_main("I think I can do that...{w} For Ravenclaw...", "quiver", "base", "worried", "down")
             m "Good, let me know how it goes later today."
             call cho_main("Yes, [cho_genie_name]!","base","base","base","mid")
 
@@ -69,21 +69,21 @@ label cc_pr_manipulate_start:
         # Intro
         if cc_pr_manipulate.points == 0:
             m "[cho_name], how well, in your opinion, did you do in your last match?"
-            call cho_main("I think I did quite well with distracting those Hufflepuffs...","soft","narrow","sad","mid")
+            call cho_main("I think I did quite well with distracting those Hufflepuffs...", "soft", "narrow", "worried", "mid")
             m "Only one Hufflepuff!{w} We were lucky you could secure that win with such low effort..."
-            call cho_main("(...)","annoyed","base","sad","downR")
+            call cho_main("(...)", "annoyed", "base", "worried", "downR")
             m "We have to up our game to win against the next house, don't you think?"
             m "Manipulating just one player won't be enough this time! We have to put our focus on their entire team!"
-            call cho_main("You might be right about that, [cho_genie_name].{w} Slytherin's team is quite good overall, and they have some of the best players at this school.","soft","base","sad","mid")
-            call cho_main("What do you suggest I should do?","annoyed","narrow","sad","mid")
+            call cho_main("You might be right about that, [cho_genie_name].{w} Slytherin's team is quite good overall, and they have some of the best players at this school.", "soft", "base", "worried", "mid")
+            call cho_main("What do you suggest I should do?", "annoyed", "narrow", "worried", "mid")
             m "Same as with that Diggory boy!"
             g4 "Go and talk to them, be affectionate and flirty, make out with them..."
-            call cho_main("Make out with? Those Slytherins-","soft","wide","sad","mid")
+            call cho_main("Make out with? Those Slytherins-", "soft", "wide", "worried", "mid")
             call cho_main("*guargh*","scream","narrow","angry","mid", trans=hpunch)
             call cho_main("*cough*{w=0.6} *guargh!*{w=0.8} *cough*","scream","closed","angry","mid", trans=hpunch)
             call nar(">You hear Cho make some inadvertent gag noises...")
             m "Is everything okay, girl?"
-            call cho_main("No!{w=0.2} It's not ok!{w} Why would you think I want to snog with those repulsive, yuck-ugly, Slytherin degenerates?!","angry","wide","sad","mid")
+            call cho_main("No!{w=0.2} It's not ok!{w} Why would you think I want to snog with those repulsive, yuck-ugly, Slytherin degenerates?!", "angry", "wide", "worried", "mid")
             call cho_main("The thought alone utterly disgusts me, [cho_genie_name]!","soft","narrow","angry","R")
             call cho_main("I'll do anything but that!","soft","narrow","base","mid")
             m "So no kissing?"
@@ -96,17 +96,17 @@ label cc_pr_manipulate_start:
             m "So... just do it in secret, then."
             call cho_main("That... might work.","annoyed","base","base","R")
             m "Don't you have any classes with them?"
-            call cho_main("I do on some days.","soft","narrow","sad","mid")
+            call cho_main("I do on some days.", "soft", "narrow", "worried", "mid")
             m "Then give them a note to meet you alone once the class is finished, easy..."
             call cho_main("I guess I could do that...","base","base","base","mid")
             m "They can read, right?"
-            call cho_main("Yes, I do believe they can read{w=0.8} but don't take my word for it...","soft","narrow","sad","mid")
+            call cho_main("Yes, I do believe they can read{w=0.8} but don't take my word for it...", "soft", "narrow", "worried", "mid")
             m "You need to find a way to convince them to throw the game. It's our only chance..."
             m "Do you have any ideas how you could accomplish that?"
             call cho_main("I- *uhm*...","annoyed","base","base","R")
-            call cho_main("I could still try to flirt with them a bit, I guess.","soft","base","sad","mid")
+            call cho_main("I could still try to flirt with them a bit, I guess.", "soft", "base", "worried", "mid")
             m "I doubt that that will be enough..."
-            call cho_main("","annoyed","base","sad","mid")
+            call cho_main("", "annoyed", "base", "worried", "mid")
             m "But,...{w=0.5} let's just try it and see how it goes."
             m "If anything goes wrong...{w=0.8} just improvise..."
             call cho_main("Very well, Sir.{w} I'll try my best!","base","base","base","mid")
@@ -155,10 +155,10 @@ label cc_pr_manipulate_T1_intro_E1:
     m "Sounds special enough to me."
     call cho_main("Well it wasn't! I want a bit of romance...","soft","closed","base","mid")
     m "At least it sounds like you're doing a good job distracting him."
-    call cho_main("If you say so...","quiver","base","sad","down")
+    call cho_main("If you say so...", "quiver", "base", "worried", "down")
     m "Just keep in mind why we're doing this."
     g4 "You can't chicken out of something as small as a kiss if you want Ravenclaw to have a chance!"
-    call cho_main("Right, [cho_genie_name]!","angry","closed","sad","mid")
+    call cho_main("Right, [cho_genie_name]!", "angry", "closed", "worried", "mid")
     m "That'll be all for now, you can go."
     call cho_main("Thank you, [cho_genie_name].","base","base","base","mid")
 
@@ -215,43 +215,43 @@ label cc_pr_manipulate_T1_E2:
 
     call cho_main(face="annoyed", xpos="mid", ypos="base", trans=fade)
     g4 "[cho_name]! Do you have some good news for me?"
-    call cho_main("I'm afraid not this time, Sir.","soft","narrow","sad","mid")
+    call cho_main("I'm afraid not this time, Sir.", "soft", "narrow", "worried", "mid")
     m "Why not? Tell me what happened..."
-    call cho_main("Well, today I saw Cedric again down in the dungeons.","horny","closed","sad","mid")
+    call cho_main("Well, today I saw Cedric again down in the dungeons.", "horny", "closed", "worried", "mid")
     g9 "(The dungeons? I like where this is going already!)"
     call cho_main("Before I approached him I removed my Ravenclaw tie, and unbuttoned the top of my blouse.","horny","base","base","down")
     m "A very well thought out strategy, girl!"
     call cho_main("I thought it would be enough to get his attention.","soft","narrow","base","mid")
     m "Which I assume you got straight away?"
-    call cho_main("No, Sir. But somebody else's...","angry","narrow","sad","mid")
+    call cho_main("No, Sir. But somebody else's...", "angry", "narrow", "worried", "mid")
     g9 "Intriguing!{w} Who else did you manage to snag?"
-    call cho_main("Professor Slughorn, Sir.","angry","base","sad","mid")
+    call cho_main("Professor Slughorn, Sir.", "angry", "base", "worried", "mid")
     m "Who?"
     call cho_main("{size=+4}Professor Slughorn!{/size}","scream","closed","angry","mid", trans=hpunch)
-    call cho_main("Our Alchemy professor...{w} he once again had to stand in for professor Snape's potions lecture because he couldn't make it.","angry","narrow","sad","downR")
+    call cho_main("Our Alchemy professor...{w} he once again had to stand in for professor Snape's potions lecture because he couldn't make it.", "angry", "narrow", "worried", "downR")
     m "Snape is missing his classes? How often has this been happening?"
-    call cho_main("Probably every other week or so.","soft","base","sad","R")
+    call cho_main("Probably every other week or so.", "soft", "base", "worried", "R")
     m "Slacker..."
-    call cho_main("...","angry","closed","sad","mid")
-    call cho_main("Anyway, Slughorn sort of crossed paths with me when I was about to confront Cedric...","soft","narrow","sad","R")
+    call cho_main("...", "angry", "closed", "worried", "mid")
+    call cho_main("Anyway, Slughorn sort of crossed paths with me when I was about to confront Cedric...", "soft", "narrow", "worried", "R")
     call cho_main("He came out of nowhere!","soft","wide","base","mid")
-    call cho_main("And he stood so close, he could see right down my cleavage!","angry","closed","sad","mid")
+    call cho_main("And he stood so close, he could see right down my cleavage!", "angry", "closed", "worried", "mid")
     g4 "What a lucky git!"
-    call cho_main("I couldn't move a single muscle! It was like I was frozen in place!","soft","narrow","sad","R")
-    call cho_main("What if something like that would happen during the game?!","soft","narrow","sad","mid")
+    call cho_main("I couldn't move a single muscle! It was like I was frozen in place!", "soft", "narrow", "worried", "R")
+    call cho_main("What if something like that would happen during the game?!", "soft", "narrow", "worried", "mid")
     m "You're right. That could be an issue..."
-    call cho_main("And the worst thing is, he just kept staring!","angry","narrow","sad","down")
+    call cho_main("And the worst thing is, he just kept staring!", "angry", "narrow", "worried", "down")
     m "And then? What happened?"
     call cho_main("He commended me about how well I did in my last potion lesson with him, so he awarded Ravenclaw five house points for my efforts.","soft","narrow","angry","mid")
     m "Sounds like a nice guy..."
-    call cho_main("But Sir, I ruined my potion during the last lesson I had with him!","quiver","narrow","sad","mid")
-    call cho_main("The only reason he gave me those points, is because I let him stare down my shirt!","quiver","angry","sad","mid")
-    call cho_main("I feel so dirty because of it...","horny","narrow","sad","down")
+    call cho_main("But Sir, I ruined my potion during the last lesson I had with him!", "quiver", "narrow", "worried", "mid")
+    call cho_main("The only reason he gave me those points, is because I let him stare down my shirt!", "quiver", "narrow", "worried", "mid")
+    call cho_main("I feel so dirty because of it...", "horny", "narrow", "worried", "down")
     m "You shouldn't feel dirty...{w} Maybe only \"a little\" dirty, if anything..."
-    call cho_main("I'm sorry, Sir.{w} May I have permission to leave?","angry","narrow","sad","mid")
+    call cho_main("I'm sorry, Sir.{w} May I have permission to leave?", "angry", "narrow", "worried", "mid")
     m "Permission granted...{w} But try to be more effective next time."
-    call cho_main("I will, Sir.","angry","closed","sad","mid")
-    call cho_main("Have a nice day.","soft","narrow","sad","mid")
+    call cho_main("I will, Sir.", "angry", "closed", "worried", "mid")
+    call cho_main("Have a nice day.", "soft", "narrow", "worried", "mid")
 
     # Cho leaves.
     call cho_walk(action="leave")
@@ -272,7 +272,7 @@ label cc_pr_manipulate_T1_E3:
     call cho_main("Very well, Sir!", mouth="smile", face="happy")
     g9 "Yeah? Tell me about it!"
     call cho_main("I ran into Cedric on my way to the library...{w} Literally!","soft","wide","base","mid")
-    call cho_main("I bumped into him and hit my head pretty hard...","soft","narrow","sad","mid")
+    call cho_main("I bumped into him and hit my head pretty hard...", "soft", "narrow", "worried", "mid")
     m "You poor thing..."
     call cho_main("It's nothing, Sir. I'm more than capable at enduring pain!","soft","narrow","angry","R")
     m "A useful skill to have, I can imagine..."
@@ -280,14 +280,14 @@ label cc_pr_manipulate_T1_E3:
     call play_sound("gulp")
     g4 "*gulp!*"
     call cho_main("Anyway, Cedric helped me back up on my feet, but before he could even apologise, I kissed him!","soft","narrow","base","R")
-    call cho_main("It just... happened...","horny","narrow","sad","downR")
+    call cho_main("It just... happened...", "horny", "narrow", "worried", "downR")
     m "Well done, girl!"
     call cho_main("It was really nice, though.","soft","narrow","base","mid")
     call cho_main("He still is a really good kisser!", face="horny")
     call cho_main("Compared to most of the others I had...","base","base","base","downR")
     g4 "!!!"
     call cho_main("Anyhow, I should get going, Sir.","soft","base","base","R")
-    call cho_main("It's getting late...","soft","base","sad","mid")
+    call cho_main("It's getting late...", "soft", "base", "worried", "mid")
     m "Of course. You are dismissed."
     call cho_main("Good night, [cho_genie_name].", face="happy")
 
@@ -312,29 +312,29 @@ label cc_pr_manipulate_T2_intro_E1:
     m "Good evening [cho_name], How did today's task go?"
     call cho_main("I can't believe you convinced me to do this!","soft","narrow","angry","mid")
     m "So badly I take it?"
-    call cho_main("No, it went perfectly...","angry","narrow","sad","down")
+    call cho_main("No, it went perfectly...", "angry", "narrow", "worried", "down")
     m "So why the face?"
-    call cho_main("Well, I did as you suggested, I left a note for them to meet me alone after class.","soft","base","sad","mid")
+    call cho_main("Well, I did as you suggested, I left a note for them to meet me alone after class.", "soft", "base", "worried", "mid")
     m "Great, so did they show?"
-    call cho_main("Yes... apparently they could read after all... And they met with me after the lesson.","soft","narrow","sad","R")
-    call cho_main("Once everyone had left and we were alone in the corridor. I didn't really know how to go about it.","quiver","narrow","sad","mid")
-    call cho_main("They must've felt how awkward I was as I approached them, or they had literally never had any woman approach them before.","quiver","base","sad","mid")
+    call cho_main("Yes... apparently they could read after all... And they met with me after the lesson.", "soft", "narrow", "worried", "R")
+    call cho_main("Once everyone had left and we were alone in the corridor. I didn't really know how to go about it.", "quiver", "narrow", "worried", "mid")
+    call cho_main("They must've felt how awkward I was as I approached them, or they had literally never had any woman approach them before.", "quiver", "base", "worried", "mid")
     m "So they didn't get that you were coming onto them, surely they can't be that thick..."
     call cho_main("No sir, they got it alright... perhaps a little too well.","horny","base","base","down")
     call cho_main("Or they're just used to treating those Slytherin skanks as their personal squeeze toys...","annoyed","narrow","angry","R")
     m "So, what happened?"
     call cho_main("I came onto them a little bit, since they're new on the Slytherin team I told them how impressed I was when watching their practice match against Gryffindor.","soft","narrow","angry","mid")
-    call cho_main("Told them that it must be lonely on the pitch with no girls on their team so fool around with in the showers.","horny","base","sad","down")
-    call cho_main("I couldn't stand the idea of complimenting them on their looks so I told them how impressed I am with their pure strength... which technically isn't a lie.","horny","narrow","sad","down")
+    call cho_main("Told them that it must be lonely on the pitch with no girls on their team so fool around with in the showers.", "horny", "base", "worried", "down")
+    call cho_main("I couldn't stand the idea of complimenting them on their looks so I told them how impressed I am with their pure strength... which technically isn't a lie.", "horny", "narrow", "worried", "down")
     m "Understandable... but what about getting them to take it a bit easier on you during the game itself?"
-    call cho_main("I'm getting to it...","angry","closed","sad","mid")
+    call cho_main("I'm getting to it...", "angry", "closed", "worried", "mid")
     call cho_main("I was asking them how much the game meant to them and what I could do to persuade them to take it easy...{w} They didn't really seem to know what I meant. They just do whatever Draco tells them to.","soft","narrow","base","mid")
     m "Sounds like trying to make a cat understand how to bark."
-    call cho_main("Exactly...","annoyed","narrow","sad","R")
-    call cho_main("I was a bit frustrated at that point and running out of options on how I could make my intentions even clear to them...","soft","narrow","sad","mid")
-    call cho_main("So lifted my skirt a bit to show them my panties.","horny","closed","sad","mid")
+    call cho_main("Exactly...", "annoyed", "narrow", "worried", "R")
+    call cho_main("I was a bit frustrated at that point and running out of options on how I could make my intentions even clear to them...", "soft", "narrow", "worried", "mid")
+    call cho_main("So lifted my skirt a bit to show them my panties.", "horny", "closed", "worried", "mid")
     m "You go girl!"
-    call cho_main("Well, there's where I messed up... they took it as an invitation and squeezed my butt cheeks quite hard and painfully.","quiver","narrow","sad","mid")
+    call cho_main("Well, there's where I messed up... they took it as an invitation and squeezed my butt cheeks quite hard and painfully.", "quiver", "narrow", "worried", "mid")
     m "Ouch, then what happened?"
     call cho_main("I pushed them away of course! I won't just let them grope me as they please!","open","wide","base","mid")
     call cho_main("But...{w} I did tell them right after, if they're kind to me during the game, that I'll reward them handsomely for it...","horny","narrow","base","downR")
@@ -370,10 +370,10 @@ label cc_pr_manipulate_T2_E1:
     call cho_main(face="annoyed", xpos="mid", ypos="base", trans=fade)
     call cho_main("I managed to corner their seeker when he came out of the boys bathroom.{w} One of the only times those thugs weren't hanging around with him.","soft","narrow","base","down")
     m "Him?"
-    call cho_main("Malfoy...","soft","narrow","sad","mid")
+    call cho_main("Malfoy...", "soft", "narrow", "worried", "mid")
     call cho_main("I cornered him and pushed him back into the bathroom.","annoyed","narrow","base","R")
     m "That's against the school rules miss Chang..."
-    call cho_main("But I thought.","soft","base","sad","mid")
+    call cho_main("But I thought.", "soft", "base", "worried", "mid")
     m "Forget I just said that!..."
     g9 "What happened after that point?"
     call cho_main("Oh, well... I asked him if he had ever touched a Quidditch players ass before.","soft","base","base","R")
@@ -413,9 +413,9 @@ label cc_pr_manipulate_T2_intro_E2:
 
     call cho_main(face="annoyed", xpos="mid", ypos="base", trans=fade)
     m "Back already? How did it go?"
-    call cho_main("Not too great this time, [cho_genie_name].","soft","narrow","sad","R")
+    call cho_main("Not too great this time, [cho_genie_name].", "soft", "narrow", "worried", "R")
     m "No? What happened?"
-    call cho_main("Nothing, actually. I didn't see any of their team members all day. Not even at the Quidditch pitch...","annoyed","narrow","sad","mid")
+    call cho_main("Nothing, actually. I didn't see any of their team members all day. Not even at the Quidditch pitch...", "annoyed", "narrow", "worried", "mid")
     m "Odd... Were they hiding from you?"
     call cho_main("I believe they were, Sir...","soft","closed","base","mid")
     g9 "So, are they afraid of confronting you face to face? Why are they avoiding you?"
@@ -454,49 +454,49 @@ label cc_pr_manipulate_T2_intro_E3:
     call cho_main(face="annoyed", xpos="mid", ypos="base", trans=fade)
     m "[cho_name], how was your day?"
     m "Were you successful this time?"
-    call cho_main("Sir, I believe they are onto me!","angry","narrow","sad","mid")
+    call cho_main("Sir, I believe they are onto me!", "angry", "narrow", "worried", "mid")
     m "Who are... they?"
     call cho_main("Malfoy and his gang, Sir.","soft","base","base","R")
-    call cho_main("They confronted me, outside the girl's bathroom.","angry","narrow","sad","down")
+    call cho_main("They confronted me, outside the girl's bathroom.", "angry", "narrow", "worried", "down")
     g4 "How very rude of them."
-    call cho_main("I'm just glad they didn't follow me inside to be frank...","angry","base","sad","mid")
+    call cho_main("I'm just glad they didn't follow me inside to be frank...", "angry", "base", "worried", "mid")
     m "But they’re boys! They aren't allowed in there!"
     call cho_main("Don’t underestimate them, [cho_genie_name].","soft","closed","base","mid")
     call cho_main("I doubt that anything would stop them from breaking into a girl's most private place...","soft","narrow","angry","mid")
     g4 "They are ruthless!"
     m "What exactly did they want from you?"
-    call cho_main("They questioned me...","annoyed","base","sad","R")
-    call cho_main("About what I'm up to. What my plan is. Why I'm acting... strangely.","soft","narrow","sad","downR")
+    call cho_main("They questioned me...", "annoyed", "base", "worried", "R")
+    call cho_main("About what I'm up to. What my plan is. Why I'm acting... strangely.", "soft", "narrow", "worried", "downR")
     m "Strangely? In what way?"
-    call cho_main("Typically, girls from other houses doesn’t talk to boys from Slytherin...","angry","closed","sad","mid")
+    call cho_main("Typically, girls from other houses doesn’t talk to boys from Slytherin...", "angry", "closed", "worried", "mid")
     call cho_main("Not to mention flirt with them!","angry","wide","base","mid")
     m "So? What did you do?"
     call cho_main("I panicked, [cho_genie_name]!","angry","closed","base","mid")
     call cho_main("I tried to get out of the situation, although in my haste the only solution I could think of was to-...","soft","narrow","base","downR")
     m "Yes?"
-    call cho_main("Flash them, Sir. I flashed them my breasts!","soft","narrow","sad","mid")
+    call cho_main("Flash them, Sir. I flashed them my breasts!", "soft", "narrow", "worried", "mid")
     g9 "Nice!"
-    call cho_main("I'm sorry, Sir. I shouldn't have done it!","angry","narrow","sad","down")
+    call cho_main("I'm sorry, Sir. I shouldn't have done it!", "angry", "narrow", "worried", "down")
     g9 "And what was their reaction?"
     call cho_main("I don't know... They were surprised?","angry","wink","base","mid")
-    call cho_main("I closed my eyes through most of it, and then I ran off...","soft","base","sad","down")
+    call cho_main("I closed my eyes through most of it, and then I ran off...", "soft", "base", "worried", "down")
     m "*Hmmm*"
-    call cho_main("Did I do wrong, [cho_genie_name]?","angry","closed","sad","mid")
-    call cho_main("Did I go too far?","soft","narrow","sad","mid")
+    call cho_main("Did I do wrong, [cho_genie_name]?", "angry", "closed", "worried", "mid")
+    call cho_main("Did I go too far?", "soft", "narrow", "worried", "mid")
     g9 "No girl, you did great!"
     m "You successfully got yourself out of an intricate situation."
     m "You improvised, just as I taught you."
-    call cho_main("Thank you, Sir.","base","narrow","sad","mid")
-    call cho_main("But what would you suggest I do next time something like this happens?","soft","narrow","sad","mid")
+    call cho_main("Thank you, Sir.", "base", "narrow", "worried", "mid")
+    call cho_main("But what would you suggest I do next time something like this happens?", "soft", "narrow", "worried", "mid")
     m "Trust your instincts, it worked once didn’t it?"
     m "Try it again, show them your breasts, and see what effects it has on them..."
     call cho_main("Show them my breasts?! But I can't possibly do that!","scream","wide","base","mid")
     m "Why not? Didn't you just do that?{w} They \"have\" seen your tits haven't they?"
     call cho_main("My tits?!","soft","wide","base","mid")
-    call cho_main("*Oh* I mean yes, I guess they have seen them now but...","soft","base","sad","downR")
+    call cho_main("*Oh* I mean yes, I guess they have seen them now but...", "soft", "base", "worried", "downR")
     g4 "Remember why we are doing this, girl! You need to get into their minds!"
     m "If they want to see your breasts again, or any other part of your body, you show it to them!"
-    call cho_main("But, Sir!","angry","closed","sad","mid") # Embarrassed
+    call cho_main("But, Sir!", "angry", "closed", "worried", "mid") # Embarrassed
     m "Do as I say, [cho_name]!"
     g4 "Your mission, should you choose to accept it, is to please them!{w} No matter the cost!"
     call cho_main("What?!","soft","wide","base","mid")
@@ -525,9 +525,9 @@ label cc_pr_manipulate_T2_E3:
     call cho_main("(...)","annoyed","narrow","angry","down") # Annoyed
     g9 "How was your day? Anything exciting to tell me?"
     call cho_main("I- *uhm*...","soft","narrow","base","down")
-    call cho_main("I did what you asked me to...","soft","narrow","sad","mid")
+    call cho_main("I did what you asked me to...", "soft", "narrow", "worried", "mid")
     g9 "Yes?"
-    call cho_main("I... flashed them...","angry","closed","sad","mid")
+    call cho_main("I... flashed them...", "angry", "closed", "worried", "mid")
     g4 "You showed them your tits again?!"
     call cho_main("What? No!","soft","wide","base","mid")
     m "But you just said-"
@@ -536,37 +536,37 @@ label cc_pr_manipulate_T2_E3:
     m "(Could it be that they aren't into girls?)"
     call cho_main("I was on my way to the Quidditch pitch, somewhere close to the library when they ambushed me...","soft","narrow","base","R")
     g4 "An ambush?!"
-    call cho_main("I tried to be nice to them, even flirt a bit, but I just couldn't!","soft","narrow","sad","mid")
+    call cho_main("I tried to be nice to them, even flirt a bit, but I just couldn't!", "soft", "narrow", "worried", "mid")
     call cho_main("It's hard enough to deal with one of those brutes, but three at the same time?!","angry","wide","base","mid")
     m "There are girls that could handle that with ease..."
     call cho_main("Sir?","soft","base","raised","mid")
     m "Nothing,... go on..."
     call cho_main("They started mocking me... About what I did last time. Called me a slut, among other things...","soft","narrow","angry","R")
     call cho_main("Even threatened to report it as indecent behaviour...","angry","narrow","angry","downR")
-    call cho_main("I was about to lash back as they were really starting to annoy me... But then I remembered what you  told me.","angry","narrow","sad","mid")
-    call cho_main("That I should do my best to be nice to them... and... try and please them...","angry","base","sad","down")
+    call cho_main("I was about to lash back as they were really starting to annoy me... But then I remembered what you  told me.", "angry", "narrow", "worried", "mid")
+    call cho_main("That I should do my best to be nice to them... and... try and please them...", "angry", "base", "worried", "down")
     m "So? What did you do?"
-    call cho_main("I asked if they liked it...","angry","closed","sad","mid")
+    call cho_main("I asked if they liked it...", "angry", "closed", "worried", "mid")
     g9 "Liked what?"
     call cho_main("Seeing my breasts, Sir.","soft","wink","base","mid")
-    call cho_main("Instead of insulting them, I begged them not to report me to a teacher, and in return, I’d let them see them again!","soft","narrow","sad","R")
+    call cho_main("Instead of insulting them, I begged them not to report me to a teacher, and in return, I’d let them see them again!", "soft", "narrow", "worried", "R")
     g9 "And then?"
     call cho_main("They laughed at me!","annoyed","narrow","angry","R")
     call cho_main("Started mocking my breasts even... Calling them small...","annoyed","narrow","angry","downR")
     m "How foolish those boys..."
-    call cho_main("Well, I had to show them something else instead...","soft","narrow","sad","mid")
-    call cho_main("After all, they asked for it.","annoyed","narrow","sad","down")
+    call cho_main("Well, I had to show them something else instead...", "soft", "narrow", "worried", "mid")
+    call cho_main("After all, they asked for it.", "annoyed", "narrow", "worried", "down")
     g4 "Intriguing..."
     call cho_main("They asked to see my bum, Sir!","soft","narrow","angry","mid")
     g9 "I see, they are men of culture..."
-    call cho_main("I turned around and lowered my skirt for them...","annoyed","base","sad","down")
+    call cho_main("I turned around and lowered my skirt for them...", "annoyed", "base", "worried", "down")
     g9 "Sweet!"
     m "And how did they react to it?"
     call cho_main("It seemed like they enjoyed it, Sir.","soft","closed","base","mid")
     call cho_main("I mean, who wouldn't... I have a great butt.","soft","narrow","angry","R")
     m "Yes indeed!"
-    call cho_main("They did ask why I keep wearing a skirt to school, though.","annoyed","base","sad","mid")
-    call cho_main("Said that it would look a lot better in trousers... or some tight leggings...","angry","base","sad","downR")
+    call cho_main("They did ask why I keep wearing a skirt to school, though.", "annoyed", "base", "worried", "mid")
+    call cho_main("Said that it would look a lot better in trousers... or some tight leggings...", "angry", "base", "worried", "downR")
     m "They’re not wrong... you would look great in some leggings!"
     call cho_main("Anyway, I left before they had a chance to touch it...","annoyed","narrow","angry","mid")
     call cho_main("The last thing I want is their grimy hands on it.","annoyed","narrow","angry","R")

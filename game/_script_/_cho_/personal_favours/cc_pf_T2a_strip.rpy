@@ -20,8 +20,8 @@ label cc_pf_strip:
 
 label cc_pf_strip_T1_intro_E1:
     m "It's time for your next favour, [cho_name]."
-    call cho_main("I- *uhm*...{w} I think I'm ready.","horny","base","sad","downR")
-    call cho_main("What would you like me to do, [cho_genie_name]?","soft","base","sad","mid")
+    call cho_main("I- *uhm*...{w} I think I'm ready.", "horny", "base", "worried", "downR")
+    call cho_main("What would you like me to do, [cho_genie_name]?", "soft", "base", "worried", "mid")
     m "First, come a bit closer..."
     call cho_main("Very well, Sir.","base","base","base","mid")
 
@@ -46,7 +46,7 @@ label cc_pf_strip_T1_intro_E1:
     m "I assume you get complimented often?"
     call cho_main("Sometimes...","soft","base","base","R")
     g9 "And I suspect you have many admirers?"
-    call cho_main("Oh, umm... maybe?","quiver","base","sad","down")
+    call cho_main("Oh, umm... maybe?", "quiver", "base", "worried", "down")
     call cho_main("But that's \"not\" why I take such great care of my body, Sir!","open","narrow","angry","mid")
     m "Of course not..."
     call cho_main("Quidditch is a hard game for anyone, as I'm sure you know...","open","closed","base","mid")
@@ -65,7 +65,7 @@ label cc_pf_strip_T1_intro_E1:
     call cho_main("No!","scream","closed","angry","mid", trans=hpunch)
     call cho_main("Why are you even asking me to do such a thing?!","angry","narrow","angry","mid")
     m "Didn't you take your skirt off for me after the Hufflepuff match?"
-    call cho_main("{size=-4}Well, I probably shouldn't have done that..{/size}","pout","base","sad","R")
+    call cho_main("{size=-4}Well, I probably shouldn't have done that..{/size}", "annoyed", "base", "worried", "R")
     m "Sorry?"
     m "Have you already forgotten that I'm here to train you?"
     call cho_main("And I'm very thankful for that, Sir, but...","open","closed","base","mid")
@@ -76,30 +76,30 @@ label cc_pf_strip_T1_intro_E1:
     call cho_main("I don't think taking off my clothes will be necessary for our training, [cho_genie_name].","annoyed","narrow","angry","R")
     m "I'm very disappointed I've got to say..."
     m "You aren't this shy with undressing in front of your team, are you?"
-    call cho_main("Sir, that's entirely different!","angry","closed","sad","mid")
+    call cho_main("Sir, that's entirely different!", "angry", "closed", "worried", "mid")
     m "How so?"
-    call cho_main("I'm just not comfortable doing this in front of you, Sir!","quiver","closed","sad","mid")
-    call cho_main("You're really old...","soft","narrow","sad","downR")
+    call cho_main("I'm just not comfortable doing this in front of you, Sir!", "quiver", "closed", "worried", "mid")
+    call cho_main("You're really old...", "soft", "narrow", "worried", "downR")
     m "Pardon me?"
-    call cho_main("I meant... you're our headmaster! It just feels wrong to me!","soft","narrow","sad","mid")
+    call cho_main("I meant... you're our headmaster! It just feels wrong to me!", "soft", "narrow", "worried", "mid")
     m "It didn't bother you the last time you barged into my office..."
-    call cho_main("Well, we had just won the game and all that... Maybe my judgement...","pout","closed","sad","R")
+    call cho_main("Well, we had just won the game and all that... Maybe my judgement...", "annoyed", "closed", "worried", "R")
     m "Are you one of those shy girls, Miss Chang?"
-    call cho_main("No, Sir. I wouldn't say I'm shy, but...","soft","narrow","sad","downR")
+    call cho_main("No, Sir. I wouldn't say I'm shy, but...", "soft", "narrow", "worried", "downR")
     m "Well then prove me you aren't, girl!"
     g9 "Let me see it!"
 
     # Cho stays reluctant.
-    call cho_main("Is there no other way I could repay the favour?","annoyed","narrow","sad","mid")
+    call cho_main("Is there no other way I could repay the favour?", "annoyed", "narrow", "worried", "mid")
     m "Well, yes- Several.{w} But we'll get to those later..."
     call cho_main("Later, Sir?","soft","base","raised","mid")
     g4 "Girl, I wouldn't be asking you this if it wasn't absolutely necessary for your training!"
-    call cho_main("Of course, [cho_genie_name].","annoyed","base","sad","down")
+    call cho_main("Of course, [cho_genie_name].", "annoyed", "base", "worried", "down")
     m "All that's required of you is to cooperate..."
-    call cho_main("(...)","annoyed","base","sad","mid")
+    call cho_main("(...)", "annoyed", "base", "worried", "mid")
     m "Now take of your top..."
     call cho_main("(...)","annoyed","narrow","angry","mid")
-    call cho_main("Only my top?","soft","narrow","sad","mid")
+    call cho_main("Only my top?", "soft", "narrow", "worried", "mid")
     g9 "Would you like to take off \"more\"?"
     call cho_main("I didn't mean it like that!","angry","narrow","angry","mid")
     m "[cho_name], it's only the two of us in here. No need to worry."
@@ -109,7 +109,7 @@ label cc_pf_strip_T1_intro_E1:
     call cho_main("(...)","annoyed","narrow","angry","mid")
     m "*He-hem*{w} Slowly..."
     pause.5
-    call cho_main("","quiver","closed","sad","mid")
+    call cho_main("", "quiver", "closed", "worried", "mid")
     pause.8
 
     # Remove top.
@@ -120,34 +120,34 @@ label cc_pf_strip_T1_intro_E1:
     with d3
     pause.5
 
-    call cho_main("","quiver","narrow","sad","mid")
+    call cho_main("", "quiver", "narrow", "worried", "mid")
     call ctc
 
     menu:
         "\"Your posture is remarkable!\"":
-            call cho_main("I'm glad you noticed!","base","base","sad","mid") # Happy
+            call cho_main("I'm glad you noticed!", "base", "base", "worried", "mid") # Happy
             call cho_main("I'm relieved you actually show interest in my body status, Sir!","smile","base","base","mid")
             m "(Oh- You have no idea, girl!)"
-            call cho_main("I thought you just wanted to gush at my body like all the other teachers...","soft","narrow","sad","mid")
+            call cho_main("I thought you just wanted to gush at my body like all the other teachers...", "soft", "narrow", "worried", "mid")
             m "Who?{w} Which other teachers are you talking about?{w} Snape?!"
             call cho_main("No, not Snape...","annoyed","narrow","angry","R")
-            call cho_main("(...)","annoyed","base","sad","downR")
-            call cho_main("Promise me you won't tell her!","quiver","narrow","sad","mid")
+            call cho_main("(...)", "annoyed", "base", "worried", "downR")
+            call cho_main("Promise me you won't tell her!", "quiver", "narrow", "worried", "mid")
             m "Her?!"
-            call cho_main("Madame Hooch, Sir.","soft","narrow","sad","mid")
+            call cho_main("Madame Hooch, Sir.", "soft", "narrow", "worried", "mid")
             m "Ah, the old, gray haired lady..."
-            call cho_main("Yes, she's been eyeing me a lot lately...","quiver","base","sad","downR")
-            call cho_main("Even more so after our recent game against Hufflepuff. I wonder why...","horny","narrow","sad","R")
+            call cho_main("Yes, she's been eyeing me a lot lately...", "quiver", "base", "worried", "downR")
+            call cho_main("Even more so after our recent game against Hufflepuff. I wonder why...", "horny", "narrow", "worried", "R")
             g9 "I can't blame her... Your body is very pleasant to look at!"
             call cho_main("Thank you, Sir.","base","base","base","mid")
 
         "\"You have marvelous abs!\"":
             g4 "Magnificent."
             g4 "Simply...{w} magnificent..."
-            call cho_main("*Uhmm*...","quiver","narrow","sad","R") # Embarrassed
+            call cho_main("*Uhmm*...", "quiver", "narrow", "worried", "R") # Embarrassed
             g4 "As if Michelangelo himself carved them onto your flesh..."
             m "I must say I'm very impressed!"
-            call cho_main("Thank you, Sir.","soft","narrow","sad","downR")
+            call cho_main("Thank you, Sir.", "soft", "narrow", "worried", "downR")
             
         "\"I've seen better but that'll do.\"":
             $ cho_mood += 3
@@ -155,7 +155,7 @@ label cc_pf_strip_T1_intro_E1:
             g4 "(Crap!)"
             m "What I meant to say is, you're in great shape but I still see room for improvements."
             m "I'm impressed nonetheless!"
-            call cho_main("Thank you, I guess...","pout","narrow","angry","downR")
+            call cho_main("Thank you, I guess...", "annoyed", "narrow", "angry", "downR")
 
     m "Not every girl I get to see here has such fine...{w=1.0} contours..."
     call cho_main("Other girls?","soft","wide","base","mid")
@@ -164,7 +164,7 @@ label cc_pf_strip_T1_intro_E1:
     call cho_main("Then which other girls are you talking about?","annoyed","narrow","angry","mid")
     g4 "(Shit! I better just tell her the truth.)"
     m "Just...{w=1.0} Granger..."
-    call cho_main("*Phewww*{w=1.0} You scared me there for a second, Sir...","smile","narrow","sad","mid")
+    call cho_main("*Phewww*{w=1.0} You scared me there for a second, Sir...", "smile", "narrow", "worried", "mid")
     m "You... don't mind about it?"
     call cho_main("Please. Why should I care what Granger does for you in here?","soft","narrow","angry","R")
     call cho_main("I suspected she was one of those girls buying favours from her teachers!","soft","closed","angry","mid")
@@ -218,11 +218,11 @@ label cc_pf_strip_T1_intro_E1:
             call cho_main("(...)","annoyed","narrow","angry","mid")
 
 
-    call cho_main("Please don't tell anybody about what I'm doing in here, Sir.","quiver","narrow","sad","mid")
-    call cho_main("It could really tarnish my reputation.","soft","narrow","sad","R")
+    call cho_main("Please don't tell anybody about what I'm doing in here, Sir.", "quiver", "narrow", "worried", "mid")
+    call cho_main("It could really tarnish my reputation.", "soft", "narrow", "worried", "R")
     m "I'd never think of it..."
     call cho_main("I will take off my skirt now!","scream","closed","angry","mid") # Scream
-    call cho_main("","horny","narrow","sad","R")
+    call cho_main("", "horny", "narrow", "worried", "R")
     g9 "(!!!)"
     pause.4
 
@@ -244,7 +244,7 @@ label cc_pf_strip_T1_intro_E1:
     m "One of the best female street fighters, if you know how to play with her..."
     call cho_main("(Play with her?!)","angry","wide","base","mid")
     g9 "Speaking of which!{w} I don't believe we are done here just yet."
-    call cho_main("We aren't? But I did exactly what you wanted!","quiver","wide","sad","mid")
+    call cho_main("We aren't? But I did exactly what you wanted!", "quiver", "wide", "worried", "mid")
     g9 "You've still got some clothes on..."
     call cho_main("Sir, is this why you are helping me?","open","closed","angry","mid")
     call cho_main("Might this be all just part of a sick scheme to get to see me naked?","annoyed","narrow","angry","mid")
@@ -278,10 +278,10 @@ label cc_pf_strip_T1_intro_E1:
     hide screen cho_main
     $ cho.wear("all")
     hide screen cho_cloth_pile
-    call cho_main("","angry","angry","angry","mid")
+    call cho_main("", "angry", "narrow", "angry", "mid")
     pause.8
 
-    call cho_main("We are done here!","angry","angry","angry","mid")
+    call cho_main("We are done here!", "angry", "narrow", "angry", "mid")
 
     # Cho leaves.
     call cho_walk(action="leave")
@@ -369,58 +369,58 @@ label cc_pf_strip_T1_intro_E2:
     call cho_main("After all, I promised I'd do anything to win that Quidditch cup...","soft","narrow","angry","mid")
     call cho_main("If stripping for you is what it takes- then...","soft","base","angry","down")
     call play_music("sad")
-    call cho_main("Then...","angry","base","sad","down")
-    call cho_main("I- I'll do it...","soft","narrow","sad","down")
+    call cho_main("Then...", "angry", "base", "worried", "down")
+    call cho_main("I- I'll do it...", "soft", "narrow", "worried", "down")
     m "(Shit. Is she crying?)"
     m "(Can she even cry?)"
     m "Are you alright, girl?"
-    call cho_main("No.{w} I'm already regretting climbing up here!!!","angry","closed","sad","mid")
-    call cho_main("(What were you thinking, Cho?!)","angry","narrow","sad","down")
+    call cho_main("No.{w} I'm already regretting climbing up here!!!", "angry", "closed", "worried", "mid")
+    call cho_main("(What were you thinking, Cho?!)", "angry", "narrow", "worried", "down")
     m "You can come back down if it's too much for yo-"
     call cho_main("Shut up!","scream","closed","angry","mid", trans=hpunch) # Scream
-    call cho_main("Can't you see what I'm trying to do here?","angry","angry","angry","mid")
+    call cho_main("Can't you see what I'm trying to do here?", "angry", "narrow", "angry", "mid")
     m "Not really, no."
-    call cho_main("I-I'm... testing my limits, Sir.","angry","narrow","sad","down")
-    call cho_main("And I believe I've reached them!","angry","closed","sad","mid")
+    call cho_main("I-I'm... testing my limits, Sir.", "angry", "narrow", "worried", "down")
+    call cho_main("And I believe I've reached them!", "angry", "closed", "worried", "mid")
     m "For real? You are still wearing clothes..."
-    call cho_main("I thought{w=0.2}, if I could go as far as embarrassing myself in front of my headmaster...","soft","narrow","sad","down")
-    call cho_main("Doing the same in front of the school won't feel as bad in comparison.","annoyed","narrow","sad","down")
-    call cho_main("Sir, I don't think I can do this after all.","soft","narrow","sad","mid")
-    call cho_main("Could I get your permission to leave and never come back?","angry","narrow","sad","mid")
+    call cho_main("I thought{w=0.2}, if I could go as far as embarrassing myself in front of my headmaster...", "soft", "narrow", "worried", "down")
+    call cho_main("Doing the same in front of the school won't feel as bad in comparison.", "annoyed", "narrow", "worried", "down")
+    call cho_main("Sir, I don't think I can do this after all.", "soft", "narrow", "worried", "mid")
+    call cho_main("Could I get your permission to leave and never come back?", "angry", "narrow", "worried", "mid")
 
     menu:
         "\"Yes, but take off those clothes first...\"":
             call play_music("stop")
-            call cho_main("Yes! Thank you, Sir!","quiver","closed","sad","mid")
-            call cho_main("Even after I've given up you're still believing in me!","soft","narrow","sad","mid")
+            call cho_main("Yes! Thank you, Sir!", "quiver", "closed", "worried", "mid")
+            call cho_main("Even after I've given up you're still believing in me!", "soft", "narrow", "worried", "mid")
             m "What?{w=0.2} *Ahem* I mean..."
             g9 "Of course!{w=0.2} I always did!"
-            call cho_main("I may not like it. But this is all just part of my training...","soft","base","sad","R")
+            call cho_main("I may not like it. But this is all just part of my training...", "soft", "base", "worried", "R")
             m "*Uhhhh*... Sure..."
             call play_music("cho")
             call cho_main("It's one of many challenges I have to face before I can call myself a Quidditch champion!","soft","closed","angry","mid")
             call cho_main("This is just about facing my inner demons, isn't it?","soft","narrow","angry","mid")
             call cho_main("Overcoming my fears...","soft","narrow","angry","R")
             call cho_main("Failure, and embarrassment...","soft","closed","base","mid")
-            call cho_main("(Come on Cho, you can do it!!!)","horny","closed","sad","mid")
-            call cho_main("*Uhm*...","horny","narrow","sad","down")
-            call cho_main("What would you like me to do first, [cho_genie_name]?","soft","narrow","sad","mid")
+            call cho_main("(Come on Cho, you can do it!!!)", "horny", "closed", "worried", "mid")
+            call cho_main("*Uhm*...", "horny", "narrow", "worried", "down")
+            call cho_main("What would you like me to do first, [cho_genie_name]?", "soft", "narrow", "worried", "mid")
             call cho_main("Remove my bra...","soft","narrow","base","mid")
-            call cho_main("Or take off my panties?","horny","narrow","sad","down")
+            call cho_main("Or take off my panties?", "horny", "narrow", "worried", "down")
 
         "\"Yes, you are dismissed...\"":
             $ cho_mood += 6
             call play_music("stop")
             call cho_main("What?!","soft","wide","base","mid")
-            call cho_main("But Sir!","soft","wide","sad","mid")
+            call cho_main("But Sir!", "soft", "wide", "worried", "mid")
             m "You can go now..."
             call cho_main("You can't do that!","scream","narrow","angry","mid", trans=hpunch)
             call cho_main("","angry","narrow","angry","mid")
             g4 "Didn't you just beg me to do just that?"
             call play_music("sad")
-            call cho_main("I begged you to help me win the Quidditch cup!","angry","angry","angry","mid")
+            call cho_main("I begged you to help me win the Quidditch cup!", "angry", "narrow", "angry", "mid")
             call cho_main("And to be my trainer!{w} To be a \"good\" trainer!","soft","narrow","angry","mid")
-            call cho_main("How can I overcome my fear of losing if I can't even do... this!","soft","base","sad","down")
+            call cho_main("How can I overcome my fear of losing if I can't even do... this!", "soft", "base", "worried", "down")
             call cho_main("You're supposed to encourage me! Get me through any challenges I'm confronted with.","soft","narrow","angry","mid")
             m "Including stripping?"
             call cho_main("Including bloody stripping!","scream","closed","angry","mid", trans=hpunch)
@@ -441,27 +441,27 @@ label cc_pf_strip_T1_intro_E2:
             call play_music("cho")
             call cho_main("*uhhh*...","upset","wide","base","mid")
             g9 "Those two mean, hearty \"bludgers\"!"
-            call cho_main("Sir? Could it be that you are talking about my breasts?","soft","narrow","sad","mid")
+            call cho_main("Sir? Could it be that you are talking about my breasts?", "soft", "narrow", "worried", "mid")
             m "Yes indeed! Very good."
             m "I had hoped you would eventually catch on."
             m "Because I had also run out of balls to compare them to..."
-            call cho_main("Promise me that you won't laugh when I show you my...","soft","narrow","sad","R")
-            call cho_main("\"Bludgers\"!","angry","closed","sad","mid")
+            call cho_main("Promise me that you won't laugh when I show you my...", "soft", "narrow", "worried", "R")
+            call cho_main("\"Bludgers\"!", "angry", "closed", "worried", "mid")
             m "Why would I ever laugh at a pretty girl like you, Miss Chang?"
-            call cho_main("Because they...{w} aren't as big as Hermione's...","soft","narrow","sad","downR")
-            call cho_main("Hers are more closer to \"Quaffles\" than mine...","soft","base","sad","mid")
+            call cho_main("Because they...{w} aren't as big as Hermione's...", "soft", "narrow", "worried", "downR")
+            call cho_main("Hers are more closer to \"Quaffles\" than mine...", "soft", "base", "worried", "mid")
             m "And there will always be a pair of \"Beaters\" that prefer to play with your...{w} balls."
-            call cho_main("Only two?...","upset","base","sad","downR")
+            call cho_main("Only two?...", "upset", "base", "worried", "downR")
             g9 "Don't forget to count those lucky enough to get hit by those \"bludgers\"!"
             call cho_main("","upset","base","raised","mid")
             m "Speaking of which..."
-            call cho_main("Yes?","soft","base","sad","mid")
+            call cho_main("Yes?", "soft", "base", "worried", "mid")
             g4 "I'd like you to hit me with them!"
             call cho_main("With my breasts?","open","wide","base","mid")
             g9 "Yes! Hit me full force!{w} Take off that bra!"
             call cho_main("*Ugh!*...","angry","narrow","base","down")
-            call cho_main("{size=-4}I can't believe I'm actually going to do this!{/size}","angry","closed","sad","mid")
-            call cho_main("","soft","narrow","sad","mid")
+            call cho_main("{size=-4}I can't believe I'm actually going to do this!{/size}", "angry", "closed", "worried", "mid")
+            call cho_main("", "soft", "narrow", "worried", "mid")
             pause.4
 
             # Remove bra.
@@ -471,12 +471,12 @@ label cc_pf_strip_T1_intro_E2:
             with d3
             pause.8
 
-            call cho_main("","horny","narrow","sad","mid")
+            call cho_main("", "horny", "narrow", "worried", "mid")
             call ctc
 
             g4 "Simply wonderful, Miss Chang."
             m "Those are some stellar breasts you got there."
-            call cho_main("(...)","base","narrow","sad","downR")
+            call cho_main("(...)", "base", "narrow", "worried", "downR")
             g4 "Some \"outstanding\" boobies!"
             call cho_main("...","annoyed","narrow","base","mid")
             m "Would you mind if I smack them?"
@@ -492,7 +492,7 @@ label cc_pf_strip_T1_intro_E2:
             m "You're the one playing games."
             call cho_main("(...)","annoyed","narrow","angry","mid")
             call cho_main("Fine...{w} But Only once!","soft","narrow","angry","R")
-            call cho_main("Twice,...{w} maybe...","angry","narrow","sad","downR")
+            call cho_main("Twice,...{w} maybe...", "angry", "narrow", "worried", "downR")
             g9 "That's a hundred percent more than I had hoped for!"
 
             call slap_her
@@ -500,7 +500,7 @@ label cc_pf_strip_T1_intro_E2:
             call slap_her
             call slap_her
             call slap_her
-            call cho_main("Stop it!","scream","closed","sad","mid")
+            call cho_main("Stop it!", "scream", "closed", "worried", "mid")
             call cho_main("That was more than twice!","soft","narrow","angry","mid")
             m "I stopped counting halfway through..."
 
@@ -516,7 +516,7 @@ label cc_pf_strip_T1_intro_E2:
             call cho_main("And you'd be called a dead man, if you try to trick me!","angry","narrow","angry","mid")
             m "Well technically I'm a gen-"
             call play_sound("kick")
-            call cho_main("","annoyed","angry","angry","mid", trans=vpunch)
+            call cho_main("", "annoyed", "narrow", "angry", "mid", trans=vpunch)
             g4 "*Aaaaah!*"
             call nar("Cho does a daunting stomp on your desk...")
             call cho_main("Don't think for a second I wouldn't do it! After all of this!","scream","narrow","angry","mid")
@@ -525,7 +525,7 @@ label cc_pf_strip_T1_intro_E2:
             g4 "*Gulp*"
             m "Yes, Ma'am."
             call cho_main("(...)","upset","closed","base","mid")
-            call cho_main("","upset","narrow","sad","down")
+            call cho_main("", "upset", "narrow", "worried", "down")
             pause.4
 
             # Remove panties.
@@ -535,10 +535,10 @@ label cc_pf_strip_T1_intro_E2:
             with d3
             pause.5
 
-            call cho_main("","horny","narrow","sad","mid")
+            call cho_main("", "horny", "narrow", "worried", "mid")
             call ctc
 
-            call cho_main("Happy, Sir?","soft","narrow","sad","mid")
+            call cho_main("Happy, Sir?", "soft", "narrow", "worried", "mid")
             m "Very."
             g9 "Finally I get the appeal of Quidditch."
             call cho_main("Really?","soft","base","raised","mid")
@@ -559,22 +559,22 @@ label cc_pf_strip_T1_intro_E2:
     call cho_main("Sir, will that be all then?","soft","narrow","angry","mid")
     call cho_main("May I go now?","soft","narrow","angry","R")
     m "Haven't you forgotten something?"
-    call cho_main("Didn't I do enough for you already?","angry","angry","angry","mid")
+    call cho_main("Didn't I do enough for you already?", "angry", "narrow", "angry", "mid")
     g9 "For me, you did more than enough!{p=0.6}I'm more than pleased with what you've shown me..."
     call cho_main("*Ugh*...","angry","narrow","base","mid") # Disgusted
     m "But, wasn't your goal earlier to undress entirely?"
     m "To prove to yourself that you \"could\" do it?"
-    call cho_main("{size=-4}I hoped you'd just forget about that...{/size}","angry","narrow","sad","down") # Small text.
+    call cho_main("{size=-4}I hoped you'd just forget about that...{/size}", "angry", "narrow", "worried", "down") # Small text.
     g9 "Well, I didn't!"
     m "I'm here to help you mature and boost your confidence."
     m "A body like yours is nothing you need to hide away!"
-    call cho_main("","base","narrow","sad","mid")
+    call cho_main("", "base", "narrow", "worried", "mid")
     m "Don't you think so too?{w} After all the work you put into it?"
     g4 "It should be celebrated! And seen by everyone!"
-    call cho_main("You're making me blush, [cho_genie_name]...","soft","narrow","sad","downR")
+    call cho_main("You're making me blush, [cho_genie_name]...", "soft", "narrow", "worried", "downR")
     g9 "You can do it, [cho_name]! Only one more piece to go..."
-    call cho_main("Yes, Sir!","angry","closed","sad","mid")
-    call cho_main("","base","narrow","sad","mid")
+    call cho_main("Yes, Sir!", "angry", "closed", "worried", "mid")
+    call cho_main("", "base", "narrow", "worried", "mid")
     pause.4
 
     # Cho strips completely.
@@ -582,14 +582,14 @@ label cc_pf_strip_T1_intro_E2:
     with d3
     pause.5
 
-    call cho_main("","horny","narrow","sad","mid")
+    call cho_main("", "horny", "narrow", "worried", "mid")
     call ctc
 
     m "See, that wasn't very hard was it?"
     call cho_main("No...","soft","narrow","base","down")
     call cho_main("No! You're right!","smile","base","base","mid")
     m "And you have a very beautiful body if I might add."
-    call cho_main("Thank you, Sir.","soft","narrow","sad","mid")
+    call cho_main("Thank you, Sir.", "soft", "narrow", "worried", "mid")
     m "I can see why Hermione is so jealous."
     call cho_main("","upset","base","base","mid")
     pause.8
@@ -605,7 +605,7 @@ label cc_pf_strip_T1_intro_E2:
 
     call cho_main("Thank you.","base","closed","base","mid")
     m "For what?"
-    call cho_main("Teaching me.{p=0.4}I couldn't have imagined showing myself off like this before... but.","horny","narrow","sad","downR")
+    call cho_main("Teaching me.{p=0.4}I couldn't have imagined showing myself off like this before... but.", "horny", "narrow", "worried", "downR")
     m "Yes?"
     call cho_main("Well, your methods have clearly worked so far...","soft","narrow","base","R")
     call cho_main("And I feel more confident than ever!","soft","wide","base","mid")
@@ -666,8 +666,8 @@ label cc_pf_strip_T1_intro_E2:
     hide screen cho_cloth_pile
     pause.8
 
-    call cho_main("(...)","upset","narrow","sad","down", xpos="right", ypos="base")
-    call cho_main("*Uhm*...","soft","narrow","sad","mid")
+    call cho_main("(...)", "upset", "narrow", "worried", "down", xpos="right", ypos="base")
+    call cho_main("*Uhm*...", "soft", "narrow", "worried", "mid")
     if daytime:
         call cho_main("Have a good day...","soft","base","base","R")
     else:
@@ -700,10 +700,10 @@ label cc_pf_strip_T1_intro_E3:
     pause.8
     m "You keep me happy by doing favours for me, and in return, I will train you..."
     m "That was the deal."
-    call cho_main("I never expected that they would require me to do...{w} this!","annoyed","base","sad","down")
+    call cho_main("I never expected that they would require me to do...{w} this!", "annoyed", "base", "worried", "down")
     g9 "But you did it anyway! Commendable!"
     call cho_main("Please stop it with your compliments, Sir!","open","closed","angry","mid")
-    call cho_main("And explain to me why those favours have to be so...","annoyed","narrow","sad","downR")
+    call cho_main("And explain to me why those favours have to be so...", "annoyed", "narrow", "worried", "downR")
     call cho_main("perverted?","soft","narrow","angry","R") # Small text
     m "You see,..."
     m "It can get pretty lonely in this room."
@@ -719,14 +719,14 @@ label cc_pf_strip_T1_intro_E3:
     with d3
     pause.5
 
-    call cho_main("","quiver","narrow","sad","R")
+    call cho_main("", "quiver", "narrow", "worried", "R")
     call ctc
 
-    call cho_main("Does Granger do these sorts of things for you too?","soft","base","sad","mid")
+    call cho_main("Does Granger do these sorts of things for you too?", "soft", "base", "worried", "mid")
     g9 "She does a lot of things for me. You need to be more specific!"
-    call cho_main("I meant buying \"sexual favours\".{w} Doing tasks that are, let's say, a little audacious...","soft","narrow","sad","downR")
+    call cho_main("I meant buying \"sexual favours\".{w} Doing tasks that are, let's say, a little audacious...", "soft", "narrow", "worried", "downR")
     m "Are you talking about stripping, girl?"
-    call cho_main("Yes, Sir.","quiver","narrow","sad","downR")
+    call cho_main("Yes, Sir.", "quiver", "narrow", "worried", "downR")
     pause.4
 
     # Remove skirt.
@@ -736,7 +736,7 @@ label cc_pf_strip_T1_intro_E3:
     with d3
     pause.5
 
-    call cho_main("","horny","base","sad","mid")
+    call cho_main("", "horny", "base", "worried", "mid")
     call ctc
 
     # Check if Hermione has already stripped for you.
@@ -747,7 +747,7 @@ label cc_pf_strip_T1_intro_E3:
 
         m "Actually, she doesn't..."
         call cho_main("What? But I thought she'd-","soft","wide","base","mid")
-        call cho_main("Why do you ask me to do these favours, and not Granger?","open","angry","angry","mid", trans=hpunch)
+        call cho_main("Why do you ask me to do these favours, and not Granger?", "open", "narrow", "angry", "mid", trans=hpunch)
         m "Lets just say, she isn’t as progressive as you...{w} yet."
         call cho_main("You haven’t even seen her naked?","angry","base","base","mid")
         call cho_main("What favours are you even buying from her?","open","base","angry","mid")
@@ -759,8 +759,8 @@ label cc_pf_strip_T1_intro_E3:
         m "She could report me, and I’d get kicked out of this school most likely."
         m "She’s reported me to that ministry before..."
         call cho_main("The \"Ministry of Magic\"?!","open","base","raised","mid")
-        call cho_main("If they were to regulate the school rules more strictly, my chance of winning the Quidditch cup would be back down to zero!","angry","wide","sad","mid")
-        call cho_main("And if Granger ever was to find out about me stripping for our headmaster, it would mean the end of my Quidditch career for sure!","quiver","base","sad","downR")
+        call cho_main("If they were to regulate the school rules more strictly, my chance of winning the Quidditch cup would be back down to zero!", "angry", "wide", "worried", "mid")
+        call cho_main("And if Granger ever was to find out about me stripping for our headmaster, it would mean the end of my Quidditch career for sure!", "quiver", "base", "worried", "downR")
         m "So? What do you suggest we do?"
         call cho_main("Isn't it obvious?! Ask her to do more advanced favours!","soft","narrow","angry","mid")
         call cho_main("If I could get a hold of something to blackmail her with, she'd never dare to report to the ministry!","quiver","narrow","angry","R")
@@ -789,7 +789,7 @@ label cc_pf_strip_T1_intro_E3:
     # After you got Hermione to strip.
     m "She does indeed."
     call cho_main("Really?!{w} You got that cow to take off her clothes?","soft","wide","base","mid")
-    call cho_main("Did you get any prove of it?","soft","base","sad","mid")
+    call cho_main("Did you get any prove of it?", "soft", "base", "worried", "mid")
     m "What?{w} Why would I need to do that?"
     call cho_main("To blackmail her!{w} To prove that she's in on this whole \"favour trading\" business too...","open","narrow","angry","mid")
     m "We had an eye witness, for what it's worth..."
@@ -800,7 +800,7 @@ label cc_pf_strip_T1_intro_E3:
     m "He sort of just walked in on the action.{w} After all, the door wasn't locked..."
     call cho_main("That's too funny! I wish I could have been there when that happened!","smile","base","base","R")
     g9 "She was dancing on my desk, right here, butt naked!"
-    call cho_main("That sounds sooo embarrassing!","soft","narrow","sad","up")
+    call cho_main("That sounds sooo embarrassing!", "soft", "narrow", "worried", "up")
     m "As far as I know, that door isn't locked right now either..."
     m "Aren't you scared that Snape might walk in on you too?"
     call cho_main("*Hmmmm*","annoyed","base","base","R")
@@ -837,8 +837,8 @@ label cc_pf_strip_T1_intro_E3:
     call cho_main("Everybody knows that he's a creep! Nobody would believe a word he says.","horny","base","angry","down")
     m "So...{w} what if it's not Snape, but some other teacher that makes their way in here?"
     call cho_main("*Huh?*{w} Oh no!","soft","wide","base","mid")
-    call cho_main("For a second I forgot we even had other teachers at this school!","open","wide","sad","L")
-    call cho_main("What if Professor McGonagall stumbles in here while-{w} while I-...","angry","closed","sad","mid")
+    call cho_main("For a second I forgot we even had other teachers at this school!", "open", "wide", "worried", "L")
+    call cho_main("What if Professor McGonagall stumbles in here while-{w} while I-...", "angry", "closed", "worried", "mid")
 
     call play_sound("desk")
     call hide_characters
@@ -859,12 +859,12 @@ label cc_pf_strip_T1_intro_E3:
     with d3
     pause.5
 
-    call cho_main("Are you sure, Sir?","soft","narrow","sad","mid")
+    call cho_main("Are you sure, Sir?", "soft", "narrow", "worried", "mid")
     m "You have my word on it..."
-    call cho_main("O-{w}okay...","soft","narrow","sad","R")
+    call cho_main("O-{w}okay...", "soft", "narrow", "worried", "R")
     m "Now then, Miss Chang!{w} It's time for the grand finale..."
     g9 "Take off your panties!"
-    call cho_main("(...)","annoyed","base","sad","down")
+    call cho_main("(...)", "annoyed", "base", "worried", "down")
     call cho_main("Very well, Sir.","base","base","base","mid")
     pause.4
 
@@ -879,7 +879,7 @@ label cc_pf_strip_T1_intro_E3:
     call ctc
 
     g4 "I've got to say, once again I'm very impressed by you!"
-    call cho_main("Glad to hear it, [cho_genie_name].","smile","angry","angry","mid")
+    call cho_main("Glad to hear it, [cho_genie_name].", "smile", "narrow", "angry", "mid")
     call cho_main("You can have those, by the way.","base","narrow","angry","mid")
     call nar(">Cho throws a pair of panties onto your desk.")
     call cho_main("You can keep them, for now...","soft","narrow","base","R")
@@ -894,20 +894,20 @@ label cc_pf_strip_T1_intro_E3:
     m "You may leave now.{w} Dismissed."
     call cho_main("Wait Sir!{w} I can't leave just yet!","open","wide","base","mid")
     m "Why not? Don't tell me you want some points now after all..."
-    call cho_main("No Sir, but...{w} I don't believe we are done here...","angry","base","sad","R")
+    call cho_main("No Sir, but...{w} I don't believe we are done here...", "angry", "base", "worried", "R")
     g9 "We aren't?"
-    call cho_main("May I request something of you, Sir?","soft","narrow","sad","mid")
+    call cho_main("May I request something of you, Sir?", "soft", "narrow", "worried", "mid")
     m "Yes?{w} What is it?"
 
     # Cho asks you to summon Hermione.
-    call cho_main("Could you please...","soft","base","sad","downR")
-    call cho_main("*Uhm*...","quiver","narrow","sad","downR")
-    call cho_main("Could you please summon Hermione?","soft","narrow","sad","mid")
+    call cho_main("Could you please...", "soft", "base", "worried", "downR")
+    call cho_main("*Uhm*...", "quiver", "narrow", "worried", "downR")
+    call cho_main("Could you please summon Hermione?", "soft", "narrow", "worried", "mid")
 
     with hpunch
     g4 "What?"
     call cho_main("It’s time someone throws \"high and mighty\" Granger off her high horse!","open","narrow","angry","mid")
-    call cho_main("She’s been a pain in my butt for years now...","angry","angry","angry","downR")
+    call cho_main("She’s been a pain in my butt for years now...", "angry", "narrow", "angry", "downR")
     call cho_main("This is going to be my revenge!","soft","narrow","angry","mid")
     m "Are you sure that this is such a good idea? Aren’t you scared she’ll tattle about it?"
     call cho_main("No.{w} Granger is clever...","soft","closed","base","mid")
@@ -920,7 +920,7 @@ label cc_pf_strip_T1_intro_E3:
     m "Aren’t you doing exactly the same?"
     call cho_main("Yes, but I’m not a whore stripping for points, unlike her!","open","closed","base","mid")
     m "Still makes you a slut..."
-    call cho_main("I’m untouchable! I’ll show that bitch she can’t mess with me!","angry","angry","angry","R")
+    call cho_main("I’m untouchable! I’ll show that bitch she can’t mess with me!", "angry", "narrow", "angry", "R")
     call cho_main("This is gonna be so much fun!","smile","narrow","angry","mid")
 
     call cho_walk(570, "base")
@@ -951,7 +951,7 @@ label cc_pf_strip_T1_intro_E3:
     call her_main("", "angry", "base", "angry", "mid")
 
     call cho_main("You know, just the usual...","soft","base","base","L")
-    call cho_main("Like stripping for our dear headmaster!","smile","angry","angry","L")
+    call cho_main("Like stripping for our dear headmaster!", "smile", "narrow", "angry", "L")
     call cho_main("I trust that you're more than familiar with it...","soft","closed","base","L")
     call her_main("You've told her?", "clench", "base", "angry", "mid")
     call cho_main("So you really \"did\" do it!","open","wide","base","L")
@@ -969,7 +969,7 @@ label cc_pf_strip_T1_intro_E3:
     call cho_main("I don't think that's very likely to happen, Granger...","soft","narrow","angry","mid")
     call cho_main("We both know what he would prefer...","soft","closed","base","mid")
     m "..."
-    call cho_main("And who he prefers...","smile","angry","angry","mid")
+    call cho_main("And who he prefers...", "smile", "narrow", "angry", "mid")
     call her_main("You think that he prefers you over me?{w} Please...", "soft", "narrow", "angry", "R")
     call cho_main("Why don't we just ask him?","base","narrow","base","mid")
     call cho_main("Tell us, Professor...","soft","narrow","base","R")
@@ -1124,7 +1124,7 @@ label cc_pf_strip_T1_E3: # Repeats
     call cho_main("Maybe then you'd have a chance to win against me!{w} And earn some useless Gryffindor points while you're at it.","soft","base","base","L")
     call her_main("I don't think that will be necessary...", "soft", "closed", "base", "mid")
     call cho_main("Well, we all already know how this is going to turn out don't we, [cho_genie_name]?","soft","base","base","mid")
-    call cho_main("My body is still better than Miss Granger's, isn't it?","smile","angry","angry","L")
+    call cho_main("My body is still better than Miss Granger's, isn't it?", "smile", "narrow", "angry", "L")
     call her_main("", "annoyed", "base", "angry", "mid")
     call ctc
 
@@ -1235,10 +1235,10 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("Professor, could you please repeat that for me?","angry","closed","angry","mid")
             m "Hermione's body is superior."
             call her_main("No surprise there...", "base", "base", "base", "R")
-            call cho_main("No!{w} It clearly isn't!","scream","angry","angry","mid", trans=hpunch)
+            call cho_main("No!{w} It clearly isn't!", "scream", "narrow", "angry", "mid", trans=hpunch)
             call cho_main("Are you mad, old man?","angry","narrow","angry","mid")
             call her_main("Don't use that tone with the headmaster...", "soft", "closed", "base", "mid")
-            call cho_main("Nobody asked you!","angry","angry","angry","L")
+            call cho_main("Nobody asked you!", "angry", "narrow", "angry", "L")
             call her_main("He's the wisest wizard at our school...{w} Surely his word should be final...", "smile", "narrow", "base", "mid_soft")
             m "I'd use the word astute but I'll take wise..."
             call cho_main("Why are you siding with her all of a sudden?","annoyed","narrow","angry","mid")
@@ -1284,14 +1284,14 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call set_her_action("none")
 
             call her_main("Any time, Professor.", "soft", "narrow", "base", "mid_soft")
-            call cho_main("(I bloody hate her!)","angry","angry","angry","L")
+            call cho_main("(I bloody hate her!)", "angry", "narrow", "angry", "L")
 
             call her_main("If you don't mind, Sir.", "open", "base", "base", "R")
             call her_main("I'd like to leave now.", "soft", "base", "base", "mid")
             call cho_main("By all means, just go already.","soft","narrow","angry","R")
             call her_main("Did something not go as you expected?", "smile", "base", "base", "R")
             call her_main("Did you think having me here when you exposed yourself would make me jealous...", "soft", "closed", "base", "mid")
-            call cho_main("(...)","annoyed","angry","angry","L")
+            call cho_main("(...)", "annoyed", "narrow", "angry", "L")
             call her_main("Thank you for inviting me, Professor.", "soft", "narrow", "base", "mid_soft")
             call her_main("I \"did\" enjoy this little obscene \"freak-show\" you arranged for me...", "grin", "narrow", "base", "mid_soft")
             call cho_main("You'll regret this, Granger!","angry","narrow","angry","L")
@@ -1371,10 +1371,10 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("*Mhmm*","base","closed","base","mid") # Self assured.
             call her_main("Fine...", "soft", "narrow", "angry", "R")
             call her_main("\"Poor\", I'd say...", "soft", "closed", "base", "mid")
-            call cho_main("How dare you!{w} You snobby skunk!","scream","angry","angry","L", trans=hpunch)
+            call cho_main("How dare you!{w} You snobby skunk!", "scream", "narrow", "angry", "L", trans=hpunch)
             call her_main("", "base", "base", "base", "R")
             m "(Is that better or worse than \"troll\"?)" # Snape explained school ratings during the match.
-            call cho_main("Our Professor asked you to rate my body truthfully!","angry","angry","angry","L")
+            call cho_main("Our Professor asked you to rate my body truthfully!", "angry", "narrow", "angry", "L")
             call her_main("Which I did!{w} And it's at \"dreadful\" now!", "soft", "closed", "base", "mid")
             call cho_main("\"Dreadful\"?!","soft","wide","base","mid")
             call cho_main("You're a lying bitch, Granger!","angry","closed","angry","mid")
@@ -1470,7 +1470,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
 label cc_pf_strip_T2_E1:
 
     # Cho asks if you could give her house points for once.
-    call cho_main("But, before that, may I ask you about something?","soft","base","sad","mid")
+    call cho_main("But, before that, may I ask you about something?", "soft", "base", "worried", "mid")
     m "Sure..."
     call cho_main("Does Granger only ask for house points? To do this sort of thing?","open","base","base","mid")
     m "She does."
@@ -1483,7 +1483,7 @@ label cc_pf_strip_T2_E1:
             $ current_payout = 5
 
             call hide_blktone
-            call cho_main("Only five points? I expected more, Sir.","horny","narrow","sad","downR")
+            call cho_main("Only five points? I expected more, Sir.", "horny", "narrow", "worried", "downR")
             call cho_main("I've gotten more points for answering Quidditch questions to Madam Hooch!","open","base","base","mid")
             m "I'm sure that wasn't the only reason she gave you those points..."
             call cho_main("Just to be clear... She completely undresses?{w} For five mere points?","soft","narrow","raised","mid")
@@ -1511,8 +1511,8 @@ label cc_pf_strip_T2_E1:
             m "Why are you even so invested in this all of a sudden?"
             call cho_main("(...)","annoyed","narrow","angry","R")
 
-    call cho_main("I thought,...{w} maybe...{w} just this once...","angry","base","sad","down")
-    call cho_main("You could give me house points as well?","soft","base","sad","mid")
+    call cho_main("I thought,...{w} maybe...{w} just this once...", "angry", "base", "worried", "down")
+    call cho_main("You could give me house points as well?", "soft", "base", "worried", "mid")
     m "Really? I thought you didn't give a flying fuck about that house cup?"
     call cho_main("Sir?!","angry","wide","base","mid") # Shock
     m "Why do you want points all of a sudden?"
@@ -1522,21 +1522,21 @@ label cc_pf_strip_T2_E1:
     call cho_main("I'd never subject myself to earning house points this way!","soft","narrow","angry","mid")
     call cho_main("Unlike a certain other student at this school...","angry","narrow","angry","R")
     m "And yet you asked me for that very thing?{w} I wonder why, Miss Chang..."
-    call cho_main("Just as additional motivation, Sir!","angry","closed","sad","mid")
+    call cho_main("Just as additional motivation, Sir!", "angry", "closed", "worried", "mid")
     m "Additional motivation, so so..."
-    call cho_main("Yes.","soft","narrow","sad","mid")
+    call cho_main("Yes.", "soft", "narrow", "worried", "mid")
     m "Does that motivation come from the noble deed of earning those points for your house?"
     g4 "Or getting that dirty, corruptive feeling from the way you acquired them?"
-    call cho_main("(...)","angry","closed","sad","mid") # Embarrassed
+    call cho_main("(...)", "angry", "closed", "worried", "mid") # Embarrassed
     g9 "Stripping down for points! Don't you know what that would make you?"
-    call cho_main("*Uhm*","soft","narrow","sad","mid")
+    call cho_main("*Uhm*", "soft", "narrow", "worried", "mid")
     m "You'd be just as cheap as Hermione..."
     call cho_main("Please, Sir.{w} Don't compare me to that whore!","annoyed","narrow","angry","mid")
     g9 "Yes, Miss Chang. A whore!"
-    call cho_main("That's not why-","angry","closed","sad","mid")
-    call cho_main("Please, Sir. Just this once!","soft","narrow","sad","mid")
-    call cho_main("I won't ask for payment ever again!","soft","base","sad","mid")
-    call cho_main("I'll strip naked for you, for... {number=current_payout} house points!","angry","closed","sad","mid") # Embarrassed
+    call cho_main("That's not why-", "angry", "closed", "worried", "mid")
+    call cho_main("Please, Sir. Just this once!", "soft", "narrow", "worried", "mid")
+    call cho_main("I won't ask for payment ever again!", "soft", "base", "worried", "mid")
+    call cho_main("I'll strip naked for you, for... {number=current_payout} house points!", "angry", "closed", "worried", "mid") # Embarrassed
 
     menu:
         "\"Yes! Make your house proud, you slut! Earn those points!\"":
@@ -1545,7 +1545,7 @@ label cc_pf_strip_T2_E1:
 
         "\"No. You are better than that...\"":
             $ cho_mood += 6
-            call cho_main("But Sir! I asked for them!","soft","wide","sad","mid")
+            call cho_main("But Sir! I asked for them!", "soft", "wide", "worried", "mid")
             m "And I'm sure you wouldn't want to sink as low as Miss Granger, would you?"
             call cho_main("Yes! I would!","angry","closed","angry","mid")
             call cho_main("That's the entire reason I want them!!!","open","narrow","angry","R")

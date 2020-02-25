@@ -1,6 +1,6 @@
-define cho_face = {"mouth": {"neutral": ["base"], "happy": ["base", "smile"], "naughty": ["quiver","horny","soft"], "horny": ["quiver","horny","soft"], "annoyed": ["annoyed","pout"], "disgusted": ["angry","upset"], "angry": ["angry","upset"]},
-                   "eyes": {"neutral": ["base","base","closed"], "happy": ["base"], "naughty": ["base","narrow"], "horny": ["base","narrow"], "annoyed": ["base","closed","narrow"], "disgusted": ["base","narrow"], "angry": ["angry","narrow"]},
-                   "eyebrows": {"neutral": ["base"], "happy": ["base"], "naughty": ["base","raised"], "horny": ["base","raised"], "annoyed": ["base","angry"], "disgusted": ["base","raised","sad"], "angry": ["angry"]},
+define cho_face = {"mouth": {"neutral": ["base"], "happy": ["base", "smile"], "naughty": ["quiver","horny","soft"], "horny": ["quiver","horny","soft"], "annoyed": ["annoyed"], "disgusted": ["angry","upset"], "angry": ["angry","upset"]},
+                   "eyes": {"neutral": ["base","base","closed"], "happy": ["base"], "naughty": ["base","narrow"], "horny": ["base","narrow"], "annoyed": ["base","closed","narrow"], "disgusted": ["base","narrow"], "angry": ["narrow"]},
+                   "eyebrows": {"neutral": ["base"], "happy": ["base"], "naughty": ["base","raised"], "horny": ["base","raised"], "annoyed": ["base","angry"], "disgusted": ["base","raised","worried"], "angry": ["angry"]},
                    "pupils": {"neutral": ["mid","L","R"], "happy": ["mid","L","R"], "naughty": ["mid","L","R","down","up"], "horny": ["mid","L","R","down","up"], "annoyed": ["mid","L","R","down","downR"], "disgusted": ["mid","down"], "angry": ["mid"]}}
 
 label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):

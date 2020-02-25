@@ -197,6 +197,7 @@ init python:
                 if value not in (self.face.face[str(arg)][0], False):
                     self.face.face[str(arg)][0] = value
             self.face.rebuild_image()
+            self.body.rebuild_image()
             self.rebuild_image()
             
         def set_body(self, **kwargs):

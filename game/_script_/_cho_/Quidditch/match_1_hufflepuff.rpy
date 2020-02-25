@@ -5,7 +5,7 @@
 label start_hufflepuff_match:
     call cho_main(xpos="mid", ypos="base", trans=fade)
     m "[cho_name], what do you say... ready for your first game of the season?"
-    call cho_main("To be honest, [cho_genie_name], I'm feeling quite nervous.","soft","base","sad","R")
+    call cho_main("To be honest, [cho_genie_name], I'm feeling quite nervous.", "soft", "base", "worried", "R")
     m "Don't worry. I believe you are ready..."
     m "When are you going to play against Hufflepuff?"
     call cho_main("That's up to you, [cho_genie_name]. As headmaster you decide when the games will be held...","open","base","base","mid")
@@ -729,38 +729,38 @@ label hufflepuff_match:
     pause 1.5
     show screen bld2
     call her_main(face="neutral")
-    call cho_main("Hey, Granger!", "open", "angry", "angry", "L", ypos=-200, xpos=560)
+    call cho_main("Hey, Granger!", "open", "narrow", "angry", "L", ypos=-200, xpos=560)
     call her_main("What do you want? Shouldn’t you be busy with,{w=0.3} I don’t know...", "open", "base", "angry", "mid", flip=True,xpos="120",ypos="base")
-    call cho_main("", "pout", "angry", "raised", "L")
+    call cho_main("", "annoyed", "narrow", "raised", "L")
     call her_main("playing the game?", "smile", "closed", "base", "mid")
-    call cho_main("The game is over, you dipstick!", "scream", "angry", "angry", "L")
-    call cho_main("", "pout", "angry", "raised", "L")
+    call cho_main("The game is over, you dipstick!", "scream", "narrow", "angry","L")
+    call cho_main("", "annoyed", "narrow", "raised", "L")
     call her_main("What? Already?", "shock", "wide", "worried", "stare")
-    call cho_main("", "upset", "angry", "angry", "L")
+    call cho_main("", "upset", "narrow", "angry","L")
     call her_main("But who caught the Snitch?", "open", "wide", "base", "stare")
-    call cho_main("", "open", "angry", "angry", "L")
+    call cho_main("", "open", "narrow", "angry","L")
     $ cho.set_body(armright="snitch")
     with d3
     ">Cho waves the snitch in front of her."
     call her_main("", "mad", "wide", "worried", "shocked")
     $ cho.set_body(armright="down")
     call cho_main("My first ever win this season and you didn’t even notice it! No one did, thanks to your dreadful commentating!", "scream", "closed", "angry", "L")
-    call cho_main("", "upset", "angry", "angry", "down")
+    call cho_main("", "upset", "narrow", "angry","down")
     call her_main("Oh...", "normal", "wide", "worried", "shocked")
     call her_main("So should I announce it now?", "open", "happyCl", "worried", "mid")
     call sna_main("Obviousl-","snape_12",ypos="head")
-    call cho_main("{size=+10}YES!{/size}", "scream", "angry", "angry", "L", trans=vpunch)
+    call cho_main("{size=+10}YES!{/size}", "scream", "narrow", "angry", "L", trans=vpunch)
     call her_main("", "normal", "base", "worried", "mid")
-    call cho_main("{size=+6}WHAT ARE YOU EVEN WAITING FOR?{/size}", "scream", "angry", "raised", "L", trans=hpunch)
-    call cho_main("", "upset", "angry", "angry", "down")
+    call cho_main("{size=+6}WHAT ARE YOU EVEN WAITING FOR?{/size}", "scream", "narrow", "raised", "L", trans=hpunch)
+    call cho_main("", "upset", "narrow", "angry","down")
     call her_main("Don’t scream at me like that, bitch!", "scream", "base", "angry", "mid", trans=hpunch)
-    call cho_main("", "angry", "shocked", "angry", "L")
+    call cho_main("", "angry", "wide", "angry", "L")
     call her_main("", "normal", "base", "angry", "mid")
-    call cho_main("{size=+6}WHAT DID YOU JUST CALL ME?!!!{/size}", "scream", "shocked", "angry", "L", trans=vpunch)
-    call cho_main("", "angry", "shocked", "angry", "L")
+    call cho_main("{size=+6}WHAT DID YOU JUST CALL ME?!!!{/size}", "scream", "wide", "angry", "L", trans=vpunch)
+    call cho_main("", "angry", "wide", "angry", "L")
     call her_main("Everyone, Ravenclaw wins!", "grin", "happy", "base", "mid_soft")
     call her_main("Cho Chang managed to catch it, the snitch that is...", "smile", "happyCl", "base", "mid")
-    call cho_main("", "scream", "shocked", "raised", "L")
+    call cho_main("", "scream", "wide", "raised", "L")
     call her_main("With the help of her ridiculously short skirt!", "crooked_smile", "base", "angry", "mid")
     cho "{size=+10}!!!{/size}"
     $ qp_mob_reaction[0] = "emo8"
@@ -771,7 +771,7 @@ label hufflepuff_match:
     hide screen hermione_main
     hide screen bld2
     with d3
-    call cho_main("", "quiver", "wide", "sad", "downR")
+    call cho_main("", "quiver", "wide", "worried", "downR")
     ">Hermione’s commentating is drowned out by the sound of the Ravenclaw grandstand cheering."
     call cho_main("{size=+6}You are done, Granger!{/size}", "scream", "closed", "angry", "L")
     call cho_walk(1200, 500+180, speed=2)
@@ -838,26 +838,26 @@ label hufflepuff_match_return:
     call cho_walk("desk", "base", action="enter")
 
     $ renpy.sound.play("sounds/punch01.mp3")
-    call cho_main("We beat Hufflepuff!!!","smile","angry","base","mid", ypos="base", trans=hpunch)
+    call cho_main("We beat Hufflepuff!!!", "smile", "narrow", "base", "mid", ypos="base", trans=hpunch)
     $ renpy.sound.play("sounds/MaleGasp.mp3")
     g4 "{size=+10}IT WASN'T ME!{/size}"
     m "..........."
     call cho_main("huh?{w=0.5} Are you okay, [cho_genie_name]?","angry","narrow","base","mid")
     m "Wha-{w=0.5}{nw}"
     g4 "Of course I am!"
-    call cho_main("...","annoyed","angry","raised","R")
-    call cho_main("If you say so.....","annoyed","angry","base","mid")
+    call cho_main("...", "annoyed", "narrow", "raised", "R")
+    call cho_main("If you say so.....", "annoyed", "narrow", "base", "mid")
     call play_music("cho")
     call cho_main("I can't believe that we've broken our 6 year dry streak and won a real game!","smile","base","base","mid")
-    call cho_main("We could actually win the cup!","open","shocked","angry","L")
+    call cho_main("We could actually win the cup!", "open", "wide", "angry", "L")
     m "And you weren't embarrassed?"
-    call cho_main("I was a little at the start of the game...","quiver","narrow","sad","downR")
-    call cho_main("But once I realised how much it was affecting those slack-jawed Hufflepuffs...","smile","angry","angry","R")
-    call cho_main("It was like having my own personal weapon of mass distraction!","smile","shocked","angry","mid")
+    call cho_main("I was a little at the start of the game...", "quiver", "narrow", "worried", "downR")
+    call cho_main("But once I realised how much it was affecting those slack-jawed Hufflepuffs...", "smile", "narrow", "angry", "R")
+    call cho_main("It was like having my own personal weapon of mass distraction!", "smile", "wide", "angry", "mid")
     call cho_main("I don't think Cedric even knew where the snitch was most of the time!","horny","base","base","downR")
-    call cho_main("All he seemed to do was follow me around...","horny","narrow","sad","down")
-    call cho_main("Him {size=-2}and {size=-2}half {size=-2}the {size=-2}team...{/size}","quiver","narrow","sad","downR")
-    call cho_main("This might be the first real chance Ravenclaw has ever had to win the cup.","open","closed","sad","mid")
+    call cho_main("All he seemed to do was follow me around...", "horny", "narrow", "worried", "down")
+    call cho_main("Him {size=-2}and {size=-2}half {size=-2}the {size=-2}team...{/size}", "quiver", "narrow", "worried", "downR")
+    call cho_main("This might be the first real chance Ravenclaw has ever had to win the cup.", "open", "closed", "worried", "mid")
     m "I'm sure this must mean a lot to you..."
     call cho_main("It does... I might even get picked up by a pro team!","smile","base","base","R")
     m "..."

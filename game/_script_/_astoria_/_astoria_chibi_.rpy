@@ -68,7 +68,7 @@ init python:
         if astoria.is_worn("top"):
             chibi["top"] = "ag_top.png"
 
-        if astoria.is_any_worn("bottom", "top") and astoria.get_equipped("top").id == ast_top_ann.id:
+        if astoria.is_worn("bottom") or (astoria.is_worn("top") and astoria.get_equipped("top").id == ast_top_ann.id):
             chibi["bottom"] = "ag_skirt.png"
 
         if astoria.is_worn("robe") and not chibi.special:

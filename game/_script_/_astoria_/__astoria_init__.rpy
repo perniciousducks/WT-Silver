@@ -25,9 +25,9 @@ default ast_affection      = 0 # Affection level with Tonks.
 default ast_mood           = 0
 
 # Events
-default snape_gave_spellbook        = False
-
+default snape_gave_spellbook = False
 default ast_seen_lun_sex = False
+default astoria_chitchats_seen = set()
 
 # Tonks events
 default spells_locked                   = False
@@ -108,6 +108,7 @@ label reset_astoria_progress:
         # Events
         "snape_gave_spellbook",
         "ast_seen_lun_sex",
+        "astoria_chitchats_seen",
 
         # Event objects
         "ag_st_imperio",

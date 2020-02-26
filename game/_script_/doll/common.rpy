@@ -36,7 +36,12 @@ init -1 python:
             self.child = renpy.displayable(child)
 
         def render(self, w, h, st, at):
-            return renpy.render(self.child, w, h, st, at)
+            cr = renpy.display.render.render(self.child, w, h, st, at)
+            cw, ch = cr.get_size()
+            rv = renpy.display.render.Render(cw, ch)
+            rv.blit(cr, (0, 0), focus=False)
+
+            return rv
 
         def event(self, ev, x, y, st):
             return None

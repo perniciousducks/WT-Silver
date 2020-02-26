@@ -81,7 +81,7 @@ screen cho_main():
     tag cho_main
     zorder cho_zorder
     sensitive False
-    default cho_img = cho.get_image()
+    default cho_img = "cho_doll"
     if cho_animation != None:
         add cho_img xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) at cho_animation
     else:

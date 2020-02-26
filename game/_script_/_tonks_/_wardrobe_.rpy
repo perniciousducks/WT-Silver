@@ -73,3 +73,8 @@ default ton_bra_base = DollCloth("tonks", ("bras", "bras"), "bra", "bikini",[[12
 
 default ton_outfit_default = DollOutfit([ton_hair_base, ton_neckwear_beads, ton_gloves_auror, ton_top_auror, ton_robe_auror, ton_bottoms_leggings, ton_stockings_auror], True)
 default ton_outfit_last = DollOutfit([ton_hair_base])
+
+# Registered doll image
+
+image tonks_doll:
+    tonks.get_image()

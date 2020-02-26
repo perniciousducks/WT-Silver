@@ -256,17 +256,17 @@ screen stats_menuitem(xx, yy):
                     add "interface/characters/snape_locked.png" zoom 0.34 align (0.9, 1.0)
             elif current_category == "Tonks":
                 if current_item["flag"]:
-                    add tonks.get_image() zoom 0.4 align (0.7, 1.0)
+                    add "tonks_doll" zoom 0.4 align (0.7, 1.0)
                 else:
                     add "interface/characters/tonks_locked.png" zoom 0.4 align (0.7, 1.0)
             elif current_category == "Hermione":
                 if current_item["flag"]:
-                    add hermione.get_image() zoom 0.4 align (0.7, 1.0)
+                    add "hermione_doll" zoom 0.4 align (0.7, 1.0)
                 else:
                     add "interface/characters/hermione_locked.png" zoom 0.38 align (0.65, 1.0)
             elif current_category == "Cho":
                 if current_item["flag"]:
-                    add cho.get_image() zoom 0.4 align (0.65, 1.0)
+                    add "cho_doll" zoom 0.4 align (0.65, 1.0)
                 else:
                     add "interface/characters/cho_locked.png" zoom 0.4 align (0.65, 1.0)
             elif current_category == "Luna":
@@ -282,7 +282,7 @@ screen stats_menuitem(xx, yy):
                     add "interface/characters/luna_locked.png" zoom 0.38 align (0.75, 1.0)
             elif current_category == "Astoria":
                 if current_item["flag"]:
-                    add astoria.get_image() zoom 0.4 align (0.7, 1.0)
+                    add "astoria_doll" zoom 0.4 align (0.7, 1.0)
                 else:
                     add "interface/characters/astoria_locked.png" zoom 0.38 align (0.7, 1.0)
             elif current_category == "Susan":

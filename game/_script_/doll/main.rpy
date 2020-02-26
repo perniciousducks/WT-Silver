@@ -70,6 +70,8 @@ init python:
             scr_name = "{}_main".format(self.name)
             if renpy.get_screen(scr_name):
                 renpy.show_screen(scr_name)
+            else:
+                last_doll_images[scr_name] = self.get_image()
             
         def equip(self, obj):
             """Takes DollCloth or DollOutfit object to equip."""

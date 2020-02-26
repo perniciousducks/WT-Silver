@@ -246,7 +246,7 @@ screen studio():
         drag_offscreen True
         xpos 160 ypos -75
         if studio_image_body:
-            add char_active.get_image() zoom studio_image_zoom xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
+            add active_girl+"_doll" zoom studio_image_zoom xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
         else:
             add studio_outfit_saves.get(active_girl).get_image() zoom studio_image_zoom xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
         

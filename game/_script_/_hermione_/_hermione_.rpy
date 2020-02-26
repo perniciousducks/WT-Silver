@@ -79,7 +79,7 @@ screen hermione_main():
     tag hermione_main
     zorder hermione_zorder
     sensitive False
-    default hermione_img = hermione.get_image()
+    default hermione_img = "hermione_doll"
     if hermione_animation != None:
         add hermione_img xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio) at hermione_animation
     else:

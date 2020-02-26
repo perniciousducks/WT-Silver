@@ -290,7 +290,7 @@ screen wardrobe_menu(xx, yy):
         frame xysize (340, 548) xpos 100 style "empty" background wardrobe_background
         
         # Character
-        add active_girl+"_doll" zoom char_scale anchor (0.57, 1.0) align (0.5, 1.0) yoffset -2 #yoffset -12
+        add char_active.get_image() zoom char_scale anchor (0.57, 1.0) align (0.5, 1.0) yoffset -2 #yoffset -12
         
         # Switch to body modifications tab
         add "interface/frames/{}/circle.png".format(interface_color) pos (373, 62)

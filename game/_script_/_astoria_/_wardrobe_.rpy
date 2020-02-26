@@ -95,8 +95,3 @@ default ast_outfit_ann = DollOutfit([ast_hair_ann, ast_hat_ann, ast_top_ann, ast
 default ast_cloth_pants1 = DollCloth("astoria", ("bottoms", "trousers"), "bottom", "pants_1", [[180, 180, 180, 255], [213, 161, 13, 255]], armfix=True)
 default ast_cloth_shorts1 = DollCloth("astoria", ("bottoms", "trousers"), "bottom", "pants_1_short", [[180, 180, 180, 255], [213, 161, 13, 255]], level=8, armfix=True)
 default ast_cloth_pantyhose1 = DollCloth("astoria", ("legwear", "stockings"), "stockings", "pantyhose", [[190, 146, 129, 255]], armfix=True)
-
-# Registered doll image
-
-image astoria_doll:
-    astoria.get_image()

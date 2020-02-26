@@ -138,7 +138,7 @@ screen tonks_main():
     zorder tonks_zorder
     sensitive False
     
-    default tonks_img = "tonks_doll"
+    default tonks_img = tonks.get_image()
     if tonks_animation != None:
         add tonks_img xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) at tonks_animation
     else:

@@ -558,7 +558,7 @@ screen wardrobe_outfit_menuitem(xx, yy):
         xysize (467, 548)
         background wardrobe_background
    
-        add "interface/panels/"+interface_color+"/icon_panel.png"
+        add "interface/panels/"+interface_color+"/icon_panel2.png"
             
         hbox:
             pos (24, 44)

@@ -202,6 +202,13 @@ init python:
             self.body.rebuild_image()
             self.rebuild_image()
             
+        def get_face(self):
+            """Returns a dictionary containing currently set facial expressions. Used in character studio."""
+            d = {}
+            for k, v in self.face.face.iteritems():
+                d[k] = v[0]
+            return d
+            
         def set_body(self, **kwargs):
             """Takes keyword argument(s) with the string name of body part file(s)."""
             for arg, value in kwargs.iteritems():

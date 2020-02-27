@@ -56,34 +56,34 @@ init python:
         drags[0].snap(540, 300)
         return
 
-label studio(studio_char):
-    call hide_characters
-    
+label studio(studio_char):    
     python:
         studio_eyebrows_list = [x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyebrows/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x]
         studio_eyes_list = [x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyes/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x]
         studio_mouth_list = [x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/mouth/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x]
         studio_pupils_list = [x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/pupils/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x]
     
-    $ studio_bg_list = ["wall_day", "castle", "forest", "highlight", "versus", "main_room_day", "main_room_night", "corridor", "custom"]
-    $ studio_bg_overlay_list = [None, "curtains", "card", "g_bottom", "g_left", "g_circular"]
-    
-    $ studio_outfit_saves = {"cho": cho_outfit_last, "tonks": ton_outfit_last, "astoria": ast_outfit_last, "hermione": her_outfit_last}
-    
-    if studio_image_eyebrows > len(studio_eyebrows_list):
-        $ studio_image_eyebrows = 0
-    if studio_image_eyes > len(studio_eyes_list):
-        $ studio_image_eyes = 0
-    if studio_image_pupils > len(studio_pupils_list):
-        $ studio_image_pupils = 0
-    if studio_image_mouth > len(studio_mouth_list):
-        $ studio_image_mouth = 0
-    
-    $ char_active.set_face(eyebrows=studio_eyebrows_list[studio_image_eyebrows], eyes=studio_eyes_list[studio_image_eyes], pupils=studio_pupils_list[studio_image_pupils], mouth=studio_mouth_list[studio_image_mouth])
-    
-    $ studio_hide = False
-    
-    $ image_arrow = "interface/frames/"+interface_color+"/arrow2.png"
+        studio_bg_list = ["wall_day", "castle", "forest", "highlight", "versus", "main_room_day", "main_room_night", "corridor", "custom"]
+        studio_bg_overlay_list = [None, "curtains", "card", "g_bottom", "g_left", "g_circular"]
+        
+        studio_outfit_saves = {"cho": cho_outfit_last, "tonks": ton_outfit_last, "astoria": ast_outfit_last, "hermione": her_outfit_last}
+        
+        if studio_image_eyebrows > len(studio_eyebrows_list):
+            studio_image_eyebrows = 0
+        if studio_image_eyes > len(studio_eyes_list):
+            studio_image_eyes = 0
+        if studio_image_pupils > len(studio_pupils_list):
+            studio_image_pupils = 0
+        if studio_image_mouth > len(studio_mouth_list):
+            studio_image_mouth = 0
+            
+        previous_face = char_active.get_face()
+        
+        char_active.set_face(eyebrows=studio_eyebrows_list[studio_image_eyebrows], eyes=studio_eyes_list[studio_image_eyes], pupils=studio_pupils_list[studio_image_pupils], mouth=studio_mouth_list[studio_image_mouth])
+        
+        studio_hide = False
+        
+        image_arrow = "interface/frames/"+interface_color+"/arrow2.png"
     
     label .after_init:
     
@@ -213,6 +213,7 @@ label studio(studio_char):
             $ studio_text_outline_color = color_picker(get_rgb_list(studio_text_outline_color), False, "Outline Color", pos_xy=[200, 130])
             $ studio_text_outline_color = get_hex_string(studio_text_outline_color[0]/255.0, studio_text_outline_color[1]/255.0, studio_text_outline_color[2]/255.0, studio_text_outline_color[3]/255.0)
     else:
+        $ char_active.set_face(**previous_face)
         return
         
     jump .after_init

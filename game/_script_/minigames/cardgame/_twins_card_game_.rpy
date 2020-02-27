@@ -97,7 +97,7 @@ label twins_random_duel:
         twi "Sure, why not."
         fre "But let's make it a bit interesting."
         m "I was going to suggest something similar but go on..."
-        ger "Lets make a wager."
+        ger "Let's make a wager."
         m "Okay, what kind of wager are you thinking of?"
         ger "How about a monetary one?"
         m "Of course, what else is there in this world other than monetary rewards?"

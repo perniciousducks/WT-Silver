@@ -256,11 +256,11 @@ label hg_anal_sex_1:
             $ ccg1 = 30
             call her_main("No, I'm scared! *SOB!*", "scream", "happyCl", "worried", "mid",cheeks="blush",tears="messy")
 
-        "{color=[menu_disabled]}\"Lets use some lubrication.\"{size=-2}(Item){/size}{/color}" if anal_lube_ITEM.number <= 0:
+        "{color=[menu_disabled]}\"Let's use some lubrication.\"{size=-2}(Item){/size}{/color}" if anal_lube_ITEM.number <= 0:
             m "(I don't have any lube left. I'm gonna have to be more creative.)"
             jump hg_anal_sex_1.choices
 
-        "\"Lets use some lubrication.\" {size=-2}(Item){/size}" if anal_lube_ITEM.number > 0:
+        "\"Let's use some lubrication.\" {size=-2}(Item){/size}" if anal_lube_ITEM.number > 0:
             $ anal_lube_ITEM.number -= 1
 
             call play_music("playful_tension") # SEX THEME.
@@ -335,7 +335,7 @@ label hg_anal_sex_1:
 
             call her_main("*sob!*", "mad", "base", "angry", "down",cheeks="blush",tears="soft")
             call her_main("...my asshole... my poor asshole... *sob*","mad", "base", "angry", "mid",cheeks="blush",tears="soft")
-            g9 "In that case, lets try it again."
+            g9 "In that case, let's try it again."
             $ ccg1 = 19
             call her_main("No! Stop, [genie_name]!", "open", "wide", "worried", "mid",cheeks="blush",tears="soft")
             call her_main("I've changed my mind! I don't need these points!",cheeks="blush",tears="soft")

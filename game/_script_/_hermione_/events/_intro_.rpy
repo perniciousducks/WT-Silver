@@ -1084,7 +1084,7 @@ label hermione_intro_E6:
         "\"Blow me\"" if not d_flag_01:
             $ d_flag_01 = True
             m "(I don't think she's ready for that just yet)"
-            m "(Lets start with something simpler.)"
+            m "(Let's start with something simpler.)"
             jump hermione_intro_E6.choices
 
     call her_main("Em...", "angry", "base", "base", "mid")

@@ -49,7 +49,7 @@ label ll_pf_sex_T1_intro:
     m "Very desolate and quiet...{w} It's perfect!"
     call lun_main("I can give you a tour of the school while we're at it!","base","wink","base","mid")
     call lun_main("And once we are there you can tell me about your ideas!","base","wink","base","mid")
-    g9 "Sounds like a plan!{w} lets go!"
+    g9 "Sounds like a plan!{w} let's go!"
     call lun_main("Great!{w} Please follow me, Sir...","base","happyCl","sad","mid")
 
     # Roll out...

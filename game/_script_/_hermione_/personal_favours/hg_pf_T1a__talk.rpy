@@ -1048,7 +1048,7 @@ label hg_pf_talk_tonks:
             call ton_main("What does our Headmaster ask of you? To earn those house points.","horny","base","angry","mid", hair="horny")
             g4 "..."
             if masturbating:
-                g9 "(Lets take a short break, my hands are getting tired.)"
+                g9 "(Let's take a short break, my hands are getting tired.)"
                 call gen_chibi("sit_behind_desk")
             call her_main("I...", "angry", "happyCl", "worried", "mid")
             call ton_main("Go on, I'm sure the Headmaster doesn't mind.","open","base","base","L")

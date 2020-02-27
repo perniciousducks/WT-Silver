@@ -83,7 +83,7 @@ label map_forest:
 
     call outskirts_of_hogwarts
 
-    m "Lets see what I can find out here..."
+    m "Let's see what I can find out here..."
 
     menu:
         "-Search the area-":
@@ -122,7 +122,7 @@ label map_lake:
 
     call outskirts_of_hogwarts
 
-    m "Lets see what I can find out here..."
+    m "Let's see what I can find out here..."
 
     menu:
         "-Search the area-":

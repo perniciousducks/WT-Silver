@@ -1251,7 +1251,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG(pos=12)
     call her_main("Or maybe you want to bend me over your desk again{heart}{heart}{heart}...", "smile", "squint", "angry", "mid")
     $ lunCG(pos=8)
-    m "I love your enthusiasm... but lets just start with a nice look at your tits..."
+    m "I love your enthusiasm... but let's just start with a nice look at your tits..."
     $ lunCG(pos=15)
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
     call her_main("Oh... alright then...", "soft", "narrow", "worried", "mid_soft")

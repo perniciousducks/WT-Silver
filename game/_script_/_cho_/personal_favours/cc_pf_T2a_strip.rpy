@@ -748,7 +748,7 @@ label cc_pf_strip_T1_intro_E3:
         m "Actually, she doesn't..."
         call cho_main("What? But I thought she'd-","soft","wide","base","mid")
         call cho_main("Why do you ask me to do these favours, and not Granger?", "open", "narrow", "angry", "mid", trans=hpunch)
-        m "Lets just say, she isn’t as progressive as you...{w} yet."
+        m "Let's just say, she isn’t as progressive as you...{w} yet."
         call cho_main("You haven’t even seen her naked?","angry","base","base","mid")
         call cho_main("What favours are you even buying from her?","open","base","angry","mid")
         m "Just chit-chats, mostly..."

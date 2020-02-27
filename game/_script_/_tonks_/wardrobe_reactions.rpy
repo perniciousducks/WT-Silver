@@ -58,7 +58,7 @@ label tonks_wardrobe_check(section, arg=None):
                         if random_number == 1:
                             call ton_main("That's not how a headmaster should treat their subordinates.",face="annoyed")
                         elif random_number == 2:
-                            call ton_main("It's inappropriate, lets keep it civil okay?",face="annoyed")
+                            call ton_main("It's inappropriate, let's keep it civil okay?",face="annoyed")
                         elif random_number == 3:
                             call ton_main("Someone fancy themselves a bit of a bad boy?",face="annoyed",mouth="base")
                         elif random_number == 4:

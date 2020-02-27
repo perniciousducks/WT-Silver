@@ -117,7 +117,7 @@ label snape_duel_menu:
             $ one_of_ten = renpy.random.randint(1, 10)
 
             if one_of_ten == 1:
-                call sna_main("Sure, lets do it!","snape_02")
+                call sna_main("Sure, let's do it!","snape_02")
             elif one_of_ten == 2:
                 call sna_main("Is there another bottle in it for me?","snape_05")
                 g9 "If you win..."

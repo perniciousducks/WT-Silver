@@ -174,7 +174,7 @@ label equip_top:
                 # g9 "And unbutton some of those buttons! I want you to show some cleavage!"
                 # if her_whoring >= 8:
                     # if her_whoring < 11:
-                        # call her_main("(Lets just hope nobody stares at them too much.)", "annoyed", "narrow", "worried", "down")
+                        # call her_main("(Let's just hope nobody stares at them too much.)", "annoyed", "narrow", "worried", "down")
                         # call her_main("Fine, [genie_name]. {w=0.9}Let me go change.", "open", "squint", "base", "mid")
                     # elif her_whoring < 20:
                         # call her_main("Of course, [genie_name].", "soft", "base", "base", "R")

@@ -474,7 +474,7 @@ label luna_favour_1:
                     "-Ask her to shorten her skirt-":
                         if lun_sub <= 2:
                             $ lun_sub += 1
-                        m "lets talk about that skirt of yours..."
+                        m "let's talk about that skirt of yours..."
                         call lun_main("What about it?","normal","mad","angry","mid")
                         m "have you ever considered wearing it a little... shorter?"
                         call lun_main("...","normal","angry","angry","R")

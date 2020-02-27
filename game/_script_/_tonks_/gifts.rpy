@@ -138,7 +138,7 @@ label give_ton_gift(gift_item):
             
     elif gift_item == firewhisky_ITEM:
         call ton_main("Firewhisky?",face="happy",xpos="mid",ypos="base",trans=d5)
-        call ton_main("Mmm.. My favourite. But lets save it for later, shall we?", face="horny")
+        call ton_main("Mmm.. My favourite. But let's save it for later, shall we?", face="horny")
         call ton_friendship(0)
 
     call ton_main(xpos="base", ypos="base",trans=d5)

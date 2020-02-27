@@ -457,7 +457,7 @@ label cho_quiz_checkpoint:
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/gasp.mp3")
             call cho_main("Yes!", "smile", "wide", "base", "mid")
-            g9 "Great! Then lets get started with the...{w=1.2}{nw}"
+            g9 "Great! Then let's get started with the...{w=1.2}{nw}"
             call cho_main("Next question...", "open", "base", "raised", "down")
             $ cho_quiz.correct_answers += 1
 

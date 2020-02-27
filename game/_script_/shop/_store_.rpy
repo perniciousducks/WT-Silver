@@ -156,7 +156,7 @@ label store_chit_chat:
         m "Snape was in here, he doesn't disapprove of your business?"
         fre "He was using a polyjuice potion to disguise himself as a student."
         ger "But that weird walk of his where he sort of slides across the floor gives him away a mile off."
-        fre "Tell you what, lets set a wager right now. Usually we'd make it a bit more difficult but since you gave us the idea for this."
+        fre "Tell you what, let's set a wager right now. Usually we'd make it a bit more difficult but since you gave us the idea for this."
         ger "Beat us again and we'll give you three tokens."
         m "That's it? Sounds a bit out of character for you guys making it this easy."
         fre "Let's call it an insurance so that we can continue our business."

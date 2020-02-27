@@ -788,7 +788,7 @@ label hermione_change:
                     call her_main("", "base", "closed", "base", "mid")
                     m "In fact, from this point forward you don't have to call me [genie_name] or exchange any favours..."
                     call her_main("", "soft", "base", "base", "mid", emote="04")
-                    m "Lets just void this whole... deal of yours shall we."
+                    m "Let's just void this whole... deal of yours shall we."
                     call her_main("B-but, [genie_name]?!", "mad", "wide", "base", "mid", emote="02")
                     call her_main("", "mad", "wide", "base", "mid")
                     m "I must apologise {b}Miss Granger{/b}, I thought we had come to some kind of agreeable arrangement by now..."

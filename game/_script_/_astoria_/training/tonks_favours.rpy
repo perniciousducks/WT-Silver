@@ -160,7 +160,7 @@ label astoria_tonks_3:
     call ast_main("All you need to do is sit on your bum and tell me how great I look!","open","closed","base","mid")
     call ast_main("Do you think you can manage that, [ast_genie_name]?","upset","narrow","narrow","mid")
     m "I will try..."
-    call ast_main("Great! Now lets get started!","grin","narrow","angry","mid")
+    call ast_main("Great! Now let's get started!","grin","narrow","angry","mid")
 
     call popup("You can now access Susan & Astoria's wardrobe and change their appearance!", "Congratulations!", "interface/icons/head/head_astoria_2.png")
 

@@ -48,7 +48,7 @@ label summon_snape:
                         m "So about that upcoming Quidditch game..."
                         
                         if wine_ITEM.number >= 1:
-                            call sna_main("Whatever it is, it can wait, lets sit down first, shall we.", "snape_01")
+                            call sna_main("Whatever it is, it can wait, let's sit down first, shall we.", "snape_01")
                             call setup_fireplace_hangout(char="snape")
                             $ ss_he_drink.start()
                             $ ss_he_counter += 1

@@ -387,7 +387,7 @@ label cc_pf_talk_T1_intro_E2: # continue
 
         call cho_main("Shall I get Madam Pomfrey to check on yo-", "soft", "narrow", "base", "mid")
         g4 "No, no! I'm..."
-        m "I'm done.{w} Lets get back to the topic."
+        m "I'm done.{w} Let's get back to the topic."
         call cho_main("Which was?", "open", "wink", "raised", "mid")
         m "You taking a shower with your \"teammates\"..."
         call cho_main("(...)", "annoyed", "narrow", "angry", "mid") # Annoyed

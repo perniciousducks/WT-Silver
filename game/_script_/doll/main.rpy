@@ -204,10 +204,7 @@ init python:
             
         def get_face(self):
             """Returns a dictionary containing currently set facial expressions. Used in character studio."""
-            d = {}
-            for k, v in self.face.face.iteritems():
-                d[k] = v[0]
-            return d
+            return dict((k, v[0]) for k, v in self.face.face.iteritems())
             
         def set_body(self, **kwargs):
             """Takes keyword argument(s) with the string name of body part file(s)."""

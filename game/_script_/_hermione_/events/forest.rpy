@@ -242,11 +242,11 @@ label forest_BJ_2:
     $ ccg2 = 20
     her "*slurp* *schkk* *shlrp*"
     $ ccg2 = 17
-    her "Word would probably even get back to mommy and daddy..."
+    her "Word would probably even get back to mom and dad..."
     $ ccg2 = 16
     her "*slurp* *schkk* *shlrp*"
     $ ccg2 = 19
-    her "imagine what they'd think of their little girl..."
+    her "Imagine what they'd think of their little girl..."
     $ ccg2 = 18
     her "*slurp* *schkk* *shlrp*"
     $ ccg2 = 21
@@ -715,7 +715,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     her "{size=+5}*glck*{heart}*glck*{heart}*glck*{/size}"
     $ ccg2 = 35
     $ ccg1 = "m2"
-    myr "Hermione! You horny little girl!"
+    myr "Hermione! You horny little slut!"
     $ ccg2 = 34
     her "{size=+5}*glck*{heart}*glck*{heart}*glck*{/size}"
     $ ccg2 = 35

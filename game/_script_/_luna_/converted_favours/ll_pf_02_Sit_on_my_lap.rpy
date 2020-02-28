@@ -242,7 +242,7 @@ label luna_favour_2:
                         m "{size=-2}(mmmm...){/size}"
                         call lun_main("come on...","base","suspicious","angry","mid")
                         g4 "{size=+4}(agh... almost there...){/size}"
-                        call lun_main("come for your little girl...","base","suspicious","sad","mid")
+                        call lun_main("Come for me...","base","suspicious","sad","mid")
                         g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
                         ">You start shooting your load against the inside of your cloak."
                         call cum_block
@@ -674,7 +674,7 @@ label luna_favour_2:
                 m "{size=-2}(mmmm...){/size}"
                 call lun_main("come on...","base","suspicious","angry","mid")
                 g4 "{size=+4}(agh... almost there...){/size}"
-                call lun_main("come for your little girl...","soft","angry","sad","mid")
+                call lun_main("Come for me...","soft","angry","sad","mid")
                 g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
                 ">You start shooting your load against the inside of your cloak."
 
@@ -1022,7 +1022,7 @@ label luna_favour_2:
                 m "{size=-2}(mmmm...){/size}"
                 call lun_main("come on...","base","suspicious","angry","mid")
                 g4 "{size=+4}(agh... almost there...){/size}"
-                call lun_main("come for your little girl...","soft","angry","sad","mid")
+                call lun_main("Come for me...","soft","angry","sad","mid")
                 g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
                 ">You start shooting your load against the inside of your cloak."
 
@@ -1116,7 +1116,7 @@ label luna_favour_2:
                 m "{size=-2}(mmmm...){/size}"
                 call lun_main("Come on...","base","suspicious","angry","mid")
                 g4 "{size=+4}(agh... almost there...){/size}"
-                call lun_main("Come for for me...","soft","angry","sad","mid")
+                call lun_main("Come for me...","soft","angry","sad","mid")
                 g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
                 ">You start shooting your load against the inside of your cloak."
 

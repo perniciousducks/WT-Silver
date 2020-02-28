@@ -1687,7 +1687,7 @@ label hermione_breaks_astoria:
     ast "..."
     her "Would you like that? Hmm? Was that what you were going to do to me?"
     ast "..."
-    her "Have you seen [genie_name]'s cock though? It's huge... It'd probably break a tiny little girl like you..."
+    her "Have you seen [genie_name]'s cock though? It's huge... It'd probably break your tight little pussy..."
     her "Not that you wouldn't love it... If I let you, you'd probably scream for more..."
     her "But that's not what we're going to do {b}today{/b}..."
     "With that, Hermione steps forward and grabs a hold of your cock..."

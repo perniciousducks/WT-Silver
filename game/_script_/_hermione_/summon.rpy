@@ -221,7 +221,7 @@ label hermione_favor_menu:
 
             "-Personal favours-{icon=interface/icons/small/heart_red.png}":
                 call tutorial("hearts")
-                
+
                 label .personal:
                 python:
                     menu_choices = []
@@ -547,20 +547,20 @@ label hermione_talk:
                         jump hermione_change
                     else:
                         jump hermione_change_fail
-                "-Good Girl-":
-                    $ temp_name = "Good Girl"
+                "-Hottie-":
+                    $ temp_name = "Hottie"
                     if her_whoring >=5:
                         jump hermione_change
                     else:
                         jump hermione_change_fail
-                "-Little Girl-":
-                    $ temp_name = "Little Girl"
+                "-Angel-":
+                    $ temp_name = "Angel"
                     if her_whoring >=7:
                         jump hermione_change
                     else:
                         jump hermione_change_fail
-                "-Bad Girl-":
-                    $ temp_name = "Bad Girl"
+                "-Minx-":
+                    $ temp_name = "Minx"
                     if her_whoring >=9:
                         jump hermione_change
                     else:
@@ -666,6 +666,18 @@ label hermione_change:
         elif her_whoring >= 19:
             call her_main("I don't read as much as I used to anymore.", "grin", "narrow", "base", "R_soft", emote="05")
             call her_main("", "base", "narrow", "base", "mid_soft")
+    elif temp_name == "Hottie":
+        if her_whoring >=5 and her_whoring < 7:
+            call her_main("[genie_name]?!", "angry", "wide", "angry", "mid", cheeks="blush")
+            m "What? That's true, you're hot."
+            call her_main("That's inappropriate.", "annoyed", "base", "worried", "R", cheeks="blush")
+            her "But I'll let it slide, I guess."
+        elif her_whoring >=7 and her_whoring < 19:
+            call her_main("Thank you, [genie_name].", "soft", "wink", "base", "mid")
+            call her_main("", "normal", "base", "base", "mid")
+        elif her_whoring >=19:
+            call her_main("...Glad you think so.", "smile", "wink", "base", "mid", cheeks="blush")
+            call her_main("","base","happy", cheeks="blush")
     elif temp_name == "Good Girl":
         if her_whoring >=5 and her_whoring < 7:
             call her_main("Well, I do try my best, [genie_name].", "base", "closed", "base", "mid")
@@ -676,6 +688,17 @@ label hermione_change:
         elif her_whoring >=19:
             call her_main("I could act like a good girl if you really want me to...", "smile", "wink", "base", "mid", cheeks="blush")
             call her_main("","base","happy", cheeks="blush")
+    elif temp_name == "Angel":
+        if her_whoring >=7 and her_whoring < 9:
+            call her_main("What's going on with with these silly nicknames of yours all of a sudden?", "normal", "squint", "angry", "mid")
+            m "What do you mean by silly?"
+            call her_main("Ugh, forget I said anything...", "open", "narrow", "base", "down",cheeks="blush")
+            call her_main("", "normal", "base", "base", "R", cheeks="blush")
+        elif her_whoring >=9 and her_whoring < 19:
+            call her_main("I like it...", "soft", "narrow", "base", "R_soft",cheeks="blush")
+            call her_main("", "base", "narrow", "base", "R_soft",cheeks="blush")
+        elif her_whoring >= 19:
+            call her_main("I'm surprised I didn't grow wings yet.", "base", "narrow", "worried", "mid_soft",cheeks="blush")
     elif temp_name == "Little Girl":
         if her_whoring >=7 and her_whoring < 9:
             call her_main("What's going on with with these silly nicknames of yours all of a sudden?", "normal", "squint", "angry", "mid")
@@ -684,7 +707,7 @@ label hermione_change:
             call her_main("Ugh, forget I said anything...", "open", "narrow", "base", "down",cheeks="blush")
             call her_main("", "normal", "base", "base", "R", cheeks="blush")
         elif her_whoring >=9 and her_whoring < 19:
-            call her_main("Bit of an odd request but...", "normal", "narrow", "base", "down",)
+            call her_main("Bit of an odd request but...", "normal", "narrow", "base", "down")
             call her_main("I like it...", "soft", "narrow", "base", "R_soft",cheeks="blush")
             call her_main("", "base", "narrow", "base", "R_soft",cheeks="blush")
         elif her_whoring >= 19:
@@ -695,6 +718,15 @@ label hermione_change:
             call her_main("I did fail that test after all...", "disgust", "narrow", "base", "down")
             call her_main("", "normal", "narrow", "worried", "mid_soft")
             call her_main("", "normal", "base", "base", "mid")
+        elif her_whoring >=11 and her_whoring < 17:
+            call her_main("I may be a little bit naughty at times.", "base", "happy", "base", "R",cheeks="blush")
+        elif her_whoring >=17:
+            call her_main("I may be a little bit naughty at times.", "base", "happy", "base", "R",cheeks="blush")
+            call her_main("", "base", "base", "base", "mid", cheeks="blush")
+    elif temp_name == "Minx":
+        if her_whoring >=9 and her_whoring < 11:
+            call her_main("I guess I am a bit.", "soft", "narrow", "worried", "down")
+            call her_main("", "normal", "narrow", "worried", "mid_soft")
         elif her_whoring >=11 and her_whoring < 17:
             call her_main("I may be a little bit naughty at times.", "base", "happy", "base", "R",cheeks="blush")
         elif her_whoring >=17:

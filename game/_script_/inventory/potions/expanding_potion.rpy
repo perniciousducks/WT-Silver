@@ -150,7 +150,7 @@ label potion_scene_2_1_1:
     call her_main("!!!", "scream", "wide", "base", "stare")
     her "I-I-I'm cumming!"
     call nar(">She starts grinding hard against your leg as a wet spot starts to form on her skirt.")
-    m "What a naughty little girl."
+    m "What a naughty little slut."
     call nar(">She breathes heavily as she rests against you")
 
     call blkfade
@@ -250,7 +250,7 @@ label potion_scene_2_2:
 
     call nar(">Hermione hops over to your desk, her ass bouncing as she moves, and presents herself to you.")
     pause 1
-    
+
     call her_chibi_scene("behind_desk_back")
     call hide_blkfade
     call ctc
@@ -398,7 +398,7 @@ label potion_scene_2_2:
 
             call her_chibi("stand","desk","base")
             call gen_chibi("sit_behind_desk")
-            
+
             hide screen blktone
             hide screen bld1
             call hide_blkfade

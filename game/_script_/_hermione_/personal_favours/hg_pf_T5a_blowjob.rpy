@@ -245,7 +245,7 @@ label hg_pf_blowjob_T1_intro_E2:
     m "So..."
     g4 "You were messing with me then?"
     call her_main("uhm... I'm sorry [genie_name], I didn't mean to...", "angry", "happyCl", "worried", "mid", emote="05")
-    g4 "You nasty little girl! You must be punished!"
+    g4 "You nasty little slut! You must be punished!"
     g9 "I'll punish you with my cock!"
     call her_main("...............................", "angry", "happyCl", "worried", "mid", emote="05")
 

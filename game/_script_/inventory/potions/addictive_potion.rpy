@@ -238,7 +238,7 @@ label hg_pp_cumaddict_intro:
             hide screen hermione_main
             call nar(">Her hands shoot down into her panties as she starts violently orgasming.","start")
             call nar(">The sight of her pleasuring herself as you use her throat only prolongs your orgasm.","end")
-            m "You dirty little girl. Getting off on your headmaster sticking his cock down your throat."
+            m "You dirty little slut. Getting off on your headmaster sticking his cock down your throat."
             m "I bet you're loving this, being used as nothing more than a toy."
             call nar(">She says nothing but quickens the pace of her masturbation.","start")
             call nar(">You finally pull out of her eager mouth with a satisfactory pop.","end")

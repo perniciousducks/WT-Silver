@@ -227,7 +227,7 @@ label luna_favour_1:
                         m "{size=-2}(What?){/size}"
                         call lun_main("come on...","base","suspicious","sad","mid")
                         g4 "{size=+4}(agh... almost there...){/size}"
-                        call lun_main("come for your little girl...","soft","angry","mad","mid")
+                        call lun_main("Come for me...","soft","angry","mad","mid")
                         g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
                         hide screen luna_main
                         with d3

@@ -1254,7 +1254,7 @@ label ball_ending_E2:
         her "Mommy... Daddy..."
         call cg_scene("119")
         her "I wish you could see how much Hogwarts changed me..."
-        her "I wish you could see your little girl right now..."
+        her "I wish you could see what has happened to that little girl you raised..."
         her "{size=-5}Ah...{/size}{heart}"
         call ctc
 

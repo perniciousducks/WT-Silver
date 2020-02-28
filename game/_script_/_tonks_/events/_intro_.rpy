@@ -709,7 +709,7 @@ label ss_he_tonks_E2:
     m "She's going to join us."
 
     call sna_main("Join us? Doing what?","snape_05")
-    g9 "Corrupting those precious little girls of course!"
+    g9 "Corrupting those precious students of ours, of course!"
     call sna_main("And according to you, Tonks wants to help us break that Gryffindor bitch as well?","snape_34")
     m "Yep."
     call sna_main("Ha-ha-ha!{w} That's just fucking silly!","snape_28")

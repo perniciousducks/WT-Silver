@@ -261,7 +261,7 @@ label ll_pf_sex_T1_lake_sex: # Call label
     $ lunCG(pupil='ahegao', eye='furious', mouth='wide')
     lun "a-ahhhhh..."
     ">You keep pounding her from behind. Luna's lovely breasts jiggle a little with every thrust."
-    ">You turn your attention to her butt... It's so milky and... pert... she's such a needy little girl...."
+    ">You turn your attention to her butt... It's so milky and... pert... she's such a needy slut...."
     $ lunCG(pupil='right', eye='wide', mouth='wide', extra_3='spanking')
     $ renpy.play('sounds/slap.mp3')
     lun "ah...{heart}{heart}{heart}"

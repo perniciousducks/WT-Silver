@@ -30,7 +30,7 @@ label tonks_chit_chat:
         call ton_main("I can't believe how long I've spend in that shit-hole...","base","base","angry","R")
 
     elif random_number == 3:
-        call ton_main("I've spotted another cute little girl in my classes today...","open","base","angry","R")
+        call ton_main("I've spotted another cute girl in my classes today...","open","base","angry","R")
         call ton_main("I hope she's as much into points as the rest.","horny","base","raised","mid")
 
     elif random_number == 4:

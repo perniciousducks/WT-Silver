@@ -5,13 +5,13 @@ define ast_face = {"mouth": {"neutral": ["annoyed", "base"], "happy": ["smile", 
 
 label ast_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
     python:
-    
+
         if flip != None:
             astoria_flip = -1 if flip else 1
-            
+
         if animation != False:
             astoria_animation = animation
-        
+
         if xpos:
             astoria_xpos = int(sprite_pos["x"].get(xpos, xpos))
 
@@ -20,9 +20,9 @@ label ast_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
                 use_astoria_head = True
             elif ypos in ("base", "default"):
                 use_astoria_head = False
-                
+
             astoria_ypos = int(sprite_pos["y"].get(ypos, ypos))
-            
+
         astoria.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
 
         if face:
@@ -44,7 +44,7 @@ label ast_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
 
     if text:
         $ renpy.say(ast, text)
-        
+
     if use_astoria_head:
         hide screen astoria_main
     return
@@ -56,8 +56,8 @@ label set_random_nicknames:
     if random_number in [2,5]:
         $ ast_tonks_name = renpy.random.choice(["Hag","Old Hag","Punk","Dyke","Lesbo"])
     if random_number in [3,5]:
-        $ ton_astoria_name = renpy.random.choice(["Cutie","Kitty","Princess","Little girl","Honey"])
-        
+        $ ton_astoria_name = renpy.random.choice(["Cutie","Kitty","Princess","Cupcake","Honey"])
+
     return
 
 label update_astoria:
@@ -67,7 +67,7 @@ label update_astoria:
     $ astoria_chibi.position(flip=False)
     $ astoria_flip = 1
     hide screen astoria_cloth_pile
-    
+
     return
 
 label end_astoria_event:
@@ -81,7 +81,7 @@ label end_astoria_event:
     $ active_girl = None
     $ astoria_busy = True
     $ astoria.wear("all")
-    
+
     $ renpy.stop_predict(astoria.get_image())
     $ renpy.stop_predict("characters/astoria/face/*.png")
 
@@ -97,5 +97,5 @@ screen astoria_main():
         add astoria_img xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio) at astoria_animation
     else:
         add astoria_img xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio)
-    
+
     on ("show", "replace") action Function(apply_doll_transition, astoria, "astoria_main", "astoria_img", use_astoria_head)

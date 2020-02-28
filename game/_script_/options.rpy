@@ -42,7 +42,6 @@ define config.save_physical_size = True
 define config.window_icon = "interface/icon.png"
 
 # User interface settings
-define config.window = "hide"
 define config.layers = ["master", "transient", "screens", "interface", "overlay"]
 
 # Graphics and cache settings
@@ -111,18 +110,18 @@ define config.manage_gc = True
 define config.gc_thresholds = (30000, 10, 10)
 define config.idle_gc_count = 3000
 define config.gc_print_unreachable = False
-    
+
 ################################################
 ##           Build configuration              ##
 ##      For information please refer to:      ##
 ## https://www.renpy.org/doc/html/build.html  ##
 ################################################
 
-init python: 
+init python:
     build.directory_name = "WT_Silver_{}".format(title_version)
     build.executable_name = "WT Silver"
     build.include_update = False # If True, include update information into packages (allows the updater to run)
-    
+
     build.classify("**.exe", None)
     build.classify("**.psd", None)
     build.classify("**.psd~", None)
@@ -136,5 +135,5 @@ init python:
     build.classify("saves/**", None)
     build.classify("outfits/**", None)
     build.classify("music/not_used/**", None)
-    
-    build.allow_integrated_gpu = True # MacOS support Only!    
+
+    build.allow_integrated_gpu = True # MacOS support Only!

@@ -48,13 +48,13 @@ init python hide:
         ## the in-game window is square.
         rounded_window = False,
     )
-    
+
 ################################################
 ##                  Styling                   ##
 ##       For information please refer to:     ##
 ##  https://www.renpy.org/doc/html/style.html ##
 ################################################
-    
+
 style quick_button:
     is default
     activate_sound "sounds/click3.mp3"
@@ -70,7 +70,7 @@ style quick_button_text:
     selected_idle_color "#cc08"
     selected_hover_color "#cc0"
     insensitive_color "#4448"
-    
+
 style yesno_button:
     size_group "yesno"
 
@@ -100,10 +100,10 @@ style pref_slider:
 
 style soundtest_button:
     xalign 1.0
-    
+
 style gm_nav_button:
     size_group "gm_nav"
-    
+
 style mm_button:
     size_group "mm"
 
@@ -137,31 +137,22 @@ style imagemap:
 style input:
     color "#5c321b"
 
-# Dialogue styles    
-style say_window_day:
-    background "interface/frames/gold/frame.png"
-    ysize 143
-    padding (250, 40, 250, 0)
-    top_margin 22
-    yalign 1.0
-    
-style say_window_night:
-    background "interface/frames/gray/frame.png"
+# Dialogue styles
+style say_window:
+    background ConditionSwitch(
+        "interface_style == 'night'", "interface/frames/gray/frame.png",
+        "True", "interface/frames/gold/frame.png"
+    )
     ysize 143
     padding (250, 40, 250, 0)
     top_margin 22
     yalign 1.0
 
-style say_who_window_day is default:
-    background Frame("interface/frames/gold/namebox.png", 6, 6)
-    xpadding 15
-    pos (-15, -50)
-    ysize 32
-    xminimum 164
-    text_align 0.5
-    
-style say_who_window_night is default:
-    background Frame("interface/frames/gray/namebox.png", 6, 6)
+style say_who_window is default:
+    background ConditionSwitch(
+        "interface_style == 'night'", Frame("interface/frames/gray/namebox.png", 6, 6),
+        "True", Frame("interface/frames/gold/namebox.png", 6, 6)
+    )
     xpadding 15
     pos (-15, -50)
     ysize 32
@@ -232,10 +223,10 @@ style night_menu_button:
     background "#5d5151e6"
     hover_background "#897e75"
     insensitive_background "#9e8449"
-    
+
 style day_dropdown:
     ysize 24
-    
+
 style day_dropdown_text:
     yalign 0.5
     first_indent 26
@@ -244,10 +235,10 @@ style day_dropdown_text:
     hover_color "#FFF"
     insensitive_color "#ae9566"
     outlines [(1, "#00000080", 1, 0)]
-    
+
 style night_dropdown:
     ysize 24
-    
+
 style night_dropdown_text:
     yalign 0.5
     first_indent 26
@@ -256,7 +247,7 @@ style night_dropdown_text:
     hover_color "#FFF"
     insensitive_color "#6c625c"
     outlines [(1, "#00000080", 1, 0)]
-    
+
 style tooltip_text is default:
     color "#fff"
     size 12

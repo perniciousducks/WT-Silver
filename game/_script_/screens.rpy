@@ -12,27 +12,27 @@ init offset = -1
 
 screen say(who, what, side_image=None):
     zorder 30
-    
+    use hotkeys_say
+
     if hkey_chat_hidden:
         button style "empty" action SetVariable("hkey_chat_hidden", False)
-        
+
     if side_image:
         add side_image yalign 1.0 yanchor 1.0 zoom 0.5
-    
-    window:
-        style ("say_window_day" if interface_color == "gold" else "say_window_night")
+
+    style_prefix interface_style
+
+    window id "window":
 
         if hkey_chat_hidden:
             ypos 1000
-        
+
         if _game_menu_screen:
             use quick_menu
-        
-        use hotkeys_say
 
         if who:
             window:
-                style ("say_who_window_day" if interface_color == "gold" else "say_who_window_night")
+                style_prefix "say_who"
                 text who id "who":
                     color (preferences.text_color_day if interface_color == "gold" else preferences.text_color_night)
                     outlines [(1, preferences.text_outline, 1, 0)]
@@ -40,19 +40,19 @@ screen say(who, what, side_image=None):
         text what id "what":
             color (preferences.text_color_day if interface_color == "gold" else preferences.text_color_night)
             outlines [(1, preferences.text_outline, 1, 0)]
-            
+
 screen quick_menu():
     hbox:
         style_group "quick"
         xalign 1.0
         yoffset -30
-        
+
         textbutton _("Q.Save") action QuickSave()
         textbutton _("Q.Load") action QuickLoad()
         textbutton _("Skip") action Skip()
         textbutton _("Auto") action Preference("auto-forward", "toggle")
         textbutton _("Preferences") action ShowMenu("preferences")
-        
+
     if renpy.variant("android"):
         imagebutton idle "interface/frames/"+interface_color+"/arrow.png" action Rollback() xoffset -120 yalign 0.5 yanchor 0.5
         imagebutton idle im.Flip("interface/frames/"+interface_color+"/arrow.png", horizontal=True) action Skip(fast=True, confirm=True) xoffset 600 yalign 0.5 yanchor 0.5
@@ -94,14 +94,14 @@ screen choice(items):
                             text "{size=-2}[i].{/size}" xpos 5 yalign 0.5
                         if ico:
                             add ico[:-1] xcenter 40 yalign 0.5
-    
+
 screen input(prompt):
     zorder 30
 
     style_prefix "say"
     window:
         id "window"
-        
+
         if prompt:
             window:
                 style_prefix "say_who"
@@ -109,7 +109,7 @@ screen input(prompt):
                     align (0.5, 0.5)
                     color (preferences.text_color_day if interface_color == "gold" else preferences.text_color_night)
                     outlines [(1, preferences.text_outline, 1, 0)]
-                    
+
         input id "input":
             color (preferences.text_color_day if interface_color == "gold" else preferences.text_color_night)
             outlines [(1, preferences.text_outline, 1, 0)]
@@ -132,14 +132,14 @@ screen main_menu():
             text "Expect bugs, crashes and other weird stuff." color "#fff" size 12 outlines [(2, "#000", 0, 0)]
             text "Proceed at your own risk, you have been warned!" color "#fff" size 12 outlines [(2, "#000", 0, 0)]
             text "You can find the most recent stable build on our {a=https://pastebin.com/6zbuZ5gS}pastebin{/a}" color "#fff" size 12 outlines [(2, "#000", 0, 0)]
-    
+
     vbox:
         style_prefix "mm"
         spacing 10
         align (1.0, 1.0)
         offset (-40, -80)
 
-        if update_available:        
+        if update_available:
             frame:
                 has vbox
                 textbutton _("{size=-6}{color=#c70000}UPDATE AVAILABLE{/color}{/size}") action OpenURL("https://pastebin.com/6zbuZ5gS")
@@ -160,7 +160,7 @@ screen main_menu():
         frame:
             has vbox
             textbutton _("Credits") action Jump("credits")
-        
+
     imagebutton:
         xpos 910
         ypos 560
@@ -169,7 +169,7 @@ screen main_menu():
         idle "logo/patreon.png"
         hover "logo/patreon_hover.png"
         action OpenURL("https://www.patreon.com/SilverStudioGames")
-        
+
     imagebutton:
         xpos 660
         ypos 562
@@ -178,7 +178,7 @@ screen main_menu():
         idle "logo/discord.png"
         hover "logo/discord_hover.png"
         action OpenURL("https://discord.gg/7PD57yt")
-    
+
     if check_for_old_files():
         frame:
             style "empty"
@@ -248,7 +248,7 @@ screen file_picker():
                 $ file_name = FileSlotName(i, columns * rows)
                 $ file_time = FileTime(i, empty=_("Empty Slot"))
                 $ save_name = FileSaveName(i)
-                
+
                 button:
                     xfill True
                     ysize 52
@@ -265,7 +265,7 @@ screen file_picker():
                         add FileScreenshot(i)
                     else:
                         add gray_tint(FileScreenshot(i))
-                    
+
                     if FileLoadable(i):
                         textbutton _("X"):
                             yalign 0.5
@@ -307,7 +307,7 @@ screen preferences():
     else:
         $ columns = 3
         $ rows = 1
-    
+
     grid columns rows:
         style_prefix "pref"
         xfill True
@@ -327,10 +327,10 @@ screen preferences():
                         sensitive (renpy.get_physical_size() != (config.screen_width, config.screen_height))
                     textbutton _("Window") action Preference("display", "any window")
                     textbutton _("Fullscreen") action Preference("display", "fullscreen")
-                    
+
             frame:
                 has vbox
-                
+
                 label _("Interface")
                 if not renpy.variant('android'):
                     textbutton "Tooltips" action ToggleVariable("preferences.tooltip", True, False)
@@ -388,14 +388,14 @@ screen preferences():
             if not main_menu:
                 frame:
                     has vbox
-                    
+
                     label _("{size=-4}Animation preference{/size}")
                     textbutton _("Chibis") action SetVariable("use_cgs", False)
                     textbutton _("CG images") action SetVariable("use_cgs", True)
-                
+
                 frame:
                     has vbox
-                    
+
                     label _("Difficulty")
                     grid 3 1:
                         xfill True
@@ -408,7 +408,7 @@ screen preferences():
                         textbutton _("Hard"):
                             text_size 14 text_color "#b33e2766" text_selected_color "#b33e27"
                             action [Function(renpy.call_in_new_context, "adjust_game_difficulty", 3), SelectedIf(game_difficulty == 3)] sensitive persistent.game_complete
-                    
+
                     textbutton _("With cheats") action ToggleVariable("cheats_active", True, False) sensitive (game_difficulty < 3)
 
         vbox:
@@ -450,7 +450,7 @@ screen preferences():
                             style "soundtest_button"
             frame:
                 has vbox
-                
+
                 label _("Saving & Loading")
                 textbutton _("Autosave") action [
                     ToggleVariable("preferences.autosave", True, False),
@@ -481,7 +481,7 @@ screen preferences():
                     textbutton _("Inventory - [hkey_inventory]") action None
                     textbutton _("Sleep - [hkey_sleep]") action None
                     textbutton _("Jerk off - [hkey_fap]") action None
-    
+
 screen notify(message):
     layer "interface"
     sensitive False
@@ -502,13 +502,13 @@ screen notify(message):
                 linear .25 alpha 1.0
             on hide:
                 linear .5 alpha 0.0
-        
+
         text m:
-            color "#fff" 
+            color "#fff"
             outlines [(1, "#00000080", 1, 0)]
 
     timer 3.25 action Hide("notify")
-    
+
 screen skip_indicator():
     zorder 100
 
@@ -519,7 +519,7 @@ screen skip_indicator():
             timer 10 action Jump("night_start")
         else:
             timer 10 action Jump("day_start")
-    
+
 screen confirm(message, yes_action, no_action):
     zorder 999
     modal True

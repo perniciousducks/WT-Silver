@@ -4,7 +4,7 @@
             if label.startswith(("her_main", "cho_main", "ast_main", "ton_main")):
                 editor.catch(label)
                 
-    class ExpressionEditor(object):
+    class ExpressionEditor(object, NoRollback):
         transitions = ("d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "flash", "flashbulb", "flashbb", "flashblood", "kissiris", "black_magic", "blackfade", "morph", "teleport", "vpunch_repeat", "hpunch", "vpunch", "pushleft", "dissolve", "slideawayright", "wipedown", "slidedown", "pixellate", "blinds", "squares", "slideup", "pushup", "slideleft", "pushright", "wiperight", "irisin", "wipeleft", "slideawayleft", "pushdown", "irisout", "slideawayup", "wipeup", "slideawaydown", "slideright")
         
         transforms = ("move_fade", "sprite_fly_idle")

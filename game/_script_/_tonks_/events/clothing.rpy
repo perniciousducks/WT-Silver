@@ -157,6 +157,7 @@ label tonks_summon_setup:
             call ton_main("You have the nerve to call me here after what you did.", "upset", "base", "angry", "mid", xpos="base", ypos="base", trans=d3)
             
         call describe_mood("Tonks", ton_mood)
+        call tutorial("moodngifts")
     else:
         call ton_main("You called, [ton_genie_name]?","base","base","base","mid", xpos="base", ypos="base", trans=d3)
     return

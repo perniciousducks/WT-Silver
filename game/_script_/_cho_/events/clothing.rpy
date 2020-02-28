@@ -113,6 +113,7 @@ label cho_summon_setup:
             call cho_main("", "upset", "wide", "angry", "mid")
             
         call describe_mood("Cho", cho_mood)
+        call tutorial("moodngifts")
     else:
         if daytime:
             call cho_main("Good morning, [cho_genie_name].", "base", "base", "base", "mid", xpos="base", ypos="base", trans=d3)

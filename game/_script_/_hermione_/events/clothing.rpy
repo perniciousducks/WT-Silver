@@ -359,6 +359,7 @@ label hermione_summon_setup:
             call her_main("I have nothing to tell you, sir!", "mad", "narrow", "angry", "L", xpos="base", ypos="base", trans=d3)
             
         call describe_mood("Hermione", her_mood)
+        call tutorial("moodngifts")
     else:
         if daytime:
             call her_main("Good morning, [genie_name].", "base", "base", "base", "mid", xpos="base", ypos="base", trans=d3)

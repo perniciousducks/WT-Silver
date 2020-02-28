@@ -209,9 +209,9 @@ label cc_st_return_E1:
         "Are you mocking me for taking a nap?":
             call cho_main("No, sir.", "soft", "base", "base", "mid")
             m "..."
-            g4 "(Damnit, that naive brattiness of hers is turning me on!)"
+            g4 "(Damnit, that naivety of hers is turning me on!)"
 
-        "Brats like you need to be punished!":
+        "Students like you need to be punished!":
             call cho_main("Punished? For what?", "soft", "narrow", "angry", "mid") # angry
             g4 "For being a pain in my ass!"
             call cho_main("", "annoyed", "narrow", "base", "mid")

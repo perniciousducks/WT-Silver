@@ -308,7 +308,7 @@ label cc_ht_return_E3:
         "\"Hermione\"":
             pass
         "\"Astoria\"" if astoria_unlocked:
-            call cho_main("That brat?", "scream", "wide", "raised", "mid")
+            call cho_main("That mischievous little...", "scream", "wide", "raised", "mid")
             call cho_main("Not a chance!", "open", "closed", "angry", "mid")
             call cho_main("Besides, [cho_genie_name], did you forget that she's a slytherin?", "open", "narrow", "angry", "mid")
             m "Right. No slytherins. Got it."

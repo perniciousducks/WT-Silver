@@ -148,7 +148,7 @@ label cc_pf_strip_T1_intro_E1:
             g4 "As if Michelangelo himself carved them onto your flesh..."
             m "I must say I'm very impressed!"
             call cho_main("Thank you, Sir.", "soft", "narrow", "worried", "downR")
-            
+
         "\"I've seen better but that'll do.\"":
             $ cho_mood += 3
             call cho_main("What?!","angry","wide","angry","mid") # Upset
@@ -201,7 +201,7 @@ label cc_pf_strip_T1_intro_E1:
             call cho_main("What?!","scream","wide","angry","mid", trans=hpunch)
             call cho_main("","angry","narrow","angry","mid")
             m "I'm afraid, Miss Granger is simply...{w} how shall I put it...{w} sexier!"
-            m "Besides, jealousy is quite unbecoming of a young witch like yourself..."
+            m "Besides, jealousy is quite unbecoming of a witch like yourself..."
             call cho_main("But she doesn't even do workouts!","angry","narrow","angry","downR")
             m "Let's just forget about her, shall we?"
             m "And continue where we left off..."

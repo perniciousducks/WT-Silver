@@ -11,7 +11,7 @@ default complited_leena = False #Turns TRUE when you finish with Leena once. Nee
 
 # Chapters
 define waifu_chapters = [
-    "{size=-2}You are a teenage boy who is sharing his home with his cute stepsister Shea. What would you like to do after school today?{/size}",
+    "{size=-2}You are a boy who is sharing his home with his cute stepsister Shea. What would you like to do after school today?{/size}",
     "{size=-2}During classes ms.Stevens is droning away about something. You admire her chest to stay awake. She's way too hot to be a teacher.{/size}",
     "{size=-2}You meet your stepsister at school. Unlike you, Shea is quite popular among her classmates, but She all but denies your existence.{/size}",
     "{size=-2}You bump into a girl in the hallway, She is wearing thick glasses and acts very shy. afterwards She apologises and quickly runs off, is she even a student of this school?{/size}",

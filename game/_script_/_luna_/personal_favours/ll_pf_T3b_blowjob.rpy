@@ -331,7 +331,7 @@ label luna_blowjob_under_desk: # Call label
 
     menu:
         "-Take your cock out-":
-            ">While the naive young blonde sits under your desk you decide it's finally time for her to get to work."
+            ">While the naive blonde sits under your desk you decide it's finally time for her to get to work."
             ">You slowly pull your hardening cock from underneath under your robe."
             $ lunCG('open', 'wide', 'base', 'dick', pos=1)
             lun "..."
@@ -436,7 +436,7 @@ label luna_blowjob_under_desk: # Call label
     $ lunCG('sucking', 'closed', 'base', 'up', pos=3)
     lun "Hhhoohhyyy! (OK!)"
     m "Oh, thank-"
-    ">Before you can finish your sentence Luna suddenly thrusts her head forward, forcing your cock down the young girl's throat."
+    ">Before you can finish your sentence Luna suddenly thrusts her head forward, forcing your cock down the girl's throat."
     $ lunCG('sucking', 'angry', 'sad', 'up', pos=10)
     g4 "OH GODS!"
     g4 "HERE IT CUMS!"
@@ -448,7 +448,7 @@ label luna_blowjob_under_desk: # Call label
     call cum_block
     $ lunCG('sucking', 'wide', 'sad', 'dick', pos=8)
     ">Your cock continues to fire shot after shot down her throat and into her stomach."
-    ">Eventually this proves too much for the young girl, forcing her to pull back off until your cock rests in her mouth-"
+    ">Eventually this proves too much for the girl, forcing her to pull back off until your cock rests in her mouth-"
     $ lunCG('sucking', 'angry', 'sad', 'up', pos=2)
     ">Causing your cum to start firing directly into the poor girls mouth, quickly filling her cheeks and spurt out of her nose..."
     $ lunCG('sucking', 'mad', 'sad', 'ahegao', pos=2, extra_1='cum_3')

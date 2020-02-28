@@ -1916,7 +1916,7 @@ label hg_pf_facefuck_1: # Bondage facefuck scene (NOT IMPLEMENTED)
             her "Thank you, [genie_name]..."
             pass
 
-    ">With that you gently help the red bottomed young girl onto her knees, leaving her hands tied uselessly behind her as she gazes up at you with fear and anticipation."
+    ">With that you gently help the red bottomed girl onto her knees, leaving her hands tied uselessly behind her as she gazes up at you with fear and anticipation."
     m "Ready?"
     her "I t-think so..."
     m "Open wide..."

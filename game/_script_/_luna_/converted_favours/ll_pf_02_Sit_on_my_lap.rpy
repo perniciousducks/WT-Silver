@@ -99,7 +99,7 @@ label luna_favour_2:
                         m "fine fine."
                         call lun_main("Honestly, [lun_genie_name], who do you think I am?","normal","angry","angry","mid")
                         call lun_main("I think I'd like to be paid now...","normal","angry","angry","R")
-                    
+
                     "-Grope her-" if luna_grope:
                         $ current_payout = 40
                         ">You start running your hands along the outside of her thighs, up to her waist and then over her belly."
@@ -359,7 +359,7 @@ label luna_favour_2:
 
             "-Tell her to sit down-" if lun_sub >= lun_dom:
                 $ luna_grope = False
-                
+
                 m "come on now..."
                 call lun_main("...","upset","mad","sad","R")
                 call lun_main("......","upset","mad","sad","R")
@@ -762,7 +762,7 @@ label luna_favour_2:
         show screen blkfade
         with d3
         ">Luna walks around the desk and stands in front of you."
-        
+
         call lun_main(xpos=120, flip=True)
 
         call lun_chibi("stand",300,"base")
@@ -1112,21 +1112,11 @@ label luna_favour_2:
                 m "mmmm, keep going [lun_name]..."
                 call lun_main("pervert...","base","suspicious","mad","R")
                 m "yes..."
-                call lun_main("do you even know old I am?","base","angry","angry","R")
-                m "of course..."
-                call lun_main("well...","base","mad","angry","R")
                 ">Luna starts rolling her hips, your cock pressed between her cheeks."
-                m "ah... eighteen?"
-                call lun_main("{size=-5}eighteen?{/size} you don't sound so sure about that [lun_genie_name]...","base","seductive","mad","down")
-                m "..."
-                call lun_main("what if I'm seventeen?","base","suspicious","sad","R")
-                m "mmm..."
-                call lun_main("I bet that'd just make you harder, wouldn't it?","normal","seductive","base","R")
-                ">Luna starts rubbing hard against your lap."
                 m "{size=-2}(mmmm...){/size}"
-                call lun_main("come on...","base","suspicious","angry","mid")
+                call lun_main("Come on...","base","suspicious","angry","mid")
                 g4 "{size=+4}(agh... almost there...){/size}"
-                call lun_main("come for your little girl...","soft","angry","sad","mid")
+                call lun_main("Come for for me...","soft","angry","sad","mid")
                 g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
                 ">You start shooting your load against the inside of your cloak."
 
@@ -1153,7 +1143,7 @@ label luna_favour_2:
                 call lun_main("*hmph* You're such nasty old [lun_genie_name]!","base","suspicious","angry","mid",xpos="base",ypos="base", flip=False)
                 call lun_main("But I suppose I don't mind, as long as I get my reward.","base","mad","angry","mid")
                 call lun_main("Speaking of which...","base","seductive","base","R")
-        
+
         if lun_dom >= lun_sub:
             m "Alright, alright. Here's your gold."
         else:
@@ -1183,7 +1173,7 @@ label luna_favour_2:
         show screen blkfade
         with d3
         ">Luna walks around the desk and stands in front of you."
-        
+
         call lun_main(xpos=120, flip=True)
 
         call lun_chibi("stand", 300, "base")
@@ -1226,7 +1216,7 @@ label luna_favour_2:
         call lun_main("I want to look at your boobs, alright!?","open","happyCl","sad","mid", cheeks="blush")
 
         ">Upon hearing those words, Hermione quickly removes her top and bra."
-        
+
         $ hermione.strip("top", "bra")
 
         call her_main("see, that wasn't so hard now was it?", "base", "squint", "base", "mid")

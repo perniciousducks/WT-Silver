@@ -19,7 +19,7 @@ label hat_intro:
             ">You turn around."
             g4 "Who's there?! {w=0.5} Show yourself!"
             who2 "You're looking straight at me Dumbledore."
-    
+
     hat "Or should I say {i}Genie{/i}."
     g4 "(The hat is talking!)"
     m "(Wait, is it supposed to talk? Is this normal?)"
@@ -52,10 +52,10 @@ label hat_intro:
     m "What's that supposed to mean?"
     hat "I can change what house they're in, and their personalities will change to suit that, but I can't completely alter a person's mind."
     m "So I still have to do all the hard work?"
-    hat "If you call sexually harassing teens hard work..."
+    hat "If you call sexually harassing the students hard work..."
     m "I'll think about it."
     hat "Go ahead, I'm sure you'll have plenty of time to think it over while you sit there by yourself..."
-    hat "But... {w=0.3}if you want to have some real fun, get that brat Miss Granger to bring one of her slutty little friends up here."
+    hat "But... {w=0.3}if you want to have some real fun, get that Miss Granger girl to bring one of her slutty little friends up here."
     hat "Then put me on their head and we'll have some fun."
     hat "Until then..."
     m "What?"

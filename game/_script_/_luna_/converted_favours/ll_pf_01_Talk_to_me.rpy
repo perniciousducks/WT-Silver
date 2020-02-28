@@ -378,7 +378,7 @@ label luna_favour_1:
                 m "Hmmm, I'll think about it..."
                 call lun_main("You'll {size=+4}think{/size} about it?","upset","suspicious","mad","mid")
                 call lun_main("*Hmph* Maybe I'll just have to {size=+4}think{/size} about getting my father to write a story...","upset","suspicious","mad","R")
-                call lun_main("involving a perverted old headmaster who likes to lure young girls into his office...","upset","suspicious","raised","R")
+                call lun_main("involving a perverted old headmaster who likes to lure girls into his office...","upset","suspicious","raised","R")
                 call lun_main("Just to leer at them while he strokes his filthy old cock...","upset","suspicious","angry","mid")
                 m "..."
                 call lun_main("I'm sure that would sell some extra copies...","upset","mad","raised","R")
@@ -442,7 +442,7 @@ label luna_favour_1:
                 m "Thank you..."
                 call lun_main("Thank you...?","upset","suspicious","mad","mid")
                 m "Thank you princess..."
-                
+
                 $ lun_name = "Princess"
 
                 call lun_main("That's better [lun_genie_name]...","base","angry","angry","mid")

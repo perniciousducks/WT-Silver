@@ -143,8 +143,6 @@ label hg_pr_flirt_T1_E1:
     call her_main("I did not, [genie_name]...", "open", "base", "worried", "R")
     her "The thought never crossed my mind, but--"
     m "That was a joke, [hermione_name]."
-    call her_main("[genie_name]?", "normal", "squint", "angry", "mid")
-    m "I didn't send you out there to harass little kids!"
     call her_main(".............", "annoyed", "squint", "angry", "mid")
     m "I told you to flirt with boys {size=+5}your{/size} age!"
     call her_main("I wanted to at first, but...", "normal", "squint", "angry", "mid")
@@ -222,7 +220,7 @@ label hg_pr_flirt_T1_E2:
             $ her_mood += 10
 
             $ hg_pr_flirt.inProgress = False
-            
+
             pause 1.0
             m "..."
             m "Now I feel bad for saying that..."
@@ -442,7 +440,7 @@ label hg_pr_flirt_T3_E2:
     her "I tried to flirt with him too, but we ended up just chatting..."
     her "He kept calling me \"Miss Hermione\"..."
     her "So adorable..."
-    m "Well, I didn't send you to harass little kids, [hermione_name]."
+    m "Well, I didn't send you to harass people, [hermione_name]."
     call her_main("I didn't haras--", "disgust", "narrow", "base", "mid_soft")
     call her_main("[genie_name]! Seven flirts and two dates amount to something, don't they?", "angry", "happyCl", "worried", "mid", emote="05")
     m "Oh, absolutely."

@@ -136,7 +136,7 @@ label hg_anal_sex_1:
             g4 "Yes! Almost!"
             call her_main("Ouch!", "scream", "happyCl", "worried", "mid")
             m "Relax. Almost in."
-            
+
             if use_cgs:
                 show screen blkfade
                 with d5
@@ -273,12 +273,12 @@ label hg_anal_sex_1:
             m "That should do it."
             call her_main("No, [genie_name], wait! Maybe--", "angry", "base", "worried", "mid")
             call nar(">You align the tip of your dick with her lubricated winky star and push forward.")
-            
+
             if use_cgs:
                 show screen blkfade
                 with d5
             pause.2
-            
+
             $ renpy.play('sounds/gltch.mp3')
             with hpunch
             with kissiris
@@ -378,7 +378,7 @@ label hg_anal_sex_1:
     menu:
         "-Fill Hermione up with cum-":
             $ hermione_tears = "mascara" # Used to show mascara at the end of the event.
-            
+
             g4 "Argh!"
             $ ccg1 = 1
             call her_main("No! AH!", "scream", "wide", "base", "stare")
@@ -443,16 +443,16 @@ label hg_anal_sex_1:
             hide screen bld1
             with d1
             call ctc
-            
+
             show screen blkfade
             with d5
             pause 1.0
-            
+
             hide screen ccg
             hide screen blkfade
             call her_chibi_scene("sex_cum_in_done", trans=d5)
             pause.8
-            
+
             $ hermione_zorder = 15 # Reset zorder
 
             call her_main("I apologise for saying that I hate you, [genie_name]...", "base", "base", "base", "R",cheeks="blush",tears="mascara")
@@ -497,7 +497,7 @@ label hg_anal_sex_1:
             hide screen ccg
             call her_chibi_scene("sex_cum_in_done", trans=d5)
             pause.8
-            
+
             $ hermione_zorder = 15 # Reset zorder
 
             m "Well, I'm done... You can get off my desk now."
@@ -518,7 +518,7 @@ label hg_anal_sex_1:
 
 label hg_anal_sex_2:
     $ hg_pf_sex.change_icon(a="heart_yellow", b="heart_red")
-    
+
     $ hermione_tears = "mascara"
 
     call her_chibi_scene("lie_on_desk")
@@ -610,7 +610,7 @@ label hg_anal_sex_2:
             call her_main("But why do you say that, [genie_name]?", "soft", "base", "base", "mid")
             m "Huh?"
             m "What do you mean \"why\", whore?"
-            m "You are young and attractive..."
+            m "You are curvy and attractive..."
             m "Tight asshole, full tits and wet little pussy..."
             $ ccg1 = 32
             call her_main("Ah...{heart}", "open", "closed", "base", "mid")
@@ -641,7 +641,7 @@ label hg_anal_sex_2:
             $ ccg1 = 14
             call her_main("Really?", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             m "Are you kidding me?!"
-            m "Young, hot and slutty. You could have any man you want!"
+            m "Curvy, hot and slutty. You could have any man you want!"
             m "Or a wizard or whatever you are into..."
             $ ccg1 = 17
             call her_main("I think you may be right, [genie_name].", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
@@ -656,7 +656,7 @@ label hg_anal_sex_2:
             $ ccg1 = 22
             call her_main("Yes, yes...{heart} I am a whore...{heart}", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
             m "Are you crying?"
-            
+
     $ ccg1 = 8
     call her_main("Among other things, [genie_name]...{heart}{heart}{heart}", "silly", "narrow", "base", "dead")
     m "Among other things?"
@@ -734,7 +734,7 @@ label hg_anal_sex_2:
 
     hide screen ccg
     call her_chibi_scene("sex_pause", trans=fade)
-    
+
     $ hermione_zorder = 15
 
     m "Well, this was intense..."

@@ -72,7 +72,7 @@ define hermione_diary_pages = {
         # Tier 3
     "admire_panties_t3_e1": "The look on Dumbledore's face was perfect! Ugh... walking around the school without panties on is such a rush...{}", # FORMATTED {action}
             # Branching
-    "admire_panties_t3_e1_slut_positive": " When he called me a slut I felt so free and tingly inside, he even gave me bonus points! I think I can stop wearing panties for now, just to experiment a bit, I'm a young blooming girl after all, there's nothing wrong with that, right?",
+    "admire_panties_t3_e1_slut_positive": " When he called me a slut I felt so free and tingly inside, he even gave me bonus points! I think I can stop wearing panties for now, just to experiment a bit, there's nothing wrong with that, right?",
     "admire_panties_t3_e1_slut_negative": " But when he called me a slut and said I won't be getting any points I was upset... He even went so far to ask me if I'm a slut or a prostitute, obviously I told him I am a slut, I'm no common whore that would sell her body for house points!",
     "admire_panties_t3_e1_good": " I know I was just going to do this today to surprise Dumbledore, but given his reaction I think I might try it out a little more... ",
     #
@@ -137,12 +137,12 @@ default hermione_diary = diary_class(title = "My Diary", dictionary=hermione_dia
 
 label _old_writing:
     # Not in use, will be reintroduced above.
-    
-    
-    
+
+
+
     $ diary_page_13_2 = ""
-    #End of grope her tier 4 
-    $ diary_page_14 = "" 
+    #End of grope her tier 4
+    $ diary_page_14 = ""
 
     #Needs to be written
     #End of dance for me tier 1
@@ -182,7 +182,7 @@ label _old_writing:
     #End of suck it tier 3 (Options for worship it and daddy roleplay)
     $ diary_page_24_1 = "I think he's starting to get hooked on my blowjobs... {heart}When he asked for one today, he even made me act like he was my father... It was sooo wrong... (Even though it felt {b}incredible!{/b}{heart}{heart}{heart}) But if daddy ever found out some of the things I said... I would have to obliviate him and Mum if I didn't die of embarrassment first..."
     $ diary_page_24_2 = "He asked me to worship his cock today... Not that I needed much encouragement... Ugh, I used to think those Slytherin sluts just sucked off their teachers for the points... But now I'm starting to understand how much fun it can be... I don't think I can blame them for getting on their knees whenever they're asked anymore. (I can still blame them for being a dirty slytherin!)"
-    #End of suck it tier 4 
+    #End of suck it tier 4
     $ diary_page_25 = "Wow. [genie_name] told me he wanted a {i}special{/i} blowjob today. I just thought he meant some more roleplay at first but it was so much more... He made sure to handcuff me before {b}fucking{/b} my throat raw. I don't think I've felt like more of a sex object in my entire life... It was... It was incredible... That might be the hardest I've orgasmed in my life... (What's wrong with me?)"
 
     #End of tit fuck tier 1

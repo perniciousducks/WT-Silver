@@ -384,7 +384,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 hide screen bld1
                 with d3
                 $ renpy.play('sounds/cannon.mp3')
-                call cum_block 
+                call cum_block
                 with hpunch
                 call ctc
 
@@ -524,7 +524,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m "But as a canon swabber ye be a great catch!"
                 call her_main("Aye?", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
                 m "Ye pullin' me pegleg?!"
-                m "Young, hot 'n slutty. Ye could 'ave any scallywag ye wants!"
+                m "Curvy, hot 'n slutty. Ye could 'ave any scallywag ye wants!"
                 m "Or a landlubber or whatever ye be after..."
                 call her_main("I reckon ye may be right, captain.", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
                 m "I always be right, wench."
@@ -554,7 +554,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
             "-Sink her vessel, fill her up-":
                 hide screen bld1
                 with d3
-                
+
                 $ renpy.play('sounds/cannon.mp3')
                 call her_chibi_scene("sex_cum_in")
                 call cum_block

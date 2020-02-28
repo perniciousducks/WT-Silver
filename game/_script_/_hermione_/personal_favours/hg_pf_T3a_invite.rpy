@@ -168,7 +168,7 @@ label hg_pf_strip_T2_Snape:
     pause.2
 
     call nar(">Hermione starts to sway her hips seductively.")
-    
+
     if hermione.is_worn("top"):
         call nar(">Hermione reaches to take off her top...")
         $ hermione.strip("top")
@@ -205,7 +205,7 @@ label hg_pf_strip_T2_Snape:
             $ her_mood += 9
             call her_main("What?", "annoyed", "base", "angry", "mid")
             call her_main("But [genie_name]!")
-            m "Young lady, you {size=+4}will{/size} calm down now."
+            m "[hermione_name], you {size=+4}will{/size} calm down now."
             call her_main("Tsk!", "disgust", "narrow", "base", "mid_soft")
             if hermione.is_worn("bottom"):
                 m "And take off your bottoms already, would you?"
@@ -343,7 +343,7 @@ label hg_pf_strip_T2_Snape:
         call nar(">Then takes it off...")
         pause .5
         $ hermione.strip("bra")
-        
+
         call ctc
     else:
         call nar(">Hermione cups her breasts playfuly, squeezing them in the process...")
@@ -392,9 +392,9 @@ label hg_pf_strip_T2_Snape_watch:
         ">Her movements lack grace..."
         call nar(">But a pretty pussy is always a welcome sight nonetheless...","end")
         pause.5
-        
+
         $ hermione.strip("panties")
-    
+
         call ctc
 
         call sna_main("Yes... Yes...","snape_20")
@@ -405,7 +405,7 @@ label hg_pf_strip_T2_Snape_watch:
 
     call nar(">All of a sudden Hermione breaks into a series of rather complex pirouettes.")
     call sna_main("Yes, such grace...","snape_19")
-    call sna_main("That lithe, young body!","snape_20")
+    call sna_main("That lithe, flexible body!","snape_20")
     call her_main("{size=-5}(Three-two-one... Three-two-one... And step!){/size}", "open", "closed", "base", "mid")
     call nar(">Hermione seems very focused on her dancing routine...")
     call sna_main("Yes, and now another pirouette!","snape_19")
@@ -522,7 +522,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         call hide_characters
         show screen blkfade
         with d5
-        
+
         $ hermione.wear("all")
         ">Hermione jumps off the desk and starts to put her clothes back on."
         call sna_main("Well, this was awfully anticlimactic...","snape_03")
@@ -592,7 +592,7 @@ label hg_pf_strip_T2_Snape_masturbate:
 
         call nar(">All of a sudden Hermione breaks into a series of rather complex pirouettes.")
         call sna_main("Yes, such grace...","snape_19")
-        call sna_main("That lithe, young body!","snape_20")
+        call sna_main("That lithe, flexible body!","snape_20")
         call her_main(".........", "grin", "narrow", "annoyed", "up")
         call sna_main("Oh, yes!","snape_20")
         call her_main("{size=-5}(Three-two-one... Three-two-one... And step!){/size}", "grin", "narrow", "annoyed", "up")

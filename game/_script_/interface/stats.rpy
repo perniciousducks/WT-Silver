@@ -14,7 +14,7 @@ label update_stats:
 
     # Reputation
     $ her_reputation_word_list = ["Teacher's pet", "School star", "good girl", "minx", "slutty schoolgirl", "easy lay", "whore", "slut for sex", "gryffindor whore", "school cumdump", "mudblood cumdump"]
-    #$ slutWords = ["Teacher's pet", "School star", "good girl", "principal's pet", "slutty schoolgirl", "slut", "principal's slut", "daddy's girl", "gryffindor slut", "Dumbledore's whore", "Dumbledore's cumdump"]
+    #$ slutWords = ["Teacher's pet", "School star", "good girl", "headmaster's pet", "slutty schoolgirl", "slut", "headmaster's slut", "daddy's girl", "gryffindor slut", "Dumbledore's whore", "Dumbledore's cumdump"]
     $ her_reputation_word = her_reputation_word_list[int(her_reputation/2.4)]
 
     # Tutoring
@@ -84,7 +84,7 @@ label update_stats:
     #$ ton_sluttiness_word = ton_sluttiness_word_list[int(ton_clothing_level/10)]
 
     return
-    
+
 label stats:
     $ screenshot_image = ScreenshotImage.capture()
     $ renpy.call_in_new_context("stats_menu")
@@ -124,7 +124,7 @@ label stats_menu(xx=150, yy=90):
     $ luna_ypos = 0
     $ susan_xpos = 300
     $ susan_ypos = 0
-    
+
     if not renpy.variant("android"):
         show screen mouse_tooltip
 
@@ -157,7 +157,7 @@ screen stats_menu(xx, yy):
     tag stats_menu
     zorder 30
     modal True
-    
+
     add im.Blur(screenshot_image, 2)
 
     use close_button
@@ -197,7 +197,7 @@ screen stats_menu(xx, yy):
                                 else:
                                     hover_background "interface/achievements/"+interface_color+"/highlight_left_b.png"
                                     action Return(["category", category])
-                            
+
                             add "interface/achievements/"+interface_color+"/spacer_left.png"
                         add "interface/achievements/"+interface_color+"/iconbox.png" yoffset 1
                         if stats_dict[category]["flag"]:
@@ -464,13 +464,13 @@ screen stats_menuitem(xx, yy):
 
 screen stat_bar(steps, top_text, bottom_text, stat_number, top_padding=20):
     sensitive False
-    
+
     frame:
         background "#0000"
         ysize top_padding
 
     text top_text xalign 0.5 size 30
-    
+
     frame:
         background "#0000"
         xalign 0.5
@@ -478,10 +478,10 @@ screen stat_bar(steps, top_text, bottom_text, stat_number, top_padding=20):
         xsize 360
         add Crop((0, 0, steps*36, 600), "interface/stats/"+str(interface_color)+"/bar_full.png")
         add "interface/stats/"+str(interface_color)+"/bar_empty.png"
-        
+
     text bottom_text+" (lvl " +str(stat_number)+ ")" xalign 0.5 size 20
 
 screen text_stat(startText="", endText="", amount="", top_padding = 20):
     sensitive False
-    
+
     text (startText +str(amount)+ endText) xpos 20 size 14

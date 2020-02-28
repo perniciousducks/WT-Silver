@@ -294,7 +294,7 @@ label hg_pp_cumaddict_intro:
             call cum_block
             call her_chibi_scene("bj_cum_out")
             $ uni_sperm = True
-            call nar(">You start pumping your cock quickly and explode all over the young witch's face")
+            call nar(">You start pumping your cock quickly and explode all over the witch's face")
             m "Take it you filthy cum slut!"
             call cum_block
             call her_main("{size=+5}!!!{/size}", "soft", "narrow", "annoyed", "up")
@@ -391,7 +391,7 @@ label hg_pp_cumaddict_intro:
             hide screen hermione_main
             call nar(">You place her carefully back into her bed.")
             m "Sleep tight, slut."
-            
+
         "-Clean her up and take her back to her room-":
             $ uni_sperm = False
             call nar(">You pick her limp body up and carry her to her room.","start")
@@ -400,7 +400,7 @@ label hg_pp_cumaddict_intro:
             hide screen hermione_main
             call nar(">You place her carefully back into her bed.")
             m "Sleep tight, [hermione_name]."
-    
+
     if her_whoring <= 17: #When she still cares about points (Defined at the start)
         m "Thirty points to Gryffindor..."
         $ gryffindor += 30
@@ -955,7 +955,7 @@ label potion_scene_3_4_1:
     pause.1
     hide screen white
     with hpunch
-    ">You give her ass another hard slap, savoring the feeling of another orgasm flowing through the young witch."
+    ">You give her ass another hard slap, savoring the feeling of another orgasm flowing through the witch."
     $ ccg2 = 18
     her "{size=+10}!!!{/size}"
     $ ccg2 = 19

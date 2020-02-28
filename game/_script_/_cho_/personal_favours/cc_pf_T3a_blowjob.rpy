@@ -130,7 +130,7 @@ label cho_favor_3_1:
             "You let you cock rest there for a moment. Basking in the warmth of Cho's mouth."
             call cho_main("Hmmm.","smile","base","base","mid")
             m "Hold on."
-            "You slowly push your cock further into the young girls mouth."
+            "You slowly push your cock further into the girls mouth."
             call cho_main("Hmmmm!","smile","base","base","mid")
             "The sensations are incredible, and your head is wrapped in warm, slippery wetness."
             "Suddenly your cock bottoms out at the back of Cho's throat."
@@ -236,7 +236,7 @@ label cho_favor_3_1:
             "You let you cock rest there for a moment. Basking in the warmth of Cho's mouth."
             call cho_main("Hmmm.","smile","base","base","mid")
             m "Hold on."
-            "You slowly push your cock further into the young girls mouth."
+            "You slowly push your cock further into the girls mouth."
             call cho_main("Hmmmm!","smile","base","base","mid")
             "The sensations are incredible, and your head is wrapped in warm, slippery wetness."
             "Suddenly your cock bottoms out at the back of Cho's throat."
@@ -397,7 +397,7 @@ label cho_favor_3_1:
             "You let you cock rest there for a moment. Basking in the warmth of Cho's breath and the soft, slipperiness of her tongue."
             call cho_main("Hmmm.","smile","base","base","mid")
             m "Shhh. It's okay, girl."
-            "You slowly slide your cock into the young girls mouth."
+            "You slowly slide your cock into the girls mouth."
             call cho_main("Hmmmm....","smile","base","base","mid")
             "The sensations are incredible, and soon your head is wrapped in warm, slippery wetness."
             "You leave it there for a moment."
@@ -575,7 +575,7 @@ label cho_favor_3_2:
         "You let your cock rest there for a moment. Basking in the warmth of Cho's mouth."
         call cho_main("Hmmm.","smile","base","base","mid")
         m "Hold on."
-        "You slowly push your cock deeper into the young girls mouth."
+        "You slowly push your cock deeper into the girls mouth."
         call cho_main("Hmmmm!","smile","base","base","mid")
         "The sensations are incredible, and your head is wrapped in warm, slippery wetness."
         "Suddenly your cock bottoms out at the back of Cho's throat."
@@ -959,7 +959,7 @@ label cho_favor_3_3:
 
             m "Get on your knees and open your mouth."
             "Cho slides down to her knees and opens her mouth, sticking out her tongue."
-            "The sigh of your student on her knees with her young mouth open, her soft tongue drooling over her chin is enough to drive you wild."
+            "The sigh of your student on her knees with her mouth open, her soft tongue drooling over her chin is enough to drive you wild."
             "Your cock strains against your robes, leaking pre-cum all over the inside."
             call cho_main("RIke 'ish?(Like this?)","smile","base","base","mid")
             m "Very good, Ms. Chang."
@@ -1145,7 +1145,7 @@ label cho_favor_3_3:
                                 "Cho spits your cock out of her mouth and begins to stroke it."
                                 call cho_main("Cum for me, Professor!","smile","base","base","mid")
                                 ##Genie cums.
-                                "Your cock explodes, coating the proud, young witch in your old wizard jizz."
+                                "Your cock explodes, coating the proud witch in your old wizard jizz."
                                 call cho_main("Yes...","smile","base","base","mid")
                                 call cho_main("Oh my god...","smile","base","base","mid")
                                 call cho_main("that was amazing.","smile","base","base","mid")
@@ -1176,7 +1176,7 @@ label cho_favor_3_3:
             "You carefully guide your cock into Cho's soft, wet mouth."
             call cho_main("Hmmm...","smile","base","base","mid")
             call cho_main("Hmmm...(it's so thick!)","smile","base","base","mid")
-            "The young witch's mouth is warm and surprisingly accommodating."
+            "The witch's mouth is warm and surprisingly accommodating."
             "You push your cock deeper into her mouth."
             "You stop when you feel your thick head rest against the entrance to her throat."
             call cho_main("*Hrk!*","smile","base","base","mid")
@@ -1191,7 +1191,7 @@ label cho_favor_3_3:
             "Then you thrust deep, driving your it all the way to the hilt."
             call cho_main("AALG! HHHGGGGG!","smile","base","base","mid")
             call cho_main("AALG! HHhgGggG! (god he's choking me!)","smile","base","base","mid")
-            "The young witch's throat feels too good, and you begin to fuck it in earnest."
+            "The witch's throat feels too good, and you begin to fuck it in earnest."
             call cho_main("*glug* *GluG* *glg* *Gluck*","smile","base","base","mid")
             call cho_main("(Oh my god....)","smile","base","base","mid")
             call cho_main("*GlG* *Glg* *Glg*","smile","base","base","mid")
@@ -1319,7 +1319,7 @@ label cho_favor_3_3:
                                 "Cho spits your cock out of her mouth and begins to stroke it."
                                 call cho_main("Cum for me, Professor!","smile","base","base","mid")
                                 ##Genie cums.
-                                "Your cock explodes, coating the proud, young witch in your old wizard jizz."
+                                "Your cock explodes, coating the proud witch in your old wizard jizz."
                                 call cho_main("Yes...","smile","base","base","mid")
                                 call cho_main("Oh my god...","smile","base","base","mid")
                                 call cho_main("That was amazing.","smile","base","base","mid")
@@ -1366,7 +1366,7 @@ label cho_favor_3_3:
                     m "That's good, you fucking whore."
                     call cho_main("(Yes!)","smile","base","base","mid")
                     "Suddenly, you feel Cho's hands tightly grip your ass, and you realise that you haven't had to hold her down."
-                    "The crazed young witch desperately fucks her face against your cock."
+                    "The crazed witch desperately fucks her face against your cock."
                     "Your cock feels amazing, but you have other plans."
                     "You grab Cho's hands and push her down."
                     $ renpy.play('sounds/pop.mp3')
@@ -1397,7 +1397,7 @@ label cho_mood_blowjob:
     "Cho drops to her knees and reaches into your robes grabbing your semi-hard cock."
     call cho_main("You're not even hard yet.","smile","base","base","mid")
     "Cho leans forward and after gathering saliva in her mouth she spits a messy dollop across your cockhead."
-    "The angry young witch begins to roughly pump your hardening cock."
+    "The angry witch begins to roughly pump your hardening cock."
     m "Take it easy."
     call cho_main("Take it easy?","smile","base","base","mid")
     "Cho leans forward and guides your cock into her mouth."
@@ -1413,7 +1413,7 @@ label cho_mood_blowjob:
     "Cho squeezes your cock uncomfortably hard and pumps your shaft so fast that your mind reals from the twin sensations of pleasure and pain."
     ##Genie cums
     "Suddenly, your cock throbs and just as you begin to cum Cho bends your twitching cock down, forcing you to cum on the floow at your feet."
-    m "Ah! Cho, you Teenage Bitch!"
+    m "Ah! Cho, you Bitch!"
     "As the last few drops of your cum splatter against the floor of your office, Cho releases your abused cock."
     "She shakes the spit and pre-cum off her hand before glaring daggers at you."
     call cho_main("well? my house Points?","smile","base","base","mid")

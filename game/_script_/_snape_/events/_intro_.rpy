@@ -99,7 +99,7 @@ label snape_intro_E1:
 
     m "........................."
     call sna_main("","snape_04")
-    who2 "Well, those wretched kids left me completely exhausted. I think I will retire for today."
+    who2 "Well, those wretched students left me completely exhausted. I think I will retire for today."
     call sna_main("","snape_09")
     who2 "................"
 
@@ -186,7 +186,7 @@ label snape_intro_E2:
     call sna_main("","snape_06")
     who2 "Perhaps I'd better go get some sleep."
     who2 "I need to be in my top shape every morning..."
-    who2 "You can't show weakness to those kids or they will swallow you whole..."
+    who2 "You can't show weakness to those students or they will swallow you whole..."
     call sna_main("","snape_24")
     who2 "Good night, Albus."
 
@@ -234,7 +234,7 @@ label snape_intro_E3:
     call ctc
 
     who2 "Good evening, Albus."
-    who2 "I want to talk to you about those damn kids again..."
+    who2 "I want to talk to you about those damn students again..."
     who2 "But first I want to ask you something..."
     call sna_main("","snape_05")
     who2 "Have you noticed anything strange going on around here lately?"
@@ -242,7 +242,7 @@ label snape_intro_E3:
     menu:
         m "..."
         "{size=-2}\"Like you being especially whiny?\"{/size}":
-            who2 "What? B-but... Those kids..."
+            who2 "What? B-but..."
             call sna_main("","snape_06")
             who2 "Well, perhaps you are right..."
         "{size=-2}\"That owl is fetching my mail, man!\"{/size}" if owl_away_counter != 0:
@@ -269,7 +269,7 @@ label snape_intro_E3:
         "\"Hermione Granger? No, Nothing from her.\"":
             who2 "I see... So she's been bluffing then."
             call sna_main("","snape_16")
-            who2 "What an annoying young witch."
+            who2 "What an annoying witch."
         "\"Yes... Every damn day...\"" if letter_hg_2.read:
             who2 "Really now?"
             who2 "Any lies about me in particular?"
@@ -287,7 +287,7 @@ label snape_intro_E3:
     who2 "The stories I hear about Minerva McGonagall and those poor Gryffindor freshmen may be true..."
     call sna_main("","snape_01")
     who2 "Well, I just wanted to make sure that you take those rumours about me for what they are..."
-    who2 "Nasty lies made up by a bunch of spoiled kids."
+    who2 "Nasty lies made up by a bunch of spoiled-"
 
     who2 "Oh.... Before I go..."
     who2 "There is one thing I meant to ask you for a while now..."

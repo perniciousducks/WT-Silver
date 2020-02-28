@@ -416,7 +416,7 @@ label ball_ending_E2:
 
 
     #Setting up Hermione's outfit.
-    
+
     # TODO: Uncomment once ball dress is added.
     $ hermione.equip(her_outfit_ball)
 
@@ -738,7 +738,6 @@ label ball_ending_E2:
         call cg_scene("91")
         her "Oh, but I would not know how, sir..."
         call cg_scene("92")
-        her "because I am but a child myself..."
         g4 "You nasty little thing!"
         call cg_scene("97")
         her "*Slurp!* *Slurp!* *Gulp!* *Slurp!* *Slurp!*"

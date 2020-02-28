@@ -159,7 +159,7 @@ label hg_pf_grope_ass_T1_back:
             call her_walk(action="leave")
 
             call bld
-            g4 "*Tsk!* (You little brat!)"
+            g4 "*Tsk!*"
 
             $ her_mood += 20
 
@@ -186,8 +186,8 @@ label hg_pf_grope_ass_T1_back:
                 "\"Dammit. Now I feel like crap...\"":
                     m "Dammit... Now I feel like crap..."
                     g9 "But who could resist slapping that little behind of hers?"
-                "\"She made me do this, that brat!\"":
-                    g4 "She made me do this, that brat!"
+                "\"She made me do this!\"":
+                    g4 "She made me do this!"
                     m "Acting all wounded now..."
                     g9 "I bet she actually enjoyed the slapping and just won't admit it..."
 

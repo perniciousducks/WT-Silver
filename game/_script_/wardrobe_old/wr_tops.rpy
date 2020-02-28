@@ -681,7 +681,7 @@ label equip_top:
                         # call her_main("What?... What is this?!", "shock", "wide", "base", "stare")
                         # call her_main("Wizard... Sex?!", "scream", "base", "angry", "mid",emote="01")
                         # call her_main("What is this even supposed to mean?", "angry", "base", "angry", "mid")
-                        # m "It's just something the kids say nowadays!"
+                        # m "It's just something they say nowadays!"
                         # call her_main("It most certainly is not!", "annoyed", "narrow", "annoyed", "mid")
                         # m "If you say so..."
                         # call her_main("Keep this offensive... thing for yourself, [genie_name].", "scream", "closed", "angry", "mid")
@@ -840,7 +840,7 @@ label equip_lun_top:
     call set_lun_top(top_choice)
 
     jump return_to_wardrobe
-    
+
 ### Equip Susan's Top ###
 label equip_sus_top:
     call set_sus_top(top_choice)

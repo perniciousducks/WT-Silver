@@ -195,7 +195,7 @@ label hg_pr_flirt_teacher_T1_E2: # Snape
             call her_main("But I understand and won't argue with your decision...", "normal", "happyCl", "worried", "mid")
 
             call her_walk(action="leave")
-            
+
             $ her_mood += 3
 
             $ hg_pr_flirt_teacher.inProgress = False
@@ -240,14 +240,14 @@ label hg_pr_flirt_teacher_T2_E1: # Slughorn
     her "Rather disturbing tea parties..."
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("There were plenty of girls...", "open", "closed", "base", "mid")
-    her "But all of them were much younger then me..."
+    her "But none of them were in my year..."
     call her_main("Almost every guest was a freshman...", "annoyed", "squint", "base", "mid")
     call her_main("We had tea and some cake...", "open", "closed", "base", "mid")
     her "Everything was pretty harmless..."
     m "Did you flirt with the man or not?"
     her "I did..."
     call her_main("Or at least I tried...", "annoyed", "squint", "base", "mid")
-    her "Professor Slughorn seems to be more interested in much younger girls..."
+    her "Professor Slughorn seemed to be more interested in the other girls..."
     m "You almost sound jealous, [hermione_name]."
     call her_main("What?!", "angry", "wide", "base", "stare")
     call her_main("That is preposterous!", "annoyed", "narrow", "angry", "R")

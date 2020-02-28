@@ -12,7 +12,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     call play_music("night_outside")
     call play_sound("walking_on_grass")
 
-    ">Sure enough, the map seems to {b}magically{/b} guide you to the young girl, alone in the midnight air..."
+    ">Sure enough, the map seems to {b}magically{/b} guide you to the girl, alone in the midnight air..."
     ">Seemingly scrapping the resin off of a tree..."
 
     $ hermione.wear("all")
@@ -43,7 +43,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
             call her_main("...", "upset", "narrow", "worried", "down")
             show screen blkfade
             with d3
-            ">You turn away from the miffed young girl."
+            ">You turn away from the miffed girl."
             m "..."
             m "(What's wrong with me?)"
             return
@@ -870,14 +870,14 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
 label hermione_map_sex:
     #Genie notices hermione walking past the courtyard on the map and has the
     #option to intercept her option to come behind and scare her or to
-    #approach her normally 
+    #approach her normally
     #Hermione says that she was coming back late from the library
     #Standard sex scene with a focus on the fact that they could be caught at any time
     #Option to humiliate her based on either the shame of doing this in public or to tell her that all her teachers want to fuck her
     #Cum in her in front of Moaning myrtle
     #end
     ">This time, the marauders map leads you to Hermione walking through the halls bordering the courtyard."
-    ">You start to stalk her as a lion would its prey wondering how to best approach the lithe young girl..."
+    ">You start to stalk her as a lion would its prey wondering how to best approach the girl..."
     menu:
         "-Surprise her-":
             "asd"
@@ -914,7 +914,7 @@ label hermione_map_sex:
     her "Ah...{heart}I-I can't!{heart} people will hear!"
     m "Good! A whore like you deserves an audience..."
     her "{heart}...{heart}"
-    ">Despite feeling her pussy spasm hard around your cock the young girl remains silent..."
+    ">Despite feeling her pussy spasm hard around your cock the girl remains silent..."
     her "..."
     her "{size=+5}Ah... fuck me harder!{/size}"
     m "That's it slut! Louder!"
@@ -985,15 +985,3 @@ label hermione_map_sex:
     #FTB
     ">You let go of hermione, letting her slump to the ground with a squelch, landing in a pool of your combined juices.."
     #Take Hermione back to her room and leave Myrtle alone to masturbate
-    
-
-
-
-
-
-
-
-
-
-
-

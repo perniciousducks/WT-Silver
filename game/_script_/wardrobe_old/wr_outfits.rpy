@@ -217,7 +217,7 @@ label equip_outfit:
                     # call nar(">You hand her the outfit.")
                     # call her_main("Fine. I'll wear it.", "soft", "base", "base", "R")
                     # m "You will?"
-                    # call her_main("Of course! I like her. She's a great role model for young girls, after all!", "open", "closed", "base", "mid")
+                    # call her_main("Of course! I like her. She's a great role model for girls, after all!", "open", "closed", "base", "mid")
                     # if outfit_choice == hg_costume_power_girl_ITEM:
                         # call her_main("Although... That cleavage on her is a bit much.", "disgust", "narrow", "worried", "down")
                         # g9 "But that's the best part!"

@@ -615,7 +615,7 @@ label nt_pr_teach_T2_E3: # Tier 2 - Event 3 - Slytherin boy
     call ton_main("It was all right,....","open","base","base","R")
     call ton_main("I was able to kill two birds with one stone, though.","base","base","angry","mid")
     m "I'm intrigued."
-    call ton_main("So, I had some cocky little Slytherin brat causing trouble in class.","angry","base","angry","mid")
+    call ton_main("So, I had some cocky little Slytherin cause all sorts of trouble in class.","angry","base","angry","mid")
     call ton_main("Talking,...letting a chocolate frog loose,...forgetting to lock his \"Monster Book of Monsters\"...","open","closed","base","mid")
     m "(His what?)"
     call ton_main("Just being a general pain in the ass.","open","base","angry","R")

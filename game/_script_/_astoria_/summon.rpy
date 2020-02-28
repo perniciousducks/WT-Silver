@@ -3,14 +3,14 @@
 label summon_astoria:
     $ renpy.start_predict(astoria.get_image())
     $ renpy.start_predict("characters/astoria/face/*.png")
-    
+
     #call play_music("astoria")
     #call play_sound("door")
-    
+
     $ active_girl = "astoria"
     $ astoria_busy = True
     #call update_ast_tier
-    
+
     # Clothes Events
     call astoria_summon_setup
 
@@ -39,7 +39,7 @@ label summon_astoria:
                 jump astoria_requests
             else:
                 jump astoria_spells
-                
+
         "{color=[menu_disabled]}-Sexual favours-{/color}{icon=interface/icons/small/condom.png}" if cho_favors_unlocked:
             $ TBA_message()
             jump astoria_requests
@@ -160,7 +160,7 @@ label astoria_talk:
             ast "You do that."
             jump astoria_talk
 
-            
+
         "-Address me only as-":
             menu:
                 "-Sir-":
@@ -220,7 +220,7 @@ label astoria_talk:
                     call ast_main("Hahahaha--", face="happy")
                     m "Are you done now?"
                     call ast_main("Yes... I'm sorry... {w=1.0}Dumby...", face="happy")
-                    g4 "(Damn brat! We'll see who will be laughing later.)"
+                    g4 "(Damnit! We'll see who will be laughing later.)"
                     jump astoria_talk
                 "-Master-" if ast_affection >= 18:
                     label .master:
@@ -231,17 +231,17 @@ label astoria_talk:
                     call ast_main("Well alright... M-master--", face="happy")
                     call ast_main("Hahahaha--{w=1.0}{nw}", face="happy")
                     with hpunch
-                    g4 "Shut it you ungrateful brat or there will be consequences!"
+                    g4 "Shut it... or there will be consequences!"
                     call ast_main("I'm sorry... It won't happen again, master...", face="neutral")
                     jump astoria_talk
                 "{color=[menu_disabled]}-Custom Input-{/color}" if ast_affection < 18:
                     m "(I don't think she's yet ready for that)"
                     jump astoria_talk
-                    
+
                 "-Custom Input-" if ast_affection >= 18:
                     $ temp_name = renpy.input("(Please enter the name.)", ast_genie_name, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ", length=14)
                     $ temp_name = temp_name.strip()
-                    
+
                     if temp_name.lower() in ("sir", "dumbledore", "professor", "old man", "genie", "lord voldemort", "daddy", "master"):
                         if temp_name.lower() == "master" and ast_affection < 18:
                             jump astoria_talk.master_fail
@@ -294,15 +294,15 @@ label astoria_talk:
                     call ast_main("Oh I like games!", face="happy")
                     call ast_main("Alrighty then!", face="happy")
                     jump astoria_talk
-                    
+
                 "{color=[menu_disabled]}-Custom Input-{/color}" if ast_affection < 18:
                     m "(I don't think she's yet ready for that)"
                     jump astoria_talk
-                    
+
                 "-Custom Input-" if ast_affection >= 18:
                     $ temp_name = renpy.input("(Please enter the name.)", astoria_name, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ", length=14)
                     $ temp_name = temp_name.strip()
-                    
+
                     if temp_name.lower() in ("miss greengrass", "girl", "princess", "cutie", "slave"):
                         if temp_name.lower() == "slave" and ast_affection < 18:
                             jump astoria_talk.slave_fail

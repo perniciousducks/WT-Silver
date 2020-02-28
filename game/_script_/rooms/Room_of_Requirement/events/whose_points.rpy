@@ -170,7 +170,7 @@ label whose_points:
     with d3
 
     $ renpy.sound.play("sounds/MaleGasp.mp3")
-    hat "Are you calling me fat - young lady?!"
+    hat "Are you calling me fat?!"
 
     call ast_main("I'll read it for you, shall I?","smile","closed","base","mid")
 

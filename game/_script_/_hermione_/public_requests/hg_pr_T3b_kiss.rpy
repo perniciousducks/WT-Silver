@@ -259,11 +259,10 @@ label hg_pr_kiss_T2_E1:
     call her_main("Also she was quite adorable...", "base", "base", "base", "mid")
     call her_main("She kept calling me \"[hermione_name]\"...", "smile", "base", "base", "R")
     m "Hm..."
-    m "I Don't recall sending you out with a task to confuse little kids, [hermione_name]."
-    call her_main("\"Little kids\"? [genie_name], please...", "smile", "narrow", "base", "mid_soft")
+    m "I Don't recall sending you out with a task to confuse some girl, [hermione_name]."
+    call her_main("\"Confuse\"? [genie_name], please...", "smile", "narrow", "base", "mid_soft")
     her "You should have seen that girl..."
-    her "A little petite? Maybe... But definitely not a \"kid\"."
-    call her_main("And I assure you that she was anything but confused.", "smile", "base", "angry", "mid")
+    call her_main("I assure you that she was anything but confused.", "smile", "base", "angry", "mid")
     her "In fact, at the end of our \"Study session\" she got rather obnoxious..."
     call her_main("And it sort of felt as if she was taking advantage of me...", "open", "base", "base", "mid")
     m "Oh... Well, in that case..."
@@ -299,7 +298,7 @@ label hg_pr_kiss_T2_E2:
     call her_main(".....", "base", "squint", "base", "mid")
     her "By the way, the girl I kissed, [genie_name]..."
     m "Hm...?"
-    call her_main("She is one of those unpopular kids...", "open", "closed", "base", "mid")
+    call her_main("She is one of those unpopular girls...", "open", "closed", "base", "mid")
     her "I know that other students make fun of her sometimes..."
     call her_main("But today changed everything...", "base", "squint", "base", "mid")
     her "I Single-handedly turned that girl from a social outcast..."
@@ -330,7 +329,7 @@ label hg_pr_kiss_T2_E3:
         "\"Who knows? Boys are weird.\"":
             call her_main("Yes, they are, aren't they...?", "angry", "narrow", "base", "down")
             m "Yes, yes..."
-            m "And that is why young girls such as yourself...."
+            m "And that is why girls such as yourself...."
             m "Are often interested in a much older gentleman..."
             call her_main("??!", "angry", "base", "base", "mid")
             call her_main("That is not what I meant, [genie_name]...", "annoyed", "narrow", "annoyed", "mid")

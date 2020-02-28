@@ -728,7 +728,7 @@ label ag_st_imperio_E3:
     call ton_main("Didn't you hear her?","open","base","angry","mid")
     call ton_main("She's disregarding all of our advice!... Or at least planning to...","angry","base","angry","mid")
     call ton_main("She's been ignoring my lessons all day!","open","closed","base","mid")
-    call ton_main("She's such a cute, stubborn, cute little girl...","angry","closed","angry","mid")
+    call ton_main("She's such a cute and stubborn girl...","angry","closed","angry","mid")
     call ton_main("We can't have her roaming the school - cursing people as she pleases!","upset","base","angry","mid")
 
     m "So, should we stop?"

@@ -3,7 +3,7 @@
 ### Flash A Classmate ###
 
 label hg_pr_flash:
-    
+
     # Setup
     $ current_payout = 35
 
@@ -111,7 +111,7 @@ label hg_pr_flash:
 
     call her_walk(action="leave")
 
-    
+
     $ hg_pr_flash.inProgress = True
 
     jump end_hermione_event
@@ -485,7 +485,7 @@ label hg_pr_flash_T3_E2:
     m ".............."
     call her_main("And then the boy took out his throbbing cock...", "base", "squint", "base", "mid")
     her "And sprayed his hot spunk all over me and Ginny!"
-    call her_main("And then me and Ginny, we licked his hot sperm off of our young bodies...", "smile", "base", "angry", "mid")
+    call her_main("And then me and Ginny, we licked his hot sperm off of our bodies...", "smile", "base", "angry", "mid")
     m ".............."
     m "Are you making this up, [hermione_name]?"
     call her_main("...maybe.", "grin", "happyCl", "worried", "mid",emote="05")

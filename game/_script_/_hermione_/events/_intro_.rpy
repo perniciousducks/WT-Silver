@@ -110,7 +110,7 @@ label hermione_intro_E1:
             call her_main("...........", "normal", "base", "base", "mid")
             m "................................."
             call her_main(".....*ahem*......", "open", "closed", "angry", "mid")
-            
+
     call play_music("chipper_doodle")
 
     call her_main("I am very busy with my class schedule, but I kept my morning free today so that I could see you, professor.", "open", "closed", "base", "mid")
@@ -207,7 +207,7 @@ label hermione_intro_E1:
         menu:
             "\"(Yes, time to actually listen to her.)\"":
                 $ masturbating = False
-                
+
                 call hide_characters
                 hide screen bld1
                 with d3
@@ -218,7 +218,7 @@ label hermione_intro_E1:
 
             "\"(No! I want to keep on jerking off!)\"":
                 m "Yes, yes! *pants*"
-                
+
     if not masturbating:
         m "{size=-4}(Do I? I honestly don't give a damn...){/size}"
         m "Uhm... I suppose I do..."
@@ -274,7 +274,7 @@ label hermione_intro_E1:
         m "Alright... I will think about your proposal, I promise."
 
     call play_music("chipper_doodle")
-    
+
     call her_main("Really?", "normal", "squint", "angry", "mid")
     her "hm..........."
 
@@ -411,7 +411,7 @@ label hermione_intro_E2:
     menu:
         "\"Who is it?\"":
             her "It's me, Hermione Granger."
-            m "(It's that young witch again...)"
+            m "(It's that witch again...)"
             her "Can I come in, sir?"
             menu:
                 m "..."
@@ -441,7 +441,7 @@ label hermione_intro_E2:
             m "............................."
             her "Professor, I'm coming in..."
             m "{size=-4}(Crap!){/size}"
-    
+
     # Let Hermione in.
     call her_walk(action="enter", xpos="mid", ypos="base")
     pause.5
@@ -505,7 +505,7 @@ label hermione_intro_E2:
             call her_main("Am I? Well, we'll see...", "normal", "squint", "angry", "mid")
 
     call her_main("I already sent a letter to the ministry of magic.", "open", "closed", "angry", "mid")
-    
+
     $ renpy.music.set_volume(0.0, 1.0)
     pause 1.0
     $ renpy.music.set_pause(True, channel="music")
@@ -562,7 +562,7 @@ label ss_he_hermione_E2:
     call sna_main("Am I?!","snape_34")
     call sna_main("Can you do this for me?","snape_39")
     m "Em..."
-    m "As much I would \"enjoy\" murdering a teenage girl..."
+    m "As much I would \"enjoy\" murdering some girl..."
     m "Genies can't kill..."
     call sna_main("Rats!","snape_35")
     m "And we frown upon murderers..."
@@ -690,7 +690,7 @@ label hermione_intro_E3:
     pause.5
 
     call play_music("chipper_doodle")
-    
+
     call her_main("", "annoyed", "squint", "angry", "mid", xpos="base", ypos="base")
     call ctc
 
@@ -748,7 +748,7 @@ label hermione_intro_E3:
     call her_main("I mean, they must have, right?", "open", "base", "worried", "mid")
     call her_main(".....................", "soft", "base", "base", "R")
     call her_main("....right?", "open", "base", "worried", "mid")
-    
+
     $ d_flag_01 = False
 
     label .choices:
@@ -792,7 +792,7 @@ label hermione_intro_E3:
 
     $ snape_busy = False
     $ hermione_busy = True
-    
+
     $ hermione_intro.E3_complete = True
     $ hg_event_pause += 1
 
@@ -989,7 +989,7 @@ label hermione_intro_E6:
     menu:
         "\"Who is it?\"":
             her "It's me, Hermione Granger."
-            m "(It's that young witch again...)"
+            m "(It's that witch again...)"
             her "Can I come in, sir?"
             menu:
                 m "..."
@@ -1023,7 +1023,7 @@ label hermione_intro_E6:
     call her_walk(action="enter", xpos="mid", ypos="base")
 
     call play_music("chipper_doodle")
-    
+
     call her_main("Good day, professor...", "soft", "base", "base", "R", xpos="base", ypos="base", trans=d3)
     her "........................"
     call her_main("........................", "annoyed", "base", "worried", "R")
@@ -1037,7 +1037,7 @@ label hermione_intro_E6:
     call her_main("And they look up to me for help but I don't know what to do...", "disgust", "base", "worried", "down")
     m "............................"
     call her_main("Professor Dumbledore....", "open", "base", "worried", "mid")
-    
+
     $ renpy.music.set_volume(0.0, 1.0)
     pause 1.0
     $ renpy.music.set_pause(True, channel="music")
@@ -1062,11 +1062,11 @@ label hermione_intro_E6:
             call her_main("Professor, please, I am really desperate...", "open", "squint", "low", "mid")
             m "Desperate you say..?"
             m "Well, alright..."
-    
+
     call her_main("Really?", "silly", "base", "base", "mid")
     call her_main("Thank you, professor...", "base", "happyCl", "base", "mid")
     call her_main("So... What will it be?", "base", "base", "base", "mid")
-    
+
     $ d_flag_01 = False
 
     label .choices:
@@ -1133,7 +1133,7 @@ label hermione_intro_E6:
                 her "...................................................................."
                 call her_main(".......................................................................................................", "open_wide_tongue", "closed", "angry", "mid")
                 call her_main("*khow* *ish* *-his?", "open_wide_tongue", "base", "annoyed", "mid")
-                
+
                 menu:
                     "\"Good enough. Here, your points.\"":
                         pass
@@ -1145,12 +1145,12 @@ label hermione_intro_E6:
                         call her_main("{size=-4}(Finally...){/size}", "annoyed", "narrow", "base", "R")
     elif current_favor == "stand_there":
         call her_main("So, I just have to stand here then...?", "soft", "base", "base", "mid")
-        
+
         $ d_flag_01 = "mid"
         $ d_flag_02 = 0
-        
+
         label .stand_there_choices:
-        
+
         if d_flag_02 >= 3:
             call her_main("Professor, could you make up your mind already?!", "angry", "base", "annoyed", "R", trans=dissolve)
             m "Alright, alright, there's no need to get worked up about it, sheesh."
@@ -1161,7 +1161,7 @@ label hermione_intro_E6:
                     $ d_flag_02 += 1
                     her "uhm... alright..."
                     call her_walk("desk", "base")
-                    
+
                     jump hermione_intro_E6.stand_there_choices
                 "{size=-4}\"On second thought, go back to the middle\"{/size}" if d_flag_01 == "desk":
                     $ d_flag_01 = "mid"
@@ -1170,7 +1170,7 @@ label hermione_intro_E6:
                     call her_walk("mid", "base")
                     call her_chibi("stand", flip=False)
                     with d3
-                    
+
                     jump hermione_intro_E6.stand_there_choices
                 "\"Yes, stand right where you are.\"":
                     pass
@@ -1193,7 +1193,7 @@ label hermione_intro_E6:
         call her_main("A silly face then...", "grin", "happyCl", "worried", "mid", emote="05")
         her "Let's see..."
         label .silly_face_choices:
-        
+
         call her_main("How about this one?", "silly", "base", "base", "squint")
 
         menu:
@@ -1219,7 +1219,7 @@ label hermione_intro_E6:
                 jump hermione_intro_E6.end
             "\"Not stupid enough.\"":
                 pass
-                
+
         call her_main(".........", "annoyed", "narrow", "angry", "R")
         call her_main("I give up...", "upset", "narrow", "worried", "down")
 
@@ -1238,7 +1238,7 @@ label hermione_intro_E6:
         call her_main("I have been a very bad girl...", "open", "squint", "angry", "R")
         g9 "Have you been a very, very, very bad girl?"
         call her_main("Umm... Maybe?", "grin", "wink", "worried", "mid")
-        
+
         $ d_flag_01 = False
 
         label .bad_girl_choices:

@@ -2,7 +2,7 @@ label twins_first_duel:
     call play_music("grape_soda")
 
     $ renpy.call_in_new_context("start_duel", twins_first_deck)
-        
+
     if duel_response == "Close":
         jump twins_duel_cancel
     elif not duel_response == "win":
@@ -62,10 +62,10 @@ label twins_second_duel:
     hide screen genie_vs_twins
 
     $ renpy.call_in_new_context("start_duel", twins_second_deck, twins_after)
-        
+
     if duel_response == "Close":
         jump twins_duel_cancel
-        
+
     elif  not duel_response == "win":
         jump twins_duel_lost
 
@@ -89,7 +89,7 @@ label twins_second_duel:
 
     "You return to your office."
     jump main_room
-    
+
 label twins_random_duel:
     if first_random_twins:
         $ first_random_twins = False
@@ -122,7 +122,6 @@ label twins_random_duel:
             ger "It means you're broke, sir."
             fre "Come back with your offer when you have more gold, professor."
             m "Fine.."
-            m "(Kids nowadays..)"
             "You return to your office."
             jump main_room
         ger "Yes, that is quite satisfactory..."
@@ -164,19 +163,19 @@ label twins_random_duel:
             jump main_room
         ger "Acceptable..."
         twi "Let's play."
-       
+
     call play_music("cardgame")
-       
+
     $ random_player_deck = create_random_deck(0,150,unlocked_cards)
 
     $ random_enemy_deck = create_random_deck(get_deck_score(random_player_deck)-2, get_deck_score(random_player_deck)+8, cards_all)
 
     $ renpy.call_in_new_context("start_duel", random_enemy_deck, twins_after, [0, True, True, False], random_player_deck)
-        
+
     if duel_response == "Close":
         jump twins_duel_cancel
-        
-    elif  not duel_response == "win":    
+
+    elif  not duel_response == "win":
         jump twins_duel_lost
 
     hide screen blkfade
@@ -227,7 +226,7 @@ label twins_random_duel:
 
     "You return to your office."
     jump main_room
-    
+
 label twins_duel_lost:
     stop music fadeout 1
     if geniecard_level == 2:
@@ -236,7 +235,7 @@ label twins_duel_lost:
         twi "It seems so."
         m "Well, here's your reward..."
         $ gold -= 10
-        
+
     menu:
         "-Rematch-":
             jump twins_duel_menu

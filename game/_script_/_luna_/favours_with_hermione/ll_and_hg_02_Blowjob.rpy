@@ -116,7 +116,7 @@ label luna_favour_6:
         her "alright then... now, just like we practised. Open wide."
         lun "..."
         $ ccg2 = 9
-        ">Luna opens wide, eagerly presenting her young mouth."
+        ">Luna opens wide, eagerly presenting her mouth."
         lun "ah..."
         her "good work... now put the tip in your mouth..."
         $ ccg2 = 10
@@ -439,7 +439,7 @@ label luna_favour_6:
         lun "thank you sir..."
 
         $ ccg2 = 9
-        ">Luna opens wide, eagerly presenting her young mouth."
+        ">Luna opens wide, eagerly presenting her mouth."
         lun "ah..."
         her "good work... now put it in your mouth..."
         $ ccg2 = 10
@@ -702,7 +702,7 @@ label luna_favour_6:
         her "Time for you to earn it then cumslut... open wide!"
 
         $ ccg2 = 9
-        ">Luna opens wide, eagerly presenting her young mouth."
+        ">Luna opens wide, eagerly presenting her mouth."
         lun "ah..."
         her "good work... here we go!"
         ">Hermione grabs the back of Luna's head and gives her a violent shove, forcing your cock down her mouth and against the entrance to her throat."
@@ -853,7 +853,7 @@ label luna_favour_6:
         lun "y-yes..."
         $ ccg2 = 67
         her "mmmm... {size=-5}good girl...{/size}"
-        
+
         hide screen ccg
         call blkfade
 
@@ -863,7 +863,7 @@ label luna_favour_6:
         ">Luna and Hermione both get dressed while you sit in your chair, enjoying the show."
 
         call hide_blkfade
-        
+
         call lun_main()
         call her_main("There we are Luna, how was that?", "grin", "base", "base", "R")
         call lun_main("......","normal","seductive","sad","down", cheeks="blush",tears="mascara")

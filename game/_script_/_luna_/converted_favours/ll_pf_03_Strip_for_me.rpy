@@ -5,7 +5,7 @@ label luna_favour_3:
     # Setup
     if lun_whoring < 9:
         $ lun_whoring += 1
-        
+
     if lun_whoring > 14:
         # Jump to blowjob with Hermione
         # Note: Prevents player from replaying the strip event, also dialogue doesn't flow well
@@ -17,9 +17,9 @@ label luna_favour_3:
         call lun_main("how about another blowjob?","base","seductive","angry","mid")
         m "well then..."
         jump luna_favour_6
-        
+
     call play_music("chipper_doodle")
-    
+
     if lun_whoring < 8:
         if lun_sub > lun_dom:
             if lun_whoring == 6: # First time
@@ -795,7 +795,7 @@ label luna_favour_3:
 
                     ">You reach into your robe and pull out your cock..."
                     ">You spit on your hand to lube it before you start stroking..."
-                    
+
                     call gen_chibi("jerk_off")
                     hide screen blkfade
                     with fade
@@ -959,7 +959,7 @@ label luna_favour_3:
             ">you start stroking your cock even faster!"
             g4 "{size=+4}yes...{/size}"
             call lun_main("Is this why you became a teacher...","base","suspicious","sad","mid")
-            call lun_main("Just to cover young students in your filthy cum...","base","seductive","angry","mid")
+            call lun_main("Just to cover students in your filthy cum...","base","seductive","angry","mid")
             g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
             call lun_main("well?","base","suspicious","sad","mid")
             g4 "{size=+4}(agh... almost there...){/size}"
@@ -982,7 +982,7 @@ label luna_favour_3:
             g4 "Argh! YES!"
             hide screen luna_main
             with d3
-            
+
             call ctc
 
             call gen_chibi("jerk_off")
@@ -1025,7 +1025,7 @@ label luna_favour_3:
                 call lun_main("amazing...","base","seductive","sad","L")
                 hide screen luna_main
                 with d3
-                
+
                 show screen blkfade
                 with d5
 

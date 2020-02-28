@@ -3,14 +3,14 @@
 label summon_tonks:
     $ renpy.start_predict(tonks.get_image())
     $ renpy.start_predict("characters/tonks/face/*.png")
-    
+
     call play_music("tonks")
     call play_sound("door")
 
     $ active_girl = "tonks"
     $ tonks_busy = True
     call update_ton_tier
-    
+
     # Clothes Events
     call tonks_summon_setup
 
@@ -114,19 +114,19 @@ label tonks_level_up(tier=None):
 # Tonks Requests Menu
 label tonks_favor_menu:
     # call update_tonks_favors
-    
+
     menu:
         "-Level Up-{icon=interface/icons/small/levelup.png}" if ton_level_up != None:
             call tonks_level_up(tier=ton_level_up)
             jump tonks_requests
-            
+
         "{color=[menu_disabled]}-Personal Favours-{/color}{icon=interface/icons/small/heart_red.png}":
             call not_available
             jump tonks_favor_menu
             #
             # Uncomment once favours are ready
             #
-            
+
             # label .personal:
             # python:
                 # menu_choices = []
@@ -137,7 +137,7 @@ label tonks_favor_menu:
                         # menu_choices.append(("{color=[menu_disabled]}-Not ready-{/color}","vague"))
                     # else:
                         # menu_choices.append((i.get_menu_text(),i.start_label))
-                        
+
                 # menu_choices.append(("-Never mind-", "nvm"))
                 # result = renpy.display_menu(menu_choices)
             # if result == "nvm":
@@ -150,7 +150,7 @@ label tonks_favor_menu:
                 # jump .personal
             # else:
                 # $ renpy.jump(result)
-                
+
         "-Public Requests-{icon=interface/icons/small/star_yellow.png}" if daytime and tonks_requests_unlocked:
             jump tonks_requests_menu
 
@@ -160,10 +160,10 @@ label tonks_favor_menu:
             elif not daytime:
                 call nar(">Public requests are available during the day only.")
             jump tonks_favor_menu
-            
+
         "-Never mind-":
             jump tonks_requests
-            
+
 label tonks_requests_menu:
     call update_ton_requests
     python:
@@ -229,7 +229,7 @@ label tonks_talk:
                 call ton_main("I'm sorry [ton_genie_name], but I don't think I can improved these outfits any further.","open","base","raised","mid")
                 call ton_main("I will see what I can do should you get any new ones.","base","base","base","mid")
                 jump tonks_requests
-                
+
         "-Ask for help with Quidditch-{icon=interface/icons/small/quidditch.png}" if cho_quid.lock_practice and cc_st.match_counter == 1:
             m "Got a moment?"
             call ton_main("Sure just make it quick.","open","base","base","mid")
@@ -358,7 +358,7 @@ label tonks_talk:
                     label .daddy:
                     $ ton_genie_name = "Daddy"
                     call ton_main("Well, you do look about thrice as old as me...","base","base","raised","mid")
-                    call ton_main("Crazy to think you geezers gets to bang all those young, innocent witches here...","open","base","base","R")
+                    call ton_main("Crazy to think you geezers gets to bang all those naive, innocent witches here...","open","base","base","R")
                     m "(Geezers?)"
                     m "But I thought you didn't mind it?"
                     call ton_main("Oh, I don't mind at all, [ton_genie_name]!","horny","base","base","mid")

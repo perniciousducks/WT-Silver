@@ -1130,11 +1130,11 @@ label hornify_spell_2: #second level hornify spell
     call sus_main("What? I don't-","base","base","base","base")
     call ast_main("Shhhh.... Don't talk unless I tell you to, OK?","base","base","base","base")
     call sus_main("...","base","base","base","base")
-    ">Susan nods, a terror in her eyes as she gazes down silently at the smiling young blonde."
+    ">Susan nods, a terror in her eyes as she gazes down silently at the smiling blonde."
     call ast_main("Now why don't you kneel in front of me right here...","base","base","base","base")
     call ast_main("And sir, hurry up and get over here!","base","base","base","base")
     m "Ugh... the things I do to help my students..."
-    ">You put on a mock air of reluctance as you stroll over to Susan, pulling your cock from it's robe and presenting the imposing thing to a frightened young Susan."
+    ">You put on a mock air of reluctance as you stroll over to Susan, pulling your cock from it's robe and presenting the imposing thing to a frightened Susan."
     call ast_main("Wow...","base","base","base","base")
     call ast_main("It's big...","base","base","base","base")
     pause
@@ -1439,7 +1439,7 @@ label hornify_spell_3: #third level hornify spell
     call sus_main("Well... I also think that you should roll the bottom up and through the middle too...","base","base","base","base")
     ">With that Susan flips her top to make it little more than a tube top in front of the two of you..."
     call sus_main("There... I-I think that this should be the new Hufflepuff uniform...","base","base","base","base")
-    ">With that, Susan stands still, proudly presenting her slutty attire to you and the young Slytherin grinding on your cock."
+    ">With that, Susan stands still, proudly presenting her slutty attire to you and the Slytherin grinding on your cock."
     pause
     call ast_main("Is that all?","base","base","base","base")
     call sus_main("I think so...","base","base","base","base")
@@ -1506,7 +1506,7 @@ label hornify_spell_3: #third level hornify spell
             call sus_main("What would everyone think!","base","base","base","base")
     call sus_main("Well, I better get to class then!","base","base","base","base")
     call ast_main("Have fun, Susy...","base","base","base","base")
-    ">With that, the excited, ashamed and scantily dressed young girl blindly exited your office with a horny little smile on her face."
+    ">With that, the excited, ashamed and scantily dressed girl blindly exited your office with a horny little smile on her face."
     call ast_main("Pfft, I can't wait to hear the rumours going around about Susie the Floozy once she asks for signatures for that uniform!","base","base","base","base")
     call ast_main("This is going to be great! I'm going to chase her around to see what people say.","base","base","base","base")
     ">Astoria hops off of your lap, ready to chase after the redheaded slut..."

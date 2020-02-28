@@ -299,7 +299,7 @@ label ll_pf_sex_T1_lake_sex: # Call label
 
     menu:
         "-Carry her back to her room-":
-            ">You softly pick the statuesque young girl up off the cold grass, cradling her in your arms as you take her to her dorm."
+            ">You softly pick the statuesque girl up off the cold grass, cradling her in your arms as you take her to her dorm."
             lun "..."
             lun "{size=-5}you really are a genie, aren't you?{/size}"
             pass
@@ -310,7 +310,7 @@ label ll_pf_sex_T1_lake_sex: # Call label
             ">With that, you take your softening cock and start smearing the end of it across her nose and face."
             lun "..."
             lun "{size=-5}thank you...{/size}"
-            ">You softly pick the cum coated young girl up off the cold grass, cradling her in your arms as you take her to her dorm."
+            ">You softly pick the cum coated girl up off the cold grass, cradling her in your arms as you take her to her dorm."
             pass
 
     ">You return to your office."
@@ -438,7 +438,7 @@ label ll_pf_sex_random: # Call label
                 call ll_pf_sex_T1_ton_1
             else:
                 call ll_pf_sex_T1_ton_2
-    
+
     $ hermione_scaleratio = 2
     $ astoria_scaleratio = 2
     $ tonks_scaleratio = 2
@@ -662,7 +662,7 @@ label ll_pf_sex_T1_ast_1: # Call label
 
     ">No sooner is the name out of your mouth than a blast of light blasts from the keyhole of your door."
     ast "Alohomora!"
-    ">Your door bursts open to reveal a troublesome young witch behind it."
+    ">Your door bursts open to reveal a troublesome witch behind it."
 
     $ lun_cg_path        = "images/CG/luna_fucking/"
     $ lun_cg_base        = lun_cg_path+"base_2.png"
@@ -824,7 +824,7 @@ label ll_pf_sex_T1_ast_2: # Call label
     $ lunCG('base', 'angry', '', 'ahegao')
     if her_whoring >= 15:
         call ast_main("Or Hermione Granger being the big-titted slut that she is...","clench","narrow","angry","L")
-    
+
     $ lunCG('base', 'seductive', '', 'right')
     call ast_main("It's ridiculous!","upset","narrow","angry","R")
     $ lunCG('base', 'wink', '', 'right')

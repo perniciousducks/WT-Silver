@@ -140,8 +140,8 @@ label an_odd_circumstance:
     her "..."
     "Suddenly she looked up into my eyes as she started to move her tongue, massaging the underside of my cock..."
     her "*Gobble!* *Gltch!* *Slurp!*"
-    "My eyes closed and I felt a sudden rush of ecstasy come over me..."
-    "Right after I managed to let out an almost inaudible groan, my pelvic muscles tightened as I began cumming down her throat."
+    "My eyes closed and I felt a sudden rush of ecstasy come over me."
+    "Right after I let out an inaudible groan, my pelvic muscles tightened as I began cumming down her throat."
     call her_chibi_scene("bj_cum_in")
     with hpunch
     "I opened my eyes as hers locked with mine in surprise from the sudden overwhelming amount of semen hitting the back of her throat."

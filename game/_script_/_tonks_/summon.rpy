@@ -226,7 +226,7 @@ label tonks_talk:
                 jump tonks_requests
 
             else:
-                call ton_main("I'm sorry [ton_genie_name], but I don't think I can improved these outfits any further.","open","base","raised","mid")
+                call ton_main("I'm sorry [ton_genie_name], but I don't think I can improve these outfits any further.","open","base","raised","mid")
                 call ton_main("I will see what I can do should you get any new ones.","base","base","base","mid")
                 jump tonks_requests
 

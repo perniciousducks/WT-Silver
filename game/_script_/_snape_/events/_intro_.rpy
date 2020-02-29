@@ -99,7 +99,7 @@ label snape_intro_E1:
 
     m "........................."
     call sna_main("","snape_04")
-    who2 "Well, those wretched students left me completely exhausted. I think I will retire for today."
+    who2 "Well, those wretched brats left me completely exhausted. I think I will retire for today."
     call sna_main("","snape_09")
     who2 "................"
 
@@ -186,7 +186,7 @@ label snape_intro_E2:
     call sna_main("","snape_06")
     who2 "Perhaps I'd better go get some sleep."
     who2 "I need to be in my top shape every morning..."
-    who2 "You can't show weakness to those students or they will swallow you whole..."
+    who2 "You can't show weakness to those brats or they will swallow you whole..."
     call sna_main("","snape_24")
     who2 "Good night, Albus."
 
@@ -234,7 +234,7 @@ label snape_intro_E3:
     call ctc
 
     who2 "Good evening, Albus."
-    who2 "I want to talk to you about those damn students again..."
+    who2 "I want to talk to you about those damn brats again..."
     who2 "But first I want to ask you something..."
     call sna_main("","snape_05")
     who2 "Have you noticed anything strange going on around here lately?"

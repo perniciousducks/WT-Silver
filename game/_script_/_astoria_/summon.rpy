@@ -220,7 +220,7 @@ label astoria_talk:
                     call ast_main("Hahahaha--", face="happy")
                     m "Are you done now?"
                     call ast_main("Yes... I'm sorry... {w=1.0}Dumby...", face="happy")
-                    g4 "(Damnit! We'll see who will be laughing later.)"
+                    g4 "(Damn brat! We'll see who will be laughing later.)"
                     jump astoria_talk
                 "-Master-" if ast_affection >= 18:
                     label .master:

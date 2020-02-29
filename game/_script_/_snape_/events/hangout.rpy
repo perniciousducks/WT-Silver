@@ -215,7 +215,7 @@ label ss_he_story_E1:
     call bld
     m "Alright. Teach me your wand-based magic now."
     call sna_main("Sure, I could do that...","snape_23", ypos="head")
-    call sna_main("Or I could tell you some more about those slytherin sluts...","snape_02")
+    call sna_main("Or I could tell you some more about those ripe slytherin sluts...","snape_02")
     g9 "The latter, please."
     call sna_main("Great... Get a load of this then...","snape_13")
     pause.1

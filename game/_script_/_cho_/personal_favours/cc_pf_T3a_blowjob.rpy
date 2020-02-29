@@ -959,7 +959,7 @@ label cho_favor_3_3:
 
             m "Get on your knees and open your mouth."
             "Cho slides down to her knees and opens her mouth, sticking out her tongue."
-            "The sigh of your student on her knees with her mouth open, her soft tongue drooling over her chin is enough to drive you wild."
+            "The sight of your student on her knees with her mouth open, her soft tongue drooling over her chin is enough to drive you wild."
             "Your cock strains against your robes, leaking pre-cum all over the inside."
             call cho_main("RIke 'ish?(Like this?)","smile","base","base","mid")
             m "Very good, Ms. Chang."

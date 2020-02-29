@@ -115,7 +115,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         g9 "This is meant to be a treasure hunt! Go out and find someone's panties out in the world then bring them to me."
         call her_main("But, [genie_name]?!", "shock", "squint", "angry", "mid", cheeks="blush")
         call her_main("", mouth="angry", cheeks="blush")
-        m "You're a bright gal, I'm sure you'll think of something... Make haste!"
+        m "You're a bright young gal, I'm sure you'll think of something... Make haste!"
         call her_main(".......", mouth="disgust", cheeks="blush")
         pause 1.0
         call her_main("", "soft", "narrow", "worried", "down")

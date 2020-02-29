@@ -1,4 +1,6 @@
 label hermione_map_BJ:
+    stop weather
+
     $ renpy.call('forest_BJ_'+str(forest_BJ_progress))
     $ hermione_busy = True
     call set_her_map_location("gryffindor_room")
@@ -27,7 +29,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     with d3
 
     m "Miss Granger? What are you doing out here at this time of night?"
-    call her_main("[genie_name]! I, ugh, I wasn't doing anything bad, I swear!", "open", "wide", "base", "R",xpos="right",ypos="base",trans=d5)
+    call her_main("[genie_name]! I, ugh, I wasn't doing anything bad, I swear!", "angry", "wide", "base", "R", xpos="base", ypos="base", trans=d5)
     m "..."
     call her_main("Ugh, fine! If you must know, I was out here gathering up some mastick resin.", "upset", "narrow", "worried", "down")
     call her_main("I know Students aren't {i}technically{/i} supposed to touch the stuff since it's normally just used to make belch powder...", "annoyed", "base", "base", "R")
@@ -54,7 +56,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
             call her_main("Oh thank goodness... I thought you were going to murder me for a second there...", "base", "happyCl", "base", "mid",trans=hpunch)
             m "What? How could you think such a thing!"
             m "I don't know if I'll be able to-"
-            call her_main("How about I make it up to you with my mouth then, hmmm?", "base", "squint", "base", "mid")
+            call her_main("How about I make it up to you with my mouth then, hmmm?", "base", "narrow", "base", "mid")
             m "Done."
             $ forest_BJ_progress = 2
 
@@ -80,7 +82,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     her "Alright then... Have it your way."
     $ ccg2 = 4
     ">Hermione leans forward and engulfs the head of your cock in her mouth."
-    who2 "{size=-10}Wow...{/size}"
+    who2 "{size=-4}Wow...{/size}"
     $ ccg2 = 5
     her "!!!"
     her "Did you hear something?"
@@ -110,14 +112,12 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
             her "Or something else..."
             m "Wait..."
             m "You don't mean..."
-            pass
         "-Agree with her-":
             $ ccg2 = 10
             m "You might be right..."
             m "Did it sound like someone laughing?"
             her "Yeah..."
             her "{size=+10}Show yourselves!!!{/size}"
-            pass
 
     $ ccg1 = "m1"
     myr "Tehehehe... Hi Hermione..."
@@ -164,7 +164,7 @@ label forest_BJ_2:
 
     m "More late night gardening?"
     pause.1
-    call her_main("{size=+10}[genie_name]!{/size}", "shock", "wide", "base", "stare",xpos="right",ypos="base",trans=hpunch)
+    call her_main("{size=+10}[genie_name]!{/size}", "shock", "wide", "base", "stare", xpos="base", ypos="base", trans=hpunch)
     call her_main("Ugh... Don't startle me like that!", "annoyed", "base", "base", "R")
     call her_main("And yes, I've been collecting some mushroom samples.", "soft", "base", "base", "mid")
     m "Cool..."
@@ -334,7 +334,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     with d3
 
     m "Aren't you usually out her to collect some forbidden plant, [hermione_name]?"
-    call her_main("Not always... Sometimes I just come out her to enjoy the cool air...", "soft", "base", "base", "R",xpos="right",ypos="base",trans=d5)
+    call her_main("Not always... Sometimes I just come out her to enjoy the cool air...", "soft", "base", "base", "R", xpos="base", ypos="base", trans=d5)
     m "I see..."
     m "So you're not waiting out here for your headmaster to arrive, just so you can suck his cock in public?"
     call her_main("What! o-of course not!", "base", "narrow", "worried", "down")
@@ -344,7 +344,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     call her_main("Oh... um...", "open", "happy", "base", "R")
     m "It's alright for you to admit that you're a dirty little cumslut, miss granger."
     call her_main("It's not like that!", "upset", "narrow", "annoyed", "mid")
-    call her_main("{size=-10}I just like sucking your dick, OK...{/size}", "upset", "narrow", "base", "R_soft")
+    call her_main("{size=-4}I just like sucking your dick, OK...{/size}", "upset", "narrow", "base", "R_soft")
     m "So you don't want me to cover you in cum like the cumslut you are?"
     call her_main("...", "base", "narrow", "worried", "down")
     call her_main("Ugh...", "base", "narrow", "base", "dead")
@@ -548,7 +548,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
 
     ">Eventually, your orgasm comes to a halt and you finally pull your sloppy cock out of Hermione's well used hole..."
     ">She collapses onto her robe, no longer held up by your member."
-    m "You did good, kid..."
+    m "You did good, [hermione_name]..."
     m "Wouldn't you say the same, ghost?"
     m "Ghost?"
     m "Oh well..."
@@ -558,22 +558,21 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     ">You softly place her into her bed and pull up her sheets."
 
     menu:
-        "Clean the cum off her face?"
+        m "(Should I clean her up a bit?)"
         "-clean it-":
-            m "(I suppose I should probably clean that off..."
+            m "(I suppose I should..."
             ">You use a rag and wipe her face clean."
             her "*zzz* no... *zzz* I wanna be a*zzz* cumslut...*zzz*"
-            m "(Guess I probably should have left it..."
+            m "*Shhh*... Don't worry, [hermione_name], I will give you more tomorrow."
         "-leave it-":
             m "(She looks better like this anyway...)"
             ">As you turn to leave, you notice a content smile form over Hermione's face as she pulls her sheets up over her shoulders."
-            her "{size=-10}Night sir...{/size}"
-            her "{size=-15}I love you...{/size}"
+            her "{size=-4}Night sir...{/size}"
+            her "{size=-8}I love you...{/size}"
 
     ">You turn and leave the warm room and return to your cold, dark office..."
 
     return
-
 
 label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     $ forest_BJ_progress = 3 #Repeats 3rd event after this one.
@@ -597,16 +596,15 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     with d3
 
     m "[hermione_name]..."
-    call her_main("About time you got here, [genie_name]!", "upset", "narrow", "annoyed", "mid", xpos="right",ypos="base",trans=d5)
+    call her_main("About time you got here, [genie_name]!", "upset", "narrow", "annoyed", "mid", xpos="base", ypos="base", trans=d5)
     call her_main("Do you know how long I've been waiting out here in the cold?", "annoyed", "happy", "base", "mid")
 
     menu:
-        "-Apologise-":
+        "-Sorry-":
             m "Sorry about that..."
             m "I'll try and be on time for our blowjobs from now on."
             call her_main("Good... It's the least you can do...", "base", "closed", "angry", "mid")
-        "-Tell her to come to your office instead-":
-            m "You know where my office is..."
+        "-You know where my office is-":
             call her_main("Hmph...", "upset", "narrow", "angry", "R")
 
     show screen blkfade
@@ -845,8 +843,6 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     $ ccg1 = "blank"
     $ ccg2 = "blank"
     $ ccg3 = "blank"
-    hide screen blkfade
-    with d3
 
     call her_main("Wait, where's Myrtle?", "angry", "narrow", "worried", "mid_soft")
     m "Oh, she left as soon as I gave her the OK to blab on about you."

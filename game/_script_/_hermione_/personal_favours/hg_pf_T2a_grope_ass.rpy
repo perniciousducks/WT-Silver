@@ -159,7 +159,7 @@ label hg_pf_grope_ass_T1_back:
             call her_walk(action="leave")
 
             call bld
-            g4 "*Tsk!*"
+            g4 "*Tsk!* (You brat!)"
 
             $ her_mood += 20
 

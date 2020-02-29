@@ -469,7 +469,7 @@ label snape_chitchat:
 
         elif one_of_ten == 10:
             call sna_main("I almost feel bad for having all the fun.","snape_24")
-            call sna_main("Do You want me to send you up some Slytherin slut?","snape_14")
+            call sna_main("Do You want me to send you up some fresh Slytherin slut?","snape_14")
             call sna_main("","snape_23")
 
 

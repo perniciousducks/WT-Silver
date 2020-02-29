@@ -358,7 +358,7 @@ label tonks_talk:
                     label .daddy:
                     $ ton_genie_name = "Daddy"
                     call ton_main("Well, you do look about thrice as old as me...","base","base","raised","mid")
-                    call ton_main("Crazy to think you geezers gets to bang all those naive, innocent witches here...","open","base","base","R")
+                    call ton_main("Crazy to think you geezers get to bang all those young, sexy, innocent witches here...","open","base","base","R")
                     m "(Geezers?)"
                     m "But I thought you didn't mind it?"
                     call ton_main("Oh, I don't mind at all, [ton_genie_name]!","horny","base","base","mid")

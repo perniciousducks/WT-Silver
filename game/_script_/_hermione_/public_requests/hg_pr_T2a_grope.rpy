@@ -328,7 +328,7 @@ label hg_pr_grope_T2_E3:
     call play_music("despair")
     call her_main("He started to touch my... feet, [genie_name].", "scream", "happyCl", "worried", "mid")
     m "Huh?"
-    m "Your \"Feet\"? Is that what you call tits these days?"
+    m "Your \"Feet\"? Is that what zoomers call tits these days?"
     call her_main("I'd wish, [genie_name]...", "disgust", "narrow", "base", "mid_soft")
     her "He asked me to take off my shoes..."
     her "Then he..."

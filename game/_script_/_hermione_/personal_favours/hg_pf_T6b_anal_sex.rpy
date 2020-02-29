@@ -610,7 +610,7 @@ label hg_anal_sex_2:
             call her_main("But why do you say that, [genie_name]?", "soft", "base", "base", "mid")
             m "Huh?"
             m "What do you mean \"why\", whore?"
-            m "You are curvy and attractive..."
+            m "You are young and attractive..."
             m "Tight asshole, full tits and wet little pussy..."
             $ ccg1 = 32
             call her_main("Ah...{heart}", "open", "closed", "base", "mid")
@@ -641,7 +641,7 @@ label hg_anal_sex_2:
             $ ccg1 = 14
             call her_main("Really?", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             m "Are you kidding me?!"
-            m "Curvy, hot and slutty. You could have any man you want!"
+            m "Young, hot and slutty. You could have any man you want!"
             m "Or a wizard or whatever you are into..."
             $ ccg1 = 17
             call her_main("I think you may be right, [genie_name].", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")

@@ -495,7 +495,7 @@ label astoria_intro_E3:
     m "I thought it would be some angsty girl who listens to death metal - or something..."
     m "Not some innocent looking gir-"
     call ast_main("I am not!","clench","narrow","angry","mid")
-    call ast_main("You don't know what you're talking about you ancient old man!","annoyed","narrow","angry","R")
+    call ast_main("You don't know what you're talking about, you ancient old man!","annoyed","narrow","angry","R")
     m "(Oh, you have no idea...)"
 
     call her_main("What's going to be her punishment, Sir?", "soft", "base", "angry", "mid")

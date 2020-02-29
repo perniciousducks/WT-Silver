@@ -259,9 +259,9 @@ label hg_pr_kiss_T2_E1:
     call her_main("Also she was quite adorable...", "base", "base", "base", "mid")
     call her_main("She kept calling me \"[hermione_name]\"...", "smile", "base", "base", "R")
     m "Hm..."
-    m "I Don't recall sending you out with a task to confuse some girl, [hermione_name]."
+    m "I Don't recall sending you out with a task to confuse some poor girl, [hermione_name]."
     call her_main("\"Confuse\"? [genie_name], please...", "smile", "narrow", "base", "mid_soft")
-    her "You should have seen that girl..."
+    her "You should have seen that {i}poor girl{/i}..."
     call her_main("I assure you that she was anything but confused.", "smile", "base", "angry", "mid")
     her "In fact, at the end of our \"Study session\" she got rather obnoxious..."
     call her_main("And it sort of felt as if she was taking advantage of me...", "open", "base", "base", "mid")
@@ -329,7 +329,7 @@ label hg_pr_kiss_T2_E3:
         "\"Who knows? Boys are weird.\"":
             call her_main("Yes, they are, aren't they...?", "angry", "narrow", "base", "down")
             m "Yes, yes..."
-            m "And that is why girls such as yourself...."
+            m "And that is why young girls such as yourself...."
             m "Are often interested in a much older gentleman..."
             call her_main("??!", "angry", "base", "base", "mid")
             call her_main("That is not what I meant, [genie_name]...", "annoyed", "narrow", "annoyed", "mid")

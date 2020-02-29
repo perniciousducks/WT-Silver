@@ -40,40 +40,40 @@ init python:
         persistent.achievements = achievements_dict.copy()
 
     def achievement_fix(reset=False):
-        """Try and fix broken achievements in persistent file by comparing dictionary values 
+        """Try and fix broken achievements in persistent file by comparing dictionary values
         and replacing them with correct values without resetting the achievement progress."""
-        
+
         for key, value in persistent.achievements.iteritems():
             # Category
             if value[0] != achievements_dict[key][0]:
                 value[0] = achievements_dict[key][0]
                 print "Fixing achievement \""+key+"\" val 0"
-                
+
             # Name
             if value[1] != achievements_dict[key][1]:
                 value[1] = achievements_dict[key][1]
                 print "Fixing achievement \""+key+"\" val 1"
-                
+
             # Desc
             if value[2] != achievements_dict[key][2]:
                 value[2] = achievements_dict[key][2]
                 print "Fixing achievement \""+key+"\" val 2"
-                
+
             # Icon
             if value[4] != achievements_dict[key][4]:
                 value[4] = achievements_dict[key][4]
                 print "Fixing achievement \""+key+"\" val 4"
-                
+
             # Hidden status
             if value[5] != achievements_dict[key][5]:
                 value[5] = achievements_dict[key][5]
                 print "Fixing achievement \""+key+"\" val 5"
-                
+
             # Resets achievements
             if reset:
                 value[3] = False
         return True
-        
+
 
     class Achievements(object):
 
@@ -178,7 +178,7 @@ label achievement:
     $ screenshot_image = ScreenshotImage.capture()
     $ renpy.call_in_new_context("achievement_menu")
     jump main_room_menu
-    
+
 label achievement_menu(xx=150, yy=90):
 
     $ achievement_categories_sorted = ["All", "General", "Characters", "Cardgame", "Mirror"]
@@ -194,7 +194,7 @@ label achievement_menu(xx=150, yy=90):
     $ category_items = list(persistent.achievements.iteritems())
     $ menu_items = achievement_sortfilter(category_items, current_sorting, current_filter)
     $ menu_items_length = len(menu_items)
-    
+
     if not renpy.variant("android"):
         show screen mouse_tooltip
 
@@ -262,7 +262,7 @@ screen achievement_menu(xx, yy):
     tag achievement_menu
     zorder 30
     modal True
-    
+
     add im.Blur(screenshot_image, 2)
 
     use close_button
@@ -369,7 +369,7 @@ screen achievement_menuitem(xx, yy):
                             tooltip "???"
                         else:
                             tooltip str(menu_items[i][1][1])
-                            
+
 
         # Add empty items
         #for i in xrange(menu_items_length, items_shown):
@@ -404,7 +404,10 @@ screen achievement_menuitem(xx, yy):
                 spacing 5
                 xalign 0.5
                 text current_item[1][1] ypos 380 size 16 xoffset 45
-                add "interface/unlocked_"+str(current_item[1][3])+".png" xoffset 45 ypos 377
+                if current_item[1][3]:
+                    add "interface/unlocked_True.png" xoffset 45 ypos 377
+                else:
+                    add "interface/unlocked_False.png" xoffset 45 ypos 377
             hbox:
                 pos (132, 407)
                 xsize 410

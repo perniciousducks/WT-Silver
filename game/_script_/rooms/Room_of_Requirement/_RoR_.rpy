@@ -17,7 +17,7 @@ screen room_of_requirement():
     $ mirror_chibi = renpy.get_screen("genie_chibi")
     if mirror_chibi:
         add mirror_chibi.copy() xzoom -1 xoffset 450-config.screen_width
-    
+
     add "images/rooms/room_of_requirement/empty_room.png"
     add "images/rooms/_objects_/doors/door_idle_night.png" xpos 898 ypos 315 xanchor 0.5 yanchor 0.5 zoom 0.5
     add "images/rooms/room_of_requirement/mirror.png" xpos 100 ypos 180
@@ -43,8 +43,8 @@ screen room_of_requirement_menu():
         ypos 180
         idle "images/rooms/room_of_requirement/mirror.png"
         hover "images/rooms/room_of_requirement/mirror_hover.png"
-        tooltip "Look into"
-       
+        tooltip "Look into mirror"
+
         action [Hide("room_of_requirement_menu"), Jump("mirror_menu")]
 
     imagebutton: # DOOR
@@ -55,8 +55,8 @@ screen room_of_requirement_menu():
         yanchor "center"
         idle door_night_OBJ.get_room_image()
         hover door_night_OBJ.get_hover_image()
-        tooltip "Back to office"
-       
+        tooltip "Return to office"
+
         action Jump("return_office")
 
 label hide_room_req:
@@ -100,7 +100,7 @@ screen floor_7th_screen():
     add "images/rooms/_objects_/deco/owlbasin.png" xpos 350 ypos 255 zoom 0.3
     add "images/rooms/_objects_/deco/hogwarts_banner.png" xpos 200 ypos 105
     zorder -1
-    
+
     use ui_top_bar
 
 #animation of flower for painting maybe?
@@ -137,7 +137,7 @@ screen floor_7th_menu():
         idle "images/rooms/_objects_/doors/front_door.png"
         hover "images/rooms/_objects_/doors/front_door_hover.png"
         tooltip "Enter"
-       
+
         action Jump("enter_room_of_req")
     zorder -1
 
@@ -252,6 +252,7 @@ label enter_room_of_req:
         call hide_blkfade
 
         call gen_walk(200, "base")
+        #TODO Dont have Genie walk to the mirror when returning from a mirror story
 
     $ mirror_image = 1
     call gen_chibi("stand", "left", "base", flip=False)

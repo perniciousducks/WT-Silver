@@ -272,7 +272,7 @@ image sur:
     repeat
 
 # Main title background animation
-image title_ani: 
+image title_ani:
     contains:
         zoom 0.5
         "title/00.png"
@@ -428,3 +428,5 @@ define blackfade = Fade(0.9, 0.5, 1, color='#000000')
 
 define morph = ComposeTransition(Dissolve(0.9), before=Fade(0.1, 0.5, 0.5, color="#fff"), after=Dissolve(0.5))
 define teleport = ImageDissolve("id_teleport.png", 1.0, 0)
+
+define vpunch_repeat = Move((0, 10), (0, -10), .5, bounce=True, repeat=True, delay=4.5)

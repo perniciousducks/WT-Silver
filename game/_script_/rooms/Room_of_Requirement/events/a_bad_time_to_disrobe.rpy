@@ -1,3 +1,5 @@
+
+# Mirror story: A bad time to disrobe
 label a_bad_time_to_disrobe:
 
     # Setup
@@ -10,18 +12,18 @@ label a_bad_time_to_disrobe:
     stop weather
     call play_music("stop")
     call room("main_room")
+    hide screen owl
     show screen blkfade
     with d5
-    hide screen owl
-    
+
     $ her_outfit_last.save()
     $ hermione.equip(her_outfit_default)
-    
-    centered "{size=+7}{color=#cbcbcb}A bad time to disrobe.{/color}{/size}"
+
+    centered "{size=+7}{color=#cbcbcb}A bad time to disrobe{/color}{/size}"
 
     nar "In this story the genie has found an invisibility cloak."
     nar "And with the cloak come great opportunities."
-    
+
     menu:
         "Part 1":
             jump a_bad_time_to_disrobe_part_1
@@ -129,7 +131,7 @@ label a_bad_time_to_disrobe_part_1:
     m "Indeed, I'm expecting better from you today girl."
     call her_main("I won't disappoint you sir!", "grin", "base", "base", "mid")
     m "I'll be the judge of that..."
-    
+
     hide screen hermione_main
     show screen day_to_night
     with d3
@@ -187,7 +189,7 @@ label a_bad_time_to_disrobe_part_1:
 
     show screen blkfade
     with d5
-    
+
     centered "{size=+7}{color=#cbcbcb}End of part one.{/color}{/size}"
 
     $ daytime = temp_day
@@ -200,7 +202,7 @@ label a_bad_time_to_disrobe_part_1:
 label a_bad_time_to_disrobe_part_2:
 
     call her_chibi("stand","desk","base")
-    
+
     hide screen blkfade
     with d5
 
@@ -354,7 +356,8 @@ label a_bad_time_to_disrobe_part_2:
 
     call hide_screens
     $ daytime = temp_day
-    $ hermione.equip(her_outfit_last)
     call update_interface_color
+
+    $ hermione.equip(her_outfit_last)
 
     jump enter_room_of_req

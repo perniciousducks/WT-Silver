@@ -195,7 +195,7 @@ screen grope_tits(img):
 screen hermione_chibi_bj(img):
     tag favor
     zorder desk_zorder
-    add img pos desk_scene_position xoffset 62
+    add img pos desk_scene_position xoffset 68 yoffset 4
 
 screen hermione_chibi_sex(img):
     tag favor

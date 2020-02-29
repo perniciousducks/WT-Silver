@@ -90,7 +90,7 @@ default mr_ev_PaH = MirrorStory(
 default mr_ev_PR = MirrorStory(
     name = "Panty Raid",
     story_description = "Genie asks Hermione to go out and collect other girls panties.",
-    start_label = "panty_raid_event",
+    start_label = "panty_raid",
     authors = ["WaxerRed"],
     categories= ["Panties fetish", "Lesbian", "Corruption"],
     ach_desc = "",
@@ -125,14 +125,15 @@ default current_page = 0
 init python:
 
     class MirrorStory(Item): # This class extends Item only so it can be displayed in the item menu screen (refactor?)
-        start_label = ""
-        authors = []
-        categories = []
-        story_description = ""
-        ach_desc = ""
-        content_characters = []
 
         def __init__(self, **kwargs):
+            self.start_label = ""
+            self.authors = []
+            self.categories = []
+            self.story_description = ""
+            self.ach_desc = ""
+            self.content_characters = []
+
             self.__dict__.update(**kwargs)
 
         def get_name(self):
@@ -207,5 +208,7 @@ init python:
                 return hg_anal.trigger == True
             elif self.name == "An odd circumstance":
                 return hg_blowjob.trigger == True
+            elif self.name == "Panty Raid":
+                return her_whoring > 20 #TODO Maybe unlock this at lower whoring/level (or use 'jerk off with panties' as a trigger?)
             else:
                 return True

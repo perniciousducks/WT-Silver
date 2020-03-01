@@ -67,7 +67,7 @@ label duel:
     hide screen bld1
     show screen hp_bar
     $ duel_OBJ.in_progress = True
-    with d5
+    with d1
 
 
 label duel_main:
@@ -192,16 +192,16 @@ label main_potion:
         $ in_action = False
         jump duel_main
 
-
-
 ### SNAPE DEFENDS ### (Snape -0 HP)
 label snape_defends:
     $ renpy.play('sounds/magic4.ogg')
     $ duel_OBJ.show("smoke",x=690, y=250,z=5)
     $ duel_OBJ.show("snape_defend",x=690, y=250,z=4)
     $ duel_OBJ.snape = "block"
+    pause 1
+    $ renpy.play('sounds/attack_axe.mp3')
 
-    pause 2.3
+    pause 1.3
     hide screen duel_damage
     show screen duel_damage(0)
 
@@ -545,7 +545,7 @@ label genie_lost:
                 $ potions = 2
             elif rum_times == 3:
                 $ potions = 3
-                
+
             $ duel_OBJ.genie = ""
             jump duel
 

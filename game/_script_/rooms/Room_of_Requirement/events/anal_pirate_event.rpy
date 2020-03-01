@@ -272,6 +272,89 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("*SOB!* Yeees! *SOB!*", "scream", "squint", "base", "mid",cheeks="blush",tears="messy")
                 g4 "Take me seamen!"
                 call her_main("No, I'm scared! *SOB!*", "scream", "happyCl", "worried", "mid",cheeks="blush",tears="messy")
+            "\"Let me oil ye up.\"":
+                call play_music("playful_tension") # SEX THEME.
+                call her_chibi_scene("sex_pause", trans=fade)
+                call her_main("oil, cap'n?!", "angry", "wide", "base", "stare")
+                m "Blimey! Just stay still."
+                "*Squeeze!*"
+                call her_main("Ahhh! Shiver me timbers, It's cold!", "scream", "happyCl", "worried", "mid")
+                call nar(">Ye thoroughly oil 'er cavern.")
+                m "Sail ho!"
+                call her_main("Nay, cap'n, wait! Maybe--", "angry", "base", "worried", "mid")
+                call nar(">Alas! Ye align thee tip of yer dick with 'er slimey winky cavern and push fore.")
+
+                pause.2
+
+                $ renpy.play('sounds/gltch.mp3')
+                with hpunch
+                with kissiris
+                call her_main("ARGH!", "shock", "base", "base", "mid", tears="soft")
+                call nar(">Yer cock fully penetrating her as thee oil does its job.")
+                g4 "Farrg me!"
+
+                call her_chibi_scene("sex_slow", trans=d5)
+
+                call her_main("Ouch! Ouch! Ouch!", "mad", "happyCl", "worried", "mid",tears="soft_blink")
+                call her_main("No, ye're hurtin' me! Ye be hurtin' me!", "scream", "happyCl", "worried", "mid")
+                g4 "*Argh* Farrg, I can nah pull out!"
+                call her_main("Sink me! It hurts!", "scream", "happyCl", "worried", "mid")
+                g4 "Then stop clenching on me so hard, ye wench!"
+                g4 "Yer anus be so tight I can nah even move!"
+                call her_main("Do somethin'!", "mad", "happyCl", "worried", "mid",tears="soft_blink")
+                g4 "I be tryin', wench!"
+                call her_main("Then try harder!", "scream", "base", "angry", "mid",tears="soft")
+                call slap_her
+                call her_main("..........!", "scream", "wide", "worried", "mid",tears="soft")
+                g4 "Shut th' Davy Jones' locker up, strumpet!"
+                g4 "'tis..."
+                call slap_her
+                g4 "'tis...{fast} yer..."
+                call slap_her
+                g4 "'tis... yer...{fast} bloody..."
+                call slap_her
+                g4 "'tis... yer... bloody... {fast}fault!"
+                call slap_her
+                pause 1.0
+                call play_sound("boing")
+                with hpunch
+                call her_chibi_scene("sex_pause", trans=d5)
+                pause 1.0
+                m "Oh, 'tis worked."
+
+                call her_main("*sob!*", "mad", "base", "angry", "down",cheeks="blush",tears="soft")
+                call her_main("...me cavern... me poor cavern... *sob*","mad", "base", "angry", "mid",cheeks="blush",tears="soft")
+                g9 "In that case, let's try it again."
+                call her_main("No! Avast! Cap'n!", "open", "wide", "worried", "mid",cheeks="blush",tears="soft")
+                call her_main("I 'ave changed me mind!",cheeks="blush",tears="soft")
+                m "'twill be fine this time, trust me..."
+
+                $ renpy.play('sounds/gltch.mp3')
+                with hpunch
+                with kissiris
+                call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}", "scream", "wide", "base", "stare")
+                g4 "YARR!!!"
+
+                call her_chibi_scene("sex_slow", trans=d5)
+
+                call her_main("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!", "scream", "wide", "base", "stare")
+                g4 "I shall pump this wee cavern full o' seamen then, savvy?"
+                call her_main("Aye... , I jus' wants this t' end...", "scream", "happyCl", "worried", "mid",cheeks="blush",tears="crying")
+                g4 "Agh... Ye wants 'tis t' end sooner?"
+                g4 "Help me out then!"
+                call her_main("*sob!* How?", "shock", "base", "base", "R",cheeks="blush",tears="soft")
+                g4 "Ye know..."
+                call her_main("Oh...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
+                #$ ccg2 = 6
+                call her_main("I be a wench??", "clench", "base", "worried", "mid", cheeks="blush",tears="soft")
+                g9 "Aye ye be!"
+                call her_main("*Sob!* I be a wench...", "angry", "squint", "base", "mid",cheeks="blush")
+                call her_main("I love t' suck pegleg...")
+                call her_main("'n now me wee cavern be gettin' ripped apart... *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
+                g4 "Aye! Aye!"
+                g4 "Agrh! AYE!"
+                call her_main("No! Be it gettin' bigger?! I be yellow-bellied!", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
+                g4 "ARGH!"
 
         menu:
             "-Sink her vessel, fill her up-":

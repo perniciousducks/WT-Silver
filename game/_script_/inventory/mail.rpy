@@ -104,7 +104,7 @@ screen letter():
     zorder 20
     tag letter
 
-    add "interface/points/letter.png" pos (340, 30)
+    add "interface/letter.png" pos (340, 30)
     hbox:
         spacing 40 pos (410, 80) xmaximum 250
         text letter.text
@@ -142,9 +142,10 @@ label letter_from_hermione_A:
 
 # Ministry of Magic letters.
 label letter_paperwork_unlock:
-    m "Payments? Hm..."
+    m "Payments? Hmm..."
 
     call give_reward(">From now on you can do paperwork at your desk in order to earn additional gold...","interface/icons/gold.png")
+    call tutorial("workngold")
 
     return
 
@@ -157,7 +158,7 @@ label letter_paperwork_report:
     return
 
 label letter_favor_complaint:
-    m "Amelia...{w}Bones?"
+    m "Amelia...{w=1.0}Bones?"
     g9 "*He-he-he-he-he*..."
     m "Wait a second..."
     m "Does that mean I'm in trouble?"

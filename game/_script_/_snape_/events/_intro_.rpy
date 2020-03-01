@@ -435,10 +435,9 @@ label snape_intro_E3:
 
     pause.1
 
-
     hide screen bld1
     show screen snape_glass
-    pause 2.3
+    $ renpy.pause(2.3, hard=True)
 
     jump duel
 
@@ -728,5 +727,7 @@ label snape_intro_E5:
     $ achievement.unlock("unlocksna", True)
     call popup("{size=-4}You can now summon Snape into your office.{/size}", "Character unlocked!", "interface/icons/head/head_snape_1.png")
     $ snape_intro.E5_complete = True
+
+    call tutorial("hangouts")
 
     jump day_start

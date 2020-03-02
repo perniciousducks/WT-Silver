@@ -4,14 +4,17 @@ define cho_face = {"mouth": {"neutral": ["base"], "happy": ["base", "smile"], "n
                    "pupils": {"neutral": ["mid","L","R"], "happy": ["mid","L","R"], "naughty": ["mid","L","R","down","up"], "horny": ["mid","L","R","down","up"], "annoyed": ["mid","L","R","down","downR"], "disgusted": ["mid","down"], "angry": ["mid"]}}
 
 label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
+    if renpy.predicting():
+        cho "predict"
+
     python:
-    
+
         if flip != None:
             cho_flip = -1 if flip else 1
-            
+
         if animation != False:
             cho_animation = animation
-        
+
         if xpos:
             cho_xpos = int(sprite_pos["x"].get(xpos, xpos))
 
@@ -20,9 +23,9 @@ label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
                 use_cho_head = True
             elif ypos in ("base", "default"):
                 use_cho_head = False
-                
+
             cho_ypos = int(sprite_pos["y"].get(ypos, ypos))
-            
+
         cho.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
 
         if face:
@@ -44,7 +47,7 @@ label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
 
     if text:
         $ renpy.say(character.cho, text)
-        
+
     if use_cho_head:
         hide screen cho_main
     return
@@ -70,7 +73,7 @@ label end_cho_event:
     $ active_girl = None
     $ cho_busy = True
     $ cho.wear("all")
-    
+
     $ renpy.stop_predict(cho.get_image())
     $ renpy.stop_predict("characters/cho/face/*.png")
 
@@ -86,5 +89,5 @@ screen cho_main():
         add cho_img xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) at cho_animation
     else:
         add cho_img xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
-    
+
     on ("show", "replace") action Function(apply_doll_transition, cho, "cho_main", "cho_img", use_cho_head)

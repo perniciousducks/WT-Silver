@@ -39,9 +39,11 @@ label nar(text="",action=""):
 
 # Characters
 
-define character.cho = Character('[cho_name]') # Add to character store to avoid name conflict with Doll instance
+# Add to character store to avoid name conflict with Doll instance
+define character.cho = Character('[cho_name]', predict_function=doll_prediction("cho"))
 
 init python:
+
     # Genie
     gen = Character('Genie')
     m = Character("", show_side_image=Image("characters/genie/mage.png", xpos=20))
@@ -74,17 +76,17 @@ init python:
         san_[i] = Character("Santa", show_side_image=Image("characters/misc/santa/santa_"+str(i)+".png", xpos=20))
 
     # Students
-    her = Character('[hermione_name]')
+    her = Character('[hermione_name]', predict_function=doll_prediction("hermione"))
     lun = Character('[lun_name]')
     sus = Character('[susan_name]')
-    ast = Character('[astoria_name]')
+    ast = Character('[astoria_name]', predict_function=doll_prediction("astoria"))
     twi = Character('Fred and George', show_side_image=Image("characters/misc/weasley_twins/base_01.png", xalign=1.0))
     fre = Character('Fred', show_side_image=Image("characters/misc/weasley_twins/fred_01.png", xalign=1.0))
     ger = Character('George', show_side_image=Image("characters/misc/weasley_twins/george_01.png", xalign=1.0))
 
     # Teachers
     sna = Character('Severus Snape')
-    ton = Character('[tonks_name]')
+    ton = Character('[tonks_name]', predict_function=doll_prediction("tonks"))
     spo = Character('Professor Sprout')
     hoo = Character('Madam Hooch')
 

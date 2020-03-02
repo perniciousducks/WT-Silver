@@ -4,14 +4,17 @@ define her_face = {"mouth": {"neutral": ["annoyed","base"], "happy": ["smile","g
                    "pupils": {"neutral": ["mid","L","R"], "happy": ["mid","L","R"], "naughty": ["mid","L","R","down"], "horny": ["mid","L","R","down"], "annoyed": ["mid","R"], "disgusted": ["down"], "angry": ["L"]}}
 
 label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
+    if renpy.predicting():
+        her "predict"
+
     python:
-    
+
         if flip != None:
             hermione_flip = -1 if flip else 1
-            
+
         if animation != False:
             hermione_animation = animation
-        
+
         if xpos:
             hermione_xpos = int(sprite_pos["x"].get(xpos, xpos))
 
@@ -20,9 +23,9 @@ label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
                 use_hermione_head = True
             elif ypos in ("base", "default"):
                 use_hermione_head = False
-                
+
             hermione_ypos = int(sprite_pos["y"].get(ypos, ypos))
-            
+
         hermione.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
 
         if face:
@@ -44,7 +47,7 @@ label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
 
     if text:
         $ renpy.say(her, text)
-        
+
     if use_hermione_head:
         hide screen hermione_main
     return
@@ -68,7 +71,7 @@ label end_hermione_event:
     $ active_girl = None
     $ hermione_busy = True
     $ hermione.wear("all")
-    
+
     $ renpy.stop_predict(hermione.get_image())
     $ renpy.stop_predict("characters/hermione/face/*.png")
 

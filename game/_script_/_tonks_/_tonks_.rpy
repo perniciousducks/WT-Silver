@@ -4,14 +4,17 @@ define ton_face = {"mouth": {"neutral": ["base"], "happy": ["base", "smile"], "n
                    "pupils": {"neutral": ["mid"], "happy": ["mid","L","R"], "naughty": ["mid","up","ahegao"], "horny": ["mid","up","ahegao"], "annoyed": ["mid","L","R"], "disgusted": ["mid","down"], "angry": ["mid"]}}
 
 label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, hair=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
+    if renpy.predicting():
+        ton "predict"
+
     python:
-    
+
         if flip != None:
             tonks_flip = -1 if flip else 1
-            
+
         if animation != False:
             tonks_animation = animation
-        
+
         if xpos:
             tonks_xpos = int(sprite_pos["x"].get(xpos, xpos))
 
@@ -20,9 +23,9 @@ label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, h
                 use_tonks_head = True
             elif ypos in ("base", "default"):
                 use_tonks_head = False
-                
+
             tonks_ypos = int(sprite_pos["y"].get(ypos, ypos))
-            
+
         target_color = None
         if hair:
             if hair in ("neutral", "basic", "reset"):
@@ -45,7 +48,7 @@ label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, h
                 target_color = [[242, 126, 168, 255]]
             else: # RANDOM limited from 50 to 235 for better outcome
                 target_color = [[random.randint(50, 235), random.randint(50, 235), random.randint(50, 235), 255]]
-            
+
         tonks.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
 
         if face:
@@ -57,7 +60,7 @@ label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, h
                 tonks.set_face(eyebrows=renpy.random.choice(ton_face["eyebrows"].get(face, None)))
             if not pupils:
                 tonks.set_face(pupils=renpy.random.choice(ton_face["pupils"].get(face, None)))
-                
+
         if target_color and target_color != tonks.get_equipped("hair").color:
             tonks.get_equipped("hair").set_color(target_color)
 
@@ -70,7 +73,7 @@ label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, h
 
     if text:
         $ renpy.say(ton, text)
-        
+
     if use_tonks_head:
         hide screen tonks_main
     return
@@ -85,7 +88,7 @@ label update_tonks:
 
     $ tonks.get_equipped("hair").set_color(tonks_haircolor)
     return
-    
+
 label check_tonks_clothing_upgrades:
 
     $ upgradable_clothing = []
@@ -125,7 +128,7 @@ label end_tonks_event:
     $ active_girl = None
     $ tonks_busy = True
     $ tonks.wear("all")
-    
+
     $ renpy.stop_predict(tonks.get_image())
     $ renpy.stop_predict("characters/tonks/face/*.png")
 
@@ -137,7 +140,7 @@ screen tonks_main():
     tag tonks_main
     zorder tonks_zorder
     sensitive False
-    
+
     default tonks_img = tonks.get_image()
     if tonks_animation != None:
         add tonks_img xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) at tonks_animation

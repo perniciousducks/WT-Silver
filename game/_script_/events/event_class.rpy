@@ -92,7 +92,7 @@ init python:
             events_filtered = filter(lambda x: '_intro' not in x[0], self.events[self._tier])
             random_event = events_filtered[random.randint(0, len(events_filtered)-1)][0]
             return renpy.jump(random_event)
-            
+
         def change_icon(self, a="heart_yellow", b="heart_red"):
             for icon in self.iconset:
                 if icon[1] == a:
@@ -111,34 +111,37 @@ init python:
             random_event = events_filtered[random.randint(0, len(events_filtered)-1)][0]
             return renpy.jump(random_event)
 
-        def get_menu_text(self):
-            heart_list = []
-            imagepath = "interface/icons/small/"
+        def get_menu_item(self, disabled=False, return_value=None):
             menu_text = ""
-            for event in self.events[self._tier]:
-                if event[1] == True:
-                    heart_list.append(imagepath+self.iconset[self._tier][1]+".png")
-                else:
-                    heart_list.append(imagepath+self.iconset[self._tier][0]+".png")
 
-            # Before Text hint
             if self.hint:
-                menu_text += "{image=interface/check_True.png} "
+                menu_text += "{image=interface/check_True.png}"
 
-            # Before Text icon
-            if len(self.icons) > 0:
-                if self.icons[self._tier]:
-                    menu_text += "{image="+imagepath+self.icons[self._tier]+".png} "
-
-            # Main Text
             if self.title:
-                menu_text += "\""+self.title+"\" "
+                menu_text += "\"{}\"".format(self.title)
 
-            # After Text heart
-            for heart in heart_list:
-                menu_text += "{image="+heart+"}"
+            if disabled:
+                menu_text = "{color=[menu_disabled]}" + menu_text + "{/color}"
 
-            return menu_text
+            imagepath = "interface/icons/small/"
+
+            icon = None
+            if len(self.icons) > 0 and self.icons[self._tier]:
+                icon = imagepath + self.icons[self._tier] + ".png"
+
+            progress = []
+            for e in self.events[self._tier]:
+                if e[1]:
+                    progress.append(imagepath + self.iconset[self._tier][1] + ".png")
+                else:
+                    progress.append(imagepath + self.iconset[self._tier][0] + ".png")
+
+            if return_value is None:
+                return_value = "block" if disabled else self.start_label
+
+            action = renpy.ui.ChoiceReturn(None, return_value, kwargs={ "icon": icon, "progress": progress })
+
+            return (menu_text, action)
 
         def fail(self):
             self.counter = max(0, self.counter-1)
@@ -187,34 +190,34 @@ init python:
         @max_tiers.setter
         def max_tiers(self, value):
             pass
-            
+
     class stats_class(dict):
-            
+
         def __delitem__(self, key):
             """Override delitem method to delete inner dictionary key."""
             del self[key]
-            
+
         def __missing__(self, key):
             """Return zero if key does not exist in the inner dictionary."""
             return 0
-            
+
         def __setattr__(self, name, value):
             """Override setattr method to add attributes as keys and values in the inner dictionary."""
             self[name] = value
-                
+
         def __getattr__(self, name):
             """Override getattr method to return a value of the key from the inner dictionary."""
             # Skip protected attributes and/or injected Ren'py methods
             if not name.startswith("_"):
                 return self[name]
             raise AttributeError("'"+self.__class__.__name__+"' has no attribute '"+name+"'")
-            
+
         def status(self):
             """Print currently defined keys and values in the console."""
             for key, value in self.iteritems():
                 print key + " == " + str(value)
             return
-            
+
         def reset(self):
             """Reset all key values back to default values depending on the value type."""
             for key in self.iterkeys():

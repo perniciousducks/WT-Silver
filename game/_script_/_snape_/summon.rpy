@@ -14,7 +14,7 @@ label summon_snape:
 
     menu:
         # Talk
-        "-Talk-{icon=interface/icons/small/talk.png}":
+        "-Talk-" (icon="interface/icons/small/talk.png"):
             if not chitchated_with_snape:
                 $ chitchated_with_snape = True
                 call snape_chitchat
@@ -32,8 +32,8 @@ label summon_snape:
                     $ astoria_intro.E2_snape = True
                     $ ag_event_pause = 2
                     jump astoria_intro_E2_snape
-                    
-                "-Try solving the Quidditch Quarrel-{icon=interface/icons/small/quidditch.png}" if cho_quid.lock_practice and not cc_st.snape_E1:
+
+                "-Try solving the Quidditch Quarrel-" (icon="interface/icons/small/quidditch.png") if cho_quid.lock_practice and not cc_st.snape_E1:
                     if daytime:
                         m "I wanted to talk to you about the upcoming Quidditch game."
                         call sna_main("I don't really have time right now...", "snape_05")
@@ -46,14 +46,14 @@ label summon_snape:
                         jump .talk
                     else:
                         m "So about that upcoming Quidditch game..."
-                        
+
                         if wine_ITEM.number >= 1:
                             call sna_main("Whatever it is, it can wait, let's sit down first, shall we.", "snape_01")
                             call setup_fireplace_hangout(char="snape")
                             $ ss_he_drink.start()
                             $ ss_he_counter += 1
                             $ wine_ITEM.number -= 1
-                            
+
                             jump cc_st_snape_E1
                         else:
                             call sna_main("I hope you have some wine at least?", "snape_01")
@@ -62,16 +62,16 @@ label summon_snape:
                             call sna_main("I guess you don't need my help afterall.", "snape_31")
                             m "(Bloody alcoholic..)"
                             jump .talk
-                    
+
                 "-Never mind":
                     jump snape_ready
 
 
         # Fireplace Chats
-        "-Let's hang-{icon=interface/icons/small/toast.png}" if wine_ITEM.number >= 1 and not daytime:
+        "-Let's hang-" (icon="interface/icons/small/toast.png") if wine_ITEM.number >= 1 and not daytime:
             jump snape_hangout
 
-        "{color=[menu_disabled]}-Let's hang-{/color}{icon=interface/icons/small/toast.png}" if wine_ITEM.number < 1 or daytime:
+        "{color=[menu_disabled]}-Let's hang-{/color}" (icon="interface/icons/small/toast.png") if wine_ITEM.number < 1 or daytime:
             if daytime:
                 m "(I'm not sharing my booze with Snape while he still has to teach classes...)"
                 m "(I better ask him during the evening to get drunk...)"
@@ -80,12 +80,12 @@ label summon_snape:
             jump snape_ready
 
         # Potions
-        "-Get a potion-{icon=interface/icons/small/potion.png}" if her_whoring > 10:
+        "-Get a potion-" (icon="interface/icons/small/potion.png") if her_whoring > 10:
             jump snape_potion_menu
 
 
         # Cardgame
-        "-Let's Duel-{icon=interface/cards.png}" if deck_unlocked:
+        "-Let's Duel-" (icon="interface/cards.png") if deck_unlocked:
             jump snape_duel_menu
 
         # Dismiss
@@ -161,7 +161,7 @@ label snape_potion_menu:
                     "-Normal potion-":
                         $ potion_version = 1
                         call sna_main("Here you are Mr. Adventurous...","snape_35")
-                    
+
                     "-futa potion-":
                         call sna_main("What? Are you sure you want this one?","snape_44")
                         call sna_main("I mean I figured you were a bit of a pervert...","snape_02")
@@ -178,12 +178,12 @@ label snape_potion_menu:
                             "-no-":
                                 call sna_main("Too bad...","snape_35")
                                 jump snape_potion_choice
-                    
+
                     "-Permanent breast expansion-":
                         call sna_main("The milk production will still only last a day...","snape_02")
                         call sna_main("But her big boobs will be permanent...","snape_37")
                         if hermione_perm_expand_breasts:
-                            call sna_main("Drinking this potion again will undo the permanent effect","snape_02")    
+                            call sna_main("Drinking this potion again will undo the permanent effect","snape_02")
                         call sna_main("Are you sure you want this?","snape_02")
                         call sna_main("She might not like it...","snape_46")
                         menu:
@@ -193,7 +193,7 @@ label snape_potion_menu:
                             "-no-":
                                 call sna_main("Too bad...","snape_35")
                                 jump snape_potion_choice
-                    
+
                 ">Snape quickly pushes the milky potion into your hands."
                 ">Milking potion received!"
                 $ potion_inv.add("p_milk_potion")

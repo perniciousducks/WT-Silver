@@ -35,19 +35,19 @@ label summon_susan:
     menu:
 
         # Talk
-        "-Talk-{icon=interface/icons/small/talk.png}":
+        "-Talk-" (icon="interface/icons/small/talk.png"):
             if not chitchated_with_susan:
                 call susan_chit_chat
                 jump susan_talk
             else:
                 jump susan_talk
-                
-        "{color=[menu_disabled]}-Sexual favours-{/color}{icon=interface/icons/small/condom.png}" if cho_favors_unlocked:
+
+        "{color=[menu_disabled]}-Sexual favours-{/color}" (icon="interface/icons/small/condom.png") if cho_favors_unlocked:
             $ TBA_message()
             jump susan_requests
 
         # Wardrobe
-        "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if susan_wardrobe_unlocked:
+        "-Wardrobe-" (icon="interface/icons/small/wardrobe.png") if susan_wardrobe_unlocked:
             call load_susan_clothing_saves
 
             call reset_wardrobe_vars
@@ -63,11 +63,11 @@ label summon_susan:
 
 
         # Gifts
-        "-Gifts-{icon=interface/icons/small/gift.png}" if not gave_susan_gift:
+        "-Gifts-" (icon="interface/icons/small/gift.png") if not gave_susan_gift:
             call gift_menu
             jump susan_requests
 
-        "{color=[menu_disabled]}-Gifts-{/color}{icon=interface/icons/small/gift.png}" if gave_susan_gift:
+        "{color=[menu_disabled]}-Gifts-{/color}" (icon="interface/icons/small/gift.png") if gave_susan_gift:
             $ TBA_message()
             #m "I already gave her a gift today. Don't want to spoil her too much..."
             jump susan_requests

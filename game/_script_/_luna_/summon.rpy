@@ -26,7 +26,7 @@ label summon_luna:
     menu:
 
         # Talk
-        "{color=[menu_disabled]}-Talk-{/color}{icon=interface/icons/small/talk.png}":
+        "{color=[menu_disabled]}-Talk-{/color}" (icon="interface/icons/small/talk.png"):
             call not_available
             jump luna_requests
         # call luna_chitchat
@@ -34,11 +34,11 @@ label summon_luna:
 
 
         # Personal Favors
-        "-Sexual Favours-{icon=interface/icons/small/condom.png}" if not luna_reverted:
+        "-Sexual Favours-" (icon="interface/icons/small/condom.png"):
             jump luna_favor_menu
 
         # Wardrobe
-        "-Wardrobe-{icon=interface/icons/small/wardrobe.png}": # if luna_wardrobe_unlocked:
+        "-Wardrobe-" (icon="interface/icons/small/wardrobe.png"): # if luna_wardrobe_unlocked:
             $ ll_quirky_muggle_ITEM.unlocked = True #Temporary unlock. Will be a random clothing event eventually.
 
             call load_luna_clothing_saves
@@ -58,11 +58,11 @@ label summon_luna:
 
 
         # Gifts
-        "-Gifts-{icon=interface/icons/small/gift.png}" if not gave_luna_gift:
+        "-Gifts-" (icon="interface/icons/small/gift.png") if not gave_luna_gift:
             call gift_menu
             jump luna_requests
 
-        "{color=[menu_disabled]}-Gifts-{/color}{icon=interface/icons/small/gift.png}" if gave_luna_gift:
+        "{color=[menu_disabled]}-Gifts-{/color}" (icon="interface/icons/small/gift.png") if gave_luna_gift:
             $ TBA_message()
             #m "I already gave her a gift today. Don't want to spoil her too much..."
             jump luna_requests
@@ -81,7 +81,7 @@ label luna_favor_menu:
     call update_luna_favors
 
     menu:
-        "-Personal Favours-{icon=interface/icons/small/heart_green.png}" if not luna_reverted:
+        "-Personal Favours-" (icon="interface/icons/small/heart_green.png") if not luna_reverted:
             if gold <= 0:
                 m "(I don't have any gold...)"
                 jump luna_favor_menu
@@ -106,7 +106,7 @@ label luna_favor_menu:
                 "-Never mind-":
                     jump luna_favor_menu
 
-        "-Personal Favours-{icon=interface/icons/small/heart_red.png}" if luna_reverted and ll_favor_list != []: # List is not empty.
+        "-Personal Favours-" (icon="interface/icons/small/heart_red.png") if luna_reverted and ll_favor_list != []: # List is not empty.
             label .personal:
             python:
                 menu_choices = []
@@ -116,9 +116,10 @@ label luna_favor_menu:
                     #elif i.tier > lun_whoring:
                     #    menu_choices.append(("{color=[menu_disabled]}-Not ready-{/color}","vague"))
                     else:
-                        menu_choices.append((i.get_menu_text(),i.start_label))
+                        menu_choices.append(i.get_menu_item())
                 menu_choices.append(("-Never mind-", "nvm"))
                 result = renpy.display_menu(menu_choices)
+
             if result == "nvm":
                 jump luna_favor_menu
             elif result == "vague":
@@ -129,11 +130,11 @@ label luna_favor_menu:
                 jump .personal
             else:
                 $ renpy.jump(result)
-                
-        "{color=[menu_disabled]}-Public Requests-{/color}{icon=interface/icons/small/star_yellow.png}":
+
+        "{color=[menu_disabled]}-Public Requests-{/color}" (icon="interface/icons/small/star_yellow.png"):
             call not_available
             jump luna_favor_menu
-                
+
         "-Never mind-":
             jump luna_requests
 

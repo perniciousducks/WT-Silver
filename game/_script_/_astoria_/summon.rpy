@@ -24,7 +24,7 @@ label summon_astoria:
     menu:
 
         # Talk
-        "-Talk-{icon=interface/icons/small/talk.png}":
+        "-Talk-" (icon="interface/icons/small/talk.png"):
             if not chitchated_with_astoria:
                 call astoria_chit_chat
                 jump astoria_talk
@@ -33,19 +33,19 @@ label summon_astoria:
 
 
         # Spells
-        "-Spells-{icon=interface/icons/small/spell.png}":
+        "-Spells-" (icon="interface/icons/small/spell.png"):
             if ast_mood != 0:
                 call ast_main("I don't want to today...","annoyed","narrow","base","R")
                 jump astoria_requests
             else:
                 jump astoria_spells
 
-        "{color=[menu_disabled]}-Sexual favours-{/color}{icon=interface/icons/small/condom.png}" if cho_favors_unlocked:
+        "{color=[menu_disabled]}-Sexual favours-{/color}" (icon="interface/icons/small/condom.png") if cho_favors_unlocked:
             $ TBA_message()
             jump astoria_requests
 
         # Wardrobe
-        "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if astoria_wardrobe_unlocked:
+        "-Wardrobe-" (icon="interface/icons/small/wardrobe.png") if astoria_wardrobe_unlocked:
             hide screen astoria_main with d1
             $ screenshot_image = ScreenshotImage.capture()
             $ renpy.call_in_new_context("wardrobe", "ast_main")
@@ -58,11 +58,11 @@ label summon_astoria:
 
 
         # Gifts
-        "-Gifts-{icon=interface/icons/small/gift.png}" if not gave_astoria_gift:
+        "-Gifts-" (icon="interface/icons/small/gift.png") if not gave_astoria_gift:
             call gift_menu
             jump astoria_requests
 
-        "{color=[menu_disabled]}-Gifts-{/color}{icon=interface/icons/small/gift.png}" if gave_astoria_gift:
+        "{color=[menu_disabled]}-Gifts-{/color}" (icon="interface/icons/small/gift.png") if gave_astoria_gift:
             m "I already gave her a gift today. Don't want to spoil her too much..."
             jump astoria_requests
 
@@ -91,15 +91,14 @@ label astoria_spells:
         for i in ag_spell_list:
             if not i.complete: # Not trained yet.
                 if daytime and not tonks_busy:
-                    spell_menu.append( (i.get_menu_text(), i.start_label ) )
+                    spell_menu.append(i.get_menu_item())
                 else:
-                    spell_menu.append( ("{color=[menu_disabled]}"+i.get_menu_text()+"{/color}","block") )
+                    spell_menu.append(i.get_menu_item(disabled=True))
 
             else: # Spell trained and unlocked.
-                spell_menu.append( (i.get_menu_text(), i.start_label ) )
+                spell_menu.append(i.get_menu_item())
 
-
-        spell_menu.append( ("-Never mind-", "nvm") )
+        spell_menu.append(("-Never mind-", "nvm"))
 
         result = renpy.display_menu(spell_menu)
 
@@ -139,7 +138,7 @@ label spell_not_known:
 label astoria_talk:
     menu:
         #"--":
-        "-Ask about Slytherin Quidditch Team-{icon=interface/icons/small/quidditch.png}" if cho_quid.lock_practice and cc_st.match_counter == 1:
+        "-Ask about Slytherin Quidditch Team-" (icon="interface/icons/small/quidditch.png") if cho_quid.lock_practice and cc_st.match_counter == 1:
             m "Could you help me with something?"
             ast "Depends what it is."
             ast "And what's in it for me..."

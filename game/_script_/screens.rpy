@@ -74,9 +74,9 @@ screen choice(items):
             spacing 0
             $ choice_width = int(config.screen_width/2)
 
-            for i, entry in enumerate(items, 1):
-                $ caption_text, _, ico = entry.caption.partition("{icon=") # Icon must be at the end of caption
+            $ max_progress = max([len(e.kwargs.get("progress", [])) for e in items])
 
+            for i, entry in enumerate(items, 1):
                 button:
                     xsize choice_width
                     ypadding 5
@@ -86,14 +86,26 @@ screen choice(items):
                     sensitive bool(entry.action)
                     fixed:
                         fit_first "height"
-                        text caption_text:
+                        text entry.caption:
                             xcenter choice_width/2
                             xsize choice_width-120 # Leave enough margin for number and icon
                             text_align 0.5
                         if i < 10 and entry.action:
                             text "{size=-2}[i].{/size}" xpos 5 yalign 0.5
-                        if ico:
-                            add ico[:-1] xcenter 40 yalign 0.5
+                        $ icon = entry.kwargs.get("icon", None)
+                        if icon:
+                            add icon xcenter 40 yalign 0.5
+                        $ progress = entry.kwargs.get("progress", None)
+                        if progress:
+                            hbox:
+                                spacing 2
+                                xpos choice_width - 5
+                                align (1.0, 0.5)
+                                for i in xrange(0, max_progress):
+                                    if i < len(progress):
+                                        add progress[i]
+                                    else:
+                                        null width 21 # Assume icon width
 
 screen input(prompt):
     zorder 30

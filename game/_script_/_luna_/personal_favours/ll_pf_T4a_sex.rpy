@@ -958,7 +958,7 @@ label ll_pf_sex_T1_ton_1: # Call label
     $ lunCG('open', 'happyCl', 'base', 'right')
     lun "They're both fun!"
     $ lunCG('open', 'seductive', 'base', 'up')
-    call ton_main("Fuck... you've really done a number on this her, haven't you, Dumbledore...","horny","base","raised","L")
+    call ton_main("Fuck... you've really done a number on her, haven't you, Dumbledore...","horny","base","raised","L")
     m "She was like this from the start..."
     $ lunCG('base', 'happyCl', 'base', 'dr')
     lun "Mhmm!"

@@ -922,7 +922,7 @@ label ll_pf_sex_T1_ton_1: # Call label
     $ lunCG('open', 'wink', 'sad', 'right')
     lun "You should... ah... be careful, Ms Tonks... {heart} we're expelling a lot... {heart} of them..."
     $ lunCG('base', 'seductive', 'sad', 'dl')
-    call ton_main("Really? And how will I know If these \"wrackspurts\" are after me...?","horny","base","raised","L")
+    call ton_main("Really? And how will I know if these \"wrackspurts\" are after me...?","horny","base","raised","L")
     $ lunCG('base', 'angry', 'base', 'dr')
     lun "You'll feel... ah... hot...{heart} down there..."
     call ton_main("Oh... I see...","horny","base","raised","L")

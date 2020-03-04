@@ -22,7 +22,7 @@ label fireplace:
                 $ renpy.play('sounds/brick_scrape.mp3')
                 m "(A loose brick... If only I could..{fast} *Hhng*... There we go.)"
                 call give_reward("A puzzle box has been added to your quest items in the Inventory!", "interface/icons/icon_puzzle.png")
-                $ puzzle_box_ITEM.unlocked = True
+                $ puzzle_box_quest_ITEM.unlocked = True
                 call update_quest_items
                 m "Seems straight forward enough."
                 m "Maybe I should give it a try?"
@@ -51,6 +51,6 @@ init python:
     def is_puzzle_box_in_fireplace():
         return (
             day >= 25 and not daytime and (1 < weather_gen < 4) and
-            puzzle_box_ITEM.unlocked == False and unlocked_7th == False
+            puzzle_box_quest_ITEM.unlocked == False and unlocked_7th == False
         )
         

@@ -53,7 +53,7 @@ screen map_screen():
         add "map_unfold" xpos UI_xpos_offset ypos UI_ypos_offset zoom map_scale # 588x420
     else:
         add "interface/map/map.png" xpos UI_xpos_offset ypos UI_ypos_offset zoom map_scale # 588x420
-    
+
     fixed:
         at map_fadein
         use map_buttons
@@ -187,7 +187,12 @@ screen map_buttons():
         action Return("map_forest")
 
     #Attic
-    if sealed_scroll_ITEM.unlocked and not tentacle_owned: #Open, not visited yet
+    if sealed_scroll_quest_ITEM.unlocked and not tentacle_sample: #Open, not visited yet
+        frame:
+            style "empty"
+            xpos UI_xpos_offset +300
+            ypos UI_ypos_offset +186
+            add "interface/achievements/glow.png" align (0.5, 0.5) zoom 0.15 alpha 0.5 at rotate_circular
         imagebutton:
             xpos UI_xpos_offset +340
             ypos UI_ypos_offset +226
@@ -197,7 +202,7 @@ screen map_buttons():
             unhovered SetVariable("ball_hint", None)
             action Return("map_attic")
 
-    if sealed_scroll_ITEM.unlocked and tentacle_owned: #Open
+    if sealed_scroll_quest_ITEM.unlocked and tentacle_sample: #Open
         imagebutton:
             xpos UI_xpos_offset +340
             ypos UI_ypos_offset +226

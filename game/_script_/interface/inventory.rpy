@@ -46,7 +46,7 @@ label inventory_menu(xx=150, yy=90):
     $ category_items = inventory_dict[current_category]
     $ menu_items = inventory_sortfilter(category_items, current_sorting)
     $ menu_items_length = len(menu_items)
-    
+
     if not renpy.variant("android"):
         show screen mouse_tooltip
 
@@ -65,7 +65,7 @@ label inventory_menu(xx=150, yy=90):
             $ current_item = _return[1]
     elif _return[0] == "use":
         if current_item.number > 0:
-            $ renpy.call(_return[1])
+            $ renpy.jump_out_of_context(_return[1])
     elif _return[0] == "category":
         $ current_category = _return[1]
         $ category_items = inventory_dict[current_category]
@@ -102,7 +102,7 @@ screen inventory_menu(xx, yy):
     tag inventory_menu
     zorder 30
     modal True
-    
+
     add im.Blur(screenshot_image, 2)
 
     use close_button
@@ -150,10 +150,10 @@ screen inventory_menuitem(xx, yy):
         pos (xx+217, yy-53)
         xsize 560
         ysize 507
-        
+
         add "interface/achievements/inventory.png"
         add "interface/achievements/"+interface_color+"/panel.png"
-        
+
         #Western Egg
         button xsize 90 ysize 60 action Function(renpy.play, "sounds/plushie.mp3") xalign 0.5 style "empty"
 
@@ -215,7 +215,7 @@ screen inventory_menuitem(xx, yy):
                         hover_background btn_hover
                         action Return(["select", menu_items[i]])
                         tooltip menu_items[i].name
-                    
+
         if menu_items_length <= 0:
             text "Nothing here yet" align (0.5, 0.5) anchor (0.5, 0.5) size 24
 
@@ -246,7 +246,7 @@ screen inventory_menuitem(xx, yy):
                 spacing 5
                 xalign 0.5
                 text current_item.name ypos 380 size 16 xoffset 45
-                
+
             if current_category == "Quest Items":
                 textbutton "Use":
                     xysize (90, 26)

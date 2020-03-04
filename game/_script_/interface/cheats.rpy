@@ -142,7 +142,7 @@ label cheats:
                 "-Back-":
                     jump cheats
 
-        "-Solve the slider puzzle-" if puzzle_box_ITEM.unlocked == True and unlocked_7th == False:
+        "-Solve the slider puzzle-" if puzzle_box_quest_ITEM.unlocked == True and unlocked_7th == False:
             $ unlocked_7th = True
             jump open_puzzle_box
 
@@ -216,7 +216,6 @@ label cheats:
                             i.unlocked = True
                         for i in scroll_list_C:
                             i.unlocked = True
-                        sealed_scroll_ITEM.unlocked = True
                     jump cheats.devroom
                 "-Get all books-" (icon="interface/icons/small/book.png"):
                     python:
@@ -242,6 +241,14 @@ label cheats:
                             i.unlocked = True
                         for i in misc_hat_list:
                             i.unlocked = True
+                    jump cheats.devroom
+                "-Get all quest items-":
+                    python:
+                        sealed_scroll_quest_ITEM.unlocked = True
+                        puzzle_box_quest_ITEM.unlocked = True
+                        collar_quest_ITEM.unlocked = True
+                        lootbox_quest_ITEM.number = 5 # Consumable
+                    call update_quest_items
                     jump cheats.devroom
                 "-Read Hermione's Diary-" (icon="interface/icons/small/hermione.png"):
                     call book_handle(book=hermione_diary)

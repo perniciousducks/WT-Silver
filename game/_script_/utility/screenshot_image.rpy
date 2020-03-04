@@ -8,7 +8,7 @@ init -1 python:
             self.root = root
             # self.cache = False
             # Sometimes causes segfault, maybe only if cache = True?
-        
+
         def load(self):
             sw, sh = config.screen_width, config.screen_height
             render = renpy.display.render.render_screen(self.root, sw, sh)
@@ -39,13 +39,3 @@ screen screenshot_image():
     zorder 100
     if screenshot_image:
         add im.Blur(screenshot_image, 2)
-
-label test_screenshot_blur:
-    pause .1 # Allow some time for menu to disappear (if applicable)
-    $ screenshot_image = ScreenshotImage.capture()
-    show screen screenshot_image
-    with d3
-    pause
-    hide screen screenshot_image
-    with d3
-    return

@@ -1,6 +1,5 @@
 #TODO Move variable defaults to appropriate files, leave common ones here (and rename this file to _Variables_.rpy or something)
 init offset = -1
-default tentacle_cosmetic = False
 
 # Menu placement
 default menu_x = 0.5

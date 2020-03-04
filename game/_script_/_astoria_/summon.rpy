@@ -1,9 +1,6 @@
 
 
 label summon_astoria:
-    $ renpy.start_predict(astoria.get_image())
-    $ renpy.start_predict("characters/astoria/face/*.png")
-
     #call play_music("astoria")
     #call play_sound("door")
 

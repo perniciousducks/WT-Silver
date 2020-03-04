@@ -13,22 +13,22 @@ label floor_7th:
             $ first_time_7th = False
             call gen_chibi("stand", "right", "base", flip=False)
             call hide_blkfade
-            
+
             m "So... The diary mentioned he was walking around here."
 
             call gen_walk("left_mid", speed=1.5)
             call bld
-            
+
             m "I can definitely sense a strong magical energy in this place..."
 
             call gen_walk("right", speed=1.5)
             call bld
-            
+
             m "Maybe if I...or I could..."
 
             call gen_walk("left", speed=1.5)
             call bld
-            
+
             g4 "I could be in my office jacking off right now!!"
             hide screen bld1
             show screen floor_7th_door
@@ -51,30 +51,112 @@ label floor_7th:
 
 
 label map_attic:
-    #TODO Maybe show something other than Genie sitting in his office during the following script:
-    if not sealed_scroll_ITEM.unlocked:
-        ">You venture up to the attic but find that the door is locked."
-        m "Damn, it's locked."
-        m "Guess I'll have to ask Snape about a key."
-        jump desk
-    if sealed_scroll_ITEM.unlocked and tentacle_owned:
-        ">You venture up to the attic and find an angry tentacle plant."
-        m "Better get out of here before the plant remembers that I'm the one that cut it."
-        ">You quickly return to your office."
-        jump desk
-    else: #Scene where genie has to take a sample of the devil's snare plant
-        ">You find your way through the winding staircases to the attic door."
-        m "Hmmmmm, it seems to be open."
-        ">You walk through the dusty room, light softly cascading though the windows."
-        m "Well where's this magical plant?"
-        ">A slender piece of vine is visible, skirting the room, as if to avoid the light."
-        m "This must be it."
-        ">You cut a piece and leave."
-        ">As you shut the door you hear the room erupt in a series of loud crashes."
-        $ tentacle_owned = True
-        call update_quest_items
-        jump desk
+    with d5 # Transition from desk
 
+    if tentacle_sample:
+        m "(I have no reason to go there anymore.)"
+
+        jump desk
+    else:
+        $ tentacle_sample = True
+        call update_quest_items
+
+        m "(The attic huh...)"
+        m "(I guess I could check it out.)"
+
+        call blkfade
+        show screen chair_left
+        show screen desk
+        call gen_chibi("stand","desk","base")
+        call hide_blkfade
+
+        call gen_walk(action="leave")
+        call blkfade
+
+        stop music fadeout 3.0
+        stop weather fadeout 3.0
+
+        pause 1.0
+        call play_sound("walking")
+        play weather "sounds/wind_long_loop.mp3" fadein 2 fadeout 2
+
+        ">You find your way through the winding staircases to the attic door."
+        m "Hmm, hopefully this is the right place to use that key...."
+        play bg_sounds "sounds/pulse.mp3"
+        ">As you approach the door the lock begins to glow..."
+        ">Looking down at the key in your hand you notice the same glow around the key..."
+        m "Well, this has to be it then..."
+        stop bg_sounds fadeout 2.0
+        call play_sound("lock")
+        pause 2.0
+        call play_sound("door")
+        ">After unlocking the door you're presented to a dusty room filled with random junk and knick-knacks."
+        $ renpy.sound.play("sounds/cough_male.mp3")
+        g16 "...*cough* *cough*..."
+        g4 "This room is just filled with random junk and knick-knacks!"
+        m "(So now what... I'm supposed to take a piece of something and use with this scroll?)"
+        m "(I don't even know what the scroll is supposed to do, how am I going to find what it wants me to use!)"
+        m "..."
+        m "(Screw it... I'm just going to cheat and check the item description in my inventory.)"
+        m "(Let's see what it says...)"
+        m "(Turns the user into a magical tentacle plant with the usage of living plant material.)"
+        m "Well, well... that could be useful..."
+        m "So I guess this tentacle plant should be here somewhe-"
+        ">As you scan the room you notice a slender piece of vine poking out from behind some crates, as if to avoid the light."
+        m "This must be it."
+        $ renpy.sound.play("sounds/slash.wav")
+        ">You make a clean cut just when..{nw}"
+        $ renpy.play("sounds/mondead.wav")
+        ">You make a clean cut just when..{fast}"
+        g4 "I better get the fuck out of here."
+        $ renpy.play("sounds/mon.wav")
+        ">As you shut the door you hear the room erupt in a series of loud crashes and growling."
+
+        call play_sound("walking")
+        "> You hastily make your way towards your office."
+
+        show screen chair_left
+        show screen desk
+        call gen_walk(action="enter")
+        call hide_blkfade
+
+        stop weather
+        call music_block
+
+        m "(A tentacle plant and a body-bending magical scroll huh...)"
+        g9 "(Maybe I could use it to have some fun with Granger...)"
+
+        menu:
+            m "(Question is... Should I use it now or save it for later?)"
+            "-Use it now-":
+                if daytime:
+                    if not hermione_busy:
+                        g9 "Yes, there's no time like the present..."
+                        m "I'll just grab a seat first."
+
+                        call blkfade
+                        hide screen chair_left
+                        hide screen desk
+                        call gen_chibi("sit_behind_desk")
+                        call hide_blkfade
+
+                        jump tentacle_scene_intro
+                    else:
+                        m "(On second thought... she's probably busy right now.)"
+                else:
+                    m "(It's a bit late... Miss granger wont be having any classes right now...)"
+            "-Save for later-":
+                pass
+
+        m "(I'll just store this in my inventory for now...)"
+
+        call blkfade
+        hide screen chair_left
+        hide screen desk
+        call gen_chibi("sit_behind_desk")
+        call hide_blkfade
+
+        jump main_room
 
 label map_forest:
     if daytime:
@@ -155,13 +237,9 @@ label map_lake:
 
 
 label gryffindor_dormitories:
-    show screen blkfade
-    with d3
-    pause.8
+    call dormitories
 
-    show screen blktone
-    hide screen blkfade
-    with d5
+    centered "{size=+7}{color=#cbcbcb}Gryffindor's Dormitory{/color}{/size}"
 
     menu:
         "-Search the area-":#Cat Hair
@@ -183,13 +261,9 @@ label gryffindor_dormitories:
 
 
 label ravenclaw_dormitories:
-    show screen blkfade
-    with d3
-    pause.8
+    call dormitories
 
-    show screen blktone
-    hide screen blkfade
-    with d5
+    centered "{size=+7}{color=#cbcbcb}Ravenclaw's Dormitory{/color}{/size}"
 
     menu:
         "-Search the area-":#Luna's Hair
@@ -208,8 +282,6 @@ label ravenclaw_dormitories:
             else:
                 ">You search around the dorms but find nothing of interest."
                 jump return_office
-
-
 
 label map_pitch:
     if pitch_open:
@@ -270,6 +342,19 @@ label outskirts_of_hogwarts:
     call play_sound("walking_on_grass")
     $ ccg(layer2="172")
 
+    return
+
+label dormitories:
+    call blkfade
+    show screen chair_left
+    show screen desk
+    call gen_chibi("stand","desk","base")
+    call hide_blkfade
+
+    call gen_walk(action="leave")
+    call blkfade
+
+    stop music fadeout 1.0
     return
 
 

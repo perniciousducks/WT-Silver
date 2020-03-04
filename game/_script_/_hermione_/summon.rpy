@@ -1,9 +1,6 @@
 
 
 label summon_hermione:
-    $ renpy.start_predict(hermione.get_image())
-    $ renpy.start_predict("characters/hermione/face/*.png")
-
     #call play_music("hermione")
     #call play_sound("door")
 

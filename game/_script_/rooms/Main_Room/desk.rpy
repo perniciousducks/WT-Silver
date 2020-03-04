@@ -1,7 +1,12 @@
 screen letter_on_desk():
     zorder 3
-    
-    add "/images/rooms/_objects_/mail/letter_desk.png" zoom 0.5 xpos 334 ypos 356
+
+    add "/images/rooms/_objects_/desk/letter.png" zoom 0.5 xpos 334 ypos 356
+
+screen plant_on_desk():
+    zorder 3
+
+    add "/images/rooms/_objects_/desk/plant.png" zoom 0.5 xpos 364 ypos 306
 
 label desk:
     if day == 1:

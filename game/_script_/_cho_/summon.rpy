@@ -1,9 +1,6 @@
 
 
 label summon_cho:
-    $ renpy.start_predict(cho.get_image())
-    $ renpy.start_predict("characters/cho/face/*.png")
-
     #call play_music("cho")
     #call play_sound("door")
 
@@ -78,9 +75,14 @@ label summon_cho:
                 jump cho_requests
             jump cho_training_menu
 
+        "{color=[menu_disabled]}-Training-{icon=interface/icons/small/quidditch.png}" if cho_quid.lock_training:
+
         "{color=[menu_disabled]}-Training-" (icon="interface/icons/small/quidditch.png") if cho_quid.lock_training:
             m "(She's as ready as one can be.)"
             jump cho_requests
+
+
+        "-Sexual favours-{icon=interface/icons/small/condom.png}" if cho_favors_unlocked:
 
 
         "-Sexual favours-" (icon="interface/icons/small/condom.png") if cho_favors_unlocked:
@@ -89,6 +91,8 @@ label summon_cho:
                 jump cho_requests
             else:
                 jump cho_favor_menu
+
+        "{color=[menu_disabled]}-Sexual favours-{/color}{icon=interface/icons/small/condom.png}" if not cho_favors_unlocked:
 
         "{color=[menu_disabled]}-Sexual favours-{/color}" (icon="interface/icons/small/condom.png") if not cho_favors_unlocked:
             m "(I need to help her with her Quidditch training, before I can ask for something like this.)"
@@ -150,6 +154,8 @@ label cho_favor_menu:
                     elif i.start_tier > cho_tier:
                         menu_choices.append(("{color=[menu_disabled]}-Not ready-{/color}","vague"))
                     else:
+                        menu_choices.append((i.get_menu_text(),i.start_label))
+
                         menu_choices.append(i.get_menu_item())
 
                 menu_choices.append(("-Never mind-", "nvm"))
@@ -166,12 +172,16 @@ label cho_favor_menu:
             else:
                 $ renpy.jump(result)
 
+        "{color=[menu_disabled]}-Public Requests-{/color}{icon=interface/icons/small/star_yellow.png}" if not daytime or not cho_requests_unlocked:
+
         "{color=[menu_disabled]}-Public Requests-{/color}" (icon="interface/icons/small/star_yellow.png") if not daytime or not cho_requests_unlocked:
             if not cho_requests_unlocked:
                 call nar(">You haven't unlocked this feature yet.")
             elif not daytime:
                 call nar(">Public requests are available during the daytime only.")
             jump cho_favor_menu
+
+        "-Public Requests-{icon=interface/icons/small/star_yellow.png}" if daytime and cho_requests_unlocked:
 
         "-Public Requests-" (icon="interface/icons/small/star_yellow.png") if daytime and cho_requests_unlocked:
             jump cho_requests_menu

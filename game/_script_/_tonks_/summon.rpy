@@ -1,9 +1,6 @@
 
 
 label summon_tonks:
-    $ renpy.start_predict(tonks.get_image())
-    $ renpy.start_predict("characters/tonks/face/*.png")
-
     call play_music("tonks")
     call play_sound("door")
 

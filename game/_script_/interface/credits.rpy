@@ -1,7 +1,7 @@
 ﻿init python:
     def credits_title(title):
         return "{k=5.0}{size=+15}{outlinecolor=#842500}{color=#f9a001}{{" + title + "}{/color}{/outlinecolor}{/size}{/k}\n"
-    
+
     def credits_group(*lines):
         return "".join(map(lambda x: "{k=1.5}"+x+"{/k}\n", lines))
 
@@ -18,7 +18,7 @@ define credits_text = "\n".join([
     credits_title("Music"),
     credits_group(
         "Harry Potter OST\n{size=-5}{color=#808080}{k=0.7}\"Prologue\"\n\"Shanghai Honey\"\n\"Introducing Colin\"\n\"Neville's Waltz\"\n\"The Quidditch Match\"{/k}{/color}{/size}\n",
-        "Kevin MacLeod\n{size=-5}{color=#808080}{k=0.7}\"Anguish\"\n\"Awkward Meeting\"\n\"Brittle Rille\"\n\"Chipper Doodle v2\"\n\"Dark Fog\"\n\"Despair\"\n\"Game Over Theme\"\n\"Boss Theme\"\n\"Hitman\"\n\"Music for Manatees\"\n\"Plaint\"\n\"Fuzzball Parade\"\n\"Teddy Bear Waltz\"\n\"Scheming Weasel (Slower version)\"\n\"Open Those Bright Eyes\"\n\"Wallpaper\"{/k}{/color}{/size}\n",
+        "Kevin MacLeod\n{size=-5}{color=#808080}{k=0.7}\"Anguish\"\n\"Awkward Meeting\"\n\"Brittle Rille\"\n\"Chipper Doodle v2\"\n\"Dark Fog\"\n\"Despair\"\n\"Game Over Theme\"\n\"Boss Theme\"\n\"Hitman\"\n\"Music for Manatees\"\n\"Plaint\"\n\"Fuzzball Parade\"\n\"Teddy Bear Waltz\"\n\"Scheming Weasel (Slower version)\"\n\"Open Those Bright Eyes\"\n\"Wallpaper\"\n\"Hidden Agenda\"{/k}{/color}{/size}\n",
         "PhobyAk\n{size=-5}{color=#808080}{k=0.7}\"Under-the-radar\"{/k}{/color}{/size}\n",
         "Shadow16nh\n{size=-5}{color=#808080}{k=0.7}\"Playful Tension (Orchestral)\"{/k}{/color}{/size}\n",
         "controllerhead\n{size=-5}{color=#808080}{k=0.7}\"Item Shop\"{/k}{/color}{/size}\n",
@@ -67,7 +67,7 @@ label credits:
     call ctc
     hide screen credits
     with dissolve
-    
+
     if _menu:
         # play music config.main_menu_music fadein 1 fadeout 3
         jump main_menu_screen
@@ -84,7 +84,7 @@ transform credits_chibi_fade(start, duration):
 screen credits(credits=credits_text, duration=credits_duration, chibis=credits_chibis):
     tag credits
     zorder 20
-    
+
     add Solid("#000")
 
     for img, t, d, left in chibis:
@@ -97,7 +97,7 @@ screen credits(credits=credits_text, duration=credits_duration, chibis=credits_c
             else:
                 pos (config.screen_width - 20, config.screen_height - 20)
                 align (1.0, 1.0)
-   
+
     text credits:
         at transform:
             subpixel True

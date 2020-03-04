@@ -5,9 +5,6 @@ label phoenix:
             jump magic_tutorial
         "Let me feed and pet that damn bird!":
             pass
-        "Smile to the camera":
-            call test_screenshot_blur
-            jump main_room_menu
         "Back":
             jump main_room_menu
 

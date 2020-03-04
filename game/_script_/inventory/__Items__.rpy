@@ -1,12 +1,12 @@
 
 
 # Quest Items
-default puzzle_box_ITEM   = Item(id="puzzle_box", name="Puzzle Box", type="quest item", image="icon_puzzle", description="A wooden box with a slide puzzle located on top of it. It was found hidden behind one of the loose bricks in the fireplace. Who knows what's inside.", event="start_slide_puzzle")
+default puzzle_box_quest_ITEM = Item(id="puzzle_box", name="Puzzle Box", type="quest item", image="icon_puzzle", description="A wooden box with a slide puzzle located on top of it. It was found hidden behind one of the loose bricks in the fireplace. Who knows what's inside.", event="start_slide_puzzle")
 default collar_quest_ITEM = Item(id="collar_quest", name="Collar", type="quest item", image="icon_collar", description="Quest Item!")
 default lootbox_quest_ITEM = Item(id="lootbox", name="Pack of cards", type="quest item", image="cards", description="A pack of cards.", cost=100, event="card_lootbox")
-default sealed_scroll_ITEM = Scroll(id="sealed_scroll", name="Forbidden Scroll", cost=300, type="scroll", image="item_scroll_sealed", description="The recipe for a powerful and forbidden potion that transforms you into any magical creature you desire.", event="examine_sealed_scroll")
+default sealed_scroll_quest_ITEM = Scroll(id="sealed_scroll", name="Forbidden Scroll", cost=500, type="scroll", image="item_scroll_sealed", description="The scroll can be used to transmute one-self into.. something.", event="tentacle_scene_intro")
 
-default forbidden_scroll_list = [sealed_scroll_ITEM]
+default forbidden_scroll_list = [sealed_scroll_quest_ITEM] # TODO: Replace with quest item list instead.
 
 # Gift items
 default lollipop_ITEM          = Item(id="lollipop", name="Lollipop Candy",              cost=20, type="candy", image="item_lollipop", description="A lollipop candy. An adult candy for kids or kids candy for adults?")
@@ -261,35 +261,35 @@ default dye_list=[
 default hg_bikini1 = CostumeItem(
     id="hg_bikini1", name="Rave Bikini", type="outfit", items=["bikini bra","thong"],
     cost=her_outfit_bikini1.price, wait_time=1, image=her_outfit_bikini1, description="> A Bunch of straps for a bunch of gold!")
-    
+
 default hg_bikini2 = CostumeItem(
     id="hg_bikini2", name="Leather Bikini", type="outfit", items=["bikini bra","thong"],
     cost=her_outfit_bikini2.price, wait_time=1, image=her_outfit_bikini2, description="> A Bunch of straps for a bunch of gold!")
-    
+
 default hg_maid = CostumeItem(
     id="hg_maid", name="French Maid Costume", type="outfit", items=["top","stockings","hat","choker","gloves"],
     cost=her_outfit_maid.price, wait_time=1, image=her_outfit_maid, description="> Oui, sir! At once!")
-    
+
 default hg_bunny = CostumeItem(
     id="hg_bunny", name="Sexy Bunny Costume", type="outfit", items=["top","stockings","hat","bowtie","gloves","tattoo"],
     cost=her_outfit_bunny.price, wait_time=1, image=her_outfit_bunny, description="> Oui, sir! At once!")
-    
+
 default hg_ball = CostumeItem(
     id="hg_ball", name="Classy Ball Dress", type="outfit", items=["top","earrings","necklace","sash"],
     cost=her_outfit_ball.price, wait_time=1, image=her_outfit_ball, description="> A fancy dress for a fancy witch.")
-    
+
 default hg_yennefer = CostumeItem(
     id="hg_yennefer", name="Yennefer Costume", type="outfit", items=["top","bottom","stockings","sash","belt","feathers","scarf","corset","pendant","gloves"],
     cost=her_outfit_yennefer.price, wait_time=1, image=her_outfit_yennefer, description="> Smells like lilac and gooseberries.")
-    
+
 default hg_bioshock = CostumeItem(
     id="hg_bioshock", name="Bioshock Costume", type="outfit", items=["top", "bottom", "choker", "jacket"],
     cost=her_outfit_bioshock.price, wait_time=1, image=her_outfit_bioshock, description="> Shockingly modest.")
-    
+
 default hg_swimsuit = CostumeItem(
     id="hg_swimsuit", name="Swimsuit", type="outfit", items=["top"],
     cost=her_outfit_swimsuit.price, wait_time=1, image=her_outfit_swimsuit, description="> Breezy.")
-    
+
 default hg_poker = CostumeItem(
     id="hg_poker", name="Poke-her-nips Outfit", type="outfit_token", items=["top"],
     cost=10, wait_time=0, image=her_outfit_poker, description="")

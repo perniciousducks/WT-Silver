@@ -441,22 +441,23 @@ label purchase_forbidden_scroll(item):
     hide screen list_menu
     with d3
 
-    if her_whoring <= 15:
+    if not hg_sex.trigger:
         m "What's in this scroll?"
         ger "Don't worry about it."
         m "Why?"
         ger "You're not ready for what's in this scroll."
-        m "Well that just makes me want it more."
-        ger "Too bad."
+        m "Well, that just makes me want it more."
+        ger "Too bad, professor."
+        m "(Perhaps I should check it out later...)"
         return
 
     m "What's this scroll?"
     fre "This is the recipe for a powerful and forbidden potion."
     ger "Acquired completely legitimately I might add!"
     m "What does it do?"
-    fre "It transforms you into any magical creature you desire."
+    fre "It transforms you into... something."
     m "Like what?"
-    fre "Anything you can secure a sample of."
+    fre "We don't know, it could be anything."
     ger "A powerful phoenix, a terrifying gorgon, a deadly basilisk or an awe inspiring dragon."
     m "Not sure I'd really want to transform into any of those..."
     ger "Well then perhaps there is a creature that would suit you and your \"Hobbies\"."
@@ -467,10 +468,9 @@ label purchase_forbidden_scroll(item):
     m "So it's a tentacle monster?"
     ger "Pretty much. We're not sure where it lives however."
     fre "No idea!"
-    ger "Certainly not in the attic!"
     m "Ok, well how much is the scroll?"
-    ger "Three hundred gold coins."
-    m "Three hundred!? Why on earth is it so expensive?"
+    ger "Five hundred gold coins."
+    m "Five hundred!? Why on earth is it so expensive?"
     fre "Forbidden magic is quite a risky and expensive endeavour Professor, We'll sell it for no less than 300."
 
     menu:
@@ -478,22 +478,20 @@ label purchase_forbidden_scroll(item):
             if gold >= item.cost:
                 m "Fine, here's the money"
                 ger "Thank you very much"
-                $ the_gift = item.get_image() # SACRED SCROLL.
+                $ the_gift = item.get_image()
                 show screen gift
                 with d3
-
                 $ gold -= item.cost
                 $ item.unlocked = True
                 call update_quest_items
-                ">A New scroll has been added to your sacred scrolls collection."
+                ">Forbidden scroll has been added to your inventory."
+                hide screen gift
+                with d3
             else:
                 m "I don't have enough gold."
         "-No thanks-":
-            m "No thanks, not right now"
-            fre "Perhaps later then"
-
-    hide screen gift
-    with d3
+            m "No thanks, not right now."
+        fre "Perhaps later then."
 
     return
 

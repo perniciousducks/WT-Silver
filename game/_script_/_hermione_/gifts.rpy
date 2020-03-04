@@ -5,10 +5,6 @@ label give_her_quest_item(quest_item):
 
     $ gave_hermione_gift = True
 
-    if quest_item == sealed_scroll_ITEM:
-        call tentacle_scene_intro
-        return
-
     if quest_item == collar_quest_ITEM:
         ">This Quest is now active!\nIt will start the next morning."
         $ collar = 5

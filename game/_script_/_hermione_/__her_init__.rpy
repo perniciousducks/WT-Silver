@@ -92,6 +92,9 @@ default autograph                  = False # Professor Lockhart's tattoo.
 default gave_hermione_gift         = False
 default hermione_wardrobe_unlocked = False
 
+# Tentacle event
+default tentacle_sample = False # Quest "item" flag.
+
 default hg_ps_get_panties = shaming_class(
     tier = 1,
     title = "Panty Thief",

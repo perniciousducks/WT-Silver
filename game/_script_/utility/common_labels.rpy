@@ -99,6 +99,8 @@ label play_sound(sound=""):
     # Objects
     if sound in ["knock", "knocking"]: # knocking
         $ renpy.play('sounds/knocking.mp3')
+    if sound in ["knock2", "knocking2"]: # knocking
+        $ renpy.play('sounds/knocking2.mp3')
     if sound == "door":
         $ renpy.play('sounds/door.mp3')
     if sound in ["lock","unlock"]: # lock
@@ -249,6 +251,8 @@ label play_music(music=""):
         play music "music/Under-the-Radar by PhobyAk.mp3" fadein 1 fadeout 1 if_changed
     elif music == "despair":
         play music "music/Despair_by_erenik.mp3" fadein 1 fadeout 1 if_changed
+    elif music == "agenda":
+        play music "music/hidden-agenda-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
 
     # Fallback
     else:
@@ -286,7 +290,7 @@ label adjust_game_difficulty(dif=None):
         $ wine_ITEM.cost = 140
         $ firewhisky_ITEM.cost = 160
     return
-    
+
 label unlock_clothing(text="",item=None):
 
     $ renpy.play('sounds/win2.mp3')
@@ -357,5 +361,5 @@ label describe_mood(name, value):
     else:
         ">[name] is calm."
     call hide_blktone
-    
+
     return

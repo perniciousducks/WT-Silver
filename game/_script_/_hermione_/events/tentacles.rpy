@@ -7,7 +7,7 @@ label tentacle_scene_intro:
     m "(Let's see...)"
     if not tentacle_sample:
         m "(I'm still missing the plant sample.)"
-        m "(Well... I have the key so I guess I need to find where that highest point is...)"
+        m "(Well... I do have this key, so I just need to find where that highest point is...)"
 
         label .riddle:
         m "\"At the highest point is where I'm hidden-\""
@@ -22,18 +22,18 @@ label tentacle_scene_intro:
             "-Repeat the riddle-":
                 jump tentacle_scene_intro.riddle
 
-        m "(The highest point, huh... I wonder where that could be.)"
+        m "(The highest point... *hmm* I wonder where that could be.)"
         jump main_room_menu
     else:
-        m "(I have everything I need to perform the ritual.)"
+        m "(I have everything I need to perform the ritual and have some fun with Hermione.)"
         if not daytime:
-            m "(It's too late for me to use it now, I better try again at dusk.)"
+            m "(*hmm* But it's too late for me to use it now. I should do it at dawn, before class has started.)"
             jump main_room_menu
         elif hermione_busy:
-            m "(Though Hermione is busy at the moment, I should postpone using the scroll until tomorrow.)"
+            m "(*hmm* But Hermione is busy at the moment, I should postpone my plans until tomorrow.)"
             jump main_room_menu
 
-    m "(I better write miss Granger a note first so she can carry me with her to class...)"
+    m "(I better write her a note first so she can carry me with her to class...)"
     call gen_chibi("paperwork")
     with d3
     pause 1.0
@@ -85,7 +85,7 @@ label tentacle_scene_intro:
             call gen_chibi("sit_behind_desk")
             with d3
             g4 "I can't write that!"
-            m "What if she does listen and I get shat on... No, no, no, let me change that."
+            m "What if she does it and I get shat on... No, no, no, let me change that."
             call gen_chibi("paperwork")
             with d3
         "...take me to class..." if d_flag_02:
@@ -97,7 +97,7 @@ label tentacle_scene_intro:
             call gen_chibi("sit_behind_desk")
             with d3
             g4 "I can't write that!"
-            m "What if she does listen and I get shat on... No, no, no, let me change that."
+            m "What if she does it and I get shat on... No, no, no, let me change that."
             call gen_chibi("paperwork")
             with d3
 
@@ -108,7 +108,7 @@ label tentacle_scene_intro:
         "...Sincerely, Dombledure.":
             $ d_flag_01.append("Sincerely,\nDombledure.")
         "...Yours truly, [genie_name].":
-            $ d_flag_01.append("Yours trully,\n[genie_name].")
+            $ d_flag_01.append("Yours truly,\n[genie_name].")
 
     $ d_flag_01 = " ".join(d_flag_01)
 
@@ -119,7 +119,7 @@ label tentacle_scene_intro:
     stop music fadeout 3.0
     show screen blkfade
     with d5
-    centered "{size=+7}{color=#cbcbcb}Few moments later...{/color}{/size}"
+    centered "{size=+7}{color=#cbcbcb}A few moments later...{/color}{/size}"
     call gen_chibi("hide")
     show screen desk
     show screen chair_left
@@ -152,7 +152,7 @@ label tentacle_scene_intro:
     call her_walk(xpos="desk", ypos="base")
     m "(Yes... she's seen me...)"
     m "(Take the note!)"
-    call her_main("What's with this ugly plant...", "disgust", "narrow", "angry", "stare", trans=d3)
+    call her_main("What's with this ugly plant?", "disgust", "narrow", "angry", "stare", trans=d3)
     with vpunch
     g4 "(I'm not ugly!)"
     m "(...Just haven't blossomed yet...)"
@@ -192,7 +192,7 @@ label tentacle_scene_intro:
     hide screen letter
     call her_main("....................................", "disgust", "narrow", "angry", "mid", trans=d3)
     call her_main("So I'm a delivery girl as well now?", "annoyed", "narrow", "angry", "stare")
-    call her_main("Well.. I suppose I'm already headed that way...", "annoyed", "closed", "angry", "stare")
+    call her_main("Well.. I suppose I'm already headed there anyway...", "annoyed", "closed", "angry", "stare")
     call her_main("Guess he must've checked my schedule for once...", "annoyed", "narrow", "worried", "R")
     g9 "(Herbology class, here I come!)"
 
@@ -213,33 +213,33 @@ label tentacle_scene_intro:
 
     spo "In today's class, we will be learning about a plant called Devil's Snare."
     spo "Hermione Granger was kind enough to bring us a pot with an underdeveloped Devil's Snare."
-    spo "It's kind of witty and looks weak but..."
+    spo "It's kind of wilted and looks weak but..."
     g4 "(Oh fuck you, bitch!)"
-    her "Actually, professor that wa-..."
+    her "Actually, professor that wa-"
     spo "Miss Granger, please don't interrupt me."
     her "Sorry..."
     spo "Now then..."
     spo "This is an incredibly dangerous plant, known to constrict and kill its prey with its fast and powerful tendrils."
     spo "They are found naturally in caves and swamps as they like dark and damp places and hate sunlight."
     her "Isn't Devil's Snare extremely dangerous?"
-    spo "Thank you for stating the obvious, Miss Granger, now please, sit down."
+    spo "Yes, Miss Granger. At least you're paying attention to what I was saying. Now please sit down."
     # TODO: sound class laughs
     her "..........."
-    spo "They're barely one week old, they would barely be able to stroke you with their tendrils, let alone constrict you."
+    spo "These aren't even a week old, so they would barely be able to stroke you with their tendrils, let alone constrict you."
     spo "Now everyone, pass the samples around so that you all can get a good look."
     her "Professor Sprout, are they supposed to have mouths?"
     spo "Yes Miss Granger, it's how they eat their prey once they have asphyxiated them."
     her "Okay, well what are the eyes for? I thought they sensed their prey by touch?"
-    spo "What are you talking about, Devil's Snare don't have eyes."
-    her "This one do-..."
+    spo "What are you talking about? Devil's Snare don't have eyes."
+    her "This one do-"
     # TODO: sound crowd gasps
     # TODO: sound grab (?)
     with vpunch
     ">All of a sudden, you explode outwards in a flash of thick green tentacles"
     her "What's happening?!?"
-    ">You quickly bind her wrists and stomach..."
+    ">You quickly bind her wrists and waist..."
     her "I can't move!"
-    ">then lift her into the air with your powerful appendages."
+    ">then lift her into the air with your powerful appendages..."
     spo "Stay calm Miss Granger, Devil's Snare will let you go if you don't move!"
     ">Slinking your slimy tentacles under her top and skirt."
     if not hermione.is_worn("panties"):
@@ -248,39 +248,39 @@ label tentacle_scene_intro:
         mal2 "And she brought her own plant sample, I bet she planned this out, what a total slut!"
     her "Oh no..."
     # TODO: sound cloth rip
-    ">You rip her top of in a flurry of buttons and cotton."
+    ">You rip her top off in a flurry of buttons and cotton..."
     her "Ahhhh"
     # TODO: sound Old squeeky door sound being opened. (No, don't add that XD)
-    ">Sliding your tentacles up her legs and slowly pull them apart"
+    ">Sliding your tentacles up her legs and slowly pulling them apart"
     ">Hermione struggles against you but her effort is in vain."
     her "Please no... Not here."
     if hermione.is_worn("panties"):
-        ">The tentacles slowly pull up her panties, revealing her to the class"
+        ">The tentacles slowly remove her panties, revealing her to the entire class"
     mal "Wow..."
-    fem "This is horrible, someone should do something"
+    fem "This is horrible, someone should do something!"
     mal2 "Professor Sprout says as long as she doesn't move she'll be released."
     ">You position a large, flowered tentacle above Hermione's head"
-    her "What is that?"
+    her "What is that!?"
     ">It suddenly opens to reveal a long slender appendage with an engorged base"
     her "What the hell is that? It looks like a..."
-    ">While she is focused on the dangling limb above her you move six smaller tentacles towards her waist"
+    ">While she is focused on the dangling limb above her you move six smaller tentacles towards her waist."
     her "Oh god no, someone please help me! Professor Sprout do something!"
-    spo "Ok students, stand back!"
-    ">Professor Sprout casts an impressive-looking spell at the mass of writhing tentacles"
+    spo "Students, stand back!"
+    ">Professor Sprout casts an impressive-looking spell at the mass of writhing tentacles."
     # TODO: sound Spell
     spo "Confringo!"
     ">It strikes the plant forcefully but does nothing."
     spo "What? That should have killed it. It must be magically protected."
-    ">You move three tentacles to her vagina and start teasing the opening."
+    ">You move three tentacles to Hermione's vagina and start teasing the opening."
     her "Please Professor Sprout, do something! Anything!"
     spo "I'm not sure I can, it has a powerful magical spell protecting it"
-    spo "If I try anything more powerful than the spell I just cast I might hurt you."
+    spo "If I try anything more powerful than the spell I just cast, I might hurt you."
     ">You move two smaller tentacles to her asshole and start teasing the entrance, slowly prying it open"
     her "Well then what am I supposed to do?"
     spo "Just stay as still as possible and it should eventually let you go..."
     ">You move a tentacle with a mouth on the end of it to her right breast and latch onto it."
-    her "Please, I'm not going to be able to stay still if this keeps going"
-    ">The three tentacles at the entrance of her vagina suddenly thrust into her"
+    her "Please, I'm not going to be able to stay still if this keeps going!"
+    ">The three tentacles at the entrance of her vagina suddenly thrust into her."
 
     # TODO: sound RIGHT INTO HER VAGENE
 
@@ -301,7 +301,7 @@ label tentacle_scene_intro:
 
     call play_sound("running")
 
-    "> You dash through the castle in a flash and get back to your office to grab a new pair of pants."
+    "> You dash through the castle in a flash and get back to your office where, fortunately, you find your clothes lying in a pile behind the desk."
 
     hide screen blkfade
     with d5
@@ -339,7 +339,7 @@ label tentacle_1: #Public path
     mal2 "I've got no idea, bitches be crazy man."
     gen "Are you sure? Do you think you'll be able to stifle every moan?"
     # TODO: masturbating sound?
-    ">You push deeply into her with the 3 tentacles."
+    ">You push deeply into her with the three tentacles."
     her "!!!"
     call cg_scene("p4")
     gen "Do you think you'll be able to stop your hips from bucking?"
@@ -506,75 +506,5 @@ label tentacle_2: # Personal path
     pause 3.0
 
     spo "Class dismissed!"
-
-    return
-
-###COSTUME SCENES
-label costume_scene_1: #Maid role-play
-    call her_main("A costume? What on earth do you need me to dress up for?", "angry", "wide", "base", "stare")
-    m "[hermione_name], have you ever heard of the term role-play?"
-    call her_main("role-play?", "smile", "narrow", "base", "mid_soft")
-    m "It's where you pretend to be someone you're not."
-    call her_main("I gathered that much but why would I want to do that?", "smile", "narrow", "base", "mid_soft")
-    m "Because it can be fun!"
-    call her_main("Hmmmm. Who would I be role-playing?", "smile", "narrow", "base", "mid_soft")
-    m "Well I was thinking seeing as how I purchased you that lovely new cleaning outfit."
-    m "You could play the role of my personal maid."
-    if her_whoring < 17:
-        call her_main("And how much would this \"personal maid\" be paid?", "smile", "narrow", "base", "mid_soft")
-        m "Thirty-five points sounds fair."
-    call her_main("...", "smile", "narrow", "base", "mid_soft")
-    call her_main("Let me go change.", "smile", "narrow", "base", "mid_soft")
-    $ hermione.equip(her_outfit_maid)
-    call her_main("", "smile", "narrow", "base", "mid_soft")
-    call ctc
-
-    call her_main("Well?", "smile", "narrow", "base", "mid_soft")
-    m "You certainly look the part. The question is can you act the part?"
-    call her_main("Act? I thought you just wanted me to clean your room?", "smile", "narrow", "base", "mid_soft")
-    m "Where's the fun in that? If I wanted a clean room, I'd just get those ugly dwarves to do it."
-    call her_main("House-elves.", "smile", "narrow", "base", "mid_soft")
-    m "Whatever. Anyway I want you to act like a sexy french maid."
-    her "Why does it have to be french?"
-    m "Must I explain everything?"
-    call her_main("Fine...", "smile", "narrow", "base", "mid_soft")
-    call her_main("Is there anything you need cleaned today sir?", "smile", "narrow", "base", "mid_soft")
-    m "At least try to do the accent."
-    call her_main("...", "smile", "narrow", "base", "mid_soft")
-    call her_main("Is there anything that you need cleaned today Monsieur?", "mad", "base", "angry", "mid",cheeks="blush")
-    m "Much better."
-    call her_main("Thank you Monsieur.", "smile", "narrow", "base", "mid_soft")
-    m "Now as for your cleaning I think that the fireplace could you a good dusting."
-    call her_main("As you command Monsieur!", "smile", "narrow", "base", "mid_soft")
-    ">Hermione stands on her toes to reach the mantelpiece giving you a lovely view of the top of her stockings."
-    m "That's it, just a little higher."
-    ">You reach under the desk and start to stroke your cock."
-    her "..."
-    her "Ooh-la-la, You wouldn't happen to be doing anything naughty under that table would you now Monsieur?"
-    m "Of course not mademoiselle, just an itch, now back to cleaning."
-    her "Yes yes."
-    ">She resumes dusting the mantelpiece, reaching even higher this time."
-    ">You can now almost make out the start of her bottom."
-    her "Oh my! When was the last time this was cleaned?"
-    m "I couldn't say..."
-    her "It's so dirty! I will have to put all my effort into this."
-    ">She starts making small hops with each dust to reach the top of the books."
-    m "That's it. I think you might have missed a spot near the bottom however."
-    her "Did I? How about this."
-    ">She bends over in front of you, giving you a clear view up her skirt."
-    m "That's it."
-    ">You erupt underneath your desk, shooting spunk up and over it and onto the floor."
-    her "Monsieur! You are so naughty!"
-    her "Making a mess as I am cleaning up this filthy filthy room."
-    her "At this rate I'll never be done!"
-    m "Well you're cleaning was responsible for this mess."
-    her "Hmmm, I suppose you are right as always Monsieur, I better start cleaning."
-    ">Hermione drops to her knees and starts wiping up your cum."
-    her "Such a big mess!"
-    ">Hermione cleans up your cum from the floor and table."
-    her "Well how did I do?"
-    m "Very well indeed! You've taken to role-play like a duck to water."
-    m "Forty points to Gryffindor."
-    her "Thank you [genie_name]."
 
     return

@@ -322,7 +322,7 @@ label tentacle_1: #Public path
     ">You move a small tentacle with a mouth on the end to her ear so that only she can hear you."
     gen "Enjoying yourself slut?"
     her "Professor!"
-    spo "Shhh... Just relax dear. I'll let you go eventually."
+    gen "Shhh... Just relax dear. I'll let you go eventually."
     gen "Thaaaat's right, do as your [genie_name] says, just relax."
     her "How am I supposed to relax?!"
     gen "Well if you're not going to relax, at least try to enjoy it..."
@@ -330,9 +330,9 @@ label tentacle_1: #Public path
     # TODO: masturbating sound?
     call cg_scene("p3")
     her "..."
-    spo "What's wrong Miss Granger?" # <- What the actual...?
-    her "It's nothing... it's just very uncomfortable..."
-    gen "Are you sure you're uncomfortable? Judging by how wet you are I'd say that you're the opposite."
+    spo "If you keep thrashing about so much it won't let you go, stay still girl!"
+    her "I-I'm trying!"
+    gen "Are you sure you're trying enough? Judging by how much you're moving I'd say that's quite the opposite."
     gen "Someone might even think that you are enjoying this."
     her "They wouldn't..."
     mal "Who's she talking to?"

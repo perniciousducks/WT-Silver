@@ -187,7 +187,7 @@ screen map_buttons():
         action Return("map_forest")
 
     #Attic
-    if sealed_scroll_quest_ITEM.unlocked and not tentacle_sample: #Open, not visited yet
+    if sealed_scroll_quest_ITEM.unlocked and not tentacle_sample:
         frame:
             style "empty"
             xpos UI_xpos_offset +300
@@ -202,7 +202,7 @@ screen map_buttons():
             unhovered SetVariable("ball_hint", None)
             action Return("map_attic")
 
-    if sealed_scroll_quest_ITEM.unlocked and tentacle_sample: #Open
+    if sealed_scroll_quest_ITEM.unlocked and tentacle_sample:
         imagebutton:
             xpos UI_xpos_offset +340
             ypos UI_ypos_offset +226

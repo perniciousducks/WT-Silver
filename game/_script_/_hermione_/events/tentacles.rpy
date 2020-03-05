@@ -192,7 +192,7 @@ label tentacle_scene_intro:
     hide screen letter
     call her_main("....................................", "disgust", "narrow", "angry", "mid", trans=d3)
     call her_main("So I'm a delivery girl as well now?", "annoyed", "narrow", "angry", "stare")
-    call her_main("Well.. I suppose I'm already headed there anyway...", "annoyed", "closed", "angry", "stare")
+    call her_main("Well... I suppose I'm already headed there anyway...", "annoyed", "closed", "angry", "stare")
     call her_main("Guess he must've checked my schedule for once...", "annoyed", "narrow", "worried", "R")
     g9 "(Herbology class, here I come!)"
 
@@ -239,7 +239,7 @@ label tentacle_scene_intro:
     stop bg_sounds
     with vpunch
     pause 2.0
-    ">All of a sudden, you explode outwards in a flash of thick green tentacles"
+    ">All of a sudden, you explode outwards in a flash of thick green tentacles."
     her "What's happening?!?"
     $ renpy.sound.play("sounds/plant_grab.mp3")
     ">You quickly bind her wrists and waist..."
@@ -254,24 +254,24 @@ label tentacle_scene_intro:
         fem "Oh my gosh, so the rumours about her were true?!"
         mal2 "And she brought her own plant sample, I bet she planned this out, what a total slut!"
     her "Oh no..."
-    $ renpy.sound.play("sounds/cloth_sound.mp3")
+    $ renpy.sound.play("sounds/cloth_rip.mp3")
     # TODO: sound cloth rip
     ">You rip her top off in a flurry of buttons and cotton..."
-    her "Ahhhh"
+    her "Ahhhh!"
     $ renpy.sound.play("sounds/plant_slithering.mp3")
-    ">Sliding your tentacles up her legs and slowly pulling them apart"
+    ">Sliding your tentacles up her legs and slowly pulling them apart."
     ">Hermione struggles against you but her effort is in vain."
     her "Please no... Not here."
     if hermione.is_worn("panties"):
-        ">The tentacles slowly remove her panties, revealing her pussy to the entire class"
+        ">The tentacles slowly remove her panties, revealing her pussy to the entire class."
     mal "Wow..."
     fem "This is horrible, someone should do something!"
     mal2 "Professor Sprout says as long as she doesn't move she'll be released."
     $ renpy.sound.play("sounds/plant_slithering.mp3")
-    ">You position a large, flowered tentacle above Hermione's head"
+    ">You position a large, flowered tentacle above Hermione's head."
     her "What is that!?"
     $ renpy.sound.play("sounds/creaking.mp3")
-    ">It suddenly opens to reveal a long slender appendage with an engorged base"
+    ">It suddenly opens to reveal a long slender appendage with an engorged base."
     her "What the hell is that? It looks like a..."
     ">While she is focused on the dangling limb above her you move six of your smaller tentacles towards her waist."
     her "Oh god no, someone please help me! Professor Sprout do something!"
@@ -284,7 +284,7 @@ label tentacle_scene_intro:
     spo "What? That should have killed it. It must be magically protected."
     ">You move three tentacles to Hermione's vagina and start teasing the opening."
     her "Please Professor Sprout, do something! Anything!"
-    spo "I'm not sure I can, it has a powerful magical aura protecting it"
+    spo "I'm not sure I can, it has a powerful magical aura protecting it."
     spo "If I try anything more advanced than the spell I just cast, I might hurt you."
     ">You move two smaller tentacles to her asshole and start teasing the entrance, slowly prying it open."
     her "Then what am I supposed to do?!"
@@ -328,18 +328,17 @@ label tentacle_1: #Public path
     her "!!!"
     her "What on earth is going on?"
     play bg_sounds "sounds/slickloop.mp3" fadein 2 fadeout 2
-    ">You start pumping the tentacles in her vagina slowly"
+    ">You slowly begin to move the tentacles in her vagina."
     call cg_scene("p2")
     her "Oh..."
-    ">You move a small tentacle with a mouth on the end to her ear so that only she can hear you."
+    ">You move a small, mouthed tentacle to her ear so that only she can hear you."
     gen "Enjoying yourself slut?"
     her "Professor!"
-    gen "Shhh... Just relax dear. I'll let you go eventually."
-    gen "Thaaaat's right, do as your [genie_name] says, just relax."
+    gen "That's right, just do as I say and relax."
     her "How am I supposed to relax?!"
     gen "Well if you're not going to relax, at least try to enjoy it..."
     ">You start rotating the tentacles in her vagina."
-    # TODO: masturbating sound?
+    $ renpy.sound.play("sounds/slick_02.mp3")
     call cg_scene("p3")
     her "..."
     spo "If you keep thrashing about so much it won't let you go, stay still girl!"
@@ -348,42 +347,50 @@ label tentacle_1: #Public path
     gen "Someone might even think that you are enjoying this."
     her "They wouldn't..."
     mal "Who's she talking to?"
-    mal2 "I've got no idea, bitches be crazy man."
+    mal2 "I've got no idea, this bitch is crazy."
     gen "Are you sure? Do you think you'll be able to stifle every moan?"
-    # TODO: masturbating sound?
+    $ renpy.sound.play("sounds/slick_02.mp3")
     ">You push deeply into her with the three tentacles."
     her "!!!"
     call cg_scene("p4")
     gen "Do you think you'll be able to stop your hips from bucking?"
     ">You give her another powerful thrust."
+    $ renpy.sound.play("sounds/slick_02.mp3")
     her "{size=-6}{heart}*ah*{/size}"
     gen "Do you really think that you'll be able to stop yourself from begging me for more?"
-    ">You increase the speed of the tentacles"
+    ">You increase the speed of the tentacles."
+    play bg_sounds "sounds/slickloopfast.mp3" fadein 2 fadeout 2
     her "{size=-3}mmmmmmm{/size}"
     gen "I don't think you will. In fact I know that you won't."
     gen "Because I know what you are. A slut."
-    gen "A slut who can only think about getting off when she's being fucked by a monster in front of her classmates."
+    gen "A slut who can only think about getting off when she's being fucked by a plant in front of her classmates."
+    stop bg_sounds fadeout 2
     ">You stop moving the tentacles."
     gen "Now tell them what you are."
     her "W-w-what? No please, just don't stop."
+    $ renpy.sound.play("sounds/creaking.mp3")
     gen "Tell them what you are and I'll keep going."
     her "I can't... Just keep going..."
     gen "Say it."
     her "{size=-3}I'm a slut.{/size}"
+    play bg_sounds "sounds/slickloop.mp3" fadein 2 fadeout 2
     ">You start rotating the tentacles in her vagina ever so slowly."
     gen "What was that? I don't think that they heard you. Why don't you say it once more, with feeling."
     her "I'm a slut!"
+    play bg_sounds "sounds/slickloopveryfast.mp3" fadein 2 fadeout 2
     ">You begin fiercely fucking her vagina."
     her "Yes, yes, I'm a fucking slut. Fuck me harder."
     gen "See that wasn't so hard now was it. How about I give you a little reward."
     her "Wha-"
     call cg_scene("p5")
     ">You thrust a ribbed tentacle deeply into her asshole in one motion."
+    $ renpy.sound.play("sounds/slick_02.mp3")
     her "!!!"
-    her "It's in my ass... I-I'm cumming."
+    her "It's in my ass... I-I'm...{w=0.4} I-I'm cumming."
     ">You take alternating turns pumping into her ass and pussy."
     her "I'm cumming! It's too much..."
     call cg_scene("p6")
+    $ renpy.sound.play("sounds/slick_01.mp3")
     ">You feel her body shudder as the orgasm rocks her."
     ">This only spurs you on to fuck her harder."
     her "Please... no more... I'll faint..."
@@ -391,17 +398,25 @@ label tentacle_1: #Public path
     gen "This is it girl, get ready."
     her "...ready?..."
     call cg_scene("p7")
+    stop bg_sounds fadeout 2
+    $ renpy.sound.play("sounds/slick_01.mp3")
     ">With one final surge you release the pent up energy in a surge of white sap all over her."
-    gen "Oh gods, it's like each vine is cumming. This is amazing..."
-    ">The sensations proved to much for hermione and she faints, going limp in your tentacles."
+    $ renpy.sound.play("sounds/slick_02.mp3")
+    gen "By the gods, it's as if each vine is cumming. This is amazing..."
+    $ renpy.sound.play("sounds/slick_02.mp3")
+    ">The sensations proved to much for Hermione and she faints, going limp in your tentacles."
     mal "What a slut..."
-    fem "I told you so."
+    fem "That's what I've been telling you!"
     mal2 "Man, I'm going to have to join Gryffindor."
+    hide screen cg
+    show screen blkfade
+    with d9
+    pause.8
     ">You place Hermione back onto the desk as the plant that you are occupying slowly wilts and dies."
     ">Professor Sprout quickly runs over."
     spo "Miss Granger are you okay?"
     her "..."
-    spo "Quickly, someone take her to the hospital."
+    spo "Quickly, someone take her to the hospital wing."
     mal "Should we cover her up?"
 
     # This is the public route, don't change writing please!
@@ -413,7 +428,7 @@ label tentacle_1: #Public path
         mal2 "{size=-4}Holy shit, they're soft."
         spo "If you two don't stop that at once you'll get expelled."
         mal "S-sorry..."
-        mal2 "Yes, sorry."
+        mal2 "Sorry professor!"
         spo "Just take her out."
     else:
         spo "No need, if she feels comfortable parading without panties in MY class, then she should be fine being taken naked to the infirmary."
@@ -423,8 +438,7 @@ label tentacle_1: #Public path
 
     call play_sound("walking")
 
-    ">You can hear the boys snickering to each other while they carry hermione out in some unknown direction..."
-    ">...Probably to have some fun with her while she's still unconcious..."
+    ">You hear the boys snickering to each other whilst they carry Hermione out in some unknown direction..."
 
     spo "Class dismissed!"
 
@@ -451,8 +465,8 @@ label tentacle_2: # Personal path
 
     call cg_scene("e2")
     call ctc
-    $ renpy.sound.play("sounds/slick_02.mp3")
 
+    $ renpy.sound.play("sounds/slick_02.mp3")
     ">You quickly force another flowered tentacle into her mouth."
     gen "Now, now [hermione_name], you don't want anyone to find out how much you actually are enjoying yourself now, do you?"
     her "*Hmmmhhhhhhhhh* !"
@@ -467,26 +481,29 @@ label tentacle_2: # Personal path
     mal2 "I don't know man, she doesn't look like she hates it."
     play bg_sounds "sounds/slickloopfast.mp3" fadein 2 fadeout 2
     ">You increase the speed of the tentacles in her vagina."
-    gen "Hear that, [hermione_name]? Your classmates are starting to realize how much you like your slutty pussy getting stuffed."
+    gen "Hear that, [hermione_name]? Your classmates are starting to realize how much you like getting your pussy stuffed."
     her "*NNNNNNNNNm*"
     gen "What was that? Faster you say?"
     gen "You got it, [hermione_name]!"
     call cg_scene("e3")
+    play bg_sounds "sounds/slickloopveryfast.mp3" fadein 2 fadeout 2
     ">You begin fucking Hermione in earnest."
     her "*HMMMMMMm...!!!*"
     ">The sensation of fucking Hermione in two different holes is almost overwhelming."
     gen "I know you are loving every second of this..."
     gen "...Being fucked in front of your classmates."
     gen "Having your tits and pussy on display..."
+
     ">You move a ridged tentacle towards her ass."
     her "*mm eehh oorr mmmnooo*!"
-    # TODO: Sound enter her bottocks :DDD
+    $ renpy.sound.play("sounds/slick_02.mp3")
     call cg_scene("e4")
     ">You enter her tight ass. The feeling of being in every hole at once is incredible."
     her "*mmmmmmmm*"
-    ">Hermione barely manages a groan. She is being overwhelmed by the shear amount of pleasure she is currently bombarded with."
+    ">Hermione barely manages a groan, overwhelmed by the shear amount of pleasure she is currently bombarded with."
+    play bg_sounds "sounds/slickloop.mp3" fadein 2 fadeout 2
     gen "Admit it! You're loving this aren't you."
-    gen "Being forced to take dick in front of you classmates like the whore you are."
+    gen "Having your holes filled in front of your classmates like the whore you are."
     gen "Go on say it! Tell me what you are!"
     her "*hmmm aaaaa hhhhhhuuuttt*"
     gen "What was that, I couldn't quite make it out over the sound of you sucking dick."
@@ -498,22 +515,27 @@ label tentacle_2: # Personal path
     ">The realisation of what has just occurred hits her like a ton of bricks."
     her "I-I'm cumming... Profes-"
     call cg_scene("e6")
+    $ renpy.sound.play("sounds/slick_02.mp3")
     ">You quickly reinsert the tentacle into her mouth, silencing her."
     gen "Good girl. Time for your reward."
     play bg_sounds "sounds/slickloopveryfast.mp3" fadein 2 fadeout 2
     ">You quicken the pace as she convulses beneath you."
     call cg_scene("e7")
+    $ renpy.sound.play("sounds/slick_01.mp3")
     ">You explode inside of her from every tentacle-like heads, filling her up to the brim."
+    stop bg_sounds fadeout 2
+    $ renpy.sound.play("sounds/slick_02.mp3")
     mal "Told you she was a slut."
+    $ renpy.sound.play("sounds/slick_02.mp3")
     fem "I guess you were right..."
-    ">Professor Sprout quickly runs over."
-    spo "Miss Granger are you okay? Miss granger!"
-    her "..................*ah*"
-    spo "....She's breathing, thank be Merlin."
     hide screen cg
     show screen blkfade
     with d9
     pause.8
+    ">Professor Sprout quickly runs over."
+    spo "Miss Granger are you okay? Miss granger!"
+    her "..................*ah*"
+    spo "....She's breathing, thank be Merlin."
     spo "You! Yes, you girls! Take her to the hospital wing at once!"
     fem "W-wha-.. But..."
     spo "What are you waiting for!"

@@ -1316,7 +1316,7 @@ label ll_pf_sex_bedroom:
     m "Got anywhere in mind?"
     call lun_main("Well... I've been wanting to try out your technique somewhere we can lie down...","soft","angry","sad","R")
     call lun_main("Would you like to... Come to my room, [lun_genie_name]?","base","seductive","sad","mid")
-    m "Are girl as gorgeous and king as you inviting me to her bed?"
+    m "Is a girl as gorgeous and kind as you inviting me to her bed?"
     m "I don't think any man on the planet could turn you down."
     call lun_main("...","base","angry","sad","down")
     show screen blkfade

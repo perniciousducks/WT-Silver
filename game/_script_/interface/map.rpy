@@ -188,7 +188,7 @@ screen map_buttons():
 
     #Attic
     if tentacle_scroll_examined:
-        if tentacle_sample:
+        if not tentacle_sample:
             add "interface/achievements/glow.png" pos (UI_xpos_offset+340, UI_ypos_offset+226) align (0.5, 0.5) offset (15, 15) zoom 0.15 alpha 0.5 at rotate_circular
             imagebutton:
                 xpos UI_xpos_offset +340

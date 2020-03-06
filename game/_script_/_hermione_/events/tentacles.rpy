@@ -1,7 +1,33 @@
 #Public tentacle scene
 label tentacle_scene_intro:
-    with d3 # Transition from inventory
+    with d3
     show screen bld1
+
+    if not tentacle_scroll_examined:
+        $ tentacle_scroll_examined = True
+        m "(Hmm... let's see what this scroll says...)"
+        m "At the highest point I am hidden..."
+        m "(fuck it's a riddle...)"
+
+        m "At the highest point is where I'm hidden-"
+        m "A place where you will need this key-"
+        m "To use this scroll that is forbidden-"
+        m "You'll need to take a piece of me..."
+
+        m "Key... what ke-"
+        $ renpy.play('sounds/magic1.ogg')
+        show screen white
+        with d9
+        pause 0.9
+        hide screen white
+        with d5
+        g4 "ARGH!"
+        g4 "(Bloody magic...)"
+        m "(Oh look, a rusty key just popped out from that scroll...)"
+        m "(Convenient...)"
+        m "(Now I'll just have to find where it fits...)"
+        jump main_room_menu
+
     m "(Okay... so...{w=0.3} What was this scroll supposed to do again?)"
     m "(Ah, that's it... it's supposed to turn me into some sort of magical tentacle plant...)"
     m "(Let's see...)"

@@ -470,7 +470,7 @@ label purchase_forbidden_scroll(item):
     fre "No idea!"
     m "Ok, well how much is the scroll?"
     ger "Five hundred gold coins."
-    m "Five hundred!? Why on earth is it so expensive?"
+    g4 "Five hundred!? Why on earth is it so expensive?"
     fre "Forbidden magic is quite a risky and expensive endeavour Professor, We'll sell it for no less than five hundred."
 
     menu:
@@ -489,9 +489,10 @@ label purchase_forbidden_scroll(item):
                 with d3
             else:
                 m "I don't have enough gold."
+                fre "Perhaps later then."
         "-No thanks-":
             m "No thanks, not right now."
-    fre "Perhaps later then."
+            fre "Perhaps later then."
 
     return
 

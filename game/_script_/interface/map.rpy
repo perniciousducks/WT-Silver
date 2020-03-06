@@ -15,7 +15,6 @@ default ton_map_location = "room_defense"
 default first_time_7th = True
 default pitch_open = True
 default inn_intro = False
-default attic_open = False
 
 default map_animated = "once"
 
@@ -24,7 +23,7 @@ define map_ani_time = 1.5
 
 transform map_fadein:
     alpha 0
-    pause (map_ani_time if map_animated else 0)
+    pause (map_ani_time)
     linear 1 alpha 1
 
 image map_unfold:
@@ -55,7 +54,8 @@ screen map_screen():
         add "interface/map/map.png" xpos UI_xpos_offset ypos UI_ypos_offset zoom map_scale # 588x420
 
     fixed:
-        at map_fadein
+        if unfold:
+            at map_fadein
         use map_buttons
         use map_screen_characters
 
@@ -112,7 +112,9 @@ screen map_buttons():
         #hover "interface/map/room_slytherin_hover.png"
         #action Return("slytherin_dormitories")
 
-    #Weasley Store
+    #Weasley Store 15 x 15
+    if not store_intro_done:
+        add "interface/achievements/glow.png" pos (UI_xpos_offset+246, UI_ypos_offset+231) align (0.5, 0.5) offset (15, 15) zoom 0.15 alpha 0.5 at rotate_circular
     imagebutton:
         xpos UI_xpos_offset +246
         ypos UI_ypos_offset +231
@@ -123,6 +125,8 @@ screen map_buttons():
         action Return("open_weasley_store")
 
     #Clothing Store
+    if not clothing_store_intro_done:
+        add "interface/achievements/glow.png" pos (UI_xpos_offset+462, UI_ypos_offset+231) align (0.5, 0.5) offset (15, 15) zoom 0.15 alpha 0.5 at rotate_circular
     imagebutton:
         xpos UI_xpos_offset +462
         ypos UI_ypos_offset +231
@@ -146,11 +150,7 @@ screen map_buttons():
     #Room of Requirement
     if unlocked_7th:
         if not mirror_intro_done:
-            frame:
-                style "empty"
-                xpos UI_xpos_offset +80
-                ypos UI_ypos_offset +120
-                add "interface/achievements/glow.png" align (0.5, 0.5) zoom 0.15 alpha 0.5 at rotate_circular
+            add "interface/achievements/glow.png" pos (UI_xpos_offset+116, UI_ypos_offset+160) align (0.5, 0.5) offset (15, 15) zoom 0.15 alpha 0.5 at rotate_circular
         imagebutton:
             xpos UI_xpos_offset +116
             ypos UI_ypos_offset +160
@@ -187,30 +187,26 @@ screen map_buttons():
         action Return("map_forest")
 
     #Attic
-    if sealed_scroll_quest_ITEM.unlocked and not tentacle_sample:
-        frame:
-            style "empty"
-            xpos UI_xpos_offset +300
-            ypos UI_ypos_offset +186
-            add "interface/achievements/glow.png" align (0.5, 0.5) zoom 0.15 alpha 0.5 at rotate_circular
-        imagebutton:
-            xpos UI_xpos_offset +340
-            ypos UI_ypos_offset +226
-            idle "interface/map/room_attic_closed_idle.png"
-            hover "interface/map/room_attic_closed_hover.png"
-            hovered SetVariable("ball_hint", "attic")
-            unhovered SetVariable("ball_hint", None)
-            action Return("map_attic")
-
-    if sealed_scroll_quest_ITEM.unlocked and tentacle_sample:
-        imagebutton:
-            xpos UI_xpos_offset +340
-            ypos UI_ypos_offset +226
-            idle "interface/map/room_attic_open_idle.png"
-            hover "interface/map/room_attic_open_hover.png"
-            hovered SetVariable("ball_hint", "attic")
-            unhovered SetVariable("ball_hint", None)
-            action Return("map_attic")
+    if tentacle_scroll_examined:
+        if tentacle_sample:
+            add "interface/achievements/glow.png" pos (UI_xpos_offset+340, UI_ypos_offset+226) align (0.5, 0.5) offset (15, 15) zoom 0.15 alpha 0.5 at rotate_circular
+            imagebutton:
+                xpos UI_xpos_offset +340
+                ypos UI_ypos_offset +226
+                idle "interface/map/room_attic_closed_idle.png"
+                hover "interface/map/room_attic_closed_hover.png"
+                hovered SetVariable("ball_hint", "attic")
+                unhovered SetVariable("ball_hint", None)
+                action Return("map_attic")
+        else:
+            imagebutton:
+                xpos UI_xpos_offset +340
+                ypos UI_ypos_offset +226
+                idle "interface/map/room_attic_open_idle.png"
+                hover "interface/map/room_attic_open_hover.png"
+                hovered SetVariable("ball_hint", "attic")
+                unhovered SetVariable("ball_hint", None)
+                action Return("map_attic")
 
     # Map animation toggle
     text "Animation" xpos 700+21 ypos 530+10 size 10
@@ -424,6 +420,8 @@ screen map_screen_characters():
 
     #Hermione
     if hermione_unlocked:
+        if her_map_location == "forest": # Mark forest event.
+            add "interface/achievements/glow.png" pos (UI_xpos_offset+her_map_xpos, UI_ypos_offset+her_map_ypos) align (0.5, 0.5) zoom 0.15 alpha 0.5 at rotate_circular
         imagebutton:
             xpos +UI_xpos_offset +her_map_xpos
             ypos +UI_ypos_offset +her_map_ypos

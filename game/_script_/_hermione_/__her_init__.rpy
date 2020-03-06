@@ -94,6 +94,7 @@ default hermione_wardrobe_unlocked = False
 
 # Tentacle event
 default tentacle_sample = False # Quest "item" flag.
+default tentacle_scroll_examined = False
 
 default hg_ps_get_panties = shaming_class(
     tier = 1,

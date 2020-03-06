@@ -36,10 +36,7 @@ label rummaging:
 
     ">You rummage through the cupboard for a while..."
 
-
-    ### Intem Rewards ###
     $ random_percent = renpy.random.randint(1, 100)
-
 
     # Dueling Potion.
     if day <= 3 and rum_times in [1,2]:
@@ -47,7 +44,6 @@ label rummaging:
         call give_reward(">You found some sort of potion...","interface/icons/item_potion.png")
 
         jump main_room_menu
-
 
     # Map.
     if hermione_favors and not map_unlocked:
@@ -64,77 +60,97 @@ label rummaging:
 
         jump main_room_menu
 
-
-
     ##################################################
     ### Add your cupboard unlocks above this line. ###
     ##################################################
 
-    # Wine/firewhisky.
-    if firewhisky_ITEM.unlocked and firewhisky_ITEM.number < 1:
-        call rum_block(firewhisky_ITEM)
-    elif wine_ITEM.number < 1:
-        call rum_block(wine_ITEM)
+    $ drop_list = [lollipop_ITEM, chocolate_ITEM, plush_owl_ITEM, butterbeer_ITEM, science_mag_ITEM, girls_mag_ITEM, adult_mag_ITEM, porn_mag_ITEM, krum_poster_ITEM, sexy_lingerie_ITEM, sexy_stockings_ITEM, pink_condoms_ITEM, vibrator_ITEM, anal_lube_ITEM, ballgag_and_cuffs_ITEM, anal_plugs_ITEM, testral_strapon_ITEM, broom_2000_ITEM, sexdoll_ITEM, anal_beads_ITEM, firewhisky_ITEM, wine_ITEM]
 
-    elif random_percent <= 25:
-        if firewhisky_ITEM.unlocked and random_percent <= 25:
+    $ _dr = max(rum_times-day, 0)*2
+
+    #
+    # Easy (with soft diminishing returns, more rubber banding. Guaranteed item drop.)
+    #
+    if game_difficulty == 1:
+        if firewhisky_ITEM.unlocked and firewhisky_ITEM.number < 1:
             call rum_block(firewhisky_ITEM)
-        else:
+        elif wine_ITEM.number < 1:
             call rum_block(wine_ITEM)
+        elif gold < int(170*math.log(day)) and random_percent <= 56-_dr:
+            call rum_block(int(math.log(her_tier+cho_tier+ton_tier+lun_tier+day)*random_gold))
+        else:
+            $ _filtered_list = filter(lambda x: x.number <= 5, drop_list)
+            $ _item = renpy.random.choice(_filtered_list if _filtered_list else drop_list)
 
-    # Gold.
-    elif random_percent <= 40:
-        call rum_block("gold")
+            call rum_block(_item)
+    #
+    # Normal (with fair diminishing returns, soft rubber banding. High chance for item drop.) (Recommended)
+    #
+    elif game_difficulty == 2:
+        if gold < int(120*math.log(day)) and random_percent <= 38-_dr:
+            call rum_block(int(math.log(her_tier+cho_tier+ton_tier+lun_tier+day)*random_gold))
+        else:
+            $ _filtered_list = filter(lambda x: x.number <= 3, drop_list) # Filter out owned items with quantity higher than 2.
+            $ _item = renpy.random.choice(_filtered_list if _filtered_list else drop_list)
 
-    # Items.
-    else:
-
-        if game_difficulty <= 2: # Easy and Normal difficulty.
-
-            if her_tier in [1]:
-                $ random_choice = renpy.random.choice([lollipop_ITEM, plush_owl_ITEM, chocolate_ITEM])
-            elif her_tier in [2]:
-                $ random_choice = renpy.random.choice([science_mag_ITEM, lollipop_ITEM, chocolate_ITEM, butterbeer_ITEM, sexy_lingerie_ITEM])
-            elif her_tier in [3]:
-                $ random_choice = renpy.random.choice([girls_mag_ITEM, lollipop_ITEM, butterbeer_ITEM, krum_poster_ITEM])
-            elif her_tier in [4]:
-                $ random_choice = renpy.random.choice([adult_mag_ITEM, butterbeer_ITEM, pink_condoms_ITEM, krum_poster_ITEM])
-            elif her_tier in [5]:
-                $ random_choice = renpy.random.choice([porn_mag_ITEM, pink_condoms_ITEM, vibrator_ITEM, anal_lube_ITEM, anal_plugs_ITEM])
+            if int(120*math.log(day))/3 < _item.cost:
+                $ _chance = max(6-(_item.number*5), 1)
+            elif gold > _item.cost:
+                $ _chance = max(65-(_item.number*15), 5)
             else:
-                $ random_choice = renpy.random.choice([broom_2000_ITEM, vibrator_ITEM, anal_lube_ITEM, anal_plugs_ITEM, testral_strapon_ITEM])
+                $ _chance = max(95-(_item.number*10), 15)
 
-        else: # Hardcore difficulty. # Sex items only.
+            if random_percent <= _chance-_dr:
+                call rum_block(_item)
+            else:
+                call rum_block("nothing")
+    #
+    # Hardcore (with more harsh diminishing returns, no rubber banding. Chance for item drop.)
+    #
+    elif game_difficulty == 3:
+        if gold < int(90*math.log(day)) and random_percent <= 33-_dr:
+            call rum_block(int(math.log(her_tier+cho_tier+ton_tier+lun_tier+day)*random_gold))
+        else:
+            $ _item = renpy.random.choice(drop_list)
 
-            $ random_choice = renpy.random.choice([adult_mag_ITEM, porn_mag_ITEM, butterbeer_ITEM, pink_condoms_ITEM, anal_lube_ITEM, sexy_lingerie_ITEM, anal_plugs_ITEM, sexdoll_ITEM])
+            if int(90*math.log(day))/3 < _item.cost:
+                $ _chance = max(3-(_item.number*5), 1)
+            elif gold > _item.cost:
+                $ _chance = max(40-(_item.number*15), 0)
+            else:
+                $ _chance = max(75-(_item.number*10), 5)
 
-        call rum_block(random_choice)
+            if random_percent <= _chance-_dr:
+                call rum_block(_item)
+            else:
+                call rum_block("nothing")
 
     jump main_room_menu
 
 
-label rum_block(item = ""):
-    if item == "gold":
-        $ renpy.play('sounds/win2.mp3')
+label rum_block(item):
+    if isinstance(item, int):
         $ the_gift = "interface/icons/gold.png"
-        show screen gift
+        show screen gift(True)
         with d3
-        ">You found [random_gold] gold..."
-        $ gold += random_gold
-
+        $ gold += item
+        ">You found [item] gold..."
+    elif item == "nothing":
+        ">You found nothing of value..."
     else:
-        $ renpy.play('sounds/win2.mp3')
         $ item.number += 1
         $ the_gift = item.get_image()
-        show screen gift
+        show screen gift(True)
         with d3
         if item == wine_ITEM:
-            ">You found a bottle of wine from professor dumbledore's personal stash..."
+            ">You found a bottle of wine from professor Dumbledore's personal stash..."
         elif item == firewhisky_ITEM:
-            ">You found a bottle of firewhisky from professor dumbledore's personal stash..."
+            ">You found a bottle of firewhisky from professor Dumbledore's personal stash..."
         else:
             ">You found [item.name]..."
             ">[item.description]"
+
+        call tutorial("inventory")
 
     hide screen gift
     with d3

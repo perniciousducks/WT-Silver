@@ -53,6 +53,7 @@ default toy_gift_list = [
     plush_owl_ITEM,
     pink_condoms_ITEM,
     sexy_lingerie_ITEM,
+    sexy_stockings_ITEM,
     vibrator_ITEM,
     anal_lube_ITEM,
     ballgag_and_cuffs_ITEM,

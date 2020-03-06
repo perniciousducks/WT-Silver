@@ -264,7 +264,7 @@ label get_package:
 
     if clothing_mail_item != None:
         if clothing_mail_timer <= 0:
-            call unlock_clothing(text="You received a new outfit.",item=clothing_mail_item)
+            call unlock_clothing(text="You have received a new outfit.",item=clothing_mail_item)
             $ clothing_mail_item = None
             $ clothing_mail_timer = 0
 
@@ -302,6 +302,8 @@ label get_package:
 
     $ package_is_here = False
     $ renpy.block_rollback()
+
+    call tutorial("inventory")
 
     jump main_room_menu
 

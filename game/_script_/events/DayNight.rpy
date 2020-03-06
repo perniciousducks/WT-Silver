@@ -132,8 +132,6 @@ label update_day_values:
 
     $ day_random = renpy.random.randint(0, 10)
 
-    $ random_gold = renpy.random.randint(8, 120) # Money you find in the cupboard.
-
     # Count days of the week. Every day +1. When day_of_week = 7, reset to zero.
     if day_of_week == 7:
         $ day_of_week = 0
@@ -215,5 +213,7 @@ label update_day_and_night_values:
     call set_sus_map_location()
 
     $ searched  = False # Cupboard.
+
+    $ random_gold = renpy.random.randint(8, 40) # Money you find in the cupboard.
 
     return

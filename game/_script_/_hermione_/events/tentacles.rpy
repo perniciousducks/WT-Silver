@@ -6,8 +6,8 @@ label tentacle_scene_intro:
     if not tentacle_scroll_examined:
         $ tentacle_scroll_examined = True
         m "(Hmm... let's see what this scroll says...)"
-        m "At the highest point I am hidden..."
-        m "(fuck it's a riddle...)"
+        m "At the highest point is where I'm hidden..."
+        g4 "(fuck, it's a riddle...)"
 
         m "At the highest point is where I'm hidden-"
         m "A place where you will need this key-"
@@ -29,11 +29,9 @@ label tentacle_scene_intro:
         jump main_room_menu
 
     m "(Okay... so...{w=0.3} What was this scroll supposed to do again?)"
-    m "(Ah, that's it... it's supposed to turn me into some sort of magical tentacle plant...)"
     m "(Let's see...)"
     if not tentacle_sample:
-        m "(I'm still missing the plant sample.)"
-        m "(Well... I do have this key, so I just need to find where that highest point is...)"
+        m "Right, the riddle..."
 
         label .riddle:
         m "\"At the highest point is where I'm hidden-\""
@@ -48,9 +46,11 @@ label tentacle_scene_intro:
             "-Repeat the riddle-":
                 jump tentacle_scene_intro.riddle
 
+        m "(Well... I have the key, now to figure out the rest...)"
         m "(The highest point... *hmm* I wonder where that could be.)"
         jump main_room_menu
     else:
+        m "(Ah, that's it... it's supposed to turn me into some sort of magical tentacle plant...)"
         m "(I have everything I need to perform the ritual and have some fun with Hermione.)"
         if not daytime:
             m "(*hmm* But it's too late for me to use it now. I should do it at dawn, before class has started.)"

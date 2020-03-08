@@ -5,9 +5,37 @@ label tentacle_scene_intro:
 
     if not tentacle_scroll_examined:
         $ tentacle_scroll_examined = True
-        m "(Hmm... let's see what this scroll says...)"
+        m "(Hmm... let's see if we can get this writing to show...)"
+        m "(It should be something simple like a command word...)"
+
+        $ d_flag_01 = False
+        $ d_flag_02 = False
+        $ d_flag_03 = False
+        label .spell:
+        if d_flag_01 and d_flag_02 and d_flag_03:
+          jump .after_spell
+        menu:
+          "\"Open Sesame!\"" if not d_flag_01:
+            $ d_flag_01 = True
+            m "...{w=0.8} Guess not..."
+            jump .spell
+          "\"Hocus Pocus!\"" if not d_flag_02:
+            $ d_flag_02 = True
+            m "...{w=0.8} Damn..."
+            jump .spell
+          "\"Abracadabra!\"" if not d_flag_03:
+            $ d_flag_03 = True
+            m "...{w=0.8} ..."
+            jump .spell
+
+        label .after_spell:
+        m "Work you stupid scroll or I'll throw you in the fire!"
+        $ renpy.play('sounds/scribble.mp3')
+        m "That's what I thought..."
+
+        m "Now then... Let's find out what this scroll says..."
         m "At the highest point is where I'm hidden..."
-        g4 "(fuck, it's a riddle...)"
+        g4 "(fuck, it's a riddle...{w=0.4} Guess I deserved that...)"
 
         m "At the highest point is where I'm hidden-"
         m "A place where you will need this key-"

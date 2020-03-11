@@ -103,3 +103,17 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
             sc_cg_image_3 = "blank"
         renpy.show_screen("sccg")
         renpy.with_statement(Dissolve(0.5))
+
+    def dynamic_cg(folder, *args):
+        d = tuple("images/CG/{}/{}.png".format(folder, file) for file in args)
+
+        renpy.show_screen("dynamic_cg", d)
+        renpy.with_statement(Dissolve(0.5))
+        return
+
+screen dynamic_cg(d):
+    tag cg_screen
+    zorder 14
+
+    for img in d:
+        add img

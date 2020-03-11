@@ -49,7 +49,7 @@ label ending_after:
     # Choose to end the game or continue playing
     menu:
         g14 "What should I do?"
-        "Go home to Agrabah (exit to main menu)":
+        "Go home, to Agrabah!\n(exit to main menu)":
             g14 "Yes, that is probably for the best..."
             show screen white
             pause .1
@@ -117,8 +117,11 @@ label ending_after:
                 m "I um...{w=0.4} had a change of heart."
                 call her_main("Cold outside?", "base", "base", "base", "mid")
                 m "Yes...{w=0.5} that's it."
+
+                $ hermione.equip(her_outfit_ball)
                 ">Standing there in silence, looking at Hermione, you can't help but struggle with what to say."
                 ">Hermione looks at you expectantly and breaks the silence by extending one of her arms to you."
+
                 call her_main("Care for a dance?", "open", "squint", "base", "mid", cheeks="blush", xpos="base", ypos="head")
                 g9 "I...{w=0.5} of course!"
                 call her_main("...", "base", "base", "base", "mid", cheeks="blush")
@@ -264,6 +267,7 @@ label ending_after:
                 m "Okay then..."
                 m "In that case I'll head back to my office."
 
+                $ hermione.equip(her_outfit_ball)
                 ">As Snape slides back towards the teachers table, Hermione notices your presence and quickly starts walking towards you."
                 ">Before you can even attempt to slip into the shadows again, she's already come through the doorway with one of her arms held out in front of her."
                 call her_main("Care for a dance?", "base", "happy", "base", "L", cheeks="blush", xpos="base", ypos="head") # smiles

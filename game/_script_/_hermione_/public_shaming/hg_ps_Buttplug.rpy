@@ -427,9 +427,6 @@ label hg_ps_buttplug:
     jump end_hermione_event
 
 
-
-
-
 label hg_ps_buttplug_complete:
 
     call her_walk(action="enter", xpos="mid", ypos="base")
@@ -1033,7 +1030,6 @@ label hg_ps_buttplug_complete:
     call her_walk(action="leave")
 
     $ hg_ps_buttplug.points += 1
-    $ hg_ps_buttplug.complete = True
     $ hg_ps_buttplug.inProgress = False
 
     $ hermione.unequip("buttplug")

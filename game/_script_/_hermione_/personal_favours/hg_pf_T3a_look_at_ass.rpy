@@ -89,36 +89,36 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
 
             if hermione.is_worn("top"):
                 $ hermione.strip("top")
-                
+
                 call ctc
-            
+
             if hermione.is_worn("bottom"):
                 m "That's it [hermione_name], take off your bottoms..."
                 call her_main("............", "annoyed", "narrow", "angry", "R", cheeks="blush")
                 $ hermione.strip("bottom")
-            
+
                 call ctc
-                
+
             if hermione.is_worn("bra"):
                 m "Show me your titties too!"
                 call her_main("............", "soft", "base", "base", "R", cheeks="blush")
                 $ hermione.strip("bra")
                 m "Very nice..."
-                
+
                 call ctc
-                
+
             if hermione.is_worn("panties"):
                 g9 "The grand finale..."
                 call her_main(".....", "annoyed", "narrow", "angry", "R", cheeks="blush")
-                
+
                 $ hermione.strip("panties")
-                
+
                 call ctc
-                
+
                 if hermione.is_worn("pubes"):
                     g9 "Nice patch of hair you got there!"
                     call her_main("............", "annoyed", "narrow", "angry", "R", cheeks="blush")
-                
+
         m "Now turn around..."
         call blkfade
 
@@ -158,9 +158,9 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
 
             if hermione.is_worn("top"):
                 $ hermione.strip("top")
-                
+
                 call ctc
-            
+
             if hermione.is_worn("bottom"):
                 m "That's it [hermione_name], take off your bottoms..."
                 if her_whoring < 18:
@@ -168,9 +168,9 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
                 else:
                     call her_main("............", "soft", "base", "base", "R", cheeks="blush")
                 $ hermione.strip("bottom")
-            
+
                 call ctc
-                
+
             if hermione.is_worn("bra"):
                 m "Show me your titties too!"
                 if her_whoring < 18:
@@ -179,9 +179,9 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
                     call her_main("............", "soft", "base", "base", "R", cheeks="blush")
                 $ hermione.strip("bra")
                 m "Very nice..."
-                
+
                 call ctc
-                
+
             if hermione.is_worn("panties"):
                 g9 "The grand finale..."
                 if her_whoring < 18:
@@ -189,9 +189,9 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
                 else:
                     call her_main("............", "soft", "base", "base", "R", cheeks="blush")
                 $ hermione.strip("panties")
-                
+
                 call ctc
-                
+
                 if hermione.is_worn("pubes"):
                     g9 "Nice patch of hair you got there!"
                     if her_whoring < 18:
@@ -215,7 +215,7 @@ label hg_show_ass:
     with d5
     call play_sound("climb_desk")
     pause 1
-    
+
     #
     # TODO: Naked ass sprite
     #
@@ -347,7 +347,7 @@ label hg_pr_strip_T2_masturbate_rear:
 
     call gen_chibi("jerk_off_behind_desk")
     call play_music("chipper_doodle")
-    
+
     ">You take your cock out and start stroking it..."
 
     hide screen blkfade
@@ -518,7 +518,7 @@ label hg_pr_strip_T3_masturbate_rear:
 
     call gen_chibi("jerk_off_behind_desk")
     call play_music("chipper_doodle")
-    
+
     ">You take your cock out and start stroking it..."
 
     hide screen blkfade
@@ -697,7 +697,7 @@ label hg_pr_strip_T4_masturbate_rear:
 
     call gen_chibi("jerk_off_behind_desk")
     call play_music("chipper_doodle")
-    
+
     ">You take your cock out and start stroking it..."
 
     hide screen blkfade
@@ -1023,19 +1023,6 @@ label end_hg_show_ass:
         call her_main(".................................", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
 
     call her_chibi("leave")
-
-
-    $ hg_pf_look_at_ass.level = 1 #Event hearts level (0-3)
-
-    if her_whoring >= 12 and her_whoring < 15:
-        $ hg_pf_look_at_ass.level = 1 #Event hearts level (0-3)
-
-    if her_whoring >= 15 and her_whoring < 18:
-        $ hg_pf_look_at_ass.level = 2 #Event hearts level (0-3)
-
-    if her_whoring >= 18:
-        $ hg_pf_look_at_ass.level = 3 #Event hearts level (0-3)
-
 
     if her_whoring < 15:
         $ her_whoring +=1

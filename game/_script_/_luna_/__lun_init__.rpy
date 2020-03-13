@@ -226,9 +226,6 @@ default ll_pf_sex = event_class(title = "Let's have sex!", start_label = "ll_pf_
     iconset = [["heart_empty", "heart_blue"]]
 )
 
-# default ll_pf_talk       = favor_class(title = "Talk to me!", tier = 0, start_label = "ll_pf_talk")
-# default ll_pf_strip      = favor_class(title = "Inspect her body!", tier = 1, start_label = "ll_pf_strip")
-
 # Favors get added to the list after their intro events.
 # Do not add them manually to this list!
 default ll_favor_list = []

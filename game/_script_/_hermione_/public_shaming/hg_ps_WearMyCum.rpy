@@ -26,7 +26,6 @@ label hg_ps_cumslut:
 
     if her_whoring < 9:
         jump too_much
-
     elif her_whoring < 15:
         jump hg_ps_cumslut_Scene_1
     elif her_whoring < 21:
@@ -595,7 +594,6 @@ label hg_ps_cumslut_Scene_3:
 label hg_ps_cumslut_complete:
     # Hermione returns from her day of wearing your cum
     $ hg_ps_cumslut.inProgress = False
-    $ hg_ps_cumslut.complete = True
     if cum_location < 4:
         jump hg_ps_cumslut_complete_1
     elif cum_location < 7:
@@ -844,7 +842,7 @@ label hg_ps_cumslut_complete_3:
         $ u_sperm = "characters/hermione/face/auto_07.png"
         $ uni_sperm = True
         #TODO Cum layer
-        
+
         ">Hermione returns to your office, her face still covered in cum."
         call her_main("I did it, [genie_name].", "open", "squint", "base", "mid")
         call her_main("I kept your cum on me all day.", "base", "base", "base", "mid")

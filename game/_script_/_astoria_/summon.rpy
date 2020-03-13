@@ -86,7 +86,7 @@ label astoria_spells:
         spell_menu = []
 
         for i in ag_spell_list:
-            if not i.complete: # Not trained yet.
+            if not i.is_complete(): # Not trained yet.
                 if daytime and not tonks_busy:
                     spell_menu.append(i.get_menu_item())
                 else:

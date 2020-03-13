@@ -1710,8 +1710,6 @@ label ag_st_imperio_E5:
 
     call nar(">Astoria has \"mastered\" the imperio curse!")
 
-    $ ag_st_imperio.complete = True
-
     $ snape_busy = True
     $ tonks_busy = True
     $ astoria_busy = True

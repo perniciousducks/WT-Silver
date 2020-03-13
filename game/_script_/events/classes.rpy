@@ -5,7 +5,7 @@
 init -1 python:
 
     #Favours
-    class silver_request(object):
+    class shaming_class(object):
         title        = ""
         tier         = 0
         start_label  = ""
@@ -14,61 +14,26 @@ init -1 python:
         counter      = 0 # For stats
         hint         = False
 
-    class favor_class(silver_request): # Not in use anymore.
-        level        = 0 # Hearts
-        max_level    = 3
-        heart_color  = "red"
-
-        def __init__(self, **kwargs):
-            self.__dict__.update(**kwargs)
-
-        def get_menu_text(self):
-            heart_list = []
-            menu_text = None
-            for i in xrange(self.max_level):
-                if i < self.level:
-                    heart_list.append("interface/icons/small/heart_"+self.heart_color+".png")
-                else:
-                    heart_list.append("interface/icons/small/heart_empty.png")
-
-            # Before Text
-            if self.hint:
-                menu_text = "{image=interface/check_True.png} "
-            # Main Text
-            if menu_text != None:
-                menu_text += "\""+self.title+"\" "
-            else:
-                menu_text = "\""+self.title+"\" "
-            # After Text
-            for i in xrange(len(heart_list)):
-                menu_text += "{image="+str(heart_list[i])+"}"
-
-            return menu_text
-
-    class request_class(silver_request):
-        complete = False
         inProgress = False
 
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
 
-        def get_menu_text(self):
-            menu_image = "interface/check_"+str(self.complete)+".png"
-            ret_str = "\""+self.title+"\" {image="+menu_image+"}"
+        def get_menu_item(self, disabled=False, return_value=None):
+            menu_text = ""
+
             if self.hint:
-               ret_str += "  {image=interface/check_True.png}"
-            return ret_str
+                menu_text += "{image=interface/check_True.png}"
 
-    class shaming_class(silver_request):
-        complete = False
-        inProgress = False
+            if self.title:
+                menu_text += "\"{}\"".format(self.title)
 
-        def __init__(self, **kwargs):
-            self.__dict__.update(**kwargs)
+            if disabled:
+                menu_text = "{color=[menu_disabled]}" + menu_text + "{/color}"
 
-        def get_menu_text(self):
-            menu_image = "interface/check_"+str(self.complete)+".png"
-            ret_str = "\""+self.title+"\" {image="+menu_image+"}"
-            if self.hint:
-               ret_str += "  {image=interface/check_True.png}"
-            return ret_str
+            if return_value is None:
+                return_value = "block" if disabled else self.start_label
+
+            action = renpy.ui.ChoiceReturn(None, return_value, kwargs={})
+
+            return (menu_text, action)

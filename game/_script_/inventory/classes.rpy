@@ -50,13 +50,13 @@ init -1 python:
 
         def get_items(self):
             return self.items
-        
+
         def get_type(self):
             return self.type
-        
+
         def get_description(self):
             return self.description
-        
+
         def get_annotation(self):
             return ""
 
@@ -106,9 +106,6 @@ init -1 python:
 
         def __repr__(self):
             return self.id
-
-        def get_menu_text(self):
-            return "-"+str(self.name)+"-"
 
         def get_description(self):
             out_des = ""

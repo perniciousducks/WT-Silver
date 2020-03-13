@@ -165,6 +165,15 @@ init python:
                 status_list += [item[1]]
             return status_list
 
+        def is_complete(self, ignore_in_progress=False):
+            return self.tier == len(self.events) and self.is_tier_complete(ignore_in_progress=ignore_in_progress)
+
+        def is_tier_complete(self, ignore_in_progress=False):
+            return self.points == len(self.events[self._tier]) and (not self.inProgress or ignore_in_progress)
+
+        def is_event_complete(self, tier, event):
+            return bool(self.events[tier-1][event-1][1])
+
         @property
         def points(self):
             return self._points

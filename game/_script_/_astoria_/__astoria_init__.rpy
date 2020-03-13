@@ -80,7 +80,7 @@ default ag_spell_list = []
 
 label update_astoria_spells:
     $ del ag_spell_list[:] # Clear list
-    if ag_st_imperio.complete == False:
+    if not ag_st_imperio.is_complete():
         $ ag_spell_list.append(ag_st_imperio)
     else:
         $ ag_spell_list.append(ag_se_imperio_sb) # Susan

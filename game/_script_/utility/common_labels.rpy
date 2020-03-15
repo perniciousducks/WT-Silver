@@ -58,7 +58,7 @@ label bld(action=None):
     return
 
 label blktone:
-    show screen bld1 #Making sure it's active. Blktone looks stupid without.
+    show screen bld1 # blktone looks stupid without bld1
     show screen blktone
     with d5
 
@@ -66,6 +66,19 @@ label blktone:
 
 label hide_blktone:
     hide screen blktone
+    with d5
+
+    return
+
+label blktone_top:
+    show screen bld1 # blktone looks stupid without bld1
+    show screen blktone5 # Has higher zorder than normal blktone
+    with d5
+
+    return
+
+label hide_blktone_top:
+    hide screen blktone5
     with d5
 
     return

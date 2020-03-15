@@ -12,17 +12,17 @@ label ending_after:
     centered "{size=+7}{color=#cbcbcb}Somewhere outside of time and space...{/color}{/size}\n\n"
     play music "music/epic-unease-by-kevin-macleod.mp3" fadein 1 fadeout 1 # noloop
     pause 3
-    g2 "Where...{w=0.4} where am I...?" with d5
-    g2 "Am I dead...{w=0.4} is this the end...?"
+    g2 "Where... where am I...?" with d5
+    g2 "Am I dead... is this the end...?"
     g2 "Genies aren't supposed to die are they?"
-    g12 "No wait...{w=0.4} this is different...{w=0.4} what is this feeling..."
+    g12 "No wait... this is different...{w=0.4} what is this feeling?"
     g12 "I feel..."
     show screen white
     pause .1
     hide screen white
     g14 "Everything!" with hpunch
-    g14 "The...{w=0.6} The cosmic power is running through me!"
-    g14 "I can see it, the universe... No...{w=0.6} Multiple universes... all around me."
+    g14 "The...{w=0.4} The cosmic power is running through me!"
+    g14 "I can see it, the universe... No...{w=0.4} Multiple universes... all around me."
     g14 "But... Why?"
     g14 "Why am I not back yet!?"
     show screen white
@@ -32,24 +32,24 @@ label ending_after:
     play bg_sounds "sounds/pulse.mp3"
     g15 "ARGH!" with hpunch
     g15 "My form is being pulled in multiple directions!"
-    g15 "If I don't get out of here I'll get torn apart!"
+    g15 "If I don't get out of here I'll be torn apart!"
     stop bg_sounds fadeout 4
     show screen white
     pause .1
     hide screen white
     g14 "Wait...{w=0.8} I know..." with d3
-    g14 "This...{w=0.6} it must be my magic!"
+    g14 "This... it must be my magic!"
     g14 "I need to focus where I want to be... Or I'll be stuck... stuck here forever!"
-    g14 "Stupid...{w=0.4} life choices!"
+    g14 "Stupid... life choices!"
     play bg_sounds "sounds/pulse.mp3"
     g14 "Focus..."
     g14 "I just left a bunch of Sluts at that school!"
-    g14 "But...{w=0.6} I need to get home!"
+    g14 "But... I need to get home!"
 
     # Choose to end the game or continue playing
     menu:
         g14 "What should I do?"
-        "Go home, to Agrabah!\n(exit to main menu)":
+        "Go home, to Agrabah!\n{size=-4}(exit to main menu){/size}":
             g14 "Yes, that is probably for the best..."
             show screen white
             pause .1
@@ -65,13 +65,13 @@ label ending_after:
 
         "Cause a time paradox at Hogwarts":
             g14 "On the other hand..."
-            g14 "Who doesn't love-"
+            g14 "Who doesn't love..."
             show screen white
             pause .1
             hide screen white
             $ renpy.sound.play("sounds/thunder_2.mp3")
-            g15 "A good old time paradox!" with hpunch
-            g15 "It better be worth it... Here I go!"
+            g15 "Who doesn't love...{fast} a good old time paradox!" with hpunch
+            g15 "It better be worth it...{w=0.4} Here I go!"
 
             stop bg_sounds fadeout 4
             stop music fadeout 10
@@ -84,8 +84,8 @@ label ending_after:
             pause.5
             call hide_blkfade
 
-            m "Good bye world of bizarre magic..."
-            m "Good bye my who--......"
+            m "Good bye, world of bizarre magic..."
+            m "Good bye, my whor-"
             m "Wait..."
 
             # Record scratch, music stops
@@ -132,16 +132,14 @@ label ending_after:
                 call play_sound("slap_3")
                 call her_main("...", "soft", "happyCl", "base", "up", cheeks="blush")
                 call her_main("Hey! At least warn me!", "clench", "narrow", "annoyed", "L", cheeks="blush")
-                ">Swiftly taking your hand away from Hermione's butt you give a quick smirk towards your audience."
+                ">Swiftly taking your hand away from Hermione's butt, you give a quick smirk towards your audience."
                 call her_main("I didn't say stop...", "soft", "narrow", "base", "L", cheeks="blush")
                 g9 "Of course..."
                 ">Without a moments hesitation you lift her skirt up, holding it against her back and leaving her panties exposed."
                 call her_main("Sir...", "crooked_smile", "base", "base", "down", cheeks="blush") #could change the sirs here to the name that the player has set for hermione to call you
-                ">Now firmly gripping her butt with your other hand you begin to massage her cheeks whilst moving along with the music."
+                ">Now firmly gripping her butt with your other hand, you begin to massage her cheeks whilst moving along with the music."
                 call her_main("...", "grin", "narrow", "worried", "up", cheeks="blush") #Look of pleasure
-                ">Suddenly the feeling of her soft cheeks is interrupted by something hard brushing against he back of your palm..."
-                ">Moving your hand up against her back, you realise Hermione has tucked the letter you gave her firmly in-between the top edge of her skirt..."
-                ">Continuing to move along with the music your hand finds its way back down, pulling Hermione's panties with them."
+                ">Your hand finds its way back down, pulling Hermione's panties down with it."
                 call her_main("Sir...{w=0.4} what are you doing?", "open", "happyCl", "base", "stare", cheeks="blush")
                 m "You seem a little bit tense... just giving you a hand..."
                 call her_main("But... What if someone notices...", "annoyed", "base", "base", "R", cheeks="blush")
@@ -169,15 +167,6 @@ label ending_after:
                 ">As she gets on her feet she looks up and notices the backs of the Slytherins in the doorway. She spins around to look at you, a red colour quickly spreading across her cheeks."
                 call her_main("I...{w=0.3} I think I'd better head off to bed then...", "mad", "squint", "base", "stare_soft", cheeks="blush") #Worried #Sheepish looking
                 m "Sounds like a good idea..."
-                call her_main("And I'll make sure that I-", "open", "base", "base", "down", cheeks="blush")
-                call her_main("...", "angry", "wide", "base", "stare", cheeks="blush") # shocked
-                call her_main("The letter!", "scream", "wide", "worried", "stare", cheeks="blush")
-                call her_main("It's gone!", "clench", "squint", "base", "mid", cheeks="blush")
-                m "..."
-                m "No matter, it wasn't that important."
-                m "Nothing that you don't already know..."
-                call her_main("You sure?", "soft", "squint", "base", "mid", cheeks="blush")
-                m "As sure as my name is Albus Dumbledore."
                 call her_main("Okay...", "soft", "squint", "worried", "R", cheeks="blush") # smiles
                 call her_main("Good night then...", "base", "squint", "worried", "mid", cheeks="blush")
                 m "Good night Miss Granger."

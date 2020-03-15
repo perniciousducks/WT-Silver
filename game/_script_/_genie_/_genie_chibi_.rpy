@@ -57,8 +57,8 @@ label gen_chibi(action=None, xpos=None, ypos=None, flip=True, pic=None):
         show screen chair_left
         show screen desk
         $ genie_chibi.position(430, 205+340, False)
-    
-    elif action == "paperwork":
+
+    elif action in ("paperwork", "paperwork_idle"):
         hide screen chair_left
         hide screen desk
         $ genie_chibi.position(224, 205+262, False)

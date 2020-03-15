@@ -3,13 +3,13 @@
 
 image ch_gen stand:
     "characters/genie/chibis/stand.png"
-    
+
 image ch_gen stand_alt:
     "characters/genie/chibis/stand_alt.png"
-    
+
 image ch_gen stand_shocked:
     "characters/genie/chibis/shocked/01.png"
-    
+
 image ch_gen sneeze:
     "characters/genie/chibis/sneeze.png"
 
@@ -41,7 +41,7 @@ image ch_gen rummage:
 
 image ch_gen sit_behind_desk:
     zoom 0.5
-    
+
     "characters/genie/chibis/idle/desk_01.png"
     pause.1
     "characters/genie/chibis/idle/desk_02.png"
@@ -126,6 +126,9 @@ image ch_gen paperwork:
     pause.15
     repeat
 
+image ch_gen paperwork_idle:
+    "characters/genie/chibis/working/01.png"
+
 # Reading
 image ch_gen read:
     xzoom -1
@@ -174,7 +177,7 @@ image ch_gen read_near_fire_done:
 # Drinking
 image ch_gen toast_goblet:
     zoom 0.5
-    
+
     "characters/genie/chibis/drinking/01.png"
     pause 2
     "characters/genie/chibis/drinking/02.png"
@@ -191,7 +194,7 @@ image ch_gen toast_goblet:
 
 image ch_gen toast_goblet_daytime:
     zoom 0.5
-    
+
     "characters/genie/chibis/drinking/01_day.png"
     pause 2
     "characters/genie/chibis/drinking/02_day.png"
@@ -447,7 +450,7 @@ image ch_gen petting:
     "characters/genie/chibis/petting/petting_01.png"
     pause 3
     repeat
-    
+
 image ch_gen grab_low: # Used in pizza mirror event
     xzoom -1 # Flip fix
     offset (20, 58) # pos fix

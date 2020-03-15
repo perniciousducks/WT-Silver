@@ -291,7 +291,7 @@ label adjust_game_difficulty(dif=None):
         $ firewhisky_ITEM.cost = 160
     return
 
-label unlock_clothing(text="",item=None):
+label unlock_clothing(text="", item="interface/icons/outfits/mannequin_1.png"):
 
     $ renpy.play('sounds/win2.mp3')
     show screen notes
@@ -299,15 +299,10 @@ label unlock_clothing(text="",item=None):
     hide screen notes
     with d3
 
-    if item != None:
-        $ mannequin_preview = item.get_image()
-    else:
-        $ mannequin_preview = "interface/icons/outfits/mannequin_1.png"
-
     $ menu_x = 0.5
     $ menu_y = 0.75 #makes the menu lower so it isn't writing over the image.
 
-    show screen clothing_unlock
+    show screen clothing_unlock(item)
     show screen blktone5
     with d3
 

@@ -257,16 +257,14 @@ label hg_pr_flirt_teacher_T2_E1: # Slughorn
     jump end_hg_pr_flirt_teacher
 
 
-label hg_pr_flirt_teacher_T2_E2: # Lockheart
+label hg_pr_flirt_teacher_T2_E2:
+
+    $ hermione.equip(her_tattoo3_lockhart) # Tattoo
 
     call hg_pr_flirt_teacher_intro
 
-    $ autograph = True # This unlocks the Lockheart tattoo in the wardrobe now.
-    $ h_request_wear_tattoos = True
-    $ hermione_wear_tattoos = True
-    $ hermione_tattoos_list.append("thigh/signature") #LOCKHEART TATTOO
+    call play_music("chipper_doodle")
 
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("I had an amazing day, [genie_name]!", "smile", "happyCl", "base", "mid", emote="06")
     m "Do tell, [hermione_name]..."
     call her_main("I had a class with professor Lockhart today...", "grin", "base", "base", "R")
@@ -298,8 +296,6 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
                 "\"Fine. Here are your points.\"":
                     call her_main("Thank you for understanding, [genie_name].", "base", "happyCl", "base", "mid")
 
-                    jump end_hg_pr_flirt_teacher
-
                 "\"Show me or I won't pay you!\"":
                     call her_main("What?!", "scream", "wide", "base", "mid")
                     call her_main("...............", "annoyed", "narrow", "worried", "down")
@@ -307,13 +303,13 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
                     call her_main("Well, alright, but only to clear my idol's name...", "angry", "base", "angry", "mid")
                     pause.5
 
-                    call her_main("Here....", "disgust", "narrow", "base", "down",cheeks="blush",xpos="mid",ypos="base",trans=fade)
+                    call her_main("Here....", "disgust", "narrow", "base", "down",cheeks="blush")
 
-                    call set_her_action("lift_skirt")
+                    $ hermione.strip("bottom")
                     pause.5
 
                     m "Hm..."
-                    call her_main("", "angry", "narrow", "annoyed", "mid", emote="01", xpos="right", ypos="base")
+                    call her_main("", "angry", "narrow", "annoyed", "mid", emote="01")
                     call ctc
 
                     call her_main("As you can see Professor Lockhart is nothing but an embodiment of everything pure and courageous!", "annoyed", "narrow", "annoyed", "mid")
@@ -331,12 +327,12 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
 
                     $ her_mood += 9
 
-                    jump end_hg_pr_flirt_teacher
-
         "\"Fine... Here are your points.\"":
             call her_main("Thank you for understanding, [genie_name].", "base", "happyCl", "base", "mid")
 
-            jump end_hg_pr_flirt_teacher
+    $ hermione.wear("all")
+    call unlock_clothing(text=">New tattoo for Hermione has been unlocked!", item=her_tattoo3_lockhart)
+    jump end_hg_pr_flirt_teacher
 
 
 label hg_pr_flirt_teacher_T2_E3: # Filch

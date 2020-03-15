@@ -20,7 +20,7 @@ screen blktone5(): #For narrator. (label nar) #Don't add tag blktone!
 screen white():
     zorder 20
     add Color("#fff")
-    
+
 screen bld1():
     zorder 10
     if not current_room == "quidditch_stands":
@@ -41,7 +41,21 @@ screen gift(win=False):
         on "show" action Play("sound", "sounds/win2.mp3")
     add the_gift align (0.5, 0.4) zoom get_zoom(the_gift, 320,320)
 
-screen clothing_unlock():
+screen clothing_unlock(item):
     zorder 30
-    add "interface/panels/"+str(interface_color)+"/clothing_panel.png" at Position(xalign=0.5, ypos=100)
-    add mannequin_preview xalign 0.47 ypos 52 zoom 0.6/scaleratio
+
+    frame:
+        style "empty"
+        xalign 0.5
+        ypos 100
+        xysize (197, 325)
+
+        add "interface/panels/"+str(interface_color)+"/clothing_panel.png"
+
+        if isinstance(item, DollCloth):
+            add item.get_icon() align (0.5, 0.5)
+        elif isinstance(item, DollOutfit):
+            add item.get_image() align (0.5, 1.0) yoffset -13
+        else:
+            add item align (0.5, 0.5)
+

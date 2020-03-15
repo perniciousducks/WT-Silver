@@ -2,7 +2,7 @@
 ## Character ##
 ###############
 
-default hermione = Doll(name="hermione", 
+default hermione = Doll(name="hermione",
                         clothes={"hat":        [None, 15, True],
                                  "hair":       [None, 4, True],
                                  "earring":    [None, 14, True],
@@ -43,11 +43,11 @@ default hermione = Doll(name="hermione",
                               "eyes":     ["base", 8, True],
                               "pupils":   ["mid", 9, True],
                               "mouth":    ["base", 13, True]},
-                        body={"armleft": ["down", 3], 
-                              "armright":["down", 0], 
-                              "base":    ["front", 1], 
+                        body={"armleft": ["down", 3],
+                              "armright":["down", 0],
+                              "base":    ["front", 1],
                               "breasts": ["normal", 2]})
-                              
+
 ###############
 ##   Hair    ##
 ###############
@@ -198,3 +198,9 @@ default her_outfit_bioshock = DollOutfit([her_hair_bioshock, her_robe_bioshock, 
 default her_top_swimsuit_1 = DollCloth("hermione", ("tops", "school"), "top", "swimsuit_top_1", [[22, 27, 48, 255], [224, 198, 16, 255]], blacklist=["panties", "bra"], zorder=7)
 
 default her_outfit_swimsuit = DollOutfit([her_hair_base, her_top_swimsuit_1], price=250)
+
+##########
+## MISC ##
+##########
+
+default her_tattoo3_lockhart = DollCloth("hermione", ("hips", "tattoos"), "tattoo3", "lockhart_tattoo", [[70, 70, 70, 255]], unlocked=False)

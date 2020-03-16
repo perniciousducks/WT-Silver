@@ -51,7 +51,7 @@ label hg_pr_flirt_teacher:
 # End Event
 label end_hg_pr_flirt_teacher:
     $ gryffindor += current_payout
-    m "The Gryffindors get {number=current_payout} points!"
+    m "The Gryffindors gets {number=current_payout} points!"
     her "Thank you, [genie_name]."
 
     call her_walk(action="leave")
@@ -265,70 +265,91 @@ label hg_pr_flirt_teacher_T2_E2:
 
     call play_music("chipper_doodle")
 
-    call her_main("I had an amazing day, [genie_name]!", "smile", "happyCl", "base", "mid", emote="06")
-    m "Do tell, [hermione_name]..."
-    call her_main("I had a class with professor Lockhart today...", "grin", "base", "base", "R")
-    her "[genie_name] Lockhart is so charming and smart and..."
-    call her_main("And perfect...", "base", "narrow", "base", "up")
-    m "Please spare me your schoolgirl crush, [hermione_name]."
-    call her_main("[genie_name] Lockhart was even kind enough to give me his autograph...", "smile", "happyCl", "base", "mid", emote="06")
-    m "How kind of him indeed."
-    call her_main("Yes, I can't wait to show it to the girls!", "grin", "base", "base", "R")
-    m "Hm... Can I see it?"
-    call her_main("[genie_name]?", "base", "base", "base", "mid")
-    m "The Autograph, [hermione_name]. Can I see it?"
-    call her_main("Well... Em... It's in a rather private area, [genie_name].", "upset", "wink", "base", "mid")
-    m "What? Well, then professor Goldenheart surely is \"dirty\"!"
-    call her_main("It's professor Lockhart, [genie_name]...", "annoyed", "narrow", "angry", "R")
-    her "And... Ehm..."
-    her "Well, it's not {size=+5}that{/size} private..."
-    m "Show it to me then!"
-    call her_main("No, [genie_name]! That would be inappropriate!", "disgust", "narrow", "base", "mid_soft")
+    if not hermione.is_worn("bottom"):
+        call her_main("I had an amazing day, [genie_name]!", "smile", "happyCl", "base", "mid", emote="06")
+        m "Do te-"
+        m "[hermione_name]... What have you done to your leg?"
+        call her_main("What do you...{w=0.4} Oh, that...", "mad", "base", "base", "down", cheeks="blush")
+        m "Yes that..."
+        call her_main("It's... it's nothing.", "open", "base", "base", "mid", cheeks="blush")
 
-    menu:
-        "{size=-3}\"Lockhart will be out of this school in no time!\"{/size}":
-            call her_main("Because of me?", "scream", "wide", "base", "mid")
-            call her_main("[genie_name], please!", "mad", "base", "worried", "mid", tears="soft")
-            m "Show me!"
-            call her_main("No, it's embarrassing!", "scream", "happyCl", "worried", "mid")
+        if not hermione.is_worn("stockings"):
+            m "The hell it is...{w=0.4} is that writing on your leg?"
+            call her_main("I... yes...", "normal", "happyCl", "worried", "mid", cheeks="blush")
+            m "Gil... Gilde-"
+            call her_main("*sigh*... Gilderoy Lockhart... [genie_name].", "open", "narrow", "base", "down", cheeks="blush")
+            m "Now that's dirty!"
+            call her_main("What!?", "clench", "base", "worried", "mid")
+            m "Tagging the students... why didn't I think of that!"
+            call her_main("Sir, what are you on about?", "annoyed", "squint", "base", "mid")
+            m "Why else would he put his name there?"
+            call her_main("Sir, he's a famous author!", "normal", "squint", "angry", "mid", cheeks="blush")
+            m "Doesn't give him the right to-"
+            m "Oh... It's an autograph!"
+            call her_main("I... what else would it be?", "clench", "squint", "worried", "mid", cheeks="blush")
+            m "Nothing..."
+            m "Here are your points..."
+            call her_main("Thank you, [genie_name].", "annoyed", "base", "worried", "down", cheeks="blush")
+        else:
+            m "I can clearly see something..."
+            m "Take that off and let me have a proper look."
+            her "I..."
 
-            menu:
-                "\"Fine. Here are your points.\"":
-                    call her_main("Thank you for understanding, [genie_name].", "base", "happyCl", "base", "mid")
+            jump hg_pr_flirt_teacher_T2_E2.angry
+    else:
+        call her_main("I had an amazing day, [genie_name]!", "smile", "happyCl", "base", "mid", emote="06")
+        m "Do tell, [hermione_name]..."
+        call her_main("I had a class with professor Lockhart today...", "grin", "base", "base", "R")
+        call her_main("[genie_name] He is so charming and smart and...", "base", "base", "base", "mid")
+        call her_main("And perfect...", "base", "narrow", "base", "up")
+        m "Please spare me your schoolgirl crush, [hermione_name]."
+        call her_main("He was even kind enough to give me his autograph...", "smile", "happyCl", "base", "mid", emote="06")
+        m "How kind of him indeed..."
+        call her_main("Yes, I can't wait to show it to the girls!", "grin", "base", "base", "R")
+        call her_main("It was a bit weird that he wouldn't sign my notebook though...", "annoyed", "base", "base", "mid")
+        m "He wouldn't-"
+        call her_main("It's just going to fade away in the shower now...", "upset", "base", "worried", "mid")
+        m "It's going to-"
+        g9 "Show me!"
+        call her_main("[genie_name]?", "open", "base", "worried", "mid", cheeks="blush")
+        call her_main("I... It's just an autograph...", "base", "squint", "worried", "R", cheeks="blush")
+        m "Just an autograph? It's Lockfart we're talking about here, I have to see it!"
+        call her_main("I...", "disgust", "base", "worried", "down", cheeks="blush")
 
-                "\"Show me or I won't pay you!\"":
-                    call her_main("What?!", "scream", "wide", "base", "mid")
-                    call her_main("...............", "annoyed", "narrow", "worried", "down")
-                    call her_main("..................", "annoyed", "base", "worried", "R")
-                    call her_main("Well, alright, but only to clear my idol's name...", "angry", "base", "angry", "mid")
-                    pause.5
+        menu:
+            "\"Show me or I won't pay you!\"":
+                $ her_mood += 9
 
-                    call her_main("Here....", "disgust", "narrow", "base", "down",cheeks="blush")
+                call her_main("What?!", "scream", "base", "base", "mid")
+                call her_main("...............", "annoyed", "narrow", "worried", "down")
+                call her_main("..................", "annoyed", "base", "worried", "R")
 
-                    $ hermione.strip("bottom")
-                    pause.5
+                label .angry:
 
-                    m "Hm..."
-                    call her_main("", "angry", "narrow", "annoyed", "mid", emote="01")
-                    call ctc
+                call her_main("Well, alright, but don't get any ideas...", "angry", "base", "angry", "mid")
+                pause.5
+                call her_main("Here....", "disgust", "narrow", "base", "down",cheeks="blush")
 
-                    call her_main("As you can see Professor Lockhart is nothing but an embodiment of everything pure and courageous!", "annoyed", "narrow", "annoyed", "mid")
-                    pause
-                    m "Do I? From this?"
-                    her "You should not worry about professor Lockhart, [genie_name]."
-                    her "He is not \"dirty\"."
-                    m "Ah, what do I care..."
-                    call her_main("............?", "angry", "narrow", "annoyed", "mid", emote="01")
+                $ hermione.strip("bottom", "stockings")
+                pause.5
 
-                    call set_her_action("none")
+                m "Hm..."
+                call her_main("", "angry", "narrow", "annoyed", "mid", cheeks="blush", emote="01")
+                call ctc
 
-                    call her_main("", "angry", "base", "angry", "mid")
-                    call ctc
+                m "Well then, professor Goldenheart surely is \"dirty\"!"
+                call her_main("What do you mean?!", "clench", "happy", "base", "mid", cheeks="blush")
+                m "Surely a piece of paper would've been-"
+                call her_main("Professor Lockhart is nothing but an embodiment of everything pure and courageous!", "annoyed", "narrow", "annoyed", "mid")
+                call her_main("You should not worry about professor Lockhart, [genie_name].", "base", "base", "worried", "R")
+                call her_main("He is not \"dirty\".", "annoyed", "base", "worried", "L")
+                m "Ah, what do I care..."
+                call her_main("............?", "annoyed", "narrow", "annoyed", "mid", emote="01")
+                call her_main("", "angry", "base", "angry", "mid")
+                call ctc
 
-                    $ her_mood += 9
-
-        "\"Fine... Here are your points.\"":
-            call her_main("Thank you for understanding, [genie_name].", "base", "happyCl", "base", "mid")
+            "\"Fine... Here are your points.\"":
+                call her_main("Thank you for understanding, [genie_name].", "base", "happyCl", "base", "mid")
 
     $ hermione.wear("all")
     call unlock_clothing(text=">New tattoo for Hermione has been unlocked!", item=her_tattoo3_lockhart)
@@ -445,33 +466,30 @@ label hg_pr_flirt_teacher_T3_E2: # Snape +CG
     m "Yes, yes, [hermione_name], I'm listening."
     call her_main("I just confirmed that professor Snape is corrupted and \"dirty\", [genie_name]!", "open", "closed", "angry", "mid")
     m "Tell me what happened."
-
-    hide screen hermione_main
-    hide screen blktone
-    call blkfade
-
-    call her_main("Well, during classes today...", "open", "base", "base", "mid", ypos="head")
-    call her_main("I have been doing my best to attract professor Snape's attention...", "open", "base", "base", "R", ypos="head")
-    call her_main("I have been giving him \"dreamy looks\"...", "open", "narrow", "worried", "down", ypos="head")
-    call her_main("And I've been eyeing his crotch...", "soft", "base", "base", "R", ypos="head")
+    call her_main("Well, during classes today...", "open", "base", "base", "mid")
+    call her_main("I have been doing my best to attract professor Snape's attention...", "open", "base", "base", "R")
+    call her_main("I have been giving him \"dreamy looks\"...", "open", "narrow", "worried", "down")
+    call her_main("And I've been eyeing his crotch...", "soft", "base", "base", "R")
     m "You..."
     m "Eyed his crotch?"
-    call her_main("Yes... It's when you stare at a man's crotch and imagine that you are looking at something you want badly...", "open", "closed", "angry", "mid", ypos="head")
+    call her_main("Yes... It's when you stare at a man's crotch and imagine that you are looking at something you want badly...", "open", "closed", "angry", "mid")
     m "Where do you get this stuff?"
-    call her_main("Women's magazines...", "open", "base", "worried", "R", ypos="head")
-    call her_main("Well, anyway, it worked, [genie_name].", "normal", "squint", "angry", "mid", ypos="head")
+    call her_main("Women's magazines...", "open", "base", "worried", "R")
+    call her_main("Well, anyway, it worked, [genie_name].", "normal", "squint", "angry", "mid")
 
-    hide screen blkfade
+    hide screen hermione_main
     show screen snape_groping
     with fade
     call ctc
 
-    call her_main("As soon as the class was over, professor Snape grabbed my buttocks, [genie_name]!", "angry", "base", "angry", "mid", ypos="head")
-    m "The fiend!"
+    call her_main("As soon as the class was over, professor Snape grabbed my buttocks, [genie_name]!", "angry", "base", "angry", "mid", xpos="base", ypos="head")
+    g9 "The fiend!"
     m "Did you enjoy it, though?"
-    call her_main("[genie_name], I am only doing this--", "scream", "closed", "angry", "mid", ypos="head")
+    call her_main("[genie_name], I am only doing this--", "scream", "closed", "angry", "mid")
     m "Go Gryffindors! honour and all that. Yes, I remember."
     call ctc
+
+    call her_main("", "normal", "closed", "angry", "R", xpos="mid", ypos="base")
 
     hide screen snape_groping
     with fade
@@ -494,43 +512,39 @@ label hg_pr_flirt_teacher_T3_E3: # Lockhart
     her "He just..."
     call her_main("How is this possible?", "mad", "happyCl", "worried", "mid", tears="soft_blink")
     her "I can't believe this..."
-    hide screen hermione_main
-    with d3
     call play_music("playful_tension") # SEX THEME.
     m "{size=-4}(Agh! The suspense is killing me!){/size}"
-    m "{size=-4}(Did he force her to blow him?){/size}"
-    m "{size=-4}(Did he rape her?){/size}"
     g4 "What was it, [hermione_name]? Speak up!"
     call her_main("Huh?", "open", "base", "base", "mid")
     m "What did Professor Lockhart do to you?"
     call her_main("Ehm... Nothing, [genie_name]...", "soft", "base", "base", "R")
     m "Nothing?!"
-    call her_main("Yes, I sort of cornered mr.Lockhart today...", "open", "base", "worried", "mid")
+    call her_main("Yes, I sort of cornered Mr. Lockhart today...", "open", "base", "worried", "mid")
     call her_main("And I also may have sort of made a pass at him...", "open", "base", "base", "mid")
     m "Seriously?"
     call her_main("Yes... Not sure what had gotten into me, [genie_name]...", "angry", "happyCl", "worried", "mid", emote="05")
     m "Way to go, [hermione_name]!"
     call her_main("Hear me out first [genie_name], please!", "scream", "happyCl", "worried", "mid")
     m "My apologies. Please continue."
-    call her_main("Well, I always knew that mr.Lockhart was a true gentleman and...", "open", "base", "base", "mid")
+    call her_main("Well, I always knew that Mr. Lockhart was a true gentleman and...", "open", "base", "base", "mid")
     her "And... and I just wanted to clear his name from any suspicions once and for all..."
     call her_main("...............", "annoyed", "base", "worried", "R")
-    her "Well mr.Lockhart did not reject me..."
+    her "Well Mr. Lockhart did not reject me..."
     m "You are killing me [hermione_name]!"
-    m "He didn't reject you, he didn't rape you..."
+    m "He didn't reject you, he didn't do anything to you..."
     m "What the hell happened then?"
     call her_main(".............", "normal", "happyCl", "worried", "mid")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("I made him cry, [genie_name]...", "angry", "happyCl", "worried", "mid", emote="05")
-    m "..............wait.......what?"
+    m "..............{w=0.5}wait what?"
     call her_main("He gave me a bewildered look and then started to sob...", "angry", "base", "worried", "mid")
     her "He looked like he was genuinely afraid of me, [genie_name]."
     call her_main("I think...", "annoyed", "base", "worried", "R")
-    her "I think mr.Lockhart might be afraid of women..."
+    her "I think Mr. Lockhart might be afraid of women..."
     m "Afraid of women?"
     m "What is that supposed to mean?"
     call her_main("That he is into boys, [genie_name]?", "angry", "happyCl", "worried", "mid", emote="05")
-    m "Oh..."
+    m "Oh... To each their own I guess."
     call her_main("............", "upset", "wink", "base", "mid")
     m "..........."
     m "Well, I bet it was a traumatizing experience for you, [hermione_name]."

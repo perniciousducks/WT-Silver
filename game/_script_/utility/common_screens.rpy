@@ -54,7 +54,7 @@ screen clothing_unlock(item):
 
         if isinstance(item, DollCloth):
             add item.get_icon() align (0.5, 0.5)
-        elif isinstance(item, DollOutfit):
+        elif isinstance(item, (DollOutfit, Item)):
             add item.get_image() align (0.5, 1.0) yoffset -13
         else:
             add item align (0.5, 0.5)

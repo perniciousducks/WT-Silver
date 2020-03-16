@@ -5,7 +5,7 @@ label cho_summon_setup:
     $ cho.wear("all")
 
     $ random_number = renpy.random.randint(1, 10)
-    
+
     if not cho_quid.slytherin_talk and cho_tier == 2:
         jump cc_st_intro
 
@@ -74,7 +74,7 @@ label cho_summon_setup:
             g4 "Your body, in an outfit like that,..."
             g4 "Really shows off your best assets."
             call cho_main("Oh...","horny","base","raised","down")
-            call cho_main("You see, that sort of reaction is just what I wanted to get from the boys...","soft","base","sad","R")
+            call cho_main("You see, that sort of reaction is just what I wanted to get from the boys...","soft","base","worried","R")
             call cho_main("Stare at my assets any time you want, [cho_genie_name]!","horny","narrow","angry","mid")
             g4 "*Hngggh!!!*"
 
@@ -84,7 +84,7 @@ label cho_summon_setup:
             call cho_main(xpos="base", ypos="base", face="horny", trans=fade)
 
             return
-            
+
     if cho_outfits_schedule:
         $ cho.equip_random_outfit()
 
@@ -94,7 +94,7 @@ label cho_summon_setup:
 
     #Cho greeting.
     call play_music("cho")
-    
+
     if cho_mood > 0:
         if 5 > cho_mood >= 1:
             call cho_main("Yes, [cho_genie_name]?", "annoyed", "base", "base", "mid", xpos="base", ypos="base", trans=d3)
@@ -111,7 +111,7 @@ label cho_summon_setup:
         elif cho_mood >= 50:
             call cho_main("I can't believe you've done this!", "scream", "wide", "angry", "mid", xpos="base", ypos="base",trans=d3)
             call cho_main("", "upset", "wide", "angry", "mid")
-            
+
         call describe_mood("Cho", cho_mood)
         call tutorial("moodngifts")
     else:

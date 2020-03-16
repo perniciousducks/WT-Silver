@@ -666,13 +666,12 @@ label ball_ending_E2:
     sna "Let's see... Can't open the damn envelope..."
     $ dynamic_cg("ball/bj", "background", "base2", "eyes_closed2", "sweat2")
     her "Alright, sounds like we have no time to lose."
-    m "Yes! That's the spirit!"
 
     if ball_ending_2:
         # Public whore ending
         $ dynamic_cg("ball/bj", "background", "base", "sweat")
         her "*Slurp!* *Gulp!* *Slurp!*"
-        m "Yes..."
+        m "Yes! That's the spirit!"
         $ dynamic_cg("ball/bj", "background", "base", "lashes", "sweat", "sperm")
         her "*Gulp!* *Slurp!* *Gulp!*"
         her "*Slurp-*"
@@ -866,7 +865,7 @@ label ball_ending_E2:
         her "{size=+5}*GOBBLE!*{/size}"
         g4 "{size=+5}Yeeeeeeeeeees!{/size}"
 
-        sna "There! Hm...?"
+        sna "There! Hmm...?"
         sna "(Well of course... Why am I not surprised?)"
         $ dynamic_cg("ball/bj", "background", "base3", "blush3", "eyes_stare3")
         sna "Miss Hermione Granger of the Gryffindor house..."
@@ -1092,11 +1091,11 @@ label ball_ending_E2:
         m "!!!"
         m "Her hairdo looks perfect!"
         m "I suppose I was wrong and-"
+        $ dynamic_cg("ball/speech", "background", "base", "mouth_open", "eyes_closed", "cum0", "overlay")
         g4 "Nope, there it is!"
         g4 "Dripping down behind her ear!"
         hide screen blktone5
 
-        $ dynamic_cg("ball/speech", "background", "base", "mouth_open", "eyes_closed", "cum0", "overlay")
         her "I would like to dedicate my speech to every girl in this room..."
 
         show screen blktone5
@@ -1151,9 +1150,9 @@ label ball_ending_E2:
         fem "{size=-4}It's when your girl is also your best friend.{/size}"
         mal "{size=-4}Oh, I don't need {i}that{/i}!{/size}"
         mal "{size=-4}I already have a best friend, this ugly bugger right here.{/size}"
-        mal2 "{size=-4}Same, mate!{/size}"
+        mal2 "{size=-4}Right back at you, mate!{/size}"
         mal "{size=-4}But I sure could use a slut in my life!{/size}"
-        mal2 "{size=-4}Right on, dude!{/size}"
+        mal2 "{size=-4}What he said!{/size}"
         fem "{size=-4}you guys are...{/size}"
         fem "Such Idiots!!!"
         hide screen blktone5
@@ -1185,6 +1184,7 @@ label ball_ending_E2:
         # Reveal titty
         stop music
         $ dynamic_cg("ball/speech", "background", "base2", "mouth_open", "eyes_closed", "cum4", "overlay")
+        $ renpy.sound.play("sounds/boing02.mp3")
         call ctc
 
         show screen blktone5
@@ -1612,7 +1612,6 @@ label ball_ending_E2:
         # Dick in mouth
         her "!!!........................................................."
         sly2 "Cool! I'm next!"
-        call play_sound("gulp")
         her "*Gulp!*"
         sly1 "Suck my cock, bitch! Suck it!"
         m "Do what the boy tells you, girl."
@@ -1953,7 +1952,7 @@ label ball_ending_E2:
         sly1 "{size=-4}Man, professor Dumbledore sure is one cool dude.{/size}"
         sly2 "{size=-4}Yeah... Who would have thought...{/size}"
         sly1 "{size=-4}True. I can't help but respect the man...{/size}"
-        m "(Aw... What nice boys...)"
+        m "(Aw... Such nice boys...)"
         sly2 "{size=-4}Yeah... I hope I will be as agile as he is when I am that ancient.{/size}"
         g4 "(I'm not ancient, you punks!)"
         m "(Although I suppose in some way I am...)"
@@ -2601,9 +2600,9 @@ label ball_ending_E2:
         call her_main("A letter?", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara_soft")
         m "Yeah... It should explain a couple of things..."
         call her_main("Oh... Alright...", "silly", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
-        m "Just read it tomorrow morning..."
+        m "Just come and pick it up from my office tomorrow morning..."
         m "Or whenever..."
-        m "Or don't read it at all, I don't care..."
+        m "Or don't pick it up, I don't care..."
         g4 "............."
         call her_main("Sir...?", "base", "base", "worried", "mid", cheeks="blush",tears="mascara")
         m "Stop it with the eyes! You're making me feel uncomfortable..."

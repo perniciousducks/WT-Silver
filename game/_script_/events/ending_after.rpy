@@ -113,12 +113,13 @@ label ending_after:
                 ">Arriving at the great hall you glance through the doors and spot Hermione who's currently enjoying the attention she's receiving from some of the other students."
                 ">You decide it's probably best to head back to your office. But before you get the chance to slip into the shadows Hermione has already begun making her way in your direction."
                 ">As she steps through the door you notice some Slytherin students looking in your direction, smirks spreading across their faces."
+
+                $ hermione.equip(her_outfit_ball)
                 call her_main("Back so soon?", "base", "happy", "base", "L", cheeks="blush", xpos="base", ypos="head")
                 m "I um...{w=0.4} had a change of heart."
                 call her_main("Cold outside?", "base", "base", "base", "mid")
                 m "Yes...{w=0.5} that's it."
 
-                $ hermione.equip(her_outfit_ball)
                 ">Standing there in silence, looking at Hermione, you can't help but struggle with what to say."
                 ">Hermione looks at you expectantly and breaks the silence by extending one of her arms to you."
 
@@ -156,7 +157,7 @@ label ending_after:
                 with hpunch
                 with kissiris
                 stop music fadeout 6 #It's a bit sudden and quiet but not sure what to do instead
-                ">Hermione shudders in your arms and then quickly lets go as the music comes to an end and you snag the letter from her skirt, pocketing it."
+                ">Hermione shudders in your arms and then quickly lets go as the music comes to an end."
                 call her_main("*Ah*...{w=0.8}*Ah*...{w=0.8}*Ah*...", "soft", "happyCl", "base", "mid", cheeks="blush")
                 ">With a quick glance towards the doorway you notice some Slytherin students have blocked it with their backs towards you."
                 m "You look tired girl, you'd better pull yourself together..."
@@ -167,8 +168,8 @@ label ending_after:
                 ">As she gets on her feet she looks up and notices the backs of the Slytherins in the doorway. She spins around to look at you, a red colour quickly spreading across her cheeks."
                 call her_main("I...{w=0.3} I think I'd better head off to bed then...", "mad", "squint", "base", "stare_soft", cheeks="blush") #Worried #Sheepish looking
                 m "Sounds like a good idea..."
-                call her_main("Okay...", "soft", "squint", "worried", "R", cheeks="blush") # smiles
-                call her_main("Good night then...", "base", "squint", "worried", "mid", cheeks="blush")
+                call her_main("Okay then...", "soft", "squint", "worried", "R", cheeks="blush") # smiles
+                call her_main("Good night...", "base", "squint", "worried", "mid", cheeks="blush")
                 m "Good night Miss Granger."
 
 

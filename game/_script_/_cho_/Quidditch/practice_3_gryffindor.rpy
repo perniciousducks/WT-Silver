@@ -43,5 +43,5 @@ label nothing_to_see_here_049:
     m "You said that the Slytherins were playing dirty..."
     m "How about you fight fire with fire then?"
     call cho_main("So you think we should fight dirty too?","horny","narrow","base","mid")
-    call cho_main("But how? The rules forbid almost all foul play.", "pout", "narrow", "worried", "downR")
+    call cho_main("But how? The rules forbid almost all foul play.", "annoyed", "narrow", "worried", "downR")
     m "Hmmmm..."

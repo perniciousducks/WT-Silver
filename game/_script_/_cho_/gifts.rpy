@@ -261,7 +261,7 @@ label give_cho_gift(gift_item):
         elif cho_tier == 3:
             call cho_main("Lingerie?",face="annoyed",xpos="mid",ypos="base")
             call give_gift(">You give the lingerie to Cho...",gift_item)
-            call cho_main("Seems pretty flexible. I might be able use these when stretching.",mouth="pout",pupils="down",face="annoyed")
+            call cho_main("Seems pretty flexible. I might be able use these when stretching.",mouth="annoyed",pupils="down",face="annoyed")
             call cho_main("Thank you [cho_genie_name]",face="neutral")
             call cho_mood(-2)
         else:
@@ -341,7 +341,7 @@ label give_cho_gift(gift_item):
             call cho_main("Anal Lubricant?",face="annoyed",xpos="mid",ypos="base")
             call give_gift(">You give the jar of anal lube to Cho...", gift_item)
             call cho_main("You should've given me this yesterday, [cho_genie_name].",mouth="soft",face="annoyed")
-            call cho_main("I haven't been able to sit on a broom all day after yesterday's game...",mouth="pout",pupils="down",face="annoyed")
+            call cho_main("I haven't been able to sit on a broom all day after yesterday's game...",mouth="annoyed",pupils="down",face="annoyed")
             call cho_mood(-5)
 
     elif gift_item == ballgag_and_cuffs_ITEM:
@@ -466,7 +466,7 @@ label give_cho_gift(gift_item):
             call cho_main("It says Joanne on it...",face="disgusted")
             call cho_main("I leave it in the boys changing room, should be a good reward after a practice.",face="annoyed")
             call cho_mood(-7)
-            
+
     elif gift_item == wine_ITEM:
         if cho_tier <= 2:
             call cho_main("A wine bottle?", face="annoyed", xpos="mid", ypos="base")
@@ -477,7 +477,7 @@ label give_cho_gift(gift_item):
             call cho_main("Thank you, [cho_genie_name] but I can't take it.",face="neutral")
             call cho_main("{size=-4}Maybe to celebrate after I win the Quidditch Cup..{/size}",face="horny")
             call cho_mood(0)
-            
+
     elif gift_item == firewhisky_ITEM:
         call cho_main("Firewhisky?",face="happy",xpos="mid",ypos="base",trans=d5)
         call cho_main("Why are you giving it to me?","annoyed","wide","base","L")

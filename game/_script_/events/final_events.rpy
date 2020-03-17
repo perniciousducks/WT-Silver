@@ -705,9 +705,6 @@ label ball_quest_E5:
     m "......................"
     m "Women..."
 
-    $ ball_quest.gave_dress = True
-    #Unlocks the dress in the wardrobe. Makes it wearable.
-    #$ ball_quest.started = True # Removed. Starts in "label ball_ending_start" now.
     $ hg_event_pause += 2
 
     $ ball_quest.gave_dress = True

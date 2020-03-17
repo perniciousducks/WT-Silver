@@ -184,7 +184,7 @@ label quests:
 
         else:
             # Ending events
-            if ball_quest.started:
+            if ball_quest.started and not ball_quest.completed:
                 jump ball_ending_E1
 
     # Tonks events not triggered by a date.
@@ -341,7 +341,7 @@ default cho_quid = quest_class(
     lock_practice = False,
     lock_tactic   = False,
     in_progress   = False,
-    
+
     #hufflepuff_talk = False,
     slytherin_talk = False,
     gryffindor_talk = False
@@ -405,6 +405,7 @@ default ball_quest = quest_class(
     E4_complete = False,
     gave_dress  = False,
     started     = False,
+    completed   = False,
 )
 
 

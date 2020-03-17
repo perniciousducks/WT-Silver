@@ -2906,6 +2906,7 @@ Farewell, my little [word_03].{/size}
 
     pause 2
 
+    $ ball_quest.completed = True
     $ persistent.game_complete = True
 
     $ persistent.gold = gold

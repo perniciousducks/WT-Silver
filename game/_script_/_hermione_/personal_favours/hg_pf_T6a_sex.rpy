@@ -14,7 +14,7 @@ label hg_pf_sex:
 
     # Start Event
     $ current_payout = 65
-    $ hermione_crying = None # Default value
+    $ hermione_tears = None # Default value, can be set in the event to ensure tears keep showing afterwards
     $ hg_pf_sex.start()
 
 
@@ -26,7 +26,7 @@ label hg_pf_sex:
     call hide_characters
     show screen blkfade
     with d3
-    
+
     $ hermione.wear("all")
     $ hermione_zorder = 15 # Reset sprite zorder (affected by CGs)
 
@@ -41,18 +41,15 @@ label hg_pf_sex:
     else:
         call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade, tears=hermione_tears)
 
-
     # Points
     m "Yes, [hermione_name]. {number=current_payout} points to the Gryffindor house."
     $ gryffindor += current_payout
     call her_main("Thank you, [genie_name]...", "soft", "base", "base", "R", tears=hermione_tears)
 
-
     # Hermione leaves
     call her_walk("door", "base")
 
     call her_chibi("leave")
-
 
     # Increase level
     $ hg_sex.trigger = True
@@ -436,9 +433,9 @@ label hg_sex_1:
 
             hide screen ccg
             call her_chibi_scene("sex_cum_in_done", trans=d5)
-            
+
             $ hermione_zorder = 15 # Reset zorder
-            
+
             #
             # TODO: CUM LAYERS
             #
@@ -486,9 +483,9 @@ label hg_sex_1:
 
             hide screen ccg
             call her_chibi_scene("sex_cum_out_done", trans=d5)
-            
+
             $ hermione_zorder = 15 # Reset zorder
-            
+
             #
             # TODO: CUM LAYERS
             #
@@ -714,9 +711,9 @@ label hg_sex_2:
 
             hide screen ccg
             call her_chibi_scene("sex_cum_in_done", trans=d5)
-            
+
             $ hermione_zorder = 15 # Reset zorder
-            
+
             #
             # TODO: CUM LAYERS
             #
@@ -764,9 +761,9 @@ label hg_sex_2:
 
             hide screen ccg
             call her_chibi_scene("sex_cum_in_done", trans=d5)
-            
+
             $ hermione_zorder = 15 # Reset zorder
-            
+
             #
             # TODO: CUM LAYERS
             #
@@ -885,7 +882,7 @@ label hg_sex_luna:
         lun "...and Susan Bones..."
     if ton_friendship > 50:
         lun "...and perhaps Miss Tonks, but she's our teacher!"
-        
+
     call her_main("ah...", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     m "{size=-3}What else did you do to her?{/size}"
     call her_main("I may have suggested to her that she... ah...{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")

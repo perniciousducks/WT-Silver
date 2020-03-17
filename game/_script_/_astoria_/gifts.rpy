@@ -39,7 +39,7 @@ label give_ast_gift(gift_item):
             call ast_main("Some chocolate?", mouth="open", face="neutral")
             call give_gift(">You give the chocolate to Astoria...", gift_item)
             call ast_main("Thank you, [ast_genie_name].",mouth="open",face="neutral")
-            call ast_main("I don't know what I did to deserve it.",mouth="pout",pupils="R",face="neutral")
+            call ast_main("I don't know what I did to deserve it.",mouth="annoyed",pupils="R",face="neutral")
             call ast_main("But I'm not going to say no...",face="happy")
             call ast_mood(-1)
         else:
@@ -62,7 +62,7 @@ label give_ast_gift(gift_item):
             call ast_main("An owl plushie?", mouth="open", face="neutral")
             call give_gift(">You give the stuffed toy to Astoria...", gift_item)
             call ast_main("I don't use stuffed toys...", mouth="open", face="annoyed")
-            call ast_main("I know someone that hates owls though... I'll put this in front of her face when she's waking up...", mouth="pout", pupils="R", face="neutral")
+            call ast_main("I know someone that hates owls though... I'll put this in front of her face when she's waking up...", mouth="annoyed", pupils="R", face="neutral")
             call ast_mood(-1)
         elif ast_affection > 11 and ast_affection < 18:
             call ast_main("An owl plushie?", mouth="open", face="neutral")

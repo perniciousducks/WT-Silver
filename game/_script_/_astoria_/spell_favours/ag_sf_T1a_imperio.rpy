@@ -998,13 +998,13 @@ label hornify_spell_1: #first level hornify spell
     ">Astoria rolls her hips hard against your cock..."
     call ast_main("Or good fire?","smile","narrow","narrow","mid")
     call sus_main("{b}Good{/b} fire...","upset","","base","base",cheeks="blush")
-    call ast_main("And where is the good fire?","base","base","base","base")
+    call ast_main("And where is the good fire?","base","base","base","mid")
     call sus_main("Ugh... I... I don't want to say...","base","base","base","base")
-    call ast_main("Why not?","base","base","base","base")
+    call ast_main("Why not?","base","base","base","mid")
     call sus_main("it's too embarrassing!","base","base","base","base")
-    call ast_main("Don't worry, you love being embarrassed in front of the headmaster and I...","base","base","base","base")
-    call ast_main("It makes the fire feel even better...","base","base","base","base")
-    call ast_main("{b}doesn't it?{/b}","base","base","base","base")
+    call ast_main("Don't worry, you love being embarrassed in front of the headmaster and I...","base","base","base","mid")
+    call ast_main("It makes the fire feel even better...","base","base","base","mid")
+    call ast_main("{b}doesn't it?{/b}","base","base","base","mid")
     call sus_main("Ah...","base","base","base","base")
     call sus_main("It's in...","base","base","base","base")
     call sus_main("My breasts... They feel so...","base","base","base","base")
@@ -1015,40 +1015,40 @@ label hornify_spell_1: #first level hornify spell
     call sus_main("{heart}{heart}{heart}","base","base","base","base")
     ">As Susan's hands mesmerisingly tend to her own tits, your cock begins to strain in earnest against the girl above."
     ">You shamelessly start to hump against astoria, desperate for any stimulation to accompany the sight before you."
-    call ast_main("Mmmm... your liking this aren't you...","base","base","base","base")
+    call ast_main("Mmmm... your liking this aren't you...","base","base","base","mid")
     ">Before you can say anything, Susan issues a defeated response..."
     call sus_main("yes...","base","base","base","base")
     ">A cheeky grin forms across Astoria's face as she holds her butt firm against your cock."
-    call ast_main("Are you going to cum?","base","base","base","base")
+    call ast_main("Are you going to cum?","base","base","base","mid")
     m "..."
     call sus_main("...","base","base","base","base")
-    call ast_main("Tell me.","base","base","base","base")
+    call ast_main("Tell me.","base","base","base","mid")
     m "y-"
     call sus_main("Ah... yes...{heart}","base","base","base","base")
-    call ast_main("Mmmm...","base","base","base","base")
+    call ast_main("Mmmm...","base","base","base","mid")
     ">Astoria pushes hard into your lap."
     m "Argh..."
-    call ast_main("It makes sense a cow like you would cum from having her udders played with...","base","base","base","base")
-    call ast_main("Not to mention when she's doing it in front of her headmaster. *tsk*tsk*tsk*","base","base","base","base")
+    call ast_main("It makes sense a cow like you would cum from having her udders played with...","base","base","base","mid")
+    call ast_main("Not to mention when she's doing it in front of her headmaster. *tsk*tsk*tsk*","base","base","base","mid")
     call sus_main("Y-you made me do this!","base","base","base","base")
-    call ast_main("What?","base","base","base","base")
-    call ast_main("You came up here and asked the headmaster and me to watch you...","base","base","base","base")
-    call ast_main("Didn't you...","base","base","base","base")
+    call ast_main("What?","base","base","base","mid")
+    call ast_main("You came up here and asked the headmaster and me to watch you...","base","base","base","mid")
+    call ast_main("Didn't you...","base","base","base","mid")
     ">Susan struggles unsuccessfully against the effect of the imperio spell."
     call sus_main("I don't- maybe- I- why?...","base","base","base","base")
-    call ast_main("Because you wanted Dumbledore and me to know what a nasty slut you were...","base","base","base","base")
-    call ast_main("You were so proud about being able to cum from just your big gross tits being played with!","base","base","base","base")
+    call ast_main("Because you wanted Dumbledore and me to know what a nasty slut you were...","base","base","base","mid")
+    call ast_main("You were so proud about being able to cum from just your big gross tits being played with!","base","base","base","mid")
     call sus_main("I- I'm proud...","base","base","base","base")
     ">Astoria has begun humping your lap in earnest, punctuating every word with a little thrust."
-    call ast_main("You should be!","base","base","base","base")
-    call ast_main("It's not easy cumming from just your tits...","base","base","base","base")
-    call ast_main("Only the biggest sluts in the world can do it!","base","base","base","base")
+    call ast_main("You should be!","base","base","base","mid")
+    call ast_main("It's not easy cumming from just your tits...","base","base","base","mid")
+    call ast_main("Only the biggest sluts in the world can do it!","base","base","base","mid")
     call sus_main("...The biggest...","base","base","base","base")
-    call ast_main("That's right...","base","base","base","base")
-    call ast_main("Now go on...","base","base","base","base")
+    call ast_main("That's right...","base","base","base","mid")
+    call ast_main("Now go on...","base","base","base","mid")
     m "Argh..."
     ">Your cock is riding the edge after Astoria's relentless assault."
-    call ast_main("{b}Cum{/b}","base","base","base","base")
+    call ast_main("{b}Cum{/b}","base","base","base","mid")
     ">Astoria punctuates her sentence by pressing her buttcrack hard against your cock and holding it there as she shakes her butt.."
     m "ARGH! FUCK YES!"
     ">That, combined with the sight of the innocent redhead cumming helplessly as she claws at her own tits prove too much for your poor cock..."
@@ -1060,49 +1060,49 @@ label hornify_spell_1: #first level hornify spell
     m "You dirty little sluts..."
     ">Your hips slow as your orgasm begins to subside."
     m "Mmmm... that's it..."
-    call ast_main("All done now sir?","base","base","base","base")
+    call ast_main("All done now sir?","base","base","base","mid")
     m "Yeah... I could go for a nap right about now..."
-    call ast_main("Don't fall asleep now old man, we've still got bessy here putting on a show for us...","base","base","base","base")
+    call ast_main("Don't fall asleep now old man, we've still got bessy here putting on a show for us...","base","base","base","mid")
     call sus_main("Arghh...{heart}{heart}{heart}","base","base","base","base")
     call sus_main("I thought...","base","base","base","base")
     call sus_main("why do...{heart}{heart}{heart} they still feel so {b}gooood{/b}.","base","base","base","base")
-    call ast_main("Hmmm... I thought that it would wear off after the first one...","base","base","base","base")
-    call ast_main("Oh well, I'm bored now.","base","base","base","base")
+    call ast_main("Hmmm... I thought that it would wear off after the first one...","base","base","base","mid")
+    call ast_main("Oh well, I'm bored now.","base","base","base","mid")
     ">Astoria hops off your lap, causing you to notice a huge cum stain on her skirt..."
-    call ast_main("!!!","base","base","base","base")
-    call ast_main("Sir!","base","base","base","base")
+    call ast_main("!!!","base","base","base","mid")
+    call ast_main("Sir!","base","base","base","mid")
     m "What?"
-    call ast_main("My butt is {b}covered{/b} in your gross cum!","base","base","base","base")
+    call ast_main("My butt is {b}covered{/b} in your gross cum!","base","base","base","mid")
     m "Well what did you expect after that?"
-    call ast_main("Hmph!","base","base","base","base")
-    call ast_main("I expected your robe to stop it all!","base","base","base","base")
-    call ast_main("Clearly a gross old man like you has way too much cum in those big yucky balls of yours!","base","base","base","base")
-    call ast_main("Susan!","base","base","base","base")
+    call ast_main("Hmph!","base","base","base","mid")
+    call ast_main("I expected your robe to stop it all!","base","base","base","mid")
+    call ast_main("Clearly a gross old man like you has way too much cum in those big yucky balls of yours!","base","base","base","mid")
+    call ast_main("Susan!","base","base","base","mid")
     call sus_main("Y-yes A-Astoria...","base","base","base","base")
-    call ast_main("Clean me up and then go back to class...","base","base","base","base")
-    call ast_main("Oh, and put your clothes on before you go...","base","base","base","base")
+    call ast_main("Clean me up and then go back to class...","base","base","base","mid")
+    call ast_main("Oh, and put your clothes on before you go...","base","base","base","mid")
     call sus_main("Clean you... how?","base","base","base","base")
-    call ast_main("Lick it up, Bessy!","base","base","base","base")
+    call ast_main("Lick it up, Bessy!","base","base","base","mid")
     call sus_main("You can't be serious!","base","base","base","base")
     ">However, Susan's shock and disgust are undermined by her helpless body moving towards Astoria's skirt."
-    call ast_main("And make sure you get it all!","base","base","base","base")
+    call ast_main("And make sure you get it all!","base","base","base","mid")
     call sus_main("I-","base","base","base","base")
-    call ast_main("!!!","base","base","base","base")
-    call ast_main("Wow, she's really going for it!","base","base","base","base")
+    call ast_main("!!!","base","base","base","mid")
+    call ast_main("Wow, she's really going for it!","base","base","base","mid")
     call sus_main("...","base","base","base","base")
     m "..."
-    call ast_main("I forgot how big cow's tongues were.","base","base","base","base")
+    call ast_main("I forgot how big cow's tongues were.","base","base","base","mid")
     m "Alright, that's it. Unless you intend to sort out the problem your creating right now I think you two better head off."
-    call ast_main("What? Already?","base","base","base","base")
+    call ast_main("What? Already?","base","base","base","mid")
     m "Only if you don't want to hop back up on my lap..."
     ">You give your cum-soaked lap an inviting pat."
-    call ast_main("Ugh, fine. You better be done Susan.","base","base","base","base")
+    call ast_main("Ugh, fine. You better be done Susan.","base","base","base","mid")
     ">Susan moves her head away from the Astoria's cute skirt."
     call sus_main("Mhmm...","base","base","base","base")
-    call ast_main("Good, well swallow that and head to class.","base","base","base","base")
-    call ast_main("Let me know when you want to try out the next spell...","base","base","base","base")
+    call ast_main("Good, well swallow that and head to class.","base","base","base","mid")
+    call ast_main("Let me know when you want to try out the next spell...","base","base","base","mid")
     ">Astoria throws Susan a cheeky grin."
-    call ast_main("Bye bessy...","base","base","base","base")
+    call ast_main("Bye bessy...","base","base","base","mid")
     ">With that, Astoria hops out of your office, leaving Susan alone to silently collect her clothes and leave, forgetting the whole incident only moments after closing the door."
     m "(I sort of feel bad for her...)"
     m "(No, there's boobs at stake, we have to forge on...)"
@@ -1113,70 +1113,70 @@ label hornify_spell_1: #first level hornify spell
 
 
 label hornify_spell_2: #second level hornify spell
-    call ast_main("Ready to practise that hornify spell again?","base","base","base","base")
+    call ast_main("Ready to practise that hornify spell again?","base","base","base","mid")
     m "Are you sure you wanna practise that one again? We could start to learn a new spell instead."
     m "Don't forget you have to have to visit Tonks each time we try one..."
-    call ast_main("Pfft, what's she going to do? Make me try on another cute skirt?","base","base","base","base")
+    call ast_main("Pfft, what's she going to do? Make me try on another cute skirt?","base","base","base","mid")
     ">Astoria gives her hips a quick shake, almost flashing you due to the shortness of it."
-    call ast_main("I'm soooo scared... Now hurry up and get Bessy here, it's almost milking time!","base","base","base","base")
+    call ast_main("I'm soooo scared... Now hurry up and get Bessy here, it's almost milking time!","base","base","base","mid")
     m "..."
     ">With that you summon the poor redhead up to your office for another session of degrading humiliation."
     call sus_main("You wanted to see me sir?","base","base","base","base")
     ">Susan calmly begins to take her top off, not letting it interrupt her as she greets Astoria."
     call sus_main("Oh... H-hi, astoria... what are you doing here?","base","base","base","base")
-    call ast_main("Getting ready to watch a show...","base","base","base","base")
+    call ast_main("Getting ready to watch a show...","base","base","base","mid")
     call sus_main("What show?","base","base","base","base")
-    call ast_main("You on your knees while Professor Dumbledore coats you in his sticky, icky cum!","base","base","base","base")
+    call ast_main("You on your knees while Professor Dumbledore coats you in his sticky, icky cum!","base","base","base","mid")
     call sus_main("What? I don't-","base","base","base","base")
-    call ast_main("Shhhh.... Don't talk unless I tell you to, OK?","base","base","base","base")
+    call ast_main("Shhhh.... Don't talk unless I tell you to, OK?","base","base","base","mid")
     call sus_main("...","base","base","base","base")
     ">Susan nods, a terror in her eyes as she gazes down silently at the smiling blonde."
-    call ast_main("Now why don't you kneel in front of me right here...","base","base","base","base")
-    call ast_main("And sir, hurry up and get over here!","base","base","base","base")
+    call ast_main("Now why don't you kneel in front of me right here...","base","base","base","mid")
+    call ast_main("And sir, hurry up and get over here!","base","base","base","mid")
     m "Ugh... the things I do to help my students..."
     ">You put on a mock air of reluctance as you stroll over to Susan, pulling your cock from it's robe and presenting the imposing thing to a frightened Susan."
-    call ast_main("Wow...","base","base","base","base")
-    call ast_main("It's big...","base","base","base","base")
+    call ast_main("Wow...","base","base","base","mid")
+    call ast_main("It's big...","base","base","base","mid")
     pause
-    call ast_main("For an old man like you!","base","base","base","base")
+    call ast_main("For an old man like you!","base","base","base","mid")
     call sus_main("...","base","base","base","base")
-    call ast_main("Go on then... make it shoot... stuff...","base","base","base","base")
+    call ast_main("Go on then... make it shoot... stuff...","base","base","base","mid")
     ">You slowly start to stroke your cock only inches from Susan's face..."
     m "If you want this to go a little quicker at least make her move a little..."
-    call ast_main("Just wait a second sir, I haven't even cast it yet!","base","base","base","base")
+    call ast_main("Just wait a second sir, I haven't even cast it yet!","base","base","base","mid")
     call sus_main("???","base","base","base","base")
-    call ast_main("Hornify cum!","base","base","base","base")
+    call ast_main("Hornify cum!","base","base","base","mid")
     ">Another flash as the pink bolt of lightning shoots from the end of astoria's wand and strikes susan's head."
     call sus_main("!!!","base","base","base","base")
     ">Susan's hips immediately start to quiver as she struggles to maintain her composure."
-    call ast_main("Now what this spell does, susy, is it makes you feel really good...","base","base","base","base")
-    call ast_main("Once you cover yourself in the headmaster's gross smelly cum...","base","base","base","base")
+    call ast_main("Now what this spell does, susy, is it makes you feel really good...","base","base","base","mid")
+    call ast_main("Once you cover yourself in the headmaster's gross smelly cum...","base","base","base","mid")
     call sus_main("!!!!!!","base","base","base","base")
-    call ast_main("Until then...","base","base","base","base")
-    call ast_main("Well... you're slutty, little brain won't be able to think of much else...","base","base","base","base")
-    call ast_main("So why don't you help the headmaster out and give him a little show, hmmm?","base","base","base","base")
+    call ast_main("Until then...","base","base","base","mid")
+    call ast_main("Well... you're slutty, little brain won't be able to think of much else...","base","base","base","mid")
+    call ast_main("So why don't you help the headmaster out and give him a little show, hmmm?","base","base","base","mid")
     call sus_main("...","base","base","base","base")
-    call ast_main("You can speak now Bessy...","base","base","base","base")
+    call ast_main("You can speak now Bessy...","base","base","base","mid")
     call sus_main("...","base","base","base","base")
     call sus_main("{size=-5}Please sir...{/size}","base","base","base","base")
     call sus_main("cover me...","base","base","base","base")
     m "Mmmm, keep shaking those tits of yours and I won't have any other option!"
-    call ast_main("hahahaha","base","base","base","base")
+    call ast_main("hahahaha","base","base","base","mid")
     call sus_main("*sob*T-thank you sir *sob*","base","base","base","base")
-    call ast_main("Awww, is little susy sad that her tits are gonna be covered in cum?","base","base","base","base")
+    call ast_main("Awww, is little susy sad that her tits are gonna be covered in cum?","base","base","base","mid")
     call sus_main("...","base","base","base","base")
-    call ast_main("Or maybe you're crying because your headmaster hasn't cum yet...?","base","base","base","base")
+    call ast_main("Or maybe you're crying because your headmaster hasn't cum yet...?","base","base","base","mid")
     call sus_main("*sob*I-I am not...","base","base","base","base")
-    call ast_main("So you don't want Dumbledore to cum all over you then?","base","base","base","base")
+    call ast_main("So you don't want Dumbledore to cum all over you then?","base","base","base","mid")
     call sus_main("I didn't say that!","base","base","base","base")
-    call ast_main("haha, typical. You Hufflepuff whores are always after one thing.","base","base","base","base")
+    call ast_main("haha, typical. You Hufflepuff whores are always after one thing.","base","base","base","mid")
     call sus_main("...","base","base","base","base")
-    call ast_main("Maybe this would go faster if you sucked on dumbledore's gross old cock...","base","base","base","base")
+    call ast_main("Maybe this would go faster if you sucked on dumbledore's gross old cock...","base","base","base","mid")
     call sus_main("What? You can't be serious! Isn't this enough?","base","base","base","base")
-    call ast_main("I don't know... Is it, sir?","base","base","base","base")
+    call ast_main("I don't know... Is it, sir?","base","base","base","mid")
     menu:
         "-\"This is fine.\"-":
-            call ast_main("*pfft*","base","base","base","base")
+            call ast_main("*pfft*","base","base","base","mid")
             call sus_main("really?","base","base","base","base")
             call sus_main("You mean I don't have to...","base","base","base","base")
             call sus_main("{b}suck{/b} it...","base","base","base","base")
@@ -1185,101 +1185,101 @@ label hornify_spell_2: #second level hornify spell
             call sus_main("...","base","base","base","base")
         "-\"Suck it!\"-":
             call sus_main("Professor dumbledore!","base","base","base","base")
-            call ast_main("See! I told you he wants you to suck it!","base","base","base","base")
-            call ast_main("Open Wide slut!","base","base","base","base")
+            call ast_main("See! I told you he wants you to suck it!","base","base","base","mid")
+            call ast_main("Open Wide slut!","base","base","base","mid")
             call sus_main("...","base","base","base","base")
             call sus_main("...","base","base","base","base")
     ">With that, Susan closes her eyes and nervously puts the head of your cock in her mouth..."
     call sus_main("!!!","base","base","base","base")
     call sus_main("It's disgusting!","base","base","base","base")
-    call ast_main("HAHAHAHAHAHA","base","base","base","base")
+    call ast_main("HAHAHAHAHAHA","base","base","base","mid")
     m "Now, now [susan_name]..."
-    call ast_main("Yeah, susy, don't be rude to the headmaster!","base","base","base","base")
+    call ast_main("Yeah, susy, don't be rude to the headmaster!","base","base","base","mid")
     call sus_main("But, but-","base","base","base","base")
-    call ast_main("Hornify cock!","base","base","base","base")
+    call ast_main("Hornify cock!","base","base","base","mid")
     ">Another flash of lightning erupts from the Slytherin's wand as it flies towards poor Susan..."
     ">Susan's eyes lock forward in a mixture of pleasure and fear as she plunges her inexperienced mouth onto your cock."
-    call ast_main("There, not so gross now is it, Susy?","base","base","base","base")
+    call ast_main("There, not so gross now is it, Susy?","base","base","base","mid")
     call sus_main("*Slrp*glp*slrp*","base","base","base","base")
     ">Susan just runs her tongue as fast as she can along the underside your cock as she holds the tip in her mouth."
     m "Ugh... slow down there [susan_name]..."
-    call ast_main("Mmmmm, this look suits you, susy...","base","base","base","base")
+    call ast_main("Mmmmm, this look suits you, susy...","base","base","base","mid")
     call sus_main("*Slrp*glp*slrp*","base","base","base","base")
     m "Ugh... are you sure you should have cast it twice?"
     call sus_main("*Slrp*glp*slrp*?","base","base","base","base")
-    call ast_main("It'll be fine... Exponential can't be that much more can it?","base","base","base","base")
+    call ast_main("It'll be fine... Exponential can't be that much more can it?","base","base","base","mid")
     call sus_main("*Slrp*!!!*glp*","base","base","base","base")
-    call ast_main("She's not even feeling them both yet anyway...","base","base","base","base")
+    call ast_main("She's not even feeling them both yet anyway...","base","base","base","mid")
     call sus_main("*Slrp*glp*slrp*","base","base","base","base")
     ">Susan's mouth softly cradles your cock as she assaults the tip..."
     call sus_main("*Slrp*glp*slrp*","base","base","base","base")
     m "Ugh... I said slow down slut!"
     call sus_main("*Slrp*glp*slrp*","base","base","base","base")
     ">Susan refuses to acknowledge you, desperate to drain you as fast as she can..."
-    call ast_main("Mmmm, that's it bessy...","base","base","base","base")
-    call ast_main("Are you ready yet, sir?","base","base","base","base")
+    call ast_main("Mmmm, that's it bessy...","base","base","base","mid")
+    call ast_main("Are you ready yet, sir?","base","base","base","mid")
     m "Ugh... almost there..."
     ">Astoria leans in close to Susan."
     call sus_main("*Slrp*glp*slrp*","base","base","base","base")
-    call ast_main("{size=-5}Hear that? He's going to coat you with his nasty cum...{/size}","base","base","base","base")
+    call ast_main("{size=-5}Hear that? He's going to coat you with his nasty cum...{/size}","base","base","base","mid")
     call sus_main("*Slrp{heart}*glp*{heart}slrp*","base","base","base","base")
     g4 "ARGH, THAT'S IT YOU LITTLE WHORES!"
-    call ast_main("Get ready slut-","base","base","base","base")
+    call ast_main("Get ready slut-","base","base","base","mid")
     call sus_main("*Slrp{heart}*!!!*{heart}slrp*","base","base","base","base")
     ">Your cock can handle Susan's amateur tongue no longer."
     g4 "AHH TAKE THIS SLUTS!"
     ">You pull your dick out of Susan's mouth with a satisfying pop as it begins to fire its load."
     call sus_main("!!!","base","base","base","base")
-    call ast_main("Told you!","base","base","base","base")
+    call ast_main("Told you!","base","base","base","mid")
     ">You close your eyes as you furiously jerk your cock off onto Susan's blank face..."
     call sus_main("...this...","base","base","base","base")
     ">With that, Susan's mind seems to have taken too much, saving the poor girl from the excess pleasure by fainting..."
     call sus_main("...","base","base","base","base")
     ">She slumps to the floor, her hips still jerking intermittently..."
-    call ast_main("...","base","base","base","base")
+    call ast_main("...","base","base","base","mid")
     m "!!!"
-    call ast_main("Hahahaha! I guess casting it twice was too much for poor old Bessy.","base","base","base","base")
-    call ast_main("Looks like you were right for once, sir.","base","base","base","base")
+    call ast_main("Hahahaha! I guess casting it twice was too much for poor old Bessy.","base","base","base","mid")
+    call ast_main("Looks like you were right for once, sir.","base","base","base","mid")
     m "Well we'll know for next time."
-    call ast_main("Are you kidding? Someone like Susan deserves way worse than this!","base","base","base","base")
+    call ast_main("Are you kidding? Someone like Susan deserves way worse than this!","base","base","base","mid")
     m "...(What's she got against this girl?)"
-    call ast_main("Good job by the way, sir, you covered her! I can smell her from here...","base","base","base","base")
+    call ast_main("Good job by the way, sir, you covered her! I can smell her from here...","base","base","base","mid")
     m "About that..."
-    call ast_main("Not now, sir, I wanna wake her up.","base","base","base","base")
-    call ast_main("Surgere!","base","base","base","base")
+    call ast_main("Not now, sir, I wanna wake her up.","base","base","base","mid")
+    call ast_main("Surgere!","base","base","base","mid")
     ">A brief flash of white appears at the end of Astoria's wand."
     call sus_main("W-w-wha happened? where am I?","base","base","base","base")
-    call ast_main("Don't you remember professor dumbledore's wrinkly old cock coating you in his nasty, smelly cum?","base","base","base","base")
-    call ast_main("Hmmm?","base","base","base","base")
+    call ast_main("Don't you remember professor dumbledore's wrinkly old cock coating you in his nasty, smelly cum?","base","base","base","mid")
+    call ast_main("Hmmm?","base","base","base","mid")
     call sus_main("I-i Stop-","base","base","base","base")
-    call ast_main("Shhh...","base","base","base","base")
+    call ast_main("Shhh...","base","base","base","mid")
     call sus_main("!!!","base","base","base","base")
-    call ast_main("I think I'm getting sick of smelling you honestly...","base","base","base","base")
-    call ast_main("Why don't you head back to your room.","base","base","base","base")
+    call ast_main("I think I'm getting sick of smelling you honestly...","base","base","base","mid")
+    call ast_main("Why don't you head back to your room.","base","base","base","mid")
     call sus_main("!!!","base","base","base","base")
-    call ast_main("Take the scenic route, I think you'll need the fresh air...","base","base","base","base")
+    call ast_main("Take the scenic route, I think you'll need the fresh air...","base","base","base","mid")
     call sus_main("!!!","base","base","base","base")
     ">You can see a desperate pleading in the poor redheads eyes as she realises the humiliation she's about to endure..."
     m "don't you think that's a little much [astoria_name]?"
-    call ast_main("Pfft, no... Besides, Everyone already stares at her big tits, it's not like anything will change...","base","base","base","base")
+    call ast_main("Pfft, no... Besides, Everyone already stares at her big tits, it's not like anything will change...","base","base","base","mid")
     call sus_main("...","base","base","base","base")
-    call ast_main("Bye bye, Susy, don't forget to have fun!","base","base","base","base")
-    call ast_main("And no magic to hide or clean up the headmaster's cum either!","base","base","base","base")
+    call ast_main("Bye bye, Susy, don't forget to have fun!","base","base","base","mid")
+    call ast_main("And no magic to hide or clean up the headmaster's cum either!","base","base","base","mid")
     call sus_main("......","base","base","base","base")
     ">With that, Susan silently walks a death march towards the door..."
     ">The door closes behind the cum drenched redhead as she puts her clothes back on and forgets the entire encounter..."
-    call ast_main("hahaha, everyone's going to be talking about this for weeks!","base","base","base","base")
+    call ast_main("hahaha, everyone's going to be talking about this for weeks!","base","base","base","mid")
     m "You don't think you're taking this too far?"
-    call ast_main("Not far enough! besides, who's going to punish me? you?","base","base","base","base")
+    call ast_main("Not far enough! besides, who's going to punish me? you?","base","base","base","mid")
     m "I'm not the one to worry about... Don't forget tonkerbell..."
-    call ast_main("I'm sooo scared... What's she going to do?","base","base","base","base")
+    call ast_main("I'm sooo scared... What's she going to do?","base","base","base","mid")
     m "She is Susan's aunt."
-    call ast_main("And a huge perv like you! I've got her wrapped around my finger.","base","base","base","base")
+    call ast_main("And a huge perv like you! I've got her wrapped around my finger.","base","base","base","mid")
     m "..."
-    call ast_main("Speaking of, I better go see her now...","base","base","base","base")
+    call ast_main("Speaking of, I better go see her now...","base","base","base","mid")
     m "Have fun..."
-    call ast_main("I will, she's probably got some more cool clothes for me.","base","base","base","base")
-    call ast_main("See ya, sir!","base","base","base","base")
+    call ast_main("I will, she's probably got some more cool clothes for me.","base","base","base","mid")
+    call ast_main("See ya, sir!","base","base","base","mid")
     ">With that, Astoria turns and walk out the door on the way to tonks' office..."
     m "Hmmm..."
     jump main_room_menu
@@ -1296,88 +1296,88 @@ label hornify_spell_2: #second level hornify spell
 label hornify_spell_3: #third level hornify spell
     ">Astoria quickly walks around your desk and hops up onto your lap."
     m "What's the special occasion?"
-    call ast_main("You want to practise that spell don't you?","base","base","base","base")
+    call ast_main("You want to practise that spell don't you?","base","base","base","mid")
     ">Astoria starts shamelessly rolling her hips on your cock."
-    call ast_main("I'm just getting ready...","base","base","base","base")
+    call ast_main("I'm just getting ready...","base","base","base","mid")
     ">Astoria then gives her butt a little wriggle until your cock is resting in-between her butt cheeks."
-    call ast_main("There, you can bring susy up here now...","base","base","base","base")
+    call ast_main("There, you can bring susy up here now...","base","base","base","mid")
     m "You're comfortable sitting here then?"
-    call ast_main("Hmph, I need something soft after what that meanie Tonks did!","base","base","base","base")
-    call ast_main("Besides, a filthy old man like you should count their lucky stars I'm sitting here...","base","base","base","base")
+    call ast_main("Hmph, I need something soft after what that meanie Tonks did!","base","base","base","mid")
+    call ast_main("Besides, a filthy old man like you should count their lucky stars I'm sitting here...","base","base","base","mid")
     m "Suit yourself... but don't say I didn't warn you..."
     ">With that you give a playful thrust into Astoria before summoning Susan up to your office."
     call sus_main("Hello Professor Dumbledore.","base","base","base","base")
     call sus_main("Oh... um... hello Astoria...","base","base","base","base")
     call sus_main("You wanted to see me sir?","base","base","base","base")
-    call ast_main("Pfft... you bet he does...","base","base","base","base")
+    call ast_main("Pfft... you bet he does...","base","base","base","mid")
     ">Astoria wriggles her bum against your cock to make her point..."
     call sus_main("Astoria!","base","base","base","base")
-    call ast_main("Shhhh, Susy... just stay still for a sec, OK?","base","base","base","base")
+    call ast_main("Shhhh, Susy... just stay still for a sec, OK?","base","base","base","mid")
     ">Susan's bodies stiffens in response to Astoria's lingering spell."
     call sus_main("...","base","base","base","base")
-    call ast_main("You ready to go, sir?","base","base","base","base")
+    call ast_main("You ready to go, sir?","base","base","base","mid")
     m "I don't see why not."
-    call ast_main("Ready, Susy?","base","base","base","base")
+    call ast_main("Ready, Susy?","base","base","base","mid")
     call sus_main("...","base","base","base","base")
     ">A look of fear forms in Susan's eyes..."
-    call ast_main("Hornify uniform!","base","base","base","base")
+    call ast_main("Hornify uniform!","base","base","base","mid")
     ">A pink flash erupts from the end of Astoria's wand..."
     call sus_main("!!!","base","base","base","base")
     m "Her uniform?"
-    call ast_main("What? You've got a problem with it?","base","base","base","base")
+    call ast_main("What? You've got a problem with it?","base","base","base","mid")
     m "no, no, it's just a little tame compared to last time..."
     m "Maybe tonks really did teach you a lesson."
-    call ast_main("Pfft as if! I wasn't even done yet!","base","base","base","base")
-    call ast_main("hornify exhibitionism!","base","base","base","base")
+    call ast_main("Pfft as if! I wasn't even done yet!","base","base","base","mid")
+    call ast_main("hornify exhibitionism!","base","base","base","mid")
     call sus_main("!!!","base","base","base","base")
     m "Hmmm, that's a little more interesting..."
-    call ast_main("Not done yet!","base","base","base","base")
+    call ast_main("Not done yet!","base","base","base","mid")
     call sus_main("...","base","base","base","base")
-    call ast_main("Susy, walk out and come back in!","base","base","base","base")
+    call ast_main("Susy, walk out and come back in!","base","base","base","mid")
     ">Susan turns and walks outside, closing the large door behind her."
     m "What's that supposed to do?"
-    call ast_main("So she forgets about the spells!","base","base","base","base")
-    call ast_main("This way we can trick her into thinking she came to us...","base","base","base","base")
+    call ast_main("So she forgets about the spells!","base","base","base","mid")
+    call ast_main("This way we can trick her into thinking she came to us...","base","base","base","mid")
     ">With that the door swings open as Susan bones enters."
     call sus_main("Hello Professor Dumbledore.","base","base","base","base")
     call sus_main("Oh... um... hello Astoria...","base","base","base","base")
     call sus_main("W-Why are you sitting on Dumbledore's lap?","base","base","base","base")
-    call ast_main("Because it's the softest place in the room.","base","base","base","base")
+    call ast_main("Because it's the softest place in the room.","base","base","base","mid")
     call sus_main("Oh, ah o-ok then...","base","base","base","base")
     ">You notice a red flush appear over Susan's face as her thighs slowly start to roll together."
     call sus_main("D-did you want to {b}see{/b} me sir?","base","base","base","base")
-    call ast_main("Don't you remember why you're here, susy?","base","base","base","base")
+    call ast_main("Don't you remember why you're here, susy?","base","base","base","mid")
     call sus_main("U-um... I thought you... I-I guess not...","base","base","base","base")
-    call ast_main("You wanted to show Dumbledore and me your plans for the new Hufflepuff uniform.","base","base","base","base")
+    call ast_main("You wanted to show Dumbledore and me your plans for the new Hufflepuff uniform.","base","base","base","mid")
     call sus_main("I-I did?","base","base","base","base")
     call ast_main("Mhmm! Something about the current one being way too \"prudish\"!","base","base","base","base")
-    call ast_main("Isn't that right Dumbledore?","base","base","base","base")
+    call ast_main("Isn't that right Dumbledore?","base","base","base","mid")
     ">Astoria pushes hard into your cock..."
     m "I do seem to remember the word conservative being thrown around..."
     call sus_main("So you two are going sit there and {b}watch{/b} me...","base","base","base","base")
     call sus_main("-while I show off my new {b}uniform{/b}...","base","base","base","base")
-    call ast_main("If you don't want t-","base","base","base","base")
+    call ast_main("If you don't want t-","base","base","base","mid")
     call sus_main("NO! Ugh... I mean, no, I want to show you...","base","base","base","base")
-    call ast_main("Show us what?","base","base","base","base")
+    call ast_main("Show us what?","base","base","base","mid")
     call sus_main("My... new uniform...","base","base","base","base")
     ">Astoria begins rocking her hips slowly on your lap."
-    call ast_main("Well, go on then...","base","base","base","base")
+    call ast_main("Well, go on then...","base","base","base","mid")
     call sus_main("...","base","base","base","base")
     call sus_main("Ok...","base","base","base","base")
     ">You notice the desperate need and lust in Susan's voice begin to overtake her nervousness..."
     call sus_main("The first thing I t-think needs to be changed is the s-skirt...","base","base","base","base")
-    call ast_main("Really? How's that?","base","base","base","base")
+    call ast_main("Really? How's that?","base","base","base","mid")
     ">Astoria changes her rocking motion from forwards and backwards to side to side."
     call sus_main("I think it needs to be shor-shorter...","base","base","base","base")
-    call ast_main("Shorter?","base","base","base","base")
+    call ast_main("Shorter?","base","base","base","mid")
     call sus_main("Mhmm...","base","base","base","base")
-    call ast_main("How much shorter?","base","base","base","base")
+    call ast_main("How much shorter?","base","base","base","mid")
     call sus_main("Well, um, a fair-","base","base","base","base")
-    call ast_main("Why don't you show us...","base","base","base","base")
+    call ast_main("Why don't you show us...","base","base","base","mid")
     ">Astoria presses your cock hard into her buttcrack..."
     m "Ugh..."
     call sus_main("Here?... in front of...","base","base","base","base")
-    call ast_main("Go on...","base","base","base","base")
+    call ast_main("Go on...","base","base","base","mid")
     call sus_main("A-Alright...","base","base","base","base")
     call sus_main("I ugh... think that the skirt should-","base","base","base","base")
     ">Susan starts to fold it inwards at the belt, causing it to ride up..."
@@ -1387,12 +1387,12 @@ label hornify_spell_3: #third level hornify spell
     m "You don't think that's a little too high Ms Bones?"
     ">You look down and notice the desperate redhead's juices start to drip down from underneath the tiny skirt..."
     call sus_main("I-I don't think so...","base","base","base","base")
-    call ast_main("Really? I can make out your panties!","base","base","base","base")
+    call ast_main("Really? I can make out your panties!","base","base","base","mid")
     call sus_main("You can?...","base","base","base","base")
     call sus_main("...","base","base","base","base")
     ">You notice Susan's thighs squeeze together helplessly in pleasure."
     call sus_main("well a-anyway, I think this is a good length for the hufflepuff uniform...","base","base","base","base")
-    call ast_main("I bet you do...","base","base","base","base")
+    call ast_main("I bet you do...","base","base","base","mid")
     call sus_main("W-what do you think sir?","base","base","base","base")
     ">You start to rock your hips against Astoria, causing her to bob up and down in front of Susan as you answer..."
     menu:
@@ -1400,40 +1400,40 @@ label hornify_spell_3: #third level hornify spell
             m "I'd say you could stand to go a little shorter..."
             call sus_main("Really? Thank you sir...","base","base","base","base")
             ">With that, Susan starts to roll up her skirt a little more, shamelessly bringing her soaked panties into view..."
-            call ast_main("Wow, that took a lot of convincing...","base","base","base","base")
+            call ast_main("Wow, that took a lot of convincing...","base","base","base","mid")
             ">Astoria speeds up her hips as she starts to bounce on your lap."
             call sus_main("Well it's not my fault the school skirt is so horribly long!","base","base","base","base")
-            call ast_main("Of course not...","base","base","base","base")
+            call ast_main("Of course not...","base","base","base","mid")
         "-It's fine-":
             m "That's short enough i'd say..."
             call sus_main("Really? You don't want it a little...","base","base","base","base")
-            call ast_main("Sir! Of course he wants it shorter!","base","base","base","base")
+            call ast_main("Sir! Of course he wants it shorter!","base","base","base","mid")
             call sus_main("b-but he said...","base","base","base","base")
-            call ast_main("You want it shorter, don't you, sir?","base","base","base","base")
+            call ast_main("You want it shorter, don't you, sir?","base","base","base","mid")
             ">Astoria presses her ass into your cock with a playful hop."
             m "Ugh... gods yes..."
             call sus_main("...","base","base","base","base")
             ">Susan has a guilty smirk on her lips as she rolls her skirt ever so higher, showing off her soaked panties..."
     m "Well I don't think anyone could complain about a skirt like that..."
     call sus_main("T-thank you s-sir...","base","base","base","base")
-    call ast_main("That's not all though is it, Susy?","base","base","base","base")
+    call ast_main("That's not all though is it, Susy?","base","base","base","mid")
     call sus_main("N-no...","base","base","base","base")
-    call ast_main("I think you want to change your top as well don't you?","base","base","base","base")
+    call ast_main("I think you want to change your top as well don't you?","base","base","base","mid")
     call sus_main("Ah... yes... I want to show you... my... {p}ideas...","base","base","base","base")
-    call ast_main("Mmmm... go on then...","base","base","base","base")
+    call ast_main("Mmmm... go on then...","base","base","base","mid")
     ">Astoria has shamelessly started to grind against your cock while teasing the poor redhead..."
     call sus_main("First th-things first... The vest needs to go...","base","base","base","base")
-    call ast_main("...","base","base","base","base")
+    call ast_main("...","base","base","base","mid")
     ">Astoria silently watches as Susan throws her vest to the ground..."
-    call ast_main("What's next?","base","base","base","base")
+    call ast_main("What's next?","base","base","base","mid")
     call sus_main("Well I think it should be a rule that...","base","base","base","base")
     ">Astoria's hips continue to grind against you, a needy heat beginning to emanate from them..."
     call sus_main("You shouldn't be allowed to do up your first two buttons on your shirt...","base","base","base","base")
-    call ast_main("Why's that?","base","base","base","base")
+    call ast_main("Why's that?","base","base","base","mid")
     call sus_main("Oh... um... it's so that you don't overheat in class...","base","base","base","base")
-    call ast_main("Overheat?","base","base","base","base")
+    call ast_main("Overheat?","base","base","base","mid")
     call sus_main("Um... as well as it helps to, um...","base","base","base","base")
-    call ast_main("Shhh, keep going...","base","base","base","base")
+    call ast_main("Shhh, keep going...","base","base","base","mid")
     call sus_main("...","base","base","base","base")
     ">Susan's thighs start to shamelessly drip as she continues to debase her uniform for Astoria and yourself."
     call sus_main("Well... I also think that you should roll the bottom up and through the middle too...","base","base","base","base")
@@ -1441,29 +1441,29 @@ label hornify_spell_3: #third level hornify spell
     call sus_main("There... I-I think that this should be the new Hufflepuff uniform...","base","base","base","base")
     ">With that, Susan stands still, proudly presenting her slutty attire to you and the Slytherin grinding on your cock."
     pause
-    call ast_main("Is that all?","base","base","base","base")
+    call ast_main("Is that all?","base","base","base","mid")
     call sus_main("I think so...","base","base","base","base")
     call sus_main("So what do you think?","base","base","base","base")
-    call ast_main("It'll definitely get rid of the idea that hufflepuff are prudes!","base","base","base","base")
+    call ast_main("It'll definitely get rid of the idea that hufflepuff are prudes!","base","base","base","mid")
     call sus_main("...","base","base","base","base")
     call sus_main("What do you think, sir?","base","base","base","base")
     ">Before you're able to muster a response, Astoria shamelessly starts grinding in front of Susan, doing everything she can to shame the poor girl..."
-    call ast_main("Mmmm, the headmaster sure feels like he likes it...","base","base","base","base")
+    call ast_main("Mmmm, the headmaster sure feels like he likes it...","base","base","base","mid")
     call sus_main("Feels like-","base","base","base","base")
     call sus_main("You mean?","base","base","base","base")
-    call ast_main("Yep, his nasty old cock is all hard from having to look at your slutty little uniform...","base","base","base","base")
+    call ast_main("Yep, his nasty old cock is all hard from having to look at your slutty little uniform...","base","base","base","mid")
     ">A look of both shame and extreme arousal pass over Susan's face as her hips start to quiver..."
     call sus_main("Is it true sir... Do you think this uniform is too {b}slutty{/b}?","base","base","base","base")
     menu:
         "-Shame her-":
             m "Of course girl!"
-            call ast_main("...","base","base","base","base")
+            call ast_main("...","base","base","base","mid")
             ">Astoria continues to encourage you along with her playful lap dance..."
             m "You expect to dress like that and not be called a whore?"
             call sus_main("I-I-I was just trying","base","base","base","base")
             m "To what? Get me to cum just by looking at you?"
             call sus_main("...","base","base","base","base")
-            call ast_main("She isn't far off from the feel of you...","base","base","base","base")
+            call ast_main("She isn't far off from the feel of you...","base","base","base","mid")
             ">Astoria gives a forceful rub to the tip of your cock..."
             m "Urghh... You're not helping you little minx..."
             call sus_main("So I shouldn't dress like this then?","base","base","base","base")
@@ -1471,28 +1471,28 @@ label hornify_spell_3: #third level hornify spell
         "-Be nice...-":
             m "Nonsense, a girl is only as slutty as she acts..."
             m "I'm sure you'll be able to go to classes and act normally dressed like that..."
-            call ast_main("Really sir? It wouldn't surprise me if Susy rubs one out in the middle of class!","base","base","base","base")
+            call ast_main("Really sir? It wouldn't surprise me if Susy rubs one out in the middle of class!","base","base","base","mid")
             call sus_main("Astoria! I would never do such a thing sir!","base","base","base","base")
             call sus_main("Can you imagine what people would say if they s-saw me touching myself in class!","base","base","base","base")
             call sus_main("There would be talk for weeks about how much of a {b}slut{/b} I am and how I should so {b}ashamed{/b}...","base","base","base","base")
             ">Susan's hips spasm with need..."
             call sus_main("Maybe I shouldn't go to class like this...","base","base","base","base")
-    call ast_main("Nonsense! You have to go to class and show everyone your cute new uniform!","base","base","base","base")
+    call ast_main("Nonsense! You have to go to class and show everyone your cute new uniform!","base","base","base","mid")
     call sus_main("I do?","base","base","base","base")
-    call ast_main("Mhmm! How else are you going to get people's opinions about it?","base","base","base","base")
+    call ast_main("Mhmm! How else are you going to get people's opinions about it?","base","base","base","mid")
     call sus_main("Y-you're right!","base","base","base","base")
     call sus_main("I know, I should make a petition!","base","base","base","base")
-    call ast_main("*pffft*","base","base","base","base")
-    call ast_main("That's a great idea Susie! Why don't you ask as many people as you can about your new uniform!","base","base","base","base")
+    call ast_main("*pffft*","base","base","base","mid")
+    call ast_main("That's a great idea Susie! Why don't you ask as many people as you can about your new uniform!","base","base","base","mid")
     call sus_main("How many do I need to get to make this Hufflepuffs new uniform?","base","base","base","base")
     menu:
         "-Ten-":
             m "Ten should do."
             call sus_main("Only ten?!","base","base","base","base")
             call sus_main("I'll have this done before lunch!","base","base","base","base")
-            call ast_main("Yeah, that's not enough, sir!","base","base","base","base")
+            call ast_main("Yeah, that's not enough, sir!","base","base","base","mid")
             call sus_main("Astoria!","base","base","base","base")
-            call ast_main("Fine, I guess that just means he must really like your uniform...","base","base","base","base")
+            call ast_main("Fine, I guess that just means he must really like your uniform...","base","base","base","mid")
         "-Fifty-":
             m "Fifty signatures would probably be enough..."
             call sus_main("OK sir, I'll try my hardest to get that many!","base","base","base","base")
@@ -1501,24 +1501,24 @@ label hornify_spell_3: #third level hornify spell
             call sus_main("One hundred?!","base","base","base","base")
             call sus_main("I can't get one hundred signatures in just one day!","base","base","base","base")
             call sus_main("Especially not if I go to all my classes...","base","base","base","base")
-            call ast_main("Just skip them!","base","base","base","base")
+            call ast_main("Just skip them!","base","base","base","mid")
             call sus_main("Play hooky?","base","base","base","base")
             call sus_main("What would everyone think!","base","base","base","base")
     call sus_main("Well, I better get to class then!","base","base","base","base")
-    call ast_main("Have fun, Susy...","base","base","base","base")
+    call ast_main("Have fun, Susy...","base","base","base","mid")
     ">With that, the excited, ashamed and scantily dressed girl blindly exited your office with a horny little smile on her face."
-    call ast_main("Pfft, I can't wait to hear the rumours going around about Susie the Floozy once she asks for signatures for that uniform!","base","base","base","base")
-    call ast_main("This is going to be great! I'm going to chase her around to see what people say.","base","base","base","base")
+    call ast_main("Pfft, I can't wait to hear the rumours going around about Susie the Floozy once she asks for signatures for that uniform!","base","base","base","mid")
+    call ast_main("This is going to be great! I'm going to chase her around to see what people say.","base","base","base","mid")
     ">Astoria hops off of your lap, ready to chase after the redheaded slut..."
     m "Wait a minute, you don't plan on leaving me like this do you?"
-    call ast_main("You mean your- gross!","base","base","base","base")
-    call ast_main("Your lucky I sat on your lap today! If you think I'm going to actually touch that monster of yours...","base","base","base","base")
-    call ast_main("That's what Susie's for!","base","base","base","base")
+    call ast_main("You mean your- gross!","base","base","base","mid")
+    call ast_main("Your lucky I sat on your lap today! If you think I'm going to actually touch that monster of yours...","base","base","base","mid")
+    call ast_main("That's what Susie's for!","base","base","base","mid")
     m "Well why didn't you get her to deal with this then?"
-    call ast_main("You know what happens if I send her out with your cum all over her...","base","base","base","base")
-    call ast_main("Just be a good headmaster and wait for Susy to come back later today.","base","base","base","base")
+    call ast_main("You know what happens if I send her out with your cum all over her...","base","base","base","mid")
+    call ast_main("Just be a good headmaster and wait for Susy to come back later today.","base","base","base","mid")
     m "Ugh, fine... But it's not good to leave a man with blue balls..."
-    call ast_main("Ew... sir!","base","base","base","base")
+    call ast_main("Ew... sir!","base","base","base","mid")
     ">Astoria then rushes off to watch the flaming wreck that is Susan's social life..."
     m "..."
     jump main_room_menu

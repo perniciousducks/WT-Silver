@@ -1,12 +1,10 @@
 ﻿
-default _checking_for_errors = False
-
 init python:
     if not config.developer:
         config.missing_image_callback = missing_image_func
         config.missing_label_callback = missing_label_func
     else:
-        config.after_load_callbacks.append(check_errors)
+        config.lint_hooks.append(lint_char_main_calls)
 
 init -1 python:
     rpy_version = int('%d%d%d%d' % renpy.version_tuple)
@@ -44,79 +42,61 @@ init -1 python:
         renpy.with_statement(d3)
         return
 
-    def check_for_call_errors(char, auto=True):
-        global _checking_for_errors
+    def lint_char_main_calls():
+        """
+        Checks character calls that use the doll system.
+        """
+        renpy.execute_default_statement(False)
+        char_lookup = {
+            "ast_main": astoria,
+            "cho_main": cho,
+            "her_main": hermione,
+            "ton_main": tonks
+        }
 
-        open(config.basedir+"/calls.txt", "w").close()
-        open(config.basedir+"/game/test.rpy", "w").close()
-        _files = {"f": 0} # nonlocal nonglobal
-        _calls = []
-        _calls_dict = {}
-        _exp = char
-        _auto = auto
+        calls = [i for i in renpy.game.script.all_stmts if isinstance(i, renpy.ast.Call) and i.label in char_lookup]
+        calls.sort(key=lambda i: (i.filename, i.linenumber))
 
-        _tab = " "*4
+        for c in calls:
+            named_args = {}
+            try:
+                args, kwargs = c.arguments.evaluate(renpy.store.__dict__)
+                node = renpy.game.script.lookup(c.label)
+                named_args = node.parameters.apply(args, kwargs)
+            except NameError:
+                continue # Linting with undefined variables is difficult
+            except Exception as e:
+                print
+                print "{}:{} {}".format(c.filename, c.linenumber, e)
+                continue
 
-        def check_file(file, name):
-            _found = False
-            with open(file) as f:
-                for n, line in enumerate(f):
-                    l = line.strip()
-                    if l.startswith("call %s" % _exp):
-                        _calls.append(l)
-                        _calls_dict.setdefault(name, []).append(l+" # Line: %s" % n)
-                        if not _found:
-                            _found = True
-                            _files["f"] += 1
-            return
+            if named_args["face"] is not None:
+                pass # Linting random face expressions is difficult
 
-        for dp, dn, fn in system.walk(config.basedir):
-            for i in [f for f in fn if f.endswith(".rpy")]:
-                check_file(system.path.join(dp, i), i)
+            char = char_lookup[c.label]
 
-        with open(config.basedir+"/calls.txt", "w") as f:
-            for exp in _calls:
-                f.write("%s\n" % exp)
-
-        with open(config.basedir+"/game/test.rpy", "w") as f:
-            f.write("label expression_testing:\n%s%s\n%s### Found %s occurences of 'call %s' in %s files. ###\n%s\n%s$ _skip = Skip(fast=True)\n%s$ _skip()\n%s$ renpy.not_infinite_loop(60)\n" % (_tab, "#"*70, _tab, len(_calls), _exp, _files["f"], _tab+"#"*70, _tab, _tab, _tab))
-            for k in _calls_dict.iterkeys():
-                f.write("%s#\n%s# %s\n%s#\n" % (_tab, _tab, k, _tab))
-                for v in _calls_dict[k]:
-                    f.write(_tab+"%s\n" % v)
-            f.write("%s$ renpy.choice_for_skipping()\n%smenu:\n%s\"System\" \"Test successful, delete test.rpy?\"\n%s\"Yes\":\n%s$ _delete_test_file()\n%s\"No\":\n%spass\n%sjump main_room_menu\n" % (_tab, _tab, _tab*2, _tab*2, _tab*3, _tab*2, _tab*3, _tab))
-
-        print "Scan finished"
-        print "Found %s calls." % len(_calls)
-        if _auto:
-            _checking_for_errors = True
-            print "restarting..."
-            renpy.reload_script()
-
-    def _delete_test_file():
-            if system.path.isfile(config.basedir+"/game/test.rpy"):
-                system.remove(config.basedir+"/game/test.rpy")
-            return
-
-    def check_errors():
-
-        global _checking_for_errors
-        if _checking_for_errors:
-            _checking_for_errors = False
-            renpy.pause(2.0)
-            renpy.jump("expression_testing")
-
-        if system.path.isfile(config.basedir+"/game/test.rpyc") and not system.path.isfile(config.basedir+"/game/test.rpy"):
-            system.remove(config.basedir+"/game/test.rpyc")
+            # Reset face to default first, to avoid persisting errors from previous calls
+            char.set_face(mouth="base", eyes="base", eyebrows="base", pupils="mid")
+            char.set_face(
+                mouth=named_args["mouth"],
+                eyes=named_args["eyes"],
+                eyebrows=named_args["eyebrows"],
+                pupils=named_args["pupils"],
+                cheeks=named_args["cheeks"],
+                tears=named_args["tears"],
+            )
+            img = char.get_image()
+            what = "Call to {}".format(c.label)
+            renpy.lint.report_node = c
+            renpy.lint.check_displayable(what, img)
 
     def save_whitespace(mode=0):
-        """ Saves whitespace information to .whitespace file
-            mode = 0 - Whitespace_dict
-            mode = 1 - file crawler """
+        """
+        Saves whitespace information to .whitespace file.
+        mode = 0 - Whitespace_dict
+        mode = 1 - file crawler
+        """
         file = config.basedir+"/game/.whitespace"
-
-        open(file, "w").close()
-
         with open(file, "w") as fp:
             if mode == 0:
                 for key, value in whitespace_dict.iteritems():

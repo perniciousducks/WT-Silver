@@ -1,7 +1,6 @@
 # Hide all character images (not chibi)
 label hide_characters:
     hide screen hermione_main
-    hide screen hermione_ass
     hide screen luna_main
     hide screen cho_main
     hide screen astoria_main

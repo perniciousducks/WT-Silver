@@ -479,7 +479,7 @@ label tentacle_1: #Public path
         spo "Oh yes, I suppose you should."
         mal "{size=-4}Damn dude, have you seen her tits?!{/size}"
         ">*Squeeze* *Squeeze*"
-        mal2 "{size=-4}Holy shit, they're soft."
+        mal2 "{size=-4}Holy shit, they're soft.{/size}"
         spo "If you two don't stop that at once you'll get expelled."
         mal "S-sorry..."
         mal2 "Sorry professor!"
@@ -593,7 +593,7 @@ label tentacle_2: # Personal path
     spo "You! Yes, you girls! Take her to the hospital wing at once!"
     fem "W-wha-.. But..."
     spo "What are you waiting for!"
-    fem "Fine... {size=-4}"
+    fem "{size=-4}Fine...{/size}"
 
     call play_sound("running")
     pause 3.0

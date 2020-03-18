@@ -74,7 +74,7 @@ label summon_cho:
                 jump cho_requests
             jump cho_training_menu
 
-        "{color=[menu_disabled]}-Training-" (icon="interface/icons/small/quidditch.png") if cho_quid.lock_training:
+        "{color=[menu_disabled]}-Training-{/color}" (icon="interface/icons/small/quidditch.png") if cho_quid.lock_training:
             m "(She's as ready as one can be.)"
             jump cho_requests
 

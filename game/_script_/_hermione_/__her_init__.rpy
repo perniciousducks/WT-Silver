@@ -491,7 +491,8 @@ default hg_pr_flash = event_class(title = "Flash your tits to a classmate", star
 
     ],
     icons = [None, None, None], # If a tier doesn't need an icon replace with None
-    iconset = [["star_empty", "star_yellow"], ["star_empty", "star_yellow"], ["star_empty", "star_yellow"]]
+    iconset = [["star_empty", "star_yellow"], ["star_empty", "star_yellow"], ["star_empty", "star_yellow"]],
+    monologue_glass = False # Event specific
     )
 
 default hg_pr_kiss = event_class(title = "Kiss a girl", start_label = "hg_pr_kiss", start_tier = 1, events = [

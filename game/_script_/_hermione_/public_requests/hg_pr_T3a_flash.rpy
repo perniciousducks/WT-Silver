@@ -1,5 +1,4 @@
 
-
 ### Flash A Classmate ###
 
 label hg_pr_flash:
@@ -7,7 +6,7 @@ label hg_pr_flash:
     # Setup
     $ current_payout = 35
 
-    if hg_pr_flash.counter < 1:
+    if hg_pr_flash.counter == 0:
         m "{size=-4}(Tell her to flash her tits to one of her classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -15,7 +14,7 @@ label hg_pr_flash:
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
 
-    call her_main(face="happy", xpos="right", ypos="base", trans=fade)
+    call her_main(xpos="mid", ypos="base", trans=fade)
 
     #Intro.
     if hg_pr_flash.counter == 0:
@@ -26,7 +25,9 @@ label hg_pr_flash:
         m "Yes, but first I will require your help with something..."
         her "Of course, [genie_name]! Anything!"
         m "I need you to go out there and show off your tits to people..."
+
         stop music fadeout 1.0
+
         call her_main("...?", "open", "base", "base", "mid")
         m "You know, flash your breasts to some boys..."
         call her_main("?!!", "shock", "wide", "base", "stare")
@@ -35,7 +36,6 @@ label hg_pr_flash:
             jump too_much
 
         her "[genie_name]!"
-        call play_music("chipper_doodle") # HERMIONE'S THEME.
         call her_main("This is a completely new level of inappropriate, even for you, [genie_name]!", "angry", "base", "angry", "mid")
         her "How can you ask one of your pupils to perform such a task?"
         m "So that's how you feel then? I see..."
@@ -59,7 +59,6 @@ label hg_pr_flash:
         m "A pretty nifty deal, wouldn't you agree?"
         her "I suppose..."
         her "Well alright, I'll see what I can do..."
-
     elif her_tier < 4:
         m "I think you need to show off your tits some more, [hermione_name]."
         call her_main("You mean to you, [genie_name]?", "upset", "wink", "base", "mid")
@@ -71,10 +70,8 @@ label hg_pr_flash:
         m "{number=current_payout} house points. The usual rate..."
         call her_main(".................", "annoyed", "narrow", "angry", "R")
         call her_main("Well alright... I will see what I can do, [genie_name]...", "disgust", "narrow", "base", "mid_soft")
-
     elif her_tier < 5:
         m "[hermione_name]. I have a question for you."
-        call play_music("chipper_doodle") # HERMIONE'S THEME.
         m "Why do you think women have breasts?"
         call her_main("...what do you mean, [genie_name]?", "upset", "wink", "base", "mid")
         m "Alright, let me rephrase this..."
@@ -94,7 +91,6 @@ label hg_pr_flash:
         her "my classes are about to start..."
         m "{number=current_payout} house points will be waiting for you here upon your return, [hermione_name]."
         call her_main("..............", "annoyed", "narrow", "annoyed", "mid")
-
     else:
         m "[hermione_name] I need you to go out there and flash your tits to one of your classmates."
         call her_main("I will do my best [genie_name].", "open", "closed", "base", "mid")
@@ -117,15 +113,31 @@ label hg_pr_flash:
 
 label end_hg_pr_flash:
     $ gryffindor += current_payout
+
     m "The Gryffindor house gets {number=current_payout} points!"
     her "Thank you, [genie_name]."
 
     call her_walk("door", "base")
     pause.2
 
-    show screen blktone
-    if hg_pr_flash.points == 1:
-        call her_main("(I can't believe I did that today...)", "upset", "closed", "base", "mid")
+    # Inner monologue
+    if hg_pr_flash.counter == 1:
+        show screen blktone
+        with d3
+
+        call her_main("(Stupid Slytherin...)", "angry", "narrow", "angry", "mid", flip=True, trans=d3)
+        call her_main("(I {b}HATE{/b} them!)", "angry", "angryCl", "worried", "mid")
+
+        hide screen blktone
+        with d3
+
+    elif not hg_pr_flash.monologue_glass and hg_pr_flash.is_event_complete(2, 3): # Event specific
+        $ hg_pr_flash.monologue_glass = True
+
+        show screen blktone
+        with d3
+
+        call her_main("(I can't believe I did that today...)", "upset", "closed", "base", "mid", flip=True, trans=d3)
         call her_main("(What if Harry or Ron saw me like that?)", "angry", "wide", "base", "stare")
         call her_main("(Standing there...)")
         call her_main("(Pressing my breasts against that window glass...)")
@@ -134,7 +146,9 @@ label end_hg_pr_flash:
         call her_main("(We must get the cup this year, no matter the cost...)")
         call her_main("(........)", "angry", "narrow", "base", "down")
 
-    hide screen blktone
+        hide screen blktone
+        with d3
+
     call her_chibi("leave")
 
     $ hg_pr_flash.inProgress = False
@@ -150,15 +164,13 @@ label end_hg_pr_flash:
     jump end_hermione_event
 
 label hg_pr_flash_intro:
-
     call her_walk(action="enter", xpos="mid", ypos="base")
-
     call her_main("Good evening, [genie_name].", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]..."
     m "Did you complete your task?"
     her "I did as you asked [genie_name]..."
 
-    if hg_pr_flash.points > 4: # If you have seen all events in this tier once, you get the choice to skip it.
+    if hg_pr_flash.is_tier_complete():
         menu:
             "\"Great. Here are your points.\"":
                 jump end_hg_pr_flash
@@ -166,28 +178,26 @@ label hg_pr_flash_intro:
             "\"Give me the details.\"":
                 pass
 
+    stop music fadeout 3.0
     show screen blktone
     with d3
 
-    if her_whoring < 9:
-        stop music fadeout 3.0
+    if hg_pr_flash.counter == 1:
         call her_main("......", "annoyed", "narrow", "angry", "R")
         call her_main("Well... Em...", "soft", "base", "base", "R")
         m "Speak up, [hermione_name]."
-        m "Did you flash some lucky guy or not? How did it go?"
+
+    m "Did you flash some lucky guy? How did it go?"
 
     return
 
-### Tier 1 ###
+### Tier 1 - LVL 9-12 ###
 
 label hg_pr_flash_T1_E1:
 
     call hg_pr_flash_intro
 
-    #if her_whoring >= 9 and her_whoring < 12:
-
-    call play_music("playful_tension") # SEX THEME.
-
+    call play_music("playful_tension") # Music
     call her_main("Ehm... Not too well, actually...", "angry", "happyCl", "worried", "mid",emote="05")
     her "................................"
     m "Just tell me what happened, [hermione_name]."
@@ -213,8 +223,7 @@ label hg_pr_flash_T1_E2:
 
     call hg_pr_flash_intro
 
-    call play_music("hermione") # HERMIONE'S THEME.
-
+    call play_music("hermione") # Music
     call her_main("Ehm... Sort of...", "annoyed", "base", "worried", "R")
     m "Sort of?"
     call her_main("Yes... uhm...", "open", "base", "base", "mid")
@@ -248,8 +257,7 @@ label hg_pr_flash_T1_E3:
 
     call hg_pr_flash_intro
 
-    call play_music("hermione") # HERMIONE'S THEME.
-
+    call play_music("hermione") # Music
     call her_main("I think it went well, [genie_name].", "annoyed", "base", "worried", "R")
     m "Good. Tell me more."
     call her_main("Ehm... There is not much to tell, really...", "open", "base", "base", "mid")
@@ -269,11 +277,11 @@ label hg_pr_flash_T1_E3:
 
     jump end_hg_pr_flash
 
+### Tier 2 - LVL 12-15 ###
+
 label hg_pr_flash_T2_E1:
 
     call hg_pr_flash_intro
-
-    #elif her_whoring >= 12 and her_whoring < 15:
 
     call her_main("...........", "upset", "base", "worried", "R")
     m "[hermione_name], did you complete your task or not?"
@@ -281,9 +289,7 @@ label hg_pr_flash_T2_E1:
     call her_main(".............", "angry", "narrow", "base", "down")
     m "Well?"
     call her_main("................", "angry", "narrow", "base", "down")
-
-    call play_music("hermione") # HERMIONE'S THEME.
-
+    call play_music("hermione") # Music
     call her_main("Just for the record, [genie_name]...", "annoyed", "narrow", "angry", "R")
     m "Hm?"
     call her_main("I think that forcing your pupils to do things like this...", "scream", "closed", "angry", "mid")
@@ -318,8 +324,7 @@ label hg_pr_flash_T2_E2:
 
     call hg_pr_flash_intro
 
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
-
+    call play_music("hermione") # Music
     call her_main("..........", "normal", "happyCl", "worried", "mid")
     m "................"
     her "..............."
@@ -363,9 +368,7 @@ label hg_pr_flash_T2_E3:
     her "I had to spend a big portion of the day at the school library..."
     her "So I didn't really have the time to perform your task properly, [genie_name]..."
     m "Hm...?"
-
-    call play_music("playful_tension") # SEX THEME.
-
+    call play_music("playful_tension") # Music
     her "Instead I just went to the library window and..."
     call her_main("...I just pulled my shirt up and pressed my bare breasts against the glass...", "angry", "narrow", "base", "down")
     her "I stood there like that for several seconds..."
@@ -386,12 +389,11 @@ label hg_pr_flash_T2_E3:
 
     jump end_hg_pr_flash
 
+### Tier 3 - LVL 15-X ###
 
 label hg_pr_flash_T3_E1:
 
     call hg_pr_flash_intro
-
-    #elif her_whoring >= 15:
 
     call her_main("As usual, [genie_name]...", "base", "base", "base", "mid")
     m "I'm listening..."
@@ -399,9 +401,7 @@ label hg_pr_flash_T3_E1:
     call her_main("So I didn't really have the time to perform your task properly, [genie_name]...")
     m "Hm...?"
     call her_main("Instead I just made sure there were no teachers around...", "angry", "base", "base", "mid")
-
-    call play_music("playful_tension") # SEX THEME.
-
+    call play_music("playful_tension") # Music
     call her_main("Pulled my shirt up...")
     call her_main("And then I just sat there like that for a while...", "open", "base", "base", "mid")
     call her_main("trying to get some studying done...", "open", "narrow", "worried", "down")
@@ -420,7 +420,6 @@ label hg_pr_flash_T3_E1:
 
     jump end_hg_pr_flash
 
-
 label hg_pr_flash_T3_E2:
 
     call hg_pr_flash_intro
@@ -437,9 +436,7 @@ label hg_pr_flash_T3_E2:
     m "Alright, fine, continue..."
     call her_main("uhm...", "soft", "base", "base", "R")
     her "......."
-
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
-
+    call play_music("hermione") # Music
     call her_main("*Giggle*", "grin", "happyCl", "worried", "mid",emote="05")
     m "Hm...?"
     call her_main("Then Ginny grabbed my breasts...", "smile", "base", "base", "R")
@@ -474,8 +471,7 @@ label hg_pr_flash_T3_E3:
 
     call hg_pr_flash_intro
 
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
-
+    call play_music("hermione") # Music
     call her_main("Yes I did, [genie_name]...", "base", "base", "base", "mid")
     m "Alright, tell me how did it go."
     call her_main("Well, let's see...", "annoyed", "base", "worried", "R")

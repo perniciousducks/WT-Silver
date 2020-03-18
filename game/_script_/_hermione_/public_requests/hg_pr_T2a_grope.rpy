@@ -1,5 +1,4 @@
 
-
 ### Let Classmate Molest Her ###
 
 label hg_pr_grope:
@@ -7,7 +6,7 @@ label hg_pr_grope:
     # Setup
     $ current_payout = 25
 
-    if hg_pr_grope.counter < 1:
+    if hg_pr_grope.counter == 0:
         m "{size=-4}(Tell her to go get touched by one of her classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -16,12 +15,12 @@ label hg_pr_grope:
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
 
-    call her_main(face="happy", xpos="mid", ypos="base", trans=fade)
+    call her_main(xpos="mid", ypos="base", trans=fade)
+    m "[hermione_name]?"
+    call her_main("[genie_name]?", "base", "base", "base", "mid")
 
     #Intro.
     if hg_pr_grope.counter == 0:
-        m "[hermione_name]?"
-        call her_main("[genie_name]?", "base", "base", "base", "mid")
         m "You do like boys your age, don't you?"
         call her_main("...?", "normal", "base", "base", "mid")
         m "one of your classmates maybe?"
@@ -61,10 +60,7 @@ label hg_pr_grope:
         call her_main("Well, so be it then...", "disgust", "narrow", "base", "mid_soft")
         m "Great..."
         call her_main("I'd better go now. The classes are about to start...", "angry", "base", "angry", "mid")
-
     elif her_tier < 3:
-        m "[hermione_name]?"
-        call her_main("[genie_name]?", "base", "base", "base", "mid")
         m "How about you go let one of your classmates molest you a little again?"
         call her_main("........", "upset", "closed", "base", "mid")
         m "{number=current_payout} house points, [hermione_name]."
@@ -76,13 +72,11 @@ label hg_pr_grope:
         her "The classes are about to start, I'd better go..."
         m "Will you do it?"
         call her_main("I don't know... Maybe...", "disgust", "narrow", "base", "mid_soft")
-
     elif her_tier < 4:
         m "[hermione_name], I need you to go out there, and make one of your classmates molest you a little."
         call her_main("I understand, [genie_name]...", "base", "base", "base", "mid")
         m "Off you go then."
         her "..........."
-
     else:
         m "[hermione_name], I need you to go out there..."
         m "Find a handsome guy and force yourself on him!"
@@ -103,15 +97,28 @@ label hg_pr_grope:
 
     jump end_hermione_event
 
-
 label end_hg_pr_grope:
     $ gryffindor += current_payout
+
     m "The Gryffindor house gets {number=current_payout} points!"
     her "Thank you, [genie_name]."
 
     label .no_pay:
 
-    call her_walk(action="leave")
+    call her_walk("door", "base")
+    pause.2
+
+    # Inner monologue
+    if hg_pr_grope.counter == 1:
+        show screen blktone
+        with d3
+
+        call her_main("(Why did I agree to this...)", "disgust", "base", "worried", "down", flip=True, trans=d3)
+
+        hide screen blktone
+        with d3
+
+    call her_chibi("leave")
 
     $ hg_pr_grope.inProgress = False
 
@@ -125,18 +132,14 @@ label end_hg_pr_grope:
 
     jump end_hermione_event
 
-
-
 label hg_pr_grope_intro:
-
     call her_walk(action="enter", xpos="mid", ypos="base")
-
     call her_main("Good evening, [genie_name].", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]..."
-    m "Did you complete your task?"
-    her "I did as you asked [genie_name]..."
+    m "Did you finish your task?"
+    her "I did, just as you asked [genie_name]..."
 
-    if hg_pr_grope.points > 4: # If you have seen all events in this tier once, you get the choice to skip it.
+    if hg_pr_grope.is_tier_complete():
         menu:
             "\"Great. Here are your points.\"":
                 jump end_hg_pr_grope
@@ -144,33 +147,30 @@ label hg_pr_grope_intro:
             "\"Give me the details.\"":
                 pass
 
+    stop music fadeout 3.0
     show screen blktone
     with d3
 
-    if her_whoring < 9:
-        stop music fadeout 3.0
+    if hg_pr_grope.counter == 1:
         call her_main("......", "annoyed", "narrow", "angry", "R")
-        call her_main("Well... Em...", "soft", "base", "base", "R")
-        m "Speak up, [hermione_name]."
-        m "Did you let some lucky guy feel you up or what?"
+        call her_main("I... Uhh...", "soft", "base", "base", "R")
+
+    m "Did you let some lucky guy feel you up or what?"
 
     return
 
-
-
-### Tier 1 ###
+### Tier 1 - LVL 0-3 ###
 
 label hg_pr_grope_T1_E1:
 
     call hg_pr_grope_intro
 
-    m "So? Tell me more."
     her "Well, there is not much to tell..."
     call her_main("I told that one guy I know that he could touch me a little if he wants...", "open", "base", "base", "mid")
     call her_main("He thought I was joking at first...", "annoyed", "base", "worried", "R")
     call her_main("So embarrassing...", "normal", "happyCl", "worried", "mid")
     m "So, did he cop a feel or not?"
-    call play_music("playful_tension") # SEX THEME.
+    call play_music("playful_tension") # Music
     call her_main("He did...", "normal", "happyCl", "worried", "mid")
     m "Well, where did he touch you, [hermione_name]?"
     call her_main("Ehm... My legs...", "annoyed", "base", "worried", "R")
@@ -184,16 +184,14 @@ label hg_pr_grope_T1_E1:
 
     jump end_hg_pr_grope
 
-
 label hg_pr_grope_T1_E2:
 
     call hg_pr_grope_intro
 
-    stop music fadeout 3.0
     call her_main("I did, but it was all very awkward and embarrassing...", "annoyed", "narrow", "angry", "R")
     m "That's the whole point of it, [hermione_name]."
     m "Tell me where were you touched today..."
-    call play_music("playful_tension") # SEX THEME.
+    call play_music("playful_tension") # Music
     her "Ehm..."
     call her_main("Well, he touched me under my skirt a little...", "angry", "base", "base", "mid")
     her "Then I let him rub my..."
@@ -206,12 +204,11 @@ label hg_pr_grope_T1_E2:
 
     jump end_hg_pr_grope
 
-
 label hg_pr_grope_T1_E3:
 
     call hg_pr_grope_intro
 
-    call play_music("playful_tension") # SEX THEME.
+    call play_music("playful_tension") # Music
     call her_main("I led this one guy from Hufflepuff to an empty classroom and I told him that he can touch me if he wants.", "open", "base", "base", "mid")
     her "That I don't mind..."
     call her_main("...........", "annoyed", "base", "worried", "R")
@@ -221,10 +218,12 @@ label hg_pr_grope_T1_E3:
     m "Don't make me pull every word out of you, [hermione_name]!"
     m "What happened?"
     call her_main("Well...", "open", "narrow", "worried", "down")
+
     stop music fadeout 1.0
+
     her "I think he was more interested in {size=+5}me{/size} molesting {size=+5}him{/size}..."
     call her_main("He asked me to call him a \"sissy boy\"...", "upset", "wink", "base", "mid")
-    call play_music("despair")
+    call play_music("despair") # Music
     call her_main("And he kept on reassuring me that he has a very small penis...", "open", "base", "worried", "down")
     call her_main("He just kept repeating that *sob!*...", "angry", "base", "base", "mid", tears="soft")
     call her_main("Why would anyone be like this?", "angry", "base", "base", "mid", tears="soft")
@@ -243,13 +242,13 @@ label hg_pr_grope_T1_E3:
 
     jump end_hg_pr_grope
 
+### Tier 2 - LVL 9-12 ###
 
 label hg_pr_grope_T2_E1:
 
     call hg_pr_grope_intro
 
-    #elif her_whoring >= 9 and her_whoring <= 11: # LEVEL 04
-    call play_music("playful_tension") # SEX THEME.
+    call play_music("playful_tension") # Music
     call her_main("Well... There is not much to tell...", "open", "closed", "base", "mid")
     her "I found this one boy from Ravenclaw..."
     her "Led him to one of the empty classrooms in the eastern wing..."
@@ -270,7 +269,6 @@ label hg_pr_grope_T2_E1:
 
     jump end_hg_pr_grope
 
-
 label hg_pr_grope_T2_E2:
 
     call hg_pr_grope_intro
@@ -278,9 +276,7 @@ label hg_pr_grope_T2_E2:
     call her_main("Well...", "open", "closed", "base", "mid")
     her "I'm not sure whether or not this counts, but..."
     her "During the herbology class today..."
-
-    call play_music("hermione")
-
+    call play_music("hermione") # Music
     call her_main("I let this one boy slide his hand under my skirt...", "upset", "wink", "base", "mid")
     her "So while Professor Sprout explained the differences between \"mandrake\" and \"mandragore\"..."
     call her_main("Something I already knew of course...", "open", "squint", "base", "mid")
@@ -307,10 +303,9 @@ label hg_pr_grope_T2_E3:
 
     call hg_pr_grope_intro
 
-    stop music fadeout 1.0
     call her_main(".................", "annoyed", "narrow", "angry", "R")
     m "???"
-    call play_music("playful_tension") # SEX THEME.
+    call play_music("playful_tension") # Music
     call her_main("I don't want to talk about it, [genie_name]...", "annoyed", "narrow", "angry", "R")
     m "What happened, [hermione_name]. Spit it out."
     call her_main(".................", "annoyed", "narrow", "annoyed", "mid")
@@ -332,7 +327,7 @@ label hg_pr_grope_T2_E3:
     call her_main("..........", "clench", "narrow", "base", "down")
     m "What?"
     call her_main(".....................", "normal", "happyCl", "worried", "mid")
-    call play_music("despair")
+    call play_music("despair") # Music
     call her_main("He started to touch my... feet, [genie_name].", "scream", "happyCl", "worried", "mid")
     m "Huh?"
     m "Your \"Feet\"? Is that what zoomers call tits these days?"
@@ -356,22 +351,18 @@ label hg_pr_grope_T2_E3:
 
     jump end_hg_pr_grope
 
+### Tier 2 - LVL 12-X ###
 
 label hg_pr_grope_T3_E1:
 
     call hg_pr_grope_intro
 
-    #elif her_whoring >= 12: # LEVEL 05+
-
-    stop music fadeout 1.0
     call her_main("......", "annoyed", "base", "worried", "R")
     call her_main("Well...", "open", "base", "base", "mid")
     her "During the potions class today..."
     her "I wrote a note on a piece of paper..."
     her "I was about to slide it to my lab partner when..."
-
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
-
+    call play_music("hermione") # Music
     call her_main("Professor Snape snatched it right out of my hand...", "annoyed", "narrow", "angry", "R")
     call her_main("He then read it out loud before the entire class...", "annoyed", "narrow", "annoyed", "mid", cheeks="blush")
     m "What did the note say?"
@@ -382,9 +373,7 @@ label hg_pr_grope_T3_E1:
     call her_main("I really hate professor Snape, [genie_name]...", "angry", "base", "angry", "mid", cheeks="blush")
     m "What happened then?"
     call her_main("Nothing...", "open", "narrow", "worried", "down")
-
-    call play_music("playful_tension") # SEX THEME.
-
+    call play_music("playful_tension") # Music
     call her_main("But when the class was over...")
     call her_main("These two nasty-looking boys from Slytherin cornered me...")
     call her_main("Actually they weren't mean to me or anything...")
@@ -403,7 +392,6 @@ label hg_pr_grope_T3_E1:
 
     jump end_hg_pr_grope
 
-
 label hg_pr_grope_T3_E2:
 
     call hg_pr_grope_intro
@@ -411,7 +399,7 @@ label hg_pr_grope_T3_E2:
     call her_main("Actually something quite unexpected happened to me today, [genie_name]...", "base", "base", "base", "mid")
     her "Right after the Defence Against the Dark Arts class..."
     her "This stocky Hufflepuff boy came up to me..."
-    call play_music("playful_tension") # SEX THEME.
+    call play_music("playful_tension") # Music
     call her_main("He said someone told him that I let boys touch me...", "angry", "wink", "base", "mid")
     call her_main("Normally I would deny everything...", "base", "narrow", "base", "mid_soft")
     her "But I decided not to waste the opportunity..."
@@ -423,17 +411,15 @@ label hg_pr_grope_T3_E2:
 
     jump end_hg_pr_grope
 
-
 label hg_pr_grope_T3_E3:
 
     call hg_pr_grope_intro
 
-    stop music fadeout 1.0
     call her_main("Well...", "upset", "wink", "base", "mid")
     her "I did what you told me to do, [genie_name]..."
     her "But... it sort of... ehm..."
     call her_main("Well, it sort of escalated into something else...", "base", "narrow", "base", "up")
-    call play_music("playful_tension") # SEX THEME.
+    call play_music("playful_tension") # Music
     m "Hm?"
     call her_main("uhm...", "upset", "wink", "base", "mid")
     her "I sort of... got caught while I was letting this one boy fondle my breasts..."

@@ -1,5 +1,4 @@
 
-
 ### Flirt With Classmate ###
 
 label hg_pr_flirt:
@@ -7,7 +6,7 @@ label hg_pr_flirt:
     # Setup
     $ current_payout = 5
 
-    if hg_pr_flirt.counter < 1:
+    if hg_pr_flirt.counter == 0:
         m "{size=-4}(Ask her to go flirt with some boys from Slytherin?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -16,14 +15,12 @@ label hg_pr_flirt:
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
 
-    call her_main(xpos="right", ypos="base", trans=fade)
+    call her_main(xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("Yes?", "soft", "base", "base", "R")
 
     #Intro.
     if hg_pr_flirt.counter == 0 and her_whoring < 6:
-
-        call play_music("chipper_doodle") # HERMIONE'S THEME.
         m "What is your opinion on the boys of the Slytherin house?"
         call her_main("I detest them, [genie_name].", "angry", "base", "angry", "mid")
         m "Well, too bad. Because I want you to get really friendly with a few of them today."
@@ -47,10 +44,10 @@ label hg_pr_flirt:
         call her_main("Oh, I see...", "base", "base", "base", "mid")
         m "Exactly... Just looking out for you [hermione_name]."
         her "Em... Thank you [genie_name]..."
-
     elif her_whoring < 6:
         m "I need you to go make some new friends at Slytherin house."
         her "You mean you need me to flirt with the Slytherin boys again [genie_name]?"
+
         if hg_pr_flirt.counter == 1:
             m "That's exactly what I need you to do today, [hermione_name]."
             m "Just do it properly this time."
@@ -73,7 +70,6 @@ label hg_pr_flirt:
         m "Great. I'll be expecting your report today after classes."
 
     her "Well, I'd better go now. Classes are about to start..."
-
     call her_walk(action="leave")
 
     $ hg_pr_flirt.inProgress = True
@@ -83,10 +79,25 @@ label hg_pr_flirt:
 # End Event
 label end_hg_pr_flirt:
     $ gryffindor += current_payout
-    m "The Gryffindor house gets {number=current_payout} points!"
-    call her_main("Thank you, [genie_name].", face="happy")
 
-    call her_walk(action="leave")
+    m "The Gryffindor house gets {number=current_payout} points!"
+    her "Thank you, [genie_name]."
+
+    call her_walk("door", "base")
+    pause.2
+
+    # Inner monologue
+    if hg_pr_flirt.counter == 1:
+        show screen blktone
+        with d3
+
+        call her_main("(........)", "disgust", "base", "worried", "down", flip=True, trans=d3)
+        call her_main("(I'll need to read about this whole \"flirting\" thing...)", "annoyed", "base", "angry", "L")
+
+        hide screen blktone
+        with d3
+
+    call her_chibi("leave")
 
     $ hg_pr_flirt.inProgress = False
 
@@ -100,12 +111,8 @@ label end_hg_pr_flirt:
 
     jump end_hermione_event
 
-### Tier 1 ###
-
 label hg_pr_flirt_intro:
-    #if her_whoring >= 0 and her_whoring < 3:
     call her_walk(action="enter", xpos="mid", ypos="base")
-
     call her_main("Good evening, [genie_name].", "open", "closed", "base", "mid", xpos="mid", ypos="base", trans=fade)
     call her_main("", "normal", "base", "base", "mid")
     m "[hermione_name]..."
@@ -113,7 +120,7 @@ label hg_pr_flirt_intro:
     call her_main("I did as you asked, [genie_name]...", "open", "base", "base", "R")
     call her_main("", "normal", "base", "base", "R")
 
-    if hg_pr_flirt.points > 4: # If you have seen all events in this tier once, you get the choice to skip it.
+    if hg_pr_flirt.is_tier_complete():
         menu:
             "\"Great. You earned your points.\"":
                 jump end_hg_pr_flirt
@@ -121,23 +128,31 @@ label hg_pr_flirt_intro:
             "\"Give me the details.\"":
                 pass
 
+    stop music fadeout 3.0
+    show screen blktone
+    with d3
+
+    if hg_pr_flirt.counter == 1:
+        call her_main("......", "annoyed", "narrow", "angry", "R")
+        call her_main("So umm...", "soft", "base", "base", "R")
+
+    m "How many boys did you flirt with today, [hermione_name]?"
+
     return
+
+### Tier 1 - LVL 0-3 ###
 
 label hg_pr_flirt_T1_E1:
 
     call hg_pr_flirt_intro
 
-    m "How many boys did you flirt with today, [hermione_name]?"
-    call blktone
-    stop music fadeout 1.0
     call her_main("Well...", "open", "base", "worried", "R")
     her "There was this one freshman boy..."
     her "........."
     m "I'm listening..."
-    her "Well... I went to him and I said \"Hey, handsome!\"."
+    her "So... I went to him and I said \"Hey, handsome!\"."
     m "And?"
-
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
+    call play_music("hermione") # Music
     call her_main("He showed me his tongue and ran off, [genie_name].", "normal", "squint", "angry", "mid")
     m "Did you try to lure him in with a lolipop?"
     call her_main("I did not, [genie_name]...", "open", "base", "worried", "R")
@@ -151,6 +166,7 @@ label hg_pr_flirt_T1_E1:
     call her_main("I would have to fight my gag-reflex the entire time!", "angry", "base", "angry", "mid")
 
     menu:
+        m "..."
         "\"Fine. Just try harder next time.\"":
             call her_main("Thank you, [genie_name].", "base", "base", "base", "mid")
             her "I will, I promise!"
@@ -159,24 +175,21 @@ label hg_pr_flirt_T1_E1:
 
         "\"Favour failed! No points for you!\"":
             stop music fadeout 1.0
+
             call her_main("I understand...", "normal", "squint", "angry", "mid")
             m "Get out of my sight..."
-            call her_main("Yes, [genie_name]...Sorry, [genie_name]...", "annoyed", "squint", "angry", "mid")
-
+            call her_main("Yes, [genie_name]... Sorry, [genie_name]...", "annoyed", "squint", "angry", "mid")
             call her_walk(action="leave")
 
             $ hg_pr_flirt.inProgress = False
 
             jump end_hermione_event
 
-
 label hg_pr_flirt_T1_E2:
 
     call hg_pr_flirt_intro
 
-    m "How many boys did you flirt with today, [hermione_name]?"
-    call blktone
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
+    call play_music("hermione") # Music
     call her_main("Well, I tried to compliment an upperclassman...", "open", "base", "worried", "R")
     m "Did he appreciate it?"
     call her_main("He called me a \"Gryffindor whore\", [genie_name]!", "angry", "base", "angry", "mid", emote="01")
@@ -202,6 +215,7 @@ label hg_pr_flirt_T1_E2:
     call her_main("I am sorry, [genie_name]. I thought this would be easy...", "annoyed", "narrow", "angry", "R")
 
     menu:
+        m "..."
         "\"Well, at least you are trying.\"":
             call her_main("Apparently flirting is not my forte...", "angry", "happyCl", "worried", "mid", emote="05")
 
@@ -213,12 +227,10 @@ label hg_pr_flirt_T1_E2:
             call her_main("But, you promised!", "angry", "base", "base", "mid", tears="soft")
             m "And you promised to flirt with the boys, not get bullied."
             call her_main("................", "mad", "happyCl", "worried", "mid", tears="soft_blink")
-
             call her_walk(action="run", xpos="door", speed=2, reduce=True)
             call her_chibi("leave")
 
             $ her_mood += 10
-
             $ hg_pr_flirt.inProgress = False
 
             pause 1.0
@@ -227,20 +239,17 @@ label hg_pr_flirt_T1_E2:
 
             jump end_hermione_event
 
-
 label hg_pr_flirt_T1_E3:
 
     call hg_pr_flirt_intro
 
-    m "How many boys did you flirt with today, [hermione_name]?"
-    call blktone
-    stop music fadeout 1.0
     call her_main("Well, the Slytherin quidditch team was practising in the stadium today...", "open", "base", "worried", "R")
     her "I thought I could sneak into the bleachers and cheer them on..."
     call her_main("But...", "annoyed", "narrow", "angry", "R")
     m "Yes?"
 
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
+    call play_music("hermione") # Music
+
     call her_main("A whole flock of those Slytherin harlots was already there, [genie_name].", "angry", "base", "angry", "mid")
     her "They were cheering and yelling..."
     call her_main("And one of them even exposed herself in an inappropriate manner to the players, [genie_name]...", "angry", "base", "angry", "mid")
@@ -266,21 +275,16 @@ label hg_pr_flirt_T1_E3:
 
             jump end_hermione_event
 
-
-
-### Tier 2 ###
+### Tier 2 - LVL 3-6 ###
 
 label hg_pr_flirt_T2_E1:
 
     call hg_pr_flirt_intro
 
-    #elif her_whoring >= 3 and her_whoring < 6:
-
-    stop music fadeout 1.0
     call her_main("Well, there was this one guy at the library...", "open", "base", "worried", "R")
     her "He was obviously struggling with some assignment, so I offered my help..."
     m "And?"
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
+    call play_music("hermione") # Music
     call her_main("Well, to my surprise he accepted it...", "smile", "happyCl", "base", "mid")
     her "He let me finish the assignment for him..."
     call her_main("While I was working he made a couple of inappropriate comments, but I just smiled in response...", "angry", "happyCl", "worried", "mid", emote="05")
@@ -323,12 +327,11 @@ label hg_pr_flirt_T2_E2:
 
     call hg_pr_flirt_intro
 
-    stop music fadeout 1.0
     call her_main("Well...", "open", "base", "worried", "R")
     her "This morning I did flirt with this one guy..."
     call her_main("Then after the second period there was this other guy...", "soft", "base", "base", "R")
     call her_main("And then something bizarre happened...", "angry", "base", "worried", "mid")
-    call play_music("playful_tension") # SEX THEME.
+    call play_music("playful_tension") # Music
     her "This angry-looking guy from Slytherin came up to me and asked me out on a date..."
     call her_main("I told him \"no\" at first, but we ended up taking a walk together.", "soft", "base", "base", "R")
     m "Did you enjoy yourself, [hermione_name]?"
@@ -358,7 +361,7 @@ label hg_pr_flirt_T2_E3:
 
     call hg_pr_flirt_intro
 
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
+    call play_music("hermione") # Music
     call her_main("Five guys, [genie_name]!", "smile", "happyCl", "base", "mid")
     m "Really?"
     call her_main("Yes!", "base", "happyCl", "base", "mid")
@@ -378,23 +381,14 @@ label hg_pr_flirt_T2_E3:
 
     jump end_hg_pr_flirt
 
-
-
-### Tier 3 ###
+### Tier 3 - LVL 6-X ###
 
 label hg_pr_flirt_T3_E1:
-    #elif her_whoring >= 6:
 
     call hg_pr_flirt_intro
 
-    show screen blkfade
-    with d5
-
-    $ sc34CG(2, 7, 1, 1)
-
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
-    hide screen blkfade
-    call her_main("Eleven boys, [genie_name]!", "smile", "happyCl", "base", "mid", xpos="right", ypos="base", trans=d5)
+    call play_music("hermione") # Music
+    call her_main("Eleven boys, [genie_name]!", "smile", "happyCl", "base", "mid")
     m "Eleven? Really? Your personal best, [hermione_name]."
     call her_main("Yes.", "base", "happyCl", "base", "mid")
     call her_main("Let's see...", "grin", "base", "base", "R")
@@ -406,12 +400,10 @@ label hg_pr_flirt_T3_E1:
     call her_main("And finally this last guy that walked me right to your tower, [genie_name]...", "smile", "happyCl", "base", "mid")
     m "So, eleven then?"
     m "Those Slytherin boys are really starting to like you, huh?"
-    $ sc34CG(2, 7, 1, 2)
     call her_main("I suppose so...", "base", "happyCl", "base", "mid")
     call her_main("Well, not all of them were nice to me at first...", "annoyed", "narrow", "worried", "down")
     call her_main("But I use this trick to \"tame\" them.", "smile", "narrow", "base", "mid_soft")
     m "A trick?"
-    $ sc34CG(2, 6, 1, 1)
     call her_main("Yes... Whenever a boy from Slytherin is being mean to me or calls me a name...", "base", "happyCl", "base", "mid")
     her "I just swallow my pride and smile in response."
     m "Hm..."
@@ -420,19 +412,15 @@ label hg_pr_flirt_T3_E1:
     m "Yeah, I'm sure that wins them over."
     m "Great job, [hermione_name]."
     call her_main("", "grin", "base", "base", "R")
-    show screen blkfade
-    hide screen sccg
-    with d5
 
     jump end_hg_pr_flirt
-
 
 label hg_pr_flirt_T3_E2:
 
     call hg_pr_flirt_intro
 
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("Two dates, seven quite pleasant conversations...", "smile", "happyCl", "base", "mid",xpos="right",ypos="base")
+    call play_music("hermione") # Music
+    call her_main("Two dates, seven quite pleasant conversations...", "smile", "happyCl", "base", "mid")
     call her_main("And I even let this one guy kiss me...", "grin", "base", "base", "R")
     m "Quite impressive, [hermione_name]."
     call her_main("I think so too, [genie_name]. Thank you.", "base", "happyCl", "base", "mid")
@@ -449,14 +437,12 @@ label hg_pr_flirt_T3_E2:
 
     jump end_hg_pr_flirt
 
-
 label hg_pr_flirt_T3_E3:
 
     call hg_pr_flirt_intro
 
-    stop music fadeout 1.0
     call her_main("[genie_name], I am sorry, but...", "normal", "happyCl", "worried", "mid")
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
+    call play_music("hermione") # Music
     call her_main("I hate those Slytherin tramps, [genie_name]!", "angry", "base", "angry", "mid")
     m "Tell me what happened."
     call her_main("I don't want to talk about it...", "annoyed", "narrow", "angry", "R")
@@ -469,13 +455,13 @@ label hg_pr_flirt_T3_E3:
             call her_main("Thank you, [genie_name].", "normal", "happyCl", "worried", "mid")
             m "No luck with the flirting today then?"
             call her_main("Oh, quite the opposite, [genie_name].", "angry", "happyCl", "worried", "mid", emote="05")
-            call play_music("playful_tension") # SEX THEME.
+            call play_music("playful_tension") # Music
             her "One of the boys actually took me to the Slytherin common room today..."
             call her_main("There were at least a dozen of them there...", "normal", "base", "base", "mid")
             call her_main("All of the boys knew who I was...", "open", "closed", "angry", "mid")
             her "I was the center of attention at first..."
             call her_main("And it felt sort of wonderful...", "base", "narrow", "base", "up")
-            call play_music("chipper_doodle") # HERMIONE'S THEME.
+            call play_music("hermione") # Music
             call her_main("Then a bunch of those Slytherin harlots stumbled in and...", "disgust", "narrow", "base", "mid_soft")
             m "And?"
             call her_main("Well, they started saying stuff and doing things...", "annoyed", "narrow", "angry", "R")
@@ -491,11 +477,9 @@ label hg_pr_flirt_T3_E3:
             m "No one is forcing you, [hermione_name]."
             m "You are free to leave."
             call her_main("{size=-4}(Stubborn old man!){/size}", "angry", "base", "angry", "mid")
-
             call her_walk(action="leave")
 
             $ her_mood += 10
-
             $ hg_pr_flirt.inProgress = False
 
             jump end_hermione_event

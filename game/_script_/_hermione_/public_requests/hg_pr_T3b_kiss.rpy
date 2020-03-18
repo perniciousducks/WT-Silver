@@ -1,13 +1,12 @@
 
-
 ### Make Out With A Girl ###
 
 label hg_pr_kiss:
 
-    # setup
+    # Setup
     $ current_payout += 45
 
-    if hg_pr_kiss.counter < 1:
+    if hg_pr_kiss.counter == 0:
         m "{size=-4}(Tell her to go make out with one of her female classmates?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -15,7 +14,7 @@ label hg_pr_kiss:
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
 
-    call her_main(face="happy", xpos="right", ypos="base", trans=fade)
+    call her_main(xpos="mid", ypos="base", trans=fade)
 
     #Intro.
     if hg_pr_kiss.counter == 0:
@@ -25,7 +24,6 @@ label hg_pr_kiss:
         if her_tier < 3 or her_reputation < 6:
             jump too_much
 
-        call play_music("chipper_doodle") # HERMIONE'S THEME.
         call her_main("I am not a... lesbian, [genie_name].", "open", "base", "base", "mid")
         m "Silly girl... You don't need to be a lesbian to kiss girls."
         m "I mean, I do it and I am not a lesbian either."
@@ -38,11 +36,9 @@ label hg_pr_kiss:
         call her_main("[genie_name]!......", "normal", "squint", "angry", "mid")
         m "I said you're dismissed."
         call her_main("*Humph!*...", "annoyed", "squint", "angry", "mid")
-
     elif her_tier < 4:
         m "[hermione_name], {number=current_payout} house points are up for grabs today!"
         m "Are you interested?"
-        call play_music("chipper_doodle") # HERMIONE'S THEME.
         call her_main("It depends...", "normal", "base", "base", "mid")
         her "Will I have to do something depraved again?"
         m "\"Depraved\"??! When did I ever--?"
@@ -56,7 +52,6 @@ label hg_pr_kiss:
         call her_main("I will see what I can do, [genie_name]...", "annoyed", "narrow", "angry", "R")
         m "Great. See you after your classes then."
         call her_main("................", "annoyed", "narrow", "annoyed", "mid")
-
     elif her_tier < 5:
         m "[hermione_name], {number=current_payout} house points are up for grabs today!"
         m "Are you interested?"
@@ -66,11 +61,9 @@ label hg_pr_kiss:
         m "Up for the task, [hermione_name]?"
         call her_main("I suppose...", "annoyed", "base", "worried", "R")
         m "Great. See you after your classes then."
-
     else:
         m "[hermione_name], {number=current_payout} house points are up for grabs today!"
         m "Are you interested?"
-        call play_music("chipper_doodle") # HERMIONE'S THEME.
         call her_main("Sure, why not?", "base", "base", "base", "mid")
         m "Great."
         m "I want you to make out with another girl today."
@@ -84,13 +77,25 @@ label hg_pr_kiss:
 
     jump end_hermione_event
 
-
 label end_hg_pr_kiss:
     $ gryffindor += current_payout
+
     m "The Gryffindor house gets {number=current_payout} points!"
     her "Thank you, [genie_name]."
+    call her_walk("door", "base")
+    pause.2
 
-    call her_walk(action="leave")
+    # Inner monologue
+    if hg_pr_grope.counter == 1:
+        show screen blktone
+        with d3
+
+        call her_main("(*Tsk*)", "mad", "base", "angry", "R", flip=True, trans=d3)
+
+        hide screen blktone
+        with d3
+
+    call her_chibi("leave")
 
     $ hg_pr_kiss.inProgress = False
 
@@ -104,29 +109,48 @@ label end_hg_pr_kiss:
 
     jump end_hermione_event
 
+label hg_pr_kiss_intro:
+    call her_walk(action="enter", xpos="mid", ypos="base")
+    call her_main("Good evening, [genie_name].", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
+    m "[hermione_name]..."
+    m "Did you succeed in completing your task?"
+    her "Yes, [genie_name]..."
 
+    if hg_pr_kiss.is_tier_complete():
+        menu:
+            "\"Great. Here are your points.\"":
+                jump end_hg_pr_kiss
 
-### Tier 1 ###
+            "\"Give me the details.\"":
+                pass
+
+    stop music fadeout 3.0
+    show screen blktone
+    with d3
+
+    if hg_pr_kiss.counter == 1:
+        call her_main("......", "annoyed", "narrow", "angry", "R")
+        call her_main("Well... I...", "soft", "base", "base", "R")
+        m "Don't be shy, [hermione_name]."
+
+    m "Have you kissed someone?"
+
+    return
+
+### Tier 1 - LVL 12-15 ###
 
 label hg_pr_kiss_T1_E1:
 
-    call her_walk(action="enter", xpos="mid", ypos="base")
+    call hg_pr_kiss_intro
 
-    #if her_whoring >= 12 and her_whoring < 15: # LEVEL 05
-
-    stop music fadeout 1.0
-    call her_main(face="neutral", xpos="right", ypos="base")
-    m "[hermione_name]..."
-    m "Did you succeed in completing your task?"
-    show screen blktone
     call her_main("I...", "open", "base", "worried", "mid")
     m "I told you to make out with another girl..."
-    m "Did you do it?"
+    m "Did you do it or not?"
     call her_main("I...", "open", "base", "worried", "R")
     her "I tried, [genie_name]. I really did."
     m "And?"
     call her_main("Well...", "annoyed", "base", "worried", "R")
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
+    call play_music("hermione") # Music
     her "It was awkward and embarrassing..."
     m "did you do it or not?"
     call her_main("...no I did not, [genie_name]...", "annoyed", "narrow", "angry", "R")
@@ -146,21 +170,17 @@ label hg_pr_kiss_T1_E1:
 
     call her_walk(action="leave")
 
-    $ her_mood +=12
+    $ her_mood += 12
 
     $ hg_pr_kiss.inProgress = False
 
     jump end_hermione_event
 
-
 label hg_pr_kiss_T1_E2:
 
-    call her_walk(action="enter", xpos="mid", ypos="base")
+    call hg_pr_kiss_intro
 
-    call her_main(face="neutral", xpos="right", ypos="base")
-    m "[hermione_name], did you complete your task?"
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
-    show screen blktone
+    call play_music("hermione") # Music
     call her_main("I did, [genie_name]...", "open", "closed", "base", "mid")
     m "Good. Give me the details."
     call her_main("Well, I kissed a girl. Just like you told me to, [genie_name].", "annoyed", "squint", "base", "mid")
@@ -179,15 +199,11 @@ label hg_pr_kiss_T1_E2:
 
     jump end_hg_pr_kiss
 
-
 label hg_pr_kiss_T1_E3:
 
-    call her_walk(action="enter", xpos="mid", ypos="base")
+    call hg_pr_kiss_intro
 
-    call her_main(face="neutral", xpos="right", ypos="base")
-    m "[hermione_name], did you complete your task?"
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
-    show screen blktone
+    call play_music("hermione") # Music
     call her_main("Yes, I did, [genie_name].", "open", "closed", "base", "mid")
     m "Good. Tell me how it went."
     call her_main("It went well, [genie_name].", "open", "closed", "base", "mid")
@@ -214,7 +230,9 @@ label hg_pr_kiss_T1_E3:
             call her_main("Well, that is unfortunate, [genie_name].", "open", "closed", "angry", "mid")
             m "Sure is..."
             m "Because you are not getting paid you insolent, little witch."
+
             stop music fadeout 1.0
+
             call her_main("What?", "normal", "base", "base", "mid")
             call her_main("[genie_name], you can't do that!", "open", "base", "worried", "mid")
             m "Dismissed."
@@ -223,26 +241,24 @@ label hg_pr_kiss_T1_E3:
             her "The girl was from Hufflepuff and--"
             m "Too late for that, [hermione_name]."
             m "You are dismissed."
-            call her_main("......", "angry", "base", "base", "mid",tears="soft")
-
-            call her_walk(action="leave")
+            call her_main("......", "angry", "base", "base", "mid", tears="soft")
+            call her_walk(action="run", xpos="door", speed=2, reduce=True)
+            call her_chibi("leave")
 
             $ her_mood +=25
-
             $ hg_pr_kiss.inProgress = False
+
+            pause 1.0
+            m "*Tsk*"
 
             jump end_hermione_event
 
+### Tier 2 - LVL 15-17 ###
 
 label hg_pr_kiss_T2_E1:
 
-    call her_walk(action="enter", xpos="mid", ypos="base")
+    call hg_pr_kiss_intro
 
-    #elif her_whoring >= 15 and her_whoring <= 17: # LEVEL 06. Event level 02.
-
-    call her_main(face="neutral", xpos="right", ypos="base")
-    m "[hermione_name], did you complete your task?"
-    show screen blktone
     call her_main("I did, [genie_name]...", "open", "closed", "base", "mid")
     m "Well, don't just stand there. Give me the details."
     call her_main("Ehm, alright...", "open", "base", "base", "mid")
@@ -252,7 +268,7 @@ label hg_pr_kiss_T2_E1:
     call her_main("And she told me that she never kissed one...", "open", "closed", "base", "mid")
     her "And that she is worried that she might be very bad at it..."
     call her_main("So I just offered my help...", "base", "base", "base", "mid")
-    call play_music("playful_tension") # SEX THEME.
+    call play_music("playful_tension") # Music
     her "And then we spent some time in one of the bathroom stalls..."
     call her_main("Making out...", "base", "base", "base", "mid")
     call her_main("She caught on real quick... I think she could be really good at it with some practice...", "open", "base", "base", "mid")
@@ -270,15 +286,11 @@ label hg_pr_kiss_T2_E1:
 
     jump end_hg_pr_kiss
 
-
 label hg_pr_kiss_T2_E2:
 
-    call her_walk(action="enter", xpos="mid", ypos="base")
+    call hg_pr_kiss_intro
 
-    call her_main(face="neutral", xpos="right", ypos="base")
-    m "[hermione_name]. Did you complete your task?"
-    show screen blktone
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
+    call play_music("hermione") # Music
     call her_main("I did, [genie_name].", "open", "closed", "base", "mid")
     m "Tell me how it went."
     call her_main("Well... Ehm...", "open", "base", "base", "mid")
@@ -310,18 +322,18 @@ label hg_pr_kiss_T2_E2:
 
     jump end_hg_pr_kiss
 
-
 label hg_pr_kiss_T2_E3:
 
-    call her_walk(action="enter", xpos="mid", ypos="base")
+    call hg_pr_kiss_intro
 
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
-    show screen blktone
-    call her_main("[genie_name]?", "open", "closed", "base", "mid", xpos="right", ypos="base")
+    her "I did."
+    call her_main("..........", "annoyed", "base", "base", "R")
+    call her_main("[genie_name]?", "open", "closed", "base", "mid")
     m "Yes, [hermione_name]?"
-    call her_main("May I ask you a question, [genie_name]?", "open", "base", "base", "mid")
+    call her_main("May I ask you a question?", "open", "base", "base", "mid")
     m "By all means."
     call her_main("Ehm...", "annoyed", "narrow", "angry", "R")
+    call play_music("hermione") # Music
     call her_main("Why are boys so into watching girls make out with each other, [genie_name]?", "disgust", "narrow", "base", "mid_soft")
 
     menu:
@@ -365,19 +377,13 @@ label hg_pr_kiss_T2_E3:
 
     jump end_hg_pr_kiss
 
+### Tier 3 - LVL 18-X ###
 
 label hg_pr_kiss_T3_E1:
 
-    call her_walk(action="enter", xpos="mid", ypos="base")
+    call hg_pr_kiss_intro
 
-    #elif her_whoring >= 18: # LEVEL 07+
-
-    call her_main(face="happy", xpos="right", ypos="base")
-    m "[hermione_name]..."
-    show screen blktone
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("Good evening, [genie_name].", "open", "closed", "base", "mid")
-    m "Did you complete your task, girl?"
+    call play_music("hermione") # Music
     call her_main("I did, [genie_name].", "soft", "base", "base", "mid")
     m "I'm all ears..."
     call her_main("Well, I kissed that annoying blond girl from Slytherin...", "annoyed", "squint", "base", "mid")
@@ -451,14 +457,10 @@ label hg_pr_kiss_T3_E1:
 
     jump end_hg_pr_kiss
 
-
 label hg_pr_kiss_T3_E2:
 
-    call her_walk(action="enter", xpos="mid", ypos="base")
+    call hg_pr_kiss_intro
 
-    call her_main(face="happy", xpos="right", ypos="base")
-    m "[hermione_name], did you complete your task?"
-    show screen blktone
     call her_main("I did, [genie_name].", "open", "closed", "base", "mid")
     call her_main("Only... ehm...", "grin", "base", "base", "R")
     m "What is it?"
@@ -472,7 +474,7 @@ label hg_pr_kiss_T3_E2:
     her "So me and Ginny, we were studying..."
     her "And we got to talking about boys..."
     m "Naturally..."
-    call play_music("playful_tension") # SEX THEME.
+    call play_music("playful_tension") # Music
     call her_main("And then I sort of kissed her...", "open", "base", "base", "R", cheeks="blush")
     call her_main("And Ginny returned my kiss with such passion...", "base", "narrow", "base", "mid_soft")
     her "that we sort of ended up doing more than just kissing..."

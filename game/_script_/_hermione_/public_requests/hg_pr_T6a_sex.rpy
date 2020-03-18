@@ -1,5 +1,4 @@
 
-
 ### Have Sex With A Classmate ###
 
 label hg_pr_sex:
@@ -7,33 +6,15 @@ label hg_pr_sex:
     # Setup
     $ current_payout = 75
 
-    if hg_pr_sex.counter < 1:
+    if hg_pr_sex.counter == 0:
         m "{size=-4}(Tell her to fuck one of her classmates?){/size}"
-        if her_tier < 6 or hg_sex.trigger == False or her_reputation < 18:
-            menu:
-                "\"(Yes, let's do it!)\"":
-                    pass
-                "\"(Not right now.)\"":
-                    jump hermione_favor_menu
+        menu:
+            "\"(Yes, let's do it!)\"":
+                pass
+            "\"(Not right now.)\"":
+                jump hermione_favor_menu
 
-        else: # Succeeds
-            menu:
-                "\"(Yes, let's do it!)\"":
-                    call nar("!!! Attention !!!","start")
-                    ">Continuing on this path will lock your game to a specific ending."
-                    call nar(">You might want to save your game here.","end")
-
-                    menu:
-                        "Do you wish to continue?"
-                        "\"(Yes, continue!)\"":
-                            pass
-                        "\"(No, return.)\"":
-                            jump hermione_favor_menu
-
-                "\"(Not right now.)\"":
-                    jump hermione_favor_menu
-
-    call her_main(face="happy", xpos="right", ypos="base")
+    call her_main(xpos="mid", ypos="base", trans=fade)
 
     #Intro.
     if hg_pr_sex.counter == 0:
@@ -43,7 +24,7 @@ label hg_pr_sex:
         if her_tier < 6 or hg_sex.trigger == False or her_reputation < 18:
             jump too_much
 
-        call play_music("chipper_doodle") # HERMIONE'S THEME.
+        call play_music("hermione") # Music
         call her_main("..............", "angry", "base", "angry", "mid")
         call her_main("I had the feeling that we would get to this sooner or later...", "disgust", "narrow", "base", "mid_soft")
         call her_main("But...", "annoyed", "narrow", "angry", "R")
@@ -66,15 +47,24 @@ label hg_pr_sex:
 
     jump end_hermione_event
 
-
 label end_hg_pr_sex:
     $ gryffindor += current_payout
     m "Gryffindor gets {number=current_payout} points!"
     her "Thank you, [genie_name]."
+    call her_walk("door", "base")
+    pause.2
 
-    call her_walk(action="leave")
+    # Inner monologue
+    if hg_pr_sex.counter == 1:
+        show screen blktone
+        with d3
 
-    $ public_whore_ending = True
+        call her_main("(I did it, I have finally did it...)", "smile", "narrow", "base", "dead", flip=True, trans=d3)
+
+        hide screen blktone
+        with d3
+
+    call her_chibi("leave")
 
     $ hg_pr_sex.inProgress = False
 
@@ -84,9 +74,33 @@ label end_hg_pr_sex:
 
     jump end_hermione_event
 
+label hg_pr_sex_intro:
+    call her_walk(action="enter", xpos="mid", ypos="base")
+    call her_main("Good evening, [genie_name].", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
+    m "[hermione_name]..."
+    m "Did you do it?"
 
+    if hg_pr_sex.is_tier_complete():
+        her "Of course, [genie_name]."
+        menu:
+            "\"Great. Here are your points.\"":
+                jump end_hg_pr_sex
 
-### Tier 1 ###
+            "\"Give me the details.\"":
+                pass
+
+    stop music fadeout 3.0
+    show screen blktone
+    with d3
+
+    if hg_pr_sex.counter == 1:
+        call her_main("......", "base", "narrow", "base", "mid")
+
+    m "Have you enjoyed yourself?"
+
+    return
+
+### Tier 1 - LVL 21-X ###
 
 label hg_pr_sex_T1_intro_E1:
 
@@ -103,16 +117,17 @@ label hg_pr_sex_T1_intro_E1:
     # Next Morning.
     jump day_start
 
-
 label hg_pr_sex_T1_intro_E2:
     $ hg_pr_sex_skip = False
 
+    # Special intro
+    stop music fadeout 3.0
     call her_walk(action="enter", xpos="mid", ypos="base")
 
-    call her_main(face="neutral", xpos="right", ypos="base")
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
     m "[hermione_name], you missed your debriefing yesterday."
-    call her_main("Yes, [genie_name], I apologise... *yawn*...", "open", "closed", "base", "mid")
+    m "Explain yourself."
+    call play_music("hermione") # Music
+    call her_main("Yes, [genie_name], I apologise... *yawn*...", "open", "closed", "base", "mid", xpos="mid", ypos="base", trans=d3)
     m "Care to explain yourself?"
     call her_main("Of course, [genie_name].", "open", "happy", "base", "mid", cheeks="blush")
     call her_main("It is sort of embarrassing, though...", "base", "base", "base", "R", cheeks="blush")
@@ -122,7 +137,7 @@ label hg_pr_sex_T1_intro_E2:
     call her_main("No, [genie_name]. Harry and Ron are boys...", "open", "base", "base", "R", cheeks="blush")
     m "Hm..."
     call her_main("Yes, we were best friends for such a long time...", "base", "base", "base", "R", cheeks="blush")
-    call play_music("playful_tension") # SEX THEME.
+    call play_music("playful_tension") # Music
     call her_main("But last night the boys made me their little plaything...", "base", "narrow", "base", "mid_soft")
     call her_main("And I did not mind it one bit...", "grin", "narrow", "base", "dead")
     her "They did everything they wanted to do to me..."
@@ -132,15 +147,11 @@ label hg_pr_sex_T1_intro_E2:
 
     jump end_hg_pr_sex
 
-
 label hg_pr_sex_T1_E3:
-    call her_walk(action="enter", xpos="mid", ypos="base")
 
-    call her_main(face="happy", xpos="right", ypos="base")
+    call hg_pr_sex_intro
 
-    m "[hermione_name], did you complete your task?"
-    show screen blktone
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
+    call play_music("hermione") # Music
     call her_main("Yes I did, [genie_name].", "upset", "closed", "base", "mid")
     call her_main("And in the school library of all places...", "open", "narrow", "annoyed", "mid", cheeks="blush")
     her "At first I was kind of worried that we would make too much noise..."
@@ -161,14 +172,11 @@ label hg_pr_sex_T1_E3:
 
     jump end_hg_pr_sex
 
-
 label hg_pr_sex_T1_E4:
-    call her_walk(action="enter", xpos="mid", ypos="base")
 
-    call her_main(face="happy", xpos="right", ypos="base")
+    call hg_pr_sex_intro
 
-    m "[hermione_name], did you complete your task?"
-    call play_music("playful_tension") # SEX THEME.
+    call play_music("playful_tension") # Music
     call her_main("I did, [genie_name].", "upset", "closed", "base", "mid")
     call her_main("I took one of the Ravenclaw boys to the girl's restroom...", "base", "narrow", "worried", "down")
     her "...and let him have his way with me in one of the stalls."

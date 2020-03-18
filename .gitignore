@@ -2,6 +2,7 @@
 # General
 *.tmp
 *.log
+*.bak
 
 # Windows/Mac garbage files
 Thumbs.db
@@ -50,3 +51,4 @@ image_cache.txt
 *.kra~
 *.psd
 *.psd~
+*.png~

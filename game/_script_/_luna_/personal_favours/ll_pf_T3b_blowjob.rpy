@@ -681,7 +681,13 @@ label ll_pf_blowjob_T1_slapping: # Call label
 
     ">You quickly take out your hard cock and slap it against Luna's naive nose a few times."
 
-    $ lun_cg_path       = "images/CG/luna_desk2/"
+    $ ccg_folder    = "luna_desk"
+    $ ccg("base","blank","blank")    
+    
+    $ lun_cg_path         = "images/CG/luna_desk2/"
+    $ lun_cg_base         = lun_cg_path+"base.png"
+    $ lun_cg_genie        = lun_cg_path+"blank.png"
+    $ lun_cg_overlay      = lun_cg_path+"blank.png"
     $ lun_cg_xpos_abs     = 0
     $ lun_cg_ypos_abs     = 0
     $ lun_cg_xpos         = 0
@@ -932,6 +938,7 @@ label ll_pf_blowjob_T1_facefuck: # Call label
 
     $ lun_cg_path         = "images/CG/luna_desk2/"
     $ lun_cg_base         = lun_cg_path+"base.png"
+    $ lun_cg_overlay      = lun_cg_path+"blank.png"
     $ lun_cg_xpos_abs     = 0
     $ lun_cg_ypos_abs     = 0
     $ lun_cg_xpos         = 0
@@ -1136,6 +1143,7 @@ label ll_pf_blowjob_T1_summon:
     $ lun_cg_path         = "images/CG/luna_desk2/"
     $ lun_cg_base         = lun_cg_path+"base.png" # Split-screen
     $ lun_cg_genie        = lun_cg_path+"blank.png"
+    $ lun_cg_overlay      = lun_cg_path+"blank.png"
     $ lun_cg_xpos_abs     = 0
     $ lun_cg_ypos_abs     = 0
     $ lun_cg_xpos         = 0

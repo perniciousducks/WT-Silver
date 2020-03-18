@@ -231,7 +231,7 @@ label hg_pr_handjob_T1_E1:
 
 label hg_pr_handjob_T1_E2:
 
-    call call hg_pr_handjob_intro
+    call hg_pr_handjob_intro
 
     call play_music("playful_tension") # Music
     call her_main("It went well, [genie_name]...", "open", "base", "base", "mid")

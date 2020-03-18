@@ -431,7 +431,7 @@ label give_cho_gift(gift_item):
             call cho_main("Professor, seriously... why... just why.", "angry", "narrow", "base", "mid")
             call cho_mood(2)
         elif cho_tier == 3:
-            call cho_main("A broom?", "open", "wide", "sad", "down",xpos="mid",ypos="base")
+            call cho_main("A broom?", "open", "wide", "worried", "down",xpos="mid",ypos="base")
             call cho_main("A sex broom? Where did you even get this...","open","wide","raised","mid")
             call cho_main("No..{w=0.3} I don't...{w=0.3} I don't want that.","horny","narrow","base","mid")
             call cho_mood(0)

@@ -43,11 +43,12 @@ You can support us on our official [Witch Trainer: Silver Patreon page](https://
 - **Johnny**:           Writer, Editor, Game designer, QA.
 - **LoafyLemon**:       Artist, Coder, Game designer.
 - **Dr. Lupin**:        Networking, Management and Administration.
-- **Noodle**:           Artist. You can follow them [here](https://twitter.com/BrothBowl).
 - **TropeCode**:        Coder.
+- **CyniclePickle**:    Artist. You can follow them [here](https://twitter.com/CyniclePickle).
 
 
 ## Additional Credits (in no particular order):
+- **Noodle**:          Artist. You can follow them [here](https://twitter.com/BrothBowl).
 - **DostojevskijSTG**: Artist.
 - **Darwin7**:         Artist.
 - **Lineup**:          Moderator, Tester.

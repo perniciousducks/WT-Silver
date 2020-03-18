@@ -88,10 +88,10 @@ label hermione_wardrobe_check(section, arg=None):
                             call her_main("I'm not gonna flash you anything!", "clench", "narrow", "angry", "mid")
                             call her_main("{size=-4}Pervert..{/size}", "annoyed", "narrow", "angry", "R")
                         elif random_number == 2:
-                            call her_main("Take off my "+arg+"?! No way!", "clench", "narrow", "angry", "mid")
+                            call her_main("Take off my [arg]?! No way!", "clench", "narrow", "angry", "mid")
                             call her_main("", "annoyed", "narrow", "angry", "down")
                         else:
-                            call her_main("I am not taking off my "+arg+"!", "clench", "narrow", "angry", "mid")
+                            call her_main("I am not taking off my [arg]!", "clench", "narrow", "angry", "mid")
                             call her_main("", "annoyed", "narrow", "angry", "mid")
                     #Hint
                     $ wardrobe_fail_hint(10)

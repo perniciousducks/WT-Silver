@@ -658,7 +658,7 @@ label potion_scene_3_3_1:
     call her_main("(...)", "annoyed", "base", "angry", "mid")
     call her_main("(And here I was hoping he'd just ask to fuck...)", "annoyed", "narrow", "angry", "R")
     call her_main("(Questions are so boooring! I hope they are at least naughty...)", "annoyed", "narrow", "annoyed", "up")
-    call her_main("Are those questions going to be hard, mistah?","grin", "worried", "mid", emote="05")
+    call her_main("Are those questions going to be hard, mistah?","grin", "base", "worried", "mid", emote="05")
     call her_main("I don't like hard questions.", "grin", "happyCl", "worried", "mid")
     m "Don't worry they'll be nice and easy for you."
     call her_main("yay!", "smile", "happyCl", "base", "mid")

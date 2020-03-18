@@ -88,10 +88,10 @@ label cho_wardrobe_check(section, arg=None):
                             call cho_main("I'm not gonna flash you anything!",face="angry")
                             call cho_main("{size=-4}Pervert..{/size}",face="annoyed")
                         elif random_number == 2:
-                            call cho_main("Take off my "+arg+"?! No way!",face="angry")
+                            call cho_main("Take off my [arg]?! No way!",face="angry")
                             call cho_main("", face="annoyed")
                         else:
-                            call cho_main("I am not taking off my "+arg+"!",face="angry")
+                            call cho_main("I am not taking off my [arg]!",face="angry")
                             call cho_main("", face="annoyed")
                     #Hint
                     $ wardrobe_fail_hint(10)

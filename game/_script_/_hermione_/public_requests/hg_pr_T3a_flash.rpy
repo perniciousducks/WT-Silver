@@ -126,7 +126,7 @@ label end_hg_pr_flash:
         with d3
 
         call her_main("(Stupid Slytherin...)", "angry", "narrow", "angry", "mid", flip=True, trans=d3)
-        call her_main("(I {b}HATE{/b} them!)", "angry", "angryCl", "worried", "mid")
+        call her_main("(I {b}HATE{/b} them!)", "angry", "closed", "worried", "mid")
 
         hide screen blktone
         with d3

@@ -761,9 +761,9 @@ label hermione_change:
         if her_whoring >=13 and her_whoring < 15:
             call her_main("Isn't this a bit inappropriate [genie_name]?", "mad", "narrow", "worried", "down")
             m "And doing favours for house points isn't?"
-            call her_main("Fine...","base","down_raised",cheeks="blush")
+            call her_main("Fine...", "base", "narrow", "base", "down", cheeks="blush")
         elif her_whoring >= 15 and her_whoring < 17:
-            call her_main("...", "normal", "narrow", "worried", "down",cheeks="blush")
+            call her_main("...", "normal", "narrow", "worried", "down", cheeks="blush")
             m "Any objections?"
             call her_main("...", "soft", "base", "worried", "R",cheeks="blush")
             g9 "Okay then..."

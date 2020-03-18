@@ -657,7 +657,7 @@ label nt_he_story_E12:
 # Substitute Teacher for Care for Magical Creatures maybe?
 
 label nt_he_story_centaur: # Not in use.
-    call ton_main("...","worried","base","worried","mid")
+    call ton_main("...","upset","base","worried","mid")
     call ton_main("Very well, Professor.{w} I think I can make an exception for you.","open","base","base","R")
     g9 "And spare no details."
     call ton_main("I have your word that you will not tell a soul about any of this?","open","base","base","mid")
@@ -675,7 +675,7 @@ label nt_he_story_centaur: # Not in use.
     call ton_main("Making them a compelling offer so they'd peacefully return to their assigned territory was quite...{w}challenging {heart}","horny","base","base","R")
     g4 "Go on..."
     call ton_main("All I did was do them a small favour.{w} A little service the Ministry would never even think of providing them with.","angry","base","worried","down")
-    call ton_main("But I did it anyway...","base","base","angry","base")
+    call ton_main("But I did it anyway...","base","base","angry","mid")
     g4 "*Argh!* What did you do?"
     call ton_main("Well, I simply helped them release some of their stored up tension...","open","base","base","R")
     call ton_main("And stroked their manhood's{w}with my hands...","horny","base","base","mid")

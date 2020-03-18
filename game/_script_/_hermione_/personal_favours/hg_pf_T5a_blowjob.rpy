@@ -2082,21 +2082,22 @@ label hg_pf_facefuck_1: # Bondage facefuck scene (NOT IMPLEMENTED)
     g9 "ARGH!!!"
 
     menu:
-        "Cum up her nose":
+        "-Cum up her nose-":
             hide screen hercg
             with fade
             ">You quickly pull your cock out of her throat before placing it up against her left nostril."
-            call her_main("aaaaaaahhh.... *pant*wait...*pant* not there...", "nose_cum", "wide", "base", "stare", xpos="base", ypos="head", tears="mascara")
+            #TODO Cum in nose layer?
+            call her_main("aaaaaaahhh.... *pant*wait...*pant* not there...", "open_tongue", "wide", "base", "stare", xpos="base", ypos="head", tears="mascara")
             ">Helpless to stop you, Hermione is unable to prevent you from firing a huge load up her nose."
             g9 "FUCK YES! TAKE THIS, WHORE!"
-            call her_main("Ah... no... it's so hot! I can feel it! Ugh... it's coming down my throat...", "nose_cum", "narrow", "annoyed", "up")
+            call her_main("Ah... no... it's so hot! I can feel it! Ugh... it's coming down my throat...", "open_tongue", "narrow", "annoyed", "up")
             g9 "UGHH!!!"
             ">You shift your cock head so it's firmly sealed against her right nostril before you continue unloading into the poor girl."
             call her_main("Ah.... it's... your shooting it on my brain!", "full_cum", "narrow", "annoyed", "up")
             call her_main("Agh.... the smell... it's so much... I can't...", "full_cum", "narrow", "annoyed", "up")
             call her_main("ah........", "full_cum", "narrow", "annoyed", "up")
 
-        "Cum down her throat":
+        "-Cum down her throat-":
             ">You firmly hold hermione's head against your body as you shamelessly unload down her throat for the second time..."
             g9 "FUCK YES! SWALLOW THIS, SLUT!"
             $ herCG(pupil='up', eye='squint', xpos=-0, extra_1='cum')
@@ -2108,7 +2109,7 @@ label hg_pf_facefuck_1: # Bondage facefuck scene (NOT IMPLEMENTED)
             $ herCG(pupil='up', eye='squint', xpos=-0)
             her "*glp*glp*glp*"
 
-        "Cum on her face":
+        "-Cum on her face-":
             ">You pull your cock out and start furiously jerking it in front of her face."
             call her_main("aaaaaaahhh.... *pant*please...*pant* coat me...", "shock", "narrow", "annoyed", "up")
             g9 "ARGH!!! YOU WHORE!!!"

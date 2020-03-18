@@ -67,7 +67,7 @@ label potion_scene_11_1:
     call her_main("I nearly got a \"b\" in biology the other day...", "angry", "base", "worried", "mid")
     m "Well speaking of biology..."
     call nar(">You notice Hermione's breasts start to swell slightly.")
-    call her_main("!!!", "wide", "base", "stare")
+    call her_main("!!!", "open", "wide", "base", "stare")
     call her_main("[genie_name], they're growing rather quickly!", "angry", "base", "worried", "mid")
     m "This is all perfectly normal."
     call her_main("...", "open", "squint", "base", "mid")
@@ -438,7 +438,7 @@ label potion_scene_11_3:
 
     call her_main("!!!","angry","wide")
     call nar(">You notice hermione's breasts start to grow a little more.")
-    call her_main("ugh...","grin","ahegao")
+    call her_main("ugh...", "grin", "narrow", "annoyed", "up")
     m "mmmm, just like that."
     call her_main("(this is so weird...)", "angry", "narrow", "base", "down")
 
@@ -1004,7 +1004,7 @@ label potion_scene_11_1_2:
     #refuses and says she can take care of it herself
     #leaves
 
-#label potion_scene_11_2_2: 
+#label potion_scene_11_2_2:
     #Milking potion part 2 night time
     #comes back after class
     #breasts still expanded

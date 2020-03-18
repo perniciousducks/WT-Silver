@@ -226,7 +226,7 @@ label potion_scene_1_1_2:
                 her "*Purr* *Purr* *Purr*"
                 call nar(">You grab her ears and pull her head into you causing the tip of your cock to rest in her vibrating throat.")
                 g4 "{size=+10}ARGH!!!!!!!!!!!!!!!!{/size}"
-                
+
                 call her_chibi_scene("bj_cum_in")
                 call cum_block
                 her "*Purr* *Purr* *Purr*"
@@ -243,7 +243,7 @@ label potion_scene_1_1_2:
                 call her_main("", "full_cum", "narrow", "base", "dead")
                 pause .1
                 call her_main("*Purr* *gulp* *gulp*", "cum", "happyCl", "worried", "mid")
-                
+
                 call her_chibi_scene("bj_pause")
                 call nar(">You pull your cock out of her purring mouth.")
                 call her_main("Mmmmm, it might be this potion but that tasted good...", "base", "narrow", "base", "mid_soft")
@@ -521,7 +521,7 @@ label potion_scene_1_2:
     if not her_potions_drunk:
         her "I can't believe you're making me drink random potions..."
     else:
-        call her_main("Another of your mysterious potions?","open","suspicious")
+        call her_main("Another of your mysterious potions?", "open", "squint", "base", "mid")
 
     if "polyjuice" in her_potions_drunk:
         her "Yuck... another polyjuice potion..."
@@ -551,7 +551,7 @@ label potion_scene_1_2:
         call her_main("Ugh. Those taste like muck.", "normal", "happyCl", "worried", "mid")
         her "...and what will it turn me into?"
         m "That, Miss Granger, is a secret."
-        call her_main("Typical.", "base", "base", "R",tears="soft")
+        call her_main("Typical.", "base", "base", "worried", "R",tears="soft")
         m "It'll taste a lot sweeter if you imagine all the points you'll earn for Gryffindor."
         m "How much of a lead did Slytherin have on you again?"
         her "You're right, [genie_name]. I can't let Gryffindor down!"

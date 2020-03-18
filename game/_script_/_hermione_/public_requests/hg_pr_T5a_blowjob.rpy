@@ -206,8 +206,8 @@ label hg_pr_blowjob_T1_E3:
 
     call hg_pr_blowjob_intro
 
-    call her_main("I still find the idea of performaing a favour like this unappealing, [genie_name].", "annoyed", "narrow", "angry", "R")
-    call her_main("But it went surprising well...", "annoyed", "narrow", "annoyed", "mid")
+    call her_main("I still find the idea of performing a favour like this unappealing, [genie_name].", "annoyed", "narrow", "angry", "R")
+    call her_main("But it went surprisingly well...", "annoyed", "narrow", "annoyed", "mid")
     call play_music("playful_tension") # Music
     her "I gave a proper blowjob to this handsome boy from Ravenclaw..."
     call her_main("And he was such a gentleman about it...", "open", "narrow", "worried", "down")
@@ -331,7 +331,7 @@ label hg_pr_blowjob_T2_E3:
     call her_main("Oh, excuse me, [genie_name]... I feel a little lightheaded...", "grin", "narrow", "base", "dead")
     her "I think I need to go lie down for a while..."
     m "Don't miss the shower room this time."
-    call her_main("A shower room? Why?", "base", "narrow", "base", "mid_soft")
+    call her_main("The shower room? Why?", "base", "narrow", "base", "mid_soft")
     m "Forget I said anything..."
 
     jump end_hg_pr_blowjob

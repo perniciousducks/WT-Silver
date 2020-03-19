@@ -215,7 +215,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
     show screen blktone
     call her_main("{size=-5}(Am I really going to do this?){/size}", "angry", "happyCl", "worried", "mid", cheeks="blush", xpos="base", ypos="base", trans=fade)
     hide screen blktone
-    
+
     $ hermione.strip("robe", "accessory")
 
     menu:
@@ -706,7 +706,7 @@ label hg_pf_strip_T1_E2:
     call her_main("I still consider this a highly inappropriate favour to be buying from one of your students, [genie_name].", "annoyed", "squint", "base", "mid")
     m "Right. And an equally inappropriate favour to be selling to your headmaster. Wouldn't you agree?"
     call her_main("..........", "annoyed", "narrow", "angry", "R")
-    
+
     $ hermione.strip("robe", "accessory")
 
     if hermione.is_worn("top"):

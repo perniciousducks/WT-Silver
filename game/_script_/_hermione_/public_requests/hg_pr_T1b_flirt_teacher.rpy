@@ -307,7 +307,7 @@ label hg_pr_flirt_teacher_T2_E2:
             m "And why would you want such a thing?"
             call her_main("He's a very popular and esteemed author, surely you know this...", "annoyed", "base", "base", "mid", cheeks="blush")
             g9 "Of course!"
-            g9 "Who would say no to have their leg signed by \"The\" Spocktart?"
+            g9 "Who would say no to having their leg signed by \"The\" Spocktart?"
             g9 "Not me, that's for sure!"
             call her_main("I didn't ask him to sign my leg specifically...", "angry", "base", "worried", "mid", cheeks="blush")
             m "I see...{w=0.4} Well, can't say I'm surprised..."

@@ -294,6 +294,25 @@ label hg_pr_flirt_teacher_T2_E2:
             m "I can clearly see something..."
             m "Take that off and let me have a proper look."
             her "I..."
+            call her_main("Well, alright, but don't get any ideas...", "angry", "base", "angry", "mid")
+            pause.5
+            call her_main("Here....", "disgust", "narrow", "base", "down",cheeks="blush")
+
+            $ hermione.strip("bottom", "stockings")
+            pause.5
+
+            m "Gil... Gilde-"
+            call her_main("*sigh*... Gilderoy Lockhart... [genie_name].", "open", "narrow", "base", "down", cheeks="blush")
+            call her_main("He very kindly gave me his autograph after today's lesson...", "base", "narrow", "base", "down", cheeks="blush")
+            m "And why would you want such a thing?"
+            call her_main("He's a very popular and esteemed author, surely you know this...", "annoyed", "base", "base", "mid", cheeks="blush")
+            g9 "Of course!"
+            g9 "Who would say no to have their leg signed by \"The\" Spocktart?"
+            g9 "Not me, that's for sure!"
+            call her_main("I didn't ask him to sign my leg specifically...", "angry", "base", "worried", "mid", cheeks="blush")
+            m "I see...{w=0.4} Well, can't say I'm surprised..."
+            call her_main("Sir?", "annoyed", "base", "worried", "mid", cheeks="blush")
+            m "An esteemed author making dirty requests from a fan is more common than you thi-"
 
             jump hg_pr_flirt_teacher_T2_E2.angry
     else:
@@ -324,8 +343,6 @@ label hg_pr_flirt_teacher_T2_E2:
                 call her_main("...............", "annoyed", "narrow", "worried", "down")
                 call her_main("..................", "annoyed", "base", "worried", "R")
 
-                label .angry:
-
                 call her_main("Well, alright, but don't get any ideas...", "angry", "base", "angry", "mid")
                 pause.5
                 call her_main("Here....", "disgust", "narrow", "base", "down",cheeks="blush")
@@ -333,19 +350,23 @@ label hg_pr_flirt_teacher_T2_E2:
                 $ hermione.strip("bottom", "stockings")
                 pause.5
 
-                m "Hm..."
+                m "Hmm..."
                 call her_main("", "angry", "narrow", "annoyed", "mid", cheeks="blush", emote="01")
                 call ctc
 
-                m "Well then, professor Goldenheart surely is \"dirty\"!"
+                m "Well then, this \"Goldenheart\" surely is \"dirty\"!"
+
+                label .angry:
+
                 call her_main("What do you mean?!", "clench", "happy", "base", "mid", cheeks="blush")
                 m "Surely a piece of paper would've been-"
+
                 call her_main("Professor Lockhart is nothing but an embodiment of everything pure and courageous!", "annoyed", "narrow", "annoyed", "mid")
                 call her_main("You should not worry about professor Lockhart, [genie_name].", "base", "base", "worried", "R")
                 call her_main("He is not \"dirty\".", "annoyed", "base", "worried", "L")
-                m "Ah, what do I care..."
+                m "Whatever you say [hermione_name]..."
                 call her_main("............?", "annoyed", "narrow", "annoyed", "mid", emote="01")
-                call her_main("", "angry", "base", "angry", "mid")
+                m "Anyhow..."
                 call ctc
 
             "\"Fine... Here are your points.\"":

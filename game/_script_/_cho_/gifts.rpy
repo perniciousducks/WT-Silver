@@ -260,8 +260,8 @@ label give_cho_gift(gift_item):
             call cho_mood(0)
         elif cho_tier == 3:
             call cho_main("Lingerie?",face="annoyed",xpos="mid",ypos="base")
-            call give_gift(">You give the lingerie to Cho...",gift_item)
             call cho_main("Seems pretty flexible. I might be able use these when stretching.",mouth="annoyed",pupils="down",face="annoyed")
+            call give_gift(">You give the lingerie to Cho...",gift_item)
             call cho_main("Thank you [cho_genie_name]",face="neutral")
             call cho_mood(-2)
         else:
@@ -272,6 +272,30 @@ label give_cho_gift(gift_item):
             call give_gift(">You give the lingerie to Cho...",gift_item)
             call cho_main("Thank you [cho_genie_name]",face="neutral")
             call cho_mood(-3)
+
+    elif gift_item == sexy_stockings_ITEM :
+        if cho_tier <= 1:
+            call cho_main("stockings?", "annoyed", "narrow", "raised", "down",xpos="mid",ypos="base")
+            call cho_main("Surely that must be against some kind of dresscode...","open","wide","raised","mid")
+            call cho_main("I'll pass...","open","base","angry","down")
+            call cho_main("","annoyed","base","base","mid")
+            call cho_mood(1)
+        elif cho_tier == 2:
+            call cho_main("Stockings?", "annoyed", "narrow", "base", "down",xpos="mid",ypos="base")
+            call cho_main("I guess I wont get sunburnt on my legs wearing these...","open","narrow","base","mid")
+            call give_gift(">You give the lingerie to Cho...",gift_item)
+            call cho_main("Thank you [cho_genie_name]",face="neutral")
+            call cho_mood(-1)
+        elif cho_tier == 3:
+            call cho_main("Stockings?", "annoyed", "narrow", "base", "down",xpos="mid",ypos="base")
+            call cho_main("I can almost see right through these...",mouth="annoyed",pupils="down",face="annoyed")
+            call give_gift(">You give the lingerie to Cho...",gift_item)
+            call cho_main("Thank you [cho_genie_name]",face="neutral")
+            call cho_mood(-2)
+        else:
+            call cho_main("Stockings?", "annoyed", "narrow", "base", "down",xpos="mid",ypos="base")
+            call cho_main("But my legs gets to itchy in these, I'd rather go without any leggings...","open","narrow","base","mid")
+            call cho_mood(0)
 
     elif gift_item == pink_condoms_ITEM:
         if cho_tier <= 1:

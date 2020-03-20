@@ -230,12 +230,11 @@ label give_ast_gift(gift_item):
             call ast_main("Lingerie?", face="disgusted")
             call ast_main("Sexy Lingerie?!?")
             call ast_main("Why do you care so much about what I wear? Isn't this shitty school uniform enough for you?", face="angry")
-            call ast_mood(1)
+            call ast_mood(2)
         elif ast_affection > 5 and ast_affection < 12:
             call ast_main("Lingerie?", mouth="open", face="neutral")
-            call give_gift(">You give the sexy lingerie to Astoria...", gift_item)
-            call ast_main("Seems pretty elastic... I could totally lob some stink bombs with these.", mouth="grin", face="angry")
-            call ast_mood(-1)
+            call ast_main("I... No, I'd just end up looking like a tramp!", face="angry")
+            call ast_mood(0)
         elif ast_affection > 11 and ast_affection < 18:
             call ast_main("Lingerie?", face="annoyed")
             call ast_main("Sexy...", pupils="down", face="annoyed")
@@ -247,6 +246,29 @@ label give_ast_gift(gift_item):
             call give_gift(">You give the sexy lingerie to Astoria...", gift_item)
             call ast_main("Is this is the kind of clothes you want your students to dress in from now on?", face="annoyed")
             call ast_main("*Heh*- I don't blame you, the school uniform is the most basic piece of trash ever without some spice...", face="annoyed")
+            call ast_mood(-1)
+
+    elif gift_item == sexy_stockings_ITEM :
+        if ast_affection < 6:
+            call ast_main("Stockings?", face="disgusted")
+            call ast_main("What happened to the dress code at this place?")
+            call ast_main("What next, shorter skirts?", face="angry")
+            call ast_mood(1)
+        elif ast_affection > 5 and ast_affection < 12:
+            call ast_main("Stockings?", mouth="open", face="neutral")
+            call give_gift(">You give the stockings to Astoria...", gift_item)
+            call ast_main("Seems pretty elastic... I could totally lob some stink bombs with these.", mouth="grin", face="angry")
+            call ast_mood(-1)
+        elif ast_affection > 11 and ast_affection < 18:
+            call ast_main("Stockings?", face="annoyed")
+            call ast_main("Hah, you fool! With these you wont be able to stare at my legs anymore!", pupils="grin", face="happy")
+            call give_gift(">You give the stockings to Astoria...", gift_item)
+            call ast_mood(-2)
+        else:
+            call ast_main("Stockings?", face="annoyed")
+            call ast_main("These are almost as see-through as your wicked intentions...", pupils="grin", face="angry")
+            call give_gift(">You give the stockings to Astoria...", gift_item)
+            call ast_main("Disgusting...", face="angry")
             call ast_mood(-1)
 
     elif gift_item == pink_condoms_ITEM:

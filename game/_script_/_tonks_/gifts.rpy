@@ -66,11 +66,17 @@ label give_ton_gift(gift_item):
         call ton_friendship(1)
 
     elif gift_item == sexy_lingerie_ITEM:
-        call ton_main("Oh, I see you're a man of a sense of style.",mouth="open",pupils="down",face="happy",xpos="mid",ypos="base",trans=d5)
+        call ton_main("Oh, I see you're a man with a sense of style.",mouth="open",pupils="down",face="happy",xpos="mid",ypos="base",trans=d5)
         call give_gift(">You give the sexy lingerie to Tonks...", gift_item)
         call ton_main("If it were up to me these would be part of the school uniform...",face="happy")
         call ton_friendship(1)
 
+    elif gift_item == sexy_stockings_ITEM :
+        call ton_main("Nice, I have a pair just like these...",mouth="open",pupils="down",face="happy",xpos="mid",ypos="base",trans=d5)
+        call ton_main("Although another pair without holes in them wont hurt...",face="happy")
+        call give_gift(">You give the sexy stockings to Tonks...", gift_item)
+        call ton_friendship(1)
+        
     elif gift_item == pink_condoms_ITEM:
         call ton_main("Some condoms?",face="neutral",xpos="mid",ypos="base",trans=d5)
         call give_gift(">You give some condoms to Tonks...", gift_item)
@@ -126,7 +132,7 @@ label give_ton_gift(gift_item):
         call give_gift(">You give the sex doll to Tonks...", gift_item)
         call ton_main("They'll gossip for weeks wondering who it's from.",face="horny")
         call ton_friendship(1)
-        
+
     elif gift_item == wine_ITEM:
         if not firewhisky_ITEM.unlocked:
             call ton_main("A bottle of wine?",face="base",xpos="mid",ypos="base", trans=d5)
@@ -135,7 +141,7 @@ label give_ton_gift(gift_item):
         else:
             call ton_main("I had told you before I don't particularly like wine..", face="sad", xpos="mid",ypos="base", trans=d5)
             call ton_friendship(-1)
-            
+
     elif gift_item == firewhisky_ITEM:
         call ton_main("Firewhisky?",face="happy",xpos="mid",ypos="base",trans=d5)
         call ton_main("Mmm.. My favourite. But let's save it for later, shall we?", face="horny")
@@ -144,7 +150,7 @@ label give_ton_gift(gift_item):
     call ton_main(xpos="base", ypos="base",trans=d5)
 
     return
-    
+
 label ton_friendship(value=0):
     show screen blktone5
     with d3

@@ -4,7 +4,7 @@ label give_lun_gift(gift_item):
     hide screen luna_main
     with d5
     call lun_main(xpos="mid",ypos="base",trans=d5)
-    
+
     $ gave_luna_gift = True
 
     if gift_item == lollipop_ITEM:
@@ -55,6 +55,10 @@ label give_lun_gift(gift_item):
         call give_gift(">You give the lingerie to Luna...",gift_item)
         #Add text
 
+    elif gift_item == sexy_stockings_ITEM :
+        call give_gift(">You give the stockings to Luna...",gift_item)
+        #Add text
+        
     elif gift_item == pink_condoms_ITEM:
         call give_gift(">You give the condoms to Luna...",gift_item)
         #Add text
@@ -86,11 +90,11 @@ label give_lun_gift(gift_item):
     elif gift_item == sexdoll_ITEM:
         call give_gift(">You give the doll to Luna...",gift_item)
         #Add text
-        
+
     elif gift_item == wine_ITEM:
         call give_gift(">You give the wine to Luna...", gift_item)
         #Add text
-            
+
     elif gift_item == firewhisky_ITEM:
         call give_gift(">You give the firewhisky to Luna...", gift_item)
         #Add text

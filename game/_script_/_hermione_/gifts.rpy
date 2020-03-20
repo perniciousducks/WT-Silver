@@ -291,6 +291,27 @@ label give_her_gift(gift_item):
             call give_gift(">You give the lingerie to Hermione...",gift_item)
             call her_mood(-15)
 
+    elif gift_item == sexy_stockings_ITEM :
+        if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
+            call her_main("Stockings?", "base", "narrow", "worried", "down")
+            call her_main("[genie_name], are you insinuating that I wear these?", "angry", "closed", "base", "mid")
+            call her_mood(8)
+        elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
+            call her_main("Sexy stockings?", "angry", "narrow", "base", "down")
+            call her_main("Isn't this a bit inappropriate, [genie_name]?", "annoyed", "base", "base", "mid")
+            call her_mood(0)
+        elif her_whoring >= 12 and her_whoring <= 17: # Lv 5-6.
+            call her_main("Sexy stockings?", "base", "narrow", "worried", "down")
+            call her_main("Thank you I guess...", "base", "wink", "base", "mid",cheeks="blush")
+            call give_gift(">You give the stockings to Hermione...",gift_item)
+            call her_main("Thank you, [genie_name].", "base", "base", "base", "R",cheeks="blush")
+            call her_mood(-8)
+        elif her_whoring >= 18: # Lv 7+
+            call her_main("Sexy stockings?", "base", "narrow", "worried", "down")
+            call her_main("These are almost completely transparent, [genie_name]!", "grin", "wide", "base", "mid")
+            call give_gift(">You give the stockings to Hermione...",gift_item)
+            call her_mood(-10)
+
     elif gift_item == pink_condoms_ITEM:
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("Condoms?!", "angry", "wide", "base", "stare")

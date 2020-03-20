@@ -52,17 +52,17 @@ label store_chit_chat:
         ger "You're not here to shut us down are you?"
         m "Shut you down? What for?"
         fre "NOTHING!"
-        ger "We certainly aren't selling potions that we stole from Snape."
-        fre "No sir! No prohibited goods being sold here."
+        # ger "We certainly aren't selling potions that we stole from Snape."
+        fre "No prohibited goods being sold here."
         ger "None at all!"
         fre "But if we did sell them-"
         ger "Which we don't-"
         fre "They would be sold at the best prices in the school."
         ger "Unbeatable."
-        m "Hmmmm. What sort of potions are you \'not\' selling?"
-        fre "Well we aren't selling polyjuice potion."
-        ger "Wouldn't dream of it."
-        m "Well do you sell anything else?"
+        # m "Hmmmm. What sort of potions are you \'not\' selling?"
+        # fre "Well we aren't selling polyjuice potion."
+        # ger "Wouldn't dream of it."
+        m "What sort of items are you \'not\' selling?"
         ger "We have books, treats, and knick-knacks for sale."
         fre "Take a look."
 
@@ -263,17 +263,17 @@ screen weasley_store_menu():
         text "Books" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+44 size 14
 
     # Potions
-    imagebutton:
-        xpos 725 +UI_xpos_offset
-        ypos 105+88
-        idle "interface/general/"+interface_color+"/button_select.png"
-        if store_category != 2:
-            hover "interface/general/"+interface_color+"/button_select_hover.png"
-            action [SetVariable("store_category",2), Jump("shop_potion_menu")]
-    if store_category == 2:
-        text "Potions" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+88 size 16
-    else:
-        text "Potions" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+88 size 14
+    #imagebutton:
+    #    xpos 725 +UI_xpos_offset
+    #    ypos 105+88
+    #    idle "interface/general/"+interface_color+"/button_select.png"
+    #    if store_category != 2:
+    #        hover "interface/general/"+interface_color+"/button_select_hover.png"
+    #        action [SetVariable("store_category",2), Jump("shop_potion_menu")]
+    #if store_category == 2:
+    #    text "Potions" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+88 size 16
+    #else:
+    #    text "Potions" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+88 size 14
 
     # Token Shop
     if twins_cards_stocked:
@@ -357,9 +357,9 @@ label object_purchase_item(item, quantity):
         $ gold -= order_cost
         $ deliveries.send(item, transit_time, quantity,'Gift')
         if transit_time ==  1:
-            "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered tomorrow."
+            "Thank your for shopping at \"Weasley & Weasley\". Your order shall be delivered tomorrow."
         else:
-            "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered in 1 to [transit_time] days."
+            "Thank your for shopping at \"Weasley & Weasley\". Your order shall be delivered in 1 to [transit_time] days."
 
     else:
         m "I don't have enough gold."

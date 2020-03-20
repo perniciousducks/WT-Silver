@@ -208,7 +208,7 @@ default ll_pf_blowjob = event_class(title = "Suck it!", start_label = "ll_pf_blo
             ["ll_pf_blowjob_T1_intro"],
             ["ll_pf_blowjob_T1_intro_E1"],
             ["ll_pf_blowjob_T1_intro_E2"],
-            ["ll_pf_blowjob_T1_E3"]
+            ["ll_pf_blowjob_T1_intro_E3"]
         ]
     ],
     iconset = [["heart_empty", "heart_blue"]]

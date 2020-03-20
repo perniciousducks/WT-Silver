@@ -15,18 +15,18 @@ label wardrobe(char_label):
             "astoria": ast_affection,
             "cho": cho_whoring
             }
-            
+
         char_active = eval(active_girl)
         char_nickname = char_active.name
         char_scale = 1.0/globals()[active_girl+"_scaleratio"]
         char_level = _char_var_list[active_girl]
-        
+
         renpy.start_predict("interface/wardrobe/*.png")
         predict = tuple(x.get_image() for x in char_active.wardrobe_list)
         renpy.start_predict(*predict)
 
         wardrobe_background = wardrobe_background_day if interface_color == "gold" else wardrobe_background_night
-        
+
         items_shown = 20
         current_page = 0
         current_category = ""
@@ -41,35 +41,35 @@ label wardrobe(char_label):
         character_toggles = [(k, v[1]) for k, v in char_active.clothes.iteritems() if k != "hair" and not any(i.isdigit() for i in k)]
         character_toggles.extend([("tattoo", 30), ("piercing", 31), ("makeup", 32), ("accessory", 33)])
         character_toggles.sort(key=lambda x: x[1], reverse=True)
-        
+
         renpy.hide_screen(active_girl+"_main")
-    
+
     if wardrobe_music:
         call play_music("wardrobe")
-        
+
     if not renpy.variant("android"):
         show screen mouse_tooltip
-        
-    show screen wardrobe_menu(550, 50) 
-    with d2
-    
-    
-    label .after_init:
-    
+
     show screen wardrobe_menu(550, 50)
-    
+    with d2
+
+
+    label .after_init:
+
+    show screen wardrobe_menu(550, 50)
+
     if current_category:
         if current_category == "outfits":
             show screen wardrobe_outfit_menuitem(20, 50)
         else:
             show screen wardrobe_menuitem(20, 50)
-    
+
     $ _return = ui.interact()
-    
+
     hide screen wardrobe_menu
     hide screen wardrobe_menuitem
     hide screen wardrobe_outfit_menuitem
-    
+
     if _return == "tabswitch":
         show screen wardrobe_menu(550, 50)
         $ renpy.call(active_girl+"_wardrobe_check", _return)
@@ -248,20 +248,20 @@ label wardrobe(char_label):
         $ renpy.stop_predict(*predict)
         return
     jump .after_init
-        
+
 screen wardrobe_menu(xx, yy):
     tag wardrobe
     zorder 15
-    
+
     add im.Blur(screenshot_image, 2)
 
     use close_button
-    
+
     frame:
         style "empty"
         pos (xx, yy)
         xysize (540, 548)
-        
+
         # Main Categories
         for i, category in enumerate(wardrobe_categories_sorted):
             $ cat_row = (i // 4) % 2
@@ -285,13 +285,13 @@ screen wardrobe_menu(xx, yy):
                     hover_background btn_hover
                     tooltip category
                     action Return(["category", wardrobe_categories_sorted[i]])
-        
+
         # Background
         frame xysize (340, 548) xpos 100 style "empty" background wardrobe_background
-        
+
         # Character
         add char_active.get_image() zoom char_scale anchor (0.57, 1.0) align (0.5, 1.0) yoffset -2 #yoffset -12
-        
+
         # Switch to body modifications tab
         add "interface/frames/{}/circle.png".format(interface_color) pos (373, 62)
         button:
@@ -327,7 +327,7 @@ screen wardrobe_menu(xx, yy):
                 action Return("studio")
 
         add "interface/panels/{}/wardrobe_panel.png".format(interface_color)
-        
+
         #Easter Egg
         vbox:
             xalign 0.5
@@ -335,7 +335,7 @@ screen wardrobe_menu(xx, yy):
             spacing 72
             button style "empty" xysize (120, 60) action Return(["erozone", "boobs"])
             button style "empty" xysize (120, 50) action Return(["erozone", "pussy"])
-        
+
         # Toggles and User Settings
         use dropdown_menu(name="Toggles", pos=(116, 29), items_offset=(-5, 2)):
             for item in character_toggles:
@@ -369,21 +369,21 @@ screen wardrobe_menu(xx, yy):
                 background "interface/frames/{}/check_{}.png".format(interface_color, wardrobe_requirements)
                 tooltip "Toggle level requirements display"
                 action ToggleVariable("wardrobe_requirements", True, False)
-                
+
         # Zoom slider
         # bar:
             # area (25, 290, 255, 30)
             # value VariableValue("char_scale", range=1.0, step=0.01, style=u'bar')
             # top_gutter 0
             # bottom_gutter 0
-                
+
         add "interface/general/{}/button_wide.png".format(interface_color) pos (200, -4)
         text char_nickname xalign 0.5 ypos 4 size 16
-        
+
 screen wardrobe_menuitem(xx, yy):
     tag wardrobe_menuitem
     zorder 16
-    
+
     # Navigational Buttons Up/Down
     if menu_items_length > items_shown:
         imagebutton:
@@ -399,25 +399,25 @@ screen wardrobe_menuitem(xx, yy):
             if current_page < math.ceil((menu_items_length-1)/items_shown):
                 hover "interface/general/{}/button_arrow_down_hover.png".format(interface_color)
                 action Return("inc")
-    
+
     frame:
         style "empty"
         pos (xx, yy)
         xysize (467, 548)
         background wardrobe_background
-   
+
         add "interface/panels/{}/icon_panel.png".format(interface_color)
-        
+
         hbox:
             pos (24, 44)
             spacing 3
             text "[current_category]:" size 18
             text "[current_subcategory]" size 12 yalign 0.5
-        
+
         # Page Counter
         if menu_items_length > items_shown:
             textbutton str(current_page+1)+"/"+str(int(math.ceil(menu_items_length/items_shown)+1)):
-                style "empty" 
+                style "empty"
                 ysize 32
                 pos (270, 37)
                 xanchor 1.0
@@ -425,13 +425,13 @@ screen wardrobe_menuitem(xx, yy):
                 text_yalign 0.5
                 text_first_indent 26
                 action NullAction()
-        
+
         # Colours
         if current_item:
             hbox:
                 pos (283, 31)
                 spacing 2
-                
+
                 for i in xrange(current_item.layers):
                     button:
                         xysize (32, 44)
@@ -440,12 +440,12 @@ screen wardrobe_menuitem(xx, yy):
                         action Return(["item_color", i])
             # Reset Button
             textbutton "R":
-                pos (422, 31) 
-                xysize (32, 44) 
+                pos (422, 31)
+                xysize (32, 44)
                 background "#d3d3d3"
                 tooltip "Reset all colours"
-                action Return("item_reset") 
-            
+                action Return("item_reset")
+
         # Add subcategory list
         if len(category_items) > 0:
             for i, subcategory in enumerate(category_items.keys()):
@@ -457,7 +457,7 @@ screen wardrobe_menuitem(xx, yy):
                     hover_background btn_hover
                     tooltip subcategory
                     action Return(["subcategory", subcategory])
-        
+
         # Add Clothing Items
         for i in xrange(current_page*items_shown, (current_page*items_shown)+items_shown):
             if i < menu_items_length:
@@ -468,7 +468,7 @@ screen wardrobe_menuitem(xx, yy):
                     style "empty"
                     pos (12+90*col, 180+90*row)
                     xysize (83, 85)
-                    
+
                     add menu_items[i].get_icon() zoom image_zoom xalign 0.5 yalign 0.5
                 if char_active.clothes[menu_items[i].type][0] and menu_items[i].id == char_active.clothes[menu_items[i].type][0].id:
                     button:
@@ -478,9 +478,9 @@ screen wardrobe_menuitem(xx, yy):
                         hover_background btn_hover
                         tooltip "Take off"
                         action Return(["equip", menu_items[i]])
-                    
+
                     add "interface/topbar/icon_check.png" pos (60+90*col, 225+90*row)
-                else:   
+                else:
                     button:
                         style "empty"
                         pos (12+90*col, 180+90*row)
@@ -488,7 +488,7 @@ screen wardrobe_menuitem(xx, yy):
                         hover_background btn_hover
                         # tooltip "Put on"
                         action Return(["equip", menu_items[i]])
-                    
+
                 # Whoring req
                 if wardrobe_requirements:
                     if menu_items[i].level > her_whoring:
@@ -526,17 +526,17 @@ screen wardrobe_menuitem(xx, yy):
                         # text_outlines [ (1, "#000", 0, 0) ]
                         # tooltip "This item is a part of a mod."
                         # action NullAction()
-                    
+
         # Add empty items
         for i in xrange(menu_items_length, items_shown):
             $ row = (i // 5) % 4
             $ col = i % 5
             button style "empty" pos (12+90*col, 180+90*row) xysize (83, 85) background "#00000033"
-                    
+
 screen wardrobe_outfit_menuitem(xx, yy):
     tag wardrobe_menuitem
     zorder 16
-    
+
     # Navigational Buttons Up/Down
     if menu_items_length > 9:
         if not current_page <= 0:
@@ -551,25 +551,25 @@ screen wardrobe_outfit_menuitem(xx, yy):
                 idle "interface/general/"+interface_color+"/button_arrow_down.png"
                 hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
                 action Return("inc")
-    
+
     frame:
         style "empty"
         pos (xx, yy)
         xysize (467, 548)
         background wardrobe_background
-   
+
         add "interface/panels/"+interface_color+"/icon_panel2.png"
-            
+
         hbox:
             pos (24, 44)
             spacing 3
             text "[current_category]:" size 18
             text "[current_subcategory]" size 12 yalign 0.5
-        
+
         # Page Counter
         if menu_items_length > 9:
             textbutton str(current_page+1)+"/"+str(int(math.ceil(menu_items_length/10))+1):
-                style "empty" 
+                style "empty"
                 ysize 32
                 pos (270, 37)
                 xanchor 1.0
@@ -577,7 +577,7 @@ screen wardrobe_outfit_menuitem(xx, yy):
                 text_yalign 0.5
                 text_first_indent 26
                 action NullAction()
-                
+
         # Add subcategory list
         for i, subcategory in enumerate(category_items):
             add "interface/wardrobe/icons/"+current_category+"_"+subcategory+".png" ypos 88 xpos 10+(90*i) zoom 0.2
@@ -588,25 +588,25 @@ screen wardrobe_outfit_menuitem(xx, yy):
                 hover_background btn_hover
                 tooltip subcategory
                 action Return(["subcategory", subcategory])
-        
+
         # Add Outfit Items
         for i in xrange(current_page*10, (current_page*10)+10):
             if i < menu_items_length:
                 $ row = (i // 5) % 2
                 $ col = i % 5
-                
+
                 # Preview Icon
                 frame:
                     style "empty"
                     xysize (90, 180)
                     add menu_items[i].get_image() xpos 40+90*col ypos 141+180*row xalign 0.5 zoom 0.18
-                    
+
                 # Button Icons
                 if current_subcategory == "Delete":
                     button:
                         style "empty"
                         pos (10+90*col, 176+180*row)
-                        xysize (90, 180) 
+                        xysize (90, 180)
                         hover_background "#cc330040"
                         tooltip "Delete Outfit"
                         action Return(["deloutfit", i])
@@ -614,7 +614,7 @@ screen wardrobe_outfit_menuitem(xx, yy):
                     button:
                         style "empty"
                         pos (10+90*col, 176+180*row)
-                        xysize (90, 180) 
+                        xysize (90, 180)
                         hover_background btn_hover
                         tooltip "Equip Outfit"
                         action Return(["equip", menu_items[i]])
@@ -623,7 +623,7 @@ screen wardrobe_outfit_menuitem(xx, yy):
                         style "empty"
                         pos (10+90*col, 176+180*row)
                         xysize (90, 180)
-                        hover_background btn_hover 
+                        hover_background btn_hover
                         tooltip "Export Outfit"
                         action Return(["export", menu_items[i]])
                 elif current_subcategory == "Schedule":
@@ -638,21 +638,21 @@ screen wardrobe_outfit_menuitem(xx, yy):
                             for x in wardrobe_outfit_schedule:
                                 $ _ico = "interface/wardrobe/icons/"+x.lower()+".png"
                                 $ _bool = str(menu_items[i].schedule[x.lower()])
-                                
+
                                 if x in ("Day", "Night"):
                                     $ _tooltip = "Worn during the "+x+":\n{size=-4}"+_bool+"{/size}"
                                 elif x in ("Rainy", "Cloudy", "Snowy"):
                                     $ _tooltip = "Worn during "+x+" weather:\n{size=-4}"+_bool+"{/size}"
-                                    
+
                                 button:
-                                    style "empty" 
-                                    xysize (25, 25) 
-                                    background gray_tint(_ico) 
-                                    hover_background white_tint(_ico) 
-                                    selected_background _ico 
+                                    style "empty"
+                                    xysize (25, 25)
+                                    background gray_tint(_ico)
+                                    hover_background white_tint(_ico)
+                                    selected_background _ico
                                     tooltip _tooltip
                                     action [SelectedIf(menu_items[i].schedule[x.lower()] == True), Return(["tagoutfit", menu_items[i], x.lower()])]
-                    
+
         # Add empty items
         for i in xrange(menu_items_length, (current_page*10)+10):
             $ row = (i // 5) % 2
@@ -663,8 +663,8 @@ screen wardrobe_outfit_menuitem(xx, yy):
                     style interface_style+"_menu"
                     pos (10+90*col, 180+180*row)
                     xysize (88, 178)
-                    background "#00000033" 
-                    hover_background btn_hover 
+                    background "#00000033"
+                    hover_background btn_hover
                     text_align (0.5, 0.5)
                     action Return("addoutfit")
             elif current_subcategory == "Export&Import":
@@ -672,13 +672,13 @@ screen wardrobe_outfit_menuitem(xx, yy):
                     style interface_style+"_menu"
                     pos (10+90*col, 180+180*row)
                     xysize (88, 178)
-                    background "#00000033" 
+                    background "#00000033"
                     hover_background btn_hover
                     text_align (0.5, 0.5)
                     action Return("import")
             else:
                 button style "empty" pos (10+90*col, 180+180*row) xysize (88, 178) background "#00000033"
-                
+
         # Schedule Toggle
         if current_subcategory == "Schedule":
             textbutton "Outfit scheduling":
@@ -686,8 +686,8 @@ screen wardrobe_outfit_menuitem(xx, yy):
                 pos (290, 42)
                 background "interface/frames/"+str(interface_color)+"/check_"+str(globals()[active_girl+"_outfits_schedule"])+".png"
                 tooltip "{color=#35aae2}[active_girl]{/color} will automatically wear outfits\nbased on set schedule, time of day and weather."
-                action Return("toggle_schedule") 
-                
+                action Return("toggle_schedule")
+
             if not globals()[active_girl+"_outfits_schedule"]:
                 textbutton "Disabled":
                     style interface_style+"_menu"
@@ -696,4 +696,4 @@ screen wardrobe_outfit_menuitem(xx, yy):
                     background "#00000080"
                     text_align (0.5, 0.5)
                     text_size 24
-                    action NullAction()  
+                    action NullAction()

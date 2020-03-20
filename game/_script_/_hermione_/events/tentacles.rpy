@@ -309,7 +309,6 @@ label tentacle_scene_intro:
         mal2 "And she brought her own plant sample, I bet she planned this out, what a total slut!"
     her "Oh no..."
     $ renpy.sound.play("sounds/cloth_rip.mp3")
-    # TODO: sound cloth rip
     ">You rip her top off in a flurry of buttons and cotton..."
     her "Ahhhh!"
     $ renpy.sound.play("sounds/plant_slithering.mp3")

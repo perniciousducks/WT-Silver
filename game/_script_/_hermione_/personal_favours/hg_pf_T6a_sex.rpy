@@ -403,6 +403,7 @@ label hg_sex_1:
             with hpunch
             g4 "{size=+7}Argh!!!{/size}"
             call cum_block
+            $ hermione.set_cum(crotch="light")
             g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
 
             if not use_cgs:
@@ -412,6 +413,7 @@ label hg_sex_1:
             call cum_block
             call ctc
 
+            $ hermione.set_cum(crotch="heavy")
             $ ccg1 = 7
             call her_main("Ah...{heart}{heart}{heart}", "silly", "narrow", "base", "dead")
             hide screen bld1
@@ -435,10 +437,6 @@ label hg_sex_1:
             call her_chibi_scene("sex_cum_in_done", trans=d5)
 
             $ hermione_zorder = 15 # Reset zorder
-
-            #
-            # TODO: CUM LAYERS
-            #
 
             if daytime:
                 call her_main("But I think I will be able to make it to my classes...", "silly", "narrow", "base", "dead")
@@ -464,6 +462,7 @@ label hg_sex_1:
 
             $ ccg3 = "s1"
             call cum_block
+            $ hermione.set_cum(pussy="light")
             call ctc
 
             $ ccg1 = 7
@@ -485,10 +484,7 @@ label hg_sex_1:
             call her_chibi_scene("sex_cum_out_done", trans=d5)
 
             $ hermione_zorder = 15 # Reset zorder
-
-            #
-            # TODO: CUM LAYERS
-            #
+            $ hermione.set_cum(pussy="heavy", crotch="light")
 
             call her_main("But...", "silly", "narrow", "base", "dead")
             m "What?"
@@ -680,6 +676,7 @@ label hg_sex_2:
             g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
             call cum_block
             $ ccg1 = 17
+            $ hermione.set_cum(pussy="light")
             call her_main("AH! MY WOMB!", "shock", "base", "base", "R", cheeks="blush", tears="soft")
             g4 "{size=+5}SLUT!{/size}"
 
@@ -713,10 +710,7 @@ label hg_sex_2:
             call her_chibi_scene("sex_cum_in_done", trans=d5)
 
             $ hermione_zorder = 15 # Reset zorder
-
-            #
-            # TODO: CUM LAYERS
-            #
+            $ hermione.set_cum(pussy="heavy")
 
             call her_main("Maybe you are right, [genie_name], and I shouldn't worry so much.", "angry", "wink", "base", "mid")
             call her_main("Can I get my payment now?")
@@ -763,10 +757,7 @@ label hg_sex_2:
             call her_chibi_scene("sex_cum_in_done", trans=d5)
 
             $ hermione_zorder = 15 # Reset zorder
-
-            #
-            # TODO: CUM LAYERS
-            #
+            $ hermione.set_cum(pussy="light", crotch="heavy")
 
             call her_main("I think I came several times, [genie_name]...", "soft", "narrow", "annoyed", "up")
             call her_main("Can I get my payment now?", "angry", "wink", "base", "mid")

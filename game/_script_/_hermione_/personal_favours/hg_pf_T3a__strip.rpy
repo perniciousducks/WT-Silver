@@ -28,6 +28,9 @@ label hg_pf_strip:
     call her_chibi("stand","desk","base", flip=False)
     call gen_chibi("sit_behind_desk")
 
+    $ hermione.set_cum(None)
+    $ hermione.wear("all")
+
     hide screen blkfade
     if her_mood != 0:
         call her_main("", "annoyed", "base", "angry", "mid", xpos="mid", ypos="base", trans=fade)
@@ -1203,8 +1206,6 @@ label hg_pf_strip_T2_watch:
 
     jump end_hg_pf_strip
 
-
-
 label hg_pf_strip_T2_masturbate:
     show screen blkfade
     with d5
@@ -1294,11 +1295,12 @@ label hg_pf_strip_T2_masturbate:
 
     call cum_block
     call gen_chibi("cum","behind_desk","behind_desk")
+    $ hermione.set_cum(hair="light")
+    pause 0.7
+    $ hermione.set_cum(face="light")
+    pause 1
+    $ hermione.set_cum(breasts="light")
     call ctc
-
-    #
-    # TODO: CUM LAYER
-    #
 
     call her_chibi("sit_naked_shocked","on_desk","on_desk")
 

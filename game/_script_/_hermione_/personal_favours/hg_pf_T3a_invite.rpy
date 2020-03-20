@@ -630,9 +630,11 @@ label hg_pf_strip_T2_Snape_masturbate:
         call gen_chibi("cum","behind_desk","base")
         pause.2
 
-        #
-        # TODO: CUM LAYERS
-        #
+        $ hermione.set_cum(hair="light")
+        pause 0.7
+        $ hermione.set_cum(face="light")
+        pause 1
+        $ hermione.set_cum(breasts="light")
 
         call her_main("??!!!", "shock", "wide", "base", "stare")
         call her_main("", "angry", "happyCl", "worried", "mid")
@@ -647,9 +649,11 @@ label hg_pf_strip_T2_Snape_masturbate:
         call sna_chibi("cum","desk_close","desk_close")
         pause.2
 
-        #
-        # TODO: CUM LAYERS
-        #
+        $ hermione.set_cum(hair="heavy")
+        pause 0.7
+        $ hermione.set_cum(face="heavy")
+        pause 1
+        $ hermione.set_cum(breasts="heavy", body="light")
 
         call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
         hide screen bld1
@@ -701,10 +705,6 @@ label hg_pf_strip_T2_Snape_masturbate:
         hide screen blkfade
         with d5
         call ctc
-
-        #
-        # TODO: CUM LAYERS
-        #
 
         call her_main("I demand a higher grade than that!", "soft", "base", "angry", "mid", xpos="right", ypos="base")
         call sna_main("You do not demand a grade miss Granger, you earn it.","snape_09")

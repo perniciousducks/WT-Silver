@@ -176,7 +176,7 @@ label luna_favour_5:
         hide screen blkfade
         with d3
         call ctc
-        
+
         call gen_main("!!!","grin")
         call lun_main("Just admit it...","base","mad","sad","mid")
         call lun_main("you're a slut...","base","suspicious","base","mid")
@@ -238,13 +238,12 @@ label luna_favour_5:
         g9 "{size=+10}TAKE IT ALL YOU sLUT!{/size}"
         show screen white
         pause.1
+        $ hermione.set_cum(face="light")
         $ luna_r_arm = 4
         hide screen white
         pause.2
-        $ uni_sperm = True
-        $ u_sperm = "characters/hermione/face/auto_07.png"
-        #TODO Cum layer
         show screen white
+        $ hermione.set_cum(face="heavy")
         pause .1
         hide screen white
         with hpunch
@@ -320,14 +319,13 @@ label luna_favour_5:
             call lun_main("mmmmm... you taste even better...","base","happyCl","sad","mid")
             call her_main("...", "open", "happyCl", "worried", "mid")
             ">Hermione stands still, letting luna slowly wipe the cum from her face..."
-            $ u_sperm = "characters/hermione/face/auto_08.png"
+            $ hermione.set_cum(face="light")
             call her_main("...", "shock", "happyCl", "worried", "mid")
             call lun_main("mmmmm...","full","happyCl","sad","mid")
             ">Luna slowly fills her mouth with cum before eventually swallowing."
             call lun_main("*gulp*","base","seductive","sad","empty")
             ">Eventually she finally gets the last strand into her mouth."
-            $ uni_sperm = False
-            #TODO Remove cum layer
+            $ hermione.set_cum(None)
             call her_main("...", "disgust", "narrow", "base", "down")
             call lun_main("...","full","happyCl","sad","mid")
             call lun_main("*gulp*","base","seductive","sad","empty")
@@ -370,13 +368,12 @@ label luna_favour_5:
             call lun_main("mmmmm... that's it... make sure you get it all slut...","base","seductive","sad","down", cheeks="blush")
             m "(woah...)"
             ">Hermione slowly continues to clear her face of cum."
-            $ u_sperm = "characters/hermione/face/auto_08.png"
+            $ hermione.set_cum(face="light")
             call her_main("...","full_cum","narrow","base","dead")
             ">She fills her mouth with cum before eventually swallowing."
             call her_main("*gulp*","cum","happyCl","worried","mid")
             ">Eventually she finally gets the last strand into her mouth."
-            $ uni_sperm = False
-            #TODO Remove cum layer
+            $ hermione.set_cum(None)
             call her_main("...","full_cum","narrow","base","dead")
             call lun_main("see, good sluts don't waste anything do they?","grin","seductive","sad","down")
             call her_main("...","full_cum","narrow","base","dead")
@@ -399,7 +396,7 @@ label luna_favour_5:
         $ hermione.wear("bra", "top")
 
         call her_chibi("stand","mid","base")
-        
+
         call her_main("[genie_name], what on earth was that all about?!", "scream", "closed", "angry", "mid", xpos="mid", ypos="base")
         call her_main("Why on earth was Luna in here?", "annoyed", "narrow", "angry", "R")
         call her_main("how on earth does she know about me selling favours?", "angry", "base", "angry", "mid")
@@ -522,7 +519,7 @@ label luna_favour_5:
                 m "I didn't mean it like-"
                 call lun_main("*hmph* I suppose I'll strip then [lun_genie_name]... Just so you remember who has the better body.","normal","seductive","angry","mid")
                 call lun_main("But I expect extra for this [lun_genie_name]!","upset","angry","angry","R")
-        
+
         m "sure. I'll add another forty gold."
         $ luna_payout += 40
         call her_main("If she's getting extra then I want some more points!", "scream", "closed", "angry", "mid")
@@ -669,7 +666,7 @@ label luna_favour_5:
         $ luna_cum = 12
         call lun_main("mmmmm...","base","wide","sad","mid")
         call her_main("that's it, just let out all that {b}nasty{/b} cum.", "grin", "narrow", "annoyed", "up")
-        
+
         ">Luna collects a strand of cum on the end of her finger, staring at it intently before putting it into her mouth."
         call lun_main("{heart}{heart}{heart}","base","angry","angry","mid")
         call lun_main("it's not nasty!","base","seductive","angry","mid")
@@ -800,7 +797,7 @@ label luna_favour_5:
 
         call load_luna_clothing_saves
         call update_lun_uniform
-        
+
         $ hermione.wear("all")
 
         show screen luna_main
@@ -896,7 +893,7 @@ label luna_favour_5:
         with d3
 
         ">Luna slowly strips as well, carefully putting her clothes in a pile next to hermione's."
-        
+
         $ luna_wear_top = False
         $ luna_wear_bra = False
         $ luna_wear_bottom = False
@@ -995,13 +992,12 @@ label luna_favour_5:
         g4 "{size=+10}ARGHHH!!!!{/size}"
         show screen white
         pause.1
-        $ uni_sperm = True
-        $ u_sperm = "characters/hermione/face/auto_16.png"
-        #TODO Cum layer
+        $ hermione.set_cum(face="light")
         hide screen white
         pause.2
         show screen white
         pause .1
+        $ hermione.set_cum(face="heavy")
         hide screen white
         with hpunch
 
@@ -1049,14 +1045,13 @@ label luna_favour_5:
         call lun_main("mmmmm... you taste even better...","base","happyCl","sad","mid")
         call her_main("...", "grin", "narrow", "base", "dead")
         ">Hermione stands still, letting luna slowly wipe the cum from her face..."
-        $ u_sperm = "characters/hermione/face/auto_08.png"
+        $ hermione.set_cum(face="light")
         call her_main("that's it... make sure you get it all...", "base", "narrow", "worried", "down")
         call lun_main("mmmmm...","full","happyCl","sad","mid")
         ">Luna slowly fills her mouth with cum before swallowing all of it."
         call lun_main("*gulp*","base","seductive","sad","empty")
         ">Eventually she gets the last strand into her mouth."
-        $ uni_sperm = False
-        #TODO Remove cum layer
+        $ hermione.set_cum(None)
         call her_main("better?", "base", "narrow", "base", "mid_soft")
         call lun_main("...","full","happyCl","sad","mid")
         call lun_main("*gulp*","base","seductive","sad","empty")
@@ -1156,7 +1151,7 @@ label luna_favour_5:
 
                     call load_luna_clothing_saves
                     call update_lun_uniform
-                   
+
                     $ hermione.wear("all")
 
                     with d3

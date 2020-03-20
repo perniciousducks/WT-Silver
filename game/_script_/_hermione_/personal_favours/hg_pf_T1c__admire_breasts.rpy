@@ -13,11 +13,9 @@ label hg_pf_admire_breasts:
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
 
-
     # Start Event
     $ current_payout = 10
     $ hg_pf_admire_breasts.start()
-
 
     # End Event
     label end_hg_pf_admire_breasts:
@@ -30,7 +28,8 @@ label hg_pf_admire_breasts:
 
     call her_chibi("stand","desk","base", flip=False)
     call gen_chibi("sit_behind_desk")
-    
+
+    $ hermione.set_cum(None)
     $ hermione.wear("all")
 
     hide screen blkfade
@@ -40,7 +39,6 @@ label hg_pf_admire_breasts:
         call her_main("", "base", "base", "base", "R", xpos="mid", ypos="base", trans=fade)
     else:
         call her_main("", "base", "narrow", "annoyed", "up", xpos="mid", ypos="base", trans=fade)
-
 
     # Points
     $ gryffindor += current_payout
@@ -77,11 +75,7 @@ label hg_pf_admire_breasts:
         call her_main("{size=-5}(No, Hermione, you silly girl!){/size}", "angry", "base", "angry", "mid", cheeks="blush")
         call her_main("{size=-5}(We are doing this to protect the honour of our house!){/size}", "angry", "base", "angry", "mid", cheeks="blush")
         call her_main(".................................", "base", "narrow", "base", "up", cheeks="blush")
-        
-    #    
-    # TODO: CUM LAYERS
-    #
-    
+
     # elif aftersperm:
         # call her_main("{size=-5}(That was so exhilarating...){/size}", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
         # call her_main("{size=-5}(I wonder if anyone will notice my clothes!){/size}", "open", "narrow", "base", "up", cheeks="blush", ypos="head")
@@ -161,7 +155,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
 
             $ her_mood += 3
             $ hg_pf_admire_breasts.fail()
-            
+
             m "Well.. Next time I guess."
 
             jump main_room
@@ -178,7 +172,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
     m "..........."
     call her_main("Sir?", "clench", "base", "angry", "mid")
     g4 "(I wonder what cup size those are.)"
-    
+
     $ hermione.wear("top")
     call her_main("Sir, I would like to have my points now.", "open", "closed", "angry", "mid")
     m "What? Oh yes. Of course..."
@@ -239,7 +233,7 @@ label hg_pf_admire_breasts_T1_intro_E2:
 
             $ her_mood += 6
             $ hg_pf_admire_breasts.fail()
-            
+
             m "Bummer.."
 
             jump main_room

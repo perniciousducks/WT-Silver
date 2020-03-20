@@ -976,13 +976,10 @@ label luna_revert_2:
 
             g9  "{size=+7}Argh, TAKE THIS!!!{/size}"
             call cum_block
+            $ hermione.set_cum(face="light")
             g9  "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
             call cum_block
-            show screen ctc
-            pause
-            hide screen ctc
-            $ uni_sperm = True
-            $ u_sperm = "characters/hermione/face/auto_08.png"
+            $ hermione.set_cum(face="heavy")
             hide screen bld1
             with d3
             call ctc
@@ -1075,8 +1072,7 @@ label luna_revert_2:
             ">You feel like your cumming more then you've ever cum in your life..."
 
             show screen blkfade
-            $ uni_sperm = True
-            $ u_sperm = "characters/hermione/face/auto_16.png"
+            $ hermione.set_cum(face="heavy")
             # $ luna_xpos = 550
             # $ luna_l_arm = 1
             call gen_chibi("cum_close_done")
@@ -1146,7 +1142,7 @@ label luna_revert_2:
     hide screen white
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
     call lun_main("scourgify!","open","suspicious","angry","mid")
-    $ uni_sperm = False
+    $ hermione.set_cum(None)
     ">All the cum vanishes from hermione's body."
     call her_main("...","annoyed","base")
     m "Woah..."

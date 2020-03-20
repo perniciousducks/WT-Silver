@@ -30,14 +30,11 @@ label hg_pf_titjob:
     show screen blkfade
     with d3
 
+    $ hermione.set_cum(None)
     $ hermione.wear("all")
     $ hermione_zorder = 15 # Reset sprite zorder (affected by CGs)
 
     hide screen ccg
-
-    #
-    # TODO: CUM LAYERS
-    #
 
     call her_chibi("stand","desk","base", flip=False)
     call gen_chibi("sit_behind_desk")
@@ -451,6 +448,8 @@ label hg_pf_titjob_1:
             call her_main("!!!", "open_wide_tongue", "wide", "base", "stare")
             call cum_block
 
+            $ hermione.set_cum(breasts="light")
+
             g4 "{size=+5}ARGH! YES!!! Take it!{/size}"
             call her_main(".....................", "open_wide_tongue_cum", "happyCl", "worried", "mid")
             call bld("hide")
@@ -473,9 +472,7 @@ label hg_pf_titjob_1:
             $ ccg1 = 15
             call her_main("*Ptui*...", "open_wide_tongue_cum", "base", "angry", "mid", trans=hpunch)
 
-            #
-            # TODO: CUM LAYERS
-            #
+            $ hermione.set_cum(face="light")
 
             $ ccg1 = 16
             call her_main("Why on earth did you cum in my mouth?", "angry", "happyCl", "worried", "mid", emote="05")
@@ -523,15 +520,14 @@ label hg_pf_titjob_1:
             call her_chibi_scene("tj_cum_on", trans=d5)
             pause.8
 
+            $ hermione.set_cum(breasts="light")
+
             call bld
             g4 "{size=+5}ARGH! YES!!!{/size}"
 
-            #
-            # TODO: CUM LAYERS
-            #
-
             call her_main("....................", "shock", "happyCl", "worried", "mid")
             call cum_block
+            $ hermione.set_cum(body="light", breasts="heavy")
             $ ccg1 = 18
             call ctc
 
@@ -937,13 +933,12 @@ label hg_pf_titjob_2_cumming:
             pause.8
 
             $ ccg1 = 30
+            $ hermione.set_cum(breasts="light")
 
             call bld
             g4 "{size=+5}ARGH! YES!!!{/size}"
 
-            #
-            # TODO: CUM LAYERS
-            #
+            $ hermione.set_cum(breasts="heavy")
 
             call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
 

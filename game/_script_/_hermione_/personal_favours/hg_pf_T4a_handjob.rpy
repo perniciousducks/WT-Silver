@@ -30,9 +30,8 @@ label hg_pf_handjob:
     show screen blkfade
     with d3
 
-    #
-    # TODO: CUM LAYERS
-    #
+    $ hermione.set_cum(None)
+    $ hermione.wear("all")
 
     call her_chibi("stand","desk","base", flip=False)
     call gen_chibi("sit_behind_desk")
@@ -42,7 +41,6 @@ label hg_pf_handjob:
         call her_main("", "annoyed", "base", "angry", "mid", xpos="mid", ypos="base", trans=fade)
     else:
         call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
-
 
     # Points
     if her_tier <= 5:
@@ -547,16 +545,17 @@ label hg_pf_handjob_1:
             pause.8
 
             call cum_block
+            $ hermione.set_cum(face="light")
             call bld
             g4 "{size=+5}ARGH! YES!!!{/size}"
+            pause 1.0
+            $ hermione.set_cum(breasts="light", body="light")
             call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
 
             call her_chibi_scene("hj_cum_on_done", trans=d5)
             call ctc
 
-            #
-            # TODO: CUM LAYERS
-            #
+
 
             call her_main(".......................", "angry", "wide", "base", "stare", xpos="right", ypos="base")
             m "Yes... I Feel so much better now..."
@@ -925,18 +924,17 @@ label hg_pf_handjob_2_cumming:
             hide screen bld1
             call ctc
 
-            #
-            # TODO: CUM LAYERS
-            #
-
             call cum_block
+            $ hermione.set_cum(breasts="light", body="light")
             g4 "Argh! You whore!"
             call nar(">The sensation of her skin under your engorged cock almost makes you lightheaded...")
             call her_main("Yes, [genie_name]! Just let it out!", "base", "narrow", "worried", "down", xpos="right", ypos="base")
+            $ hermione.set_cum(breasts="heavy", face="light")
             g4 "Argh! Fucking slut!"
             call her_main("Ah!! It's so hot!", "smile", "narrow", "base", "mid_soft")
             call her_main("And it's getting everywhere! So much of it!", "soft", "narrow", "annoyed", "up")
             call her_main("...[genie_name].")
+            $ hermione.set_cum(body="heavy")
             g4 "Argh!!!"
             m "............"
             call her_chibi_scene("hj_cum_in_done", trans=d5)
@@ -996,24 +994,23 @@ label hg_pf_handjob_2_cumming:
             g4 "Here! Take this, whore!"
 
             call cum_block
+            $ hermione.set_cum(face="light")
             call her_chibi_scene("hj_cum_on", trans=d5)
             pause.8
             g4 "ARGH!"
+            $ hermione.set_cum(breasts="light", body="light")
 
             call her_main("WHAT?!", "shock", "wide", "base", "stare", ypos="head")
             g4 "Take this!"
 
             call cum_block
+            $ hermione.set_cum(breasts="heavy")
             g4 "{size=+5}ARGH! YES!!!{/size}"
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
             hide screen bld1
             call ctc
-
-            #
-            # TODO: CUM LAYERS
-            #
 
             call her_main(".......................", "angry", "wide", "base", "stare")
 
@@ -1022,10 +1019,6 @@ label hg_pf_handjob_2_cumming:
 
             call bld
             m "Yes... I Feel so much better now..."
-
-            #
-            # TODO: CUM LAYERS
-            #
 
             call her_chibi("stand","mid","base")
             call gen_chibi("stand","desk","base")

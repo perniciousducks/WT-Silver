@@ -454,6 +454,7 @@ label hg_anal_sex_1:
             pause.8
 
             $ hermione_zorder = 15 # Reset zorder
+            $ hermione.set_cum(pussy="light")
 
             call her_main("I apologise for saying that I hate you, [genie_name]...", "base", "base", "base", "R",cheeks="blush",tears="mascara")
             call her_main("And your cock is not nasty...",cheeks="blush",tears="mascara")
@@ -483,12 +484,14 @@ label hg_anal_sex_1:
             else:
                 $ ccg3 = "s3"
             call cum_block
+            $ hermione.set_cum(crotch="light")
             call ctc
 
             $ ccg1 = 7
             call her_main("Ah...{heart}{heart}{heart}", "silly", "narrow", "base", "dead")
             g4 "Yes!!! All over your ass!"
             $ ccg1 = 8
+            $ hermione.set_cum(crotch="heavy", body="light")
             call her_main("Ah... It's so hot!", "silly", "narrow", "annoyed", "up")
             hide screen bld1
             with d1
@@ -680,11 +683,8 @@ label hg_anal_sex_2:
             else:
                 $ ccg3 = "s1"
             call cum_block
+            $ hermione.set_cum(pussy="light")
             call ctc
-
-            #
-            # TODO: CUM LAYERS
-            #
 
             call her_main("!!!", "scream", "wide", "base", "stare")
             m "Yes! Argh!"
@@ -707,16 +707,14 @@ label hg_anal_sex_2:
             else:
                 $ ccg3 = "s3"
             call cum_block
+            $ hermione.set_cum(crotch="light")
             call ctc
-
-            #
-            # TODO: CUM LAYERS
-            #
 
             $ ccg1 = 17
             call her_main("Ah-aha! You're cumming! {heart}{heart}{heart}", "silly", "narrow", "base", "dead")
             g4 "{size=+7}Yes I am, whore!{/size}"
             $ ccg1 = 16
+            $ hermione.set_cum(crotch="heavy")
             call her_main("Ah, me too! Me too!", "scream", "happyCl", "worried", "mid",cheeks="blush",tears="messy")
             g4 "{size=+7}FUCKING SLUT!{/size}"
             $ ccg1 = 19
@@ -724,6 +722,7 @@ label hg_anal_sex_2:
             $ ccg1 = 17
             call her_main("I'm so full...{heart}{heart}{heart}")
             g4 "Yes!!! All over your ass!"
+            $ hermione.set_cum(body="heavy")
             $ ccg1 = 22
             call her_main("Ah... It's so hot!", "silly", "narrow", "annoyed", "up")
 

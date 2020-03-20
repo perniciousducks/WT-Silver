@@ -100,8 +100,7 @@ label end_hg_pr_blowjob:
 
     call her_chibi("leave")
 
-    # TODO: CLEAN CUM
-
+    $ hermione.set_cum(None)
     $ hg_pr_blowjob.inProgress = False
 
     # Increase Points
@@ -256,7 +255,7 @@ label hg_pr_blowjob_T2_E2:
     stop music fadeout 3.0
     call her_walk(action="enter", xpos="mid", ypos="base")
 
-    # TODO: CUM LAYERS
+    $ hermione.set_cum(hair="heavy", face="heavy")
 
     show screen blktone
     with d3
@@ -305,7 +304,7 @@ label hg_pr_blowjob_T2_E3:
     stop music fadeout 3.0
     call her_walk(action="enter", xpos="mid", ypos="base")
 
-    # TODO: CUM LAYERS
+    $ hermione.set_cum("heavy")
 
     show screen blktone
     with d3
@@ -313,7 +312,7 @@ label hg_pr_blowjob_T2_E3:
     pause 1.0
 
     her "Good evening, [genie_name]..."
-    g4 "[hermione_name]?!"
+    g4 "Hermione?!"
     g4 "What happened to you, [hermione_name]?"
     g4 "All I asked you to do was to give a blowjob to one of your classmates."
     call play_music("hermione") # Music

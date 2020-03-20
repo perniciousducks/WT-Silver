@@ -11,13 +11,13 @@ label hg_pf_admire_breasts_transition:
     # Setup Pose
     $ hermione.strip("top", "bra", "robe", "accessory")
     call her_chibi("lift_top","mid","base")
-    
+
     pause 2.0
-    
+
     call her_main("", "angry", "happyCl", "base", "down", cheeks="blush", trans=d3)
-    
+
     call ctc
-    
+
     m "Hm..."
     if her_tier <= 2:
         call her_main("{size=-5}(My breasts are completely exposed...){/size}", "disgust", "narrow", "base", "down", cheeks="blush")
@@ -311,10 +311,10 @@ label hg_pf_admire_breasts_T3_touch:
 
     $ hermione.wear("all")
     call her_chibi_scene("reset", "desk", "base")
-    
+
     hide screen blkfade
     with d5
-    
+
     call her_main("You promised not to touch, [genie_name]...", "annoyed", "narrow", "angry", "R", cheeks="blush")
     m "It was hard to resist..."
 
@@ -392,13 +392,18 @@ label hg_pf_admire_breasts_T3_masturbate:
             hide screen bld1
             with d1
 
+            $ hermione.set_cum(breasts="light")
             call her_chibi_scene("grope_tits_cum")
             with d5
+
+            call cum_block
+            $ hermione.set_cum(breasts="heavy")
+            pause 1.0
+            $ hermione.set_cum(body="light")
+
             call ctc
 
-            #
-            # TODO: CUM LAYERS
-            #
+
 
             call her_main("[genie_name], no, you promised!", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
             g4 "Oh, this is great, yes..."
@@ -425,6 +430,7 @@ label hg_pf_admire_breasts_T3_masturbate:
             with d5
 
             $ hermione.wear("all")
+            $ hermione.set_cum(None)
             call her_chibi("stand","desk","base")
             call gen_chibi("sit_behind_desk")
             hide screen blkfade
@@ -566,7 +572,7 @@ label hg_pf_admire_breasts_T4_touch: # Call label
     $ hermione.wear("all")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_chibi_scene("reset", "desk", "base")
-    
+
     hide screen blkfade
     with d5
 
@@ -636,7 +642,6 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
         g4 "Yes, I know you want this! Yes!"
         call her_main("................", "base", "narrow", "base", "up", cheeks="blush")
 
-
     # Genie cums.
     menu:
         g4 "Argh! (I'm about to cum!)"
@@ -651,18 +656,17 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             call her_main("If you want to you can--", "base", "base", "base", "R", cheeks="blush")
             g4 "Argh! You whore!"
             call her_main("???", "mad", "wide", "base", "stare", cheeks="blush")
-
-            call cum_block
-
             g4 "Argh! YES!"
 
-            #
-            # TODO: CUM LAYERS
-            #
-
+            call cum_block
+            $ hermione.set_cum(breasts="light")
             call her_chibi_scene("grope_tits_cum")
             with d5
-            call ctc
+
+            call cum_block
+            $ hermione.set_cum(breasts="heavy")
+            pause 1.0
+            $ hermione.set_cum(body="light")
 
             call bld
             call her_main("[genie_name], I didn't mean that you can release your... semen on me, [genie_name]...", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="05")
@@ -688,10 +692,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             show screen blkfade
             with d5
 
-            #
-            # TODO: CUM LAYERS
-            #
-
+            $ hermione.set_cum(None)
             $ hermione.wear("all")
             call her_chibi("stand","desk","base")
             call gen_chibi("sit_behind_desk")
@@ -708,17 +709,18 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
         "-Just start cumming-":
             g4 "Argh! You whore!"
             call her_main("???", "mad", "wide", "base", "stare", cheeks="blush")
-
-            call cum_block
-
             g4 "Argh! YES!"
 
-            #
-            # TODO: CUM LAYERS
-            #
-
+            call cum_block
+            $ hermione.set_cum(breasts="light")
             call her_chibi_scene("grope_tits_cum")
-            call hide_blkfade
+            with d5
+
+            call cum_block
+            $ hermione.set_cum(breasts="heavy")
+            pause 1.0
+            $ hermione.set_cum(body="light")
+
             call ctc
 
             call her_main("ah...{heart} It's so hot...{heart}", "shock", "happyCl", "worried", "mid")
@@ -745,10 +747,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             hide screen hermione_main
             call blkfade
 
-            #
-            # TODO: CUM LAYERS
-            #
-
+            $ hermione.set_cum(None)
             $ hermione.wear("all")
             call her_chibi("stand","desk","base")
             call gen_chibi("sit_behind_desk")

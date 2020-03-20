@@ -264,7 +264,7 @@ label hg_pr_handjob_T1_E3:
     call her_walk(action="enter", xpos="mid", ypos="base")
 
     m "[hermione_name], how did it-"
-    # TODO: CUM LAYERS
+    $ hermione.set_cum(hair="light")
     show screen blktone
     with d3
     call her_main("", "angry", "narrow", "angry", "R", xpos="mid", ypos="base", trans=d3)
@@ -280,7 +280,7 @@ label hg_pr_handjob_T1_E3:
     show screen blkfade
     with d3
     pause.5
-    # TODO: CLEAN CUM
+    $ hermione.set_cum(None)
     call her_main("", "upset", "closed", "base", "mid")
     hide screen blkfade
     with d3
@@ -492,7 +492,7 @@ label hg_pr_handjob_T3_intro_E1:
     stop music fadeout 3.0
     call her_walk(action="enter", xpos="mid", ypos="base")
 
-    # TODO: CUM LAYERS
+    $ hermione.set_cum(hair="light")
 
     show screen blktone
     with d3

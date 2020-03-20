@@ -31,10 +31,7 @@ label hg_pf_blowjob:
     show screen blkfade
     with d3
 
-    #
-    # TODO: CUM LAYERS
-    #
-
+    $ hermione.set_cum(None)
     $ hermione.wear("all")
 
     call her_chibi("stand","desk","base", flip=False)
@@ -595,13 +592,16 @@ label hg_pf_blowjob_1:
 
             call cum_block
             g4 "{size=+7}Whore!{/size}"
+            $ hermione.set_cum(face="light")
             call her_main("!!?", "shock", "wide", "base", "stare")
 
             call her_chibi_scene("bj_cum_out", trans=d5)
             call ctc
 
+            $ hermione.set_cum(face="heavy")
             call her_main("[genie_name]...", "shock", "wide", "base", "stare")
             g4 "Don't you move now, [hermione_name]."
+            $ hermione.set_cum(breasts="light")
             g4 "Yes, just be still and take it."
             g4 "Argh! You little slut! You make me cum hard, [hermione_name]!"
             call her_main("..............", "angry", "base", "base", "mid", tears="soft")
@@ -633,10 +633,6 @@ label hg_pf_blowjob_1:
                 call her_main("Yes...", "angry", "happyCl", "worried", "mid", emote="05")
 
             call her_main("Can I get paid before I leave, [genie_name]?", "upset", "wink", "base", "mid")
-
-            #
-            # TODO: CUM LAYERS
-            #
 
     jump end_hg_pf_blowjob
 
@@ -1419,15 +1415,14 @@ label hg_hidden_blowjob_cumming:
             call her_chibi_scene("bj_cum_out", trans=d5)
             pause.8
 
+            $ hermione.set_cum(face="light")
             call bld
             g4 "{size=+7}Whore!{/size}"
             call her_main("!!?", "shock", "wide", "base", "stare")
             hide screen bld1
             call ctc
 
-            #
-            # TODO: CUM LAYERS
-            #
+            $ hermione.set_cum(face="heavy")
 
             call her_main("[genie_name]...", "shock", "wide", "base", "stare")
             g4 "All over your fucking face!"
@@ -1447,10 +1442,6 @@ label hg_hidden_blowjob_cumming:
 
             stop music fadeout 1.0
             ">A while later."
-
-            #
-            # TODO: CUM LAYERS
-            #
 
             call her_chibi("stand","desk","base")
             call gen_chibi("sit_behind_desk")
@@ -1654,14 +1645,14 @@ label hg_pf_blowjob_2:
                     call her_chibi_scene("bj_cum_out", trans=d5)
                     pause.8
 
+                    $ hermione.set_cum(face="light")
+
                     call bld
                     g4 "{size=+7}Slut!{/size}"
                     call her_main("!!?", "shock", "narrow", "base", "dead")
                     call ctc
 
-                    #
-                    # TODO: CUM LAYERS
-                    #
+                    $ hermione.set_cum(face="heavy")
 
                     call her_main("Daddy...", "shock", "wide", "base", "stare")
                     g4 "That's it, princess!"
@@ -1686,17 +1677,12 @@ label hg_pf_blowjob_2:
 
                     ">A while later."
 
-                    #
-                    # TODO: CUM LAYERS
-                    #
-
                     call her_chibi_scene("bj_pause", trans=d9)
                     pause.8
 
                     call play_music("chipper_doodle") # HERMIONE'S THEME.
                     call her_main("I take it you enjoyed yourself, [genie_name]?", "angry", "wink", "base", "mid")
                     m "Yes I did, [hermione_name]."
-                    $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
 
         "\"Worship my cock.\"":
             call her_main("Worship it?", "angry", "wink", "base", "mid")
@@ -2113,8 +2099,7 @@ label hg_pf_facefuck_1: # Bondage facefuck scene (NOT IMPLEMENTED)
             ">You pull your cock out and start furiously jerking it in front of her face."
             call her_main("aaaaaaahhh.... *pant*please...*pant* coat me...", "shock", "narrow", "annoyed", "up")
             g9 "ARGH!!! YOU WHORE!!!"
-            $ uni_sperm = True
-            $ u_sperm = "characters/hermione/face/auto_07.png"
+            $ hermione.set_cum(face="heavy")
             call her_main("*pant*{heart}{heart}{heart}*pant*", "shock", "slit", "worried", "ahegao")
             g9 "TAKE THIS!!!"
             ">You start unloading onto the girl's waiting face."

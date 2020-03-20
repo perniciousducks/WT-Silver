@@ -23,7 +23,7 @@ label her_chibi_scene(action="reset", xpos="mid", ypos="base", trans=None):
 
     elif action == "behind_desk_front":
         show screen behind_desk("front")
-    
+
     elif action == "behind_desk_show_tits":
         show screen behind_desk("show_tits")
 
@@ -52,12 +52,12 @@ label her_chibi_scene(action="reset", xpos="mid", ypos="base", trans=None):
     # Lie on desk (admire ass)
     elif action == "lie_on_desk":
         show screen lie_on_desk
-    
+
     elif action == "lie_on_desk_jerk_off":
         show screen chair_left
         $ masturbating = True
         show screen lie_on_desk("jerk_off")
-        
+
     elif action == "lie_on_desk_cum":
         show screen chair_left
         $ masturbating = True
@@ -79,10 +79,6 @@ label her_chibi_scene(action="reset", xpos="mid", ypos="base", trans=None):
     elif action in ("bj", "bj_pause", "bj_cum_in", "bj_cum_out", "bj_cum_out_done"):
         show screen chair_left
         show screen hermione_chibi_bj(action)
-        if "cum" in action:
-            # TODO: CUM LAYERS
-            $ uni_sperm = True
-            $ u_sperm = "characters/hermione/face/auto_07.png"
 
     # Sex
     elif action in (
@@ -93,9 +89,6 @@ label her_chibi_scene(action="reset", xpos="mid", ypos="base", trans=None):
     ):
         show screen chair_left
         show screen hermione_chibi_sex(action)
-        if "cum" in action:
-            $ uni_sperm = True
-            $ u_sperm = "characters/hermione/face/auto_08.png"
 
     if trans:
         with trans

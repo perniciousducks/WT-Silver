@@ -491,6 +491,32 @@ label give_cho_gift(gift_item):
             call cho_main("I leave it in the boys changing room, should be a good reward after a practice.",face="annoyed")
             call cho_mood(-7)
 
+    elif gift_item == anal_beads_ITEM:
+        if cho_tier <= 1:
+            call cho_main("Anal beads?",face="annoyed",xpos="mid",ypos="base")
+            call cho_main("Yeah, that's not going anywhere near their intended target...","angry","wide","raised","L")
+            call cho_mood(4)
+        elif cho_tier == 2:
+            call cho_main("Anal beads?",face="annoyed",xpos="mid",ypos="base")
+            call cho_main("How... where did you...","angry","wide","raised","L")
+            call cho_main("*Gross!", "open", "narrow", "raised", "mid")
+            call cho_main("","annoyed","base","base","mid")
+            call cho_mood(3)
+        elif cho_tier == 3:
+            call cho_main("Anal beads?",face="annoyed",xpos="mid",ypos="base")
+            call cho_main("Sir, how would I be able to sit on a broom if I used these?","angry","base","base","L")
+            call cho_main("Not that I would ever use them!","angry","wide","raised","L")
+            call cho_main("Get those away from me!", "open", "narrow", "raised", "mid")
+            call cho_main("","annoyed","base","base","mid")
+            call cho_mood(2)
+        else:
+            call cho_main("Anal beads?",face="annoyed",xpos="mid",ypos="base")
+            call give_gift(">You give the anal beads to Cho...", gift_item)
+            call cho_main("Surely my butt would hurt after using these...",face="annoyed")
+            call cho_main("Although I do have a cushioning charm on my broom for a reason...",face="horny")
+            call cho_main("Thank you, [cho_genie_name].",face="neutral")
+            call cho_mood(-2)
+
     elif gift_item == wine_ITEM:
         if cho_tier <= 2:
             call cho_main("A wine bottle?", face="annoyed", xpos="mid", ypos="base")

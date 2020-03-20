@@ -76,7 +76,7 @@ label give_ton_gift(gift_item):
         call ton_main("Although another pair without holes in them wont hurt...",face="happy")
         call give_gift(">You give the sexy stockings to Tonks...", gift_item)
         call ton_friendship(1)
-        
+
     elif gift_item == pink_condoms_ITEM:
         call ton_main("Some condoms?",face="neutral",xpos="mid",ypos="base",trans=d5)
         call give_gift(">You give some condoms to Tonks...", gift_item)
@@ -131,6 +131,13 @@ label give_ton_gift(gift_item):
         call ton_main("Not too useful for me, but I might put it in one of our secret gift exchanges.",mouth="open",face="horny")
         call give_gift(">You give the sex doll to Tonks...", gift_item)
         call ton_main("They'll gossip for weeks wondering who it's from.",face="horny")
+        call ton_friendship(1)
+
+    elif gift_item == anal_beads_ITEM:
+        call ton_main("anal beads?",face="disgusted",xpos="mid",ypos="base",trans=d5)
+        call ton_main("It's a bit short but I'll take it...",face="happy")
+        call give_gift(">You give the anal beads to Tonks...", gift_item)
+        call ton_main("Thanks...",face="horny")
         call ton_friendship(1)
 
     elif gift_item == wine_ITEM:

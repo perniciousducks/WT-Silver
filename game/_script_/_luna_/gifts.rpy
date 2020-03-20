@@ -58,7 +58,7 @@ label give_lun_gift(gift_item):
     elif gift_item == sexy_stockings_ITEM :
         call give_gift(">You give the stockings to Luna...",gift_item)
         #Add text
-        
+
     elif gift_item == pink_condoms_ITEM:
         call give_gift(">You give the condoms to Luna...",gift_item)
         #Add text
@@ -89,6 +89,10 @@ label give_lun_gift(gift_item):
 
     elif gift_item == sexdoll_ITEM:
         call give_gift(">You give the doll to Luna...",gift_item)
+        #Add text
+
+    elif gift_item == anal_beads_ITEM:
+        call give_gift(">You give the anal beads to Luna...",gift_item)
         #Add text
 
     elif gift_item == wine_ITEM:

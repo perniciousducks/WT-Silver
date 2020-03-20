@@ -556,6 +556,35 @@ label give_her_gift(gift_item):
             call her_main("Thank you, [genie_name].", "base", "base", "base", "R",cheeks="blush")
             call her_mood(-30)
 
+    elif gift_item == anal_beads_ITEM:
+        if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
+            call her_main("Hm...?", "base", "base", "base", "mid")
+            call her_main("Is this a necklace?", "soft", "base", "base", "mid")
+            call give_gift(">You give the anal plugs to Hermione...",gift_item)
+            call her_main("Thank you, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
+            call her_mood(-8)
+        elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
+            call her_main("[genie_name], are those adult toys of some sort?", "open", "narrow", "annoyed", "mid", cheeks="blush")
+            call her_main("This is one of those butt... bead things, aren't they?", "angry", "base", "angry", "mid",cheeks="blush")
+            call her_main("[genie_name] get them away from me!")
+            call her_main("Gross!", "upset", "closed", "base", "mid")
+            call her_mood(15)
+        elif her_whoring >= 12 and her_whoring <= 17: # Lv 5-6.
+            call her_main("That's not a necklace...", "upset", "closed", "base", "mid")
+            call her_main("I wouldn't have any use for this...", "open", "narrow", "annoyed", "mid", cheeks="blush")
+            call her_main("Thanks but no thanks [genie_name].", "upset", "closed", "base", "mid")
+            call her_mood(0)
+        elif her_whoring >= 18: # Lv 7+
+            call her_main("Anal beads?", "angry", "narrow", "base", "down")
+            call her_main("Obviously I don't need this sort of thing, [genie_name]...", "angry", "base", "base", "mid")
+            call her_main("Although it's got a nice colour...", "angry", "wink", "base", "mid")
+            call her_main(".....................", "angry", "narrow", "base", "down")
+            call her_main("Fine, I'll use them as an armband, [genie_name].", "soft", "narrow", "annoyed", "up")
+            call give_gift(">You give the anal plugs to Hermione...",gift_item)
+            call her_main("But I wont use them for their intended purpose...", "open", "closed", "base", "mid")
+            call her_main("................", "base", "narrow", "worried", "down")
+            call her_mood(-10)
+
     elif gift_item == wine_ITEM or gift_item == firewhisky_ITEM:
         if her_whoring <= 6  and her_whoring <= 11:
             call her_main("[genie_name]?! Drinking alcohol at school grounds is forbidden..","open", "base", "angry", "mid")

@@ -10,7 +10,6 @@ label give_ast_gift(gift_item):
 
         if ast_affection < 6:
             call ast_main("A lollipop?", mouth="open", face="neutral")
-            call give_gift(">You give the lollipop to Astoria...", gift_item)
             call ast_main("Why are you giving me sweets, I'm not a kid!", face="angry")
             call ast_mood(1)
         elif ast_affection > 5 and ast_affection < 12:
@@ -31,7 +30,6 @@ label give_ast_gift(gift_item):
 
         if ast_affection < 6:
             call ast_main("Some chocolate?", mouth="open", face="neutral")
-            call give_gift(">You give the chocolate to Astoria...", gift_item)
             call ast_main("Don't you have any dungbombs?")
             call ast_main("They're way more fun!")
             call ast_mood(0)
@@ -54,7 +52,6 @@ label give_ast_gift(gift_item):
 
         if ast_affection < 6:
             call ast_main("An owl plushie?", mouth="open", face="neutral")
-            call give_gift(">You give the stuffed toy to Astoria...", gift_item)
             call ast_main("Why are you giving me this?")
             call ast_main("Toys are for children...")
             call ast_mood(1)
@@ -97,7 +94,7 @@ label give_ast_gift(gift_item):
         elif ast_affection > 11 and ast_affection < 18:
             call ast_main("Butterbeer?", face="annoyed")
             call give_gift(">You give the bottle to Astoria...", gift_item)
-            call ast_main("This watered down piss-water can only get a house elf tipsy.")
+            call ast_main("This watered down piss-water can barely get a house elf tipsy.")
             call ast_main("Actually, that gives me an idea...")
             call ast_mood(-1)
         else:
@@ -110,9 +107,8 @@ label give_ast_gift(gift_item):
     elif gift_item == science_mag_ITEM:
         if ast_affection < 6:
             call ast_main("(...)", pupils="down", face="annoyed")
-            call give_gift(">You give an assortment of educational magazines to Astoria...", gift_item)
             call ast_main("Creating your own itch powder using household ingredients?", mouth="open", pupils="down", face="annoyed")
-            call ast_main("Is the kitchen open to students?", pupils="down", face="annoyed")
+            call ast_main("Is the kitchen even open to students?", pupils="down", face="annoyed")
             call ast_main("What am I supposed to do with this, [ast_genie_name]?", face="annoyed")
             call ast_mood(0)
         elif ast_affection > 5 and ast_affection < 12:
@@ -124,7 +120,6 @@ label give_ast_gift(gift_item):
             call ast_mood(-1)
         elif ast_affection > 11 and ast_affection < 18:
             call ast_main("Magazines?", mouth="angry", face="angry")
-            call give_gift(">You give an assortment of educational magazines to Astoria...", gift_item)
             call ast_main("You want me to do more school work?", mouth="annoyed", face="angry")
             call ast_mood(1)
         else:
@@ -136,7 +131,6 @@ label give_ast_gift(gift_item):
     elif gift_item == girls_mag_ITEM:
         if ast_affection < 6:
             call ast_main("Girl magazines?", mouth="open", face="annoyed")
-            call give_gift(">You give an assortment of rather girly magazines to Astoria...", gift_item)
             call ast_main("This is that trash my sister reads.", mouth="clench", pupils="down", face="annoyed")
             call ast_main("Such a massive waste of time...", face="annoyed")
             call ast_mood(0)
@@ -160,9 +154,7 @@ label give_ast_gift(gift_item):
     elif gift_item == adult_mag_ITEM:
         if ast_affection < 6:
             call ast_main("Adult magazines?", mouth="clench", face="disgusted")
-            call give_gift(">You give an assortment of adult magazines to Astoria...", gift_item)
-            call ast_main("Well... aren't they having fun.", face="disgusted")
-            call ast_main("I have no need for such cock teasing material...", face="angry")
+            call ast_main("I'm good thanks.", face="disgusted")
             call ast_mood(0)
         elif ast_affection > 5 and ast_affection < 12:
             call ast_main("Adult magazines?", face="annoyed")
@@ -186,9 +178,8 @@ label give_ast_gift(gift_item):
             call ast_mood(-1)
         elif ast_affection > 5 and ast_affection < 12:
             call ast_main("Porn magazines?", face="annoyed")
-            call give_gift(">You give an assortment of pornographic magazines to Astoria...", gift_item)
             call ast_main("Why do you have these?", face="annoyed")
-            call ast_main("Give it to Susan, if she's busy with a dick in her mouth I wont have to listen to her constant mumbling in class...", pupils="R", face="annoyed")
+            call ast_main("Give them to Susan...", pupils="R", face="annoyed")
             call ast_mood(0)
         elif ast_affection > 11 and ast_affection < 18:
             call ast_main("Porn magazines?", face="annoyed")
@@ -221,8 +212,7 @@ label give_ast_gift(gift_item):
             call ast_mood(-1)
         else:
             call ast_main("Viktor Krum?", face="happy")
-            call ast_main("His trousers aren't even off. Then what's even the point...", face="angry")
-            call give_gift(">You give the poster to Astoria...", gift_item)
+            call ast_main("His trousers aren't even off. What's the point...", face="angry")
             call ast_mood(1)
 
     elif gift_item == sexy_lingerie_ITEM:
@@ -261,12 +251,12 @@ label give_ast_gift(gift_item):
             call ast_mood(-1)
         elif ast_affection > 11 and ast_affection < 18:
             call ast_main("Stockings?", face="annoyed")
-            call ast_main("Hah, you fool! With these you wont be able to stare at my legs anymore!", pupils="grin", face="happy")
+            call ast_main("Hah, you fool! With these you wont be able to stare at my legs anymore!", mouth="grin", face="angry")
             call give_gift(">You give the stockings to Astoria...", gift_item)
             call ast_mood(-2)
         else:
             call ast_main("Stockings?", face="annoyed")
-            call ast_main("These are almost as see-through as your wicked intentions...", pupils="grin", face="angry")
+            call ast_main("These are almost as see-through as your wicked intentions...", mouth="grin", face="angry")
             call give_gift(">You give the stockings to Astoria...", gift_item)
             call ast_main("Disgusting...", face="angry")
             call ast_mood(-1)
@@ -298,12 +288,10 @@ label give_ast_gift(gift_item):
     elif gift_item == vibrator_ITEM:
         if ast_affection < 6:
             call ast_main("A vibrator?", face="disgusted")
-            call give_gift(">You give the vibrator to Astoria...",gift_item)
             call ast_main("Gross, where did you even get that from?", face="angry")
             call ast_mood(2)
         elif ast_affection > 5 and ast_affection < 12:
             call ast_main("A vibrator?", face="disgusted")
-            call give_gift(">You give the vibrator to Astoria...",gift_item)
             call ast_main("Get the fuck out...", face="angry")
             call ast_main("Oh right, I'm in your office... yeah that's going to be solid no on that one.", face="annoyed")
             call ast_mood(1)
@@ -348,9 +336,8 @@ label give_ast_gift(gift_item):
     elif gift_item == ballgag_and_cuffs_ITEM:
         if ast_affection < 6:
             call ast_main("Handcuffs? And what.... a ball gag?", face="disgusted")
-            call give_gift(">You give the handcuffs to Astoria...", gift_item)
             call ast_main("I don't know what you're trying to insinuate.", face="angry")
-            call ast_main("The cuffs can be useful but with the ball gag...", face="disgusted")
+            call ast_main("The cuffs could be useful but why the ball gag?", face="disgusted")
             call ast_main("I'd rather not.", face="annoyed")
             call ast_mood(1)
         elif ast_affection > 5 and ast_affection < 12:
@@ -368,17 +355,14 @@ label give_ast_gift(gift_item):
             call ast_main("Colour me intrigued...", face="happy")
             call ast_mood(-1)
 
-
     elif gift_item == anal_plugs_ITEM:
         if ast_affection < 6:
             call ast_main("anal plugs?", face="disgusted")
-            call give_gift(">You give the anal plugs to Astoria...", gift_item)
             call ast_main("Yuck, what the hell is wrong with you... do you know where these go?", face="angry")
             call ast_main("Of course you do... you detestable dingbat.", face="angry")
             call ast_mood(2)
         elif ast_affection > 5 and ast_affection < 12:
             call ast_main("anal plugs?", face="disgusted")
-            call give_gift(">You give the anal plugs to Astoria...", gift_item)
             call ast_main("Why don't you try and sit on one yourself...", face="angry")
             call ast_mood(1)
         elif ast_affection > 11 and ast_affection < 18:
@@ -399,13 +383,11 @@ label give_ast_gift(gift_item):
     elif gift_item == testral_strapon_ITEM:
         if ast_affection < 6:
             call ast_main("A strap-on?", face="disgusted")
-            call give_gift(">You give the strap-on to Astoria...", gift_item)
             call ast_main("Why would you give me this... it's so ribbed...", face="angry")
             call ast_main("As if anyone would want something like that!", face="angry")
             call ast_mood(1)
         elif ast_affection > 5 and ast_affection < 12:
             call ast_main("A strap-on?", face="disgusted")
-            call give_gift(">You give the strap-on to Astoria...", gift_item)
             call ast_main("What do you want me to do with this?", face="annoyed")
             call ast_main("Well I know what you want me to do with it.", face="annoyed")
             call ast_main("It's not happening...", face="angry")
@@ -429,7 +411,6 @@ label give_ast_gift(gift_item):
     elif gift_item == broom_2000_ITEM:
         if ast_affection < 6:
             call ast_main("A broom?", face="neutral")
-            call give_gift(">You give the broom to Astoria...", gift_item)
             call ast_main("What's that sticking out on the top? That's not going to help me fly!", face="annoyed")
             call ast_mood(1)
         elif ast_affection > 5 and ast_affection < 12:
@@ -450,13 +431,11 @@ label give_ast_gift(gift_item):
     elif gift_item == sexdoll_ITEM:
         if ast_affection < 6:
             call ast_main("A sex doll?", face="disgusted")
-            call give_gift(">You give the doll to Astoria...", gift_item)
             call ast_main("That's gross [ast_genie_name]!", face="angry")
             call ast_main("Yuck, it smells gross too!", face="angry")
             call ast_mood(2)
         elif ast_affection > 5 and ast_affection < 12:
             call ast_main("A sex doll?", face="disgusted")
-            call give_gift(">You give the doll to Astoria...", gift_item)
             call ast_main("This is literally worthless to me, why would you even consider this a good gift?", face="angry")
             call ast_mood(1)
         elif ast_affection > 11 and ast_affection < 18:
@@ -472,6 +451,27 @@ label give_ast_gift(gift_item):
             call ast_main("I'll leave it in the Slytherin common room to see if anyone has balls enough to takes it...", mouth="grin", face="angry")
             call ast_mood(-1)
 
+    elif gift_item == anal_beads_ITEM:
+        if ast_affection < 6:
+            call ast_main("anal beads?", face="disgusted")
+            call ast_main("Like, ones that you putt in your ass?", face="angry")
+            call ast_main("What... the hell!", face="angry")
+            call ast_mood(2)
+        elif ast_affection > 5 and ast_affection < 12:
+            call ast_main("anal beads?", face="disgusted")
+            call ast_main("Put it up your own ass and I'll let er rip!", face="angry")
+            call ast_mood(1)
+        elif ast_affection > 11 and ast_affection < 18:
+            call ast_main("anal beads?", face="disgusted")
+            call ast_main("Why would I need these?", face="annoyed")
+            call ast_main("I'll pass...", face="annoyed")
+            call ast_mood(0)
+        else:
+            call ast_main("anal beads?", face="neutral")
+            call ast_main("Sounds painful", face="annoyed")
+            call give_gift(">You give the anal beads to Astoria...", gift_item)
+            call ast_main("And they're green... Did you get these made just for me?", mouth="annoyed", face="neutral")
+            call ast_mood(-1)
 
     elif gift_item == wine_ITEM:
         if ast_affection < 6:
@@ -484,8 +484,8 @@ label give_ast_gift(gift_item):
             call ast_mood(0)
         else:
             call ast_main("Wine?", face="happy")
-            call give_gift(">You give the wine to Astoria...", gift_item)
             call ast_main("Well aren't we fancy?", face="neutral")
+            call give_gift(">You give the wine to Astoria...", gift_item)
             call ast_main("This is the real shit. Look at the date on that.", face="neutral")
             call ast_main("You really are ancient if you bought it new...", face="happy")
             call ast_mood(-1)
@@ -493,15 +493,14 @@ label give_ast_gift(gift_item):
     elif gift_item == firewhisky_ITEM:
         if ast_affection < 6:
             call ast_main("Firewhisky?", face="neutral")
-            call give_gift(">You give the firewhisky to Astoria...", gift_item)
             call ast_main("That's the stuff Tonks always reeks off.", face="disgusted")
             call ast_main("I'm not gonna drink whatever she does.", face="annoyed")
             call ast_main("It'd be like wearing old peoples perfume!", face="annoyed")
             call ast_mood(0)
         else:
             call ast_main("Firewhisky?", face="happy")
-            call give_gift(">You give the firewhisky to Astoria...", gift_item)
             call ast_main("Fine, I'll give in. If Tonks likes it so much it can't be that bad...", face="happy")
+            call give_gift(">You give the firewhisky to Astoria...", gift_item)
             call ast_main("*Hmm*... not made using real fire.. well that's bloody obvious...", face="neutral")
             call ast_main("Might experience a slight pain and burning sensation when consuming...", face="disgusted")
             call ast_main("Why didn't you say so before!", face="angry")

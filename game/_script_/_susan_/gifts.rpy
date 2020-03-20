@@ -83,6 +83,10 @@ label give_sus_gift(gift_item):
         call give_gift(">You give the doll to Susan...",gift_item)
         #Add text
 
+    elif gift_item == anal_beads_ITEM:
+        call give_gift(">You give the anal beads to Susan...",gift_item)
+        #Add text
+        
     elif gift_item == wine_ITEM:
         call give_gift(">You give the wine to Susan...", gift_item)
         #Add text

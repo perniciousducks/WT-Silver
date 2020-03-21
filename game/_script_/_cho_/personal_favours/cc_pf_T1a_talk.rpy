@@ -43,12 +43,12 @@ label cc_pf_talk_T1_intro_E1:
     call cho_walk("desk", "base")
 
     call play_music("cho")
-    call cho_main(face="happy",xpos="mid",ypos="base",trans=fade)
+    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
     call ctc
 
     call cho_main("What would you like to talk about?", "soft", "base", "base", "mid")
     m "Do you have a boyfriend, Miss Chang?"
-    call cho_main("Excuse me?", "open", "wide", "base", "mid",trans=hpunch) # Shocked
+    call cho_main("Excuse me?", "open", "wide", "base", "mid", trans=hpunch) # Shocked
     m "I asked if you have boyfriend. Anybody you fool around with?"
     call cho_main("Me? Professor? He-{w=0.8} hav-{w=0.5} a boyfriend?", "open", "wide", "base", "R", cheeks="blush") # Reluctant, Embarassed
     g9 "Or a girlfriend! That would be even better, now that I think about it!"
@@ -61,8 +61,8 @@ label cc_pf_talk_T1_intro_E1:
 
     call cho_main("Sir, I do not have a boyfriend at the moment.{p}I hope that answers your question.", "soft", "closed", "angry", "mid")
     g9 "So, a girlfriend then?"
-    call cho_main("!!!", "angry", "wide", "raised", "mid",trans=hpunch)
-    call cho_main("No!", "scream", "closed", "angry", "mid",trans=hpunch)
+    call cho_main("!!!", "angry", "wide", "raised", "mid", trans=hpunch)
+    call cho_main("No!", "scream", "closed", "angry", "mid", trans=hpunch)
     call cho_main("", "annoyed", "narrow", "angry", "mid")
     m "(She doesn't seem that keen on the subject, perhaps I could tell her...)"
 
@@ -105,7 +105,7 @@ label cc_pf_talk_T1_intro_E1:
             g4 "Very sexual!"
             call cho_main("!!!", "annoyed", "wide", "base", "mid")
             g9 "Lots of acrobatic stuff!"
-            call cho_main("NO Sir, please!{w=0.5} I don't want to know any of that!", "scream", "closed", "angry", "mid",trans=hpunch)
+            call cho_main("NO Sir, please!{w=0.5} I don't want to know any of that!", "scream", "closed", "angry", "mid", trans=hpunch)
             call cho_main("(Gross!{w=0.5} Keep it to yourself...)", "angry", "narrow", "worried", "R")
             m "I just wanted to expand my backstory a little bit...{w=0.5} What's so wrong with that..."
 
@@ -264,14 +264,14 @@ label cc_pf_talk_T1_intro_E1:
     jump end_cho_talk_event
 
 
-label cc_pf_talk_T1_intro_E2: # continue
+label cc_pf_talk_T1_intro_E2:
     g9 "Get closer, [cho_name]..."
     call cho_main("...", "annoyed", "base", "base", "down")
 
     call cho_walk("desk", "base")
 
     call play_music("cho")
-    call cho_main("", "annoyed", "narrow", "angry", "mid",xpos="mid",ypos="base",trans=fade)
+    call cho_main("", "annoyed", "narrow", "angry", "mid", xpos="mid", ypos="base", trans=fade)
     call ctc
 
     call cho_main("Another talk, Professor?", "soft", "narrow", "angry", "mid")
@@ -280,31 +280,34 @@ label cc_pf_talk_T1_intro_E2: # continue
     call cho_main("I'd rather not.", "soft", "narrow", "angry", "mid")
     m "Tell me about yourself then."
     call cho_main("Of course, [cho_genie_name].", "smile", "base", "base", "mid")
-    call cho_main("We had a training session yesterday. ", "open", "narrow", "base", "mid")
+    call cho_main("We had a training session yesterday. ", "soft", "base", "base", "R")
     m "Training session?"
     call cho_main("Yes. We are preparing ourselves for the Quidditch match against Hufflepuff.", "open", "narrow", "base", "mid")
-    call cho_main("Our team really believes that we have a chance to win this time!{w=1.0} They got a huge boost of confidence after I told 'em that the great \"Albus Dumbledore\" would be training us himself!", "smile", "base", "base", "mid")
+    call cho_main("Our team really believes that we have a chance to win this time!", "smile", "base", "base", "mid")
+    call cho_main("They got a huge boost of confidence after I told 'em that the great \"Albus Dumbledore\" would be training us himself!", "base", "narrow", "base", "mid")
     m "Are you getting along with your team well?"
     call cho_main("I'd say so.{w=1.0} But there has been a time when...", "soft", "base", "base", "mid")
     call cho_main("Let's just say that it has been difficult for me at first. After all Quidditch is largely dominated by men...", "open", "narrow", "worried", "down")
-    call cho_main("Getting accepted into our Quidditch team was a challenge. I really had to prove I was worth it.", "angry", "narrow", "worried", "mid")
+    call cho_main("Getting accepted into our Quidditch team was a challenge. I really had to prove I was worth it.", "soft", "narrow", "worried", "mid")
     g9 "And how exactly did you manage that? Mind spilling the beans?"
     call cho_main("Through diligence, expertise, and determination!", "open", "closed", "base", "mid")
+    call cho_main("", "normal", "base", "base", "mid")
     m "(...)"
-    m "I was sort of expecting something else entirely but,... you do you..."
-    call cho_main("And as you can see it did work out in my favour, Sir.", "open", "base", "base", "mid")
-    call cho_main("Very few teams have allowed a female player into their ranks over the past years.", "open", "narrow", "angry", "mid")
-    call cho_main("And I've been the only female seeker at this school in over half a century.{w} Can you even believe that, [cho_genie_name]?", "open", "wide", "base", "mid")
+    m "I was sort of expecting something else entirely but... you do you..."
+    call cho_main("And as you can see -- it did work out in my favour, Sir.", "smile", "base", "base", "mid")
+    call cho_main("Very few teams have allowed a female player into their ranks over the past years.", "open", "narrow", "angry", "R")
+    call cho_main("And I've been the only female seeker at this school in over half a century!", "open", "wide", "base", "mid")
+    call cho_main("Can you even believe that, [cho_genie_name]?", "soft", "base", "raised", "mid")
     m "(Half a century? That's like a coffee break for me girl...)"
     call cho_main("I don't want to brag, [cho_genie_name], but the role of a seeker is \"the\" most important position in a team by far!", "smile", "narrow", "base", "mid")
     call cho_main("If you don't have a good seeker, you have no chance of winning!", "soft", "closed", "base", "mid")
     m "Which is why you need my help so badly..."
     m "Because you are great at it..."
-    call cho_main("That we're losing is neither my fault, nor my team's, [cho_genie_name]!", "annoyed", "base", "angry", "mid")
+    call cho_main("That we're losing is neither my fault, nor my team's, [cho_genie_name]!", "open", "base", "angry", "mid")
     m "So who's is it then?"
     call cho_main("The enemy team's, obviously!", "soft", "narrow", "angry", "mid")
-    call cho_main("They are cheating! And they have done so for years!", "open", "narrow", "angry", "R")
-    call cho_main("This is my last chance! And I'm growing more and more desperate with my situation...", "angry", "narrow", "angry", "mid")
+    call cho_main("They are cheating! And they have done so for years!", "mad", "narrow", "angry", "R")
+    call cho_main("This is my last chance! And I'm growing more and more desperate with my situation...", "mad", "narrow", "angry", "mid")
     m "(...)"
 
     menu:
@@ -312,11 +315,11 @@ label cc_pf_talk_T1_intro_E2: # continue
             hide screen cho_main
             hide screen bld1
             with d5
-            pause.5
+            pause .5
 
             call gen_chibi("jerk_off_behind_desk")
             with d3
-            pause.8
+            pause .8
 
             $ cho_jerk_off_counter += 1
             $ masturbating = True
@@ -324,31 +327,32 @@ label cc_pf_talk_T1_intro_E2: # continue
         "-Participate in the conversation-":
             $ masturbating = False
 
-    call cho_main("Ever since I was a little girl Quidditch has been my dream...", "quiver", "narrow", "worried", "down")
+    call cho_main("Ever since I was a little girl -- Quidditch has been my dream...", "soft", "narrow", "worried", "down")
     call cho_main("[cho_genie_name], can you imagine how \"hard\" it was for me?", "soft", "narrow", "worried", "mid")
     if masturbating:
         g4 "{size=-4}(Yes, yes... It's so hard for you, you little slut!!!){/size}"
     call cho_main("How difficult it was for me at first?", "open", "narrow", "worried", "R")
     call cho_main("Getting accepted?", "soft", "closed", "worried", "mid")
     if masturbating:
-        g4 "{size=-4}I'd accept your ass on my cock if you're in such a need for acceptance, you whore!{/size}"
+        g4 "{size=-4}(I'd accept your ass on my cock if you're in such a need for acceptance, you whore!){/size}"
     call cho_main("I'm the only female in my team. Constantly surrounded by other men...", "soft", "base", "worried", "down")
     if masturbating:
-        g4 "{size=-4}Yes! Yes! And they all would like to have their way with you!{/size}"
+        g4 "{size=-4}(Yes! Yes! And they all would like to have their way with you!){/size}"
     else:
         m "(Quite a sausage-party this Quidditch I have to admit.)"
-        g4 "(Maybe telling Hermione off was a bad idea after all...{w} An \"all female\" team would be more fun to watch...)"
-    call cho_main("I can constantly feel their gazes behind my back...", "angry", "base", "worried", "down")
+        g4 "(Maybe telling Hermione off was a bad idea after all...)"
+        g9 "(An \"all female\" team would be more fun to watch...)"
+    call cho_main("I can constantly feel their gazes behind my back...", "disgust", "base", "worried", "down")
     call cho_main("My own team, [cho_genie_name]!{w} They treat me like the plague!", "upset", "base", "worried", "mid")
     call cho_main("They ignore me during classes...", "soft", "closed", "base", "mid")
     call cho_main("When we're in our dormitories they are going out of their way to not cross paths with me...", "annoyed", "narrow", "angry", "R")
     call cho_main("And in the showers they're scared to even look at me!", "angry", "narrow", "angry", "mid")
     if masturbating:
-        g4 "{size=-4}Yes, yes!{w} Even in the showers you who-{/size}"
+        g4 "{size=-4}(Yes, yes!{w=0.6} Even in the showers you whore-){/size}"
         with hpunch
-        m "Wait a bloody minute!{w} You shower \"with\" your team?"
+        m "Wait a bloody minute!{w} You shower {b}with{/b} your team?"
     else:
-        m "The showers?{w} You shower \"with\" your team?"
+        m "The showers?{w} You shower {b}with{/b} your team?"
     call cho_main("Of course, [cho_genie_name]. It was after my request, after all.", "soft", "base", "raised", "mid")
     g4 "No kidding?"
     call cho_main("They shouldn't exclude me from team activities just because I'm a girl.", "open", "base", "base", "R")
@@ -362,53 +366,54 @@ label cc_pf_talk_T1_intro_E2: # continue
 
     # Genie cums.
     if masturbating:
-        g4 "{size=-4}You exhibitionistic slut!{/size}"
-        g4 "*Argh* {size=-4}Here it comes!{/size}"
+        g4 "{size=-4}(You exhibitionistic slut!){/size}"
+        g4 "*Argh* {size=-4}(Here it comes!){/size}"
 
         call cum_block
         call gen_chibi("cum_behind_desk")
         with d3
-        pause.8
+        pause .8
 
         call bld
-        g4 "*heavy breathing* {size=-4}Take it!{/size}"
+        g4 "*heavy breathing* {size=-4}(Take it!){/size}"
 
         call cum_block
-        call cho_main("", "base", "narrow", "raised", "mid")
-        g4 "*Argh!* {size=-4}Shower in this, you slut!{/size}"
+        call cho_main("", "base", "narrow", "base", "mid")
+        g4 "*Argh!* {size=-4}(Shower in this, you slut!){/size}"
 
         call cum_block
-        call cho_main("[cho_genie_name], are you alright?", "quiver", "wide", "base", "mid")
-        call cho_main("You're sweating and breathing quite heavily...", "quiver", "base", "base", "mid")
+        call cho_main("[cho_genie_name], are you alright?", "soft", "base", "base", "mid")
+        call cho_main("You're sweating and breathing quite heavily...", "annoyed", "base", "worried", "mid")
 
         call gen_chibi("cum_behind_desk_done")
         with d3
-        pause.8
+        pause .8
 
-        call cho_main("Shall I get Madam Pomfrey to check on yo-", "soft", "narrow", "base", "mid")
+        call cho_main("Shall I get Madam Pomfrey to check on you-", "soft", "narrow", "base", "mid")
         g4 "No, no! I'm..."
-        m "I'm done.{w} Let's get back to the topic."
-        call cho_main("Which was?", "open", "wink", "raised", "mid")
+        m "I'm done.{w=0.3} Let's get back to the topic."
+        call cho_main("Which was?", "open", "base", "raised", "mid")
         m "You taking a shower with your \"teammates\"..."
-        call cho_main("(...)", "annoyed", "narrow", "angry", "mid") # Annoyed
+        call cho_main("(...)", "annoyed", "narrow", "annoyed", "mid") # Annoyed
 
     m "Don't you think, the fact that they've seen you naked hasn't affected any of their actions?"
     call cho_main("Why would it, [cho_genie_name]? We're all adults here...", "soft", "closed", "base", "mid")
     m "Maybe that's your response to it, girl."
     call cho_main("", "annoyed", "narrow", "angry", "mid")
     g9 "Maybe your \"teammates\" aren't as... \"mature\" as you."
-    call cho_main("I've known my team for years.{w} We're all professionals!", "soft", "narrow", "base", "mid")
+    call cho_main("I've known my team for years.{w=0.6} We're all professionals!", "soft", "narrow", "base", "mid")
     m "Let me ask you a question..."
-    m "In the showers,{w} do they all have their backs turned towards you?"
-    call cho_main("I don't know. Maybe they uhm-...", "open", "base", "base", "mid")
-    call cho_main("!!!", "scream", "wide", "raised", "mid") # Cho remembers something?!
-    g9 "Yes?"
-    g9 "What is it?"
-    call cho_main("May I... May I leave, [cho_genie_name]?", "quiver", "closed", "base", "mid")
+    m "In the showers,{w=0.3} do they all have their backs turned towards you?"
+    call cho_main("I don't know. Maybe they- *uhm*...", "open", "base", "base", "mid")
+    call cho_main("!!!", "normal", "wide", "base", "mid") # Cho remembers something?!
+    call cho_main("", "normal", "happyCl", "worried", "mid", cheeks="heavy_blush")
+    pause .6
+    g9 "Yes?{w=0.3} What is it?"
+    call cho_main("May I... May I leave, [cho_genie_name]?", "soft", "narrow", "worried", "mid", cheeks="blush")
     g9 "Don't want to tell me?"
-    call cho_main("No...", "quiver", "closed", "worried", "mid")
-    m "Fine...{w} you may leave..."
-    call cho_main("Thank you, [cho_genie_name].", "soft", "wink", "worried", "mid")
+    call cho_main("No.", "disgust", "happyCl", "worried", "mid", cheeks="blush")
+    m "Fine...{w=0.3} you may leave..."
+    call cho_main("Thank you, [cho_genie_name].", "open", "narrow", "worried", "mid", cheeks="blush")
 
     # Cho very slowly walks out of your office...
     call cho_walk(action="leave")
@@ -426,7 +431,8 @@ label cc_pf_talk_T1_intro_E2: # continue
 
 label cc_pf_talk_T1_E3:
     m "Care to tell me more about Quidditch?"
-    call cho_main("Of course, [cho_genie_name].{w} I always love talking about Quidditch!", "smile", "base", "base", "R")
+    call cho_main("Of course, [cho_genie_name].", "smile", "base", "base", "R")
+    call cho_main("I always love talking about Quidditch!", "base", "base", "base", "mid")
     m "Yeah, yeah... I know."
     m "First, come closer. Let me have a good look at you!"
     call cho_main("Yes, Sir.", "base", "base", "base", "mid")
@@ -436,7 +442,7 @@ label cc_pf_talk_T1_E3:
     call cho_main("Anything specific you'd like to know?", "soft", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "Yes. Let's talk some more about Diggory..."
     g9 "Your ex-boyfriend."
-    call cho_main("{size=-4}I knew I shouldn't have told him...{/size}", "angry", "narrow", "base", "down")
+    call cho_main("{size=-4}I knew I shouldn't have told him...{/size}", "disgust", "narrow", "base", "down", cheeks="blush")
     call cho_main("Sir, Why do you have to keep bringing that up?", "soft", "narrow", "base", "mid")
     call cho_main("What's past is in the past...", "annoyed", "narrow", "angry", "R")
     m "I believe otherwise..."
@@ -444,16 +450,16 @@ label cc_pf_talk_T1_E3:
     m "Your relationship with him is of the utmost importance right now!"
     m "I need to know every tiny bit of detail about the two of you."
     m "His sexual preferences. Secret fetishes he might have. That sort of stuff..."
-    call cho_main("Sir that's a very personal thing to ask for!", "angry", "wide", "base", "mid")
-    call cho_main("I will not tell you about any of that!", "soft", "base", "angry", "mid")
+    call cho_main("Sir that's a very personal thing to ask for!", "open", "narrow", "base", "mid")
+    call cho_main("I will not tell you about any of that!", "annoyed", "narrow", "angry", "mid")
     m "[cho_name], we need to find something we can use against him. To our advantage!"
-    call cho_main("And you believe that that would help us win?", "annoyed", "narrow", "angry", "mid")
+    call cho_main("And you believe that that would help us win?", "open", "narrow", "angry", "mid")
     m "Precisely."
-    call cho_main("(...)", "annoyed", "narrow", "angry", "mid")
-    call cho_main("Very well, [cho_genie_name]...", "soft", "narrow", "angry", "R")
-    call cho_main("I'll tell you what I know about him.", "soft", "closed", "base", "mid")
+    call cho_main("(...)", "annoyed", "narrow", "angry", "R")
+    call cho_main("Very well, [cho_genie_name]...", "open", "closed", "angry", "mid")
+    call cho_main("I'll tell you what I know about him.", "open", "narrow", "base", "mid")
     call cho_main("Cedric was always a bit of a loner...", "annoyed", "narrow", "base", "R")
-    call cho_main("He was cold. Focused. Never showed too much affection towards me. Except for-", "soft", "base", "base", "downR")
+    call cho_main("He was cold. Focused. Never showed too much affection towards me. Except for-", "open", "base", "angry", "downR")
     call cho_main("(...)", "annoyed", "narrow", "base", "R")
     m "Yes? Go on..."
     call cho_main("I believe he had a bit of an obsession with my panties, Sir.", "soft", "narrow", "base", "mid")
@@ -463,7 +469,7 @@ label cc_pf_talk_T1_E3:
         g9 "*Ha!* Called it!"
     call cho_main("It was almost creepy how often he tried to look up my skirt...", "angry", "wide", "base", "mid")
     call cho_main("I mean who would do such a thing?", "soft", "base", "base", "mid")
-    m "Yes, yes,... how terrible of him..."
+    m "Yes, yes... how terrible of him..."
 
     menu:
         "-Jerk off while she's talking-":
@@ -475,7 +481,7 @@ label cc_pf_talk_T1_E3:
 
             call gen_chibi("jerk_off_behind_desk")
             with d3
-            pause.8
+            pause .8
 
             call bld
             g9 "Please tell me more about your panties!"
@@ -493,21 +499,21 @@ label cc_pf_talk_T1_E3:
         call cho_main("*Uhm*...", "annoyed", "base", "base", "R")
         call cho_main("I never wore panties too often...", "angry", "narrow", "base", "downR")
         call cho_main("At least not those fancy ones the other girls are wearing.", "soft", "narrow", "base", "mid")
-        g4 "*Argh!* I'd love to see those!"
+        g4 "*Argh!* {size=-4}(I'd love to see those!){/size}"
         call cho_main("If you can even call them that...", "annoyed", "narrow", "base", "R")
         call cho_main("Most of them look like shoelaces!", "annoyed", "narrow", "angry", "R")
-        g4 "What a bunch of sluts!"
-        call cho_main("They're all a bunch of sluts!!!", "soft", "narrow", "angry", "mid")
+        g4 "{size=-4}(What a bunch of sluts!){/size}"
         call nar("*Fap* *Fap* *Fap*...")
-        call cho_main("You should see them, [cho_genie_name]!", "annoyed", "narrow", "angry", "R")
-        call cho_main("They wear their skirts so low, you just have to wonder how they haven't fallen off yet...", "soft", "narrow", "base", "downR")
-        g4 "Indeed, I'd love to see that!"
+        call cho_main("You should see them, [cho_genie_name]!", "annoyed", "narrow", "angry", "mid")
+        call cho_main("They're all a bunch of sluts!!!", "soft", "narrow", "angry", "mid")
+        call cho_main("They wear their skirts so low -- you just have to wonder how they haven't fallen off yet...", "soft", "narrow", "base", "downR")
+        g4 "{size=-4}(Indeed, I'd love to see that!){/size}"
         call cho_main("And pull their panty-string up and over their hip bones...", "soft", "narrow", "base", "mid")
-        g4 "Yes! So fucking slutty!"
+        g4 "{size=-4}(Yes! So fucking slutty!){/size}"
         call cho_main("They look like arrows pointing down at their \"Snitch\", if you get what I mean...", "angry", "narrow", "angry", "mid")
-        g4 "*Argh!* Those cheap whores!"
+        g4 "*Argh!* {size=-4}(Those cheap whores!){/size}"
         call cho_main("As if they give any boy an open invitation to lay with them...", "soft", "narrow", "angry", "R")
-        g4 "*Fuck!* That did it!!!"
+        g4 "*Fuck!* {size=-4}(That did it!!!){/size}"
 
         # Genie cums.
         call hide_characters
@@ -517,20 +523,20 @@ label cc_pf_talk_T1_E3:
         call cum_block
         call gen_chibi("cum_behind_desk")
         with d3
-        pause.8
+        pause .8
 
         call cho_main("As for me, panties have to be practical, first and foremost!", "soft", "closed", "base", "mid")
-        g4 "*Ahg!* So you can quickly get them off, you whore!"
+        g4 "*Ahg!* {size=-4}(So you can quickly get them off, you whore!){/size}"
 
         call cum_block
         call cho_main("And there needs to be enough fabric to soak up all the sweat...", "soft", "narrow", "base", "R")
-        g4 "I bet you are so wet right now too!"
+        g4 "{size=-4}(I bet you are so wet right now too!){/size}"
 
         # Genie finished.
         call hide_characters
         call gen_chibi("cum_behind_desk_done")
         with d3
-        pause.8
+        pause .8
 
         call cho_main("(...)", "annoyed", "narrow", "base", "mid")
         call cho_main("Sir, would it be alright if I head off now?", "soft", "base", "base", "R")
@@ -567,7 +573,7 @@ label cc_pf_talk_T1_E3:
         m "No, your good manners...{w} Yes your panties!"
         call cho_main("Why would I have wanted to?", "soft", "narrow", "raised", "mid")
         m "What kind of girl doesn't show her panties to her beloved?"
-        call cho_main("I beg your pardon?!", "angry", "wide", "base", "mid")
+        call cho_main("I beg your pardon?!", "angry", "wide", "raised", "mid")
 
         if cc_ht.win_counter == 0:
             m "But, that made me think..."
@@ -590,8 +596,8 @@ label cc_pf_talk_T1_E3:
             m "They do where I'm from..."
             call cho_main("(...)", "annoyed", "narrow", "angry", "R")
             call cho_main("But you were correct with your assumption, Sir.", "soft", "closed", "base", "mid")
-            call cho_main("I'm surprised how well that worked out in our favour.", "angry", "base", "base", "down")
-            call cho_main("He really \"does\" love panties...", "soft", "narrow", "base", "mid")
+            call cho_main("I'm surprised how well that worked out in our favour.", "annoyed", "base", "raised", "down")
+            call cho_main("He really {b}does{/b} love panties...", "soft", "narrow", "base", "mid")
             m "I mean who doesn't..."
 
         call cho_main("Sir, if you don't mind...", "soft", "closed", "base", "mid")
@@ -622,7 +628,7 @@ label cc_pf_talk_T1_E3:
 
 ### Tier 2 (pre Slytherin) ###
 
-label cc_pf_talk_T2_intro_E1:
+label cc_pf_talk_T2_intro_E1: # continue
     m "Miss Chang, it's time we have a little chat again!"
     m "Please come a bit closer..."
     call cho_main("Yes, Sir.", "base", "base", "base", "mid")
@@ -667,7 +673,7 @@ label cc_pf_talk_T2_intro_E1:
 
             call gen_chibi("jerk_off_behind_desk")
             with d3
-            pause.8
+            pause .8
 
             show screen blktone5 # Gets removed by `call nar()`
             show screen bld1
@@ -730,7 +736,7 @@ label cc_pf_talk_T2_intro_E1:
         call cum_block
         call gen_chibi("cum_behind_desk")
         with d3
-        pause.8
+        pause .8
 
         call bld
         g4 "*Argh!* {size=-4}Take it!{/size}"
@@ -740,7 +746,7 @@ label cc_pf_talk_T2_intro_E1:
 
         call gen_chibi("cum_behind_desk_done")
         with d3
-        pause.8
+        pause .8
 
         call cho_main("", "annoyed", "narrow", "base", "mid")
         m "(*Phewwww*...)"
@@ -806,12 +812,12 @@ label cc_pf_talk_T2_intro_E2:
 
             call gen_chibi("jerk_off_behind_desk")
             with d3
-            pause.8
+            pause .8
 
             call bld
             g4 "*Agh!* Go on!"
             call cho_main("", "soft", "base", "base", "up")
-            pause.8
+            pause .8
             call cho_main("What?{w} Oh, of course, [cho_genie_name]!", "soft", "wide", "base", "mid")
             call cho_main("I'm sorry. I had my head in the clouds there for a second, Sir.", "soft", "base", "worried", "downR")
 
@@ -844,7 +850,7 @@ label cc_pf_talk_T2_intro_E2:
 
                 call gen_chibi("jerk_off_behind_desk")
                 with d3
-                pause.8
+                pause .8
 
                 call bld
                 m "Please, don't let me interrupt your thought..."
@@ -900,7 +906,7 @@ label cc_pf_talk_T2_intro_E2:
 
                 call gen_chibi("jerk_off_behind_desk")
                 with d3
-                pause.8
+                pause .8
 
                 call bld
                 g4 "Please, continue!"
@@ -925,7 +931,7 @@ label cc_pf_talk_T2_intro_E2:
     call hide_characters
     call gen_chibi("cum_behind_desk")
     with d3
-    pause.8
+    pause .8
 
     call bld
     g4 "*Argh!* {size=-4}Take it!{/size}"
@@ -939,7 +945,7 @@ label cc_pf_talk_T2_intro_E2:
     call cum_block
     call cho_main("Sir?!", "annoyed", "narrow", "raised", "mid")
     call cum_block
-    pause.8
+    pause .8
 
     call cho_main("[cho_genie_name]! What the bloody hell are you doing?!", "angry", "wide", "base", "mid", trans=hpunch)
     m "(Oh no!)"
@@ -948,10 +954,10 @@ label cc_pf_talk_T2_intro_E2:
     # Genie stops.
     hide screen bld1
     with d3
-    pause.2
+    pause .2
 
     call gen_chibi("cum_behind_desk_done")
-    pause.8
+    pause .8
 
     call bld
     g4 "Nothing, I was just-"
@@ -1019,7 +1025,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
 
             call gen_chibi("jerk_off_behind_desk")
             with d3
-            pause.8
+            pause .8
 
             call bld
             m "You don't mind if I..."
@@ -1093,7 +1099,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
                 call cum_block
                 call gen_chibi("cum_behind_desk")
                 with d3
-                pause.8
+                pause .8
 
                 call bld
                 g4 "(Yes! Here it comes!)"
@@ -1107,10 +1113,10 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
                 # Genie stops.
                 hide screen bld1
                 with d3
-                pause.2
+                pause .2
 
                 call gen_chibi("cum_behind_desk_done")
-                pause.8
+                pause .8
 
                 call cho_main("And why don't we put a large bucket under her so when they-", "soft", "closed", "base", "mid")
                 g4 "Stop! No more!"
@@ -1237,7 +1243,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
                 call cum_block
                 call gen_chibi("cum_behind_desk")
                 with d3
-                pause.8
+                pause .8
 
                 g4 "*Argh!* You nasty slut!"
                 call cum_block
@@ -1248,10 +1254,10 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
                 # Genie stops.
                 hide screen bld1
                 with d3
-                pause.2
+                pause .2
 
                 call gen_chibi("cum_behind_desk_done")
-                pause.8
+                pause .8
 
                 call bld
                 g9 "You did great, [cho_name]."

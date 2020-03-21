@@ -312,7 +312,7 @@ label change_quidditch_tactics:
                 pass
             "\"Come back down.\"":
                 call cho_walk("mid", "base")
-                pause.2
+                pause .2
 
                 call cho_chibi("reset", "mid", "base", flip=False)
                 with d5
@@ -361,10 +361,10 @@ label change_quidditch_tactics:
             "-Start Practice Match-" if daytime and not cho_quid.lock_practice:
                 # Cho continues to wear her Quidditch outfit.
                 # No clothing reset until after the eventing.
-                if cho_tier == 1: # Hufflepuff
-                    jump cc_ht_start
-                if cho_tier == 2: # Slytherin
-                    jump cc_st_start
+                #if cho_tier == 1: # Hufflepuff
+                jump cc_ht_start
+                #if cho_tier == 2: # Slytherin
+                #    jump cc_st_start
 
             "{color=[menu_disabled]}-Start Practice Match-{/color}" if not daytime or cho_quid.lock_practice:
                 if cho_quid.lock_practice:

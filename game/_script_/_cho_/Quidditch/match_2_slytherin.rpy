@@ -68,7 +68,7 @@ label start_slytherin_match:
     $ cho_quid.lock_training = True
     $ cho_quid.lock_practice = True
 
-    $ slytherin_match = "start"
+    #$ slytherin_match = "start"
 
     jump main_room
 
@@ -291,9 +291,9 @@ label slytherin_match:
     pause .2
 
     call ton_main("Oh, what a view! Much better than the one from the Hufflepuff stands!","base","happyCl","base","mid", flip=True, ypos="head")
-    
+
     m "And it was supposed to be ra-{w=0.3}{nw}"
-    
+
     $ qp_cloudy = True
     $ qp_rain = True
     $ qp_fire = True
@@ -301,7 +301,7 @@ label slytherin_match:
     $ renpy.sound.play("sounds/thunder.ogg")
     with flashbulb
     play weather "sounds/rain.mp3" fadeout 1.0 fadein 1.0
-    
+
     pause 1.0
     m "Crap..."
 
@@ -1395,7 +1395,7 @@ label slytherin_match_return:
         call sus_chibi("stand","desk","base", flip=False)
         call sus_main("You want to s-spank me? W-Why would you want to sp-spank me, professor? Did I do something wrong?","upset","base","worried","mid", xpos="mid", ypos="base", flip=False)
         with morph
-        
+
         call sus_main("Are you going to punish me for flaunting these massive pair of tits-","open","base","worried","down")
         call sus_main("Wow... They really are big aren't they... And they feel so soft...","open","wide","base","down")
         call sus_main("(I'll give you two the attention you deserve tonight...)","grin","base","angry","down")
@@ -1412,7 +1412,7 @@ label slytherin_match_return:
         call sus_chibi("stand","desk","base", flip=False)
         call sus_main("Did I do something wrong, Sir?","upset","base","worried","mid", xpos="mid", ypos="base", flip=False)
         with morph
-        
+
         call sus_main("Are you going to punish me for having these massive pair of tits-","open","base","worried","down")
         call sus_main("Wow. They really are big... And they feel so soft...","open","wide","base","down")
         call sus_main("(I think I'm gonna play with them later for a little...)","grin","base","angry","down")
@@ -1432,7 +1432,7 @@ label slytherin_match_return:
         call lun_chibi("stand","desk","base", flip=False)
         call lun_main("Professor Dumbledore, watch out for that jigglypuff on your shoulder...","soft","seductive","sad","mid", xpos="mid", ypos="base", flip=False)
         with morph
-        
+
         call lun_main("Let me lick it off for you!","crazy","seductive","sad","mid") #lmao nice
         call play_sound("giggle")
         call lun_main("*Hi-Hi-Hi*","grin","happyCl","base","mid")
@@ -1450,7 +1450,7 @@ label slytherin_match_return:
     call sna_chibi("stand",410,177+250, flip=False)
     call sna_main("Want some of this, Genie?","snape_20", xpos="320", ypos="base", flip=False)
     with morph
-    
+
     call play_sound("gasp")
     g4 "Aaaah!"
     with hpunch

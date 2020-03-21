@@ -62,7 +62,7 @@ default cc_pf_talk = event_class(title = "Talk to me!", start_label = "cc_pf_tal
             ["cc_pf_talk_T2_E3"]
         ]
     ],
-    iconset = [["heart_empty", "heart_yellow"], ["heart_empty", "heart_green"]]
+    iconset = [["heart_empty", "heart_blue"], ["heart_empty", "heart_blue"]]
 )
 
 default cc_pf_strip = event_class(title = "Inspect her body!", start_label = "cc_pf_strip", start_tier = 2,
@@ -73,7 +73,7 @@ default cc_pf_strip = event_class(title = "Inspect her body!", start_label = "cc
             ["cc_pf_strip_T1_intro_E3"], ["cc_pf_strip_T1_E3"]
         ]
     ],
-    iconset = [["heart_empty", "heart_green"]]
+    iconset = [["heart_blue", "heart_blue"]]
 )
 
 default cc_favor_list = [cc_pf_talk, cc_pf_strip]

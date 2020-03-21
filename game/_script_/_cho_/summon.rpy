@@ -33,17 +33,17 @@ label summon_cho:
                         jump cho_requests
             jump start_hufflepuff_match
 
-        "-Start Slytherin Match-" (icon="interface/icons/small/slyt.png") if (cho_tier == 2 and slytherin_match == "ready"):
-            if cho_reputation <= 3:
-                m "(If I want Cho to do anything in public with those Slythershits I better do it before the Match.)"
-                m "(Although maybe not...)"
-                menu:
-                    "Are you ready to begin the match?"
-                    "Yes":
-                        pass
-                    "no":
-                        jump cho_requests
-            jump start_slytherin_match
+        #"-Start Slytherin Match-" (icon="interface/icons/small/slyt.png") if (cho_tier == 2 and slytherin_match == "ready"):
+        #    if cho_reputation <= 3:
+        #        m "(If I want Cho to do anything in public with those Slythershits I better do it before the Match.)"
+        #        m "(Although maybe not...)"
+        #        menu:
+        #            "Are you ready to begin the match?"
+        #            "Yes":
+        #                pass
+        #            "no":
+        #                jump cho_requests
+        #    jump start_slytherin_match
 
         #"-Start Slytherin Match-" (icon="interface/icons/small/gryf.png") if (cc_gt.win_counter >= 2 and cho_tier == 3 and gryffindor_match == "ready"):
         #    jump start_gryffindor_match

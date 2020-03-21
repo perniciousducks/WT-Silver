@@ -1,20 +1,9 @@
-screen bludger_flying(start, end, t=1.0):
-    zorder 4
-    tag bludger
 
-    add "images/rooms/quidditch_stands/bludger.png":
-        at transform:
-            subpixel True
-            anchor (0.5, 0.5)
-            align (0.5, 0.5)
-            pos start
-            ease t xpos end[0] ypos end[1]
+# Ravenclaw vs. Slytherin
 
-
-### Main Match ###
-
-# Chat with Cho the day before.
 label start_slytherin_match:
+    # Chat with Cho the day before the match
+
     call cho_main(xpos="mid", ypos="base", trans=fade)
     g9 "Alright, [cho_name]. Let's do this!"
     g4 "Tomorrow we shall wipe the floor with those Slytherins, and bathe in their salty tears!"
@@ -62,8 +51,8 @@ label start_slytherin_match:
     call cho_walk(action="leave")
 
     $ cho_busy = True
-    $ cc_event_pause  += 1  # Event starts on the next day.
-    $ cc_summon_pause += 1  # Can't be summoned until next event.
+    $ cc_event_pause  += 1 # Event starts on the next day
+    $ cc_summon_pause += 1 # Can't be summoned until next event
 
     $ cho_quid.lock_training = True
     $ cho_quid.lock_practice = True
@@ -73,11 +62,9 @@ label start_slytherin_match:
     jump main_room
 
 
-
-#Office before game
 label slytherin_match:
+    # Quidditch match: Ravenclaw vs. Slytherin
 
-    ### Event Setup ###
     $ cho_outfit_last.save()
     $ her_outfit_last.save()
     $ ton_outfit_last.save()
@@ -86,10 +73,9 @@ label slytherin_match:
     $ hermione.equip(her_outfit_default)
     $ tonks.equip(ton_outfit_default)
 
-
-    # Scene before Match against Slytherin
     call play_music("stop")
 
+    # Start in the office
     call play_sound("knocking")
     call bld
     "*Knock-knock-knock*"
@@ -113,7 +99,6 @@ label slytherin_match:
         "\"Come in...\"":
             pass
 
-    #Tonks enters
     call ton_walk(action="enter", xpos="desk", ypos="base")
 
     call play_music("tonks")
@@ -141,7 +126,7 @@ label slytherin_match:
     hide screen bld1
     with d3
 
-    # Teleport
+    # Teleport to door
     call play_sound("kick")
     show screen chair_left
     show screen desk
@@ -187,9 +172,8 @@ label slytherin_match:
     with d5
     pause .5
 
-
-    ### Lower Quidditch Pitch Area ###
-
+    # Quidditch pitch entrance
+    #TODO Use quidditch_pitch area
 
     call play_sound("grass")
     nar "You make your way across the castle grounds accompanied by Tonks."
@@ -225,18 +209,19 @@ label slytherin_match:
     call sna_main("After me then...","snape_12")
 
     stop bg_sounds fadeout 4
+    call blkfade
 
     #nar "You continue making your way down to the Quidditch pitch, the silence only broken by Tonks giggling to herself every so often..."
     nar "The three of you climb up the Quidditch tower."
 
+    # Quidditch stands
+    call room("quidditch_stands")
+    call quidditch_stands(weather="overcast")
 
-    ### Main Match Starts ###
+    #TODO Weather effects:
+    # Scene Cloudy/rainy pitch
+    # Sounds slightly windy/rain (Might need a new sound we'll see... It shouldn't overpower things)
 
-    #Scene Cloudy/rainy pitch
-    #Sounds slightly windy/rain (Might need a new sound we'll see... It shouldn't overpower things)
-
-    $ qp_mob = 0 # Controls number of people
-    $ qp_mob_reaction = [None, None, None] # Reset reactions
     #call sna_chibi("stand", 210, -40+250, flip=True)
     #call gen_chibi("stand", 130, 10+250)
     #call her_chibi("stand", 375, 105+186, flip=True)
@@ -245,13 +230,11 @@ label slytherin_match:
     $ tonks_chibi.zorder = 3
     $ genie_chibi.zorder = 4
 
-    call room("quidditch_stands")
-    with d3
+    call hide_blkfade
     play bg_sounds "sounds/crowd.mp3" fadein 2
     pause 1
 
-    #Quidditch pitch fills up a little
-    $ qp_mob = 1
+    call quidditch_stands(crowd=crowd_few)
     with d3
     pause 1
 
@@ -268,14 +251,13 @@ label slytherin_match:
     with d3
     pause .1
 
-    #Snape enters and stands at the back
     call ton_main("Mind your head!","base","base","worried","down", ypos="head", flip=False)
 
     call play_sound("kick")
     with hpunch
     pause .6
-    g4 "Bloody bleachers!" #noone uses blooming in a serious context, unless they're some kind of yorkshire caricature
-    call sna_main("...","snape_45", ypos="head") #Smirks
+    g4 "Bloody bleachers!"
+    call sna_main("...","snape_45", ypos="head")
     pause .2
 
     call play_sound("footsteps")
@@ -294,26 +276,21 @@ label slytherin_match:
 
     m "And it was supposed to be ra-{w=0.3}{nw}"
 
-    $ qp_cloudy = True
-    $ qp_rain = True
-    $ qp_fire = True
-    $ qp_puddles = True
     $ renpy.sound.play("sounds/thunder.ogg")
+    call quidditch_stands(tree_fire=True, rain=True, puddles=True)
     with flashbulb
     play weather "sounds/rain.mp3" fadeout 1.0 fadein 1.0
 
     pause 1.0
     m "Crap..."
 
-    #Hermione enters from the left and walks up to the podium
-
+    # Hermione walks up to the podium
     call her_chibi("stand", 220, 50+186, flip=True)
     with d3
     pause .3
     call her_walk(375, 105+186)
     pause .5
 
-    #Hermione turns around
     call her_chibi(flip=False)
     with d3
     pause .1
@@ -322,11 +299,10 @@ label slytherin_match:
     call ton_main("Miss Granger, so glad you made it!","base","base","base","L", flip=True, ypos="head")
     call her_main("Of course, as you know I take my responsibilities seriously!","open","base","angry","L")
 
-    #Quidditch pitch fills up a little
-    $ qp_mob = 2
+    call quidditch_stands(crowd=crowd_mid)
     with d3
 
-    #Crowdsound goes up
+    #TODO Crowd sound goes up
     call sna_main("{size=-4}Unfortunately...{/size}","snape_31") #small text
     call ton_main("I'm here if you need me!","base","happyCl","base","mid")
     call her_main("I appreciate the thought, Professor... but I'll be fine.","open","closed","base","mid")
@@ -334,19 +310,17 @@ label slytherin_match:
     call ton_main("Whatever you want, sweetie.","horny","base","base","L") #smile
     call her_main("...","mad","base","worried","down", cheeks="blush") #smiles and blushes
 
-    # Tonks goes back up, now stands between Snape and Genie.
     pause.2
     call ton_chibi("stand", 200, 50+180, flip=True)
     with d5
     pause.3
 
-    #Quidditch pitch full
-    $ qp_mob = 3
+    call quidditch_stands(crowd=crowd_full)
     with d3
+
     call sna_main("The crowd is waiting, Miss Granger...","snape_31")
     call her_main("Sorry!","clench","base","worried","down", emote="05")
 
-    #Hermione turns
     call her_chibi(flip=True)
     with d3
     pause .5
@@ -357,16 +331,17 @@ label slytherin_match:
     $ renpy.sound.play("sounds/microphone_feedback.mp3")
     play bg_sounds "sounds/crowd_low.mp3" fadein 3
     call her_main("*Ahem*","soft","narrow","worried","mid")
-    #Crowdsounds go down
+    #TODO Crowd sound goes down
     call her_main("Welcome back to the second match of the season!","base","happyCl","base","mid")
     sly1 "{size=+5}Not the Gryffindor slut again!{/size}"
+
+    call quidditch_stands(crowd_react=[None, None, "emo8"])
     with hpunch
-    $ qp_mob_reaction[2] = "emo8"
+
     sly2 "{size=+8}Get off the podium, Mudblood!{/size}"
     sly1 "{size=+15}Boooo!{/size}"
     call her_main("*Hmph!*","annoyed","narrow","angry","mid")
 
-    #Hermione Turns to Tonks, Genie and Snape
     call hide_characters
     with d3
     pause .2
@@ -376,13 +351,14 @@ label slytherin_match:
 
     call her_main("Sir, I'm trying to do my job here - and those Slytherin boys just can't keep their filthy mouths shut!","soft","narrow","angry","mid", flip=False, ypos="head")
     call sna_main("Surely you've been called worse Miss Granger...","snape_05")
-    $ qp_mob_reaction = [None, None, None]
+
+    call quidditch_stands(crowd_react=[None, None, None])
+    with d3
+
     call ton_main("Just ignore them sweetie, you're doing great.","base","happyCl","base","mid")
-    call her_main("...","annoyed","narrow","angry","down") #annoyed
-    call her_main("Fine...","soft","base","base","R") #Open mouth glances to the right
+    call her_main("...","annoyed","narrow","angry","down")
+    call her_main("Fine...","soft","base","base","R")
 
-
-    #Hermione turns to the crowd again
     pause .2
     call her_chibi(flip=True)
     with d3
@@ -393,34 +369,44 @@ label slytherin_match:
     call her_main("The team known for their technical prowess and... lately... unconventional tactics...","disgust","base","worried","down")
     call her_main("Team Ravenclaw!","open","base","base","mid")
 
-    $ qp_mob_reaction[0] = "emo8"
-    $ qp_mob_reaction[1] = "emo7"
-    $ qp_mob_reaction[2] = "emo8"
     $ renpy.sound.play("sounds/crowd_cheer.mp3")
-    ">A loud cheer roars from the grandstands."
-    $ qp_mob_reaction = [None, None, None]
+    call quidditch_stands(crowd_react=["emo8", "emo7", "emo8"])
+    with d3
 
-    #Crowd Sounds
+    ">A loud cheer roars from the grandstands."
+
+    call quidditch_stands(crowd_react=[None, None, None])
+    with d3
+
+    #TODO Crowd sounds
     call her_main("And their opponents...","soft","closed","base","mid")
     call her_main("The team known for their...","open","narrow","angry","down")
     call her_main("Their...","open","narrow","angry","L")
-    $ qp_mob_reaction[2] = "emo8"
+
+    call quidditch_stands(crowd_react=[None, None, "emo8"])
+    with d3
+
     sly1 "{size=+5}Got a cock down your throat?{w=0.8} Get on with it!{/size}"
     sly2 "{size=+8}Yeah!{w=0.5} Get on with it!{/size}"
     call her_main("...","annoyed","closed","angry","mid")
     with hpunch
-    qcr "{size=+15}Get on with it!{/size}" # loud
-    $ qp_mob_reaction[2] = None
+    qcr "{size=+15}Get on with it!{/size}"
+
+    call quidditch_stands(crowd_react=[None, None, None])
+    with d3
+
     call her_main("The team known for their thick skin... or should I say, thick skulls...","angry","base","angry","mid", emote="01")
     call her_main("Team Slytherin!","annoyed","narrow","angry","mid")
 
     $ renpy.sound.play("sounds/crowd_stomping.mp3")
-    $ qp_mob_reaction[0] = "emo8"
-    $ qp_mob_reaction[1] = "emo7"
+    call quidditch_stands(crowd_react=["emo8", "emo7", None])
+    with d3
+
     call her_main("", "base", "base", "base", "mid")
     ">The green grandstand shakes violently with enthusiasm."
-    $ qp_mob_reaction[0] = None
-    $ qp_mob_reaction[1] = None
+
+    call quidditch_stands(crowd_react=[None, None, None])
+    with d3
 
     g9 "..."
     call sna_main("...","snape_38")
@@ -435,7 +421,6 @@ label slytherin_match:
     $ renpy.sound.play("sounds/referee.mp3")
     call play_music("quidditch")
     call nar("The grey haired lady glances up to the podium and gives Hermione a wink - as she throws the quaffle into the air.")
-
 
     call her_main("And we're off!","base","happyCl","base","mid")
     call nar("Looking up you can see Cho giving Malfoy a quick smirk as she darts off towards the Slytherin half of the pitch.")
@@ -472,7 +457,8 @@ label slytherin_match:
 
     menu:
         g4 "(Damnit! Two against one... That's not fair!)"
-        "-Agree, and call the bet off...-":  # No option actually calls it off
+        "-Agree, and call the bet off...-":
+            # Offer to call off the bet, Snape declines
             call ton_main("That's the spirit, now let's just enjoy the... *uhm*...","horny","base","raised","L", hair="horny")
             call ton_main("The match, is what I wanted to say...","upset","base","worried","L")
             call sna_main("No no, it's fine. I've got some cards up my sleeves.","snape_09") #I think a repeated 'no' here works well, sort of a posh English way of being dismissive. But you can just use one it makes no real difference
@@ -483,6 +469,7 @@ label slytherin_match:
             call ton_main("I'm sorry. Did you guys say something?","open","base","raised","L")
 
         "-Forfeit, and give Snape the money...-":
+            #TODO Review this text: is Genie thinking to himself? what should happen, return to other options?
             if gold >= 2000:
                 m "Fuck no, you think I'm some kind of charity?"
             else:
@@ -499,21 +486,20 @@ label slytherin_match:
     g4 "..."
     call her_main("But can he get through the keeper!","soft","base","base","up")
 
-    #Screen shake audience groans
-    with hpunch
-    $ qp_mob_reaction[0] = "sur"
-    $ qp_mob_reaction[1] = "emo02"
-    $ qp_mob_reaction[2] = "excl"
     $ renpy.sound.play("sounds/crowd_ouch.mp3")
+    call quidditch_stands(crowd_react=["sur", "emo02", "excl"])
+    with hpunch
+
     call her_main("Another bludger hit by Crabbe - going straight into the stomach of the Ravenclaw keeper!","clench","base","worried","up")
-    $ qp_mob_reaction[2] = None
-    $ qp_mob_reaction[1] = None
-    $ qp_mob_reaction[0] = None
+
+    call quidditch_stands(crowd_react=[None, None, None])
+    with d3
+
     call her_main("Pucey passes the quaffle to Warrington, who scores another goal for team Slytherin!","annoyed","base","angry","up")
     hide screen hermione_main
     with d3
 
-    call sna_main("...","snape_45") #Smirks
+    call sna_main("...","snape_45")
     m "That's insane, how the hell did he hit that?"
     g4 "He was on the other side of the pitch!"
     call sna_main("That's my boys!","snape_37")
@@ -543,28 +529,24 @@ label slytherin_match:
     $ renpy.sound.play("sounds/ball_hit.mp3")
     call her_main("Ravenclaw would have no issues beating the ever living sh-{w=1.2}{nw}","angry","narrow","angry","L")
 
-    #Hermione gets hit in the face by a bludger
     call hide_characters
     with d3
     pause .2
 
-    # Ball hitting the chibi's face.
-    # DEVVV
-
-
+    # Hermione gets hit in the face by a bludger
     show screen bludger_flying((530, -100), (-50, 1000))
     pause .18
     $ renpy.play(["sounds/card_punch4.mp3", "sounds/microphone_feedback.mp3"])
     show screen gfx_effect(435, 118, img="glow_effect", zoom=0.7, duration=0.3)
     call her_chibi("hit_head", flip=True)
     with vpunch
+
     hide screen gfx_effect
     show screen gfx_effect(355, 320, img="smoke", zoom=0.5)
     call play_sound("kick")
-    $ qp_hole = True
+    call quidditch_stands(hole=True)
     with None
 
-    #Audience groans
     stop bg_sounds fadeout 2
     stop music fadeout 2
     pause 0.5
@@ -575,7 +557,7 @@ label slytherin_match:
     pause 1.0
     $ renpy.sound.play("sounds/dizzy.mp3", loop=True)
     pause 2.0
-    call sna_main("*Pfffffffffff*-","snape_14") # Snape has wine gushing out of his nose (image edit)
+    call sna_main("*Pfffffffffff*-","snape_14") #TODO Custom image? Snape has wine gushing out of his nose
     call sna_main("*Ha-ha-HA-HA!*","snape_42")
     $ renpy.sound.stop(fadeout=1.0)
 
@@ -613,12 +595,12 @@ label slytherin_match:
 
     call sna_main("I'm surprised she didn't swallow that one - with how wide she was blabbing her mouth.","snape_42", ypos="head")
     call sna_main("That's liquid luck for you!","snape_45")
-    call ton_main("What?","angry","shocked","base","wide", hair="neutral", ypos="head", flip=True, trans=hpunch) #Shocked
+    call ton_main("What?","angry","shocked","base","wide", hair="neutral", ypos="head", flip=True, trans=hpunch)
     g4 "What the fuck is liquid luck?"
     call ton_main("You gave those brutes a luck potion?!","scream","base","angry","L", hair="angry")
     call sna_main("Well...{w=0.8}{nw}","snape_14")
     call ton_main("I can't believe you, Snape...{w=0.5} look what they've done to her face!","angry","base","worried","down", hair="sad")
-    call ton_main("Her beautiful face...","upset","base","sad","down") #Sad
+    call ton_main("Her beautiful face...","upset","base","sad","down")
     call sna_main("Looks like an improvement to me.","snape_46")
     call ton_main("Quiet!","angry","base","angry","L", hair="angry")
     m "..."
@@ -633,7 +615,6 @@ label slytherin_match:
     pause .2
 
     call ton_walk(430, 70+180)
-
 
     pause .5
 
@@ -664,7 +645,7 @@ label slytherin_match:
 
     m "She sure sobered up quickly..."
 
-    #Genie and Snape sprite should probably both be turned left and swapped in this section.
+    #TODO Genie and Snape sprite should probably both be turned left and swapped in this section.
     with hpunch
     $ renpy.sound.play("sounds/falling_stairs.mp3")
     pause 1
@@ -672,26 +653,29 @@ label slytherin_match:
     m "Nevermind..."
     call sna_main("This isn't good.","snape_03")
     g4 "You tell me, her face is fucked, and not in the fun way."
-    #Snape should turn forward here
+    #TODO Snape should turn forward here
     call sna_main("I'm talking about the crowd... Granger will be out of it for now - but should be fine by the end of the day.","snape_09")
     call sna_main("Unfortunately...","snape_35")
     m "(...)"
     pause .5
 
-    #Black screen
+    # Blackfade
     show screen blkfade
     with d5
     pause .2
 
     "A couple of minutes go by - and there's no sign of Tonks..."
+
     $ renpy.sound.play("sounds/murmur.mp3")
-    $ qp_mob_reaction[1] = "emoq"
+    # Crowd reactions aren't visible during blackfade
+    # call quidditch_stands(crowd_react=[None, "emoq", None])
+    # with d3
+
     "The crowd now whispering even more, some beginning to spot the empty podium."
 
-    #Fades back, crowd noises louder
-    $ qp_mob_reaction[1] = None
+    # call quidditch_stands(crowd_react=[None, None, None])
+    # with d3
 
-    pause .2
     hide screen blkfade
     with d5
     pause .5
@@ -705,10 +689,10 @@ label slytherin_match:
     g4 "I'm out of material."
     m "Also, doesn't this feel a bit like rehashing content?"
 
-    #Snape starts walking slowly to the podium
+    #TODO Snape starts walking slowly to the podium
     call sna_main("Fine, in that case. I'll just go up and give a motivational-","snape_01")
 
-    #Genie walks past him and snape stops
+    # Genie walks past Snape, who stops
     call gen_chibi()
     with d3
     pause .5
@@ -723,8 +707,7 @@ label slytherin_match:
     call gen_main(face="base", xpos="100", ypos="120")
     call ctc
 
-    call gen_main("I've got this...")
-    #idk this feels more 'hollywood' and 'dramatic' than "i got it" which I think is good considering the speeches coming up
+    call gen_main("I've got this...") # Genie gets into character for his speech
 
     $ renpy.sound.play("sounds/microphone_feedback.mp3")
     hide screen blktone5
@@ -739,15 +722,22 @@ label slytherin_match:
 
     menu:
         "(Let's give them what they came for...)"
-        "\"Independence!\"": #Independence day
+        "\"Independence!\"":
+            # Independence day
             play bg_sounds "music/fanfare.mp3" fadein 1.0
             call gen_main("Good morning...", face="base")
-            $ qp_mob_reaction[0] = "emoq"
+
+            call quidditch_stands(crowd_react=["emoq", None, None])
+            with d3
+
             call gen_main("In less than an hour, aircrafts from here will join others from around the world. And you will be launching the largest aerial battle in this history of mankind.", face="open")
             call gen_main("", face="base")
             call sna_main("Not again...","snape_17")
             call gen_main("Mankind...{w=0.3} that word should have new meaning for all of us today.", face="open")
-            $ qp_mob_reaction[1] = "qu"
+
+            call quidditch_stands(crowd_react=["emoq", "qu", None])
+            with d3
+
             call gen_main("We can't be consumed by our petty differences anymore.", face="base")
             call gen_main("We will be united in our common interests.", face="open")
             call gen_main("Perhaps it's fate that today is the 4th of July, and you will once again be fighting for our freedom, not from tyranny, oppression, or persecution -- but from annihilation.", face="open")
@@ -756,10 +746,12 @@ label slytherin_match:
             call gen_main("We will not go quietly into the night!", face="base")
             call gen_main("We will not vanish without a fight!", face="open")
             call gen_main("We're going to live on!{w} We're going to survive!", face="angry")
-            $ qp_mob_reaction[0] = None
-            $ qp_mob_reaction[1] = None
 
-        "\"Sunshine and rainbows.\"": #Rocky
+            call quidditch_stands(crowd_react=[None, None, None])
+            with d3
+
+        "\"Sunshine and rainbows.\"":
+            # Rocky
             play bg_sounds "music/BattleThemeB.mp3" fadein 3.0
             call gen_main("The world ain’t all sunshine and rainbows...\nIt is a very mean and nasty place and it will beat you to your knees and keep you there permanently if you let it.", face="base")
             mal "An inspirational speech in the middle of the game?"
@@ -776,11 +768,12 @@ label slytherin_match:
             call gen_main("...", face="grin")
             call gen_main("Nailed it.", face="grin")
 
-        "\"Be winners!\"": #"\"Don't care about the scoreboard\"": #Hoosiers
+        "\"Be winners!\"": #"\"Don't care about the scoreboard\"":
+            # Hoosiers
             play bg_sounds "music/fanfare.mp3" fadein 1.0
             call gen_main("There's a tradition in tournament play to not talk about the next step until you've climbed the one in front of you.", face="base")
             call gen_main("I'm sure going to the state finals is beyond your wildest dreams, so let's just keep it right there.", face="base")
-            #Crowd confusion
+            #TODO Crowd confusion
             cho "(State finals?!?)"
             call gen_main("Forget about the crowds, the size of the school, their fancy uniforms, and remember what got you here.", face="angry")
             call gen_main("Focus on the fundamentals that we've gone over time and time again.", face="open")
@@ -792,7 +785,7 @@ label slytherin_match:
             call gen_main("{size=+10}Let's go!!{/size}", face="angry")
             call gen_main("{size=+10}Let's go!!{/size}", face="angry")
             call gen_main("{size=+10}Let me hear it!!!{/size}", face="angry")
-            #Applause
+            #TODO Applause
 
     call play_sound("footsteps")
     call hide_characters
@@ -833,11 +826,10 @@ label slytherin_match:
     with d3
     pause .5
 
-    #Microphone static sound
     $ renpy.sound.play("sounds/microphone_feedback.mp3")
     call her_main("*Ahem*...","base","base","base","mid", flip=True, xpos="120", ypos="base")
     call her_main("{size=-4}Oh, these boobs are so heavy...{/size}","disgust","base","worried","down", cheeks="blush")
-    #Crowd ???
+    #TODO Crowd ???
     call her_main("{size=-4}And why is this shirt so hot...{/size}","soft","base","base","down", cheeks="blush")
 
     $ renpy.sound.play("sounds/cloth_sound.mp3")
@@ -853,7 +845,7 @@ label slytherin_match:
 
     call her_main("{size=-4}That's better.{/size}","base","base","base","down", cheeks="blush")
     call her_main("So, after that short... intermission and removing that... streaker of the pitch...","open","base","base","L")
-    #Crowd !!!
+    #TODO Crowd !!!
     g4 "There was a streaker on the pitch? WHEN!?!"
     call sna_main("She's deflecting the attention from the podium...","snape_09")
     m "Oh, of course..."
@@ -861,11 +853,11 @@ label slytherin_match:
     call her_main("Now, back to your positions...","open","base","base","mid")
     call her_main("{size=-4}How nice, I'm not used to being listened to this easily!{/size}","base","base","base","ahegao", cheeks="blush")
 
-    #Crowd exclamation
+    #TODO Crowd exclamation
     sly1 "{size=+8}Oh, shut up slut... or I'll make you!{/size}"
     call her_main("Looking forward to it!","base","base","angry","L")
 
-    #Crowd questionmark
+    #TODO Crowd questionmark
     sly1 "..."
     m "What's wrong with her, did she get hit too hard?"
     call her_main("Hooch, give that whistle a good blow for me will you?","soft","base","angry","L")
@@ -887,11 +879,11 @@ label slytherin_match:
     call her_main("Miss Chang sure knows how to handle that broom between her thighs.","angry","base","angry","L")
     cho "!!!"
 
-    # Section where genie goes up and touches Hermione (tonks) under her skirt
-    call sna_main("You know... Tonks isn't here right now...","snape_05") #Small text
-    m "So?" #Small text
-    call sna_main("...","snape_37") #Smirks
-    g9 "Oh...{w=0.3} I see what you mean..."#Small text
+    # Section where genie goes up and touches Hermione (Tonks) under her skirt
+    call sna_main("You know... Tonks isn't here right now...","snape_05") #TODO Small text
+    m "So?" # Small text
+    call sna_main("...","snape_37")
+    g9 "Oh...{w=0.3} I see what you mean..." # Small text
     call gen_walk(290, 55+250)
     call gen_chibi("hide")
     call her_chibi_scene("grope_on_podium_idle")
@@ -905,11 +897,11 @@ label slytherin_match:
     call her_chibi_scene("grope_on_podium")
     with d3
     pause 2.0
-    call her_main("Whoa!","base","base","base","mid") # Look of surprise
+    call her_main("Whoa!","base","base","base","mid") #TODO Look of surprise
     hide screen hermione_main
     with d3
     call ctc
-    # Crowd ???
+    #TODO Crowd ???
     g9 "..."
     call her_main("No worries ladies and gentlemen, just had a bit of a slip. It's very...{w=0.3} wet up here...","base","base","base","mid") #blushing
     m "(And it will be getting even wetter in a minute...)"
@@ -965,7 +957,7 @@ label slytherin_match:
     hide screen blktone5
 
     $ renpy.sound.play("sounds/crowd_applause.mp3")
-    call her_main("{size=+8}Goooaaal!!!{/size}","base","base","base","mid") # Orgasmic face. Yell "Cumming!!!" instead?
+    call her_main("{size=+8}Goooaaal!!!{/size}","base","base","base","mid") #TODO Orgasmic face. Yell "Cumming!!!" instead?
     hide screen hermione_main
     with d3
     pause 0.5
@@ -1052,17 +1044,18 @@ label slytherin_match:
     call her_main("Malfoy on his superior broom edging ever closer...","open","base","angry","L")
     call sna_main("Well, congratulations... You've got me beat...","snape_37")
     call sna_main("Sure as hell is a better view than last season...","snape_20")
-    $ qp_mob_reaction[0] = "emo8"
-    $ qp_mob_reaction[1] = "emo7"
-    $ qp_mob_reaction[2] = "emo7"
+
     play bg_sounds "sounds/crowd.mp3" fadein 1 fadeout 1
     $ renpy.sound.play("sounds/crowd_applause.mp3")
+    call quidditch_stands(crowd_react=["emo8", "emo7", "emo7"])
+    with d3
+
     call her_main("And she's caught it! Ravenclaw wins and makes it to the finals against Gryffindor!","smile","base","angry","L")
     call sna_main("I was looking forward to seeing that cup in my office again this year... Oh well...","snape_41")
     call her_main("And what a well deserved victory as well!","soft","narrow","base","mid")
     m "You put the cup in your office?"
 
-    #Fades to black
+    # Fade to black
     call hide_characters
     show screen blkfade
     with d5
@@ -1072,15 +1065,11 @@ label slytherin_match:
     call gen_chibi("stand_alt",130,10+250)
     call sna_chibi("stand",220,-50, flip=False)
 
-    $ qp_mob_reaction[0] = None
-    $ qp_mob_reaction[1] = None
-    $ qp_mob_reaction[2] = None
-    $ qp_mob = 0
+    call quidditch_stands(crowd=[], crowd_react=[None, None, None])
 
     stop bg_sounds fadeout 4
     stop music fadeout 2
 
-    #Fades back to empty stadium
     hide screen blkfade
     with d5
     pause .5
@@ -1103,10 +1092,7 @@ label slytherin_match:
     g4 "Balls..."
     sna "Who would've foreseen it would be in my best interest for Gryffindor to win the cup..."
 
-
-
-
-    #Blackfade
+    # Fade to black
     show screen blkfade
     with d9
     pause .5
@@ -1124,10 +1110,8 @@ label slytherin_match:
     jump night_start
 
 
-
 label slytherin_match_return:
-
-    #Office screen, evening after game
+    # The office, evening after the game
     call play_music("stop")
     show screen blkfade
     call room("main_room")
@@ -1135,7 +1119,6 @@ label slytherin_match_return:
     show screen chair_left
     show screen desk
 
-    ### Event Setup ###
     $ cho_outfit_last.save()
     $ her_outfit_last.save()
     $ ton_outfit_last.save()
@@ -1176,7 +1159,7 @@ label slytherin_match_return:
     g9 "(And getting to feel up Miss Granger's juicy ass is always worth the price of admission!)"
     call bld("hide")
 
-    #Tonks as Hermione walks in.
+    # Hermione (Tonks) walks in
     call play_sound("door")
     call her_chibi("stand","door","base", flip=False)
     with d3
@@ -1197,7 +1180,7 @@ label slytherin_match_return:
     call her_main("*Hmm*...{w=0.5} I think someone deserves a reward...","soft","narrow","base","mid") #Horny
     pause .2
 
-    #Hermione takes her top off
+    # Hermione (Tonks) starts stripping
     call play_sound("equip")
     hide screen hermione_main
     $ hermione.strip("robe","top")
@@ -1209,7 +1192,6 @@ label slytherin_match_return:
     call her_main("Be quiet you, just enjoy it!","base","narrow","base","mid")
     g9 "!!!"
 
-    #Hermione takes her bottoms off
     call play_sound("equip")
     hide screen hermione_main
     $ hermione.strip("bottom")
@@ -1224,7 +1206,6 @@ label slytherin_match_return:
     g4 "..."
     call her_main("Or these little puppies...","base","narrow","angry","mid")
 
-    #Hermione takes her bra off
     call play_sound("equip")
     hide screen hermione_main
     $ hermione.strip("bra")
@@ -1243,13 +1224,11 @@ label slytherin_match_return:
     call her_main("*Mmmm*... Damn right...","angry","narrow","angry","down")
     call her_main("And since you love this butt so much...","base","narrow","base","down")
 
-    #Hermione turns around
     pause .5
     call her_chibi(flip=True)
     call her_main(xpos="440", ypos="base", flip=True)
     pause .8
 
-    #Hermione takes her panties off
     call play_sound("equip")
     hide screen hermione_main
     $ hermione.strip("panties")
@@ -1264,7 +1243,7 @@ label slytherin_match_return:
     g9 "I mean -{w=0.3} Of course,{w=0.2} how could I not!"
     g4 "Your arse looks great, Miss Grange-{w=0.6}{nw}"
 
-    #Cho enters
+    # Cho enters
     call play_music("stop")
     call hide_characters
     hide screen bld1
@@ -1290,7 +1269,7 @@ label slytherin_match_return:
     call cho_main("...", "angry", "base", "worried", "down") #Blushes
     call cho_main("*HMPH!*", "annoyed", "narrow", "angry", "L")
 
-    #Cho walks out and slams the door
+    # Cho walks out and slams the door
     call play_music("stop")
     call hide_characters
     hide screen bld1
@@ -1319,7 +1298,7 @@ label slytherin_match_return:
     pause .8
 
     # Tonks turns back into herself
-    #Should the naked version only happen if you've done Imperio Training maybe?
+    #TODO Should the naked version only happen if you've done Imperio Training maybe?
     call play_sound("magic")
     call hide_characters
     call her_chibi("hide")
@@ -1349,7 +1328,6 @@ label slytherin_match_return:
         m "So this is the ability you were speaking of?"
         call ton_main("Impressive, isn't it?","horny","base","base","mid")
 
-
     else:
         $ tonks_morph_known = True
         g4 "You were Miss Granger the whole time?"
@@ -1363,7 +1341,7 @@ label slytherin_match_return:
     m "Really?"
     call ton_main("Of course!","base","base","angry","mid")
 
-    #Tonks turns into cho
+    # Tonks turns into cho
     call play_sound("magic")
     call play_music("cho")
     call hide_characters
@@ -1377,8 +1355,8 @@ label slytherin_match_return:
     call cho_main("Want to give this snatch a little lick?","soft","narrow","base","mid")
     g4 "!!!"
 
-    #Tonks turns into Astoria if you've met her
     if astoria_unlocked:
+        # Tonks turns into Astoria
         call play_sound("magic")
         call play_music("astoria")
         call hide_characters
@@ -1402,8 +1380,8 @@ label slytherin_match_return:
         m "Tonks?"
         call sus_main("Oh right...{w=0.3} Where was I?","open","narrow","worried","mid")
 
-    #Tonks Turns into Susan if you've met her and not Astoria
     elif susan_unlocked:
+        # Tonks Turns into Susan
         call play_sound("magic")
         call play_music("susan")
         call hide_characters
@@ -1419,8 +1397,8 @@ label slytherin_match_return:
         m "Tonks?"
         call sus_main("Oh right... Where was I?","open","narrow","worried","mid")
 
-    #Tonks turns into Luna if you've met her
     if luna_unlocked:
+        #Tonks turns into Luna
         g9 "Now do Luna!"
 
         call play_sound("magic")
@@ -1437,7 +1415,7 @@ label slytherin_match_return:
         call play_sound("giggle")
         call lun_main("*Hi-Hi-Hi*","grin","happyCl","base","mid")
 
-    #Tonks turn into snape
+    # Tonks turns into snape
     g9 "Nice, now do-"
 
     call play_sound("magic")
@@ -1459,7 +1437,7 @@ label slytherin_match_return:
     call play_sound("giggle")
     call sna_main("*Hi-Hi-Hi*","snape_22")
 
-    #Tonks turns into herself
+    # Tonks turns into herself
     call play_sound("magic")
     call play_music("tonks")
     call hide_characters
@@ -1486,7 +1464,7 @@ label slytherin_match_return:
     m "I see..."
     m "And she-"
     call ton_main("She's fine...","open","base","sad","R")
-    #If we had the hospital wing drawn she could offer to take you there at this line
+    #TODO If we had the hospital wing drawn she could offer to take you there at this line
     call ton_main("Your face is cute when you worry, you know that?","base","base","sad","mid")
     m "So, won't people find out you replaced her?"
     call ton_main("You think so?","upset","base","worried","down")
@@ -1498,7 +1476,6 @@ label slytherin_match_return:
     call ton_main("I'm gonna go sleep off whatever this is...","open","base","sad","mid")
     call ton_main("Toodaloo!","base","happyCl","base","mid")
 
-    #Tonks leaves
     call play_music("stop")
     call ton_walk(action="leave")
 
@@ -1514,12 +1491,12 @@ label slytherin_match_return:
     $ cho_busy = True
 
     $ cho_mood += 9
-    #$ cho_tier = 3 # TODO: activate this after adding favors.
+    # $ cho_tier = 3 # TODO activate this after adding favors.
 
     # Reset
-    $ tonks.equip(ton_outfit_last) # Equip player outfit.
-    $ hermione.equip(her_outfit_last) # Equip player outfit.
-    $ cho.equip(cho_outfit_last) # Equip player outfit.
-    $ astoria.equip(ast_outfit_last) # Equip player outfit.
+    $ tonks.equip(ton_outfit_last)
+    $ hermione.equip(her_outfit_last)
+    $ cho.equip(cho_outfit_last)
+    $ astoria.equip(ast_outfit_last)
 
     jump main_room

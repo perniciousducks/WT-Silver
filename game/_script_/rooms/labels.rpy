@@ -70,8 +70,7 @@ label room(room=None, hide_screens=True, stop_sound=True):
         show screen quid_pitch_front
 
     if room == "quidditch_stands":
-        show screen quidditch_stands
-        show screen quidditch_stands_overlay
+        call quidditch_stands(reset=True)
 
     return
 
@@ -102,7 +101,7 @@ label main_room_menu:
         jump day_main_menu
     else:
         jump night_main_menu
-        
+
 label fireplace_sound:
     if fire_in_fireplace:
         play bg_sounds "sounds/fire02.mp3" fadeout 0.5 fadein 0.5 if_changed

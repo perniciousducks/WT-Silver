@@ -134,7 +134,7 @@ init python:
             self.ach_desc = ""
             self.content_characters = []
 
-            self.__dict__.update(**kwargs)
+            super(MirrorStory, self).__init__(**kwargs)
 
         def get_name(self):
             ret_str = "{size=-2}\""+self.name+"\"{/size}{size=-6} by "

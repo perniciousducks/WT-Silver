@@ -22,12 +22,6 @@ label house_points:
     # Outline settings
     #TODO Refactor interface_color dependent styles to definitions
     $ points_outline = [ (1, "#000", 0, 0) ]
-    if interface_color == "gold":
-        $ daygold_colour = "{color=#000}"
-        $ daygold_outline = [ (1, "#e4ba7080", 0, 0) ]
-    else:
-        $ daygold_colour = "{color=#FFF}"
-        $ daygold_outline = [ (1, "#00000080", 0, 0) ]
 
     #If points variable value exceedes one thousand make it a decimal number instead and round to x.x
     #Remember, "slytherin_points" is a string! If you need points integer use i.e. "slytherin" variable instead.
@@ -233,7 +227,7 @@ screen ui_menu():
         style "empty"
     frame:
         style "empty"
-        style_prefix interface_style        
+        style_prefix interface_style
         ypos 34
         xsize 102
         ysize 204
@@ -417,7 +411,7 @@ label decorate_room_menu:
             "No":
                 pass
         jump decorate_room_menu
-    
+
     elif _return == "Close":
         $ current_page = 0
         $ category_choice = None

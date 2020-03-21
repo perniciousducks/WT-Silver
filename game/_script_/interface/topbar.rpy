@@ -345,21 +345,12 @@ label bugfix_menu:
 label scene_gallery:
     menu:
         "-Watch Ball Ending 1-" if persistent.ending_01:
-            $ gallery_active = True
-            $ ball_ending_2 = False
-            jump ball_ending_E2
+            $ renpy.call_replay("ball_ending_E2", { "public_whore_ending": False })
         "-Watch Ball Ending 2-" if persistent.ending_02:
-            $ gallery_active = True
-            $ ball_ending_2 = True
-            jump ball_ending_E2
-
+            $ renpy.call_replay("ball_ending_E2", { "public_whore_ending": True })
         "-Never mind-":
-            jump main_room_menu
-
-label return_gallery:
-    call blkfade
-    $ gallery_active = False
-    jump main_room
+            pass
+    jump main_room_menu
 
 label decorate_room_menu:
 

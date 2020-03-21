@@ -383,18 +383,17 @@ label ball_ending_E1:
         # First play-through
         centered "{size=+7}{color=#cbcbcb}Fine whatever...{/color}{/size}"
 
-    call play_music("ball")
-
-    centered "{size=+7}{color=#cbcbcb}The Annual Hogwarts Autumn Ball{/color}{/size}"
-
     jump ball_ending_E2
 
 
 label ball_ending_E2:
-    call blkfade
+    # Main part of the ball event
+    # Event replay starts here
 
-    if gallery_active == False: # Regular play-through of the scene.
-        $ ball_ending_2 = public_whore_ending # Sets this to True or False
+    call blkfade
+    call play_music("ball")
+
+    centered "{size=+7}{color=#cbcbcb}The Annual Hogwarts Autumn Ball{/color}{/size}"
 
     # Scene Setup
     $ daytime = True
@@ -437,7 +436,7 @@ label ball_ending_E2:
 
     call blktone_top
 
-    if ball_ending_2:
+    if public_whore_ending:
         # Public whore ending
         # Students talking
         mal "Have you heard that rumour about Hermione Granger?"
@@ -667,7 +666,7 @@ label ball_ending_E2:
     $ dynamic_cg("ball/bj", "background", "base2", "eyes_closed2", "sweat2")
     her "Alright, sounds like we have no time to lose."
 
-    if ball_ending_2:
+    if public_whore_ending:
         # Public whore ending
         $ dynamic_cg("ball/bj", "background", "base", "sweat")
         her "*Slurp!* *Gulp!* *Slurp!*"
@@ -1057,7 +1056,7 @@ label ball_ending_E2:
 
     pause 1.5
 
-    if ball_ending_2:
+    if public_whore_ending:
         # Public whore ending
         call sna_main("Miss Granger...?","snape_03", xpos="base", ypos="head")
         call sna_main("So you decided to show up after all","snape_04")
@@ -2650,10 +2649,7 @@ label ball_ending_E2:
 
         call ctc
 
-    if gallery_active:
-        jump return_gallery
-    else:
-        pass
+    $ renpy.end_replay()
 
     label test_final_scene:
 

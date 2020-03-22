@@ -1,12 +1,13 @@
 screen hufflepuff_match_cho_chase(zoom1=0.5, zoom2=0.5):
     zorder 16
     tag cg
-    add "images/rooms/quidditch_stands/sky.png"
+    add "images/rooms/quidditch_stands/cho_chase/sky.png"
     add "snitch" at snitch_chased(zoom1, zoom2)
     add "images/rooms/quidditch_stands/cho_chase/cho_chase.png" at sprite_zoom_fly(zoom1, zoom2)
     if cho.is_worn("panties"):
         add "images/rooms/quidditch_stands/cho_chase/cho_chase_panties.png" at sprite_zoom_fly(zoom1, zoom2)
     #TODO Check and wear goggles
+        #add "images/rooms/quidditch_stands/cho_chase/cho_chase_goggles.png" at sprite_zoom_fly(zoom1, zoom2)
 
 image snitch:
     "images/rooms/quidditch_stands/cho_chase/snitch0.png"

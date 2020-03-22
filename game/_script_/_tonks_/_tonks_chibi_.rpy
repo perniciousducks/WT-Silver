@@ -54,17 +54,50 @@ screen ton_cloth_pile(position=(440, 425)): # Default position: Right of desk, b
     zorder tonks_chibi.zorder
     add "characters/chibis/cloth_pile_r.png" pos position zoom 0.5
 
+label ton_sit(xpos=nxpos, ypos=nypos, flip=None, chair=True): # TODO: replace this with the regular chibi call and add a sitting pose/action -- call ton_chibi("sit", chair=False)
+
+    # call ton_sit(chair=False, xpos=0, ypos=0)
+    # Quidditch stands position: xpos=-140, ypos=125
+
+    python:
+
+        xpos = nxpos
+        ypos = nypos
+
+        if flip != None:
+            tonks_flip = -1 if flip else 1
+
+    show screen tonks_sit_ani(nxpos, nypos, chair)
+
+    return
+
+screen tonks_sit_ani(xpos=nxpos, ypos=nypos, chair=True): # TODO: use Tonks' regular chibi position for this -- tonks_chibi.pos
+    tag ton_chibi
+    zorder tonks_chibi.zorder
+
+    if chair == True:
+        add "ch_ton sit_chair" xpos nxpos ypos nypos xzoom tonks_flip
+
+    add "ch_ton sit" xpos nxpos ypos nypos xzoom tonks_flip
+
+    if tonks.is_worn("bottom"):
+        add "ch_ton sit_trousers" xpos nxpos ypos nypos xzoom tonks_flip
+    if tonks.is_any_worn("bottom", "stockings"):
+        add "ch_ton sit_shoes" xpos nxpos ypos nypos xzoom tonks_flip
+    if tonks.is_worn("top"):
+        add "ch_ton sit_top" xpos nxpos ypos nypos xzoom tonks_flip
+
 screen with_tonks_animated():
     tag ton_chibi
     zorder tonks_chibi.zorder
-    
+
     if daytime:
         add "ch_gen toast_goblet_daytime" xpos 435 ypos 200
     else:
         add "ch_gen toast_goblet" xpos 435 ypos 200
 
     add "ch_ton sit" xpos 610 ypos 175
-    
+
     if tonks.is_worn("bottom"):
         add "ch_ton sit_trousers" xpos 610 ypos 175
     if tonks.is_any_worn("bottom", "stockings"):
@@ -83,7 +116,7 @@ init python:
         chibi["base"] = chibi_image
 
         # Determine clothing state
-        
+
         if tonks.is_worn("top"):
             chibi["top"] = "nt_top.png"
 

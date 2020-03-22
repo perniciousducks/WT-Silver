@@ -399,7 +399,7 @@ label cc_ht_hermione_commentator:
     call her_main("Cho will be so mad!", "crooked_smile", "happy", "base", "mid")
     m "I see..."
     g9 "Congratulations then, [hermione_name]! You got the job."
-    call her_main("Ah!!! I better start learing-...{w=0.8} I mean, preparing my opening speech!", "open", "wide", "base", "mid", trans=hpunch)
+    call her_main("Ah!!! I better start learning-...{w=0.8} I mean, preparing my opening speech!", "open", "wide", "base", "mid", trans=hpunch)
 
     call her_walk(action="leave", speed=1.5)
 

@@ -46,7 +46,7 @@ image ch_ton walk shoes: # Walk shoes layer
     pause.08
 
     repeat
-    
+
 image ch_ton walk trousers: # Walk trousers layer
     "characters/tonks/chibis/nt_walk_01_trousers.png"
     pause.08
@@ -66,14 +66,17 @@ image ch_ton walk trousers: # Walk trousers layer
     pause.08
 
     repeat
-    
+
 #Drinking chibi
-image ch_ton sit:
+image ch_ton sit_chair:
     zoom 0.5
-    
+
     # Chair
     contains:
         "characters/tonks/chibis/drinking/chair.png"
+
+image ch_ton sit:
+    zoom 0.5
 
     # Blinking
     contains:
@@ -92,7 +95,7 @@ image ch_ton sit:
         "characters/tonks/chibis/drinking/nt_head_01.png"
         pause 3
         repeat
-        
+
     # Leg sway
     contains:
         "characters/tonks/chibis/drinking/nt_sit_01.png"
@@ -110,10 +113,10 @@ image ch_ton sit:
         "characters/tonks/chibis/drinking/nt_sit_01.png"
         pause 2.5
         repeat
-        
+
 image ch_ton sit_trousers:
     zoom 0.5
-    
+
     # Trousers
     contains:
         "characters/tonks/chibis/drinking/nt_sit_01_trousers.png"
@@ -131,10 +134,10 @@ image ch_ton sit_trousers:
         "characters/tonks/chibis/drinking/nt_sit_01_trousers.png"
         pause 2.5
         repeat
-        
+
 image ch_ton sit_shoes:
     zoom 0.5
-    
+
     # Shoes
     contains:
         "characters/tonks/chibis/drinking/nt_sit_01_shoes.png"
@@ -152,11 +155,12 @@ image ch_ton sit_shoes:
         "characters/tonks/chibis/drinking/nt_sit_01_shoes.png"
         pause 2.5
         repeat
-        
+
 image ch_ton sit_top:
     zoom 0.5
-    
-    "characters/tonks/chibis/drinking/nt_top.png"
+
+    contains:
+        "characters/tonks/chibis/drinking/nt_top.png"
 
 image ch_ton slack_jaw:
     random_blink("characters/tonks/chibis/slack_jaw/nt_stand_02.png", "characters/tonks/chibis/slack_jaw/nt_stand_01.png")

@@ -194,9 +194,36 @@ label hufflepuff_match:
     call room("quidditch_stands")
     call quidditch_stands(crowd=crowd_mid)
 
-    #call sna_chibi("stand", 210, -40+250, flip=True)
-    #call gen_chibi("stand", 130, 10+250)
-    #call her_chibi("stand", 375, 105+186, flip=True)
+    ### Snape Chibi Postions ###
+    # First Step R:     call sna_chibi("stand", flip=True, 25, 234)
+    # Second Step R:    call sna_chibi("stand", flip=True, 85, 260)
+    # Third Step R:     call sna_chibi("stand", flip=True, 120, 295)
+
+    ### Genie Postions ###
+    ## Sprite:          call gen_main(face="base", base="base", xpos=-10, ypos=140)
+    # First Step Mid:   call gen_chibi("stand", flip=True, -20, 270)
+    # Second Step L:    call gen_chibi("stand", flip=True, -20, 320)
+    # Second Step Mid:  call gen_chibi("stand", flip=True, 0, 360)
+    # Third Step L:     call gen_chibi("stand", flip=True, 20, 365)
+    # Third Step Mid:   call gen_chibi("stand", flip=True, 65, 340)
+    # Floor Mid:        call gen_chibi("stand", flip=True, 170, 400)
+    # Podium:           call gen_chibi("stand", flip=True, 280, 400)
+
+    ### Hermione Postions ###
+    ## Sprite:          call her_main(flip=True, xpos="290", ypos="base")
+    # call her_chibi("stand", flip=True, 375, 105+186)
+    # Second Step Mid:  call her_chibi("stand", flip=True, 40, 295)
+    # Floor Mid:        call her_chibi("stand", flip=True, 180, 400)
+    # Podium:           call her_chibi("stand", flip=True, 300, 400)
+    # Podium Sidestep:  call her_chibi("stand", flip=True, 260, 460)
+
+    ### Tonks Chibi Positions ###
+    # Sitting: call ton_chibi("sit", flip=True, xpos=-140, ypos=125)
+
+    ### Cho Positions ###
+    ## Flying Sprite:   call cho_main(xpos=580, ypos=-200)
+    # Flying Chibi:     call cho_chibi("fly", 530, 360)
+
     $ snape_chibi.zorder = 2
     $ hermione_chibi.zorder = 3
     $ genie_chibi.zorder = 4
@@ -205,10 +232,11 @@ label hufflepuff_match:
     play bg_sounds "sounds/crowd.mp3" fadein 2
     call hide_blkfade
     pause 1
-
+    #call sna_chibi("stand", flip=True, xpos=210, ypos=210)
     call play_sound("footsteps")
     pause .8
-    call sna_chibi("stand", 210, -40+250, flip=True)
+    #call sna_chibi("stand", 210, -40+250, flip=True)
+    call sna_chibi("stand", flip=True, 120, 295)
     with d3
     pause .8
     call sna_chibi("stand", flip=False)
@@ -220,26 +248,31 @@ label hufflepuff_match:
     g4 "Bloody hell!"
     call play_sound("footsteps")
     pause .8
-    call gen_chibi("stand", 130, 10+250)
+    #call gen_chibi("stand", 130, 10+250)
+    call gen_chibi("stand", flip=True, 20, 365)
     with d3
     pause .5
     call sna_chibi("stand", flip=True)
     with d3
     sna "Well, here we are..."
     sna "Now we are only waiting for-"
-    call her_chibi("stand",220,50+186, flip=True)
+    call her_chibi("stand", flip=True, 40, 295)
     with d3
     pause .5
-    call her_chibi("stand",230,50+186, flip=False)
-    with d3
-    her "Professors."
-    sna "Granger..."
-    call her_chibi("stand",220,50+186, flip=True)
+    call sna_chibi("stand", flip=False)
     with d3
     pause .2
-    call her_walk(375, 105+186)
+    her "Professors."
+    sna "Granger..."
+    call sna_chibi("stand", flip=True)
+    with d3
+    pause .2
+    #call her_walk(375, 105+186)
+    call her_walk(path=[(180, 400),(300, 400)])
+    call her_chibi("stand", flip=True, 300, 400) # Temp Bugfix
     pause .5
-    call her_main("Good Morning everyone, and welcome to the i-inaugural-", "soft", "base", "worried", "mid", flip=True, xpos="120", ypos="base")
+    # call her_main(xpos=290, ypos="base")
+    call her_main("Good Morning everyone, and welcome to the i-inaugural-", "soft", "base", "worried", "mid", flip=True, xpos="290", ypos="base")
     call her_main("", "normal", "base", "worried", "mid")
     call sna_main("Speak up girl! And would it kill you to enunciate?!", "snape_03", ypos="head")
     call her_main("*Grrr*", "mad", "narrow", "angry", "R")
@@ -307,14 +340,22 @@ label hufflepuff_match:
 
     $ hermione_chibi.zorder = 4
     $ genie_chibi.zorder = 3
-    call her_chibi("stand",350,185+186, flip=True)
+    #call her_chibi("stand",350,185+186, flip=True)
+    call her_chibi("stand", flip=True, 260, 460)
+    with d3
+    pause .5
+
+    call gen_chibi("stand", flip=True, 65, 340)
     with d3
 
-    call gen_walk(360, 45+250)
+    call gen_walk(path=[(170, 400),(280, 400)])
+    call gen_chibi("stand", flip=True, 280, 400) # Temp Bugfix
+    with d3
+    pause .5
 
     $ genie_zorder = 15
 
-    call gen_main(face="base", base="base", xpos=100, ypos=120)
+    call gen_main(face="base", base="base", xpos=-10, ypos=140)
     call ctc
 
     call gen_main("", face="angry")
@@ -406,15 +447,18 @@ label hufflepuff_match:
             call sna_main("...", "snape_03")
             call gen_main("Aye, fight and you may die...",face="base")
 
-            call sna_chibi("stand",320,40+250, flip=True)
+            call sna_chibi("stand", flip=True, 230, 400)
+            with d3
+            pause .2
+
             call sna_main("I think it's time for you to step down from the...", "snape_01")
             call gen_main("No, I'm just about to get to the best part!",face="angry")
             $ renpy.sound.play("sounds/cloth_sound.mp3")
             stop bg_sounds fadeout 2.0
 
             hide screen genie_main
-            call sna_chibi("stand",300,40+250, flip=True)
-            call gen_chibi("stand", 340, 45+250)
+            call sna_chibi("stand", flip=True, 230-20, 400)
+            call gen_chibi("stand", flip=True, 280-20, 400)
             with d3
 
             ">Snape then begins to drag you away from the podium."
@@ -424,15 +468,15 @@ label hufflepuff_match:
             $ renpy.sound.play("sounds/microphone_feedback.mp3")
 
             hide screen genie_main
-            call sna_chibi("stand",320,40+250, flip=True)
-            call gen_chibi("stand", 360, 45+250)
+            call sna_chibi("stand", flip=True, 230+0, 400)
+            call gen_chibi("stand", flip=True, 280+0, 400)
             with d3
 
             call gen_main("This is our chance... they may take away our microphones... {w=0.3}But they...{nw}{fast}{w=1.0}But they...{w=0.5}{nw}",face="angry")
 
             hide screen genie_main
-            call sna_chibi("stand",280,40+250, flip=True)
-            call gen_chibi("stand", 320, 45+250)
+            call sna_chibi("stand", flip=True, 230-40, 400)
+            call gen_chibi("stand", flip=True, 280-40, 400)
             with d3
 
             call gen_main("But they'll never take away our freedom!",face="angry")
@@ -442,8 +486,8 @@ label hufflepuff_match:
 
             $ snape_chibi.zorder = 3
             $ genie_chibi.zorder = 2
-            call sna_chibi("stand",260,40+250, flip=True)
-            call gen_chibi("stand", 340, 45+250, flip=False)
+            call sna_chibi("stand", flip=True, 230-60, 400)
+            call gen_chibi("stand", flip=False, 280-40, 400)
             with d3
 
         "\"Nam\"":
@@ -491,22 +535,22 @@ label hufflepuff_match:
     call quidditch_stands(crowd_react=[None, None, None])
     with d3
 
-    call gen_walk(130, 10+250)
+    call gen_walk(path=[(170, 400),(65, 340)])
 
     $ snape_chibi.zorder = 2
     $ hermione_chibi.zorder   = 4
     $ genie_chibi.zorder = 3
-    call gen_chibi("stand", 130, 10+250)
-    call sna_chibi("stand", 210, -40+250, flip=True)
-    with d3
+    call gen_chibi("stand", flip=True, 20, 365)
+    call sna_chibi("stand", flip=True, 120, 295)
+    with d5
     pause .2
 
     # Hermione commentates again
-    call her_chibi("stand",375,105+186, flip=True)
+    call her_chibi("stand", flip=True, 300, 400)
     with d3
     pause .8
 
-    call her_main("Ugh... thank you for that, professor Dumbledore...", "soft", "narrow", "base", "R_soft", flip=True, xpos="120", ypos="base")
+    call her_main("Ugh... thank you for that, professor Dumbledore...", "soft", "narrow", "base", "R_soft", flip=True, xpos="290", ypos="base")
     call her_main("Now, to get this game underway!", "open", "closed", "base", "mid")
 
     # Player introduction
@@ -533,16 +577,21 @@ label hufflepuff_match:
     ">The yellow grandstand bursts into a mix of applause and whistles."
     hide screen hermione_main
     call sna_main("Back down to Troll...", "snape_09", ypos="head")
-    call her_chibi("stand",375,105+186, flip=False)
+
+    call her_chibi("stand", flip=False)
     with d3
+    pause .1
+
     her "*grrrrr*"
 
     call quidditch_stands(crowd_react=[None, None, None])
     with d3
 
-    call her_chibi("stand",375,105+186, flip=True)
-    call her_main("", flip=True, xpos="120", ypos="base")
-    call her_main("It appears we've got an interesting game ahead of us.", "open", "base", "base", "mid")
+    call her_chibi("stand", flip=True)
+    with d3
+    pause .1
+
+    call her_main("It appears we've got an interesting game ahead of us.", "open", "base", "base", "mid", flip=True, xpos="290", ypos="base")
     call her_main("If I'm not mistaken, there's some history between our seekers, Cho Chang and Cedric Diggory...", "crooked_smile", "closed", "base", "mid")
     call her_main("", "smile", "happy", "base", "mid_soft")
     ">Even though they are far down below on the pitch, you can clearly see Cho and Cedric glaring up at Hermione."
@@ -562,7 +611,7 @@ label hufflepuff_match:
     $ renpy.sound.play("sounds/sniff.mp3")
     her "..."
     play bg_sounds "sounds/wind_long_loop.mp3" fadein 2
-    call her_main("The capturing of the snitch is worth 150 points-", "open", "narrow", "base", "down", flip=True, xpos="120", ypos="base")
+    call her_main("The capturing of the snitch is worth 150 points-", "open", "narrow", "base", "down", flip=True, xpos="290", ypos="base")
 
     call quidditch_stands(crowd_react=["th", None, None])
     with d3
@@ -583,7 +632,7 @@ label hufflepuff_match:
     mal2 "Yeh! Start the game!"
     qcr "START THE GAME! START THE GAME!"
     ">Hermione's voice eventually gets drowned out by the growing restlessness of the crowd."
-    call her_main("", "normal", "base", "base", "mid", xpos="120", ypos="base", flip=True)
+    call her_main("", "normal", "base", "base", "mid", xpos="290", ypos="base", flip=True)
     call her_main("Ugh, fine...{w=0.3} If everyone wants us to begin play without knowing {b}a single thing{/b}...{w=0.8} then that's {b}OK!{/b}", "annoyed", "narrow", "annoyed", "R")
     call her_main("A good commentator knows when to accommodate for a crowd's impatience!", "soft", "closed", "base", "mid")
     hide screen hermione_main
@@ -598,16 +647,18 @@ label hufflepuff_match:
     call quidditch_stands(crowd_react=[None, None, None])
     with d3
     play bg_sounds "sounds/crowd_low.mp3" fadein 0.5 fadeout 0.5
-    call her_main("Now then...", "open", "closed", "base", "mid", cheeks="blush", flip=True, xpos="120", ypos="base")
+    call her_main("Now then...", "open", "closed", "base", "mid", cheeks="blush", flip=True, xpos="290", ypos="base")
     call her_main("Let's begin!", "base", "happy", "base", "mid_soft", cheeks="blush")
     hide screen hermione_main
+    with d3
+    pause .1
 
     # Start of the game
     $ renpy.sound.play("sounds/referee.mp3")
     call play_music("quidditch")
     ">A Grey haired woman then throws the quaffle into the air -- which signals the start of the match and the players quickly take off!"
 
-    call her_main("Oh, wow... They're going quite f-fast...", "normal", "wide", "worried", "shocked", flip=True, xpos="120", ypos="base")
+    call her_main("Oh, wow... They're going quite f-fast...", "normal", "wide", "worried", "shocked", flip=True, xpos="290", ypos="base")
     call her_main("", "normal", "happyCl", "base", "mid")
     call sna_main("Great commentary there girl... You might want to let them know the colour of the grass next...", "snape_10", ypos="head")
     $ renpy.sound.play("sounds/ball_hit.mp3")
@@ -617,12 +668,17 @@ label hufflepuff_match:
     call sna_main("{size=-4}Good grief...{/size}", "snape_05", ypos="head")
     pause .5
 
-    # Cho's skirt gets addressed
-    show screen hufflepuff_match_cho_chase(1.0, 1.0)
-    with fade
+    # Cho's flying CG
     play bg_sounds "sounds/snitchloop.ogg" fadein 2 fadeout 2
-    call her_main("Higher up, Cho seems to have caught an eye on the snitch and is chasing after it, directly followed by Cedric who...", "open", "slit", "low", "stare")
-    show screen hufflepuff_match_cho_chase(1.0, 0.5)
+    show screen hufflepuff_match_cho_chase(1.0, 0.8)
+    hide screen hermione_main
+    with fade
+    pause .8
+
+    $ hermione_zorder=17 # 15 is default
+    call her_main("Higher up, Cho seems to have caught an eye on the snitch and is chasing after it, directly followed by Cedric who...", "open", "slit", "low", "stare", flip=True, xpos=-80, ypos="head")
+    show screen hufflepuff_match_cho_chase(0.8, 0.5)
+    pause 1.5
     call her_main("Hold on a minute... Is Cho wearing a skirt?", "scream", "wide", "worried", "stare")
 
     $ renpy.sound.play("sounds/crowd_gasp.mp3")
@@ -639,12 +695,16 @@ label hufflepuff_match:
     mal "She totally is!"
     $ renpy.sound.play("sounds/giggle2_loud.mp3")
     hide screen hermione_main
-    "Female Student #1" "What a slut!"
-    hide screen hufflepuff_match_cho_chase
     with d3
+    "Female Student #1" "What a slut!"
+    call ctc
+
+    # Pack to stands.
+    hide screen hufflepuff_match_cho_chase
+    with fade
     pause .1
 
-    call her_chibi("stand",375,105+186, flip=False)
+    call her_chibi("stand", flip=False)
     with d3
     pause .3
 
@@ -657,7 +717,7 @@ label hufflepuff_match:
     call her_main("Perhaps I could get Madame Hooch to pause the game...", "open", "closed", "annoyed", "mid")
     pause .1
 
-    call her_chibi("stand",375,105+186, flip=True)
+    call her_chibi("stand", flip=True)
     with d3
     pause .3
 
@@ -693,7 +753,7 @@ label hufflepuff_match:
     # Back to commentating
     call play_music("quidditch")
     play bg_sounds "sounds/crowd_low.mp3" fadein 0.5 fadeout 0.5
-    call her_main("...", "normal", "squint", "angry", "mid", flip=True, xpos="120", ypos="base")
+    call her_main("...", "normal", "squint", "angry", "mid", flip=True, xpos="290", ypos="base")
     call her_main("Oh, apparently Ravenclaw scored during that... \"captivating\" bit of distraction...", "open", "narrow", "annoyed", "mid")
     g9 "Sarcasm much?"
     call her_main("", "normal", "closed", "base", "mid")
@@ -727,7 +787,8 @@ label hufflepuff_match:
     mal2 "She can't help herself answering questions in class...."
     mal2 "I suppose the rule book was more for her benefit than ours."
 
-    call quidditch_stands(crowd_react=["th", "th", "emo3"])
+    #call quidditch_stands(crowd_react=["th", "th", "emo3"]) # emo3 image is missing?
+    call quidditch_stands(crowd_react=["th", "th", None]) # Temp fix, use above line.
     with d3
 
     call her_main("", "annoyed", "closed", "base", "mid")
@@ -740,6 +801,8 @@ label hufflepuff_match:
     call quidditch_stands(crowd_react=[None, None, None])
     with d3
     hide screen hermione_main
+    with d3
+    pause .1
 
     # Genie and Snape get drunk
     call sna_main("Fancy a glass of wine then?", "snape_02", ypos="head")
@@ -763,7 +826,7 @@ label hufflepuff_match:
 
     with hpunch
     $ renpy.sound.play("sounds/punch02.mp3")
-    call her_main("...", "normal", "wide", "base", "stare", flip=True, xpos="120", ypos="base")
+    call her_main("...", "normal", "wide", "base", "stare", flip=True, xpos="290", ypos="base")
 
     $ renpy.sound.play("sounds/crowd_ouch.mp3")
     call quidditch_stands(crowd_react=["sur", "emo02", "excl"])
@@ -778,7 +841,7 @@ label hufflepuff_match:
     with d3
     pause .1
 
-    call her_chibi("stand",375,105+186, flip=False)
+    call her_chibi("stand", flip=False)
     with d3
     pause .1
 
@@ -804,7 +867,7 @@ label hufflepuff_match:
     call her_main("*Grrrrr*", "clench", "narrow", "angry", "mid")
     pause .1
 
-    call her_chibi("stand",375,105+186, flip=True)
+    call her_chibi("stand", flip=True)
     with d3
     pause .1
 
@@ -815,7 +878,7 @@ label hufflepuff_match:
     call quidditch_stands(crowd_react=["th", None, "emo8"])
     with d3
 
-    call her_main("So, I think... that Hufflepuff just scored another goal? They might even be unstoppable at this point!", "open", "base", "base", "L", flip=True, xpos="120", ypos="base")
+    call her_main("So, I think... that Hufflepuff just scored another goal? They might even be unstoppable at this point!", "open", "base", "base", "L", flip=True, xpos="290", ypos="base")
 
     # Fade to black
     stop bg_sounds fadeout 4
@@ -845,14 +908,15 @@ label hufflepuff_match:
     $ cho.set_pose("broom")
     $ cho_animation = sprite_fly_idle
 
-    call cho_chibi("fly",1200,-100+180)
-    call cho_walk(500, 50+180, speed=2)
+    call cho_chibi("fly", 1100, 140)
+    call cho_walk(530, 360, speed=2)
     pause 1.5
+    call ctc
 
     show screen bld2
-    call her_main(face="neutral")
-    call cho_main("Hey, Granger!", "open", "narrow", "angry", "L", ypos=-200, xpos=560) #FIXME transition doesn't work.
-    call her_main("What do you want?{w=0.6} Shouldn't you be busy with,{w=0.8} I don't know...", "open", "base", "angry", "mid", flip=True, xpos="120", ypos="base")
+    call her_main("", "annoyed", "base", "annoyed", "L", flip=True, xpos="290", ypos="base")
+    call cho_main("Hey, Granger!", "open", "narrow", "angry", "L", xpos=580, ypos=-200) #FIXME transition doesn't work.
+    call her_main("What do you want?{w=0.6} Shouldn't you be busy with,{w=0.8} I don't know...", "open", "base", "angry", "mid")
     call cho_main("", "annoyed", "narrow", "raised", "L")
     call her_main("playing the game?", "smile", "closed", "base", "mid")
     call cho_main("The game is over, you dipstick!", "scream", "narrow", "angry", "L")
@@ -905,7 +969,7 @@ label hufflepuff_match:
     pause .1
 
     call cho_walk(1200, 500+180, speed=2)
-    pause 5
+    pause 2
     $ cho_animation = None
     $ cho.set_pose(None)
     call cho_chibi("reset")
@@ -1018,10 +1082,10 @@ label hufflepuff_match_return:
     call popup("New favours for Cho have been unlocked!", "Congratulations!", "interface/icons/head/head_cho_2.png")
     #call unlock_clothing(text=">New clothing items for Cho have been unlocked!", item=cho_outfit_cheerleader)
 
-    #if cho_whoring < 24:
-    #    $ cho_whoring = 24
-    #    $ TBA_message("This concludes all Quidditch events for Cho as of version %s." % title_version)
-    #    $ TBA_message("Cho's recklesness stat has been maxed out.\nYou can now use all of her wardrobe options.")
+    if cho_whoring < 24:
+        $ cho_whoring = 24
+        $ TBA_message("This concludes all Quidditch events for Cho as of version %s." % title_version)
+        $ TBA_message("Cho's recklesness stat has been maxed out.\nYou can now use all of her wardrobe options.")
 
     $ cho_busy      = True
     $ hermione_busy = True
@@ -1031,9 +1095,9 @@ label hufflepuff_match_return:
     $ cho.equip(cho_outfit_last)
 
     $ cho_tier = 2
-    $ cho_training_unlocked = True
-    $ cho_quid.lock_practice = False
-    $ cho_quid.lock_training = False
-    $ cho_quid.lock_tactic   = False
+    #$ cho_training_unlocked = True
+    #$ cho_quid.lock_practice = False
+    #$ cho_quid.lock_training = False
+    #$ cho_quid.lock_tactic   = False
 
     jump end_cho_event

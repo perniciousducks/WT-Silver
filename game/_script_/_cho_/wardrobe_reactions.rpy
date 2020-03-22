@@ -157,7 +157,7 @@ label cho_wardrobe_check(section, arg=None):
                         elif random_number == 3:
                             call cho_main("I would look like a tramp, I refuse.",face="annoyed")
                         elif random_number == 4:
-                            call cho_main("I'm not Granger,[cho_genie_name], ask her to humiliate herself for your amusement..",face="angry")
+                            call cho_main("I'm not Granger, [cho_genie_name]... Ask her to humiliate herself for your amusement..",face="angry")
                         elif random_number == 5:
                             call cho_main("This is too much.",face="annoyed")
                     #Hint

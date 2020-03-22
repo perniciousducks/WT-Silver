@@ -560,8 +560,8 @@ label give_her_gift(gift_item):
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("Hm...?", "base", "base", "base", "mid")
             call her_main("Is this a necklace?", "soft", "base", "base", "mid")
-            call give_gift(">You give the anal plugs to Hermione...",gift_item)
-            call her_main("Thank you, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
+            call give_gift(">You give the anal beads to Hermione...",gift_item)
+            call her_main("Thank you, [genie_name].", "base", "base", "base", "mid")
             call her_mood(-8)
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
             call her_main("[genie_name], are those adult toys of some sort?", "open", "narrow", "annoyed", "mid", cheeks="blush")
@@ -580,7 +580,7 @@ label give_her_gift(gift_item):
             call her_main("Although it's got a nice colour...", "angry", "wink", "base", "mid")
             call her_main(".....................", "angry", "narrow", "base", "down")
             call her_main("Fine, I'll use them as an armband, [genie_name].", "soft", "narrow", "annoyed", "up")
-            call give_gift(">You give the anal plugs to Hermione...",gift_item)
+            call give_gift(">You give the anal beads to Hermione...",gift_item)
             call her_main("But I wont use them for their intended purpose...", "open", "closed", "base", "mid")
             call her_main("................", "base", "narrow", "worried", "down")
             call her_mood(-10)

@@ -189,7 +189,7 @@ default scroll_list_B = [
     scroll_30_ITEM,
 ]
 default scroll_list_C = [
-    scroll_31_ITEM, scroll_32_ITEM,
+    scroll_31_ITEM,
     scroll_33_ITEM, scroll_34_ITEM,
     scroll_35_ITEM, scroll_37_ITEM,
 ]

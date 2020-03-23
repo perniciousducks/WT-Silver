@@ -203,11 +203,14 @@ label hg_wager_bj:
                     call her_main("...", "soft", "base", "worried", "mid", cheeks="blush")
                     m "You're being very strange..."
                     g9 "I didn’t know you cared so much about my well being..."
-                    call sna_main("I thought...{w} never mind, I'll just go.", face="snape_14", wand=True)
+                    call sna_main("But... I swear I heard something...", face="snape_14", wand=True)
+                    g4 "..."
+                    call sna_main("I guess I must've imagined it... I'll just go then.", face="snape_14", wand=True)
                     hide screen snape_defends
                     call sna_chibi("stand","mid","base",flip=True) #snape turns and leaves
                     hide screen bld1
                     with d3
+                    stop music fadeout 2
                     pause.2
 
                     call sna_walk(action="leave")
@@ -257,18 +260,26 @@ label hg_wager_bj:
                     call her_main("That was mortifying!", "angry", "closed", "angry", "mid")
                     call her_main("How could you make me keep going?!?", "angry", "base", "angry", "mid")
                     m "Well, you were down there already, how could I not?"
-                    call her_main("Well, he found out anyway!", "angry", "closed", "angry", "mid")
-                    m "And he didn't care, I don't see the problem here."
-                    call her_main("You are unbelievable sometimes!", "scream", "base", "angry", "mid")
+                    call her_main("I can't believe you...", "angry", "closed", "angry", "mid")
                     call her_main("I'm going now, don't expect me to do anything for you any time soon!", "clench", "base", "angry", "mid")
                     $ her_mood += 10
                 else: #if whoring is higher than 20
                     call her_main("The old me would have been embarrassed by that...", "clench", "narrow", "worried", "mid_soft", cheeks="blush")
                     call her_main("But I thought it was hot!", "grin", "happy", "base", "mid_soft", cheeks="blush")
-                    g9 "I'll bet you did!"
+                    g9 "I bet you did!"
                     call her_main("I can't believe that just happened!", "smile", "base", "base", "mid_soft")
-                    m "Well you did a great job, I'll try to win even harder now!"
-                    call her_main("Well anyway, I must be going. Good bye [genie_name].", "open", "base", "base", "mid")
+                    m "You did a great job, I'll try to win even harder next time!"
+                    call her_main("Thank you [genie_name]... Anyway, I must be going...", "open", "base", "base", "mid")
+                    call blkfade
+                    call her_chibi("stand","mid","base")
+                    call gen_chibi("sit_behind_desk")
+                    hide screen blkfade
+                    if daytime:
+                        call her_main("Bye then...", "smile", "base", "base", "mid")
+                        m "Bye, [hermione_name]."
+                    else:
+                        call her_main("Good night.", "open", "base", "base", "mid")
+                        m "Good night, [hermione_name]"
             "-Tell Him the ghost is gone-":
                 g4 "Wait..."
                 call her_main("*Glick*?", "open_wide_tongue", "wide", "base", "R")
@@ -304,7 +315,7 @@ label hg_wager_bj:
 
                             g4 "And not a moment to soon.... Take this you whore!"
                             call her_chibi_scene("bj_cum_in")
-                            
+
                             call cum_block
                             pause 1
                             call her_chibi_scene("bj_pause")
@@ -365,10 +376,10 @@ label hg_wager_bj:
                             hide screen blkfade
                             call her_main("", "base", "happy", "base", "mid_soft", ypos="base")
                             m "You've done more than enough to save those points."
-                            call her_main("Thank you, [genie_name]", "smile", "happy", "base", "mid_soft")
+                            call her_main("Thank you, [genie_name].", "smile", "happy", "base", "mid_soft")
                             if daytime: #should play if day time
-                                call her_main("Good bye.", "open", "base", "base", "mid")
-                                m "Bye, [hermione_name]"
+                                call her_main("Bye then...", "open", "base", "base", "mid")
+                                m "Bye, [hermione_name]."
                             else:
                                 call her_main("Good night.", "open", "base", "base", "mid")
                                 m "Good night, [hermione_name]"
@@ -389,7 +400,7 @@ label hg_wager_bj:
                     m "Trust me, there's not going to be any watching going on here..."
                     call sna_main("...",face="snape_05")
                     call sna_main("Anyway, I was coming to see if you were up for another round of cards...", face="snape_01")
-                    call sna_main("But I suppose you're quite spent after that whole ordeal", face="snape_02")
+                    call sna_main("But I suppose you're quite spent after that whole ordeal.", face="snape_02")
                     #
                     #
                     menu:
@@ -478,7 +489,7 @@ label hg_wager_bj:
                                         call her_main("But I just made you...", "open", "base", "worried", "mid", cheeks="blush")
                                         g4 "I just lost that god damn game cause I couldn't concentrate!"
                                         call her_main("Well, I did what you asked me!", "mad", "narrow", "angry", "R", cheeks="blush")
-                                        call her_main("So I'd very much appreciate if you didn't deduct those points", "open", "closed", "angry", "mid", cheeks="blush")
+                                        call her_main("So I'd very much appreciate if you didn't deduct those points!", "open", "closed", "angry", "mid", cheeks="blush")
                                 menu:
                                     "-Only deduct the twenty-":
                                         g4 "You should be happy that I'm not deducting more!"

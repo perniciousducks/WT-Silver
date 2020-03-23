@@ -136,16 +136,17 @@ screen map_buttons():
         unhovered SetVariable("ball_hint", None)
         action Return("open_clothing_store")
 
+    # TODO: Uncomment after Snape's office has been implemented.
     #Potions
-    imagebutton:
-        xpos UI_xpos_offset +314
-        ypos UI_ypos_offset +331
-        idle "interface/map/room_potions_idle.png"
-        unhovered SetVariable("ball_hint", None)
-        if store_intro_done:
-            hover "interface/map/room_potions_hover.png"
-            hovered SetVariable("ball_hint", "potions")
-            action Return("potions_room")
+    # imagebutton:
+        # xpos UI_xpos_offset +314
+        # ypos UI_ypos_offset +331
+        # idle "interface/map/room_potions_idle.png"
+        # unhovered SetVariable("ball_hint", None)
+        # if store_intro_done:
+            # hover "interface/map/room_potions_hover.png"
+            # hovered SetVariable("ball_hint", "potions")
+            # action Return("potions_room")
 
     #Room of Requirement
     if unlocked_7th:

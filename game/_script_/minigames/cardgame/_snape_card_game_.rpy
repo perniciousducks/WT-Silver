@@ -97,7 +97,7 @@ label snape_duel_menu:
                 m "I don't have one, right now..."
                 sna "That's a shame, the wager will have to wait then."
                 m "Damn...!"
-                m "(I should see if I could find some more wine in that cupboard...)"
+                m "(I should see if I could find some more wine in that cupboard, or perhaps check the local store...)"
                 jump snape_ready
 
         else:
@@ -111,7 +111,7 @@ label snape_duel_menu:
                 sna "Neither am I."
                 sna "No wine, no duel."
                 m "Damn!"
-                m "(I should see if I could find some more wine in that cupboard...)"
+                m "(I should see if I could find some more wine in that cupboard, or perhaps check the local store...)"
                 jump snape_ready
 
             $ one_of_ten = renpy.random.randint(1, 10)
@@ -335,9 +335,11 @@ label snape_random_duel:
     stop music fadeout 1
     hide screen blkfade
 
-    python:
-        rand_ing_or_pot = random.choice(potion_lib.lib)
-        potion_inv.add(rand_ing_or_pot)
+    # TODO: Uncomment parts of code once potions have been fixed.
+
+    # python:
+        # rand_ing_or_pot = random.choice(potion_lib.lib)
+        # potion_inv.add(rand_ing_or_pot)
 
     if not random_snape_win:
         $ random_snape_win = True
@@ -347,7 +349,8 @@ label snape_random_duel:
         call sna_main("...","snape_04")
         g9 "Now, how about that prize we discussed."
         call sna_main("Ah, yes... something from my collection.","snape_05")
-        call give_reward("You've received "+rand_ing_or_pot.name+" from Snape!", "interface/icons/item_potion.png")
+        call give_reward("You've received a bottle of grape juice from Snape!", "interface/icons/item_potion.png") # <--
+        #call give_reward("You've received "+rand_ing_or_pot.name+" from Snape!", "interface/icons/item_potion.png")
         g4 "What the fuck is this..."
         call sna_main("As I said...","snape_01")
         call sna_main("Something from my collection...","snape_02")
@@ -358,8 +361,8 @@ label snape_random_duel:
         g9 "I bet you do have a whip..."
         call sna_main("Well...","snape_12")
         m "Whatever, I'll take it."
-        call sna_main("What, the whi...","snape_18")
-        call sna_main("Oh, the potion ingredient...","snape_14")
+        #call sna_main("What, the whi...","snape_18")
+        #call sna_main("Oh, the potion ingredient...","snape_14")
         call sna_main("There's plenty more where that came from if you want another game...","snape_24")
         m "..."
         m "I'll think about it."
@@ -404,7 +407,8 @@ label snape_random_duel:
             call sna_main("Maybe I should've gone over the rules a bit more before trying this game again....","snape_05")
             call sna_main("Well played though.","snape_04")
 
-        call give_reward("You've received "+rand_ing_or_pot.name+" from Snape!", "interface/icons/item_potion.png")
+        #call give_reward("You've received "+rand_ing_or_pot.name+" from Snape!", "interface/icons/item_potion.png")
+        call give_reward("You've received a bottle of grape juice from Snape!", "interface/icons/item_potion.png")
 
     call play_sound("door")
     call hide_characters
@@ -422,7 +426,7 @@ label snape_special_duel:
     call play_music("cardgame")
 
     $ random_enemy_deck = create_random_deck(get_deck_score(playerdeck)-2, get_deck_score(playerdeck)+8, cards_all)
-    
+
     $ renpy.call_in_new_context("start_duel", random_enemy_deck)
 
     stop music fadeout 1

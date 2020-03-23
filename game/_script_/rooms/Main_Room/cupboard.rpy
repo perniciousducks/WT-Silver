@@ -41,17 +41,25 @@ label rummaging:
     # Dueling Potion.
     if day <= 3 and rum_times in [1,2]:
         $ potions += 1
-        call give_reward(">You found some sort of potion...","interface/icons/item_potion.png")
+        call give_reward(">You found some sort of healing potion...","interface/icons/item_potion.png")
 
         jump main_room_menu
 
-    # Map.
-    if hermione_favors and not map_unlocked:
-        $ map_unlocked = True # Turns TRUE after you found the Dahr's oddities catalog in the cupboard.
-        call give_reward(">You found a map of the school grounds...\n>You can now leave the office.","interface/icons/item_scroll.png")
+    # Map and wine (Prologue Only).
+    if not map_unlocked:
+        if hermione_favors:
+            $ map_unlocked = True
+            call give_reward(">You found a map of the school grounds...\n>You can now leave the office.","interface/icons/item_scroll.png")
 
-        jump main_room_menu
+            jump main_room_menu
+        elif wine_ITEM.number < 1:
+            call rum_block(wine_ITEM)
 
+            jump main_room_menu
+        elif firewhisky_ITEM.unlocked and firewhisky_ITEM.number < 1:
+            call rum_block(firewhisky_ITEM)
+
+            jump main_room_menu
 
     # Dumbledore Card.
     if day >= 26 and deck_unlocked and random_percent <= 40 and not card_exist(unlocked_cards,card_dumbledore) :

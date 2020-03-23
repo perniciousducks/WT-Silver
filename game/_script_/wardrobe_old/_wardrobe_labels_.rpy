@@ -112,7 +112,7 @@ label wardrobe_update:
     else:
         if wardrobe_music:
             $ wardrobe_music = False
-            call music_block
+            call play_music(active_girl)
 
     #Sound Effects
     if add_wardrobe_sound: #False by default. Only happens on a "wardrobe_page" change.
@@ -188,7 +188,7 @@ label close_wardrobe:
     if active_girl == "susan":
         call sus_main(xpos="base",ypos="base")
         jump susan_requests
-        
+
 ### TOGGLE LABELS ###
 
 label wardrobe_chitchat_toggle:

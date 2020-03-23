@@ -2,7 +2,7 @@
 
 screen wardrobe_old():
     tag wardrobe_menu_old
-    zorder 4
+    zorder 11
 
     if active_girl in ["luna","susan"]:
         $ icon_ypos_offset = 0
@@ -51,16 +51,14 @@ screen wardrobe_old():
             hover "interface/wardrobe/old/"+str(interface_color)+"/hover_full_"+str(wardrobe_color)+".png"
 
 
-
         ## Always Active ##
-        hotspot (745+280,10,45,45) clicked [SetVariable("wardrobe_page",0),Jump("close_wardrobe")]    #Close Wardrobe and set to default.
+        use close_button(close_action=[SetVariable("wardrobe_page",0), Jump("close_wardrobe")])
+
         if active_girl == "luna":
             text ""+lun_name xalign 0.5 xpos 820 ypos 57 size 20
         if active_girl == "susan":
             text ""+susan_name xalign 0.5 xpos 820 ypos 57 size 20
         text "Wardrobe" xpos 668 ypos 154+360 size 12
-
-        hotspot (993,10,32,23) clicked Jump("hide_wardrobe")
 
         #Wardrobe background color
         for i in range(0,len(wr_background_color)):

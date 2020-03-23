@@ -45,7 +45,7 @@ label rummaging:
 
         jump main_room_menu
 
-    # Map and wine (Prologue Only).
+    # Map and beverages (Prologue Only).
     if not map_unlocked:
         if hermione_favors:
             $ map_unlocked = True

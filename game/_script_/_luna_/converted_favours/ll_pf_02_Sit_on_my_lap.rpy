@@ -1100,7 +1100,7 @@ label luna_favour_2:
                 call lun_main("tell me how good it feels to rub that filthy cock of yours against me...","base","mad","angry","R")
                 m "..."
                 call lun_main("go on... or else...","base","seductive","angry","R")
-                ">Luna goes to stand up slowly."
+                ">Luna stands up slowly."
                 m "alright... I'll do it."
                 ">Luna sits back down onto your lap"
                 call lun_main("good boy...","base","seductive","base","R")

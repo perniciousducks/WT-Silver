@@ -399,7 +399,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
             $ ccg1 = "luna_34"
             lun "You don't mean..."
             g9 "ARGH!!!"
-            ">Your cock explodes inside Luna, unleashing an avalanche of your thick seed into her tight little pussy."
+            ">Your cock explodes inside Luna, unleashing a deluge of your thick seed into her tight little pussy."
             g9 "BY THE NINE DIVINES!"
             $ ccg1 = "luna_35"
             lun "it's {heart} I can't {heart} what {heart} ahhhhhhhhh {heart}{heart}{heart}"

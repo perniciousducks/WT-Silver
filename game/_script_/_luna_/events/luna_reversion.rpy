@@ -86,7 +86,7 @@ label luna_reversion_event:
             if lun_dom <= 8:
                 $ lun_dom += 1
             $ luna_choice = 3
-            m "Well seeing as how you're so skilled at everything you turn your hand towards..."
+            m "Seeing as how you're so skilled at everything you turn your hand towards..."
             call lun_main("Mhmmm...","upset","suspicious","angry","R")
             m "I was hoping you could turn your hand towards my cock."
             call lun_main("...","normal","mad","base","R")
@@ -96,7 +96,7 @@ label luna_reversion_event:
             m "There'll be a hefty reward..."
             call lun_main("...","upset","mad","mad","R")
             call lun_main("......","normal","mad","angry","mid")
-            call lun_main("Well seeing as how you asked so nicely...","base","mad","base","mid")
+            call lun_main("Well since you asked so nicely...","base","mad","base","mid")
             m "..."
             call lun_main("Get over here...","base","angry","mad","mid")
             m "Fantastic! Let me just stand up."

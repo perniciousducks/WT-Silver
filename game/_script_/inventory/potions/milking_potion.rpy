@@ -762,7 +762,7 @@ label potion_scene_11_3:
         call her_main("really?", "annoyed", "narrow", "annoyed", "mid")
         m "Really, really."
         call her_main("Ugh, fine... (the stuff I put up with)", "annoyed", "narrow", "angry", "R")
-        call nar(">hermione takes it from your hands and goes to put it on.")
+        call nar(">hermione takes it from your hands and puts it on.")
         call her_main("Where's my stupid dick supposed to go...", "angry", "base", "base", "mid")
         call her_main("It's in the way of the cannister.", "angry", "narrow", "base", "down")
         m "Try sticking it into the bottom of the cannister."

@@ -563,7 +563,7 @@ label tentacle_2: # Personal path
     her "*hmmm aaaaa hhhhhhuuuttt*!"
     gen "One last time. Say it like you mean it."
     call cg_scene("e5")
-    ">As she goes to exhale you quickly remove the tentacle from her mouth."
+    ">As she exhales, you quickly remove the tentacle from her mouth."
     her "{size=+5}I'm a slut!{/size}"
     ">The realisation of what has just occurred hits her like a ton of bricks."
     her "I-I'm cumming... Profes-"

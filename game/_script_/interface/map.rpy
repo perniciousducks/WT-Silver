@@ -218,8 +218,7 @@ screen map_buttons():
         hover "interface/general/"+str(interface_color)+"/check_true.png"
         selected_idle "interface/general/"+str(interface_color)+"/check_true_hidden.png"
         selected_hover "interface/general/"+str(interface_color)+"/check_false.png"
-        hovered SetVariable("ball_hint", None)
-        unhovered SetVariable("ball_hint", None)
+        tooltip "Toggles map folding animation"
         action ToggleVariable("map_animated", True, False)
 
 label set_her_map_location(location = ""):

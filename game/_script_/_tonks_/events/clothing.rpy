@@ -2,6 +2,9 @@ label tonks_summon_setup:
 
     $ tonks_wardrobe_unlocked = True
 
+    $ tonks.wear("all")
+    $ tonks.set_cum(None)
+
     $ random_number = renpy.random.randint(1, 20)
     if random_number in [1,2,3,4,5] and tonks.is_worn("top") and ton_friendship >= 50: #Naked
 
@@ -128,17 +131,17 @@ label tonks_summon_setup:
         call ton_main(xpos="base", ypos="base", trans=fade)
 
         return
-        
+
     if tonks_outfits_schedule:
         $ tonks.equip_random_outfit()
 
     call play_sound("door")
     call ton_chibi("stand","mid","base")
     with d3
-    
+
     #Tonks greeting.
     call play_music("tonks")
-    
+
     if ton_mood > 0:
         if 5 > ton_mood >= 1:
             call ton_main("Yes, [ton_genie_name]?", "open", "base", "base", "R", xpos="base", ypos="base", trans=d3)
@@ -155,7 +158,7 @@ label tonks_summon_setup:
             call ton_main("Please stop wasting my time.", "upset", "closed", "angry", "mid", xpos="base", ypos="base", trans=d3)
         elif ton_mood >= 50:
             call ton_main("You have the nerve to call me here after what you did.", "upset", "base", "angry", "mid", xpos="base", ypos="base", trans=d3)
-            
+
         call describe_mood("Tonks", ton_mood)
         call tutorial("moodngifts")
     else:

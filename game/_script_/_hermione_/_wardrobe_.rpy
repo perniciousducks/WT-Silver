@@ -52,32 +52,32 @@ default hermione = Doll(name="hermione",
 ##   Hair    ##
 ###############
 
-default her_hair_base = DollCloth("hermione", ("head", "hair"), "hair", "base", [[152, 89, 48, 255], [195, 137, 89, 255], [230, 141, 32, 255]])
+default her_hair_base = DollCloth("hermione", ("head", "hair"), "hair", "base", [[152, 89, 48, 255], [195, 137, 89, 255], [230, 141, 32, 255]], unlocked=True)
 
 ################
 ## Schoolgirl ##
 ################
 
-default her_top_school1 = DollCloth("hermione", ("tops", "school"), "top", "top_school_1", [[183, 183, 184, 255], [109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
-default her_top_school2 = DollCloth("hermione", ("tops", "school"), "top", "top_school_2", [[183, 183, 184, 255], [109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
-default her_top_school3 = DollCloth("hermione", ("tops", "school"), "top", "top_school_3", [[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
-default her_top_school4 = DollCloth("hermione", ("tops", "school"), "top", "top_school_4", [[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
-default her_top_school5 = DollCloth("hermione", ("tops", "school"), "top", "top_school_5", [[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
-default her_top_school6 = DollCloth("hermione", ("tops", "school"), "top", "top_school_6", [[109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
-default her_top_school7 = DollCloth("hermione", ("tops", "school"), "top", "top_school_7", [[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
-default her_bottom_school1 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "school_skirt_1", [[103, 90, 108, 255], [232, 177, 13, 255]])
-default her_bottom_school2 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "school_skirt_2", [[103, 90, 108, 255], [232, 177, 13, 255]])
-default her_bottom_school3 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "school_skirt_3", [[103, 90, 108, 255], [232, 177, 13, 255]])
-default her_bottom_school4 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "school_skirt_4", [[103, 90, 108, 255], [232, 177, 13, 255]])
-default her_stockings_base1 = DollCloth("hermione", ("legwear", "stockings"), "stockings", "stockings_1", [[219, 165, 13, 255], [146, 63, 30, 255]])
-default her_panties_base1 = DollCloth("hermione", ("panties", "panties"), "panties", "basic_panties_1", [[232, 232, 232, 255], [202, 60, 1, 255]])
-default her_bra_base1 = DollCloth("hermione", ("bras", "bras"), "bra", "basic_bra_1", [[232, 232, 232, 255], [202, 60, 1, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
+default her_top_school1 = DollCloth("hermione", ("tops", "school"), "top", "top_school_1", [[183, 183, 184, 255], [109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]], unlocked=True)
+default her_top_school2 = DollCloth("hermione", ("tops", "school"), "top", "top_school_2", [[183, 183, 184, 255], [109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]], unlocked=True)
+default her_top_school3 = DollCloth("hermione", ("tops", "school"), "top", "top_school_3", [[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]], unlocked=True)
+default her_top_school4 = DollCloth("hermione", ("tops", "school"), "top", "top_school_4", [[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]], unlocked=True)
+default her_top_school5 = DollCloth("hermione", ("tops", "school"), "top", "top_school_5", [[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]], unlocked=True)
+default her_top_school6 = DollCloth("hermione", ("tops", "school"), "top", "top_school_6", [[109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]], unlocked=True)
+default her_top_school7 = DollCloth("hermione", ("tops", "school"), "top", "top_school_7", [[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]], unlocked=True)
+default her_bottom_school1 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "school_skirt_1", [[103, 90, 108, 255], [232, 177, 13, 255]], unlocked=True)
+default her_bottom_school2 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "school_skirt_2", [[103, 90, 108, 255], [232, 177, 13, 255]], unlocked=True)
+default her_bottom_school3 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "school_skirt_3", [[103, 90, 108, 255], [232, 177, 13, 255]], unlocked=True)
+default her_bottom_school4 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "school_skirt_4", [[103, 90, 108, 255], [232, 177, 13, 255]], unlocked=True)
+default her_stockings_base1 = DollCloth("hermione", ("legwear", "stockings"), "stockings", "stockings_1", [[219, 165, 13, 255], [146, 63, 30, 255]], unlocked=True)
+default her_panties_base1 = DollCloth("hermione", ("panties", "panties"), "panties", "basic_panties_1", [[232, 232, 232, 255], [202, 60, 1, 255]], unlocked=True)
+default her_bra_base1 = DollCloth("hermione", ("bras", "bras"), "bra", "basic_bra_1", [[232, 232, 232, 255], [202, 60, 1, 255], [167, 77, 42, 255], [237, 179, 14, 255]], unlocked=True)
 
 default her_accessory_house_emblem = DollCloth("hermione", ("misc", "accessory"), "accessory0", "house_emblem", [[167, 77, 42, 255], [237, 179, 14, 255]], zorder=16, unlocked=True)
 
 default her_outfit_default = DollOutfit([her_hair_base, her_top_school1, her_bottom_school1, her_panties_base1, her_bra_base1, her_stockings_base1], True)
-default her_outfit_default_no_vest = DollOutfit([her_hair_base, her_top_school3, her_bottom_school1, her_panties_base1, her_bra_base1, her_stockings_base1], True)
-default her_outfit_default_no_tie_open_shirt = DollOutfit([her_hair_base, her_top_school5, her_bottom_school1, her_panties_base1, her_bra_base1, her_stockings_base1], True)
+default her_outfit_default_no_vest = DollOutfit([her_hair_base, her_top_school3, her_bottom_school1, her_panties_base1, her_bra_base1, her_stockings_base1])
+default her_outfit_default_no_tie_open_shirt = DollOutfit([her_hair_base, her_top_school5, her_bottom_school1, her_panties_base1, her_bra_base1, her_stockings_base1])
 default her_outfit_last = DollOutfit([her_hair_base])
 
 ###########################
@@ -86,7 +86,7 @@ default her_outfit_last = DollOutfit([her_hair_base])
 default her_panties_bikini1 = DollCloth("hermione", ("panties", "panties"), "panties", "bikini_panties_1", [[138, 0, 0, 255], [252, 135, 0, 255]])
 default her_bra_bikini1 = DollCloth("hermione", ("bras", "bras"), "bra", "bikini_bra_1", [[138, 0, 0, 255], [252, 135, 0, 255]])
 
-default her_outfit_bikini1 = DollOutfit([her_hair_base, her_panties_bikini1, her_bra_bikini1], price=100)
+default her_outfit_bikini1 = DollOutfit([her_hair_base, her_panties_bikini1, her_bra_bikini1], price=500)
 
 ########################
 ## Rave Bikini Outfit ##
@@ -95,7 +95,7 @@ default her_outfit_bikini1 = DollOutfit([her_hair_base, her_panties_bikini1, her
 default her_panties_bikini2 = DollCloth("hermione", ("panties", "panties"), "panties", "bikini_panties_2", [[55, 55, 55, 255], [197, 142, 35, 255]])
 default her_bra_bikini2 = DollCloth("hermione", ("bras", "bras"), "bra", "bikini_bra_2", [[55, 55, 55, 255], [197, 142, 35, 255]])
 
-default her_outfit_bikini2 = DollOutfit([her_hair_base, her_panties_bikini2, her_bra_bikini2], price=100)
+default her_outfit_bikini2 = DollOutfit([her_hair_base, her_panties_bikini2, her_bra_bikini2], price=500)
 
 #################
 ## Maid Outfit ##
@@ -108,7 +108,7 @@ default her_neckwear_maid1 = DollCloth("hermione", ("head", "neckwear"), "neckwe
 default her_neckwear_maid2 = DollCloth("hermione", ("head", "neckwear"), "neckwear", "maid_choker_2", [[236, 243, 244, 255]])
 default her_gloves_maid1 = DollCloth("hermione", ("misc", "gloves"), "gloves", "maid_gloves_1", [[40, 51, 61, 255], [236, 243, 244, 255], [53, 63, 84, 255]])
 
-default her_outfit_maid = DollOutfit([her_hair_base, her_top_maid1, her_stockings_maid1, her_hat_maid1, her_neckwear_maid1, her_neckwear_maid2, her_gloves_maid1], price=250)
+default her_outfit_maid = DollOutfit([her_hair_base, her_top_maid1, her_stockings_maid1, her_hat_maid1, her_neckwear_maid1, her_neckwear_maid2, her_gloves_maid1], price=500)
 
 ##################
 ## Poker Outfit ##
@@ -125,7 +125,7 @@ default her_gloves_poker1 = DollCloth("hermione", ("misc", "gloves"), "gloves", 
 default her_earring_poker1 = DollCloth("hermione", ("head", "earrings"), "earring", "poker_earring_1", [[255, 179, 3, 255]])
 default her_piercing2_poker1 = DollCloth("hermione", ("torso", "piercing"), "piercing2", "poker_belly_1", [[26, 26, 35, 255], [232, 232, 232, 255], [153, 22, 10, 255], [255, 179, 3, 255]])
 
-default her_outfit_poker = DollOutfit([her_hair_base, her_hat_poker1, her_hat_poker2, her_neckwear_poker1, her_stockings_poker1, her_stockings_poker2, her_panties_poker1, her_bra_poker1, her_gloves_poker1, her_earring_poker1, her_piercing2_poker1], price=250)
+default her_outfit_poker = DollOutfit([her_hair_base, her_hat_poker1, her_hat_poker2, her_neckwear_poker1, her_stockings_poker1, her_stockings_poker2, her_panties_poker1, her_bra_poker1, her_gloves_poker1, her_earring_poker1, her_piercing2_poker1], price=500)
 
 ##################
 ## Bunny Outfit ##
@@ -138,7 +138,7 @@ default her_hat_bunny1 = DollCloth("hermione", ("head", "hats"), "hat", "bunny_h
 default her_gloves_bunny1 = DollCloth("hermione", ("misc", "gloves"), "gloves", "bunny_gloves_1", [[232, 232, 232, 255]])
 default her_neckwear_bunny1 = DollCloth("hermione", ("head", "neckwear"), "neckwear", "bunny_bowtie_1", [[232, 232, 232, 255], [48, 48, 48, 255]])
 
-default her_outfit_bunny = DollOutfit([her_hair_base, her_top_bunny1, her_stockings_bunny1, her_tattoo3_bunny1, her_hat_bunny1, her_gloves_bunny1, her_neckwear_bunny1], price=250)
+default her_outfit_bunny = DollOutfit([her_hair_base, her_top_bunny1, her_stockings_bunny1, her_tattoo3_bunny1, her_hat_bunny1, her_gloves_bunny1, her_neckwear_bunny1], price=500)
 
 ################
 ## Ball Dress ##
@@ -167,7 +167,7 @@ default her_accessory_yen_corset1 = DollCloth("hermione", ("misc", "accessory"),
 default her_neckwear_yen_choker1 = DollCloth("hermione", ("head", "neckwear"), "neckwear", "yen_choker", [[30, 29, 28, 255]])
 default her_gloves_yen1 = DollCloth("hermione", ("misc", "gloves"), "gloves", "yen_gloves", [[52, 37, 31, 255]], zorder=16)
 
-default her_outfit_yennefer = DollOutfit([her_hair_base, her_top_yen1, her_bottom_yen_skirt1, her_accessory_yen_sash1, her_stockings_yen1, her_accessory_yen_feathers1, her_accessory_yen_scarf1, her_neckwear_yen_choker1, her_gloves_yen1, her_accessory_yen_corset1, her_accessory_yen_belt1], price=250)
+default her_outfit_yennefer = DollOutfit([her_hair_base, her_top_yen1, her_bottom_yen_skirt1, her_accessory_yen_sash1, her_stockings_yen1, her_accessory_yen_feathers1, her_accessory_yen_scarf1, her_neckwear_yen_choker1, her_gloves_yen1, her_accessory_yen_corset1, her_accessory_yen_belt1], price=500)
 
 #######################
 ## Pizza Slut Outfit ##
@@ -189,7 +189,7 @@ default her_top_bioshock = DollCloth("hermione", ("tops", "school"), "top", "bio
 default her_neckwear_bioshock = DollCloth("hermione", ("head", "neckwear"), "neckwear", "bioshock_choker", [[12, 1, 72, 255]])
 default her_robe_bioshock = DollCloth("hermione", ("tops", "robes"), "robe", "bioshock_robe", [[12, 1, 72, 255], [232, 232, 232, 255]])
 
-default her_outfit_bioshock = DollOutfit([her_hair_bioshock, her_robe_bioshock, her_bottom_bioshock, her_top_bioshock, her_neckwear_bioshock], price=250)
+default her_outfit_bioshock = DollOutfit([her_hair_bioshock, her_robe_bioshock, her_bottom_bioshock, her_top_bioshock, her_neckwear_bioshock], price=500)
 
 ##############
 ## Swimsuit ##
@@ -197,7 +197,7 @@ default her_outfit_bioshock = DollOutfit([her_hair_bioshock, her_robe_bioshock, 
 
 default her_top_swimsuit_1 = DollCloth("hermione", ("tops", "school"), "top", "swimsuit_top_1", [[22, 27, 48, 255], [224, 198, 16, 255]], blacklist=["panties", "bra"], zorder=7)
 
-default her_outfit_swimsuit = DollOutfit([her_hair_base, her_top_swimsuit_1], price=250)
+default her_outfit_swimsuit = DollOutfit([her_hair_base, her_top_swimsuit_1], price=500)
 
 ##########
 ## MISC ##

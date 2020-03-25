@@ -307,7 +307,7 @@ label adjust_game_difficulty(dif=None):
         $ firewhisky_ITEM.cost = 160
     return
 
-label unlock_clothing(text="", item="interface/icons/outfits/mannequin_1.png"):
+label unlock_clothing(text="", item="interface/icons/box_blue_1.png"):
 
     $ renpy.play('sounds/win2.mp3')
     show screen notes

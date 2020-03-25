@@ -1,6 +1,9 @@
 label hermione_summon_setup:
     $ random_number = renpy.random.randint(1, 10)
 
+    $ hermione.wear("all")
+    $ hermione.set_cum(None)
+
     if not hermione_wardrobe_unlocked:
         $ hermione_wardrobe_unlocked = True
 
@@ -61,7 +64,7 @@ label hermione_summon_setup:
     # storm             = bool
 
     # Sunny
-    
+
     #
     #
     # TODO: Remove obsolete variables and fix the code after clothes have been added.
@@ -330,7 +333,7 @@ label hermione_summon_setup:
 
             # #Unlocks rewards.
             # call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_cold_sexy_ITEM)
-            
+
     if hermione_outfits_schedule:
         $ hermione.equip_random_outfit()
 
@@ -340,7 +343,7 @@ label hermione_summon_setup:
 
     #Hermione greeting.
     call play_music("hermione")
-    
+
     if her_mood > 0:
         if 5 > her_mood >= 1:
             call her_main("Yes, [genie_name]?", "soft", "base", "worried", "mid", xpos="base", ypos="base", trans=d3)
@@ -357,7 +360,7 @@ label hermione_summon_setup:
             call her_main("*Tsk*", "angry", "base", "angry", "R", xpos="base", ypos="base", trans=d3)
         elif her_mood >= 50:
             call her_main("I have nothing to tell you, sir!", "mad", "narrow", "angry", "L", xpos="base", ypos="base", trans=d3)
-            
+
         call describe_mood("Hermione", her_mood)
         call tutorial("moodngifts")
     else:

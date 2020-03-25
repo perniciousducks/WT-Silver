@@ -194,69 +194,6 @@ default scroll_list_C = [
     scroll_35_ITEM, scroll_37_ITEM,
 ]
 
-# Badges
-default spew_badge_ITEM      = Item(id="spew_badge", name="S.P.E.W. Badge",       type="accessory", items=["badge"],       image="badge_spew",        cost=5,  description=">A badge designed to show one's opposition of elf\n slavery.")
-default cum_badge_ITEM       = Item(id="cum_badge", name="I <3 C.U.M. Badge",     type="accessory", items=["badge"],       image="badge_cum",  cost=15, description=">A badge that displays ones affection towards semen.")
-default cat_ears_ITEM        = Item(id="cat_ears", name="Cat Ears",               type="accessory", items=["ears","tail"], image="ears_cat",          cost=40, description=">A fluffy set of catlike ears that matches one's\n hair-colour!")
-default elf_ears_ITEM        = Item(id="elf_ears", name="Elf Ears",               type="accessory", items=["ears"],        image="ears_elf",          cost=20, description=">A pointy set of elven ears.")
-default reading_glasses_ITEM = Item(id="reading_glasses", name="Reading Glasses", type="accessory", items=["glasses"],     image="glasses_reading",   cost=50, description=">A lot of wizards are into girls wearing these!")
-default vintage_glasses_ITEM = Item(id="vintage_glasses", name="Vintage Glasses", type="accessory", items=["glasses"],     image="glasses_vintage",   cost=70, description=">Wearing these doesn't automatically make you a nerd!")
-
-default accs_list=[
-    spew_badge_ITEM,
-    cum_badge_ITEM,
-    cat_ears_ITEM,
-    elf_ears_ITEM,
-    reading_glasses_ITEM,
-    vintage_glasses_ITEM
-]
-
-# Makeup
-default lipstick_red_ITEM    = Item(id="lipstick_red", name="Red Lipstick",   type="makeup", items=["lipstick"], image="lipstick_red",    cost=100, description=">They call this one the red rocket!")
-default lipstick_pink_ITEM   = Item(id="lipstick_pink", name="Pink Lipstick", type="makeup", items=["lipstick"], image="lipstick_pink",   unlockable=True)
-default freckles_makeup_ITEM = Item(id="freckles_makeup", name="Freckles",    type="makeup", items=["freckles"], image="makeup_freckles", cost=20,  description=">A magical item that makes the wearer's freckles more\n pronounced!")
-default fake_cum_makeup_ITEM = Item(id="fake_cum_makeup", name="Fake Cum",    type="makeup", items=["fake cum"], image="makeup_fake_cum", cost=20,  description=">When she doesn't want to wear your real cum just yet.\n Be patient!")
-
-default misc_list=[
-    lipstick_red_ITEM,
-    lipstick_pink_ITEM,
-    freckles_makeup_ITEM,
-    fake_cum_makeup_ITEM,
-]
-
-# Dyes
-default brown_dye_ITEM      = Item(id="brown_dye", name="Mud-Blood Brown",    type="dye", items=["clothing dye","hair dye"], image="dye_brown",      cost=20,  description=">Basic shade of brown. Simple yet elegant!")
-default yellow_dye_ITEM     = Item(id="yellow_dye", name="Niffler's Gold",    type="dye", items=["clothing dye","hair dye"], image="dye_yellow",     cost=40,  description=">A very nice shade of yellow.")
-default orange_dye_ITEM     = Item(id="orange_dye", name="Butter Beer",       type="dye", items=["clothing dye"],            image="dye_orange",     cost=60,  description=">A very nice shade of orange.")
-default red_dye_ITEM        = Item(id="red_dye", name="Weasel Red",           type="dye", items=["clothing dye","hair dye"], image="dye_red",        cost=60,  description=">A very nice shade of red.")
-default crimson_dye_ITEM    = Item(id="crimson_dye", name="Crimson Lion",     type="dye", items=["clothing dye","hair dye"], image="dye_crimson",    cost=80,  description=">A very rich shade of red.")
-default green_dye_ITEM      = Item(id="green_dye", name="Bowtruckle Paint",   type="dye", items=["clothing dye"],            image="dye_green",      cost=60,  description=">A bright shade of green.")
-default dark_green_dye_ITEM = Item(id="dark_green_dye", name="Serpent Green", type="dye", items=["clothing dye","hair dye"], image="dye_dark_green", cost=80,  description=">A darker shade of green.")
-default blue_dye_ITEM       = Item(id="blue_dye", name="Pixie Dye",           type="dye", items=["clothing dye"],            image="dye_blue",       cost=60,  description=">A bright shade of blue.")
-default dark_blue_dye_ITEM  = Item(id="dark_blue_dye", name="Raven Blue",     type="dye", items=["clothing dye","hair dye"], image="dye_dark_blue",  cost=80,  description=">A darker shade of blue.")
-default purple_dye_ITEM     = Item(id="purple_dye", name="Pygmy Puff Purple", type="dye", items=["clothing dye","hair dye"], image="dye_purple",     cost=100, description=">A very nice shade of purple.")
-default pink_dye_ITEM       = Item(id="pink_dye", name="Pussy Pink",          type="dye", items=["clothing dye","hair dye"], image="dye_pink",       cost=120, description=">A colour so pink, it makes you want to cover your\n whole room with it!")
-default gray_dye_ITEM       = Item(id="gray_dye", name="Ghostly Gray",        type="dye", items=["clothing dye","hair dye"], image="dye_gray",       cost=120, description=">A very classy shade of gray.")
-default black_dye_ITEM      = Item(id="black_dye", name="Seriously Black",    type="dye", items=["clothing dye","hair dye"], image="dye_black",      cost=200, description=">As black as a Testral.")
-default white_dye_ITEM      = Item(id="white_dye", name="Patroni White",      type="dye", items=["clothing dye"],            image="dye_white",      cost=200, description=">As bright and pure as a Patronus!")
-
-default dye_list=[
-    brown_dye_ITEM,
-    yellow_dye_ITEM,
-    orange_dye_ITEM,
-    red_dye_ITEM,
-    crimson_dye_ITEM,
-    green_dye_ITEM,
-    dark_green_dye_ITEM,
-    blue_dye_ITEM,
-    dark_blue_dye_ITEM,
-    purple_dye_ITEM,
-    pink_dye_ITEM,
-    gray_dye_ITEM,
-    black_dye_ITEM,
-    white_dye_ITEM,
-]
-
 # Hermione
 
 default hg_bikini1 = CostumeItem(
@@ -299,8 +236,6 @@ default hermione_outfits_list = [hg_bikini1, hg_bikini2, hg_maid, hg_bunny, hg_b
 default hermione_costumes_list = []
 default hermione_dresses_list = []
 default hermione_clothing_sets_list=[]
-
-
 
 # Luna Outfits
 

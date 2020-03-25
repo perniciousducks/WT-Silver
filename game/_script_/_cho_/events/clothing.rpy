@@ -3,6 +3,7 @@ label cho_summon_setup:
     $ cho_wardrobe_unlocked = True
 
     $ cho.wear("all")
+    $ cho.set_cum(None)
 
     $ random_number = renpy.random.randint(1, 10)
 

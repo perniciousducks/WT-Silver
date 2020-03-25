@@ -4,8 +4,10 @@
 
 label astoria_summon_setup:
 
+    $ astoria.wear("all")
+    $ astoria.set_cum(None)
     $ astoria_wardrobe_unlocked = True
-    
+
     if astoria_outfits_schedule:
         $ astoria.equip_random_outfit()
 
@@ -15,7 +17,7 @@ label astoria_summon_setup:
 
     #Astoria greeting.
     call play_music("astoria")
-    
+
     if ast_mood > 0:
         if 5 > ast_mood >= 1:
             call ast_main("[ast_genie_name]?", "annoyed", "base", "base", "mid", xpos="base", ypos="base", trans=d3)
@@ -32,7 +34,7 @@ label astoria_summon_setup:
         elif ast_mood >= 50:
             call ast_main("What?!", "scream", "narrow", "angry", "mid", xpos="base", ypos="base", trans=d3)
             call ast_main("", "angry", "narrow", "angry", "mid")
-            
+
         call describe_mood("Astoria", ast_mood)
         call tutorial("moodngifts")
     else:

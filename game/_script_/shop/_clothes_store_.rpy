@@ -13,7 +13,7 @@ init python:
             var_name = outfit_linking[item.id]
             outfit = globals()[var_name]
             outfit.unlock()
-            
+
 init python:
     # Used for prediction
     def all_clothes_images():
@@ -41,8 +41,6 @@ screen clothing_store_room():
     use ui_top_bar
 
     zorder 0
-
-
 
 label open_clothing_store:
     show screen blkfade
@@ -74,8 +72,6 @@ label open_clothing_store:
 
     jump clothing_shop_menu
 
-
-
 label clothing_store_chitchat:
     if not clothing_store_intro_done:
         $ clothing_store_intro_done = True
@@ -101,8 +97,6 @@ label clothing_store_chitchat:
 
     return
 
-
-
 label close_clothing_store:
     $ renpy.play('sounds/door2.mp3')
     hide screen clothing_store_menu
@@ -119,8 +113,6 @@ label close_clothing_store:
 
     jump return_office
 
-
-
 screen clothing_store_menu():
     tag store_menu
     if store_category == 0:
@@ -132,35 +124,6 @@ screen clothing_store_menu():
 
     # Close Button
     use close_button
-
-    # Outfits Button
-    imagebutton:
-        xpos 725 +UI_xpos_offset
-        ypos 105
-        idle "interface/general/"+interface_color+"/button_select.png"
-        if store_category != 0:
-            hover "interface/general/"+interface_color+"/button_select_hover.png"
-            action [SetVariable("store_category",0), Jump("clothing_shop_menu")]
-    if store_category == 0:
-        text "Outfits" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121 size 16
-    else:
-        text "Outfits" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121 size 14
-
-    # Clothing Items Button
-    imagebutton:
-        xpos 725 +UI_xpos_offset
-        ypos 149
-        idle "interface/general/"+interface_color+"/button_select.png"
-        if store_category != 1:
-            hover "interface/general/"+interface_color+"/button_select_hover.png"
-            action [SetVariable("store_category",1), Jump("clothing_items_shop_menu")]
-    if store_category == 1:
-        text "Items" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+44 size 16
-    else:
-        text "Items" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+44 size 14
-
-
-
 
 #Clothing Store, Outfits & Sets.
 label clothing_shop_menu:
@@ -233,53 +196,6 @@ label clothing_shop_menu:
         $ item_choice = None
 
     jump clothing_shop_menu
-
-label clothing_items_shop_menu:
-    hide screen clothing_menu
-    show screen clothing_store_menu
-
-    $ item_list = [filter(lambda x : not (x.unlocked or x.unlockable), y) for y in [[], accs_list, misc_list, dye_list]]
-
-    show screen list_menu("clothing_items_shop_menu", "Clothing Items", ("Clothing", "Accessories", "Other", "Dyes"), item_list)
-    with d3
-
-    label .interact:
-    $ _return = ui.interact()
-
-    if isinstance(_return, Item):
-        call purchase_clothing_item(_return)
-        jump clothing_items_shop_menu
-
-    elif _return == "Close":
-        jump close_clothing_store
-
-    jump .interact
-
-label purchase_clothing_item(item):
-    hide screen clothing_store_menu
-    hide screen list_menu
-    hide screen clothing_menu
-    with d3
-
-    if gold >= item.cost:
-        $ item.unlocked = True #Unlocks item.
-        $ gold -= item.cost
-
-        $ the_gift = item.get_image()
-        show screen gift
-        with d3
-
-        "Item purchased!"
-
-        hide screen gift
-        with d3
-
-    else:
-        m "I don't have enough gold."
-
-    return
-
-
 
 label purchase_outfit(item):
     hide screen clothing_store_menu

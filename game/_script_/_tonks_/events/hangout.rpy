@@ -678,7 +678,7 @@ label nt_he_story_centaur: # Not in use.
     call ton_main("But I did it anyway...","base","base","angry","mid")
     g4 "*Argh!* What did you do?"
     call ton_main("Well, I simply helped them release some of their stored up tension...","open","base","base","R")
-    call ton_main("And stroked their manhood's{w}with my hands...","horny","base","base","mid")
+    call ton_main("And stroked their manhoods with my hands...","horny","base","base","mid")
 
     g9 "Yes! How filthy!"
     call ton_main("*Hmph?!* You believe what I did was filthy, Professor?!","base","wide","wide","wide")

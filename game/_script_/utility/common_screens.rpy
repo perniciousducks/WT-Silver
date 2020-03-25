@@ -43,6 +43,7 @@ screen gift(win=False):
 
 screen clothing_unlock(item):
     zorder 30
+    modal True
 
     frame:
         style "empty"
@@ -53,9 +54,9 @@ screen clothing_unlock(item):
         add "interface/panels/"+str(interface_color)+"/clothing_panel.png"
 
         if isinstance(item, DollCloth):
-            add item.get_icon() align (0.5, 0.5)
+            add item.get_icon() align (0.5, 0.5) zoom 0.5
         elif isinstance(item, (DollOutfit, Item)):
-            add item.get_image() align (0.5, 1.0) yoffset -13
+            add item.get_image() align (0.5, 1.0) offset (-13, -13) zoom 0.3
         else:
             add item align (0.5, 0.5)
 

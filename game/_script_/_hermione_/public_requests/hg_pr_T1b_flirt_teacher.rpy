@@ -383,7 +383,7 @@ label hg_pr_flirt_teacher_T2_E3: # Filch
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Well, I spent quite some time by flirting with mr.Filch today.", "soft", "base", "base", "mid",xpos="right",ypos="base")
-    call her_main("What a well read and exceptionally well mannered gentleman mr.Filch is.", "open", "closed", "base", "mid")
+    call her_main("What a well-read and exceptionally well-mannered gentleman mr.Filch is.", "open", "closed", "base", "mid")
     m "........"
     call her_main("But I don't think anyone knows him like that...", "soft", "base", "base", "R")
     her "I don't think anyone knows mr.Filch like I do."

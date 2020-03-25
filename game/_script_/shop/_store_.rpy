@@ -295,9 +295,9 @@ screen weasley_store_menu():
 label gift_shop_menu:
     show screen weasley_store_menu
 
-    $ item_list = [filter(lambda x : not x.unlocked, y) for y in [candy_gift_list, drink_gift_list, mag_gift_list, toy_gift_list]]
+    $ item_list = [filter(lambda x : not x.unlocked, y) for y in [drink_gift_list, candy_gift_list, mag_gift_list, toy_gift_list]]
 
-    show screen list_menu("gift_shop_menu", "Gifts", ("Candy", "Beverages", "Mags", "Toys"), item_list)
+    show screen list_menu("gift_shop_menu", "Gifts", ("Beverages", "Candy", "Mags", "Toys"), item_list)
     with d3
 
     label .interact:

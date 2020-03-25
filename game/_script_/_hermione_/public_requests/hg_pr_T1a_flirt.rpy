@@ -252,7 +252,7 @@ label hg_pr_flirt_T1_E3:
 
     call her_main("A whole flock of those Slytherin harlots was already there, [genie_name].", "angry", "base", "angry", "mid")
     her "They were cheering and yelling..."
-    call her_main("And one of them even exposed herself in an inappropriate manner to the players, [genie_name]...", "angry", "base", "angry", "mid")
+    call her_main("And one of them even exposed herself inappropriately to the players, [genie_name]...", "angry", "base", "angry", "mid")
     her "I cannot believe our school accepts such behaviour..."
     m "So... how did this captivating drama end?"
     call her_main("I just left [genie_name]...", "annoyed", "narrow", "angry", "R")

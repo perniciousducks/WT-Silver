@@ -12,7 +12,7 @@ default forbidden_scroll_list = [sealed_scroll_quest_ITEM] # TODO: Replace with 
 default lollipop_ITEM          = Item(id="lollipop", name="Lollipop Candy",              cost=20, type="candy", image="item_lollipop", description="A lollipop candy. An adult candy for kids or kids candy for adults?")
 default chocolate_ITEM         = Item(id="chocolate", name="Chocolate",                  cost=40, type="candy", image="item_chocolate", description="The recipe for this delicious milk chocolate is kept a secret. (Rumoured to contain dried faeries).")
 default plush_owl_ITEM         = Item(id="plush_owl", name="Plush owl",                  cost=35, type="toy", image="item_plush_owl", description="A Toy owl stuffed with feathers of an actual owl. It's so cuddly!")
-default butterbeer_ITEM        = Item(id="butterbeer", name="Butterbeer",                cost=50, type="drink", image="item_butterbeer", description="Girls can't resist this beverage's buttery texture. Therefore it's always in high demand among the boys. \n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
+default butterbeer_ITEM        = Item(id="butterbeer", name="Butterbeer",                cost=50, type="drink", image="item_butterbeer", description="Girls can't resist this beverage's buttery texture. Therefore it's always in high demand among the boys.")
 default science_mag_ITEM       = Item(id="science_mag", name="Educational Magazines",    cost=30, type="mag", image="item_mag_science", description="Educational magazines. \nthe Trusty companions of every social outcast.")
 default girls_mag_ITEM         = Item(id="girls_mag", name="Girly Magazines",            cost=45, type="mag", image="item_mag_girls", description="Girly magazines. \nAll cool girls are reading these.")
 default adult_mag_ITEM         = Item(id="adult_mag", name="Adult magazines",            cost=60, type="mag", image="item_mag_adult", description="Your boyfriend is turning into a nice guy? \nYour husband won't abuse you anymore? \nAll you wanted to know about relationships, love and sex. Mostly about sex.")
@@ -30,8 +30,8 @@ default broom_2000_ITEM        = Item(id="broom_2000", name="Lady Speed Stick-20
 default sexdoll_ITEM           = Item(id="sexdoll", name="Sex doll \"Joanne\"",          cost=350,type="toy", image="item_sexdoll", description="Sex doll \"Joanne\"... It's so realistic. Almost looks like a real human under the influence of a spell of some sort.")
 default anal_beads_ITEM        = Item(id="anal_beads", name="Anal beads",                cost=65, type="toy", image="item_anal_beads", description="Anal beads engraved with a strange inscription \"Property of L.C.\".")
 
-default wine_ITEM       = Item(id="wine", name="Wine",             cost=60, type="drink", image="item_wine", description="For the more refined palate.\n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
-default firewhisky_ITEM = Item(id="firewhisky", name="firewhisky", cost=80, type="drink", image="item_whisky", description="Great taste with a fiery burn.\n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
+default wine_ITEM       = Item(id="wine", name="Wine",             cost=60, type="drink", image="item_wine", description="For the more refined palate.")
+default firewhisky_ITEM = Item(id="firewhisky", name="Firewhisky", cost=80, type="drink", image="item_whisky", description="Great taste with a fiery burn.")
 
 default candy_gift_list = [
     lollipop_ITEM,

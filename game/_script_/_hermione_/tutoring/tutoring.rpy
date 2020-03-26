@@ -460,7 +460,7 @@ label l_tutoring:
         m "And you felt those emotions without even touching yourself."
         call her_main("Yes...", "open", "base", "base", "mid",cheeks="blush")
         g9 "{size=-2}(What a slut!){/size}"
-        if her_whoring <= 12 or hermione_wear_bra:
+        if her_whoring <= 12 or hermione.is_worn("bra"):
             call nar(">You move forward to her panties.")
         else:
             call nar(">You move forward to her pussy.")
@@ -624,7 +624,7 @@ label l_tutoring:
 
         call her_main("Like that?", "annoyed", "narrow", "angry", "R",cheeks="blush")
 
-        if hermione_wear_bra:
+        if hermione.is_worn("bra"):
             m "Without your bra Miss Granger..."
             hide screen hermione_main
             $ hermione.strip("bra")
@@ -759,7 +759,7 @@ label l_tutoring:
         $ hermione.strip("robe")
         $ hermione.strip("top")
 
-        if hermione_wear_bra:
+        if hermione.is_worn("bra"):
             call her_main("...",ypos="head")
             m "And your bra..."
 
@@ -786,7 +786,7 @@ label l_tutoring:
         call her_main("", "base", "base", "base", "R",cheeks="blush")
         call ctc
 
-        if hermione_wear_panties:
+        if hermione.is_worn("panties"):
             call her_main("You love my pussy don't you?", "base", "narrow", "base", "up",cheeks="blush")
             g9 "Oh yes, I love your smell, especially when you're wet."
             call her_main("Professor...", "angry", "happyCl", "worried", "mid",cheeks="blush",emote="05")
@@ -926,7 +926,7 @@ label l_tutoring:
         call her_main("{size=-2}(I've become such a whore. Not that I don't enjoy it...){/size}", "smile", "base", "angry", "mid",cheeks="blush")
         call her_main("So... where do we start?", "open", "happy", "base", "mid",cheeks="blush")
 
-        if hermione_wear_bra:
+        if hermione.is_worn("bra"):
             m "Take off your shirt and bra, I want to see your tits."
             pause.5
 
@@ -972,7 +972,7 @@ label l_tutoring:
         her "Good idea."
         call her_main("Sometimes I wish I could do this with others girls.", "open", "happy", "base", "mid",cheeks="blush")
         call her_main("Masturbate naked in front of each other.", "open", "narrow", "base", "up",cheeks="blush")
-        if hermione_wear_panties:
+        if hermione.is_worn("panties"):
             g9 "Yes go on, take off your panties!"
             her "Your wish is my command."
             pause.5
@@ -1460,7 +1460,7 @@ label l_tutoring:
         elif h_robe in slytherin_robe_list:
             $ hermione_robe = "characters/hermione/clothes/robe/robe_2_s.png"
         call set_her_action("naked") #Removes all clothes.
-        $ hermione_wear_robe = True
+        #$ hermione_wear_robe = True
 
         call her_chibi("stand","door","base")
         call hide_blkfade
@@ -1624,7 +1624,7 @@ label l_tutoring:
 
         ">After a while, she makes herself somewhat presentable."
 
-        $ hermione_wear_robe = True
+        #$ hermione_wear_robe = True
 
         call gen_chibi("sit_behind_desk")
         call her_chibi("stand","desk","base")

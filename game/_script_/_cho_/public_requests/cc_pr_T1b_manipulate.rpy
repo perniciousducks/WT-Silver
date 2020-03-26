@@ -197,7 +197,7 @@ label cc_pr_manipulate_T1_E1:
     m "So...{w=0.3} you did the \"pencil trick\"...{w=0.8} Just with books."
     call cho_main("I've put my own spin on it. It's different enough...", "soft", "closed", "base", "mid")
     m "No it isn't."
-    call cho_main("In any case, I think it worked.", "narrow", "closed", "raised", "R")
+    call cho_main("In any case, I think it worked.", "open", "narrow", "raised", "R")
     call cho_main("He couldn't keep his eyes off my bum for the rest of classes!", "base", "narrow", "angry", "mid")
     g9 "Well done, [cho_name]! You may leave now."
     call cho_main("Thank you, Sir.", "smile", "happyCl", "base", "mid")

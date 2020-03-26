@@ -210,11 +210,12 @@ label hermione_favor_menu:
     call update_her_requests
 
     if slytherin >= gryffindor or ravenclaw >= gryffindor or hufflepuff >= gryffindor:
+
         label silver_requests_root:
         menu:
             "-Level Up-" (icon="interface/icons/small/levelup.png") if her_level_up != None:
                 call hermione_level_up(tier=her_level_up)
-                jump silver_requests_root
+                jump hermione_favor_menu
 
             "-Personal favours-" (icon="interface/icons/small/heart_red.png"):
                 call tutorial("hearts")

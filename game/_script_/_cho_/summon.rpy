@@ -63,7 +63,7 @@ label summon_cho:
                 jump cho_talk
 
         # Quidditch Training
-        "-Training-" (icon="interface/icons/small/quidditch.png") if not cho_quid.lock_training:
+        "-Training-" (icon="interface/icons/small/quidditch.png") if cho_tier < 2 and not cho_quid.lock_training:
             if cho_mood > 0:
                 m "Ready to get back to training?"
                 if cho_mood >= 5:
@@ -74,7 +74,7 @@ label summon_cho:
                 jump cho_requests
             jump cho_training_menu
 
-        "{color=[menu_disabled]}-Training-{/color}" (icon="interface/icons/small/quidditch.png") if cho_quid.lock_training:
+        "{color=[menu_disabled]}-Training-{/color}" (icon="interface/icons/small/quidditch.png") if cho_tier < 2 and cho_quid.lock_training:
             m "(She's as ready as one can be.)"
             jump cho_requests
 

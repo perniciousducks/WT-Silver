@@ -1,22 +1,24 @@
+
+
 ### Cho Intro Slytherin Training ###
-label cc_st_intro:
+
+label cc_st_intro: # TODO: Move this event to the training into once Slytherin match training has been added. And make it unlock the T2 favours.
     $ cho_quid.slytherin_talk = True
 
+    call play_music("stop")
     call play_sound("door")
     call cho_chibi("stand","mid","base")
     with d3
 
-    call play_music("stop")
-
-    # TODO: Needs posing
     cho "Hello, [cho_genie_name]..." # sad
-    m "[cho_name]."
+    m "[cho_name]..."
     m "Where did that high-spirit from yesterday fly off to?"
     cho "Nowhere, [cho_genie_name], I'm still very happy we won the game, it's just.." # worried/sad
     m "Just?"
     cho "I'm worried about the future." # sad/relieved
     m "The futu...{w=0.7}{nw}"
     m "You didn't get pregnant during your little celebration event, did you?"
+
     call play_music("cho")
     cho "WHAT?!" # Upset/whatthefuck face
     cho "Sir, why would you even suggest that?!" # upset
@@ -43,6 +45,7 @@ label cc_st_intro:
     cho "I... yes... yes you're right, Thank you, [cho_genie_name]." # happy
 
     jump cho_requests
+
 
 ### Cho Slytherin Training ###
 label cc_st_start:

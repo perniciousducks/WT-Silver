@@ -197,6 +197,10 @@ label cheats:
                             for x in getattr(renpy.store, i).wardrobe_list:
                                 x.unlocked = True
                     jump cheats.devroom
+
+                "-Skip character progression-":
+                    jump cheats.progression_skip
+
                 "-Get 100 of all gift items-" (icon="interface/icons/small/gift.png"):
                     python:
                         for i in candy_gift_list:
@@ -263,3 +267,171 @@ label cheats:
 
         "-Never mind-":
             jump main_room_menu
+
+
+label .progression_skip:
+    menu:
+        "-Hermione-":
+            label .hermione_skip:
+            menu:
+                "-Skip Intro-" if not hermione_favors:
+                    call cheats.hermione_skip_intro
+                "-Skip Tier 1-" if hermione_favors and her_tier == 1:
+                    call cheats.hermione_skip_T1
+                "-Skip Tier 2-" if her_tier == 2:
+                    call cheats.hermione_skip_T2
+                "-Skip Tier 3-" if her_tier == 3:
+                    call cheats.hermione_skip_T3
+                "-Skip Tier 4-" if her_tier == 4:
+                    call cheats.hermione_skip_T4
+                "-Skip Tier 5-" if her_tier == 5:
+                    call cheats.hermione_skip_T5
+                "-Back-":
+                    jump cheats.progression_skip
+
+            call update_her_favors
+            call update_her_requests
+            jump cheats.hermione_skip
+
+        "-Cho-" if her_tier >= 2:
+            label .cho_skip:
+            menu:
+                "-Skip Intro-" if not cho_intro.E3_complete:
+                    call cheats.cho_skip_intro
+                "-Skip Quiz-" if cho_intro.E3_complete and not cho_quiz.complete:
+                    call cheats.cho_skip_quiz
+                "-Back-":
+                    jump cheats.progression_skip
+
+            jump cheats.cho_skip
+
+        "-Back-":
+            jump cheats.devroom
+
+
+### Hermione ###
+
+label .hermione_skip_intro:
+
+    $ bird_examined = True
+    $ desk_examined = True
+    $ cupboard_examined = True
+    $ door_examined = True
+    $ fireplace_examined = True
+
+    $ wine_ITEM.number       += 5
+    $ firewhisky_ITEM.number += 5
+    $ firewhisky_ITEM.unlockable = False
+
+    $ rum_times = 6
+    $ day = 7
+
+    $ achievement.unlock("start", True)
+
+    $ genie_intro.E1_complete = True
+    $ genie_intro.E2_complete = True
+    $ genie_intro.E3_complete = True
+
+    $ snape_intro.E1_complete   = True
+    $ snape_intro.E2_complete   = True
+    $ snape_intro.E3_complete   = True
+    $ snape_intro.duel_complete = True
+    $ snape_intro.E4_complete   = True
+    $ snape_intro.E5_complete   = True
+
+    $ ss_he.hermione_E1 = True
+    $ ss_he.hermione_E2 = True
+    $ ss_he.tonks_E1 = True
+    $ ss_he.tonks_E2 = True
+    $ ss_he.tonks_E3 = True
+
+    $ tonks_intro.E1_complete = True
+    $ tonks_intro.E2_complete = True
+    $ tonks_intro.E3_complete = True
+
+    $ nt_he.hermione_E1 = True
+
+    $ hermione_intro.E1_complete = True
+    $ hermione_intro.E2_complete = True
+    $ hermione_intro.E3_complete = True
+    $ hermione_intro.E4_complete = True
+    $ hermione_intro.E5_complete = True
+    $ hermione_intro.E6_complete = True
+
+    $ letter_hg_1.read_letter()
+    $ letter_hg_2.read_letter()
+    $ letter_min_work.read_letter()
+    $ letter_min_report.read_letter()
+    $ letter_min_favors.read_letter()
+
+    $ snape_unlocked = True
+    $ achievement.unlock("unlocksna", True)
+
+    $ tonks_unlocked = True
+    $ achievement.unlock("unlockton", True)
+
+    $ hermione_unlocked = True
+    $ achievement.unlock("unlockher", True)
+    $ tutoring_hermione_unlocked = True
+    $ hermione_favors = True
+
+    python:
+        for i in xrange(0, 6):
+            hermione_diary.append("prologue_0"+str(i), "prologue_0"+str(i))
+
+    return
+
+label .hermione_skip_T1:
+    $ her_tier = 2
+    $ her_whoring = 1
+    return
+
+label .hermione_skip_T2:
+    $ her_tier = 3
+    $ her_whoring = 9
+    $ hg_jerkoff.trigger = True
+    $ imagination = 2
+    return
+
+label .hermione_skip_T3:
+    $ her_tier = 4
+    $ her_whoring = 12
+    $ hg_strip.trigger = True
+    $ imagination = 3
+    return
+
+label .hermione_skip_T4:
+    $ her_tier = 5
+    $ her_whoring = 18
+    $ hg_kiss.trigger = True
+    $ imagination = 4
+    return
+
+label .hermione_skip_T5:
+    $ her_tier = 6
+    $ her_whoring = 21
+    $ hg_blowjob.trigger = True
+    $ imagination = 5
+    return
+
+
+### Cho ###
+
+label .cho_skip_intro:
+    if day < 16:
+        $ day = 16
+    $ cho_intro.E1_complete = True
+    $ cho_intro.E2_complete = True
+    $ ss_he.cho_E1 = True
+    $ cho_intro.E3_complete = True
+    $ achievement.unlock("unlockcho", True)
+    $ cho_unlocked = True
+    return
+
+label .cho_skip_quiz:
+    $ cho_quiz.complete = True
+    $ cho_quid.E1_complete = True
+    $ cho_quid.E2_complete = True
+    $ cho_training_unlocked = True
+    $ cho_favors_unlocked = True
+    return

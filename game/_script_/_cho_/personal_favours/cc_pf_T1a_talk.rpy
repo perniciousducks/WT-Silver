@@ -40,8 +40,6 @@ label cc_pf_talk_T1_intro_E1:
     m "First, I'd like you to come a bit closer."
     call cho_main("Very well, [cho_genie_name]...", "soft", "base", "base", "R")
 
-    call cho_walk("desk", "base")
-
     call play_music("cho")
     call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
     call ctc
@@ -52,17 +50,18 @@ label cc_pf_talk_T1_intro_E1:
     m "I asked if you have boyfriend. Anybody you fool around with?"
     call cho_main("Me? Professor? He-{w=0.8} hav-{w=0.5} a boyfriend?", "open", "wide", "base", "R", cheeks="blush") # Reluctant, Embarassed
     g9 "Or a girlfriend! That would be even better, now that I think about it!"
-    call cho_main("Sir that's-{w} that's not something a headmaster should be concerned about.", "soft", "happyCl", "worried", "L", cheeks="blush")
+    call cho_main("Sir that's-{w=0.3} that's not something a headmaster should be concerned about.", "soft", "happyCl", "worried", "L", cheeks="blush")
     call cho_main("And I don't see how this information would be of importance for my training.", "open", "wide", "raised", "downR", cheeks="blush")
-    call cho_main("Why would it matter if- {w}Even if I did I'd-", "soft", "wide", "base", "down", cheeks="blush")
+    call cho_main("Why would it matter if- {w=0.5}Even if I did I'd-", "soft", "wide", "base", "down", cheeks="blush")
     g9 "So you don't have one?"
     call cho_main("You're making me nervous, [cho_genie_name]. {heart}", "horny", "narrow", "worried", "R", cheeks="blush")
     m "(So cute.{w=0.5} Perhaps this is something I could push her further on...)"
 
-    call cho_main("Sir, I do not have a boyfriend at the moment.{p}I hope that answers your question.", "soft", "closed", "angry", "mid")
+    call cho_main("Sir, I do not have a boyfriend at the moment.", "soft", "closed", "angry", "mid")
+    call cho_main("I hope that answers your question.", "annoyed", "narrow", "base", "mid")
     g9 "So, a girlfriend then?"
-    call cho_main("!!!", "angry", "wide", "raised", "mid", trans=hpunch)
-    call cho_main("No!", "scream", "closed", "angry", "mid", trans=hpunch)
+    call cho_main("!!!", "angry", "wide", "raised", "mid", cheeks="blush")
+    call cho_main("No. Why would you even think that, [cho_genie_name].", "open", "closed", "angry", "mid")
     call cho_main("", "annoyed", "narrow", "angry", "mid")
     m "(She doesn't seem that keen on the subject, perhaps I could tell her...)"
 
@@ -84,7 +83,8 @@ label cc_pf_talk_T1_intro_E1:
             pass
 
         "\"It's okay if you like girls...\"":
-            $ cho_mood += 1
+            if cho_mood == 0:
+                $ cho_mood += 1
             m "Swinging the other way, you know..."
             call cho_main("What?", "angry", "wide", "base", "mid")
             m "Some people like flicking the bean rather than rubbing a wand..."
@@ -96,7 +96,8 @@ label cc_pf_talk_T1_intro_E1:
             jump cc_pf_talk_T1_intro_E1.choices
 
         "\"Let me tell you something about my own previous relationships...\"":
-            $ cho_mood += 1
+            if cho_mood == 0:
+                $ cho_mood += 1
             call cho_main("Sir, I'd rather not hear a boring old tale about any of your old flames...", "open", "narrow", "base", "R")
             g9 "Oh they weren't boring at all!"
             call cho_main("Hmm?", "annoyed", "narrow", "base", "mid")
@@ -147,10 +148,10 @@ label cc_pf_talk_T1_intro_E1:
     call cho_main("Sir?", "angry", "narrow", "base", "mid")
     m "Died just the way he lived...{w} as a plot device."
     call cho_main("Sir, Cedric isn't dead.", "open", "narrow", "angry", "mid")
-    m "Oh...{w} he's not?"
+    m "Oh...{w=0.3} he's not?"
     call cho_main("No!", "annoyed", "narrow", "angry", "mid")
     m "I could've sworn I read that somewhere..."
-    m "Are you sure he's still around?{w} What if he \"did\" die, but then he returned from the dead?"
+    m "Are you sure he's still around?{w=0.6} What if he {b}did{/b} die, but then he returned from the dead?"
     g4 "For all you know he could be a vampire!"
     call cho_main("Sir, you're talking nonsense...", "annoyed", "narrow", "angry", "R")
     call cho_main("Please don't joke about your student like that. It's so unlike you...", "open", "closed", "base", "mid")
@@ -170,9 +171,9 @@ label cc_pf_talk_T1_intro_E1:
     call cho_main("I didn't quite hear that, Sir.", "base", "base", "base", "mid")
     m "Who else did you do it with?"
     call cho_main("Do it with?", "soft", "narrow", "raised", "mid") # Shocked
-    m "Smooching, kissing, snogging...{w} whatever you call it nowadays..."
+    m "Smooching, kissing, snogging...{w=0.8} whatever you call it nowadays..."
     call cho_main("With all due respect, Professor, it's very odd that you'd ask me about those sort of things...", "open", "closed", "base", "mid")
-    call cho_main("But... you \"are\" helping me.{w} So I guess I owe you that much...", "annoyed", "base", "base", "R")
+    call cho_main("But... you {b}are{/b} helping me.{w=0.8} So I guess I owe you that much...", "annoyed", "base", "base", "R")
     g9 "That's what I wanted to hear."
 
     # Fleur
@@ -268,11 +269,9 @@ label cc_pf_talk_T1_intro_E2:
     g9 "Get closer, [cho_name]..."
     call cho_main("...", "annoyed", "base", "base", "down")
 
-    call cho_walk("desk", "base")
-
     call play_music("cho")
     call cho_main("", "annoyed", "narrow", "angry", "mid", xpos="mid", ypos="base", trans=fade)
-    call ctc
+    pause .5
 
     call cho_main("Another talk, Professor?", "soft", "narrow", "angry", "mid")
     call cho_main("Are we going to discuss my previous relationships again?", "open", "narrow", "base", "R")
@@ -328,7 +327,7 @@ label cc_pf_talk_T1_intro_E2:
             $ masturbating = False
 
     call cho_main("Ever since I was a little girl -- Quidditch has been my dream...", "soft", "narrow", "worried", "down")
-    call cho_main("[cho_genie_name], can you imagine how \"hard\" it was for me?", "soft", "narrow", "worried", "mid")
+    call cho_main("[cho_genie_name], can you imagine how {b}hard{/b} it was for me?", "soft", "narrow", "worried", "mid")
     if masturbating:
         g4 "{size=-4}(Yes, yes... It's so hard for you, you little slut!!!){/size}"
     call cho_main("How difficult it was for me at first?", "open", "narrow", "worried", "R")
@@ -437,9 +436,11 @@ label cc_pf_talk_T1_E3:
     m "First, come closer. Let me have a good look at you!"
     call cho_main("Yes, Sir.", "base", "base", "base", "mid")
 
-    call cho_walk("desk", "base")
+    call play_music("cho")
+    call cho_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
+    pause .5
 
-    call cho_main("Anything specific you'd like to know?", "soft", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
+    call cho_main("Anything specific you'd like to know?", "soft", "base", "base", "mid")
     m "Yes. Let's talk some more about Diggory..."
     g9 "Your ex-boyfriend."
     call cho_main("{size=-4}I knew I shouldn't have told him...{/size}", "disgust", "narrow", "base", "down", cheeks="blush")
@@ -633,9 +634,10 @@ label cc_pf_talk_T2_intro_E1: # continue
     m "Please come a bit closer..."
     call cho_main("Yes, Sir.", "base", "base", "base", "mid")
 
-    call cho_walk("desk", "base")
-
+    call play_music("cho")
     call cho_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
+    pause .5
+
     m "Tell me, how have you been?"
     g9 "I bet a lot has changed for you after your big win!"
     call cho_main("More or less...", "soft", "base", "raised", "mid")
@@ -794,9 +796,10 @@ label cc_pf_talk_T2_intro_E2:
     call cho_main("Of course not, [cho_genie_name]!", "smile", "base", "base", "mid")
     m "Come closer..."
 
-    call cho_walk("desk", "base")
-
+    call play_music("cho")
     call cho_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
+    pause .5
+
     m "How's school? Have anything to tell me?"
     call cho_main("Quite a bit, Sir!", "smile", "base", "base", "down")
     call cho_main("I feel like people have shown me more affection ever since our game against Hufflepuff.", "base", "base", "base", "mid")
@@ -1006,9 +1009,10 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
     g9 "Come a bit closer, would you."
     call cho_main("Of course...", "annoyed", "base", "base", "R")
 
-    call cho_walk("desk", "base")
-
+    call play_music("cho")
     call cho_main("", "annoyed", face="neutral", xpos="mid", ypos="base", trans=fade)
+    pause .5
+
     g9 "So. How is school life?"
     m "I need to stay \"on top\" of all the latest \"hot goss\"..."
     call cho_main("Sir, I don't tend to pay attention to that sort of stuff.", "soft", "closed", "base", "mid")

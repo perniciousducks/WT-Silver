@@ -238,7 +238,7 @@ default hg_poker = CostumeItem(
     id="hg_poker", name="Poke-her-nips Outfit", type="outfit_token", items=["top"],
     cost=10, wait_time=0, image=her_outfit_poker, description="")
 
-default hermione_outfits_list = [hg_bikini1, hg_bikini2, hg_maid, hg_bunny, hg_ball, hg_yennefer, hg_bioshock, hg_swimsuit]
+default hermione_outfits_list = [hg_bikini1, hg_bikini2, hg_maid, hg_bunny, hg_ball, hg_yennefer, hg_bioshock, hg_swimsuit, hg_egypt]
 default hermione_costumes_list = []
 default hermione_dresses_list = []
 default hermione_clothing_sets_list=[]

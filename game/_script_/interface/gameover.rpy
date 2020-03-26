@@ -1,13 +1,13 @@
 label gameover(fake=False):
-    
+
     # Fade to black
     $ renpy.pause(0.5, hard=True)
-    
+
     hide screen cartoon_zoom
     show screen gameover
     hide screen blkfade
     with d9
-    
+
     $ renpy.pause(0.5, hard=True)
     $ renpy.play('sounds/jail_door.mp3')
     $ renpy.pause(1.2, hard=True)
@@ -18,21 +18,21 @@ label gameover(fake=False):
     if fake:
         show screen blkfade
         with d9
-        
+
         $ renpy.pause(0.9, hard=True)
-        
+
         play music "music/02 - Shanghai Honey.mp3" fadein 0.5 fadeout 1
-        
+
         hide screen gameover
         hide screen blkfade
         show screen credits(fake_credits_text, 30)
         with blinds
-        
+
         $ renpy.pause(12, hard=True)
-        
+
         hide screen credits
         with None
-        
+
     hide screen gameover
     return
 
@@ -62,13 +62,13 @@ define fake_credits_text = "\n".join([
     "{image=logo/silverstudiogames.png}\n"
     "\n{space=220}{image=characters/genie/mage9.png}{rb}{space=-60}Thanks for cumin!{/rb}"
 ])
-        
+
 screen cartoon_zoom():
     tag gameover
     zorder 31 # Above saybox
-    
+
     button style "empty" action NullAction()
-    
+
     add "images/misc/circle_cartoon.png":
         at transform:
             xanchor 0.1
@@ -79,19 +79,19 @@ screen cartoon_zoom():
             xzoom 24.0
             yzoom 24.0
             easein_quart 5.0 xzoom 1.0 yzoom 1.0 yoffset 0
-            
+
     add Solid("#000000"):
         at transform:
             alpha 0.0
             pause 5.0
             linear 1.0 alpha 1.0
-    
+
 screen gameover():
     tag gameover
-    zorder 5
-    
+    zorder 20
+
     button style "empty" action NullAction()
-            
+
     add Solid("#000000")
     add "images/misc/gameover.png":
         at transform:
@@ -108,7 +108,7 @@ screen gameover():
             alpha 0.0
             pause 4.8
             alpha 1.0
-            
+
     add "images/misc/folks.png":
         at transform:
             alpha 0.0

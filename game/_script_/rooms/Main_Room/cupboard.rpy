@@ -153,7 +153,7 @@ init python:
 
                 if int(90 * math.log(day)) / 3 < random_item.cost:
                     chance = max(3 - (random_item.number * 5), 1)
-                elif gold > _item.cost:
+                elif gold > random_item.cost:
                     chance = max(40 - (random_item.number * 15), 0)
                 else:
                     chance = max(75 - (random_item.number * 10), 5)

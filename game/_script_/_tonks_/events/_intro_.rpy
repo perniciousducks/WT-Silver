@@ -65,7 +65,7 @@ label tonks_intro_E1:
     pause.1
 
     call bld
-    m "*hmmm?*..."
+    m "*hmmm?*"
 
     call ton_walk("mid", "base")
     pause.5
@@ -96,11 +96,11 @@ label tonks_intro_E1:
             m "Tell me about it..."
 
     if masturbating:
-        call ton_main("Oh,...about the centaurs?","open","base","worried","mid")
+        call ton_main("Oh... about the centaurs?","open","base","worried","mid")
         m "Yes, centaurs!"
         g4 "Half of a man, and the other half that of a horse?"
         call ton_main("Yes?","base","base","raised","mid")
-        m "With the bottom half being that of a{w=0.2}.{w=0.2}.{w=0.2}.{w=0.6}horse?!"
+        m "With the bottom half being that of a{w=0.2}.{w=0.2}.{w=0.2}.{w=0.6} horse?!"
         call ton_main("Of course, Sir.","base","base","base","mid")
         g9 "(Sweet!)"
         m "Just wanted to check if I still knew my mythology..."
@@ -116,12 +116,12 @@ label tonks_intro_E1:
         with d3
         pause.8
 
-        call nar("You take out your cock and start jerking off.")
+        call nar(">You take out your cock and start jerking off.")
 
         call ton_main("They are fascinating creatures, aren't they, Professor?","base","base","base","R")
         m "What?{w} Oh yes, very fascinating..."
 
-        call nar(">*Fap!* *Fap!* *Fap!*")
+        call nar("*Fap!* *Fap!* *Fap!*")
         m "Don't mind me... Please continue..."
         g9 "I'd like to hear more about the things you did with those centaurs!"
         call ton_main("I'm sorry Professor, but that's classified information.","open","closed","worried","mid")
@@ -364,7 +364,7 @@ label ss_he_tonks_E1:
     call sna_main("Albus{w} Percival{w} Wulfric{w} Brian{w} Dumbledore!","snape_34")
     m "..........................."
     m "I thought I traded places with just one person..."
-    call sna_main("That \"is\" one person!","snape_30", trans=hpunch)
+    call sna_main("That {b}is{/b} one person!","snape_30", trans=hpunch)
     call sna_main("It's our headmaster's full name. And it's your name now!{w} You best make sure to remember it.","snape_34")
     m "Yeah...{w}I'm not even going to try..."
     call sna_main("Let's just hope this whole Ministry situation will solve itself...","snape_31")
@@ -387,7 +387,7 @@ label ss_he_tonks_E1:
     call sna_main("Or as normal as can be, without the real Albus...","snape_09")
     m ".................."
     call sna_main("Even if she finds any concrete proof of something going on, any involvement on our part should be kept quiet at all cost.","snape_01")
-    call sna_main("And as soon as she is out of here, I'll go back to drinking wine, whilst enjoying my student's company...","snape_40")
+    call sna_main("And as soon as she is out of here, I'll go back to drinking wine, whilst enjoying my students' company...","snape_40")
     m "And Granger? What do you suggest we do with her?"
     call sna_main("*Tzzzgh*-{w=0.6} Like that annoying brat can do any harm to us...","snape_25")
     call sna_main("A girl her age would do anything for attention, is what I'd say...","snape_09")

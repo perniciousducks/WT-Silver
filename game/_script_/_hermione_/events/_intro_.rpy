@@ -697,10 +697,10 @@ label hermione_intro_E3:
     call her_main("Good evening, Professor.", "annoyed", "narrow", "angry", "R")
 
     menu:
-        "\"-stare full of hatred-\"":
+        "-stare full of hatred-":
             call her_main("You can stare at me all you want, sir.", "normal", "squint", "angry", "mid")
             her "It will not make the problems of this school go away."
-        "*sigh of exasperation*":
+        "-sigh of exasperation-":
             call her_main("Is this a bad time?", "normal", "base", "base", "mid")
             call her_main("Well, since I'm already here...", "open", "base", "base", "mid")
         "\"....................................\"":
@@ -963,13 +963,13 @@ label nt_he_hermione_E1:
     call ton_main("But I shouldn't complain about that...","base","base","base","mid")
     call ton_main("Hearing those naughty words spill out of her gorgeous little mouth really gets me going!","horny","base","base","ahegao", hair="horny")
     g9 "I can imagine so."
-    call ton_main("When she describes all the wrongdoings of those filthy \"Slytherin girls\"...","open","base","angry","mid")
+    call ton_main("When she describes all the wrongdoings of those \"filthy Slytherin girls\"...","open","base","angry","mid")
     call ton_main("How could I possibly get tired of that!","base","base","base","mid")
     call ton_main("I'm very glad I decided to join you two.","open","base","base","down")
     call ton_main("As an Auror It's just constant busy work...","open","base","angry","mid")
     call ton_main("Not to mention the hours.","angry","base","upset","down")
     call ton_main("And the mortality rate...","upset","base","worried","R")
-    call ton_main("If I'd realised the benefits of being a teacher at Hogwarts, I would have signed up straight away!","horny","base","base","ahegao")
+    call ton_main("If I had known the benefits of being a teacher at Hogwarts, I would have signed up straight away!","horny","base","base","ahegao")
 
     ">You spend the [temp_txt] conspiring against Hermione with Tonks..."
     ">You feel a faint bond forming between you two..."

@@ -388,7 +388,7 @@ label f_moon_bonus:
     hide screen notes
     show screen notes
     $ report_chapters += 1
-    ">The Full moon makes you feel more productive.\n>You finished [report_chapters] chapters so far."
+    ">The Full moon makes you feel more productive.\n>You finished {number=report_chapters} chapters so far."
 
     return
 
@@ -398,7 +398,7 @@ label finished_working_chapter:
     $ renpy.play('sounds/win_04.mp3')
     hide screen notes
     show screen notes
-    ">You finished [report_chapters] chapters so far."
+    ">You finished {number=report_chapters} chapters so far."
 
     return
 
@@ -408,7 +408,7 @@ label concentration_label:
     hide screen notes
     show screen notes
     $ report_chapters += 1
-    ">You maintain perfect concentration during your work.\n>And finish another chapter of the report.\n>You finished [report_chapters] chapters so far."
+    ">You maintain perfect concentration during your work.\n>And finish another chapter of the report.\n>You finished {number=report_chapters} chapters so far."
 
     return
 
@@ -418,6 +418,6 @@ label speedwriting_label:
     hide screen notes
     show screen notes
     $ report_chapters += 1
-    ">You use your Speedwriting skills.\n>And finish another chapter of the report.\n>You finished [report_chapters] chapters so far."
+    ">You use your Speedwriting skills.\n>And finish another chapter of the report.\n>You finished {number=report_chapters} chapters so far."
 
     return

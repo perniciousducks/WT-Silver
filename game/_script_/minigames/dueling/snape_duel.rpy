@@ -269,8 +269,6 @@ label snapes_turn:
         $ duel_OBJ.show("hand",x=690, y=250,z=4)
         $ renpy.play('sounds/attack_snape3.ogg')
         pause 1.5
-        hide hand
-        hide ch_gen
         $ renpy.play('sounds/attack_snape4.ogg')
 
         if blocking: # GENIE BLOCKS AGAINST THE HAND.(Genie -50 HP)
@@ -348,7 +346,6 @@ label snapes_turn:
 
         elif snape_decides in [2]:  #MAGIC. CASTS THE PICTOGRAM.
             $ duel_OBJ.snape = "hand"
-            show image "images/dueling/snape/snape_casting_01.png" at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")
             $ duel_OBJ.show("snape_summon",690,250,4)
             $ renpy.play('sounds/attack_snape2.ogg')
             pause.8

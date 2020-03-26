@@ -458,9 +458,6 @@ label snape_intro_E4:
 
     call play_music("dark_fog")
 
-    hide ch_gen
-    show image "images/dueling/snape/no_magic.png" at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")
-
     m "I told you that you're no match for me..."
     m "You did give me a good run for my money though..."
     call sna_main("The way you conjure the spells with your bare hands...","snape_01")

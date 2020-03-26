@@ -228,6 +228,10 @@ default hg_swimsuit = CostumeItem(
     id="hg_swimsuit", name="Swimsuit", type="outfit", items=["top"],
     cost=her_outfit_swimsuit.price, wait_time=1, image=her_outfit_swimsuit, description="> Breezy.")
 
+default hg_egypt = CostumeItem(
+    id="hg_egypt", name="Egyptian", type="outfit", items=["top", "bottom", "arm bands", "neck band"],
+    cost=her_outfit_egypt.price, wait_time=1, image=her_outfit_egypt, description="> Breezy.")
+
 default hg_poker = CostumeItem(
     id="hg_poker", name="Poke-her-nips Outfit", type="outfit_token", items=["top"],
     cost=10, wait_time=0, image=her_outfit_poker, description="")
@@ -381,7 +385,8 @@ default outfit_linking = {
     hg_yennefer.id:                 "her_outfit_yennefer",
     hg_bioshock.id:                 "her_outfit_bioshock",
     hg_swimsuit.id:                 "her_outfit_swimsuit",
-    hg_poker.id:                    "her_outfit_poker"
+    hg_poker.id:                    "her_outfit_poker",
+    hg_egypt.id:                    "her_outfit_egypt"
 }
 
 init offset = 0 # back to normal

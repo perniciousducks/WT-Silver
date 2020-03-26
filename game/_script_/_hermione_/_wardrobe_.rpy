@@ -144,13 +144,14 @@ default her_outfit_bunny = DollOutfit([her_hair_base, her_top_bunny1, her_stocki
 ## Ball Dress ##
 ################
 
+default her_hair_updo = DollCloth("hermione", ("head", "hair"), "hair", "updo", [[152, 89, 48, 255], [195, 137, 89, 255]])
 default her_top_ball1 = DollCloth("hermione", ("tops", "school"), "top", "ball_dress_1", [[240, 120, 161, 255], [247, 222, 231, 255]], blacklist=["bottom"])
 #default her_gloves_bunny1 = DollCloth("hermione", ("misc", "gloves"), "gloves", "bunny_gloves_1", [[232, 232, 232, 255]])
 default her_earring_pearls1 = DollCloth("hermione", ("head", "earrings"), "earring", "pearl_1", [[233, 166, 253, 255]])
 default her_neckwear_pearls1 = DollCloth("hermione", ("head", "neckwear"), "neckwear", "ball_pearls_1", [[233, 166, 253, 255]])
 default her_accessory_ball_sash1 = DollCloth("hermione", ("misc", "accessory"), "accessory4", "ball_sash", [[247, 222, 231, 255], [161, 82, 159, 255]], zorder=16)
 
-default her_outfit_ball = DollOutfit([her_hair_base, her_neckwear_pearls1, her_top_ball1, her_earring_pearls1, her_accessory_ball_sash1], price=1000)
+default her_outfit_ball = DollOutfit([her_hair_updo, her_neckwear_pearls1, her_top_ball1, her_earring_pearls1, her_accessory_ball_sash1], price=1000)
 
 #####################
 ## Yennefer Outfit ##
@@ -198,6 +199,17 @@ default her_outfit_bioshock = DollOutfit([her_hair_bioshock, her_robe_bioshock, 
 default her_top_swimsuit_1 = DollCloth("hermione", ("tops", "school"), "top", "swimsuit_top_1", [[22, 27, 48, 255], [224, 198, 16, 255]], blacklist=["panties", "bra"], zorder=7)
 
 default her_outfit_swimsuit = DollOutfit([her_hair_base, her_top_swimsuit_1], price=500)
+
+#####################
+## Egyptian Outfit ##
+#####################
+
+default her_top_egypt = DollCloth("hermione", ("tops", "school"), "top", "egypt_top", [[240, 237, 250, 255]], blacklist=["bra"])
+default her_bottom_egypt = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "egypt_loincloth", [[240, 237, 250, 255], [227, 182, 101, 255], [47, 151, 255, 255]], blacklist=["panties"])
+default her_gloves_egypt = DollCloth("hermione", ("misc", "gloves"), "gloves", "egypt_armband", [[227, 182, 101, 255]])
+default her_neckwear_egypt = DollCloth("hermione", ("head", "neckwear"), "neckwear", "egypt_neck", [[227, 182, 101, 255], [94, 209, 236, 255], [47, 151, 255, 255]])
+
+default her_outfit_egypt = DollOutfit([her_hair_base, her_neckwear_egypt, her_top_egypt, her_bottom_egypt, her_gloves_egypt], price=500)
 
 ##########
 ## MISC ##

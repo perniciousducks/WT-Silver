@@ -48,20 +48,39 @@ label l_tutoring:
     $ d_flag_01 = False
 
     if her_tutoring == 0:   # Whoring lvl 0
-        call her_main("Again, thank you for doing this for me, sir...", "open", "base", "base", "mid",xpos="base",ypos="base",trans=fade)
-        call her_main("Shall I go and fetch my books?", "open", "squint", "base", "mid")
+
+        call her_main("[genie_name], I'm very thankful that you're doing this for me.", "open", "base", "base", "mid", xpos="base", ypos="base", trans=fade)
+        m "Doing what?"
+        call her_main("My tutoring lessons...", "soft", "squint", "base", "mid")
+        call her_main("I hope you're still planning to lecture me, [genie_name]?", "annoyed", "base", "base", "mid")
+        g9 "Oh, I'll give you a lecture for sure."
+        call her_main("Shall I go and fetch my books, then?", "open", "squint", "base", "mid")
         m "What?"
         call her_main("My Books, [genie_name]. I need to study them more for my tests.", "soft", "base", "base", "R")
         call her_main("All the knowledge I need is in those books!", "annoyed", "narrow", "angry", "R")
         m "Books can't teach you everything, girl... Some knowledge only comes with practice and experience!"
         m "(I'm really just going to make this shit up as I go, ain't I?)"
-        call her_main("Maybe... I mean, you're not chosen as the head of Hogwarts by chance.", "annoyed", "squint", "base", "mid")
+
+        call her_main("Maybe... I mean, as the head of Hogwarts you probably know best.", "annoyed", "squint", "base", "mid")
         m "Sometimes you seem to forget that, Miss Granger."
         call her_main("That sounded like something professor Snape would say...", "open", "squint", "base", "mid")
         call her_main(".........", "annoyed", "squint", "base", "mid")
         call her_main("Sorry about that, he thinks he's always right and it annoys me.", "smile", "happyCl", "base", "mid")
         m "..........."
         call her_main("Sir?", "soft", "base", "base", "R")
+
+        m "We're going to have to do it my way."
+        m "There's no need for those books."
+        call her_main("Too bad, I love books.", "annoyed", "narrow", "worried", "down")
+        g9 "{size=-2}And soon you'll love cock!{/size}"
+        call her_main("Yes?", "soft", "base", "base", "mid", trans=d5)
+        m "I didn't say anything..."
+        call her_main("If you say so, [genie_name].", "open", "base", "base", "R")
+        call her_main("Is it ok if we could start right away with the lessons?", "soft", "base", "base", "mid")
+        m "Well... Of course..."
+
+        call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base", trans=fade)
+
         g4 "It's time to talk about your future, child."
         stop music fadeout 1.0
         call her_main("I'm not a child anymore, professor!", "normal", "squint", "angry", "mid")
@@ -548,7 +567,7 @@ label l_tutoring:
         call nar(">You abruptly stop.")
         pause.5
         call her_main("Don't stop, you idiot!", "scream", "base", "angry", "mid",cheeks="blush",emote="01",ypos="head")
-        
+
         hide screen hermione_main
 
         call gen_chibi("sit_behind_desk")

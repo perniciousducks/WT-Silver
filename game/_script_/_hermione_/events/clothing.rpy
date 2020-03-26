@@ -1,59 +1,10 @@
 label hermione_summon_setup:
+    $ hermione_wardrobe_unlocked = True
+
     $ random_number = renpy.random.randint(1, 10)
 
     $ hermione.wear("all")
     $ hermione.set_cum(None)
-
-    if not hermione_wardrobe_unlocked:
-        $ hermione_wardrobe_unlocked = True
-
-        #call set_her_action("hold_book") # This will only be used once in the game, here.
-
-        call her_walk(action="enter", xpos="mid", ypos="base")
-
-        call play_music("hermione")
-        call ctc
-
-        m "(...)"
-        call her_main("Is anything wrong, [genie_name]?", "soft", "base", "base", "mid", trans=d3)
-        g4 "Why are you holding all those... \"things\"?"
-        call her_main("My books?", "open", "narrow", "worried", "down")
-        call her_main("I wasn't sure which ones I'd need, so I brought all of them!", "grin", "happyCl", "base", "mid")
-        m "Brought them for what?"
-        call her_main("My tutoring lessons...", "soft", "squint", "base", "mid")
-        call her_main("I hope you're still planning to lecture me, [genie_name].", "annoyed", "base", "base", "mid")
-        g9 "Oh, I'll give you a lecture for sure."
-        m "But we're going to have to do it my way.{w}\nThere's no need for those books."
-        call her_main("No need?", "normal", "base", "worried", "mid")
-        m "No."
-        call her_main("Too bad, I love books.", "annoyed", "narrow", "worried", "down")
-        hide screen hermione_main
-        with d5
-        pause.2
-
-        call her_chibi("stand","mid","base",flip=True)
-        with d5
-        pause.5
-
-        #call set_her_action("none","update")
-
-        g9 "{size=-2}And soon you'll love cock!{/size}"
-        $ renpy.play('sounds/punch01.mp3') #Hermione lays books onto the floor.
-        pause.2
-
-        call her_chibi("stand","mid","base",flip=False)
-        with d5
-        pause.2
-
-        call her_main("Yes?", "soft", "base", "base", "mid",trans=d5)
-        m "I didn't say anything..."
-        call her_main("If you say so, [genie_name].", "open", "base", "base", "R")
-        call her_main("Is it ok if we could start right away with the lessons?", "soft", "base", "base", "mid")
-        m "Well... Of course..."
-
-        call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base",trans=fade)
-
-        return
 
     # weather_gen 1-3   = good weather
     # weather_gen 4     = cloudy weather

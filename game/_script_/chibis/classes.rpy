@@ -54,7 +54,7 @@ init -1 python:
             * Represent what a chibi is doing.
             * Determine which transform is applied.
             * Allow layers to be changed to the relevant images (via update callback).
-            
+
             There are two types of actions, one is used in place and the other while moving.
 
             Actions are defined in the `actions` dict as a tuple: (special, transform, move_action|loop_time).
@@ -66,7 +66,7 @@ init -1 python:
               It should not be set for move actions.
             * `loop_time` (float) if set, it's the time in seconds for one animation loop of this action. Used to calculate movement time.
               It should only be set for move actions. Set to zero to disable time adjustments.
-            
+
             Layers:
             A chibi is made up of one or more named layers. These are cleared on update and should be set by a callback function.
             * Layers can be accessed as `chibi_object[key]`.
@@ -88,7 +88,7 @@ init -1 python:
 
         def __init__(self, tag, layers, update_callback, zorder=3, speed=100, image_path=None, actions=None, places=None):
             self.tag = tag
-            
+
             # Use a tuple/list to specify the order of layers in a dict
             self.layers_order = layers
             self.layers = dict([(k, None) for k in layers])
@@ -99,7 +99,7 @@ init -1 python:
                 self.image_path = image_path
             else:
                 self.image_path = "characters/{}/chibis".format(tag)
-            
+
             if actions:
                 # Override class variable for this instance
                 self.actions = dict(Chibi.actions)
@@ -146,7 +146,7 @@ init -1 python:
                 renpy.pause(0.2) # Pause for duration of emote_effect
             if emote:
                 renpy.show_screen(self.emote_tag, emote=emote, chibi_object=self)
-        
+
         def update(self):
             self.clear()
             if self.update_callback:
@@ -155,7 +155,7 @@ init -1 python:
         def move(self, x=None, y=None, speed=1.0, reduce=False, action=None):
             """Moves to a certain point, taking into account the action, direction, time and transitions."""
             pos = self.resolve_position(x,y)
-            
+
             flip = self.pos[0] <= pos[0]
             if self.flip != flip:
                 self.flip = flip
@@ -172,7 +172,7 @@ init -1 python:
             else:
                 # Current action is already a move action
                 move_action = self.action
-                
+
             _, trans_name, loop_time = self.resolve_action(move_action)
 
             # Calculate movement time
@@ -199,19 +199,19 @@ init -1 python:
                 if old_action != move_action:
                     self.do(old_action)
                     renpy.with_statement(None)
-        
+
         def path_move(self, path, speed=1.0):
             """Moves non-stop from point to point. Looks best without direction flips."""
+            old_action = self.action
             for i in xrange(len(path)):
                 x,y = path[i]
                 reduce = i < len(path)-1 # Reduce all except last node
+                self.set_action(old_action) # Ensures the actual old action is performed after the final move
                 self.move(x, y, speed, reduce)
 
         def do(self, action=None, trans=None):
             """Performs an action. Applies a transform and updates the chibi."""
-            self.action = action
-            self.action_info = self.resolve_action(action)
-            self.special = self.action_info[0]
+            self.set_action(action)
 
             # Set the transform (static version by default)
             if trans is None:
@@ -223,13 +223,19 @@ init -1 python:
             self.update()
             self.show()
 
+        def set_action(self, action):
+            """Set the action state (no screen update)."""
+            self.action = action
+            self.action_info = self.resolve_action(action)
+            self.special = self.action_info[0]
+
         def position(self, x=None, y=None, flip=None):
             """Set the position to be used on next update."""
             (x,y) = self.resolve_position(x,y)
             if flip is not None:
                 self.flip = flip
             self.pos = (x,y)
-        
+
         def resolve_position(self, x=None, y=None):
             """Compute new position from place keywords (or just ints) for one or both of the coordinates."""
             return ChibiRoom.place((x,y), self.pos)
@@ -273,12 +279,12 @@ init -1 python:
 
         def __getitem__(self, key):
             return self.layers[key]
-        
+
         def __setitem__(self, key, value):
             if key not in self.layers:
                 # Layer must be defined at init
                 raise KeyError(key)
-            
+
             if isinstance(value, basestring) and '.' in value:
                 # Assume value is a filename and resolve it
                 if value.startswith('~') or not self.special:
@@ -286,9 +292,9 @@ init -1 python:
                     value = self.image_path + "/" + value.lstrip("~/")
                 else:
                     value = self.image_path + "/" + self.action + "/" + value
-            
+
             self.layers[key] = value
-    
+
     class ChibiRoom(object):
         """Defines chibi scale factor and named positions (places) for a room."""
 
@@ -320,7 +326,7 @@ init -1 python:
             if not chibi_room:
                 raise Exception("Chibi room is not defined for {}".format(room))
             return chibi_room
-        
+
         @staticmethod
         def place(place, position, room=None):
             """Resolve place coordinates in the current room, or a given room (by name)."""

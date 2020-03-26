@@ -31,7 +31,7 @@ default sexdoll_ITEM           = Item(id="sexdoll", name="Sex doll \"Joanne\"", 
 default anal_beads_ITEM        = Item(id="anal_beads", name="Anal beads",                cost=65, type="toy", image="item_anal_beads", description="Anal beads engraved with a strange inscription \"Property of L.C.\".")
 
 default wine_ITEM       = Item(id="wine", name="Wine",             cost=60, type="drink", image="item_wine", description="For the more refined palate.")
-default firewhisky_ITEM = Item(id="firewhisky", name="Firewhisky", cost=80, type="drink", image="item_whisky", description="Great taste with a fiery burn.")
+default firewhisky_ITEM = Item(id="firewhisky", name="Firewhisky", cost=80, type="drink", image="item_whisky", description="Great taste with a fiery burn.", unlockable=True)
 
 default candy_gift_list = [
     lollipop_ITEM,
@@ -63,6 +63,8 @@ default toy_gift_list = [
     sexdoll_ITEM,
     anal_beads_ITEM,
 ]
+
+default cupboard_drop_list = candy_gift_list + drink_gift_list + mag_gift_list + toy_gift_list
 
 # Posters
 default poster_agrabah_ITEM = Item(id="agrabah", name="Agrabah Poster", cost=2, type="poster", image="posters/agrabah", description="A remnant of a distant land and memories about different times. A reminder for when you just want to ponder about what could've been.")

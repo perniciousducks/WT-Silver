@@ -113,8 +113,8 @@ label nt_he_wine_intro:
     call ton_main("What a bummer. I guess wine will do for today.","upset","base","sad","down")
     m "(Maybe there is some of that other stuff stored in the cupboard as well...)"
 
-    $ firewhisky_ITEM.unlocked   = True  # Makes this available in the cupboard.
-    $ firewhisky_ITEM.unlockable = False # Makes this available at the shop as a buyable item.
+    # Make firewhisky available in the cupboard and store
+    $ firewhisky_ITEM.unlockable = False
 
     jump tonks_hangout_continue
 

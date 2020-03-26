@@ -96,6 +96,7 @@ screen with_tonks_animated():
     else:
         add "ch_gen toast_goblet" xpos 435 ypos 200
 
+    add "ch_ton sit_chair" xpos 610 ypos 175
     add "ch_ton sit" xpos 610 ypos 175
 
     if tonks.is_worn("bottom"):

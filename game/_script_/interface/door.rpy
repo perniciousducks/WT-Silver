@@ -7,11 +7,11 @@ default door_show_busy = True
 label door_menu(xx=723, yy=90):
 
     $ hide_transitions = True
-        
+
     call update_stats
-    
+
     $ map_transcript_loc = {"library": "Library", "room_g": "Gryffindor Dormitory", "room_s": "Slytherin Dormitory", "room_r": "Ravenclaw Dormitory", "room_h": "Hufflepuff Dormitory", "great_hall": "Great Hall", "courtyard": "Courtyard", "forest": "Forest", "greenhouse": "Greenhouse", "defense": "D.A.D.A Classroom", "training_grounds": "Training Grounds", "Lake": "Lake", "randomstudent": renpy.random.choice(["Classroom", "Bathroom", "Hagrid's Hut", "Weasley's Store", "Mafkin's Store", "Broom Cupboard", "Attic"]), "randomsnape": renpy.random.choice(["Classroom", "Boathouse", "Bathroom", "Snape's Office", "Hall", "Slytherin Dormitory", "Library", "Attic", "Forest", "Lake", "Dungeons", "Quidditch Cave", "Staircase", "Behind your door", "Room of Doom"]), "randomtonks": renpy.random.choice(["Classroom", "Bathroom", "Hall", "Gryffindor Dormitory", "Slytherin Dormitory", "Hufflepuff Dormitory", "Ravenclaw Dormitory", "Training Grounds", "Tonks' Room", "Quidditch Pitch", "Infirmary", "Sex Dungeon", "Hospital Wing", "Forest", "Lake", "Greenhouse", "Mafkin's Store"])}
-        
+
     # Door dictionary
     $ door_dict = {
                     "Snape": {"ico": "head_snape_1", "flag": snape_unlocked, "busy": snape_busy, "loc": "randomsnape"},
@@ -28,11 +28,12 @@ label door_menu(xx=723, yy=90):
 
     $ current_sorting = door_show_busy
 
+    label .after_init:
+
     show screen bld1
     show screen door_menu(xx, yy)
     with d3
 
-    label .after_init:
     #$ renpy.block_rollback()
     $ _return = ui.interact()
 
@@ -67,7 +68,7 @@ screen door_menu(xx, yy):
         ysize 454
 
         add "interface/achievements/"+interface_color+"/panel_left.png"
-        
+
         vbox:
             pos (6, 384)
             button action NullAction() style "empty" xsize 195 ysize 32
@@ -112,4 +113,3 @@ screen door_menu(xx, yy):
         else:
             if tmp_x <= 0:
                 text "All characters are busy" size 12 at truecenter
-            

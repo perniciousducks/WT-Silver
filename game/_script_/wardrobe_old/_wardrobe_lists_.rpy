@@ -26,35 +26,21 @@ label update_wr_color_list:
     $ wr_clothcolor = []
 
     if active_girl in ["luna"]:
-        if dark_blue_dye_ITEM.unlocked:
-            $ wr_clothcolor.append("dark_blue")
-        if dark_green_dye_ITEM.unlocked:
-            $ wr_clothcolor.append("dark_green")
-        if crimson_dye_ITEM.unlocked:
-            $ wr_clothcolor.append("crimson")
-        if orange_dye_ITEM.unlocked:
-            $ wr_clothcolor.append("orange")
-        if purple_dye_ITEM.unlocked:
-            $ wr_clothcolor.append("purple")
-        if brown_dye_ITEM.unlocked:
-            $ wr_clothcolor.append("brown")
-        if black_dye_ITEM.unlocked:
-            $ wr_clothcolor.append("black")
+        $ wr_clothcolor.append("dark_blue")
+        $ wr_clothcolor.append("dark_green")
+        $ wr_clothcolor.append("crimson")
+        $ wr_clothcolor.append("orange")
+        $ wr_clothcolor.append("purple")
+        $ wr_clothcolor.append("brown")
+        $ wr_clothcolor.append("black")
 
-        if blue_dye_ITEM.unlocked:
-            $ wr_clothcolor.append("blue")
-        if green_dye_ITEM.unlocked:
-            $ wr_clothcolor.append("green")
-        if red_dye_ITEM.unlocked:
-            $ wr_clothcolor.append("red")
-        if yellow_dye_ITEM.unlocked:
-            $ wr_clothcolor.append("yellow")
-        if pink_dye_ITEM.unlocked:
-            $ wr_clothcolor.append("pink")
-        if gray_dye_ITEM.unlocked:
-            $ wr_clothcolor.append("gray")
-        if white_dye_ITEM.unlocked:
-            $ wr_clothcolor.append("white")
+        $ wr_clothcolor.append("blue")
+        $ wr_clothcolor.append("green")
+        $ wr_clothcolor.append("red")
+        $ wr_clothcolor.append("yellow")
+        $ wr_clothcolor.append("pink")
+        $ wr_clothcolor.append("gray")
+        $ wr_clothcolor.append("white")
 
     return
 

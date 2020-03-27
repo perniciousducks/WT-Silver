@@ -1,6 +1,5 @@
 define cho_face = {
-    "mouth":
-        {
+    "mouth": {
         "neutral":      ["base","normal","annoyed"],
         "happy":        ["base", "smile"],
         "naughty":      ["base","quiver","horny","soft"],
@@ -8,10 +7,9 @@ define cho_face = {
         "annoyed":      ["annoyed"],
         "disgusted":    ["disgust","upset"],
         "angry":        ["angry","clench","mad","upset"]
-        },
+    },
 
-    "eyes":
-        {
+    "eyes": {
         "neutral":      ["base","base","closed"],
         "happy":        ["base","base","happyCl"],
         "naughty":      ["narrow"],
@@ -19,10 +17,9 @@ define cho_face = {
         "annoyed":      ["narrow","narrow","closed"],
         "disgusted":    ["base","narrow"],
         "angry":        ["narrow"]
-        },
+    },
 
-    "eyebrows":
-        {
+    "eyebrows": {
         "neutral":      ["base"],
         "happy":        ["base"],
         "naughty":      ["base","raised","worried"],
@@ -30,10 +27,9 @@ define cho_face = {
         "annoyed":      ["angry"],
         "disgusted":    ["base","raised","worried"],
         "angry":        ["angry"]
-        },
+    },
 
-    "pupils":
-        {
+    "pupils": {
         "neutral":      ["mid","L","R"],
         "happy":        ["mid","L","R"],
         "naughty":      ["mid","L","R","down","up"],
@@ -41,8 +37,8 @@ define cho_face = {
         "annoyed":      ["mid","L","R","downR"],
         "disgusted":    ["mid","down"],
         "angry":        ["mid"]
-        }
     }
+}
 
 label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
     if renpy.predicting():

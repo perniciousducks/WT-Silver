@@ -1,6 +1,5 @@
 define ton_face = {
-    "mouth":
-        {
+    "mouth": {
         "neutral":      ["base"],
         "happy":        ["base", "smile"],
         "naughty":      ["horny","base"],
@@ -8,10 +7,9 @@ define ton_face = {
         "annoyed":      ["upset"],
         "disgusted":    ["angry","upset"],
         "angry":        ["angry"]
-        },
+    },
 
-    "eyes":
-        {
+    "eyes": {
         "neutral":      ["base"],
         "happy":        ["base"],
         "naughty":      ["base"],
@@ -19,10 +17,9 @@ define ton_face = {
         "annoyed":      ["base"],
         "disgusted":    ["base"],
         "angry":        ["base"]
-        },
+    },
 
-    "eyebrows":
-        {
+    "eyebrows": {
         "neutral":      ["base"],
         "happy":        ["base","raised"],
         "naughty":      ["base","raised","angry"],
@@ -30,10 +27,9 @@ define ton_face = {
         "annoyed":      ["base","angry"],
         "disgusted":    ["raised","worried"],
         "angry":        ["angry"]
-        },
+    },
 
-    "pupils":
-        {
+    "pupils": {
         "neutral":      ["mid"],
         "happy":        ["mid","L","R"],
         "naughty":      ["mid","up","ahegao"],
@@ -41,8 +37,8 @@ define ton_face = {
         "annoyed":      ["mid","L","R"],
         "disgusted":    ["mid","down"],
         "angry":        ["mid"]
-        }
     }
+}
 
 label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, hair=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
     if renpy.predicting():

@@ -73,7 +73,7 @@ default cc_pf_strip = event_class(title = "Inspect her body!", start_label = "cc
             ["cc_pf_strip_T1_intro_E3"], ["cc_pf_strip_T1_E3"]
         ]
     ],
-    iconset = [["heart_blue", "heart_blue"]]
+    iconset = [["heart_empty", "heart_blue"]]
 )
 
 default cc_favor_list = [cc_pf_talk, cc_pf_strip]

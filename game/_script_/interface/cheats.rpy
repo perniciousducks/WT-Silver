@@ -432,6 +432,7 @@ label .cho_skip_quiz:
     $ cho_quiz.complete = True
     $ cho_quid.E1_complete = True
     $ cho_quid.E2_complete = True
+    $ cho_quid.position = "above"
     $ cho_training_unlocked = True
     $ cho_favors_unlocked = True
     return

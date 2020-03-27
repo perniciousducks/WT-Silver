@@ -1,6 +1,5 @@
 define ast_face = {
-    "mouth":
-        {
+    "mouth": {
         "neutral":      ["annoyed", "base"],
         "happy":        ["smile", "grin"],
         "naughty":      ["grin", "horny"],
@@ -8,10 +7,9 @@ define ast_face = {
         "annoyed":      ["annoyed"],
         "disgusted":    ["clench", "annoyed"],
         "angry":        ["clench","angry"]
-        },
+    },
 
-    "eyes":
-        {
+    "eyes": {
         "neutral":      ["base"],
         "happy":        ["base"],
         "naughty":      ["narrow", "base"],
@@ -19,10 +17,9 @@ define ast_face = {
         "annoyed":      ["narrow"],
         "disgusted":    ["narrow"],
         "angry":        ["narrow", "base"]
-        },
+    },
 
-    "eyebrows":
-        {
+    "eyebrows": {
         "neutral":      ["base"],
         "happy":        ["base"],
         "naughty":      ["base"],
@@ -30,10 +27,9 @@ define ast_face = {
         "annoyed":      ["worried"],
         "disgusted":    ["base", "angry"],
         "angry":        ["angry"]
-        },
+    },
 
-    "pupils":
-        {
+    "pupils": {
         "neutral":      ["mid","L","R"],
         "happy":        ["mid","L","R"],
         "naughty":      ["mid","L","R","down"],
@@ -41,8 +37,8 @@ define ast_face = {
         "annoyed":      ["mid","R"],
         "disgusted":    ["down"],
         "angry":        ["L"]
-        }
     }
+}
 
 label ast_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
     if renpy.predicting():

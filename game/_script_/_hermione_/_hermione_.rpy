@@ -1,6 +1,5 @@
 define her_face = {
-    "mouth":
-        {
+    "mouth": {
         "neutral":      ["annoyed","base"],
         "happy":        ["smile","grin"],
         "naughty":      ["base","soft"],
@@ -8,10 +7,9 @@ define her_face = {
         "annoyed":      ["annoyed"],
         "disgusted":    ["disgust","clench","annoyed"],
         "angry":        ["angry","clench","mad"]
-        },
+    },
 
-    "eyes":
-        {
+    "eyes": {
         "neutral":      ["base"],
         "happy":        ["base","base","happyCl"],
         "naughty":      ["narrow","base"],
@@ -19,10 +17,9 @@ define her_face = {
         "annoyed":      ["narrow"],
         "disgusted":    ["narrow"],
         "angry":        ["narrow","base"]
-        },
+    },
 
-    "eyebrows":
-        {
+    "eyebrows": {
         "neutral":      ["base"],
         "happy":        ["base"],
         "naughty":      ["base"],
@@ -30,10 +27,9 @@ define her_face = {
         "annoyed":      ["worried"],
         "disgusted":    ["base", "angry"],
         "angry":        ["angry"]
-        },
+    },
 
-    "pupils":
-        {
+    "pupils": {
         "neutral":      ["mid","L","R"],
         "happy":        ["mid_soft","L_soft","R_soft"],
         "naughty":      ["mid_soft"],
@@ -41,8 +37,8 @@ define her_face = {
         "annoyed":      ["mid","R"],
         "disgusted":    ["down"],
         "angry":        ["mid"]
-        }
     }
+}
 
 label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
     if renpy.predicting():

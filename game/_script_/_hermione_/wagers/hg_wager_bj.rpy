@@ -188,8 +188,8 @@ label hg_wager_bj:
                 call blkfade
                 $ renpy.play('sounds/07_run.mp3') #snape runs back and draws his wand
                 hide screen snape_main
-                call sna_chibi("hide")
-                show screen snape_defends(xx=50)
+                $ snape_chibi.zorder = desk_zorder + 1
+                call sna_chibi("wand_defend", "mid")
                 pause 1
                 hide screen blkfade
                 $ renpy.music.play("music/Hitman.mp3")
@@ -206,21 +206,16 @@ label hg_wager_bj:
                     call sna_main("But... I swear I heard something...", face="snape_14", wand=True)
                     g4 "..."
                     call sna_main("I guess I must've imagined it... I'll just go then.", face="snape_14", wand=True)
-                    hide screen snape_defends
                     call sna_chibi("stand","mid","base",flip=True) #snape turns and leaves
                     hide screen bld1
                     with d3
                     stop music fadeout 2
-                    pause.2
-
-                    call sna_walk(action="leave")
 
                 else: #if hermione has stripped twice (so snape walked in on her)
                     show screen desk(437) # Desk was shifted during blowjob
                     call gen_chibi("dick_out", 260, 205+250)
                     call her_chibi("stand",220,"base", flip=True)
                     call sna_main("Miss Granger?! I tho-... I...", face="snape_14", wand=True)
-                    hide screen snape_defends
                     hide screen snape_main
                     call sna_chibi("stand",460,"base")
                     $ renpy.music.play("music/Dark Fog.mp3")
@@ -249,9 +244,11 @@ label hg_wager_bj:
                     call sna_chibi("stand","mid","base",flip=True) #snape turns and leaves
                     hide screen bld1
                     with d3
-                    pause.2
 
-                    call sna_walk(action="leave")
+                pause.2
+
+                call sna_walk(action="leave")
+                $ snape_chibi.zorder = 3
 
                 pause.2
                 m "Well, that was something..."

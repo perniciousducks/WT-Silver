@@ -211,6 +211,22 @@ default her_neckwear_egypt = DollCloth("hermione", ("head", "neckwear"), "neckwe
 
 default her_outfit_egypt = DollOutfit([her_hair_base, her_neckwear_egypt, her_top_egypt, her_bottom_egypt, her_gloves_egypt], price=500)
 
+#######################
+## Latex dress Outfit ##
+#######################
+
+default her_top_latex_dress_1 = DollCloth("hermione", ("tops", "school"), "top", "latex_dress_1", [[250, 139, 241, 255], [255, 173, 22, 255]], blacklist=["bra"])
+
+default her_outfit_latex_dress = DollOutfit([her_hair_base, her_top_latex_dress_1], price=500)
+
+####################
+## Nightie Outfit ##
+####################
+
+default her_top_nightie = DollCloth("hermione", ("tops", "school"), "top", "nightie", [[255, 172, 184, 215]])
+
+default her_outfit_nightie = DollOutfit([her_hair_base, her_top_nightie], price=500)
+
 ##########
 ## MISC ##
 ##########

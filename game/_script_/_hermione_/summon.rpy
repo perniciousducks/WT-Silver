@@ -250,6 +250,19 @@ label hermione_favor_menu:
                 jump silver_requests_root
 
             "-Public requests-" (icon="interface/icons/small/star_yellow.png") if daytime:
+                if her_reputation >= 16 and not public_whore_ending:
+                    # Public whore ending choice
+                    $ renpy.choice_for_skipping()
+                    $ renpy.music.set_volume(0.5, 1.0)
+                    nar "Attention!{w=1.0} If you continue raising Hermione's reputation you will lock yourself towards certain game ending. (Public route)"
+                    menu:
+                        nar "Do you wish to continue?\n{size=-4}(You won't be asked again){/size}"
+                        "Yes, I do.":
+                            $ renpy.music.set_volume(1.0, 1.0)
+                            $ public_whore_ending = True
+                        "No, go back.":
+                            $ renpy.music.set_volume(1.0, 1.0)
+                            jump silver_requests_root
                 python:
                     menu_choices = []
                     for i in hg_requests_list:

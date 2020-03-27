@@ -422,6 +422,7 @@ screen preferences():
                             action [Function(renpy.call_in_new_context, "adjust_game_difficulty", 3), SelectedIf(game_difficulty == 3)] sensitive persistent.game_complete
 
                     textbutton _("With cheats") action ToggleVariable("cheats_active", True, False) sensitive (game_difficulty < 3)
+                    textbutton _("Tutorials") action ToggleVariable("preferences.tutorials", True, False)
 
         vbox:
             spacing 5

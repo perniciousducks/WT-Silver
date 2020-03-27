@@ -234,11 +234,19 @@ default hg_egypt = CostumeItem(
     id="hg_egypt", name="Egyptian", type="outfit", items=["top", "bottom", "arm bands", "neck band"],
     cost=her_outfit_egypt.price, wait_time=1, image=her_outfit_egypt, description="> Breezy.")
 
+default hg_latex_dress = CostumeItem(
+    id="hg_latex_dress", name="Latex Dress", type="outfit", items=["top"],
+    cost=her_outfit_latex_dress.price, wait_time=1, image=her_outfit_latex_dress, description="> Presentable attire for slut party.")
+
+default hg_nightie = CostumeItem(
+    id="hg_nightie", name="Nightie", type="outfit", items=["top"],
+    cost=her_outfit_nightie.price, wait_time=1, image=her_outfit_nightie, description="> Comfortable alternative for pyjamas.")
+
 default hg_poker = CostumeItem(
     id="hg_poker", name="Poke-her-nips Outfit", type="outfit_token", items=["top"],
     cost=10, wait_time=0, image=her_outfit_poker, description="")
 
-default hermione_outfits_list = [hg_bikini1, hg_bikini2, hg_maid, hg_bunny, hg_ball, hg_yennefer, hg_bioshock, hg_swimsuit, hg_egypt]
+default hermione_outfits_list = [hg_bikini1, hg_bikini2, hg_maid, hg_bunny, hg_ball, hg_yennefer, hg_bioshock, hg_swimsuit, hg_egypt, hg_latex_dress, hg_nightie]
 default hermione_costumes_list = []
 default hermione_dresses_list = []
 default hermione_clothing_sets_list=[]
@@ -388,7 +396,9 @@ default outfit_linking = {
     hg_bioshock.id:                 "her_outfit_bioshock",
     hg_swimsuit.id:                 "her_outfit_swimsuit",
     hg_poker.id:                    "her_outfit_poker",
-    hg_egypt.id:                    "her_outfit_egypt"
+    hg_egypt.id:                    "her_outfit_egypt",
+    hg_latex_dress.id:              "her_outfit_latex_dress",
+    hg_nightie.id:                  "her_outfit_nightie"
 }
 
 init offset = 0 # back to normal

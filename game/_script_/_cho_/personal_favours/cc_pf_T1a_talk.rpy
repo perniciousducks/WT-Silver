@@ -1011,7 +1011,7 @@ label cc_pf_talk_T2_intro_E2:
     jump end_cho_talk_event
 
 
-label cc_pf_talk_T2_E3: # continue
+label cc_pf_talk_T2_E3:
     #g9 "[cho_name], how is my favourite Quidditch player doing today?"
     #call cho_main("Me?", "soft", "base", "raised", "mid")
     #m "I don't see anyone else in here besides the bird..."

@@ -51,7 +51,7 @@ label cho_summon_setup:
             return
 
         # Party outfit.
-        elif cho_whoring >= 14 and not cc_party_slut_ITEM.unlocked:
+        elif cho_strip_complete and cho_whoring >= 14 and not cc_party_slut_ITEM.unlocked:
             $ cc_party_slut_ITEM.unlocked = True
 
             $ cho.unequip("all")
@@ -69,15 +69,15 @@ label cho_summon_setup:
             g9 "Wow girl, what are you wearing?"
             call cho_main("It's my party outfit...", "soft", "base", "raised", "down")
             m "(...)"
-            call cho_main("Is it too much?", "quiver", "wink", "raised", "mid")
+            call cho_main("Is it too much?", "quiver", "base", "raised", "mid")
             m "Too much? Are you really asking me that?"
             m "If I'm truly honest with you-"
-            g4 "Your body, in an outfit like that,..."
-            g4 "Really shows off your best assets."
-            call cho_main("Oh...", "horny", "base", "raised", "down")
-            call cho_main("You see, that sort of reaction is just what I wanted to get from the boys...", "soft", "base", "worried", "R")
-            call cho_main("Stare at my assets any time you want, [cho_genie_name]!", "horny", "narrow", "angry", "mid")
-            g4 "*Hngggh!!!*"
+            g4 "Your body, in an outfit like that..."
+            g9 "Really shows off your best assets."
+            call cho_main("Oh...", "base", "base", "raised", "down", cheeks="blush")
+            call cho_main("You see, that sort of reaction is just what I wanted to get from the boys...", "soft", "base", "base", "downR", cheeks="blush")
+            call cho_main("Stare at my assets any time you want, [cho_genie_name]!", "base", "narrow", "angry", "mid")
+            g4 "*Hngh!!!*"
 
             #Unlocks rewards.
             call unlock_clothing(text = ">New clothing items for Cho have been unlocked!", item = cc_party_slut_ITEM)

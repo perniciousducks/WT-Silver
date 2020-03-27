@@ -125,10 +125,9 @@ label cho_wardrobe_check(section, arg=None):
                             #Hint
                             $ wardrobe_fail_hint(10)
                             return
-                else:
-                    if cho_whoring < arg.level:
-                        call .too_much
-                        return
+                if cho_whoring < arg.level:
+                    call .too_much
+                    return
             else:
                 if cho_whoring < 3:
                     if arg.type in ("top", "bottom"):

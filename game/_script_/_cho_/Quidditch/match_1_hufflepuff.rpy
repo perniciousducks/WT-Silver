@@ -538,7 +538,6 @@ label hufflepuff_match:
     call gen_walk(path=[(170, 400),(65, 340)])
 
     $ snape_chibi.zorder = 2
-    $ hermione_chibi.zorder   = 4
     $ genie_chibi.zorder = 3
     call gen_chibi("stand", flip=True, 20, 365)
     call sna_chibi("stand", flip=True, 120, 295)
@@ -546,6 +545,7 @@ label hufflepuff_match:
     pause .2
 
     # Hermione commentates again
+    $ hermione_chibi.zorder = 3
     call her_chibi("stand", flip=True, 300, 400)
     with d3
     pause .8

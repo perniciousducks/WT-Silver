@@ -25,6 +25,7 @@ label quidditch_stands(hidden=False, reset=False, **kwargs):
     $ quidditch_stands.update(kwargs)
     if not hidden:
         show screen quidditch_stands_back(**quidditch_stands)
+        show screen quidditch_stands_mid(**quidditch_stands)
         show screen quidditch_stands_front(**quidditch_stands)
     return
 
@@ -45,6 +46,11 @@ screen quidditch_stands_back(weather, rain=False, crowd=[], crowd_react=[None, N
     add crowd_react[2] pos (960, 60)
 
     #TODO Add rain/puddle graphics
+
+screen quidditch_stands_mid(weather, **kwargs):
+    zorder 4
+
+    add "images/rooms/quidditch_stands/podium_{}.png".format(weather) zoom 0.5
 
 
 screen quidditch_stands_front(weather, spotlight=False, hole=False, rain=False, **kwargs):

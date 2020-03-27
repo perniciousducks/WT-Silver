@@ -1079,8 +1079,10 @@ label hufflepuff_match_return:
     call cho_walk(action="leave")
 
     stop music fadeout 1.0
+    call unlock_clothing(text=">New clothing items for Cho have been unlocked!", item=cho_outfit_cheerleader)
     call popup("New favours for Cho have been unlocked!", "Congratulations!", "interface/icons/head/head_cho_2.png")
-    #call unlock_clothing(text=">New clothing items for Cho have been unlocked!", item=cho_outfit_cheerleader)
+
+    pause 2
 
     if cho_whoring < 24:
         $ cho_whoring = 24

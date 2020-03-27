@@ -139,7 +139,7 @@ default cho_hair_pigtails = DollCloth("cho", ("head", "hair"), "hair", "pigtails
 default cho_earring_snitch = DollCloth("cho", ("head", "earrings"), "earring", "snitch", [[220, 220, 221, 255], [213, 161, 13, 255]])
 default cho_stockings_quid1 = DollCloth("cho", ("legwear", "stockings"), "stockings", "quid1", [[64, 84, 141, 255], [213, 161, 13, 255]], level=10)
 default cho_panties_sport2 = DollCloth("cho", ("panties", "panties"), "panties", "sport_panties_2", [[156, 204, 249, 255]], level=4)
-default cho_bra_sports1 = DollCloth("cho", ("bras", "bras"), "bra", "sport_bra_1", [[156, 204, 249, 255]])
+default cho_bra_sports1 = DollCloth("cho", ("bras", "bras"), "bra", "sport_bra_1", [[156, 204, 249, 255]], unlocked=True)
 default cho_top_quid1 = DollCloth("cho", ("tops", "school"), "top", "top_quid_1", [[64, 84, 141, 255], [213, 161, 13, 255]], level=10)
 default cho_bottom_quid1 = DollCloth("cho", ("bottoms", "skirts"), "bottom", "quid_skirt_1", [[64, 84, 141, 255], [213, 161, 13, 255]], level=10, armfix=True)
 default cho_makeup0_blush = DollCloth("cho", ("makeup", "blush"), "makeup0", "blush", [[238, 113, 196, 255]], level=2)
@@ -155,8 +155,7 @@ default cho_bottom_shorts1 = DollCloth("cho", ("bottoms", "trousers"), "bottom",
 default cho_stockings_pantyhose = DollCloth("cho", ("legwear", "stockings"), "stockings", "pantyhose", [[190, 146, 129, 255]])
 default cho_earring_basic = DollCloth("cho", ("head", "earrings"), "earring", "basic", [[220, 220, 221, 255]])
 
-default cho_outfit_trainee = DollOutfit([cho_hair_ponytail1, cho_bra_basic1, cho_panties_basic1, cho_bottom_shorts1
-, cho_top_tank2, cho_stockings_pantyhose, cho_earring_basic], price=500)
+default cho_outfit_trainee = DollOutfit([cho_hair_ponytail1, cho_bra_basic1, cho_panties_basic1, cho_bottom_shorts1, cho_top_tank2, cho_stockings_pantyhose, cho_earring_basic], price=500)
 
 ###########
 ## Other ##

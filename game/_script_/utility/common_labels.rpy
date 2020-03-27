@@ -309,12 +309,6 @@ label adjust_game_difficulty(dif=None):
 
 label unlock_clothing(text="", item="interface/icons/box_blue_1.png"):
 
-    $ renpy.play('sounds/win2.mp3')
-    show screen notes
-    with d9
-    hide screen notes
-    with d3
-
     $ menu_x = 0.5
     $ menu_y = 0.75 #makes the menu lower so it isn't writing over the image.
 

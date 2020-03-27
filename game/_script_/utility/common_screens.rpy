@@ -45,6 +45,9 @@ screen clothing_unlock(item):
     zorder 30
     modal True
 
+    use notes
+    on "show" action Play("sound", "sounds/win2.mp3")
+
     frame:
         style "empty"
         xalign 0.5

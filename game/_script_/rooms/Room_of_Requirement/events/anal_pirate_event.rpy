@@ -734,8 +734,6 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
     call her_walk(action="leave")
 
-    $ aftersperm = False #Show cum stains on Hermione's uniform.
-
     if not hg_outfit_pirate_ITEM.unlocked:
         call unlock_clothing(">Congratulations! You have unlocked a new outfit!",hg_outfit_pirate_ITEM)
 

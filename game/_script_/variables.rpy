@@ -26,9 +26,7 @@ default rum_times      = 0 # Counts how many times have you rummaged the cupboar
 default current_payout = 0
 
 # Hermione main screen flags
-default sperm_on_tits = False # Sperm on tits when Hermione pulls her shirt up.
-default aftersperm    = False # Shows cum stains on Hermione's uniform.
-default uni_sperm     = False # Triggers universal sperm to show on hermione_main screen.
+default uni_sperm     = False # OBSOLETE! Untouched for backwards compatibility and references in the code.
 
 default public_whore_ending = False # If TRUE the game will end with "Public Whore Ending".
 

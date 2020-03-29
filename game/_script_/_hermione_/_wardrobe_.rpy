@@ -145,7 +145,7 @@ default her_outfit_bunny = DollOutfit([her_hair_base, her_top_bunny1, her_stocki
 ################
 
 default her_hair_updo = DollCloth("hermione", ("head", "hair"), "hair", "updo", [[152, 89, 48, 255], [195, 137, 89, 255]])
-default her_top_ball1 = DollCloth("hermione", ("tops", "school"), "top", "ball_dress_1", [[240, 120, 161, 255], [247, 222, 231, 255]], blacklist=["bottom"])
+default her_top_ball1 = DollCloth("hermione", ("tops", "school"), "top", "ball_dress_1", [[255, 140, 174, 255], [242, 218, 255, 255]], blacklist=["bottom"])
 #default her_gloves_bunny1 = DollCloth("hermione", ("misc", "gloves"), "gloves", "bunny_gloves_1", [[232, 232, 232, 255]])
 default her_earring_pearls1 = DollCloth("hermione", ("head", "earrings"), "earring", "pearl_1", [[233, 166, 253, 255]])
 default her_neckwear_pearls1 = DollCloth("hermione", ("head", "neckwear"), "neckwear", "ball_pearls_1", [[233, 166, 253, 255]])

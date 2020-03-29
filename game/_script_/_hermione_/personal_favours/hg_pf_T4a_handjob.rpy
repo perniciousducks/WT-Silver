@@ -382,7 +382,7 @@ label hg_pf_handjob_1:
 
             if hg_kiss.trigger == False:
                 $ achievement.unlock("herkiss")
-                $ hg_pf_handjob.change_icon(a="heart_yellow", b="heart_red")
+                $ hg_pf_handjob.change_icon(a="heart_half", b="heart_red")
                 call her_main("(It was my first kiss ever and I gave it away to a... cock...)", "disgust", "narrow", "worried", "down")
             $ hg_kiss.triggered() # .trigger = True, .counter += 1
             pause 2
@@ -480,7 +480,6 @@ label hg_pf_handjob_1:
 
             call her_chibi_scene("hj_cum_in_done", trans=d5)
 
-            $ aftersperm = True
             call her_main(".......................", "angry", "wide", "base", "stare", xpos="right", ypos="base")
             m "..........................."
             call her_main(".......................", "angry", "wide", "base", "stare")

@@ -76,12 +76,6 @@ label hg_pf_admire_breasts:
         call her_main("{size=-5}(We are doing this to protect the honour of our house!){/size}", "angry", "base", "angry", "mid", cheeks="blush")
         call her_main(".................................", "base", "narrow", "base", "up", cheeks="blush")
 
-    # elif aftersperm:
-        # call her_main("{size=-5}(That was so exhilarating...){/size}", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
-        # call her_main("{size=-5}(I wonder if anyone will notice my clothes!){/size}", "open", "narrow", "base", "up", cheeks="blush", ypos="head")
-        # call her_main("{size=-5}(What will people think of me?){/size}", "open", "narrow", "base", "up", cheeks="blush", ypos="head")
-        # call her_main(".................................", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
-
     call her_chibi("leave")
 
 

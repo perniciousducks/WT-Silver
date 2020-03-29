@@ -199,7 +199,7 @@ default ll_pf_masturbate = event_class(title = "Masturbate for me!", start_label
             ["ll_pf_masturbate_T1_E3"]
         ]
     ],
-    iconset = [["heart_empty", "heart_blue"]]
+    iconset = [["heart_empty", "heart_red"]]
 )
 
 default ll_pf_blowjob = event_class(title = "Suck it!", start_label = "ll_pf_blowjob", start_tier = 3,
@@ -211,7 +211,7 @@ default ll_pf_blowjob = event_class(title = "Suck it!", start_label = "ll_pf_blo
             ["ll_pf_blowjob_T1_intro_E3"]
         ]
     ],
-    iconset = [["heart_empty", "heart_blue"]]
+    iconset = [["heart_empty", "heart_red"]]
 )
 
 default ll_pf_sex = event_class(title = "Let's have sex!", start_label = "ll_pf_sex", start_tier = 4,
@@ -223,7 +223,7 @@ default ll_pf_sex = event_class(title = "Let's have sex!", start_label = "ll_pf_
             ["ll_pf_sex_T1_E3"]
         ]
     ],
-    iconset = [["heart_empty", "heart_blue"]]
+    iconset = [["heart_empty", "heart_red"]]
 )
 
 # Favors get added to the list after their intro events.

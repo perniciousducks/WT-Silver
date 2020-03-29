@@ -231,7 +231,6 @@ label hg_pp_cumaddict_intro:
             call nar(">You start pumping your thick load directly into her stomach.")
             call cum_block
             call her_chibi_scene("bj_cum_in")
-            $ aftersperm = True
             call nar(">Hermione's eyes widen and tears form as she senses your semen enter her.")
             call cum_block
             call her_main("hhaanooo hhhheerrr", "scream", "wide", "base", "stare")
@@ -257,7 +256,6 @@ label hg_pp_cumaddict_intro:
             call nar(">You explode into her mouth.")
             call cum_block
             call her_chibi_scene("bj_cum_in")
-            $ aftersperm = True
             call her_main("mmmmmmm... *gulp* *gulp*", "full_cum", "narrow", "base", "dead")
             hide screen hermione_main
             call nar(">Hermiones eyes go blank as she starts swallowing down your load.")
@@ -359,13 +357,11 @@ label hg_pp_cumaddict_intro:
                     call her_main("...", "angry", "base", "base", "mid")
                     hide screen hermione_main
                     call nar(">She bends over with her head to the floor.")
-                    $ aftersperm = True
                     call her_main("(This is so degrading...)", "open_wide_tongue", "base", "angry", "mid")
                     hide screen hermione_main
                     call nar(">She puts her tongue out licks your cum.","start")
 
             call nar(">The effect is instantaneous.","end")
-            $ aftersperm = True
             call her_main("{size=-4}I-I'm cumming...{/size}", "cum", "happyCl", "worried", "mid")
             hide screen hermione_main
             m "What was that?"
@@ -410,8 +406,6 @@ label hg_pp_cumaddict_intro:
     call gen_chibi("sit_behind_desk")
     hide screen blktone
 
-    $ uni_sperm = False
-    $ aftersperm = False
     call hide_blkfade
 
     $ hermione_busy = True

@@ -163,7 +163,7 @@ default hg_pf_talk = event_class(title = "Talk to me!", start_label = "hg_pf_tal
 
     ],
     icons = [None, None, None], # If a tier doesn't need an icon replace with None
-    iconset = [["heart_empty", "heart_red"], ["heart_empty", "heart_yellow"], ["heart_empty", "heart_red"]]
+    iconset = [["heart_empty", "heart_red"], ["heart_empty", "heart_half"], ["heart_empty", "heart_red"]]
     )
 
 # Alternate talk event with TONKS
@@ -175,7 +175,7 @@ default hg_pf_talk_tonks = event_class(title = "", start_label = "", start_tier 
 
     ],
     icons = [None, None, None], # If a tier doesn't need an icon replace with None
-    iconset = [["heart_empty", "heart_red"], ["heart_empty", "heart_yellow"], ["heart_empty", "heart_red"]]
+    iconset = [["heart_empty", "heart_red"], ["heart_empty", "heart_half"], ["heart_empty", "heart_red"]]
     )
 
 
@@ -282,7 +282,7 @@ default hg_pf_strip = event_class(title = "Dance for Me!", start_label = "hg_pf_
 
     ],
     icons = [None, None, None, None], # If a tier doesn't need an icon replace with None
-    iconset = [["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_yellow"], ["heart_empty", "heart_red"]]
+    iconset = [["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_half"], ["heart_empty", "heart_red"]]
     )
 
 
@@ -305,7 +305,7 @@ default hg_pf_handjob = event_class(title = "Touch me!", start_label = "hg_pf_ha
 
     ],
     icons = [None, None, None, None, None], # If a tier doesn't need an icon replace with None
-    iconset = [["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_yellow"], ["heart_empty", "heart_red"]]
+    iconset = [["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_half"], ["heart_empty", "heart_red"]]
     )
 
 
@@ -356,7 +356,7 @@ default hg_pf_blowjob = event_class(title = "Suck it!", start_label = "hg_pf_blo
 
     ],
     icons = [None, None, None, None, None, None], # If a tier doesn't need an icon replace with None
-    iconset = [["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_yellow"], ["heart_empty", "heart_red"]]
+    iconset = [["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_half"], ["heart_empty", "heart_red"]]
     )
 
 
@@ -379,7 +379,7 @@ default hg_pf_sex = event_class(title = "Let's have sex!", start_label = "hg_pf_
 
     ],
     icons = [None, None, None, None, None, None], # If a tier doesn't need an icon replace with None
-    iconset = [["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_yellow"]]
+    iconset = [["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_half"]]
     )
 
 

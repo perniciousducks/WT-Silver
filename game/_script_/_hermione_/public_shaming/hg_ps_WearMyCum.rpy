@@ -125,7 +125,6 @@ label hg_ps_cumslut_Scene_1:
 
             call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
 
-            $ aftersperm = True
             # TODO Cum layer
 
             call her_chibi_scene("hj_cum_in_done")
@@ -608,7 +607,6 @@ label hg_ps_cumslut_complete_1:
 
     if cum_location == 1:
         # Cum under shirt
-        $ aftersperm = True
         #TODO Cum layer
 
         call her_main("...I did it, [genie_name].", "base", "happy", "base", "mid",xpos="right",ypos="base")

@@ -2,7 +2,7 @@
 
 # Intro
 label hg_anal_sex_1:
-    $ hg_pf_sex.change_icon(a="heart_yellow", b="heart_red")
+    $ hg_pf_sex.change_icon(a="heart_half", b="heart_red")
 
     call her_chibi_scene("lie_on_desk")
     with d3
@@ -520,7 +520,7 @@ label hg_anal_sex_1:
 ### Anal Sex Repeat ###
 
 label hg_anal_sex_2:
-    $ hg_pf_sex.change_icon(a="heart_yellow", b="heart_red")
+    $ hg_pf_sex.change_icon(a="heart_half", b="heart_red")
 
     $ hermione_tears = "mascara"
 

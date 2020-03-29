@@ -502,7 +502,6 @@ label hg_pf_titjob_1:
             call her_main("Swallow? All of that?", "angry", "narrow", "base", "down")
             call her_main("I don't think I have enough room in my stomach...")
             call her_main("Could I please have my points now, [genie_name]?", "soft", "base", "angry", "mid")
-            $ aftersperm = True
 
         "\"(Cover her tits!)\"":
             with hpunch

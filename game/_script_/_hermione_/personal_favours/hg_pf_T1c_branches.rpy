@@ -169,7 +169,7 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
 
     if hg_jerkoff.trigger == False:
         $ achievement.unlock("busted")
-        $ hg_pf_talk.change_icon(a="heart_yellow", b="heart_red")
+        $ hg_pf_talk.change_icon(a="heart_half", b="heart_red")
     $ hg_jerkoff.triggered() # .trigger = True, .counter += 1
 
     call ctc

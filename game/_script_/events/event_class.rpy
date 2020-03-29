@@ -93,7 +93,7 @@ init python:
             random_event = events_filtered[random.randint(0, len(events_filtered)-1)][0]
             return renpy.jump(random_event)
 
-        def change_icon(self, a="heart_yellow", b="heart_red"):
+        def change_icon(self, a="heart_half", b="heart_red"):
             for icon in self.iconset:
                 if icon[1] == a:
                     icon[1] = b

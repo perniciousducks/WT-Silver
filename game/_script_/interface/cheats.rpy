@@ -6,6 +6,9 @@ default skip_duel = False
 default skip_to_hermione = False
 
 label cheats:
+    "asdEASSdąóźżććććććććććććłżćóóśżŹsaczxxxxxxxxxxxxxxxxxxxxxxxxxxzcawww ąsośą€óąśaXzzzzassssssshujcsaou ahu hDso ądóąSÓąóŚóą"
+    m "................"
+    jump main_room_menu
     menu:
         "-Hermione Cheats-" (icon="interface/icons/small/hermione.png") if hermione_unlocked:
             label .hermione:

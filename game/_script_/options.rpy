@@ -24,14 +24,14 @@ default preferences.tutorials = True
 ################################################
 
 # Pre-Release related flags and variables
-define is_release = False
+define is_release = True
 define _experimental = "" if is_release else " EXPERIMENTAL"
 define config.autoreload = False
 define config.debug = not is_release
 define config.developer = "auto"
 
 # Game version and naming
-define config.version = "1.38"
+define config.version = "1.0"
 define title_version = config.version if len(config.version) < 5 else (config.version[:4] + "." + config.version[4:6])
 define config.name = "GT Silver{}".format(_experimental)
 define config.window_title = "Glitch Trainer (Silver) {}{}".format(title_version, _experimental)
@@ -81,6 +81,7 @@ define config.main_menu_music = "music/01 Prologue.mp3"
 # General
 define config.quit_action = Quit(True)
 define config.narrator_menu = True
+define config.rollback_enabled = False if not config.developer else True
 define config.hard_rollback_limit = 150
 define config.mouse = {"default": [("interface/cursor.png", 0, 0)]} if preferences.customcursor else None
 

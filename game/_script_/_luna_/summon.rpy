@@ -37,20 +37,20 @@ label summon_luna:
         "-Sexual Favours-" (icon="interface/icons/small/condom.png"):
             jump luna_favor_menu
 
-        # Wardrobe
-        "-Wardrobe-" (icon="interface/icons/small/wardrobe.png"): # if luna_wardrobe_unlocked:
-            $ ll_quirky_muggle_ITEM.unlocked = True #Temporary unlock. Will be a random clothing event eventually.
+        # # Wardrobe
+        # "-Wardrobe-" (icon="interface/icons/small/wardrobe.png"): # if luna_wardrobe_unlocked:
+            # $ ll_quirky_muggle_ITEM.unlocked = True #Temporary unlock. Will be a random clothing event eventually.
 
-            call load_luna_clothing_saves
+            # call load_luna_clothing_saves
 
-            call reset_wardrobe_vars
-            call update_wr_color_list
+            # call reset_wardrobe_vars
+            # call update_wr_color_list
 
-            #call lun_chibi("stand","wardrobe","base")
+            # #call lun_chibi("stand","wardrobe","base")
 
-            $ hide_transitions = True
-            call lun_main(xpos="wardrobe",ypos="base")
-            call screen wardrobe_old
+            # $ hide_transitions = True
+            # call lun_main(xpos="wardrobe",ypos="base")
+            # call screen wardrobe_old
 
         #"{color=[menu_disabled]}-Hidden-{/color}" if not luna_wardrobe_unlocked:
         #    call nar(">You haven't unlocked this feature yet.")

@@ -76,10 +76,10 @@ label rum_block(item):
         show screen gift(True)
         with d3
         $ gold += item
-        ">You found [item] gold..."
+        ">You found [item]+E gold..."
 
     elif item == "nothing":
-        ">You found nothing of value..."
+        ">You found {size=-10}nothing{/size} of value..."
 
     else:
         $ item.number += 1

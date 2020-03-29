@@ -41,17 +41,17 @@ label summon_astoria:
             $ TBA_message()
             jump astoria_requests
 
-        # Wardrobe
-        "-Wardrobe-" (icon="interface/icons/small/wardrobe.png") if astoria_wardrobe_unlocked:
-            hide screen astoria_main with d1
-            $ screenshot_image = ScreenshotImage.capture()
-            $ renpy.call_in_new_context("wardrobe", "ast_main")
-            with d2
-            jump astoria_requests
+        # # Wardrobe
+        # "-Wardrobe-" (icon="interface/icons/small/wardrobe.png") if astoria_wardrobe_unlocked:
+            # hide screen astoria_main with d1
+            # $ screenshot_image = ScreenshotImage.capture()
+            # $ renpy.call_in_new_context("wardrobe", "ast_main")
+            # with d2
+            # jump astoria_requests
 
-        "{color=[menu_disabled]}-Hidden-{/color}" if not astoria_wardrobe_unlocked:
-            call nar(">You haven't unlocked this feature yet.")
-            jump astoria_requests
+        # "{color=[menu_disabled]}-Hidden-{/color}" if not astoria_wardrobe_unlocked:
+            # call nar(">You haven't unlocked this feature yet.")
+            # jump astoria_requests
 
 
         # Gifts

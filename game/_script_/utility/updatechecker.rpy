@@ -8,9 +8,11 @@ init -1 python:
     import urllib2
 
     def check_for_updates():
+        return False
+
         if persistent.lastupdatechecktime == None:
             persistent.lastupdatechecktime = __import__('time').time()
-            
+
         if persistent.lastupdatechecktime+86400.0 < __import__('time').time():
             updt_website = urllib2.Request(binascii.unhexlify("68747470733a2f2f706173746562696e2e636f6d2f7261772f424e354261647639"))
             try:
@@ -20,7 +22,7 @@ init -1 python:
             except:
                 pass
         return False
-    
+
     # Groundwork for future save compatibility patches
     def check_save_compatibility(slot, page=None):
         save_version = FileJson(slot, "_version", missing=0, page=page)
@@ -28,7 +30,7 @@ init -1 python:
             return float(save_version) >= 1.37 # float(config.version)
         else:
             return True # Slot is empty
-    
+
     # Save compatibility patches
     def update_savefile():
         # Check for version variable
@@ -38,9 +40,9 @@ init -1 python:
                 pass
         except NameError:
             save_internal_version = 1.37
-            
+
         # Compare&perform an update
-            
+
         # Achievements update
         if persistent.achievements.get("busted") == None: # 1.37
             persistent.achievements['pantiesfap'] == ["Characters", "I sneezed on them...", "Rubbed one out on Hermione's panties.", False, "characters/genie/chibis/jerk_off/02.png", False]
@@ -50,20 +52,20 @@ init -1 python:
             persistent.achievements['hertits'] = ["Characters", "Boobs Lover", "*ahem* I mean.. books, yes, books lover!", False, "interface/icons/head/head_hermione_2.png", False]
             persistent.achievements['headlib'] = ["Characters", "Head Librarian", "Did she just swallow it?", False, "interface/icons/head/head_hermione_2.png", False]
             persistent.achievements['nerdgasm'] = ["Characters", "Nerdgasm", "Had a very fulfilling moment with Hermione.", False, "interface/icons/head/head_hermione_2.png", False]
-            
+
         if float(save_internal_version) < 1.371:
             owl_OBJ.idle_image = "owl_letter"
             tonks_cloth_garterbase = tonks_cloth_stockingsbase
-            
+
             achievement_fix()
-            
+
             save_internal_version = 1.371
-            
+
         if float(save_internal_version) < 1.372:
             global ton_mood
             ton_mood = 0
-            
+
             save_internal_version = 1.372
-            
+
         if float(save_internal_version) < 1.373:
             save_internal_version = 1.373

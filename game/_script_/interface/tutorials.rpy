@@ -5,6 +5,8 @@ default tutorial_dict = {"hearts": ["{heart} Hearts System", "Hearts indicate yo
 "inventory": ["Inventory & Items", "The inventory screen allows you to examine items you posses. You can access it by clicking on the {color=#204997}{b}inventory button{/b}{/color} located on the top right part of the screen, or by pressing the  {color=#204997}{b}I{/b}{/color} key. The inventory is split into two main categories:\n{color=#204997}{b}Gifts{/b}{/color} - Items that can be given to other characters.\n{color=#204997}{b}Quest Items{/b}{/color} - Important items related to game progression. Some of them can be used by clicking on the {b}USE{/b} button next to the item name when it's selected.", False]}
 
 label tutorial(entry):
+    return
+
     if not tutorial_dict[entry][2] and preferences.tutorials == True:
         $ tutorial_dict[entry][2] = True
         $ screenshot_image = ScreenshotImage.capture()

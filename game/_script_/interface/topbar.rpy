@@ -343,6 +343,9 @@ label bugfix_menu:
     jump main_room_menu
 
 label scene_gallery:
+    "ĄŚ?ĆĄŹź5{heart}~~{heart}{heart}{heart}"
+    jump main_room_menu
+
     menu:
         "-Watch Ball Ending 1-" if persistent.ending_01:
             $ renpy.call_replay("ball_ending_E2", { "public_whore_ending": False })

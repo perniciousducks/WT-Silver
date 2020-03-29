@@ -73,12 +73,23 @@ label open_clothing_store:
     jump clothing_shop_menu
 
 label clothing_store_chitchat:
+    $ clothing_store_intro_done = True
+    m "Hello."
+    maf "Hello, Professor Dumbledore.{nw}"
+    $ _audiopos = renpy.music.get_pos(channel='music')
+    play music "<from 5 to 6>music/clothing_store.mp3"
+
+    "Mad_m MĄfkJn~~" "Hello,~~AĆĄŚĆ Professor DumbĄĆŚdore.ĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆ`~~ĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆźźóĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆAEĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆĆ{fast}"
+
+    stop music
+
+    jump return_office
+
     if not clothing_store_intro_done:
         $ clothing_store_intro_done = True
         ">You enter to see an old woman busy sewing together two pieces of long dark fabric."
         ">The woman is dressed almost entirely in pink and has a warm, approachable air to her."
-        m "Hello."
-        maf "Hello, Professor Dumbledore."
+
         maf "What can I do for you? Would you like a new cloak, or do you require some alterations to an existing item?"
         m "Neither thank you, I'm just here to make a few inquiries."
         maf "Of course sir, what could I help you with?"

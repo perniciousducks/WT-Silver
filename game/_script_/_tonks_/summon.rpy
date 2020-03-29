@@ -48,17 +48,17 @@ label summon_tonks:
             m "(I don't have any wine...)"
             jump tonks_requests
 
-        # Wardrobe
-        "-Wardrobe-" (icon="interface/icons/small/wardrobe.png") if tonks_wardrobe_unlocked:
-            hide screen tonks_main with d1
-            $ screenshot_image = ScreenshotImage.capture()
-            $ renpy.call_in_new_context("wardrobe", "ton_main")
-            with d2
-            jump tonks_requests
+        # # Wardrobe
+        # "-Wardrobe-" (icon="interface/icons/small/wardrobe.png") if tonks_wardrobe_unlocked:
+            # hide screen tonks_main with d1
+            # $ screenshot_image = ScreenshotImage.capture()
+            # $ renpy.call_in_new_context("wardrobe", "ton_main")
+            # with d2
+            # jump tonks_requests
 
-        "{color=[menu_disabled]}-Hidden-{/color}" if not tonks_wardrobe_unlocked:
-            call nar(">You haven't unlocked this feature yet.")
-            jump tonks_requests
+        # "{color=[menu_disabled]}-Hidden-{/color}" if not tonks_wardrobe_unlocked:
+            # call nar(">You haven't unlocked this feature yet.")
+            # jump tonks_requests
 
 
         # Gifts

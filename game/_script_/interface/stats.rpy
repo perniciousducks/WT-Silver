@@ -240,62 +240,62 @@ screen stats_menuitem(xx, yy):
                 action [Return(["subcat", "details"]), SelectedIf(current_subcategory=="details")]
                 background None
 
-        # Character sprites
-        frame:
-            style "empty"
-            xysize (200, 406)
-            align (1.0, 1.0)
-            offset (-10, -4)
+        # # Character sprites
+        # frame:
+            # style "empty"
+            # xysize (200, 406)
+            # align (1.0, 1.0)
+            # offset (-10, -4)
 
-            if current_category == "Genie":
-                add "characters/genie/base/base.png" zoom 0.346 align (1.0, 1.0) xzoom -1
-            elif current_category == "Snape":
-                if current_item["flag"]:
-                    add "characters/snape/main/snape_09.png" zoom 0.34 align (0.9, 1.0)
-                else:
-                    add "interface/characters/snape_locked.png" zoom 0.34 align (0.9, 1.0)
-            elif current_category == "Tonks":
-                if current_item["flag"]:
-                    add tonks.get_image() zoom 0.4 align (0.7, 1.0)
-                else:
-                    add "interface/characters/tonks_locked.png" zoom 0.4 align (0.7, 1.0)
-            elif current_category == "Hermione":
-                if current_item["flag"]:
-                    add hermione.get_image() zoom 0.4 align (0.7, 1.0)
-                else:
-                    add "interface/characters/hermione_locked.png" zoom 0.38 align (0.65, 1.0)
-            elif current_category == "Cho":
-                if current_item["flag"]:
-                    add cho.get_image() zoom 0.4 align (0.65, 1.0)
-                else:
-                    add "interface/characters/cho_locked.png" zoom 0.4 align (0.65, 1.0)
-            elif current_category == "Luna":
-                if current_item["flag"]:
-                    frame:
-                        style "empty"
-                        #align (0.7, 1.0)
-                        at at_zoom(0.75)
-                        offset (-620, -44)
+            # if current_category == "Genie":
+                # add "characters/genie/base/base.png" zoom 0.346 align (1.0, 1.0) xzoom -1
+            # elif current_category == "Snape":
+                # if current_item["flag"]:
+                    # add "characters/snape/main/snape_09.png" zoom 0.34 align (0.9, 1.0)
+                # else:
+                    # add "interface/characters/snape_locked.png" zoom 0.34 align (0.9, 1.0)
+            # elif current_category == "Tonks":
+                # if current_item["flag"]:
+                    # add tonks.get_image() zoom 0.4 align (0.7, 1.0)
+                # else:
+                    # add "interface/characters/tonks_locked.png" zoom 0.4 align (0.7, 1.0)
+            # elif current_category == "Hermione":
+                # if current_item["flag"]:
+                    # add hermione.get_image() zoom 0.4 align (0.7, 1.0)
+                # else:
+                    # add "interface/characters/hermione_locked.png" zoom 0.38 align (0.65, 1.0)
+            # elif current_category == "Cho":
+                # if current_item["flag"]:
+                    # add cho.get_image() zoom 0.4 align (0.65, 1.0)
+                # else:
+                    # add "interface/characters/cho_locked.png" zoom 0.4 align (0.65, 1.0)
+            # elif current_category == "Luna":
+                # if current_item["flag"]:
+                    # frame:
+                        # style "empty"
+                        # #align (0.7, 1.0)
+                        # at at_zoom(0.75)
+                        # offset (-620, -44)
 
-                        use luna_main
-                else:
-                    add "interface/characters/luna_locked.png" zoom 0.38 align (0.75, 1.0)
-            elif current_category == "Astoria":
-                if current_item["flag"]:
-                    add astoria.get_image() zoom 0.4 align (0.7, 1.0)
-                else:
-                    add "interface/characters/astoria_locked.png" zoom 0.38 align (0.7, 1.0)
-            elif current_category == "Susan":
-                if current_item["flag"]:
-                    frame:
-                        style "empty"
-                        #align (0.7, 1.0)
-                        at at_zoom(0.78)
-                        offset (-350, -62)
+                        # use luna_main
+                # else:
+                    # add "interface/characters/luna_locked.png" zoom 0.38 align (0.75, 1.0)
+            # elif current_category == "Astoria":
+                # if current_item["flag"]:
+                    # add astoria.get_image() zoom 0.4 align (0.7, 1.0)
+                # else:
+                    # add "interface/characters/astoria_locked.png" zoom 0.38 align (0.7, 1.0)
+            # elif current_category == "Susan":
+                # if current_item["flag"]:
+                    # frame:
+                        # style "empty"
+                        # #align (0.7, 1.0)
+                        # at at_zoom(0.78)
+                        # offset (-350, -62)
 
-                        use susan_main
-                else:
-                     add "interface/characters/susan_locked.png" zoom 0.385 align (0.65, 1.0)
+                        # use susan_main
+                # else:
+                     # add "interface/characters/susan_locked.png" zoom 0.385 align (0.65, 1.0)
 
         frame:
             style "empty"

@@ -87,13 +87,13 @@ label summon_hermione:
                 jump hermione_favor_menu
 
 
-        # Wardrobe
-        "-Wardrobe-" (icon="interface/icons/small/wardrobe.png") if hermione_wardrobe_unlocked: # Unlocks after first summoning her.
-            hide screen hermione_main with d1
-            $ screenshot_image = ScreenshotImage.capture()
-            $ renpy.call_in_new_context("wardrobe", "her_main")
-            with d2
-            jump hermione_requests
+        # # Wardrobe
+        # "-Wardrobe-" (icon="interface/icons/small/wardrobe.png") if hermione_wardrobe_unlocked: # Unlocks after first summoning her.
+            # hide screen hermione_main with d1
+            # $ screenshot_image = ScreenshotImage.capture()
+            # $ renpy.call_in_new_context("wardrobe", "her_main")
+            # with d2
+            # jump hermione_requests
 
         # Cardgame
         "-Let's Duel-" (icon="interface/cards.png") if snape_second_win:

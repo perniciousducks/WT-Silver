@@ -25,6 +25,8 @@ init -1 python:
 
     # Groundwork for future save compatibility patches
     def check_save_compatibility(slot, page=None):
+        return True
+
         save_version = FileJson(slot, "_version", missing=0, page=page)
         if save_version is not None:
             return float(save_version) >= 1.37 # float(config.version)
@@ -33,6 +35,8 @@ init -1 python:
 
     # Save compatibility patches
     def update_savefile():
+        return
+
         # Check for version variable
         global save_internal_version
         try:

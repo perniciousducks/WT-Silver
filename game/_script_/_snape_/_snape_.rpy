@@ -71,15 +71,7 @@ label update_snape:
 
 
 screen snape_main(old_sprite=s_sprite, new_sprite=s_sprite, wand=False):
-    tag big_snape
-    zorder snape_zorder
-    sensitive False
-
-    add doll_transition(old_sprite, new_sprite):
-        xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)
-
-    if wand:
-        add "characters/snape/main/wand.png" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)
+    pass
 
 screen snape_picture_frame():
     add "characters/snape/main/picture_frame.png" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)

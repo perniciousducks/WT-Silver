@@ -174,14 +174,4 @@ label end_tonks_event:
 
 
 screen tonks_main():
-    tag tonks_main
-    zorder tonks_zorder
-    sensitive False
-
-    default tonks_img = tonks.get_image()
-    if tonks_animation != None:
-        add tonks_img xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) at tonks_animation
-    else:
-        add tonks_img xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
-
-    on ("show", "replace") action Function(apply_doll_transition, tonks, "tonks_main", "tonks_img", use_tonks_head)
+    pass

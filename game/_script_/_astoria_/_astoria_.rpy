@@ -129,13 +129,4 @@ label end_astoria_event:
     jump main_room
 
 screen astoria_main():
-    tag astoria_main
-    zorder astoria_zorder
-    sensitive False
-    default astoria_img = astoria.get_image()
-    if astoria_animation != None:
-        add astoria_img xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio) at astoria_animation
-    else:
-        add astoria_img xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio)
-
-    on ("show", "replace") action Function(apply_doll_transition, astoria, "astoria_main", "astoria_img", use_astoria_head)
+    pass

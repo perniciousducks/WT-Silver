@@ -85,8 +85,4 @@ label update_genie:
     return
 
 screen genie_main():
-    tag genie_main
-    zorder genie_zorder
-    sensitive False
-    add genie_base xpos genie_xpos ypos genie_ypos xzoom genie_flip zoom (1.0/genie_scaleratio)#Add the base body
-    add genie_face xpos genie_xpos ypos genie_ypos xzoom genie_flip zoom (1.0/genie_scaleratio)#Add genie expression
+    pass

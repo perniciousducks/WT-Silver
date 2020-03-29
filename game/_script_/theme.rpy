@@ -109,7 +109,7 @@ style mm_button:
 
 # Common control styles
 style default:
-    font "fonts/CREABBB.TTF"
+    font "fonts/Gbboot-ALpM.TTF"
     size 16
     color "#402313"
     outline_scaling "linear"
@@ -146,7 +146,6 @@ style say_window:
     ysize 143
     padding (250, 40, 250, 0)
     top_margin 22
-    yalign 1.0
 
 style say_who_window is default:
     background ConditionSwitch(

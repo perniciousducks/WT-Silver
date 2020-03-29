@@ -33,8 +33,8 @@ define config.developer = "auto"
 # Game version and naming
 define config.version = "1.38"
 define title_version = config.version if len(config.version) < 5 else (config.version[:4] + "." + config.version[4:6])
-define config.name = "WT Silver{}".format(_experimental)
-define config.window_title = "Witch Trainer (Silver) {}{}".format(title_version, _experimental)
+define config.name = "GT Silver{}".format(_experimental)
+define config.window_title = "Glitch Trainer (Silver) {}{}".format(title_version, _experimental)
 
 # Application Window settings
 define config.screen_width = 1080
@@ -62,7 +62,7 @@ define config.use_drawable_resolution = preferences.use_drawable_resolution
 define config.drawable_resolution_text = preferences.use_drawable_resolution
 
 # Saving and Loading
-define config.save_directory = "WT SILVER"
+define config.save_directory = "GT SILVER"
 define config.has_autosave = preferences.autosave
 define config.autosave_on_quit = preferences.autosave
 define config.autosave_on_choice = False
@@ -119,8 +119,8 @@ define config.gc_print_unreachable = False
 ################################################
 
 init python:
-    build.directory_name = "WT_Silver_{}".format(title_version)
-    build.executable_name = "WT Silver"
+    build.directory_name = "GT_Silver_{}".format(title_version)
+    build.executable_name = "GT Silver"
     build.include_update = False # If True, include update information into packages (allows the updater to run)
 
     build.classify("**.exe", None)

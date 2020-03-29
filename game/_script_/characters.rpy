@@ -40,67 +40,67 @@ label nar(text="",action=""):
 # Characters
 
 # Add to character store to avoid name conflict with Doll instance
-define character.cho = Character('[cho_name]', predict_function=doll_prediction("cho"))
+define character.cho = Character('[cho_name]')
 
 init python:
 
     # Genie
     gen = Character('Genie')
-    m = Character("", show_side_image=Image("characters/genie/mage.png", xpos=20))
-    g2 = Character("", show_side_image=Image("characters/genie/mage2.png", xpos=20))
-    g3 = Character("", show_side_image=Image("characters/genie/mage3.png", xpos=20))
-    g4 = Character("", show_side_image=Image("characters/genie/mage4.png", xpos=20))
-    g5 = Character("", show_side_image=Image("characters/genie/mage5.png", xpos=20))
-    g6 = Character("", show_side_image=Image("characters/genie/mage6.png", xpos=20))
-    g7 = Character("", show_side_image=Image("characters/genie/mage7.png", xpos=20))
-    g8 = Character("", show_side_image=Image("characters/genie/mage8.png", xpos=20))
-    g9 = Character("", show_side_image=Image("characters/genie/mage9.png", xpos=20))
-    g10 = Character("", show_side_image=Image("characters/genie/mage10.png", xpos=20))
-    g11 = Character("", show_side_image=Image("characters/genie/mage11.png", xpos=20))
-    g12 = Character("", show_side_image=Image("characters/genie/mage12.png", xpos=20))
-    g13 = Character("", show_side_image=Image("characters/genie/mage13.png", xpos=20))
-    g14 = Character("", show_side_image=Image("characters/genie/mage14.png", xpos=20))
-    g15 = Character("", show_side_image=Image("characters/genie/mage15.png", xpos=20))
-    g16 = Character("", show_side_image=Image("characters/genie/mage16.png", xpos=20))
+    m = Character("")
+    g2 = Character("")
+    g3 = Character("")
+    g4 = Character("")
+    g5 = Character("")
+    g6 = Character("")
+    g7 = Character("")
+    g8 = Character("")
+    g9 = Character("")
+    g10 = Character("")
+    g11 = Character("")
+    g12 = Character("")
+    g13 = Character("")
+    g14 = Character("")
+    g15 = Character("")
+    g16 = Character("")
 
     # Dumbledore
     dum_ = [""]
     for i in xrange(1,6):
         dum_.append("")
-        dum_[i] = Character("Dumbledore", show_side_image=Image("characters/misc/dumbledore/dum_"+str(i)+".png", xpos=20))
+        dum_[i] = Character("Dumbledore")
 
     # Santa
     san_ = [""]
     for i in xrange(1,7):
         san_.append("")
-        san_[i] = Character("Santa", show_side_image=Image("characters/misc/santa/santa_"+str(i)+".png", xpos=20))
+        san_[i] = Character("Santa")
 
     # Students
-    her = Character('[hermione_name]', predict_function=doll_prediction("hermione"))
+    her = Character('[hermione_name]')
     lun = Character('[lun_name]')
     sus = Character('[susan_name]')
-    ast = Character('[astoria_name]', predict_function=doll_prediction("astoria"))
-    twi = Character('Fred and George', show_side_image=Image("characters/misc/weasley_twins/base_01.png", xalign=1.0))
-    fre = Character('Fred', show_side_image=Image("characters/misc/weasley_twins/fred_01.png", xalign=1.0))
-    ger = Character('George', show_side_image=Image("characters/misc/weasley_twins/george_01.png", xalign=1.0))
+    ast = Character('[astoria_name]')
+    twi = Character('Fred and George')
+    fre = Character('Fred')
+    ger = Character('George')
 
     # Teachers
     sna = Character('Severus Snape')
-    ton = Character('[tonks_name]', predict_function=doll_prediction("tonks"))
+    ton = Character('[tonks_name]')
     spo = Character('Professor Sprout')
     hoo = Character('Madam Hooch')
 
     # Other characters
-    hat = Character('Sorting Hat', show_side_image=Image("characters/misc/hat/hat.png", xalign=1.0))
+    hat = Character('Sorting Hat')
     helf = Character("House-Elf")
-    nar = Character('Narrator', show_side_image=Image("characters/misc/dumbledore/dum_narritor.png"))
-    sil = Character('Team Silver', show_side_image=Image("characters/misc/dumbledore/dum_narritor.png"))
+    nar = Character('Narrator')
+    sil = Character('Team Silver')
 
     malf = Character('Malfoy')
     cra = Character('Crabbe')
     goy = Character('Goyle')
 
-    maf = Character('Madam Mafkin', show_side_image=Image("characters/misc/mafkin/maf_1.png", xalign=1.0))
+    maf = Character('Madam Mafkin')
     abe = Character('Aberforth')
     myr = Character('Moaning Myrtle')
     vol = Character('Lord Voldemort')

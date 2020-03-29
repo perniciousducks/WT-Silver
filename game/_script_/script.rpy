@@ -9,7 +9,7 @@ label start_dev:
     call game_init
     call adjust_game_difficulty(2)
     $ cheats_active = True
-    $ use_cgs = True
+    $ use_cgs = False
     jump skip_to_hermione
 
 label game_init:

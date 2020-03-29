@@ -398,12 +398,6 @@ screen preferences():
                     textbutton _("Wait for Voice") action Preference("wait for voice", "toggle")
 
             if not main_menu:
-                frame:
-                    has vbox
-
-                    label _("{size=-4}Animation preference{/size}")
-                    textbutton _("Chibis") action SetVariable("use_cgs", False)
-                    textbutton _("CG images") action SetVariable("use_cgs", True)
 
                 frame:
                     has vbox

@@ -77,12 +77,7 @@ label start_wt:
             "-Disable Cheats-":
                 $ cheats_active = False
 
-    menu:
-        "Animations" ">Would you like to use chibi animations, or CG images when available?\nThis can be changed in the preferences menu."
-        "-Use chibis-":
-            $ use_cgs = False
-        "-Use CG images-":
-            $ use_cgs = True
+    $ use_cgs = False
 
     if cheats_active or persistent.game_complete:
         menu:

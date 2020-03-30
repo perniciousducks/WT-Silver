@@ -124,11 +124,8 @@ label update_day_values:
 
     # Set random variables
     $ one_out_of_three = renpy.random.randint(1, 3)
-    $ i_of_iv = renpy.random.randint(1, 4)
     $ one_of_five = renpy.random.randint(1, 5)
-    $ i_of_vii = renpy.random.randint(1, 7)
     $ one_of_ten = renpy.random.randint(1, 10)
-    $ one_of_tw = renpy.random.randint(1, 20)
 
     $ day_random = renpy.random.randint(0, 10)
 

@@ -4,15 +4,20 @@
 
 label cho_panties_response_T2:
     $ has_cho_panties = False
+    call play_sound("door")
+    call cho_chibi("stand","mid","base")
+    with d3
+
+    call play_music("cho")
     call cho_main("Hello, [cho_genie_name].", "soft", "narrow", "worried", "mid", xpos="right", ypos="base")
     m "Sup..."
     call cho_main("*Uhm*...", "annoyed", "narrow", "worried", "R")
-    call cho_main("I forgot to take my underwear with me the last time I was here.", "soft", "narrow", "worried", "downR")
+    call cho_main("I forgot to take my underwear with me the last time I was here.", "soft", "narrow", "worried", "downR", cheeks="blush")
 
     if cho_panties_soaked:
         g9 "Your panties! Of course, [cho_name]!{w} I've got them right here..."
         call cho_walk("desk", "base")
-        pause.8
+        pause .8
 
         call cho_main("(...)", "annoyed", "narrow", "angry", "mid", xpos="mid", ypos="base", trans=fade) # Evil stare.
         m "What?"
@@ -69,12 +74,12 @@ label cho_panties_response_T2:
         m "There, take them..."
 
         call cho_walk("desk", "base")
-        pause.8
+        pause .8
 
         call cho_walk("mid", "base")
         call cho_chibi("stand", "mid", "base", flip=False)
         with d3
-        pause.2
+        pause .2
 
         call cho_main("Thank you, Sir.", "base", "base", "base", "mid")
         m "You're welcome..."

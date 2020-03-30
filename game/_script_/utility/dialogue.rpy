@@ -1,7 +1,7 @@
 
 # Handling of doll transitions in dialogue
 
-define sprite_pos = {"x": {"base": 640, "default": 640, "mid": 300, "left": 200, "right": 400, "wardrobe": 540, "close": 540},
+define sprite_pos = {"x": {"base": 640, "default": 640, "far_right": 640, "mid": 300, "left": 200, "far_left": -80, "right": 400, "wardrobe": 540, "close": 540},
                      "y": {"base": 0, "default": 0, "head": 200}}
 
 default last_doll_images = dict()
@@ -32,7 +32,7 @@ init -1 python:
             scope[img_name] = doll_transition(doll_old, doll_new)
 
             last_doll_images[scr_name] = doll_new
-        
+
     def update_doll_transitions():
         """Used after skip to update doll images on all visible character screens."""
         for doll in [astoria, cho, hermione, tonks]:
@@ -69,4 +69,3 @@ init -1 python:
             was_skipping = False
             for c in after_skip_callbacks:
                 c()
-    

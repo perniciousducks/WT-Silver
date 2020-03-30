@@ -10,39 +10,37 @@ label cc_st_intro: # TODO: Move this event to the training into once Slytherin m
     call cho_chibi("stand","mid","base")
     with d3
 
-    cho "Hello, [cho_genie_name]..." # sad
+    call cho_main("Hello, [cho_genie_name]...", "annoyed", "narrow", "worried", "downR", xpos="right", ypos="base")
     m "[cho_name]..."
-    m "Where did that high-spirit from yesterday fly off to?"
-    cho "Nowhere, [cho_genie_name], I'm still very happy we won the game, it's just.." # worried/sad
-    m "Just?"
-    cho "I'm worried about the future." # sad/relieved
-    m "The futu...{w=0.7}{nw}"
+    m "Where did that high-spirit from your \"big win\" fly off to?"
+    call cho_main("Nowhere, [cho_genie_name]...{w=0.6} I'm still very happy we won the game, it's just...", "open", "narrow", "worried", "down") # worried/sad
+    call cho_main("I'm a bit worried about the future.", "soft", "narrow", "worried", "mid") # sad/relieved
+    m "The future?"
     m "You didn't get pregnant during your little celebration event, did you?"
 
     call play_music("cho")
-    cho "WHAT?!" # Upset/whatthefuck face
-    cho "Sir, why would you even suggest that?!" # upset
+    call cho_main("WHAT?!", "clench", "wide", "base", "mid", cheeks="heavy_blush")  # Upset/whatthefuck face
+    call cho_main("Sir, why would you even suggest that?!", "angry", "narrow", "angry", "mid", cheeks="blush") # upset
     m "Then what is it?"
-    cho "It's about the upcoming quidditch match" # annoyed - eyes R, mouth annoyed
+    call cho_main("It's about the upcoming quidditch match", "annoyed", "narrow", "angry", "R") # annoyed - eyes R, mouth annoyed
     m "Oh... Of course..."
-    m "..."
-    m "Well?"
-    cho "Well, what?" # confused
-    m "Tell me who we're up against next..."
-    cho "Slytherin, [cho_genie_name]..." # eyebrows sad, eyes mid, mouth pout
-    g9 "Oh, sweet!"
-    cho "I'm glad you're optimistic, they're an entirely different ballpark compared to Hufflepuff." # annoyed
-    m "Really?"
-    m "Why's that?"
-    cho "They're brutal compared to Hufflepuff. They'd do anything they could get away with..." # eyebrows sad, eyes mid, mouth pout
-    m "Then we should do the same shouldn't we?"
-    cho "I suppose..." # eyes R eyebrows normal mouth pout
-    m "Where's did the positive spirits from winning that last match go?"
-    m "We'll show those Slytherins what we got no problem!"
+    call cho_main("[cho_genie_name], I worry that we won't be able to beat Slytherin in the next match.", "annoyed", "narrow", "worried", "mid") # eyebrows sad, eyes mid, mouth pout
+    g9 "Slytherin is next?{w=0.6} Sweet!"
+    call cho_main("They're an entirely different ballpark compared to Hufflepuff.", "open", "base", "worried", "mid")
+    m "Really? Why's that?"
+    call cho_main("They're brutal and ruthless!{w} And they think they can get away with anything...", "open", "narrow", "angry", "mid") # eyebrows sad, eyes mid, mouth pout
+    m "Then we should do the same, shouldn't we?"
+    call cho_main("", "annoyed", "narrow", "base", "mid")
+    m "We'll show those Slytherins what {b}we{/b} got -- no problem!"
+    call cho_main("...", "base", "base", "base", "mid") # slight smile
     g9 "(And show Snape who's boss.)"
-    cho "..." # slight smile
-    m "Trust me, our tactics has worked perfectly thus far hasn't it?"
-    cho "I... yes... yes you're right, Thank you, [cho_genie_name]." # happy
+    m "Trust me, our tactics have worked perfectly thus far, haven't they?"
+    call cho_main("I-...{w=0.3} yes...", "soft", "base", "raised", "downR")
+    call cho_main("You're right! Thank you, [cho_genie_name].", "base", "base", "base", "mid") # happy
+    show screen blkfade
+    with d5
+    hide screen blkfade
+    # don't add transition here!
 
     jump cho_requests
 

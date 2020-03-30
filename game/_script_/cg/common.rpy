@@ -79,7 +79,7 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         renpy.show_screen("ccg")
         renpy.with_statement(Dissolve(0.5))
 
-    def sc34CG(scene=None, image1=None, image2=None, image3=None):
+    def sc34CG(scene=None, image1=None, image2=None, image3=None, with_trans=True):
         global sc_cg_base
         global sc_cg_image_1
         global sc_cg_image_2
@@ -102,7 +102,8 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         else:
             sc_cg_image_3 = "blank"
         renpy.show_screen("sccg")
-        renpy.with_statement(Dissolve(0.5))
+        if with_trans:
+            renpy.with_statement(Dissolve(0.5))
 
     def dynamic_cg(folder, *args):
         d = tuple("images/CG/{}/{}.png".format(folder, file) for file in args)

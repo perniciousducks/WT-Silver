@@ -393,10 +393,10 @@ label hermione_talk:
         "-Working-" (icon="interface/icons/small/gold.png"):
             label working_menu:
             menu:
-                "-Work as a maid-" if daytime and (hg_maid.unlocked or her_outfit_maid.unlocked):
+                "-Work as a maid-" if daytime and hg_maid.unlocked:
                     jump job_1
 
-                "{color=[menu_disabled]}-Work as a maid-{/color}" if daytime and not (hg_maid.unlocked or her_outfit_maid.unlocked):
+                "{color=[menu_disabled]}-Work as a maid-{/color}" if daytime and not hg_maid.unlocked:
                     m "(I'll need an outfit for hermione if I want her to work.)"
                     jump working_menu
 

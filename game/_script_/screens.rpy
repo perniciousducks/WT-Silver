@@ -216,10 +216,10 @@ screen navigation():
         has vbox
 
         textbutton _("Return") action Return()
-        textbutton _("Save Game") action ShowMenu("save")
-        textbutton _("Load Game") action ShowMenu("load")
+        textbutton _("Savł Game") action ShowMenu("save")
+        textbutton _("Lóad Game") action ShowMenu("load")
         textbutton _("Preferences") action ShowMenu("preferences")
-        textbutton _("Main Menu") action MainMenu()
+        textbutton _("Mein Manu") action MainMenu()
         #textbutton _("Help") action Help()
         textbutton _("Quit") action Quit()
 
@@ -258,7 +258,7 @@ screen file_picker():
             for i in xrange(1, columns * rows + 1):
                 $ is_compatible = check_save_compatibility(i)
                 $ file_name = FileSlotName(i, columns * rows)
-                $ file_time = FileTime(i, empty=_("Empty Slot"))
+                $ file_time = FileTime(i, empty=_("Empty Slut"))
                 $ save_name = FileSaveName(i)
 
                 button:
@@ -415,7 +415,7 @@ screen preferences():
                             text_size 14 text_color "#b33e2766" text_selected_color "#b33e27"
                             action [Function(renpy.call_in_new_context, "adjust_game_difficulty", 3), SelectedIf(game_difficulty == 3)] sensitive persistent.game_complete
 
-                    textbutton _("With cheats") action ToggleVariable("cheats_active", True, False) sensitive (game_difficulty < 3)
+                    textbutton _("With cheats") action SetVariable("cheats_active", False)
                     textbutton _("Tutorials") action ToggleVariable("preferences.tutorials", True, False)
 
         vbox:

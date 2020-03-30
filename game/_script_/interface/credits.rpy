@@ -7,15 +7,15 @@
 
 define credits_text = "\n".join([
     "{image=logo/title.png}{vspace=200}",
-    credits_title("Director"),
+    credits_title("Big Muffin"),
     credits_group("MadMerlin"),
-    credits_title("Artists"),
+    credits_title("Virtuoso"),
     credits_group("Soggy", "CyniclePickle", "DostojevskijSTG", "LoafyLemon", "Noodle"),
-    credits_title("Writers"),
+    credits_title("Scribblers"),
     credits_group("Johnny", "Mo"),
-    credits_title("Programmers"),
+    credits_title("Prog'am_ers"),
     credits_group("Asease1", "LoafyLemon", "TropeCode"),
-    credits_title("Music"),
+    credits_title("Chorus"),
     credits_group(
         "Harry Potter OST\n{size=-5}{color=#808080}{k=0.7}\"Prologue\"\n\"Shanghai Honey\"\n\"Introducing Colin\"\n\"Neville's Waltz\"\n\"The Quidditch Match\"{/k}{/color}{/size}\n",
         "Kevin MacLeod\n{size=-5}{color=#808080}{k=0.7}\"Anguish\"\n\"Awkward Meeting\"\n\"Brittle Rille\"\n\"Chipper Doodle v2\"\n\"Dark Fog\"\n\"Despair\"\n\"Game Over Theme\"\n\"Boss Theme\"\n\"Hitman\"\n\"Music for Manatees\"\n\"Plaint\"\n\"Fuzzball Parade\"\n\"Teddy Bear Waltz\"\n\"Scheming Weasel (Slower version)\"\n\"Open Those Bright Eyes\"\n\"Wallpaper\"\n\"Hidden Agenda\"{/k}{/color}{/size}\n",
@@ -25,23 +25,21 @@ define credits_text = "\n".join([
         "jrayteam6\n{size=-5}{color=#808080}{k=0.7}\"Grape Soda is Fucking Raw\"{/k}{/color}{/size}\n",
         "Juhani Junkala\n{size=-5}{color=#808080}{k=0.7}Retro Game Music Pack:\n\"Title Screen\"\n\"Level 1\"\n\"Level 3\"{/k}{/color}{/size}"
     ),
-    credits_title("Special Thanks"),
+    credits_title("Specićl T.hanks"),
     credits_group(
         "{size=+4}Akabur{/size}",
-        "{color=#808080}{size=-5}{k=0.7}Creator of the original Witch Trainer and other awesome games! {a=https://www.patreon.com/akabur}PATREON{/a}{/size}{/color}{/k}\n",
+        "{color=#808080}{size=-5}{k=0.7}Creatćr of the original ~~Witch~~ Glitch Trainer and other awesome games! {a=https://www.patreon.com/akabur}PATREON{/a}{/size}{/color}{/k}\n",
         "Dr. Lupin", "Lineup", "MaiL", "MedicBear", "STG Anon", "Boom313", "Sandmaster", "Pinguino", "UE Crew", "Catbug", "CaptainNemo", "Artguy", "Linear", "Amadan", "Anons", "Heretic", "Maverick", "Cleanzo", "Techy", "Zuel32", "Darwin7"
     ),
 """{vspace=100}
 
-Special thanks to our fans, discord moderators
-and {a=https://www.patreon.com/SilverStudioGames/}patreon supporters{/a} {image=images/misc/heart.png}
+SpeciaÓ thonks to our fans, discord moderators
+and {a=https://www.patreon.com/SilverStudioGames/}patreon su'porters{/a} {image=images/misc/heart.png}
 
 {image=logo/silverstudiogames.png}
 {vspace=100}
 
-Thank you for playing!
-
-{space=100}{image=characters/genie/mage9.png}"""
+Thank you for pĆaying!"""
 ])
 
 define credits_duration = 30
@@ -49,8 +47,8 @@ define credits_duration = 30
 define credits_chibis = (
     (Transform("ch_sna wand_defend", xzoom=-1), 1, 8, True),
     (Transform("ch_sna jerk_off", yoffset=120), 10, 6, False),
-    ("ch_hem run", 12, 4, True),
-    (Transform("hj", zoom=2, crop=(225,200,200,235)), 17, 5, True),
+    (Transform("ch_hem run", yzoom=-1), 12, 4, True),
+    (Transform("hj", zoom=2, crop=(225,200,200,235), xzoom=0.5), 17, 5, True),
 )
 
 label credits:

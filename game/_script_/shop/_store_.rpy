@@ -320,6 +320,25 @@ label object_gift_block(item):
     show screen gift
     with d3
 
+    if item.id == "hg_ball":
+        if hg_ball.unlocked:
+            hide screen gift
+            with None
+            return
+
+        if gold >= 1000:
+            $ gold -= 1000
+            $ hg_ball.unlocked = True
+            m "I'll take that dress."
+            ger "Of course!"
+            "Thank your for shopping at \"Weasley & Weasley\"."
+            hide screen gift
+            return
+        else:
+            m "(I don't have enough gold)"
+            hide screen gift
+            return
+
     "[item.description]"
     $ cost2 = item.cost * 2
     $ cost3 = item.cost * 4

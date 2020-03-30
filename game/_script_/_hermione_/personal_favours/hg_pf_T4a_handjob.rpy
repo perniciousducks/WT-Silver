@@ -832,7 +832,7 @@ label hg_pf_handjob_2_continue:
             #  If the player can't be bothered to choose a name, then we
             #  choose a suitable one for them:
             if tmp_name == "":
-                $ tmp_name="I'm a whore"
+                $ tmp_name="I'm a ćź...ćbore!"
                 m "(...)"
                 call her_main("I could just call myself a \"Whore\" again, as usual...", "annoyed", "base", "worried", "R")
                 m "Yes. A great suggestion."

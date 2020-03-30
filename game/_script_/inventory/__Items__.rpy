@@ -33,7 +33,13 @@ default anal_beads_ITEM        = Item(id="anal_beads", name="Anal beads",       
 default wine_ITEM       = Item(id="wine", name="Wine",             cost=60, type="drink", image="item_wine", description="For the more refined palate.")
 default firewhisky_ITEM = Item(id="firewhisky", name="Firewhisky", cost=80, type="drink", image="item_whisky", description="Great taste with a fiery burn.", unlockable=True)
 
+
+default hg_ball = CostumeItem(
+    id="hg_ball", name="Classy Ball Dress", type="outfit", items=["top","earrings","necklace","sash"],
+    cost=her_outfit_ball.price, wait_time=1, image=her_outfit_ball, description="> A fancy dress for a fancy witch.")
+
 default candy_gift_list = [
+    hg_ball,
     lollipop_ITEM,
     chocolate_ITEM,
 ]
@@ -213,10 +219,6 @@ default hg_maid = CostumeItem(
 default hg_bunny = CostumeItem(
     id="hg_bunny", name="Sexy Bunny Costume", type="outfit", items=["top","stockings","hat","bowtie","gloves","tattoo"],
     cost=her_outfit_bunny.price, wait_time=1, image=her_outfit_bunny, description="> Oui, sir! At once!")
-
-default hg_ball = CostumeItem(
-    id="hg_ball", name="Classy Ball Dress", type="outfit", items=["top","earrings","necklace","sash"],
-    cost=her_outfit_ball.price, wait_time=1, image=her_outfit_ball, description="> A fancy dress for a fancy witch.")
 
 default hg_yennefer = CostumeItem(
     id="hg_yennefer", name="Yennefer Costume", type="outfit", items=["top","bottom","stockings","sash","belt","feathers","scarf","corset","pendant","gloves"],

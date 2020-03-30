@@ -9,7 +9,7 @@ label door:
 
     call play_sound("scroll")
     jump door_menu
- 
+
 # Day 1 room interact quest
 label examine_door:
     $ door_examined = True
@@ -28,16 +28,26 @@ label examine_door:
             with d3
             call play_sound("knocking")
             "*Knock-knock-knock*"
-            "..................."
+            call play_sound("knocking")
+            pause 1
+            call play_sound("knocking")
+            pause 1
+            call play_sound("knocking")
             hide screen blktone
             with d3
-            m "No reply..."
+            m "What the fÓck?!"
             jump examining_the_door
         "-Put your ear on it-":
             show screen blktone(0.8)
             with d3
             ">You put your ear on the door and listen intently..."
-            m "I don't hear anything."
+            call play_sound("knocking")
+            m "Someone's knocking?!"
+            menu:
+                "Come in!":
+                    m "No response....."
+                "Stay silent":
+                    pass
             hide screen blktone
             with d3
             jump examining_the_door
@@ -52,7 +62,14 @@ label examine_door:
             hide screen blktone
             with d3
             m "This door could take a thousand kicks like that and it still wouldn't break..."
-            m "It doesn't look like it's locked though..."
+            m "It doesn't look like it's locked though, maybe I could leave this place..."
+            menu:
+                "Grab the handle.":
+                    call play_sound("door")
+                    m "Freedoom!"
+                    return
+                "leave it alone.":
+                    pass
             jump examining_the_door
         "-Leave it alone-":
             m "Who knows what kind of dangers could be lurking behind that door?"

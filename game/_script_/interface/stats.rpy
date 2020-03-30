@@ -354,7 +354,7 @@ screen stats_menuitem(xx, yy):
                             at at_zoom(0.62)
                             if current_category == "Genie":
                                 use stat_bar(int(100/10), "-Lust-", "", 100)
-                                use stat_bar(int(0/10), "-Sanity-", "", 0)
+                                use stat_bar(int(0/10), "-Sanity-", "", -10)
                                 use stat_bar(int(imagination +bdsm_imagination/1), "-Imagination-", "", imagination +bdsm_imagination)
                                 if not cheat_reading:
                                     use stat_bar(int(speed_writing/0.25), "-Speed Writing-", "", speed_writing)

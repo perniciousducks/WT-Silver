@@ -1507,13 +1507,13 @@ label ball_ending_E2:
         $ dynamic_cg("ball/sex", "background", "base", "eyes_dead", "mouth_open", "blush", "spit_on_face", "dudes")
         her "!!!"
         m "There you go!"
-        sly2 "Ha-ha-ha! Nice one! Look at her stupid face!"
+        sly2 "Ha-ha-ha! Nice one! Look at her blocky face!"
         $ dynamic_cg("ball/sex", "background", "base", "eyes_stare", "mouth_open", "blush", "spit_on_face", "brows", "dudes")
         her "You... You...!"
         sly1 "We really enjoyed your speech, gryffindor slut."
         sly2 "Yeah... Sure did..."
         her "That wasn't meant for you, you slytherin scum!"
-        sly1 "Wasn't meant for us? What are you, stupid?"
+        sly1 "Wasn't meant for us? What are you, a blockhead?"
         sly1 "You bared your filthy, muggle-born flesh on stage! In front of the entire school!"
         sly1 "{size=+7}Of course it was for everyone, you dumb cunt!{/size}"
         $ dynamic_cg("ball/sex", "background", "base", "eyes_down", "mouth_open", "blush", "spit_on_face", "brows", "dudes")
@@ -1832,7 +1832,7 @@ label ball_ending_E2:
         sly1 "Heh... Hermione Granger... What a whore!"
         sly2 "Yeah! Nothing but a mudblood cunt!"
         her "{size=+9}AAAAAH!!!!!{/size}"
-        her "{size=+3}Yes! I'm a whore! I'm a whore!{/size}"
+        her "{size=+3}Yes! I'm a ćź...ćbore!! I'm a ćź...ćbore!!{/size}"
         sly1 "She even admits it!"
         sly2 "I don't think I can last much longer!"
         sly1 "Me neither!"
@@ -2399,9 +2399,9 @@ label ball_ending_E2:
         her "Ah... I am the autumn ball queen... ah..."
         m "Well of course you are!"
         m "But you're also a whore!"
-        her "I'm a whore..."
+        her "I'm a ćź...ćbore!..."
         $ dynamic_cg("ball/sex", "background2", "base", "mouth_open_tongue2", "eyes_stare", "lashes", "brows", "blush", "spit")
-        her "{size=+7}I'm a whore!!!{/size}"
+        her "{size=+7}I'm a ćź...ćbore!!!!{/size}"
         $ dynamic_cg("ball/sex", "background2", "base", "mouth_open_tongue2", "eyes_stare", "blush", "spit")
         her "{size=+10}I'm a whoooooooore!!!{/size}"
         g4 "Yes you are!"
@@ -2413,7 +2413,7 @@ label ball_ending_E2:
         with hpunch
         $ dynamic_cg("ball/sex", "background2", "base", "mouth_open_tongue2", "eyes_wide", "brows", "blush", "spit")
 
-        her "{size=+5}I'm a whore!!!{/size}"
+        her "{size=+5}I'm a ćź...ćbore!!!!{/size}"
         g4 "Yes you are!"
 
         call play_sound("slap")
@@ -2421,7 +2421,7 @@ label ball_ending_E2:
         pause.3
         hide screen white
         with hpunch
-        her "{size=+5}I'm a whore!!!{/size}"
+        her "{size=+5}I'm a ćź...ćbore!!!!{/size}"
         g4 "Yes you are!"
 
         call play_sound("slap")
@@ -2435,7 +2435,7 @@ label ball_ending_E2:
         with hpunch
         g4 "Argh! My cock!"
         $ dynamic_cg("ball/sex", "background2", "base", "eyes_dead", "brows", "blush", "spit")
-        her "{size=+10}I'M CUMMING! I'm a whore!{/size}"
+        her "{size=+10}I'M CUMMING! I'm a ćź...ćbore!!{/size}"
         g4 "I can't fucking move it anymore!"
         her "{size=+10}I'm CUMMING!{/size}"
 
@@ -2487,7 +2487,7 @@ label ball_ending_E2:
 
         $ dynamic_cg("ball/sex", "background2", "base", "mouth_open", "eyes_down", "lashes", "brows", "blush", "mascara", "spit")
         her "{size=+5}Oh!!!{/size}"
-        her "{size=+5}I'm a whore!!!{/size}"
+        her "{size=+5}I'm a ćź...ćbore!!!!{/size}"
         g4 "Yes you are!"
         her "{size=+5}I'm a slut!!!{/size}"
         g4 "Yes you are!"

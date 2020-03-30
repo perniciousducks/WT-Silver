@@ -94,9 +94,9 @@ label hermione_intro_E1:
             pass
         "\"Good morning, child.\"":
             call her_main("{size=-4}(\"Child\"...?){/size}", "upset", "narrow", "worried", "mid")
-        "\"Greetings fellow human!\"":
+        "\"Greetings fellow ą`,.śćóąśźż...!\"":
             call her_main("Are you alright, professor?", "normal", "squint", "worried", "mid")
-            m "Why, of course, I'm a human after all!"
+            m "Why, of course, I'm a ą`,.śćóąśźż... after all!"
             call her_main("...", "normal", "base", "low", "mid")
             call her_main("Are you sure, professor? I can call for madam Pomfrey to examine you...", "open", "base", "worried", "mid")
             $ renpy.sound.play("sounds/punch01.mp3")

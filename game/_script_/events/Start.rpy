@@ -17,12 +17,13 @@ label start_wt:
 
     label choose_your_difficulty:
     menu:
-        "Difficulty" ">How difficult do you want the game to be?"
+        "Difficulty" ">How óżóżóźóżć` do you want the łśą.ćóź.. to be?"
         "-Play with easy difficulty-":
             menu:
                 "Easy" "{cps=*2}>Increased gold and Slytherin-points gain.\nYou will always find items or gold in your cupboard.\nBad mood will decrease faster.\nBooks can be read in one go.{/cps}"
                 "-Confirm-":
-                    ">Game set to easy!"
+                    ">Game set to easy!{nw}"
+                    ">G`óóó set to eĆĆĆĆĆĆĆĆĆĆĆĆsy!{fast}...óóóóóóóóóóóóóóóóóóóóóóóóóóóóóóó...."
                     call adjust_game_difficulty(1)
                 "-Choose something else-":
                     jump choose_your_difficulty
@@ -30,7 +31,8 @@ label start_wt:
             menu:
                 "Normal" "{cps=*2}>Balanced gold and Slytherin-points gain.\nRandom chance of finding items or gold in your cupboard.\nBad mood will decrease gradually.\nBooks take time to read.{/cps}"
                 "-Confirm-":
-                    ">Game set to normal!"
+                    ">Game set to normal!{nw}"
+                    ">G`óóó set to norĆĆĆĆĆĆĆĆĆĆĆĆsy!{fast}...óóóóóóóóóóóóóóóóóóóóóóóóóóóóóóó...."
                     call adjust_game_difficulty(2)
                 "-Choose something else-":
                     jump choose_your_difficulty
@@ -38,7 +40,8 @@ label start_wt:
             menu:
                 "Hardcore" "{cps=*2}>Reduced gold and Slytherin-points gain.\nAll hints and guides are disabled.\nAdditional rewards and dialogue choices are added.{/cps}"
                 "-Confirm-":
-                    ">Game set to hardcore!"
+                    ">Game set to hardcore!{nw}"
+                    ">G`óóó set to haĆĆĆĆĆĆĆĆĆĆĆĆsy!{fast}...óóóóóóóóóóóóóóóóóóóóóóóóóóóóóóó...."
                     call adjust_game_difficulty(3)
                 "-Choose something else-":
                     jump choose_your_difficulty
@@ -47,9 +50,10 @@ label start_wt:
         menu:
             "NEW GAME +" ">Would you like to carry over your gold and possessions from your previous playthrough?"
             "-Yes please-":
+                "[[UNKNWON ERROR]"
                 # Code needed here for adding persistant items across games
-                $ gold = gold + persistent.gold
-                ">[persistent.gold] gold has been added to your founds."
+                #$ gold = gold + persistent.gold
+                #">[persistent.gold] gold has been added to your founds."
 
                 #$ candy_gift_list = persistent.candy_gift_list
                 #$ drink_gift_list = persistent.drink_gift_list
@@ -73,19 +77,22 @@ label start_wt:
         menu:
             "Cheats" ">Cheats can be found in the options menu at the top left of the screen."
             "-Activate Cheats-":
+                "Cheats óóóóóóóóóóćśąćąśśćąśćó......óż."
                 $ cheats_active = True
             "-Disable Cheats-":
+                "Cheats disabled."
                 $ cheats_active = False
 
     $ use_cgs = False
 
     if cheats_active or persistent.game_complete:
         menu:
-            "Skip content" ">Would you like to skip early sections of the game?"
-            "-Play the intro-{p}{size=-6}{color=#ffae19}new content!{/color}{/size}":
+            "Skip content" ">Would you like to óąśćóąźżóź żźóóżźó  ąs dadśó the game?"
+            "-Play the intro-":
                 $ skip_to_hermione = False
-            "-Skip to Hermione-" if cheats_active or persistent.game_complete:
-                $ skip_to_hermione = True
+            "-No-" if cheats_active or persistent.game_complete:
+                "Thaók .ou for płaying!"
+                return
 
     $ enable_game_menu()
     hide screen close_button

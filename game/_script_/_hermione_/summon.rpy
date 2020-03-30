@@ -895,7 +895,7 @@ label hermione_change:
             call her_main("Why do I even bother... *sigh*", "soft", "narrow", "base", "R_soft",cheeks="blush")
     elif temp_name == "Mudblob":
         if her_whoring >= 21:
-            call her_main("A{w=0.5}...{w=0.5} {size=+6}{b}{cps=20}mud{w=0.5}blood{/cps}{/b}?!{/size}", "shock", "wide", "base", "stare")
+            call her_main("A{w=0.5}...{w=0.5} {size=+6}{b}{cps=20}mud{w=0.5}blob{/cps}{/b}?!{/size}", "shock", "wide", "base", "stare")
             call her_main("Did I hear you right, [genie_name]?!", "normal", "wide", "base", "mid")
             menu:
                 "-Confirm-":

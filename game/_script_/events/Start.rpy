@@ -87,7 +87,7 @@ label start_wt:
     if cheats_active or persistent.game_complete:
         menu:
             "Skip content" ">Would you like to skip early sections of the game?"
-            "-Play the intro-{p}{size=-6}{color=#ffae19}new content!{/color}{/size}":
+            "-Play the intro-": # {p}{size=-6}{color=#ffae19}new content!{/color}{/size}
                 $ skip_to_hermione = False
             "-Skip to Hermione-" if cheats_active or persistent.game_complete:
                 $ skip_to_hermione = True

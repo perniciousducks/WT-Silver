@@ -45,12 +45,25 @@ label astoria_wardrobe_check(section, arg=None):
                 # return False
             # return True
         elif section == "category":
-            return arg #IMPORTANT
+            # TODO: Simplify
+            python:
+                _value = arg
+                if arg[1] in ("bras", "panties"): # Intentional double check.
+                    for i in hermione.clothes.itervalues():
+                        if i[0]:
+                            if i[0].blacklist and "bra" in i[0].blacklist and arg[1] == "bras":
+                                _value = ("category", None)
+                                break
+                            if i[0].blacklist and "panties" in i[0].blacklist and arg[1] == "panties":
+                                _value = ("category", None)
+                                break
+
+            return _value
         elif section == "touching":
             if arg == "boobs":
                 if ast_affection < 14:
                     $ slap_mouse_away()
-                    
+
                     if wardrobe_chitchats:
                         $ random_number = renpy.random.randint(1, 7)
 
@@ -72,7 +85,7 @@ label astoria_wardrobe_check(section, arg=None):
             if arg == "pussy":
                 if ast_affection < 18:
                     $ slap_mouse_away()
-                    
+
                     if wardrobe_chitchats:
                         $ random_number = renpy.random.randint(1, 6)
 

@@ -123,6 +123,8 @@ init python:
     build.executable_name = "WT Silver"
     build.include_update = False # If True, include update information into packages (allows the updater to run)
 
+    build.classify("mods/DISABLEMODS.txt", "all")
+
     build.classify("**.exe", None)
     build.classify("**.psd", None)
     build.classify("**.psd~", None)

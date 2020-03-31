@@ -97,38 +97,39 @@ default tentacle_sample = False # Quest "item" flag.
 default tentacle_scroll_examined = False
 
 default hg_ps_get_panties = shaming_class(
-    tier = 1,
+    tier = 2,
     title = "Panty Thief",
     start_label = "hg_ps_get_panties",
     complete_label = "hg_ps_get_panties_complete"
 )
 
 default hg_ps_buttplug = shaming_class(
-    tier = 1,
+    tier = 3,
     title = "Wear A Buttplug",
     start_label = "hg_ps_buttplug",
     complete_label = "hg_ps_buttplug_complete"
 )
 
 default hg_ps_cumslut = shaming_class(
-    tier = 2,
+    tier = 4,
     title = "Wear My Cum",
     start_label = "hg_ps_cumslut",
     complete_label = "hg_ps_cumslut_complete"
 )
 
+# Not used
 default hg_ps_walk = shaming_class(
     tier = 2,
     title = "Walk Of Shame",
     start_label = "hg_ps_walk",
     complete_label = "hg_ps_walk_complete"
-    )
+)
 
 default hg_ps_list = [
     hg_ps_get_panties,
     hg_ps_buttplug,
     hg_ps_cumslut
-    ]
+]
 
 default panty_jerkoff  = counter_class()
 default hg_talk        = counter_class()

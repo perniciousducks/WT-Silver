@@ -37,7 +37,7 @@ label setup_fireplace_hangout(char=None):
     with fade
 
     return
-    
+
 label slap_her:
     call play_sound("slap") #SLAP!
     show screen white
@@ -75,7 +75,7 @@ label cast_spell(spell=""):
         with hpunch
 
     return
-    
+
 label cum_block:
     show screen white
     pause.1
@@ -86,10 +86,6 @@ label cum_block:
     hide screen white
     with hpunch
 
-    return
-    
-label vague_idea:
-    call nar(">You lack imagination for an idea of this caliber.")
     return
 
 label increase_house_points(house, points):

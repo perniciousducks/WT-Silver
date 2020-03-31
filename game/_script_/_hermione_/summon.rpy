@@ -284,8 +284,8 @@ label hermione_favor_menu:
                 python:
                     menu_choices = []
                     for i in hg_ps_list:
-                        if i.tier > bdsm_imagination:
-                            menu_choices.append(("{color=[menu_disabled]}-A vague idea-{/color}","vague"))
+                        if i.tier > her_tier:
+                            menu_choices.append(("{color=[menu_disabled]}-Not ready-{/color}","vague"))
                         else:
                             menu_choices.append(i.get_menu_item())
                     menu_choices.append(("-Never mind-", "nvm"))
@@ -294,7 +294,7 @@ label hermione_favor_menu:
                 if result == "nvm":
                     jump silver_requests_root
                 elif result == "vague":
-                    call vague_idea
+                    call favor_not_ready
                     jump not_now_ps
                 else:
                     $ renpy.jump(result)

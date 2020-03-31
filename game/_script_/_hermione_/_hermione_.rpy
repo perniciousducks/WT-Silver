@@ -121,8 +121,11 @@ screen hermione_main():
     sensitive False
     default hermione_img = hermione.get_image()
     if hermione_animation != None:
+        #TODO Remove temporary plug image solution once the butt plug events have some kind of CG
+        add hermione_plug_img xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio) at hermione_animation
         add hermione_img xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio) at hermione_animation
     else:
+        add hermione_plug_img xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
         add hermione_img xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
 
     on ("show", "replace") action Function(apply_doll_transition, hermione, "hermione_main", "hermione_img", use_hermione_head)

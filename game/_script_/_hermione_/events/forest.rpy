@@ -656,7 +656,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
             $ ccg2 = 6
             her "Oh alright then..."
             $ ccg2 = 10
-            her "Just don't go blabbing to everyone in the girls bathroom, OK?"
+            her "Just don't go blabbing to everyone in the girls' bathroom, OK?"
             myr "Deal..."
             m "Good... Now why don't you just sit back and enjoy the show then..."
         "-facefuck her-":
@@ -717,7 +717,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     $ ccg2 = 34
     her "{size=+5}*glck*{heart}*glck*{heart}*glck*{/size}"
     $ ccg2 = 35
-    myr "Just wait until the girls bathrooms hear about tonight!"
+    myr "Just wait until the girls' bathrooms hear about tonight!"
     $ ccg2 = 34
     her "{size=+5}*glck*HNNOOO*glck*{/size}"
     $ ccg2 = 44

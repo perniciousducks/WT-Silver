@@ -11,7 +11,7 @@ label job_1:
 
     show screen blkfade
     with d5
-    
+
     # Setup
     call play_sound("equip_inventory")
     $ her_outfit_last.save()
@@ -140,7 +140,7 @@ label barmaid_responses:
             m "Well done [hermione_name], twenty points to Gryffindor."
 
     her "Thank you, [genie_name]."
-    
+
     $ gryffindor+= 20
     $ gold += payment
 
@@ -461,7 +461,7 @@ label job_5:
         call her_main("I'll see you tonight.", "open", "base", "base", "mid")
         m "Forgetting something?"
         call her_main("... Just hand it over.", "disgust", "narrow", "worried", "down", cheeks="blush")
-        
+
         if her_whoring < 15:
             # Failstate
             call her_main("I know I said I'd help them but you want me to wear... this?", "open", "base", "angry", "mid")
@@ -475,10 +475,10 @@ label job_5:
             call her_main("Of course it's a no", "shock", "base", "angry", "mid")
             $ her_mood += 5
             jump working_menu
-            
+
         $ first_time_cardgame_work = False
         $random_choice = renpy.random.randint(0,3)
-        
+
         if random_choice == 0:
             call her_main("Why are the cards placed like that?", "mad", "narrow", "worried", "down")
             call her_main("...", "normal", "happyCl", "worried", "mid", cheeks="blush")
@@ -494,22 +494,23 @@ label job_5:
             call her_main("That doesn't leave a lot to the imagination...", "smile", "happy", "base", "mid")
             call her_main("At least the straps should cover my nipples...", "open", "wink", "base", "mid")
             call her_main("I'll do it...","normal","happy", cheeks="blush")
-        
+
 
     show screen blkfade
     with d5
     call play_sound("equip_inventory")
     pause 2.5
-    call h_equip_temp_outfit(hg_gamble_slut_ITEM)
+
+    $ her_outfit_last.save()
+    $ hermione.equip(her_outfit_poker)
+
     hide screen blkfade
     with d5
     g9 "Looking great!"
     call her_main("Thank you...","open","happy", cheeks="blush")
     m "Off you go then..."
 
-
-    hide screen hermione_main
-    call h_unequip_temp_outfit()
+    call her_walk(action="leave")
     $ hermione_busy = True
     $ current_job = 5
 
@@ -518,8 +519,6 @@ label job_5:
 label hermione_helping_selling_cards:
     $ current_job = 0
     $ random_choice = renpy.random.randint(1,4)
-
-    call h_equip_temp_outfit(hg_gamble_slut_ITEM)
 
     if her_shop_help_first:
         $ her_shop_help_first = False
@@ -547,8 +546,6 @@ label hermione_helping_selling_cards:
         $ gold += 20
         m "Well done [hermione_name], fifteen points to Gryffindor."
         $ gryffindor += 15
-        call h_unequip_temp_outfit()
-        jump main_room_menu
 
     if random_choice == 1:
         call her_main("")
@@ -651,7 +648,7 @@ label hermione_helping_selling_cards:
         m "Well done [hermione_name], twenty-five points to Gryffindor."
         $ gryffindor += 25
     else:
-        $ uni_sperm = True
+        $ hermione.set_cum(hair="light")
         call her_main("", "cum", "narrow", "base", "dead")
         m "What happened to you?"
         call her_main("What do you mean...", "open", "narrow", "worried", "mid_soft")
@@ -680,7 +677,11 @@ label hermione_helping_selling_cards:
         m "Well done [hermione_name], thirty points to Gryffindor."
         $ gryffindor += 30
 
-    call h_unequip_temp_outfit()
+    her "Good night, sir."
+    call her_walk(action="leave")
+
+    $ hermione.equip(her_outfit_last)
+    $ hermione.set_cum(None)
     jump main_room_menu
 
 label inn_menu:

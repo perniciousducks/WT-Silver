@@ -11,7 +11,7 @@ default her_tier       = 1
 default her_whoring    = 0
 default her_reputation = 0
 default her_mood       = 0
-default her_tutoring   = 0
+default her_tutoring   = 1
 
 default forest_BJ_progress = 1
 

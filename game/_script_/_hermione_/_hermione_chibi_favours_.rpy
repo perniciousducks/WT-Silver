@@ -53,6 +53,13 @@ label her_chibi_scene(action="reset", xpos="mid", ypos="base", trans=None):
     elif action == "lie_on_desk":
         show screen lie_on_desk
 
+    elif action == "lie_on_desk_fingering":
+        show screen lie_on_desk("fingering")
+    elif action == "lie_on_desk_fingering_slow":
+        show screen lie_on_desk("fingering_slow")
+    elif action == "lie_on_desk_fingering_pause":
+        show screen lie_on_desk("fingering_pause")
+
     elif action == "lie_on_desk_jerk_off":
         show screen chair_left
         $ masturbating = True
@@ -130,6 +137,21 @@ screen lie_on_desk(alt=None):
                 add "lie_on_desk_cum"
             else:
                 add "lie_on_desk_naked_cum"
+        elif alt == "fingering":
+            if hermione.is_worn("bottom"):
+                add "finger_naked"
+            else:
+                add "finger_naked"
+        elif alt == "fingering_slow":
+            if hermione.is_worn("bottom"):
+                add "finger_naked_slow"
+            else:
+                add "finger_naked_slow"
+        elif alt == "fingering_pause":
+            if hermione.is_worn("bottom"):
+                add "finger_naked_pause"
+            else:
+                add "finger_naked_pause"
         else:
             if hermione.is_worn("bottom"):
                 add "lie_on_desk"

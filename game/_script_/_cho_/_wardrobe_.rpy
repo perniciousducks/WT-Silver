@@ -105,7 +105,7 @@ default cho_outfit_sailor = DollOutfit([cho_hair_ponytail1, cho_top_sailor1, cho
 ## Bikini Outfit ##
 ###################
 
-default cho_bra_bikini2 = DollCloth("cho", ("bras", "bras"), "bra", "bikini_top_2", [[138, 22, 17, 255]], level=14)
+default cho_bra_bikini2 = DollCloth("cho", ("bras", "bras"), "bra", "bikini_top_2", [[89, 116, 194, 255]], level=14) #Red: [138, 22, 17, 255]
 default cho_panties_bikini1 = DollCloth("cho", ("panties", "panties"), "panties", "bikini_bottom_1", [[213, 161, 13, 255]], level=14, armfix=True)
 
 default cho_outfit_bikini = DollOutfit([cho_hair_ponytail1, cho_bra_bikini2, cho_panties_bikini1], price=500)

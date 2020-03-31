@@ -462,7 +462,7 @@ label job_5:
         m "Forgetting something?"
         call her_main("... Just hand it over.", "disgust", "narrow", "worried", "down", cheeks="blush")
 
-        if her_whoring < 15:
+        if her_whoring < 19:
             # Failstate
             call her_main("I know I said I'd help them but you want me to wear... this?", "open", "base", "angry", "mid")
             m "Of course, is that going to be a problem?"

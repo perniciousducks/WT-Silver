@@ -96,3 +96,6 @@ init -1 python:
                     ll_favor_list[i] = ll_pf_masturbate
 
             save_internal_version = 1.381
+
+        if float(save_internal_version) < 1.382:
+            save_internal_version = 1.382

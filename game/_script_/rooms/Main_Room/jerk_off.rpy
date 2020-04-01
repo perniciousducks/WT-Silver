@@ -29,7 +29,7 @@ label jerk_off:
             jump how_to_finish
 
         "-On the floor!-":
-            $ jerk_off_choice = renpy.random.choice("jasmine", "lara")
+            $ jerk_off_choice = renpy.random.choice(["jasmine", "lara"])
 
     hide screen bld1
     show screen blktone

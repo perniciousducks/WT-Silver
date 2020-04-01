@@ -351,7 +351,7 @@ label give_ast_gift(gift_item):
         else:
             call ast_main("Handcuffs? And a Ball gag?", face="happy")
             call give_gift(">You give the handcuffs to Astoria...", gift_item)
-            call ast_main("So I guess these are one of those BDSM items?", face="nautral")
+            call ast_main("So I guess these are one of those BDSM items?", face="neutral")
             call ast_main("Colour me intrigued...", face="happy")
             call ast_mood(-1)
 

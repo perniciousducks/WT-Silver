@@ -105,10 +105,10 @@ label set_lun_top(top=""):
     return
 
 #Bottom equip.
-label set_lun_bottom(bottom="", color=""):
+label set_lun_bottom(bottom=""):
     hide screen luna_main
 
-    if luna_wear_bottom and lun_bottom == bottom and lun_bottom_color == color:
+    if luna_wear_bottom and lun_bottom == bottom:
         $ lun_request_wear_bottom = False
         $ luna_wear_bottom = False
     else:
@@ -118,8 +118,6 @@ label set_lun_bottom(bottom="", color=""):
         $ luna_wear_bottom = True
         if bottom != "":
             $ lun_bottom = bottom
-        if color != "":
-            $ lun_bottom_color = color
 
     call update_lun_uniform
 

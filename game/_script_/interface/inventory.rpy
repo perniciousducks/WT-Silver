@@ -247,7 +247,7 @@ screen inventory_menuitem(xx, yy):
                 xalign 0.5
                 text current_item.name ypos 380 size 16 xoffset 45
 
-            if current_category == "Quest Items":
+            if current_category == "Quest Items" and hasattr(current_item, "event"):
                 textbutton "Use":
                     xysize (90, 26)
                     xalign 0.89

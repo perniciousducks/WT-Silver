@@ -88,7 +88,6 @@ default lun_top_color = "base"
 # Bottom
 default luna_bottom      = "characters/luna/clothes/bottoms/skirt_1.png"
 default lun_bottom       = "skirt_1"
-default lun_bottom_color = "base"
 
 # Underwear
 default luna_bra      = "characters/luna/clothes/bras/bra_basic.png"
@@ -354,7 +353,6 @@ label reset_luna_clothing:
         # Bottom
         "luna_bottom",
         "lun_bottom",
-        "lun_bottom_color",
 
         # Underwear
         "luna_bra",

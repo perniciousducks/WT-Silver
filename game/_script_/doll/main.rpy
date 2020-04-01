@@ -233,7 +233,7 @@ init python:
             self.apply_transition()
 
         def set_pose(self, pose):
-            if pose is None or renpy.loadable("characters/{}/poses/{}".format(self.name, pose)):
+            if pose is None or renpy.loadable("characters/{}/poses/{}/loadable.png".format(self.name, pose)):
                 self.pose = pose
                 self.face.set_pose(pose)
                 self.body.set_pose(pose)

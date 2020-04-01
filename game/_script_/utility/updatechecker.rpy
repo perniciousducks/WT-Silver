@@ -25,7 +25,7 @@ init -1 python:
     def check_save_compatibility(slot, page=None):
         save_version = FileJson(slot, "_version", missing=0, page=page)
         if save_version is not None:
-            return float(save_version) >= 1.37 # float(config.version)
+            return float(save_version) >= compatible_version # float(config.version)
         else:
             return True # Slot is empty
 
@@ -81,3 +81,18 @@ init -1 python:
                 misc_hat_list.append(owl_xmas_ITEM)
 
             save_internal_version = 1.374
+
+        if float(save_internal_version) < 1.381:
+
+            ton_top_corset.blacklist=["bra"]
+            ast_stockings_ann.blacklist=["bottom"]
+
+            reset_variables("ll_pf_masturbate", "ll_pf_blowjob")
+
+            for i, e in enumerate(ll_favor_list):
+                if e.title == "Suck it!":
+                    ll_favor_list[i] = ll_pf_blowjob
+                elif e.title == "Masturbate for me!":
+                    ll_favor_list[i] = ll_pf_masturbate
+
+            save_internal_version = 1.381

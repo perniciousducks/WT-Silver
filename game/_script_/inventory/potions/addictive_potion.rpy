@@ -173,7 +173,7 @@ label hg_pp_cumaddict_intro:
     her "*Gobble!* *Slurp!* *Slurp!*"
     call her_main("", "smile", "narrow", "base", "mid_soft")
     call her_chibi_scene("bj_pause")
-    her "I even masturbated in the girls bathroom."
+    her "I even masturbated in the girls' bathroom."
     hide screen hermione_main
     call her_chibi_scene("bj")
     her "*Gobble!!* *Gltch!!* *Gobble!!!*"

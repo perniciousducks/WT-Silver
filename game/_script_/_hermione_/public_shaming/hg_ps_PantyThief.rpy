@@ -1,8 +1,6 @@
 
-
-### Panty Thief ###
-
-label hg_ps_get_panties: #(Whoring = 5 - 12)
+label hg_ps_get_panties:
+    # Public shaming: Panty thief
     hide screen hermione_main
     with d3
     m "{size=-4}(I could ask her to take off her panties and give them to me before she leaves for classes today.){/size}"
@@ -17,7 +15,7 @@ label hg_ps_get_panties: #(Whoring = 5 - 12)
     call her_main("I am listening, [genie_name].",xpos="right",ypos="base")
     m "I will need your panties..."
 
-    if not hg_pf_admire_panties.is_event_complete(3, 1) or her_whoring <= 5:
+    if not hg_pf_admire_panties.is_event_complete(3, 1) or her_whoring < 6:
         jump too_much
 
     elif hg_ps_get_panties.points == 0:
@@ -25,16 +23,18 @@ label hg_ps_get_panties: #(Whoring = 5 - 12)
 
         call her_main("W-what?", "open", "base", "worried", "mid")
         her "My... panties...?"
-        her "[genie_name], this is..."
+        her "[genie_name], this is-"
         m "This is the favour I will be buying from you today, [hermione_name]..."
         m "If you are not interested you are more than welcome to leave."
         her "No, I am interested. I am.... it's just..."
-        her "You need my...."
-        call play_music("chipper_doodle") # HERMIONE'S THEME.
+        her "You need my..."
+
+        call play_music("chipper_doodle")
+
         call her_main("...panties, [genie_name]?", "angry", "base", "angry", "mid")
         m "Yes I do..."
         call her_main("May I ask what you are planning to do with them...?", "disgust", "narrow", "base", "mid_soft")
-        m "Ehm...I'm conducting research..."
+        m "Ehm... I'm conducting research..."
         her "But this is kind of inappropriate, don't you think?"
         m "But don't you hate it that some of the girls from Slytherin..."
         m "Are selling favours for house points, [hermione_name]?"
@@ -54,75 +54,80 @@ label hg_ps_get_panties: #(Whoring = 5 - 12)
 
         if hermione.is_worn("panties"):
             $ hermione.strip("panties")
-            call nar(">Suddenly Hermione bends forward and takes off her panties...","start")
+            call nar(">Suddenly Hermione bends forward and takes off her panties.","start")
         else:
             if hermione.is_any_worn("top", "bottom"):
-                call nar(">Suddenly Hermione reaches inside one of her hidden pockets...","start")
+                call nar(">Suddenly Hermione reaches inside one of her hidden pockets.","start")
             else:
-                call nar(">Suddenly Hermione reaches inside...","start")
-                call nar("Hmm, she's not exactly clothed...")
-                call nar("*Sigh*")
-                call nar("{cps=*2}{size=-6}She prepares her wand, closing her other fist. While shaking it vigorously from side to side she says the incantation \"teL ereht eb seitnap!\" done!{/size}{/cps}")
-        call nar(">Then she extends her arm to you...")
-        call nar(">You see that she is clutching a little piece of fabric in her fist...","end")
+                call nar(">Suddenly Hermione reaches inside-","start")
+                call nar(">Wait, she's not exactly clothed...{w=0.4} Well then...")
+                call nar(">By some kind of magic, a pair of panties suddenly appear in her hand.")
+
+        call nar(">She extends her arm to you, clutching a little piece of fabric in her fist.","end")
         m "??!"
-        call nar(">You acquired Hermione's panties...")
         call her_main("Just take them, [genie_name]...", "mad", "base", "worried", "mid", tears="soft")
+        call nar(">Slightly surprised, you take the panties from her hand.")
         m "What? When did you?"
         her "Your speech was so moving..."
         her "You are so right, [genie_name]! I shall beat them at their own game!"
         her "My classes are about to start, so I should probably go now..."
         call her_main("...........", "normal", "base", "base", "R",tears="soft")
-        call her_main("...I hope nobody will notice that I have no underwear on today...", "annoyed", "base", "worried", "R")
+        call her_main("I hope nobody will notice that I have no underwear on today...", "annoyed", "base", "worried", "R")
         call her_main("Oh, and I will be back tonight to pick them up, [genie_name].", "open", "base", "base", "mid")
         m "Of course. Your panties will be right here on my desk, waiting for you..."
         call her_main(".............", "angry", "happyCl", "worried", "mid",emote="05")
 
     else:
-        if hg_ps_get_panties.points >= 1:
+        label dev:
+        if hg_ps_get_panties.points > 0:
             her "Again, [genie_name]?"
             m "Yes, again..."
+
         her "Here..."
-        if her_whoring >= 12: #LEVEL 05
+
+        if her_whoring >= 12:
             hide screen hermione_main
             with d3
 
             if hermione.is_worn("panties"):
                 $ hermione.strip("panties")
-                call nar(">Suddenly Hermione bends forward and takes off her panties...")
+                call nar(">Suddenly Hermione bends forward and takes off her panties.")
             else:
                 if hermione.is_any_worn("top", "bottom"):
-                    call nar(">Hermione pulls her panties out of her pocket...")
+                    call nar(">Hermione pulls her panties out of her pocket.")
                 else:
-                    call nar(">Suddenly Hermione reaches inside...","start")
-                    call nar("Hmm, she's not exactly clothed...")
-                    call nar("*Sigh*")
-                    call nar("{cps=*2}{size=-6}She prepares her wand, closing her other fist. While shaking it vigorously from side to side she says the incantation \"teL ereht eb seitnap!\" done!{/size}{/cps}")
+                    call nar(">Suddenly Hermione reaches inside-","start")
+                    call nar(">Wait, she's not exactly clothed...{w=0.4} Well then...")
+                    call nar(">By some kind of magic, a pair of panties suddenly appear in her hand.")
+
+            call nar(">She casually throws them on your desk.", "end")
 
             m "What?"
             call her_main("Yes, I had a feeling that you might ask for these today, [genie_name].", "base", "base", "base", "mid")
             m "A feeling?"
             call her_main("Well, to be completely honest I just do not bother to wear them much anymore...", "grin", "base", "base", "R")
+
             if hermione.is_equipped("panties"):
                 her "Unless I'm asked to, that is..."
+
         else:
             hide screen hermione_main
             with d3
 
             if hermione.is_worn("panties"):
                 $ hermione.strip("panties")
-                call nar(">Hermione takes off her panties and hands them over to you...")
+                call nar(">Hermione takes off her panties without hesitation.", "start")
             else:
                 if hermione.is_any_worn("top", "bottom"):
-                    call nar(">Suddenly Hermione reaches inside one of her hidden pockets...")
+                    call nar(">Suddenly Hermione reaches inside one of her hidden pockets.", "start")
                 else:
-                    call nar(">Suddenly Hermione reaches inside...","start")
-                    call nar("Hmm, she's not exactly clothed...")
-                    call nar("*Sigh*")
-                    call nar("{cps=*2}{size=-6}She prepares her wand, closing her other fist. While shaking it vigorously from side to side she says the incantation \"teL ereht eb seitnap!\" done!{/size}{/cps}", "end")
+                    call nar(">Suddenly Hermione reaches inside-", "start")
+                    call nar(">Wait, she's not exactly clothed...{w=0.4} Well then...")
+                    call nar(">By some kind of magic, a pair of panties suddenly appear in her hand.")
 
-        call nar(">Hermione's panties acquired.")
-        call her_main("Well, the classes are about to start, so I'd better go now...", "soft", "base", "base", "mid")
+            call nar(">She casually throws them on your desk.", "end")
+
+        call her_main("Classes are about to start, so I'd better go now...", "soft", "base", "base", "mid")
 
     call her_walk(action="leave")
 
@@ -168,21 +173,22 @@ label hg_cum_on_panties_response:
                 m "I am not..."
                 call her_main("B-but...", "open", "base", "base", "mid")
                 call her_main("........................................", "normal", "happyCl", "worried", "mid")
-                call her_main("(Must you always have your way, [genie_name]?)", "angry", "base", "angry", "mid")
+                call her_main("{size=-5}Must you always have your way, [genie_name]?{/size}", "angry", "base", "angry", "mid")
                 m "What was that, [hermione_name]?"
                 call her_main("It's nothing, [genie_name].", "scream", "closed", "angry", "mid")
                 her "Putting my panties back on!"
                 hide screen hermione_main
-                call nar(">Hermione hesitantly puts on her panties...","start")
+                call nar(">Hermione hesitantly puts on her panties.","start")
 
                 if hermione.is_equipped("panties"):
                     $ hermione.wear("panties")
                 else:
                     $ hermione.equip(her_panties_base1)
 
-                ">A tiny stream of cum trickles down one of her legs..."
-                call nar(">Hermione looks very uncomfortable...","end")
+                call nar(">A tiny stream of cum trickles down her leg.")
+                call nar(">Hermione looks very uncomfortable.","end")
                 call her_main("......................", "angry", "happyCl", "worried", "mid",emote="05")
+
             "\"Well, suit yourself...\"":
                 pass
 
@@ -196,19 +202,20 @@ label hg_cum_on_panties_response:
             "\"An experiment went wrong.\"":
                 her "Hm..."
                 her "I see..."
+
             "\"You gave them to me like this!\"":
                 her "Did I? Oh, well..."
 
         hide screen hermione_main
-        call nar(">Hermione gives her cum-soaked underwear a quizzical look...")
+        call nar(">Hermione gives her cum-soaked underwear a quizzical look.")
         call her_main("Seems like these will require some serious cleaning before I can put them on again...", "annoyed", "narrow", "worried", "down")
         m "Why not put them on now?"
-        call her_main("Hm....?", "annoyed", "squint", "base", "mid")
+        call her_main("Hm...?", "annoyed", "squint", "base", "mid")
         call her_main("Well, I suppose I could wear them one more time before putting them into laundry...", "annoyed", "narrow", "worried", "down")
         hide screen hermione_main
-        call nar(">Hermione puts the panties on...")
+        call nar(">Hermione puts on the panties.")
 
-        if hermione.is_worn("panties") != None:
+        if hermione.is_equipped("panties"):
             $ hermione.wear("panties")
         else:
             $ hermione.equip(her_panties_base1)
@@ -219,10 +226,7 @@ label hg_cum_on_panties_response:
 
     elif her_tier == 4:
         call her_main("My panties...", "annoyed", "narrow", "worried", "down",xpos="right",ypos="base")
-        if her_panties_soaked:
-            her "They are covered in something slimy again..."
-        else:
-            her "They are covered in something slimy..."
+        her "They are covered in something slimy..."
         her "And they smell funny..."
         call her_main("Hm... That smell...", "annoyed", "base", "worried", "R")
         her "It's familiar somehow..."
@@ -233,10 +237,12 @@ label hg_cum_on_panties_response:
                 her "An experiment, huh?"
                 her "Of what nature?"
                 call her_main("No, don't answer that... I think I know...", "smile", "base", "base", "R")
+
             "\"You gave them to me like this!\"":
                 her "I don't think so, [genie_name]."
                 her "But it's alright if you don't want to tell me, [genie_name]..."
                 her "I think I know exactly what happened to them..."
+
             "\"I came all over them!\"":
                 call her_main("I knew it...", "smile", "narrow", "base", "mid_soft")
                 her "They reek of semen!"
@@ -248,15 +254,16 @@ label hg_cum_on_panties_response:
         menu:
             "\"Yes! Put them on now, [hermione_name]!\"":
                 her "Well, if I must..."
+
             "\"I don't care. Do what you want.\"":
                 her "Why not put them on one more time?"
 
         call her_main("I am only doing this to give my house a fair chance at winning the cup this year...", "base", "happyCl", "base", "mid")
         m "Right..."
         hide screen hermione_main
-        call nar(">Hermione swiftly slides her drenched panties on...")
+        call nar(">Hermione swiftly slides into her drenched panties...")
 
-        if hermione.is_worn("panties") != None:
+        if hermione.is_equipped("panties"):
             $ hermione.wear("panties")
         else:
             $ hermione.equip(her_panties_base1)
@@ -265,21 +272,18 @@ label hg_cum_on_panties_response:
         call her_main("What about my points?", "scream", "closed", "angry", "mid")
         m "You still want points after I just gave you a gift?"
         her "What gift?"
-        m "You're wearing it"
+        m "You're wearing it."
         her "What, semen soaked panties?"
-        m "if you'd prefer the points then just take them off"
-        call her_main("well... I am already wearing them", "annoyed", "base", "worried", "R")
-        m "then say thank you for the gift"
-        call her_main("Thank you, [genie_name]...", "annoyed", "squint", "base", "mid")
+        m "If you'd prefer the points then just take them off."
+        call her_main("well... I am already wearing them!", "annoyed", "base", "worried", "R")
+        m "Then say \"thank you\" for the gift."
+        call her_main("Thank you, [genie_name]...{w=0.3} for the gift.", "annoyed", "squint", "base", "mid")
         m "You can go now."
         her "Good night, [genie_name]."
 
     elif her_tier >= 5:
         call her_main("My panties...", "base", "narrow", "base", "up",xpos="right",ypos="base")
-        if hg_ps_get_panties.points >= 1:
-            her "You came all over them again..."
-        else:
-            her "You came all over them..."
+        her "You came all over them..."
         call her_main("Hm...", "grin", "base", "base", "R")
         her "Seems like these will require some serious cleaning before I can put them on..."
         call her_main("Unless you want me to put them on now, [genie_name]...?", "smile", "narrow", "base", "mid_soft")
@@ -300,7 +304,6 @@ label hg_cum_on_panties_response:
 
                 call her_main("...", "soft", "narrow", "annoyed", "up")
             "\"Why don't you clean them now?\"":
-                $ cleaned_panties = True
                 call her_main("Clean them How? You don't have a wash basin in here.", "open", "base", "base", "mid")
                 m "You're right, you'll have to use your mouth then."
                 call her_main("My mouth?!", "scream", "wide", "base", "mid")
@@ -317,24 +320,24 @@ label hg_cum_on_panties_response:
                 call her_main("...", "angry", "narrow", "base", "down")
                 call nar(">Hermione reluctantly puts her cum-soaked panties in her mouth.")
                 call her_main("Mmmmhhhhh!", "full", "slit", "worried", "ahegao")
-                m "That's it, not as bas as you thought now is it?"
+                m "That's it, not as bad as you thought now is it?"
                 call her_main("...", "full", "slit", "low", "stare")
                 m "Make sure you get them nice and clean now..."
                 call her_main("*gulp*", "full_cum", "narrow", "worried", "down",cheeks="blush")
-                m "That's it. Do you think they're clean yet."
+                m "That's it. Do you think they're clean yet?"
                 call her_main("*Mmmhhhmmm*", "full_cum", "narrow", "base", "dead")
-                m "Well then you can probably take them out of your mouth."
+                m "Well, then you can take them out of your mouth."
                 call her_main("*Ahhhhh*", "open_wide_tongue", "narrow", "annoyed", "up")
                 m "There, nice and clean."
-                call her_main("*Yes [genie_name]*", "soft", "narrow", "annoyed", "up")
+                call her_main("Yes, [genie_name].", "soft", "narrow", "annoyed", "up")
 
-        m "You can go now."
-        call her_main("yes, [genie_name]", "angry", "narrow", "base", "down")
-        m "After you say thank you. "
+        m "You can go..."
+        call her_main("yes, [genie_name]...", "angry", "narrow", "base", "down")
+        m "After you say \"thank you\"..."
         call her_main("Thank you for what?", "angry", "wink", "base", "mid")
-        m "For my cum"
+        m "For my cum."
         call her_main("...", "base", "narrow", "worried", "down")
-        call her_main("Thank you for your cum [genie_name]...", "grin", "narrow", "base", "dead")
+        call her_main("Thank you for your cum, [genie_name]...", "grin", "narrow", "base", "dead")
         m "You may go now."
         her "Good night, [genie_name]."
 
@@ -350,7 +353,7 @@ label hg_ps_get_panties_complete:
     call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main("Good evening, [genie_name]...", "base", "base", "base", "mid",xpos="right",ypos="base")
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
+    call play_music("chipper_doodle")
 
     menu:
         "\"Here are your panties.\"":
@@ -361,8 +364,8 @@ label hg_ps_get_panties_complete:
 
         "\"How was your day, [hermione_name]?\"":
             if her_tier == 2:
-                $ sc34CG(1, 10)
-                call her_main("Oh...", "soft", "base", "base", "mid",xpos="base",ypos="base")
+                $ sc34CG(1, 10, with_trans=False)
+                call her_main("Oh...", "soft", "base", "base", "mid",xpos="base",ypos="base", trans=d5)
                 her "Quite ordinary actually..."
                 call her_main("Although... I couldn't help but worry that somebody would notice somehow...", "soft", "base", "base", "R")
                 call her_main(".....", "annoyed", "base", "worried", "R")
@@ -371,15 +374,15 @@ label hg_ps_get_panties_complete:
                 m "Of course..."
                 hide screen hermione_main
                 with d3
-                call nar(">You give Hermione her panties back...")
+                call nar(">You give Hermione her panties back.")
                 if her_panties_soaked:
                     jump hg_cum_on_panties_response
                 else:
                     call her_main("And my payment?", "open", "base", "base", "mid")
 
             elif her_tier == 3:
-                $ sc34CG(1, 5)
-                call her_main("Oh...", "soft", "base", "base", "mid",xpos="base",ypos="base")
+                $ sc34CG(1, 5, with_trans=False)
+                call her_main("Oh...", "soft", "base", "base", "mid",xpos="base",ypos="base", trans=d5)
                 her "It was quite ordinary really..."
                 her "I spent some time with my classmates..."
                 her "And we had a short \"MRM\" meeting after that..."
@@ -415,8 +418,8 @@ label hg_ps_get_panties_complete:
                             her "And my payment."
 
             elif her_tier >= 4:
-                $ sc34CG(1, 11)
-                call her_main("Another ordinary day at hogwarts...", "open", "closed", "base", "mid",xpos="base",ypos="base")
+                $ sc34CG(1, 11, with_trans=False)
+                call her_main("Another ordinary day at hogwarts...", "open", "closed", "base", "mid",xpos="base",ypos="base", trans=d5)
                 her "Nothing worth mentioning happened today..."
                 call her_main("Although I have to admit...", "annoyed", "base", "worried", "R")
                 her "It was oddly empowering to have no underwear on..."
@@ -426,7 +429,7 @@ label hg_ps_get_panties_complete:
                 m "Of course..."
                 hide screen hermione_main
                 with d3
-                call nar(">You give Hermione her panties back...")
+                call nar(">You give Hermione her panties back.")
                 if her_panties_soaked:
                     jump hg_cum_on_panties_response
                 else:
@@ -444,14 +447,10 @@ label hg_ps_get_panties_complete:
 
     call her_walk(action="leave")
 
-    if her_whoring < 6:
-        $ her_whoring +=1
-
+    $ hg_ps_get_panties.counter += 1
     $ hg_ps_get_panties.points += 1
+
     $ hg_ps_get_panties.inProgress = False
     $ her_panties_soaked = False
-
-    # Stats
-    $ hg_ps_get_panties.counter += 1
 
     jump end_hermione_event

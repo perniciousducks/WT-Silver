@@ -297,7 +297,7 @@ label potions_menu:
     jump potions_menu
 
 
-init python:
+init -1 python:
 
     class PotionBase(object):
         id = ""

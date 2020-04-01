@@ -36,7 +36,7 @@ label summon_hermione:
 
 
         # Tutoring
-        "-Tutoring-" (icon="interface/icons/small/book.png") if not daytime and her_tutoring < 14: #13 is last level.
+        "-Tutoring-" (icon="interface/icons/small/book.png") if not daytime and her_tutoring < 15: #14 is last level.
             if her_mood >=1 and her_mood < 3:
                 her "I'm sorry, maybe tomorrow..."
                 jump hermione_requests
@@ -47,15 +47,14 @@ label summon_hermione:
                 her "Absolutely not, [genie_name]."
                 her "I {i}might{/i} consider it once you've said sorry..."
                 jump hermione_requests
-                # Question: What to do between 9 and 20? Only "jump l_tutoring_check"?
             elif her_mood >=20:
                 her "After what you did, [genie_name]?"
                 her "I don't think so..."
                 jump hermione_requests
             else:
-                jump l_tutoring_check
+                jump hg_tutor_start
 
-        "{color=[menu_disabled]}-Tutoring-{/color}" (icon="interface/icons/small/book.png") if daytime and her_tutoring < 14:
+        "{color=[menu_disabled]}-Tutoring-{/color}" (icon="interface/icons/small/book.png") if daytime and her_tutoring < 15:
             call nar("> Tutoring is available during the night only.")
             jump hermione_requests
 
@@ -284,8 +283,8 @@ label hermione_favor_menu:
                 python:
                     menu_choices = []
                     for i in hg_ps_list:
-                        if i.tier > bdsm_imagination:
-                            menu_choices.append(("{color=[menu_disabled]}-A vague idea-{/color}","vague"))
+                        if i.tier > her_tier:
+                            menu_choices.append(("{color=[menu_disabled]}-Not ready-{/color}","vague"))
                         else:
                             menu_choices.append(i.get_menu_item())
                     menu_choices.append(("-Never mind-", "nvm"))
@@ -294,7 +293,7 @@ label hermione_favor_menu:
                 if result == "nvm":
                     jump silver_requests_root
                 elif result == "vague":
-                    call vague_idea
+                    call favor_not_ready
                     jump not_now_ps
                 else:
                     $ renpy.jump(result)

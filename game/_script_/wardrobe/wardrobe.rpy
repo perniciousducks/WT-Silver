@@ -157,39 +157,43 @@ label wardrobe(char_label):
                 $ char_active.wear("all")
         else:
             $ renpy.call(active_girl+"_wardrobe_check", "category", _return)
-            $ renpy.play('sounds/scroll.mp3')
-            $ current_category = _return[1]
-            # Outfits
-            if current_category == "outfits":
-                $ category_items = ["Load", "Save", "Delete", "Export&Import", "Schedule"]
-                $ current_subcategory = category_items[0]
-                $ current_item = None
-                $ char_active.wear("all")
-                $ menu_items = filter(lambda x: x.unlocked==True, char_active.outfits)
-                $ menu_items_length = len(menu_items)
+
+            if _return[1] != None:
+                $ renpy.play('sounds/scroll.mp3')
+                $ current_category = _return[1]
+                # Outfits
+                if current_category == "outfits":
+                    $ category_items = ["Load", "Save", "Delete", "Export&Import", "Schedule"]
+                    $ current_subcategory = category_items[0]
+                    $ current_item = None
+                    $ char_active.wear("all")
+                    $ menu_items = filter(lambda x: x.unlocked==True, char_active.outfits)
+                    $ menu_items_length = len(menu_items)
+                else:
+                    if current_category in ("bras", "panties"):
+                        $ char_active.strip("top", "bottom", "robe", "accessory")
+                    else:
+                        if 'head' in wardrobe_categories_sorted:
+                            $ char_active.wear("top", "bottom", "robe", "accessory")
+                    $ category_items = wardrobe_categories.get(current_category)
+                    # Default subcategory
+                    if category_items:
+                        $ current_subcategory = category_items.keys()[0]
+                        $ menu_items = filter(lambda x: x.unlocked==True, category_items.get(current_subcategory))
+                    else:
+                        $ category_items = []
+                        $ current_subcategory = "No items available"
+                        $ menu_items = []
+                    $ menu_items_length = len(menu_items)
+                    # Default selected item
+                    $ current_item = None
+                    python:
+                        for item in menu_items:
+                            if char_active.clothes[item.type][0] and item.id == char_active.clothes[item.type][0].id:
+                                current_item = item
+                                break
             else:
-                if current_category in ("bras", "panties"):
-                    $ char_active.strip("top", "bottom", "robe", "accessory")
-                else:
-                    if 'head' in wardrobe_categories_sorted:
-                        $ char_active.wear("top", "bottom", "robe", "accessory")
-                $ category_items = wardrobe_categories.get(current_category)
-                # Default subcategory
-                if category_items:
-                    $ current_subcategory = category_items.keys()[0]
-                    $ menu_items = filter(lambda x: x.unlocked==True, category_items.get(current_subcategory))
-                else:
-                    $ category_items = []
-                    $ current_subcategory = "No items available"
-                    $ menu_items = []
-                $ menu_items_length = len(menu_items)
-                # Default selected item
-                $ current_item = None
-                python:
-                    for item in menu_items:
-                        if char_active.clothes[item.type][0] and item.id == char_active.clothes[item.type][0].id:
-                            current_item = item
-                            break
+                $ renpy.play('sounds/fail.mp3')
     elif _return[0] == "subcategory":
         if current_subcategory != _return[1]:
             $ renpy.play('sounds/scroll.mp3')

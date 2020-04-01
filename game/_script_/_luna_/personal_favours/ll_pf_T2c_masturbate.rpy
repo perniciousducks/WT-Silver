@@ -234,7 +234,7 @@ label ll_pf_masturbate_T1_intro:
     jump end_luna_event
 
 
-label ll_pf_masturbate_T1_intro_E1:
+label ll_pf_masturbate_T1_E1:
     # Luna masturbates for Genie and then he cums on her face
 
     $ ll_event_pause += renpy.random.randint(1, 2)
@@ -282,7 +282,7 @@ label ll_pf_masturbate_T1_intro_E1:
     jump end_luna_masturbate_event
 
 
-label ll_pf_masturbate_T1_intro_E2:
+label ll_pf_masturbate_T1_E2:
     # Luna masturbates for Genie
 
     $ ll_event_pause += renpy.random.randint(1, 2)

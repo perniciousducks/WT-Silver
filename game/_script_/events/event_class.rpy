@@ -40,11 +40,12 @@ init python:
 
 
     class event_class(object):
-        """ Handles and tracks event progression.
+        """
+        Handles and tracks event progression.
 
-            `tier` (int): The current tier number, which determines the set of events to run.
-            `counter` (int): The number of successfully completed events.
-            `points` (int): The number of successfully completed events in the current tier.
+        `tier` (int): The current tier number, which determines the set of events to run.
+        `counter` (int): The number of successfully completed events.
+        `points` (int): The number of successfully completed events in the current tier.
         """
 
         def __init__(self, **kwargs):

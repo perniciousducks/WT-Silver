@@ -42,7 +42,7 @@ default gryffindor_match      = ""
 default cho_content_complete  = False
 
 # Names
-default cho_genie_name = "Sir"
+default cho_genie_name = "Professor"
 default cho_name = "Cho"
 
 default gave_cho_gift      = False

@@ -194,8 +194,8 @@ default ll_pf_masturbate = event_class(title = "Masturbate for me!", start_label
     events = [
         [
             ["ll_pf_masturbate_T1_intro"],
-            ["ll_pf_masturbate_T1_intro_E1"],
-            ["ll_pf_masturbate_T1_intro_E2"],
+            ["ll_pf_masturbate_T1_E1"],
+            ["ll_pf_masturbate_T1_E2"],
             ["ll_pf_masturbate_T1_E3"]
         ]
     ],
@@ -206,9 +206,9 @@ default ll_pf_blowjob = event_class(title = "Suck it!", start_label = "ll_pf_blo
     events = [
         [
             ["ll_pf_blowjob_T1_intro"],
-            ["ll_pf_blowjob_T1_intro_E1"],
-            ["ll_pf_blowjob_T1_intro_E2"],
-            ["ll_pf_blowjob_T1_intro_E3"]
+            ["ll_pf_blowjob_T1_E1"],
+            ["ll_pf_blowjob_T1_E2"],
+            ["ll_pf_blowjob_T1_E3"]
         ]
     ],
     iconset = [["heart_empty", "heart_red"]]

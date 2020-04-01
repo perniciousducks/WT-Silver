@@ -319,12 +319,12 @@ label cho_quiz:
         call cho_main("And now you stopped making sense again...", "annoyed", "base", "raised", "L")
         call cho_main("Also I'm still quite unsure if you actually know Quidditch or am just trying to confuse me with Basketball terms...", "annoyed", "narrow", "raised", "mid")
         call exp_o_meter(fill=75)
-        pause.3
+        pause .3
         call bld
         g4 "(Fuck, she's onto me!)"
         g9 "Of course I'm not... I'll prove it to you!"
         call exp_o_meter(fill=50)
-        pause.5
+        pause .5
         call bld
         g4 "(Wait, why did I say that?)"
         call cho_main("...", "smile", "base", "raised", "mid")

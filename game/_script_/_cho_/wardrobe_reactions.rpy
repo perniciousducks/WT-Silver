@@ -43,7 +43,20 @@ label cho_wardrobe_check(section, arg=None):
                 return False
             return True
         elif section == "category":
-            return arg #IMPORTANT
+            # TODO: Simplify
+            python:
+                _value = arg
+                if arg[1] in ("bras", "panties"): # Intentional double check.
+                    for i in hermione.clothes.itervalues():
+                        if i[0]:
+                            if i[0].blacklist and "bra" in i[0].blacklist and arg[1] == "bras":
+                                _value = ("category", None)
+                                break
+                            if i[0].blacklist and "panties" in i[0].blacklist and arg[1] == "panties":
+                                _value = ("category", None)
+                                break
+
+            return _value
         elif section == "touching":
             $ random_number = renpy.random.randint(1, 5)
             if arg == "boobs":

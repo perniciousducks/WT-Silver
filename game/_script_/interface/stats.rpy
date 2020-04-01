@@ -19,7 +19,7 @@ label update_stats:
 
     # Tutoring
     $ her_tutoring_word_list = ["Not started", "naive", "tempted", "curious", "tainted", "eager", "sinful", "perverted", "corrupted", "depraved", "shattered"]
-    $ her_tutoring_word = her_tutoring_word_list[int(her_tutoring/1.4)]
+    $ her_tutoring_word = her_tutoring_word_list[int(her_tutoring/1.5)]
 
     # Mood
     $ her_mood_word_list = ["Cheerful", "Reluctant", "Gloomy", "Stern", "Slightly Annoyed", "Annoyed", "Upset", "Outraged", "Mad", "Angry", "Very Angry"]
@@ -375,7 +375,7 @@ screen stats_menuitem(xx, yy):
                                 use stat_bar(int(her_tier/0.6), "-Favour Tier-", "", her_tier) # 6 will be max.
                                 use stat_bar(int(her_whoring/2.4), "-Whoring-", her_whoring_word, her_whoring)
                                 use stat_bar(int(her_reputation/2.4), "-Reputation-", her_reputation_word, her_reputation)
-                                use stat_bar(int(her_tutoring/1.4), "-Tutoring-" , her_tutoring_word, her_tutoring)
+                                use stat_bar(int(her_tutoring/1.5), "-Tutoring-" , her_tutoring_word, her_tutoring)
                             elif current_category == "Cho":
                                 use stat_bar(int(10-cho_mood/1.0), "-Mood-" , cho_mood_word, cho_mood)
                                 use stat_bar(int(cho_tier/0.2), "-Favour Tier-", "", cho_tier) # 4 will be max.

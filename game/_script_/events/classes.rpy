@@ -1,22 +1,24 @@
 
-
-### Classes ###
-
 init -1 python:
 
-    #Favours
     class shaming_class(object):
-        title        = ""
-        tier         = 0
-        start_label  = ""
-        complete_label = ""
-        points       = 0 # For progress checks. Can be reset if needed.
-        counter      = 0 # For stats
-        hint         = False
+        #TODO This class should be replaced by event_class after the events have been restructured into tiers
+        """
+        Represents a shaming event.
 
-        inProgress = False
-
+        `counter` (int): The number of times this event has been completed.
+        `points` (int): The number of times that count as progress.
+        """
         def __init__(self, **kwargs):
+            self.title = ""
+            self.tier = 0
+            self.start_label = ""
+            self.complete_label = ""
+            self.counter = 0
+            self.points = 0
+            self.hint = False
+            self.inProgress = False
+
             self.__dict__.update(**kwargs)
 
         def get_menu_item(self, disabled=False, return_value=None):

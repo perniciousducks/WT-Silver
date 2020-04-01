@@ -69,7 +69,7 @@ default ton_outfit_last = DollOutfit([ton_hair_base])
 ## Misc ##
 ##########
 
-default ton_top_corset = DollCloth("tonks", ("tops", "auror"), "top", "corset",[[247, 206, 146, 255]], blacklist=("bra"), unlocked=True)
+default ton_top_corset = DollCloth("tonks", ("tops", "auror"), "top", "corset",[[247, 206, 146, 255]], blacklist=["bra"], unlocked=True)
 default ton_bottoms_jeans = DollCloth("tonks", ("bottoms", "trousers"), "bottom", "jeans",[[51, 104, 105, 255]], unlocked=True)
 default ton_panties_base = DollCloth("tonks", ("panties", "panties"), "panties", "base",[[124, 42, 50, 255]], unlocked=True)
 default ton_bra_base = DollCloth("tonks", ("bras", "bras"), "bra", "bikini",[[124, 42, 50, 255], [177, 168, 172, 255]], unlocked=True)

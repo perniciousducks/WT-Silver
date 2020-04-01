@@ -393,7 +393,7 @@ label cc_pf_talk_T1_intro_E2:
         m "I'm done.{w=0.3} Let's get back to the topic."
         call cho_main("Which was?", "open", "base", "raised", "mid")
         m "You taking a shower with your \"teammates\"..."
-        call cho_main("(...)", "annoyed", "narrow", "annoyed", "mid") # Annoyed
+        call cho_main("(...)", "annoyed", "narrow", "angry", "mid") # Annoyed
 
     m "Don't you think, the fact that they've seen you naked hasn't affected any of their actions?"
     call cho_main("Why would it, [cho_genie_name]? We're all adults here...", "soft", "closed", "base", "mid")
@@ -1114,7 +1114,7 @@ label cc_pf_talk_T2_E3:
                 pause .8
 
                 call bld
-                g4 "{size=-4}(Yes! Here it comes!)"
+                g4 "{size=-4}(Yes! Here it comes!){/size}"
 
                 call cum_block
                 g4 "*Agh!* {size=-4}(Here comes another!){/size}"

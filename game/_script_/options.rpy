@@ -32,6 +32,7 @@ define config.developer = "auto"
 
 # Game version and naming
 define config.version = "1.0"
+define compatible_version = 1.0
 define title_version = config.version if len(config.version) < 5 else (config.version[:4] + "." + config.version[4:6])
 define config.name = "GT Silver{}".format(_experimental)
 define config.window_title = "Glitch Trainer (Silver) {}{}".format(title_version, _experimental)
@@ -123,7 +124,10 @@ init python:
     build.directory_name = "GT_Silver_{}".format(title_version)
     build.executable_name = "GT Silver"
     build.include_update = False # If True, include update information into packages (allows the updater to run)
+    build.exclude_empty_directories = False
 
+    build.classify("game/mods/DISABLEMODS.txt", "all")
+    build.classify("game/images.whitespace", "all")
     build.classify("**.exe", None)
     build.classify("**.psd", None)
     build.classify("**.psd~", None)
@@ -134,8 +138,8 @@ init python:
     build.classify("**.txt", None)
     build.classify("**.xml", None)
     build.classify('**/thumbs.db', None)
-    build.classify("saves/**", None)
-    build.classify("outfits/**", None)
-    build.classify("music/not_used/**", None)
+    build.classify("game/saves/**", None)
+    build.classify("game/outfits/**", None)
+    build.classify("game/music/not_used/**", None)
 
     build.allow_integrated_gpu = True # MacOS support Only!

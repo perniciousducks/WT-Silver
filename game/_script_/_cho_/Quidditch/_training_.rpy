@@ -41,6 +41,9 @@ label cho_quid_E1:
             $ cho_genie_name = "Sergeant"
         "\"Captain\"":
             $ cho_genie_name = "Captain"
+        "\"Professor\"":
+            $ cho_genie_name = "Professor"
+            m "You know what, keep calling me Professor..."
 
     call cho_main("Yes, [cho_genie_name].", "base", "base", "angry", "mid")
     m "And you I will call..."
@@ -57,6 +60,8 @@ label cho_quid_E1:
             $ cho_name = "Eagle #1"
         "\"Eagle #2\"":
             $ cho_name = "Eagle #2"
+        "\"Cho\"":
+            $ cho_name = "Cho"
 
     call cho_main("Yes, Sir!", "soft", "closed", "angry", "mid")
     g4 "Let's start with your \"Quiddesh\" training!"
@@ -99,7 +104,7 @@ label cho_quid_E1:
     call cho_main("Please stop saying that, [cho_genie_name]!", "angry", "closed", "angry", "mid")
     m "Saying what?"
     call cho_main("(...)", "annoyed", "narrow", "angry", "mid")
-    call cho_main("{size=-4}\"Snatch\".{/size}", "soft", "narrow", "angry", "mid") # Small text
+    call cho_main("{size=-4}\"Snatch.\"{/size}", "soft", "narrow", "angry", "mid") # Small text
     g9 "*Hehehehe*{w} Now you've said it!"
     call cho_main("Could we please just talk about your plan, [cho_genie_name]?", "open", "narrow", "angry", "R")
     m "Patience, Miss Chang."
@@ -237,7 +242,7 @@ label cho_quid_E2:
     call cho_walk(action="leave")
 
     call blkfade
-    pause.8
+    pause .8
 
     # Scene Setup
     show screen chair_left
@@ -248,10 +253,10 @@ label cho_quid_E2:
     $ cho.equip(cho_outfit_quidditch) # Equip quidditch set
 
     call hide_blkfade
-    pause.8
+    pause .8
 
     call cho_walk(action="enter", xpos="mid", ypos="base")
-    pause.5
+    pause .5
 
     call cho_main("Ready when you are, [cho_genie_name]!", "smile", "base", "base", "mid", xpos="right", ypos="base")
     m "(...)"
@@ -283,7 +288,7 @@ label change_quidditch_tactics:
     hide screen bld1
     hide screen blkfade
     with d5
-    pause.8
+    pause .8
 
     label demonstrate_quidditch_tactics:
     call hide_characters

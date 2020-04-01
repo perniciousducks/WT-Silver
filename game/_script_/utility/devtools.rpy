@@ -88,11 +88,11 @@ init -1 python:
 
     def save_whitespace(mode=0):
         """
-        Saves whitespace information to .whitespace file.
+        Saves whitespace information to whitespace file.
         mode = 0 - Whitespace_dict
         mode = 1 - file crawler
         """
-        file = config.basedir+"/game/.whitespace"
+        file = config.basedir+"/game/images.whitespace"
         with open(file, "w") as fp:
             if mode == 0:
                 for key, value in whitespace_dict.iteritems():

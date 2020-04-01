@@ -105,7 +105,7 @@ label ll_pf_blowjob_T1_intro:
     jump end_luna_event
 
 
-label ll_pf_blowjob_T1_intro_E1:
+label ll_pf_blowjob_T1_E1:
     # Second "lesson" in removing wrackspurts
 
     $ ll_event_pause += renpy.random.randint(1, 2)
@@ -138,7 +138,7 @@ label ll_pf_blowjob_T1_intro_E1:
     jump end_luna_blowjob_event
 
 
-label ll_pf_blowjob_T1_intro_E2:
+label ll_pf_blowjob_T1_E2:
     # Luna gentle BJ for about 9 hours and 14 orgasms from Genie
 
     $ ll_event_pause += renpy.random.randint(1, 2)
@@ -187,7 +187,7 @@ label ll_pf_blowjob_T1_intro_E2:
     jump end_luna_blowjob_event
 
 
-label ll_pf_blowjob_T1_intro_E3:
+label ll_pf_blowjob_T1_E3:
     # Luna regular BJ for about 5 hours with Luna masturbating the whole time
 
     call lun_main("","base","base","base","mid", xpos="mid", ypos="base", trans=fade)

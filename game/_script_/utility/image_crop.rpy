@@ -2,7 +2,7 @@ init python:
     import threading
 
     whitespace_dict = {}
-    with renpy.file(".whitespace") as fp:
+    with renpy.file("images.whitespace") as fp:
         line = fp.readline()
         while line:
             path, area = line.strip("\r\n").split(':')

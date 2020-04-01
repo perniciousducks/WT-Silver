@@ -208,11 +208,11 @@ label cho_intro_E1:
         "\"(I will jerk off a little while they talk.)\"":
             call hide_characters
             with d3
-            pause.2
+            pause .2
 
             call gen_chibi("jerk_off_behind_desk")
             with d3
-            pause.5
+            pause .5
 
             $ cho_jerk_off_counter += 1
             $ her_jerk_off_counter += 1
@@ -270,7 +270,7 @@ label cho_intro_E1:
         call cum_block
         call gen_chibi("cum_behind_desk")
         with d3
-        pause.8
+        pause .8
 
         g4 "*heavy breathing* {size=-4}Fuck yes...{/size}"
 
@@ -284,7 +284,7 @@ label cho_intro_E1:
 
         call gen_chibi("cum_behind_desk_done")
         with d3
-        pause.8
+        pause .8
 
         call cho_main("Sir, I'm sorry about all this... it's not what I came here for...", "open", "closed", "worried", "mid")
         m "Oh, of course not!"
@@ -293,10 +293,10 @@ label cho_intro_E1:
 
         # Cho walks to the door and stops.
         call cho_walk("door", "base")
-        pause.8
+        pause .8
         call cho_chibi("stand", "door", "base")
         with d3
-        pause.8
+        pause .8
 
         call cho_main("{size=-4}You have fun now... getting at that wand of his...{/size}", "angry", "narrow", "angry", "L")
         call her_main("*Tzzzh!*...", "clench", "closed", "angry", "mid")
@@ -345,10 +345,10 @@ label cho_intro_E1:
 
         # Cho walks to the door and stops.
         call cho_walk("door", "base")
-        pause.8
+        pause .8
         call cho_chibi("stand", "door", "base")
         with d3
-        pause.8
+        pause .8
 
         call cho_main("Professor, please do consider what we discussed earlier...", "soft", "closed", "base", "mid", trans=d3)
         m "Of course."
@@ -359,10 +359,10 @@ label cho_intro_E1:
     with d3
 
     # Cho leaves
-    pause.2
+    pause .2
     call cho_chibi("stand", "door", "base",flip=True)
     with d3
-    pause.5
+    pause .5
 
     call cho_chibi("leave")
 
@@ -400,16 +400,16 @@ label cho_intro_E2:
     call play_sound("door")
     call cho_chibi("stand", "door", "base")
     with d3
-    pause.5
+    pause .5
     call cho_chibi("stand", "door", "base",flip=True)
     with d1
     call play_sound("bump")
-    pause.8
+    pause .8
     call cho_chibi("stand", "door", "base",flip=False)
     with d1
-    pause.3
+    pause .3
     call cho_walk("desk", "base")
-    pause.2
+    pause .2
 
     call cho_main("I hate her!", "scream", "closed", "angry", "mid", xpos="mid", ypos="base", trans=hpunch)
     call cho_main("", "clench", "narrow", "angry", "mid")
@@ -844,18 +844,18 @@ label cho_intro_E3:
 
         hide screen hermione_main
         with d3
-        pause.8
+        pause .8
 
         m "(...)"
 
         $ hermione.wear("all")
-        pause.5
+        pause .5
 
     else:
         hide screen hermione_main
         hide screen bld1
         with d3
-        pause.5
+        pause .5
 
     # Cho enters the office.
     call cho_walk(580, "base", action="enter")
@@ -885,21 +885,21 @@ label cho_intro_E3:
 
     # Hermione leaves after glaring one last time at Cho.
     call her_walk("door", "base")
-    pause.2
+    pause .2
     call her_chibi("stand", "door", "base",flip=False)
     with d3
-    pause.2
+    pause .2
 
     call her_main("*glare*", "normal", "base", "angry", "mid", xpos="base", ypos="head")
     # Add Cho glaring back with her 'head' image.
 
     call her_chibi("stand", "door", "base",flip=True)
     with d3
-    pause.8
+    pause .8
 
     call her_chibi("leave")
     with d3
-    pause.5
+    pause .5
 
     call cho_main("Thank you for getting her off my back, Professor.", "base", "base", "base", "mid")
     m "No problem."

@@ -36,7 +36,7 @@ default firewhisky_ITEM = Item(id="firewhisky", name="Firewhisky", cost=80, type
 
 default hg_ball = CostumeItem(
     id="hg_ball", name="Classy Ball Dress", type="outfit", items=["top","earrings","necklace","sash"],
-    cost=her_outfit_ball.price, wait_time=1, image=her_outfit_ball, description="> A fancy dress for a fancy witch.")
+    cost=her_outfit_ball.price, wait_time=1, image="hg_ball_dress", description="A fancy dress for a fancy witch.")
 
 default candy_gift_list = [
     hg_ball,

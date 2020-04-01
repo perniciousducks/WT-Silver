@@ -82,7 +82,7 @@ default ast_outfit_last = DollOutfit([ast_hair_base])
 default ast_hair_ann = DollCloth("astoria", ("head", "hair"), "hair", "ann_takamaki", [[229, 198, 129, 255], [163, 125, 80, 255], [255, 209, 105, 255]])
 default ast_hat_ann = DollCloth("astoria", ("head", "hats"), "hat", "ann_takamaki", [[173, 18, 18, 255], [238, 188, 187, 255]], level=14)
 default ast_top_ann = DollCloth("astoria", ("tops", "school"), "top", "ann_takamaki", [[173, 18, 18, 255], [232, 232, 232, 255], [238, 188, 187, 255]], level=14, blacklist=("bottom", "bra", "garterbelt"), armfix=True)
-default ast_stockings_ann = DollCloth("astoria", ("legwear", "stockings"), "stockings", "ann_takamaki", [[99, 42, 42, 255], [181, 135, 135, 255]], level=14, blacklist=("bottom"), armfix=True)
+default ast_stockings_ann = DollCloth("astoria", ("legwear", "stockings"), "stockings", "ann_takamaki", [[99, 42, 42, 255], [181, 135, 135, 255]], level=14, blacklist=["bottom"], armfix=True)
 default ast_gloves_ann = DollCloth("astoria", ("misc", "gloves"), "gloves", "ann_takamaki", [[249, 139, 225, 255]], armfix=True)
 default ast_buttplug_ann = DollCloth("astoria", ("misc", "accessory"), "buttplug", "ann_takamaki", [[99, 42, 42, 255], [181, 135, 135, 255]], level=14)
 

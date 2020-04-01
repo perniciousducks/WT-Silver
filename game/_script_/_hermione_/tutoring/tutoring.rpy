@@ -365,7 +365,7 @@ label hg_tutor_E5:
     if masturbating:
         g9 "{size=-2}(Yes... yes...){/size}"
     call her_main("One of the girls went crazy and inserted her fingers into the other's \"thing,\" and worked them furiously.", "silly", "base", "worried", "mid", cheeks="blush")
-    call her_main("Soon imitated by her girlfriend.", "base", "angry", "mid", cheeks="blush")
+    call her_main("Soon imitated by her girlfriend.", "base", "narrow", "angry", "mid", cheeks="blush")
     call her_main("Those whores came so hard I'm sure they heard the screams on the other side of the grounds!", "soft", "narrow", "base", "mid", cheeks="blush")
 
     if masturbating:

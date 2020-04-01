@@ -122,9 +122,10 @@ init python:
     build.directory_name = "WT_Silver_{}".format(title_version)
     build.executable_name = "WT Silver"
     build.include_update = False # If True, include update information into packages (allows the updater to run)
+    build.exclude_empty_directories = False
 
-    build.classify("mods/DISABLEMODS.txt", "all")
-
+    build.classify("game/mods/DISABLEMODS.txt", "all")
+    build.classify("game/images.whitespace", "all")
     build.classify("**.exe", None)
     build.classify("**.psd", None)
     build.classify("**.psd~", None)
@@ -135,8 +136,8 @@ init python:
     build.classify("**.txt", None)
     build.classify("**.xml", None)
     build.classify('**/thumbs.db', None)
-    build.classify("saves/**", None)
-    build.classify("outfits/**", None)
-    build.classify("music/not_used/**", None)
+    build.classify("game/saves/**", None)
+    build.classify("game/outfits/**", None)
+    build.classify("game/music/not_used/**", None)
 
     build.allow_integrated_gpu = True # MacOS support Only!

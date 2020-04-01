@@ -520,6 +520,7 @@ label snape_lost:
 
 ### GENIE LOSES ###
 label genie_lost:
+    $ renpy.block_rollback()
     play music "music/Final Fantasy 7 Game Over Theme.mp3" fadein 1 fadeout 1
 
     hide screen duel
@@ -530,6 +531,9 @@ label genie_lost:
     with flashbulb
     with hpunch
     call ctc
+
+    jump game_over
+
     menu:
         "-Try again-":
             stop music

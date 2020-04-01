@@ -20,11 +20,10 @@ label start_wt:
         "Difficulty" ">How óżóżóźóżć` do you want the łśą.ćóź.. to be?"
         "-Play with easy difficulty-":
             menu:
-                "Easy" "{cps=*2}>Increased gold and Slytherin-points gain.\nYou will always find items or gold in your cupboard.\nBad mood will decrease faster.\nBooks can be read in one go.{/cps}"
+                "Easy" "{cps=*2}>---..-----Sl---.-------...------....ain.\nY--------------..------------gold-.........\nBad mood-..................\n.....................-.-............go.{/cps}"
                 "-Confirm-":
-                    ">Game set to easy!{nw}"
-                    ">G`óóó set to eĆĆĆĆĆĆĆĆĆĆĆĆsy!{fast}...óóóóóóóóóóóóóóóóóóóóóóóóóóóóóóó...."
-                    call adjust_game_difficulty(1)
+                    ">..............ERROR"
+                    jump choose_your_difficulty
                 "-Choose something else-":
                     jump choose_your_difficulty
         "-Play with normal difficulty-":

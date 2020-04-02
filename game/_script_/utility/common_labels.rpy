@@ -331,21 +331,6 @@ label unlock_clothing(text="", item="interface/icons/box_blue_1.png"):
 
     return
 
-label item_description(item):
-
-    $ the_gift = item.get_image() #Prints whole imagepath!
-
-    show screen blktone5
-    show screen gift
-    with d3
-
-    "[item.description]"
-
-    hide screen blktone5
-    hide screen gift
-    with d3
-
-    return
 
 label describe_mood(name, value):
     call blktone

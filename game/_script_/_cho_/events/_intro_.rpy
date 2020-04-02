@@ -60,7 +60,7 @@ label cho_intro_E1:
             call cho_main("*Uhm*...", "annoyed", "wide", "base", "mid")
             call cho_main("Sir, I'd much prefer not to be called nicknames.", "open", "closed", "base", "mid")
             call cho_main("Mutual respect is very important for a student-teacher relationship to work.", "open", "base", "base", "down")
-            m "(She's must be fun at parties..)"
+            m "(She must be fun at parties..)"
             call cho_main("I'd much prefer if you called me Cho, or Miss Chang...", "open", "base", "raised", "mid")
             g9 "And how is that any different..."
             call cho_main("It's my name, Sir!", "annoyed", "narrow", "base", "mid")

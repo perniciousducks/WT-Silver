@@ -320,7 +320,7 @@ label object_gift_block(item):
     show screen gift
     with d3
 
-    "[item.description]"
+    ">[item.description]"
     $ cost2 = item.cost * 2
     $ cost3 = item.cost * 4
     $ cost4 = item.cost * 8
@@ -419,7 +419,7 @@ label purchase_book(item):
     $ the_gift = item.get_image()
     show screen gift
     with d3
-    "[item.description]"
+    ">[item.description]"
     menu:
         "-Buy the book for [item.cost] gold -":
             if gold >= item.cost:
@@ -606,7 +606,7 @@ label purchase_deco(item):
     $ the_gift = item.get_image()
     show screen gift
     with d3
-    "[item.description]"
+    ">[item.description]"
 
     if item.type == "outfit_token":
         $ item_token_str = "A new \"%s\" outfit has been added to Hermione's wardrobe." % item.name

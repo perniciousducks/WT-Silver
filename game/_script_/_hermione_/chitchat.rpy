@@ -32,7 +32,7 @@ label chit_chat:
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 5:
-            call her_main("So far professor Trelawney did not taught me a single piece of any actual knowledge, sir.", "open", "closed", "angry", "mid")
+            call her_main("So far professor Trelawney did not teach me a single piece of any actual knowledge, sir.", "open", "closed", "angry", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 6:
@@ -430,27 +430,27 @@ label chit_chat:
         if one_of_ten == 1:
             call her_main("If you ever need some \"help\", sir, please let me know.", "open_wide_tongue", "base", "base", "R",cheeks="blush")
             "-She suggestively jerks her hand-"
-            call her_main("", "base", "base", "base", "R",cheeks="blush") 
+            call her_main("", "base", "base", "base", "R",cheeks="blush")
 
         elif one_of_ten == 2:
-            call her_main("I am sorry to bother you with this, sir...", "open", "base", "base", "mid") 
+            call her_main("I am sorry to bother you with this, sir...", "open", "base", "base", "mid")
             her "But do you have any condoms?"
             call her_main("Sadly the ones I've bought are already gone...", "annoyed", "happyCl", "worried", "mid",emote="05")
             call her_main("", "base", "base", "base", "R")
-                 
+
         elif one_of_ten == 3:
-            call her_main("It's been getting so cold lately...", "open", "base", "base", "mid") 
+            call her_main("It's been getting so cold lately...", "open", "base", "base", "mid")
             call her_main("I hope it's going to start snowing soon...", "base", "base", "base", "mid")
             call her_main("You will let me wear a coat at least right?", "angry", "happyCl", "worried", "mid",emote="05")
             call her_main("", "base", "narrow", "base", "mid_soft")
-        
+
         elif one_of_ten == 4:
-            call her_main("Jump and scream for the Gryffindor team!", "open", "closed", "base", "mid") 
-            call her_main("So daring and bold, sporting red and gold!", "smile", "happyCl", "base", "mid",emote="06") 
-            call her_main("", "base", "base", "base", "mid") 
+            call her_main("Jump and scream for the Gryffindor team!", "open", "closed", "base", "mid")
+            call her_main("So daring and bold, sporting red and gold!", "smile", "happyCl", "base", "mid",emote="06")
+            call her_main("", "base", "base", "base", "mid")
 
         elif one_of_ten == 5:
-            call her_main("Sir, I have a favour to ask...", "base", "base", "worried", "mid") 
+            call her_main("Sir, I have a favour to ask...", "base", "base", "worried", "mid")
             call her_main("Could help me with the dress later, sir?", "base", "base", "base", "R")
             call her_main("I could use some of your... insight", "soft", "narrow", "base", "mid_soft",cheeks="blush")
             call her_main("", "base", "narrow", "base", "mid_soft")
@@ -459,29 +459,29 @@ label chit_chat:
             call her_main("I can't believe I was such a prude before.", "angry", "base", "worried", "mid")
             call her_main("Meeting you was the best thing that has happened to me, sir.", "smile", "narrow", "base", "mid_soft")
             call her_main("", "base", "narrow", "base", "mid_soft")
-        
+
         elif one_of_ten == 7:
-            call her_main("Considering the nature of the favours you keep buying from me sir...", "open", "closed", "base", "mid") 
+            call her_main("Considering the nature of the favours you keep buying from me sir...", "open", "closed", "base", "mid")
             call her_main("I seldom bother to put on underwear at all anymore...", "open", "base", "worried", "mid")
-            call her_main("(Not that I complain anyway..)", "soft", "narrow", "annoyed", "up") 
-        
+            call her_main("(Not that I complain anyway..)", "soft", "narrow", "annoyed", "up")
+
         elif one_of_ten == 8:
-            call her_main("Sir, could you put your penis in my mouth?", "angry", "base", "base", "mid") 
-            call her_main("Sir, I am begging you...", "open_wide_tongue", "narrow", "annoyed", "up") 
+            call her_main("Sir, could you put your penis in my mouth?", "angry", "base", "base", "mid")
+            call her_main("Sir, I am begging you...", "open_wide_tongue", "narrow", "annoyed", "up")
             call her_main("Fifty-five points, please!", "smile", "base", "angry", "mid")
             call her_main("(Although I wouldn't mind doing it for free..).", "smile", "narrow", "annoyed", "up")
 
         elif one_of_ten == 9:
-            call her_main("Remember when I told you about this one article...", "open", "closed", "base", "mid") 
+            call her_main("Remember when I told you about this one article...", "open", "closed", "base", "mid")
             her "It was about the positive effects of semen on a woman's skin."
-            call her_main("I tested it recently...", "base", "narrow", "base", "mid_soft") 
+            call her_main("I tested it recently...", "base", "narrow", "base", "mid_soft")
             call her_main("And it actually works!", "smile", "narrow", "base", "mid_soft")
-            call her_main("My skin definitely is getting softer.", "smile", "closed", "base", "mid") 
-            call her_main("", "base", "narrow", "base", "mid_soft") 
+            call her_main("My skin definitely is getting softer.", "smile", "closed", "base", "mid")
+            call her_main("", "base", "narrow", "base", "mid_soft")
 
         elif one_of_ten == 10:
-            call her_main("It goes like this...", "open", "closed", "base", "mid") 
+            call her_main("It goes like this...", "open", "closed", "base", "mid")
             her "First Gryffindor, then Ravenclaw, then Hufflepuff..."
-            call her_main("And Slytherin is not even on the list!", "open", "narrow", "annoyed", "mid", cheeks="blush") 
+            call her_main("And Slytherin is not even on the list!", "open", "narrow", "annoyed", "mid", cheeks="blush")
             call her_main("", "upset", "closed", "base", "mid")
     return

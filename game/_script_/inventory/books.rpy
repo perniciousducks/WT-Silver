@@ -2,52 +2,52 @@
 default Speedreading_1_ITEM = Book(
     id = "Speedreading_1", name = "\"Copper book of spirit\"",
     cost = 40,  type = "book", image = "book_general",
-    chapters = 2,  description = ">This book contains various tips on speed reading. 2 chapters.",
-    effect = ">New skill unlocked: a 1 out of 3 chance of completing an additional chapter when reading."
+    chapters = 2,  description = "This book contains basic techniques used to improve one's reading ability. 2 chapters.",
+    effect = "New skill unlocked: a 1 out of 3 chance of completing an additional chapter when reading."
 )
 default Speedreading_2_ITEM = Book(
     id = "Speedreading_2", name = "\"Bronze book of spirit\"",
     cost = 60, type = "book", image = "book_general",
-    chapters = 4, description = ">This book contains various tips on speed reading. 4 chapters.",
-    effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when reading."
+    chapters = 4, description = "This book contains intermediate techniques used to improve one's reading ability. 4 chapters.",
+    effect = "New skill unlocked: a 2 out of 3 chance of completing an additional chapter when reading."
 )
 default Speedreading_3_ITEM = Book(
     id = "Speedreading_3", name = "\"Silver book of spirit\"",
     cost = 80, type = "book", image = "book_general",
-    chapters = 6, description = ">This book contains various tips on speed reading. 6 chapters.",
-    effect = ">New skill unlocked: always complete an additional chapter when reading."
+    chapters = 6, description = "This book contains advanced techniques used to improve one's reading ability. 6 chapters.",
+    effect = "New skill unlocked: always complete an additional chapter when reading."
 )
 default Speedreading_4_ITEM = Book(
     id = "Speedreading_4", name = "\"Golden book of spirit\"",
     cost = 160, type = "book", image="book_general",
-    chapters = 8, description = ">This book contains various tips on speed reading. 8 chapters.",
-    effect = ">You have mastered your spirit and from now on you can always complete two additional chapters when reading."
+    chapters = 8, description = "This book contains expert techniques used to improve one's reading ability. 8 chapters.",
+    effect = "You have mastered your spirit and from now on you can always complete two additional chapters when reading."
 )
 
 # Speedwriting books
 default Speedwriting_1_ITEM = Book(
     id = "Speedwriting_1", name = "\"Speedwriting for beginners\"",
     cost = 90, type = "book", image = "book_general",
-    chapters = 2, description = ">This book contains a bunch of very basic techniques used to improve one's ability to write quickly. 2 chapters.",
-    effect = ">New skill unlocked: a 1 out of 3 chance of completing an additional chapter when doing paperwork."
+    chapters = 2, description = "This book contains basic techniques used to improve one's writing ability. 2 chapters.",
+    effect = "New skill unlocked: a 1 out of 3 chance of completing an additional chapter when doing paperwork."
 )
 default Speedwriting_2_ITEM = Book(
     id="Speedwriting_2", name="\"Speedwriting for amateurs\"",
     cost=110, type="book", image="book_general",
-    chapters=4, description=">This book contains intermediate techniques used to improve one's ability to write quickly. 4 chapters.",
-    effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when doing paperwork."
+    chapters=4, description="This book contains intermediate techniques used to improve one's writing ability. 4 chapters.",
+    effect = "New skill unlocked: a 2 out of 3 chance of completing an additional chapter when doing paperwork."
 )
 default Speedwriting_3_ITEM = Book(
-    id="Speedwriting_3", name="\"Speedwriting for advanced\"",
+    id="Speedwriting_3", name="\"Speedwriting for professionals\"",
     cost=130, type="book", image="book_general",
-    chapters=6, description=">This book contains advanced techniques used to improve one's ability to write quickly. 6 chapters.",
-    effect = ">New skill unlocked: always complete an additional chapter when doing paperwork."
+    chapters=6, description="This book contains advanced techniques used to improve one's writing ability. 6 chapters.",
+    effect = "New skill unlocked: always complete an additional chapter when doing paperwork."
 )
 default Speedwriting_4_ITEM = Book(
     id="Speedwriting_4", name="\"Speedwriting for experts\"",
     cost=150, type="book", image="book_general",
-    chapters=8, description=">This book contains expert techniques used to improve one's ability to read quickly. 8 chapters.",
-    effect = ">You have become a true master of Speedwriting and from now on you shall always complete two additional chapters when doing paperwork."
+    chapters=8, description="This book contains expert techniques used to improve one's writing ability. 8 chapters.",
+    effect = "You have become a true master of Speedwriting and from now on you shall always complete two additional chapters when doing paperwork."
 )
 
 # Fictional books
@@ -58,8 +58,8 @@ default Galadriel_I_ITEM = FictionBook(
     type        = "book",
     image       = "book_galadriel_1",
     chapters    = 20,
-    description = ">This book tells the story of an elven princess who defies the traditions of her people and chooses to forge her own destiny. Or does it? 20 chapters.",
-    effect      = ">Your imagination has improved.",
+    description = "This book tells the story of an elven princess who defies the traditions of her people and chooses to forge her own destiny. Or does it? 20 chapters.",
+    effect      = "Your imagination has improved.",
     chapter_description = [
         "Galadriel - a gentle and gracious elven princess is introduced into the story.",
         "Galadriel's father - King Methis and his childhood friend Mofothelis are introduced into the story.",
@@ -91,8 +91,8 @@ default Galadriel_II_ITEM = FictionBook(
     type        = "book",
     image       = "book_galadriel_2",
     chapters    = 20,
-    description = ">This book tells the story of an elven princess who defies the traditions of her people and chooses to forge her own destiny. Or does it? 20 chapters.",
-    effect      = ">Your imagination has improved.",
+    description = "This book tells the story of an elven princess who defies the traditions of her people and chooses to forge her own destiny. Or does it? 20 chapters.",
+    effect      = "Your imagination has improved.",
     chapter_description = [
         "Galadriel has been pregnant for several months now. To the princess' own surprise her popularity grows seemingly in direct correlation to the size of her belly.",
         "Although Galadriel maintains the appearance of an obedient whore, in truth she contemplates her escape from the brothel.",
@@ -125,8 +125,8 @@ default Armchairs_ITEM = FictionBook(
     type        = "book",
     image       = "book_chairs",
     chapters    = 20,
-    description = ">An epic tale of betrayal, murder and rape. Then some more murder, some more betrayal and some more rape. 20 chapters.",
-    effect      = ">Your imagination has improved.",
+    description = "An epic tale of betrayal, murder and rape. Then some more murder, some more betrayal and some more rape. 20 chapters.",
+    effect      = "Your imagination has improved.",
     chapter_description = [
         "A family of noble northmen is introduced into the story.",
         "The royal family and the king are introduced into the story.",
@@ -158,8 +158,8 @@ default Dear_Wifu_ITEM = FictionBook(
     type        = "book",
     image       = "book_waifu",
     chapters    = 20,
-    description = ">Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"? 20 chapters.",
-    effect      = ">Your imagination has improved."
+    description = "Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"? 20 chapters.",
+    effect      = "Your imagination has improved."
 )
 
 default quidditch_book_1_ITEM = FictionBook(
@@ -169,8 +169,8 @@ default quidditch_book_1_ITEM = FictionBook(
     type        = "book",
     image       = "book_general",
     chapters    = 10,
-    description = ">This book contains the basic knowledge of Quidditch.\n 10 chapters.",
-    effect      = ">New skill unlocked: You now have enough knowledge to beat even the simplest of Quidditch quizzes.",
+    description = "This book contains the basic knowledge of Quidditch.\n 10 chapters.",
+    effect      = "New skill unlocked: You now have enough knowledge to beat even the simplest of Quidditch quizzes.",
     chapter_description = [
         "Quidditch - One of the most popular sports in the wizarding world is a team based sport played on broomsticks...",
         "Two opposing teams with seven people making up each team go up against each other...",
@@ -235,7 +235,7 @@ label handle_book_selection:
     $ the_gift = book_choice.get_image()
     show screen gift
     with d3
-    "[book_choice.description]"
+    ">[book_choice.description]"
     if book_choice.done:
         if book_choice.id == "Armchairs":
             m "Why would I want to do this to myself again?"
@@ -435,7 +435,7 @@ label book_complete:
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     hide screen notes
     show screen notes
-    "[book_choice.effect]" # ex. ">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when doing paperwork.."
+    ">[book_choice.effect]" # ex. ">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when doing paperwork.."
     hide screen notes
 
 

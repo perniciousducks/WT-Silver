@@ -93,6 +93,9 @@ style pref_button:
     xfill True
     xalign 0.5
 
+style pref_button_text:
+    size 18
+
 style pref_slider:
     #xmaximum 200
     xfill True

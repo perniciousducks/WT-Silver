@@ -337,8 +337,12 @@ screen preferences():
                     textbutton _("Default"):
                         action Preference("display", "window")
                         sensitive (renpy.get_physical_size() != (config.screen_width, config.screen_height))
-                    textbutton _("Window") action Preference("display", "any window")
-                    textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                    grid 2 1:
+                        xfill True
+                        textbutton _("Windowed") action Preference("display", "any window")
+                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
+
+
 
             frame:
                 has vbox
@@ -352,9 +356,14 @@ screen preferences():
             frame:
                 has vbox
 
-                label _("Text colour")
-                textbutton _("Day {color=[preferences.text_color_day]}text{/color}") action Function(renpy.invoke_in_new_context, set_text_color) sensitive (not preferences.nightmode)
-                textbutton _("Night {color=[preferences.text_color_night]}text{/color}") action Function(renpy.invoke_in_new_context, set_text_color, False)
+                label _("Text size")
+                bar value Preference("font size")
+                textbutton _("Reset") action [Preference("font size", 1.0), SensitiveIf(preferences.font_size != 1.0)]
+                label _("Text color")
+                grid 2 1:
+                    xfill True
+                    textbutton _("Day {color=[preferences.text_color_day]}text{/color}") action Function(renpy.invoke_in_new_context, set_text_color) sensitive (not preferences.nightmode) text_size 16
+                    textbutton _("Night {color=[preferences.text_color_night]}text{/color}") action Function(renpy.invoke_in_new_context, set_text_color, False) text_size 16
                 textbutton _("Shadow") action ToggleVariable("preferences.text_outline", "#00000080", "#00000000")
                 textbutton _("Default") action [SetVariable("preferences.text_color_day", "#402313"), SetVariable("preferences.text_color_night", "#341c0f"), SetVariable("preferences.text_outline", "#00000000")]
 
@@ -362,8 +371,10 @@ screen preferences():
                 has vbox
 
                 label _("Transitions")
-                textbutton _("All") action Preference("transitions", "all")
-                textbutton _("None") action Preference("transitions", "none")
+                grid 2 1:
+                    xfill True
+                    textbutton _("All") action Preference("transitions", "all")
+                    textbutton _("None") action Preference("transitions", "none")
 
         vbox:
             spacing 5
@@ -372,15 +383,19 @@ screen preferences():
                 has vbox
 
                 label _("Skip")
-                textbutton _("Seen Messages") action Preference("skip", "seen")
-                textbutton _("All Messages") action Preference("skip", "all")
+                grid 2 1:
+                    xfill True
+                    textbutton _("Seen Messages") action Preference("skip", "seen")
+                    textbutton _("All Messages") action Preference("skip", "all")
 
             frame:
                 has vbox
 
                 label _("After Choices")
-                textbutton _("Stop Skipping") action Preference("after choices", "stop")
-                textbutton _("Keep Skipping") action Preference("after choices", "skip")
+                grid 2 1:
+                    xfill True
+                    textbutton _("Stop Skipping") action Preference("after choices", "stop")
+                    textbutton _("Keep Skipping") action Preference("after choices", "skip")
 
             frame:
                 has vbox
@@ -402,8 +417,10 @@ screen preferences():
                     has vbox
 
                     label _("{size=-4}Animation preference{/size}")
-                    textbutton _("Chibis") action SetVariable("use_cgs", False)
-                    textbutton _("CG images") action SetVariable("use_cgs", True)
+                    grid 2 1:
+                        xfill True
+                        textbutton _("Chibis") action SetVariable("use_cgs", False) tooltip "{image=interface/chibi.png}"
+                        textbutton _("CGs") action SetVariable("use_cgs", True) tooltip "{image=interface/cg.png}"
 
                 frame:
                     has vbox
@@ -433,9 +450,6 @@ screen preferences():
                 label _("Music Volume")
                 bar value Preference("music volume")
 
-            frame:
-                has vbox
-
                 label _("Sound Volume")
                 bar value Preference("sound volume")
 
@@ -443,8 +457,6 @@ screen preferences():
                     textbutton _("Test"):
                         action Play("sound", config.sample_sound)
                         style "soundtest_button"
-            frame:
-                has vbox
 
                 label _("Weather Volume")
                 bar value Preference("weather volume")

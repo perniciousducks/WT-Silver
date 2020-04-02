@@ -31,7 +31,7 @@ define config.debug = not is_release
 define config.developer = "auto"
 
 # Game version and naming
-define config.version = "1.382"
+define config.version = "1.383"
 define compatible_version = 1.38
 define title_version = config.version if len(config.version) < 5 else (config.version[:4] + "." + config.version[4:6])
 define config.name = "WT Silver{}".format(_experimental)

@@ -99,3 +99,6 @@ init -1 python:
 
         if float(save_internal_version) < 1.382:
             save_internal_version = 1.382
+
+        if float(save_internal_version) < 1.383:
+            save_internal_version = 1.383

@@ -142,8 +142,8 @@ label give_ton_gift(gift_item):
 
     elif gift_item == wine_ITEM:
         if not firewhisky_ITEM.unlocked:
-            call ton_main("A bottle of wine?",face="base",xpos="mid",ypos="base", trans=d5)
-            call ton_main("I was hoping for something with a bit more \'punch\'.",mouth="open", pupils="R", face="base")
+            call ton_main("A bottle of wine?",face="neutral",xpos="mid",ypos="base", trans=d5)
+            call ton_main("I was hoping for something with a bit more \'punch\'.",mouth="open", pupils="R", face="neutral")
             call ton_friendship(0)
         else:
             call ton_main("I had told you before I don't particularly like wine..", face="sad", xpos="mid",ypos="base", trans=d5)

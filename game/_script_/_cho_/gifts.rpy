@@ -523,7 +523,7 @@ label give_cho_gift(gift_item):
             call cho_main("[cho_genie_name], I cannot drink alcohol, it would ruin my career..", "open", "narrow", "angry", "mid")
             call cho_mood(4)
         else:
-            call cho_main("A wine bottle?", face="base", xpos="mid", ypos="base")
+            call cho_main("A wine bottle?", face="neutral", xpos="mid", ypos="base")
             call cho_main("Thank you, [cho_genie_name] but I can't take it.",face="neutral")
             call cho_main("{size=-4}Maybe to celebrate after I win the Quidditch Cup..{/size}",face="horny")
             call cho_mood(0)

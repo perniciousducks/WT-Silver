@@ -7,6 +7,8 @@ init python:
         config.lint_hooks.append(lint_char_main_calls)
 
 init -1 python:
+    from dot_graph import event_graphs
+
     if renpy.version_tuple < (7,3,5,606):
         raise Exception("Your Ren'Py launcher is outdated, the current minimal requirement is 7.3.5+\nPlease perform an update and try launching the game again.")
 

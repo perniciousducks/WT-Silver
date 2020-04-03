@@ -5,9 +5,9 @@ init python:
         config.missing_label_callback = missing_label_func
     else:
         config.lint_hooks.append(lint_char_main_calls)
+        renpy.arguments.register_command("graph", generate_graph)
 
 init -1 python:
-    from dot_graph import event_graphs
 
     if renpy.version_tuple < (7,3,5,606):
         raise Exception("Your Ren'Py launcher is outdated, the current minimal requirement is 7.3.5+\nPlease perform an update and try launching the game again.")
@@ -87,6 +87,15 @@ init -1 python:
             what = "Call to {}".format(c.label)
             renpy.lint.report_node = c
             renpy.lint.check_displayable(what, img)
+
+    def generate_graph():
+        from dot_graph import event_graphs
+
+        renpy.arguments.takes_no_arguments("Generates a graph of the game script.")
+
+        renpy.execute_default_statement(True)
+        event_graphs("graph.dot")
+        return False
 
     def save_whitespace(mode=0):
         """

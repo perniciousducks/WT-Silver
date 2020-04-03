@@ -264,8 +264,30 @@ default her_garterbelt_hslut = DollCloth("hermione", ("legwear", "garterbelts"),
 
 default her_outfit_hslut = DollOutfit([her_hair_base, her_top_hslut, her_gloves_hslut, her_stockings_hslut, her_panties_hslut, her_bra_hslut, her_earring_hslut, her_neckwear_hslut, her_garterbelt_hslut], price=500)
 
+#######################
+## Lara Croft Outfit ## TODO: Set levels
+#######################
+
+default her_top_croft = DollCloth("hermione", ("tops", "school"), "top", "croft_top", [[163, 201, 152, 255]])
+default her_bottom_croft = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "croft_shorts", [[147, 114, 61, 255], [137, 136, 120, 255], [252, 192, 4, 255]])
+default her_accessory_croft_belt = DollCloth("hermione", ("misc", "accessory"), "accessory3", "croft_belt", [[111, 86, 66, 255], [116, 123, 114, 255], [252, 192, 4, 255]])
+default her_accessory_croft_suspenders = DollCloth("hermione", ("misc", "accessory"), "accessory4", "croft_suspenders", [[111, 86, 66, 255], [116, 123, 114, 255]], zorder=16)
+
+default her_outfit_croft = DollOutfit([her_hair_base, her_top_croft, her_bottom_croft, her_accessory_croft_belt, her_accessory_croft_suspenders], price=500)
+
+##################
+## Witch Outfit ## TODO: Set levels
+##################
+
+default her_top_witch = DollCloth("hermione", ("tops", "school"), "top", "witch_top", [[71, 51, 102, 255], [252, 180, 112, 255]], blacklist=["panties"])
+default her_stockings_witch = DollCloth("hermione", ("legwear", "stockings"), "stockings", "witch_stockings", [[71, 51, 102, 255], [252, 180, 112, 255]])
+default her_robe_witch = DollCloth("hermione", ("tops", "robes"), "robe", "witch_cape", [[71, 51, 102, 255], [252, 180, 112, 255], [36, 112, 58, 255]])
+
+default her_outfit_witch = DollOutfit([her_hair_base, her_top_witch, her_stockings_witch, her_robe_witch], price=500)
+
 ##########
 ## MISC ##
 ##########
 
 default her_tattoo3_lockhart = DollCloth("hermione", ("hips", "tattoos"), "tattoo3", "lockhart_tattoo", [[70, 70, 70, 255]], unlocked=False)
+default her_top_ruffled = DollCloth("hermione", ("tops", "school"), "top", "ruffled_top", [[235, 223, 163, 255]], unlocked=True)

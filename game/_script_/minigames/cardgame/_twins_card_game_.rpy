@@ -213,7 +213,7 @@ label twins_random_duel:
         $ twins_profit += 0.05
         $ twins_random_win = False
         $ tokens += 3
-    elif twins_profit == 0.2:
+    elif twins_profit >= 1.2:
         fre "Nice job but you've reached the cap I'm afraid."
         ger "Yeah, don't want to go minus do we?"
         $ tokens += 1

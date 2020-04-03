@@ -161,7 +161,7 @@ default cho_outfit_trainee = DollOutfit([cho_hair_ponytail1, cho_bra_basic1, cho
 ## Other ##
 ###########
 
-default cho_panties_sport1 = DollCloth("cho", ("panties", "panties"), "panties", "sport_panties_1", [[156, 204, 249, 255]], unlocked=True)
+default cho_panties_sport1 = DollCloth("cho", ("panties", "panties"), "panties", "sport_panties_1", [[156, 204, 249, 255]], unlocked=True, armfix=True)
 default cho_pubes_thick = DollCloth("cho", ("pelvis", "pubes"), "pubes", "thick", [[52, 59, 80, 255], [70, 90, 147, 255]], unlocked=True)
 default cho_pubes_heart = DollCloth("cho", ("pelvis", "pubes"), "pubes", "heart", [[52, 59, 80, 255], [70, 90, 147, 255]], unlocked=True)
 default cho_tattoo0_free = DollCloth("cho", ("pelvis", "tattoos"), "tattoo0", "pelv_free", [[0, 0, 1, 255]], unlocked=True)

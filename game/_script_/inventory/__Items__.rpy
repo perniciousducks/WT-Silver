@@ -246,7 +246,19 @@ default hg_poker = CostumeItem(
     id="hg_poker", name="Poke-her-nips Outfit", type="outfit_token", items=["top"],
     cost=10, wait_time=0, image=her_outfit_poker, description="")
 
-default hermione_outfits_list = [hg_bikini1, hg_bikini2, hg_maid, hg_bunny, hg_ball, hg_yennefer, hg_bioshock, hg_swimsuit, hg_egypt, hg_latex_dress, hg_nightie]
+default hg_tifa = CostumeItem(
+    id="hg_tifa", name="Tifa Cosplay", type="outfit", items=["top"],
+    cost=her_outfit_tifa.price, wait_time=0, image=her_outfit_tifa, description="")
+
+default hg_msmarv = CostumeItem(
+    id="hg_msmarv", name="Ms. Marvel Cosplay", type="outfit", items=["top"],
+    cost=her_outfit_msmarv.price, wait_time=0, image=her_outfit_msmarv, description="")
+
+default hg_hslut = CostumeItem(
+    id="hg_hslut", name="Heart Slut", type="outfit", items=["top"],
+    cost=her_outfit_hslut.price, wait_time=0, image=her_outfit_hslut, description="")
+
+default hermione_outfits_list = [hg_bikini1, hg_bikini2, hg_maid, hg_bunny, hg_ball, hg_yennefer, hg_bioshock, hg_swimsuit, hg_egypt, hg_latex_dress, hg_nightie, hg_tifa, hg_msmarv, hg_hslut]
 default hermione_costumes_list = []
 default hermione_dresses_list = []
 default hermione_clothing_sets_list=[]
@@ -398,7 +410,10 @@ default outfit_linking = {
     hg_poker.id:                    "her_outfit_poker",
     hg_egypt.id:                    "her_outfit_egypt",
     hg_latex_dress.id:              "her_outfit_latex_dress",
-    hg_nightie.id:                  "her_outfit_nightie"
+    hg_nightie.id:                  "her_outfit_nightie",
+    hg_tifa.id:                     "her_outfit_tifa",
+    hg_msmarv.id:                   "her_outfit_msmarv",
+    hg_hslut.id:                    "her_outfit_hslut"
 }
 
 init offset = 0 # back to normal

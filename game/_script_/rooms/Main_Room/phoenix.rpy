@@ -1,13 +1,5 @@
 label phoenix:
 
-    menu:
-        "Dueling - Prototype sign drawing":
-            jump magic_tutorial
-        "Let me feed and pet that damn bird!":
-            pass
-        "Back":
-            jump main_room_menu
-
     if not bird_examined:
         $ bird_examined = True
         call gen_chibi("stand","mid","base",flip=False)

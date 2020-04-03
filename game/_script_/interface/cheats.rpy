@@ -273,6 +273,8 @@ label cheats:
                 "Lootbox":
                     call card_lootbox
                     jump cheats.devroom
+                "Dueling - Prototype sign drawing":
+                    jump magic_tutorial
                 "-Back-":
                     jump cheats
 

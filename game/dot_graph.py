@@ -4,6 +4,7 @@ import renpy.ast as ast
 import renpy.store as store
 from renpy.game import script
 from graphviz import Digraph
+from fnmatch import fnmatchcase
 
 
 def event_graphs(filename):
@@ -12,11 +13,13 @@ def event_graphs(filename):
         return event.events[0][0][0][:2] # First event label
         #return event.start_label[:2]
 
-    events = [x for x in store.__dict__.itervalues() if isinstance(x, store.event_class)]
-    events = sorted(events, key=event_group)
+    # events = [x for x in store.__dict__.itervalues() if isinstance(x, store.event_class)]
+    # events = sorted(events, key=event_group)
+    events = [store.hg_pf_grope]
 
-    g = Digraph()
-    g.attr(concentrate="true", pack="36",packmode="array_cu", rankdir="LR")
+    g = Digraph()#strict=True)
+    g.attr(concentrate="true",pack="36",packmode="array_cu", rankdir="LR") #
+    g.attr("node", shape="box", style="rounded")
 
     for event in events:
         event_graph = get_event_subgraph(event)
@@ -32,71 +35,139 @@ def get_event_subgraph(event):
     sg = Digraph("cluster_{}".format(event.start_label))
     sg.attr(label="{} ({})".format(event.start_label, event.title))
 
-    visited = set()
+    visitor = ScriptVisitor(sg)
     for tier in event.events:
         for start, _ in tier:
-            sg.node(start, style="filled")
-
-            node = script.lookup(start)
-            visited.add(start)
-            visitor = ast_visitor(start, sg, visited)
-            node.get_children(visitor)
+            visitor.explore(start, start=True)
 
     return sg
 
+class ScriptVisitor:
 
-def ast_visitor(start, graph, visited):
-    def visit(node):
-        target = None
+    def __init__(self, graph):
+        self.graph = graph
+        self.stack = []
+        self.visited = set()
+        self.start_nodes = set()
+
+
+    def explore(self, node, start=False):
+        if isinstance(node, basestring):
+            node = script.lookup(node)
+
+        if start:
+            self.start_nodes.add(node)
+
+        if node not in self.visited:
+            self.visited.add(node)
+            self.stack.append(node)
+            node.get_children(self.visit)
+            self.stack.pop()
+
+
+    def visit(self, node):
+        start = self.stack[-1]
+
+        if isinstance(start, list):
+            blocks = start
+            if len(blocks) == 0:
+                self.stack.pop()
+                start = self.stack[-1]
+            else:
+                start = blocks[-1][0] # First block node
+                if node is blocks[-1][-1]:
+                    blocks.pop()
+                    if len(blocks) == 0:
+                        self.stack.pop()
+
+        if end_node(node):
+            end = "{}_end".format(nid(node))
+            self.graph.node(end, "end")
+            self.graph.edge(nid(start), end)
+            return
 
         if ignore_node(node):
             return
 
+        if isinstance(node, ast.Label):
+            if node is not start:
+                # Nested label
+                self.graph.edge(nid(start), nid(node), arrowhead="none", style="dashed")
+
+            if node in self.start_nodes:
+                self.graph.node(nid(node), node.name, style="filled,rounded")
+            else:
+                self.graph.node(nid(node), node.name)
+
         if isinstance(node, ast.Jump):
-            target = node.target
-            graph.edge(start, target)
+            target = script.lookup(node.target)
+            self.graph.edge(nid(start), nid(target))
+            self.explore(target)
 
         if isinstance(node, ast.Call) and not node.expression:
-            target = node.label
-            graph.edge(start, target, style="bold")
+            target = script.lookup(node.label)
+            self.graph.edge(nid(start), nid(target), style="bold")
+            self.explore(target)
 
-        if target and target not in visited:
-            visited.add(target)
-            visitor = ast_visitor(target, graph, visited)
-            script.lookup(target).get_children(visitor)
+        if isinstance(node, ast.Menu):
+            menu_cluster = Digraph("cluster_{}".format(nid(node)))
+            menu_cluster.attr(label="")
+            bs = []
+            for label, condition, block in node.items:
+                if block:
+                    bs.append(block)
+                    name = nid(block[0])
+                    menu_cluster.node(name, label)
+                    self.graph.edge(nid(start), name, arrowhead="none")
 
-    return visit
+            self.graph.subgraph(menu_cluster)
+            bs.reverse()
+            self.stack.append(bs)
+
+        if isinstance(node, ast.If):
+            pass
 
 
-def ignore_node(node):
-    label_startswith = tuple([
-        "end_", "main_room", "play_", "play_", "update_", "blkfade", "hide", "nar", "bld",
-        "ctc", "reset_", "room", "day_", "night_", "common_", "chibi_", "set_", "blk",
-        "sly_plus", "give_reward", "teleport", "too_much", "increase_house_points",
-        "popup", "spit_on_her", "kiss_her", "slap_her"
-    ])
-    label_endswith = tuple(["_main", "_walk", "_chibi", "_block", "_chibi_scene"])
+def nid(x):
+    return hex(id(x))
+
+
+def end_node(node):
+    label_patterns = ["end_*", "too_much"]
 
     if isinstance(node, ast.Jump):
         label = node.target
-        return label.startswith(label_startswith) or label.endswith(label_endswith)
+        return any(fnmatchcase(label, p) for p in label_patterns)
 
     if isinstance(node, ast.Call):
         label = node.label
-        return label.startswith(label_startswith) or label.endswith(label_endswith)
+        return any(fnmatchcase(label, p) for p in label_patterns)
+
+    return False
+
+
+def ignore_node(node):
+    label_patterns = [
+        "_end_*", "main_room*", "play_*", "update_*", "blk*", "hide*",
+        "nar", "bld", "ctc", "reset_*", "chibi_*", "set_*",
+        "*_main", "*_walk", "*_chibi", "*_block", "*_chibi_scene",
+        "room", "day_start", "night_start",
+        "teleport", "increase_house_points", "sly_plus",
+        "spit_on_her", "kiss_her", "slap_her", "give_reward", "popup",
+    ]
+
+    if isinstance(node, ast.Jump):
+        label = node.target
+        return any(fnmatchcase(label, p) for p in label_patterns)
+
+    if isinstance(node, ast.Call):
+        label = node.label
+        return any(fnmatchcase(label, p) for p in label_patterns)
 
     return False
 
 
 # Old code (reusable?)
-
-
-def is_ignored_label(label_name):
-    return (label_name.startswith(("play_", "end_", "set_", "update_", "."))
-    or label_name in ["nar", "main_room", "main_room_menu", "her_kneel", "transition", "bld", "blkfade", "teleport", "give_reward", "popup"]
-    or "chibi" in label_name
-    or label_name.endswith(("_main","_walk", "_favor_menu", "_start"))
-    or not script.has_label(label_name))
 
 
 def is_ignored_var(var_name):

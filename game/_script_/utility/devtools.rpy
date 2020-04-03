@@ -5,30 +5,25 @@ init python:
         config.missing_label_callback = missing_label_func
     else:
         config.lint_hooks.append(lint_char_main_calls)
+        renpy.arguments.register_command("whitespace", save_whitespace)
+
 
 init -1 python:
     if renpy.version_tuple < (7,3,5,606):
         raise Exception("Your Ren'Py launcher is outdated, the current minimal requirement is 7.3.5+\nPlease perform an update and try launching the game again.")
+
 
     def missing_image_func(path):
         global systemerror
         systemerror = ["Missing image", path]
         return Null()
 
+
     def missing_label_func(name):
         global systemerror
         systemerror = ["Missing label", name]
         return "missing_label"
 
-    # If you're reading this it probably means you've got the warning message about old unusable files, since there has been hundreds of changes I cant guarantee if the game will work correctly if you decide to delete just the files/labels listed below, make your life easier and simply delete the game and unpack it into new empty folder instead. -LoafyLemon
-    def check_for_old_files():
-        path = "__Renpy__/_cho_/"
-        oldfiles = ["cho_wear_buttplug", "update_cho_uniform", "set_cho_hair", "set_cho_hat", "set_cho_top", "set_cho_bottom", "set_cho_bra", "set_cho_onepiece", "set_cho_panties", "set_cho_garterbelt", "set_cho_neckwear", "set_cho_body_accessory", "set_cho_gloves", "set_cho_stockings", "set_cho_robe", "set_cho_gag", "set_cho_piercing", "set_cho_outfit", "set_cho_transparency", "update_cho_quidditch_outfit", "load_cho_clothing_saves", "cho_favor_1", "cho_favor_1_1", "cho_favor_1_2", "cho_favor_1_3", "jerk_off_to_cho", "cho_quidd_intro", "cho_quidd_1_1", "cho_quidd_1_2", "cho_quidd_1_3", "cho_quidd_2_1", "cho_quidd_2_2", "cho_quidd_2_3", "new_custom_request", "custom_request_wrapup", "shaming_intro", "shaming_event", "shaming", "shaming_night", "rcement", "heritic_intro", "heritic_event", "heretic", "heretic_night"]
-
-        for item in oldfiles:
-            if renpy.has_label(item):
-                return True
-        return False
 
     def TBA_message(msg="Currently unavailable, check in later versions of the game."):
         renpy.show_screen("blktone5")
@@ -37,6 +32,7 @@ init -1 python:
         renpy.hide_screen("blktone5")
         renpy.with_statement(d3)
         return
+
 
     def lint_char_main_calls():
         """
@@ -86,26 +82,40 @@ init -1 python:
             renpy.lint.report_node = c
             renpy.lint.check_displayable(what, img)
 
-    def save_whitespace(mode=0):
+
+    def save_whitespace(refresh=False):
         """
-        Saves whitespace information to whitespace file.
-        mode = 0 - Whitespace_dict
-        mode = 1 - file crawler
+        Generates a whitespace information file.
         """
-        file = config.basedir+"/game/images.whitespace"
-        with open(file, "w") as fp:
-            if mode == 0:
-                for key, value in whitespace_dict.iteritems():
-                    fp.write("{}:{},{},{},{}\n".format(key, value[0], value[1], value[2], value[3]))
-            elif mode == 1:
-                print "This might take a while... If your game freezes, that's normal."
-                time.sleep(3)
-                for dp, dn, fn in system.walk(config.basedir+"/game/"):
-                    for i in [f for f in fn if f.endswith(".png")]:
-                        img = system.path.join(dp, i).replace("\\", "/").split("/game/")[1]
-                        box = crop_whitespace(img)
-                        fp.write("{}:{},{},{},{}\n".format(img, box[0], box[1], box[2], box[3]))
-        return "Saved successfuly"
+        global whitespace_dict
+
+        ap = renpy.arguments.ArgumentParser("Generates a whitespace information file.", require_command=False)
+        ap.add_argument("--refresh", action="store_true", help="Recalculate for all images.")
+        args = ap.parse_args()
+        if args.refresh or refresh:
+            whitespace_dict = {}
+
+        path = posixpath.join(config.basedir, "game")
+        imgs = []
+        for root, dirs, files in system.walk(path):
+            for file in fnmatch.filter(files, "*.png"):
+                img = posixpath.join(root, file).split("/game/")[1]
+                imgs.append(img)
+
+        c = len(imgs)
+        for i, img in enumerate(imgs):
+            sys.stdout.write("\rCalculating whitespace... {:3.0f}%".format(i / float(c - 1) * 100.0))
+            sys.stdout.flush()
+            crop_whitespace(img)
+
+        file = config.basedir + "/game/images.whitespace"
+        with open(file, "w") as f:
+            for img, box in sorted(whitespace_dict.iteritems()):
+                f.write("{}:{},{},{},{}\n".format(img, *box))
+
+        print "\rCalculating whitespace... Done!"
+        return False
+
 
 label missing_label():
     $ renpy.choice_for_skipping()

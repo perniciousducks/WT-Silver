@@ -7,6 +7,8 @@ init -1 python:
     import colorsys
     import itertools
     import os as system
+    import fnmatch
+    import posixpath
 
     get_volume_preference = renpy.game.preferences.get_volume
 

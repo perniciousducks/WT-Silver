@@ -191,18 +191,6 @@ screen main_menu():
         hover "logo/discord_hover.png"
         action OpenURL("https://discord.gg/7PD57yt")
 
-    if check_for_old_files():
-        frame:
-            style "empty"
-            background "#000"
-            xsize 1080
-            ysize 600
-            button style "empty" action NullAction()
-            add "images/misc/old.png" yanchor 1.0 yalign 0.99 xpos 10
-            text "{size=+40}WARNING!{/size}" xalign 0.5 xanchor 0.5 ypos 150 color "#7a0000"
-            text "We have detected old unusable files in your game folder,\nplease close the game and perform a clean installation." xalign 0.5 xanchor 0.5 ypos 250 color "#FFF"
-            textbutton "{size=+30}Quit{/size}" action Quit(confirm=False) xalign 0.5 xanchor 0.5 yalign 0.9
-
 screen navigation():
     window:
         style "gm_root"

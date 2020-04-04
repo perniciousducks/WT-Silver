@@ -209,7 +209,7 @@ screen navigation():
         textbutton _("Preferences") action ShowMenu("preferences")
         textbutton _("Main Menu") action MainMenu()
         #textbutton _("Help") action Help()
-        textbutton _("Quit") action Quit()
+        textbutton _("Quit") action Quit(confirm=not main_menu)
 
 screen file_picker():
     frame:

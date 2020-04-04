@@ -525,7 +525,7 @@ screen notify(message):
 screen skip_indicator():
     zorder 100
 
-    add "ui_rewind" align (0.5, 0.5)
+    text "Skipping {unicode}{b}»{/b}{/unicode}" size 22 pos (50, 50) color "#fff" outlines [(1, "#00000080", 1, 0)] at blink
 
     if room_menu_active:
         if daytime:

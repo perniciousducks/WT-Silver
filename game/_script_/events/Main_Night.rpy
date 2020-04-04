@@ -46,7 +46,7 @@ label night_start:
     # Hermione Potions return
     if her_cat_polyjuice_return:
         jump potion_scene_1_1_2
-    
+
     if transparent_quest:
         jump potion_scene_4_2
 
@@ -64,5 +64,7 @@ label night_start:
         #jump astoria_tonks_event <- label does not exist #These do not return to 'night_resume'!
 
     label night_main_menu: # Use `jump main_room_menu` instead of jumping directly to this label
+
+    $ renpy.choice_for_skipping()
 
     call screen main_room_menu

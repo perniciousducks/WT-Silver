@@ -16,4 +16,6 @@ label day_start:
     if bird_examined and desk_examined and cupboard_examined and door_examined and fireplace_examined and not genie_intro.E2_complete:
         jump genie_intro_E2
 
+    $ renpy.choice_for_skipping()
+
     call screen main_room_menu

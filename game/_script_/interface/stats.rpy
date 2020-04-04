@@ -109,7 +109,7 @@ label stats_menu(xx=150, yy=90):
     $ stats_categories_sorted = ["Genie", "Snape", "Tonks", "Hermione", "Cho", "Luna", "Astoria", "Susan"] #"Ginny", "Daphne", "Padma", "Patil", "Myrtle", "Mafkin"
     $ stats_categories_sorted_length = len(stats_categories_sorted)
 
-    $ current_category = stats_categories_sorted[0]
+    $ current_category = last_character.capitalize() if last_character else stats_categories_sorted[0]
     $ current_item = stats_dict[current_category]
     $ current_subcategory = "overview"
     $ current_sorting = stats_show_locked

@@ -1,7 +1,9 @@
 
 
 label summon_snape:
-    #Snape theme
+
+    $ last_character = "snape"
+
     call play_music("snape")
     call play_sound("door")
     call sna_chibi("stand","mid","base")

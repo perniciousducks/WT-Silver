@@ -5,6 +5,10 @@ init offset = -1
 default menu_x = 0.5
 default menu_y = 0.5
 
+# Summoned character
+default active_girl = None
+default last_character = None
+
 # Turns commentaries on/off in gallery
 default commentaries = False
 

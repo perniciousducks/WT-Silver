@@ -1,10 +1,11 @@
 
-
 label summon_cho:
     #call play_music("cho")
     #call play_sound("door")
 
     $ active_girl = "cho"
+    $ last_character = "cho"
+
     $ cho_busy = True
     #call update_cho_tier
 

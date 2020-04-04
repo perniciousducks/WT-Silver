@@ -1,12 +1,15 @@
 
-
 label summon_tonks:
-    call play_music("tonks")
-    call play_sound("door")
 
     $ active_girl = "tonks"
+    $ last_character = "tonks"
+
     $ tonks_busy = True
+
     call update_ton_tier
+
+    call play_music("tonks")
+    call play_sound("door")
 
     # Clothes Events
     call tonks_summon_setup

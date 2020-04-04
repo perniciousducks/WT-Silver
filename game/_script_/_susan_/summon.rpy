@@ -1,7 +1,11 @@
 
-
-
 label summon_susan:
+
+    $ active_girl = "susan"
+    $ last_character = "susan"
+
+    $ susan_busy = True
+
     call play_music("susan")
     call play_sound("door")
 
@@ -28,9 +32,7 @@ label summon_susan:
     label susan_requests:
 
     $ hide_transitions = False
-    $ susan_busy = True
-    $ gave_susan_gift = True #Remove when adding gift texts!
-    $ active_girl = "susan"
+    $ gave_susan_gift = True # Remove when adding gift texts!
 
     menu:
 

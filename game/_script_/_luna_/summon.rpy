@@ -1,6 +1,11 @@
 
-
 label summon_luna:
+
+    $ active_girl = "luna"
+    $ last_character = "luna"
+
+    $ luna_busy = True
+
     call play_music("luna")
     call play_sound("door")
     call lun_chibi("stand","mid","base")
@@ -19,9 +24,7 @@ label summon_luna:
     label luna_requests:
 
     $ hide_transitions = False
-    $ luna_busy = True
-    $ gave_luna_gift = True #Remove when adding gift texts!
-    $ active_girl = "luna"
+    $ gave_luna_gift = True # Remove when adding gift texts!
 
     menu:
 

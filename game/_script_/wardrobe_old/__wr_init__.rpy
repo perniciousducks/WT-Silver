@@ -1,6 +1,4 @@
 
-default active_girl      = "hermione"
-
 default wardrobe_page        = 0
 default wardrobe_page_choice = 0
 default wardrobe_toggle_page = 0

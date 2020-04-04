@@ -5,7 +5,10 @@ label summon_hermione:
     #call play_sound("door")
 
     $ active_girl = "hermione"
+    $ last_character = "hermione"
+
     $ hermione_busy = True
+
     call update_hermione
     call update_her_tier
 

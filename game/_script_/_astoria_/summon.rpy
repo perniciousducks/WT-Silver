@@ -1,11 +1,11 @@
 
-
 label summon_astoria:
-    #call play_music("astoria")
-    #call play_sound("door")
 
     $ active_girl = "astoria"
+    $ last_character = "astoria"
+
     $ astoria_busy = True
+
     #call update_ast_tier
 
     # Clothes Events

@@ -738,7 +738,7 @@ label hg_hidden_blowjob_snape:
     pause.2
 
     call play_music("snape")
-    call sna_main("Good, you are here.","snape_01")
+    call sna_main("Good, you are here.","snape_01", xpos="base", ypos="head")
     call her_chibi_scene("bj")
     call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "slit", "worried", "ahegao")
     call sna_main("Listen, there is something I want to discuss...","snape_06")
@@ -837,7 +837,7 @@ label hg_hidden_blowjob_luna:
     #Luna comes in
     call lun_walk("mid", action="enter")
 
-    call lun_main("Hello, [lun_genie_name].","soft","base","base","down")
+    call lun_main("Hello, [lun_genie_name].","soft","base","base","down", xpos="base", ypos="head")
     call bld("hide")
     pause.2
 
@@ -1041,9 +1041,9 @@ label hg_hidden_blowjob_tonks:
     call ton_walk("mid","base")
 
     if daytime:
-        call ton_main("Hello, Sir.","base","base","base","mid", xpos="right", ypos="base")
+        call ton_main("Hello, Sir.","base","base","base","mid", xpos="base", ypos="head")
     else:
-        call ton_main("Good evening, Sir.","base","base","base","mid", xpos="right", ypos="base")
+        call ton_main("Good evening, Sir.","base","base","base","mid", xpos="base", ypos="head")
 
     call her_chibi_scene("bj")
     call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "open_wide_tongue", "narrow", "annoyed", "up")

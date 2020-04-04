@@ -591,7 +591,7 @@ label luna_favour_1:
         call update_her_uniform
         pause.8
 
-        call her_main("hello Professor!", "base", "happyCl", "base", "mid")
+        call her_main("hello Professor!", "base", "happyCl", "base", "mid", xpos="base", ypos="base")
         call her_main("hi luna! what's he want now? another blowjob.", "grin", "base", "base", "R")
         call lun_main("no, he just wants to talk...","base","seductive","angry","mid")
         call her_main("really?", "upset", "wink", "base", "mid")

@@ -1078,7 +1078,7 @@ label hg_tutor_E10:
     call gen_chibi("cum_behind_desk_done")
     hide screen blkfade
 
-    call her_main("I hope you enjoyed it as much I did.", "open", "narrow", "worried", "mid_soft", cheeks="blush", tears="mascara", xpos="mid", ypos="base", trans="fade")
+    call her_main("I hope you enjoyed it as much I did.", "open", "narrow", "worried", "mid_soft", cheeks="blush", tears="mascara", xpos="mid", ypos="base", trans=fade)
     m "Oh fuck yes, you're doing great, my little witch!"
     g9 "Very good!"
     call her_main("Thank you, professor.", "grin", "narrow", "worried", "mid_soft", cheeks="blush", tears="mascara")

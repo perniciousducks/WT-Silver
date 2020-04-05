@@ -52,7 +52,7 @@ label tonks_wardrobe_check(section, arg=None):
             python:
                 _value = arg
                 if arg[1] in ("bras", "panties"): # Intentional double check.
-                    for i in hermione.clothes.itervalues():
+                    for i in tonks.clothes.itervalues():
                         if i[0]:
                             if i[0].blacklist and "bra" in i[0].blacklist and arg[1] == "bras":
                                 _value = ("category", None)

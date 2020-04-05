@@ -174,7 +174,10 @@ label clothing_shop_menu:
         call purchase_outfit(item_choice)
         $ item_choice = None
         $ current_page = 0
-        jump clothing_shop_menu
+        if clothing_mail_item != None:
+            jump close_clothing_store
+        else:
+            jump clothing_shop_menu
 
     elif _return == "Close":
         $ current_page = 0
@@ -206,10 +209,6 @@ label purchase_outfit(item):
     if clothing_mail_item != None:
         maf "I'm sorry luv, but I'm still quite busy working on your previous order."
         maf "Come back once you received my package."
-        return
-
-    if gold < item.cost:
-        m "I don't have enough gold."
         return
 
     # if item == hg_outfit_maid_ITEM:
@@ -348,18 +347,40 @@ label purchase_outfit(item):
         # maf "Toss a coin to your tailor."
 
     # Purchase Outfit
-    $ clothing_mail_item = item
-    $ clothing_mail_timer = item.wait_time
+
+    if gold >= item.cost:
+
+        $ clothing_mail_item = item
+        $ clothing_mail_timer = item.wait_time
+        $ order_cost = item.cost
+        $ order_tip = int(item.cost * 0.20) # int() removes decimental
+
+        menu:
+            "-add next day delivery (+[order_tip] gold)-" if gold >= order_cost + order_tip:
+                $ order_cost = order_cost + order_tip
+                $ clothing_mail_timer = 1
+                g9 "I'll tip you handsomely if you can get it done by tomorrow."
+                maf "Oh, Professor. I {b}do{/b} love a challenge."
+                maf "I should have all the materials laying around somewhere..."
+            "{color=[menu_disabled]}-add next day delivery (+[order_tip] gold)-{/color}" if gold < order_cost + order_tip:
+                m "(I don't have enough money for that.)"
+                pass
+            "-no thanks-":
+                pass
+
+    else:
+        m "I don't have enough gold."
+        return
 
     $ item.unlockable = True #Hides it from the store menu.
-    $ gold -= item.cost
+    $ gold -= order_cost
 
     m "Here is your gold."
     maf "Thank you.\nI'll start working on it right away, Professor!"
-    if item.wait_time == 1:
+    if clothing_mail_timer == 1:
         maf "You can expect a package with the outfit by tomorrow."
     else:
-        $ _tmp = "You can expect a package with the outfit in about "+num_to_word(item.wait_time)+" days."
+        $ _tmp = "You can expect a package with the outfit in about "+num_to_word(clothing_mail_timer)+" days."
         maf "[_tmp]"
 
     return

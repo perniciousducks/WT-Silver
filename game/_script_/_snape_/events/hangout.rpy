@@ -62,8 +62,8 @@ label snape_hangout:
     ### Snape Stories ###
     # Events are located here.
 
-    if sna_support <= 5:
-        $ random_number = renpy.random.randint(1, 2)
+    if sna_support < 15:
+        $ random_number = 1
     else:
         $ random_number = renpy.random.randint(1, 3)
 
@@ -83,12 +83,15 @@ label snape_hangout:
     label end_snape_hangout_points:
 
     if sna_friendship < 100: # max
-        if game_difficulty < 2:      #Easy difficulty
-            $ sna_friendship += 4
-        elif game_difficulty == 2:   #Normal
-            $ sna_friendship += 3
-        else:                        #Hardcore, larger wine bonus.
+        if raining or blizzard: # Rain puts him in a good mood.
             $ sna_friendship += 2
+
+        if game_difficulty < 2:      #Easy difficulty
+            $ sna_friendship += 5
+        elif game_difficulty == 2:   #Normal
+            $ sna_friendship += 4
+        else:                        #Hardcore
+            $ sna_friendship += 3
 
     if sna_friendship > 100:
         $ sna_friendship = 100

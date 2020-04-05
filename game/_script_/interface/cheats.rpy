@@ -88,18 +88,29 @@ label cheats:
                 "-never mind-":
                     jump cheats
 
-        "-Cho Cheats-" (icon="interface/icons/small/cho.png") if cho_unlocked:
+        "-Cho Cheats-" (icon="interface/icons/small/cho.png") if her_tier >= 2 or cho_unlocked:
             label .cho:
             menu:
                 "-Reset Cho's mood-" if cho_mood != 0:
                     $ cho_mood = 0
                     ">Cho is no longer mad at you."
                     jump cheats.cho
+
+                "-Skip Cho Intro-" if not cho_intro.E3_complete:
+                    call cheats.cho_skip_intro
+                    "Cho is now unlocked."
+                    if day < 16:
+                        "Sixteen days have passed since you arrived here."
+                    jump cheats.cho
+                "-Skip Cho Quiz-" if cho_intro.E3_complete and not cho_quiz.complete:
+                    call cheats.cho_skip_quiz
+                    "You can now start training Cho."
+                    jump cheats.cho
+
                 "-Max Whoring-" if cho_whoring < 24:
                     $ cho_whoring = 24
                     ">Cho is now a giant slut."
                     jump cheats.cho
-
                 "-Increase Whoring-" if cho_whoring < 24:
                     $ cho_whoring += 1
                     ">Cho became more depraved..."
@@ -108,6 +119,7 @@ label cheats:
                     $ cho_whoring += -1
                     "Cho recovered some of her dignity"
                     jump cheats.cho
+
                 "-Back-":
                     jump cheats
 
@@ -304,7 +316,7 @@ label .progression_skip:
 
             call update_her_favors
             call update_her_requests
-            jump cheats.hermione_skip
+            jump cheats.progression_skip
 
         "-Cho-" if her_tier >= 2:
             label .cho_skip:
@@ -316,7 +328,7 @@ label .progression_skip:
                 "-Back-":
                     jump cheats.progression_skip
 
-            jump cheats.cho_skip
+            jump cheats.progression_skip
 
         "-Back-":
             jump cheats.devroom

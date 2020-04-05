@@ -53,8 +53,8 @@ label tonks_hangout:
 
     ### Snape Stories ###
 
-    if ton_support <= 5:
-        $ random_number = renpy.random.randint(1, 2)
+    if ton_support < 12:
+        $ random_number = 1
     else:
         $ random_number = renpy.random.randint(1, 3)
 
@@ -78,12 +78,15 @@ label tonks_hangout:
     label end_tonks_hangout_points:
 
     if ton_friendship < 100: # max
-        if game_difficulty < 2:      #Easy difficulty
-            $ ton_friendship += 4
-        elif game_difficulty == 2:   #Normal
-            $ ton_friendship += 3
-        else:                        #Hardcore, larger wine bonus.
+        if fire_in_fireplace: # Tonks is feeling hot.
             $ ton_friendship += 2
+
+        if game_difficulty < 2:      #Easy difficulty
+            $ ton_friendship += 5
+        elif game_difficulty == 2:   #Normal
+            $ ton_friendship += 4
+        else:                        #Hardcore
+            $ ton_friendship += 3
 
     if ton_friendship > 100:
         $ ton_friendship = 100

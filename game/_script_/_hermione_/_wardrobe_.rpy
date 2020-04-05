@@ -226,6 +226,14 @@ default her_top_nightie = DollCloth("hermione", ("tops", "school"), "top", "nigh
 
 default her_outfit_nightie = DollOutfit([her_hair_base, her_top_nightie], price=500)
 
+##################
+## Teddy Outfit ## TODO: Set levels
+##################
+
+default her_top_teddy = DollCloth("hermione", ("tops", "school"), "top", "teddy_top", [[20, 20, 20, 215], [148, 144, 163, 215], [148, 144, 163, 215]])
+
+default her_outfit_teddy = DollOutfit([her_hair_base, her_top_teddy], price=500)
+
 #################
 ## Tifa Outfit ## TODO: Set levels
 #################
@@ -285,9 +293,33 @@ default her_robe_witch = DollCloth("hermione", ("tops", "robes"), "robe", "witch
 
 default her_outfit_witch = DollOutfit([her_hair_base, her_top_witch, her_stockings_witch, her_robe_witch], price=500)
 
+#######################
+## Slutty Schoolgirl ## TODO: Set levels
+#######################
+
+default her_top_slutty1 = DollCloth("hermione", ("tops", "school"), "top", "open_top_1", [[183, 183, 184, 255], [109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
+default her_bottom_slutty1 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "open_skirt_1", [[103, 90, 108, 255]])
+default her_stockings_slutty = DollCloth("hermione", ("legwear", "stockings"), "stockings", "stockings_2", [[170, 170, 170, 255]])
+
+default her_outfit_slutty_schoolgirl = DollOutfit([her_hair_base, her_top_slutty1, her_bottom_slutty1, her_stockings_slutty], price=500)
+
+##################
+## Latex Outfit ## TODO: Set levels
+##################
+
+default her_top_latex = DollCloth("hermione", ("tops", "school"), "top", "latex_top", [[55, 55, 55, 255]])
+default her_gloves_latex = DollCloth("hermione", ("misc", "gloves"), "gloves", "latex_gloves", [[55, 55, 55, 255]])
+default her_stockings_latex = DollCloth("hermione", ("legwear", "stockings"), "stockings", "latex_stockings", [[55, 55, 55, 255]])
+default her_panties_latex = DollCloth("hermione", ("panties", "panties"), "panties", "latex_panties", [[55, 55, 55, 255]])
+default her_neckwear_latex = DollCloth("hermione", ("head", "neckwear"), "neckwear", "latex_choker", [[55, 55, 55, 255]])
+
+default her_outfit_latex = DollOutfit([her_hair_base, her_top_latex, her_gloves_latex, her_stockings_latex, her_panties_latex, her_neckwear_latex], price=500)
+
 ##########
 ## MISC ##
 ##########
 
 default her_tattoo3_lockhart = DollCloth("hermione", ("hips", "tattoos"), "tattoo3", "lockhart_tattoo", [[70, 70, 70, 255]], unlocked=False)
 default her_top_ruffled = DollCloth("hermione", ("tops", "school"), "top", "ruffled_top", [[235, 223, 163, 255]], unlocked=True)
+default her_accessory_gift_wrap = DollCloth("hermione", ("misc", "accessory"), "accessory3", "leg_wrap", [[167, 77, 42, 255], [237, 179, 14, 255]], zorder=7, unlocked=True)
+default her_bra_bandaids = DollCloth("hermione", ("bras", "bras"), "bra", "bandaids", [[233, 187, 149, 255]], unlocked=True)

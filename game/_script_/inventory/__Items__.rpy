@@ -266,7 +266,19 @@ default hg_witch = CostumeItem(
     id="hg_witch", name="Halloween Witch Cosplay", type="outfit", items=["top"],
     cost=her_outfit_witch.price, wait_time=0, image=her_outfit_witch, description="")
 
-default hermione_outfits_list = [hg_bikini1, hg_bikini2, hg_maid, hg_bunny, hg_ball, hg_yennefer, hg_bioshock, hg_swimsuit, hg_egypt, hg_latex_dress, hg_nightie, hg_tifa, hg_msmarv, hg_hslut, hg_croft, hg_witch]
+default hg_latex = CostumeItem(
+    id="hg_latex", name="Latex Outfit", type="outfit", items=["top"],
+    cost=her_outfit_latex.price, wait_time=0, image=her_outfit_latex, description="")
+
+default hg_slutty_schoolgirl = CostumeItem(
+    id="hg_slutty_schoolgirl", name="Slutty Schoolgirl", type="outfit", items=["top"],
+    cost=her_outfit_slutty_schoolgirl.price, wait_time=0, image=her_outfit_slutty_schoolgirl, description="")
+
+default hg_teddy = CostumeItem(
+    id="hg_teddy", name="Halloween Witch Cosplay", type="outfit", items=["top"],
+    cost=her_outfit_teddy.price, wait_time=0, image=her_outfit_teddy, description="")
+
+default hermione_outfits_list = [hg_bikini1, hg_bikini2, hg_maid, hg_bunny, hg_ball, hg_yennefer, hg_bioshock, hg_swimsuit, hg_egypt, hg_latex_dress, hg_nightie, hg_tifa, hg_msmarv, hg_hslut, hg_croft, hg_witch, hg_latex, hg_slutty_schoolgirl, hg_teddy]
 default hermione_costumes_list = []
 default hermione_dresses_list = []
 default hermione_clothing_sets_list=[]
@@ -423,7 +435,10 @@ default outfit_linking = {
     hg_msmarv.id:                   "her_outfit_msmarv",
     hg_hslut.id:                    "her_outfit_hslut",
     hg_croft.id:                    "her_outfit_croft",
-    hg_witch.id:                    "her_outfit_witch"
+    hg_witch.id:                    "her_outfit_witch",
+    hg_latex.id:                    "her_outfit_latex",
+    hg_slutty_schoolgirl.id:        "her_outfit_slutty_schoolgirl",
+    hg_teddy.id:                    "her_outfit_teddy"
 }
 
 init offset = 0 # back to normal

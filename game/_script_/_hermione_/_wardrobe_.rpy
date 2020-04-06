@@ -315,6 +315,15 @@ default her_neckwear_latex = DollCloth("hermione", ("head", "neckwear"), "neckwe
 
 default her_outfit_latex = DollOutfit([her_hair_base, her_top_latex, her_gloves_latex, her_stockings_latex, her_panties_latex, her_neckwear_latex], price=500)
 
+#################
+## Fishnet Outfit ## TODO: Set levels
+#################
+
+default her_top_fishnet = DollCloth("hermione", ("tops", "school"), "top", "fishnet_top", [[24, 24, 24, 255]], blacklist=["bra"])
+default her_panties_fishnet = DollCloth("hermione", ("panties", "panties"), "panties", "fishnet_panties", [[24, 24, 24, 255]])
+
+default her_outfit_fishnet = DollOutfit([her_hair_base, her_top_fishnet, her_panties_fishnet], price=500)
+
 ##########
 ## MISC ##
 ##########

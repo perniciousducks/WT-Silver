@@ -37,50 +37,9 @@ init -1 python:
             if save_internal_version:
                 pass
         except NameError:
-            save_internal_version = 1.37
+            save_internal_version = 1.38
 
-        # Compare&perform an update
-
-        # Achievements update
-        if persistent.achievements.get("busted") == None: # 1.37
-            persistent.achievements['pantiesfap'] == ["Characters", "I sneezed on them...", "Rubbed one out on Hermione's panties.", False, "characters/genie/chibis/jerk_off/02.png", False]
-            persistent.achievements['pantiesfapcho'] == ["Characters", "Exercise is important", "Rubbed one out on Cho's panties.", False, "characters/genie/chibis/jerk_off/02.png", False]
-            persistent.achievements['busted'] = ["Characters", "BUSTED!", "... a nut when got busted for busting a nut.", False, "interface/icons/head/head_hermione_2.png", False]
-            persistent.achievements['herstrip'] = ["Characters", "Dance lessons", "Even elephants have more grace when they're moving, girl.. -Severus Snape", False, "interface/icons/head/head_hermione_2.png", False]
-            persistent.achievements['hertits'] = ["Characters", "Boobs Lover", "*ahem* I mean.. books, yes, books lover!", False, "interface/icons/head/head_hermione_2.png", False]
-            persistent.achievements['headlib'] = ["Characters", "Head Librarian", "Did she just swallow it?", False, "interface/icons/head/head_hermione_2.png", False]
-            persistent.achievements['nerdgasm'] = ["Characters", "Nerdgasm", "Had a very fulfilling moment with Hermione.", False, "interface/icons/head/head_hermione_2.png", False]
-
-        if float(save_internal_version) < 1.371:
-            owl_OBJ.idle_image = "owl_letter"
-            tonks_cloth_garterbase = tonks_cloth_stockingsbase
-
-            achievement_fix()
-
-            save_internal_version = 1.371
-
-        if float(save_internal_version) < 1.372:
-            global ton_mood
-            ton_mood = 0
-
-            save_internal_version = 1.372
-
-        if float(save_internal_version) < 1.373:
-            save_internal_version = 1.373
-
-        if float(save_internal_version) < 1.374:
-            reset_variables("potion_lib")
-
-            if fireplace_xmas_ITEM not in misc_deco_list:
-                misc_deco_list.append(fireplace_xmas_ITEM)
-
-            if phoenix_xmas_ITEM not in misc_deco_list:
-                misc_deco_list.append(phoenix_xmas_ITEM)
-
-            if owl_xmas_ITEM not in misc_hat_list:
-                misc_hat_list.append(owl_xmas_ITEM)
-
-            save_internal_version = 1.374
+        # Apply update to old save
 
         if float(save_internal_version) < 1.381:
 
@@ -102,3 +61,8 @@ init -1 python:
 
         if float(save_internal_version) < 1.383:
             save_internal_version = 1.383
+
+        if float(save_internal_version) < 1.384:
+            save_internal_version = 1.384
+
+            ag_se_imperio_sb.change_icon() # Fill all half hearts

@@ -324,11 +324,75 @@ default her_panties_fishnet = DollCloth("hermione", ("panties", "panties"), "pan
 
 default her_outfit_fishnet = DollOutfit([her_hair_base, her_top_fishnet, her_panties_fishnet], price=500)
 
+###################
+## Winter Outfit ## (Unfinished)
+###################
+
+default her_top_pullover_1 = DollCloth("hermione", ("tops", "school"), "top", "pullover_1", [[255, 123, 207, 255]])
+default her_top_pullover_2 = DollCloth("hermione", ("tops", "school"), "top", "pullover_2", [[255, 123, 207, 255]])
+default her_top_pullover_3 = DollCloth("hermione", ("tops", "school"), "top", "pullover_3", [[255, 123, 207, 255]])
+default her_bottom_winter_1 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "winter_skirt_1", [[192, 31, 30, 255]])
+default her_stockings_pantyhose_1= DollCloth("hermione", ("legwear", "stockings"), "stockings", "pantyhose_1", [[177, 144, 131, 255]])
+default her_stockings_pantyhose_2= DollCloth("hermione", ("legwear", "stockings"), "stockings", "pantyhose_2", [[177, 144, 131, 255]])
+default her_stockings_pantyhose_3= DollCloth("hermione", ("legwear", "stockings"), "stockings", "pantyhose_3", [[177, 144, 131, 255]])
+
+default her_outfit_winter = DollOutfit([her_hair_base, her_top_pullover_1, her_bottom_winter_1, her_stockings_pantyhose_1])
+
+###################
+## Spring Outfit ## TODO: Set levels
+###################
+
+default her_top_ruffled = DollCloth("hermione", ("tops", "school"), "top", "ruffled_top", [[235, 223, 163, 255]], unlocked=True)
+default her_bottom_jeans = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "jeans_1", [[64, 87, 88, 255], [174, 93, 11, 255], [155, 142, 130, 255]], unlocked=True)
+
+default her_outfit_spring = DollOutfit([her_hair_base, her_top_ruffled, her_bottom_jeans])
+
 ##########
 ## MISC ##
 ##########
 
-default her_tattoo3_lockhart = DollCloth("hermione", ("hips", "tattoos"), "tattoo3", "lockhart_tattoo", [[70, 70, 70, 255]], unlocked=False)
-default her_top_ruffled = DollCloth("hermione", ("tops", "school"), "top", "ruffled_top", [[235, 223, 163, 255]], unlocked=True)
 default her_accessory_gift_wrap = DollCloth("hermione", ("misc", "accessory"), "accessory3", "leg_wrap", [[167, 77, 42, 255], [237, 179, 14, 255]], zorder=7, unlocked=True)
 default her_bra_bandaids = DollCloth("hermione", ("bras", "bras"), "bra", "bandaids", [[233, 187, 149, 255]], unlocked=True)
+
+#############
+## Tattoos ##
+#############
+
+# Pelvis/crotch (Slot 0)
+default her_tattoo0_10g = DollCloth("hermione", ("pelvis", "tattoos"), "tattoo0", "10g_tattoo", [[0, 0, 0, 255]], unlocked=True)
+default her_tattoo0_cockhole = DollCloth("hermione", ("pelvis", "tattoos"), "tattoo0", "cockhole_tattoo", [[0, 0, 0, 255]], unlocked=True)
+default her_tattoo0_cumhere = DollCloth("hermione", ("pelvis", "tattoos"), "tattoo0", "cumhere_tattoo2", [[0, 0, 0, 255]], unlocked=True)
+default her_tattoo0_cumslut = DollCloth("hermione", ("pelvis", "tattoos"), "tattoo0", "cumslut_tattoo", [[0, 0, 0, 255]], unlocked=True)
+default her_tattoo0_cunt = DollCloth("hermione", ("pelvis", "tattoos"), "tattoo0", "cunt_tattoo", [[0, 0, 0, 255]], unlocked=True)
+default her_tattoo0_deatheater = DollCloth("hermione", ("pelvis", "tattoos"), "tattoo0", "deatheater_tattoo", [[0, 0, 0, 255]], unlocked=True)
+default her_tattoo0_deposit = DollCloth("hermione", ("pelvis", "tattoos"), "tattoo0", "deposit_tattoo", [[0, 0, 0, 255]], unlocked=True)
+default her_tattoo0_fuckme = DollCloth("hermione", ("pelvis", "tattoos"), "tattoo0", "fuckme_tattoo", [[0, 0, 0, 255]], unlocked=True)
+default her_tattoo0_mudblood = DollCloth("hermione", ("pelvis", "tattoos"), "tattoo0", "mudblood_tattoo", [[0, 0, 0, 255]], unlocked=True)
+default her_tattoo0_nocondom = DollCloth("hermione", ("pelvis", "tattoos"), "tattoo0", "nocondom_tattoo", [[0, 0, 0, 255]], unlocked=True)
+default her_tattoo0_punkblood = DollCloth("hermione", ("pelvis", "tattoos"), "tattoo0", "punkblood_tattoo", [[192, 84, 58, 255], [68, 188, 64, 255]], unlocked=True)
+default her_tattoo0_whore = DollCloth("hermione", ("pelvis", "tattoos"), "tattoo0", "whore_tattoo", [[0, 0, 0, 255]], unlocked=True)
+default her_tattoo0_womb = DollCloth("hermione", ("pelvis", "tattoos"), "tattoo0", "womb_tattoo", [[0, 0, 0, 255]], unlocked=True)
+
+# Breasts/Nipples (Slot 1)
+default her_tattoo1_twist = DollCloth("hermione", ("breasts", "tattoos"), "tattoo1", "twist_tattoo", [[0, 0, 0, 255]], unlocked=True)
+
+# Torso/chest (Slot 2)
+default her_tattoo2_cumhere = DollCloth("hermione", ("torso", "tattoos"), "tattoo2", "cumhere_tattoo1", [[0, 0, 0, 255]], unlocked=True)
+
+# Legs/Thighs (Slot 3)
+default her_tattoo3_lockhart = DollCloth("hermione", ("hips", "tattoos"), "tattoo3", "lockhart_tattoo", [[70, 70, 70, 255]])
+default her_tattoo3_free = DollCloth("hermione", ("hips", "tattoos"), "tattoo3", "free_tattoo", [[0, 0, 0, 255]], unlocked=True)
+
+############
+## Makeup ##
+############
+
+# Face (Slot 0)
+default her_makeup0_freckles = DollCloth("hermione", ("makeup", "slot1"), "makeup0", "freckles1", [[185, 124, 81, 255]], unlocked=True)
+default her_makeup0_freckles_nonose = DollCloth("hermione", ("makeup", "slot1"), "makeup0", "freckles1_nonose", [[185, 124, 81, 255]], unlocked=True)
+
+# Breasts
+default her_makeup1_freckles = DollCloth("hermione", ("makeup", "slot2"), "makeup1", "freckles2", [[185, 124, 81, 255]], unlocked=True)
+
+# Torso
+default her_makeup2_freckles = DollCloth("hermione", ("makeup", "slot3"), "makeup2", "freckles3", [[185, 124, 81, 255]], unlocked=True)

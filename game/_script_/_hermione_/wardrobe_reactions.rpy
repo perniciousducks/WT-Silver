@@ -34,9 +34,6 @@ label hermione_wardrobe_check(section, arg=None):
             return
     else:
         if section == "tabswitch":
-            $ TBA_message()
-            return False
-
             if her_whoring < 12:
                 if wardrobe_chitchats:
                     call her_main("You want me to have piercing and tattoos?", "open", "narrow", "angry", "L")

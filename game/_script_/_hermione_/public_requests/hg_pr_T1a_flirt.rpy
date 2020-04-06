@@ -33,7 +33,7 @@ label hg_pr_flirt:
         call her_main("I'm not even going to ask why you'd be interested in this, [genie_name]...", "annoyed", "squint", "base", "mid")
         call her_main("But why Slytherin?", "open", "base", "worried", "mid")
         her "If you need me to be flirtatious today, I think I can manage that..."
-        her "But, please, can't be another house?"
+        her "But, please, can't it be another house?"
         call her_main("The Gryffindors maybe?", "upset", "wink", "base", "mid")
         m "I am only trying to protect your reputation, [hermione_name]."
         call her_main("[genie_name]?", "soft", "base", "base", "mid")
@@ -154,7 +154,7 @@ label hg_pr_flirt_T1_E1:
     m "And?"
     call play_music("hermione") # Music
     call her_main("He showed me his tongue and ran off, [genie_name].", "normal", "squint", "angry", "mid")
-    m "Did you try to lure him in with a lolipop?"
+    m "Did you try to lure him in with a lollipop?"
     call her_main("I did not, [genie_name]...", "open", "base", "worried", "R")
     her "The thought never crossed my mind, but--"
     m "That was a joke, [hermione_name]."

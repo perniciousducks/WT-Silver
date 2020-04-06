@@ -216,7 +216,7 @@ label panty_raid:
                 call her_main("I am sorry [genie_name]. I wo-", "disgust", "narrow", "worried", "down")
                 call her_main("Wait what?", "shock", "base", "worried", "mid")
                 call her_main("", "soft", "base", "worried", "mid")
-                m "I never imagined you'd posses such \"out of the box\" problem solving!"
+                m "I never imagined you'd possess such \"out of the box\" problem solving!"
                 call her_main("Really?", "open", "base", "worried", "mid")
                 call her_main("", "soft", "base", "worried", "mid")
                 g9 "You fumbled the landing, but otherwise cheated like a pro!"

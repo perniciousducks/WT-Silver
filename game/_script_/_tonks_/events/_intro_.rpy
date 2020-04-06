@@ -191,7 +191,7 @@ label tonks_intro_E1:
             call ton_main("Nonetheless, she was very persistent that certain other teachers weren't behaving as adequately...","open","base","base","mid")
 
         "\"What did she want?\"":
-            call ton_main("Miss Granger wrote about several students, most commonly girls of the Slytherin House, that were inquired to do favours for their male teachers.","open","base","base","R") #Tonks is a hogwarts graduate. Slytherin doesn't need to be in quotations, she knows what it is.
+            call ton_main("Miss Granger wrote about several students, most commonly girls of the Slytherin House, that were inclined to do favours for their male teachers.","open","base","base","R") #Tonks is a hogwarts graduate. Slytherin doesn't need to be in quotations, she knows what it is.
             m "So what?"
             call ton_main("According to her letter, those favours tend to be very \"sexual\" in nature...","base","base","raised","mid", hair="horny")
 
@@ -393,7 +393,7 @@ label ss_he_tonks_E1:
     call sna_main("A girl her age would do anything for attention, is what I'd say...","snape_09")
     call sna_main("Do you think some student's word would be as good as the headmaster's?","snape_02")
     call sna_main("The Headmaster of the most respected educational institution in the country, no less...","snape_37")
-    g4 "I'm the headmaster of the most respected institution of the country!?!"
+    g4 "I'm the headmaster of the most respected institution in the country!?!"
     call sna_main("It is also the only magical institution...","snape_09")
     m "...................................."
 

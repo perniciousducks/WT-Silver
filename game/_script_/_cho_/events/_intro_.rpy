@@ -241,17 +241,17 @@ label cho_intro_E1:
         call cho_main("And so what? What's wrong with being confident about your body...", "open", "narrow", "angry", "L")
         call cho_main("You should try it some time... You might even get a boyfriend one day...", "smile", "narrow", "angry", "L")
         call cho_main("Though what do I know...", "open", "closed", "base", "mid")
-        call cho_main("I didn't need to get my teeth shortened, so I wouldn't be confused as a rabbit!", "open", "narrow", "angry", "L")
+        call cho_main("I didn't need to get my teeth shortened, so I wouldn't be confused for a rabbit!", "open", "narrow", "angry", "L")
         call her_main("...", "normal", "narrow", "angry", "down", cheeks="blush")
         call cho_main("Not that anyone would even see them through that horribly bushy hair of yours...", "smile", "narrow", "angry", "L")
-        call her_main("Well, I heard that you were caught snogging someone in one off the carriages, after the triwizard tournament.", "soft", "closed", "base", "mid", cheeks="blush")
+        call her_main("Well, I heard that you were caught snogging someone in one of the carriages, after the triwizard tournament.", "soft", "closed", "base", "mid", cheeks="blush")
         call her_main("I'm sure that will go down in the Hogwarts book of history...", "grin", "narrow", "base", "mid", cheeks="blush")
         g9 "(How naughty, didn't expect such indecent behaviour from a girl with such a cute face...)"
         call cho_main("Yeah? You ever even kissed a boy before, Granger?", "soft", "narrow", "raised", "L")
         call her_main("", "normal", "base", "worried", "R", cheeks="blush")
         call cho_main("And I'm talking about a real kiss, and not your daddy kissing you good night...", "soft", "narrow", "raised", "L")
         call her_main("Oh...{w=0.5} Of course I have!", "angry", "base", "worried", "R", cheeks="blush")
-        call her_main("Just because I don't jump on every opportunity I get to glimpse at random boys wands...", "soft", "closed", "base", "mid", cheeks="blush")
+        call her_main("Just because I don't jump on every opportunity to glimpse random boys' wands...", "soft", "closed", "base", "mid", cheeks="blush")
         call her_main("Unlike some other girls at this school...", "normal", "narrow", "angry", "L", cheeks="blush")
         call her_main("That doesn't mean I've never kissed anyone...", "soft", "base", "worried", "mid", cheeks="blush")
         g9 "..."
@@ -437,7 +437,7 @@ label cho_intro_E2:
     g4 "(Yikes!)"
     m "I could hear that."
     call cho_main("Good. Then you already know what I'm willing to do if this continues...", "open", "closed", "angry", "mid")
-    call cho_main("If you can't stop her, Professor. Then I will!", "open", "base", "angry", "mid")
+    call cho_main("If you can't stop her, Professor, Then I will!", "open", "base", "angry", "mid")
     call cho_main("And rest assured that I will end her!", "soft", "narrow", "angry", "mid")
 
     menu:
@@ -674,7 +674,7 @@ label cho_intro_E3:
         call her_main("What about her...", "annoyed", "base", "angry", "mid")
         m "Well, it has come to my attention that you've been spreading false rumours about her."
         call her_main("And? It's well deserved in my opinion...", "soft", "narrow", "annoyed", "mid")
-        m "Well, don't you feel like it's unbefitting of you to publicly talk badly about another student."
+        m "Well, don't you feel like it's unbefitting of you to publicly talk badly about another student?"
         call her_main("...", "annoyed", "narrow", "base", "down")
         g9 "Surely that isn't something to expect from Gryffindor's finest.."
         call her_main("Did Cho put you up to this?", "normal", "squint", "base", "mid")
@@ -765,7 +765,7 @@ label cho_intro_E3:
         call her_main("I might consider dropping it.", "base", "base", "base", "R")
         call her_main("Even though it would take away the immense pleasure of seeing Cho getting all worked up about it...", "grin", "base", "base", "mid")
         m "(...)"
-        call her_main("There is something I'd like from you in return, [genie_name].{p=0.8}Or else I'll' just continue with it!", "base", "narrow", "base", "mid_soft")
+        call her_main("There is something I'd like from you in return, [genie_name].{p=0.8}Or else I'll just continue with it!", "base", "narrow", "base", "mid_soft")
         m "Go on girl."
         m "Tell me what you want."
         m "What you really{w}, really want..."

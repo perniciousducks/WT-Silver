@@ -113,8 +113,15 @@ init python:
             """Takes int layer number for manual color picking or a list to replace the cloth color in its entirety."""
             if isinstance(n, int):
                 self.char.override, self.override = True, True
-                x = bool(not self.type.startswith(self.blacklist_unequip) and (config.developer or cheat_wardrobe_alpha))
-                self.color[n] = color_picker(self.color[n], x, "Colour channel {}".format(n+1), pos_xy=(40, 85), color_default=self.color_default[n])
+
+                # Transarency slider boolean
+                is_cheating = config.developer or cheat_wardrobe_alpha
+                is_blacklisted = self.type.startswith(self.blacklist_unequip)
+                is_allowed = self.type.startswith(("makeup", "tattoo"))
+
+                transparency = not is_blacklisted and (is_allowed or is_cheating)
+
+                self.color[n] = color_picker(self.color[n], transparency, "Colour channel {}".format(n+1), pos_xy=(40, 85), color_default=self.color_default[n])
                 self.char.override, self.override = False, False
             elif isinstance(n, list):
                 self.color = [x[:] for x in n]

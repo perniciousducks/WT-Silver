@@ -1025,6 +1025,10 @@ label hg_tutor_E10:
     else:
         call her_main("Touch her pussy like I'm touching mine now.", "silly", "narrow", "base", "up", cheeks="blush")
 
+    if hermione.is_any_worn("clothes"):
+        m "Get rid off the rest of your silly attire."
+        $ hermione.strip("all")
+
     ### Milestone ###
     $ hg_masturbated.triggered()
 

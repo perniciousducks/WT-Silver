@@ -29,7 +29,7 @@ label hg_pf_strip_T2_fingering:
         m "Witcher's promise."
         call her_main("...", "annoyed", "squint", "base", "mid")
     else: # Repeat
-        m "[hermione_name]." 
+        m "[hermione_name]."
         g9 "Why don't you give that lovely pussy of yours a little rub."
         call her_main("Again?", "annoyed", "narrow", "base", "mid")
         call her_main("...", "disgust", "narrow", "base", "down")
@@ -39,23 +39,27 @@ label hg_pf_strip_T2_fingering:
     call her_main("...........", "upset", "base", "base", "mid")
     call her_main("Do you want me to... start?", "soft", "wink", "base", "mid")
     m "When you're ready..."
-    
+
     if hermione.is_worn("panties"):
         m "But why don't we get rid of those panties first."
-        
+
     call her_main("...........", "disgust", "narrow", "base", "down")
-    
+
     if hermione.is_worn("panties"): # Rest of the clothes is taken off during stripping.
         pause 1.0
         $ hermione.strip("panties")
         pause 1.0
-    
+
+    if hermione.is_any_worn("clothes"):
+        m "Now take off the rest."
+        $ hermione.strip("all")
+
     call her_main("(I never would've imagined... To do this in front of my headmaster of all people...)", "normal", "happyCl", "worried", "mid")
 
     $ hermione.set_pose("masturbate")
     $ hermione.set_body(armleft="on_pussy")
     call her_main("", "soft", "closed", "worried", "mid", trans=d3)
-    
+
     $ renpy.play("sounds/slick_02.mp3")
     with hpunch
     pause 1.0
@@ -104,10 +108,10 @@ label hg_pf_strip_T2_fingering:
             call her_main("My classmates win the house cup...", "angry", "wink", "base", "mid")
             g9 "As if that's the only reason..."
             call her_main("I..{w=0.4}*Ah*... of course it...-", "normal", "happyCl", "worried", "mid")
-            
+
             $ hermione.body.body["armright"][1] = 3 # Hacky hacky, sucky sucky, CG better.
             $ hermione.set_body(armleft="on_pussy", armright="on_tits")
-            
+
             call her_main("ah-a{heart}...", "open", "happyCl", "worried", "mid")
             call her_main("What..{w=0.4}*Ah*... other reason would there be for me to...", "angry", "narrow", "base", "down")
             m "It seems to me that you might be enjoying this a little too much..."
@@ -150,7 +154,7 @@ label hg_pf_strip_T2_fingering:
             $ current_payout += 10
             call her_main("...", "normal", "happy", "base", "R")
             call her_main("......", "soft", "happy", "base", "R")
-            
+
             $ hermione.body.body["armright"][1] = 3 # Hacky hacky, sucky sucky, CG better.
             $ hermione.set_body(armleft="on_pussy", armright="on_tits")
 
@@ -193,7 +197,7 @@ label hg_pf_strip_T2_fingering:
             m "Excellent... Just make sure to give me a nice view of that wet pussy!"
             call her_main("[genie_name]!", "open", "base", "angry", "mid", cheeks="blush")
             m "What?"
-            
+
             call her_main("It's not {size=-5}wet...{/size}", "annoyed", "narrow", "worried", "R", cheeks="blush")
             m "Are you sure? Because from where I'm sitting it looks nice and wet."
             call her_main("*Ah*...{heart}", "soft", "narrow", "base", "up", cheeks="blush")
@@ -204,7 +208,7 @@ label hg_pf_strip_T2_fingering:
             play bg_sounds "sounds/slickloopfast.mp3"
             call her_main("{heart}{heart}{heart}", "silly", "narrow", "base", "up_soft", cheeks="blush")
             call her_main("Sir... please...", "open", "narrow", "base", "mid_soft", cheeks="blush")
-            
+
             $ hermione.body.body["armright"][1] = 3 # Hacky hacky, sucky sucky, CG better.
             $ hermione.set_body(armleft="on_pussy", armright="on_tits")
 
@@ -247,34 +251,34 @@ label hg_pf_strip_T2_fingering:
             play bg_sounds "sounds/slickloopveryfast.mp3"
             call her_main("", eyes="happyCl", tears="tears_soft_sweat")
             call nar(">Hermione starts grinding furiously against her hand.")
-            
+
             # Reset pose
             $ hermione.body.body["armright"][1] = 0 # Hacky hacky, sucky sucky, CG better.
             $ hermione.set_body(armleft="down", armright="down")
             $ hermione.set_pose(None)
-            
+
             stop bg_sounds
             call her_main("*SOB!* i can't...", "angry", "happyCl", "base", "down", cheeks="blush", tears="messy")
             m "Well then, zero points to Gryffindor..."
             call her_main("{size=-5}After everything I...{/size} Really [genie_name]?", "open", "base", "worried", "stare", cheeks="blush", tears="messy")
             call her_main("After I stood here and...", "scream", "base", "angry", "mid", cheeks="blush", tears="messy")
             call her_main("..........", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
-            
+
             call blkfade
             hide screen hermione_main
             call her_chibi("stand", "desk", "base")
             $ hermione.wear("all")
             stop music fadeout 2.0
-            
+
             call hide_blkfade
-            
+
             call her_main("I am not going to sell you a single favour anymore, [genie_name]!", "scream", "base", "low", "mid", cheeks="blush", tears="mascara")
-            
+
             call her_walk(action="run", xpos="door", speed=2, reduce=True)
             call her_chibi("leave")
 
             $ her_mood += 15
-            
+
             pause 1.0
             m "..."
             m "We'll see about that."
@@ -285,15 +289,15 @@ label hg_pf_strip_T2_fingering:
             m "It's alright, [hermione_name]."
             call her_main("Really?", "open", "narrow", "worried", "mid", cheeks="blush", tears="crying")
             m "I'm sure you're just a little nervous."
-            
+
             # Reset pose
             $ hermione.body.body["armright"][1] = 0 # Hacky hacky, sucky sucky, CG better.
             $ hermione.set_body(armleft="down", armright="down")
             $ hermione.set_pose(None)
-            
+
             call her_main("Thank you [genie_name].", "base", "base", "worried", "mid", cheeks="blush", tears="soft")
             call her_main("I promise to try harder next time.", "base", "happyCl", "worried", "mid", cheeks="blush")
-            
+
     $ hermione.wear("all")
     jump end_hg_pf_strip
 
@@ -320,6 +324,10 @@ label hg_pf_strip_T3_fingering:
         pause 1.0
         $ hermione.strip("panties")
         pause 1.0
+
+    if hermione.is_any_worn("clothes"):
+        m "Now take off the rest."
+        $ hermione.strip("all")
 
     call her_main("(Okay then, here I go...)", "normal", "happyCl", "worried", "mid")
 
@@ -425,6 +433,10 @@ label hg_pf_strip_T4_fingering:
         $ hermione.strip("panties")
         pause 1.0
 
+    if hermione.is_any_worn("clothes"):
+        m "Now take off the rest."
+        $ hermione.strip("all")
+
     call her_main("(...)", "base", "happyCl", "worried", "mid")
 
     show screen blkfade
@@ -509,10 +521,10 @@ label hg_pf_strip_T4_fingering:
         "\"Play with your tits some more!\"":
             call her_main("Hm?", "soft", "narrow", "annoyed", "up")
             call her_main("Okay...{w=0.4} if you insist...", "open", "base", "base", "R", cheeks="blush")
-            
+
             $ hermione.body.body["armright"][1] = 3
             $ hermione.set_body(armright="on_tits")
-            
+
             call her_main("*Ah*...{heart}", "angry", "wink", "base", "mid")
             m "Now pinch your nipples."
             call her_main("[genie_name]...", "open", "happy", "base", "mid", cheeks="blush")
@@ -545,7 +557,7 @@ label hg_pf_strip_T4_fingering:
     stop bg_sounds
     ">Hermione slowly climbs down from the desk and stands in front of you."
     pause.5
-    
+
     # Both hands down
     $ hermione.body.body["armright"][1] = 0
     $ hermione.set_body(armleft="down", armright="down")
@@ -564,7 +576,7 @@ label hg_pf_strip_T4_fingering:
         m "..."
         "-Grab her tits-":
             call nar(">You reach forward and grab a hold of Hermione's tits.")
-            
+
             call her_chibi_scene("grope_tits")
 
             call her_main("[genie_name]!", "shock", "happyCl", "worried", "mid")
@@ -599,7 +611,7 @@ label hg_pf_strip_T4_fingering:
             call her_chibi_scene("grope_ass_front")
             with vpunch
             $ renpy.play("sounds/slick_02.mp3")
-            
+
             call nar(">You swiftly plunge two fingers into her dripping pussy.")
 
             call her_main("{heart}{heart}{size=+5}!!!{/size}{heart}{heart}", "open_wide_tongue", "narrow", "annoyed", "up")
@@ -690,12 +702,12 @@ label hg_pf_strip_T4_fingering:
     call her_chibi_scene("behind_desk_front")
     show screen bld1
     with d3
-        
+
     # Reset pose
     $ hermione.body.body["armright"][1] = 0
     $ hermione.set_body(armleft="down", armright="down")
     $ hermione.set_pose(None)
-    
+
     m "This shall do for now [hermione_name]."
 
     call her_main("*Ah*...{w=0.4} *Ah*...{heart}", "open", "narrow", "annoyed", "dead", cheeks="blush")

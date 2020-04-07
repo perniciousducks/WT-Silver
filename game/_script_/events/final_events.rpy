@@ -163,6 +163,10 @@ label ball_quest_E1:
     label .choices2:
 
     if d_flag_01 and d_flag_02:
+        if hermione.is_any_worn("clothes"):
+            m "Now take off everything else you're wearing."
+            $ hermione.strip("all")
+
         jump ball_quest_E1.after_strip
 
     menu:
@@ -208,7 +212,7 @@ label ball_quest_E1:
                 label .bra:
 
                 call her_main("...", "annoyed", "base", "angry", "R_soft", cheeks="blush")
-                $ hermione.strip("bra", "accessory")
+                $ hermione.strip("bra")
                 pause.5
 
             call her_main("", "soft", "base", "base", "R_soft", cheeks="blush")
@@ -261,7 +265,7 @@ label ball_quest_E1:
                 label .panties:
 
                 call her_main("...", "normal", "base", "low", "R_soft", cheeks="blush")
-                $ hermione.strip("panties", "accessory")
+                $ hermione.strip("panties")
                 pause.5
 
             call her_main("", "annoyed", "base", "base", "R_soft", cheeks="blush")

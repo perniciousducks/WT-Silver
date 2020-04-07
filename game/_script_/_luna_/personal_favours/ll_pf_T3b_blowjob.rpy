@@ -1274,6 +1274,9 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG(pos=10)
     $ hermione.strip("panties")
     pause 0.5
+    if hermione.is_any_worn("clothes"):
+        $ hermione.strip("all")
+        pause 0.5
     $ lunCG(pos=12)
     call her_main("So... who's hiding under the desk?", "smile", "narrow", "base", "down")
     $ lunCG(pos=9)

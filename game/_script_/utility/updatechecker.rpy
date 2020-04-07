@@ -25,7 +25,10 @@ init -1 python:
     def check_save_compatibility(slot, page=None):
         save_version = FileJson(slot, "_version", missing=0, page=page)
         if save_version is not None:
-            return float(save_version) >= compatible_version # float(config.version)
+            try:
+                return float(save_version) >= compatible_version
+            except ValueError: # (Old version fallback with letters)
+                return False
         else:
             return True # Slot is empty
 

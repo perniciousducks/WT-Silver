@@ -189,9 +189,15 @@ init python:
 
         def is_any_worn(self, *args):
             """Takes arguments containing string cloth types. Returns True if ANY of them is worn, False otherwise."""
-            for arg in args:
-                if self.is_worn(arg):
-                    return True
+            if "clothes" in args:
+                for k, v in self.clothes.iteritems():
+                    if not k.startswith(self.blacklist_toggles):
+                        if self.is_worn(k):
+                            return True
+            else:
+                for arg in args:
+                    if self.is_worn(arg):
+                        return True
             return False
 
         def set_face(self, **kwargs):

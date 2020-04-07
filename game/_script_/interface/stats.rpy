@@ -133,7 +133,6 @@ label stats_menu(xx=150, yy=90):
     with d3
 
     label .after_init:
-    $ renpy.block_rollback()
     $ _return = ui.interact()
 
     if _return[0] == "category":

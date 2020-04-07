@@ -81,10 +81,12 @@ label wardrobe(char_label):
             $ renpy.play('sounds/click3.mp3')
             if "head" in wardrobe_categories_sorted:
                 $ wardrobe_categories_sorted = ("face", "torso", "hips", "legs", "makeup", "breasts", "pelvis", "misc")
-                $ char_active.strip("top", "bottom", "robe", "bra", "panties", "accessory")
+                $ char_active.strip("all")
+                $ char_active.strip("accessory")
             else:
                 $ wardrobe_categories_sorted = ("head", "tops", "bottoms", "legwear", "makeup", "bras", "panties", "misc")
-                $ char_active.wear("top", "bottom", "robe", "bra", "panties", "accessory")
+                $ char_active.wear("all")
+                $ char_active.wear("accessory")
     elif _return == "studio":
         $ renpy.play('sounds/click3.mp3')
         call studio(char_label)

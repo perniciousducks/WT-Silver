@@ -34,7 +34,6 @@ label door_menu(xx=723, yy=90):
     show screen door_menu(xx, yy)
     with d3
 
-    #$ renpy.block_rollback()
     $ _return = ui.interact()
 
     if _return[0] == "summon":

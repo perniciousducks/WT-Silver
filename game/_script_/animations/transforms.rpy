@@ -38,7 +38,15 @@ transform blink:
         alpha 0.0
         pause 0.5
         repeat
-        
+
+transform bob(t=1):
+    subpixel True
+    on show, appear, start:
+        yoffset absolute(0)
+        ease t yoffset absolute(10)
+        ease t yoffset absolute(0)
+        repeat
+
 transform sprite_blink(img):
     choice:
         pause 4

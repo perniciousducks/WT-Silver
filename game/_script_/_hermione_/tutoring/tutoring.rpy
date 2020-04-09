@@ -1624,6 +1624,7 @@ label hg_tutor_E13:
     $ hermione.strip("robe")
 
     call her_chibi("dance","on_desk","on_desk")
+    call her_main(animation=bob)
 
     call hide_blkfade
     pause 1
@@ -1649,6 +1650,7 @@ label hg_tutor_E13:
     call her_main("{size=-2}(*sigh* men...){/size}", "annoyed", "narrow", "base", "up", cheeks="blush")
     call her_main("As you wish my dear {b}old{/b} headmaster.", "open", "happy", "base", "mid", cheeks="blush")
     m "{size=-2}(If you knew how old I actually am...){/size}"
+    call her_main(animation=None)
     hide screen hermione_main
     call blkfade
 

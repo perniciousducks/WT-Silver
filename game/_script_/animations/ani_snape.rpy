@@ -9,7 +9,7 @@ image ch_sna walk:
     "characters/snape/chibis/snape_03.png"
     pause .18
     repeat
-    
+
 image ch_sna stand:
     "characters/snape/chibis/snape_stand.png"
 
@@ -17,11 +17,9 @@ image ch_sna stand_shocked:
     "characters/snape/chibis/shocked/01.png"
 
 image ch_sna hold_dick:
-    yoffset -120
     "characters/snape/chibis/masturbating/02.png"
 
 image ch_sna jerk_off:
-    yoffset -120
     "characters/snape/chibis/masturbating/01.png"
     pause .2
     "characters/snape/chibis/masturbating/02.png"
@@ -38,7 +36,7 @@ image ch_sna cum:
         "ch_sna jerk_off"
     contains:
         zoom 2
-        yoffset -480
+        yoffset -360
         xoffset -980
         alpha 1
         "characters/snape/chibis/masturbating/sperm_01.png"
@@ -84,11 +82,10 @@ image ch_sna cum:
 image ch_sna cum_done:
     size (300,500)
     contains:
-        yoffset -120
         "characters/snape/chibis/masturbating/02.png"
     contains:
         zoom 2
-        yoffset -480
+        yoffset -360
         xoffset -980
         "characters/snape/chibis/masturbating/sperm_18.png"
 

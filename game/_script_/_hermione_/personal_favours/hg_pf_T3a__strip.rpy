@@ -1,5 +1,7 @@
 ### Hermione Dance ###
 
+#TODO Add her_main(animation=bob) to parts where she's dancing
+
 label hg_pf_strip:
 
     if hg_pf_strip.counter < 1:

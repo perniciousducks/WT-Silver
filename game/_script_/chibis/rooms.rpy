@@ -16,7 +16,7 @@ init python:
         "cupboard": (260, None),
 
         # for snape
-        "desk_close": (425, 495),
+        "desk_close": (425, 435),
     })
 
     ChibiRoom("quidditch_pitch", 1.4, {

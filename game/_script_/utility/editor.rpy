@@ -112,7 +112,7 @@
 
             # Lookup transform name
             if not self.args["animation"] in (False, None):
-                _transforms = dict([(obj, name) for (name, obj) in store.__dict__.iteritems() if name in self.transforms])
+                _transforms = dict([(obj, name) for (name, obj) in store.__dict__.iteritems() if isinstance(obj, renpy.atl.ATLTransformBase)])
                 self.args["animation"] = _transforms[self.args["animation"]]
 
             # Read file and find the line in question

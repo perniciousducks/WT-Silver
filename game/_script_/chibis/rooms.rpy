@@ -1,20 +1,22 @@
 init python:
     ChibiRoom("main_room",  1.0, {
-        "base": (None, 250+180), # sna: y 190 (240/245?) gen: y 190
-        "mid": (540, None), # cho: x 560 lun: x 580 sna: x 500 gen: x 500
+        "base": (None, 430),
+        "back": (None, 400),
+        "mid": (540, None),
         "desk": (440, None),
         "right": (620, None),
-        "on_desk": (350, 180+180+5),
-        "behind_desk": (210, 190+250), # def: x 210, y 260
+        "by_desk": (335, None),
+        "on_desk": (350, 365),
+        "behind_desk": (210, 440),
         "door": (750, None),
 
         # for genie
         "left": (100, None),
-        "fireplace": (550, 160+250),
+        "fireplace": (550, 410),
         "cupboard": (260, None),
 
         # for snape
-        "desk_close": (425, 245+250),
+        "desk_close": (425, 495),
     })
 
     ChibiRoom("quidditch_pitch", 1.4, {

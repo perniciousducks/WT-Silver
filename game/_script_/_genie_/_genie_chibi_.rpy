@@ -11,6 +11,7 @@
 # Note: The flip parameter defaults to True, because Genie is most often facing right
 label gen_chibi(action=None, xpos=None, ypos=None, flip=True, pic=None):
     hide screen favor # screen tag
+    hide screen luna_chibi_scene # screen tag
 
     #TODO Check if needed. These hide screen calls are not in other chibi labels
     # hide screen blktone

@@ -20,40 +20,16 @@ label lun_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
     if emote == None:
         $ emote = "blank"
 
-    #Positioning
-    if xpos != None:
-        if xpos in ["base","default"]:     # All the way to the right.
-            $ luna_xpos = 640
-        elif xpos == "mid":                # Centered.
-            $ luna_xpos = 300
-        elif xpos == "right":              # Bit more to the right.
-            $ luna_xpos = 400
-        elif xpos in ["wardrobe","close"]:
-            $ luna_xpos = 540
-        else:
-            $ luna_xpos = int(xpos)
+    if xpos:
+        $ luna_xpos = int(sprite_pos["x"].get(xpos, xpos))
 
-    if ypos != None:
-        if ypos in ["base","default"]:
-            $ luna_ypos = 0
-            $ luna_scaleratio = 2
-            $ luna_zorder = 15
-            $ use_luna_head = False
-        elif ypos in ["head"]:
-            # Use ypos="head" to activate her head position.
-            # Use ypos="base" to disable it.
-            # Use ypos="200" or any other number to move her head up or down.
+    if ypos:
+        if ypos == "head":
             $ use_luna_head = True
-            $ luna_scaleratio = 2
+        elif ypos in ("base", "default"):
+            $ use_luna_head = False
 
-            if luna_flip == -1: #Flipped
-                $ luna_xpos = 620
-            else:
-                $ luna_xpos = 590
-            $ luna_ypos = 230
-            $ luna_zorder = 18
-        else:
-            $ luna_ypos = int(ypos)
+        $ luna_ypos = int(sprite_pos["y"].get(ypos, ypos))
 
     if face != None:
         if mouth == None:

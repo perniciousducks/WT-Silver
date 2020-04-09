@@ -1,4 +1,6 @@
 label lun_chibi(action=None, xpos=None, ypos=None, flip=False):
+    hide screen luna_chibi_scene # screen tag
+
     $ luna_chibi.position(xpos, ypos, flip)
 
     if action == "hide":
@@ -16,7 +18,7 @@ label lun_chibi(action=None, xpos=None, ypos=None, flip=False):
     elif action == "reset":
         $ luna_chibi.do(None)
         return
-    
+
     $ luna_chibi.do(action)
 
     return
@@ -74,7 +76,7 @@ init python:
                 chibi["base"] = "ch_lun blink_topless"
             elif not luna_wear_top and not luna_wear_bottom:
                 chibi["base"] = "ch_lun blink_n"
-            elif luna_wear_robe:        
+            elif luna_wear_robe:
                 chibi["base"] = "ch_lun blink_robe"
         else:
             # Assume chibi action has a matching image definition

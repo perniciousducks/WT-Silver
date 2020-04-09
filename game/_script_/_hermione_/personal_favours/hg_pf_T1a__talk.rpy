@@ -488,9 +488,9 @@ label hg_pf_talk_T3:
         call play_music("playful_tension")
         if her_tier <= 4:
             $ her_mood = +7
-            call her_main("[genie_name]...{w} did you just..?", "disgust", "narrow", "base", "down", ypos="head")
+            call her_main("[genie_name]...{w} did you just..?", "disgust", "narrow", "base", "down")
         else:
-            call her_main("[genie_name]...{w} did you just..?", "soft", "narrow", "worried", "down", ypos="head")
+            call her_main("[genie_name]...{w} did you just..?", "soft", "narrow", "worried", "down")
 
         call hide_characters
         hide screen bld1
@@ -501,7 +501,7 @@ label hg_pf_talk_T3:
         pause.5
 
         if her_tier <= 4:
-            call her_main("*Yuck!*...", "annoyed", "narrow", "base", "mid_soft", ypos="head")
+            call her_main("*Yuck!*...", "annoyed", "narrow", "base", "mid_soft")
         call bld
         m "That felt amazing..."
         call her_main("...", "base", "narrow", "base", "mid_soft", xpos="mid", ypos="base")

@@ -147,6 +147,20 @@ image ch_lun blink_robe:
     pause 3
     repeat
 
+image ch_lun_scene sit_on_lap:
+    zoom 0.5
+    contains:
+        "characters/genie/chibis/jerk_off_behind_desk/desk_01.png"
+    contains:
+        "characters/luna/chibis/sit_on_lap.png"
+
+image ch_lun_scene sit_on_lap_grope:
+    zoom 0.5
+    contains:
+        "ch_gen jerk_off_behind_desk"
+    contains:
+        "characters/luna/chibis/sit_on_lap.png"
+
 # Luna CG
 
 image luna_bj_loop_1:

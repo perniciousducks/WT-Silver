@@ -23,7 +23,7 @@ screen list_menu(menu_id, title, toggle_names=tuple(), menu_groups=[]):
     default menu_items = []
     $ menu_items = list(itertools.chain.from_iterable([menu_groups[i] for i in sorted(toggles) if i < len(menu_groups)]))
 
-    default items_shown = 4    
+    default items_shown = 4
     default max_page = 0
     $ max_page = max(0, (len(menu_items)-1)/items_shown)
     $ current_page = min(current_page, max_page)
@@ -309,14 +309,9 @@ screen clothing_menu(menu_items, character, preview):
             text preview.get_name() xpos 83 ypos 458 size 16
             text preview.get_description() xpos 85 ypos 490 size 12
             text preview.get_type() xpos 509 ypos 458 size 16
-
-            for i in xrange(0,len(preview.get_items() )):
-                $ row = i % 3
-                $ col = i % 2
-                text "+"+preview.get_items()[i] xpos 511+(80*col) ypos (490+(12*row)) size 12
-
+            text ", ".join(preview.get_items()) pos (511, 490) xmaximum 180 size 12
             text preview.get_wait_time() xpos 83 ypos 557 size 16
-            text "Gold: "+preview.get_cost() xpos 509 ypos 557 size 16
+            text "Price: "+preview.get_cost() xpos 509 ypos 557 size 16
 
         #Mannequin Display Panels.
         $ page_offset = current_page*items_shown

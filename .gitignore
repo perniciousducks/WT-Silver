@@ -38,7 +38,6 @@ pip-log.txt
 # Ren'py data
 game/saves/
 game/cache/
-game/outfits
 
 # Ren'py logs
 traceback.txt

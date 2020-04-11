@@ -97,6 +97,14 @@ default her_bra_bikini2 = DollCloth("hermione", ("bras", "bras"), "bra", "bikini
 
 default her_outfit_bikini2 = DollOutfit([her_hair_base, her_panties_bikini2, her_bra_bikini2], price=500)
 
+#########################
+## Sling Bikini Outfit ## TODO: Set levels
+#########################
+default her_panties_bikini3 = DollCloth("hermione", ("panties", "panties"), "panties", "sling_panties", [[48, 69, 164, 255], [212, 164, 32, 255]])
+default her_bra_bikini3 = DollCloth("hermione", ("bras", "bras"), "bra", "sling_bra", [[48, 69, 164, 255], [212, 164, 32, 255]])
+
+default her_outfit_bikini3 = DollOutfit([her_hair_base, her_panties_bikini3, her_bra_bikini3], price=500)
+
 #################
 ## Maid Outfit ##
 #################
@@ -346,6 +354,15 @@ default her_top_ruffled = DollCloth("hermione", ("tops", "school"), "top", "ruff
 default her_bottom_jeans = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "jeans_1", [[64, 87, 88, 255], [174, 93, 11, 255], [155, 142, 130, 255]], unlocked=True)
 
 default her_outfit_spring = DollOutfit([her_hair_base, her_top_ruffled, her_bottom_jeans])
+
+###################
+## Casual Outfit ## TODO: Set levels
+###################
+
+default her_top_casual1 = DollCloth("hermione", ("tops", "school"), "top", "casual_top_1", [[116, 18, 48, 255], [60, 111, 66, 255]], unlocked=True)
+default her_top_casual2 = DollCloth("hermione", ("tops", "school"), "top", "casual_top_2", [[116, 18, 48, 255]], unlocked=True)
+
+default her_outfit_casual = DollOutfit([her_hair_base, her_top_casual1])
 
 ##########
 ## MISC ##

@@ -123,6 +123,8 @@ label wardrobe(char_label):
     elif _return == "import":
         menu:
             "Import from PNG file" if not renpy.variant('android'):
+                #call file_explorer # Unfinished
+
                 $ txt_filename = "exported"
                 $ txt_filename = renpy.input("Filename", txt_filename, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#&_- ", length=64)
                 $ getattr(renpy.store, active_girl[:3]+"_outfit_last").import_data(True, txt_filename)

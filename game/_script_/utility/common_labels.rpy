@@ -194,6 +194,10 @@ label play_sound(sound=""):
     if sound in ["glass_break","glass"]:
         $ renpy.play('sounds/glass_break.mp3')
 
+    # Undefined sounds fallback
+    if renpy.loadable("sounds/{}.mp3".format(sound)):
+        $ renpy.play("sounds/{}.mp3".format(sound))
+
     return
 
 #TODO One keyword per theme (maybe define everything in a dictionary to simplify code further?)

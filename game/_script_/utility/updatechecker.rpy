@@ -73,3 +73,9 @@ init -1 python:
             # Add neck layer to Tonks chibi
             tonks_chibi.layers_order = ["fix", "base", "bottom", "shoes", "top", "robe", "gloves", "neck"]
             tonks_chibi.layers["neck"] = None
+
+            # Replace current/default hair on Tonks doll
+            reset_variables("tonks_haircolor")
+            ton_outfit_default.group[0] = ton_hair_base_new.clone()
+            ton_outfit_last.group[0] = ton_hair_base_new.clone()
+            tonks.equip(ton_hair_base_new)

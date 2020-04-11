@@ -6,7 +6,7 @@ default tonks_flip = 1
 default use_tonks_head = False
 default tonks_animation = None
 
-default tonks_haircolor = [[243, 158, 189, 255]]
+default tonks_haircolor = [[243, 158, 189, 255], [254, 218, 238, 255]]
 
 # Stats
 default ton_tier           = 1
@@ -14,7 +14,7 @@ default ton_friendship     = 0 #Max is 100.
 default ton_support        = 0
 default ton_reputation     = 0
 default ton_clothing_level = 100
-default ton_mood           = 0 
+default ton_mood           = 0
 
 # Flags
 default tonks_busy              = False

@@ -68,23 +68,21 @@ label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, h
             if hair in ("neutral", "basic", "reset"):
                 target_color = tonks_haircolor
             elif hair in ("red", "angry", "furious"):
-                target_color = [[164, 34, 34, 255]]
+                target_color = [[164, 34, 34, 255], [236, 156, 156, 255]]
             elif hair in ("orange", "upset", "annoyed"):
-                target_color = [[228, 93, 34, 255]]
+                target_color = [[228, 93, 34, 255], [246, 193, 170, 255]]
             elif hair in ("yellow", "happy", "cheerful"):
-                target_color = [[255, 213, 23, 255]]
+                target_color = [[255, 213, 23, 255], [255, 239, 167, 255]]
             elif hair in ("green", "disgusted"):
-                target_color = [[111, 205, 75, 255]]
+                target_color = [[111, 205, 75, 255], [200, 237, 186, 255]]
             elif hair in ("blue", "sad"):
-                target_color = [[64, 75, 205, 255]]
+                target_color = [[64, 75, 205, 255], [182, 186, 237, 255]]
             elif hair in ("purple"):
-                target_color = [[205, 75, 205, 255]]
+                target_color = [[205, 75, 205, 255], [237, 186, 237, 255]]
             elif hair in ("white", "scared"):
-                target_color = [[238, 238, 241, 255]]
+                target_color = [[238, 238, 241, 255], [249, 249, 250, 255]]
             elif hair in ("pink", "horny"):
-                target_color = [[242, 126, 168, 255]]
-            else: # RANDOM limited from 50 to 235 for better outcome
-                target_color = [[random.randint(50, 235), random.randint(50, 235), random.randint(50, 235), 255]]
+                target_color = [[242, 126, 168, 255], [251, 205, 222, 255]]
 
         tonks.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
 

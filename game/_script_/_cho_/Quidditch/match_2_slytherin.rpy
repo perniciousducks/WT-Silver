@@ -551,7 +551,7 @@ label slytherin_match:
     stop music fadeout 2
     pause 0.5
     $ renpy.sound.play("sounds/crowd_gasp.mp3")
-    call ton_chibi("slack_jaw", 200, 50+180, flip=True)
+    call ton_chibi("stand_shocked", 200, 50+180, flip=True)
     call gen_chibi("stand_shocked", 130, 10+250)
     call sna_chibi("stand_shocked", 210, -40+250, flip=True)
     pause 1.0

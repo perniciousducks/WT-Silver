@@ -7,6 +7,13 @@ image spr_tonks blink:
 image ch_ton stand:
     random_blink("characters/tonks/chibis/nt_stand_blink.png", "characters/tonks/chibis/nt_walk_01.png")
 
+image ch_ton stand_shocked:
+    size (200,360)
+    contains:
+        "ch_ton stand"
+    contains:
+        "characters/tonks/chibis/nt_shocked.png"
+
 image ch_ton walk:
     "characters/tonks/chibis/nt_walk_01.png"
     pause.08
@@ -158,9 +165,8 @@ image ch_ton sit_shoes:
 
 image ch_ton sit_top:
     zoom 0.5
+    "characters/tonks/chibis/drinking/nt_top.png"
 
-    contains:
-        "characters/tonks/chibis/drinking/nt_top.png"
-
-image ch_ton slack_jaw:
-    random_blink("characters/tonks/chibis/slack_jaw/nt_stand_02.png", "characters/tonks/chibis/slack_jaw/nt_stand_01.png")
+image ch_ton sit_choker:
+    zoom 0.5
+    "characters/tonks/chibis/drinking/nt_choker.png"

@@ -69,3 +69,7 @@ init -1 python:
             save_internal_version = 1.384
 
             ag_se_imperio_sb.change_icon() # Fill all half hearts
+
+            # Add neck layer to Tonks chibi
+            tonks_chibi.layers_order = ["fix", "base", "bottom", "shoes", "top", "robe", "gloves", "neck"]
+            tonks_chibi.layers["neck"] = None

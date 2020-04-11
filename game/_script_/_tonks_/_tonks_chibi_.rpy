@@ -105,10 +105,12 @@ screen with_tonks_animated():
         add "ch_ton sit_shoes" xpos 610 ypos 175
     if tonks.is_worn("top"):
         add "ch_ton sit_top" xpos 610 ypos 175
+    if tonks.is_worn("neckwear"):
+        add "ch_ton sit_choker" xpos 610 ypos 175
 
 
 # Chibi definition
-default tonks_chibi = Chibi("tonks", ["fix", "base", "bottom", "shoes", "top", "robe", "gloves"], update_tonks_chibi)
+default tonks_chibi = Chibi("tonks", ["fix", "base", "bottom", "shoes", "top", "robe", "gloves", "neck"], update_tonks_chibi)
 
 init python:
     def update_tonks_chibi(chibi):
@@ -122,13 +124,10 @@ init python:
             chibi["top"] = "nt_top.png"
 
         if tonks.is_worn("bottom"):
-            if tonks.get_equipped("bottom").categories[1] == "trousers":
-                if chibi.action == "walk":
-                    chibi["bottom"] = "ch_ton walk trousers"
-                else:
-                    chibi["bottom"] = "nt_trousers.png"
+            if chibi.action == "walk":
+                chibi["bottom"] = "ch_ton walk trousers"
             else:
-                chibi["bottom"] = "nt_skirt.png"
+                chibi["bottom"] = "nt_trousers.png"
 
         if tonks.is_worn("gloves"):
             chibi["gloves"] = "nt_gloves.png"
@@ -141,3 +140,6 @@ init python:
                 chibi["shoes"] = "ch_ton walk shoes"
             else:
                 chibi["shoes"] = "nt_shoes.png"
+
+        if tonks.is_worn("neckwear"):
+            chibi["neck"] = "nt_choker.png"

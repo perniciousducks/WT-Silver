@@ -276,7 +276,7 @@ screen wardrobe_menu(xx, yy):
             $ cat_col = i % 4
             if current_category == category:
                 add "interface/wardrobe/{}/frame.png".format(interface_color) xpos 14+411*cat_row ypos 80+110*cat_col zoom 0.5
-                add "interface/wardrobe/icons/{}/categories/{}.png".format(active_girl, category) xpos 14+411*cat_row ypos 80+110*cat_col zoom 0.5
+                add "interface/wardrobe/icons/categories/{}/{}.png".format(active_girl, category) xpos 14+411*cat_row ypos 80+110*cat_col zoom 0.5
                 button:
                     style "empty"
                     pos (14+411*cat_row, 80+110*cat_col)
@@ -285,7 +285,7 @@ screen wardrobe_menu(xx, yy):
                     action Return(["category", category])
             else:
                 add "interface/wardrobe/{}/frame.png".format(interface_color) xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
-                add "interface/wardrobe/icons/{}/categories/{}.png".format(active_girl, category) xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
+                add "interface/wardrobe/icons/categories/{}/{}.png".format(active_girl, category) xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
                 button:
                     style "empty"
                     pos (61+377*cat_row, 80+110*cat_col)
@@ -457,7 +457,10 @@ screen wardrobe_menuitem(xx, yy):
         # Add subcategory list
         if len(category_items) > 0:
             for i, subcategory in enumerate(category_items.keys()):
-                add "interface/wardrobe/icons/{}/{}_{}.png".format(active_girl, current_category, subcategory) ypos 86 xpos 10+(90*i) zoom 0.2
+                if current_subcategory == subcategory:
+                    add "interface/wardrobe/icons/{}.png".format(subcategory) ypos 95 xpos 19+(90*i) zoom 0.8
+                else:
+                    add image_alpha("interface/wardrobe/icons/{}.png".format(subcategory), 0.65) ypos 95 xpos 19+(90*i) zoom 0.8
                 button:
                     style "empty"
                     pos (10+90*i, 86)
@@ -588,7 +591,10 @@ screen wardrobe_outfit_menuitem(xx, yy):
 
         # Add subcategory list
         for i, subcategory in enumerate(category_items):
-            add "interface/wardrobe/icons/"+current_category+"_"+subcategory+".png" ypos 88 xpos 10+(90*i) zoom 0.2
+            if current_subcategory == subcategory:
+                add "interface/wardrobe/icons/outfits/"+subcategory+".png" ypos 95 xpos 19+(90*i) zoom 0.8
+            else:
+                add image_alpha("interface/wardrobe/icons/outfits/"+subcategory+".png") ypos 95 xpos 19+(90*i) zoom 0.8
             button:
                 style "empty"
                 pos (10+90*i, 86)
@@ -644,7 +650,7 @@ screen wardrobe_outfit_menuitem(xx, yy):
                             spacing 5
                             xpos 5
                             for x in wardrobe_outfit_schedule:
-                                $ _ico = "interface/wardrobe/icons/"+x.lower()+".png"
+                                $ _ico = "interface/wardrobe/icons/outfits/"+x.lower()+".png"
                                 $ _bool = str(menu_items[i].schedule[x.lower()])
 
                                 if x in ("Day", "Night"):

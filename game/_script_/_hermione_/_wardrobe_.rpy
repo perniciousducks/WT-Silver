@@ -397,7 +397,7 @@ default her_tattoo1_twist = DollCloth("hermione", ("breasts", "tattoos"), "tatto
 default her_tattoo2_cumhere = DollCloth("hermione", ("torso", "tattoos"), "tattoo2", "cumhere_tattoo1", [[0, 0, 0, 255]], unlocked=True)
 
 # Legs/Thighs (Slot 3)
-default her_tattoo3_lockhart = DollCloth("hermione", ("hips", "tattoos"), "tattoo3", "lockhart_tattoo", [[70, 70, 70, 255]])
+default her_tattoo3_lockhart = DollCloth("hermione", ("legs", "tattoos"), "tattoo3", "lockhart_tattoo", [[70, 70, 70, 255]])
 default her_tattoo3_free = DollCloth("hermione", ("hips", "tattoos"), "tattoo3", "free_tattoo", [[0, 0, 0, 255]], unlocked=True)
 
 ############

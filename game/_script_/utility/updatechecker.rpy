@@ -66,7 +66,6 @@ init -1 python:
             save_internal_version = 1.383
 
         if float(save_internal_version) < 1.384:
-            save_internal_version = 1.384
 
             ag_se_imperio_sb.change_icon() # Fill all half hearts
 
@@ -79,3 +78,15 @@ init -1 python:
             ton_outfit_default.group[0] = ton_hair_base_new.clone()
             ton_outfit_last.group[0] = ton_hair_base_new.clone()
             tonks.equip(ton_hair_base_new)
+
+            # Valuefix
+            if twins_profit > 1.2:
+                twins_profit = 1.2
+
+            # Clothes
+            reset_variables("outfit_linking", "hermione_outfits_list")
+            cho_panties_sport1.armfix = True
+            cho_panties_sport1.rebuild_image()
+            cho.rebuild_image()
+
+            save_internal_version = 1.384

@@ -125,7 +125,11 @@ init python:
         elif game_difficulty == 2:
             # Normal
             # Fair diminishing returns, soft rubber banding. High chance for item drop. (Recommended)
-            if gold < int(120 * math.log(day)) and random_percent <= 38 - dr:
+            if not firewhisky_ITEM.unlockable and firewhisky_ITEM.number < 1 and random_percent <= 50:
+                return firewhisky_ITEM
+            elif wine_ITEM.number < 1 and random_percent <= 50:
+                return wine_ITEM
+            elif gold < int(120 * math.log(day)) and random_percent <= 38 - dr:
                 return int(progress_factor * random_gold)
             else:
                 filtered_list = filter(lambda x: x.number <= 3, drop_list)

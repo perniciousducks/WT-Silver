@@ -202,10 +202,10 @@ label update_ton_requests:
 
 label tonks_talk:
     menu:
-        "-Ask about outfit upgrades-" (icon="interface/icons/small/wardrobe.png"):
-            # TODO: Comment out in case it doesn't get finished.
-            call clothing_upgrades
-            jump tonks_requests
+        # TODO: Finish up
+        # "-Ask about outfit upgrades-" (icon="interface/icons/small/wardrobe.png"):
+            # call clothing_upgrades
+            # jump tonks_requests
 
         "-Ask for help with Quidditch-" (icon="interface/icons/small/quidditch.png") if cho_quid.lock_practice and cc_st.match_counter == 1:
             m "Got a moment?"

@@ -23,7 +23,7 @@ define achievements_dict = {"unlockher": ["Characters", "Granger Danger", "Award
                                    "decorator": ["Cardgame", "Decorator", "Applied decoration in the office.", False, "interface/icons/trophies/stag.png", False],
                                    "flashback": ["Cardgame", "Flashback", "Totally what happened...", False, "interface/icons/cards.png", True],
                                    "start": ["General", "Welcome to Hogwarts!", "Awarded upon finishing the intro.", False, "interface/icon.png", False],
-                                   "export": ["General", "Sharing is caring", "Exported an outfit through the wardrobe menu.", False, "interface/wardrobe/icons/outfits_load.png", False],
+                                   "export": ["General", "Sharing is caring", "Exported an outfit through the wardrobe menu.", False, "interface/wardrobe/icons/outfits/load.png", False],
                                    "Credits":  ["General", "New game, who this?", "Checked out the Credits Menu", False, "interface/icons/item_scroll_silver.png", False],
                                    "Cardwin":  ["Cardgame", "Time to duel", "Awarded for winning your first Cardgame duel", False, "interface/icons/cards.png", False],
                                    "puzzle": ["General", "Down the hatch!", "Wasted a bottle of unbelievably rare phoenix tears by drinking it.", False, "interface/icons/item_potion.png", True],

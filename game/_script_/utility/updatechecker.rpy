@@ -89,4 +89,6 @@ init -1 python:
             cho_panties_sport1.rebuild_image()
             cho.rebuild_image()
 
+            achievement_fix()
+
             save_internal_version = 1.384

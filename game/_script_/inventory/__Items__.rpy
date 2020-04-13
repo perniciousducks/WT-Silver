@@ -449,7 +449,7 @@ default outfit_linking = {
     hg_slutty_schoolgirl.id:        "her_outfit_slutty_schoolgirl",
     hg_teddy.id:                    "her_outfit_teddy",
     hg_fishnet.id:                  "her_outfit_fishnet",
-    hg_bikini3.id                   "her_outfit_bikini3"
+    hg_bikini3.id:                  "her_outfit_bikini3"
 }
 
 init offset = 0 # back to normal

@@ -2,7 +2,6 @@ define mirror_bg = [None, "images/rooms/room_of_requirement/agrabah.png"]
 default mirror_image = 0
 
 transform mirrage:
-    subpixel True
     on show, appear, start:
         alpha 0.0
         linear 0.5 alpha 1.0

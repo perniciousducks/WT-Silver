@@ -78,7 +78,6 @@ label weather_sound:
 
 # Transforms
 transform cloud_move: #http://www.renpy.org/wiki/atl
-    subpixel True
     xpos 520
     choice:
         ypos 150
@@ -96,7 +95,6 @@ transform cloud_move: #http://www.renpy.org/wiki/atl
     repeat
 
 transform cloud_night_move_01: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
-    subpixel True
     xpos 520
     choice:
         ypos 130
@@ -109,7 +107,6 @@ transform cloud_night_move_01: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
     repeat
 
 transform cloud_night_move_02: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
-    subpixel True
     xpos 520
     choice:
         ypos 150
@@ -120,7 +117,6 @@ transform cloud_night_move_02: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
     repeat
 
 transform cloud_night_move_03: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
-    subpixel True
     xpos 520
     ypos 160
     linear 50.0 xpos 280 # linear
@@ -209,7 +205,7 @@ image lightning: #Lightening during rain behind the window.
 screen weather():
     zorder -1
     sensitive False
-    
+
     if daytime:
         if weather_gen < 4:# (cloud across sky)
             add "images/rooms/_weather_/sky.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")

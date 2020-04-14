@@ -16,7 +16,6 @@ transform chibi_walk(start, end, speed):
     linear speed pos end
 
 transform chibi_fly:
-    subpixel True
     block:
         yoffset absolute(0)
         ease 2 yoffset absolute(-10)
@@ -25,7 +24,6 @@ transform chibi_fly:
         repeat
 
 transform chibi_fly_move(start, end, speed):
-    subpixel True
     parallel:
         pos start
         ease_quad speed pos end

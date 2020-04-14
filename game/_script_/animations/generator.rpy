@@ -1,10 +1,9 @@
 image object:
     Null()
-    
+
 transform OBJbutterfly(hue=random.randint(0, 359)):
-    subpixel True
     zoom random.uniform(0.4, 0.85)
-    
+
     choice:
         pause random.randint(1, 7)
         parallel:
@@ -60,7 +59,7 @@ transform OBJbutterfly(hue=random.randint(0, 359)):
             pause .3
             repeat
     repeat
-            
+
 transform OBJcloud(start=(random.randint(270, 800), random.randint(60, 130)), speed=random.randint(60, 180)):
     parallel:
         zoom random.uniform(0.6, 1.0)

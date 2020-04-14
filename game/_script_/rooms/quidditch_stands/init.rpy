@@ -71,7 +71,6 @@ screen bludger_flying(start, end, t=1.0):
 
     add "images/rooms/quidditch_stands/bludger.png":
         at transform:
-            subpixel True
             anchor (0.5, 0.5)
             align (0.5, 0.5)
             pos start

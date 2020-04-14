@@ -21,8 +21,6 @@ image snitch:
     repeat
 
 transform sprite_fly_idle:
-    subpixel True
-
     on show, appear, start:
         yoffset absolute(110)
         ease_back 2.5 yoffset absolute(90)
@@ -30,8 +28,6 @@ transform sprite_fly_idle:
         repeat
 
 transform sprite_zoom_fly(start, value):
-    subpixel True
-
     on show, appear, start:
         parallel:
             zoom start
@@ -50,8 +46,6 @@ transform sprite_zoom_fly(start, value):
             repeat
 
 transform snitch_chased(start, value):
-    subpixel True
-
     on show, appear, start:
         parallel:
             zoom start

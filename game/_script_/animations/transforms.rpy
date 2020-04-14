@@ -5,7 +5,6 @@ transform move_in(x, t):
     pause t
 
 transform move_fade:
-    subpixel True
     on show, appear, start:
         alpha 0.0
         xoffset 200
@@ -40,7 +39,6 @@ transform blink:
         repeat
 
 transform bob(t=1):
-    subpixel True
     on show, appear, start:
         yoffset absolute(0)
         ease t yoffset absolute(10)

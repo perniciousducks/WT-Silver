@@ -54,7 +54,7 @@ image ch_ast wand:
 
     contains:
         random_blink("characters/astoria/chibis/wand/ag_head_02.png", "characters/astoria/chibis/wand/ag_head_01.png")
-        
+
 image ch_ast wand_casting:
     size (350, 360) # Set size when using `contains`, so additional transforms work as expected
     contains:
@@ -68,7 +68,7 @@ image ch_ast wand_casting:
 
     contains:
         random_blink("characters/astoria/chibis/wand_casting/ag_head_02.png", "characters/astoria/chibis/wand_casting/ag_head_01.png")
-        
+
     contains:
         xpos 78
         ypos 78
@@ -76,7 +76,7 @@ image ch_ast wand_casting:
         linear .48 xoffset -10 yoffset 10
         linear .22 xoffset 10 yoffset -10
         repeat
-        
+
 image ch_ast wand_imperio:
     size (350, 360) # Set size when using `contains`, so additional transforms work as expected
     contains:
@@ -90,14 +90,14 @@ image ch_ast wand_imperio:
 
     contains:
         random_blink("characters/astoria/chibis/wand_imperio/ag_head_02.png", "characters/astoria/chibis/wand_imperio/ag_head_01.png")
-        
+
     contains:
         "blank"
         pause.12
         "characters/astoria/chibis/wand_imperio/ag_head_03.png"
         pause 1
         "blank"
-        
+
     contains:
         xpos 78
         ypos 78
@@ -105,30 +105,28 @@ image ch_ast wand_imperio:
         "characters/astoria/chibis/wand_imperio/sparkles.png"
         linear .22 xoffset -10 yoffset 10
         linear 1.0 alpha 0.0 xoffset -80 yoffset -4
-        
+
     contains:
         xpos -28
         ypos 31
         rotate -70
         alpha 0.0
         xzoom 0
-        
+
         pause.24
         alpha 1.0
         "characters/astoria/chibis/wand_imperio/smoke.png"
         linear 1.0 xzoom 1.0 xpos -34 ypos 37
         "blank"
-        
+
     contains:
         xpos -34
         ypos -37
-        
+
         pause 1.24
         "ch_ast imperio_smoke"
-        
+
 image ch_ast imperio_smoke: # Imperio smoke layer
-    subpixel True
-    
     xoffset 0
     yoffset 72
     rotate -70
@@ -137,7 +135,7 @@ image ch_ast imperio_smoke: # Imperio smoke layer
     linear 1.0 alpha 0.7 yzoom 0.85 xoffset 16 yoffset 86
     linear 1.0 alpha 1.0 yzoom 1.0 xoffset 0 yoffset 72
     repeat
-    
+
 image ch_ast imperio_shoes: # Imperio shoes layer
     "characters/astoria/chibis/wand_imperio/ag_shoes.png"
     pause 1.24

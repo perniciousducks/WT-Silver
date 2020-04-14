@@ -264,8 +264,6 @@ screen card_battle(l_playerdeck, l_enemydeck, shown_cards):
     use close_button
 
 transform cardrender_move(xpos_card, ypos_card, start_xy):
-    subpixel True
-
     on start, show:
         pos start_xy
         linear 0.2 xpos absolute(xpos_card) ypos absolute(ypos_card)

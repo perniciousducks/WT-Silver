@@ -1,5 +1,4 @@
 transform crop_meter(fill, opacity):
-    subpixel True
     transform_anchor True
     on show, appear, start:
         alpha opacity

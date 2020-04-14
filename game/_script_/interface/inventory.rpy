@@ -10,14 +10,6 @@ init python:
             item = sorted(item, key=lambda x: x.name)
         return item
 
-transform rotate_circular():
-    subpixel True
-
-    on show, appear, start:
-        rotate 0
-        linear 7.0 rotate 360
-        repeat
-
 ####################################
 ############# Menu #################
 ####################################

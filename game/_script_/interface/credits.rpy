@@ -100,7 +100,6 @@ screen credits(credits=credits_text, duration=credits_duration, chibis=credits_c
 
     text credits:
         at transform:
-            subpixel True
             xalign 0.5
             yanchor 0.0
             ypos (config.screen_height / 2 - 125)

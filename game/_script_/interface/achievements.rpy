@@ -163,8 +163,6 @@ screen achievement_window(string="", title="", icon=None, xpos=0, ypos=60):
     timer 6.0 action Hide("achievement_window")
 
 transform rotate_circular():
-    subpixel True
-
     on show, appear, start:
         rotate 0
         linear 7.0 rotate 360

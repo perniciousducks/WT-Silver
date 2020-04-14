@@ -1,6 +1,4 @@
 transform flytest_anim0:
-    subpixel True
-    
     on show, appear, start:
         xzoom -1.0
         parallel:
@@ -20,8 +18,6 @@ transform flytest_anim0:
             repeat
 
 transform flytest_anim1:
-    subpixel True
-    
     on show, appear, start:
         xzoom -1.0
         parallel:
@@ -38,10 +34,8 @@ transform flytest_anim1:
             easeout_quad 1.5 zoom 0.5
             linear 1.5 zoom 0.01
             repeat
-            
+
 transform flytest_anim2:
-    subpixel True
-    
     on show, appear, start:
         xzoom -1.0
         parallel:
@@ -60,10 +54,8 @@ transform flytest_anim2:
             linear 1.0 rotate -2
             linear 1.0 rotate 2
             repeat
-            
+
 transform flytest_anim3:
-    subpixel True
-    
     on show, appear, start:
         xzoom -1.0
         parallel:
@@ -87,10 +79,8 @@ transform flytest_anim3:
             easeout_expo 0.5 rotate 0
             pause(1.5)
             repeat
-            
+
 transform flytest_anim4:
-    subpixel True
-    
     on show, appear, start:
         xzoom -1.0
         zoom 0.25
@@ -101,10 +91,8 @@ transform flytest_anim4:
         rotate 0
         linear 3.0 radius 200 clockwise circles 1 rotate 360
         repeat
-            
+
 transform flytest_anim5:
-    subpixel True
-    
     on show, appear, start:
         xzoom -1.0
         parallel:
@@ -121,10 +109,8 @@ transform flytest_anim5:
             linear 1.5 xoffset absolute(300)
             linear 1.5 xoffset absolute(-300)
             repeat
-            
+
 transform flytest_anim6:
-    subpixel True
-    
     on show, appear, start:
         xzoom -1.0
         parallel:
@@ -148,8 +134,6 @@ transform flytest_anim6:
             repeat
 
 transform flytest_anim7:
-    subpixel True
-    
     on show, appear, start:
         xzoom -1.0
         zoom 0.25
@@ -159,10 +143,8 @@ transform flytest_anim7:
         easein_back 0.5 yoffset absolute(100) rotate 15
         easein_back 0.5 yoffset absolute(0) rotate 0
         repeat
-            
+
 transform flytest_anim8:
-    subpixel True
-    
     on show, appear, start:
         xzoom -1.0
         zoom 0.01
@@ -173,10 +155,8 @@ transform flytest_anim8:
         easein_back 1.0 xoffset absolute(0) yoffset absolute(120) rotate 0
         ease_back 2.5 yoffset absolute(90)
         ease_back 2.5 yoffset absolute(110)
-            
+
 transform flytest_anim9:
-    subpixel True
-    
     on show, appear, start:
         xzoom -1.0
         zoom 0.5
@@ -184,10 +164,8 @@ transform flytest_anim9:
         ease_back 2.5 yoffset absolute(90)
         ease_back 2.5 yoffset absolute(110)
         repeat
-            
+
 transform flytest_anim10:
-    subpixel True
-    
     on show, appear, start:
         zoom 0.25
         xzoom -1.0
@@ -200,10 +178,8 @@ transform flytest_anim10:
         xzoom 1.0
         linear 4.0 radius 700 counterclockwise circles 1 rotate 0
         repeat
-            
+
 transform flytest_anim11:
-    subpixel True
-    
     on show, appear, start:
         parallel:
             xoffset -700
@@ -224,24 +200,24 @@ transform flytest_anim11:
             linear 2.0 rotate -10
             linear 2.0 rotate 10
             repeat
-            
+
 ##############################
 ########### EVENT ############
 ##############################
 
 label flytest_cho:
-    
+
     # Equip quidditch outfit and set quidditch animations
     $ cho.equip(cho_outfit_quidditch)
     $ cho.animation("quid", (233, -78)) # <- Prepares cho for animating
-    
+
     show screen flytest
-    
+
     call cho_main("...{w=3.5} Hello professor.","base","base","base","mid", animation=flytest_anim8) #<--- transform_name
-    call cho_main("I'm glad you decided to show up today, sir.","base","base","base","mid", animation=flytest_anim9) 
+    call cho_main("I'm glad you decided to show up today, sir.","base","base","base","mid", animation=flytest_anim9)
     call cho_main("bla bla bla","base","base","base","mid") # it retains previously set animation
-    call cho_main("bla","base","base","base","mid") 
-    call cho_main("bla bla","base","base","base","mid") 
+    call cho_main("bla","base","base","base","mid")
+    call cho_main("bla bla","base","base","base","mid")
     call cho_main("bla","base","base","base","mid", animation=None) # If you want to disable animations completely for this dialog
     # reset everything
     $ cho_animation = None # <- same as above, removes animations completely
@@ -249,20 +225,20 @@ label flytest_cho:
     $ cho.equip(cho_outfit_custom) # <- equip standard school outfit (This will probably get changed so the player equips his old outfit instead
     hide screen flytest
     jump main_room_menu
-    
 
-    
+
+
 screen flytest():
     tag flytest
     zorder 4
-    
+
     add "images/rooms/quidditch_stands/day.png"
-    
+
     vbox:
         textbutton "inc +" xsize 200 ysize 40 action SetVariable("anim_number", clamp(anim_number+1, 0, 11))
         textbutton "dec -" xsize 200 ysize 40 action SetVariable("anim_number", clamp(anim_number-1, 0, 11))
         text "Animation [anim_number]"
-    
+
     #if anim_number == 0:
     #    add cho_class.get_image() align (0.5, 0.5) at flytest_anim0
     #elif anim_number == 1:

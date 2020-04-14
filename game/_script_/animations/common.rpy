@@ -348,7 +348,6 @@ image title_ani:
 
     #sparkle
     contains:
-        subpixel True
         xpos 798
         ypos 200
         xanchor 0.5
@@ -362,7 +361,6 @@ image title_ani:
 
     #shine silver (synchronized)
     contains:
-        subpixel True
         xpos 848
         ypos 230
         xanchor 0.5

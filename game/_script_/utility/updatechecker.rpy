@@ -80,8 +80,8 @@ init -1 python:
             tonks.equip(ton_hair_base_new)
 
             # Valuefix
-            if twins_profit > 1.2:
-                twins_profit = 1.2
+            if renpy.store.twins_profit > 1.2:
+                renpy.store.twins_profit = 1.2
 
             # Clothes
             reset_variables("outfit_linking", "hermione_outfits_list")

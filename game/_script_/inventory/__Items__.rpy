@@ -200,91 +200,91 @@ default scroll_list_C = [
 
 default hg_bikini1 = CostumeItem(
     id="hg_bikini1", name="Rave Bikini", type="outfit", items=["bikini bra","thong"],
-    cost=her_outfit_bikini1.price, wait_time=1, image=her_outfit_bikini1, description="> A Bunch of straps for a bunch of gold!")
+    cost=her_outfit_bikini1.price, wait_time=2, image=her_outfit_bikini1, description="> A Bunch of straps for a bunch of gold!")
 
 default hg_bikini2 = CostumeItem(
     id="hg_bikini2", name="Leather Bikini", type="outfit", items=["bikini bra","thong"],
-    cost=her_outfit_bikini2.price, wait_time=1, image=her_outfit_bikini2, description="> A Bunch of straps for a bunch of gold!")
+    cost=her_outfit_bikini2.price, wait_time=2, image=her_outfit_bikini2, description="> A Bunch of straps for a bunch of gold!")
 
 default hg_maid = CostumeItem(
     id="hg_maid", name="French Maid Costume", type="outfit", items=["top","stockings","hat","choker","gloves"],
-    cost=her_outfit_maid.price, wait_time=1, image=her_outfit_maid, description="> Oui, sir! At once!")
+    cost=her_outfit_maid.price, wait_time=2, image=her_outfit_maid, description="> Oui, sir! At once!")
 
 default hg_bunny = CostumeItem(
     id="hg_bunny", name="Sexy Bunny Costume", type="outfit", items=["top","stockings","hat","bowtie","gloves","tattoo"],
-    cost=her_outfit_bunny.price, wait_time=1, image=her_outfit_bunny, description="> Oui, sir! At once!")
+    cost=her_outfit_bunny.price, wait_time=2, image=her_outfit_bunny, description="> Oui, sir! At once!")
 
 default hg_ball = CostumeItem(
     id="hg_ball", name="Classy Ball Dress", type="outfit", items=["top","earrings","necklace","sash"],
-    cost=her_outfit_ball.price, wait_time=1, image=her_outfit_ball, description="> A fancy dress for a fancy witch.")
+    cost=her_outfit_ball.price, wait_time=2, image=her_outfit_ball, description="> A fancy dress for a fancy witch.")
 
 default hg_yennefer = CostumeItem(
     id="hg_yennefer", name="Yennefer Costume", type="outfit", items=["top","bottom","stockings","sash","belt","feathers","scarf","corset","pendant","gloves"],
-    cost=her_outfit_yennefer.price, wait_time=1, image=her_outfit_yennefer, description="> Smells like lilac and gooseberries.")
+    cost=her_outfit_yennefer.price, wait_time=2, image=her_outfit_yennefer, description="> Smells like lilac and gooseberries.")
 
 default hg_bioshock = CostumeItem(
     id="hg_bioshock", name="Bioshock Costume", type="outfit", items=["top", "bottom", "choker", "jacket"],
-    cost=her_outfit_bioshock.price, wait_time=1, image=her_outfit_bioshock, description="> Shockingly modest.")
+    cost=her_outfit_bioshock.price, wait_time=2, image=her_outfit_bioshock, description="> Shockingly modest.")
 
 default hg_swimsuit = CostumeItem(
     id="hg_swimsuit", name="Swimsuit", type="outfit", items=["top"],
-    cost=her_outfit_swimsuit.price, wait_time=1, image=her_outfit_swimsuit, description="> Breezy.")
+    cost=her_outfit_swimsuit.price, wait_time=2, image=her_outfit_swimsuit, description="> Breezy.")
 
 default hg_egypt = CostumeItem(
     id="hg_egypt", name="Egyptian", type="outfit", items=["top", "bottom", "arm bands", "neck band"],
-    cost=her_outfit_egypt.price, wait_time=1, image=her_outfit_egypt, description="> Breezy.")
+    cost=her_outfit_egypt.price, wait_time=2, image=her_outfit_egypt, description="> Breezy.")
 
 default hg_latex_dress = CostumeItem(
     id="hg_latex_dress", name="Latex Dress", type="outfit", items=["top"],
-    cost=her_outfit_latex_dress.price, wait_time=1, image=her_outfit_latex_dress, description="> Presentable attire for slut party.")
+    cost=her_outfit_latex_dress.price, wait_time=2, image=her_outfit_latex_dress, description="> Presentable attire for slut party.")
 
 default hg_nightie = CostumeItem(
     id="hg_nightie", name="Nightie", type="outfit", items=["top"],
-    cost=her_outfit_nightie.price, wait_time=1, image=her_outfit_nightie, description="> Comfortable alternative for pyjamas.")
+    cost=her_outfit_nightie.price, wait_time=2, image=her_outfit_nightie, description="> Comfortable alternative for pyjamas.")
 
 default hg_poker = CostumeItem(
     id="hg_poker", name="Poke-her-nips Outfit", type="outfit_token", items=["top"],
-    cost=10, wait_time=0, image=her_outfit_poker, description="")
+    cost=10, wait_time=2, image=her_outfit_poker, description="")
 
 default hg_tifa = CostumeItem(
     id="hg_tifa", name="Tifa Cosplay", type="outfit", items=["top"],
-    cost=her_outfit_tifa.price, wait_time=0, image=her_outfit_tifa, description="")
+    cost=her_outfit_tifa.price, wait_time=2, image=her_outfit_tifa, description="")
 
 default hg_msmarv = CostumeItem(
     id="hg_msmarv", name="Ms. Marvel Cosplay", type="outfit", items=["top"],
-    cost=her_outfit_msmarv.price, wait_time=0, image=her_outfit_msmarv, description="")
+    cost=her_outfit_msmarv.price, wait_time=2, image=her_outfit_msmarv, description="")
 
 default hg_hslut = CostumeItem(
     id="hg_hslut", name="Heart Slut", type="outfit", items=["top"],
-    cost=her_outfit_hslut.price, wait_time=0, image=her_outfit_hslut, description="")
+    cost=her_outfit_hslut.price, wait_time=2, image=her_outfit_hslut, description="")
 
 default hg_croft = CostumeItem(
     id="hg_croft", name="Lora Craft Cosplay", type="outfit", items=["top"],
-    cost=her_outfit_croft.price, wait_time=0, image=her_outfit_croft, description="")
+    cost=her_outfit_croft.price, wait_time=2, image=her_outfit_croft, description="")
 
 default hg_witch = CostumeItem(
     id="hg_witch", name="Halloween Witch Cosplay", type="outfit", items=["top"],
-    cost=her_outfit_witch.price, wait_time=0, image=her_outfit_witch, description="")
+    cost=her_outfit_witch.price, wait_time=2, image=her_outfit_witch, description="")
 
 default hg_latex = CostumeItem(
     id="hg_latex", name="Latex Outfit", type="outfit", items=["top"],
-    cost=her_outfit_latex.price, wait_time=0, image=her_outfit_latex, description="")
+    cost=her_outfit_latex.price, wait_time=2, image=her_outfit_latex, description="")
 
 default hg_slutty_schoolgirl = CostumeItem(
     id="hg_slutty_schoolgirl", name="Slutty Schoolgirl", type="outfit", items=["top"],
-    cost=her_outfit_slutty_schoolgirl.price, wait_time=0, image=her_outfit_slutty_schoolgirl, description="")
+    cost=her_outfit_slutty_schoolgirl.price, wait_time=2, image=her_outfit_slutty_schoolgirl, description="")
 
 default hg_teddy = CostumeItem(
     id="hg_teddy", name="Halloween Witch Cosplay", type="outfit", items=["top"],
-    cost=her_outfit_teddy.price, wait_time=0, image=her_outfit_teddy, description="")
+    cost=her_outfit_teddy.price, wait_time=2, image=her_outfit_teddy, description="")
 
 default hg_fishnet = CostumeItem(
     id="hg_fishnet", name="Fishnet Outfit", type="outfit", items=["top"],
-    cost=her_outfit_fishnet.price, wait_time=0, image=her_outfit_fishnet, description="")
+    cost=her_outfit_fishnet.price, wait_time=2, image=her_outfit_fishnet, description="")
 
 default hg_bikini3 = CostumeItem(
     id="hg_bikini3", name="Sling Bikini Outfit", type="outfit", items=["top"],
-    cost=her_outfit_bikini3.price, wait_time=0, image=her_outfit_bikini3, description="")
+    cost=her_outfit_bikini3.price, wait_time=2, image=her_outfit_bikini3, description="")
 
 default hermione_outfits_list = [hg_bikini1, hg_bikini2, hg_maid, hg_bunny, hg_ball, hg_yennefer, hg_bioshock, hg_swimsuit, hg_egypt, hg_latex_dress, hg_nightie, hg_tifa, hg_msmarv, hg_hslut, hg_croft, hg_witch, hg_latex, hg_slutty_schoolgirl, hg_teddy, hg_fishnet, hg_bikini3]
 
@@ -390,20 +390,17 @@ default cc_costume_misty_ITEM = CostumeItem(
 default cc_muggle_hot_ITEM = Item(id="cc_muggle_hot", name="Hot Weather Clothing", type="set", items=["top","pants","stockings"], image=cho_outfit_trainee, unlockable=True)
 default cc_party_slut_ITEM = Item(id="cc_party", name="Party Clothing", type="set", items=["bra","skirt"], image=cho_outfit_party, unlockable=True)
 
-default cc_lingerie_lace_ITEM = Item(id="cc_lingerie_lace", name="Lace Lingerie", type="set", items=["bra","panties","garter","stockings","choker","earrings"], image=cho_outfit_lacelingerie, cost=500, wait_time=5, description=">This lingerie set turns even the toughest tomboy\n into a cute and sexy princess!")
-default cc_bikini_micro_ITEM  = Item(id="cc_bikini_micro", name="Micro Bikini", type="set", items=["bra","panties"], image=cho_outfit_bikini, cost=69, wait_time=1, description=">The regular size bikinis are out of stock...")
+default cc_lingerie_lace_ITEM = Item(id="cc_lingerie_lace", name="Lace Lingerie", type="set", items=["bra","panties","garter","stockings","choker","earrings"], image=cho_outfit_lacelingerie, cost=500, wait_time=2, description=">This lingerie set turns even the toughest tomboy\n into a cute and sexy princess!")
+default cc_bikini_micro_ITEM  = Item(id="cc_bikini_micro", name="Micro Bikini", type="set", items=["bra","panties"], image=cho_outfit_bikini, cost=69, wait_time=2, description=">The regular size bikinis are out of stock...")
 
 default cho_outfits_list = [
-    cc_outfit_sailor_white_ITEM,
-    # cc_outfit_sailor_black_ITEM
+    cc_outfit_sailor_white_ITEM
 ]
 default cho_costumes_list = [
     cc_costume_misty_ITEM
 ]
 default cho_dresses_list = [
-    cc_dress_red_ITEM,
-    # cc_dress_silver_ITEM,
-    # cc_dress_black_ITEM
+    cc_dress_red_ITEM
 ]
 
 default cho_clothing_sets_list = [

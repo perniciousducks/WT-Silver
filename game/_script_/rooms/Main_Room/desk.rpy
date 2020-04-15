@@ -313,8 +313,6 @@ label paperwork:
     if letter_min_report in letter_queue_list:
         m "I need to get paid first."
         jump main_room
-    else:
-        pass
 
     stop music fadeout 1.0
     if daytime:

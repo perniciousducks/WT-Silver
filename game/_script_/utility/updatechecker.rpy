@@ -85,6 +85,17 @@ init -1 python:
 
             # Clothes
             reset_variables("outfit_linking", "hermione_outfits_list")
+            her_tattoo3_lockhart.categories = ("legs", "tattoos")
+            her_outfit_bikini1.price = 350
+            her_outfit_bikini2.price = 350
+            her_outfit_bunny.price = 350
+            her_outfit_latex_dress.price = 350
+            her_outfit_nightie.price = 350
+            her_outfit_yennefer.price = 400
+            her_outfit_bioshock.price = 400
+            her_outfit_egypt.price = 400
+            her_outfit_maid.price = 450
+            her_outfit_poker.price = 450
             cho_panties_sport1.armfix = True
             cho_panties_sport1.rebuild_image()
             cho.rebuild_image()

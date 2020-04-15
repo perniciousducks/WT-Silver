@@ -588,7 +588,7 @@ label purchase_outfit(item):
     # Luna lovegood
     #
 
-    if item == ll_stewardess_ITEM:
+    elif item == ll_stewardess_ITEM:
             m "Could you make me a stewardess outfit?"
             maf "The outfit that women wear in those flying muggle metal bird contraptions?"
             m "Precisely!"
@@ -626,15 +626,6 @@ label purchase_outfit(item):
         maf "That should be quite doable..."
         m "Excellent."
         maf "I'll get it done as soon as I can."
-
-
-    #Astoria
-
-    #Tonks
-    #Susan
-
-
-
 
     # Purchase Outfit
 

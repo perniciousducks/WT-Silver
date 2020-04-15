@@ -66,12 +66,7 @@ label wardrobe(char_label):
 
     $ _return = ui.interact()
 
-    hide screen wardrobe_menu
-    hide screen wardrobe_menuitem
-    hide screen wardrobe_outfit_menuitem
-
     if _return == "tabswitch":
-        show screen wardrobe_menu(550, 50)
         $ renpy.call(active_girl+"_wardrobe_check", _return)
         if _return in (None, True):
             $ current_page = 0
@@ -83,20 +78,20 @@ label wardrobe(char_label):
                 $ wardrobe_categories_sorted = ("face", "torso", "hips", "legs", "makeup", "breasts", "pelvis", "misc")
                 $ char_active.strip("all")
                 $ char_active.strip("accessory")
+
             else:
                 $ wardrobe_categories_sorted = ("head", "tops", "bottoms", "legwear", "makeup", "bras", "panties", "misc")
                 $ char_active.wear("all")
                 $ char_active.wear("accessory")
+            hide screen wardrobe_menuitem
     elif _return == "studio":
         $ renpy.play('sounds/click3.mp3')
         call studio(char_label)
     elif _return[0] == "equip":
-        show screen wardrobe_menu(550, 50)
         if isinstance(_return[1], DollCloth) and char_active.is_blacklisted(_return[1].type):
             $ renpy.play('sounds/fail.mp3')
         else:
             $ renpy.call(active_girl+"_wardrobe_check", "equip", _return[1])
-        $ char_active.reset_blacklist()
     elif _return == "addoutfit":
         $ char_active.create_outfit()
         $ menu_items = filter(lambda x: x.unlocked==True, char_active.outfits)
@@ -136,15 +131,14 @@ label wardrobe(char_label):
         $ menu_items_length = len(menu_items)
     elif _return[0] == "item_color":
         $ active_layer = _return[1]
-        show screen wardrobe_menu(550, 50)
+        hide screen wardrobe_menuitem
         $ current_item.set_color(active_layer)
-        hide screen wardrobe_menu
         $ active_layer = None
     elif _return == "item_reset":
         $ current_item.reset_color()
     elif _return == "bg_color":
         $ active_layer = None
-        show screen wardrobe_menu(550, 50)
+        hide screen wardrobe_menuitem
         $ wardrobe_background = color_picker(get_rgb_list(wardrobe_background), False, "Wardrobe Background Color", pos_xy=[40, 85])
         $ wardrobe_background = get_hex_string(wardrobe_background[0]/255.0, wardrobe_background[1]/255.0, wardrobe_background[2]/255.0, wardrobe_background[3]/255.0)
     elif _return == "inc":
@@ -159,6 +153,8 @@ label wardrobe(char_label):
             $ current_subcategory = ""
             if "head" in wardrobe_categories_sorted:
                 $ char_active.wear("all")
+            hide screen wardrobe_menuitem
+            hide screen wardrobe_outfit_menuitem
         else:
             $ renpy.call(active_girl+"_wardrobe_check", "category", _return)
 
@@ -214,30 +210,12 @@ label wardrobe(char_label):
                             current_item = item
                             break
     elif _return[0] == "erozone":
-        show screen wardrobe_menu(550, 50)
-        if current_category:
-            if current_category == "outfits":
-                show screen wardrobe_outfit_menuitem(20, 50)
-            else:
-                show screen wardrobe_menuitem(20, 50)
         $ renpy.call(active_girl+"_wardrobe_check", "touching", _return[1])
     elif _return[0] == "toggle":
-        show screen wardrobe_menu(550, 50)
-        if current_category:
-            if current_category == "outfits":
-                show screen wardrobe_outfit_menuitem(20, 50)
-            else:
-                show screen wardrobe_menuitem(20, 50)
         $ renpy.call(active_girl+"_wardrobe_check", "toggle", _return[1])
     elif _return == "toggle_schedule":
         $ globals()[active_girl+"_outfits_schedule"] = not globals()[active_girl+"_outfits_schedule"]
     elif _return == "music":
-        show screen wardrobe_menu(550, 50)
-        if current_category:
-            if current_category == "outfits":
-                show screen wardrobe_outfit_menuitem(20, 50)
-            else:
-                show screen wardrobe_menuitem(20, 50)
         if wardrobe_music:
             $ wardrobe_music = False
             call play_music(active_girl)

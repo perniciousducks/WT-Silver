@@ -182,4 +182,5 @@ label cho_wardrobe_check(section, arg=None):
         $ char_active.unequip(current_item.type)
     else:
         $ char_active.equip(current_item)
+    $ char_active.reset_blacklist()
     return

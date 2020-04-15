@@ -17,7 +17,7 @@ label hermione_wardrobe_check(section, arg=None):
         if her_whoring < temp_count[0]:
             call her_main("It's too "+random.choice(("slutty", "revealing", "much", "breezy"))+"...",face="annoyed")
             $ temp_score += 1
-        if temp_count[2] < 2 and her_whoring < 10:
+        if temp_count[2] < 2 and her_whoring < 15:
             if temp_score > 0:
                 call her_main("...not to mention missing underwear!",face="annoyed")
             else:
@@ -30,23 +30,28 @@ label hermione_wardrobe_check(section, arg=None):
         if temp_score > 0:
             call her_main("I am NOT wearing it!",face="annoyed")
             #Hint
-            $ wardrobe_fail_hint(max(temp_count[0], 5, 10))
+            $ wardrobe_fail_hint(max(temp_count[0], 5, 15))
             return
     else:
         if section == "tabswitch":
-            if her_whoring < 12:
+            if her_whoring < 18:
                 if wardrobe_chitchats:
                     call her_main("You want me to have piercing and tattoos?", "open", "narrow", "angry", "L")
                     call her_main("My body is already perfect without things like that...", "annoyed", "happyCl", "angry", "L", cheeks="blush")
                 #Hint
-                $ wardrobe_fail_hint(12)
+                $ wardrobe_fail_hint(18)
                 return False
             return True
         elif section == "category":
             # TODO: Simplify
             python:
                 _value = arg
+                _failure = False
                 if arg[1] in ("bras", "panties"): # Intentional double check.
+                    if her_whoring < 3:
+                        _value = ("category", None)
+                        _failure = True
+
                     for i in hermione.clothes.itervalues():
                         if i[0]:
                             if i[0].blacklist and "bra" in i[0].blacklist and arg[1] == "bras":
@@ -55,12 +60,14 @@ label hermione_wardrobe_check(section, arg=None):
                             if i[0].blacklist and "panties" in i[0].blacklist and arg[1] == "panties":
                                 _value = ("category", None)
                                 break
-
+            if _failure:
+                call her_main("I won't let you pick underwear for me!", face="angry")
+                $ wardrobe_fail_hint(3)
             return _value
         elif section == "touching":
             $ random_number = renpy.random.randint(1, 5)
             if arg == "boobs":
-                if her_whoring < 10:
+                if her_whoring < 12:
                     $ slap_mouse_away()
                     if wardrobe_chitchats:
                         if random_number == 1:
@@ -75,7 +82,7 @@ label hermione_wardrobe_check(section, arg=None):
                             call her_main("Hands off me.", "mad", "wide", "angry", "mid")
                     return
             if arg == "pussy":
-                if her_whoring < 16:
+                if her_whoring < 18:
                     $ slap_mouse_away()
                     if wardrobe_chitchats:
                         if random_number == 1:
@@ -94,7 +101,7 @@ label hermione_wardrobe_check(section, arg=None):
             return
         elif section == "toggle":
             if arg in ("bra", "panties"):
-                if her_whoring < 9:
+                if her_whoring < 15:
                     if wardrobe_chitchats:
                         $ random_number = renpy.random.randint(1, 3)
                         if random_number == 1:
@@ -107,7 +114,7 @@ label hermione_wardrobe_check(section, arg=None):
                             call her_main("I am not taking off my [arg]!", "clench", "narrow", "angry", "mid")
                             call her_main("", "annoyed", "narrow", "angry", "mid")
                     #Hint
-                    $ wardrobe_fail_hint(10)
+                    $ wardrobe_fail_hint(15)
                     return
             elif arg in ("top", "bottom"):
                 if her_whoring < 3:
@@ -117,26 +124,26 @@ label hermione_wardrobe_check(section, arg=None):
                         elif arg == "bottom":
                             call her_main("Take my bottoms off so you can ogle my ass? No thank you.", "open", "narrow", "angry", "mid")
                     #Hint
-                    $ wardrobe_fail_hint(3)
+                    $ wardrobe_fail_hint(13)
                     return
             $ char_active.toggle_wear(arg)
             return
         elif section == "equip":
             if arg.type in ("bra", "panties"):
-                if her_whoring < 10:
+                if her_whoring < 15:
                     if char_active.get_equipped("bra"):
                         if arg.id == char_active.get_equipped("bra").id:
                             if wardrobe_chitchats:
                                 call her_main("No, I'm not taking off my bra!", "clench", "wide", "angry", "mid")
                             #Hint
-                            $ wardrobe_fail_hint(10)
+                            $ wardrobe_fail_hint(15)
                             return
                     if char_active.get_equipped("panties"):
                         if arg.id == char_active.get_equipped("panties").id:
                             if wardrobe_chitchats:
                                 call her_main("No, I'm not taking off my panties!", "mad", "narrow", "angry", "mid")
                             #Hint
-                            $ wardrobe_fail_hint(10)
+                            $ wardrobe_fail_hint(15)
                             return
                 else:
                     if her_whoring < arg.level:
@@ -159,6 +166,7 @@ label hermione_wardrobe_check(section, arg=None):
                                 #Hint
                                 $ wardrobe_fail_hint(3)
                                 return
+
                 label .too_much:
                 if her_whoring < arg.level:
                     if wardrobe_chitchats:
@@ -177,10 +185,52 @@ label hermione_wardrobe_check(section, arg=None):
                     $ wardrobe_fail_hint(arg.level)
                     return
 
+                # Blacklist support
+                if arg.blacklist:
+                    if her_whoring < 15 and any(x in arg.blacklist for x in ("bra", "panties")):
+                        call her_main("I can't wear underwear with this!", "annoyed", "narrow", "angry", "L", cheeks="blush")
+                        call her_main("Fine! I'll wear this stupid thing.", "disgust", "narrow", "angry", "down", cheeks="blush")
+                    elif her_whoring < 3 and any(x in arg.blacklist for x in ("top", "bottom")):
+                        call her_main("Do I have to wear this?", "open", "narrow", "angry", "mid")
+                        call her_main("Fine... but I'm putting my old clothes back on once I've taken off this ridiculous piece of garment.", "annoyed", "narrow", "angry", "R", cheeks="blush")
+
     $ renpy.play('sounds/equip.ogg')
     $ current_item = arg
     if isinstance(current_item, DollCloth) and current_item.type != "hair" and char_active.is_equipped(current_item.type) and char_active.clothes[current_item.type][0].id == current_item.id:
         $ char_active.unequip(current_item.type)
     else:
         $ char_active.equip(current_item)
+    $ char_active.reset_blacklist()
+
+    # Blacklist fallbacks
+    if her_whoring < 15:
+
+        $ underwear_pass = True
+
+        if not "bra" in char_active.blacklist and not char_active.is_equipped("bra"):
+            $ underwear_pass = False
+            $ char_active.equip(her_bra_base1)
+
+        if not char_active.is_equipped("panties") and not "panties" in char_active.blacklist:
+            $ underwear_pass = False
+            $ char_active.equip(her_panties_base1)
+
+        if not underwear_pass:
+            call her_main("I'm putting my underwear back on then!", "open", "closed", "angry", "mid", cheeks="blush")
+            call her_main("", "normal", "base", "worried", "mid", cheeks="blush")
+    if her_whoring < 3:
+
+        $ clothes_pass = True
+
+        if not "top" in char_active.blacklist and not char_active.is_equipped("top"):
+            $ clothes_pass = False
+            $ char_active.equip(her_top_school1)
+
+        if not char_active.is_equipped("bottom") and not "bottom" in char_active.blacklist:
+            $ clothes_pass = False
+            $ char_active.equip(her_bottom_school1)
+
+        if not clothes_pass:
+            call her_main("In that case I'm putting my old clothes back on!", "open", "closed", "angry", "mid", cheeks="blush")
+            call her_main("", "normal", "base", "worried", "mid", cheeks="blush")
     return

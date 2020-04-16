@@ -93,7 +93,7 @@ label clothing_store_chitchat:
         m "A few things. I haven't decided on anything specific yet."
         maf "Well, while you're making up your mind, feel free to browse the store."
     else:
-        maf "Well, what can I get for you today?"
+        maf "What can I get for you today?"
 
     return
 
@@ -230,15 +230,15 @@ label purchase_outfit(item):
         m "Thank you."
 
     elif item == hg_nightie:
-        m "I'd like to order another custom outfit today."
-        maf "Certainly honey... Repairing these conservative school clothes all day has been quite a mind-numbing to say the least."
+        m "I'd like to order a custom outfit today."
+        maf "Certainly honey... Repairing these conservative school clothes all day has been quite dull to say the least."
         m "Well, I can assure you that this outfit is not conservative."
         maf "Hmmm?"
         m "I'd like to order a girls Nightgown."
-        maf "Well that doesn't seem overl-"
+        maf "Well, that doesn't seem overl-"
         m "And make it out of silk!"
         maf "Ahh... So I assume that you also want it transparent?"
-        m "If it's possible."
+        m "If that is possible."
         maf "Of course it is possible, who do you take me for?"
         maf "I just have to order in the materials, although silks not cheap."
         m "Don't worry about the cost."
@@ -271,14 +271,14 @@ label purchase_outfit(item):
         maf "Certainly, who did you have in mind?"
         m "Do you know Ms Marvel?"
         maf "I'm afraid not..."
-        maf "But I'm sure that my grandson has a comic of hers. I'm set to visit him this weekend so I can take a look."
+        maf "But I'm sure that my grandson has a comic of hers. I'm set to visit him this tonight so I can take a look."
         m "Thank you very much."
         maf "No need to thank me honey. Payment will suffice."
 
     elif item == hg_hslut:
         m "Have you ever seen a burlesque show Madam?"
         maf "I've done more than that, I've designed a few of the outfits for them!"
-        m "Splendid, in that case I'd love ´to commission one."
+        m "Splendid, in that case I'd love to commission one."
         maf "Most Certainly, any particular colour in mind?"
         m "Red!"
         maf "As you wish."
@@ -306,7 +306,7 @@ label purchase_outfit(item):
     elif item == hg_croft:
         m "Would you be able to make me a cosplay costume?"
         maf "Certainly, what are you after?"
-        m "I don't suppose that you know Lara croft?"
+        m "Do you happen to know Lara croft?"
         maf "I'm afraid not..."
         m "She's a video game character..."
         maf "Well, my little squib grandson loves video games. I'm sure he can show me what she looks like."
@@ -368,7 +368,7 @@ label purchase_outfit(item):
 
     elif item == hg_bunny:
         m "Could you make me a bunny costume?"
-        maf "A bunny costume? Like the Easter bunny?"
+        maf "A bunny costume? Do you mean something like the Easter bunny?"
         m "No, like the ones you might see in Vegas!"
         maf "I'll see what I can-"
         m "With big bunny ears!"
@@ -395,7 +395,7 @@ label purchase_outfit(item):
         m "Would you be able to make me something Egyptian themed?"
         m "Like the outfits Cleopatra used to wear..."
         maf "..."
-        m "I shall pay you for it of course."
+        m "I'll trade you two camels for it."
         maf "Cleopatra you said?"
         m "Yes..."
         maf "That would require some metal work... Perhaps one of my contacts in Diagon alley..."
@@ -404,7 +404,8 @@ label purchase_outfit(item):
         m "Or is this too much for \"The\" Mafkin?"
         maf "It most certain isn't!"
         maf "I'll have it ready for you in no time!"
-        m "Great!"
+        maf "Although I'd prefer to be paid in gold rather than in camels."
+        m "Ask and you shall receive!"
 
     elif item == hg_latex_dress:
         m "Ready to work with some latex?"
@@ -422,8 +423,8 @@ label purchase_outfit(item):
             m "Pink would look good I think!"
             maf "Noted..."
             m "An make a heart shaped-"
-            m "I'll get it done shortly."
-            m "But I wasn't finished."
+            maf "I'll get it done shortly."
+            m "But I wasn't finished!"
         maf "I think I got the gist of it."
         maf "One latex outfit-"
         maf "With a heart shaped cut-out..."
@@ -435,30 +436,30 @@ label purchase_outfit(item):
     elif item == hg_tifa:
         m "I'd like a cosplay costume."
         maf "Good idea! Who are we thinking, Gandalf the grey or-"
-        m "Not for me!"
+        g4 "Not for me!"
         maf "Oh... I should've realized..."
         m "No, I'd like a Tifa cosplay!"
         maf "Ti-fa? Sir?"
         m "Yes, she's from a video game."
         maf "I'll have to ask my squib grandson about that one... Hopefully he knows who she is."
         m "Oh, he'll know her, even if he's never played it... could even be his final fantasy."
-        maf "Okay then, I'll give him a floo and I'll have the outfit ready for you shortly."
-        m "(She'll give him a what?)"
+        maf "Okay then, I shall floo him and then I'll get that outfit ready for you."
+        m "(She'll do what to him?)"
         maf "Anything else?"
 
     elif item == hg_witch:
-        m "Do you have time to make a cosplay outfit?"
-        maf "A cosplay outfit?"
-        m "Well, it's more of a Halloween outfit."
+        m "Do you have time to make a cosplay costume?"
+        maf "A cosplay costume?"
+        m "Well, it's more of a Halloween costume."
         m "One of those witch outfits muggle girls would wear during Halloween."
         maf "Oh... those..."
         m "Any problem?"
-        maf "Those outfits looks nothing like a real witch's outfit..."
+        maf "Those costumes looks nothing like a real witch's costume..."
         maf "Oh Well... If I'm to make one, it's going to be the best of the best..."
         m "Great!"
 
     elif item == hg_latex:
-        m "I'd like another outfit... a latex one!"
+        m "I'd like an outfit... a latex one!"
         maf "Latex?"
         maf "Now you do know what kind of outfits are known to be made by latex don't you, honey?"
         m "Of course... And I'd like one of those very much."
@@ -494,7 +495,7 @@ label purchase_outfit(item):
         m "Excellent..."
 
     elif item == hg_bikini3:
-        m "Madam, I require your bikini!"
+        m "Madam, I require your finest bikini!"
         maf "Oh my, aren't you a quick one, at least buy me a dinner first."
         g4 "...!"
         m "You got it wrong... I want to buy a custom made bikini."
@@ -617,7 +618,7 @@ label purchase_outfit(item):
     #
 
     else:
-        m "Could you make another outfit for me?"
+        m "Could you make an outfit for me?"
         maf "Certainly... got something specific in mind?"
         m "Yes... I sketched something out for you..."
         maf "Let's have a look..."
@@ -641,8 +642,25 @@ label purchase_outfit(item):
                 $ order_cost = order_cost + order_tip
                 $ clothing_mail_timer = 1
                 g9 "I'll tip you handsomely if you can get it done by tomorrow."
-                maf "Oh, Professor. I {b}do{/b} love a challenge."
-                maf "I should have all the materials laying around somewhere..."
+                $ random_response = renpy.random.randint(1, 5)
+
+                if random_response == 1:
+                    maf "Oh, Professor. I {b}do{/b} love a challenge."
+                    maf "I'll have to pull some strings but I'll get it done."
+                elif random_response == 2:
+                    maf "Well... since you're putting it that way..."
+                    maf "I'll start on it straight away."
+                elif random_response == 3:
+                    maf "I feel like I'd be neglecting my usual responsibilities a bit if I took this on immediately..."
+                    m "So, is that a no?"
+                    maf "You're the headmaster, your wish is my command."
+                elif random_response == 4:
+                    maf "I'll put everything else on hold in that case..."
+                else:
+                    maf "I might need an extra pair of hands to pull it off by then..."
+                    maf "Could I use one of the house elves?"
+                    m "Use anything that will get it done by tomorrow."
+                    maf "Certainly, sir."
             "{color=[menu_disabled]}-add next day delivery (+[order_tip] gold)-{/color}" if gold < order_cost + order_tip:
                 m "(I don't have enough money for that.)"
                 pass

@@ -86,7 +86,7 @@ label wardrobe(char_label):
             hide screen wardrobe_menuitem
     elif _return == "studio":
         $ renpy.play('sounds/click3.mp3')
-        call studio(char_label)
+        $ renpy.call_in_new_context("studio", char_label)
     elif _return[0] == "equip":
         if isinstance(_return[1], DollCloth) and char_active.is_blacklisted(_return[1].type):
             $ renpy.play('sounds/fail.mp3')

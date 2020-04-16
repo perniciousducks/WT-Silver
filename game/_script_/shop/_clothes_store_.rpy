@@ -663,12 +663,11 @@ label purchase_outfit(item):
                     maf "Certainly, sir."
             "{color=[menu_disabled]}-add next day delivery (+[order_tip] gold)-{/color}" if gold < order_cost + order_tip:
                 m "(I don't have enough money for that.)"
-                pass
             "-no thanks-":
                 pass
 
     else:
-        m "I don't have enough gold."
+        m "(I don't have enough gold.)"
         return
 
     $ item.unlockable = True #Hides it from the store menu.

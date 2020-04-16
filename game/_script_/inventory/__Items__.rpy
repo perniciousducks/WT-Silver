@@ -286,7 +286,15 @@ default hg_bikini3 = CostumeItem(
     id="hg_bikini3", name="Sling Bikini Outfit", type="outfit", items=["bra","panties"],
     cost=her_outfit_bikini3.price, wait_time=2, image=her_outfit_bikini3, description="> An outfit providing some coverage.")
 
-default hermione_outfits_list = [hg_bikini1, hg_bikini2, hg_maid, hg_bunny, hg_ball, hg_yennefer, hg_bioshock, hg_swimsuit, hg_egypt, hg_latex_dress, hg_nightie, hg_tifa, hg_msmarv, hg_hslut, hg_croft, hg_witch, hg_latex, hg_slutty_schoolgirl, hg_teddy, hg_fishnet, hg_bikini3]
+default hg_cheerleader = CostumeItem(
+    id="hg_cheerleader", name="Gryffindor Cheerleader Outfit", type="outfit", items=["top", "bottoms", "gloves"],
+    cost=her_outfit_cheerleader_1.price, wait_time=2, image=her_outfit_cheerleader_1, description="> So daring and bold, sporting red and gold!")
+
+default hg_cheerleader2 = CostumeItem(
+    id="hg_cheerleader2", name="Slutty Gryffindor Cheerleader Outfit", type="outfit", items=["top", "bottoms"],
+    cost=her_outfit_cheerleader_2.price, wait_time=2, image=her_outfit_cheerleader_2, description="> So daring and bold, sporting red and gold!")
+
+default hermione_outfits_list = [hg_maid, hg_cheerleader, hg_bunny, hg_ball, hg_yennefer, hg_bioshock, hg_swimsuit, hg_egypt, hg_latex_dress, hg_nightie, hg_tifa, hg_msmarv, hg_hslut, hg_croft, hg_witch, hg_latex, hg_slutty_schoolgirl, hg_teddy, hg_fishnet, hg_bikini3, hg_bikini1, hg_bikini2, hg_cheerleader2]
 
 default hermione_costumes_list = [] # TODO: Remove
 default hermione_dresses_list = [] # TODO: Remove
@@ -446,7 +454,9 @@ default outfit_linking = {
     hg_slutty_schoolgirl.id:        "her_outfit_slutty_schoolgirl",
     hg_teddy.id:                    "her_outfit_teddy",
     hg_fishnet.id:                  "her_outfit_fishnet",
-    hg_bikini3.id:                  "her_outfit_bikini3"
+    hg_bikini3.id:                  "her_outfit_bikini3",
+    hg_cheerleader.id:              "her_outfit_cheerleader_1",
+    hg_cheerleader2.id:              "her_outfit_cheerleader_2"
 }
 
 init offset = 0 # back to normal

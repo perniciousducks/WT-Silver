@@ -17,7 +17,8 @@ label game_init:
     $ save_internal_version = config.version
     $ achievement_fix()
     $ start_image_crop()
-    show screen mouse_tooltip
+    if not renpy.variant("android"):
+        show screen mouse_tooltip
     return
 
 init python:

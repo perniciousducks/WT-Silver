@@ -457,7 +457,7 @@ label purchase_outfit(item):
         maf "Oh Well... If I'm to make one, it's going to be the best of the best..."
         m "Great!"
 
-    elif item == hg_latex_outfit:
+    elif item == hg_latex:
         m "I'd like another outfit... a latex one!"
         maf "Latex?"
         maf "Now you do know what kind of outfits are known to be made by latex don't you, honey?"

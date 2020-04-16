@@ -48,7 +48,7 @@ label hermione_wardrobe_check(section, arg=None):
                 _value = arg
                 _failure = False
                 if arg[1] in ("bras", "panties"): # Intentional double check.
-                    if her_whoring < 3:
+                    if her_whoring < 5:
                         _value = ("category", None)
                         _failure = True
 
@@ -178,7 +178,7 @@ label hermione_wardrobe_check(section, arg=None):
                         elif random_number == 3:
                             call her_main("I would look like a tramp, I refuse.", "annoyed", "wide", "angry", "mid")
                         elif random_number == 4:
-                            call her_main("I'm not some Slytherin skank,[genie_name], ask them to humiliate themselves for your amusement..", "open", "narrow", "angry", "L")
+                            call her_main("I'm not some Slytherin skank [genie_name], ask them to humiliate themselves for your amusement..", "open", "narrow", "angry", "L")
                         elif random_number == 5:
                             call her_main("This is too much.", "annoyed", "narrow", "angry", "R")
                     #Hint
@@ -192,7 +192,7 @@ label hermione_wardrobe_check(section, arg=None):
                         call her_main("Fine! I'll wear this stupid thing.", "disgust", "narrow", "angry", "down", cheeks="blush")
                     elif her_whoring < 3 and any(x in arg.blacklist for x in ("top", "bottom")):
                         call her_main("Do I have to wear this?", "open", "narrow", "angry", "mid")
-                        call her_main("Fine... but I'm putting my old clothes back on once I've taken off this ridiculous piece of garment.", "annoyed", "narrow", "angry", "R", cheeks="blush")
+                        call her_main("Fine, I'll wear it... but I'm putting my old clothes back on once you change your mind.", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
     $ renpy.play('sounds/equip.ogg')
     $ current_item = arg

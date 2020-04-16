@@ -275,7 +275,7 @@ default hg_slutty_schoolgirl = CostumeItem(
     cost=her_outfit_slutty_schoolgirl.price, wait_time=2, image=her_outfit_slutty_schoolgirl, description="")
 
 default hg_teddy = CostumeItem(
-    id="hg_teddy", name="Halloween Witch Cosplay", type="outfit", items=["top"],
+    id="hg_teddy", name="Teddy Nightie", type="outfit", items=["top"],
     cost=her_outfit_teddy.price, wait_time=2, image=her_outfit_teddy, description="")
 
 default hg_fishnet = CostumeItem(

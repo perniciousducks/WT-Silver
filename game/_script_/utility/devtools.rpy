@@ -16,7 +16,7 @@ init -1 python:
     def missing_image_func(path):
         global systemerror
         systemerror = ["Missing image", path]
-        return Null()
+        return "images/blank.png"
 
 
     def missing_label_func(name):

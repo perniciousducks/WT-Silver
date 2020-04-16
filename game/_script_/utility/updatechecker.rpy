@@ -103,3 +103,5 @@ init -1 python:
             achievement_fix()
 
             save_internal_version = 1.384
+
+            renpy.block_rollback()

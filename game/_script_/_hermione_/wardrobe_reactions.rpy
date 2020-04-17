@@ -62,7 +62,7 @@ label hermione_wardrobe_check(section, arg=None):
                                 break
             if _failure:
                 call her_main("I won't let you pick underwear for me!", face="angry")
-                $ wardrobe_fail_hint(3)
+                $ wardrobe_fail_hint(5)
             return _value
         elif section == "touching":
             $ random_number = renpy.random.randint(1, 5)

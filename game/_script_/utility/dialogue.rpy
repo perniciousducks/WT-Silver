@@ -19,19 +19,19 @@ init python:
     after_skip_callbacks.append(update_doll_transitions)
 
 init -1 python:
-    def apply_doll_transition(doll, scr_name, img_name, use_head):
-        """Apply a transition between old and new images of a doll that's on screen."""
-        doll_new = doll.get_image()
+    def apply_doll_transition(doll_new, scr_name, use_head):
+        """Apply a transition between old and new images of a doll."""
         doll_old = last_doll_images.get(scr_name, None)
 
         if doll_new != doll_old and not renpy.in_rollback():
             if not doll_old or (use_head and last_say_who != get_say_who()):
                 doll_old = doll_new
 
-            scope = renpy.get_screen(scr_name).scope
-            scope[img_name] = doll_transition(doll_old, doll_new)
-
             last_doll_images[scr_name] = doll_new
+
+            return doll_transition(doll_old, doll_new)
+
+        return doll_new
 
     def update_doll_transitions():
         """Used after skip to update doll images on all visible character screens."""

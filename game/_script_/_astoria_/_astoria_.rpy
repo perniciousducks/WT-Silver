@@ -76,6 +76,7 @@ label ast_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
                 astoria.set_face(pupils=renpy.random.choice(ast_face["pupils"].get(face, None)))
 
     if not renpy.get_screen("wardrobe_menu"):
+        hide screen astoria_main
         show screen astoria_main()
     show screen bld1
 
@@ -132,10 +133,8 @@ screen astoria_main():
     tag astoria_main
     zorder astoria_zorder
     sensitive False
-    default astoria_img = astoria.get_image()
+    default astoria_img = apply_doll_transition(astoria.get_image(), "astoria_main", use_astoria_head)
     if astoria_animation != None:
         add astoria_img xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio) at astoria_animation
     else:
         add astoria_img xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio)
-
-    on ("show", "replace") action Function(apply_doll_transition, astoria, "astoria_main", "astoria_img", use_astoria_head)

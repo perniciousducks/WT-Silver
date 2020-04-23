@@ -70,6 +70,7 @@ init python:
         def apply_transition(self):
             scr_name = "{}_main".format(self.name)
             if renpy.get_screen(scr_name):
+                renpy.hide_screen(scr_name)
                 renpy.show_screen(scr_name)
             else:
                 last_doll_images[scr_name] = self.get_image()

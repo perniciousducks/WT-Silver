@@ -76,6 +76,7 @@ label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
                 cho.set_face(pupils=renpy.random.choice(cho_face["pupils"].get(face, None)))
 
     if not renpy.get_screen("wardrobe_menu"):
+        hide screen cho_main
         show screen cho_main()
     show screen bld1
 
@@ -121,10 +122,8 @@ screen cho_main():
     tag cho_main
     zorder cho_zorder
     sensitive False
-    default cho_img = cho.get_image()
+    default cho_img = apply_doll_transition(cho.get_image(), "cho_main", use_cho_head)
     if cho_animation != None:
         add cho_img xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) at cho_animation
     else:
         add cho_img xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
-
-    on ("show", "replace") action Function(apply_doll_transition, cho, "cho_main", "cho_img", use_cho_head)

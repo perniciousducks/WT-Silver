@@ -76,6 +76,7 @@ label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
                 hermione.set_face(pupils=renpy.random.choice(her_face["pupils"].get(face, None)))
 
     if not renpy.get_screen("wardrobe_menu"):
+        hide screen hermione_main
         show screen hermione_main()
     show screen bld1
 
@@ -119,7 +120,7 @@ screen hermione_main():
     tag hermione_main
     zorder hermione_zorder
     sensitive False
-    default hermione_img = hermione.get_image()
+    default hermione_img = apply_doll_transition(hermione.get_image(), "hermione_main", use_hermione_head)
     if hermione_animation != None:
         #TODO Remove temporary plug image solution once the butt plug events have some kind of CG
         add hermione_plug_img xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio) at hermione_animation
@@ -127,5 +128,3 @@ screen hermione_main():
     else:
         add hermione_plug_img xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
         add hermione_img xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
-
-    on ("show", "replace") action Function(apply_doll_transition, hermione, "hermione_main", "hermione_img", use_hermione_head)

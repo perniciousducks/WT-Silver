@@ -100,6 +100,7 @@ label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, h
             tonks.get_equipped("hair").set_color(target_color)
 
     if not renpy.get_screen("wardrobe_menu"):
+        hide screen tonks_main
         show screen tonks_main()
     show screen bld1
 
@@ -148,10 +149,8 @@ screen tonks_main():
     zorder tonks_zorder
     sensitive False
 
-    default tonks_img = tonks.get_image()
+    default tonks_img = apply_doll_transition(tonks.get_image(), "tonks_main", use_tonks_head)
     if tonks_animation != None:
         add tonks_img xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) at tonks_animation
     else:
         add tonks_img xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
-
-    on ("show", "replace") action Function(apply_doll_transition, tonks, "tonks_main", "tonks_img", use_tonks_head)

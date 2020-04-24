@@ -58,6 +58,10 @@ label end_hg_pr_flirt_teacher:
 
     $ hg_pr_flirt_teacher.inProgress = False
 
+    # Unequip lockhart tattoo after the event
+    if hermione.is_equipped("tattoo3") and hermione.get_equipped("tattoo3").id == "lockhart_tattoo":
+        $ hermione.unequip("tattoo3")
+
     # Increase Points
     if her_tier == 1:
         if her_whoring < 6: # Points til 6

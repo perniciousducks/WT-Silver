@@ -67,6 +67,17 @@ init python:
             sprites = tuple(itertools.chain.from_iterable(((0,0), x[0]) for x in sprites))
             return sprites
 
+        def get_image(self):
+            if not renpy.is_skipping() or self.sprite is None:
+                if self.override:
+                    sprites = self.build_image()
+                    self.sprite = DollDisplayable(Composite(self.size, *sprites))
+                elif not self.cached:
+                    sprites = self.build_image()
+                    self.sprite = DollDisplayable(Composite(self.size, *sprites))
+                    self.cached = True
+            return self.sprite
+
         def apply_transition(self):
             scr_name = "{}_main".format(self.name)
             if renpy.get_screen(scr_name):

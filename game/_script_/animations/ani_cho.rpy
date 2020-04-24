@@ -1,9 +1,6 @@
 # Sprite blinking
-image spr_cho blink:
-    sprite_blink("characters/cho/face/eyes/closed.png")
-    
-image spr_cho blink broom:
-    sprite_blink("characters/cho/poses/broom/face/eyes/closed.png")
+image spr_cho blink = sprite_blink("characters/cho/face/eyes/closed.png")
+image spr_cho blink broom = sprite_blink("characters/cho/poses/broom/face/eyes/closed.png")
 
 # Cho chibi
 
@@ -49,7 +46,7 @@ image ch_cho walk_shoes: # Walk shoes layer
     pause.08
 
     repeat
-    
+
 image ch_cho walk_quid_shoes: # Walk Quidditch shoes layer
     "characters/cho/chibis/cc_walk_01_quid_shoes.png"
     pause.08
@@ -69,7 +66,7 @@ image ch_cho walk_quid_shoes: # Walk Quidditch shoes layer
     pause.08
 
     repeat
-    
+
 image ch_cho trousers: # Walk trousers layer
     "characters/cho/chibis/cc_walk_01_trousers.png"
     pause.08

@@ -21,9 +21,9 @@ label wardrobe(char_label):
         char_scale = 1.0/globals()[active_girl+"_scaleratio"]
         char_level = _char_var_list[active_girl]
 
-        renpy.start_predict("interface/wardrobe/*.png")
-        predict = tuple(x.get_image() for x in char_active.wardrobe_list)
-        renpy.start_predict(*predict)
+        renpy.start_predict("interface/wardrobe/gold/*.png")
+        renpy.start_predict("interface/wardrobe/gray/*.png")
+        renpy.start_predict("interface/wardrobe/icons/*.png")
 
         wardrobe_background = wardrobe_background_day if interface_color == "gold" else wardrobe_background_night
 
@@ -97,7 +97,7 @@ label wardrobe(char_label):
         $ menu_items = filter(lambda x: x.unlocked==True, char_active.outfits)
         $ menu_items_length = len(menu_items)
     elif _return[0] == "deloutfit":
-        $ char_active.outfits.pop(_return[1])
+        $ char_active.outfits.remove(_return[1])
         $ menu_items = filter(lambda x: x.unlocked==True, char_active.outfits)
         $ menu_items_length = len(menu_items)
     elif _return[0] == "tagoutfit":
@@ -109,7 +109,7 @@ label wardrobe(char_label):
                 $ getattr(renpy.store, active_girl[:3]+"_outfit_last").save()
                 $ char_active.equip(_return[1])
                 $ item_to_export = _return[1]
-                call studio(char_label)
+                $ renpy.call_in_new_context("studio", char_label)
             "Export to clipboard":
                 $ _return[1].export_data(False)
             "Back":
@@ -230,8 +230,9 @@ label wardrobe(char_label):
         #$ char_active.clothes_compatible()
         if wardrobe_music:
             call play_music(active_girl)
-        $ renpy.stop_predict("interface/wardrobe/*.png")
-        $ renpy.stop_predict(*predict)
+        $ renpy.stop_predict("interface/wardrobe/gold/*.png")
+        $ renpy.stop_predict("interface/wardrobe/gray/*.png")
+        $ renpy.stop_predict("interface/wardrobe/icons/*.png")
         return
     jump .after_init
 
@@ -276,7 +277,7 @@ screen wardrobe_menu(xx, yy):
         frame xysize (340, 548) xpos 100 style "empty" background wardrobe_background
 
         # Character
-        add char_active.get_image() zoom char_scale anchor (0.57, 1.0) align (0.5, 1.0) yoffset -2 #yoffset -12
+        add char_active.get_image() yoffset -12 corner1 (238, 200) corner2 (872, 1200) zoom char_scale align (0.5, 1.0) events False
 
         # Switch to body modifications tab
         add "interface/frames/{}/circle.png".format(interface_color) pos (373, 62)
@@ -455,14 +456,14 @@ screen wardrobe_menuitem(xx, yy):
                 $ image_zoom = get_zoom(menu_items[i].get_icon(), 83, 85)
                 frame:
                     style "empty"
-                    pos (12+90*col, 180+90*row)
+                    pos (12+90*col, 180+92*row)
                     xysize (83, 85)
 
-                    add menu_items[i].get_icon() zoom image_zoom xalign 0.5 yalign 0.5
+                    add menu_items[i].get_icon() zoom image_zoom xalign 0.5 yalign 0.5 events False
                 if char_active.clothes[menu_items[i].type][0] and menu_items[i].id == char_active.clothes[menu_items[i].type][0].id:
                     button:
                         style "empty"
-                        pos (12+90*col, 180+90*row)
+                        pos (12+90*col, 180+92*row)
                         xysize (83, 85)
                         hover_background btn_hover
                         tooltip "Take off"
@@ -472,7 +473,7 @@ screen wardrobe_menuitem(xx, yy):
                 else:
                     button:
                         style "empty"
-                        pos (12+90*col, 180+90*row)
+                        pos (12+90*col, 180+92*row)
                         xysize (83, 85)
                         hover_background btn_hover
                         # tooltip "Put on"
@@ -483,7 +484,7 @@ screen wardrobe_menuitem(xx, yy):
                     if menu_items[i].level > her_whoring:
                         textbutton str(menu_items[i].level):
                             style "empty"
-                            pos (15+90*col, 180+90*row)
+                            pos (15+90*col, 180+92*row)
                             text_size 20
                             text_outlines [ (1, "#000", 0, 0) ]
                             text_color "#b20000"
@@ -492,7 +493,7 @@ screen wardrobe_menuitem(xx, yy):
                 # Check current item compatibility, if fails forbid equipping
                 if char_active.is_blacklisted(menu_items[i].type):
                     textbutton "{color=#b20000}X{/color}":
-                        pos (64+90*col, 180+90*row)
+                        pos (64+90*col, 180+92*row)
                         background None
                         text_size 20
                         text_outlines [ (1, "#000", 0, 0) ]
@@ -500,27 +501,27 @@ screen wardrobe_menuitem(xx, yy):
                         action NullAction()
                 elif menu_items[i].blacklist != None:
                     textbutton "{color=#b20000}!{/color}":
-                        pos (64+90*col, 180+90*row)
+                        pos (64+90*col, 180+92*row)
                         background None
                         text_size 20
                         text_outlines [ (1, "#000", 0, 0) ]
                         tooltip "Incompatible with:\n{color=#35aae2}"+"\n".join(str(k) for k in menu_items[i].blacklist)+"{/color}\n{size=-4}{color=#e4cb35}Above items will be unequipped.{/color}{/size}"
                         action NullAction()
-                # if menu_items[i].modpath:
-                    # textbutton "{color=#00b200}M{/color}":
-                        # style "empty"
-                        # pos (15+90*col, 240+90*row)
-                        # background None
-                        # text_size 20
-                        # text_outlines [ (1, "#000", 0, 0) ]
-                        # tooltip "This item is a part of a mod."
-                        # action NullAction()
+                if menu_items[i].modpath:
+                    textbutton "{color=#00b200}M{/color}":
+                        style "empty"
+                        pos (15+90*col, 240+92*row)
+                        background None
+                        text_size 20
+                        text_outlines [ (1, "#000", 0, 0) ]
+                        tooltip "This item belongs to a mod:\n{size=-4}{color=#35aae2}"+menu_items[i].get_modname()+"{/color}{/size}"
+                        action NullAction()
 
         # Add empty items
-        for i in xrange(menu_items_length, items_shown):
+        for i in xrange(menu_items_length-(items_shown*current_page), items_shown):
             $ row = (i // 5) % 4
             $ col = i % 5
-            button style "empty" pos (12+90*col, 180+90*row) xysize (83, 85) background "#00000033"
+            button style "empty" pos (12+90*col, 179+92*row) xysize (83, 85) background "#00000033"
 
 screen wardrobe_outfit_menuitem(xx, yy):
     tag wardrobe_menuitem
@@ -590,60 +591,63 @@ screen wardrobe_outfit_menuitem(xx, yy):
                 # Preview Icon
                 frame:
                     style "empty"
-                    xysize (90, 180)
-                    add menu_items[i].get_image() xpos 40+90*col ypos 141+180*row xalign 0.5 zoom 0.18
+                    xysize (83, 177)
+                    pos (12+90*col, 179+184*row)
+                    add menu_items[i].get_image() corner1 (270, 0) corner2 (840, 1200) maxsize (83, 177) yalign 1.0 events False
 
                 # Button Icons
-                if current_subcategory == "Delete":
-                    button:
-                        style "empty"
-                        pos (10+90*col, 176+180*row)
-                        xysize (90, 180)
-                        hover_background "#cc330040"
-                        tooltip "Delete Outfit"
-                        action Return(["deloutfit", i])
-                elif current_subcategory == "Load":
-                    button:
-                        style "empty"
-                        pos (10+90*col, 176+180*row)
-                        xysize (90, 180)
-                        hover_background btn_hover
-                        tooltip "Equip Outfit"
-                        action Return(["equip", menu_items[i]])
-                elif current_subcategory == "Export&Import":
-                    button:
-                        style "empty"
-                        pos (10+90*col, 176+180*row)
-                        xysize (90, 180)
-                        hover_background btn_hover
-                        tooltip "Export Outfit"
-                        action Return(["export", menu_items[i]])
-                elif current_subcategory == "Schedule":
-                    frame:
-                        style "empty"
-                        pos (12+90*col, 179+180*row)
-                        xysize(35, 179)
-                        background "#000000B3"
-                        vbox:
-                            spacing 5
-                            xpos 5
-                            for x in wardrobe_outfit_schedule:
-                                $ _ico = "interface/wardrobe/icons/outfits/"+x.lower()+".png"
-                                $ _bool = str(menu_items[i].schedule[x.lower()])
+                    if current_subcategory == "Delete":
+                        button:
+                            style "empty"
+                            hover_background "#cc330040"
+                            tooltip "Delete Outfit"
+                            action Return(["deloutfit", menu_items[i]])
+                    elif current_subcategory == "Load":
+                        button:
+                            style "empty"
+                            hover_background btn_hover
+                            tooltip "Equip Outfit"
+                            action Return(["equip", menu_items[i]])
+                    elif current_subcategory == "Export&Import":
+                        button:
+                            style "empty"
+                            hover_background btn_hover
+                            tooltip "Export Outfit"
+                            action Return(["export", menu_items[i]])
+                    elif current_subcategory == "Schedule":
+                        frame:
+                            style "empty"
+                            background "#000000B3"
+                            vbox:
+                                spacing 5
+                                xpos 5
+                                for x in wardrobe_outfit_schedule:
+                                    $ _ico = "interface/wardrobe/icons/outfits/"+x.lower()+".png"
+                                    $ _bool = str(menu_items[i].schedule[x.lower()])
 
-                                if x in ("Day", "Night"):
-                                    $ _tooltip = "Worn during the "+x+":\n{size=-4}"+_bool+"{/size}"
-                                elif x in ("Rainy", "Cloudy", "Snowy"):
-                                    $ _tooltip = "Worn during "+x+" weather:\n{size=-4}"+_bool+"{/size}"
+                                    if x in ("Day", "Night"):
+                                        $ _tooltip = "Worn during the "+x+":\n{size=-4}"+_bool+"{/size}"
+                                    elif x in ("Rainy", "Cloudy", "Snowy"):
+                                        $ _tooltip = "Worn during "+x+" weather:\n{size=-4}"+_bool+"{/size}"
 
-                                button:
-                                    style "empty"
-                                    xysize (25, 25)
-                                    background gray_tint(_ico)
-                                    hover_background white_tint(_ico)
-                                    selected_background _ico
-                                    tooltip _tooltip
-                                    action [SelectedIf(menu_items[i].schedule[x.lower()] == True), Return(["tagoutfit", menu_items[i], x.lower()])]
+                                    button:
+                                        style "empty"
+                                        xysize (25, 25)
+                                        background gray_tint(_ico)
+                                        hover_background white_tint(_ico)
+                                        selected_background _ico
+                                        tooltip _tooltip
+                                        action [SelectedIf(menu_items[i].schedule[x.lower()] == True), Return(["tagoutfit", menu_items[i], x.lower()])]
+
+                    if menu_items[i].is_modded():
+                        textbutton "{color=#00b200}M{/color}":
+                            style "empty"
+                            pos (3, 155)
+                            background None
+                            text_size 20
+                            text_outlines [ (1, "#000", 0, 0) ]
+                            tooltip "This outfit contains modded items:\n{size=-4}{color=#35aae2}"+"\n".join(menu_items[i].get_modname())+"{/color}{/size}"
+                            action NullAction()
 
         # Add empty items
         for i in xrange(menu_items_length, (current_page*10)+10):
@@ -653,8 +657,8 @@ screen wardrobe_outfit_menuitem(xx, yy):
             if current_subcategory == "Save":
                 textbutton "Save\n{size=-5}Slot [n]{/size}":
                     style interface_style+"_menu"
-                    pos (10+90*col, 180+180*row)
-                    xysize (88, 178)
+                    xysize (83, 177)
+                    pos (12+90*col, 179+184*row)
                     background "#00000033"
                     hover_background btn_hover
                     text_align (0.5, 0.5)
@@ -662,14 +666,14 @@ screen wardrobe_outfit_menuitem(xx, yy):
             elif current_subcategory == "Export&Import":
                 textbutton "Import\n{size=-5}Slot [n]{/size}":
                     style interface_style+"_menu"
-                    pos (10+90*col, 180+180*row)
-                    xysize (88, 178)
+                    xysize (83, 177)
+                    pos (12+90*col, 179+184*row)
                     background "#00000033"
                     hover_background btn_hover
                     text_align (0.5, 0.5)
                     action Return("import")
             else:
-                button style "empty" pos (10+90*col, 180+180*row) xysize (88, 178) background "#00000033"
+                button style "empty" xysize (83, 177) pos (12+90*col, 179+184*row) background "#00000033"
 
         # Schedule Toggle
         if current_subcategory == "Schedule":

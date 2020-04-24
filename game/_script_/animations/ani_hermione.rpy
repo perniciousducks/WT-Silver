@@ -1,10 +1,7 @@
 # Sprite blinking
-image spr_hermione blink:
-    sprite_blink("characters/hermione/face/eyes/closed.png")
-    
-image spr_hermione blink masturbate:
-    sprite_blink("characters/hermione/face/eyes/closed.png")
-    
+image spr_hermione blink = sprite_blink("characters/hermione/face/eyes/closed.png")
+image spr_hermione blink masturbate = sprite_blink("characters/hermione/face/eyes/closed.png")
+
 # Hermione Solo Animations
 image ch_hem blink:
     random_blink("characters/hermione/chibis/walk/h_walk_a_06.png", "characters/hermione/chibis/walk/h_walk_a_01.png")
@@ -338,7 +335,7 @@ image ch_hem kneel_pant:
     "characters/hermione/chibis/kneel/2.png"
     pause 1
     repeat
-    
+
 image ch_hem sit:
     #TODO Make chibi blink
     #TODO Draw and add clothing layers (not really a priority unless required for some event)
@@ -357,7 +354,7 @@ image ch_hem sit_naked_shocked:
 image ch_hem hit_head:
     yoffset -36
     xoffset 8
-    
+
     "characters/hermione/chibis/hit_on_head/01.png"
     pause.1
     "characters/hermione/chibis/hit_on_head/02.png"
@@ -383,7 +380,7 @@ image clothed_dance_ani: # Fully clothed
     "characters/hermione/chibis/dance/01_dancing_04.png"
     pause.1
     repeat
-    
+
 image no_vest_dance_ani: # No vest
     "characters/hermione/chibis/dance/02_no_vest_01.png"
     pause.1
@@ -394,7 +391,7 @@ image no_vest_dance_ani: # No vest
     "characters/hermione/chibis/dance/02_no_vest_04.png"
     pause.1
     repeat
-    
+
 image no_skirt_dance_ani: # No skirt
     "characters/hermione/chibis/dance/04_no_skirt_01.png"
     pause.1
@@ -405,7 +402,7 @@ image no_skirt_dance_ani: # No skirt
     "characters/hermione/chibis/dance/04_no_skirt_04.png"
     pause.1
     repeat
-    
+
 image no_shirt_dance_ani: # No shirt
     "characters/hermione/chibis/dance/03_no_shirt_01.png"
     pause.1

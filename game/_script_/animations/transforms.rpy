@@ -46,6 +46,7 @@ transform bob(t=1):
         repeat
 
 transform sprite_blink(img):
+    events False
     choice:
         pause 4
     choice:

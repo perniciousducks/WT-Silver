@@ -35,7 +35,7 @@ init python:
                     if o.front_outline:
                         sprites.append([o.front_outline, 100+o.zorder+o.layers])
                 if o.armfix:
-                    sprites.extend([[im.Grayscale("{}armleft/{}_fix.png".format(self.body.imagepath, self.body.get_part("armleft"))), o.zorder+0.5], [im.Grayscale("{}armright/{}_fix.png".format(self.body.imagepath, self.body.get_part("armright"))), o.zorder+0.5]])
+                    sprites.extend([[im.Grayscale("{}armleft/{}_fix.png".format(self.char.body.imagepath, self.char.body.get_part("armleft"))), o.zorder+0.5], [im.Grayscale("{}armright/{}_fix.png".format(self.char.body.imagepath, self.char.body.get_part("armright"))), o.zorder+0.5]])
                 if o.mask:
                     masks.append([o.mask, o.zorder-1])
 
@@ -58,6 +58,17 @@ init python:
             sprites = back_sprites + sprites
             sprites = tuple(itertools.chain.from_iterable(((0,0), x[0]) for x in sprites))
             return sprites
+
+        def get_image(self):
+            if not renpy.is_skipping() or self.sprite is None:
+                if self.override:
+                    sprites = self.build_image()
+                    self.sprite = DollDisplayable(Composite(self.size, *sprites))
+                elif not self.cached:
+                    sprites = self.build_image()
+                    self.sprite = DollDisplayable(Composite(self.size, *sprites))
+                    self.cached = True
+            return self.sprite
 
         def export_data(self, tofile=True, filename="exported"):
             """Exports outfit to .png file or clipboard text."""
@@ -136,3 +147,14 @@ init python:
                     self.group.append(v[0].clone())
             self.rebuild_image()
             return
+
+        def is_modded(self):
+            """Returns True if one of the group items comes from a mod."""
+            for i in self.group:
+                if i.modpath:
+                    return True
+            return False
+
+        def get_modname(self):
+            """Returns a list of mods contained within the outfit group."""
+            return list(set([i.get_modname() for i in self.group if i.modpath]))

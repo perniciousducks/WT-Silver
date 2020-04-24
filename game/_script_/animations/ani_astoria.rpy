@@ -1,6 +1,5 @@
 # Sprite blinking
-image spr_astoria blink:
-    sprite_blink("characters/astoria/face/eyes/closed.png")
+image spr_astoria blink = sprite_blink("characters/astoria/face/eyes/closed.png")
 
 # Astoria chibi
 

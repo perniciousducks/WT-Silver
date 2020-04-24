@@ -56,18 +56,18 @@ init python:
         drags[0].snap(540, 300)
         return
 
-label studio(studio_char):    
+label studio(studio_char):
     python:
         studio_eyebrows_list = [x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyebrows/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x]
         studio_eyes_list = [x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyes/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x]
         studio_mouth_list = [x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/mouth/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x]
         studio_pupils_list = [x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/pupils/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x]
-    
+
         studio_bg_list = ["wall_day", "castle", "forest", "highlight", "versus", "main_room_day", "main_room_night", "corridor", "custom"]
         studio_bg_overlay_list = [None, "curtains", "card", "g_bottom", "g_left", "g_circular"]
-        
+
         studio_outfit_saves = {"cho": cho_outfit_last, "tonks": ton_outfit_last, "astoria": ast_outfit_last, "hermione": her_outfit_last}
-        
+
         if studio_image_eyebrows > len(studio_eyebrows_list):
             studio_image_eyebrows = 0
         if studio_image_eyes > len(studio_eyes_list):
@@ -76,21 +76,21 @@ label studio(studio_char):
             studio_image_pupils = 0
         if studio_image_mouth > len(studio_mouth_list):
             studio_image_mouth = 0
-            
+
         previous_face = char_active.get_face()
-        
+
         char_active.set_face(eyebrows=studio_eyebrows_list[studio_image_eyebrows], eyes=studio_eyes_list[studio_image_eyes], pupils=studio_pupils_list[studio_image_pupils], mouth=studio_mouth_list[studio_image_mouth])
-        
+
         studio_hide = False
-        
+
         image_arrow = "interface/frames/"+interface_color+"/arrow2.png"
-    
+
     label .after_init:
-    
+
     show screen studio
-    
+
     $ _return = ui.interact()
-    
+
     hide screen studio
     if _return == "confirm":
         show screen studio
@@ -215,31 +215,31 @@ label studio(studio_char):
     else:
         $ char_active.set_face(**previous_face)
         return
-        
+
     jump .after_init
 
 screen studio():
     tag studio
     zorder 30
-    
+
     key hkey_hide action ToggleVariable("studio_hide", True, False)
     key hkey_mhide action ToggleVariable("studio_hide", True, False)
-    
+
     frame background "#000"
-    
+
     if studio_bg_list[studio_room_bg] == "custom":
         add Color(hsv=(studio_room_bg_hue/360.0, studio_room_bg_saturation/4.0, studio_room_bg_brightness/2.0))
     elif studio_room_bg_blur > 0.0:
         add im.Blur(im.MatrixColor("images/rooms/_bg_/"+studio_bg_list[studio_room_bg]+".png", (im.matrix.hue(studio_room_bg_hue)*im.matrix.saturation(clamp(studio_room_bg_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_bg_brightness-1.0)), studio_room_bg_blur) ypos studio_room_bg_yoffset-300 xpos studio_room_bg_xoffset-540 xzoom studio_room_bg_flipx yzoom studio_room_bg_flipy xanchor 0.5 yanchor 0.5
     else:
         add im.MatrixColor("images/rooms/_bg_/"+studio_bg_list[studio_room_bg]+".png", (im.matrix.hue(studio_room_bg_hue)*im.matrix.saturation(clamp(studio_room_bg_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_bg_brightness-1.0)) ypos studio_room_bg_yoffset-300 xpos studio_room_bg_xoffset-540 xzoom studio_room_bg_flipx yzoom studio_room_bg_flipy xanchor 0.5 yanchor 0.5
-        
+
     if not studio_bg_overlay_list[studio_room_overlay] == None:
         if studio_room_overlay_blur > 0.0:
             add im.Blur(im.MatrixColor("images/rooms/overlays/"+studio_bg_overlay_list[studio_room_overlay]+".png", (im.matrix.hue(studio_room_overlay_hue)*im.matrix.saturation(clamp(studio_room_overlay_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_overlay_brightness-1.0)), studio_room_overlay_blur) ypos studio_room_overlay_yoffset-300 xpos studio_room_overlay_xoffset-540 xzoom studio_room_overlay_flipx yzoom studio_room_overlay_flipy alpha studio_room_overlay_alpha xanchor 0.5 yanchor 0.5
         else:
             add im.MatrixColor("images/rooms/overlays/"+studio_bg_overlay_list[studio_room_overlay]+".png", (im.matrix.hue(studio_room_overlay_hue)*im.matrix.saturation(clamp(studio_room_overlay_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_overlay_brightness-1.0)) ypos studio_room_overlay_yoffset-300 xpos studio_room_overlay_xoffset-540 xzoom studio_room_overlay_flipx yzoom studio_room_overlay_flipy alpha studio_room_overlay_alpha xanchor 0.5 yanchor 0.5
-    
+
     drag:
         drag_name "character"
         #dragged character_dropped
@@ -247,16 +247,16 @@ screen studio():
         drag_offscreen True
         xpos 160 ypos -75
         if studio_image_body:
-            add char_active.get_image() zoom studio_image_zoom xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
+            add Flatten(char_active.get_image()) zoom studio_image_zoom xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
         else:
             add studio_outfit_saves.get(active_girl).get_image() zoom studio_image_zoom xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
-        
+
     if not studio_bg_overlay_list[studio_room_overlay2] == None:
         if studio_room_overlay2_blur > 0.0:
             add im.Blur(im.MatrixColor("images/rooms/overlays/"+studio_bg_overlay_list[studio_room_overlay2]+".png", (im.matrix.hue(studio_room_overlay2_hue)*im.matrix.saturation(clamp(studio_room_overlay2_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_overlay2_brightness-1.0)), studio_room_overlay2_blur) ypos studio_room_overlay2_yoffset-300 xpos studio_room_overlay2_xoffset-540 xzoom studio_room_overlay2_flipx yzoom studio_room_overlay2_flipy alpha studio_room_overlay2_alpha xanchor 0.5 yanchor 0.5
         else:
             add im.MatrixColor("images/rooms/overlays/"+studio_bg_overlay_list[studio_room_overlay2]+".png", (im.matrix.hue(studio_room_overlay2_hue)*im.matrix.saturation(clamp(studio_room_overlay2_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_overlay2_brightness-1.0)) ypos studio_room_overlay2_yoffset-300 xpos studio_room_overlay2_xoffset-540 xzoom studio_room_overlay2_flipx yzoom studio_room_overlay2_flipy alpha studio_room_overlay2_alpha xanchor 0.5 yanchor 0.5
-    
+
     if studio_text:
         drag:
             drag_name "studio_text"
@@ -274,29 +274,31 @@ screen studio():
                     text "[studio_text_input]" size studio_text_size color studio_text_color:
                         at transform:
                             alpha studio_text_alpha
-                            
+
     if export_in_progress:
         add "images/rooms/overlays/card_sp.png"
         hbox:
-            xalign 1.0 
+            xalign 1.0
             yalign 1.0
             textbutton "confirm" action Return("confirm") xalign 1.0 yalign 1.0
             textbutton "cancel" action Return("cancel") xalign 1.0 yalign 1.0
         frame:
             style "empty"
-            pos (688, 512)
-            text "WT:S [title_version]" size 12 color "#FFFFFF" outlines [(1, "#000000", 0, 0)] xanchor 1.0
-    
+            ypos 512
+            text "WT:S [title_version]" size 12 color "#FFFFFF" outlines [(1, "#000000", 0, 0)] xanchor 1.0 xpos 688
+            if item_to_export.is_modded():
+                text "Modded" size 12 color "#00b200" outlines [(1, "#000000", 0, 0)] xpos 392
+
     if not studio_hide:
         use character_studio
-    
+
 screen character_studio():
     tag character_studio
     zorder 31
-    
+
     if not export_in_progress:
         use close_button
-    
+
     if config.developer:
         vbox:
             xpos 50 yalign 0.9
@@ -304,7 +306,7 @@ screen character_studio():
             text "Eyes: {size=-4}{color=#93c763}"+studio_eyes_list[studio_image_eyes]+"{/color}{/size}" color "#fff" outlines [(1, "#000000", 0, 0)]
             text "Pupils: {size=-4}{color=#93c763}"+studio_pupils_list[studio_image_pupils]+"{/color}{/size}" color "#fff" outlines [(1, "#000000", 0, 0)]
             text "Mouth: {size=-4}{color=#93c763}"+studio_mouth_list[studio_image_mouth]+"{/color}{/size}" color "#fff" outlines [(1, "#000000", 0, 0)]
-    
+
     frame:
         ypos 50
         xpos 50
@@ -333,7 +335,7 @@ screen character_studio():
                         spacing 32
                         imagebutton idle image_arrow hover image_hover(image_arrow) action Return(["body", True])
                         imagebutton idle im.Flip(image_arrow, horizontal=True) hover image_hover(im.Flip(image_arrow, horizontal=True)) action Return(["body", False])
-                    
+
                 frame:
                     style "empty"
                     xpos 50
@@ -343,7 +345,7 @@ screen character_studio():
                         bar value VariableValue("studio_image_zoom", 1.0, max_is_zero=False, style=u'bar', offset=0, step=0.01)
                         bar value VariableValue("studio_image_alpha", 1.0, max_is_zero=False, style=u'bar', offset=0, step=0.01)
                         bar value VariableValue("studio_image_rotation", 359.0, max_is_zero=False, style=u'bar', offset=0, step=1.0)
-                    
+
                 textbutton "{size=11}{color=#FFF}Flip{/color}{/size}" action ToggleVariable("studio_image_flip", -1, 1) xsize 94 xpos 50 xanchor 0.5
                 textbutton "{size=11}{color=#FFF}Reset{/color}{/size}" action Return(["reset", "character"]) xsize 94 xpos 50 xanchor 0.5
             vbox:
@@ -351,7 +353,7 @@ screen character_studio():
                     spacing 32
                     imagebutton idle image_arrow hover image_hover(image_arrow) action Return(["bg", "dec"])
                     imagebutton idle im.Flip(image_arrow, horizontal=True) hover image_hover(im.Flip(image_arrow, horizontal=True)) action Return(["bg", "inc"])
-                    
+
                 frame:
                     style "empty"
                     xpos 50
@@ -364,18 +366,18 @@ screen character_studio():
                         bar value VariableValue("studio_room_bg_blur", 5.0, max_is_zero=False, style=u'bar', offset=0, step=0.1)
                         bar value VariableValue("studio_room_bg_xoffset", 2160, max_is_zero=False, style=u'bar', offset=0, step=1)
                         bar value VariableValue("studio_room_bg_yoffset", 1200, max_is_zero=False, style=u'bar', offset=0, step=1)
-                    
+
                 textbutton "{size=11}{color=#FFF}Flip X{/color}{/size}" action ToggleVariable("studio_room_bg_flipx", -1, 1) xsize 94 xpos 50 xanchor 0.5
                 textbutton "{size=11}{color=#FFF}Flip Y{/color}{/size}" action ToggleVariable("studio_room_bg_flipy", -1, 1) xsize 94 xpos 50 xanchor 0.5
                 textbutton "{size=11}{color=#FFF}Reset{/color}{/size}" action Return(["reset", "background"]) xsize 94 xpos 50 xanchor 0.5
-            
+
             vbox:
                 hbox:
                     spacing 32
                     imagebutton idle image_arrow hover image_hover(image_arrow) action Return(["overlay", "dec", 1])
                     imagebutton idle im.Flip(image_arrow, horizontal=True) hover image_hover(im.Flip(image_arrow, horizontal=True)) action Return(["overlay", "inc", 1])
-                    
-                if not studio_bg_overlay_list[studio_room_overlay] == None:    
+
+                if not studio_bg_overlay_list[studio_room_overlay] == None:
                     frame:
                         style "empty"
                         xpos 50
@@ -389,18 +391,18 @@ screen character_studio():
                             bar value VariableValue("studio_room_overlay_blur", 5.0, max_is_zero=False, style=u'bar', offset=0, step=0.1)
                             bar value VariableValue("studio_room_overlay_xoffset", 2160, max_is_zero=False, style=u'bar', offset=0, step=1)
                             bar value VariableValue("studio_room_overlay_yoffset", 1200, max_is_zero=False, style=u'bar', offset=0, step=1)
-                        
+
                     textbutton "{size=11}{color=#FFF}Flip X{/color}{/size}" action ToggleVariable("studio_room_overlay_flipx", -1, 1) xsize 94 xpos 50 xanchor 0.5
                     textbutton "{size=11}{color=#FFF}Flip Y{/color}{/size}" action ToggleVariable("studio_room_overlay_flipy", -1, 1) xsize 94 xpos 50 xanchor 0.5
                     textbutton "{size=11}{color=#FFF}Reset{/color}{/size}" action Return(["reset", "overlay", 1]) xsize 94 xpos 50 xanchor 0.5
-                    
+
             vbox:
                 hbox:
                     spacing 32
                     imagebutton idle image_arrow hover image_hover(image_arrow) action Return(["overlay", "dec", 2])
                     imagebutton idle im.Flip(image_arrow, horizontal=True) hover image_hover(im.Flip(image_arrow, horizontal=True)) action Return(["overlay", "inc", 2])
-                    
-                if not studio_bg_overlay_list[studio_room_overlay2] == None:    
+
+                if not studio_bg_overlay_list[studio_room_overlay2] == None:
                     frame:
                         style "empty"
                         xpos 50
@@ -414,7 +416,7 @@ screen character_studio():
                             bar value VariableValue("studio_room_overlay2_blur", 5.0, max_is_zero=False, style=u'bar', offset=0, step=0.1)
                             bar value VariableValue("studio_room_overlay2_xoffset", 2160, max_is_zero=False, style=u'bar', offset=0, step=1)
                             bar value VariableValue("studio_room_overlay2_yoffset", 1200, max_is_zero=False, style=u'bar', offset=0, step=1)
-                        
+
                     textbutton "{size=11}{color=#FFF}Flip X{/color}{/size}" action ToggleVariable("studio_room_overlay2_flipx", -1, 1) xsize 94 xpos 50 xanchor 0.5
                     textbutton "{size=11}{color=#FFF}Flip Y{/color}{/size}" action ToggleVariable("studio_room_overlay2_flipy", -1, 1) xsize 94 xpos 50 xanchor 0.5
                     textbutton "{size=11}{color=#FFF}Reset{/color}{/size}" action Return(["reset", "overlay", 2]) xsize 94 xpos 50 xanchor 0.5
@@ -423,7 +425,7 @@ screen character_studio():
                     spacing 32
                     imagebutton idle image_arrow hover image_hover(image_arrow) action ToggleVariable("studio_text", True, False)
                     imagebutton idle im.Flip(image_arrow, horizontal=True) hover image_hover(im.Flip(image_arrow, horizontal=True)) action ToggleVariable("studio_text", True, False)
-                    
+
                 if studio_text:
                     textbutton "{size=11}{color=#FFF}Input{/color}{/size}" action Return(["input", "text"]) xsize 94 xpos 50 xanchor 0.5
                     frame:

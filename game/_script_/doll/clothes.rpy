@@ -141,7 +141,7 @@ init python:
 
         def clone(self):
             """Creates a clone of this cloth object. Since it requires a parent object it should be used internally only to avoid object depth issue."""
-            return DollCloth(self.name, self.categories, self.type, self.id, [x[:] for x in self.color], self.zorder, self.unlocked, self.level, self.blacklist, self)
+            return DollCloth(self.name, self.categories, self.type, self.id, [x[:] for x in self.color], self.zorder, self.unlocked, self.level, self.blacklist, self, self.armfix, self.modpath)
 
         def set_pose(self, pose):
             for x in (self.categories[0], self.categories[1], self.type):
@@ -159,3 +159,7 @@ init python:
             self.set_layers()
             self.rebuild_image()
             return
+
+        def get_modname(self):
+            """Return the name of the mod directory if exists."""
+            return self.modpath.split("/")[1] if self.modpath else None

@@ -151,10 +151,10 @@ init python:
         def is_modded(self):
             """Returns True if one of the group items comes from a mod."""
             for i in self.group:
-                if i.modpath:
+                if i.is_modded():
                     return True
             return False
 
         def get_modname(self):
             """Returns a list of mods contained within the outfit group."""
-            return list(set([i.get_modname() for i in self.group if i.modpath]))
+            return list(set([i.get_modname() for i in self.group if i.is_modded()]))

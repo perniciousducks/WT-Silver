@@ -10,16 +10,17 @@ label wardrobe(char_label):
     python:
         # TODO: Streamline and unify whoring variables.
         _char_var_list = {
-            "hermione": her_whoring,
-            "tonks": ton_friendship,
-            "astoria": ast_affection,
-            "cho": cho_whoring
+            "hermione": (her_whoring, her_requirements["change_underwear"]),
+            "tonks": (ton_friendship, ton_requirements["change_underwear"]),
+            "astoria": (ast_affection, ast_requirements["change_underwear"]),
+            "cho": (cho_whoring, cho_requirements["change_underwear"])
             }
 
         char_active = eval(active_girl)
         char_nickname = char_active.name
-        char_scale = 1.0/globals()[active_girl+"_scaleratio"]
-        char_level = _char_var_list[active_girl]
+        char_scale = 1.0/getattr(renpy.store, active_girl+"_scaleratio")
+        char_level = _char_var_list[active_girl][0]
+        char_underwear_allowed = char_level >= _char_var_list[active_girl][1]
 
         renpy.start_predict("interface/wardrobe/gold/*.png")
         renpy.start_predict("interface/wardrobe/gray/*.png")
@@ -192,8 +193,6 @@ label wardrobe(char_label):
                             if char_active.clothes[item.type][0] and item.id == char_active.clothes[item.type][0].id:
                                 current_item = item
                                 break
-            else:
-                $ renpy.play('sounds/fail.mp3')
     elif _return[0] == "subcategory":
         if current_subcategory != _return[1]:
             $ renpy.play('sounds/scroll.mp3')
@@ -264,7 +263,11 @@ screen wardrobe_menu(xx, yy):
                     action Return(["category", category])
             else:
                 add "interface/wardrobe/{}/frame.png".format(interface_color) xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
-                add "interface/wardrobe/icons/categories/{}/{}.png".format(active_girl, category) xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
+                # Underwear disabled check
+                if category in ("bras", "panties") and not char_underwear_allowed:
+                    add gray_tint("interface/wardrobe/icons/categories/{}/{}.png".format(active_girl, category)) xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
+                else:
+                    add "interface/wardrobe/icons/categories/{}/{}.png".format(active_girl, category) xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
                 button:
                     style "empty"
                     pos (61+377*cat_row, 80+110*cat_col)
@@ -315,13 +318,10 @@ screen wardrobe_menu(xx, yy):
 
         add "interface/panels/{}/wardrobe_panel.png".format(interface_color)
 
-        #Easter Egg
-        vbox:
-            xalign 0.5
-            ypos 260
-            spacing 72
-            button style "empty" xysize (120, 60) action Return(["erozone", "boobs"])
-            button style "empty" xysize (120, 50) action Return(["erozone", "pussy"])
+        #Easter Egg (Headpats, boobs, pussy)
+        button style "empty" xysize (120, 80) xalign 0.525 ypos 60 action Return(["erozone", "head"])
+        button style "empty" xysize (120, 60) xalign 0.525 ypos 238 action Return(["erozone", "boobs"])
+        button style "empty" xysize (120, 60) xalign 0.525 ypos 360 action Return(["erozone", "pussy"])
 
         # Toggles and User Settings
         use dropdown_menu(name="Toggles", pos=(116, 29), items_offset=(-5, 2)):
@@ -618,9 +618,9 @@ screen wardrobe_outfit_menuitem(xx, yy):
                         frame:
                             style "empty"
                             background "#000000B3"
+                            padding (5, 5)
                             vbox:
                                 spacing 5
-                                xpos 5
                                 for x in wardrobe_outfit_schedule:
                                     $ _ico = "interface/wardrobe/icons/outfits/"+x.lower()+".png"
                                     $ _bool = str(menu_items[i].schedule[x.lower()])

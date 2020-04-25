@@ -160,6 +160,12 @@ init python:
             self.rebuild_image()
             return
 
+        def is_modded(self):
+            """Returns True if item comes from a mod."""
+            if self.modpath:
+                return True
+            return False
+
         def get_modname(self):
             """Return the name of the mod directory if exists."""
-            return self.modpath.split("/")[1] if self.modpath else None
+            return self.modpath.split("/")[1] if self.is_modded() else None

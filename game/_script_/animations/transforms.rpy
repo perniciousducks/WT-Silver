@@ -79,3 +79,6 @@ transform main_sprite_position(x, y, flip, scale):
     ypos y
     xzoom flip
     zoom (1.0/scale)
+
+transform random_rotation(a=-45, b=45):
+    rotate random.randint(a, b)

@@ -60,7 +60,7 @@ init python:
                     score += 15
         return score
 
-    def slap_mouse_away():
+    def mouse_slap():
         """Causes the mouse to be moved away from current position and displays a smoke effect"""
         renpy.play('sounds/slap.mp3')
         renpy.stop_predict_screen("gfx_effect")
@@ -70,7 +70,17 @@ init python:
         renpy.show_screen("gfx_effect", start_x=x, start_y=y, target_x=xx, target_y=yy, img="smoke", xanchor=0.1, yanchor=0.7, zoom=0.2, duration=0.15)
         renpy.set_mouse_pos(xx, yy, duration=0.1)
 
-    def love_mouse_away():
+    def mouse_headpat():
+        """Causes the mouse to be moved away from current position and displays a heart effect"""
+        renpy.play('sounds/slap_03.mp3')
+        renpy.stop_predict_screen("gfx_effect")
+        x, y = renpy.get_mouse_pos()
+        xx, yy = x, y-15
+        img = At(Text("*pat*", size=16, color="#000000CC", outlines=[(1, "#FFFFFFCC", 0, 0)]), random_rotation)
+        renpy.hide_screen("gfx_effect")
+        renpy.show_screen("gfx_effect", start_x=x, start_y=y, target_x=xx, target_y=yy, img=img, xanchor=0.5, yanchor=0.65, zoom=1.0, timer=0.35)
+
+    def mouse_heart():
         """Causes the mouse to be moved away from current position and displays a heart effect"""
         renpy.play('sounds/kiss.mp3')
         renpy.stop_predict_screen("gfx_effect")

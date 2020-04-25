@@ -68,16 +68,15 @@ label hg_pf_grope:
     else:
         her "I'd better go now. It's getting pretty late..."
 
-
     # Hermione leaves
     call her_walk("door", "base")
 
     if her_tier > 5:
-        call her_main("(What about my points?)", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
+        call her_main("(What about my points?)", "disgust", "narrow", "base", "down", cheeks="blush", xpos="base", flip=True)
         if her_whoring < 24:
-            call her_main("(I'll just ask him about it next time...)", "annoyed", "narrow", "angry", "R", ypos="head")
+            call her_main("(I'll just ask him about it next time...)", "annoyed", "narrow", "angry", "R")
         else:
-            call her_main("(Eh, who cares...)", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
+            call her_main("(Eh, who cares...)", "base", "narrow", "base", "up", cheeks="blush")
         pause.5
 
     call her_chibi("leave")
@@ -309,14 +308,14 @@ label hg_pf_grope_T3_intro_E2:
     menu:
         "\"I'm gonna play with your tits today.\"":
             call her_main("Of course, Sir.", "base", "narrow", "worried", "down")
-            
+
             if not hermione.is_worn("top") and hermione.is_worn("bra"):
                 call nar(">You reach out swiftly and grab both of her tits through her bra...")
             elif hermione.is_worn("top") and not hermione.is_worn("bra"):
                 call nar(">You reach out swiftly and grab both of her tits through her clothes...")
             else:
                 call nar(">You reach out swiftly and grab both of her tits...")
-            
+
             jump hg_pf_grope_breasts_T3
 
         "\"I'm gonna play with your butt today.\"":
@@ -346,7 +345,7 @@ label hg_pf_grope_T3_E2:
     menu:
         "\"I'm gonna molest your tits now.\"":
             call her_main("Yes, Sir.", "base", "narrow", "annoyed", "up")
-            
+
             if not hermione.is_worn("top") and hermione.is_worn("bra"):
                 call nar(">You reach out swiftly and grab both of her tits through her bra...")
             elif hermione.is_worn("top") and not hermione.is_worn("bra"):

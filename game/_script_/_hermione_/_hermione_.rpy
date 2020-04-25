@@ -109,6 +109,7 @@ label end_hermione_event:
     $ active_girl = None
     $ hermione_busy = True
     $ hermione.wear("all")
+    $ hermione.set_cum(None)
 
     $ renpy.stop_predict(hermione.get_image())
     $ renpy.stop_predict("characters/hermione/face/*.png")

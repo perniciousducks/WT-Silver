@@ -428,3 +428,12 @@ default her_makeup1_freckles = DollCloth("hermione", ("makeup", "slot2"), "makeu
 
 # Torso
 default her_makeup2_freckles = DollCloth("hermione", ("makeup", "slot3"), "makeup2", "freckles3", [[185, 124, 81, 255]], unlocked=True)
+
+################
+## Pubic Hair ##
+################
+
+default her_pubes_arrow = DollCloth("hermione", ("pelvis", "pubes"), "pubes", "arrow", [[152, 89, 48, 255]], unlocked=True)
+default her_pubes_beaver = DollCloth("hermione", ("pelvis", "pubes"), "pubes", "beaver", [[152, 89, 48, 255]], unlocked=True)
+default her_pubes_stuble = DollCloth("hermione", ("pelvis", "pubes"), "pubes", "stuble", [[92, 54, 29, 255]], unlocked=True)
+default her_pubes_unshaved = DollCloth("hermione", ("pelvis", "pubes"), "pubes", "unshaved", [[92, 54, 29, 255]], unlocked=True)

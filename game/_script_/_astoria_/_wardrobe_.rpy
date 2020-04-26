@@ -95,3 +95,12 @@ default ast_outfit_ann = DollOutfit([ast_hair_ann, ast_hat_ann, ast_top_ann, ast
 default ast_cloth_pants1 = DollCloth("astoria", ("bottoms", "trousers"), "bottom", "pants_1", [[180, 180, 180, 255], [213, 161, 13, 255]], armfix=True, unlocked=True)
 default ast_cloth_shorts1 = DollCloth("astoria", ("bottoms", "trousers"), "bottom", "pants_1_short", [[180, 180, 180, 255], [213, 161, 13, 255]], level=8, armfix=True, unlocked=True)
 default ast_cloth_pantyhose1 = DollCloth("astoria", ("legwear", "stockings"), "stockings", "pantyhose", [[190, 146, 129, 255]], armfix=True, unlocked=True)
+
+################
+## Pubic Hair ##
+################
+
+default ast_pubes_arrow = DollCloth("astoria", ("pelvis", "pubes"), "pubes", "arrow", [[229, 198, 129, 255]], unlocked=True)
+default ast_pubes_beaver = DollCloth("astoria", ("pelvis", "pubes"), "pubes", "beaver", [[229, 198, 129, 255]], unlocked=True)
+default ast_pubes_stuble = DollCloth("astoria", ("pelvis", "pubes"), "pubes", "stuble", [[139, 107, 69, 255]], unlocked=True)
+default ast_pubes_unshaved = DollCloth("astoria", ("pelvis", "pubes"), "pubes", "unshaved", [[139, 107, 69, 255]], unlocked=True)

@@ -44,13 +44,9 @@ label tonks_wardrobe_check(section, arg=None):
             return
     else:
         if section == "tabswitch":
-            # TODO: Delete
-            $ TBA_message()
-            return False
-
             if ton_friendship < ton_requirements["tattoos"]:
                 if wardrobe_chitchats:
-                    call ton_main("As much as I'd like to get a new piercing or a tattoo I can't simply let you modify my body like that.",face="angry")
+                    call ton_main("As much as I'd like to get a new piercing or a tattoo I can't simply let you modify my body like that.",face="annoyed")
                 #Hint
                 $ wardrobe_fail_hint(ton_requirements["tattoos"])
                 return False

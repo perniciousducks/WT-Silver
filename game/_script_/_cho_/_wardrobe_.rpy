@@ -195,3 +195,12 @@ default choq_goggles_face = DollCloth("cho", ("event", "miscellaneous"), "hat", 
 default choq_cloth_schoolskirt3 = DollCloth("cho", ("bottoms", "skirts"), "bottom", "school_skirt_3", [[103, 90, 108, 255], [232, 177, 13, 255]], unlocked=False, armfix=True)
 
 default cho_outfit_quidditch = DollOutfit([choq_cloth_topsweater1, choq_cloth_pantslong2, choq_cloth_robequidditch1, choq_cloth_glovesquidditch1, cho_bra_basic1, cho_panties_basic1])
+
+################
+## Pubic Hair ##
+################
+
+default cho_pubes_arrow = DollCloth("cho", ("pelvis", "pubes"), "pubes", "arrow", [[70, 90, 147, 255]], unlocked=True)
+default cho_pubes_beaver = DollCloth("cho", ("pelvis", "pubes"), "pubes", "beaver", [[70, 90, 147, 255]], unlocked=True)
+default cho_pubes_stuble = DollCloth("cho", ("pelvis", "pubes"), "pubes", "stuble", [[52, 59, 80, 255]], unlocked=True)
+default cho_pubes_unshaved = DollCloth("cho", ("pelvis", "pubes"), "pubes", "unshaved", [[52, 59, 80, 255]], unlocked=True)

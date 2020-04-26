@@ -44,10 +44,6 @@ label astoria_wardrobe_check(section, arg=None):
             return
     else:
         if section == "tabswitch":
-            # TODO: Delete
-            $ TBA_message()
-            return False
-
             if ast_affection < ast_requirements["tattoos"]:
                 if wardrobe_chitchats:
                     call ast_main("Cool idea!",face="happy")

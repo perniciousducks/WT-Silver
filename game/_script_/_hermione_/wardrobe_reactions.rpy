@@ -175,10 +175,9 @@ label hermione_wardrobe_check(section, arg=None):
                             #Hint
                             $ wardrobe_fail_hint(her_requirements["unequip_underwear"])
                             return
-                else:
-                    if her_whoring < arg.level:
-                        call .too_much
-                        return
+                if her_whoring < arg.level:
+                    call .too_much
+                    return
             else:
                 if her_whoring < her_requirements["unequip_clothes"]:
                     if arg.type in ("top", "bottom"):

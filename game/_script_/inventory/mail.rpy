@@ -42,7 +42,7 @@ default letter_min_curses = Letter(
 
 # Card Game Letters
 default letter_deck = Letter(
-    text = "{size=-3}Sir Albus Dumbledore{/size}\n\n{size=-7}We would like to present to you great opportunity to become a Wizard Cards champion. We've included a starter pack to our card game in the hopes that you will consider any of our resellers to stock our cards for your students to purchase and play.\n\nHere's a little bit of information about our cards:\nEvery Wizard card has an enchantment that will personalise its look just for you and show something of your own favourite interest.\n\nDo you like Quidditch? Every card will look like a famous Quidditch player or a sport related print.\nInterested in magical creatures? The cards will have magical creatures on them.\nFind out your unique illustrations today with a started pack, we don't even know what it is!{/size}\n\n{space=110}{size=-5}Wizard cards inc{/size}",
+    text = "{size=-3}Sir Albus Dumbledore{/size}\n\n{size=-7}We would like to present to you great opportunity to become a Wizard Cards champion. We've included a starter pack to our card game in the hopes that you will consider any of our resellers to stock our cards for your students to purchase and play.\n\nHere's a little bit of information about our cards:\nEvery Wizard card has an enchantment that will personalise its look just for you and show something of your own favourite interest.\n\nDo you like Quidditch? Every card will look like a famous Quidditch player or a sport related print.\nInterested in magical creatures? The cards will have magical creatures on them.\nFind out your unique illustrations today with a starter pack, we don't even know what it is!{/size}\n\n{space=110}{size=-5}Wizard cards inc{/size}",
     label = "deck_mail_send"
 )
 
@@ -208,7 +208,7 @@ label letter_curse_complaint:
 label deck_mail_send:
     $ deck_unlocked = True
 
-    m "That last bit just sounds like scam to me..."
+    m "That last bit just sounds like a scam to me..."
     m "..."
     m "I guess I'll have a look at the starter pack at least..."
 

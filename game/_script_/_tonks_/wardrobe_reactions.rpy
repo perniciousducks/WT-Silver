@@ -193,10 +193,9 @@ label tonks_wardrobe_check(section, arg=None):
                             #Hint
                             $ wardrobe_fail_hint(ton_requirements["unequip_underwear"])
                             return
-                else:
-                    if ton_friendship < arg.level:
-                        call .too_much
-                        return
+                if ton_friendship < arg.level:
+                    call .too_much
+                    return
             else:
                 if ton_friendship < ton_requirements["unequip_clothes"]:
                     if arg.type in ("top", "bottom"):

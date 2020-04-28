@@ -196,10 +196,9 @@ label astoria_wardrobe_check(section, arg=None):
                             #Hint
                             $ wardrobe_fail_hint(ast_requirements["unequip_underwear"])
                             return
-                else:
-                    if ast_affection < arg.level:
-                        call .too_much
-                        return
+                if ast_affection < arg.level:
+                    call .too_much
+                    return
             else:
                 if ast_affection < ast_requirements["unequip_clothes"]:
                     if arg.type in ("top", "bottom"):

@@ -14,10 +14,11 @@ init python:
 
             self.rebuild_image()
 
-        def rebuild(self, *args):
+        def rebuild(self):
             """Rebuild all character images. Useful for debugging."""
             self.body.rebuild_image()
             self.face.rebuild_image()
+            self.cum.rebuild_image()
             for o in self.wardrobe_list:
                 o.rebuild_image()
                 o.build_icon()

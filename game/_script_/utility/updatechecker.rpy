@@ -104,4 +104,17 @@ init -1 python:
 
             save_internal_version = 1.384
 
+        if float(save_internal_version) < 1.385:
+
+            hermione.rebuild()
+            cho.rebuild()
+            astoria.rebuild()
+            tonks.rebuild()
+
+            if her_whoring < 18 and hermione.is_equipped("tattoo3") and hermione.get_equipped("tattoo3").id == "lockhart_tattoo":
+                if hg_pr_flirt.is_event_complete(2, 2):
+                    hermione.unequip("tattoo3")
+
+            save_internal_version = 1.385
+
             renpy.block_rollback()

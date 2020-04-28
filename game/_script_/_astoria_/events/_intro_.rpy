@@ -575,7 +575,10 @@ label astoria_intro_E3:
     call her_main("...", "annoyed", "narrow", "angry", "R")
     call ast_main("*cough*... {size=-4}mudblood...{/size}","annoyed","narrow","angry","L")
     call her_main("*Tzzzs!*...", "angry", "closed", "angry", "mid")
-    call her_main("I'll go back to class then...", "annoyed", "narrow", "angry", "R")
+    if d_flag_01:
+        call her_main("I'll go {i}fetch{/i} professor Snape then...", "annoyed", "narrow", "angry", "R")
+    else:
+        call her_main("I'll go back to class then...", "annoyed", "narrow", "angry", "R")
     call her_main("Good day, Professor.", "open", "base", "angry", "mid")
     stop music fadeout 2.0
 

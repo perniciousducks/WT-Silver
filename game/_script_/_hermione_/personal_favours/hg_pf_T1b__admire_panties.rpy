@@ -28,7 +28,7 @@ label hg_pf_admire_panties:
 
     call her_chibi("stand","desk","base", flip=False)
     call gen_chibi("sit_behind_desk")
-    
+
     $ hermione.wear("all")
 
     hide screen blkfade
@@ -130,9 +130,9 @@ label hg_pf_admire_panties_T1: # Call label
     $ hermione.strip("bottom")
     call her_chibi("lift_skirt","mid","base")
     with d3
-    
+
     call ctc
-        
+
     call play_music("playful_tension")
     show screen blktone
     call her_main(".....................", "angry", "base", "angry", "mid", xpos="mid", ypos="base")
@@ -202,7 +202,7 @@ label hg_pf_admire_panties_T2: # Call label
             call her_main("That's not true...", "base", "happy", "base", "mid")
             call her_main("But this is a small price to pay if the Gryffindors keep the cup this year.", "base", "base", "base", "R")
             her "I know everyone will be so happy..."
-            
+
         "\"I like your panties...\"":
             call her_main("Thank you, [genie_name]...", "base", "happy", "base", "mid")
 
@@ -257,7 +257,7 @@ label hg_pf_admire_panties_T3_intro_E1:
             menu:
                 "\"Absolutely!\"":
                     m "Absolutely!"
-                    $ current_payout +=10
+                    $ current_payout += 10
                     m "{number=current_payout} additional points to Gryffindor!"
                     call her_main("Thank you, [genie_name]!", "base", "happyCl", "worried", "mid")
                     call ctc
@@ -309,7 +309,7 @@ label hg_pf_admire_panties_T3_E1:
             menu:
                 "\"Absolutely!\"":
                     m "Absolutely!"
-                    $ current_payout +=10
+                    $ current_payout += 10
                     m "{number=current_payout} additional points to Gryffindor!"
                     call her_main("Thank you, [genie_name]!", "base", "happyCl", "worried", "mid")
                     call ctc

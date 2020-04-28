@@ -103,7 +103,7 @@ label stats_menu(xx=150, yy=90):
                     "Cho": {"ico": "head_cho_2", "flag": cho_unlocked, "name": "Cho Chang", "sex": "Female", "height": "5.1ft", "weight": "122lb", "job": "Student", "hates": "Hermione", "likes": "Winning"},
                     "Luna": {"ico": "head_luna_2", "flag": luna_unlocked, "name": "Luna Lovegood", "sex": "Female", "height": "5.2ft", "weight": "117lb", "job": "Student", "hates": "Wrackspurts", "likes": "{size=-2}Magical creatures{/size}"},
                     "Astoria": {"ico": "head_astoria_2", "flag": astoria_unlocked, "name": "Astoria Greengrass", "sex": "Female", "height": "5.0ft", "weight": "102lb", "job": "Student", "hates": "Rules", "likes": "Breaking them"},
-                    "Susan": {"ico": "head_susan_2", "flag": susan_unlocked, "name": "Susan Bones", "sex": "Female", "height": "5.3ft", "weight": "135lb", "job": "Student", "hates": "Chores", "likes": "You {size=-4}Secretly..{/size}"}
+                    "Susan": {"ico": "head_susan_2", "flag": susan_unlocked, "name": "Susan Bones", "sex": "Female", "height": "5.1ft", "weight": "135lb", "job": "Student", "hates": "Chores", "likes": "You {size=-4}Secretly..{/size}"}
                     }
 
     $ stats_categories_sorted = ["Genie", "Snape", "Tonks", "Hermione", "Cho", "Luna", "Astoria", "Susan"] #"Ginny", "Daphne", "Padma", "Patil", "Myrtle", "Mafkin"

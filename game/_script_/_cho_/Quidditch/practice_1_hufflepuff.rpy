@@ -14,7 +14,7 @@ label cc_ht_start:
             m "So, when will those Quidditch matches take place?"
             call cho_main("We could arrange one for today. Just for practice, against Hufflepuff.", "open", "base", "base", "R")
             m "Really? Just like that?"
-            call cho_main("Why yes. The Hufflepuff team wouldn't take up a chance to play against us for training.", "soft", "base", "raised", "mid")
+            call cho_main("Why yes. The Hufflepuff team wouldn't give up a chance to play against us for training.", "soft", "base", "raised", "mid")
             call cho_main("They'd welcome every opportunity to test us and study our tactics...", "open", "narrow", "angry", "mid")
             call cho_main("All I need to do is give their team captain a heads up during classes.", "base", "base", "base", "mid")
             m "Great. Get your team ready cause you are going to play today."

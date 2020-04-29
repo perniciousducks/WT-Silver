@@ -688,7 +688,7 @@ label hg_pf_talk_tonks:
             call her_main("I'm almost certain one of the girls wasn't wearing any underwear in class - which is completely unhygienic.", "angry", "narrow", "worried", "mid_soft")
             if not hermione.is_worn("panties"):
                 m "(Is she even wearing any herself right now?...)"
-            call her_main("It was if a snail had dragged themselves across one of the seats.", "annoyed", "base", "base", "R", cheeks="blush")
+            call her_main("It was as if a snail had dragged themselves across one of the seats.", "annoyed", "base", "base", "R", cheeks="blush")
             call her_main("I had to insist on staying after class - and I spent a good ten minutes scourgifying everything.", "disgust", "narrow", "worried", "down", cheeks="blush")
             if masturbating:
                 g9 "(I bet you lapped it all up, slut!)"
@@ -824,16 +824,16 @@ label hg_pf_talk_tonks:
     if not masturbating:
         m "..."
     call ton_main("Hold on...","open","closed","base","mid")
-    call ton_main("That doesn't explain as to why {i}you{/i} decided to contribute to this problem - and do favours for your teachers as well.","open","base","raised","L")
+    call ton_main("That doesn't explain as to why {i}you{/i} decided to contribute to this problem, and do favours for your teachers as well.","open","base","raised","L")
     call her_main("Well...", "disgust", "base", "base", "R")
-    call ton_main("There is no need for you to keep up an act - if you changed your mind on it.","base","base","base","mid")
+    call ton_main("There is no need for you to keep up an act, if you changed your mind on it.","base","base","base","mid")
     call ton_main("You can tell us. I most certainly won't judge you...","horny","base","base","L", cheeks="blush", hair="horny")
     call her_main("I just...{w=0.6} Sometimes Gryffindor is just so far behind in points...", "soft", "narrow", "base", "down")
     call ton_main("Oh, I see...","base","base","upset","L", hair="basic")
-    call her_main("I also only asked Professor Dumbledore for a favour once or twice...", "soft", "base", "base", "mid", cheeks="blush")
+    call her_main("So I also asked Professor Dumbledore for a favour, but only once or twice...", "soft", "base", "base", "mid", cheeks="blush")
 
     if not masturbating:
-        m "[tmp_word] times..."
+        m "Actually..."
         call her_main("*Hmpf*...", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
     call ton_main("And I suppose you're against the idea of doing favours for another teacher?","horny","base","raised","L", hair="horny")
@@ -957,7 +957,7 @@ label hg_pf_talk_tonks:
                 call her_main("...", "annoyed", "narrow", "worried", "down", cheeks="blush")
                 call ton_main("Miss Granger?","base","base","raised","L")
                 call her_main("*Uhm*...", "annoyed", "base", "base", "R", cheeks="blush")
-                call her_main("Well, I could prick any of the girls in Slytherin, really...", "soft", "narrow", "angry", "R")
+                call her_main("Well, I could pick any of the girls in Slytherin, really...", "soft", "narrow", "angry", "R")
 
             call her_main("It is quite astonishing to what level those Slytherins would go - to get the teachers going...", "annoyed", "base", "angry", "mid")
             call her_main("Especially that one time during care for magical creatures...", "open", "base", "base", "mid")

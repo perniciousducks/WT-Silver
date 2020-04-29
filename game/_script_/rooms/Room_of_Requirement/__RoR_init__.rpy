@@ -89,6 +89,7 @@ default mr_ev_PaH = MirrorStory(
 )
 default mr_ev_PR = MirrorStory(
     name = "Panty Raid",
+    unlockable = True,
     story_description = "Genie asks Hermione to go out and collect other girls panties.",
     start_label = "panty_raid",
     authors = ["WaxerRed"],

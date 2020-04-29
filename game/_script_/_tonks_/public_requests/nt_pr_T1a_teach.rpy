@@ -438,7 +438,7 @@ label nt_pr_teach_T2_E1: # Tier 2 - Event 1 - Hufflepuff girl
     g9 "Was it something naughty?"
     call ton_main("Naturally...","open","closed","base","mid")
     call ton_main("She just sort of stood there after I told her, stunned for a little bit...","base","base","base","mid")
-    call ton_main("I hushed to the door and made sure it was locked.","open","base","base","R")
+    call ton_main("I rushed to the door and made sure it was locked.","open","base","base","R")
     call ton_main("After that, I sat down in the front-row of the class, and told her to sit on my desk...","base","base","angry","mid")
     m "Mmm, now that's a front-row seat to die for."
     call ton_main("All that was missing was a bucket of popcorn...","horny","base","angry","mid")
@@ -644,7 +644,7 @@ label nt_pr_teach_T2_E3: # Tier 2 - Event 3 - Slytherin boy
     call ton_main("No, just until the spell wears off...","open","closed","base","mid")
     call ton_main("In an hour or so...","upset","base","angry","R")
     call ton_main("That, or someone else finds him...","upset","base","base","up")
-    call ton_main("Either way, he's learned his lesson about- not to screw around- in my class.","open","closed","base","mid")
+    call ton_main("Either way, he learned his lesson about not screwing around in my class.","open","closed","base","mid")
     m "Very good..."
     call ton_main("Thank you, Sir...","base","base","base","mid")
     call ton_main("See you...","base","happyCl","base","mid")
@@ -693,8 +693,8 @@ label nt_pr_teach_T2_E4: # Tier 2 - Event 4 - Slytherin girl
     call ton_main("For someone who supposedly hates selling favours,...she was surprisingly keen today...","base","base","angry","mid")
     m "Maybe she's finally coming around..."
     call ton_main("I got her to give me a little peek under her skirt, for twenty house points...","open","closed","base","mid")
-    call ton_main("And, after she'd pulled up her skirt, I did the old-...offer more points for something else- trick...","open","base","base","mid")
-    call ton_main("Had her to drop her panties as well.","base","base","base","mid")
+    call ton_main("And, after she'd pulled up her skirt, I did the old... \"offer more points for something else\" trick...","open","base","base","mid")
+    call ton_main("Had her drop her panties as well.","base","base","base","mid")
     call ton_main("I was expecting her to at least argue at least a bit about the amount of points she would receive for it...","open","base","base","R")
     call ton_main("But she dropped them in an instant, without even hearing my offer.","base","base","angry","mid")
     call ton_main("Next, she just looked at me as if to ask, \"what next?\"","open","base","base","mid")
@@ -705,7 +705,7 @@ label nt_pr_teach_T2_E4: # Tier 2 - Event 4 - Slytherin girl
     call ton_main("I decided to take matters into my own hands...","base","base","base","ahegao")
     call ton_main("Specifically her matter...","horny","base","base","mid")
     m "You couldn't help yourself, could you?"
-    call ton_main("Can you blame me for wanting to \"finger\" that cute little slut?.","base","base","angry","mid")
+    call ton_main("Can you blame me for wanting to \"finger\" that cute little slut?","base","base","angry","mid")
     g9 "You're a bad teacher, you know that?"
     call ton_main("Tell me about it...","base","base","base","ahegao")
     m "What did she have to say about the whole thing?"

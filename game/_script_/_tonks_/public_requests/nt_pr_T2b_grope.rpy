@@ -107,7 +107,7 @@ label nt_pr_grope_T1_E1: # Tier 1 - Event 1 - Slytherin boy
     call ton_main("He didn't want to say it at first...","open","base","base","R")
     call ton_main("So I leaned in closer...{w} Let him feel my breath on his neck...","open","closed","angry","mid")
     call ton_main("And then I whispered the truth into his ear...","open","base","base","mid")
-    call ton_main("That he's' a dirty-little \"tit-addict!\"","horny","base","angry","mid")
+    call ton_main("That he's a dirty little \"tit addict!\"","horny","base","angry","mid")
     g9 "You naughty girl!"
     call ton_main("*Ugh*... He went redder than a tomato when I said that.","horny","base","base","ahegao")
     call ton_main("And as both you and I know there's only one cure for that...","open","closed","base","mid")

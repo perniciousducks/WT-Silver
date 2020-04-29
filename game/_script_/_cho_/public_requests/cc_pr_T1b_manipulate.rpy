@@ -36,7 +36,7 @@ label cc_pr_manipulate_start:
             call cho_main("Oh-...", "soft", "base", "base", "downR", cheeks="blush")
             call cho_main("Well... how do I do that?", "annoyed", "base", "base", "mid")
             m "It's a little something called {b}seduction{/b}..."
-            m "It should be your genders bread and butter."
+            m "It should be your gender's bread and butter."
             call cho_main("Isn't that a little mean?", "soft", "closed", "base", "mid")
             m "Mean? You're not doing anything wrong, are you?"
             m "You're just talking to him..."

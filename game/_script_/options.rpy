@@ -45,6 +45,7 @@ define config.window_icon = "interface/icon.png"
 
 # User interface settings
 define config.layers = ["master", "transient", "screens", "interface", "overlay"]
+define config.transparent_tile = False
 
 # Graphics and cache settings
 define config.gl_enable = True

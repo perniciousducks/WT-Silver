@@ -218,24 +218,18 @@ init python:
 
         def set_face(self, **kwargs):
             """Takes keyword argument(s) with the string name of expression file(s)."""
-            for arg, value in kwargs.iteritems():
-                if value not in (self.face.face[str(arg)][0], False):
-                    self.face.face[str(arg)][0] = value
-            self.face.rebuild_image()
-            self.body.rebuild_image()
-            self.rebuild_image()
+            if self.face.set_face(**kwargs):
+                self.body.rebuild_image()
+                self.rebuild_image()
 
         def get_face(self):
             """Returns a dictionary containing currently set facial expressions. Used in character studio."""
-            return dict((k, v[0]) for k, v in self.face.face.iteritems())
+            return self.face.get_face()
 
         def set_body(self, **kwargs):
             """Takes keyword argument(s) with the string name of body part file(s)."""
-            for arg, value in kwargs.iteritems():
-                if value != self.body.body[str(arg)][0]:
-                    self.body.body[str(arg)][0] = value
-            self.body.rebuild_image()
-            self.rebuild_image()
+            if self.body.set_body(**kwargs):
+                self.rebuild_image()
 
         def set_body_hue(self, arg):
             """Takes integer between 0 - 359, rotates the character body colour by given amount."""
@@ -245,14 +239,9 @@ init python:
 
         def set_cum(self, *args, **kwargs):
             """Takes keyword argument(s) containing string name(s) of cum layers to apply or None."""
-            if args:
-                for k in self.cum.cum.iterkeys(): # for v in self.cum.cum.itervalues(); Abnormal behaviour when itervalues() used to mutate the value.
-                    self.cum.cum[k] = args[0]
-            for arg, value in kwargs.iteritems():
-                self.cum.cum[str(arg)] = value
-            self.cum.rebuild_image()
-            self.rebuild_image()
-            self.apply_transition()
+            if self.cum.set_cum(*args, **kwargs):
+                self.rebuild_image()
+                self.apply_transition()
 
         def set_pose(self, pose):
             if pose is None or renpy.loadable("characters/{}/poses/{}/loadable.png".format(self.name, pose)):
@@ -266,7 +255,7 @@ init python:
                 self.rebuild_image()
                 self.apply_transition()
             else:
-                raise IOError("'{}' pose doesn't exist for character named '{}'.".format(pose, self.name))
+                raise Exception("'{}' pose doesn't exist for character named '{}'.".format(pose, self.name))
 
         def reset_blacklist(self, unequip=True):
             """Resets wardrobe blacklist based on worn clothes. Takes optional argument that causes blacklisted clothes to be unequipped."""

@@ -15,6 +15,26 @@ init python:
             sprites = tuple(itertools.chain.from_iterable(((0,0), "{}{}/{}.png".format(self.imagepath, k, v)) for k, v in self.cum.iteritems() if v != None))
             return sprites
 
+        def set_cum(self, *args, **kwargs):
+            """Takes keyword argument(s) containing string name(s) of cum layers to apply or None. Returns True if image is changed."""
+            changed = False
+
+            if args:
+                for k, v in self.cum.iteritems():
+                    if v != args[0]:
+                        self.cum[k] = args[0]
+                        changed = True
+
+            for arg, value in kwargs.iteritems():
+                if str(arg) != value:
+                    self.cum[str(arg)] = value
+                    changed = True
+
+            if changed:
+                self.rebuild_image()
+
+            return changed
+
         def set_pose(self, pose):
             if pose is None:
                 self.imagepath = "characters/{}/cum/".format(self.name)

@@ -42,6 +42,20 @@ init python:
         def get_part(self, arg):
             return self.body[arg][0]
 
+        def set_body(self, **kwargs):
+            """Takes keyword argument(s) with the string name of body part file(s). Returns True if image is changed."""
+            changed = False
+
+            for arg, value in kwargs.iteritems():
+                if value != self.body[str(arg)][0]:
+                    self.body[str(arg)][0] = value
+                    changed = True
+
+            if changed:
+                self.rebuild_image()
+
+            return changed
+
         def set_pose(self, pose):
             if pose is None:
                 self.imagepath = "characters/{}/body/".format(self.name)

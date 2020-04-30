@@ -364,7 +364,7 @@ label hg_ps_get_panties_complete:
 
         "\"How was your day, [hermione_name]?\"":
             if her_tier == 2:
-                $ sc34CG(1, 10, with_trans=False)
+                $ sc34CG(1, 10, trans=None)
                 call her_main("Oh...", "soft", "base", "base", "mid",xpos="base",ypos="base", trans=d5)
                 her "Quite ordinary actually..."
                 call her_main("Although... I couldn't help but worry that somebody would notice somehow...", "soft", "base", "base", "R")
@@ -381,7 +381,7 @@ label hg_ps_get_panties_complete:
                     call her_main("And my payment?", "open", "base", "base", "mid")
 
             elif her_tier == 3:
-                $ sc34CG(1, 5, with_trans=False)
+                $ sc34CG(1, 5, trans=None)
                 call her_main("Oh...", "soft", "base", "base", "mid",xpos="base",ypos="base", trans=d5)
                 her "It was quite ordinary really..."
                 her "I spent some time with my classmates..."
@@ -418,7 +418,7 @@ label hg_ps_get_panties_complete:
                             her "And my payment."
 
             elif her_tier >= 4:
-                $ sc34CG(1, 11, with_trans=False)
+                $ sc34CG(1, 11, trans=None)
                 call her_main("Another ordinary day at hogwarts...", "open", "closed", "base", "mid",xpos="base",ypos="base", trans=d5)
                 her "Nothing worth mentioning happened today..."
                 call her_main("Although I have to admit...", "annoyed", "base", "worried", "R")

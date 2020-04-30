@@ -140,9 +140,6 @@ default sc_cg_image_1 = "images/CG/sc34/1/A_1.png"
 default sc_cg_image_2 = "images/CG/sc34/2/B_1.png"
 default sc_cg_image_3 = "images/CG/sc34/2/C_1.png"
 
-default sccgxpos = 200
-default sccgypos = 50
-
 # CG or chibis
 default face_on_cg = False # `call her_main(,ypos="head")` will use screen "her_face". Face gets positioned automatically.
 default use_cgs = False

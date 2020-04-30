@@ -33,14 +33,15 @@ screen ccg():
     if loopimage is not None:
         add loopimage
 
-screen sccg():
+screen sccg(base, a, b, c):
     # Used by function sc34CG
     zorder 14
-    add Color("#000")
-    add sc_cg_base xpos sccgxpos ypos sccgypos
-    add sc_cg_image_1 xpos sccgxpos ypos sccgypos
-    add sc_cg_image_2 xpos sccgxpos ypos sccgypos
-    add sc_cg_image_3 xpos sccgxpos ypos sccgypos
+    default cgpos = (200, 50)
+    add "black"
+    add base pos cgpos
+    add a pos cgpos
+    add b pos cgpos
+    add c pos cgpos
 
 # Snape CG
 screen snape_groping():
@@ -79,37 +80,25 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         renpy.show_screen("ccg")
         renpy.with_statement(Dissolve(0.5))
 
-    def sc34CG(scene=None, image1=None, image2=None, image3=None, with_trans=True):
-        global sc_cg_base
-        global sc_cg_image_1
-        global sc_cg_image_2
-        global sc_cg_image_3
+    def sc34CG(base=None, a=None, b=None, c=None, trans=d5):
         renpy.hide_screen("sccg")
         renpy.hide_screen("blkfade")
-        #renpy.with_statement(Dissolve(0.5))
-        if scene is not None:
-            sc_cg_base = "images/CG/sc34/"+str(scene)+"/base_1.png"
-        if image1 is not None:
-            sc_cg_image_1 = "images/CG/sc34/"+str(scene)+"/A_"+str(image1)+".png"
-        else:
-            sc_cg_image_1 = "blank"
-        if image2 is not None:
-            sc_cg_image_2 = "images/CG/sc34/"+str(scene)+"/B_"+str(image2)+".png"
-        else:
-            sc_cg_image_2 = "blank"
-        if image3 is not None:
-            sc_cg_image_3 = "images/CG/sc34/"+str(scene)+"/C_"+str(image3)+".png"
-        else:
-            sc_cg_image_3 = "blank"
-        renpy.show_screen("sccg")
-        if with_trans:
-            renpy.with_statement(Dissolve(0.5))
+
+        img_base = "images/CG/sc34/{}/base_1.png".format(base) if base else None
+        img_a = "images/CG/sc34/{}/A_{}.png".format(base, a) if a else None
+        img_b = "images/CG/sc34/{}/B_{}.png".format(base, b) if b else None
+        img_c = "images/CG/sc34/{}/C_{}.png".format(base, c) if c else None
+
+        renpy.show_screen("sccg", img_base, img_a, img_b, img_c)
+
+        if trans:
+            renpy.with_statement(trans)
 
     def dynamic_cg(folder, *args):
         d = tuple("images/CG/{}/{}.png".format(folder, file) for file in args)
 
         renpy.show_screen("dynamic_cg", d)
-        renpy.with_statement(Dissolve(0.5))
+        renpy.with_statement(d5)
         return
 
 screen dynamic_cg(d):

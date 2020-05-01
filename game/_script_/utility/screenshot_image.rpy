@@ -33,6 +33,21 @@ init -1 python:
             else:
                 return None
 
+    def displayable_to_file(d, fn="output.png", w=2048, h=2048):
+        import cStringIO
+
+        sw = renpy.display.swdraw
+
+        render = d.render(w, h, 0, 0)
+        surf = sw.surface(render.width, render.height, True)
+        sw.draw(surf, None, render, 0, 0, False)
+
+        sio = cStringIO.StringIO()
+        renpy.display.module.save_png(surf, sio, 0)
+        with open(fn, "wb") as f:
+            f.write(sio.getvalue())
+        sio.close()
+
 # Usage example
 
 screen screenshot_image():

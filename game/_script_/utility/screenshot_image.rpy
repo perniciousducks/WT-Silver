@@ -36,12 +36,32 @@ init -1 python:
     def displayable_to_file(d, fn="output.png", w=2048, h=2048):
         import cStringIO
 
-        sw = renpy.display.swdraw
+        switch_renderer = renpy.get_renderer_info()["renderer"] != "sw"
 
+        if switch_renderer:
+            # Remember the renderer preference
+            renderer_pref = renpy.game.preferences.renderer
+            renpy.game.preferences.renderer = "sw"
+
+            # Switch to software rendering
+            renpy.display.draw.quit()
+            renpy.display.draw = None
+            renpy.display.interface.set_mode()
+
+        # Render to surface using software rendering
         render = d.render(w, h, 0, 0)
-        surf = sw.surface(render.width, render.height, True)
-        sw.draw(surf, None, render, 0, 0, False)
+        surf = renpy.display.swdraw.surface(render.width, render.height, True)
+        renpy.display.swdraw.draw(surf, None, render, 0, 0, False)
 
+        if switch_renderer:
+            # Restore preferred rendering
+            renpy.display.draw.quit()
+            renpy.display.draw = None
+            renpy.game.preferences.renderer = renderer_pref
+            renpy.display.interface.set_mode()
+            renpy.free_memory()
+
+        # Write surface to PNG file
         sio = cStringIO.StringIO()
         renpy.display.module.save_png(surf, sio, 0)
         with open(fn, "wb") as f:

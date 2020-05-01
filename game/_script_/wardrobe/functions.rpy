@@ -1,4 +1,13 @@
 init python:
+    def get_progression(name):
+        """Returns the progression score (usually whoring) for a given girl"""
+        if name == "astoria":
+            return ast_affection
+        if name == "tonks":
+            return ton_friendship
+        if name in ("cho", "hermione", "luna", "susan"):
+            return getattr(store, "{}_whoring".format(name[:3]))
+
     def get_character_object(key):
         return character_list.get(key)
 

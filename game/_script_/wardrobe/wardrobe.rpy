@@ -16,9 +16,9 @@ label wardrobe(char_label):
             "cho": (cho_whoring, cho_requirements["change_underwear"])
             }
 
-        char_active = eval(active_girl)
+        char_active = getattr(store, active_girl)
         char_nickname = char_active.name
-        char_scale = 1.0/getattr(renpy.store, active_girl+"_scaleratio")
+        char_scale = 1.0/getattr(store, active_girl+"_scaleratio")
         char_level = _char_var_list[active_girl][0]
         char_underwear_allowed = char_level >= _char_var_list[active_girl][1]
 
@@ -481,7 +481,7 @@ screen wardrobe_menuitem(xx, yy):
 
                 # Whoring req
                 if wardrobe_requirements:
-                    if menu_items[i].level > her_whoring:
+                    if menu_items[i].level > get_progression(active_girl):
                         textbutton str(menu_items[i].level):
                             style "empty"
                             pos (15+90*col, 180+92*row)

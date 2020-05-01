@@ -13,7 +13,7 @@ label start_slytherin_match:
     call cho_main("I am!", "base", "base", "angry", "mid")
     m "Then show me the money."
     call cho_main("What?", "upset", "base", "raised", "mid")
-    g9 "Say it with me,[cho_name]!{w} Show me the money!"
+    g9 "Say it with me, [cho_name]!{w} Show me the money!"
     call cho_main("I don't have any on me, Sir.", "angry", "narrow", "worried", "mid")
     m "..."
     call cho_main("Show me the money?", "open", "narrow", "raised", "mid")
@@ -27,7 +27,7 @@ label start_slytherin_match:
     g9 "What you gonna do, [cho_name]?"
     call cho_main("Get the nurse?", "upset", "narrow", "angry", "mid")
     m "You're gonna win that match tomorrow, that's what!"
-    call cho_main("If we're going to play tomorrow, I'll first have to prepare my gear and charm my Quidditch googles...", "soft", "base", "base", "R")
+    call cho_main("If we're going to play tomorrow, I'll first have to prepare my gear, and charm my Quidditch googles...", "soft", "base", "base", "R")
     call cho_main("Or they'll just fog-up and not dispel the rain properly...", "soft", "narrow", "base", "mid")
     m "Hold up!{w=0.3} It's going to rain tomorrow?"
     call cho_main("Most likely...", "annoyed", "base", "worried", "mid")
@@ -41,7 +41,7 @@ label start_slytherin_match:
     m "Nonsense..."
     call cho_main("[cho_genie_name], I'm gonna get soaked without my coat on!", "soft", "base", "worried", "mid")
     g9 "Counting on it!"
-    g9 "I - for one - am quite looking forward to the possibility of you getting wet."
+    g9 "I -- for one -- am quite looking forward to the possibility of you getting wet."
     call cho_main("Let's just hope for the best...", "upset", "narrow", "worried", "down")
     g9 "That we shall."
     g9 "Off you go then. And good luck."
@@ -57,7 +57,7 @@ label start_slytherin_match:
     $ cho_quid.lock_training = True
     $ cho_quid.lock_practice = True
 
-    #$ slytherin_match = "start"
+    $ slytherin_match = "start"
 
     jump main_room
 
@@ -1491,7 +1491,7 @@ label slytherin_match_return:
     $ cho_busy = True
 
     $ cho_mood += 9
-    # $ cho_tier = 3 # TODO activate this after adding favors.
+    $ cho_tier = 3
 
     # Reset
     $ tonks.equip(ton_outfit_last)

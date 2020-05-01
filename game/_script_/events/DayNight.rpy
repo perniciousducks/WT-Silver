@@ -148,6 +148,8 @@ label update_day_values:
     # Change the weather for Quidditch Matches
     if cc_event_pause == 0 and hufflepuff_match == "start":
         $ weather_gen = 1
+    if cc_event_pause == 0 and slytherin_match == "start":
+        $ weather_gen = 1
 
     # Package delivery
     if deliveries.got_mail():

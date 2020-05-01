@@ -34,19 +34,19 @@ label summon_cho:
                         jump cho_requests
             jump start_hufflepuff_match
 
-        #"-Start Slytherin Match-" (icon="interface/icons/small/slyt.png") if (cho_tier == 2 and slytherin_match == "ready"):
-        #    if cho_reputation <= 3:
-        #        m "(If I want Cho to do anything in public with those Slythershits I better do it before the Match.)"
-        #        m "(Although maybe not...)"
-        #        menu:
-        #            "Are you ready to begin the match?"
-        #            "Yes":
-        #                pass
-        #            "no":
-        #                jump cho_requests
-        #    jump start_slytherin_match
+        "-Start Slytherin Match-" (icon="interface/icons/small/slyt.png") if (cho_tier == 2 and slytherin_match == "ready"):
+            if cho_reputation <= 3:
+                m "(If I want Cho to do anything in public with those Slythershits I better do it before the Match.)"
+                m "(Although maybe not...)"
+                menu:
+                    "Are you ready to begin the match?"
+                    "Yes":
+                        pass
+                    "no":
+                        jump cho_requests
+            jump start_slytherin_match
 
-        #"-Start Slytherin Match-" (icon="interface/icons/small/gryf.png") if (cc_gt.win_counter >= 2 and cho_tier == 3 and gryffindor_match == "ready"):
+        #"-Start Gryffindor Match-" (icon="interface/icons/small/gryf.png") if (cho_tier == 3 and gryffindor_match == "ready"):
         #    jump start_gryffindor_match
 
 
@@ -64,7 +64,7 @@ label summon_cho:
                 jump cho_talk
 
         # Quidditch Training
-        "-Training-" (icon="interface/icons/small/quidditch.png") if cho_tier < 2 and not cho_quid.lock_training:
+        "-Training-" (icon="interface/icons/small/quidditch.png") if cho_tier < 3 and not cho_quid.lock_training:
             if cho_mood > 0:
                 m "Ready to get back to training?"
                 if cho_mood >= 5:
@@ -75,7 +75,7 @@ label summon_cho:
                 jump cho_requests
             jump cho_training_menu
 
-        "{color=[menu_disabled]}-Training-{/color}" (icon="interface/icons/small/quidditch.png") if cho_tier < 2 and cho_quid.lock_training:
+        "{color=[menu_disabled]}-Training-{/color}" (icon="interface/icons/small/quidditch.png") if cho_tier < 3 and cho_quid.lock_training:
             m "(She's as ready as one can be.)"
             jump cho_requests
 
@@ -87,7 +87,10 @@ label summon_cho:
                 jump cho_favor_menu
 
         "{color=[menu_disabled]}-Sexual favours-{/color}" (icon="interface/icons/small/condom.png") if not cho_favors_unlocked:
-            m "(I need to help her with her Quidditch training, before I can ask for something like this.)"
+            if cho_tier == 1:
+                m "(I need to help her with her Quidditch training, before I can ask for something like this.)"
+            else:
+                m "(I should ask her about the next Quidditch match first. See who we're up against...)"
             jump cho_requests
 
         "-Wardrobe-" (icon="interface/icons/small/wardrobe.png") if cho_wardrobe_unlocked:
@@ -227,6 +230,9 @@ label cho_talk:
                 call cc_ht_talk
             elif cho_tier == 2:
                 call cc_st_talk
+
+            call cho_main(xpos="base", ypos="base", trans=fade)
+
             jump cho_talk
 
         # Naming

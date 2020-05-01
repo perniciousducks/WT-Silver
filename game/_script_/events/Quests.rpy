@@ -376,6 +376,7 @@ default cc_st = quest_class(
     return_E2 = False, # 2st match, right clothing, wrong commentator (Tonks).
     return_E3 = False, # 3st match, right clothing, right commentator (Hermione).
 
+    intro = False, # unlocks favours again.
     hermione_E1 = False, # Walks into your room and quits commentating.
     snape_E1 = False, # Refuses to get Slyth to play.
     tonks_E1 = False, # You tell her about Cho. She gets Slyth to play.

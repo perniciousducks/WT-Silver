@@ -377,7 +377,7 @@ screen stats_menuitem(xx, yy):
                                 use stat_bar(int(her_tutoring/1.5), "-Tutoring-" , her_tutoring_word, her_tutoring)
                             elif current_category == "Cho":
                                 use stat_bar(int(10-cho_mood/1.0), "-Mood-" , cho_mood_word, cho_mood)
-                                use stat_bar(int(cho_tier/0.2), "-Favour Tier-", "", cho_tier) # 4 will be max.
+                                use stat_bar(int(cho_tier/0.3), "-Favour Tier-", "", cho_tier) # 4 will be max.
                                 use stat_bar(int(cho_whoring/0.9), "-Recklessness-", cho_whoring_word, cho_whoring)
                                 use stat_bar(int(cho_reputation/0.9), "-Reputation-", cho_reputation_word, cho_reputation)
                                 use stat_bar(int((cc_ht.win_counter+cc_st.win_counter)/0.6), "{size=-10}-Quidditch Training-{/size}" , "Not started", cc_ht.win_counter+cc_st.win_counter) # TODO: Add word list # TODO: Add cc_gt.match_counter & cc_gt.win_counter

@@ -209,12 +209,11 @@ label tonks_talk:
 
         "-Ask for help with Quidditch-" (icon="interface/icons/small/quidditch.png") if cho_quid.lock_practice and cc_st.match_counter == 1:
             m "Got a moment?"
-            call ton_main("Sure just make it quick.","open","base","base","mid")
-            m "I have a problem with...{w=0.5}{nw}"
-            call ton_main("I'll have to stop you right there.","upset","base","worried","mid")
-            call ton_main("if you want to cry out about your problems, at least offer me a drink first...","open","closed","worried","mid")
-            call ton_main("","upset","closed","worried","mid")
-            m "(Is in this school at least ONE person that has no problems with alcohol...?)"
+            call ton_main("Sure, just make it quick...","open","base","base","mid")
+            m "I have a problem with--"
+            call ton_main("[ton_genie_name], aren't you forgetting about something?","open","closed","base","mid")
+            call ton_main("You should offer a lady a drink, before burdening her with your problems...","base","base","base","mid")
+            m "(Is there {b}any{/b} teacher in this school that has no problems with alcohol...?)"
             jump tonks_talk
 
         "-Get naked!-" if tonks_strip_happened and (not tonks.is_worn("top") or not tonks.is_worn("bottom") or not tonks.is_worn("robe")):

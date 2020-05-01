@@ -2,16 +2,13 @@
 
 ### Cho Intro Slytherin Training ###
 
-label cc_st_intro: # TODO: Move this event to the training into once Slytherin match training has been added. And make it unlock the T2 favours.
-    $ cho_quid.slytherin_talk = True
+label cc_st_intro:
+    $ cc_st.intro = True
 
-    call play_music("stop")
-    call play_sound("door")
-    call cho_chibi("stand","mid","base")
-    with d3
-
-    call cho_main("Hello, [cho_genie_name]...", "annoyed", "narrow", "worried", "downR", xpos="right", ypos="base")
-    m "[cho_name]..."
+    call cho_main("...", "annoyed", "narrow", "worried", "downR", xpos="right", ypos="base", trans=fade)
+    m "[cho_name], before we get back to our usual diversions, why don't we have a little chat about the recent happenings."
+    call cho_main("Very well, [cho_genie_name]...", "open", "narrow", "worried", "mid")
+    m "Cheer up, will you..."
     m "Where did that high-spirit from your \"big win\" fly off to?"
     call cho_main("Nowhere, [cho_genie_name]...{w=0.6} I'm still very happy we won the game, it's just...", "open", "narrow", "worried", "down") # worried/sad
     call cho_main("I'm a bit worried about the future.", "soft", "narrow", "worried", "mid") # sad/relieved
@@ -37,6 +34,7 @@ label cc_st_intro: # TODO: Move this event to the training into once Slytherin m
     m "Trust me, our tactics have worked perfectly thus far, haven't they?"
     call cho_main("I-...{w=0.3} yes...", "soft", "base", "raised", "downR")
     call cho_main("You're right! Thank you, [cho_genie_name].", "base", "base", "base", "mid") # happy
+
     show screen blkfade
     with d5
     hide screen blkfade
@@ -55,15 +53,16 @@ label cc_st_start:
         m "Alright, we need to try out those new tactics!"
         if cho_quid.bottom in ["skirt_long","skirt_short"] and cho_quid.position == "above":
             call cho_main("New tactics? Aren't we still using the ones from before?", "soft", "narrow", "base", "mid")
-            m "Right... Well I'm sure they're good enough to secure a win."
             m "Well, I'm sure they're good enough to secure us another easy win."
             call cho_main("If you say so, [cho_genie_name].", "base", "base", "base", "mid")
         g4 "There is a lot at stake here! We can't afford to lose even a single game!"
         g4 "We can't show any weakness to those Slytherins!"
-        call cho_main("Is my success really that important to you, Sir? I'm glad!", "smile", "base", "base", "mid")
+        call cho_main("I'm glad my success is that important to you, Sir.", "smile", "happyCl", "base", "mid", cheeks="blush")
+        show screen blktone
         m "(I can't lose this much gold to Snape. I'll show that bastard!)"
+        hide screen blktone
         g9 "Return to my office after the game."
-        call cho_main("Yes, Sir.", "annoyed", "narrow", "base", "R")
+        call cho_main("Yes, Sir.", "base", "narrow", "base", "mid")
 
         $ hermione_busy = True
         $ cho_quid.commentator = None # Hermione won't show up.
@@ -87,7 +86,7 @@ label cc_st_start:
             m "Tonks is doing her best to help you. You should at least give her a chance."
             call cho_main("Yes. You're right...", "base", "base", "base", "mid")
 
-        call cho_main("I'm really glad we have her as a teacher.", "base", "base", "base", "down")
+        call cho_main("I'm really glad we have her as a teacher.", "base", "happyCl", "base", "mid", cheeks="blush")
         m "Make sure to thank her for it...some day."
         call cho_main("I will, [cho_genie_name].", "smile", "base", "base", "mid")
         call cho_main("Until later...", "base", "base", "base", "mid")
@@ -222,7 +221,9 @@ label cc_st_return_E1:
     m "Why aren't you on that Quidditch ditch right now?"
     call cho_main("It's a pitch, Sir.", "soft", "narrow", "raised", "mid")
     m "I thought we were going to prepare for the next match, or are we already finished with that?"
+    show screen blktone
     g4 "(Please say yes! I want to do the naughty stuff already!)"
+    hide screen blktone
     call cho_main("Yes, we are...", "open", "closed", "base", "mid")
     g9 "(Yes!)"
     call cho_main("For today, that is...", "annoyed", "narrow", "base", "R")
@@ -231,14 +232,14 @@ label cc_st_return_E1:
     call cho_main("And neither did our commentator!", "soft", "narrow", "base", "mid")
     m "Hermione?"
     call cho_main("Yes! Where the bloody hell was she?!", "angry", "narrow", "angry", "mid", emote="01")
-    m "The commentator needs to show up for training too?"
-    call cho_main("Yes! And she bloody well needs it.", "soft", "narrow", "base", "down")
-    call cho_main("And those braindead Slytherins.", "annoyed", "narrow", "angry", "mid")
-    call cho_main("Spineless cowards...", "annoyed", "narrow", "base", "R")
-    call cho_main("They have no interest in training against us!", "soft", "base", "base", "mid")
-    call cho_main("Because why should they... They'll win anyway!", "angry", "wide", "base", "mid")
-    call cho_main("They assured me that they would be there today!", "annoyed", "base", "angry", "R")
-    call cho_main("Such a pathetic bunch of apes!", "angry", "base", "angry", "R")
+    m "Is it really necessary for her to show up for training too?"
+    call cho_main("Yes! And she bloody well needs it!", "open", "narrow", "angry", "mid")
+    call cho_main("And those braindead Slytherins.", "clench", "narrow", "angry", "down")
+    call cho_main("Spineless cowards...", "annoyed", "narrow", "angry", "downR")
+    call cho_main("They have no interest in training against us!", "open", "narrow", "angry", "mid")
+    call cho_main("Because why should they... They'll win anyway!", "open", "narrow", "angry", "R")
+    call cho_main("They assured me that they would be there today...", "annoyed", "narrow", "angry", "downR")
+    call cho_main("Such a pathetic bunch of apes!", "annoyed", "narrow", "angry", "R")
     m "A troop."
     call cho_main("What?", "soft", "narrow", "raised", "mid")
     m "It's called a troop of apes."
@@ -248,8 +249,8 @@ label cc_st_return_E1:
     m "I'm afraid I can't have you do that..."
     call cho_main("Why not? They deserve it!", "annoyed", "base", "angry", "mid")
     m "No guy deserves that..."
-    m "I'd rather deal with it myself, than let you do that, if you don't mind!"
-    call cho_main("Fine...", "annoyed", "base", "base", "down")
+    m "I'd rather deal with it myself, if you don't mind."
+    call cho_main("Fine...", "annoyed", "narrow", "angry", "downR")
     call cho_main("But you better do something, quickly! Get those idiots to play!", "soft", "narrow", "angry", "mid")
     call cho_main("We can't possibly win if we don't know their tactics.", "soft", "base", "base", "R")
     call cho_main("Or know if our tactics work against them, for that matter...", "annoyed", "narrow", "base", "mid")
@@ -257,7 +258,7 @@ label cc_st_return_E1:
     call cho_main("And what about Granger?", "soft", "narrow", "raised", "mid")
     g4 "*Ugh*... her too?"
     call cho_main("Yes!", "angry", "base", "angry", "mid")
-    m "At least let me finish the first quest - before taking on another one..."
+    m "At least let me finish the first quest -- before taking on another one..."
     call cho_main("You better get that spineless mop's ass back behind that podium!", "soft", "narrow", "base", "mid")
     call cho_main("She agreed to do this! We need an announcer!", "annoyed", "narrow", "base", "R")
     m "I'll talk to her..."
@@ -389,68 +390,68 @@ label cc_st_hermione_E1:
     pause .5
 
     call bld
-    g4 "..."
+    m "..."
 
     # Hermione barges in.
     call her_walk("desk", "base")
 
-    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base") # annoyed
+    call her_main("", "annoyed", "narrow", "angry", "mid", xpos="mid", ypos="base") # annoyed
     pause .5
-    call her_main("I can't believe her...", "base", "base", "base", "mid", trans=hpunch) # angry
+    call her_main("I can't believe her...", "clench", "closed", "angry", "mid", trans=hpunch) # angry
     m "Good day to you too..."
-    her "That bitch has been walking around saying that I quit the commentator job."
+    call her_main("That bitch has been walking around saying that I quit the commentator job.", "open", "base", "angry", "mid")
     m "Who did?"
-    her "Cho Chang!"
+    call her_main("Cho Chang.", "soft", "base", "angry", "mid")
     g4 "..."
     m "Wait, so you didn't quit?"
-    her "No! How were I supposed to know I needed to show up for Practice?"
+    call her_main("No! How were I supposed to know I needed to show up for Practice?", "angry", "base", "angry", "mid")
     m "(Is she blaming me?)"
     m "Surely there must've been some contract that mentioned it..."
-    her "You tell me, you're the one that appointed me."
+    call her_main("You tell me, you're the one that appointed me.", "annoyed", "narrow", "annoyed", "mid")
     m "Oh, right."
-    her "So, since I didn't sign anything..."
-    her "I quit!"
+    call her_main("So, since I didn't sign anything...", "soft", "closed", "base", "mid")
+    call her_main("I quit!", "soft", "narrow", "base", "mid")
     g4 "What? You can't do that!"
-    her "Why not? After all, I'm terrible at it, aren't I?"
-    her "I made such a fool out of myself during the Hufflepuff game..." # Sad, tears
-    her "And now with the Slytherin team being next..."
-    her "I won't take part of their practice runs just to be laughed at by them..."
-    her "I'm not giving those Slytherins that satisfaction!"
-
+    call her_main("Why not? After all, I'm terrible at it, aren't I?", "clench", "base", "angry", "mid")
+    call her_main("I made such a fool out of myself during the Hufflepuff game...", "upset", "base", "worried", "R", tears="soft") # Sad, tears
+    call her_main("And now with the Slytherin team being next...", "open", "happyCl", "worried", "mid", tears="soft_blink")
+    call her_main("I won't take part of their practice runs just to be laughed at by them...", "open", "base", "worried", "mid", tears="soft")
+    call her_main("I'm not giving those Slytherins that satisfaction!", "annoyed", "base", "worried", "R", tears="soft")
 
     menu:
         m "(...)"
-        "Tough luck, Miss Granger!":
-            m "You agreed to do this, remember."
+        "\"Tough luck, Miss Granger!\"":
+            call her_main("Tough luck?!", "clench", "wide", "base", "stare")
+            m "You agreed to do this, remember..."
             g4 "May I remind you how many house points I gave you?"
-            her "No amount of house points was worth the humiliation I got!"
-            m "Well, boo- hoo-..."
-            her "*Tzzzs!*..."
-            her "Good luck finding somebody that is more willing to be the school's laughing stock!"
-            $ her_mood += 6
+            call her_main("No amount of house points was worth the humiliation I got!", "angry", "base", "angry", "mid")
+            m "Well, boo--{w} bloody--{w} hoo..."
+            call her_main("*Tzzzs!*...", "clench", "closed", "angry", "mid", emote="01")
+            call her_main("Good luck finding somebody that is more willing to be the school's laughing stock!", "open", "base", "angry", "mid")
+            $ her_mood += 16
 
-        "We'll look for somebody more competent, then.":
-            her "More competent?!"
+        "\"We'll look for somebody more competent, then.\"":
+            call her_main("More competent?!", "clench", "base", "angry", "mid")
             m "Surely we can find a replacement for you in no time."
-            her "Well if that's the case, it seems like I'm no longer needed..."
-            $ her_mood += 2
+            call her_main("Well if that's the case, it seems like I'm no longer needed...", "open", "base", "angry", "mid")
+            $ her_mood += 10
 
-        "All you need is a bit of practice...":
+        "\"All you need is a bit of practice...\"":
             if hg_pf_sex.counter == 0:
                 g9 "(And a good fucking, but we'll get to that...)"
             else:
                 g9 "(And a good fucking...)"
             m "You're a natural at this!"
-            her "..."
-            her "It doesn't matter..."
-            her "Thanks to Cho, everybody now thinks I'm a fraud..."
-            her "I don't understand why she feels the need to constantly spread rumours about me."
+            call her_main("...", "annoyed", "base", "worried", "mid", tears="soft")
+            call her_main("It doesn't matter...", "soft", "base", "worried", "R", tears="soft")
+            call her_main("Thanks to Cho, everybody now thinks I'm a fraud...", "open", "happyCl", "worried", "mid", tears="soft_blink")
+            call her_main("I don't understand why she feels the need to constantly spread rumours about me.", "annoyed", "base", "annoyed", "R", tears="soft")
             m "(Look who's talking...)"
 
-    her "You can tell that bitch to look for somebody else to commentate!"
-    her "Because I will not!"
+    call her_main("You can tell that bitch to look for somebody else to commentate!", "open", "base", "angry", "mid")
+    call her_main("Because I will not!", "clench", "base", "angry", "mid")
     m "..."
-    her "Good day, Sir."
+    call her_main("Good day, Sir.", "annoyed", "base", "annoyed", "R")
 
     #Hermione walks out
     call her_walk(action="leave")
@@ -505,7 +506,7 @@ label cc_st_snape_E1:
     $ renpy.sound.play(["sounds/gulp.mp3"]*3)
     call nar(">Snape empties the last drop of wine, before he quietly leaves.","start")
     ">You feel a sense of remorse shortly after he's gone, realizing that you're both just parts of the same coin."
-    call nar(">Your friendship level with him has not changed...{w=1.5}...Probably","end")
+    call nar(">Your friendship level with him has not changed...{w=1.5}Probably...","end")
 
     $ snape_busy = True
     $ ss_summon_pause += 5 # Snape can't be summoned for a couple of days. Can be set to 0 once you talked to Tonks.
@@ -539,8 +540,8 @@ label cc_st_tonks_E1:
     m "Yes, the little Ravenclaw minx, correct."
     call ton_main("Well, I figured you'd be talking about her - if it has to do with Quidditch.","open","base","base","R")
     m "She's one of the girls I buy favours from."
-    call ton_main("No way!{w=0.8}{nw}","scream","wide","wide","wide", hair="horny")
-    call ton_main("You got that little hotty-","open","base","sad","mid")
+    call ton_main("No way!","scream","wide","wide","wide", hair="horny")
+    call ton_main("You got that little hotty--","open","base","sad","mid")
     call ton_main("*Uhm*... hot-head to sell you favours?","angry","base","sad","R")
     m "Once or twice..."
     call ton_main("I'm impressed.","horny","base","raised","mid")
@@ -592,7 +593,7 @@ label cc_st_tonks_E1:
         call ton_main("Who else?","base","base","angry","mid")
         m "Some of the other contestants of that tourney..."
         call ton_main("The tri wizards tournament?","open","base","raised","mid")
-        call ton_main("That happened last year right? Such a shame I missed it.","upset","base","sad","down")
+        call ton_main("That happened last year, right? Such a shame I missed it.","upset","base","sad","down")
         #g9 "We should hold our own tournament!"
         #m "The tri-bitcha... Bi-curious-ishar.."
         #m "It's a work in progress title..."
@@ -601,7 +602,7 @@ label cc_st_tonks_E1:
         call ton_main("Oh my...","upset","base","worried","mid") # Horny
         call ton_main("I didn't know she was...","upset","closed","sad","mid") # Horny
         g9 "They even made out a couple of times!"
-        call ton_main("Fuck!","angry","base","sad","ahegao") # Ahegao?
+        call ton_main("{b}Fuck!{/b}","angry","base","sad","ahegao") # Ahegao?
         m "..."
         call ton_main("...","horny","base","base","ahegao")
         m "You alright there?"
@@ -655,7 +656,7 @@ label cc_st_tonks_E1:
         m "We need her to do it. We don't have anybody else."
         call ton_main("Well...","upset","base","worried","down")
         call ton_main("I could do it.","open","base","sad","mid")
-        m "You can? But I thought-"
+        m "You can? But I thought--"
         call ton_main("You think I'd be biased?","open","base","raised","mid")
 
     else:
@@ -717,38 +718,40 @@ label cc_st_hermione_blackmail:
     # Before Cho stripped in front of Hermione.
     if cc_pf_strip.points < 3:
         m "[hermione_name], may I change your mind about your role in the Slytherin match?"
-        her "My answer is still no, [genie_name]."
+        call her_main("My answer is still no, [genie_name].", "open", "closed", "base", "mid")
         g4 "Come on!"
-        her "That's my final answer."
+        call her_main("That's my final answer.", "annoyed", "narrow", "angry", "mid")
         m "..."
 
         menu:
             "\"I'll give you house points.\"":
-                her "Not...{w=0.3}interested."
+                call her_main("Not...{w=0.3}interested.", "annoyed", "narrow", "angry", "R")
                 g4 "But you're always eager for those points!"
-                her "No amount of points would be worth it."
+                call her_main("No amount of points would be worth it.", "open", "base", "angry", "mid")
                 m "So you don't even want to hear my offer?"
-                her "I guess I don't..." # upset
+                call her_main("I guess I don't...", "open", "closed", "base", "mid") # upset
                 m "Your loss..."
 
             "\"You could make fun of those Slytherins.\"":
                 if her_tier >= 5:
-                    her "That sounds childish, [genie_name]."
+                    call her_main("That sounds childish, [genie_name].", "annoyed", "base", "base", "mid")
                     m "Does it now?"
                     m "So you aren't bothered that they do the same? Calling you all sorts of names?"
-                    her "Not in the slightest. They can act like the usual dorks if they want to, that's no concern to me."
-                    her "I have no reason to stoop down to their level."
+                    call her_main("Not in the slightest...", "soft", "narrow", "base", "mid")
+                    call her_main("They can act like the usual dorks if they want to, that's no concern to me.", "soft", "base", "base", "R", cheeks="blush")
+                    call her_main("But I have no reason to stoop down to their level.", "open", "closed", "base", "mid")
                 else:
-                    her "And why would I want to do that? I'm not that foolish!"
-                    her "Bad-mouthing their entire team would make me an even bigger target than I already am."
-                    her "Besides, I wouldn't really be able to mock them with a teacher present."
-                    her "Madam Hooch would be unquestionable against that."
-                    m "..."
+                    call her_main("And why would I want to do that? I'm not that foolish!", "open", "base", "annoyed", "mid")
+                    call her_main("Bad-mouthing their entire team would make me an even bigger target than I already am.", "annoyed", "base", "base", "R")
+                    call her_main("Besides, I wouldn't really be able to mock them with a teacher present.", "open", "closed", "base", "mid")
+                    call her_main("Madam Hooch would be unquestionably against that.", "open", "narrow", "base", "mid")
 
         # Hermione refuses.
-        her "I'm sorry [genie_name], but my answer shall remain: No." # annoyed
+        call her_main("I'm sorry [genie_name], but my answer shall remain: No.", "annoyed", "base", "angry", "mid") # annoyed
         g4 "(Dammit! This is such a waste of time!)"
         m "(I might as well continue with Cho's \"Training\" and see if I can come up with some solution to this...)"
+
+        call her_main(xpos="base", ypos="base", trans=fade)
 
         jump hermione_requests
 
@@ -756,149 +759,175 @@ label cc_st_hermione_blackmail:
     ### Hermione Blackmail ###
 
     # After Cho stripped in front of Hermione.
-    her "What is it, [genie_name]?"
+    call her_main("What is it, [genie_name]?", "base", "base", "base", "mid")
     m "..."
     g4 "(I'm done playing nice!)"
-    her "[genie_name]?"
+    call her_main("[genie_name]?", "soft", "wink", "base", "mid")
     m "[hermione_name], you're going to commentate that match. Whether you like it or not."
-    her "No. And you won't get me to change my mind on this."
+    call her_main("No. And you won't get me to change my mind on this.", "annoyed", "base", "angry", "mid")
     g9 "Are you sure about that?"
-    her "Why?" # suspicious
+    call her_main("Why?", "annoyed", "narrow", "angry", "mid") # suspicious
 
     menu:
         g9 "[hermione_name]..."
         "\"I heard Cho has a crush on you!\"":
             $ d_flag_01 = True
-            her "She has a-... What?"
+            call her_main("She has a--{w=0.5} What?", "open", "wide", "base", "stare")
             pass
         "\"I heard you have a crush on Cho!\"":
             $ d_flag_01 = False
-            her "But- That's not true!"
+            call her_main("But--{w=0.3} That's not true!", "open", "wide", "base", "mid")
             pass
 
-    her "That's a lie!" # angry
-    her "Not even Cho would agree to this!"
+    call her_main("That's a lie!", "clench", "base", "angry", "mid") # angry
+    call her_main("Not even Cho would agree to this!", "open", "base", "angry", "mid")
     g9 "Why don't we ask her?"
-    her "What?"
-    her "[genie_name], you can't do this!"
+    call her_main("What?", "angry", "base", "base", "mid")
+    call her_main("[genie_name], you can't do this!", "open", "base", "angry", "mid")
     g9 "Sure I can."
 
-    call nar("> You telepathically call Cho into your office.")
-
     call hide_characters
+    call nar(">You telepathically call Cho into your office.")
+
     hide screen bld1
     with d3
     pause .2
 
-    # Hermione puts her clothes on if she's naked.
-    # TODO: add clothing equip for Hermione.
+    if her_tier < 4: # Hermione changes into her school outfit
+        $ her_outfit_last.save()
+        $ hermione.equip(her_outfit_default)
+    else:
+        $ hermione.wear("all")
 
     call her_walk("mid", "base")
+    call chibi_emote("thought", "hermione")
+    with d3
     pause .1
 
     # Summon Cho.
     call play_sound("door")
     call cho_chibi("stand", "door", "base")
     with d3
-
-    call chibi_emote("thought", "hermione")
     pause 1
 
     call cho_walk(680, "base")
     pause .2
 
-    call her_main("", "base", "base", "base", "mid", xpos="270", ypos="base", flip=True)
+    call chibi_emote("hide", "hermione")
+    with d3
+
+    call her_main("", "annoyed", "base", "angry", "R", xpos="270", ypos="base", flip=True)
     call cho_main("Hello, Sir.", "base", "base", "base", "mid", xpos="close", ypos="base")
-    cho "Granger."
-    her "..."
-    cho "How can I be of help?"
-    m "Miss Granger and I were just discussing about who should commentate the next Squidditch game."
-    cho "Oh, did you already blackmail her?"
-    her "Blackmailing? Me?!" # chocked
-    m "I tried..."
-    her "So that's what's going on here. You two are scheming against me!" # angry
-    cho "Come on, Hermione. You can't be that scared of those Slytherins. Don't be such a coward..."
-    her "I am not!"
-    cho "Please! We need somebody to commentate."
-    her "I won't do it! And neither of you can change my mind on this!"
+    call cho_main("Granger.", "soft", "narrow", "base", "L")
+    call her_main("...", "annoyed", "base", "angry", "mid", cheeks="blush")
+    call cho_main("How can I be of help?", "base", "base", "base", "mid")
+    m "I have very good news for you, Miss Chang."
+    m "Miss Granger and I were just discussing -- about who should commentate the next Squidditch game."
+    call cho_main("Oh, did you already blackmail her?", "crooked_smile", "base", "base", "mid")
+    call her_main("Blackmailing?!{w=0.5} Me?", "open", "wide", "base", "stare") # shocked
+    call cho_main("", "annoyed", "narrow", "base", "L")
+    m "What choice do we have? You're acting stubborn, Miss Granger."
+    call her_main("So that's what's going on here. You two are scheming against me!", "angry", "base", "angry", "mid") # angry
+    call cho_main("Come on, Hermione. You can't be {b}that{/b} scared of those Slytherins...", "open", "narrow", "raised", "L")
+    call cho_main("Don't be such a coward...", "annoyed", "narrow", "angry", "L")
+    call her_main("I am not!", "annoyed", "base", "angry", "R", cheeks="blush")
+    call cho_main("Please! We need somebody to commentate.", "open", "narrow", "base", "L")
+    call her_main("I won't do it! And neither of you can change my mind on this!", "angry", "base", "angry", "mid")
     g9 "I bet she can!"
-    cho "Me? How so?"
+    call cho_main("Me? How so?", "annoyed", "base", "raised", "mid")
 
     if d_flag_01: # Cho has crush
         m "Miss Chang, I've heard rumours that you have a huge crush on Hermione..."
-        cho "What? That's rubbish!"
-        her "..."
+        call cho_main("What? That's rubbish!", "open", "narrow", "angry", "mid")
+        call her_main("...", "annoyed", "base", "angry", "mid")
 
     else: # Hermione has crush
         m "Miss Chang, I've heard rumours that Hermione secretly has a crush on you..."
-        cho "She does?" # Surprised
-        her "No, I don't!"
-        her "It's just made up rubbish..."
+        call cho_main("She does?", "soft", "base", "raised", "mid") # Surprised
+        call her_main("No, I don't!", "clench", "happyCl", "angry", "mid")
+        call her_main("It's just made up rubbish...", "open", "base", "angry", "mid")
 
     g9 "Rubbish or not, I'm sure Miss Granger wouldn't want such rumours to make their rounds now, would she?"
-    her "*Pfff*... As if anybody would believe that..."
-    cho "Oh, I get it now!"
-    cho "You can count on me, Sir!"
-    cho "I don't mind if my reputation gets a bit tarnished, from being associated with her."
-    cho "For as long as it gets me closer to that cup..."
-    her "You're such an idiot, I can't believe it."
-    her "I can't believe you'd stoop as low as blackmail for some stupid Quidditch Cup!"
+    call cho_main("", "annoyed", "base", "raised", "L")
+    call her_main("*Pfff*...{w=0.3} As if anybody would believe that...", "annoyed", "base", "angry", "R")
+    call cho_main("Oh, I get it now!", "base", "base", "base", "mid")
+    call her_main("", "annoyed", "narrow", "angry", "L")
+    call cho_main("You can count on me, Sir!", "crooked_smile", "base", "base", "mid")
+    call cho_main("I don't mind if my reputation gets a bit tarnished, from being associated with her.", "open", "narrow", "angry", "L")
+    call cho_main("For as long as it gets me closer to that cup...", "base", "narrow", "base", "mid")
+    call her_main("You're such an idiot...", "clench", "happyCl", "angry", "mid")
+    call her_main("I can't believe you'd stoop as low as blackmail for some stupid Quidditch Cup!", "open", "narrow", "angry", "L")
 
     if d_flag_01: # Cho has crush
-        cho "Don't be mean to me, Hermione."
-        cho "After all, I really, really like you!"
-        her "..." # looks away
-        cho "I love your bushy hair, your cute little nose, your gorgeous eyes..."
-        cho "Your enormous rack!"
-        her "*Tzzzs!*" # Starts to blush
-        her "Stop lying!"
+        call cho_main("Don't be mean to me, Hermione.", "soft", "base", "base", "L")
+        call cho_main("After all, I really, really like you!", "base", "narrow", "base", "L")
+        call her_main("...", "annoyed", "narrow", "angry", "R") # looks away
+        call cho_main("I love your bushy hair, your cute little nose, your gorgeous eyes...", "soft", "narrow", "raised", "L")
+        call cho_main("Your enormous rack!", "grin", "narrow", "angry", "L")
+        call her_main("*Tzzzs!*", "clench", "closed", "angry", "mid", cheeks="blush") # Starts to blush
+        call her_main("Stop lying!", "open", "base", "angry", "L", cheeks="blush")
+        call cho_main("", "horny", "narrow", "angry", "L", cheeks="blush")
         m "She sounds pretty convincing to me..."
-        cho "Everybody will know that I have a thing for you, Granger!"
-        cho "And, sooner or later, I might even mix in some love potion into your pumpkin juice..."
-        her "You'd-... do what?"
+        call cho_main("Everybody will know that I have a thing for you, Granger!", "open", "narrow", "angry", "L")
+        call cho_main("And, sooner or later, I might even mix in some love potion into your pumpkin juice...", "soft", "narrow", "raised", "L")
+        call her_main("You'd--...{w=0.5} do what?", "clench", "wide", "worried", "stare", cheeks="blush")
         m "(Pumpkin juice? Sounds disgusting.)"
-        cho "You wouldn't want all of your friends to see us finally make out, would you?"
+        call cho_main("You wouldn't want all of your friends to see us finally make out, would you?", "horny", "narrow", "raised", "L", cheeks="blush")
 
     else: # Hermione has crush
-        cho "Tell me, Granger..."
-        cho "What exactly do you like about me?"
-        cho "Is it my hair? Or my strong legs? Or my abs?"
-        cho "Would you like me to show you my body again, right now?"
-        her "No."
-        cho "I should mix in some drops of veritaserum into your pumpkin juice, and ask you again..."
-        cho "Maybe then you'll speak the truth... How you really think of me."
-        her "You wouldn't!"
-        cho "Yes I would!"
+        call cho_main("Tell me, Granger...", "soft", "narrow", "raised", "L")
+        call cho_main("What exactly do you like about me?", "base", "narrow", "angry", "L")
+        call her_main("", "annoyed", "narrow", "angry", "L")
+        call cho_main("Is it my hair? Or my strong legs? Or my abs?", "open", "narrow", "base", "down")
+        call cho_main("Would you like me to show you my body again, right now?", "grin", "narrow", "base", "L")
+        call her_main("No thanks.", "normal", "closed", "base", "mid")
+        call cho_main("I should mix in some drops of veritaserum into your pumpkin juice, and ask you again...", "annoyed", "narrow", "base", "L")
+        call cho_main("Maybe then you'll speak the truth... How you really think of me.", "annoyed", "narrow", "raised", "mid")
+        call her_main("You wouldn't!", "clench", "base", "angry", "L", cheeks="blush")
+        call cho_main("Yes I would!", "base", "narrow", "base", "L")
         g9 "(I need to get some of that stuff...)"
-        m "(The truth potion, not the pumpkin juice... Sounds disgusting...)"
-        cho "And I'll make sure that all your friends hear about it. Maybe I'll even let them watch!"
+        m "(The truth potion, not the pumpkin juice...)"
+        m "(Pumpkin juice sounds disgusting...)"
+        call cho_main("And I'll make sure that all your friends hear about it. Maybe I'll even let them watch!", "open", "narrow", "angry", "L")
 
-    her "Professor! You can't have her do that. That's insane!"
+    call her_main("Professor! You can't have her do that. That's insane!", "clench", "happyCl", "worried", "mid", cheeks="blush")
+    call cho_main("", "annoyed", "narrow", "base", "up")
     m "That's all up to you, Miss Granger."
     g9 "All you gotta do is commentate the next match."
-    her "Both matches!"
+    call her_main("Both matches!", "clench", "base", "angry", "mid")
+    call cho_main("", "annoyed", "narrow", "base", "L")
     m "What?"
-    her "The Gryffindor match as well! The one after that, should Ravenclaw even get that far..."
-    cho "Oh no you won't! You'd be all in favour of Gryffindor!"
-    her "Yes I would. And I'll make sure that you lose."
+    call her_main("The Gryffindor match as well! The one after that, should Ravenclaw even get that far...", "open", "base", "angry", "mid")
+    call cho_main("Oh no you won't! You'd be all in favour of Gryffindor!", "clench", "base", "angry", "L")
+    call her_main("Yes I would. And I'll make sure that you lose.", "base", "narrow", "base", "L")
     m "Great. Finally we can get on with this..."
+    call cho_main("Wait!--", "clench", "happyCl", "worried", "mid", cheeks="blush")
     m "Miss Granger, you're expected to appear during the practice matches as commentator."
-    her "..."
+    call her_main("", "base", "base", "base", "mid")
+    call cho_main("(...)", "annoyed", "narrow", "angry", "L", cheeks="blush")
     g9 "Every time you don't, I'll take fifty points from Gryffindor!"
-    her "That's just typical of you!"
+    call her_main("That's just typical of you!", "annoyed", "narrow", "base", "mid")
     m "Make sure to be present..."
-    her "..."
-
+    call her_main("I will.", "annoyed", "narrow", "base", "L")
     m "You are both dismissed..."
-    her "..."
+    call her_main("...", "base", "base", "base", "mid")
 
     call her_walk(action="leave")
     pause .2
 
+    show screen blkfade
+    with d3
+
+    call cho_chibi("stand","mid","base")
+    hide screen blkfade
+    call cho_main("", "annoyed", "narrow", "angry", "mid", xpos="mid", ypos="base", trans=fade)
+    m "I'd say that was a success."
+    call cho_main("(...)", "annoyed", "narrow", "angry", "R")
+
     if daytime:
-        call cho_main("Good day, Sir.", "base", "base", "base", "mid", ypos="head") # Happy
+        call cho_main("Good day, Sir.", "open", "narrow", "angry", "mid")
     else:
-        call cho_main("Good night, Sir.", "base", "base", "base", "mid", ypos="head") # Happy
+        call cho_main("Good night, Sir.", "open", "narrow", "angry", "mid")
 
     call cho_walk(action="leave")
 
@@ -912,6 +941,10 @@ label cc_st_hermione_blackmail:
     $ cc_st.hermione_blackmail = True
     $ cho_quid.commentator = "hermione"
 
+    # Reset
+    if her_tier < 4:
+        $ hermione.equip(her_outfit_last) # Equip player outfit.
+
     jump main_room
 
 
@@ -920,7 +953,7 @@ label cc_st_hermione_blackmail:
 
 label cc_st_talk:
 
-    call cho_main(xpos="mid", ypos="base", trans=fade)
+    call cho_main(xpos="right", ypos="base", trans=fade)
 
     # you haven't talked to Tonks yet.
     if cho_quid.lock_practice:
@@ -929,12 +962,12 @@ label cc_st_talk:
         call cho_main("Please just hurry up, Sir.","annoyed","narrow","base","mid")
         call cho_main("We need to practise...", "annoyed", "narrow", "worried", "R")
         m "Any ideas on how I would do that?"
-        call cho_main("How would I know, I'm not a teacher am I... ask one of them.", "annoyed","base","angry","R")
+        call cho_main("How would I know, I'm not a teacher, am I?...{w} Ask one of them.", "open","narrow","base","mid")
         if cc_st.snape_E1:
             m "Well, I asked Snape..."
-            call cho_main("And how did that work out for you?","open","base","base","mid")
+            call cho_main("And how did that work out for you?","open","narrow","raised","mid")
             m "It didn't."
-            call cho_main("Ask another teacher then...", "angry","base","angry","mid")
+            call cho_main("Ask another teacher then...", "annoyed","narrow","base","mid")
 
     # played one match with Tonks.
     elif cc_st.match_counter >= 2 and cho_quid.commentator == "tonks" and cc_pf_strip.points < 3 and not cc_st.hermione_blackmail:
@@ -975,6 +1008,6 @@ label cc_st_talk:
         call cho_main("I'm confident that we can win this, [cho_genie_name].","smile","base","base","mid")
         call cho_main("Slythein has no blasted chance against us!","base","narrow","base","mid")
 
-    call cho_main(xpos="base", ypos="base", trans=fade)
+    #call cho_main(xpos="base", ypos="base", trans=fade)
 
     return

@@ -419,7 +419,7 @@ label cc_ht_hermione_commentator:
 
 label cc_ht_talk:
 
-    call cho_main(xpos="mid", ypos="base", trans=fade)
+    call cho_main(xpos="right", ypos="base", trans=fade)
 
     if cc_ht.return_E3 and cho_quid.commentator == None:
         call cho_main("Have you asked Hermione to be our commentator yet?", "soft", "base", "base", "mid")
@@ -457,7 +457,5 @@ label cc_ht_talk:
 
     else:
         call cho_main("I'm confident that we can win this, [cho_genie_name].", "smile", "base", "base", "mid")
-
-    call cho_main(xpos="base", ypos="base", trans=fade)
 
     return

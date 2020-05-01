@@ -1084,7 +1084,7 @@ label hufflepuff_match_return:
 
     pause 2
 
-    if cho_whoring < 24:
+    if cho_whoring < 24: # # TODO: move this for 1.39
         $ cho_whoring = 24
         $ TBA_message("This concludes all Quidditch events for Cho as of version %s." % title_version)
         $ TBA_message("Cho's recklesness stat has been maxed out.\nYou can now use all of her wardrobe options.")
@@ -1097,9 +1097,9 @@ label hufflepuff_match_return:
     $ cho.equip(cho_outfit_last)
 
     $ cho_tier = 2
-    #$ cho_training_unlocked = True
-    #$ cho_quid.lock_practice = False
-    #$ cho_quid.lock_training = False
-    #$ cho_quid.lock_tactic   = False
+    $ cho_favors_unlocked = False # Need to do next tutoring event first.
+    $ cho_quid.lock_practice = False
+    $ cho_quid.lock_training = False
+    $ cho_quid.lock_tactic   = False
 
     jump end_cho_event

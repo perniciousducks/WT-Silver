@@ -19,6 +19,11 @@ label cho_training_menu:
         $ cho_favors_unlocked = True
         jump cho_quid_E2
 
+    # Slytherin Intro.
+    if cho_tier == 2 and not cc_st.intro:
+        $ cho_favors_unlocked = True
+        jump cc_st_intro
+
     jump change_quidditch_tactics
 
 
@@ -333,6 +338,8 @@ label change_quidditch_tactics:
                     call cc_ht_talk
                 elif cho_tier == 2:
                     call cc_st_talk
+                hide screen cho_main
+                with fade
 
             "-Change Tactic-" if not cho_quid.lock_tactic:
                 m "Start flying, [cho_name]."
@@ -366,10 +373,10 @@ label change_quidditch_tactics:
             "-Start Practice Match-" if daytime and not cho_quid.lock_practice:
                 # Cho continues to wear her Quidditch outfit.
                 # No clothing reset until after the eventing.
-                #if cho_tier == 1: # Hufflepuff
-                jump cc_ht_start
-                #if cho_tier == 2: # Slytherin
-                #    jump cc_st_start
+                if cho_tier == 1: # Hufflepuff
+                    jump cc_ht_start
+                if cho_tier == 2: # Slytherin
+                    jump cc_st_start
 
             "{color=[menu_disabled]}-Start Practice Match-{/color}" if not daytime or cho_quid.lock_practice:
                 if cho_quid.lock_practice:

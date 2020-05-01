@@ -7,9 +7,6 @@ label cho_summon_setup:
 
     $ random_number = renpy.random.randint(1, 10)
 
-    if not cho_quid.slytherin_talk and cho_tier == 2:
-        jump cc_st_intro
-
     if has_cho_panties:
         jump cho_panties_response_T2
 

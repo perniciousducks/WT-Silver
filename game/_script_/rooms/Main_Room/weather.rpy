@@ -1,6 +1,7 @@
 
 default weather = None
 default full_moon = False
+default moon_cycle = 7
 
 define weather_types = ("clear", "cloudy", "overcast", "blizzard", "snow", "storm", "rain")
 
@@ -13,7 +14,11 @@ init python:
             full_moon = bool(full)
         else:
             # Full moon averages every 7 days
-            full_moon = day % renpy.random.randint(5,9) == 0
+            if day % moon_cycle == 0:
+                full_moon = True
+                moon_cycle = renpy.random.randint(5,9)
+            else:
+                full_moon = False
 
     def set_weather(*args):
         """Sets the weather based on predefined chance, or randomly picks a weather type from the arguments."""

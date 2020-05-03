@@ -892,7 +892,7 @@ label hermione_change:
                             g4 "I said mass flood!"
                             call her_main("Mass flood?", "soft", "base", "base", "mid")
                             m "Are you deaf or something?"
-                            if raining:
+                            if weather == "rain":
                                 call her_main("I was pretty sure you said-...", "open", "base", "base", "mid")
                                 call her_main("", "normal", "base", "base", "R")
                                 m "Look outside the window, it's raining is it not?"

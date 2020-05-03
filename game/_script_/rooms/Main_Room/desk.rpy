@@ -292,11 +292,11 @@ screen watch():
     $ watch_x = 603 +67
     $ watch_y = 35
 
-    if raining:
+    if weather == "rain":
         add "interface/desk/watch/rain.png" xpos watch_x ypos watch_y
-    elif snowing or blizzard:
+    elif weather in ("snow", "blizzard"):
         add "interface/desk/watch/snow.png" xpos watch_x ypos watch_y
-    elif storm:
+    elif weather == "storm":
         add "interface/desk/watch/storm.png" xpos watch_x ypos watch_y
     else:
         if daytime:
@@ -314,15 +314,12 @@ label paperwork:
         m "I need to get paid first."
         jump main_room
 
-    stop music fadeout 1.0
-    if daytime:
-        play bg_sounds "sounds/day.mp3" fadeout 1.0 fadein 1.0 #Quiet...
-    else:
-        play bg_sounds "sounds/night.mp3" fadeout 1.0 fadein 1.0 #Quiet...
+    call weather_sound
 
-    if raining:
-        play weather "sounds/rain.mp3" fadeout 1.0 fadein 1.0 #Quiet...
-        stop bg_sounds
+    if not renpy.music.is_playing("weather"):
+        call music_block
+    else:
+        stop music fadeout 1.0
 
     call gen_chibi("paperwork")
     with d3
@@ -332,7 +329,7 @@ label paperwork:
 
     call report_chapters_check #Checks whether or not the completed chapter was the final one.
 
-    if not daytime and (1 < weather_gen < 4): # FULL MOON
+    if not daytime and full_moon:
         call f_moon_bonus
 
     call report_chapters_check #Checks whether or not the completed chapter was the final one.

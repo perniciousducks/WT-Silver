@@ -109,8 +109,7 @@ label start_wt:
 
     ### START ANIMATION ###
     call stop_sound_effects
-    $ weather_gen = 2
-    $ show_weather()
+    $ set_weather("clear")
     $ daytime = True
     call update_interface_color
     call room("main_room")

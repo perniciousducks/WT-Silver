@@ -3,7 +3,7 @@ screen quid_pitch_back():
     sensitive False
     zorder 0
     add "images/rooms/quidditch_pitch/back.png" zoom 0.5
-    if weather_gen < 4:
+    if weather == "cloudy":
         for i in xrange(random.randint(2, 5)):
             add "object" at OBJcloud
     add "images/rooms/quidditch_pitch/back_overlay.png" zoom 0.5

@@ -6,21 +6,10 @@ label hermione_summon_setup:
     $ hermione.wear("all")
     $ hermione.set_cum(None)
 
-    # weather_gen 1-3   = good weather
-    # weather_gen 4     = cloudy weather
-    # weather_gen 5-6   = bad weather
-    # raining           = bool
-    # snowing           = bool
-    # blizzard          = bool
-    # storm             = bool
-
-    # Sunny
-
-    #
     #
     # TODO: Remove obsolete variables and fix the code after clothes have been added.
     #
-    # if weather_gen in [1] and 1 > 2:
+    # if weather == "clear":
 
         # if her_tier >= 3 and daytime and not hg_muggle_hot_ITEM.unlocked:
             # $ hg_muggle_hot_ITEM.unlocked = True
@@ -69,8 +58,7 @@ label hermione_summon_setup:
             # call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_hot_ITEM)
 
 
-    # # Cloudy
-    # if weather_gen in [4] and 1 > 2:
+    # if weather == "overcast":
 
         # #One time event.
         # if not hg_accs_wool_g_ITEM.unlocked:
@@ -133,7 +121,7 @@ label hermione_summon_setup:
 
 
     # # Raining
-    # if raining and 1 > 2:
+    # if weather == "rain":
 
         # if her_tier >= 2 and not hg_muggle_rainy_ITEM.unlocked:
             # $ hg_muggle_rainy_ITEM.unlocked = True
@@ -198,7 +186,7 @@ label hermione_summon_setup:
                 # pause.5 #Shows Hermione with robe for a bit.
 
     # # Snow
-    # if snowing or blizzard and 1 > 2:
+    # if weather in ("snow", "blizzard"):
 
         # if her_tier >= 2 and not hg_muggle_cold_ITEM.unlocked:
             # $ hg_muggle_cold_ITEM.unlocked = True

@@ -129,10 +129,7 @@ init python:
                     renpy.hide_screen("card_battle")
                     renpy.transition(dissolve)
                     # Replay weather SFX
-                    if raining:
-                        renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
-                    if blizzard:
-                        renpy.music.play("sounds/blizzard.ogg", "weather", fadeout=1.0, fadein=1.0)
+                    renpy.call("weather_sound")
                     return response_card
 
                 enemy_turn(enemy_deck, shown_backside, reverse, dobelt_number)
@@ -151,10 +148,7 @@ init python:
                     renpy.hide_screen("card_battle")
                     renpy.transition(dissolve)
                     # Replay weather SFX
-                    if raining:
-                        renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
-                    if blizzard:
-                        renpy.music.play("sounds/blizzard.ogg", "weather", fadeout=1.0, fadein=1.0)
+                    renpy.call("weather_sound")
                     return response_card
                 return "AfterEnemy"
             else:

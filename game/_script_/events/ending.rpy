@@ -2740,7 +2740,7 @@ label ball_ending_E2:
     hide screen chair_left
     hide screen bld1
 
-    $ show_weather()
+    $ set_weather()
     call weather_sound
     show screen weather
 

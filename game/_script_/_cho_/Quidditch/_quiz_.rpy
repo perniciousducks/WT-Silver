@@ -256,10 +256,7 @@ label cho_quiz:
 
     call music_block
 
-    if raining:
-        $ renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
-    if blizzard:
-        $ renpy.music.play("sounds/blizzard.ogg", "weather", fadeout=1.0, fadein=1.0)
+    call weather_sound
 
     $ renpy.block_rollback()
 
@@ -576,10 +573,7 @@ label cho_quiz_checkpoint:
 
     call music_block
 
-    if raining:
-        $ renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
-    if blizzard:
-        $ renpy.music.play("sounds/blizzard.ogg", "weather", fadeout=1.0, fadein=1.0)
+    call weather_sound
 
     $ renpy.block_rollback()
 

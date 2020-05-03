@@ -3,12 +3,11 @@
 label genie_house_elf:
 
     $ temp_day = daytime
-    $ temp_weather = weather_gen
+    $ temp_weather = weather
     $ daytime = True
     call update_interface_color
 
-    $ weather_gen = 1
-    $ show_weather()
+    $ set_weather("clear")
     call room("main_room")
     call music_block
     call blkfade
@@ -94,7 +93,6 @@ label genie_house_elf:
 
     $ daytime = temp_day
     call update_interface_color
-    $ weather_gen = temp_weather
-    $ show_weather()
+    $ weather = temp_weather
 
     jump enter_room_of_req

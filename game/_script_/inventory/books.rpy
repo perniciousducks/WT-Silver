@@ -269,26 +269,27 @@ label check_book_order:
 
 
 label reading_book:
-    stop music fadeout 2.0
-    if raining:
-        play weather "sounds/rain.mp3" fadeout 1.0 fadein 1.0 #Quiet...
-    if fire_in_fireplace:
-        play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
-    if daytime and not raining and not fire_in_fireplace:
-        play bg_sounds "sounds/day.mp3" fadeout 1.0 fadein 1.0 #Quiet...
-    if not daytime and not raining and not fire_in_fireplace:
-        play bg_sounds "sounds/night.mp3" fadeout 1.0 fadein 1.0 #Quiet...
 
-    if fire_in_fireplace:   #Shows Genie reading a book near the fireplace.
+    call weather_sound
+
+    if not renpy.music.is_playing("weather"):
+        call music_block
+    else:
+        stop music fadeout 1.0
+
+    if fire_in_fireplace:
+        play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0
+
+    if fire_in_fireplace:
         hide screen chair_right
         call gen_chibi("read_near_fire")
         with d3
-    else:                   #Shows Genie reading a book near the window.
+    else:
         hide screen chair_right
         call gen_chibi("read")
         with d3
 
-    if raining:
+    if weather == "rain":
         ">You read a book called [book_choice.name], while listening to the sound of raindrops bombarding the roof of your tower."
     else:
         ">You read a book called [book_choice.name]..."
@@ -330,7 +331,7 @@ label reading_book:
         if _return == "DONE":
             jump book_complete
 
-        if raining:
+        if weather == "rain":
             if not fire_in_fireplace:
                 ">The rain outside of the tower calms your mood and you feel like keeping on reading..."
                 ">You try to keep on reading but after a while you realise that the air in your chambers is too damp for your liking."

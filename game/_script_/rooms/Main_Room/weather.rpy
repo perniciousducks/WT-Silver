@@ -1,83 +1,106 @@
-default weather_animations = []
-default weather_gen = 1
-default raining = False
-default snowing = False
-default blizzard = False
-default storm = False
+
+default weather = None
+default full_moon = False
+
+define weather_types = ("clear", "cloudy", "overcast", "blizzard", "snow", "storm", "rain")
 
 init python:
-        ### Weather Types ###
+    def set_moon(full=None):
+        """Sets the moon phase based on predefined frequency, or boolean argument."""
+        global full_moon
 
-        ## Day ##
+        if full is not None:
+            full_moon = bool(full)
+        else:
+            # Full moon averages every 7 days
+            full_moon = day % renpy.random.randint(5,9) == 0
 
-        # (clear sky)           w_g == 1 + 2
-        # (cloud across sky)    w_g == 3
+    def set_weather(*args):
+        """Sets the weather based on predefined chance, or randomly picks a weather type from the arguments."""
+        global weather
 
-        # (heavy clouds)        w_g >= 4
-        # (rain)                w_g >= 5
-        # (lighting)            w_g >= 5 + l_g == 1
-        # (snowy)               w_g >= 5 + s_g == 1
-        # (blizzard)            w_g >= 5 + s_g == 1 + l_g == 1
+        if args:
+            if any((x not in weather_types for x in args)):
+                raise Exception("Unsupported weather type in {}".format(args))
+            weather = renpy.random.choice(args)
+            return
 
-        ## Night ##
+        weather_gen = renpy.random.randint(1, 6)
 
-        # (clear sky)           w_g == 1
-        # (Clear sky with moon) w_g == 2
-        # (clouds across moon)  w_g == 3
-
-        # (heavy clouds)        w_g >= 4
-        # (rain)                w_g >= 5
-        # (lighting)            w_g >= 5 + l_g == 1
-        # (snowy)               w_g >= 5 + s_g == 1
-        # (blizzard)            w_g >= 5 + s_g == 1 + l_g == 1
-
-    #TODO Rename: show_weather updates the weather state, doesn't show anything
-    def show_weather():
-        global weather_animations, weather_gen, raining, snowing, blizzard, storm, cloudy
-        raining = False
-        snowing = False
-        blizzard = False
-        storm = False
-        cloudy = False
-        weather_animations = []
-        snow_gen      = renpy.random.randint(1, 3)
-        lightning_gen = renpy.random.randint(1, 3)
-
-        # Bad Weather
-        if weather_gen in [5,6]:
-
-            # Blizzard
-            if snow_gen == 1 and lightning_gen == 1 and day >= 30:
-                blizzard = True
-                weather_animations.append("blizzard")
-            # Snow
-            elif snow_gen == 1 and day >= 30:
-                snowing = True
-                weather_animations.append("snow")
-
-            # Lightning
-            elif lightning_gen == 1: # (Heavy clouds with chance of lightning)
-                storm = True
-                weather_animations.append("lightning")
-
-            # Rain
-            else:
-                raining = True
-                weather_animations.append("rain")
+        if weather_gen <= 2:
+            weather = "clear"
+        elif weather_gen == 3:
+            weather = "cloudy"
         elif weather_gen == 4:
-            cloudy = True
+            weather = "overcast"
+        else:
+            snow_gen = renpy.random.randint(1, 3) == 1
+            storm_gen = renpy.random.randint(1, 3) == 1
+
+            if snow_gen and day >= 30:
+                weather = "blizzard" if storm_gen else "snow"
+            elif storm_gen:
+                weather = "storm"
+            else:
+                weather = "rain"
 
 label weather_sound:
-    if blizzard:
+    if weather == "blizzard":
         play weather "sounds/blizzard.ogg" fadeout 0.5 fadein 0.5 if_changed
-    elif raining:
-        play weather "sounds/rain.mp3" fadeout 0.5 fadein 0.5 if_changed
+    elif weather == "storm":
+        play weather "sounds/storm.mp3" fadeout 0.5 fadein 0.5 if_changed
+    elif weather == "rain":
+        pass #TODO Rain sound (without thunder)
     else:
         stop weather fadeout 0.5
     return
 
-# Transforms
-transform cloud_move: #http://www.renpy.org/wiki/atl
+screen weather():
+    zorder -1
+    sensitive False
+
+    if daytime:
+        if weather in ("clear", "cloudy"):
+            add "images/rooms/_weather_/sky.png" pos (430, 218) anchor (0.5, 0.5)
+
+        if weather == "cloudy":
+            add "images/rooms/_weather_/cloud_small.png" at cloud_move
+
+        if weather in ("overcast", "blizzard", "snow", "storm", "rain"):
+            add "images/rooms/_weather_/sky_overcast.png" pos (430, 218) anchor (0.5, 0.5)
+
+    elif full_moon:
+        if weather in ("clear", "cloudy"):
+            add "images/rooms/_weather_/night_sky_moon.png" pos (430, 218) anchor (0.5, 0.5)
+
+        if weather == "cloudy":
+            add "images/rooms/_weather_/night_cloud_02.png" at cloud_night_move_01
+            add "images/rooms/_weather_/night_cloud_01.png" at cloud_night_move_02
+            add "images/rooms/_weather_/night_cloud_03.png" at cloud_night_move_03
+
+        if weather in ("overcast", "blizzard", "snow", "storm", "rain"):
+            add "images/rooms/_weather_/night_sky_moon_overcast.png" pos (430, 218) anchor (0.5, 0.5)
+
+    else:
+        if weather in ("clear", "cloudy"):
+            add "images/rooms/_weather_/night_sky.png" pos (430, 218) anchor (0.5, 0.5)
+
+        if weather == "cloudy":
+            add "images/rooms/_weather_/night_cloud_02.png" at cloud_night_move_01
+            add "images/rooms/_weather_/night_cloud_01.png" at cloud_night_move_02
+            add "images/rooms/_weather_/night_cloud_03.png" at cloud_night_move_03
+
+        if weather in ("overcast", "blizzard", "snow", "storm", "rain"):
+            add "images/rooms/_weather_/night_sky_overcast.png" pos (430, 218) anchor (0.5, 0.5)
+
+    if weather in ("blizzard", "snow", "storm", "rain"):
+        add weather pos (430, 218) anchor (0.5, 0.5)
+
+    if weather == "storm":
+        add "rain" pos (430, 218) anchor (0.5, 0.5)
+
+
+transform cloud_move:
     xpos 520
     choice:
         ypos 150
@@ -90,11 +113,11 @@ transform cloud_move: #http://www.renpy.org/wiki/atl
     choice:
         ypos 200
 
-    linear 15.0 xpos 237 # linear
+    linear 15.0 xpos 237
     pause 7
     repeat
 
-transform cloud_night_move_01: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
+transform cloud_night_move_01:
     xpos 520
     choice:
         ypos 130
@@ -102,29 +125,28 @@ transform cloud_night_move_01: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
         ypos 150
     choice:
         ypos 150
-    linear 30.0 xpos 280 # linear
+    linear 30.0 xpos 280
     pause 2
     repeat
 
-transform cloud_night_move_02: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
+transform cloud_night_move_02:
     xpos 520
     choice:
         ypos 150
     choice:
         ypos 170
-    linear 70.0 xpos 280 # linear
+    linear 70.0 xpos 280
     pause 2
     repeat
 
-transform cloud_night_move_03: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
+transform cloud_night_move_03:
     xpos 520
     ypos 160
-    linear 50.0 xpos 280 # linear
+    linear 50.0 xpos 280
     pause 2
     repeat
 
-# Images
-image rain: #Rain.
+image rain:
     "images/rooms/_weather_/rain_01.png"
     pause.1
     "images/rooms/_weather_/rain_02.png"
@@ -133,7 +155,7 @@ image rain: #Rain.
     pause.1
     repeat
 
-image snow: #Snow.
+image snow:
     "images/rooms/_weather_/snow_01.png"
     pause.07
     "images/rooms/_weather_/snow_02.png"
@@ -156,7 +178,7 @@ image snow: #Snow.
     pause.07
     repeat
 
-image blizzard: #Blizzard.
+image blizzard:
     "images/rooms/_weather_/blizzard_01.png"
     pause.05
     "images/rooms/_weather_/blizzard_02.png"
@@ -179,52 +201,24 @@ image blizzard: #Blizzard.
     pause.05
     repeat
 
-
-image lightning: #Lightening during rain behind the window.
+image storm:
     pause 20
-    "images/rooms/_weather_/lightining_01.png"
+    "images/rooms/_weather_/lightning_01.png"
     pause.1
-    "images/rooms/_weather_/lightining_02.png"
+    "images/rooms/_weather_/lightning_02.png"
     pause.1
-    "images/rooms/_weather_/lightining_03.png"
+    "images/rooms/_weather_/lightning_03.png"
     pause.1
-    "images/rooms/_weather_/lightining_04.png"
+    "images/rooms/_weather_/lightning_04.png"
     pause.1
-    "images/rooms/_weather_/lightining_05.png"
+    "images/rooms/_weather_/lightning_05.png"
     pause.1
-    "images/rooms/_weather_/lightining_06.png"
+    "images/rooms/_weather_/lightning_06.png"
     pause.1
-    "images/rooms/_weather_/lightining_05.png"
+    "images/rooms/_weather_/lightning_05.png"
     pause.1
-    "images/rooms/_weather_/lightining_06.png"
+    "images/rooms/_weather_/lightning_06.png"
     pause.1
-    "images/rooms/_weather_/lightining_05.png"
+    "images/rooms/_weather_/lightning_05.png"
     pause 20
     repeat
-
-screen weather():
-    zorder -1
-    sensitive False
-
-    if daytime:
-        if weather_gen < 4:# (cloud across sky)
-            add "images/rooms/_weather_/sky.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
-            add "images/rooms/_weather_/cloud_small.png" at cloud_move
-        if weather_gen >= 4:# (heavy clouds)
-            add "images/rooms/_weather_/cloudy.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
-    else:
-        ## Weather Types
-        if weather_gen == 1:# (clear sky)
-            add "images/rooms/_weather_/night_sky.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
-        if weather_gen == 2:# (Clear sky with moon)
-            add "images/rooms/_weather_/night_sky_02.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
-        if weather_gen == 3:# (clouds across moon)
-            add "images/rooms/_weather_/night_sky_02.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
-            add "images/rooms/_weather_/night_cloud_02.png" at cloud_night_move_01
-            add "images/rooms/_weather_/night_cloud_01.png" at cloud_night_move_02
-            add "images/rooms/_weather_/night_cloud_03.png" at cloud_night_move_03
-        if weather_gen >= 4:# (heavy clouds)
-            add "images/rooms/_weather_/night_sky_04.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")
-
-    for img in weather_animations:
-        add img at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")

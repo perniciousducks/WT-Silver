@@ -10,7 +10,7 @@ label prev_at_hogwarts:
     $ temp_gold = gold
     $ temp_day = daytime
     $ temp_color = interface_color
-    $ temp_weather = weather_gen
+    $ temp_weather = weather
 
     stop weather
     call play_music("stop")
@@ -22,9 +22,8 @@ label prev_at_hogwarts:
     $ gold = 0
     $ daytime = True
     call update_interface_color
-    $ weather_gen = 1
-    $ show_weather()
-    
+    $ set_weather("clear")
+
     call gen_chibi("hide")
     show screen dumbledore
     hide screen owl
@@ -34,7 +33,7 @@ label prev_at_hogwarts:
     call play_music("day")
     hide screen blkfade
     with d5
-    
+
     pause 3.0
     call play_sound("knocking")
     pause.8
@@ -103,7 +102,7 @@ label prev_at_hogwarts:
     hide screen dumbledore
     call gen_chibi("sit_behind_desk")
     with None
-    
+
     call teleport("desk")
 
     pause.8
@@ -121,8 +120,7 @@ label prev_at_hogwarts:
     $ gold = temp_gold
     $ daytime = temp_day
     call update_interface_color
-    $ weather_gen = temp_weather
-    $ show_weather()
+    $ weather = temp_weather
 
     jump enter_room_of_req
 
@@ -133,7 +131,7 @@ label a_spaced_out_conversation:
     $ temp_gold = gold
     $ temp_day = daytime
     $ temp_color = interface_color
-    $ temp_weather = weather_gen
+    $ temp_weather = weather
 
     stop weather
     call play_music("stop")
@@ -144,8 +142,7 @@ label a_spaced_out_conversation:
     $ daytime = False
     call update_interface_color
     $ fire_in_fireplace = True
-    $ weather_gen = 1
-    $ show_weather()
+    $ set_weather("clear")
 
     call gen_chibi("hide")
     hide screen chair_right
@@ -153,12 +150,12 @@ label a_spaced_out_conversation:
     show screen fireplace_fire
     show screen desk
     show screen with_snape(ani=False)
-    
+
     centered "{size=+7}{color=#cbcbcb}A spaced out conversation.{/color}{/size}"
 
     hide screen blkfade
     with d5
-    
+
     call fireplace_sound
     call play_music("anguish")
 
@@ -347,16 +344,16 @@ label a_spaced_out_conversation:
     m "Well, you know what the game devs say."
     nar "Genie replied, causing the dark man to pause and look back quizzically."
     m "Play it again, Snape."
-    
+
     show screen blkfade
     with d9
-    
+
     stop music fadeout 3.0
-    
+
     centered "{size=+7}{color=#cbcbcb}The end.{/color}{/size}"
-    
+
     $ daytime = temp_day
-    $ weather_gen = temp_weather
+    $ weather = temp_weather
     call update_interface_color
     $ fire_in_fireplace = False
     hide screen fireplace_fire

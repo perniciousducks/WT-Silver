@@ -13,23 +13,21 @@ init python:
 
     def get_character_outfits_schedule(key):
         """Returns a list of outfits applicable for the current day and weather"""
-        global daytime, weather_gen, raining, snowing, blizzard, storm
-
         schedule = []
         char = get_character_object(key)
         outfits = char.outfits_schedule[daytime]
 
         for i in outfits:
-            if i.schedule[4] and (snowing or blizzard):
+            if i.schedule[4] and weather in ("snow", "blizzard"):
                 schedule.append(i)
                 continue
-            if i.schedule[3] and raining:
+            if i.schedule[3] and weather == "rain":
                 schedule.append(i)
                 continue
-            if i.schedule[2] and weather_gen >= 4 and not (raining or blizzard or snowing):
+            if i.schedule[2] and weather in ("overcast", "storm"):
                 schedule.append(i)
                 continue
-            if not (i.schedule[2] or i.schedule[3] or i.schedule[4]) and weather_gen < 4:
+            if not (i.schedule[2] or i.schedule[3] or i.schedule[4]) and weather in ("clear", "cloudy"):
                 schedule.append(i)
                 continue
         return schedule

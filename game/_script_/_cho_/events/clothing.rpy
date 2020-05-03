@@ -11,7 +11,7 @@ label cho_summon_setup:
         jump cho_panties_response_T2
 
     # Clear Weather.
-    if weather_gen in [1]:
+    if weather == "clear":
 
         # Hot muggle outfit.
         if cho_strip_complete and not cc_muggle_hot_ITEM:

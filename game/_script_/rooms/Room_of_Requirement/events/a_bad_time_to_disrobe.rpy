@@ -3,11 +3,7 @@
 label a_bad_time_to_disrobe:
 
     # Setup
-    $ temp_date = day
-    $ temp_gold = gold
     $ temp_day = daytime
-    $ temp_color = interface_color
-    $ temp_weather = weather_gen
 
     stop weather
     call play_music("stop")

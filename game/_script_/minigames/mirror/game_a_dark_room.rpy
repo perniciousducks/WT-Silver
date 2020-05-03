@@ -78,15 +78,12 @@ label dark_room_main:
 
     stop bg_sounds #Stops playing the fire SFX.
     stop weather #Stops playing the rain SFX.
-    if DRgame.day in [1,2,3]:
-        $ weather_gen = 6 #Rain & Thunder
+    if DRgame.day in [1,2,3,6,7]:
+        $ set_weather("storm")
     elif DRgame.day in [4,5]:
-        $ weather_gen = 1
-    elif DRgame.day in [6,7]:
-        $ weather_gen = 6 #Rain & Thunder
+        $ set_weather("clear")
     else:
-        $ weather_gen = renpy.random.randint(1, 6)
-    $ show_weather()
+        $ set_weather()
     call weather_sound
 
     pause 2
@@ -273,7 +270,7 @@ label DRgame_leave_for_task:
     python:
         for i in DRgame.characters:
             if i.task in ["wood_cutting","hunting"]:
-                if weather_gen in [1,2,3,4]:
+                if weather in ("clear", "cloudy", "overcast"):
                     i.location = "outside"
                 elif i.force_task == True:
                     i.location = "outside"
@@ -298,9 +295,9 @@ label DRgame_return_from_task: #renpy.say(None,"[i.name] has gotten ill.")
         for i in DRgame.characters:
 
             #Hunting
-            if i.task == "hunting" and weather_gen in [1,2,3,4] or i.force_task == True: #They were hunting.
+            if i.task == "hunting" and weather in ("clear", "cloudy", "overcast") or i.force_task == True: #They were hunting.
                 temp_item = 2
-                if weather_gen in [5,6]:
+                if weather in ("blizzard", "snow", "storm", "rain"):
                     temp_item -= 1
                     if i.hp > 1:
                         i.hp -= 1
@@ -320,7 +317,7 @@ label DRgame_return_from_task: #renpy.say(None,"[i.name] has gotten ill.")
 
                 DRgame.meat += temp_item
                 renpy.say(None,"[i.name] came back from the hunt, hungry and freezing.")
-                if weather_gen in [5,6]:
+                if weather in ("blizzard", "snow", "storm", "rain"):
                     renpy.say(None,"The cold rains have shown its mark on them...")
                 if temp_item >= 5:
                     renpy.say(None,"A large deer on their back. This will last a couple of days.")
@@ -340,9 +337,9 @@ label DRgame_return_from_task: #renpy.say(None,"[i.name] has gotten ill.")
                     renpy.say(None,"They were unsuccessful and couldn't find any wild animals in the thick snow.")
 
             #Wood Chopping/Gathering
-            if i.task == "chopping_wood" and weather_gen in [1,2,3,4] or i.force_task == True: #They were gathering wood/chopping wood.
+            if i.task == "chopping_wood" and weather in ("clear", "cloudy", "overcast") or i.force_task == True: #They were gathering wood/chopping wood.
                 temp_item = 3
-                if weather_gen in [5,6]:
+                if weather in ("blizzard", "snow", "storm", "rain"):
                     temp_item -= 1
                     if i.hp > 1:
                         i.hp -= 1
@@ -752,7 +749,7 @@ label DRgame_chop_wood:
     "Exhausted you return to the cabin..."
     "You were able to gather and chop [temp_number] pieces of wood."
 
-    if weather_gen in [5,6]:
+    if weather in ("blizzard", "snow", "storm", "rain"):
         $ DRplayer.hp -= 1
         "The ruthless weather has shown its mark on you. You shouldn't have gone out there."
         "But there was no other choice..."
@@ -777,7 +774,7 @@ label DRgame_hunt_animals:
         $ temp_number += 1
     if DRplayer.random_number in [4]:
         $ temp_number -= 1
-    if weather_gen in [5,6]:
+    if weather in ("blizzard", "snow", "storm", "rain"):
         $ temp_number -= 1
 
     $ DRgame.meat += temp_number
@@ -795,7 +792,7 @@ label DRgame_hunt_animals:
     else:
         "You found a small fox. Should be good enough to eat..."
 
-    if weather_gen in [5,6]:
+    if weather in ("blizzard", "snow", "storm", "rain"):
         $ DRplayer.hp -= 1
         "The ruthless weather has shown its mark on you. You shouldn't have gone out there."
         "But there was no other choice..."

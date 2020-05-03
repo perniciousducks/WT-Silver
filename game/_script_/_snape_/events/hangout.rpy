@@ -82,15 +82,16 @@ label snape_hangout:
 
     label end_snape_hangout_points:
 
-    if sna_friendship < 100: # max
-        if raining or blizzard: # Rain puts him in a good mood.
+    if sna_friendship < 100:
+        if weather in ("rain", "blizzard"):
+            # Rain puts him in a good mood.
             $ sna_friendship += 2
 
-        if game_difficulty < 2:      #Easy difficulty
+        if game_difficulty < 2:
             $ sna_friendship += 5
-        elif game_difficulty == 2:   #Normal
+        elif game_difficulty == 2:
             $ sna_friendship += 4
-        else:                        #Hardcore
+        else:
             $ sna_friendship += 3
 
     if sna_friendship > 100:

@@ -4,8 +4,8 @@ label a_christmas_tale:
     $ temp_gold = gold
     $ temp_day = daytime
     $ temp_color = interface_color
-    $ temp_weather = weather_gen
-    
+    $ temp_weather = weather
+
     call play_music("stop")
     call room("main_room")
     show screen blkfade
@@ -14,31 +14,28 @@ label a_christmas_tale:
 
     centered "{size=+7}{color=#cbcbcb}A Christmas tale{/color}{/size}"
 
-    $ daytime = False #Night
+    $ daytime = False # Night
     call update_interface_color
-    
+
     stop weather
-    $ weather_gen = 5
-    $ lightning_gen = 0
-    $ snow_gen = 1
-    $ show_weather()
+    $ set_weather("snow")
 
     call gen_chibi("hide")
     show screen chair_left
     show screen desk
     show screen fireplace_fire
-    
+
     # unlock decorations and add to room
     $ fireplace_xmas_ITEM.unlocked = True
     $ phoenix_xmas_ITEM.unlocked = True
     $ owl_xmas_ITEM.unlocked = True
-    
+
     $ fireplace_deco_OBJ.room_image = fireplace_xmas_ITEM.id
     $ fireplace_xmas_ITEM.active = True
-    
+
     $ phoenix_deco_OBJ.room_image = phoenix_xmas_ITEM.id
     $ phoenix_xmas_ITEM.active = True
-    
+
     $ owl_deco_OBJ.room_image = owl_xmas_ITEM.id
     $ owl_xmas_ITEM.active = True
 
@@ -199,9 +196,9 @@ label a_christmas_tale:
 
     call hide_screens
 
-    #Reset
+    # Reset
     $ daytime = temp_day
-    $ weather_gen = temp_weather
+    $ weather = temp_weather
     call update_interface_color
 
     jump enter_room_of_req

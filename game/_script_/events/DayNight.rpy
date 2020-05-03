@@ -36,8 +36,6 @@ label common_start(set_daytime):
     if letter_queue_list != [] and not owl_away:
         call play_sound("owl")
 
-    $ show_weather()
-
     call room("main_room", stop_sound=False)
 
     hide screen blkfade
@@ -142,14 +140,19 @@ label update_day_values:
     $ day += 1
 
     # Change the weather
-    if day > 1:
-        $ weather_gen = renpy.random.randint(1, 6)
+    if day <= 1:
+        $ set_weather("cloudy")
+    else:
+        $ set_weather()
 
-    # Change the weather for Quidditch Matches
+    # Weather for Quidditch Matches
     if cc_event_pause == 0 and hufflepuff_match == "start":
-        $ weather_gen = 1
+        $ set_weather("clear")
     if cc_event_pause == 0 and slytherin_match == "start":
-        $ weather_gen = 1
+        $ set_weather("clear")
+
+    # Change whether today is a full moon day
+    $ set_moon()
 
     # Package delivery
     if deliveries.got_mail():

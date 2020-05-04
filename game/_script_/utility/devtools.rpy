@@ -131,3 +131,10 @@ label missing_label():
         $ active_girl = None
     $ systemerror = [None, None]
     jump main_room
+
+screen placeholder():
+    tag cg
+    zorder 16 # above dolls
+
+    add Placeholder("bg")
+    add Placeholder("girl")

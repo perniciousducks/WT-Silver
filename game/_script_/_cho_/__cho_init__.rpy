@@ -26,7 +26,8 @@ default cho_busy                = False
 default cho_chatted             = False
 default has_cho_panties         = False
 default cho_panties_soaked      = False
-default cho_outfits_schedule = True
+default cho_outfits_schedule    = True
+default cho_bj_choice           = None # Dynamic string. Valid choices: failed, swallow, throat, points, taste.
 
 # Intro
 default jerked_off_during_cho_intro = False
@@ -76,7 +77,18 @@ default cc_pf_strip = event_class(title = "Inspect her body!", start_label = "cc
     iconset = [["heart_empty", "heart_red"]]
 )
 
-default cc_favor_list = [cc_pf_talk, cc_pf_strip]
+default cc_pf_blowjob = event_class(title = "Suck it!", start_label = "cc_pf_blowjob", start_tier = 3,
+    events = [
+        [
+            ["cc_pf_blowjob_T3_intro_E1"],
+            ["cc_pf_blowjob_T3_E2"],
+            ["cc_pf_blowjob_T3_E3"],
+        ]
+    ],
+    iconset = [["heart_empty", "heart_red"]]
+)
+
+default cc_favor_list = [cc_pf_talk, cc_pf_strip, cc_pf_blowjob]
 
 # Public requests
 # cc_pr = Cho Chang Public Request
@@ -137,6 +149,7 @@ label reset_cho_progress:
         # Event objects
         "cc_pf_talk",
         "cc_pf_strip",
+        "cc_pf_blowjob",
         "cc_favor_list",
 
         "cc_pr_manipulate",

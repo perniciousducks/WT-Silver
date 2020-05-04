@@ -8,7 +8,7 @@ define weather_types = ("clear", "cloudy", "overcast", "blizzard", "snow", "stor
 init python:
     def set_moon(full=None):
         """Sets the moon phase based on predefined frequency, or boolean argument."""
-        global full_moon
+        global full_moon, moon_cycle
 
         if full is not None:
             full_moon = bool(full)

@@ -18,7 +18,7 @@ label gen_chibi(action=None, xpos=None, ypos=None, flip=True, pic=None):
     # hide screen bld1
 
     # Rarely used position
-    if xpos == "on_girl": # Girl has to stand at mid
+    if xpos == "on_girl": # Girl has to stand at mid # TODO: remove this and replace with the number during call.
         $ xpos = 470
 
     $ genie_chibi.position(xpos, ypos, flip)

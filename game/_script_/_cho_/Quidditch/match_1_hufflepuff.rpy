@@ -198,6 +198,7 @@ label hufflepuff_match:
     # First Step R:     call sna_chibi("stand", flip=True, 25, 234)
     # Second Step R:    call sna_chibi("stand", flip=True, 85, 260)
     # Third Step R:     call sna_chibi("stand", flip=True, 120, 295)
+    # Fourth Step R:    call sna_chibi("stand", flip=True, 160, 330)
 
     ### Genie Postions ###
     ## Sprite:          call gen_main(face="base", base="base", xpos=-10, ypos=140)
@@ -211,14 +212,18 @@ label hufflepuff_match:
 
     ### Hermione Postions ###
     ## Sprite:          call her_main(flip=True, xpos="290", ypos="base")
-    # call her_chibi("stand", flip=True, 375, 105+186)
     # Second Step Mid:  call her_chibi("stand", flip=True, 40, 295)
     # Floor Mid:        call her_chibi("stand", flip=True, 180, 400)
     # Podium:           call her_chibi("stand", flip=True, 300, 400)
     # Podium Sidestep:  call her_chibi("stand", flip=True, 260, 460)
 
-    ### Tonks Chibi Positions ###
-    # Sitting: call ton_chibi("sit", flip=True, xpos=-140, ypos=125)
+    ### Tonks Positions ###
+    # 1st Step R:       call ton_chibi("stand", flip=True, 55, 235)
+    # 4th Step R:       call ton_chibi("stand", flip=True, 180, 340)
+    # Floor mid:        call ton_chibi("stand", flip=True, 180, 400)
+    # Floor R:          call ton_chibi("stand", flip=True, 230, 370)
+    # Podium:           call ton_chibi("stand", flip=True, 300, 400)
+    # Sitting:          call ton_chibi("sit", flip=True, xpos=-140, ypos=125)
 
     ### Cho Positions ###
     ## Flying Sprite:   call cho_main(xpos=580, ypos=-200)
@@ -232,15 +237,16 @@ label hufflepuff_match:
     play bg_sounds "sounds/crowd.mp3" fadein 2
     call hide_blkfade
     pause 1
-    #call sna_chibi("stand", flip=True, xpos=210, ypos=210)
+
     call play_sound("footsteps")
     pause .8
-    #call sna_chibi("stand", 210, -40+250, flip=True)
+
     call sna_chibi("stand", flip=True, 120, 295)
     with d3
     pause .8
     call sna_chibi("stand", flip=False)
     with d3
+
     sna "Careful at the top. Don't hit your head."
     call play_sound("kick")
     with hpunch
@@ -248,7 +254,6 @@ label hufflepuff_match:
     g4 "Bloody hell!"
     call play_sound("footsteps")
     pause .8
-    #call gen_chibi("stand", 130, 10+250)
     call gen_chibi("stand", flip=True, 20, 365)
     with d3
     pause .5
@@ -267,11 +272,11 @@ label hufflepuff_match:
     call sna_chibi("stand", flip=True)
     with d3
     pause .2
-    #call her_walk(375, 105+186)
+
     call her_walk(path=[(180, 400),(300, 400)])
     call her_chibi("stand", flip=True, 300, 400) # Temp Bugfix
     pause .5
-    # call her_main(xpos=290, ypos="base")
+
     call her_main("Good Morning everyone, and welcome to the i-inaugural-", "soft", "base", "worried", "mid", flip=True, xpos="290", ypos="base")
     call her_main("", "normal", "base", "worried", "mid")
     call sna_main("Speak up girl! And would it kill you to enunciate?!", "snape_03", ypos="head")

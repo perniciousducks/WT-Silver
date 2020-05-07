@@ -83,7 +83,6 @@ label cc_pf_blowjob_T3_intro_E1:
         pause 1.0
 
         # TODO: CG behind desk
-        $ camera.set_type("png")
         $ camera.set_imagepath("cho_bj/kneel/")
         $ camera.set_image("0")
         $ camera.set(zoom=1.0, pos=(950, -750), initialize=True)
@@ -124,14 +123,12 @@ label cc_pf_blowjob_T3_intro_E1:
         $ camera.set_image("up_base")
         cho "..." # annoyed
 
-        $ camera.set_type("movie")
         $ camera.set_image("cho_hj base")
 
         call ctc
 
         gen "That's it... stroke that cock you little Ravenclaw slut..."
 
-        $ camera.set_type("png")
         $ camera.set_image("up_annoyed")
 
         cho "[cho_genie_name]!"# Stops moving hand #Annoyed #Looks up at genie
@@ -146,7 +143,6 @@ label cc_pf_blowjob_T3_intro_E1:
 
         cho "Fine...."
 
-        $ camera.set_type("movie")
         $ camera.set_image("cho_hj base")
 
         call ctc
@@ -164,7 +160,6 @@ label cc_pf_blowjob_T3_intro_E1:
         gen "That's better..."
         gen "Now then... Let's find out what you can do with that mouth of yours, shall we?"
 
-        $ camera.set_type("png")
         $ camera.set_image("up_wide")
 
         cho "Already?" #Wide eyed
@@ -189,7 +184,6 @@ label cc_pf_blowjob_T3_intro_E1:
         call cho_walk("desk_close", "base")
         pause 1.0
 
-        $ camera.set_type("png")
         $ camera.set_imagepath("cho_bj/kneel/")
         $ camera.set_image("1")
         $ camera.set(zoom=1.0, pos=(0, -750), initialize=True)
@@ -211,7 +205,6 @@ label cc_pf_blowjob_T3_intro_E1:
         gen "There you go... much easier the second time, isn't it?"
         gen "Now, get those muscles moving..."
 
-        $ camera.set_type("movie")
         $ camera.set_image("cho_hj base")
         call ctc
 
@@ -235,7 +228,6 @@ label cc_pf_blowjob_T3_intro_E1:
 
         gen "Now let's put that mouth to good use..."
 
-        $ camera.set_type("png")
         $ camera.set_imagepath("cho_bj/kneel/")
         $ camera.set_image("9")
 
@@ -253,7 +245,6 @@ label cc_pf_blowjob_1:
             gen "That's not what we agreed on."
             gen "Get those lips on there..."
 
-            $ camera.set_type("png")
             if cho_bj_choice == None:
                 $ camera.set_image("up_wide")
             else:
@@ -339,7 +330,6 @@ label cc_pf_blowjob_1:
         "\"(Take it slow...)\"": #Cho strokes and licks genie then goes back to stroking until climax
             gen "Okay... just keep stroking it for now..."
 
-            $ camera.set_type("png")
             if cho_bj_choice == None:
                 $ camera.set_imagepath("cho_bj/hj/")
                 $ camera.set_image("up_wide")
@@ -358,7 +348,6 @@ label cc_pf_blowjob_1:
             $ camera.set_image("mid_blush")
             cho "..." #Blushing
 
-            $ camera.set_type("movie")
             $ camera.set_image("cho_hj base")
 
             call ctc
@@ -385,7 +374,6 @@ label cc_pf_blowjob_1:
 
             gen "Ready to receive her coach's cum."
             gen "Now, put your mouth on it [cho_name]..."
-            $ camera.set_type("png")
             $ camera.set_image("up_wide")
             #Cho stops handjob
             cho "But I thought..."
@@ -427,7 +415,6 @@ label cc_pf_blowjob_1:
             gen "That's what I wanted to hear [cho_name], you're learning..."
             gen "Get going then..."
 
-            $ camera.set_type("movie")
             $ camera.set_image("cho_hj blush")
 
             call ctc

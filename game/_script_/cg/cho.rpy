@@ -50,15 +50,9 @@ init python:
         def set_imagepath(self, path):
             self.imagepath = "images/CG/{}/".format(path)
 
-        def set_type(self, type):
-            self.type = type
-
-            if type == "movie":
-                self.scale = 2.0
-            else:
-                self.scale = 1.0
-
         def set_image(self, img):
+            p = max(0, self.get_pause() - 0.3)
+
             self.last_image = self.image
             self.image = img
 
@@ -67,6 +61,7 @@ init python:
             self.last_pos = self.pos
             self.last_rotate = self.rotate
 
+            renpy.pause(p)
             self.redraw(self.default_timer)
             renpy.with_statement(d3)
 
@@ -107,18 +102,32 @@ init python:
                 renpy.pause(t)
 
         def redraw(self, t):
-            if self.type == "png":
-                d = "{}{}.{}".format(self.imagepath, self.image, self.type)
-            elif self.type == "movie":
-                d = renpy.get_registered_image(self.image)
+            d = renpy.get_registered_image(self.image)
 
-            last_zoom = self.last_zoom*self.scale
-            zoom = self.zoom*self.scale
+            if d is None:
+                d = Image("{}{}.{}".format(self.imagepath, self.image, self.type))
+
+            if isinstance(d, Movie):
+                self.scale = 2.0
+            else:
+                self.scale = 1.0
+
+            last_zoom = self.last_zoom * self.scale
+            zoom = self.zoom * self.scale
 
             self.child = At(d, CGCamera(last_zoom, zoom, self.last_pos, self.pos, self.last_rotate, self.rotate, t))
 
         def get_image(self):
             return self.child
+
+        def get_pause(self):
+            d = renpy.get_registered_image(self.image)
+            if isinstance(d, Movie) and renpy.music.is_playing(d.channel):
+                p = renpy.music.get_pos(d.channel)
+                t = renpy.music.get_duration(d.channel)
+                return t - p
+            else:
+                return 0
 
 default camera = CGController(imagepath="cho_bj/kneel/", image="0")
 

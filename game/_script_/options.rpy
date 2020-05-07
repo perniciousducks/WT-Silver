@@ -58,10 +58,15 @@ define config.image_cache_size_mb = 1024
 define config.load_before_transition = True
 define config.imagemap_cache = True
 define config.optimize_texture_bounds = True
-define config.automatic_images = None
 define config.debug_image_cache = False
 define config.use_drawable_resolution = preferences.use_drawable_resolution
 define config.drawable_resolution_text = preferences.use_drawable_resolution
+
+# Disable automatic image scanning
+define config.automatic_images = None
+define config.images_directory = None
+init -1:
+    define config.late_images_scan = True
 
 # Saving and Loading
 define config.save_directory = "WT SILVER"

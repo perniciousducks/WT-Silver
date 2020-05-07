@@ -287,6 +287,12 @@ label cheats:
                     jump cheats.devroom
                 "Dueling - Prototype sign drawing":
                     jump magic_tutorial
+                "Cho CG demo":
+                    call cho_main(xpos="base",ypos="base")
+                    call play_sound("door")
+                    call cho_chibi("stand", "mid", "base")
+                    with d3
+                    jump cc_pf_blowjob
                 "-Back-":
                     jump cheats
 

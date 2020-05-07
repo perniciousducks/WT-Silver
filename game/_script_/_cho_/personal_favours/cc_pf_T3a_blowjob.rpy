@@ -83,7 +83,11 @@ label cc_pf_blowjob_T3_intro_E1:
         pause 1.0
 
         # TODO: CG behind desk
-        show screen placeholder
+        $ camera.set_type("png")
+        $ camera.set_imagepath("cho_bj/kneel/")
+        $ camera.set_image("0")
+        $ camera.set(zoom=1.0, pos=(950, -750), initialize=True)
+        show screen animatedCG
         with fade
 
         call gen_chibi("sit_behind_desk") # reset
@@ -92,45 +96,84 @@ label cc_pf_blowjob_T3_intro_E1:
         # Cho is dressed.
 
         # Note: Cho does not require posing here because it happens during the CG scene.
+        $ renpy.checkpoint()
 
+        pause 1.0
+        $ camera.set(pos=(0, -750), t=3.5, pause=True)
         cho "By Merlin's beard!" #Wide eyed looking at dick #open mouth
+        $ camera.set(pos=(150, 400), t=2)
         gen "Something wrong?"
+        $ camera.set_image("1")
         cho "N-No...{w=0.4} It's just...{w=0.4} this close...{w=0.4} it's so much larger than-" #Looking at dick
         gen "Good, then stop staring and put your hand on it..."
+        $ camera.set_image("2")
         cho "Okay..." #Blush #Normal mouth
+        $ camera.set_imagepath("cho_bj/hj/")
+        $ camera.set_image("up_worried")
+
+        pause 0.6
+
+        $ camera.set(zoom=0.39, pos=(0, 0), t=3.0)
         #Cho puts her hand on genies dick and looks up at him
+
         cho "..." #worried eyes
         gen "What? Don't tell me this is the first time you've done this..."
+        $ camera.set_image("away_blush")
         cho "O-... of course I've done it before!"
         gen "Then get going, move those muscles!"
+        $ camera.set_image("up_base")
         cho "..." # annoyed
-        #Cho starts moving her arm/hand, jacking Genie off. Looking at his penis
-        "......"#Click without any dialog (Or we'd remove dialog box on a timer)
-        "..........."
-        "..........."
+
+        $ camera.set_type("movie")
+        $ camera.set_image("cho_hj base")
+
+        call ctc
+
         gen "That's it... stroke that cock you little Ravenclaw slut..."
+
+        $ camera.set_type("png")
+        $ camera.set_image("up_annoyed")
+
         cho "[cho_genie_name]!"# Stops moving hand #Annoyed #Looks up at genie
         gen "What?"
         gen "You're doing a great job [cho_name], keep it going just like that..."
+
+        $ camera.set_image("mid_annoyed")
+
         cho "..." #annoyed
+
+        $ camera.set_image("away_blush")
+
         cho "Fine...."
-        "......" #Hand/penis movement starts again #Looks back at penis #Click without any dialog
-        "..........."
-        "..........."
+
+        $ camera.set_type("movie")
+        $ camera.set_image("cho_hj base")
+
+        call ctc
+
         gen "Such a firm grip..."
         gen "Must be from riding that broom so much..."
         gen "Although your rhythm could do with some work..."
-        cho "..." #Annoyed
-        "......"
-        "..........."
-        "..........."
+
+        $ camera.set_image("cho_hj annoyed")
+
+        cho "*tsk*..." #Annoyed
+
+        call ctc
+
         gen "That's better..."
         gen "Now then... Let's find out what you can do with that mouth of yours, shall we?"
-        #Cho stops jerking genie and looks up at him
+
+        $ camera.set_type("png")
+        $ camera.set_image("up_wide")
+
         cho "Already?" #Wide eyed
+        $ camera.set_image("up_worried")
         cho "Can't I just keep jerking you off?"
         gen "You agreed to a blowjob did you not?."
+        $ camera.set_image("mid_worried")
         cho "I...{w=0.4} well that was before you showed me your..." #Looks back down
+        $ camera.set_image("away_blush")
         cho "How is this even..." #Cuts to dialog Menu choice
     else: # Alternate intro if first event has failed
         m "Ready to continue with your training?"
@@ -146,40 +189,59 @@ label cc_pf_blowjob_T3_intro_E1:
         call cho_walk("desk_close", "base")
         pause 1.0
 
-        # TODO: CG behind desk
-        show screen placeholder
+        $ camera.set_type("png")
+        $ camera.set_imagepath("cho_bj/kneel/")
+        $ camera.set_image("1")
+        $ camera.set(zoom=1.0, pos=(0, -750), initialize=True)
+        show screen animatedCG
         with fade
 
-        # Start CG with Cho kneeling in front of Genie.
-        # Cho is dressed.
+        $ camera.set(pos=(150, 400), t=2.0, pause=True)
 
+        $ camera.set(zoom=0.39, pos=(0, 0), t=3.0)
         cho "Okay, then... I'm ready."
-        #Genie takes out cock
+        $ camera.set_image("2")
         cho "..." #blush
         gen "Go on then, I don't have all day..."
+        $ camera.set_image("4")
         cho "..." #Pout
-        #Cho puts hand on Genies dick
+        $ camera.set_imagepath("cho_bj/hj/")
+        $ camera.set_image("mid_annoyed")
         cho "..." #annoyed
         gen "There you go... much easier the second time, isn't it?"
         gen "Now, get those muscles moving..."
-        "......" #Cho starts stroking
-        "......"
-        "......"
+
+        $ camera.set_type("movie")
+        $ camera.set_image("cho_hj base")
+        call ctc
+
         gen "That's it... you keep stroking, slut..."
+
+        $ camera.set_image("cho_hj annoyed")
         cho "..." #Annoyed
-        "......" #Cho keeps stroking
-        "......"
-        "......"
+
+        call ctc
+
         gen "Good..."
         gen "You're doing way better than last time... looks like you had some time to think things over..."
+
+        $ camera.set_image("cho_hj up")
+
         cho "..." #looks up
-        "......" #Cho keeps stroking #Looks back down
-        "......"
-        "......"
+
+        $ camera.set_image("cho_hj base")
+
+        call ctc
+
         gen "Now let's put that mouth to good use..."
-        #Cho stops stroking and take hand off  #Looks up at genie
+
+        $ camera.set_type("png")
+        $ camera.set_imagepath("cho_bj/kneel/")
+        $ camera.set_image("9")
+
         cho "Already?"
         gen "No, tomorrow... yes of course now!"
+        $ camera.set_image("5")
         cho "Can't I just keep jerking you off?" #pout
         gen "This again..."
 
@@ -190,37 +252,62 @@ label cc_pf_blowjob_1:
         "\"(A deal's a deal...)\"": # FAIL
             gen "That's not what we agreed on."
             gen "Get those lips on there..."
+
+            $ camera.set_type("png")
+            if cho_bj_choice == None:
+                $ camera.set_image("up_wide")
+            else:
+                $ camera.set_image("8")
+
             cho "[cho_genie_name]!" #shocked
             gen "It's time to push those limits [cho_name]... we've been over this."
             gen "Open up..."
+
+            $ camera.set_imagepath("cho_bj/kneel/")
+            $ camera.set_image("6")
+
             cho "But... it's... how is it even going to fit?!"
+            $ camera.set_image("3")
             gen "It will fit, you're the most flexible girl in the castle. If anyone could do it it's you..."
             cho "..."
             gen "Now, put your hand back..."
+            $ camera.set_image("5")
             cho "..."
             cho "Al- Alright...!"
+            $ camera.set_imagepath("cho_bj/hj/")
+            $ camera.set_image("up_worried")
             #Cho puts her hand back on
             gen "Good... now put your lips around the tip..."
+
+            $ camera.set_image("away_blush")
             cho "Oh-okay...{w=0.4} Here I go..."
+
             #Cho opens her mouth and moves in towards genies cock #Genie cock twitches
             #She moves in closer and closes her eyes with her mouth wide open and just as she barely touches it she jumps back
+            $ camera.set_image("mid_worried")
             cho "No, I can't!"
-            #Cho takes her hand off
+
+            $ camera.set_imagepath("cho_bj/kneel/")
+            $ camera.set_image("6")
 
             if cho_bj_choice == "failed":
                 cho "It still won't fit!"
                 gen "[cho_name]... You're here to push your limits, stop with the whining!"
+                $ camera.set_image("8")
                 cho "I- I'm sorry [cho_genie_name]..."
                 cho "I... just can't do this, it all happens too fast!"
                 gen "[cho_name]..."
+                $ camera.set_image("5")
                 cho "I'm sorry!" #blush, looking away
                 $ cho_mood += 3 # Annoyed that you failed it again, sucker
             else:
                 cho "It won't fit!"
                 gen "[cho_name]... You're here to push your limits."
+                $ camera.set_image("8")
                 cho "I- I'm sorry [cho_genie_name]..."
                 cho "I... need some time to think..."
                 gen "[cho_name]..."
+                $ camera.set_image("5")
                 cho "I'm sorry!" #blush, looking away
 
             # Genie standing with his dick out, all alone, blue balled, all aloooooooone
@@ -228,8 +315,7 @@ label cc_pf_blowjob_1:
             show screen chair_left
             show screen desk
 
-            # TODO: hide CG
-            hide screen placeholder
+            hide screen animatedCG
             with fade
 
             #Cuts to Office and Cho walks quickly out of the room
@@ -252,76 +338,132 @@ label cc_pf_blowjob_1:
 
         "\"(Take it slow...)\"": #Cho strokes and licks genie then goes back to stroking until climax
             gen "Okay... just keep stroking it for now..."
-            cho "Oh... Okay, I can do that..."
-            gen "But you better put some work into it!"
+
+            $ camera.set_type("png")
+            if cho_bj_choice == None:
+                $ camera.set_imagepath("cho_bj/hj/")
+                $ camera.set_image("up_wide")
+                cho "Oh... Okay, I can do that..."
+                gen "But you better put some work into it!"
+                $ camera.set_image("mid_base")
+            else:
+                $ camera.set_imagepath("cho_bj/kneel/")
+                $ camera.set_image("7")
+                cho "Oh... Okay, I can do that..."
+                gen "But you better put some work into it!"
+                $ camera.set_image("3")
+
             cho "Of course!"
-            #Cho puts hand back on genies cock
+            $ camera.set_imagepath("cho_bj/hj/")
+            $ camera.set_image("mid_blush")
             cho "..." #Blushing
-            "....." #Starts stroking
-            "....."
-            "....."
+
+            $ camera.set_type("movie")
+            $ camera.set_image("cho_hj base")
+
+            call ctc
+
             gen "That's it, you're finally getting the hang of this..."
             gen "Who knew quidditch players were so good at handjobs..."
+
+            $ camera.set_image("cho_hj up")
             cho "...." #Looks up at genie #Blushes
-            "....." #Continues stroking
-            "....."
-            "....."
+
+            call ctc
+
             gen "Such a good slut... stroking your coach's cock..."
+
+            $ camera.set_image("cho_hj base")
+
             cho "..."#Looks back down at cock #still stroking
-            "....."
-            "....."
-            "....."
+
+            call ctc
+
             gen "Willing to do anything to win that cup..."
-            "...." #Blushing
+
+            $ camera.set_image("cho_hj blush")
+
             gen "Ready to receive her coach's cum."
             gen "Now, put your mouth on it [cho_name]..."
+            $ camera.set_type("png")
+            $ camera.set_image("up_wide")
             #Cho stops handjob
             cho "But I thought..."
             gen "If you want to outdo your competition you need to push through your limits [cho_name]..."
+            $ camera.set_image("up_worried")
             gen "Give it a little lick, I promise it won't bite."
             cho "..." #Annoyed
+            $ camera.set_image("away_blush")
             cho "Fine..." #Blushes #Annoyed
-            #Cho moves her head up to licking distance (either puts hand back or not)
+            "devnote" "Cho moves her head up to licking distance (either puts hand back or not)"
+            $ camera.set_image("mid_annoyed")
             cho "..." # annoyed look at his cock.
 
-            #Cho closes her eyes and licks the tip of his penis once #dick twitches upwards
+            "devnote" "Cho closes her eyes and licks the tip of his penis once #dick twitches upwards"
+
             "...."
             gen "See? That wasn't bad, was it?"
+            $ camera.set_image("up_annoyed")
             cho "..." # Grim look at Genie
+            $ camera.set_image("mid_base")
             cho "..." #Looks back on cock
             gen "Go on..."
+            $ camera.set_image("mid_annoyed")
             cho "..." #annoyed
+            $ camera.set_image("mid_worried")
             cho "..." #Worried
-            #Cho closes her eyes and licks the tip of his penis again #dick twitches upwards
+            "devnote" "Cho closes her eyes and licks the tip of his penis again #dick twitches upwards"
             "...."
+            $ camera.set_image("up_base")
             cho "..." #Looks up at genie
             gen "Good job [cho_name]..."
             gen "I suppose that will be enough for..."
+            $ camera.set_image("up_annoyed")
             cho "No! I want-"
+            $ camera.set_image("away_blush")
             cho "I mean... {w=0.5} you deserve your reward [cho_genie_name]."
             cho "At least let me finish you off with my hand..."
+            $ camera.set_image("mid_blush")
             gen "That's what I wanted to hear [cho_name], you're learning..."
             gen "Get going then..."
-            #Cho puts hand back and starts jerking genie again
-            "....."
-            "....."
-            "....."
+
+            $ camera.set_type("movie")
+            $ camera.set_image("cho_hj blush")
+
+            call ctc
+
             gen "That's it, grip it firmy just like that..."
-            "....."
-            "....."
-            "....."
+
+            call ctc
+
             gen "Not bad... Not bad at all..."
             gen "I think someone deserves a reward..."
             gen "Now... a little bit faster [cho_name]..."
-            cho "..." #Blush
+
+            $ camera.set_image("cho_hj blush fast")
+
+            cho "Okay..." #Blush
+
+            $ camera.set(zoom=0.55, pos=(0, 145), t=5.0, pause=True)
+
+            $ camera.set_image("cho_hj up")
             cho "[cho_genie_name]... Will you tell me when-"
             gen "Faster [cho_name]!"
             cho "Oh... of course!"
-            "....."
-            "....."
-            "....."
+
+            $ camera.set_image("cho_hj blush fast")
+            call ctc
+
             gen "(Now that's my [cho_name]!)"
             gen "(I'm at my limit, should I warn her?)"
+
+            "devnote" "~End of demo"
+
+            $ cc_pf_blowjob.fail()
+            $ cho_bj_choice = "failed"
+            hide screen animatedCG
+            jump main_room_menu
+            # End of demo
 
             menu:
                 "\"(Warn her)\"":

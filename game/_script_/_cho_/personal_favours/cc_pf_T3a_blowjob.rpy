@@ -99,8 +99,8 @@ label cc_pf_blowjob_T3_intro_E1:
 
         pause 1.0
         $ camera.set(pos=(0, -750), t=3.5, pause=True)
-        cho "By Merlin's beard!" #Wide eyed looking at dick #open mouth
         $ camera.set(pos=(150, 400), t=2)
+        cho "By Merlin's beard!" #Wide eyed looking at dick #open mouth
         gen "Something wrong?"
         $ camera.set_image("1")
         cho "N-No...{w=0.4} It's just...{w=0.4} this close...{w=0.4} it's so much larger than-" #Looking at dick

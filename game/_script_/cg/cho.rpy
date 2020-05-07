@@ -24,11 +24,12 @@ init python:
     class CGController(object):
         default_timer = 1.0
 
-        def __init__(self, imagepath, image, min_zoom=0.39, max_zoom=1.0, type="png"):
+        def __init__(self, imagepath, image, min_zoom=0.39, max_zoom=1.0):
             self.imagepath = "images/CG/{}".format(imagepath)
-            self.type = type
-
             self.scale = 1.0
+
+            self.last_type = 0
+            self.type = 0 # 0 - image, 1 - Movie
 
             self.last_image = image
             self.image = image
@@ -51,7 +52,7 @@ init python:
             self.imagepath = "images/CG/{}/".format(path)
 
         def set_image(self, img):
-            p = max(0, self.get_pause() - 0.3)
+            p = max(0, self.get_pause())
 
             self.last_image = self.image
             self.image = img
@@ -62,8 +63,12 @@ init python:
             self.last_rotate = self.rotate
 
             renpy.pause(p)
-            self.redraw(self.default_timer)
-            renpy.with_statement(d3)
+            self.redraw(0)
+
+            if self.last_type == 0:
+                renpy.with_statement(d3)
+            else:
+                renpy.with_statement(d1)
 
         def set_zoom(self, n):
             self.last_zoom = self.zoom
@@ -105,12 +110,16 @@ init python:
             d = renpy.get_registered_image(self.image)
 
             if d is None:
-                d = Image("{}{}.{}".format(self.imagepath, self.image, self.type))
+                d = Image("{}{}.png".format(self.imagepath, self.image))
 
             if isinstance(d, Movie):
                 self.scale = 2.0
+                self.last_type = self.type
+                self.type = 1
             else:
                 self.scale = 1.0
+                self.last_type = self.type
+                self.type = 0
 
             last_zoom = self.last_zoom * self.scale
             zoom = self.zoom * self.scale

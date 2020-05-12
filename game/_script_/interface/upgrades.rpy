@@ -3,6 +3,8 @@ init python:
         return item
 
 default upgrades_show_locked = False
+default upgrades_show_complete = True
+default item_bought = False # TEMP var - Used as a return value out of context.
 
 default her_upgrade_school2 = DollOutfit([her_hair_base, her_top_school2, her_bottom_school2, her_panties_base1, her_bra_base1, her_stockings_base1])
 
@@ -10,16 +12,45 @@ default her_upgrade_school3 = DollOutfit([her_hair_base, her_top_school3, her_bo
 
 default her_upgrade_school4 = DollOutfit([her_hair_base, her_top_school4, her_bottom_school4, her_panties_base1, her_bra_base1, her_stockings_base1])
 
+###
+
+default her2_upgrade_school2 = DollOutfit([her_hair_base, her_top_school2, her_bottom_school2, her_panties_base1, her_bra_base1, her_stockings_base1])
+
+default her2_upgrade_school3 = DollOutfit([her_hair_base, her_top_school3, her_bottom_school3, her_panties_base1, her_bra_base1, her_stockings_base1])
+
+default her2_upgrade_school4 = DollOutfit([her_hair_base, her_top_school4, her_bottom_school4, her_panties_base1, her_bra_base1, her_stockings_base1])
+
+###
+
+default her3_upgrade_school2 = DollOutfit([her_hair_base, her_top_school2, her_bottom_school2, her_panties_base1, her_bra_base1, her_stockings_base1])
+
+default her3_upgrade_school3 = DollOutfit([her_hair_base, her_top_school3, her_bottom_school3, her_panties_base1, her_bra_base1, her_stockings_base1])
+
+default her3_upgrade_school4 = DollOutfit([her_hair_base, her_top_school4, her_bottom_school4, her_panties_base1, her_bra_base1, her_stockings_base1])
+
 label upgrades:
+    python:
+        her_upgrade_school2.price = 50
+        her_upgrade_school3.price = 75
+        her_upgrade_school4.price = 100
+        #
+        her2_upgrade_school2.price = 15
+        her2_upgrade_school3.price = 30
+        her2_upgrade_school4.price = 45
+        #
+        her3_upgrade_school2.price = 100
+        her3_upgrade_school3.price = 100
+        her3_upgrade_school4.price = 100
+
     $ screenshot_image = ScreenshotImage.capture()
     $ renpy.call_in_new_context("upgrades_menu")
-    jump tonks_talk
+    return item_bought
 
 label upgrades_menu(xx=150, yy=90):
 
     $ upgrades_dict = {
                     "Tonks": {"ico": "head_tonks_1", "flag": tonks_unlocked, "outfits": {"school": []}},
-                    "Hermione": {"ico": "head_hermione_2", "flag": hermione_unlocked, "outfits": {"school": [her_outfit_default, her_upgrade_school2, her_upgrade_school3, her_upgrade_school4], "other": [her_outfit_default, her_upgrade_school2, her_upgrade_school3, her_upgrade_school4], "other2": [her_outfit_default, her_upgrade_school2, her_upgrade_school3, her_upgrade_school4, her_outfit_bikini1], "other3": [her_outfit_default, her_upgrade_school2, her_upgrade_school3, her_upgrade_school4], "other4": [her_outfit_default, her_upgrade_school2, her_upgrade_school3, her_upgrade_school4, her_outfit_bikini1], "other5": [her_outfit_default, her_upgrade_school2, her_upgrade_school3, her_upgrade_school4], "other6": [her_outfit_default, her_upgrade_school2, her_upgrade_school3, her_upgrade_school4], "other7": [her_outfit_default, her_upgrade_school2, her_upgrade_school3, her_upgrade_school4]}},
+                    "Hermione": {"ico": "head_hermione_2", "flag": hermione_unlocked, "outfits": {"school": [her_outfit_default, her_upgrade_school2, her_upgrade_school3, her_upgrade_school4], "other": [her_outfit_default, her2_upgrade_school2, her2_upgrade_school3, her2_upgrade_school4], "other2": [her_outfit_default, her3_upgrade_school2, her3_upgrade_school3, her3_upgrade_school4], "other3": [her_outfit_default, her_upgrade_school2, her_upgrade_school3, her_upgrade_school4]}},
                     "Cho": {"ico": "head_cho_2", "flag": cho_unlocked, "outfits": {"school": []}},
                     "Luna": {"ico": "head_luna_2", "flag": luna_unlocked, "outfits": {"school": []}},
                     "Astoria": {"ico": "head_astoria_2", "flag": astoria_unlocked, "outfits": {"school": []}},
@@ -37,6 +68,8 @@ label upgrades_menu(xx=150, yy=90):
     $ category_items = []
     $ menu_items = category_items
     $ menu_items_length = len(menu_items)
+
+    $ item_bought = False
 
     if not renpy.variant("android"):
         show screen mouse_tooltip
@@ -57,6 +90,27 @@ label upgrades_menu(xx=150, yy=90):
     elif _return[0] == "subcat":
         if _return[1] != current_subcategory:
             $ current_subcategory = _return[1]
+    elif _return[0] == "buy":
+        if gold >= _return[1] and ton_friendship >= _return[3]*25:
+            python:
+                renpy.play('sounds/money.mp3')
+
+                gold -= _return[1]
+                _list = _return[2]
+                _iter = _return[3]
+
+                item_bought = True
+
+                for i in xrange(1, min(_iter+1, len(_list))):
+                    if not _list[i].unlocked:
+                        _list[i].unlock()
+                        ton_clothing_upgrades += 1
+        elif ton_friendship < _return[4]:
+            $ renpy.play('sounds/fail.mp3')
+            "> Tonks doesn't like you enough."
+        else:
+            $ renpy.play('sounds/fail.mp3')
+            "> You don't have enough gold."
     else:
         hide screen upgrades_menu
         hide screen upgrades_menuitem
@@ -121,6 +175,7 @@ screen upgrades_menu(xx, yy):
 screen upgrades_menuitem(xx, yy):
     tag upgrades_menuitem
     zorder 30
+
     frame:
         style "empty"
         style_prefix interface_style
@@ -131,30 +186,62 @@ screen upgrades_menuitem(xx, yy):
 
         text "Outfit Upgrades" size 22 xalign 0.5 ypos 65
 
+        hbox:
+            spacing 5
+            pos (18, 70)
+            add "interface/icons/small/gold.png"
+            text str(gold) size 15 ypos 4
+            add "interface/icons/small/tonks.png"
+            text str(ton_friendship) size 15 ypos 4
+
+
         vpgrid:
             cols 1
             xysize (548, 400)
             pos (6, 101)
             draggable True
-            mousewheel True
+            mousewheel "change"
             scrollbars "vertical"
             xfill True
             yfill True
 
-            # Logic
+            # TODO: Reduce the clutter and optimize the code.
             for i in upgrades_dict[current_category]["outfits"].itervalues():
+                $ linear_price = 0
+
                 if len(i) > 0 and (i[0].unlocked or upgrades_show_locked):
-                    grid 5 1:
-                        for x in xrange(5):
-                            if x < len(i):
+                    vbox:
+                        hbox:
+                            spacing 0
+                            for x in xrange(len(i)):
+                                if x < len(i)-1:
+                                    if not i[x+1].unlocked:
+                                        $ linear_price += i[x+1].price
+                                    $ actual_price = linear_price-i[x+1].price
+                                    $ favor_req = (x)*25
+                                elif x == len(i)-1:
+                                    $ actual_price = linear_price
+                                    $ favor_req = 75
                                 frame:
                                     style "empty"
-                                    background Solid("#00000080")
-                                    xysize (100, 100)
-                                    add i[x].get_image() align (1.0, 1.0) zoom 0.1
-                                    if i[x].unlocked:
-                                        add "interface/topbar/icon_check.png" align (1.0, 1.0)
-                                    elif (len(i) <= x+1) and (x > 0) and i[x-1].unlocked:
-                                        text "Locked"
-                            else:
-                                add Null()
+                                    xysize (95, 130)
+                                    xpos 10
+                                    if x < len(i):
+                                        add Flatten(i[x].get_image()) align (1.0, 1.0) zoom 0.125 alpha (1.0 if ((gold >= actual_price and ton_friendship >= favor_req) or i[x].unlocked) else 0.5)
+                                        if i[x].unlocked:
+                                            add "interface/topbar/icon_check.png" zoom 0.75 align (0.85, 1.0)
+                                        else:
+                                            button:
+                                                style "empty"
+                                                xysize (76, 130)
+                                                hover_background btn_hover
+                                                action Return(["buy", actual_price, i, x, favor_req])
+                                if x < len(i)-1:
+                                    frame:
+                                        style "empty"
+                                        xysize (50, 50)
+                                        yalign 0.5
+                                        text ("" if (linear_price <= 0) else str(favor_req+25)+"{unicode}\u2764{/unicode}") color ("#b20000" if (ton_friendship < favor_req+25) else "#402313") size 14 align (0.5, 0.25)
+                                        text (str(linear_price)+"g" if linear_price > 0 else "Sold!") color ("#b20000" if (0 < linear_price > gold) else "#402313") size 14 align (0.5, 0.7)
+                                        text "{unicode}\u0362{/unicode}" size 65 align (1.0, 0.5) xoffset 5
+                        add "interface/achievements/"+interface_color+"/spacer.png" yalign 1.0 xpos 274 xanchor 0.5

@@ -422,7 +422,7 @@ screen stats_menuitem(xx, yy):
                             #use text_stat("Hung out with Astoria:")
                             #use text_stat("- ", " times -", ton_astoria_date_counter)
                             use text_stat("Tonks has sluttyfied:")
-                            use text_stat("- ", "/7 outfits -", ton_clothing_upgrades)
+                            use text_stat("- ", " outfits -", ton_clothing_upgrades)
 
                         elif current_category == "Hermione":
                             # Tier 1

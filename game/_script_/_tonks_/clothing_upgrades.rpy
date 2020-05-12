@@ -1,6 +1,9 @@
 label clothing_upgrades:
 
-    jump upgrades
+    call upgrades
+
+    if _return is False:
+        jump tonks_talk
 
     m "[tonks_name]..."
     m "Do you think you could change this outfit?"

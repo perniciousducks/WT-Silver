@@ -1,53 +1,3 @@
-################################################
-##              Legacy Themes                 ##
-##         (No documentation found)           ##
-##  TODO: Replace with standard style system  ##
-################################################
-
-init python hide:
-    theme.threeD(
-        ## Theme: 3D
-        ## Color scheme: Muted Horror
-
-        ## The color of an idle widget face.
-        widget = "#5d5151",
-
-        ## The color of a focused widget face.
-        widget_hover = "#897e75",
-
-        ## The color of the text in a widget.
-        widget_text = "#9b8d84",
-
-        ## The color of the text in a selected widget. (For
-        ## example, the current value of a preference.)
-        widget_selected = "#FFFFFF",
-
-        ## The color of a disabled widget face.
-        disabled = "#463b3b",
-
-        ## The color of disabled widget text.
-        disabled_text = "#50443c",
-
-        ## The color of informational labels.
-        label = "#9b8d84",
-
-        ## The color of a frame containing widgets.
-        frame = "#5d5151",
-
-        ## The background of the main menu. This can be a color
-        ## beginning with '#', or an image filename. The latter
-        ## should take up the full height and width of the screen.
-        mm_root = "title_ani",
-
-        ## The background of the game menu. This can be a color
-        ## beginning with '#', or an image filename. The latter
-        ## should take up the full height and width of the screen.
-        gm_root = "menu_ani",
-
-        ## If this is True, the in-game window is rounded. If False,
-        ## the in-game window is square.
-        rounded_window = False,
-    )
 
 ################################################
 ##                  Styling                   ##
@@ -77,29 +27,6 @@ style yesno_button:
 style yesno_label_text:
     text_align 0.5
     layout "subtitle"
-
-style pref_frame:
-    xfill True
-
-style pref_vbox:
-    xfill True
-
-style pref_label:
-    bottom_margin 5
-    xalign 0.5
-    yminimum 27
-
-style pref_button:
-    xfill True
-    xalign 0.5
-
-style pref_button_text:
-    size 18
-
-style pref_slider:
-    #xmaximum 200
-    xfill True
-    xalign 0.5
 
 style soundtest_button:
     xalign 1.0

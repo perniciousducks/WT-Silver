@@ -107,7 +107,7 @@ screen choice(items):
                                     else:
                                         null width 21 # Assume icon width
 
-screen input(prompt):
+screen old_input(prompt):
     zorder 30
 
     style_prefix "say"
@@ -129,7 +129,7 @@ screen input(prompt):
 screen nvl(dialogue, items=None):
     null
 
-screen main_menu():
+screen old_main_menu():
     tag menu
     zorder 5
 
@@ -191,7 +191,7 @@ screen main_menu():
         hover "logo/discord_hover.png"
         action OpenURL("https://discord.gg/7PD57yt")
 
-screen navigation():
+screen old_navigation():
     window:
         style "gm_root"
 
@@ -211,7 +211,7 @@ screen navigation():
         #textbutton _("Help") action Help()
         textbutton _("Quit") action Quit(confirm=not main_menu)
 
-screen file_picker():
+screen old_file_picker():
     frame:
         margin (5,5)
 
@@ -281,25 +281,25 @@ screen file_picker():
                     else:
                         text "[file_name]. [file_time!t]" xpos 70 style "night_button_text"
 
-screen save():
+screen old_save():
     tag menu
     zorder 5
 
-    use navigation
-    use file_picker
+    use old_navigation
+    use old_file_picker
 
-screen load():
+screen old_load():
     tag menu
     zorder 5
 
-    use navigation
-    use file_picker
+    use old_navigation
+    use old_file_picker
 
-screen preferences():
+screen old_preferences():
     tag menu
     zorder 5
 
-    use navigation
+    use old_navigation
 
     if not renpy.variant('android'):
         $ columns = 4
@@ -533,7 +533,7 @@ screen skip_indicator():
         else:
             timer 10 action Jump("day_start")
 
-screen confirm(message, yes_action, no_action):
+screen old_confirm(message, yes_action, no_action):
     zorder 999
     modal True
 

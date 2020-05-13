@@ -28,6 +28,7 @@ default has_cho_panties         = False
 default cho_panties_soaked      = False
 default cho_outfits_schedule    = True
 default cho_bj_choice           = None # Dynamic string. Valid choices: failed, swallow, throat, points, taste.
+default cho_slytherin_talk      = False
 
 # Intro
 default jerked_off_during_cho_intro = False

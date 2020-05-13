@@ -1191,6 +1191,8 @@ label cc_pf_talk_T2_E3:
             # Add ending here.
 
         "\"Slytherin's Team\"": # Needs review.
+            $ cho_slytherin_talk = True
+
             call cho_main("Please, Sir.{w=0.3} I'm trying my best to suppress even thinking of them...", "soft", "closed", "base", "mid")
 
             # Malfoy
@@ -1320,8 +1322,17 @@ label cc_pf_talk_T2_E3:
             call cho_walk(action="leave")
 
             call bld
-            g4 "Go! Go! Ravenclaw!"
-            m "I have to admit, I'm a bit of a fanboy now..."
+
+            if cho_strip_complete and cho_slytherin_talk:
+                $ renpy.choice_for_skipping()
+                m "(I'm running out of time if I want to try and get another commentator for that game...)"
+                m "(Hmm... Blackmailing Miss Granger is a good idea... but... what could I even blackmail her with that isn't going to get me into trouble...)"
+                m "(The fact that she hates Cho isn't really going to sway her towards wanting to comment...{w=0.5} Hold on a second...)"
+                g9 "That's it!"
+                g9 "(Time to \"convince\" miss Granger it's in her best interests to keep commentating.)"
+            else:
+                g4 "Go! Go! Ravenclaw!"
+                m "I have to admit, I'm a bit of a fanboy now..."
 
             jump end_cho_talk_event
 

@@ -899,6 +899,10 @@ label cc_pf_strip_T1_intro_E3:
     pause .8
 
     # Panties acquired message!
+    if cho.is_equipped("panties"): # Cheats fallback
+        call give_reward(">You have acquired Cho's panties!", cho.get_equipped("panties").get_icon())
+    else:
+        call give_reward(">You have acquired Cho's panties!", cho_panties_basic1.get_icon())
     $ has_cho_panties = True
 
     m "Well then, Miss Chang..."
@@ -941,8 +945,11 @@ label cc_pf_strip_T1_intro_E3:
     m "I'm on it..."
 
     hide screen bld1
+    show screen blkfade
     with d3
     pause 1.0
+    hide screen blkfade
+    with d3
 
     # Summon Hermione.
     call play_sound("door")
@@ -950,7 +957,7 @@ label cc_pf_strip_T1_intro_E3:
     with d3
     pause .5
 
-    call her_main("You wanted to see me, Sir?", "soft", "closed", "base", "mid", xpos="base", ypos="head")
+    call her_main("You wanted to see me, Sir?", "soft", "closed", "base", "mid", xpos="base", ypos="head", trans=d3)
     call her_main("Cho?", "soft", "wide", "worried", "shocked")
     call cho_main("Hey there, Granger!", "horny", "narrow", "angry", "mid") # Grinning
     call her_main("What? Why are you-", "disgust", "wide", "worried", "shocked")
@@ -991,6 +998,15 @@ label cc_pf_strip_T1_intro_E3:
     $ cho_strip_complete = True # Enables wardrobe strip functions.
     $ d_flag_01 = False # Cho not on desk
     call cc_pf_strip_T1_hermione
+
+    if cho_strip_complete and cho_slytherin_talk:
+        $ renpy.choice_for_skipping()
+        m "(Anyway..)"
+        m "(I'm running out of time if I want to try and get another commentator for that game...)"
+        m "(Hmm... Blackmailing Miss Granger is a good idea... but... what could I even blackmail her with that isn't going to get me into trouble...)"
+        m "(The fact that she hates Cho isn't really going to sway her towards wanting to comment...{w=0.5} Hold on a second...)"
+        g9 "That's it!"
+        g9 "(Time to \"convince\" miss Granger it's in her best interests to keep commentating.)"
 
     jump end_cho_strip_event
 
@@ -1049,6 +1065,10 @@ label cc_pf_strip_T1_E3: # Repeats
     call nar("Cho throws her panties at you.")
 
     # Panties acquired message!
+    if cho.is_equipped("panties"): # Cheats fallback
+        call give_reward(">You have acquired Cho's panties!", cho.get_equipped("panties").get_icon())
+    else:
+        call give_reward(">You have acquired Cho's panties!", cho_panties_basic1.get_icon())
     $ has_cho_panties = True
 
     g9 "Nice!"
@@ -1367,7 +1387,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             return
 
 
-        "\"Let Hermione assess you.\"":
+        "\"Let Hermione assess you, Cho.\"":
             $ her_mood += 6
             call cho_main("Her?", "soft", "wide", "base", "mid")
             call her_main("I couldn't care less about the way she looks!", "soft", "base", "angry", "mid")
@@ -1467,6 +1487,10 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call bld
             g9 "Nice, I still got her panties!"
 
+            if cho.is_equipped("panties"): # Cheats fallback
+                call give_reward(">You have acquired Cho's panties!", cho.get_equipped("panties").get_icon())
+            else:
+                call give_reward(">You have acquired Cho's panties!", cho_panties_basic1.get_icon())
             $ has_cho_panties = True
 
             return

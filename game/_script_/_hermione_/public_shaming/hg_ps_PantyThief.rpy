@@ -122,15 +122,19 @@ label hg_ps_get_panties:
                     call nar(">Suddenly Hermione reaches inside one of her hidden pockets.", "start")
                 else:
                     call nar(">Suddenly Hermione reaches inside-", "start")
-                    call nar(">Wait, she's not exactly clothed...{w=0.4} Well then...")
-                    call nar(">By some kind of magic, a pair of panties suddenly appear in her hand.")
+                    call nar(">Wait, she's not exactly clothed...{w=0.4} Well...")
+                    call nar(">Magically, a pair of panties suddenly appears in her hand.")
 
-            call nar(">She casually throws them on your desk.", "end")
+            call nar(">She casually throws the offending underwear on your desk.", "end")
 
         call her_main("Classes are about to start, so I'd better go now...", "soft", "base", "base", "mid")
 
     call her_walk(action="leave")
 
+    if hermione.is_equipped("panties"): # Cheats fallback
+        call give_reward(">You have acquired Hermione's panties!", hermione.get_equipped("panties").get_icon())
+    else:
+        call give_reward(">You have acquired Hermione's panties!", her_panties_base1.get_icon())
     $ hg_ps_get_panties.inProgress = True
 
     jump end_hermione_event

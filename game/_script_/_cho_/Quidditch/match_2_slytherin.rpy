@@ -11,23 +11,35 @@ label start_slytherin_match:
     call cho_main("I'll do my best, Sir.", "soft", "base", "angry", "mid")
     m "Are you ready?"
     call cho_main("I am!", "base", "base", "angry", "mid")
-    m "Then show me the money."
-    call cho_main("What?", "upset", "base", "raised", "mid")
-    g9 "Say it with me, [cho_name]!{w} Show me the money!"
-    call cho_main("I don't have any on me, Sir.", "angry", "narrow", "worried", "mid")
-    m "..."
-    call cho_main("Show me the money?", "open", "narrow", "raised", "mid")
-    g9 "Yes! Say it like you mean it, brother!"
-    call cho_main("What?", "angry", "wide", "base", "mid")
-    with hpunch
-    g4 "{size=+5}Show me the money!{/size}" # loud
-    call cho_main("(He knows I'm a girl...why would he say that?)", "annoyed", "narrow", "angry", "mid")
-    with hpunch
-    call cho_main("Sir, Are you all right?", "soft", "narrow", "worried", "mid")
-    g9 "What you gonna do, [cho_name]?"
-    call cho_main("Get the nurse?", "upset", "narrow", "angry", "mid")
-    m "You're gonna win that match tomorrow, that's what!"
-    call cho_main("If we're going to play tomorrow, I'll first have to prepare my gear, and charm my Quidditch googles...", "soft", "base", "base", "R")
+    menu:
+        "\"Then show me the money.\"":
+            call cho_main("What?", "upset", "base", "raised", "mid")
+            g9 "Say it with me, [cho_name]!{w} Show me the money!"
+            call cho_main("I don't have any on me, Sir.", "angry", "narrow", "worried", "mid")
+            m "..."
+            call cho_main("Show me the money?", "open", "narrow", "raised", "mid")
+            g9 "Yes! Say it like you mean it, brother!"
+            call cho_main("What?", "angry", "wide", "base", "mid")
+            with hpunch
+            g4 "{size=+5}Show me the money!{/size}" # loud
+            call cho_main("(He knows I'm a girl...why would he say that?)", "annoyed", "narrow", "angry", "mid")
+            with hpunch
+            call cho_main("Sir, Are you all right?", "soft", "narrow", "worried", "mid")
+            g9 "What you gonna do, [cho_name]?"
+            call cho_main("Get the nurse?", "upset", "narrow", "angry", "mid")
+            m "You're gonna win that match tomorrow, that's what!"
+        "\"Show me what you got!\"":
+            call cho_main("Of course sir, always!", "soft", "base", "base", "R")
+            g9 "Show me what you got!"
+            call cho_main("sir?", "upset", "base", "raised", "mid")
+            g9 "Show me what you got, I want to see what you got!"
+            call cho_main("Sir, are you okay?", "open", "narrow", "raised", "mid")
+            m "Show me-"
+        "\"Show me your tits!\"":
+            call cho_main("What?", "upset", "base", "raised", "mid")
+            g9 "For luck!"
+            call cho_main("Sir, I don't have time for this...", "soft", "narrow", "worried", "mid")
+    call cho_main("If we're going to play tomorrow, I'll first have to prepare my gear, and charm my Quidditch goggles...", "soft", "base", "base", "R")
     call cho_main("Or they'll just fog-up and not dispel the rain properly...", "soft", "narrow", "base", "mid")
     m "Hold up!{w=0.3} It's going to rain tomorrow?"
     call cho_main("Most likely...", "annoyed", "base", "worried", "mid")
@@ -112,8 +124,8 @@ label slytherin_match:
     call ton_main("It sure was...", "base", "base", "angry", "mid")
     call ton_main("So, is Hermione going to show up as well?", "horny", "base", "angry", "mid")
     m "Who knows with her, honestly..."
-    call ton_main("May I be allowed to accompany you anyway?", "upset", "base", "worried", "mid") #sad
-    call ton_main("I've been looking forward to watching the game from the commentator booth...", "open", "base", "sad", "R")
+    call ton_main("May I be allowed to accompany you?", "upset", "base", "worried", "mid") #sad
+    call ton_main("I'd love to be able to watch her... The game from the commentator booth.", "open", "base", "sad", "R")
     g9 "Of course! I'd be delighted to have you!"
     call ton_main("Thank you, [ton_genie_name].{heart}", "base", "happyCl", "base", "mid", hair="happy")
     call ton_main("Are we to expect another great performance this time around?", "horny", "base", "base", "mid", hair="neutral")
@@ -1152,7 +1164,7 @@ label slytherin_match:
     with d5
     pause .8
 
-    "With Hermione collapsed on the ground you give last quick look and then swiftly head back to your seat..."
+    "With Hermione collapsed on the ground you give her a last quick look and then swiftly head back to your seat..."
 
     hide screen blktone5
     call gen_chibi("stand", flip=True, 20, 365)

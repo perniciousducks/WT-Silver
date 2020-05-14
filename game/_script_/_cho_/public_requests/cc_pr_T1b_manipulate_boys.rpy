@@ -1,9 +1,9 @@
 
 
-### Manipulate the enemy Quidditch players ###
+### Manipulate the enemy male Quidditch players ###
 
 ### Start ###
-label cc_pr_manipulate_start:
+label cc_pr_manipulate_boys_start:
 
     call cho_main(xpos="right", ypos="base", trans=fade)
 
@@ -11,7 +11,7 @@ label cc_pr_manipulate_start:
     if cho_tier == 1:
 
         # Intro
-        if cc_pr_manipulate.points == 0:
+        if cc_pr_manipulate_boys.points == 0:
             m "So what do we know about our opponents?"
             call cho_main("Hufflepuff? Well their team isn't the best, but they have a really strong seeker.", "soft", "base", "base", "mid")
             m "Right...{w=0.3} who was that again?"
@@ -70,7 +70,7 @@ label cc_pr_manipulate_start:
     else:
 
         # Intro
-        if cc_pr_manipulate.points == 0:
+        if cc_pr_manipulate_boys.points == 0:
             m "[cho_name], how well -- in your opinion -- did you do in your last match?"
             call cho_main("I think I did quite well with distracting those Hufflepuffs.", "annoyed", "base", "base", "mid")
             m "Only one Hufflepuff!{w=0.6} We were lucky you could secure that win with such low effort..."
@@ -139,7 +139,7 @@ label cc_pr_manipulate_start:
     # Cho leaves.
     call cho_walk(action="leave")
 
-    $ cc_pr_manipulate.inProgress = True
+    $ cc_pr_manipulate_boys.inProgress = True
 
     jump end_cho_event
 
@@ -149,7 +149,7 @@ label cc_pr_manipulate_start:
 
 ### Tier 1 (pre Hufflepuff) ###
 
-label cc_pr_manipulate_T1_intro_E1:
+label cc_pr_manipulate_boys_T1_intro_E1:
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
@@ -186,7 +186,7 @@ label cc_pr_manipulate_T1_intro_E1:
     jump end_cho_event
 
 
-label cc_pr_manipulate_T1_E1:
+label cc_pr_manipulate_boys_T1_E1:
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
@@ -223,7 +223,7 @@ label cc_pr_manipulate_T1_E1:
     jump end_cho_event
 
 
-label cc_pr_manipulate_T1_E2:
+label cc_pr_manipulate_boys_T1_E2:
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
@@ -276,7 +276,7 @@ label cc_pr_manipulate_T1_E2:
     jump end_cho_event
 
 
-label cc_pr_manipulate_T1_E3:
+label cc_pr_manipulate_boys_T1_E3:
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
@@ -318,7 +318,7 @@ label cc_pr_manipulate_T1_E3:
 
 ### Tier 2 (pre Slytherin) ###
 
-label cc_pr_manipulate_T2_intro_E1:
+label cc_pr_manipulate_boys_T2_intro_E1:
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
@@ -379,7 +379,7 @@ label cc_pr_manipulate_T2_intro_E1:
     jump end_cho_event
 
 
-label cc_pr_manipulate_T2_E1:
+label cc_pr_manipulate_boys_T2_E1:
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
@@ -426,7 +426,7 @@ label cc_pr_manipulate_T2_E1:
     jump end_cho_event
 
 
-label cc_pr_manipulate_T2_intro_E2:
+label cc_pr_manipulate_boys_T2_intro_E2:
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
@@ -467,7 +467,7 @@ label cc_pr_manipulate_T2_intro_E2:
     jump end_cho_event
 
 
-label cc_pr_manipulate_T2_intro_E3:
+label cc_pr_manipulate_boys_T2_intro_E3:
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
@@ -537,7 +537,7 @@ label cc_pr_manipulate_T2_intro_E3:
     jump end_cho_event
 
 
-label cc_pr_manipulate_T2_E3:
+label cc_pr_manipulate_boys_T2_E3:
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")

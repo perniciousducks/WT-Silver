@@ -93,24 +93,51 @@ default cc_favor_list = [cc_pf_talk, cc_pf_strip, cc_pf_blowjob]
 
 # Public requests
 # cc_pr = Cho Chang Public Request
-default cc_pr_manipulate = event_class(title = "Manipulate the enemy!", start_label = "cc_pr_manipulate_start",
+default cc_pr_manipulate_boys = event_class(title = "Manipulate the boys!", start_label = "cc_pr_manipulate_boys_start",
     events = [
         [
-            ["cc_pr_manipulate_T1_intro_E1"], ["cc_pr_manipulate_T1_E1"],
-            ["cc_pr_manipulate_T1_E2"],
-            ["cc_pr_manipulate_T1_E3"]
+            ["cc_pr_manipulate_boys_T1_intro_E1"], ["cc_pr_manipulate_boys_T1_E1"],
+            ["cc_pr_manipulate_boys_T1_E2"],
+            ["cc_pr_manipulate_boys_T1_E3"]
         ],
         [
-            ["cc_pr_manipulate_T2_intro_E1"], ["cc_pr_manipulate_T2_E1"],
-            ["cc_pr_manipulate_T2_intro_E2"],
-            ["cc_pr_manipulate_T2_intro_E3"], ["cc_pr_manipulate_T2_E3"]
+            ["cc_pr_manipulate_boys_T2_intro_E1"], ["cc_pr_manipulate_boys_T2_E1"],
+            ["cc_pr_manipulate_boys_T2_intro_E2"],
+            ["cc_pr_manipulate_boys_T2_intro_E3"], ["cc_pr_manipulate_boys_T2_E3"]
         ]
     ],
     icons = ["huff", "slyt"], #if a tier doesn't need an icon replace with None
     iconset = [["star_empty", "star_yellow"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
 )
 
-default cc_requests_list = [cc_pr_manipulate]
+default cc_pr_spy_girls = event_class(title = "Spy on the girls!", start_label = "cc_pr_spy_girls_start", start_tier = 3,
+    events = [
+        [
+            ["cc_pr_spy_girls_T3_showers_intro"],
+            ["cc_pr_spy_girls_T3_alicia_intro"],
+            ["cc_pr_spy_girls_T3_katie_intro"],
+            ["cc_pr_spy_girls_T3_angelina"],
+        ]
+    ],
+    icons = ["gryf"],
+    iconset = [["star_empty", "star_yellow"]]
+)
+
+default cc_pr_manipulate_girls = event_class(title = "Manipulate the girls!", start_label = "cc_pr_manipulate_girls_start", start_tier = 3,
+    events = [
+        [
+            ["cc_pr_manipulate_girls_T3_alicia_intro"],
+            ["cc_pr_manipulate_girls_T3_katie_intro_part1"], ["cc_pr_manipulate_girls_T3_katie_intro_part2"],
+            ["cc_pr_manipulate_girls_T3_angelina"]
+        ]
+    ],
+    icons = ["gryf"],
+    iconset = [["star_empty", "star_yellow"]]
+)
+
+# TODO: lock favours until you finish `talk to me` part 3 in tier 3
+
+default cc_requests_list = [cc_pr_manipulate_boys, cc_pr_spy_girls, cc_pr_manipulate_girls]
 
 label reset_cho_progress:
     $ reset_variables(
@@ -134,6 +161,8 @@ label reset_cho_progress:
         "cho_chatted",
         "has_cho_panties",
         "cho_panties_soaked",
+        "cho_bj_choice",
+        "cho_slytherin_talk",
 
         # Intro
         "jerked_off_during_cho_intro",
@@ -153,7 +182,9 @@ label reset_cho_progress:
         "cc_pf_blowjob",
         "cc_favor_list",
 
-        "cc_pr_manipulate",
+        "cc_pr_manipulate_boys",
+        "cc_pr_spy_girls",
+        "cc_pr_manipulate_girls",
         "cc_requests_list",
 
         # Names

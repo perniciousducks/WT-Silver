@@ -49,7 +49,7 @@ label cc_pr_spy_girls_start:
         g9 "Now, to the gadgets... I’ve got this great new invention... It's a vibrating magical rod..."
         cho "A what?!"
         cho "Wouldn’t something like an extendable ear make more sense for eavesdropping?"
-        m "Not unless they vibrate..."
+        m "Not unless it vibrates..."
         m "Anyway, you’d better get a move on..."
         m "I expect your report this evening B!"
         m "Good luck!"
@@ -199,15 +199,15 @@ label cc_pr_spy_girls_T3_alicia_intro:
     m "Great, tell me what happened."
     cho "That girl sure is something..."
     cho "She’s been assisting the twins by drawing in more customers to their shop."
-    cho "She’s got those two under her thumb, assisting them with their shop and in return they keep themselves in line during Quidditch."
+    m "How kind."
+    cho "I woulnd't call it that... Only reason she's assisting them is because they promised they'd behave during Quidditch."
 
     # Has player sent Hermione to work with the Twins, promoting the cardgame?
     if not first_time_cardgame_work:
         m "(I thought Hermione was helping them with that already...)"
 
-    m "So Spinnet is the dominant type?"
-    cho "Yes..."
-    cho "And it really shows since she doesn’t seem to have any problems persuading people to check out the shop."
+
+    cho "And she sure doesn’t seem to have any problems enticing people."
     m "So, how does she do it?"
     cho "Well... If I didn’t know better I’d say she must be using some kind of hypnosis."
     m "Hypnosis? Now that sounds completely absurd."
@@ -217,20 +217,23 @@ label cc_pr_spy_girls_T3_alicia_intro:
         m  "She’s not using that im-perv-ius curse is she?"
         cho "Imperius?"
         cho "No... I haven't seen her with a wand in hand..."
+    else:
+        cho "That's why I said, if I didn't know any better..."
 
-    cho "She was whispering something into a student's ear and as if on command they immediately followed her into the girls toilets."
-    m "I see, and did you find out what she’s doing with them in there?"
+    cho "I saw her whisper something into another student's ear and as if on command they immediately followed her into the girls toilets."
+    m "Nice, a girl that takes what she wants..."
+    m "So, what was she doing with them?"
     cho "Come on [cho_genie_name], surely you’re able to guess what she’s doing."
     g9 "I have no idea, that’s why you’re here...{w=0.4} to tell me..."
     cho "She’s doing lewd stuff with them obviously..."
     m "Such as?"
-    cho "Well... since I knew you’d ask... I did sneak in after her but I was only able to see part of her under the stall..."
+    cho "So predicatble...{w=0.4} Well, since I knew you’d ask... I did sneak in after her but I was only able to see part of her under the stall..."
     cho "She was on her knees and whoever was in there with her wasn’t being quiet that’s for sure."
-    m "Impressive, I should get her number."
+    m "I should get her number."
     cho "Her what?"
     m "Nevermind... {w=0.4} So is that all you saw?"
     cho "*Uhm* As I said, I could only see her bottom from underneath that stall...{w=0.4} so yes..." #Blushing
-    m "Your face says otherwise though, is that really everything you saw?"
+    m "Your face says otherwise, is that really everything you saw?"
     cho "When I say bottom... She wasn’t wearing any panties [cho_genie_name]..."#Blushing
     cho "She was also..."#Blushing
     cho "She was also really wet down there..."#Blushing
@@ -242,7 +245,7 @@ label cc_pr_spy_girls_T3_alicia_intro:
     cho "..." #Blushing
     m "I could let you borrow it to figure out how it works. It’s very useful you know."
     cho "I’m good, thanks. I think I’ll just head straight to bed if you don’t mind."
-    #Cho Heads to the door and stops
+    #Cho Heads to the door and stops TODO
     m "Changed your mind?"
     cho "N-...no, Good night!"
 
@@ -273,28 +276,29 @@ label cc_pr_spy_girls_T3_katie_intro:
     cho "No, but... she went in there butt-naked!"
     g9 "Butt-naked? Did they open up a nude-beach without telling me?"
     cho "What? Of course they haven’t!"
-    cho "And once she had taken all her clothes off she slowly walked into the water, and then just vanished beneath the surface..."
+    m "Shame..."
+    cho "Once she had taken her clothes off she slowly walked into the water, and then just vanished beneath the surface..."
     m "That’s...{w=0.4} odd...{w=0.4} Perhaps she is a mermaid?"
     cho "I highly doubt that, seeing that she has legs..."
-    cho "Although for a moment I did consider that the mermaids living there might have used their songs to lure her there..."
+    cho "Although for a moment I did consider that the mermaids living there might have used their songs to charm her..."
     m "Well that's not concerning at all..."
     cho "She did resurface a couple of moments later... just as I began to worry..."
     cho "Although... not the way I expected."
     cho "After a huge splash I realised she had been lifted into the air by some giant tentacles!"
     g4 "Whoa, tentacles!"
-    cho "Yes, gross slimy and green tentacles... It was if the seaweed had come to life!..."
+    cho "Yes, gross slimy and green tentacles... It was if the seaweed had come to life!"
     m "So, what was it doing to her?"
     cho "*Ugh* Do I really have to tell you..."
     g9 "With as much detail as possible thank you."
     cho "Fine..."
-    cho "They were holding her body stationary in the air, whilst its tentacles were working their way around, squeezing her breasts."
-    g4 "Tentacles, a classic!"
+    cho "They were holding her body stationary in the air, whilst more of its tentacles were working their way around, squeezing her breasts."
+    g4 "Classic tentacle move!"
     cho "As it... {w=0.5} continued...{w=0.4} the tentacles grabbed her around the waist and began moving her body up and down, with another one wrapping itself around her legs."
     cho "She almost looked like a doll being puppeted around by those giant arms..."
     m "And she was letting it do this willingly?"
     cho "Yes, she seemed to thoroughly enjoy being its...{w=0.6} toy to play with."
-    cho "As the tentacles slid across her skin I could see her eyes roll back into her head."
-    cho "And as they did, another tentacle slipped through in between her legs from behind."
+    cho "And As the tentacles slid across her skin I could see her eyes roll back into her head."
+    cho "As they did, another tentacle slipped through in between her legs from behind."
     cho "Which was enough to bring her over the edge I think."
     m "Impressive..."
     m "Now that’s quite a story, you’re not making this up are you?"

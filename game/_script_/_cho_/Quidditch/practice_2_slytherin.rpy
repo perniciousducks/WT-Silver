@@ -19,8 +19,8 @@ label cc_st_intro:
     call cho_main("WHAT?!", "clench", "wide", "base", "mid", cheeks="heavy_blush")  # Upset/whatthefuck face
     call cho_main("Sir, why would you even suggest that?!", "angry", "narrow", "angry", "mid", cheeks="blush") # upset
     m "Then what is it?"
-    call cho_main("It's about the upcoming quidditch match", "annoyed", "narrow", "angry", "R") # annoyed - eyes R, mouth annoyed
-    m "Oh... Of course..."
+    call cho_main("It's about the upcoming quidditch match.", "annoyed", "narrow", "angry", "R") # annoyed - eyes R, mouth annoyed
+    m "Oh...{w=0.4} Of course..."
     call cho_main("[cho_genie_name], I worry that we won't be able to beat Slytherin in the next match.", "annoyed", "narrow", "worried", "mid") # eyebrows sad, eyes mid, mouth pout
     g9 "Slytherin is next?{w=0.6} Sweet!"
     call cho_main("They're an entirely different ballpark compared to Hufflepuff.", "open", "base", "worried", "mid")

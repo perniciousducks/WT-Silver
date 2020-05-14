@@ -1238,8 +1238,8 @@ label cc_pf_talk_T2_E3:
                 g4 "*Argh!* {size=-4}(How nasty!){/size}"
                 call cho_main("I dare them to try it on me, those bastards!", "clench", "narrow", "angry", "R")
                 g4 "*Yes!* {size=-4}(You deserve a good spanking!){/size}"
-                call cho_main("I saw them go after Katie Bell today.{w=0.6} One of the Gryffindor chasers...", "soft", "narrow", "base", "mid")
-                call cho_main("She was carrying a whole bunch of books and other equipment...{w=0.8} so she couldn't simply run off or drop them.", "open", "narrow", "angry", "mid")
+                call cho_main("I saw them go after Katie Bell today.", "soft", "narrow", "base", "mid")
+                call cho_main("She was carrying a whole bunch of books...{w=0.8} so she couldn't simply run off or drop them.", "open", "narrow", "angry", "mid")
                 call cho_main("She would have probably beaten them up immediately if that wasn't the case. Those cowards...", "angry", "narrow", "angry", "mid")
                 g4 "*Yes!* {size=-4}(I wouldn't mind borrowing one of those bats!){/size}"
                 call cho_main("They really did her dirty, Sir.{w} Even pulled down her skirt before they ran off!", "annoyed", "narrow", "base", "mid")

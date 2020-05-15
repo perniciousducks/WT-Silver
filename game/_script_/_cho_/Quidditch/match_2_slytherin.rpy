@@ -412,7 +412,7 @@ label slytherin_match:
     call sna_main("I'll give you a dungeon dweller in a minute you--", "snape_08", ypos="head")
 
     call her_main("Professor Tonks, your hair!", "soft", "base", "base", "L", flip=False, xpos="base", ypos="head")
-    call ton_main("Oh right, Miss Granger, so glad to see you!", "base", "base", "base", "L", flip=True, xpos="far_left", ypos="head", hair="neutral")
+    call ton_main("Whopsie...{w=0.5} Miss Granger, so glad to see you!", "base", "base", "base", "L", flip=True, xpos="far_left", ypos="head", hair="neutral")
     call sna_main("{size=-2}*Hmph*{/size}", "snape_31", ypos="head")
     call her_main("Of course, as you know I take my responsibilities seriously!", "open", "base", "angry", "L")
 
@@ -949,7 +949,8 @@ label slytherin_match:
             mal "An inspirational speech in the middle of the game?"
             call gen_main("You, me, or nobody is gonna hit as hard as life.", face="base")
             call sna_main("Ain't that true...", "snape_09")
-            call gen_main("But it ain’t how hard you hit...{w=0.5} it’s about how hard you can get hit, and keep moving forward.", face="angry")
+
+            call gen_main("But it ain’t how hard you hit...{w=0.5} it’s about how hard you can get hit, and keep moving forward.", face="angry")   #TODO Spotlights on
 
             call quidditch_stands(crowd_react=[None, None, "emo8"])
             with d3
@@ -972,7 +973,7 @@ label slytherin_match:
 
         "\"Be winners!\"": #"\"Don't care about the scoreboard\"":
             # Hoosiers
-            play bg_sounds "music/fanfare.mp3" fadein 1.0
+            play bg_sounds "music/victory1.mp3" fadein 3.0
             call gen_main("There's a tradition in tournament play to not talk about the next step until you've climbed the one in front of you.", face="base")
             call gen_main("I'm sure going to the state finals is beyond your wildest dreams, so let's just keep it right there.", face="base")
 
@@ -980,7 +981,8 @@ label slytherin_match:
             with d3
 
             cho "(State finals?!?)"
-            call gen_main("Forget about the crowds, the size of the school, their fancy uniforms, and remember what got you here.", face="angry")
+
+            call gen_main("Forget about the crowds, the size of the school, their fancy uniforms, and remember what got you here.", face="angry") #TODO Spotlights on
             call gen_main("Focus on the fundamentals that we've gone over time and time again.", face="open")
             call gen_main("And most important, don't get caught up thinking about winning or losing this game.", face="base")
             call gen_main("If you put your effort and concentration into playing to your potential, to be the best that you can be, I don't care what the scoreboard says at the end of the game...", face="open")
@@ -999,6 +1001,8 @@ label slytherin_match:
 
     call quidditch_stands(crowd_react=[None, None, None])
     with d3
+
+    #TODO Spotlights Off, pause, genie leaves podium
 
     call play_sound("footsteps")
     call hide_characters

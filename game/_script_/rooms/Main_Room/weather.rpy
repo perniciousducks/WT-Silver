@@ -55,7 +55,7 @@ label weather_sound:
     elif weather == "storm":
         play weather "sounds/storm.mp3" fadeout 0.5 fadein 0.5 if_changed
     elif weather == "rain":
-        pass #TODO Rain sound (without thunder)
+        play weather "sounds/storm.mp3" fadeout 0.5 fadein 0.5 if_changed # TODO: Rain sound (without thunder)
     else:
         stop weather fadeout 0.5
     return

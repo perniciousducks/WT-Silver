@@ -352,9 +352,6 @@ image ch_hem sit_naked_shocked:
     "characters/hermione/chibis/sitting/sit_naked.png"
 
 image ch_hem hit_head:
-    yoffset -36
-    xoffset 8
-
     "characters/hermione/chibis/hit_on_head/01.png"
     pause.1
     "characters/hermione/chibis/hit_on_head/02.png"

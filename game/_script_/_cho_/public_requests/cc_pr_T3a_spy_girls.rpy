@@ -245,7 +245,7 @@ label cc_pr_spy_girls_T3_alicia_intro:
     cho "..." #Blushing
     m "I could let you borrow it to figure out how it works. It’s very useful you know."
     cho "I’m good, thanks. I think I’ll just head straight to bed if you don’t mind."
-    #Cho Heads to the door and stops TODO
+    call cho_walk("mid", "base")
     m "Changed your mind?"
     cho "N-...no, Good night!"
 

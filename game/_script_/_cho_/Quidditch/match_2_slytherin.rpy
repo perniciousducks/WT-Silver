@@ -363,10 +363,8 @@ label slytherin_match:
 
     call ton_main("Oh, what a view! Much better than the one from the Hufflepuff stands!", "base", "happyCl", "base", "mid", flip=True, xpos="far_left", ypos="head")
 
-    m "Such a nice weather too."
+    m "Such nice weather too."
     call ton_main("Indeed!", "base", "happyCl", "base", "mid", flip=True, xpos="far_left", ypos="head")
-    call sna_main("{size=-6}Unfortunately...{/size}", "snape_31", ypos="head")
-    m "*Heh* Can you imagine {i}someone{/i} said to me it would be--"
 
     $ renpy.sound.play("sounds/thunder.ogg")
     call quidditch_stands(weather="overcast", tree_fire=True, rain=True, puddles=True)
@@ -374,10 +372,9 @@ label slytherin_match:
     play weather "sounds/storm.mp3" fadeout 1.0 fadein 3.0
 
     pause 1.0
-    m "raining..."
-    call sna_main("{size=-6}That's more like it.{/size}", "snape_02", ypos="head")
+    call sna_main("Indeed!", "snape_02", ypos="head")
 
-    call ton_main("Now you jinxed it..", "upset", "closed", "sad", "mid", flip=True, xpos="far_left", ypos="head")
+    call ton_main("You jinxed it..", "upset", "closed", "sad", "mid", flip=True, xpos="far_left", ypos="head")
     g4 "Hey!{w=0.4} That wasn't--"
 
     # Hermione walks up to the podium
@@ -402,20 +399,20 @@ label slytherin_match:
     pause 2.0
     call chibi_emote("hide", "snape")
 
-    show screen blktone
-    with d5
-    m "(I feel you buddy...)"
-    hide screen blktone
-    with d5
+    #show screen blktone
+    #with d5
+    #m "(I feel you buddy...)"
+    #hide screen blktone
+    #with d5
 
-    call ton_main("{size=-4}*whispers* I think she doesn't like you Severus.{/size}", "smile", "base", "raised", "R", flip=True, xpos="far_left", ypos="head")
-    call sna_main("{size=-4}*whispers* I've noticed,{w=0.3} {cps=15}Nymphadora{/cps}.{/size}", "snape_03", ypos="head")
-    call ton_main("{size=-2}*loud whisper* I dare you to call me that again,{w=0.3} {i}dungeon dweller{/i}{/size}", "base", "shocked", "angry", "R", flip=True, hair="angry", xpos="far_left", ypos="head")
+    call ton_main("{size=-4}Do I hear some jeallousy back there?{/size}", "smile", "base", "raised", "R", flip=True, xpos="far_left", ypos="head")
+    call sna_main("{size=-4}Of course not... just a cough,{w=0.3} {cps=15}Nymphadora{/cps}.{/size}", "snape_03", ypos="head")
+    call ton_main("{size=-2}That's Tonks to you...{w=0.3} {i}dungeon dweller.{/i}{/size}", "base", "shocked", "angry", "R", flip=True, hair="angry", xpos="far_left", ypos="head")
     call sna_main("Dungeon dw--", "snape_32", ypos="head")
     call sna_main("I'll give you a dungeon dweller in a minute you--", "snape_08", ypos="head")
 
-    call her_main("Professor Tonks!", "soft", "base", "base", "L", flip=False, xpos="base", ypos="head")
-    call ton_main("Oh right, Miss Granger, so glad you made it!", "base", "base", "base", "L", flip=True, xpos="far_left", ypos="head", hair="neutral")
+    call her_main("Professor Tonks, your hair!", "soft", "base", "base", "L", flip=False, xpos="base", ypos="head")
+    call ton_main("Oh right, Miss Granger, so glad to see you!", "base", "base", "base", "L", flip=True, xpos="far_left", ypos="head", hair="neutral")
     call sna_main("{size=-2}*Hmph*{/size}", "snape_31", ypos="head")
     call her_main("Of course, as you know I take my responsibilities seriously!", "open", "base", "angry", "L")
 
@@ -673,7 +670,7 @@ label slytherin_match:
 
     show screen blktone5
     with d5
-    m "(It's probably one of my wines...)"
+    m "(Yeah right, it's probably one of mine...)"
     hide screen blktone5
     with d5
 
@@ -777,17 +774,22 @@ label slytherin_match:
 
     menu:
         "\"Way to go Snape...\"":
-            m "You knew you couldn't win so you've decided to use on of your dirty tricks..."
+            m "You knew you couldn't win so you decided to use one of your dirty tricks..."
             g4 "And now I need to find me a new commentator, thanks to you!"
-            call sna_main("First of all, we never decided on the rul--", "snape_32")
-        "\"You owe me one...\"":
+            call sna_main("A bit hypocritical of you don't you thi-", "snape_32")
+        "\"You owe me one, Snape...\"":
             call sna_main("I {i}owe you{/i} one? What are you talking about?", "snape_10")
-            m "I have doubts she'll be able to blow me any time soon, thanks to you."
+            m "She wont be able to blow me any time soon, thanks to you."
             m "So yes, I think you owe me."
-            call sna_main("Genie but you don't mean--", "snape_14")
-        "\"10 points to gryffindor!\"":
+            call sna_main("Surely you can't be-", "snape_14")
+        "\"10 points to Gryffindor!\"":
             call ton_main("Are you mad?", "scream", "base", "angry", "R", hair="angry")
             m "What? I'm just joking, I'm sure she'll be fine..."
+            call sna_main("{size=-4}10 points to Slytherin.{/size}", "snape_38")
+            m "Did you say someth-"
+            $ gryffindor += 10
+            $ slytherin += 10
+
 
     call ton_main("Quiet!", "angry", "base", "angry", "L", hair="angry")
     m "..."

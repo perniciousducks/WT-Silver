@@ -9,7 +9,9 @@ label room(room=None, hide_screens=True, stop_sound=True):
     if stop_sound:
         call stop_sound_effects
 
+    $ renpy.stop_predict("images/rooms/{}/*.png".format(current_room))
     $ current_room = room
+    $ renpy.start_predict("images/rooms/{}/*.png".format(current_room))
 
     if room == "main_room":
         # Update sound effects

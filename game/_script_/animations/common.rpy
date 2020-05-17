@@ -72,10 +72,9 @@ image ctc:
         pos (0.99, 0.995)
         anchor (0.8, 1.0)
         "interface/ctc01.png"
-        alpha 0.0
-        linear 1.0 alpha 1.0
-        pause 0.5
+        pause 5.0
         linear 1.0 alpha 0.0
+        linear 1.0 alpha 1.0
         repeat
 
 # Emotions ^_^

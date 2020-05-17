@@ -323,17 +323,21 @@ label hg_cum_on_panties_response:
                 m "Well..."
                 call her_main("...", "angry", "narrow", "base", "down")
                 call nar(">Hermione reluctantly puts her cum-soaked panties in her mouth.")
-                call her_main("Mmmmhhhhh!", "full", "slit", "worried", "ahegao")
+                $ renpy.play('sounds/gltch.mp3')
+                call her_main("Mmmmhhhhh!", "full_panties", "slit", "worried", "ahegao")
                 m "That's it, not as bad as you thought now is it?"
-                call her_main("...", "full", "slit", "low", "stare")
+                call her_main("...", "full_panties", "slit", "low", "stare")
                 m "Make sure you get them nice and clean now..."
-                call her_main("*gulp*", "full_cum", "narrow", "worried", "down",cheeks="blush")
+                call play_sound("gulp")
+                call her_main("*gulp*", "full_panties", "narrow", "worried", "down",cheeks="blush")
                 m "That's it. Do you think they're clean yet?"
-                call her_main("*Mmmhhhmmm*", "full_cum", "narrow", "base", "dead")
-                m "Well, then you can take them out of your mouth."
-                call her_main("*Ahhhhh*", "open_wide_tongue", "narrow", "annoyed", "up")
-                m "There, nice and clean."
-                call her_main("Yes, [genie_name].", "soft", "narrow", "annoyed", "up")
+                call her_main("*Mmmhhhmmm*", "full_panties", "narrow", "base", "dead")
+                m "Open your mouth, [hermione_name]."
+                $ renpy.play('sounds/gltch.mp3')
+                call her_main("*Ahhhhh*", "open_wide_tongue_panties", "narrow", "annoyed", "up")
+                m "That's a good girl, your panties are now nice and clean."
+                m "You can take them out now."
+                call her_main("....", "angry", "happyCl", "worried", "up")
 
         m "You can go..."
         call her_main("yes, [genie_name]...", "angry", "narrow", "base", "down")

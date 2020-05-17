@@ -31,20 +31,20 @@ label ast_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=
         call play_sound("door")
         call ast_chibi(None, "door", "base", False)
         if xpos or ypos:
-            $ astoria_chibi.move(xpos, ypos, speed, reduce)
+            $ astoria_chibi.move((xpos, ypos), speed, reduce)
     elif action == "leave":
         $ astoria_chibi.show()
-        $ astoria_chibi.move("door", "base", speed, reduce)
+        $ astoria_chibi.move(("door", "base"), speed, reduce)
         call play_sound("door")
         $ astoria_chibi.hide()
         with d3
         pause .5
     elif path:
         $ astoria_chibi.show()
-        $ astoria_chibi.path_move(path, speed)
+        $ astoria_chibi.move(path, speed, reduce)
     else:
         $ astoria_chibi.show()
-        $ astoria_chibi.move(xpos, ypos, speed, reduce)
+        $ astoria_chibi.move((xpos, ypos), speed, reduce)
 
     return
 

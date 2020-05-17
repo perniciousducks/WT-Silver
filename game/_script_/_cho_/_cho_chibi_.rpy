@@ -31,20 +31,20 @@ label cho_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=
         call play_sound("door")
         call cho_chibi(None, "door", "base", False)
         if xpos or ypos:
-            $ cho_chibi.move(xpos, ypos, speed, reduce)
+            $ cho_chibi.move((xpos, ypos), speed, reduce)
     elif action == "leave":
         $ cho_chibi.show()
-        $ cho_chibi.move("door", "base", speed, reduce)
+        $ cho_chibi.move(("door", "base"), speed, reduce)
         call play_sound("door")
         $ cho_chibi.hide()
         with d3
         pause .5
     elif path:
         $ cho_chibi.show()
-        $ cho_chibi.path_move(path, speed)
+        $ cho_chibi.move(path, speed, reduce)
     else:
         $ cho_chibi.show()
-        $ cho_chibi.move(xpos, ypos, speed, reduce)
+        $ cho_chibi.move((xpos, ypos), speed, reduce)
 
     return
 
@@ -64,7 +64,7 @@ init python:
         chibi["base"] = chibi_image
 
         # Determine clothing state
-        
+
         if cho.is_worn("top"):
             if cho.get_equipped("top").id == "top_sweater_1":
                 chibi["top"] = "cc_sweater.png"

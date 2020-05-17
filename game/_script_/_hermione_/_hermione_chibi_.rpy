@@ -21,7 +21,7 @@ label her_chibi(action=None, xpos=None, ypos=None, flip=False, pic=None):
         return
 
     $ hermione_chibi.do(action)
-    
+
     return
 
 label her_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=None):
@@ -34,23 +34,23 @@ label her_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=
         call play_sound("door")
         call her_chibi(None, "door", "base", False)
         if xpos or ypos:
-            $ hermione_chibi.move(xpos, ypos, speed, reduce)
+            $ hermione_chibi.move((xpos, ypos), speed, reduce)
     elif action == "leave":
         $ hermione_chibi.show()
-        $ hermione_chibi.move("door", "base", speed, reduce)
+        $ hermione_chibi.move(("door", "base"), speed, reduce)
         call play_sound("door")
         $ hermione_chibi.hide()
         with d3
         pause .5
     elif action == "run":
         $ hermione_chibi.show()
-        $ hermione_chibi.move(xpos, ypos, speed, reduce, action)
+        $ hermione_chibi.move((xpos, ypos), speed, reduce, action)
     elif path:
         $ hermione_chibi.show()
-        $ hermione_chibi.path_move(path, speed)
+        $ hermione_chibi.move(path, speed, reduce)
     else:
         $ hermione_chibi.show()
-        $ hermione_chibi.move(xpos, ypos, speed, reduce)
+        $ hermione_chibi.move((xpos, ypos), speed, reduce)
 
     return
 
@@ -105,7 +105,7 @@ init python:
                     chibi["base"] = "no_shirt_dance_ani"
                 else:
                     chibi["base"] = "no_shirt_no_skirt_dance_ani"
-        
+
         elif chibi.action == "dance_pause":
             # Determine clothing state
             if hermione.is_worn("panties"):
@@ -115,7 +115,7 @@ init python:
 
         elif chibi.action == "top_naked":
             chibi["base"] = "dance/03_no_shirt_03.png" #TODO Should be 'stand' action without top clothes (needs layers first)
-        
+
         elif chibi.action == "lift_skirt":
             if hermione.is_worn("panties"):
                 #TODO Figure out a better way to determine the expression (so it can be reused in a different event)

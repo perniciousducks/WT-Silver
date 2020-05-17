@@ -152,11 +152,21 @@ init -1 python:
             if self.update_callback:
                 self.update_callback(self)
 
-        def move(self, x=None, y=None, speed=1.0, reduce=False, action=None):
-            """Moves to a certain point, taking into account the action, direction, time and transitions."""
-            pos = self.resolve_position(x,y)
+        def move(self, path=None, speed=1.0, reduce=False, action=None):
+            """ Moves to a certain point or along a path.
+                Movement takes into account the action, direction, time and transitions.
+                Flipping is not possible mid-path, so the character should always face the same way.
+            """
+            if isinstance(path, tuple):
+                path = [path]
 
-            flip = self.pos[0] <= pos[0]
+            real_path = [self.pos]
+            for x, y in path:
+                pos = self.resolve_position(x,y)
+                real_path.append(pos)
+            path = real_path
+
+            flip = self.pos[0] <= path[-1][0]
             if self.flip != flip:
                 self.flip = flip
                 self.do(self.action) # Do a flip!
@@ -176,16 +186,21 @@ init -1 python:
             _, trans_name, loop_time = self.resolve_action(move_action)
 
             # Calculate movement time
-            dist = math.sqrt((self.pos[0] - pos[0])**2 + (self.pos[1] - pos[1])**2)
-            time = dist / (float(self.speed) * speed)
-            if loop_time > 0:
-                # Round to nearest multiple of loop time to end on the right frame
-                time = loop_time * round(time/loop_time)
+            times = []
+            for i in xrange(len(path) - 1):
+                dist = math.sqrt((path[i][0] - path[i+1][0])**2 + (path[i][1] - path[i+1][1])**2)
+                time = dist / (float(self.speed) * speed)
+                if loop_time > 0:
+                    # Round to nearest multiple of loop time to end on the right frame
+                    time = loop_time * round(time/loop_time)
+                times.append(time)
+
+            time = sum(times)
 
             # Apply the action with a transform
-            trans = self.resolve_transform(trans_name, self.pos, pos, time)
+            trans = self.resolve_transform(trans_name, path, times)
             self.do(move_action, trans)
-            self.position(pos[0], pos[1])
+            self.position(*path[-1])
 
             if reduce:
                 # Reduce the pause and don't do the old action
@@ -199,15 +214,6 @@ init -1 python:
                 if old_action != move_action:
                     self.do(old_action)
                     renpy.with_statement(None)
-
-        def path_move(self, path, speed=1.0):
-            """Moves non-stop from point to point. Looks best without direction flips."""
-            old_action = self.action
-            for i in xrange(len(path)):
-                x,y = path[i]
-                reduce = i < len(path)-1 # Reduce all except last node
-                self.set_action(old_action) # Ensures the actual old action is performed after the final move
-                self.move(x, y, speed, reduce)
 
         def do(self, action=None, trans=None):
             """Performs an action. Applies a transform and updates the chibi."""

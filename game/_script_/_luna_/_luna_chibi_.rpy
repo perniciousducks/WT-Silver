@@ -33,20 +33,20 @@ label lun_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=
         call play_sound("door")
         call lun_chibi(None, "door", "base", False)
         if xpos or ypos:
-            $ luna_chibi.move(xpos, ypos, speed, reduce)
+            $ luna_chibi.move((xpos, ypos), speed, reduce)
     elif action == "leave":
         $ luna_chibi.show()
-        $ luna_chibi.move("door", "base", speed, reduce)
+        $ luna_chibi.move(("door", "base"), speed, reduce)
         call play_sound("door")
         $ luna_chibi.hide()
         with d3
         pause .5
     elif path:
         $ luna_chibi.show()
-        $ luna_chibi.path_move(path, speed)
+        $ luna_chibi.move(path, speed, reduce)
     else:
         $ luna_chibi.show()
-        $ luna_chibi.move(xpos, ypos, speed, reduce)
+        $ luna_chibi.move((xpos, ypos), speed, reduce)
 
     return
 

@@ -31,20 +31,20 @@ label sna_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=
         call play_sound("door")
         call sna_chibi(None, "door", "base", False)
         if xpos or ypos:
-            $ snape_chibi.move(xpos, ypos, speed, reduce)
+            $ snape_chibi.move((xpos, ypos), speed, reduce)
     elif action == "leave":
         $ snape_chibi.show()
-        $ snape_chibi.move("door", "base", speed, reduce)
+        $ snape_chibi.move(("door", "base"), speed, reduce)
         call play_sound("door")
         $ snape_chibi.hide()
         with d3
         pause .5
     elif path:
         $ snape_chibi.show()
-        $ snape_chibi.path_move(path, speed)
+        $ snape_chibi.move(path, speed, reduce)
     else:
         $ snape_chibi.show()
-        $ snape_chibi.move(xpos, ypos, speed, reduce)
+        $ snape_chibi.move((xpos, ypos), speed, reduce)
 
     return
 

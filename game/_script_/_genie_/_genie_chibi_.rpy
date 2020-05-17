@@ -78,20 +78,20 @@ label gen_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=
         call play_sound("door")
         call gen_chibi(None, "door", "base", False)
         if xpos or ypos:
-            $ genie_chibi.move(xpos, ypos, speed, reduce)
+            $ genie_chibi.move((xpos, ypos), speed, reduce)
     elif action == "leave":
         $ genie_chibi.show()
-        $ genie_chibi.move("door", "base", speed, reduce)
+        $ genie_chibi.move(("door", "base"), speed, reduce)
         call play_sound("door")
         $ genie_chibi.hide()
         with d3
         pause .5
     elif path:
         $ genie_chibi.show()
-        $ genie_chibi.path_move(path, speed)
+        $ genie_chibi.move(path, speed, reduce)
     else:
         $ genie_chibi.show()
-        $ genie_chibi.move(xpos, ypos, speed, reduce)
+        $ genie_chibi.move((xpos, ypos), speed, reduce)
         $ genie_chibi.do()
 
     return

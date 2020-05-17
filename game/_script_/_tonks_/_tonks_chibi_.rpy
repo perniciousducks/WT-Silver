@@ -31,20 +31,20 @@ label ton_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=
         call play_sound("door")
         call ton_chibi(None, "door", "base", False)
         if xpos or ypos:
-            $ tonks_chibi.move(xpos, ypos, speed, reduce)
+            $ tonks_chibi.move((xpos, ypos), speed, reduce)
     elif action == "leave":
         $ tonks_chibi.show()
-        $ tonks_chibi.move("door", "base", speed, reduce)
+        $ tonks_chibi.move(("door", "base"), speed, reduce)
         call play_sound("door")
         $ tonks_chibi.hide()
         with d3
         pause .5
     elif path:
         $ tonks_chibi.show()
-        $ tonks_chibi.path_move(path, speed)
+        $ tonks_chibi.move(path, speed, reduce)
     else:
         $ tonks_chibi.show()
-        $ tonks_chibi.move(xpos, ypos, speed, reduce)
+        $ tonks_chibi.move((xpos, ypos), speed, reduce)
 
     return
 

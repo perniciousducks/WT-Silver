@@ -16,7 +16,7 @@ label sus_chibi(action=None, xpos=None, ypos=None, flip=False):
     elif action == "reset":
         $ susan_chibi.do(None)
         return
-    
+
     $ susan_chibi.do(action)
 
     return
@@ -31,20 +31,20 @@ label sus_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=
         call play_sound("door")
         call sus_chibi(None, "door", "base", False)
         if xpos or ypos:
-            $ susan_chibi.move(xpos, ypos, speed, reduce)
+            $ susan_chibi.move((xpos, ypos), speed, reduce)
     elif action == "leave":
         $ susan_chibi.show()
-        $ susan_chibi.move("door", "base", speed, reduce)
+        $ susan_chibi.move(("door", "base"), speed, reduce)
         call play_sound("door")
         $ susan_chibi.hide()
         with d3
         pause .5
     elif path:
         $ susan_chibi.show()
-        $ susan_chibi.path_move(path, speed)
+        $ susan_chibi.move(path, speed, reduce)
     else:
         $ susan_chibi.show()
-        $ susan_chibi.move(xpos, ypos, speed, reduce)
+        $ susan_chibi.move((xpos, ypos), speed, reduce)
     return
 
 # Chibi definition
@@ -57,13 +57,13 @@ init python:
         chibi["base"] = chibi_image
 
         # Determine clothing state
-        
+
         if susan_wear_bottom or susan_wear_stockings:
             if chibi.action == "walk":
                 chibi["shoes"] = "ch_sus walk_shoes"
             else:
                 chibi["shoes"] = "sb_walk_01_shoes.png"
-        
+
         if susan_wear_top:
             chibi["top"] = "sb_cloth_shirt_h.png"
 

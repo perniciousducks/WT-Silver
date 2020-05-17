@@ -32,20 +32,38 @@ label chibi_emote(emote, name):
         get_chibi_object(name).emote(emote)
     return
 
+default chibi_moves = {}
+
 init -1 python:
     def update_chibi(name):
-        # Update the chibi object for a given character
+        """Update the chibi object for a given character."""
         get_chibi_object(name).update()
 
     def get_chibi_object(name):
-        # Get a chibi object by its character's name
+        """Get a chibi object by its character's name."""
         name = "{}_chibi".format(name)
         c = getattr(renpy.store, name, None)
         if c and isinstance(c, Chibi):
             return c
         else:
-            # Fail early, returning None is no good
             raise Exception("Chibi object not found. {}".format(name))
+
+    def complete_chibi_moves(**elapsed):
+        """Resume old chibi action after (multiple) reduced move calls."""
+        q = []
+        for chibi, (t, a) in chibi_moves.iteritems():
+            et = elapsed.get(chibi, 0)
+            t -= et
+            q.append((chibi, t, a))
+
+        q.sort(key=lambda x: x[1]) # Sort by time
+        pt = 0
+        for chibi, t, a in q:
+            renpy.pause(t - pt)
+            pt += t
+            get_chibi_object(chibi).do(a)
+
+        chibi_moves.clear()
 
     class Chibi(object):
         """ Manages a character's chibi.
@@ -204,8 +222,14 @@ init -1 python:
 
             if reduce:
                 # Reduce the pause and don't do the old action
-                if not isinstance(reduce, bool):
-                    time -= float(reduce)
+                if reduce == "all":
+                    reduce = time
+                elif isinstance(reduce, bool):
+                    reduce = 0
+
+                time -= float(reduce)
+                chibi_moves[self.tag] = (reduce, old_action)
+
                 if time > 0:
                     renpy.pause(time)
             else:

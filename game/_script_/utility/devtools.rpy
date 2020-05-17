@@ -138,3 +138,12 @@ screen placeholder():
 
     add Placeholder("bg")
     add Placeholder("girl")
+
+
+init 2000 python hide:
+    def set_screen_layer(layer, *screens):
+        for scr_name in screens:
+            for _, scr in renpy.display.screen.get_all_screen_variants(scr_name):
+                scr.layer = layer
+
+    set_screen_layer("interface", "_performance", "_image_load_log")

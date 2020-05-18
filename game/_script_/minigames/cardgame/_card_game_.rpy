@@ -128,8 +128,6 @@ init python:
                     renpy.hide_screen("card_end_message")
                     renpy.hide_screen("card_battle")
                     renpy.transition(dissolve)
-                    # Replay weather SFX
-                    renpy.call("weather_sound")
                     return response_card
 
                 enemy_turn(enemy_deck, shown_backside, reverse, dobelt_number)
@@ -147,8 +145,6 @@ init python:
                     renpy.hide_screen("card_end_message")
                     renpy.hide_screen("card_battle")
                     renpy.transition(dissolve)
-                    # Replay weather SFX
-                    renpy.call("weather_sound")
                     return response_card
                 return "AfterEnemy"
             else:
@@ -401,4 +397,5 @@ screen rules_display(game_rules_list):
 
 label start_duel(opppent_deck, after_enemy = None, rules = None, duel_player_deck = None):
     $ duel_response = start_duel(opppent_deck, after_enemy, rules, duel_player_deck)
+    call weather_sound
     return

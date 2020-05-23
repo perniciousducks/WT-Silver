@@ -1,13 +1,15 @@
 
-
 ### Quests ###
 
 # Add any event triggers to this list.
 # Only one event can play for each day/night (this might change.)
 # Add date specific events at the start of the list (create the date if it's not there.)
 
-
 label quests:
+
+    #
+    # DAY-BASED EVENTS
+    #
 
     if day >= 1:
         if daytime:
@@ -56,7 +58,7 @@ label quests:
     if day >= 6:
         if daytime:
             if hg_event_pause == 0 and ss_he.hermione_E1 and not hermione_intro.E2_complete:
-                # Second visit from Hermione. Says she sent a letter to the Minestry.
+                # Second visit from Hermione. Says she sent a letter to the Ministry.
                 jump hermione_intro_E2
 
     if day >= 7:
@@ -105,7 +107,7 @@ label quests:
     if day >= 13:
         if daytime:
             if hg_event_pause == 0 and hermione_intro.E5_complete and ss_he.tonks_E1 and nt_he.hermione_E1 and not hermione_intro.E6_complete:
-                # Hermione wants to buy favors. Favors unlocked!
+                # Hermione wants to buy favours. Favours unlocked!
                 jump hermione_intro_E6
 
     if day >= 16:
@@ -117,7 +119,10 @@ label quests:
         if not deck_unlocked:
             $ letter_deck.send_letter()
 
-    # Cardgame
+    #
+    # CARDGAME - EVENTS
+    #
+
     if day >= twins_cards_delay:
         if deck_unlocked and twins_first_win and not twins_cards_stocked:
             $ letter_cards_store.send_letter()
@@ -125,58 +130,84 @@ label quests:
     if geniecard_level < 2 and snape_third_win and her_third_win and twins_second_win:
         $ letter_cardgame_t2.send_letter()
 
+    #
+    # CHO CHANG - EVENTS
+    #
 
-    # Cho events not triggered by a date.
     if cc_event_pause == 0:
         if daytime:
 
             if hufflepuff_match == "start":
                 $ hufflepuff_match = "return" # Triggers the return during the evening.
                 jump hufflepuff_match
-            if slytherin_match == "start":
+            elif slytherin_match == "start":
                 $ slytherin_match = "return"
                 jump slytherin_match
+            #elif gryffindor_match == "start":
+                #$ gryffindor_match = "return"
+                #jump gryffindor_match
 
+            # Lee Jordan gets knocked out cold
+            if cho_quid.E1_complete and cho_quid.E2_complete and not cho_quid.E3_complete:
+                jump cho_quid_E3
         else:
+            # Introduction
             if cho_intro.E1_complete and not cho_intro.E2_complete:
                 jump cho_intro_E2
 
+            # Quidditch training matches
             if cho_quid.in_progress:
                 $ cho_quid.in_progress = False
                 if cho_tier == 1: # Hufflepuff
-                    jump quidditch_match_return
-                else: # Slytherin
+                    jump cc_ht_return
+                elif cho_tier == 2: # Slytherin
                     jump cc_st_return
-
+                #elif cho_tier == 3: # Gryffindor
+                    #jump cc_gt_return
 
             if hufflepuff_match == "return":
                 $ hufflepuff_match = "end"
                 jump hufflepuff_match_return
-            if slytherin_match == "return":
+            elif slytherin_match == "return":
                 $ slytherin_match = "completed"
                 jump slytherin_match_return
+            #elif gryffindor_match == "return":
+                #$ gryffindor_match = "completed"
+                #jump gryffindor_match_return
 
-    # Susan events not triggered by a date.
+    #
+    # SUSAN BONES - EVENTS
+    #
+
     if sb_event_pause == 0:
         if daytime:
+            # Introduction
             if nt_he.susan_E1 and not susan_intro.E1_complete:
                 jump susan_intro_E1
+
+    #
+    # ASTORIA GREENGRASS - EVENTS
+    #
 
     # Astoria events not triggered by a date.
     if ag_event_pause == 0:
         if daytime:
+            # Introduction
             if astoria_intro.E2_hermione and astoria_intro.E2_snape and not astoria_intro.E3_complete:
                 jump astoria_intro_E3
             if nt_he.astoria_E1 and not astoria_intro.E4_complete:
                 jump astoria_intro_E4
         else:
+            # Introduction
             if susan_intro.E1_complete and not astoria_intro.E1_complete:
                 jump astoria_intro_E1
 
-    # Snape events not triggered by a date.
+    #
+    # SEVERUS SNAPE - EVENTS
+    #
+
     if ss_event_pause == 0:
         if daytime:
-
             # Ending events
             if her_whoring >= 15 and ball_quest.E1_complete and not ball_quest.E2_complete:
                 # Snape complains that appointing Hermione in the Autumn Ball committee was a mistake.
@@ -186,6 +217,10 @@ label quests:
             # Ending events
             if ball_quest.started and not ball_quest.completed:
                 jump ball_ending_E1
+
+    #
+    # NYMPHADORA TONKS - EVENTS
+    #
 
     # Tonks events not triggered by a date.
     if nt_event_pause == 0:
@@ -200,7 +235,10 @@ label quests:
         else:
             pass
 
-    # Hermione events not triggered by a date.
+    #
+    # HERMIONE GRANGER - EVENTS
+    #
+
     if hg_event_pause == 0:
         if daytime:
             if cc_st.return_E1 and not cc_st.hermione_E1:
@@ -223,7 +261,10 @@ label quests:
                 $ hg_event_pause += 2
                 jump collar_scene
 
-    # Luna events not triggered by a date.
+    #
+    # LUNA LOVEGOOD - EVENTS
+    #
+
     if ll_event_pause == 0:
         if daytime:
 
@@ -234,7 +275,7 @@ label quests:
             if luna_reverted and luna_reverted_intro:
                 jump luna_reverted_greeting_1
 
-            # Unlock reverted favors.
+            # Unlock reverted favours.
             if luna_reverted:
 
                 # Masturbate
@@ -261,7 +302,7 @@ label quests:
             if luna_known and not luna_unlocked:
                 jump hat_intro_3
 
-            # Unlock reverted favors.
+            # Unlock reverted favours.
             if luna_reverted:
 
                 # Sex
@@ -273,8 +314,6 @@ label quests:
                     $ ll_event_pause += renpy.random.randint(2, 4)
 
                     $ ll_pf_sex.start()
-
-
 
     # All quest events should somehow end with a jump to the main room day/night cycle
     # If no quest event is triggered, resume normally from the main room
@@ -307,7 +346,7 @@ default hermione_intro = quest_class(
     E3_complete = False, # 3rd visit, did she fail a test?
     E4_complete = False, # 4th visit, she's crying. Failed a test.
     E5_complete = False, # 5th visit, asks to be tutored, summon unlocked.
-    E6_complete = False, # 6th visit, asks to buy favors, favors unlocked.
+    E6_complete = False, # 6th visit, asks to buy favours, favours unlocked.
 )
 
 # Tonks
@@ -326,8 +365,9 @@ default cho_intro = quest_class(
 )
 
 default cho_quid = quest_class(
-    E1_complete = False, #
-    E2_complete = False, #
+    E1_complete = False, # Intro 1
+    E2_complete = False, # Intro 2
+    E3_complete = False, # Lee Jordan gets hit by a bludger
 
     position    = "",
     commentator = None,
@@ -338,7 +378,7 @@ default cho_quid = quest_class(
     gloves        = True,
 
     lock_training = False,
-    lock_practice = False,
+    lock_practice = True,
     lock_tactic   = False,
     in_progress   = False,
 
@@ -427,7 +467,7 @@ default ss_he = quest_class(
 
 # Tonks
 default nt_he = quest_class(
-    hermione_E1 = False, # Help with/unlock Hermione's favors.
+    hermione_E1 = False, # Help with/unlock Hermione's favours.
     susan_E1    = False, # Tonks is worried about Susan.
     astoria_E1  = False, # Tonks suggests to teach Astoria the Imperius curse.
 

@@ -468,6 +468,13 @@ label slytherin_match:
     with d3
 
     call ton_main("Just ignore them sweetie, you're doing great.", "base", "happyCl", "base", "mid")
+
+    if ton_friendship > sna_friendship:
+        m "What she said."
+    elif ton_friendship == sna_friendship:
+        m "What they said."
+    else:
+        m "What he said."
     call her_main("...", "annoyed", "narrow", "angry", "down")
     call her_main("Fine...", "soft", "base", "base", "R")
 

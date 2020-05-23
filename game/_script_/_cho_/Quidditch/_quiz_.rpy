@@ -254,7 +254,7 @@ label cho_quiz:
 
     $ renpy.music.set_volume(1.0)
 
-    call music_block
+    call play_music("cho")
 
     call weather_sound
 

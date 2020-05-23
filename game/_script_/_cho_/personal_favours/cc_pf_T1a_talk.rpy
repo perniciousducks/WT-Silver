@@ -40,8 +40,9 @@ label cc_pf_talk_T1_intro_E1:
     m "First, I'd like you to come a bit closer."
     call cho_main("Very well, [cho_genie_name]...", "soft", "base", "base", "R")
 
+    call cho_walk("desk", "base")
     call play_music("cho")
-    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
+    call cho_main(face="happy", xpos="mid", ypos="base", trans=d3)
     call ctc
 
     call cho_main("What would you like to talk about?", "soft", "base", "base", "mid")
@@ -269,8 +270,9 @@ label cc_pf_talk_T1_intro_E2:
     g9 "Get closer, [cho_name]..."
     call cho_main("...", "annoyed", "base", "base", "down")
 
+    call cho_walk("desk", "base")
     call play_music("cho")
-    call cho_main("", "annoyed", "narrow", "angry", "mid", xpos="mid", ypos="base", trans=fade)
+    call cho_main("", "annoyed", "narrow", "angry", "mid", xpos="mid", ypos="base", trans=d3)
     pause .5
 
     call cho_main("Another talk, Professor?", "soft", "narrow", "angry", "mid")
@@ -423,7 +425,7 @@ label cc_pf_talk_T1_intro_E2:
     stop music fadeout 1.0
 
     $ cho_requests_unlocked = True
-    call popup("You can now buy \"Public Requests\" from Cho! (They are optional to her training.)", "Congratulations!", "interface/icons/head/head_cho_1.png")
+    call popup("You can now buy \"Public Requests\" from Cho!", "Congratulations!", "interface/icons/head/head_cho_1.png")
 
     jump end_cho_talk_event
 

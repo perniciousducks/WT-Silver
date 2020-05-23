@@ -196,6 +196,10 @@ default choq_cloth_schoolskirt3 = DollCloth("cho", ("bottoms", "skirts"), "botto
 
 default cho_outfit_quidditch = DollOutfit([choq_cloth_topsweater1, choq_cloth_pantslong2, choq_cloth_robequidditch1, choq_cloth_glovesquidditch1, cho_bra_basic1, cho_panties_basic1])
 
+default cho_outfit_quidditch_hufflepuff = DollOutfit([choq_cloth_topsweater1, choq_cloth_schoolskirt3, choq_cloth_robequidditch1, choq_cloth_glovesquidditch1, cho_bra_basic1, cho_panties_basic1])
+default cho_outfit_quidditch_slytherin = DollOutfit([choq_cloth_topsweater1, choq_cloth_pantslong2, choq_cloth_robequidditch1, choq_cloth_glovesquidditch1, cho_bra_basic1, cho_panties_basic1])
+default cho_outfit_quidditch_gryffindor = DollOutfit([choq_cloth_topsweater1, choq_cloth_schoolskirt3, choq_cloth_robequidditch1, choq_cloth_glovesquidditch1, cho_bra_basic1, cho_panties_basic1])
+
 ################
 ## Pubic Hair ##
 ################

@@ -68,12 +68,13 @@ label summon_cho:
             if cho_mood > 0:
                 m "Ready to get back to training?"
                 if cho_mood >= 5:
-                    call cho_main("No.{w} And I don't want to hear of it right now, Sir.",face="angry")
+                    call cho_main("No.{w=0.5} And I don't want to hear of it right now, Sir.",face="angry")
                 else:
                     call cho_main("I'm sorry, [cho_genie_name]. But I don't feel like training today.", "soft", "base", "worried", "down")
                 call nar(">Cho is still upset with you.")
                 jump cho_requests
-            jump cho_training_menu
+
+            jump cho_training
 
         "{color=[menu_disabled]}-Training-{/color}" (icon="interface/icons/small/quidditch.png") if cho_tier < 3 and cho_quid.lock_training:
             m "(She's as ready as one can be.)"

@@ -7,13 +7,19 @@ label cc_ht_start:
     call cho_main("", "base", "base", "base", "mid", xpos="right", ypos="base", trans=fade)
 
     # First Hufflepuff match.
-    m "So, when will those Quidditch matches take place?"
-    call cho_main("We could arrange one for today. Just for practice, against Hufflepuff.", "open", "base", "base", "R")
-    m "Really? Just like that?"
-    call cho_main("Why yes. The Hufflepuff team wouldn't give up a chance to play against us for training.", "soft", "base", "raised", "mid")
-    call cho_main("They'd welcome every opportunity to test us and study our tactics...", "open", "narrow", "angry", "mid")
-    call cho_main("All I need to do is give their team captain a heads up during classes.", "base", "base", "base", "mid")
+    m "Ready to show off your panties to those badgering badgers?"
+
+    if weather in ("blizzard", "storm", "snow", "rain"):
+        cho "In this weather? But I'll freeze my legs off if I'm to wear a skirt..."
+        cho "I'd rather not catch a cold during practice..."
+        m "Alright."
+
+        jump cho_training.choices
+
+    cho "Ready as I'll ever be."
     m "Great. Get your team ready cause you are going to play today."
+    call cho_main("I'll give their team captain a heads up during classes then.", "base", "base", "base", "mid")
+    m "Good, let me know how it went once practice finishes."
     call cho_main("I will, [cho_genie_name]. Wish me luck.", "smile", "base", "base", "mid")
 
     # Cho leaves.
@@ -89,51 +95,9 @@ label cc_ht_return:
     call cho_walk(action="leave")
 
     $ cho.equip(cho_outfit_last) # Equip last worn clothes
+    $ cho_quid.hufflepuff_training = True # Mark as complete
 
     jump end_cho_event
-
-
-### Quidditch Commentator Quests ###
-
-label cc_ht_hermione_commentator:
-
-    call her_main(xpos="mid", ypos="base", trans=fade)
-    m "[hermione_name], how much do you know about Quidditch?"
-    call her_main("[genie_name], I mean, I've taken flying lessons... they're mandatory.", "open", "base", "base", "R")
-    m "Ah, okay... and here I was hoping that you'd be able to commentate this years quidditch games..."
-    call her_main("Me, wasting time on something as stupid as-", "base", "closed", "base", "mid")
-    call her_main("Wait...{w=0.3} What did you say?", "open", "squint", "base", "mid")
-    m "I was going to ask you if you'd commentate this years quidditch games..."
-    call her_main("You want me... to commentate this years wizarding school cup?", "open", "wide", "base", "mid")
-    call her_main("I'd be honoured, sir!", "scream", "closed", "base", "mid", trans=hpunch)
-    call her_main("Quidditch has always been one of my passions, to be able to commentate it...", "open", "base", "angry", "mid")
-    call her_main("Not to mention getting to make all the announcements...", "smile", "base", "base", "R")
-    call her_main("The speeches...", "grin", "happy", "base", "mid")
-
-    if her_whoring < 18:
-        call her_main("The paper...", "soft", "narrow", "annoyed", "up")
-        call her_main("The {heart}{b}preparation{/b}{heart}...", "open_tongue", "narrow", "base", "up")
-    else:
-        call her_main("Everybody will be focused on me...", "soft", "narrow", "annoyed", "up")
-
-    call her_main("I accept!", "scream", "closed", "angry", "mid", trans=hpunch)
-    g4 "I thought you just said you didn't-"
-    call her_main("Cho will be so mad!", "crooked_smile", "happy", "base", "mid")
-    m "I see..."
-    g9 "Congratulations then, [hermione_name]! You got the job."
-    call her_main("Ah!!! I better start learning-...{w=0.8} I mean, preparing my opening speech!", "open", "wide", "base", "mid", trans=hpunch)
-
-    call her_walk(action="leave", speed=1.5)
-
-    call bld
-    m "Aaaa-nd, she's gone..."
-    m "I better tell Cho about the...{w=0.8} news."
-
-    $ hermione_busy = True
-    $ cho_quid.commentator = "hermione"
-    $ cc_ht.hermione_commentator = True
-
-    jump main_room
 
 ### Cho Talk ###
 
@@ -151,7 +115,7 @@ label cc_ht_talk:
         g9 "I've got great news for you! I found us a new commentator!"
         call cho_main("Is it Hermione?", "soft", "narrow", "base", "mid")
         g9 "Yes! Very good guess!"
-        call cho_main("It wasn't a guess, [cho_genie_name]. We've discussed her already.", "annoyed", "narrow", "angry", "mid")
+        call cho_main("It wasn't a guess, [cho_genie_name]. We've discussed this already.", "annoyed", "narrow", "angry", "mid")
         m "Oh, sure..."
         call cho_main("But I'm surprised she even took up the task...", "annoyed", "base", "base", "R")
         g9 "Right away. No questions asked."
@@ -165,6 +129,22 @@ label cc_ht_talk:
 
         $ cho_quid.lock_training = True # Removes training menu.
         $ hufflepuff_match = "ready" # Able to start main match.
+
+        hide screen cho_main
+        show screen blkfade
+        with d3
+
+        $ cho.equip(cho_outfit_last)
+
+        call cho_chibi("stand", "mid", "base")
+        call gen_chibi("sit_behind_desk")
+
+        call reset_menu_position
+
+        hide screen blkfade
+        call cho_main(face="happy", xpos="base", ypos="base", trans=fade)
+
+        jump cho_requests
     elif not cc_pf_talk.is_tier_complete(): # Has NOT completed "Talk to me" favour yet.
         # TODO: Posing
         m "Have any ideas on how to beat those huffers?"
@@ -172,6 +152,10 @@ label cc_ht_talk:
         m "Oh, yeah..."
         m "(How does she expect me to help her without knowing anything about the opponents?)"
         m "(Maybe I could get her to talk to me and gain more information through favours...)"
+    elif not cho_quid.hufflepuff_prepared:
+        m "Are you ready for the big win?"
+        cho "Have you actually found out a tactic we could use?"
+        m "(Oh right... I didn't discuss our new tactic with her yet.)"
     elif cho_whoring < 3: # Has Cho enough confidence?
         # TODO: Posing
         m "So, how about those tactics?"

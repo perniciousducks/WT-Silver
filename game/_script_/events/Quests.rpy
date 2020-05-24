@@ -148,7 +148,7 @@ label quests:
                 #jump gryffindor_match
 
             # Lee Jordan gets knocked out cold
-            if cho_quid.E1_complete and cho_quid.E2_complete and not cho_quid.E3_complete:
+            if cho_quid.hufflepuff_training and not cho_quid.E3_complete:
                 jump cho_quid_E3
         else:
             # Introduction
@@ -158,11 +158,14 @@ label quests:
             # Quidditch training matches
             if cho_quid.in_progress:
                 $ cho_quid.in_progress = False
-                if cho_tier == 1: # Hufflepuff
+                if cho_tier == 1:
+                    # Hufflepuff
                     jump cc_ht_return
-                elif cho_tier == 2: # Slytherin
+                elif cho_tier == 2:
+                    # Slytherin
                     jump cc_st_return
-                #elif cho_tier == 3: # Gryffindor
+                #elif cho_tier == 3:
+                    # Gryffindor
                     #jump cc_gt_return
 
             if hufflepuff_match == "return":
@@ -368,6 +371,12 @@ default cho_quid = quest_class(
     E1_complete = False, # Intro 1
     E2_complete = False, # Intro 2
     E3_complete = False, # Lee Jordan gets hit by a bludger
+    E4_complete = False, # Genie asks Hermione to commentate
+
+    hufflepuff_prepared = False, # Has found out the tactic for the practice match.
+    hufflepuff_training = False, # Hufflepuff practice match
+
+    hermione_ready = False, # Has asked Hermione to commentate?
 
     position    = "",
     commentator = None,
@@ -397,13 +406,12 @@ default cho_quiz = quest_class(
     complete        = False,
 )
 
+# Hufflepuff practice
 default cc_ht = quest_class(
     match_counter = 0,
     win_counter   = 0,
 
     return_E1 = False, # They now need a commentator.
-    return_E2 = False, # 1st match won.
-    return_E3 = False, # 2st match won.
 
     hermione_commentator = False, # You ask Hermione to be the new commentator.
 )

@@ -476,8 +476,8 @@ label hermione_talk:
             # After talking to Snape.
             jump cho_intro_E3
 
-        "-Ask Hermione to commentate the game-" (icon="interface/icons/small/quidditch.png") if cho_quid.E3_complete and not cc_ht.hermione_commentator:
-            jump cc_ht_hermione_commentator
+        "-Ask Hermione to commentate the game-" (icon="interface/icons/small/quidditch.png") if cho_quid.E3_complete and not cho_quid.E4_complete:
+            jump cho_quid_E4
         "-Ask Hermione to commentate the game again...-\n{size=-5}again...{/size}" (icon="interface/icons/small/quidditch.png") if cc_st.hermione_E1 and not cc_st.hermione_blackmail:
             jump cc_st_hermione_blackmail
 

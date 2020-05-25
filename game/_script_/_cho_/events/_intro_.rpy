@@ -336,10 +336,10 @@ label cho_intro_E1:
         call her_main("Professor!", "scream", "base", "angry", "mid", trans=hpunch)
         g4 "*Grunt* {size=-4}Huh, what?{/size}"
         call her_main("I always have a valid reason for coming here, don't I?", "base", "base", "base", "mid")
-        m "Of course you-{w=0.8}{nw}"
+        m "Of course you-"
         call cho_main("Always? So you \"do\" come here often!", "smile", "narrow", "base", "L")
         call her_main("So what...", "angry", "closed", "angry", "mid")
-        m "Ladies, I think it's time to-{w=1.0}{nw}"
+        m "Ladies, I think it's time to-"
         call cho_main("Don't worry about it Sir, I was just about to leave anyway...", "soft", "narrow", "angry", "mid")
         call her_main("...", "annoyed", "narrow", "angry", "R")
 
@@ -371,7 +371,7 @@ label cho_intro_E1:
     call her_main("...", "annoyed", "base", "angry", "mid", xpos="base", ypos="base", flip=False, trans=d3)
     m "..."
     call her_main("You're buying favours from her aren't you?", "soft", "narrow", "base", "mid_soft")
-    m "I'm...{p=0.8}{nw}"
+    m "I'm..."
     call her_main("I knew it!", "angry", "base", "angry", "mid")
     g4 "Now, if you could just listen for a second!"
     call her_main("I don't want to hear it!", "open", "closed", "base", "mid")
@@ -423,7 +423,7 @@ label cho_intro_E2:
     call cho_main("How could you have done this?{p=0.6}Sending this dim-witted Gryffindor tramp after me?", "open", "narrow", "angry", "mid")
     g4 "W-who?"
     call cho_main("Granger!", "scream", "closed", "angry", "mid", trans=hpunch)
-    g4 "Aaa-h!{w=0.5}{nw}" # Girly scream
+    g4 "Aaa-h!" # Girly scream
     call cho_main("Gryffindor's role model student.", "angry", "narrow", "angry", "mid")
     call cho_main("She's out there spreading mean rumours about me!", "open", "narrow", "angry", "R")
     m "How mean are we talking?"
@@ -567,7 +567,7 @@ label ss_he_cho_E1:
             m "So. You want to take on the bet?"
             call sna_main("Of course, I have no doubt Slytherin will win the cup.", "snape_02")
             call sna_main("At least Quidditch will be worth watching now. I can't say no to some good old gambling.", "snape_20")
-            call sna_main("But how will you help Miss Chang in Quidditch? You know nothing about it?", "snape_05")
+            call sna_main("But how will you help Miss Chang in Quidditch? You know nothing about it!", "snape_05")
 
             menu:
                 "\"I'll just read a book about it\"":
@@ -676,7 +676,7 @@ label cho_intro_E3:
         call her_main("And? It's well deserved in my opinion...", "soft", "narrow", "annoyed", "mid")
         m "Well, don't you feel like it's unbefitting of you to publicly talk badly about another student?"
         call her_main("...", "annoyed", "narrow", "base", "down")
-        g9 "Surely that isn't something to expect from Gryffindor's finest.."
+        g9 "Surely that isn't something to expect from Gryffindor's finest..."
         call her_main("Did Cho put you up to this?", "normal", "squint", "base", "mid")
         g4 "..."
         m "(She's onto me!)"

@@ -22,13 +22,7 @@ init python:
             # Inherit zorder from character if needed
             self.zorder = zorder if zorder else self.char.clothes[type][1]
 
-            # Detect folder path
-            for x in (categories[0], categories[1], type):
-                path = "{}/characters/{}/clothes/{}/{}/".format(modpath, name, x, id)
-                if renpy.loadable(path + "0.png"):
-                    self.imagepath = path
-                    break
-
+            self.set_imagepath()
             self.set_layers()
 
             # Add to character wardrobe and unordered list
@@ -38,6 +32,15 @@ init python:
 
             self.rebuild_image()
             self.build_icon()
+
+        def set_imagepath(self):
+            for x in (self.categories[0], self.categories[1], self.type):
+                path = "{}/characters/{}/clothes/{}/{}/".format(self.modpath, self.name, x, self.id)
+                if renpy.loadable(path + "0.png"):
+                    self.imagepath = path
+                    break
+            if not self.imagepath:
+                raise Exception("Path for cloth not found")
 
         def set_layers(self):
             for x in self.layers_special:

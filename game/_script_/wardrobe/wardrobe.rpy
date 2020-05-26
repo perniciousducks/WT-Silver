@@ -89,6 +89,10 @@ label wardrobe(char_label):
         $ renpy.play('sounds/click3.mp3')
         $ renpy.call_in_new_context("studio", char_label)
     elif _return[0] == "equip":
+        # Lipstick Fix - Synchronize image with current mouth after equipping.
+        if isinstance(_return[1], DollLipstick):
+            $ _return[1].rebuild_image()
+
         if isinstance(_return[1], DollCloth) and char_active.is_blacklisted(_return[1].type):
             $ renpy.play('sounds/fail.mp3')
         else:

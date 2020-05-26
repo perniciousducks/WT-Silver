@@ -429,6 +429,9 @@ default her_makeup1_freckles = DollCloth("hermione", ("makeup", "slot2"), "makeu
 # Torso
 default her_makeup2_freckles = DollCloth("hermione", ("makeup", "slot3"), "makeup2", "freckles3", [[185, 124, 81, 255]], unlocked=True)
 
+# Lipstick (DollLipstick)
+default her_makeup4_lipstick = DollLipstick("hermione", ("makeup", "slot5"), "makeup4", "lipstick", [[185, 124, 81, 255]], unlocked=True)
+
 ################
 ## Pubic Hair ##
 ################

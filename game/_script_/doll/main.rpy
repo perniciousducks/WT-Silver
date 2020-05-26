@@ -220,6 +220,11 @@ init python:
             """Takes keyword argument(s) with the string name of expression file(s)."""
             if self.face.set_face(**kwargs):
                 self.body.rebuild_image()
+
+                # Rebuild lipstick
+                lipstick = self.clothes.get("makeup4", [None, 1, True])[0]
+                if isinstance(lipstick, DollLipstick):
+                    lipstick.rebuild_image()
                 self.rebuild_image()
 
         def get_face(self):

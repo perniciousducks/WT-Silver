@@ -53,12 +53,13 @@ init python:
             self.last_pos = self.pos
             self.last_rotate = self.rotate
 
-            renpy.pause(p)
-            self.redraw(0)
-
             if self.last_type == 0:
-                renpy.with_statement(d3)
+                renpy.pause(p - 0.1)
+                self.redraw(0)
+                renpy.with_statement(d1)
             else:
+                renpy.pause(p - 0.1)
+                self.redraw(0)
                 renpy.with_statement(d1)
 
         def set_zoom(self, n):
@@ -98,6 +99,9 @@ init python:
                 renpy.pause(t)
 
         def redraw(self, t):
+            if self.image is None:
+                return
+
             d = renpy.get_registered_image(self.image)
 
             if d is None:
@@ -121,6 +125,9 @@ init python:
             return self.child
 
         def get_pause(self):
+            if self.image is None:
+                return 0
+
             d = renpy.get_registered_image(self.image)
             if isinstance(d, Movie) and renpy.music.is_playing(d.channel):
                 p = renpy.music.get_pos(d.channel)

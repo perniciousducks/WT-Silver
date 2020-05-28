@@ -357,7 +357,7 @@ default hg_pf_blowjob = event_class(title = "Suck it!", start_label = "hg_pf_blo
 
     ],
     icons = [None, None, None, None, None, None], # If a tier doesn't need an icon replace with None
-    iconset = [["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_half"], ["heart_empty", "heart_red"]]
+    iconset = [["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_black"], ["heart_empty", "heart_red"], ["heart_empty", "heart_red"]]
     )
 
 

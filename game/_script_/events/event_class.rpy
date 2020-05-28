@@ -43,6 +43,8 @@ init python:
         """
         Handles and tracks event progression.
 
+        Event labels ending with "_intro" are treated as one-time events. Otherwise the event can be repeated.
+
         `tier` (int): The current tier number, which determines the set of events to run.
         `counter` (int): The number of successfully completed events.
         `points` (int): The number of successfully completed events in the current tier.

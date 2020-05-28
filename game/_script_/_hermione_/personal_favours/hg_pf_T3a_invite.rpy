@@ -425,7 +425,7 @@ label hg_pf_strip_T2_Snape_watch:
 
     show screen bld1
     call sna_main("Good job, you harlot!","snape_22")
-    call her_main(".............", "soft", "happy", "base", "R")
+    call her_main(".............", "soft", "happy", "base", "R", animation=None)
 
     if daytime:
         call sna_main("Well, my class is about to start so I will be leaving now.","snape_22")
@@ -497,13 +497,11 @@ label hg_pf_strip_T2_Snape_masturbate:
             with d3
             pause.2
             call sna_main("I see Miss Granger manages to remain exceptionally stubborn in any situation...","snape_03")
-            call her_main(animation=None)
             call hide_characters
             hide screen bld1
             with d5
 
             call gen_chibi("sit_behind_desk")
-            call her_chibi("dance_pause","on_desk","on_desk")
             call sna_chibi("stand","desk","base")
             with fade
             pause.3

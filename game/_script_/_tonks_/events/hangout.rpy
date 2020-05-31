@@ -38,10 +38,9 @@ label tonks_hangout:
     if astoria_intro.E3_complete and not nt_he.astoria_E1:
         jump nt_he_astoria_E1
 
-    # Cho
-    if cc_st.return_E1 and not cc_st.tonks_E1:
-        jump cc_st_tonks_E1
-
+    # (Quidditch) Ask Tonks for help with Slytherins.
+    if cho_quid.E6_complete and not cho_quid.E8_complete:
+        jump cho_quid_E8
 
     ### General Events ###
 

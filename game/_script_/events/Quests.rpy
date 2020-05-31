@@ -147,9 +147,16 @@ label quests:
                 #$ gryffindor_match = "return"
                 #jump gryffindor_match
 
-            # Lee Jordan gets knocked out cold
-            if cho_quid.hufflepuff_training and not cho_quid.E3_complete:
-                jump cho_quid_E3
+
+            if cho_tier == 1:
+                # Lee Jordan gets knocked out cold
+                if cho_quid.hufflepuff_training and not cho_quid.E3_complete:
+                    jump cho_quid_E3
+
+            elif cho_tier == 2:
+                # Hermione refuses to commentate for Slytherin match.
+                if cho_quid.lock_practice and not cho_quid.slytherin_prepared and not cho_quid.E6_complete:
+                    jump cho_quid_E6
         else:
             # Introduction
             if cho_intro.E1_complete and not cho_intro.E2_complete:
@@ -244,9 +251,6 @@ label quests:
 
     if hg_event_pause == 0:
         if daytime:
-            if cc_st.return_E1 and not cc_st.hermione_E1:
-                jump cc_st_hermione_E1
-
             # Ending events
             if her_whoring >= 15 and not ball_quest.E1_complete:
                 # Hermione wants to be in the Autumn Ball committee.
@@ -372,9 +376,16 @@ default cho_quid = quest_class(
     E2_complete = False, # Intro 2
     E3_complete = False, # Lee Jordan gets hit by a bludger
     E4_complete = False, # Genie asks Hermione to commentate
+    E5_complete = False, # Slytherin - Intro 1
+    E6_complete = False, # Hermione refuses to commentate.
+    E7_complete = False, # Blackmail Hermione.
+    E8_complete = False, # Ask Tonks for help (Hangout)
+    E9_complete = False, # Ask Snape for help (Hangout)(Optional)
 
     hufflepuff_prepared = False, # Has found out the tactic for the practice match.
     hufflepuff_training = False, # Hufflepuff practice match
+    slytherin_prepared = False, # Has found out the tactic for the practice match.
+    slytherin_training = False, # Slytherin practice match
 
     hermione_ready = False, # Has asked Hermione to commentate?
 
@@ -393,7 +404,11 @@ default cho_quid = quest_class(
 
     #hufflepuff_talk = False,
     slytherin_talk = False,
-    gryffindor_talk = False
+    gryffindor_talk = False,
+
+    asked_snape = False,
+    asked_tonks = False,
+    asked_astoria = False
 )
 
 default cho_quiz = quest_class(

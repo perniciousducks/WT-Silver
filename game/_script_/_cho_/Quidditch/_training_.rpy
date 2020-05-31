@@ -20,11 +20,6 @@ label cho_training:
         $ cho_favors_unlocked = True
         jump cho_quid_E2
 
-    # Slytherin Intro.
-    if cho_tier == 2 and not cc_st.intro:
-        $ cho_favors_unlocked = True
-        jump cc_st_intro
-
     # Setup
 
     show screen blkfade

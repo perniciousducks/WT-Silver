@@ -198,8 +198,6 @@ label update_ton_requests:
 
     return
 
-
-
 label tonks_talk:
     menu:
         # TODO: Finish up
@@ -207,13 +205,14 @@ label tonks_talk:
             call clothing_upgrades
             jump tonks_requests
 
-        "-Ask for help with Quidditch-" (icon="interface/icons/small/quidditch.png") if cho_quid.lock_practice and cc_st.match_counter == 1:
+        "-Ask for help with Quidditch-" (icon="interface/icons/small/quidditch.png") if cho_quid.lock_practice and not cho_quid.asked_tonks:
             m "Got a moment?"
             call ton_main("Sure, just make it quick...","open","base","base","mid")
             m "I have a problem with--"
             call ton_main("[ton_genie_name], aren't you forgetting about something?","open","closed","base","mid")
             call ton_main("You should offer a lady a drink, before burdening her with your problems...","base","base","base","mid")
             m "(Is there {b}any{/b} teacher in this school that has no problems with alcohol...?)"
+
             jump tonks_talk
 
         "-Get naked!-" if tonks_strip_happened and (not tonks.is_worn("top") or not tonks.is_worn("bottom") or not tonks.is_worn("robe")):

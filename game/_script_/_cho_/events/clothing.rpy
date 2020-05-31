@@ -10,6 +10,11 @@ label cho_summon_setup:
     if has_cho_panties:
         jump cho_panties_response_T2
 
+    # Slytherin Quidditch Intro.
+    if cho_tier == 2 and not cho_quid.E5_complete:
+        $ cho_favors_unlocked = True
+        jump cho_quid_E5
+
     # Clear Weather.
     if weather == "clear":
 

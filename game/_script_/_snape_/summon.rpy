@@ -35,7 +35,7 @@ label summon_snape:
                     $ ag_event_pause = 2
                     jump astoria_intro_E2_snape
 
-                "-Try solving the Quidditch Quarrel-" (icon="interface/icons/small/quidditch.png") if cho_tier == 2 and cc_st.hermione_E1 and not cc_st.snape_E1:
+                "-Try solving the Quidditch Quarrel-" (icon="interface/icons/small/quidditch.png") if cho_quid.E6_complete and not cho_quid.E9_complete:
                     if daytime:
                         m "I wanted to talk to you about the upcoming Quidditch game."
                         call sna_main("I don't really have time right now...", "snape_05")
@@ -56,7 +56,7 @@ label summon_snape:
                             $ ss_he_counter += 1
                             $ wine_ITEM.number -= 1
 
-                            jump cc_st_snape_E1
+                            jump cho_quid_E9
                         else:
                             call sna_main("I hope you have some wine at least?", "snape_01")
                             m "I hoped you'd bring your own for once."

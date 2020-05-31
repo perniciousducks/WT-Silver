@@ -478,8 +478,9 @@ label hermione_talk:
 
         "-Ask Hermione to commentate the game-" (icon="interface/icons/small/quidditch.png") if cho_quid.E3_complete and not cho_quid.E4_complete:
             jump cho_quid_E4
-        "-Ask Hermione to commentate the game again...-\n{size=-5}again...{/size}" (icon="interface/icons/small/quidditch.png") if cc_st.hermione_E1 and not cc_st.hermione_blackmail:
-            jump cc_st_hermione_blackmail
+
+        "-Ask Hermione to commentate the game again...-\n{size=-5}again...{/size}" (icon="interface/icons/small/quidditch.png") if cho_quid.E6_complete and not cho_quid.E7_complete
+            jump cho_quid_E7
 
         # General.
         "-Address me only as-":

@@ -77,7 +77,13 @@ init python:
 
             # Encode data
             if tofile:
-                path = "{}/game/outfits/{}.png".format(config.basedir, filename)
+                path = "{}/game/outfits/".format(config.basedir)
+                fn = "{}.png".format(filename)
+
+                if not os.path.exists(path):
+                    os.makedirs(path)
+
+                path = path+fn
                 renpy.screenshot(path)
                 img = pygame.image.load(path)
                 img = pygame.transform.smoothscale(img, (1080, 600))

@@ -483,8 +483,11 @@ label cho_quid_E5:
 
 label cho_quid_E6:
     # Hermione refuses to commentate Slytherin match.
+    stop music fadeout 3.0
 
-    call her_chibi(action="enter")
+    pause 1.0
+
+    call her_walk(action="enter")
     call chibi_emote("thought", "hermione")
     pause 2.0
     call chibi_emote("hide", "hermione")
@@ -497,6 +500,9 @@ label cho_quid_E6:
     pause .5
     call her_main("I can't believe her...", "clench", "closed", "angry", "mid", trans=hpunch) # angry
     m "Good day to you too..."
+
+    call play_music("hermione")
+
     call her_main("That bitch has been walking around saying that I quit the commentator job.", "open", "base", "angry", "mid")
     m "Who did?"
     call her_main("Cho Chang.", "soft", "base", "angry", "mid")

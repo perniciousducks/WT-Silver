@@ -68,18 +68,18 @@ label cho_training:
                     $ hufflepuff_match = "intro_done"
 
                     m "I got it!"
-                    cho "Got what?"
-                    m "I know how to get you that win against against those Badgers!"
-                    cho "Really? How?"
+                    call cho_main("Got what?", "soft", "base", "base", "mid")
+                    m "I know how to get you that win against those Badgers!"
+                    call cho_main("Really? How?", "soft", "base", "raised", "mid")
                     m "You told me how, yourself."
                     m "Panties are the key!"
-                    call cho_main("Panties? Why would panties have anything to do with Quidditch?", "soft", "wide", "raised", "mid")
+                    call cho_main("Panties? What does panties have to do with Quidditch?", "soft", "wide", "raised", "mid")
                     m "Everything, girl!{w} For some they are the meaning of life!"
-                    cho "What are you suggesting exactly?"
+                    call cho_main("What are you suggesting exactly?", "clench", "base", "base", "mid", cheeks="blush")
                     m "My plan is that we use Cedric's obsession of panties to distract him during the game."
-                    cho "I don't really see how that would be-"
+                    call cho_main("I don't really see how that would be-", "annoyed", "base", "base", "downR", cheeks="blush")
                     m "You'll have to wear a skirt of course."
-                    cho "A skirt?" #shocked
+                    call cho_main("A skirt?", "clench", "wide", "base", "mid", cheeks="heavy_blush") #shocked
                     g9 "Of course!"
                     g9 "If he's too focused on your panties there's no way he'll catch that snatch!"
                 else:
@@ -87,9 +87,9 @@ label cho_training:
                     m "So about that tactic..."
                     if cho_whoring < 3:
                         # Fail
-                        cho "Got a better plan? One that doesn't involve showing off my panties?"
+                        call cho_main("Got a better plan? One that doesn't involve showing off my panties?", "annoyed", "base", "base", "mid")
                         m "..."
-                        cho "Didn't think so..."
+                        call cho_main("Didn't think so...", "open", "narrow", "raised", "mid")
                         m "(Damn... maybe I need to work on her confidence a bit...)"
                         g9 "(Some more favours should surely do it...)"
 
@@ -98,21 +98,21 @@ label cho_training:
                 if cho_whoring >= 3:
                     $ cho_quid.lock_practice = False
 
-                    cho "..."
-                    cho "You actually think that will work?"
+                    call cho_main("...", "normal", "narrow", "base", "downR", cheeks="blush")
+                    call cho_main("You actually think that will work?", "open", "closed", "angry", "mid", cheeks="blush")
                     m "If what you're telling me about him is true I'm sure of it."
-                    cho "..."
-                    cho "But what if it doesn't?"
-                    cho "I need to win the game to make it to the finals!"
+                    call cho_main("...", "clench", "closed", "base", "mid", cheeks="blush")
+                    call cho_main("But what if it doesn't?", "annoyed", "base", "base", "down", cheeks="blush")
+                    call cho_main("I need to win the game to make it to the finals!", "open", "base", "angry", "mid", cheeks="blush")
                     m "Then let's put this theory into practice..."
-                    cho "You want me to try it out during next practice against them?"
+                    call cho_main("You want me to try it out during next practice against them?", "upset", "base", "raised", "mid", cheeks="blush")
                     m "You do practice matches against the other...{w=0.5} actually, that's a great idea!"
                     m "That way we'll know it works for sure!"
-                    cho "..."
-                    cho "Fine, but I'm not changing any of my other clothes, I'd rather not have anyone else staring at my panties..."
+                    call cho_main("...", "disgust", "base", "base", "down", cheeks="blush")
+                    call cho_main("Fine, but I'm not changing any of my other clothes, I'd rather not have anyone else staring at my panties...", "annoyed", "base", "angry", "mid", cheeks="blush")
                     m "Okay then..."
                     m "Get your broom and Quidditch-gear... and put that skirt on!"
-                    cho "Alright..."
+                    call cho_main("Alright...", "annoyed", "base", "base", "mid", cheeks="blush")
 
                     #Cho returns with the Hufflepuff clothing combination
                     $ cho.equip(cho_outfit_quidditch_hufflepuff)
@@ -132,14 +132,14 @@ label cho_training:
                 else:
                     # Fail
 
-                    cho "I will do nothing of the sort!"
+                    call cho_main("I will do nothing of the sort!", "mad", "base", "angry", "mid")
                     m "Sorry?"
-                    cho "You want me to wear a skirt during quidditch?"
-                    cho "The whole school will be there!"
+                    call cho_main("You want me to wear a skirt during quidditch?", "mad", "narrow", "angry", "mid")
+                    call cho_main("The whole school will be there!", "clench", "wide", "base", "mid")
                     m "Don't focus on them, Cedric is your target!"
-                    cho "But they'll see my panties!"
-                    cho "No, I will not be going through with this plan of yours..."
-                    cho "You better come up with something else!"
+                    call cho_main("But they'll see my panties!", "mad", "base", "base", "down", cheeks="blush")
+                    call cho_main("No, I will not be going through with this plan of yours...", "open", "base", "angry", "mid", cheeks="blush")
+                    call cho_main("You better come up with something else!", "soft", "base", "angry", "mid", cheeks="blush")
 
                     # Cho gets upset and leaves
                     $ cho_mood += 6
@@ -160,11 +160,11 @@ label cho_training:
 
                     m "I got it!"
                     m "I've got the perfect idea on how to beat those snakes!"
-                    cho "..."
+                    call cho_main("...", "normal", "narrow", "raised", "mid")
                     m "Do we say phrasing anymore?"
-                    cho "Just tell me your plan."
+                    call cho_main("Just tell me your plan.", "open", "narrow", "raised", "mid")
                     m "It's all about the ass!"
-                    cho "The ass?" #shocked
+                    call cho_main("The ass?", "upset", "base", "raised", "mid", cheeks="blush") #shocked
                     m "Yes, you told me how those brutes love a good ass spanking, now that's an ass fetish if I ever heard one!"
                     m "So this time we'll have those Slytherins get a good look of your ass!"
                 else:
@@ -172,9 +172,9 @@ label cho_training:
                     m "So about that tactic..."
                     if cho_whoring < 9:
                         # Fail
-                        cho "Got a better plan? One that doesn't involve flaunting my ass to those Slytherins?"
+                        call cho_main("Got a better plan? One that doesn't involve flaunting my ass to those Slytherins?", "annoyed", "base", "base", "mid")
                         m "..."
-                        cho "Didn't think so..."
+                        call cho_main("Didn't think so...", "open", "narrow", "raised", "mid")
                         m "(Damn...)"
                         m "(Looks like she isn't confident enough yet...)"
                         m "(Some more favours should do the trick.)"
@@ -184,17 +184,17 @@ label cho_training:
                 if cho_whoring >= 9:
                     $ cho_quid.lock_practice = False
 
-                    cho "..."
+                    call cho_main("...", "soft", "base", "raised", "mid")
                     m "And yes, before you ask, I'm sure this will ensure the win."
-                    cho "Fine..."
-                    cho "I can't believe I'm saying this..." #disgust
-                    cho "I'll flaunt my ass... to those Slytherins."
+                    call cho_main("Fine...", "upset", "base", "base", "R", cheeks="blush")
+                    call cho_main("I can't believe I'm saying this...", "soft", "happyCl", "base", "mid", cheeks="blush")
+                    call cho_main("I'll flaunt my ass... to those Slytherins.", "clench", "narrow", "base", "mid", cheeks="blush")
                     m "Excellent, then let's discuss some tactics..."
                     m "I'd like you to put on some trousers this time."
                     m "And get rid of your robes, they'll cover it too much."
-                    cho "Get rid of my-" #Shocked
+                    call cho_main("Get rid of my-", "open", "wide", "angry", "mid", cheeks="heavy_blush") #Shocked
                     m "You can put on something else, just something that doesn't cover the goods."
-                    cho "Alright... give me a minute to fetch my gear..."
+                    call cho_main("Alright...{w=0.5} give me a minute to fetch my gear...", "angry", "closed", "base", "mid", cheeks="blush")
 
                     #Cho returns with the Slytherin clothing combination
                     $ cho.equip(cho_outfit_quidditch_slytherin)
@@ -214,15 +214,20 @@ label cho_training:
                 else:
                     # Fail
 
-                    cho "But, they're Slytherins!"
+                    call cho_main("But, they're Slytherins!", "clench", "base", "angry", "mid")
                     m "And?"
-                    cho "You expect me to flaunt my ass to those brutes?"
+                    call cho_main("You expect me to flaunt my ass to those brutes?", "mad", "base", "angry", "mid", cheeks="heavy_blush")
                     m "Are you telling me you don't think it will work?"
-                    cho "Of course it will work, they're dumb as hell."
-                    cho "But I wont be doing... this..."
+                    call cho_main("Of course it will work, they're dumb as hell.", "open", "base", "angry", "R", cheeks="blush")
+                    call cho_main("But everyone will be able to see my butt!", "quiver", "base", "raised", "down")
+                    g4 "That's the point."
+                    call cho_main("But, but, but!", "open", "closed", "worried", "mid")
+                    g9 "That's probably what the crowd will be chanting..."
+                    call cho_main("Teasing Cedric is one thing... but the Slytherins...", "mad", "happyCl", "worried", "down")
+                    call cho_main("I can't see my self doing...{w=0.4} this...", "base", "base", "base", "mid")
                     m "Well, that's your loss I guess..."
-                    cho "..."
-                    cho "If that's all you have then I think I'm done here."
+                    call cho_main("...", "normal", "happyCl", "base", "mid", cheeks="blush")
+                    call cho_main("If that's all you have then I think I'm done here.", "open", "base", "worried", "down", cheeks="blush")
 
                     # Cho gets upset and leaves
                     $ cho_mood += 3
@@ -243,19 +248,19 @@ label cho_training:
                     $ gryffindor_match = "intro_done"
 
                     m "I got it!"
-                    cho "Finally..."
-                    cho "So, what's the plan?"
+                    call cho_main("Finally...", "soft", "base", "raised", "R")
+                    call cho_main("So, what's the plan?", "open", "base", "raised", "mid")
                     m "It's time to get intimate!"
-                    cho "Intimate?"
+                    call cho_main("Intimate?", "upset", "base", "raised", "mid")
                     m "Yes, touchy touchy!"
                 else:
                     # Repeated intro
                     m "So about that tactic..."
                     if cho_whoring < 12:
                         # Fail
-                        cho "Got a better plan? One that doesn't involve me getting felt up?"
+                        call cho_main("Got a better plan? One that doesn't involve me getting felt up?", "annoyed", "base", "base", "mid")
                         m "..."
-                        cho "Didn't think so..."
+                        call cho_main("Didn't think so...", "open", "narrow", "raised", "mid")
                         m "(She doesn't seem fully convinced...)"
                         m "(But after some more favours... Surely she'll be more keen with the idea.)"
 
@@ -264,27 +269,27 @@ label cho_training:
                 if cho_whoring >= 12:
                     $ cho_quid.lock_practice = False
 
-                    cho "And what are you basing this plan on?"
+                    call cho_main("What are you basing this plan of yours on?", "soft", "narrow", "base", "down", cheeks="blush")
 
                     if cc_pr_manipulate_girls.is_complete(): # has completed "Manipulate the girls!" public request?
                         m "Those girls sure are fond of you by now. If you could get close to them they'll surely lose focus on the game."
-                        cho "Although that doesn't solve an important issue..."
+                        call cho_main("Although that doesn't solve an important issue...", "open", "base", "raised", "mid", cheeks="blush")
                     else:
                         m "It's obvious isn't it..."
-                        cho "No?"
+                        call cho_main("No?", "annoyed", "base", "raised", "mid", cheeks="blush")
                         m "Those girls doing naughty things together."
                         m "If you get close to them they'll lose focus on the game!"
-                        cho "..." #worried
-                        cho "And what about the boys?"
+                        call cho_main("...", "normal", "closed", "base", "mid", cheeks="blush") #worried
+                        call cho_main("And what about the boys?", "mad", "base", "raised", "mid", cheeks="blush")
                         m "What about them?"
 
-                    cho "Shouldn't their seeker... Harry, be our priority?" #annoyed
+                    call cho_main("Shouldn't their seeker... Harry, be our priority?", "annoyed", "narrow", "raised", "R") #annoyed
                     m "The same tactic is sure to work for him."
-                    m "I'm sure Hermione will go mental and make him lose focus if you get close to him seeing that they're friend."
-                    cho "Now that's a plan!"
+                    m "I'm sure Hermione will go mental and make him lose focus if you get close to him seeing that they're friends."
+                    call cho_main("Now that's a plan!", "smile", "base", "base", "mid")
                     m "Great, it's settled then!"
                     # TODO: Add clothing writing if any
-                    cho "Let me fetch my gear and you can show me how you want me to fly."
+                    call cho_main("Let me fetch my gear and you can show me how you want me to fly.", "crooked_smile", "base", "base", "mid")
 
                     #Cho returns with the Gryffindor clothing combination
                     $ cho.equip(cho_outfit_quidditch_gryffindor)
@@ -303,15 +308,15 @@ label cho_training:
                 else:
                     # Fail
 
-                    cho "You want me to let them feel me up by their team?"
+                    call cho_main("You want me to let their team feel me up?", "mad", "base", "raised", "mid", cheeks="blush")
                     m "Absolutely!"
                     m "And you should touch them a bit as well while you're at it!"
-                    cho "No way!"
+                    call cho_main("No way!", "soft", "wide", "base", "mid", cheeks="blush")
                     g4 "Why not?"
-                    cho "Teasing them is one thing but touching as well?"
-                    cho "With everyone watching" #blushes but imagining it
+                    call cho_main("Teasing them is one thing but touching as well?", "angry", "base", "base", "mid", cheeks="blush")
+                    call cho_main("With everyone watching.", "horny", "happyCl", "base", "mid", cheeks="heavy_blush") #blushes but imagining it
                     m "..."
-                    cho "No, I wont do it..."
+                    call cho_main("No, I wont do it...", "horny", "base", "base", "downR", cheeks="blush")
                     m "But what if-"
 
                     # Cho gets upset and leaves
@@ -423,9 +428,9 @@ label cho_tactics:
 
             call cho_walk(600, 150+180)
 
-            cho "Is this good?"
+            call cho_main("Is this good?", "open", "base", "raised", "mid", xpos="base", ypos="head")
             m "Hmm... No, that robe is in the way... I can't seem to get a good view from this angle..."
-            cho "Good! Then the crowd shouldn't either!"
+            call cho_main("Good! Then the crowd shouldn't either!", "smile", "base", "base", "down", xpos="base", ypos="head")
             m "Yes, probably..."
             m "How about instead you..."
 
@@ -434,32 +439,32 @@ label cho_tactics:
 
             call cho_walk(600, 150+180)
 
-            cho "How's this?"
+            call cho_main("How's this?", "open", "base", "raised", "mid", xpos="base", ypos="head")
             m "Excellent, I told you getting rid of that coat would do it!"
             m "And those trousers sure emphasise the shape of your-"
 
             # Cho turns towards you
 
-            cho "Good, then it's settled!"
+            call cho_main("Good, then it's settled!", "soft", "base", "base", "down", cheeks="blush", xpos="base", ypos="head")
             m "But I didn't get a proper look yet!"
-            cho "..."
+            call cho_main("...", "clench", "base", "base", "mid", cheeks="blush", xpos="base", ypos="head")
             m "Alright, you can come down then..."
 
             #Cho flies down
             #Black screen
 
             m "We'll test the tactics during the next practice like usual."
-            cho "Do we have to? I'm sure it will work even without trying it."
+            call cho_main("Do we have to? I'm sure it will work even without trying it.", "clench", "base", "raised", "mid", cheeks="blush")
             m "Of course we do! You're the one that was so adamant last time..."
             m "So let's see those results!"
-            cho "Yeah... great, just let me know when..."
+            call cho_main("Yeah... Great, just let me know when...", "normal", "closed", "base", "mid", cheeks="blush")
             g9 "I certainly shall."
             m "But this will do for today, [cho_name]."
 
             if daytime:
-                cho "I'll head back to class then."
+                call cho_main("I'll head back to class then.", "open", "base", "base", "R")
             else:
-                cho "I'll head back to my dorm then."
+                call cho_main("I'll head back to my dorm then.", "open", "base", "base", "R")
 
             g9 "Until next time."
 
@@ -479,7 +484,7 @@ label cho_tactics:
             call cho_walk(600, 150+180)
 
             m "No, this won't do, you're way to far away from me."
-            cho "Then where do you want me?"
+            call cho_main("Then where do you want me?", "annoyed", "base", "raised", "mid", xpos="base", ypos="head")
             m "Let's see..."
 
     elif position == "above":
@@ -488,21 +493,21 @@ label cho_tactics:
         if cho_tier == 1:
             # Hufflepuff
 
-            m "Now move a bit higher."
+            m "Now, start with getting in front of me..."
 
             call cho_walk(550, 200+180)
 
             call cho_main("Like this?", "soft", "base", "base", "downR", xpos="base", ypos="head")
             with hpunch
-            g4 "Higher!"
-            cho "Is this not high enough to see my-"
+            g4 "Yes, and now...{w=0.4} Higher!"
+            call cho_main("Is this not high enough to see my-", "annoyed", "base", "raised", "mid", xpos="base", ypos="head")
             g4 "Fly right above my head!"
             g4 "Show me those panties!"
-            call cho_main("Of course, [cho_genie_name]...", "base", "base", "base", "downR", xpos="base", ypos="head")
+            call cho_main("Of course, [cho_genie_name]...", "base", "base", "base", cheeks="blush", "downR", xpos="base", ypos="head")
 
             call cho_walk(500, 100+180)
 
-            call cho_main("How is this?", "open", "base", "base", "down", xpos="base", ypos="head")
+            call cho_main("How is this?", "soft", "base", "base", "down", cheeks="blush", xpos="base", ypos="head")
 
             # TODO: Panty shot CG?
 
@@ -513,12 +518,12 @@ label cho_tactics:
 
             g4 "Yes, fantastic!"
             g9 "You have very cute panties, girl!"
-            call cho_main("*Uhm*...{w=0.5} Thank you, [cho_genie_name].", "annoyed", "base", "base", "down", xpos="base", ypos="head")
+            call cho_main("*Uhm*...{w=0.5} Thank you, [cho_genie_name].", "annoyed", "base", "base", "down", cheeks="blush", xpos="base", ypos="head")
             m "(I have created the ultimate up-skirt!)"
             m "(Nothing can stop us now...)"
-            cho "Can I come down now?"
+            call cho_main("Can I come down now?", "soft", "base", "base", "downR", xpos="base", ypos="head")
             g9 "Give me another minute."
-            cho "*Tsk*"
+            call cho_main("*Tsk*", "normal", "base", "raised", "L", cheeks="blush", xpos="base", ypos="head")
             m "Okay, you can come down now."
 
             #Cho flies down
@@ -528,26 +533,26 @@ label cho_tactics:
             hide screen cho_main
             with fade
 
-            cho "Enjoyed the view?" #angry/annoyed
+            call cho_main("Enjoyed the view?", "upset", "base", "angry", "mid", cheeks="blush") #angry/annoyed
             m "Very much so."
-            cho "Good!"
-            cho "Then I'm sure Cedric will like it too..."
+            call cho_main("Good!", "smile", "base", "base", "mid")
+            call cho_main("Then I'm sure Cedric will like it too...", "base", "closed", "base", "mid")
             m "Who?"
             m "Oh yeah, that guy!"
             m "Yes, we should definitely try this during your next practice against them."
-            cho "..." #annoyed
+            call cho_main("...", "normal", "base", "raised", "mid") #annoyed
             m "When is that again?"
-            cho "*Sigh* Just let me know when and I'll set one up with their captain."
+            call cho_main("*Sigh* Just let me know when and I'll set one up with their captain.", "open", "narrow", "base", "R")
             m "Excellent."
 
             if daytime:
-                cho "If that is all, I'll head back to class."
+                call cho_main("If that is all, I'll head back to class.", "open", "base", "base", "mid")
                 m "Yes, that shall do for today."
-                call cho_main("Good day then, Sir...", "soft", "narrow", "angry", "mid")
+                call cho_main("Good day then, Sir...", "soft", "narrow", "base", "mid")
             else:
-                cho "If that is all, I'll head back to my dorm."
+                call cho_main("If that is all, I'll head back to my dorm.", "open", "base", "base", "mid")
                 m "Yes, that shall do for today."
-                call cho_main("Good night then, Sir...", "soft", "narrow", "angry", "mid")
+                call cho_main("Good night then, Sir...", "soft", "narrow", "base", "mid")
 
             call cho_walk(action="leave")
 
@@ -563,26 +568,28 @@ label cho_tactics:
         elif cho_tier == 2:
             # Slytherin
 
-            cho "Above you, [cho_genie_name]?"
+            call cho_main("Above you, [cho_genie_name]?", "annoyed", "base", "raised", "mid", xpos="base", ypos="head")
             m "Yes, above..."
-            cho "Okay..."
+            call cho_main("Okay...", "upset", "base", "base", "mid", xpos="base", ypos="head")
 
             call cho_walk(500, 100+180)
 
             m "Hold on, that's a bit too high I think..."
-            cho "You think?" #annoyed
+            call cho_main("You think?", "angry", "base", "raised", "mid", xpos="base", ypos="head") #annoyed
             m "Yeah, how about instead you..."
 
         elif cho_tier == 3:
-            cho "You want me to fly... above you?"
+            #Gryffindor
+
+            call cho_main("You want me to fly... above you?", "clench", "base", "raised", "mid", xpos="base", ypos="head")
             m "You heard what I said..."
-            cho "Okay then..."
+            call cho_main("Okay then...", "upset", "base", "base", "mid", xpos="base", ypos="head")
 
             call cho_walk(500, 100+180)
 
             g4 "Hey, how am I supposed to reach you from up there?"
             m "That's not how you get intimate!"
-            cho "Why did you tell me to fly above you then?"
+            call cho_main("Why did you tell me to fly above you then?", "annoyed", "base", "base", "down", xpos="base", ypos="head")
             m "..."
             m "Sorry, I can't hear you from all the way up there."
             m "I think it might be better if you..."
@@ -593,43 +600,44 @@ label cho_tactics:
         if cho_tier == 1:
             # Hufflepuff
 
-            cho "Close? How would you be able to see my-"
+            call cho_main("Close? How would you be able to see my-", "annoyed", "base", "base", "mid", xpos="base", ypos="head")
             m "Come closer!"
 
             call cho_walk(450, 240+180)
 
             m "Wait a second, I can't see your panties at all from this angle..."
-            cho "No shi-"
+            call cho_main("No shi-", "open", "narrow", "base", "mid", xpos="base", ypos="head")
             m "Let's try this instead..."
 
         elif cho_tier == 2:
             # Slytherin
 
-            cho "Close?"
+            call cho_main("Close?", "annoyed", "base", "base", "mid", xpos="base", ypos="head")
             m "Yes close... did I stutter?"
 
             call cho_walk(450, 240+180)
 
             m "You smell nice..."
-            cho "Yeah, this is not going to work..."
+            call cho_main("Yeah, this is not going to work...", "disgust", "narrow", "base", "mid", xpos="base", ypos="head")
             m "Fine, let's have you..."
 
         elif cho_tier == 3:
             # Gryffindor
 
+            label temp_1:
             m "Come as close to me as you can..."
             call cho_main("Yes, [cho_genie_name].", "soft", "base", "base", "R", xpos="base", ypos="head")
 
             call cho_walk(450, 240+180)
 
-            call cho_main("How's this? Too close?", "soft", "wink", "raised", "mid", xpos="base", ypos="head")
+            call cho_main("How's this? Too close?", "soft", "wink", "raised", "mid", cheeks="blush", xpos="base", ypos="head")
             m "No! It's the perfect distance!"
             m "They should even be able to smell you if you are this close!"
-            call cho_main("I hope not!", "quiver", "closed", "worried", "mid", xpos="base", ypos="head")
+            call cho_main("I hope not!", "quiver", "closed", "worried", "mid", cheeks="blush", xpos="base", ypos="head")
             g9 "Why? You smell lovely, girl!"
-            call cho_main("*Uhm*...{w} Thank you, Sir.", "soft", "base", "worried", "mid", xpos="base", ypos="head")
+            call cho_main("*Uhm*...{w} Thank you, Sir.", "soft", "base", "worried", "mid", cheeks="blush", xpos="base", ypos="head")
 
-            cho "Can I come down now?"
+            call cho_main("Can I come down now?", "soft", "narrow", "base", "mid", cheeks="blush", xpos="base", ypos="head")
             m "Of course."
 
             #Cho flies down
@@ -640,20 +648,20 @@ label cho_tactics:
             with fade
 
             m "You'll definitely distract those girls with this kind of move!"
-            cho "And boys..."
+            call cho_main("And boys...", "open", "base", "raised", "R")
             m "Oh yeah, them to!"
-            cho "Just let me know when to try it out against them."
+            call cho_main("Just let me know when to try it out against them.", "normal", "base", "raised", "mid")
             m "Certainly... Oh, and keep wearing that scent, whatever it is."
-            cho "It's just deodorant..."
+            call cho_main("It's just deodorant...", "clench", "base", "raised", "mid", cheeks="blush")
             m "Yes, that! Keep wearing it!"
             if daytime:
-                cho "If that is all, I'll head back to class."
+                call cho_main("If that is all, I'll head back to class.", "base", "narrow", "base", "R")
                 m "Yes, that shall do for today."
-                call cho_main("Good day then, Sir...", "soft", "narrow", "angry", "mid")
+                call cho_main("Good day then, Sir...", "soft", "narrow", "base", "mid")
             else:
-                cho "If that is all, I'll head back to my dorm."
+                call cho_main("If that is all, I'll head back to my dorm.", "base", "narrow", "base", "R")
                 m "Yes, that shall do for today."
-                call cho_main("Good night then, Sir...", "soft", "narrow", "angry", "mid")
+                call cho_main("Good night then, Sir...", "soft", "narrow", "base", "mid")
 
 
             call cho_walk(action="leave")

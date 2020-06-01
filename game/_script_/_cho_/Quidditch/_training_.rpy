@@ -624,7 +624,6 @@ label cho_tactics:
         elif cho_tier == 3:
             # Gryffindor
 
-            label temp_1:
             m "Come as close to me as you can..."
             call cho_main("Yes, [cho_genie_name].", "soft", "base", "base", "R", xpos="base", ypos="head")
 

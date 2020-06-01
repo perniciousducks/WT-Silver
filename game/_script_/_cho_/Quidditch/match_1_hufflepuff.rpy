@@ -1138,5 +1138,6 @@ label hufflepuff_match_return:
     $ cho_quid.lock_training = False
     $ cho_quid.lock_practice = True
     $ cho_quid.lock_tactic   = True
+    $ cho_quid.hufflepuff_complete = True
 
     jump end_cho_event

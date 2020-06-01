@@ -35,7 +35,7 @@ label summon_snape:
                     $ ag_event_pause = 2
                     jump astoria_intro_E2_snape
 
-                "-Try solving the Quidditch Quarrel-" (icon="interface/icons/small/quidditch.png") if cho_quid.E6_complete and not cho_quid.E9_complete:
+                "-Try solving the Quidditch Quarrel-" (icon="interface/icons/small/quidditch.png") if cho_tier == 2 and cho_quid.E6_complete and not cho_quid.E9_complete:
                     if daytime:
                         m "I wanted to talk to you about the upcoming Quidditch game."
                         call sna_main("I don't really have time right now...", "snape_05")

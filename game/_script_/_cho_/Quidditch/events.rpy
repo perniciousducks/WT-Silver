@@ -425,7 +425,6 @@ label cho_quid_E4:
     m "Aaaa-nd, she's gone..."
     m "I better tell Cho about the...{w=0.8} news."
 
-    $ cho_quid.commentator = "hermione"
     $ cho_quid.E4_complete = True
 
     jump end_hermione_event # This is correct, it's Hermione talking!
@@ -788,7 +787,9 @@ label cho_quid_E7:
     $ cho_busy = True
 
     $ cho_quid.E7_complete = True
-    $ cho_quid.commentator = "hermione"
+
+    if cho_quid.E8_complete: # Has asked Tonks for help already?
+        $ cho_quid.slytherin_prepared = True
 
     # Reset
     if her_tier < 4:
@@ -908,7 +909,7 @@ label cho_quid_E8:
     call ton_main("Well that's unfortunate...","upset","base","sad","L")
     call ton_main("Perhaps you could ask Snape. He should be able to get those lazy gits back on the pitch...","open","base","base","mid")
 
-    if cc_st.snape_E1:
+    if cho_quid.E9_complete:
         m "I already did. He isn't going to help me out..."
         call ton_main("Well that's just like him.","open","base","angry","R")
     else:
@@ -921,9 +922,10 @@ label cho_quid_E8:
     call ton_main("Oh, don't worry...","smile","happyCl","base","mid")
     call ton_main("Perhaps I'll tell you my techniques some other time.","base","base","angry","mid")
 
-    # You tell Tonks about Hermione.
     m "..."
     if not cho_quid.E7_complete:
+        # Has blackmailed Hermione
+
         m "That's not all, though. There's something else I need your help with."
         call ton_main("You can't expect me to fix all of your problems, Genie.","base","base","base","mid")
         m "It's about Hermione's role as a commentator..."
@@ -941,8 +943,9 @@ label cho_quid_E8:
         m "(So it's not just me who thinks she's into Cho!)"
         ton "(She was so cute fumbling over her words...)"
         ton "In any case, I'm sure you'll be able to change her mind."
-
     else:
+        $ cho_quid.slytherin_prepared = True
+
         m "Did you know Hermione wanted to quit her task as a commentator?"
         call ton_main("Did she now? I thought she did well in the Hufflepuff game.","upset","base","raised","mid")
         call ton_main("A bit wooden, but not bad for her first try.","open","base","base","R")
@@ -975,7 +978,6 @@ label cho_quid_E8:
         ">You finish your drinks before calling it a night."
 
     $ tonks_busy = True
-    $ cho_quid.asked_tonks = True
     $ cho_quid.E8_complete = True
 
     if daytime:

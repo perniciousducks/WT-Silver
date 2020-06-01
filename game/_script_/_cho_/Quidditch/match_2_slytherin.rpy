@@ -1824,6 +1824,11 @@ label slytherin_match_return:
 
     $ cho_mood += 9
     $ cho_tier = 3
+    $ cho_favors_unlocked = False
+    $ cho_quid.lock_training = False
+    $ cho_quid.lock_practice = True
+    $ cho_quid.lock_tactic   = True
+    $ cho_quid.slytherin_complete = True
 
     # Reset
     $ tonks.equip(ton_outfit_last)

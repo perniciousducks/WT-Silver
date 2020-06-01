@@ -66,8 +66,8 @@ label cho_quiz:
     call exp_o_meter(fill=confidence_meter, opacity=0.0)
 
     # Intro
-    if not cho_quiz.intro_1:
-        $ cho_quiz.intro_1 = True
+    if not cho_quiz.E1_complete:
+        $ cho_quiz.E1_complete = True
         m "It's time to start our first lesson, Miss Chang."
         call cho_main("Great, where do we begin?", "smile", "base", "base", "mid")
         m "Well, first we're going to have to discuss what you'll do for me in this arrangement of ours..."
@@ -141,7 +141,7 @@ label cho_quiz:
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Ah,{w=0.4} well..."
 
-        "[cho_quid.hint]At the start of the game the ball gets thrown in the air...":
+        "[cho_quiz.hint]At the start of the game the ball gets thrown in the air...":
             $ cho_quiz.correct_answers += 1
 
             m "You start the game by the referee throwing the ball into the air..."
@@ -171,7 +171,7 @@ label cho_quiz:
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Of course!{w=0.4}... and in basketball..."
 
-        "[cho_quid.hint]You may not go out of bounds with the ball...":
+        "[cho_quiz.hint]You may not go out of bounds with the ball...":
             $ cho_quiz.correct_answers += 1
 
             m "You're not allowed outside the bounds whilst holding the ball or you'll have to hand it over to your opponents team..."
@@ -187,7 +187,7 @@ label cho_quiz:
 
     # Question 3
     menu:
-        "[cho_quid.hint]Each player takes a certain position...":
+        "[cho_quiz.hint]Each player takes a certain position...":
             $ cho_quiz.correct_answers += 1
 
             m "Each player takes a certain position."
@@ -235,7 +235,7 @@ label cho_quiz:
             g4 "Well...{w=0.4}"
             m "Fine..."
 
-        "[cho_quid.hint]You score by getting the ball through a hoop...":
+        "[cho_quiz.hint]You score by getting the ball through a hoop...":
             $ cho_quiz.correct_answers += 1
 
             m "The way you score is by getting the ball through a hoop."
@@ -382,8 +382,8 @@ label cho_quiz_checkpoint:
     $ renpy.music.stop("weather")
 
     # Intro
-    if not cho_quiz.intro_2:
-        $ cho_quiz.intro_2 = True
+    if not cho_quiz.E2_complete:
+        $ cho_quiz.E2_complete = True
         call cho_main("You do seem to know some basic things, but do you know anything about the balls?", "open", "narrow", "base", "mid")
         m "I could probably teach you quite a lot..."
         g9 "You should never neglect the balls."
@@ -419,7 +419,7 @@ label cho_quiz_checkpoint:
             m "Of course not..."
             call cho_main("Next question...", "open", "base", "raised", "down")
 
-        "[cho_quid.hint]Snitch":
+        "[cho_quiz.hint]Snitch":
             m "Snitch?"
             $ renpy.block_rollback()
             $ renpy.sound.play( "sounds/gasp.mp3")
@@ -446,7 +446,7 @@ label cho_quiz_checkpoint:
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("Next question...", "open", "base", "raised", "down")
 
-        "[cho_quid.hint]Bludger and Quaffle":
+        "[cho_quiz.hint]Bludger and Quaffle":
             m "Bludger and Quaffle?"
             $ renpy.block_rollback()
             $ confidence_meter += 12
@@ -479,7 +479,7 @@ label cho_quiz_checkpoint:
 
     # Question 3
     menu:
-        "[cho_quid.hint]Three Months":
+        "[cho_quiz.hint]Three Months":
             m "Three months?"
             $ renpy.block_rollback()
             $ confidence_meter += 12
@@ -551,7 +551,7 @@ label cho_quiz_checkpoint:
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("I'm not sure what else to tell you...", "open", "closed", "base", "mid")
 
-        "[cho_quid.hint]I don't know...":
+        "[cho_quiz.hint]I don't know...":
             m "Uh... I don't know..."
             $ renpy.block_rollback()
             $ confidence_meter += 12

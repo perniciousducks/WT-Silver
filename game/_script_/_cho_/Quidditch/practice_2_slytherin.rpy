@@ -45,8 +45,7 @@ label cc_st_start:
     call cho_walk(action="leave")
 
     $ cho_busy = True
-    if cho_quid.commentator == "hermione":
-        $ hermione_busy = True
+    $ hermione_busy = True
 
     $ cho_quid.in_progress = True
 

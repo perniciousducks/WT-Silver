@@ -421,7 +421,7 @@ label book_complete:
     elif book_choice.id == "quidditch_book_1":
         m "Well, that was quite informative...{w} But who in their right mind wants to watch a game for three months... even with basketball I'd struggle a bit at that point."
         m "Hopefully that’s enough information to convince Miss Chang I know what I'm doing...{w} basketball is still better though..."
-        $ cho_quid.hint = "{image=interface/check_True.png} "
+        $ cho_quiz.hint = "{image=interface/check_True.png} "
 
     elif book_choice in book_list.read_books:
         $ speed_reading += 1

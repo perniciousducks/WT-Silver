@@ -5,8 +5,6 @@ label cho_summon_setup:
     $ cho.wear("all")
     $ cho.set_cum(None)
 
-    $ random_number = renpy.random.randint(1, 10)
-
     if has_cho_panties:
         jump cho_panties_response_T2
 

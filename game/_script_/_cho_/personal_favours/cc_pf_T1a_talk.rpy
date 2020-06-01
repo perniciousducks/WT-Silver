@@ -466,7 +466,7 @@ label cc_pf_talk_T1_E3:
     call cho_main("(...)", "annoyed", "narrow", "base", "R")
     m "Yes? Go on..."
     call cho_main("I believe he had a bit of an obsession with my panties, Sir.", "soft", "narrow", "base", "mid")
-    if cc_ht.win_counter == 0:
+    if not cho_quid.hufflepuff_prepared:
         m "A panties obsession? So so..."
     else:
         g9 "*Ha!* Called it!"
@@ -578,7 +578,7 @@ label cc_pf_talk_T1_E3:
         m "What kind of girl doesn't show her panties to her beloved?"
         call cho_main("I beg your pardon?!", "angry", "wide", "raised", "mid")
 
-        if cc_ht.win_counter == 0:
+        if not cho_quid.hufflepuff_prepared:
             m "But, that made me think..."
             m "If he's as obsessed with panties as you say, why don't we use that information to our advantage?"
             call cho_main("Like how?", "soft", "narrow", "raised", "mid")

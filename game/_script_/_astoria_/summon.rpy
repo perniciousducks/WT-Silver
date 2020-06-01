@@ -134,10 +134,8 @@ label spell_not_known:
 
 label astoria_talk:
     menu:
-        "-Ask about Slytherin Quidditch Team-" (icon="interface/icons/small/quidditch.png") if cho_quid.lock_practice and not cho_quid.asked_astoria:
+        "-Ask about Slytherin Quidditch Team-" (icon="interface/icons/small/quidditch.png") if cho_tier == 2 and cho_quid.lock_practice and cho_quid.E6_complete:
             # TODO: Posing
-            $ cho_quid.asked_astoria = True
-
             m "Could you help me with something?"
             ast "Depends what it is."
             ast "And what's in it for me..."
@@ -150,7 +148,7 @@ label astoria_talk:
             ast "And can't you do something about it. You're the headmaster!"
             m "Well, I can't technically force them to do anything. If I could then that would make things way easier..."
             ast "Ask Snape then, he's the head of Slytherin... If they'd listen to anyone it'd be him."
-            if cho_quid.asked_snape:
+            if cho_quid.E9_complete:
                 m "I already did..."
             else:
                 m "I could..."

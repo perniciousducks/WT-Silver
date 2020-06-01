@@ -25,9 +25,7 @@ label cc_ht_start:
     # Cho leaves.
     call cho_walk(action="leave")
 
-    if cho_quid.commentator == "hermione": # Hermione has to commentate.
-        $ hermione_busy = True
-
+    $ hermione_busy = True
     $ cho_quid.in_progress = True
 
     jump end_cho_event
@@ -105,13 +103,13 @@ label cc_ht_talk:
 
     call cho_main(xpos="right", ypos="base", trans=fade)
 
-    if cho_quid.E3_complete and cho_quid.commentator == None:
+    if cho_quid.E3_complete and not cho_quid.E4_complete:
         call cho_main("Have you asked Hermione to be our commentator yet?", "soft", "base", "base", "mid")
         m "Not yet."
         call cho_main("We can't play if we don't have a commentator.", "soft", "base", "worried", "R")
         call cho_main("Please ask her, Sir.", "annoyed", "base", "worried", "mid")
 
-    elif cho_quid.commentator == "hermione" and cho_quid.lock_practice: # mandatory
+    elif cho_quid.E4_complete and cho_quid.lock_practice: # mandatory
         g9 "I've got great news for you! I found us a new commentator!"
         call cho_main("Is it Hermione?", "soft", "narrow", "base", "mid")
         g9 "Yes! Very good guess!"

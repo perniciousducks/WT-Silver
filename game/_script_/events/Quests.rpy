@@ -155,7 +155,7 @@ label quests:
 
             elif cho_tier == 2:
                 # Hermione refuses to commentate for Slytherin match.
-                if cho_quid.lock_practice and not cho_quid.slytherin_prepared and not cho_quid.E6_complete:
+                if cho_quid.lock_practice and not cho_quid.slytherin_prepared and cho_quid.E5_complete and not cho_quid.E6_complete:
                     jump cho_quid_E6
         else:
             # Introduction
@@ -372,8 +372,8 @@ default cho_intro = quest_class(
 )
 
 default cho_quid = quest_class(
-    E1_complete = False, # Intro 1
-    E2_complete = False, # Intro 2
+    E1_complete = False, # Hufflepuff - Intro 1
+    E2_complete = False, # Hufflepuff - Intro 2
     E3_complete = False, # Lee Jordan gets hit by a bludger
     E4_complete = False, # Genie asks Hermione to commentate
     E5_complete = False, # Slytherin - Intro 1
@@ -382,69 +382,32 @@ default cho_quid = quest_class(
     E8_complete = False, # Ask Tonks for help (Hangout)
     E9_complete = False, # Ask Snape for help (Hangout)(Optional)
 
-    hufflepuff_prepared = False, # Has found out the tactic for the practice match.
-    hufflepuff_training = False, # Hufflepuff practice match
-    slytherin_prepared = False, # Has found out the tactic for the practice match.
-    slytherin_training = False, # Slytherin practice match
+    hufflepuff_prepared = False, # Ready for practice match? (Requirements: tactic)
+    hufflepuff_training = False, # Finished Hufflepuff practice match?
+    hufflepuff_complete = False, # Finished Hufflepuff event chain?
 
-    hermione_ready = False, # Has asked Hermione to commentate?
+    slytherin_prepared = False, # Ready for practice match? (Requirements: tactic, blackmail Hermione, Tonks' help)
+    slytherin_training = False, # Finished Slytherin practice match?
+    slytherin_complete = False, # Finished Slytherin event chain?
 
-    position    = "",
-    commentator = None,
-
-    top           = "sweater",
-    bottom        = "pants_long",
-    coat          = True,
-    gloves        = True,
+    position = "", # Valid choices: "front", "above", "close"
 
     lock_training = False,
     lock_practice = True,
-    lock_tactic   = False,
-    in_progress   = False,
-
-    #hufflepuff_talk = False,
-    slytherin_talk = False,
-    gryffindor_talk = False,
-
-    asked_snape = False,
-    asked_tonks = False,
-    asked_astoria = False
+    lock_tactic = False,
+    in_progress = False,
 )
 
 default cho_quiz = quest_class(
-    intro_1 = False, #
-    intro_2 = False, #
+    E1_complete = False,
+    E2_complete = False,
 
     correct_answers = 0,
-    checkpoint      = False,
-    lost            = False,
-    complete        = False,
-)
+    checkpoint = False,
+    lost = False,
+    complete = False,
 
-# Hufflepuff practice
-default cc_ht = quest_class(
-    match_counter = 0,
-    win_counter   = 0,
-
-    return_E1 = False, # They now need a commentator.
-
-    hermione_commentator = False, # You ask Hermione to be the new commentator.
-)
-
-default cc_st = quest_class(
-    match_counter = 0,
-    win_counter   = 0,
-
-    return_E1 = False, # 1st match, Slyth & HG don't appear.
-    return_E2 = False, # 2st match, right clothing, wrong commentator (Tonks).
-    return_E3 = False, # 3st match, right clothing, right commentator (Hermione).
-
-    intro = False, # unlocks favours again.
-    hermione_E1 = False, # Walks into your room and quits commentating.
-    snape_E1 = False, # Refuses to get Slyth to play.
-    tonks_E1 = False, # You tell her about Cho. She gets Slyth to play.
-    tonks_E2 = False, # You talk more about Cho and the Slytherins boys.
-    hermione_blackmail = False, # Talk to Hermione and blackmail her.
+    hint = "" # Set after reading Quidditch Book
 )
 
 # Susan

@@ -155,7 +155,7 @@ label quests:
 
             elif cho_tier == 2:
                 # Hermione refuses to commentate for Slytherin match.
-                if cho_quid.lock_practice and not cho_quid.slytherin_prepared and cho_quid.E5_complete and not cho_quid.E6_complete:
+                if cho_quid.slytherin_failed and not cho_quid.E6_complete:
                     jump cho_quid_E6
         else:
             # Introduction
@@ -165,6 +165,7 @@ label quests:
             # Quidditch training matches
             if cho_quid.in_progress:
                 $ cho_quid.in_progress = False
+
                 if cho_tier == 1:
                     # Hufflepuff
                     jump cc_ht_return
@@ -386,6 +387,7 @@ default cho_quid = quest_class(
     hufflepuff_training = False, # Finished Hufflepuff practice match?
     hufflepuff_complete = False, # Finished Hufflepuff event chain?
 
+    slytherin_failed = False, # Has failed first training match?
     slytherin_prepared = False, # Ready for practice match? (Requirements: tactic, blackmail Hermione, Tonks' help)
     slytherin_training = False, # Finished Slytherin practice match?
     slytherin_complete = False, # Finished Slytherin event chain?

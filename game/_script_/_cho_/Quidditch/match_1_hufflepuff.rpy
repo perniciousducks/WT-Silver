@@ -1137,7 +1137,7 @@ label hufflepuff_match_return:
     $ cho_favors_unlocked = False # Need to do next tutoring event first.
     $ cho_quid.lock_training = False
     $ cho_quid.lock_practice = True
-    $ cho_quid.lock_tactic   = True
+    $ cho_quid.lock_tactic   = False
     $ cho_quid.hufflepuff_complete = True
 
     jump end_cho_event

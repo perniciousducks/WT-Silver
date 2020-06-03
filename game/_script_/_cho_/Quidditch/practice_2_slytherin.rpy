@@ -158,12 +158,17 @@ label cc_st_return:
         $ hermione_busy = True
         $ cho_mood += 6
         $ cho_quid.lock_practice = True
+        $ cho_quid.slytherin_failed = True
 
         jump end_cho_event
     else:
         # Cho has been prepared and trained.
 
-        #Cho enters
+        call cho_walk(action="enter", xpos="desk", ypos="base")
+
+        # Cho is furious.
+        call cho_main("", "annoyed", "narrow", "angry", "mid", xpos="mid",ypos="base", trans=d3)
+
         m "Welcome back..."
         cho "..." #Annoyed
         m "Don't tell me they didn't show up again... Tonks assured me she'd get them to-"
@@ -172,11 +177,11 @@ label cc_st_return:
         m "Then what about our strategy, do you think it will work during the game?"
         cho "I can't believe I flaunted my ass at them... but yes, I believe it will work."
         cho "Crabbe and Goyle especially should be a great help, turning the game to my favour."
-        cho "I'm sure not even malfoy would be able to get them to behave at that point."
+        cho "I'm sure not even Malfoy would be able to get them to behave at that point."
         cho "So long as they don't give my ass too much of a bludgering..."
         m "Just make sure to pick the right moment to distract them and I'm sure you'll be fine."
         m "Very well then, I guess we're ready to take those snakes on for the main match!"
-        if cc_st.hermione_blackmail == False: #Is this right?
+        if cho_quid.E7_complete: #Is this right?
             cho "What about Granger?"
             m "What about her?"
             cho "Is she commentating or what? We can't play without a commentator."
@@ -191,14 +196,21 @@ label cc_st_return:
         m "I... wasn't-"
         cho "Sure you weren't..."
         cho "I'll head off to bed then."
-        m "*MHHMMMM*" #Big text
-        # Cho leaves
+        m "{size=+6}*MHHMMMM*{/size}" #Big text
+
+        call cho_walk(action="leave")
+
         m "*NNNNGH!!!*"
         m "You'll be betting your ass on it!" #Big text
-        cho "I heard that!"#Cho outside door (small text)
-        m "Damnit..."
+        cho "{size=-4}I heard that!{/size}"#Cho outside door (small text)
+        m "Dammit..."
 
-        #Match requirement practice game finished (still need to blackmail Hermione if not already done)
+        $ cho.equip(cho_outfit_last) # Equip last worn clothes
+
+        $ slytherin_match = "ready"
+        $ cho_quid.lock_training = True
+
+        jump end_cho_event
 
 ### Stage 3 ###
 
@@ -206,31 +218,37 @@ label cc_st_talk:
 
     call cho_main(xpos="right", ypos="base", trans=fade)
 
-    # you haven't talked to Tonks yet.
-    if cho_quid.lock_practice:
+    if not cho_quid.E8_complete and cho_quid.E6_complete:
         call cho_main("Have you gotten those Slytherin pigs to play yet?","open","narrow","base","mid")
         m "Not yet, but I'm on it."
         call cho_main("Please just hurry up, Sir.","annoyed","narrow","base","mid")
         call cho_main("We need to try out those tactics...", "annoyed", "narrow", "worried", "R")
         m "Any ideas on how to get them to practice against you?"
         call cho_main("How would I know, I'm not a teacher, am I?...{w} Ask one of them.", "open","narrow","base","mid")
-        if cc_st.snape_E1:
+        if cho_quid.E9_complete:
             m "Well, I asked Snape..."
             call cho_main("And how did that work out for you?","open","narrow","raised","mid")
             m "It didn't."
             call cho_main("Ask another teacher then...", "annoyed","narrow","base","mid")
-    elif cc_st.hermione_blackmail == False: #TODO Is this correct? I added this section #TODO expressions
+    elif not cho_quid.E7_complete and cho_quid.E6_complete:
+        # TODO: Posing
         cho "Will Hermione commentate the match or not?"
         m "Probably..."
         cho "What do you mean probably?"
         m "I haven't confronted her about it yet."
         cho "Then do it!"
-
-    # response when there is no new task for you.
+    elif cho_quid.E5_complete and not cho_quid.E6_complete:
+        # TODO: Posing
+        cho "I'm still a bit worried about those brutes..."
+        cho "You better find a way to deal with them."
+    elif cc_pf_talk.is_tier_complete() and not cho_quid.lock_tactic:
+        # TODO: Posing
+        cho "You really believe that showing off my ass is the best tactic against Slytherin?"
+        m "I'm certain of it..."
+        cho "..." #Worried
+        m "(Perhaps doing some more favours will improve her confidence.)"
     else:
         call cho_main("I'm confident that we can win this, [cho_genie_name].","smile","base","base","mid")
-        call cho_main("Slythein has no blasted chance against us!","base","narrow","base","mid")
-
-    #call cho_main(xpos="base", ypos="base", trans=fade)
+        call cho_main("Slytherin has no blasted chance against us!","base","narrow","base","mid")
 
     return

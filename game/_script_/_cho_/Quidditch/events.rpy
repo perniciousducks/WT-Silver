@@ -476,7 +476,6 @@ label cho_quid_E5:
     call cho_main("You're right! Thank you, [cho_genie_name].", "base", "base", "base", "mid") # happy
 
     $ cho_quid.E5_complete = True
-    $ cho_quid.lock_practice = False
 
     jump cho_requests
 
@@ -727,7 +726,7 @@ label cho_quid_E7:
         call cho_main("Is it my hair? Or my strong legs? Or my abs?", "open", "narrow", "base", "down")
         call cho_main("Would you like me to show you my body again, right now?", "grin", "narrow", "base", "L")
         call her_main("No thanks.", "normal", "closed", "base", "mid")
-        call cho_main("I should mix in some drops of veritaserum into your pumpkin juice, and ask you again...", "annoyed", "narrow", "base", "L")
+        call cho_main("I should mix in some drops of Veritaserum into your pumpkin juice, and ask you again...", "annoyed", "narrow", "base", "L")
         call cho_main("Maybe then you'll speak the truth... How you really think of me.", "annoyed", "narrow", "raised", "mid")
         call her_main("You wouldn't!", "clench", "base", "angry", "L", cheeks="blush")
         call cho_main("Yes I would!", "base", "narrow", "base", "L")
@@ -788,9 +787,6 @@ label cho_quid_E7:
 
     $ cho_quid.E7_complete = True
 
-    if cho_quid.E8_complete: # Has asked Tonks for help already?
-        $ cho_quid.slytherin_prepared = True
-
     # Reset
     if her_tier < 4:
         $ hermione.equip(her_outfit_last) # Equip player outfit.
@@ -828,10 +824,26 @@ label cho_quid_E8:
 
     menu:
         m "..."
-        "Tell her everything":
-            pass
+        "-Tell her everything-":
+            m "She's been stripping for me."
+            call ton_main("Cho?! And I'm supposed to believe that?","upset","wide","raised","mid")
+            g9 "Oh, you better believe it!"
+            call ton_main("Holy shit!","upset","wide","wide","wide", hair="horny")
+            call ton_main("I'd pay so many galleons to watch that girl take her clothes off...","upset","base","sad","R")
+            call ton_main("You need to invite me next time!","angry","base","angry","mid", hair="angry") # angry
+            m "And how would I get her to agree to that?"
+            call ton_main("Well... *Uhm*...","upset","base","sad","down", hair="horny")
+            m "It was difficult enough to get her to strip just for me..."
+            m "She only did it because I helped her win against Hufflepuff."
+            call ton_main("So that was your idea with the skirt? Very clever.","horny","base","worried","mid")
+            m "Maybe I could arrange something once we've beaten those Slytherins..."
+            m "For the two of you."
+            call ton_main("Or all three of us!","base","base","angry","mid")
+            g9 "Yes!"
+            g9 "I'm sure that minx would love that!"
+            call ton_main("I can't wait!","base","happyCl","base","mid")
 
-        "Don't tell her":
+        "-Don't tell her-":
             m "I don't think I should..."
             call ton_main("What? Why not?","open","base","sad","mid")
             m "Miss Chang wouldn't like anybody to know."
@@ -840,56 +852,6 @@ label cho_quid_E8:
             call ton_main("Tell me, or I'll jinx your balls off!","upset","base","angry","mid", hair="angry")
             g4 "*Ghzzz!* Alright! Alright!"
             m "You sure know how to get me to talk..."
-
-    if cc_pf_strip.points >= 2: #TODO this would play regardless since you do all favours before this
-        # Enable special event with Tonks that plays after you blackmailed Hermione, to tell Tonks about Cho's past relationships (below conversation.)
-        # Enable special event with Tonks that plays after you blackmailed Hermione, to tell Tonks about Cho's past relationships (below conversation.)
-        m "She's been stripping for me."
-        call ton_main("Cho?! And I'm supposed to believe that?","upset","wide","raised","mid")
-        g9 "Oh, you better believe it!"
-        call ton_main("Holy shit!","upset","wide","wide","wide", hair="horny")
-        call ton_main("I'd pay so many galleons to watch that girl take her clothes off...","upset","base","sad","R")
-        call ton_main("You need to invite me next time!","angry","base","angry","mid", hair="angry") # angry
-        m "And how would I get her to agree to that?"
-        call ton_main("Well... *Uhm*...","upset","base","sad","down", hair="horny")
-        m "It was difficult enough to get her to strip just for me..."
-        m "She only did it because I helped her win against Hufflepuff."
-        call ton_main("So that was your idea with the skirt? Very clever.","horny","base","worried","mid")
-        m "Maybe I could arrange something once we've beaten those Slytherins..."
-        m "For the two of you."
-        call ton_main("Or all three of us!","base","base","angry","mid")
-        g9 "Yes!"
-        g9 "I'm sure that minx would love that!"
-        call ton_main("I can't wait!","base","happyCl","base","mid")
-
-    #else:
-        # Enable special event with Tonks that plays after you blackmailed Hermione, to tell Tonks about Cho's stripping (above conversation.)
-
-        #m "We were mostly just chatting..."
-        #call ton_main("About what?","open","base","raised","mid")
-        #m "Her previous school year... couple of relationships she had."
-        #call ton_main("Intriguing... a couple?","horny","base","base","mid", hair="horny")
-        #call ton_main("I assume Cedric Diggory was one of them? According to Miss Granger.","open","base","base","L")
-        #call ton_main("Who else?","base","base","angry","mid")
-        #m "Some of the other contestants of that tourney..."
-        #call ton_main("The tri wizards tournament?","open","base","raised","mid")
-        #call ton_main("That happened last year, right? Such a shame I missed it.","upset","base","sad","down")
-            #g9 "We should hold our own tournament!"
-            #m "The tri-bitcha... Bi-curious-ishar.."
-            #m "It's a work in progress title..."
-            #m "Anyway..."
-        #g9 "She said one of them was a girl!"
-        #call ton_main("Oh my...","upset","base","worried","mid") # Horny
-        #call ton_main("I didn't know she was...","upset","closed","sad","mid") # Horny
-        #g9 "They even made out a couple of times!"
-        #call ton_main("{b}Fuck!{/b}","angry","base","sad","ahegao") # Ahegao?
-        #m "..."
-        #call ton_main("...","horny","base","base","ahegao")
-        #m "You alright there?"
-        #call ton_main("Huh? Oh yes...","open","base","sad","mid")
-        #call ton_main("My mind was just drifting off for a second...","horny","base","worried","up")
-        #m "I can imagine why..."
-
 
     # Talk about Slytherin.
     m "..."
@@ -924,7 +886,7 @@ label cho_quid_E8:
 
     m "..."
     if not cho_quid.E7_complete:
-        # Has blackmailed Hermione
+        # Has NOT blackmailed Hermione
 
         m "That's not all, though. There's something else I need your help with."
         call ton_main("You can't expect me to fix all of your problems, Genie.","base","base","base","mid")
@@ -944,8 +906,6 @@ label cho_quid_E8:
         ton "(She was so cute fumbling over her words...)"
         ton "In any case, I'm sure you'll be able to change her mind."
     else:
-        $ cho_quid.slytherin_prepared = True
-
         m "Did you know Hermione wanted to quit her task as a commentator?"
         call ton_main("Did she now? I thought she did well in the Hufflepuff game.","upset","base","raised","mid")
         call ton_main("A bit wooden, but not bad for her first try.","open","base","base","R")
@@ -979,6 +939,8 @@ label cho_quid_E8:
 
     $ tonks_busy = True
     $ cho_quid.E8_complete = True
+    $ cho_quid.lock_practice = False
+    $ cho_quid.slytherin_prepared = True # Unlocks practice match
 
     if daytime:
         jump night_start
@@ -986,6 +948,8 @@ label cho_quid_E8:
         jump day_start
 
 label cho_quid_E9:
+    # Ask Snape for help, but it backfires (optional)
+
     call sna_main("Your precious Ravenclaw bird, made any breakthroughs with her yet?","snape_37", ypos="head")
     m "The little asian?"
     call sna_main("Yes, Miss Chang.","snape_40")
@@ -1014,7 +978,7 @@ label cho_quid_E9:
     m "I'm gonna win that bet. Then I'll have the last laugh!"
     call sna_main("I wish you good fortune.","snape_22")
     m "..."
-    g4 "Get your wine from someplace else, you slacker."
+    g4 "Get your wine from some place else, you slacker."
     call sna_main("You won't win by making friends, isn't that right?","snape_18")
     m "..."
     call sna_main("*Hrhm*... Good riddance, then...","snape_12")

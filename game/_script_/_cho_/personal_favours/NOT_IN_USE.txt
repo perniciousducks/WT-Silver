@@ -1,0 +1,67 @@
+
+###  Stretching ###
+
+label cho_stretching: # Not in use.
+
+    #If you begin masturbating:
+    #Tell me how you get ready for practice...
+
+    #If you don't masturbate:
+    #How about you do some squats for me...
+
+    # Choice to start jerking off
+    menu:
+        "\"(I will jerk off a little while she talks.)\"":
+            $ cho_jerk_off_counter += 1
+            $ masturbating = True
+        "\"(I'll ask her to show her flexibility instead.)\"":
+            $ masturbating = False
+            m "In that case..."
+
+    #Tell me how you get ready for practice:
+    if masturbating:
+        m "How about you start by telling me a little bit about your Quidditch training. How do you get ready for practice for example?"
+        cho "Okay..."
+        cho "Well, we usually wake up pretty early in the morning..."
+        "You take your cock out and begin stroking it underneath your desk"
+        cho "Once I'm up I usually start by doing some stretches to get the blood flowing."
+        g4 "\"Keep talking and you'll get mine going pretty soon.\""
+        cho "Sometimes I'll have to do it in the dark not to wake anyone up..."
+        m "\"Wakey wakey..."
+        cho "As during later parts of the year the sun hasn't even risen yet!"
+        g9 "\"There we go, it's risen... Good morning!\""
+        cho "When I'm done with stretching I get dressed and make myself down to the great hall for breakfast..."
+        g4 "\"Hhng... nude stretching...\""
+        cho" As a player on a Quidditch team we get the whole hall to ourselves and a specially protein rich and energy filled filled breakfast."
+        m "\"Yes, protein rich... that's important. I'll have to remember that one...\""
+        cho "And then...{nw}"
+        cho "Sir, are you still paying attention?"
+        m "What?"
+        # Genie stops masturbating
+        cho "..."
+        g9 "Protein rich breakfast... very important..."
+        cho "Quite..."
+        cho "Anyway..."
+
+    #How about you do some squats for me:
+    else:
+        m "How about you start by doing some squats..."
+        cho "Squats, sir?"
+        m "Yes, squats... You know, bend your knees and stretch your arms forward..."
+        cho "I know what squats are..."
+        cho "I'm just a bit confused as to why you want me to start doing squats in your office."
+        m "Well, I need to see if what you're claiming is true. I'd like to see for myself if you're really on par with the rest of your team."
+        m "You're asking a lot of me here if I were to break up any sort of student movement for you."
+        cho "I don't...{nw}"
+        m "Unless what you're saying is just a lie and you're also just one of those amateur posers that you mentioned..."
+        cho "..." # Annoyed, blushing
+        cho "I'm not... look! Can a poser do this?"
+        # cho squats down (could just be sprite for starter)
+        # Later on if we add more chibi positions she'd show off even more here
+        m "Impressive..."
+        cho "Thank you..."
+        m "How about a handstand?"
+        cho "A handstand..."
+        cho "That hasn't been part of my training so far..."
+        m "I see.."
+        cho "But I could...{nw}"

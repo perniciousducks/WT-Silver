@@ -34,7 +34,7 @@ label summon_cho:
                         jump cho_requests
             jump start_hufflepuff_match
 
-        "-Start Slytherin Match-" (icon="interface/icons/small/slyt.png") if (cho_tier == 2 and slytherin_match == "ready"):
+        "-Start Slytherin Match-" (icon="interface/icons/small/slyt.png") if (cho_tier == 2 and slytherin_match == "ready" and cho_quid.E7_complete):
             if cho_reputation <= 3:
                 m "(If I want Cho to do anything in public with those Slythershits I better do it before the Match.)"
                 m "(Although maybe not...)"

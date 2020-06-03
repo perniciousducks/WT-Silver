@@ -40,6 +40,17 @@ label cho_training:
     with d5
     pause .8
 
+    # Discuss tactics menu requirements per tier:
+    if cho_tier == 1:
+        # Hufflepuff (Finished "Talk to me")
+        $ _dt_req = (cc_pf_talk.is_tier_complete())
+    elif cho_tier == 2:
+        # Slytherin (Finished "Talk to me", Finished "Strip for me")
+        $ _dt_req = (cc_pf_talk.is_tier_complete() and cc_pf_strip.is_tier_complete())
+    #elif cho_tier == 3:
+        # Gryffindor (Finished "???")
+        #$ _dt_req = (???)
+
     # Menu
     label .choices:
 
@@ -60,7 +71,7 @@ label cho_training:
 
             jump cho_training.choices
 
-        "-Discuss Tactics-" if cc_pf_talk.is_tier_complete() and not cho_quid.lock_tactic:
+        "-Discuss Tactics-" if _dt_req and not cho_quid.lock_tactic:
             if cho_tier == 1:
                 # Hufflepuff
                 # Clothes:  Skirt, Robes
@@ -155,7 +166,7 @@ label cho_training:
             elif cho_tier == 2:
                 # Slytherin
                 # Clothes: Trousers, Pullover
-                if not slytherin_match = "intro_done":
+                if not slytherin_match == "intro_done":
                     $ slytherin_match = "intro_done"
 
                     m "I got it!"
@@ -330,7 +341,7 @@ label cho_training:
 
                     jump end_cho_event
 
-        "{color=[menu_disabled]}-Discuss tactics-{/color}" if not cc_pf_talk.is_tier_complete() or cho_quid.lock_tactic:
+        "{color=[menu_disabled]}-Discuss tactics-{/color}" if not _dt_req or cho_quid.lock_tactic:
             if cho_quid.lock_tactic:
                 m "(We've already established a tactic for the next match)"
             else:
@@ -452,6 +463,10 @@ label cho_tactics:
 
             #Cho flies down
             #Black screen
+            call gen_chibi("stand", "desk", "base")
+            call cho_chibi("stand", "mid", "base")
+            hide screen cho_main
+            with fade
 
             m "We'll test the tactics during the next practice like usual."
             call cho_main("Do we have to? I'm sure it will work even without trying it.", "clench", "base", "raised", "mid", cheeks="blush")

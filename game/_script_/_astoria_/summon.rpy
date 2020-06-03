@@ -134,7 +134,7 @@ label spell_not_known:
 
 label astoria_talk:
     menu:
-        "-Ask about Slytherin Quidditch Team-" (icon="interface/icons/small/quidditch.png") if cho_tier == 2 and cho_quid.lock_practice and cho_quid.E6_complete:
+        "-Ask about Slytherin Quidditch Team-" (icon="interface/icons/small/quidditch.png") if cho_tier == 2 and cho_quid.lock_practice and cho_quid.E6_complete and not cho_quid.E8_complete:
             # TODO: Posing
             m "Could you help me with something?"
             ast "Depends what it is."

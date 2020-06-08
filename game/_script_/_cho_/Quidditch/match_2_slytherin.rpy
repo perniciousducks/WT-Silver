@@ -1325,25 +1325,45 @@ label slytherin_match:
     # Cho CG
 
     call hide_characters
-    show screen placeholder
+    $ camera.set_imagepath(None)
+    $ camera.set_image("cho_cg quidditch pose1 open")
+    $ camera.set(zoom=1.0, pos=(1300, 300), initialize=True)
+    $ camera.min_zoom = 0.2
+    show screen animatedCG
     with fade
 
-    # TODO: add ass shot (CG)
+    $ renpy.checkpoint()
+
+    pause 0.2
+    $ camera.set(zoom=0.5, pos=(0, 300), t=3.5)
     cho "Hey boys, check this out..."
+    $ camera.set_image("cho_cg quidditch pose1 base")
     cra "What do you want slut-"
+    $ camera.set(rotate=-15, zoom=0.65, pos=(-100, -120), t=3.0, pause=True)
+    $ camera.set_image("cho_cg quidditch pose2 smirk")
     call nar("Cho spins around, flaunts her butt and gives them a quick wink.")
-    goy "..."
+    $ camera.set(rotate=0, zoom=0.3, pos=(0, 0), t=2.0, pause=True)
+
+    call ctc
+
     goy "Looks like this little Ravenclaw slut has finally come to her senses, Crabbe."
     cra "Why wouldn't she Goyle... Those Ravenclaw cucks got nothing even close to our sheer strength!" #have is correct grammar here but crabbe and goyle are dumb shits so
+    $ camera.set_image("cho_cg quidditch pose2 open")
     call nar("Cho tightens her butt cheeks and flutters her eyelashes in a way that -- to anyone except Crabbe and Goyle -- would be an obvious distraction tactic.")
 
+    $ camera.set_image("cho_cg quidditch pose2 smirk")
     play sound "sounds/crowd_cheer.mp3"
-    call her_main("And there's a goal for Ravenclaw, ladies and gentlemen!", "soft", "base", "base", "up", flip=True, xpos="far_left", ypos="head")
-    call her_main("Look at those cuties go!{w=0.5} Those clothes must be completely stuck to their skin in this weather!", "smile", "narrow", "angry", "L")
+    her "And there's a goal for Ravenclaw, ladies and gentlemen!"
+    her "Look at those cuties go!{w=0.5} Those clothes must be completely stuck to their skin in this weather!"
+
+    call ctc
+
+    $ camera.set_image("cho_cg quidditch pose1 base")
 
     call nar("Malfoy suddenly turns around with a surprised look on his face that a goal was let in and then angrily flies up to Crabbe and Goyle.")
     malf "What the hell are you guys doing?{w=0.8} Have those bludgers been hitting you too hard?"
     malf "You're supposed to be blocking the goal until that Ravenclaw girl spots the snitch!"
+    $ camera.set_image("cho_cg quidditch pose1 run")
     cra "Well, about that..."
     malf "How dare you speak over me, I'm not done with you!"
     cra "But Draco--"
@@ -1356,7 +1376,7 @@ label slytherin_match:
     # End of Cho CG
 
     call her_chibi("stand", flip=True, 300, 400)
-    hide screen placeholder
+    hide screen animatedCG
     with fade
 
     call her_main("Oh... it looks like things are heating up!{w=0.5} Malfoy has finally realised Chang is going for the Snitch...", "open", "base", "angry", "L", flip=True, xpos="290", ypos="base", trans=d3)
@@ -1837,3 +1857,281 @@ label slytherin_match_return:
     $ astoria.equip(ast_outfit_last)
 
     jump main_room
+
+# Image definitions
+
+image cho_cg quidditch pose1 base:
+    size (3840, 2880)
+
+    contains: # BG
+        "images/CG/cho_quidditch/background.jpg"
+
+    contains:
+        contains: # Cho head
+            "images/CG/cho_quidditch/pose1/head_1.png"
+
+        contains: # Cho eyes
+            "images/CG/cho_quidditch/pose1/eyes_1.png" with dissolve
+            choice:
+                pause 4
+            choice:
+                pause 3
+            choice:
+                pause 2
+            "images/CG/cho_quidditch/pose1/eyes_2.png" with dissolve
+            repeat
+
+        contains: # Cho eyebrows
+            "images/CG/cho_quidditch/pose1/eyebrows_1.png"
+
+        contains: # Cho body
+            "images/CG/cho_quidditch/pose1/body.png"
+
+        parallel:
+            yoffset absolute(110)
+
+            ease_back 2.5 yoffset absolute(50)
+            ease_back 2.5 yoffset absolute(110)
+            repeat
+
+        parallel:
+            xoffset absolute(-15)
+            ease 1.5 xoffset absolute(15) xzoom 0.98 yzoom 0.995
+            ease 1.5 xoffset absolute(-15) xzoom 1.0 yzoom 1.0
+            repeat
+
+    contains: # Overlay
+        "images/CG/cho_quidditch/overlay.png"
+
+image cho_cg quidditch pose1 open:
+    size (3840, 2880)
+
+    contains: # BG
+        "images/CG/cho_quidditch/background.jpg"
+
+    contains:
+        contains: # Cho head
+            "images/CG/cho_quidditch/pose1/head_2.png"
+
+        contains: # Cho eyes
+            "images/CG/cho_quidditch/pose1/eyes_1.png" with dissolve
+            choice:
+                pause 4
+            choice:
+                pause 3
+            choice:
+                pause 2
+            "images/CG/cho_quidditch/pose1/eyes_2.png" with dissolve
+            repeat
+
+        contains: # Cho eyebrows
+            "images/CG/cho_quidditch/pose1/eyebrows_2.png"
+
+        contains: # Cho body
+            "images/CG/cho_quidditch/pose1/body.png"
+
+        parallel:
+            yoffset absolute(110)
+
+            ease_back 2.5 yoffset absolute(50)
+            ease_back 2.5 yoffset absolute(110)
+            repeat
+
+        parallel:
+            xoffset absolute(-15)
+            ease 1.5 xoffset absolute(15) xzoom 0.98 yzoom 0.995
+            ease 1.5 xoffset absolute(-15) xzoom 1.0 yzoom 1.0
+            repeat
+
+    contains: # Overlay
+        "images/CG/cho_quidditch/overlay.png"
+
+image cho_cg quidditch pose1 run:
+    size (3840, 2880)
+
+    contains: # BG
+        "images/CG/cho_quidditch/background.jpg"
+
+    contains:
+        contains: # Cho head
+            "images/CG/cho_quidditch/pose1/head_1.png"
+
+        contains: # Cho eyes
+            "images/CG/cho_quidditch/pose1/eyes_3.png" with dissolve
+            choice:
+                pause 4
+            choice:
+                pause 3
+            choice:
+                pause 2
+            "images/CG/cho_quidditch/pose1/eyes_2.png" with dissolve
+            repeat
+
+        contains: # Cho eyebrows
+            "images/CG/cho_quidditch/pose1/eyebrows_1.png"
+
+        contains: # Cho body
+            "images/CG/cho_quidditch/pose1/body.png"
+
+        contains:
+            "snitch"
+
+            parallel:
+                yoffset absolute(700)
+                ease_back 0.5 yoffset absolute(500) zoom 1.0+0.25
+                ease_back 0.5 yoffset absolute(700) zoom 1.0-0.2
+                repeat
+
+            parallel:
+                xoffset absolute(150)
+                easein_quint 0.7 xoffset absolute(300)
+                easein_quint 0.75 xoffset absolute(15)
+                repeat
+
+        parallel:
+            yoffset absolute(110)
+
+            ease_back 2.5 yoffset absolute(50)
+            ease_back 2.5 yoffset absolute(110)
+
+        parallel:
+            xoffset absolute(-15)
+            xzoom 1.0
+            yzoom 1.0
+
+            ease 1.5 xoffset absolute(15) xzoom 0.98 yzoom 0.995
+            ease 1.5 xoffset absolute(-15) xzoom 1.0 yzoom 1.0
+
+            ease 3.0 xoffset absolute(-4000) yoffset absolute(-1000)
+
+    contains: # Overlay
+        "images/CG/cho_quidditch/overlay.png"
+
+image cho_cg quidditch pose2 smirk:
+    size (3840, 2880)
+
+    contains: # BG
+        "images/CG/cho_quidditch/background.jpg"
+
+    contains:
+        contains: # Cho head
+            "images/CG/cho_quidditch/pose2/head_3.png"
+
+        contains: # Cho eyes
+            "images/CG/cho_quidditch/pose2/eyes_1.png" with dissolve
+            choice:
+                pause 4
+            choice:
+                pause 3
+            choice:
+                pause 2
+            "images/CG/cho_quidditch/pose2/eyes_2.png" with dissolve
+            repeat
+
+        contains: # Cho eyebrows
+            "images/CG/cho_quidditch/pose2/eyebrows_1.png"
+
+        contains: # Cho body
+            "images/CG/cho_quidditch/pose2/body.png"
+
+        parallel:
+            yoffset absolute(110)
+
+            ease_back 2.5 yoffset absolute(50)
+            ease_back 2.5 yoffset absolute(110)
+            repeat
+
+        parallel:
+            xoffset absolute(-15)
+            ease 1.5 xoffset absolute(15) xzoom 0.98 yzoom 0.995
+            ease 1.5 xoffset absolute(-15) xzoom 1.0 yzoom 1.0
+            repeat
+
+    contains: # Overlay
+        "images/CG/cho_quidditch/overlay.png"
+
+image cho_cg quidditch pose2 base:
+    size (3840, 2880)
+
+    contains: # BG
+        "images/CG/cho_quidditch/background.jpg"
+
+    contains:
+        contains: # Cho head
+            "images/CG/cho_quidditch/pose2/head_1.png"
+
+        contains: # Cho eyes
+            "images/CG/cho_quidditch/pose2/eyes_3.png" with dissolve
+            choice:
+                pause 4
+            choice:
+                pause 3
+            choice:
+                pause 2
+            "images/CG/cho_quidditch/pose2/eyes_2.png" with dissolve
+            repeat
+
+        contains: # Cho eyebrows
+            "images/CG/cho_quidditch/pose2/eyebrows_3.png"
+
+        contains: # Cho body
+            "images/CG/cho_quidditch/pose2/body.png"
+
+        parallel:
+            yoffset absolute(110)
+
+            ease_back 2.5 yoffset absolute(50)
+            ease_back 2.5 yoffset absolute(110)
+            repeat
+
+        parallel:
+            xoffset absolute(-15)
+            ease 1.5 xoffset absolute(15) xzoom 0.98 yzoom 0.995
+            ease 1.5 xoffset absolute(-15) xzoom 1.0 yzoom 1.0
+            repeat
+
+    contains: # Overlay
+        "images/CG/cho_quidditch/overlay.png"
+
+image cho_cg quidditch pose2 open:
+    size (3840, 2880)
+
+    contains: # BG
+        "images/CG/cho_quidditch/background.jpg"
+
+    contains:
+        contains: # Cho head
+            "images/CG/cho_quidditch/pose2/head_2.png"
+
+        contains: # Cho eyes
+            "images/CG/cho_quidditch/pose2/eyes_1.png" with dissolve
+            choice:
+                pause 4
+            choice:
+                pause 3
+            choice:
+                pause 2
+            "images/CG/cho_quidditch/pose2/eyes_2.png" with dissolve
+            repeat
+
+        contains: # Cho eyebrows
+            "images/CG/cho_quidditch/pose2/eyebrows_2.png"
+
+        contains: # Cho body
+            "images/CG/cho_quidditch/pose2/body.png"
+
+        parallel:
+            yoffset absolute(110)
+
+            ease_back 2.5 yoffset absolute(50)
+            ease_back 2.5 yoffset absolute(110)
+            repeat
+
+        parallel:
+            xoffset absolute(-15)
+            ease 1.5 xoffset absolute(15) xzoom 0.98 yzoom 0.995
+            ease 1.5 xoffset absolute(-15) xzoom 1.0 yzoom 1.0
+            repeat
+
+    contains: # Overlay
+        "images/CG/cho_quidditch/overlay.png"

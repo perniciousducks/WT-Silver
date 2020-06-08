@@ -15,7 +15,7 @@ init python:
     class CGController(object):
         default_timer = 1.0
 
-        def __init__(self, min_zoom=0.39, max_zoom=1.0):
+        def __init__(self, min_zoom=0.3, max_zoom=1.0):
             self.imagepath = None
             self.scale = 1.0
 
@@ -75,13 +75,13 @@ init python:
             self.pos = pos
 
         def set(self, zoom=None, rotate=None, pos=None, t=None, initialize=False, pause=False):
-            if not zoom:
+            if zoom is None:
                 zoom=self.last_zoom
-            if not rotate:
+            if rotate is None:
                 rotate=self.last_rotate
-            if not pos:
+            if pos is None:
                 pos=self.last_pos
-            if not t:
+            if t is None:
                 t = self.default_timer
 
             self.set_zoom(zoom)

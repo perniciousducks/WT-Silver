@@ -169,6 +169,8 @@ label cc_st_return:
         # Cho is furious.
         call cho_main("", "annoyed", "narrow", "angry", "mid", xpos="mid",ypos="base", trans=d3)
 
+        #TODO Posing
+
         m "Welcome back..."
         cho "..." #Annoyed
         m "Don't tell me they didn't show up again... Tonks assured me she'd get them to-"
@@ -181,7 +183,7 @@ label cc_st_return:
         cho "So long as they don't give my ass too much of a bludgering..."
         m "Just make sure to pick the right moment to distract them and I'm sure you'll be fine."
         m "Very well then, I guess we're ready to take those snakes on for the main match!"
-        if cho_quid.E7_complete: #Is this right?
+        if not cho_quid.E7_complete:
             cho "What about Granger?"
             m "What about her?"
             cho "Is she commentating or what? We can't play without a commentator."
@@ -208,7 +210,10 @@ label cc_st_return:
         $ cho.equip(cho_outfit_last) # Equip last worn clothes
 
         $ slytherin_match = "ready"
-        $ cho_quid.lock_training = True
+        $ cho_quid.slytherin_training = True
+        $ cho_quid.lock_practice = True
+        if cho_quid.E7_complete:
+            $ cho_quid.lock_training = True
 
         jump end_cho_event
 

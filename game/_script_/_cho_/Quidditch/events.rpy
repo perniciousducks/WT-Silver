@@ -787,6 +787,9 @@ label cho_quid_E7:
 
     $ cho_quid.E7_complete = True
 
+    if cho_quid.slytherin_training: # Finished practice match?
+        $ cho_quid.lock_training = True
+
     # Reset
     if her_tier < 4:
         $ hermione.equip(her_outfit_last) # Equip player outfit.

@@ -76,6 +76,7 @@ label start_slytherin_match:
 
 label slytherin_match:
     # Quidditch match: Ravenclaw vs. Slytherin
+    $ set_weather("clear")
 
     $ cho_outfit_last.save()
     $ her_outfit_last.save()
@@ -1311,6 +1312,10 @@ label slytherin_match:
     with d5
 
     call her_main("*Ahh*...{w=0.3}*Ahh*...{w=0.5} Sir...{w=0.6} that was...{w=0.6} *Ahh*...", "open_tongue", "narrow", "worried", "up", cheeks="blush", flip=False, xpos="base", ypos="head")
+
+    # Start prediction
+    $ renpy.start_predict("images/CG/cho_quidditch/*.*")
+
     g9 "{size=-4}Now, where were we?{/size}"
     call sna_main("{size=-4}Another goal for Slytherin... Although you might've missed it...{/size}", "snape_37") #Small text
     "You smirk and look back at Hermione who's still on the floor trying to catch her breath."
@@ -1323,12 +1328,9 @@ label slytherin_match:
     call nar("Cho, now with her eyes fixed behind one of the goalposts -- seemingly having spotted the snitch -- gives you a quick glance and a smile as she flies up to Crabbe and Goyle.")
 
     # Cho CG
-
-    call hide_characters
     $ camera.set_imagepath(None)
     $ camera.set_image("cho_cg quidditch pose1 open")
     $ camera.set(zoom=1.0, pos=(1300, 300), initialize=True)
-    $ camera.min_zoom = 0.2
     show screen animatedCG
     with fade
 
@@ -1378,6 +1380,9 @@ label slytherin_match:
     call her_chibi("stand", flip=True, 300, 400)
     hide screen animatedCG
     with fade
+
+    # Stop Prediction
+    $ renpy.stop_predict("images/CG/cho_quidditch/*.*")
 
     call her_main("Oh... it looks like things are heating up!{w=0.5} Malfoy has finally realised Chang is going for the Snitch...", "open", "base", "angry", "L", flip=True, xpos="290", ypos="base", trans=d3)
 

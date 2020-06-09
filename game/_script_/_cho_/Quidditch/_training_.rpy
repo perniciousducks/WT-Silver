@@ -40,17 +40,6 @@ label cho_training:
     with d5
     pause .8
 
-    # Discuss tactics menu requirements per tier:
-    if cho_tier == 1:
-        # Hufflepuff (Finished "Talk to me")
-        $ _dt_req = (cc_pf_talk.is_tier_complete())
-    elif cho_tier == 2:
-        # Slytherin (Finished "Talk to me", Finished "Strip for me")
-        $ _dt_req = (cc_pf_talk.is_tier_complete() and cc_pf_strip.is_tier_complete())
-    #elif cho_tier == 3:
-        # Gryffindor (Finished "???")
-        #$ _dt_req = (???)
-
     # Menu
     label .choices:
 
@@ -71,7 +60,7 @@ label cho_training:
 
             jump cho_training.choices
 
-        "-Discuss Tactics-" if _dt_req and not cho_quid.lock_tactic:
+        "-Discuss Tactics-" if cc_pf_talk.is_tier_complete() and not cho_quid.lock_tactic:
             if cho_tier == 1:
                 # Hufflepuff
                 # Clothes:  Skirt, Robes
@@ -341,7 +330,7 @@ label cho_training:
 
                     jump end_cho_event
 
-        "{color=[menu_disabled]}-Discuss tactics-{/color}" if not _dt_req or cho_quid.lock_tactic:
+        "{color=[menu_disabled]}-Discuss tactics-{/color}" if not cc_pf_talk.is_tier_complete() or cho_quid.lock_tactic:
             if cho_quid.lock_tactic:
                 m "(We've already established a tactic for the next match)"
             else:
@@ -363,7 +352,10 @@ label cho_training:
 
         "{color=[menu_disabled]}-Start Practice Match-{/color}" if not daytime or cho_quid.lock_practice:
             if cho_quid.lock_practice:
-                call nar(">Cho isn't ready for practice yet.")
+                if (cho_tier == 1 and cho_quid.hufflepuff_training) or (cho_tier == 2 and cho_quid.slytherin_training):
+                    m "(She doesn't need any more practice.)"
+                else:
+                    call nar(">Cho isn't ready for practice yet.")
             else:
                 call nar(">You can only do that during the day.")
 

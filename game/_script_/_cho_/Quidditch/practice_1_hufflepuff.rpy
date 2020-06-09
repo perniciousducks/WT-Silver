@@ -103,12 +103,19 @@ label cc_ht_talk:
 
     call cho_main(xpos="right", ypos="base", trans=fade)
 
-    if cho_quid.E3_complete and not cho_quid.E4_complete:
+    if not cho_quid.E1_complete:
+        #TODO Posing
+        m "Ready to start training?"
+        cho "Of course, just let me know when."
+    elif not cho_quid.E2_complete:
+        #TODO Posing
+        m "So, are you sure you don't want my help?"
+        cho "I... I don't know..."
+    elif cho_quid.E3_complete and not cho_quid.E4_complete:
         call cho_main("Have you asked Hermione to be our commentator yet?", "soft", "base", "base", "mid")
         m "Not yet."
         call cho_main("We can't play if we don't have a commentator.", "soft", "base", "worried", "R")
         call cho_main("Please ask her, Sir.", "annoyed", "base", "worried", "mid")
-
     elif cho_quid.E4_complete and cho_quid.lock_practice: # mandatory
         g9 "I've got great news for you! I found us a new commentator!"
         call cho_main("Is it Hermione?", "soft", "narrow", "base", "mid")

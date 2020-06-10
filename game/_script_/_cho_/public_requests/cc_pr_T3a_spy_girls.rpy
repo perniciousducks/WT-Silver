@@ -14,75 +14,110 @@ label cc_pr_spy_girls_start:
             # Player has not spied on boys just yet.
 
             m "Time for some good old espionage!"
-            cho "Finally, a plan that makes sense!"
-            m "You say that like my plans haven't worked thus far..."
-            m "For this mission I'd like you to spy on the girls of the Gryffindor team. When they're alone..."
-            cho "When they're alone? I can't get into their common room... you should know that."
-            m "And as you should know, there's plenty of other places where girls hang out and gossip."
-            cho "..." #Blushes
-            m "That's right, the women's changing room!"
-            cho "Fine... I'll see what I can do."
-            m "Excellent, report back to me as usual C."
-            cho "C? Is that some sort of spy name?"
-            m "Yep! C is the perfect spy name for you."
-            cho "Where do you get all these ideas from... seriously."
-            m "That’s your cup-size is it not?"
-            cho "..." #Blushes
-            cho "You're such an old pervert, you know that right?"
-            cho "And it's B cup actually..." #Blushes and glances to the side
+            m "For this mission -- I'd like you to spy on the girls of the Gryffindor team."
+            m "When they're alone..."
+            call cho_main("When they're alone, [cho_genie_name]?", "open", "narrow", "raised", "mid")
+            call cho_main("I can't get into their common room... you should know that.", "soft", "narrow", "base", "R")
+            m "There are plenty of other places where girls hang out and gossip..."
+            g9 "Want to know the place I'm thinking of?"
+            call cho_main("...", "disgust", "narrow", "base", "mid", cheeks="blush") #Blushes
+            g9 "That's right, the women's changing room!"
+            call cho_main("Fine... I'll see what I can do.", "open", "closed", "base", "mid")
+            g9 "Excellent!"
+            call cho_main("", "annoyed", "base", "base", "mid")
+            m "Report back to me as usual, C."
+            call cho_main("\"C\", [cho_genie_name]?", "soft", "base", "raised", "mid")
+            g9 "It's your spy name!"
+            call cho_main("My spy name, [cho_genie_name]?", "soft", "narrow", "base", "mid")
+            call cho_main("The C stands for my Cho, I presume?", "smile", "narrow", "base", "mid")
+            m "What?"
+            m "No, not your name... I'm not that unimaginative..."
+            call cho_main("", "annoyed", "narrow", "base", "mid")
+            m "C is your cup-size, is it not?"
+            call cho_main("My cup-size?!", "angry", "wide", "base", "mid", cheeks="blush")
+            call cho_main("But that's not even correct! Mine is--", "disgust", "happyCl", "base", "mid", cheeks="heavy_blush")
+            call cho_main("I mean... where do you get all these ideas from... seriously!?", "upset", "narrow", "angry", "R", cheeks="blush")
+            m "So what's your actual size then?{w} B?"
+            call cho_main("...", "annoyed", "narrow", "worried", "down", cheeks="blush") #Blushes
+            call cho_main("Yes it's B...", "soft", "narrow", "angry", "downR", cheeks="heavy_blush") #Blushes and glances to the side
             g9 "Noted..."
+            call cho_main("You're such an old pervert, you know that right?", "annoyed", "narrow", "angry", "mid", cheeks="blush")
+
         else:
             # Player has spied on the boys
 
-            m "Time for some more espionage, and this time we’ll be targeting the girls!"
-            cho "Okay then, so you want me to spy on anyone in particular?"
-            m "Why one of them when you could do all at once?"
-            cho "All at once? "
-            m "That’s what I said!"
+            m "Time for some more espionage..."
+            g9 "This time we'll be targeting the girls!"
+            call cho_main("The girls? Anyone in particular you want me to spy on, [cho_genie_name]?", "soft", "narrow", "raised", "mid")
+            g9 "Why one of them when you could do all at once?"
+            call cho_main("All at once?", "clench", "base", "base", "mid")
+            m "That's what I said..."
             m "Their changing room should be a good place to start."
-            cho "Sir!"
+            call cho_main("You can't be serious!", "mad", "happyCl", "worried", "mid", cheeks="blush")
             g9 "I know! I surprise myself with how good my plans are sometimes..."
-            cho "..."
-            cho "Okay then then, I’ll see what I can do..."
+            call cho_main("I'm gonna get caught for sure...", "disgust", "base", "worried", "down", cheeks="blush") # small text
+            call cho_main("...", "annoyed", "base", "angry", "down")
+            call cho_main("I'll see what I can do...", "annoyed", "narrow", "angry", "mid")
             g9 "Excellent."
 
-        g9 "Now, to the gadgets... I’ve got this great new invention... It's a vibrating magical rod..."
-        cho "A what?!"
-        cho "Wouldn’t something like an extendable ear make more sense for eavesdropping?"
+        m "Now, to the gadgets..."
+        g9 "I've got this great new invention... It's a vibrating magical rod that--"
+        call cho_main("A vibrating what?", "open", "base", "raised", "mid")
+        m "You could have let me finish, and I would have told you..."
+        call cho_main("Wouldn't something like an extendable ear make more sense for eavesdropping?", "open", "narrow", "base", "mid")
         m "Not unless it vibrates..."
-        m "Anyway, you’d better get a move on..."
-        m "I expect your report this evening B!"
+        call cho_main("...", "annoyed", "narrow", "angry", "mid")
+        m "You don't want it?"
+        call cho_main("I'll manage without, [cho_genie_name].", "annoyed", "narrow", "base", "mid")
+        m "Suit yourself..."
+        m "Anyway, you'd better get a move on..."
+        m "I expect your report this evening, B!"
         m "Good luck!"
-        cho "Thanks..."
+        call cho_main("Thanks...", "open", "narrow", "angry", "R")
 
     elif not cc_pr_spy_girls.is_event_complete(1, 2): # Completed Alicia Spinnet?
         # Spy on Alicia Spinnet
 
-        m "Ready for some more espionage B?"
-        cho "Of course!"
-        cho "Who’s the target?"
-        m "Alicia Spinnet!"
-        m "I suggest you try and spy on her when she’s not with the other two."
-        cho "Why’s that?"
-        m "It’s the best way to get to know a person for real, maybe she’s putting up a front with her friends."
-        cho "Okay then..."
-        m "Off you go!"
-        m "Enj... I mean, good luck!"
-        cho "Thanks..."
+        m "Ready for some more espionage, B?"
+        call cho_main("I suppose...", "soft", "narrow", "base", "mid")
+        call cho_main("Who's the target?", "open", "narrow", "raised", "mid")
+        m "Let's do the spinner girl--"
+        m "I mean... Let's do Miss Spinnet next."
+        call cho_main("Alicia?", "soft", "base", "raised", "mid")
+        m "I suggest you try and spy on her when she's not with the other two."
+        call cho_main("Why just her?", "soft", "narrow", "base", "mid")
+        m "It's the best way to get to know a person, wouldn't you agree."
+        m "Maybe she's putting up a front with her friends."
+        call cho_main("If you say so...", "annoyed", "base", "base", "R")
+        m "Off you go, and good luck!"
+        call cho_main("Thanks, [cho_genie_name].", "base", "base", "base", "mid")
 
     elif not cc_pr_spy_girls.is_event_complete(1, 3): # Completed Katie Bell?
         # Spy on Katie Bell
 
-        m "Ready for some more espionage B?"
-        cho "Of course!"
-        cho "Who are we targeting today?"
-        m "Katie Bell!"
-        cho "Okay then."
-        m "Off you go."
+        m "Ready for some more espionage, B?"
+        call cho_main("Of course!", "base", "base", "base", "mid")
+        m "Which one of the girls from the Gryffindor team have we yet to spy on?"
+        call cho_main("Well, I could spy on Katie...", "open", "base", "raised", "R")
+        m "Katie... who again?{w=0.5} That name doesn't ring a bell..."
+        call cho_main("Katie Bell, [cho_genie_name].", "soft", "narrow", "base", "mid")
+        m "(...)"
+        m "Well, now it does..."
+        m "Just keep it quiet when you go after her... We're on a spy mission, after all."
+        g9 "I don't want you to ring Katie's bell just yet. Well do that later..."
+        call cho_main("You want me to do what?", "open", "narrow", "raised", "mid")
+        m "Never mind... Off you go."
+        call cho_main("Very well... Until later then...", "base", "base", "base", "mid")
+
         call cho_walk("door", "base")
+
+        call bld
         g4 "Oh, wait... I forgot about the gadgets!"
+
         call cho_walk(action="leave")
-        m "(Damn, she must’ve not heard me...)"
+
+        call bld
+        m "(Damn, she must've not heard me...)"
 
         # End early, cho already left!
         $ cc_pr_spy_girls.inProgress = True
@@ -92,36 +127,36 @@ label cc_pr_spy_girls_start:
     elif not cc_pr_spy_girls.is_event_complete(1, 4): # Completed Angelina Johnson?
         # Spy on Angelina Johnson
 
-        m "Ready for some more espionage B?"
-        cho "Of course!"
-        cho "Who are we targeting today?"
-        m "Angelina Johnson!"
-        cho "Their team captain?"
-        m "Yes, and I can’t stress enough that today's performance is of the utmost importance."
-        cho "Of course... So what-"
-        m "Utmost!"
-        cho "I unders-"
-        m "Importance!"
-        cho "..."
-        m "So are you ready B?"
-        cho "I am rea-"
-        m "Don’t get spotted!"
-        call cho_walk(action="leave")
-        m "(Did she just...)"
-        m "(Well, that’s just rude.)"
-
-        # End early, cho already left!
-        $ cc_pr_spy_girls.inProgress = True
-
-        jump end_cho_event
+        m "Ready for some more espionage, B?"
+        call cho_main("I suppose... I assume you want me to go after the girls again?", "soft", "base", "base", "mid")
+        m "You'd be correct with that assumption..."
+        call cho_main("Well, there's only one member I haven't spied on yet, which would be A--", "open", "base", "base", "R")
+        with hpunch
+        g4 "{b}Johnson!{/b}" # large text
+        call cho_main("...", "disgust", "narrow", "base", "mid")
+        m "Sorry. Couldn't help myself..."
+        call cho_main("I meant to say Angelina, but yes... her.", "annoyed", "narrow", "base", "mid")
+        m "She's their team captain, isn't she?"
+        m "I can't stress enough that today's performance is of the utmost importance."
+        call cho_main("...", "soft", "base", "base", "mid")
+        g4 "You can't get caught when you spy on her Johnson--"
+        g4 "I mean-- when you spy on Johnson..."
+        call cho_main("Of course... So what--", "open", "base", "base", "mid")
+        g4 "Utmost!"
+        call cho_main("", "upset", "base", "base", "mid")
+        g4 "Importance!"
+        call cho_main("...", "annoyed", "narrow", "base", "mid")
+        m "So are you ready, B?"
+        call cho_main("Yes I'm ready...", "soft", "narrow", "angry", "R")
+        m "Don't get spotted!"
+        call cho_main("Until later then...", "open", "closed", "base", "mid")
 
     else:
-        m "Let’s spy on those girls some more!"
-        cho "Again? I’ve already spied on them all..."
+        m "Let's spy on those girls some more!"
+        call cho_main("Again? I've already spied on them all...", "soft", "base", "raised", "mid")
         m "You can never get enough intel."
-        cho "Okay then..."
         m "Make sure to bring me your report as usual B."
-        cho "Of course."
+        call cho_main("Of course.", "base", "base", "base", "mid")
 
     # Cho leaves.
     call cho_walk(action="leave")
@@ -130,7 +165,10 @@ label cc_pr_spy_girls_start:
 
     jump end_cho_event
 
+
+
 ### Return Events ###
+
 
 ### Tier 3 (pre Gryffindor) ###
 
@@ -140,39 +178,42 @@ label cc_pr_spy_girls_T3_showers_intro:
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
+    call cho_main("", "annoyed", "narrow", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
-    m "Welcome back, what's the report B?"
-    cho "..." #Blushing looking away
+    m "Welcome back!{w=0.3} What's the report, B?"
+    call cho_main("...", "annoyed", "narrow", "angry", "downR", cheeks="blush") #Blushing looking away
     m "Did you get any juicy info that we could use against the Gryffindor girls?"
-    cho "No juicy info per say..."
+    call cho_main("No juicy info per se...", "open", "closed", "base", "mid")
     m "Then how'd it go, anything you could tell me?"
-    cho "Well, I went to spy on them in the showers as you asked me..."
-    cho "I found a hole in one of the walls actually..."
+    call cho_main("Well... I went to spy on them in the showers, just as you asked me...", "soft", "narrow", "worried", "R", cheeks="blush")
+    call cho_main("I found a hole in one of the walls, actually...", "annoyed", "narrow", "raised", "mid")
     m "That's unfortunate, I'll have to look into filling that hole at some point..."
-    m "So what were they talking about if it wasn’t Quidditch?"
-    cho "There wasn’t much talking at all as they were too preoccupied with kissing and touching each other."
+    m "So what were they talking about if it wasn't Quidditch?"
+    call cho_main("Uhm... There wasn't much talking at all...", "disgust", "narrow", "base", "downR", cheeks="blush")
+    call cho_main("They were too preoccupied with kissing, and touching each other.", "open", "happyCl", "base", "mid", cheeks="blush")
     g9 "I knew it!"
-    cho "..." #annoyed
-    g9 "Makes you wish you had those girls on your own team doesn't it?"
-    cho "Yeah right..." #annoyed glancing to the right #blush
+    call cho_main("*Hmpf*...", "annoyed", "narrow", "angry", "mid", cheeks="blush") #annoyed
+    g9 "Makes you wish you had those girls on your own team, doesn't it?"
+    call cho_main("Yeah right...", "annoyed", "narrow", "angry", "downR", cheeks="heavy_blush") #annoyed glancing to the right #blush
     m "What else did they do?"
-    cho "Not a lot to be honest... I wasn't going to stay until they were done..."
-    m "Why not? What's the worst that could happen? They’d catch you and ask for you to join in?"
-    cho "*Pfff* Surely they'd never let one of their opponents in on anything they were doing."
-    m "So you thought about it?"
-    cho "I didn't say that..."
-    cho "Anyhow..."
-    cho "I had no idea they were so lewd..."
-    cho "I'm worried that there's little I could do in terms of clothing that would distract them..."
-    cho "Seeing how they were crawling over each other's naked bodies..."
+    call cho_main("Not a lot to be honest...", "open", "closed", "base", "mid")
+    call cho_main("I wasn't going to stay until they were done...", "annoyed", "narrow", "angry", "mid")
+    m "Why not? What's the worst that could happen?"
+    g9 "They'd catch you -- and ask for you to join in?"
+    call cho_main("*Pfff*...{w=0.3} As if...{w=0.3} They'd never let one of their opponents in -- on anything they were doing.", "soft", "narrow", "angry", "downR", cheeks="blush")
+    m "At least you considered it."
+    call cho_main("I didn't say that.", "mad", "narrow", "angry", "mid", cheeks="heavy_blush")
+    call cho_main("I had no idea they were so lewd...", "annoyed", "narrow", "angry", "R", cheeks="blush")
+    call cho_main("I'm worried that there's little I could do in terms of clothing that would distract them...", "open", "closed", "worried", "mid")
+    call cho_main("Seeing how they were crawling over each other's naked bodies...", "annoyed", "narrow", "angry", "mid")
     m "..."
-    m "You should’ve stayed for longer miss Chang, perhaps you could’ve learned a thing or two."
-    m "Anyway..."
-    m "I’ll think of something... For now we'll just try some different clothing to see if anything works."
-    cho "Okay..."
-    cho "Good... Good night then."
-    m "Good night miss Chang."
+    m "You should've stayed for longer... Perhaps you could've learned a thing or two."
+    call cho_main("...", "annoyed", "narrow", "angry", "R", cheeks="blush")
+    m "Anyway... I'll think of something..."
+    call cho_main("Okay...", "soft", "closed", "base", "mid")
+    g4 "Mission accomplished, B!"
+    m "You may go now..."
+    call cho_main("Good night, [cho_genie_name].", "annoyed", "base", "base", "mid")
 
     # Cho leaves.
     call cho_walk(action="leave")
@@ -182,72 +223,90 @@ label cc_pr_spy_girls_T3_showers_intro:
 
     jump end_cho_event
 
+
+## Alicia Spinnet ##
 label cc_pr_spy_girls_T3_alicia_intro:
-    # Alicia Spinnet
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
+    call cho_main("", "annoyed", "narrow", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
-    #Cho returns blushing with a vacant expression on her face
-    m "Ready for you report B... what’s the {i}sitch{/i}?"
-    cho "The \"sitch\" sir?"
-    m "What’s the situation."
-    m "Did you manage to spy on miss Spinnet when she was alone?"
-    cho "I did..."
+    # Cho returns blushing with a vacant expression on her face
+    m "Ready for you report, B..."
+    m "What's the {i}sitch{/i}?"
+    call cho_main("The \"sitch\", [cho_genie_name]?", "soft", "narrow", "raised", "mid")
+    m "What's the situation?"
+    m "Did you manage to spy on Miss Spinnet?"
+    call cho_main("I did...", "open", "closed", "raised", "mid")
     m "Great, tell me what happened."
-    cho "That girl sure is something..."
-    cho "She’s been assisting the twins by drawing in more customers to their shop."
+    call cho_main("She's been assisting the Weasley twins -- by drawing in more customers to their shop.", "open", "narrow", "base", "mid")
     m "How kind."
-    cho "I woulnd't call it that... Only reason she's assisting them is because they promised they'd behave during Quidditch."
+    call cho_main("I woulnd't call it that...", "soft", "narrow", "base", "R")
+    call cho_main("The only reason she's assisting them is because they promised they'd behave during Quidditch.", "open", "narrow", "raised", "mid")
 
     # Has player sent Hermione to work with the Twins, promoting the cardgame?
     if not first_time_cardgame_work:
         m "(I thought Hermione was helping them with that already...)"
 
-
-    cho "And she sure doesn’t seem to have any problems enticing people."
+    call cho_main("And she sure doesn't seem to have any problems enticing people.", "soft", "narrow", "base", "mid")
     m "So, how does she do it?"
-    cho "Well... If I didn’t know better I’d say she must be using some kind of hypnosis."
+    call cho_main("Well... If I didn't know better, I'd say she must be using some kind of hypnosis.", "annoyed", "narrow", "angry", "R")
     m "Hypnosis? Now that sounds completely absurd."
 
     # Has player started imperius curse training?
     if ag_st_imperio.points > 0:
-        m  "She’s not using that im-perv-ius curse is she?"
-        cho "Imperius?"
-        cho "No... I haven't seen her with a wand in hand..."
+        m  "She's not using that im-perv-ius curse, is she?"
+        call cho_main("The Imperius curse?", "open", "narrow", "raised", "mid")
+        m "That's what I said..."
+        call cho_main("Of course not. That spell is illegal!{w=0.8} She'd be thrown into Azkaban for it...", "soft", "narrow", "angry", "mid")
+        m "That's-- *uhm*...{w=0.3} correct.{w=0.5} Straight into prison..."
+        call cho_main("But No... I haven't seen her with a wand in hand...", "open", "closed", "base", "mid")
     else:
-        cho "That's why I said, if I didn't know any better..."
+        call cho_main("That's why I said, \"if I didn't know any better\"...", "open", "closed", "base", "mid")
 
-    cho "I saw her whisper something into another student's ear and as if on command they immediately followed her into the girls toilets."
-    m "Nice, a girl that takes what she wants..."
+    call cho_main("I saw her whisper something into another student's ear...", "soft", "closed", "base", "mid")
+    call cho_main("And as if on command -- they immediately followed her into the girls toilets.", "soft", "narrow", "angry", "mid")
+    g9 "A girl that takes what she wants... I respect that."
+    call cho_main("", "annoyed", "narrow", "angry", "mid")
     m "So, what was she doing with them?"
-    cho "Come on [cho_genie_name], surely you’re able to guess what she’s doing."
-    g9 "I have no idea, that’s why you’re here...{w=0.4} to tell me..."
-    cho "She’s doing lewd stuff with them obviously..."
-    m "Such as?"
-    cho "So predicatble...{w=0.4} Well, since I knew you’d ask... I did sneak in after her but I was only able to see part of her under the stall..."
-    cho "She was on her knees and whoever was in there with her wasn’t being quiet that’s for sure."
+    call cho_main("Do you realy have to ask, [cho_genie_name]?", "open", "narrow", "raised", "mid")
+    call cho_main("Surely you're able to guess what they did in there...", "soft", "closed", "base", "mid")
+    g9 "No, I have no idea!"
+    call cho_main("", "annoyed", "narrow", "angry", "mid")
+    g9 "Isn't that why you're here?{w=0.4} to tell me..."
+    call cho_main("She was doing lewd stuff with the student, obviously...", "soft", "narrow", "angry", "R", cheeks="blush")
+    g9 "Such as?"
+    call cho_main("So predictable...", "disgust", "closed", "angry", "mid")
+    call cho_main("Well, since I knew you'd ask... I did sneak in after her, and got a glimpse of her kneeling inside one of the stalls...", "soft", "narrow", "angry", "mid")
+    call cho_main("And whoever was in there with her wasn't being quiet... that's for sure.", "annoyed", "narrow", "angry", "R", cheeks="blush")
     m "I should get her number."
-    cho "Her what?"
+    call cho_main("Her what?", "annoyed", "narrow", "angry", "mid")
     m "Nevermind... {w=0.4} So is that all you saw?"
-    cho "*Uhm* As I said, I could only see her bottom from underneath that stall...{w=0.4} so yes..." #Blushing
-    m "Your face says otherwise, is that really everything you saw?"
-    cho "When I say bottom... She wasn’t wearing any panties [cho_genie_name]..."#Blushing
-    cho "She was also..."#Blushing
-    cho "She was also really wet down there..."#Blushing
+    call cho_main("*Uhm*... Yes...{w=0.5} That was it...", "quiver", "narrow", "base", "down", cheeks="blush") #Blushing
+    call cho_main("As I said, I could only see her bottom, from underneath that stall...", "open", "narrow", "base", "downR", cheeks="blush") #Blushing
+    m "Your face says otherwise... Is that really everything you saw?"
+    call cho_main("When I say bottom... She wasn't wearing any panties, [cho_genie_name]...", "disgust", "happyCl", "worried", "mid", cheeks="blush") #Blushing
+    call cho_main("She was also...", "soft", "narrow", "worried", "mid", cheeks="blush") #Blushing
+    call cho_main("She was also really wet down there...", "horny", "narrow", "worried", "downR", cheeks="blush") #Blushing
     g9 "There it is..."
-    cho "I just thought I’d tell you since she was making a huge mess on the floor!"
+    call cho_main("I just thought I'd tell you, since she was making a huge mess on the floor!", "soft", "narrow", "angry", "mid", cheeks="blush")
+    call cho_main("That's all...", "annoyed", "narrow", "angry", "mid", cheeks="blush")
     m "Of course, thanks for letting me know."
-    m "You’ve done a great job today B."
-    m "Although I still think my gadgets... especially the magic rod would’ve been a great help for this mission."
-    cho "..." #Blushing
-    m "I could let you borrow it to figure out how it works. It’s very useful you know."
-    cho "I’m good, thanks. I think I’ll just head straight to bed if you don’t mind."
-    call cho_walk("mid", "base")
+    m "You've done a great job today, B!"
+    g9 "Although, I still think my gadgets -- especially the magic rod -- would've been a great help for this mission."
+    call cho_main("...", "annoyed", "narrow", "angry", "R", cheeks="blush") #Blushing
+    m "I could let you borrow it, to figure out how it works."
+    g9 "It's very useful, you know."
+    call cho_main("I'm good, thanks...", "soft", "narrow", "angry", "mid", cheeks="blush")
+    call cho_main("I think I'll just head straight to bed, if you don't mind.", "soft", "narrow", "base", "downR", cheeks="blush")
+
+    call cho_walk(xpos="door", ypos="base")
+
+    pause .8
+    call bld
     m "Changed your mind?"
-    cho "N-...no, Good night!"
+    call cho_main("N--... no, Good night!", "open", "happyCl", "base", "mid", cheeks="blush") # head
 
     # Cho leaves.
     call cho_walk(action="leave")
@@ -257,63 +316,71 @@ label cc_pr_spy_girls_T3_alicia_intro:
 
     jump end_cho_event
 
+
+## Katie Bell ##
 label cc_pr_spy_girls_T3_katie_intro:
-    # Katie Bell
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
+    call cho_main("", "annoyed", "narrow", "angry", "mid", xpos="mid", ypos="base", trans=fade)
 
     m "Mission successful?"
     m "What did you learn about Katie Bell?"
-    cho "She’s a freak!" # angry
-    m "Whoa, that’s a bit uncalled for don’t you think?"
-    m "I’m sure she looks perfectly fine."
-    cho "No, not her looks... what she’s been doing." # blush
-    cho "I followed her all the way down to the lake today. And then hid behind a tree to observe her."
+    call cho_main("She's a freak!", "soft", "narrow", "angry", "mid") # angry
+    m "Whoa, that's a bit uncalled for, don't you think?"
+    m "I'm sure she looks perfectly fine."
+    call cho_main("No, not her looks... what she's been doing.", "open", "closed", "angry", "mid") # blush
+    call cho_main("I followed her all the way down to the lake today. And then hid behind a tree to observe her.", "open", "narrow", "angry", "mid")
     m "Something wrong with a little swim?"
-    cho "No, but... she went in there butt-naked!"
+    call cho_main("No, but...{w=0.5} she went in there butt-naked!", "disgust", "narrow", "base", "mid", cheeks="blush")
     g9 "Butt-naked? Did they open up a nude-beach without telling me?"
-    cho "What? Of course they haven’t!"
+    call cho_main("Of course they haven't!", "angry", "base", "base", "mid", cheeks="blush")
     m "Shame..."
-    cho "Once she had taken her clothes off she slowly walked into the water, and then just vanished beneath the surface..."
-    m "That’s...{w=0.4} odd...{w=0.4} Perhaps she is a mermaid?"
-    cho "I highly doubt that, seeing that she has legs..."
-    cho "Although for a moment I did consider that the mermaids living there might have used their songs to charm her..."
+    call cho_main("Once she had taken her clothes off -- she slowly walked into the water -- and then just vanished beneath the surface.", "open", "narrow", "base", "mid")
+    m "That's...{w=0.4} odd..."
+    g9 "Perhaps she's a mermaid?"
+    call cho_main("I highly doubt that, seeing that she has legs...", "open", "closed", "base", "mid")
+    call cho_main("Although, for a moment I did consider that the mermaids living there -- might have used their songs to charm her...", "soft", "base", "raised", "up")
     m "Well that's not concerning at all..."
-    cho "She did resurface a couple of moments later... just as I began to worry..."
-    cho "Although... not the way I expected."
-    cho "After a huge splash I realised she had been lifted into the air by some giant tentacles!"
+    call cho_main("She did resurface a couple of moments later though... just as I began to worry...", "annoyed", "base", "base", "mid")
+    call cho_main("But she emerged with a huge splash -- as she had been lifted into the air by some giant tentacles!", "soft", "base", "angry", "mid")
     g4 "Whoa, tentacles!"
-    cho "Yes, gross slimy and green tentacles... It was if the seaweed had come to life!"
-    m "So, what was it doing to her?"
-    cho "*Ugh* Do I really have to tell you..."
-    g9 "With as much detail as possible thank you."
-    cho "Fine..."
-    cho "They were holding her body stationary in the air, whilst more of its tentacles were working their way around, squeezing her breasts."
+    m "Wait, you're seriously not making this up? Since when do Mermaids have tentacles?"
+    call cho_main("I highly doubt it was them...", "open", "closed", "base", "mid")
+    call cho_main("I've told you, she's a freak!", "soft", "narrow", "angry", "mid")
+    m "So she's into tentacles, huh?"
+    call cho_main("Yes... Gross, slimy, green tentacles...", "disgust", "narrow", "angry", "down", cheeks="blush")
+    call cho_main("She must've used some charm... It was as if the lake had come to life!", "clench", "narrow", "angry", "R")
+    g4 "Shiver me timbers!"
+    g4 "What a fearless woman, to meddle with such magic?!"
+    m "What was it doing to her?"
+    call cho_main("*Ugh* Do I really have to tell you...", "disgust", "narrow", "angry", "R", cheeks="blush")
+    g9 "With as much detail as possible, thank you."
+    call cho_main("Fine...", "annoyed", "narrow", "angry", "down", cheeks="blush")
+    call cho_main("They were holding her body stationary in the air -- whilst more of its tentacles were working their way around -- squeezing her breasts.", "soft", "closed", "base", "mid")
     g4 "Classic tentacle move!"
-    cho "As it... {w=0.5} continued...{w=0.4} the tentacles grabbed her around the waist and began moving her body up and down, with another one wrapping itself around her legs."
-    cho "She almost looked like a doll being puppeted around by those giant arms..."
+    call cho_main("As it... {w=0.5} continued...{w=0.8} the tentacles grabbed her around the waist and began moving her body up and down -- with another one wrapping itself around her legs.", "clench", "narrow", "worried", "mid", cheeks="heavy_blush")
+    call cho_main("She almost looked like a doll being puppeteered by those giant arms...", "soft", "narrow", "angry", "mid", cheeks="blush")
     m "And she was letting it do this willingly?"
-    cho "Yes, she seemed to thoroughly enjoy being its...{w=0.6} toy to play with."
-    cho "And As the tentacles slid across her skin I could see her eyes roll back into her head."
-    cho "As they did, another tentacle slipped through in between her legs from behind."
-    cho "Which was enough to bring her over the edge I think."
+    call cho_main("Yes, she seemed to thoroughly enjoy being its...{w=0.8} toy to play with.", "clench", "narrow", "base", "downR", cheeks="blush")
+    call cho_main("She looked as if possessed! Being held up in the air like that, with her eyes rolled back into her head.", "soft", "narrow", "angry", "mid")
+    call cho_main("Then I watched another tentacle slip through her legs -- which was enough to bring her over the edge, I think.", "mad", "narrow", "raised", "down", cheeks="blush")
     m "Impressive..."
-    m "Now that’s quite a story, you’re not making this up are you?"
-    cho "I wish..."
     g9 "Sounds to me like a mission accomplished!"
-    cho "Mission... what?"
-    m "I’m sure you’ve just learned more about her than even her closest friends."
-    m "She’s a pervert who likes it rough, and enjoys being treated like an object."
-    cho "If you say so, [cho_genie_name]..."
+    call cho_main("Mission... what?", "soft", "narrow", "raised", "mid")
+    m "I'm sure you've just learned more about her than even her closest friends."
+    call cho_main("", "annoyed", "narrow", "base", "mid", cheeks="blush")
+    g4 "She's a girl who likes it dirty, and takes it rougher than even the toughest sea dog can muster!"
+    call cho_main("If you say so, [cho_genie_name]...", "soft", "narrow", "base", "R", cheeks="blush")
+    g9 "A pervert who doesn't give a hoot about foreplay."
+    call cho_main("...", "annoyed", "narrow", "angry", "mid", cheeks="blush")
     g9 "And you definitely know not to entice her with any sort of seaweed."
-    cho "..."
-    cho "Can I go now?"
-    m "Yes, you may leave... good job today [cho_name]."
-    cho "Thanks..."
-    cho "Good Night."
+    call cho_main("Can I go now?", "annoyed", "narrow", "angry", "R", cheeks="blush")
+    m "Yes, you may leave..."
+    g9 "Good job today, [cho_name]."
+    call cho_main("Thanks...", "soft", "closed", "base", "mid")
+    call cho_main("Good Night.", "normal", "narrow", "base", "mid")
     m "Until next time."
 
     # Cho leaves.
@@ -324,6 +391,8 @@ label cc_pr_spy_girls_T3_katie_intro:
 
     jump end_cho_event
 
+
+## Hooch spies on them! + Repeat Events ##
 label cc_pr_spy_girls_T3_angelina:
 
     # Since this is the last event in Tier 3, it will handle repeatables.
@@ -335,40 +404,45 @@ label cc_pr_spy_girls_T3_angelina:
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
+    call cho_main("", "normal", "narrow", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
-    g9 "Ready for your report B... lay on me!"
-    cho "Don’t you mean lay \"it\" on me, [cho_genie_name]?"
-    m "I’m pretty sure I’m right..."
+    g9 "Ready for your report, B... lay on me!"
+    call cho_main("Don't you mean lay \"it\" on me, [cho_genie_name]?", "soft", "narrow", "raised", "mid")
+    m "I'm pretty sure I'm right..."
     m "But before that, tell me how everything went with Miss Johnson!"
-    cho "Well enough, I'd say..."
-    cho "I stayed behind after practice, to see if I could follow her once they were done changing their clothes."
-    cho "To my surprise, she didn't head back to the castle like the others, but went to the referee's office instead..."
+    call cho_main("Well enough, I'd say...", "open", "narrow", "raised", "down")
+    call cho_main("I stayed behind after practice, to see if I could follow her once they were done changing their clothes.", "smile", "narrow", "angry", "mid")
+    call cho_main("To my surprise, she didn't head back to the castle like the others, but went to the referee's office instead...", "base", "narrow", "angry", "mid")
     m "The Referee?"
-    cho "Madam Hooch’s office, Sir."
-    cho "I managed to eavesdrop on their conversation, although I only caught the tail end of their conversation..."
-    cho "I suspect madame Hooch might know what they’ve been doing in the showers after the game..."
-    cho "Angelina was talking about how she couldn’t believe that she and her friends were being spied on like that."
-    cho "Madam Hooch just laughed it off and told her she should take it as a compliment."
+    call cho_main("Madam Hooch's office, [cho_genie_name].", "soft", "base", "raised", "mid")
+    call cho_main("I managed to eavesdrop on their conversation, although I only caught the tail end of it...", "open", "base", "base", "L")
+    call cho_main("I suspect Madame Hooch might know what they've been doing in the showers after the game...", "base", "narrow", "angry", "mid", cheeks="blush")
+    call cho_main("Angelina was talking about how she couldn't believe that she and her friends were being spied on like that.", "open", "base", "base", "up")
+    call cho_main("Madam Hooch just laughed it off and told her she should take it as a compliment.", "grin", "happyCl", "base", "mid", cheeks="blush")
     m "Good to know my staff knows how to diffuse a situation..."
-    cho "Angelina sure didn’t see it that way as she then stormed out her office..."
-    m "You sure she wasn’t talking about-"
-    cho "Sir... If Madame Hooch is spying on them, then Angelina might get the idea to entice her into helping them during the finals!"
-    m "Hmm... Not a bad idea now that I think about it. We should try that as well..."
-    cho "[cho_genie_name]! I don’t want to win by cheating!"
+    call cho_main("Angelina sure didn't see it that way -- and stormed right out her office...", "base", "narrow", "angry", "mid")
+    m "You sure she wasn't talking about--"
+    call cho_main("[cho_genie_name]... If Madame Hooch is spying on them, then Angelina might get the idea to entice her into helping them during the finals!", "annoyed", "narrow", "base", "mid")
+    m "Hmm... Not a bad idea, now that I think about it..."
+    g9 "We should try that as well."
+    call cho_main("No! I don't want to win by cheating!", "clench", "narrow", "angry", "mid")
     m "Yes, cause distracting hardly counts as cheating..."
-    cho "Well of course it's not! It's within the rules!"
+    call cho_main("Well of course it doesn't! It's within the rules!", "open", "closed", "base", "mid")
     m "..."
-    cho "We need to do something about it before Angelina tries to take advantage of the situation..."
-    m "I’ll... figure something out..."
-    cho "You'd better!" #Angry
-    cho "So... are we done here?" #smiles and focuses on genie
+    call cho_main("We need to do something about it, before Angelina tries to take advantage of the situation...", "soft", "narrow", "angry", "mid")
+    m "I'll... figure something out..."
+    call cho_main("You'd better!", "annoyed", "narrow", "angry", "mid") #Angry
+    call cho_main("So... are we done here?", "base", "narrow", "raised", "mid") #smiles and focuses on genie
     g9 "Yes, mission successful, [cho_name]!"
-    g9 "We’ll have that girl wrapped around our...{w=0.4} your finger soon enough..."
-    cho "Good night, [cho_genie_name]."
+    m "We'll have that girl wrapped around our--"
+    g9 "I mean... around your finger soon enough..."
+    call cho_main("Counting on it!", "soft", "narrow", "raised", "mid")
+    call cho_main("Good night, [cho_genie_name].", "base", "narrow", "base", "mid")
 
     #cho leaves
     call cho_walk(action="leave")
+
+    call bld
     g9 "(Wrapped around your finger...{w} good one...)"
 
     if cho_reputation < 12: # Points til 12.
@@ -376,30 +450,32 @@ label cc_pr_spy_girls_T3_angelina:
 
     jump end_cho_event
 
+
+## Angelina slapping Katie's ass ##
 label cc_pr_spy_girls_T3_repeat1:
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
+    call cho_main("", "annoyed", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
-    m "Ready for your report B..."
+    m "Ready for your report, B..."
     m "Did you catch them doing anything interesting?"
-
-    cho "I suppose... {w=0.5} I went to spy on them in the showers again."
+    call cho_main("I suppose...", "open", "base", "base", "downR")
+    call cho_main("I went to spy on them in the showers again.", "soft", "base", "base", "mid")
     m "Go on..."
-    cho "Angelina was slapping Katie on the butt with one of the beaters bats."
-    cho "Her butt was bright red... I have no clue how she can even sit on a broom at this point..."
-    cho "She must have some really potent cushioning charm on that thing..."
+    call cho_main("Angelina was slapping Katie on the bum -- with one of the beaters bats.", "horny", "base", "raised", "mid", cheeks="blush")
+    call cho_main("Her butt was bright red... I have no clue how she can even sit on a broom at this point...", "horny", "narrow", "base", "mid", cheeks="blush")
+    call cho_main("She must have some really potent cushioning charm on that thing...", "crooked_smile", "happyCl", "base", "mid", cheeks="heavy_blush")
     m "That girl sure loves a spanking..."
-    cho "Yes... and Angelina seems to thoroughly enjoy giving her one as well."
+    call cho_main("And Angelina seems to thoroughly enjoy giving them as well.", "base", "narrow", "angry", "mid", cheeks="blush")
     m "Well then, anything else to report?"
-
-    cho "No, that’s about it..."
+    call cho_main("No, that's about it...", "soft", "base", "base", "R")
     g9 "Then mission success!"
-    g9 "Good work B!"
-    cho "Then if that’s all... I’ll head off for today."
+    g9 "Good work, B!"
+    call cho_main("Is that all for today, [cho_genie_name]?", "base", "narrow", "base", "mid")
     m "Yes, that will be all."
+    call cho_main("Until next time...", "base", "happyCl", "base", "mid")
 
     # Cho leaves.
     call cho_walk(action="leave")
@@ -409,25 +485,31 @@ label cc_pr_spy_girls_T3_repeat1:
 
     jump end_cho_event
 
+
+## Katie flashing in class ##
 label cc_pr_spy_girls_T3_repeat2:
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
+    call cho_main("", "annoyed", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
-    m "Ready for your report B..."
+    m "Ready for your report, B..."
     m "Did you catch them doing anything interesting?"
-    cho "I was keeping an eye on Katie during Defence against the dark arts and caught her flashing her breasts towards another student."
-    cho "I was quite shocked she’d dare do something like that in class to be honest."
-    cho "I wasn’t going to say anything obviously but it would’ve been funny to see her get chastised by professor Tonks."
-    m "(Yeah, as if that would ever happen...)"
+    call cho_main("I was keeping an eye on Katie during Defence against the dark arts...", "soft", "closed", "base", "mid")
+    call cho_main("I caught her flashing her breasts at another student...", "open", "narrow", "base", "mid")
+    g4 "Whoa! During classes?!"
+    call cho_main("I know!", "angry", "base", "angry", "mid")
+    call cho_main("I was quite shocked she'd dare to do something like that in class, to be honest.", "soft", "narrow", "angry", "L")
+    g4 "(Holy shit! She really is a freak!)"
+    call cho_main("Obviously I wasn't going to say anything... but it would've been funny to see her get chastised by Professor Tonks.", "smile", "narrow", "angry", "mid", cheeks="blush")
+    m "(Yeah, don't get your hopes up with her...)"
     m "Anything else to report?"
-    cho "No, that’s about it..."
+    call cho_main("No, that's about it...", "annoyed", "base", "base", "R")
     g9 "Then mission success!"
-    g9 "Good work B!"
-    cho "Then if that’s all... I’ll head off for today."
-    m "Yes, that will be all."
+    g9 "Good work, B!"
+    m "You're dismissed..."
+    call cho_main("Have a nice evening, [cho_genie_name].", "base", "happyCl", "base", "mid")
 
     # Cho leaves.
     call cho_walk(action="leave")
@@ -437,27 +519,27 @@ label cc_pr_spy_girls_T3_repeat2:
 
     jump end_cho_event
 
+
+## Angelina showing Katie's bruised ass to the team ##
 label cc_pr_spy_girls_T3_repeat3:
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
+    call cho_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
-    m "Ready for your report B..."
+    m "Ready for your report, B..."
     m "Did you catch them doing anything interesting?"
-    cho "Angelina pulled Katies panties down during practice to expose her red butt cheeks to the boys."
-    cho "I heard her yelling at them to do better or she’d make their butts look like Katies."
+    call cho_main("Angelina pulled Katies panties down during practice -- to expose her red butt cheeks to the boys.", "open", "narrow", "raised", "mid")
+    call cho_main("I heard her yelling at them to do better -- or she'd make their butts look like Katies.", "clench", "base", "worried", "down", cheeks="blush")
     m "Such a bully..."
-    cho "Yeah, Angelina is just looking to get a reaction from the boys..."
-    cho "And Katie didn’t seem to mind the attention, that’s for sure..."
-    m "Well then..."
-    m "Anything else to report?"
-    cho "No, that’s about it..."
-    g9 "Then mission success!"
-    g9 "Good work B!"
-    cho "Then if that’s all... I’ll head off for today."
-    m "Yes, that will be all."
+    call cho_main("Yeah, Angelina is just looking to get a reaction from the boys...", "annoyed", "narrow", "angry", "mid")
+    call cho_main("And Katie didn't seem to mind the attention, that's for sure...", "annoyed", "narrow", "angry", "R")
+    call cho_main("That's about all that happened today...", "open", "closed", "base", "mid")
+    g9 "Excellent work, B!"
+    call cho_main("I'll head off then, if you don't mind.", "soft", "base", "base", "mid")
+    m "Yes, you're dismissed."
+    call cho_main("Have a nice evening, [cho_genie_name].", "base", "happyCl", "base", "mid")
 
     # Cho leaves.
     call cho_walk(action="leave")

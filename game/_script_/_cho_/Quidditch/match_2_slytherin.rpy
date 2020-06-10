@@ -53,7 +53,7 @@ label start_slytherin_match:
     m "Nonsense..."
     call cho_main("[cho_genie_name], I'm gonna get soaked without my coat on!", "soft", "base", "worried", "mid")
     g9 "Counting on it!"
-    g9 "I -- for one -- am quite looking forward to the possibility of you getting wet."
+    g9 "I, for one, am quite looking forward to the possibility of you getting wet."
     call cho_main("Let's just hope for the best...", "upset", "narrow", "worried", "down")
     g9 "That we shall."
     g9 "Off you go then. And good luck."
@@ -312,10 +312,10 @@ label slytherin_match:
     ## Flying Sprite:   call cho_main(xpos=580, ypos=-200)
     # Flying Chibi:     call cho_chibi("fly", 530, 360)
 
-    $ snape_chibi.zorder = 2
-    $ tonks_chibi.zorder = 3
-    $ hermione_chibi.zorder = 4
-    $ genie_chibi.zorder = 5
+    $ snape_chibi.zorder = 1
+    $ tonks_chibi.zorder = 2
+    $ hermione_chibi.zorder = 3
+    $ genie_chibi.zorder = 4
 
     # Match starts
     play weather "sounds/outskirts_tower.mp3" fadein 3
@@ -562,27 +562,9 @@ label slytherin_match:
     $ renpy.sound.play("sounds/ball_hit.mp3")
     call her_main("", "open", "base", "angry", "up")
 
-    ##############################################################
-    # v v v Cut parts ot this section so the event isn't too long.
-
-
-    ## v v v Move this bit to later during the CG.
-
-    #m "You might enjoy it a bit more if you took a look towards the Slytherin side of the pitch..."
-    #call ton_main("Oh... I see, miss Chang has decided to forego the coat today...", "open", "base", "raised", "up")
-    #call ton_main("And those trousers seem to sit pretty tight on her...", "horny", "base", "base", "up")
-    #m "I did my research..."
-    #g9 "I know for a fact that those Slytherin boys are men of class!{w=0.8} They enjoy such things as much as you."
-    #call ton_main("I bet they do...", "open", "base", "raised", "R")
-
-    ## ^ ^ ^ Move this bit to later during the CG.
-
-
-    #call sna_main("Feels a bit like cheating, considering our bet...", "snape_09")
     call sna_main("Well, some of us bet quite a fortune on the outcome.", "snape_09")
     if gold >= 2000:
         g4 "Fuck{w=0.3}, I forgot he was here..."
-        call sna_main("And I can still hear you...", "snape_03")
     else:
         g4 "Oh shit{w=0.3}, the bet..."
 
@@ -597,44 +579,6 @@ label slytherin_match:
         m "(It's not like I can conjure gold out of the thin air, can I...)"
     hide screen blktone
     with d5
-
-    #call sna_main("I had imagined that you wouldn't use such tactics during the game against Slytherin...", "snape_04")
-    #m "(There goes that fucking bet...)"
-
-    #call her_main("The Slytherin beaters, Crabbe and Goyle, are now focusing their efforts on beating the bludgers as hard as they can towards the enemy chasers!", "open", "base", "angry", "R")
-
-    #m "Well, if you remembered the bet correctly, you'd know that we said nothing about any tampering on my part."
-    #g9 "It was only you who made such an agreement..."
-    #call ton_main("Oooh, that's so naughty...", "upset", "base", "worried", "mid", hair="neutral")
-    #call sna_main("Quite...", "snape_04")
-    #call ton_main("Surely a bet like this should be made on equal terms... where's the sportsmanship?", "open", "base", "raised", "mid")
-
-    #menu:
-    #    g4 "(Damnit! Two against one... That's not fair!)"
-    #    "-Agree, and call the bet off...-":
-    #        # Offer to call off the bet, Snape declines
-    #        call ton_main("That's the spirit, now let's just enjoy the... *uhm*...", "horny", "base", "raised", "L", hair="horny")
-    #        call ton_main("The match, is what I wanted to say...", "upset", "base", "worried", "L")
-    #        call sna_main("No no, it's fine. I've got some cards up my sleeves.", "snape_09") #I think a repeated 'no' here works well, sort of a posh English way of being dismissive. But you can just use one it makes no real difference
-    #        #Keep the bet going, Snape should've listened properly
-    #        call sna_main("A bet is a bet, after all...", "snape_02")
-    #        call sna_main("I'm confident in my--...{w=0.5} my team's abilities though.", "snape_24")
-    #        call ton_main("...", "horny", "base", "base", "L") # Distracted
-    #        call ton_main("I'm sorry. Did you guys say something?", "open", "base", "raised", "L")
-
-    #    "-Forfeit, and give Snape the money...-":
-    #        #TODO Review this text: is Genie thinking to himself? what should happen, return to other options?
-    #        show screen blktone
-    #        if gold >= 2000:
-    #            g4 "Fuck no, you think I'm some kind of charity?"
-    #        else:
-    #            g4 "With what money?"
-    #        hide screen blktone
-    #        call sna_main("What?", "snape_03")
-    #        #Back to other two options
-
-    # ^ ^ ^ Cut parts ot this section so the event isn't too long.
-    ##############################################################
 
     call her_main("The Slytherin beaters, Crabbe and Goyle, are now focusing their efforts on beating the bludgers as hard as they can towards the enemy chasers!", "open", "base", "angry", "R")
     $ renpy.sound.play("sounds/ball_hit.mp3")
@@ -1356,6 +1300,7 @@ label slytherin_match:
 
     $ camera.set_image("cho_cg quidditch pose2 smirk")
     play sound "sounds/crowd_cheer.mp3"
+
     her "And there's a goal for Ravenclaw, ladies and gentlemen!"
     her "Look at those cuties go!{w=0.5} Those clothes must be completely stuck to their skin after that heavy downpour!"
 
@@ -1375,6 +1320,7 @@ label slytherin_match:
 
     call nar("Malfoy spins his head around. Finally noticing that Cho's currently chasing the snitch in the distance, he quickly darts after her.")
     malf "You fucking idiots!"
+
 
     # End of Cho CG
 

@@ -45,3 +45,38 @@ label nothing_to_see_here_049:
     call cho_main("So you think we should fight dirty too?","horny","narrow","base","mid")
     call cho_main("But how? The rules forbid almost all foul play.", "annoyed", "narrow", "worried", "downR")
     m "Hmmmm..."
+
+
+
+# Gryffindor match:
+
+
+    #call sna_main("Feels a bit like cheating, considering our bet...", "snape_09")
+    #m "Well, if you remembered the bet correctly, you'd know that we said nothing about any tampering on my part."
+    #g9 "It was only you who made such an agreement..."
+    #call ton_main("Oooh, that's so naughty...", "upset", "base", "worried", "mid", hair="neutral")
+    #call sna_main("Quite...", "snape_04")
+    #call ton_main("Surely a bet like this should be made on equal terms... where's the sportsmanship?", "open", "base", "raised", "mid")
+
+    #menu:
+    #    g4 "(Damnit! Two against one... That's not fair!)"
+    #    "-Agree, and call the bet off...-":
+    #        # Offer to call off the bet, Snape declines
+    #        call ton_main("That's the spirit, now let's just enjoy the... *uhm*...", "horny", "base", "raised", "L", hair="horny")
+    #        call ton_main("The match, is what I wanted to say...", "upset", "base", "worried", "L")
+    #        call sna_main("No no, it's fine. I've got some cards up my sleeves.", "snape_09") #I think a repeated 'no' here works well, sort of a posh English way of being dismissive. But you can just use one it makes no real difference
+    #        #Keep the bet going, Snape should've listened properly
+    #        call sna_main("A bet is a bet, after all...", "snape_02")
+    #        call sna_main("I'm confident in my--...{w=0.5} my team's abilities though.", "snape_24")
+    #        call ton_main("...", "horny", "base", "base", "L") # Distracted
+    #        call ton_main("I'm sorry. Did you guys say something?", "open", "base", "raised", "L")
+
+    #    "-Forfeit, and give Snape the money...-":
+    #        #TODO Review this text: is Genie thinking to himself? what should happen, return to other options?
+    #        show screen blktone
+    #        if gold >= 2000:
+    #            g4 "Fuck no, you think I'm some kind of charity?"
+    #        else:
+    #            g4 "With what money?"
+    #        hide screen blktone
+    #        call sna_main("What?", "snape_03")

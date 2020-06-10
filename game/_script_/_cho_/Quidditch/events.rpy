@@ -907,7 +907,7 @@ label cho_quid_E8:
         ton "Why don't you tell her that a very special someone will be really disappointed if she doesn't show up."
         m "(So it's not just me who thinks she's into Cho!)"
         ton "(She was so cute fumbling over her words...)"
-        ton "In any case, I'm sure you'll be able to change her mind."
+        ton "I'm sure you'll be able to change her mind."
     else:
         m "Did you know Hermione wanted to quit her task as a commentator?"
         call ton_main("Did she now? I thought she did well in the Hufflepuff game.","upset","base","raised","mid")

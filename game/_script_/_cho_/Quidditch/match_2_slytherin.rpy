@@ -128,8 +128,8 @@ label slytherin_match:
     call ton_main("It sure was...", "base", "base", "angry", "mid")
     call ton_main("So, is Hermione going to show up as well?", "horny", "base", "angry", "mid")
     m "Who knows with her, honestly..."
-    call ton_main("May I be allowed to accompany you?", "upset", "base", "worried", "mid") #sad
-    call ton_main("I'd love to be able to watch her... The game from the commentator booth.", "open", "base", "sad", "R")
+    call ton_main("In that case, may I be allowed to accompany you?", "upset", "base", "worried", "mid") #sad
+    call ton_main("I'd love to be able to watch her-{w} The game from the commentator booth.", "open", "base", "sad", "R")
     g9 "Of course! I'd be delighted to have you!"
     call ton_main("Thank you, [ton_genie_name].{heart}", "base", "happyCl", "base", "mid", hair="happy")
     call ton_main("Are we to expect another great performance this time around?", "horny", "base", "base", "mid", hair="neutral")
@@ -360,7 +360,7 @@ label slytherin_match:
 
     call ton_main("Oh, what a view! Much better than the one from the Hufflepuff stands!", "base", "happyCl", "base", "mid", flip=True, xpos="far_left", ypos="head")
 
-    m "Such nice weather too."
+    m "Nice weather too."
     call ton_main("Indeed!", "base", "happyCl", "base", "mid", flip=True, xpos="far_left", ypos="head")
 
     $ renpy.sound.play("sounds/thunder.ogg")
@@ -403,7 +403,7 @@ label slytherin_match:
     #hide screen blktone
     #with d5
 
-    call ton_main("{size=-4}Do I hear some jeallousy back there?{/size}", "smile", "base", "raised", "R", flip=True, xpos="far_left", ypos="head")
+    call ton_main("{size=-4}Do I hear some jealousy back there?{/size}", "smile", "base", "raised", "R", flip=True, xpos="far_left", ypos="head")
     call sna_main("{size=-4}Of course not... just a cough,{w=0.3} {cps=15}Nymphadora{/cps}.{/size}", "snape_03", ypos="head")
     call ton_main("{size=-2}That's Tonks to you...{w=0.3} {i}dungeon dweller.{/i}{/size}", "base", "shocked", "angry", "R", flip=True, hair="angry", xpos="far_left", ypos="head")
     call sna_main("Dungeon dw--", "snape_32", ypos="head")
@@ -593,7 +593,7 @@ label slytherin_match:
     if gold >= 2000:
         g4 "(Why did I bet so much gold on this?!)"
     else:
-        g4 "(I thought he was bluffing, how in the hell would I get 2000 gold!)"
+        g4 "(How in the hell would I get 2000 gold!)"
         m "(It's not like I can conjure gold out of the thin air, can I...)"
     hide screen blktone
     with d5
@@ -774,7 +774,7 @@ label slytherin_match:
     pause .8
 
     call sna_main("I'm surprised she didn't swallow that one - with how wide she was blabbing her mouth.", "snape_42", ypos="head")
-    call sna_main("That's liquid luck for you!", "snape_45")
+    call sna_main("To think that liquid luck-", "snape_45")
     call ton_main("{size=+5}What?{/size}", "angry", "shocked", "base", "wide", hair="neutral", ypos="head", flip=True, trans=hpunch)
     g4 "What the fuck is liquid luck?"
     call ton_main("You gave those brutes a luck potion?!", "scream", "base", "angry", "L", hair="angry")
@@ -1348,15 +1348,16 @@ label slytherin_match:
 
     call ctc
 
-    goy "Looks like this little Ravenclaw slut has finally come to her senses, Crabbe."
-    cra "Why wouldn't she Goyle... Those Ravenclaw cucks got nothing even close to our sheer strength!" #have is correct grammar here but crabbe and goyle are dumb shits so
+    cra "She's showing us her ass! That luck potion Snape gave us really is working!"
+    goy "Or maybe this little Ravenclaw slut has finally come to her senses, Crabbe."
+    goy "No surprise there... Those Ravenclaw cucks got nothing even close to our sheer strength!" #have is correct grammar here but crabbe and goyle are dumb shits so
     $ camera.set_image("cho_cg quidditch pose2 open")
     call nar("Cho tightens her butt cheeks and flutters her eyelashes in a way that -- to anyone except Crabbe and Goyle -- would be an obvious distraction tactic.")
 
     $ camera.set_image("cho_cg quidditch pose2 smirk")
     play sound "sounds/crowd_cheer.mp3"
     her "And there's a goal for Ravenclaw, ladies and gentlemen!"
-    her "Look at those cuties go!{w=0.5} Those clothes must be completely stuck to their skin in this weather!"
+    her "Look at those cuties go!{w=0.5} Those clothes must be completely stuck to their skin after that heavy downpour!"
 
     call ctc
 

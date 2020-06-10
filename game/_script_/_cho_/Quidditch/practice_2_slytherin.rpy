@@ -191,7 +191,7 @@ label cc_st_return:
             cho "Good."
         else:
             cho "I suppose..." #
-        m "Well then, the match looms ever so closer... I hope you're ready."
+        m "The match looms ever so closer... I hope you're ready."
         cho "You bet your ass I am!"
         m "..."
         cho "Don't even say it..."

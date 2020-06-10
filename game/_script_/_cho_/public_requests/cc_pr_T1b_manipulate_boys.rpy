@@ -454,7 +454,7 @@ label cc_pr_manipulate_boys_T2_intro_E2:
     m "Yes! As long as you keep teasing them."
     m "They won't be able to keep focus on anything else..."
     g9 "Except your perfect bod!"
-    call cho_main("I'll do my best, Sir", "base", "base", "base", "mid")
+    call cho_main("I'll do my best, Sir.", "base", "base", "base", "mid")
     m "You may go now, [cho_name]. Nice work!"
     call cho_main("Thank you, [cho_genie_name]!", "smile", "base", "base", "R")
 
@@ -526,7 +526,7 @@ label cc_pr_manipulate_boys_T2_intro_E3:
     call cho_main("Sir!", "angry", "base", "angry", "mid")
     g4 "Dismissed!{w} Now go back to your room..."
     call cho_main("Fine...", "annoyed", "narrow", "angry", "mid") # Annoyed
-    call cho_main("Good night, coach.", "soft", "narrow", "angry", "mid") # Angry
+    call cho_main("Good night, [cho_genie_name].", "soft", "narrow", "angry", "mid") # Angry
 
     # Cho leaves.
     call cho_walk(action="leave")

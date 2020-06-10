@@ -686,7 +686,7 @@ label ss_he_cho_E2:
         call sna_main("Their rates are good, plus it means I don't have to leave the castle unless absolutely necessary...", "snape_09")
         m "Ah, a basement dweller... charmed."
         call sna_main("In any case, about your inquiry...", "snape_03")
-        call sna_main("The boys are both on the Gryffindor team so they're sure have the means of providing what you need.", "snape_01")
+        call sna_main("The boys are sure to have the means of providing what you need.", "snape_01")
         m "Sweet, looking forward to meeting them..."
         call sna_main("Aren't you going to ask for directions?", "snape_05")
         m "I'm sure I'll manage..."

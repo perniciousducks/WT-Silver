@@ -168,7 +168,7 @@ label cho_intro_E1:
     call cho_main("Anything!", "clench", "narrow", "angry", "mid")
     g9 "It's your lucky day, Miss Chang!"
     m "I will gladly talk to Miss Granger, but in return..."
-    g9 "How about you come over here and suck on my-{w=1.2}{nw}"
+    g9 "How about you come over here and suck on my-"
 
     # Hermione walks in
     stop music fadeout 1.0

@@ -169,41 +169,38 @@ label cc_st_return:
         # Cho is furious.
         call cho_main("", "annoyed", "narrow", "angry", "mid", xpos="mid",ypos="base", trans=d3)
 
-        #TODO Posing
-
         m "Welcome back..."
-        cho "..." #Annoyed
+        call cho_main("...", "annoyed", "base", "angry", "R") #Annoyed
         m "Don't tell me they didn't show up again... Tonks assured me she'd get them to-"
-        cho "No they did show up alright."
+        call cho_main("No they did show up alright.", "open", "narrow", "angry", "mid")
         g9 "Excellent!"
         m "Then what about our strategy, do you think it will work during the game?"
-        cho "I can't believe I flaunted my ass at them... but yes, I believe it will work."
-        cho "Crabbe and Goyle especially should be a great help, turning the game to my favour."
-        cho "I'm sure not even Malfoy would be able to get them to behave at that point."
-        cho "So long as they don't give my ass too much of a bludgering..."
+        call cho_main("I can't believe I flaunted my ass at them... but yes, I believe it will work.", "soft", "closed", "raised", "mid")
+        call cho_main("Crabbe and Goyle especially should be a great help, turning the game to my favour.", "smile", "narrow", "raised", "R")
+        call cho_main("So long as they don't give my ass too much of a bludgering...", "clench", "base", "raised", "mid")
         m "Just make sure to pick the right moment to distract them and I'm sure you'll be fine."
         m "Very well then, I guess we're ready to take those snakes on for the main match!"
         if not cho_quid.E7_complete:
-            cho "What about Granger?"
+            call cho_main("What about Granger?", "annoyed", "base", "raised", "mid")
             m "What about her?"
-            cho "Is she commentating or what? We can't play without a commentator."
+            call cho_main("Is she commentating or what? We can't play without a commentator.", "open", "base", "base", "mid")
             m "Oh, that's true... I'll talk to her..."
-            cho "Good."
+            call cho_main("Good.", "base", "base", "base", "mid")
         else:
-            cho "I suppose..." #
+            call cho_main("I suppose...", "annoyed", "base", "base", "R")
         m "The match looms ever so closer... I hope you're ready."
-        cho "You bet your ass I am!"
+        call cho_main("You bet your ass I am!", "smile", "base", "angry", "mid")
         m "..."
-        cho "Don't even say it..."
+        call cho_main("Don't even say it...", "upset", "base", "angry", "mid")
         m "I... wasn't-"
-        cho "Sure you weren't..."
-        cho "I'll head off to bed then."
-        m "{size=+6}*MHHMMMM*{/size}" #Big text
+        call cho_main("Sure you weren't...", "soft", "closed", "angry", "mid")
+        call cho_main("I'll head off to bed then.", "open", "base", "base", "R")
+        g4 "{size=+6}*MHHMMMM*{/size}" #Big text
 
         call cho_walk(action="leave")
 
-        m "*NNNNGH!!!*"
-        m "You'll be betting your ass on it!" #Big text
+        g4 "*NNNNGH!!!*"
+        g9 "You'll be betting your ass on it!" #Big text
         cho "{size=-4}I heard that!{/size}"#Cho outside door (small text)
         m "Dammit..."
 
@@ -236,21 +233,18 @@ label cc_st_talk:
             m "It didn't."
             call cho_main("Ask another teacher then...", "annoyed","narrow","base","mid")
     elif not cho_quid.E7_complete and cho_quid.E6_complete:
-        # TODO: Posing
-        cho "Will Hermione commentate the match or not?"
+        call cho_main("Will Hermione commentate the match or not?", "open", "base", "base", "mid")
         m "Probably..."
-        cho "What do you mean probably?"
+        call cho_main("What do you mean probably?", "clench", "base", "raised", "mid")
         m "I haven't confronted her about it yet."
-        cho "Then do it!"
+        call cho_main("Then do it!", "open", "base", "angry", "mid")
     elif cho_quid.E5_complete and not cho_quid.E6_complete:
-        # TODO: Posing
-        cho "I'm still a bit worried about those brutes..."
-        cho "You better find a way to deal with them."
+        call cho_main("I'm still a bit worried about those brutes...", "annoyed", "base", "raised", "down")
+        call cho_main("You better find a way to deal with them.", "soft", "base", "angry", "mid")
     elif cc_pf_talk.is_tier_complete() and not cho_quid.lock_tactic:
-        # TODO: Posing
-        cho "You really believe that showing off my ass is the best tactic against Slytherin?"
+        call cho_main("You really believe that showing off my ass is the best tactic against Slytherin?", "soft", "base", "base", "R", cheeks="blush")
         m "I'm certain of it..."
-        cho "..." #Worried
+        call cho_main("...", "annoyed", "base", "worried", "R", cheeks="blush") #Worried
         m "(Perhaps doing some more favours will improve her confidence.)"
     else:
         call cho_main("I'm confident that we can win this, [cho_genie_name].","smile","base","base","mid")

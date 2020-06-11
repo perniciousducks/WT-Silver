@@ -89,14 +89,13 @@ label cho_quid_E1:
     call cho_main("Tell me!", "scream", "closed", "angry", "mid", trans=hpunch)
     call cho_main("", "annoyed", "narrow", "angry", "mid")
 
-    # TODO: expressions
     m "We'll hit him where he least expects it!"
-    cho "And that would be?"
+    call cho_main("And that would be?", "soft", "base", "angry", "mid")
     m "The balls!"
-    cho "What?!?"
-    cho "Sir, surely you can't be-"
+    call cho_main("What?!?", "mad", "wide", "raised", "mid")
+    call cho_main("Sir, surely you can't be-", "clench", "base", "angry", "mid")
     m "If we entice him during the game he'll lose focus..."
-    cho "Entice... what are you..."
+    call cho_main("Entice...{w=0.4} what are you...", "clench", "base", "base", "mid")
 
     call cho_main("Sir, this is just ridiculous!", "scream", "closed", "angry", "mid", trans=hpunch)
     call cho_main("I thought a highly regarded wizard of your stature would know at least something that could help us at Quidditch.", "open", "narrow", "angry", "mid")
@@ -262,19 +261,18 @@ label cho_quid_E2:
     call cho_chibi("stand", "right", "base")
     with fade
 
-    # TODO: Posing
 
     m "Great job, we should definitely use positioning to our advantage!"
-    cho "Well, that much is true for any quidditch game..."
-    cho "I don't really see what we've achieved here."
+    call cho_main("Well, that much is true for any quidditch game...", "open", "base", "raised", "mid")
+    call cho_main("I don't really see what we've achieved here.", "soft", "base", "raised", "R")
     m "All in due time, [cho_name]..."
     m "With my training methods you'll have the upper hand over those other teams, I'm sure of it."
-    cho "Okay then." #cautious smile
+    call cho_main("I'll have to take you for your word then...", "base", "base", "raised", "mid") #cautious smile
     m "That's all for today."
-    cho "Already? I usually train for a couple of hours!"
-    m "Yes, I need to come up with a pl... prepare for our next session!"
-    cho "Oh... okay."
-    cho "Bye then."
+    call cho_main("Already? I usually train for a couple of hours!", "angry", "base", "raised", "mid")
+    m "Yes, I need to come up with a pl...{w=0.3} prepare for our next session!"
+    call cho_main("Oh... okay.", "soft", "base", "base", "down")
+    call cho_main("Bye then.", "base", "base", "base", "mid")
     m "Bye, Miss Chang."
 
     call cho_walk(action="leave")
@@ -439,10 +437,10 @@ label cho_quid_E5:
 
     if daytime:
         call cho_main("Good morning, [cho_genie_name]...", "annoyed", "narrow", "worried", "downR", xpos="right", ypos="base", trans=d3)
-        m "Mornin'"
+        m "Mornin'."
     else:
         call cho_main("Good evening, [cho_genie_name]...", "annoyed", "narrow", "worried", "downR", xpos="right", ypos="base", trans=d3)
-        m "Evenin'"
+        m "Evenin'."
     m "[cho_name], before we get back to our usual diversions, why don't we have a little chat about the recent happenings."
     call cho_main("Very well, [cho_genie_name]...", "open", "narrow", "worried", "mid")
     m "Cheer up, will you..."
@@ -668,10 +666,10 @@ label cho_quid_E7:
     call cho_main("How can I be of help?", "base", "base", "base", "mid")
     m "I have very good news for you, Miss Chang."
     m "Miss Granger and I were just discussing -- about who should commentate the next Squidditch game."
-    call cho_main("Oh, did you already blackmail her?", "crooked_smile", "base", "base", "mid")
+    call cho_main("Oh, am I sensing a blackmail situation?", "crooked_smile", "base", "base", "mid")
     call her_main("Blackmailing?!{w=0.5} Me?", "open", "wide", "base", "stare") # shocked
     call cho_main("", "annoyed", "narrow", "base", "L")
-    m "What choice do we have? You're acting stubborn, Miss Granger."
+    m "What other choice do we have? You're acting stubborn, Miss Granger."
     call her_main("So that's what's going on here. You two are scheming against me!", "angry", "base", "angry", "mid") # angry
     call cho_main("Come on, Hermione. You can't be {b}that{/b} scared of those Slytherins...", "open", "narrow", "raised", "L")
     call cho_main("Don't be such a coward...", "annoyed", "narrow", "angry", "L")
@@ -899,15 +897,14 @@ label cho_quid_E8:
         call ton_main("Hmm... that's too bad...","open","base","sad","R")
         call ton_main("But it's understandable... after all that mocking she had to go through last game.","open","base","sad","mid")
         call ton_main("Poor thing...","angry","base","sad","L")
-        # TODO: Posing
-        ton "Have you tried talking to her?"
+        call ton_main("Have you tried talking to her?", "open", "base", "raised", "mid")
         m "Not yet..."
-        ton "Well, if anyone could convince her surely you'd be the one to be able to."
+        call ton_main("Well, if anyone could convince her surely you'd be the one to be able to.", "base", "base", "base", "R")
         m "..."
-        ton "Why don't you tell her that a very special someone will be really disappointed if she doesn't show up."
-        m "(So it's not just me who thinks she's into Cho!)"
-        ton "(She was so cute fumbling over her words...)"
-        ton "I'm sure you'll be able to change her mind."
+        call ton_main("Why don't you tell her that a very special someone will be really disappointed if she doesn't show up.", "horny", "base", "base", "wide")
+        g9 "(So it's not just me who thinks she's into Cho!)"
+        call ton_main("(She was so cute fumbling over her words...)", "base", "happyCl", "base", "mid")
+        call ton_main("I'm sure you'll be able to change her mind.", "smile", "base", "base", "mid")
     else:
         m "Did you know Hermione wanted to quit her task as a commentator?"
         call ton_main("Did she now? I thought she did well in the Hufflepuff game.","upset","base","raised","mid")

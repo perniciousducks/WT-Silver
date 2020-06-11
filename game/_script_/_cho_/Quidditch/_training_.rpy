@@ -421,7 +421,6 @@ label cho_tactics:
     # Once you pick the right option the practice match option unlocks (Maybe we should have it say Try out tactic?)
     # The various options should go away once you've tried it once
 
-    # TODO: add expressions
 
     if position == "front":
         # The *ASS* position!

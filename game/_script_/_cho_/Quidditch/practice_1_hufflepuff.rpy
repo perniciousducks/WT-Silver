@@ -10,8 +10,8 @@ label cc_ht_start:
     m "Ready to show off your panties to those badgering badgers?"
 
     if weather in ("blizzard", "storm", "snow", "rain"):
-        cho "In this weather? But I'll freeze my legs off if I'm to wear a skirt..."
-        cho "I'd rather not catch a cold during practice..."
+        call cho_main("In this weather? But I'll freeze my legs off if I'm to wear a skirt...", "clench", "base", "base", "R")
+        call cho_main("I'd rather not catch a cold during practice...", "open", "base", "worried", "mid")
         m "Alright."
 
         jump cho_training.choices
@@ -104,13 +104,11 @@ label cc_ht_talk:
     call cho_main(xpos="right", ypos="base", trans=fade)
 
     if not cho_quid.E1_complete:
-        #TODO Posing
         m "Ready to start training?"
-        cho "Of course, just let me know when."
+        call cho_main("Of course, just let me know when.", "smile", "base", "raised", "mid")
     elif not cho_quid.E2_complete:
-        #TODO Posing
         m "So, are you sure you don't want my help?"
-        cho "I... I don't know..."
+        call cho_main("I... I don't know...", "upset", "base", "raised", "downR")
     elif cho_quid.E3_complete and not cho_quid.E4_complete:
         call cho_main("Have you asked Hermione to be our commentator yet?", "soft", "base", "base", "mid")
         m "Not yet."
@@ -151,24 +149,22 @@ label cc_ht_talk:
 
         jump cho_requests
     elif not cc_pf_talk.is_tier_complete(): # Has NOT completed "Talk to me" favour yet.
-        # TODO: Posing
         m "Have any ideas on how to beat those huffers?"
-        cho "Isn't that your job?"
+        call cho_main("Isn't that your job?", "soft", "base", "raised", "mid")
         m "Oh, yeah..."
         m "(How does she expect me to help her without knowing anything about the opponents?)"
         m "(Maybe I could get her to talk to me and gain more information through favours...)"
     elif not cho_quid.hufflepuff_prepared:
         m "Are you ready for the big win?"
-        cho "Have you actually found out a tactic we could use?"
+        call cho_main("Have you actually found out a tactic we could use?", "open", "base", "raised", "mid")
         m "(Oh right... I didn't discuss our new tactic with her yet.)"
     elif cho_whoring < 3: # Has Cho enough confidence?
-        # TODO: Posing
         m "So, how about those tactics?"
-        cho "I don't know if I can do...{w=0.4} That..."
+        call cho_main("I don't know if I can do...{w=0.4} That...", "disgust", "narrow", "base", "mid", cheeks="blush")
         m "What do you mean you can't? It's the perfect strategy!"
-        cho "But..."
+        call cho_main("But...", "soft", "base", "base", "down", cheeks="blush")
         m "Where's your confidence, your spirit?"
-        cho "I'm sorry, [cho_genie_name], forget I said anything..."
+        call cho_main("I'm sorry, [cho_genie_name], forget I said anything...", "open", "happyCl", "base", "mid", cheeks="blush")
         m "(Hmm... She doesn't look very confident to me...)"
         m "(Perhaps I should train her more in private.)"
     else:

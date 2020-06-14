@@ -7,6 +7,8 @@ init python:
         config.lint_hooks.append(lint_char_main_calls)
         renpy.arguments.register_command("whitespace", save_whitespace)
 
+    config.start_interact_callbacks.append(fix_intel_renderer)
+
 
 init -1 python:
     if renpy.version_tuple < (7,3,5,606):
@@ -115,6 +117,24 @@ init -1 python:
 
         print "\rCalculating whitespace... Done!"
         return False
+
+
+    def fix_intel_renderer():
+        # Called only once per session
+        config.start_interact_callbacks.remove(fix_intel_renderer)
+
+        if renpy.windows and renpy.game.preferences.renderer not in ("auto", "angle"):
+            intel_detected = False
+
+            if renpy.display.log.file:
+                for line in open(renpy.display.log.file.name, "r").readlines():
+                    if line.startswith("Vendor:") and "intel" in line.lower():
+                        intel_detected = True
+                        break
+
+            if intel_detected:
+                renpy.game.preferences.renderer = "angle"
+                renpy.quit(True)
 
 
 label missing_label():

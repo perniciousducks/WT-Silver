@@ -2,10 +2,9 @@
     def catch_character_call(label, called):
         if called:
             if label.startswith(("her_main", "cho_main", "ast_main", "ton_main")):
-                if config.developer:
-                    editor.catch(label)
+                editor.catch(label)
 
-    class ExpressionEditor(object, NoRollback):
+    class ExpressionEditor(NoRollback):
         transitions = ("d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "flash", "flashbulb", "flashbb", "flashblood", "kissiris", "black_magic", "blackfade", "morph", "teleport", "vpunch_repeat", "hpunch", "vpunch", "pushleft", "dissolve", "slideawayright", "wipedown", "slidedown", "pixellate", "blinds", "squares", "slideup", "pushup", "slideleft", "pushright", "wiperight", "irisin", "wipeleft", "slideawayleft", "pushdown", "irisout", "slideawayup", "wipeup", "slideawaydown", "slideright", "move")
 
         transforms = ("move_fade", "sprite_fly_idle")
@@ -23,26 +22,39 @@
 
             self._file = None
             self._file_contents = None
-            self._statement = None
 
             self.define_expressions()
-            self.changes = {}
+            self.changes = _dict()
+
+        def launch_editor(self, file=None, line=None):
+            """Launches external text editor."""
+            if renpy.in_rollback() or renpy.in_fixed_rollback():
+                return
+
+            renpy.launch_editor([file], line)
+            return
 
         def overwrite_statement(self):
+            if renpy.in_rollback() or renpy.in_fixed_rollback():
+                return
+
             # Backup file contents
             with open(self._file, "r") as f:
                 self._file_contents = f.readlines()
 
             try:
                 new = self.get_new_statement()
+                old = self.line_contents
 
                 # Overwrite the file contents
                 with open(self._file, "w") as f:
                     for n, l in enumerate(self._file_contents, 1):
                         if n == self.line:
                             f.writelines(l.replace(self.line_contents, new))
-                            if n not in self.changes.get(self._file, []):
-                                self.changes.setdefault(self._file, []).append(n)
+                            if n not in self.changes.get(self._file, _list()):
+                                self.changes.setdefault(self._file, _dict()).setdefault(n, [old, new, self.args])
+                            else:
+                                self.changes[self._file][n] = [old, new, self.args]
                         else:
                             f.writelines(l)
             except:
@@ -50,10 +62,12 @@
                 with open(self._file, "w") as f:
                     for l in self._file_contents:
                         f.writelines(l)
-                renpy.notify("An error occured, no changes were made.")
+                renpy.notify("An error occurred, no changes were made.")
                 return
+
             self.line_contents = new
             renpy.notify("Saved.")
+            return
 
         def get_new_statement(self):
             text = "\"\", " if not self.args["text"] else "\"{}\", ".format(self.args["text"].replace("\"", "\\\""))
@@ -95,10 +109,14 @@
             self.line = node.linenumber
             self.label = label
 
-            # Get arguments
-            node = renpy.game.script.lookup_or_none(self.label)
 
-            self.args = dict([(k, getattr(store, k)) for k in node.parameters.apply(None, None).iterkeys()])
+            if self.changes.get(self._file, _dict()).get(self.line, None):
+                # Get arguments from cache
+                self.args = self.changes[self._file][self.line][2]
+            else:
+                # Get arguments from node
+                node = renpy.game.script.lookup_or_none(self.label)
+                self.args = _dict([(k, getattr(store, k)) for k in node.parameters.apply(None, None).iterkeys()])
 
             if self.args["cheeks"] == None:
                 self.args["cheeks"] = "(No change)"
@@ -107,28 +125,36 @@
 
             # Lookup transition name
             if self.args["trans"] != None:
-                _transitions = dict([(obj.callable, name) for (name, obj) in store.__dict__.iteritems() if name in self.transitions])
+                _transitions = _dict([(obj.callable, name) for (name, obj) in store.__dict__.iteritems() if name in self.transitions])
                 self.args["trans"] = _transitions[self.args["trans"].callable]
 
             # Lookup transform name
             if not self.args["animation"] in (False, None):
-                _transforms = dict([(obj, name) for (name, obj) in store.__dict__.iteritems() if isinstance(obj, renpy.atl.ATLTransformBase)])
+                _transforms = _dict([(obj, name) for (name, obj) in store.__dict__.iteritems() if isinstance(obj, renpy.atl.ATLTransformBase)])
                 self.args["animation"] = _transforms[self.args["animation"]]
 
-            # Read file and find the line in question
-            with open(self._file) as f:
-                for n, l in enumerate(f, 1):
-                    if n == self.line:
-                        self._statement = l
-                        l = l.partition("#")[0].strip() # Ignore comments and strip spaces
-                        if l.startswith("call {}".format(self.label)):
-                            self.line_contents = l
-                            break
+            # Check for already made changes and hijack the line.
+            if self.changes.get(self._file, _dict()).get(self.line, None):
+                self.line_contents = self.changes[self._file][self.line][1]
+            else:
+                # Read file and find the line in question
+                with open(self._file) as f:
+                    for n, l in enumerate(f, 1):
+                        if n == self.line:
+                            l = l.partition("#")[0].strip() # Ignore comments and strip spaces
+                            if l.startswith("call {}".format(self.label)):
+                                self.line_contents = l
+                                break
+            self.set_expressions
             return
 
         def set_data(self, arg, val):
+            if renpy.in_rollback() or renpy.in_fixed_rollback():
+                return
+
             self.args[arg] = val
             self.set_expressions()
+            self.overwrite_statement()
 
         def set_expressions(self):
             c = getattr(renpy.store, self.char[self.label])
@@ -154,12 +180,12 @@
                 cheeks.extend([x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/cheeks/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x])
                 tears.extend([x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/tears/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x])
 
-                return dict([("mouths", mouths), ("eyes", eyes), ("eyebrows", eyebrows), ("pupils", pupils), ("cheeks", cheeks), ("tears", tears)])
+                return _dict([("mouths", mouths), ("eyes", eyes), ("eyebrows", eyebrows), ("pupils", pupils), ("cheeks", cheeks), ("tears", tears)])
 
-            self.expressions = dict([(x, scan_files(x)) for x in self.char.itervalues()])
+            self.expressions = _dict([(x, scan_files(x)) for x in self.char.itervalues()])
 
     def editor_reset():
-        editor.changes = {}
+        editor.changes = _dict()
 
     if config.developer:
         config.label_callback = catch_character_call
@@ -173,22 +199,25 @@ screen editor():
     zorder 0
 
     default minimised = False
+    default minimised_history = False
     default frame_size = (250, 450)
 
     if not _menu:
+
+        # Editor
         drag:
             drag_name "editor"
             draggable True
             drag_offscreen False
-            drag_handle (0, 0, 1.0, 0.2)
+            drag_handle (0, 0, 1.0, 26)
             pos (50, 50)
             frame:
-                xysize frame_size
-                button action NullAction() style "empty" xysize frame_size ypos 18
+                xysize (frame_size if not minimised else (250, 28))
+                button action NullAction() style "empty" xysize (frame_size if not minimised else (250, 28)) ypos 18
 
-                text "Editor" size 15 color "#FFF" outlines [(1, "#00000080", 1, 0)]
+                text "Expression Editor {size=-2}ver 0.2{/size}" size 10 color "#FFF" outlines [(1, "#00000080", 1, 0)]
 
-                textbutton "_" ysize 28 offset (-32, -7) text_size 15 text_yalign 0.5 xalign 1.0 action [ToggleScreenVariable("minimised", True, False), ToggleScreenVariable("frame_size", (250, 450), (250, 28)), SelectedIf(None)] tooltip ("Maximise editor" if minimised else "Minimise editor")
+                textbutton "_" ysize 28 offset (-32, -7) text_size 15 text_yalign 0.5 xalign 1.0 action [ToggleScreenVariable("minimised", True, False), SelectedIf(None)] tooltip ("Maximise" if minimised else "Minimise")
                 textbutton "x" ysize 28 offset (6, -7) text_size 15 text_yalign 0.5 xalign 1.0 action Hide("editor") tooltip "Close editor"
 
                 frame:
@@ -202,17 +231,8 @@ screen editor():
                         $ f = editor._file.split("/")[-1]
                         $ l = editor.line
 
-                        text "File: [f]\nLine: [l]" size 10 color "#FFF" pos (0, 160) outlines [(1, "#00000080", 1, 0)]
+                        textbutton "File: [f]\nLine: [l]" style "empty" text_size 10 text_color "#FFF" pos (0, 160) text_outlines [(1, "#00000080", 1, 0)] action Function(editor.launch_editor, editor._file, l)
 
-                        if editor.changes.get(editor._file, None):
-                            $ n = 0
-                            $ nn = 0
-                            for k, v in editor.changes.iteritems():
-                                $ n += 1
-                                $ nn += len(v)
-                            text "Reload to apply [nn] changes in [n] files" size 10 color "#FFF" align (0.5, 0.9) outlines [(1, "#00000080", 1, 0)]
-
-                        textbutton "Save" action Function(editor.overwrite_statement) align (0.0, 1.0)
                         textbutton "Reload" action Function(_reload_game) xanchor 1.0 align (1.0, 1.0)
 
                         if not False in (editor.args["pupils"], editor.args["eyebrows"], editor.args["eyes"], editor.args["mouth"]):
@@ -242,3 +262,65 @@ screen editor():
                             text "This character line uses unrecognized expression and requires to be changed manually." size 10 color "#FFF" align (0.5, 0.5) outlines [(1, "#00000080", 1, 0)]
                     else:
                         text "Not applicable." size 15 color "#FFF" align (0.5, 0.5) outlines [(1, "#00000080", 1, 0)]
+
+        # History
+        drag:
+            drag_name "editor_history"
+            draggable True
+            drag_offscreen False
+            drag_handle (0, 0, 1.0, 26)
+            pos (300, 50)
+            frame:
+                xysize (frame_size if not minimised_history else (250, 28))
+                button action NullAction() style "empty" xysize (frame_size if not minimised_history else (250, 28)) ypos 18
+
+                text "History" size 10 color "#FFF" outlines [(1, "#00000080", 1, 0)]
+
+                textbutton "_" ysize 28 offset (-32, -7) text_size 15 text_yalign 0.5 xalign 1.0 action [ToggleScreenVariable("minimised_history", True, False), SelectedIf(None)] tooltip ("Maximise" if minimised_history else "Minimise")
+                textbutton "x" ysize 28 offset (6, -7) text_size 15 text_yalign 0.5 xalign 1.0 action Hide("editor") tooltip "Close editor"
+
+                frame:
+                    style "empty"
+                    xysize (236, 2)
+                    pos (0, 18)
+                    background "#FFFFFF80"
+
+                if not minimised_history:
+                    if editor.changes:
+                        $ n = 0
+                        $ nn = 0
+                        for k, v in editor.changes.iteritems():
+                            $ n += 1
+                            $ nn += len(v)
+                        text "[nn] changes in [n] files" size 10 color "#FFF" xalign 0.5 ypos 26 outlines [(1, "#00000080", 1, 0)]
+
+                        frame:
+                            style "empty"
+                            xsize 236
+                            ymaximum 400
+                            yfill True
+                            ypos 42
+
+                            side "c r":
+                                area (0, 0, 236, 400)
+
+                                viewport id "editor_history":
+                                    draggable False
+                                    mousewheel True
+
+                                    vbox:
+                                        for fn in editor.changes.iterkeys():
+                                            text (fn.split("/")[-1]) size 10 color "#FFF" xalign 0.5 outlines [(1, "#00000080", 1, 0)]
+                                            frame style "empty" xysize (236, 2) background "#FFFFFF80"
+
+                                            for l in editor.changes[fn].iterkeys():
+                                                textbutton "Line [l]":
+                                                    text_size 10
+                                                    text_color "#FFF"
+                                                    text_outlines [(1, "#00000080", 1, 0)]
+                                                    if editor.line == l:
+                                                        background "#FFFFFF80"
+                                                    action Function(editor.launch_editor, file=fn, line=l)
+                                vbar value YScrollValue("editor_history") xsize 10
+                    else:
+                        text "No history." size 15 color "#FFF" align (0.5, 0.5) outlines [(1, "#00000080", 1, 0)]

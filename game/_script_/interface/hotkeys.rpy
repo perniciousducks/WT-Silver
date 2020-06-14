@@ -12,7 +12,13 @@ init python:
 
     config.keymap['hide_windows'].remove('mouseup_2')
     config.keymap['hide_windows'].remove('h')
-    # config.keymap['hide_windows'].remove('joy_hide')
+
+    if config.developer:
+        config.keymap['expression_editor'] = ['K_F5']
+
+        config.underlay.append(renpy.Keymap(
+            expression_editor = ToggleScreen("editor")
+            ))
 
     # Initialize hotkey variables and functions
     # List of available inputs: http://www.pygame.org/docs/ref/key.html

@@ -127,14 +127,18 @@ init -1 python:
             intel_detected = False
 
             if renpy.display.log.file:
-                for line in open(renpy.display.log.file.name, "r").readlines():
-                    if line.startswith("Vendor:") and "intel" in line.lower():
-                        intel_detected = True
-                        break
+                with open(renpy.display.log.file.name, "r") as file:
+                    for line in file:
+                        if line.startswith("Vendor:") and "intel" in line.lower():
+                            intel_detected = True
+                            break
 
             if intel_detected:
+                # Switch to Angle renderer
                 renpy.game.preferences.renderer = "angle"
-                renpy.quit(True)
+                renpy.display.draw.quit()
+                renpy.display.draw = None
+                renpy.display.interface.set_mode()
 
 
 label missing_label():

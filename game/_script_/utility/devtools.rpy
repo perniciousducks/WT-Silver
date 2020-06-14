@@ -123,7 +123,7 @@ init -1 python:
         # Called only once per session
         config.start_interact_callbacks.remove(fix_intel_renderer)
 
-        if renpy.windows and renpy.game.preferences.renderer not in ("auto", "angle"):
+        if renpy.windows and renpy.game.preferences.renderer == "auto":
             intel_detected = False
 
             if renpy.display.log.file:

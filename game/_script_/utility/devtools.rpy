@@ -129,8 +129,8 @@ init -1 python:
             if renpy.display.log.file:
                 with open(renpy.display.log.file.name, "r") as file:
                     for line in file:
-                        if line.startswith("Vendor:") and "intel" in line.lower():
-                            intel_detected = True
+                        if line.startswith("Vendor:"):
+                            intel_detected = "intel" in line.lower()
                             break
 
             if intel_detected:

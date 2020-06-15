@@ -1,3 +1,15 @@
+init python:
+    config.after_load_callbacks.append(load_assets)
+
+init -1 python:
+    def load_assets():
+        renpy.call_in_new_context("loading")
+        return
+
+label loading:
+    call screen loading()
+    return
+
 screen loading():
     layer "interface"
     tag loading

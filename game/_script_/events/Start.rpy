@@ -92,15 +92,15 @@ label start_wt:
             "-Skip to Hermione-" if cheats_active or persistent.game_complete:
                 $ skip_to_hermione = True
 
-    $ enable_game_menu()
     hide screen close_button
 
     ### GAME STARTS HERE ###
     stop music fadeout 1
     hide image "images/rooms/_bg_/castle.png"
-    show screen blkfade
+    call screen loading
     with d7
-    pause 1.2
+
+    $ enable_game_menu()
 
     ### CHEATS / SKIPPING ###
     if skip_to_hermione:

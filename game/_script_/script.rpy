@@ -10,6 +10,9 @@ label start_dev:
     call adjust_game_difficulty(2)
     $ cheats_active = True
     $ use_cgs = True
+
+    call screen loading
+
     jump skip_to_hermione
 
 label game_init:

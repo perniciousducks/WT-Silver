@@ -24,9 +24,9 @@
         if not achievement.status('workaholic') and stat_reports_counter >= 5:
             achievement.unlock("workaholic")
         return
-        
+
     def periodic_callbacks():
         """Call functions that need to be checked periodically (i.e. achievement unlocks) at around 20Hz"""
         periodic_achievements()
-        
+
 define config.periodic_callback = periodic_callbacks

@@ -52,9 +52,9 @@
                         if n == self.line:
                             f.writelines(l.replace(self.line_contents, new))
                             if n not in self.changes.get(self._file, _list()):
-                                self.changes.setdefault(self._file, _dict()).setdefault(n, [old, new, self.args])
+                                self.changes.setdefault(self._file, _dict()).setdefault(n, [old, new, self.args, self.char[self.label], None])
                             else:
-                                self.changes[self._file][n] = [old, new, self.args]
+                                self.changes[self._file][n] = [old, new, self.args, self.char[self.label], None]
                         else:
                             f.writelines(l)
             except:
@@ -155,6 +155,46 @@
             self.args[arg] = val
             self.set_expressions()
             self.overwrite_statement()
+
+        def get_tooltip(self, file, line):
+
+            if self.changes[file][line][4] == None:
+                imagepath = config.basedir.replace("\\", "/")
+                args = self.changes[file][line][2]
+                char = self.changes[file][line][3]
+
+                if char == "hermione":
+                    hair = her_hair_base
+                    box = (450, 275, 320, 240)
+                elif char == "tonks":
+                    hair = ton_hair_base_new
+                    box = (450, 275, 320, 240)
+                elif char == "astoria":
+                    hair = ast_hair_base
+                    box = (450, 320, 280, 240)
+                elif char == "cho":
+                    hair = cho_hair_ponytail1
+                    box = (450, 310, 280, 240)
+
+
+                sprites = [imagepath+"/game/characters/"+char+"/body/base/front.png"]
+
+                if not "No change" in args["cheeks"]:
+                    sprites.append(imagepath+"/game/characters/"+char+"/face/cheeks/"+args["cheeks"]+".png")
+                sprites.append(imagepath+"/game/characters/"+char+"/face/eyes/"+args["eyes"]+".png")
+                if not any(x in args["eyes"] for x in ("closed", "happyCl")):
+                    m = imagepath+"/game/characters/"+char+"/face/eyes/"+args["eyes"]+"_mask.png"
+                    sprites.append(AlphaMask(imagepath+"/game/characters/"+char+"/face/pupils/"+args["pupils"]+".png", m))
+                sprites.append(imagepath+"/game/characters/"+char+"/face/eyebrows/"+args["eyebrows"]+".png")
+                if not "No change" in args["tears"]:
+                    sprites.append(imagepath+"/game/characters/"+char+"/face/tears/"+args["tears"]+".png")
+                sprites.append(imagepath+"/game/characters/"+char+"/face/mouth/"+args["mouth"]+".png")
+                sprites.append(hair.get_image())
+
+                sprites = tuple(itertools.chain.from_iterable(((0,0), x) for x in sprites))
+
+                self.changes[file][line][4] =  At(Crop(box, Composite((1010, 1200), *sprites)), Transform(zoom=0.5))
+            return self.changes[file][line][4]
 
         def set_expressions(self):
             c = getattr(renpy.store, self.char[self.label])
@@ -320,6 +360,7 @@ screen editor():
                                                     text_outlines [(1, "#00000080", 1, 0)]
                                                     if editor.line == l:
                                                         background "#FFFFFF80"
+                                                    tooltip editor.get_tooltip(fn, l)
                                                     action Function(editor.launch_editor, file=fn, line=l)
                                 vbar value YScrollValue("editor_history") xsize 10
                     else:

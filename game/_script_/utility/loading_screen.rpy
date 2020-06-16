@@ -37,7 +37,7 @@ define loading_step_list = [
         "Nickering at knickers",
         "Greasing Snape's hair",
         "Increasing Genie's imagination levels",
-        "Adding illusion of choice dialog options",
+        "Adding illusion of choice dialogue options",
         "Redirecting blood flow",
         "Slutifying Slytherins",
         "Dampening Genie's powers",
@@ -46,7 +46,7 @@ define loading_step_list = [
         "Loading pointless bird petting mechanics",
         "Applying desk chair cushioning charm",
         "Calculating semen trajectory",
-        "Opening spankbank account at Gringotts"
+        "Opening spank-bank account at Gringotts"
         ]
 
 init python:

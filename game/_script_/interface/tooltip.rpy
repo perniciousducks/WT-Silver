@@ -6,7 +6,10 @@ screen mouse_tooltip():
     $ tooltip = GetTooltip()
 
     if preferences.tooltip and tooltip:
-        add MouseTooltip(Window(Text(tooltip, style="tooltip_text"), style="frame", background="#00000080"), padding=(10,5))
+        if isinstance(tooltip, basestring):
+            add MouseTooltip(Window(Text(tooltip, style="tooltip_text"), style="frame", background="#00000080"), padding=(10,5))
+        else:
+            add MouseTooltip(Window(tooltip, style="frame", background="#00000080"), padding=(10,5))
 
 init python:
     class MouseTooltip(renpy.Displayable):

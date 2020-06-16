@@ -1,9 +1,57 @@
+define loading_step_list = [
+        "Spinning up disks",
+        "Lubricating Hermione",
+        "Filling up Tonks' glass",
+        "Rendering Cho's marvellous abs",
+        "Teaching Astoria some manners",
+        "Gazing into the crystal ball",
+        "Waxing Cho's broom",
+        "Sanitizing Dumbledore's desk",
+        "Confiscating Hermione's panties",
+        "Adjusting the dress code",
+        "Deleting Hermiobrine",
+        "Initializing Snape walk physics",
+        "Loading Genie's name mispronunciation engine",
+        "Generating {s}dad{/s} bad jokes",
+        "Perverting common nouns",
+        "Inserting obscure pop culture references",
+        "Loading wardrobe feature fondling",
+        "Corrupting Teachers",
+        "Ignoring plot holes",
+        "Inflating Susan's tits",
+        "Hiding Room of Requirement",
+        "Predicting images",
+        "Initializing sex-drive",
+        "Loading loading screen",
+        "Bribing ministry of magic employees",
+        "Maximizing student gullibility levels",
+        "Tuning out Luna's rambles",
+        "Filling cupboard with trash",
+        "Shredding rule violation reports",
+        "Adding tissue box of holding to desk",
+        "Ignoring established lore",
+        "Neglecting minor characters",
+        "Hiding the marauders map",
+        "Injecting British slang",
+        "Stiffening nipples",
+        "Nickering at knickers",
+        "Greasing Snape's hair",
+        "Increasing Genie's imagination levels",
+        "Adding illusion of choice dialog options",
+        "Redirecting blood flow",
+        "Slutifying Slytherins",
+        "Dampening Genie's powers",
+        "Sleeving wizard cards",
+        "Breaking old save files",
+        "Loading pointless bird petting mechanics",
+        "Applying desk chair cushioning charm",
+        "Calculating semen trajectory",
+        "Opening spankbank account at Gringotts"
+        ]
+
 init python:
     config.after_load_callbacks.append(load_assets)
-    config.per_frame_screens.append("loading")
-
-    def is_prediction_active():
-        return renpy.game.interface.prediction_coroutine is not None
+    #config.per_frame_screens.append("loading")
 
 init -1 python:
     def load_assets():
@@ -20,22 +68,24 @@ screen loading():
     zorder 1000
 
     default step = 0
-    default steps = {
-        0: "Spinning up disks",
-        1: "Lubricating Hermione",
-        2: "Filling up Tonks' glass",
-        3: "Rendering Cho's marvellous abs",
-        4: "Teaching Astoria some manners",
-        5: "Gazing into the crystal ball"
-        }
-
-    # Set to False as soon as prediction is interrupted, because prediction might resume unexpectedly
-    default predicting = True
-    $ predicting = not (not predicting or not is_prediction_active())
+    default step_max = 5
+    default steps = tuple(random.choice(loading_step_list) for _ in xrange(step_max+1))
 
     frame style "empty" background "#000"
-    text ("Loading {}%".format(int(float(step) / (len(steps) - 1) * 100))) size 32 color "#fff" align (0.5, 0.5)
-    text ("{}".format(steps[step])) size 18 color "#808080" align (0.5, 0.55)
+    frame style "empty" background "#fff" maximum (406, 56) align (0.5, 0.5)
+    bar value StaticValue(step, step_max):
+        align (0.5, 0.5)
+        maximum (400, 50)
+        left_bar Frame(Solid("#ffffff"), 10, 0)
+        right_bar Frame(Solid("#000000"), 10, 0)
+        left_gutter 0
+        right_gutter 0
+        thumb None
+        thumb_shadow None
+
+    text "Loading" size 32 color "#ffffff" align (0.5, 0.4)
+    text ("{}%".format(int(float(step) / step_max * 100))) size 32 color "#808080" align (0.5, 0.5)
+    text ("{}".format(steps[step])) size 18 color "#808080" align (0.5, 0.6)
 
     timer 0.01 action SetScreenVariable("step", 1)
 
@@ -51,5 +101,8 @@ screen loading():
     elif step is 4:
         add astoria.get_image() alpha 0
         timer 0.01 action SetScreenVariable("step", 5)
-    elif step is 5 and not predicting: # not is_prediction_active():
-        timer 0.01 action Return()
+    elif step is 5:
+        if not renpy.predicting():
+            timer 0.01 action Return()
+
+

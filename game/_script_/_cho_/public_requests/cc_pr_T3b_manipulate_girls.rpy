@@ -13,33 +13,33 @@ label cc_pr_manipulate_girls_start:
         if not cc_pr_spy_girls.is_event_complete(1, 2):
             # Return if player has not spied on Alicia just yet.
             m "Let’s try and manipulate the girls on the enemy team!"
-            cho "You’re expecting me to just jump in blind?"
-            cho "I don’t know any of these girls, how do you expect me to manipulate them in any way without knowing what I’m dealing with?"
+            call cho_main("You're expecting me to just jump in blind?", "angry", "base", "base", "mid")
+            call cho_main("I don't know any of these girls, how do you expect me to manipulate them in any way without knowing what I'm dealing with?", "annoyed", "wide", "base", "mid")
             m "Good point, perhaps we should consider spying on them a bit beforehand."
 
             call cho_main(xpos="base", ypos="base", trans=fade)
 
             jump cho_requests_menu
 
-        m "I think it’s time to manipulate the female members of the enemy team a bit to see if we can find a way to distract them during the game."
-        cho "And how do you suggest we do that?"
+        m "I think it's time to manipulate the female members of the enemy team a bit and see if we can find some way to distract them during the game."
+        call cho_main("And how do you suggest we do that?", "annoyed", "base", "raised", "mid")
         m "Well, the Slytherin \"brutes\" seemed to think they had a pretty good chance to get with you during the last game."
-        cho "They’re idiots though, I barely had to do anything."
-        m "Which means it’s even more important to try and entice those girls before the match itself..."
-        cho "..."
-        m "It’s all about throwing them off their game, like you said... if the girls won’t get thrown off by you wearing some outfit then maybe an emotional... bond... would be more appropriate."
-        cho "Don’t you think we’d have an easier time focusing on the boys?"
-        m "Sometimes the hard route is the right one to take... you shouldn’t dismiss it."
+        call cho_main("They're idiots though, I barely had to do anything.", "soft", "base", "base", "R")
+        m "Which means it's even more important to try and entice those girls before the match itself..."
+        call cho_main("...", "disgust", "base", "raised", "down")
+        m "It's all about throwing them off their game, like you said... if the girls won't get thrown off by you wearing some outfit then maybe an emotional... bond... would be more appropriate."
+        call cho_main("Don't you think we'd have an easier time focusing on the boys?", "upset", "base", "base", "mid", cheeks="blush")
+        m "Sometimes the hard route is the right one to take... you shouldn't dismiss it."
         g9 "(Since those girls sound freaky...)"
-        cho "But Harry is the seeker and Ron is the keeper... wouldn’t it be more useful if-"
-        m "I’m certain my reasoning is correct here, are you questioning your trainer?"
-        cho "..."
-        cho "No..."
+        call cho_main("But Harry is the seeker and Ron is the keeper... wouldn't it be more useful if--", "open", "wide", "base", "mid", cheeks="blush")
+        m "I'm certain my reasoning is correct here, are you questioning your trainer?"
+        call cho_main("...", "upset", "base", "base", "R", cheeks="blush")
+        call cho_main("No...", "open", "base", "base", "R")
         g9 "Great, then off you go..."
         g9 "Time to make your team proud!"
         g9 "Pride is important!"
-        cho "..."
-        cho "I suppose, wish me luck..."
+        call cho_main("...{w}I suppose...", "soft", "base", "base", "mid")
+        call cho_main("Wish me luck...", "horny", "base", "base", "mid")
         g9 "Good luck..."
 
     elif not cc_pr_manipulate_girls.is_event_complete(1, 2): # Completed Katie Bell - Part 1?
@@ -47,14 +47,14 @@ label cc_pr_manipulate_girls_start:
 
         if not cc_pr_spy_girls.is_event_complete(1, 3):
             # Return if player has not spied on Katie just yet.
-            m "Let’s try and manipulate-"
-            cho "I’m going to stop you right there..."
+            m "Let's try and manipulate-"
+            call cho_main("I'm going to stop you right there...", "soft", "base", "angry", "mid")
             m "Yes?"
-            cho "There’s no way I’ll try this again before I know more about the girls."
+            call cho_main("There's no way I'll try this again before I know more about the girls.", "annoyed", "base", "angry", "mid")
             m "Why? I thought it went great with the Spinnet girl!"
-            cho "She cornered me!"
+            call cho_main("She cornered me!", "scream", "wide", "angry", "mid")
             m "And?"
-            cho "I’m not going to attempt the other two unless I know a bit more about them..."
+            call cho_main("I'm not going to attempt the other two unless I know a bit more about them...", "upset", "base", "angry", "R")
             m "Fine..."
 
 
@@ -63,17 +63,17 @@ label cc_pr_manipulate_girls_start:
             jump cho_requests_menu
 
         m "One down, two to go..."
-        m "I think it’s time to manipulate one of the other Gryffindor girls."
-        cho "Who do you want me to target this time?"
+        m "I think it's time to manipulate one of the other Gryffindor girls."
+        call cho_main("Who do you want me to target this time?", "open", "base", "raised", "mid")
         m "Katie Bell!"
-        cho "So, we’re still set on targeting the girls?"
-        g9 "Of course, I’m sure we got but a taste last time...{w=0.4} No pun intended."
-        cho "..."
-        m "I hope you’ve  remembered what you learned from her. This girl likes being treated rough so show some assertiveness with her and I’m sure she’ll fall for you."
-        cho "Okay..." #looking down a bit worried
+        call cho_main("So, we're still set on targeting the girls?", "upset", "base", "raised", "mid")
+        g9 "Of course, I'm sure we got but a taste last time...{w=0.4} No pun intended."
+        call cho_main("...", "angry", "closed", "base", "mid")
+        m "I hope you've  remembered what you learned from her. This girl likes being treated rough so show some assertiveness with her and I'm sure she'll fall for you."
+        call cho_main("Okay...", "open", "narrow", "base", "down", cheeks="blush") #looking down a bit worried
         g9 "Assertiveness!"
-        cho "..." #Changes from worried looking down to looking at genie
-        cho "Yes, I will!"
+        call cho_main("...", "clench", "base", "raised", "mid") #Changes from worried looking down to looking at genie
+        call cho_main("Yes, I will!", "mad", "base", "raised", "mid")
         g9 "Great, off you go!"
 
     elif not cc_pr_manipulate_girls.is_event_complete(1, 3): # Completed Katie Bell - Part 2?
@@ -82,24 +82,24 @@ label cc_pr_manipulate_girls_start:
         # No return here since it's just a continuation of previous Katie event.
 
         m "Follow that girl again!"
-        cho "Sir?"
-        m "I mean... Today’s mission is to follow that Bell girl again..."
-        cho "But... isn’t one time enough?"
-        cho "My butt is still sore from last time..."
+        call cho_main("Sir?", "mad", "base", "raised", "mid")
+        m "I mean... Today's mission is to follow that Bell girl again..."
+        call cho_main("But... isn't one time enough?", "disgust", "narrow", "base", "mid", cheeks="blush")
+        call cho_main("My butt is still sore from last time...", "clench", "narrow", "base", "downR", cheeks="blush")
         m "There can never be too much of a good thing."
-        cho "Fine..."
+        call cho_main("Fine...", "open", "narrow", "base", "down", cheeks="blush")
         m "Excellent, make sure to come back with an extensive report as usual B."
-        cho "Got it..."
+        call cho_main("Got it...", "soft", "base", "base", "mid", cheeks="blush")
 
     elif not cc_pr_manipulate_girls.is_event_complete(1, 4): # Completed Angelina Johnson?
         # Angelina Johnson
 
         if not cc_pr_spy_girls.is_event_complete(1, 4):
             # Return if player has not spied on Angelina just yet.
-            m "Let’s try and manipulate-"
-            cho "I’m going to stop you right there..."
+            m "Let's try and manipulate-"
+            call cho_main("I'm going to stop you right there...", "soft", "base", "angry", "mid")
             m "Yes?"
-            cho "There’s no way I’ll try this again before I know more about the girls."
+            call cho_main("There's no way I’ll try this again before I know more about the girls.", "annoyed", "base", "angry", "mid")
             m "Fine..."
 
             call cho_main(xpos="base", ypos="base", trans=fade)
@@ -107,25 +107,25 @@ label cc_pr_manipulate_girls_start:
             jump cho_requests_menu
 
         m "You seem to have gotten to know the Gryffindor girls quite well by now [cho_name]."
-        g9 "If you’re not careful you might turn into one yourself."
-        cho "As if, Ravenclaw always comes first!"
+        g9 "If you're not careful you might turn into one yourself."
+        call cho_main("As if, Ravenclaw always comes first!", "angry", "base", "base", "mid", cheeks="blush")
         g9 "You do? No shame in that!"
-        m "So...{w=0.4} Today we’re up against their team Captain, Angelina Johnson."
-        m "Once you’ve managed to bond with her you’ll have no problem winning the cup."
-        cho "Yes!"
-        cho "We’re so close I could almost taste it!"
-        g9 "I’m sure you will!"
+        m "So...{w=0.4} Today we're up against their team Captain, Angelina Johnson."
+        m "Once you've managed to bond with her you'll have no problem winning the cup."
+        call cho_main("Yes!", "grin", "closed", "base", "mid")
+        call cho_main("We're so close I could almost taste it!", "horny", "happyCl", "base", "mid")
+        g9 "I'm sure you will!"
         g9 "Now go get her..."
-        cho "Yes [cho_genie_name]!"
+        call cho_main("Yes [cho_genie_name]!", "smile", "base", "base", "R")
     else:
         # Repeatable events.
 
-        m "Let’s manipulate those girls some more!"
-        cho "More? Haven’t I done it enough already?"
-        m "There’s always room for more bonding."
-        cho "Okay then..."
+        m "Let's manipulate those girls some more!"
+        call cho_main("More? Haven't I done it enough already?", "clench", "base", "raised", "mid")
+        m "There's always room for more bonding."
+        call cho_main("Okay then...", "open", "base", "raised", "down")
         m "Make sure to bring me your report as usual B."
-        cho "Yes [cho_genie_name]!"
+        call cho_main("Yes [cho_genie_name]!", "base", "base", "base", "mid")
 
     # Cho leaves.
     call cho_walk(action="leave")
@@ -140,72 +140,71 @@ label cc_pr_manipulate_girls_start:
 
 label cc_pr_manipulate_girls_T3_alicia_intro:
     # Alicia Spinnet
-
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
+    call cho_main("", "normal", "narrow", "base", "down", cheeks="blush", xpos="mid", ypos="base", trans=fade)
 
-    m "Back so soon? I wasn’t expecting you for another hour."
-    cho "..." #Blushing
+    m "Back so soon? I wasn't expecting you for another hour."
+    call cho_main("...", "normal", "narrow", "base", "down", cheeks="blush") #Blushing
     m "Are you alright? How did it go with the girls?"
-    cho "Fine..." #Blush
+    call cho_main("Fine...", "open", "narrow", "base", "down", cheeks="blush") #Blush
     m "So, did you manage to connect with them in an emotional way?"
-    cho "..."
+    call cho_main("...", "annoyed", "closed", "base", "mid", cheeks="blush")
     m "[cho_name]?"
-    cho "You could say that."
+    call cho_main("You could say that.", "upset", "narrow", "base", "mid", cheeks="heavy_blush")
     m "Tell me what happened."
-    cho "Well..."
-    cho "My plan was to try and approach Alicia Spinnet without the other two around."
-    cho "So, I gestured her to come over to me as the other two entered the changing room..."
-    m "Nicely done. Splitting up the group makes it less likely they’ll gang up on you."
-    cho "That’s what I thought... and I felt pretty confident in my plan as she approached me."
-    cho "But before I even got a word out she had come up and kissed me on the lips!"
+    call cho_main("Well...", "disgust", "base", "base", "R", cheeks="blush")
+    call cho_main("My plan was to try and approach Alicia Spinnet without the other two around.", "open", "base", "base", "down", cheeks="blush")
+    call cho_main("So, I gestured her to come over to me as the other two entered the changing room...", "open", "base", "raised", "mid", cheeks="blush")
+    m "Nicely done. Splitting up the group makes it less likely they'll gang up on you."
+    call cho_main("That's what I thought... and I felt pretty confident in my plan as she approached me.", "soft", "closed", "base", "mid", cheeks="blush")
+    call cho_main("But before I even got a word out she had come up and kissed me on the lips!", "quiver", "base", "raised", "mid", cheeks="blush")
     g4 "Whoa, wait what?"
     g4 "I thought the plan was for you to make the advances here..."
-    cho "You and me both!"
+    call cho_main("You and me both!", "clench", "base", "raised", "mid", cheeks="blush")
     m "Do you know why she just came up and kissed you like that?"
-    cho "Well, apparently she saw me when I entered the girls bathroom..."
-    cho "And assumed I had followed her in there because I wanted to get in on the action..."
+    call cho_main("Well, apparently she saw me when I entered the girls bathroom...", "horny", "base", "base", "R", cheeks="blush")
+    call cho_main("And assumed I had followed her in there because I wanted to get in on the action...", "annoyed", "narrow", "base", "mid", cheeks="blush")
     g9 "Smart girl. She figured out you were perving on her!"
-    cho "I'm not perving on anybody! I only followed her into that bathroom to gather information!"
+    call cho_main("I'm not perving on anybody! I only followed her into that bathroom to gather information!", "horny", "happyCl", "angry", "mid", cheeks="blush")
     g9 "But I'm sure you liked sneaking a peek at her moist muff regardless."
-    cho "How was I to know she wasn’t wearing any panties..." # annoyed
+    call cho_main("How was I to know she wasn't wearing any panties...", "clench", "closed", "angry", "mid", cheeks="blush") # annoyed
     m "Be that as it may, this Alicia girl seems to be one step ahead of us..."
     m "So, what happened next B?"
-    cho "She started kissing me again, and placed a hand on one of my butt cheeks..."
+    call cho_main("She started kissing me again, and placed a hand on one of my butt cheeks...", "angry", "narrow", "base", "down", cheeks="blush")
     m "Correction, she's two steps ahead of us..."
     m "Sounds to me like you got a fan on the Gryffindor team..."
     g9 "That girl has the hots for you, that's for sure!"
-    cho "*Tzzs!*... Those sluts would probably make out with anybody..."
+    call cho_main("*Tzzs!*... Those sluts would probably make out with anybody...", "clench", "closed", "raised", "downR", cheeks="heavy_blush")
     m "Tongue or no tongue?"
-    cho "Sorry?" #Blush, shocked
+    call cho_main("Sorry?", "normal", "base", "raised", "mid", cheeks="blush") #Blush, shocked
     m "Did she slip you any tongue or what?"
-    cho "How is that relevant to anything?"
+    call cho_main("How is that relevant to anything?", "upset", "base", "base", "downR", cheeks="blush")
     m "Did she though?"
-    cho "..." #blush
-    m "I knew it!"
-    m "I hope you were at least courteous enough to return the favour..."
-    g9 "Tongue kissing and a butt squeeze... Not that's what I'd call a true challenger!"
-    cho "..." #Glaring
+    call cho_main("...", "normal", "base", "raised", "down", cheeks="blush") #blush
+    g9 "I knew it!"
+    g9 "I hope you were at least courteous enough to return the favour..."
+    g9 "Tongue kissing and a butt squeeze... Now that's what I'd call a true challenger!"
+    call cho_main("...", "base", "narrow", "base", "down", cheeks="blush") #Glaring
     m "What happened next?"
-    cho "She broke off the kiss and slapped my butt cheek, before running off to the changing rooms."
+    call cho_main("She broke off the kiss and slapped my butt cheek, before running off to the changing rooms.", "angry", "base", "base", "mid", cheeks="blush")
     m "Sounds to me like a job well done, [cho_name]."
-    cho "But I didn’t even do anything!"
+    call cho_main("But I didn't even do anything!", "clench", "wide", "base", "mid", cheeks="blush")
     m "Yet you achieved exactly what I asked of you, you formed an emotional bond with her."
     m "Now we only have to do the same with the other two..."
-    cho "So that's what this emotional bonding is all about? Getting them to kiss me?"
+    call cho_main("So that's what this emotional bonding is all about? Getting them to kiss me?", "mad", "narrow", "raised", "mid", cheeks="blush")
     m "Not kissing specifically..."
-    cho "..."
+    call cho_main("...", "annoyed", "closed", "base", "down", cheeks="blush")
     m "And now I'd like you to entice the other two as well."
-    cho "Sure, no problem... I’ll just walk up to one of them and they’d throw themselves at me, just like Spinnet did!" #Sarcastic
+    call cho_main("Sure, no problem... I'll just walk up to one of them and they'd throw themselves at me, just like Spinnet did!", "normal", "narrow", "angry", "R", cheeks="blush") #Sarcastic
     m "Great plan!"
     m "But for now you better get some rest and ready yourself to take on the other two."
-    cho "..."
-    m "Don’t look so dejected, [cho_name]. You had a beautiful girl kiss you today... surely you can’t be disappointed by that?"
-    cho "It’s...{w=0.4} it’s not that...{w=0.4} I’m just used to it being me who..."
-    cho "..." #Blush
-    cho "Nevermind, good night then."
+    call cho_main("...", "disgust", "narrow", "base", "down", cheeks="blush")
+    m "Don't look so dejected, [cho_name]. You had a beautiful girl kiss you today... surely you can't be disappointed by that?"
+    call cho_main("It's...{w=0.4} it's not that...{w=0.4} I'm just used to it being me who...", "annoyed", "closed", "base", "mid", cheeks="blush")
+    call cho_main("...", "upset", "closed", "base", "mid", cheeks="blush") #Blush
+    call cho_main("Nevermind, good night then.", "normal", "base", "base", "downR", cheeks="heavy_blush")
 
     # Cho leaves.
     call cho_walk(action="leave")
@@ -221,85 +220,87 @@ label cc_pr_manipulate_girls_T3_katie_intro_part1:
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
+    call cho_main("...", "normal", "narrow", "base", "down", cheeks="blush", xpos="mid", ypos="base", trans=fade)
 
-    #Cho returns blushing with a vacant expression on her face
-    cho "..."
     m "[cho_name]?"
-    cho "..."
+    call cho_main("...", "normal", "narrow", "base", "down", cheeks="blush")
     m "Hello?"
-    cho "Oh... Sorry [cho_genie_name]!" #face more focused still blushing
-    m "What’s the report. Did you manage to bond with the girl?"
-    cho "Of course..."
-    m "Then how did it go? Tell me all the-"
-    cho "All the details... Of course."
-    cho "So...{w=0.4} My plan was to follow Katie again."
-    cho "And to no surprise... She was once again making her way towards the lake."
-    cho "This time I ran up to ask where she was going, and her response was that she was just going for a walk to clear her head."
+    call cho_main("Oh... Sorry [cho_genie_name]!", "upset", "closed", "base", "mid", cheeks="blush") #face more focused still blushing
+    m "What's the report. Did you manage to bond with the girl?"
+    call cho_main("Of course...", "angry", "narrow", "base", "down", cheeks="blush")
+    m "Then how did it go? Tell me all the details!"
+    call cho_main("All the details...", "upset", "closed", "base", "mid", cheeks="heavy_blush")
+    call cho_main("So...{w=0.4} Much like before, my plan was to follow Katie as she wandered off away from the others.", "open", "base", "base", "mid", cheeks="blush")
+    call cho_main("And to no surprise... She was once again making her way down towards the lake.", "soft", "narrow", "base", "R", cheeks="blush")
+    call cho_main("So I ran up to her and questioned her on where she was headed, and she responded that she was just going for a walk to clear her head.", "open", "narrow", "base", "mid", cheeks="blush")
     m "Yeah right..."
-    cho "That's what I thought..."
-    cho "So... I bluntly asked her if she was heading to the lake to enchant those seaweeds again..."
+    call cho_main("That's what I said...", "clench", "narrow", "base", "R", cheeks="blush")
+    call cho_main("So to try and catch her off guard I bluntly asked her if she wasn't going for another round with those tentacles.", "open", "base", "raised", "mid", cheeks="blush")
     m "Whoa, right to the point!"
-    cho "Yes, I thought I’d catch her off guard..."
-    cho "But she didn’t respond to me at all and just started walking again..."
-    cho "So I tried pushing her more by asking her what Gryffindor house would think if they knew..."
-    cho "But she just kept walking, completely ignoring me."
-    cho "And it continued like that until finally I said that I would tell her captain unless she did something for me."
-    cho "That’s when she stopped walking to eye me up and down, and ask what her punishment was going to be."
+    call cho_main("Yes, although she didn't even respond to it and just started walking again...", "angry", "base", "base", "mid", cheeks="blush")
+    call cho_main("So I pushed her further and asked what Gryffindor house would think if they knew...", "soft", "base", "angry", "mid", cheeks="blush")
+    call cho_main("But she just kept walking, completely ignoring me.", "upset", "base", "angry", "mid", cheeks="blush")
+    call cho_main("I wasn't able to get through to her at all until I said that I would snitch to her captain unless she did something for me.", "clench", "narrow", "base", "mid", cheeks="blush")
+    call cho_main("That's when she stopped in her tracks, eyed me up and down and asked what her punishment was going to be.", "disgust", "base", "base", "down", cheeks="blush")
     g9 "Such a naughty girl!"
-    cho "I know! That’s not at all where I was going with the conversation."
-    cho "And what I hadn’t realized was that during my failed attempts at confronting her she had lead me off the path."
-    cho "Because just as I was about to answer her, I felt something tighten around my waist and suddenly I found myself dangling several feet off the ground!"
-    cho "Katie had not just wandering aimlessly... she had led me all the way to to the whomping willow!"
+    call cho_main("I know! That's not at all where I was going with the conversation.", "open", "wide", "angry", "mid", cheeks="blush")
+    call cho_main("What I hadn't realized during my failed attempts at confronting her she had been leading me off the path.", "clench", "base", "base", "downR", cheeks="blush")
+    call cho_main("Because just as I was about to reply, I felt something tighten around my waist and suddenly I found myself dangling several feet off the ground!", "open", "wide", "base", "mid", cheeks="blush")
+    call cho_main("That's when I realized, she had led me all the way to the whomping willow!", "clench", "happyCl", "angry", "mid", cheeks="blush")
     m "The whomping what?"
-    cho "That darn tree students are told to stay away from..."
-    cho "It had grabbed both Katie and I, lifting us into air... I thought we were done for."
-    cho "And for a couple of second we just dangled there until I heard a loud snapping sound and a yell."
+    call cho_main("That darn tree students are told to stay away from...", "upset", "base", "angry", "mid", cheeks="blush")
+    call cho_main("It had grabbed both Katie and I, lifting us into the air... I thought we were done for.", "angry", "narrow", "base", "mid", cheeks="blush")
+    call cho_main("And for a brief moment we just dangled there until the silence was cut short by a loud snapping sound and a yell.", "clench", "base", "base", "mid", cheeks="blush")
     g4 "Terrifying!"
-    cho "It was! But that was before I realised the tree wasn’t trying to kill us..."
-    cho "It had started lashing its branches about, smacking Katie...{w} and she was thoroughly enjoying the whole thing." #Blushing
+    call cho_main("It was! Until I realised the tree wasn't even trying to kill us...", "upset", "closed", "angry", "mid", cheeks="blush")
+    call cho_main("It had started to vigorously lash its branches about, smacking Katie...{w} and to my horror she was thoroughly enjoying the whole thing.", "disgust", "base", "base", "mid", cheeks="blush")
     g9 "A spanking tree? Seriously?"
-    cho "Yeah...{w=0.4} this wasn’t her first time doing this, that's for sure..."
-    cho "I couldn’t believe what I was seeing... I just stared at her in disbelief..."
-    cho "And that's when the tree..."
-    cho "Smacked one of its branches against my breasts and stomach..."
-    m "But of course a bit of spanking wouldn't bother a girl as tough as you, would it?"
-    cho "Of course! I’ve taken plenty of bruises playing Quidditch, so this is nothing in comparison..."
-    cho "Once I got over the initial shock I realised that the tree had moved me so I was now right next to Katie."
-    cho "And it was pretty hard to not stare at her body being smacked by those branches..."
-    m "So did she-"
-    cho "Of course she noticed me looking at her... and there was no doubt she enjoyed it even more than the spanking..."
-    cho "So...{w=0.4} I had no choice other than going back to the original plan..."
+    call cho_main("Yes!{w=0.4} And I'm sure this wasn't her first time doing this!", "clench", "base", "raised", "mid", cheeks="blush")
+    call cho_main("I couldn't believe what I was seeing, I just stared at her in disbelief...", "disgust", "base", "base", "down", cheeks="blush")
+    call cho_main("And at that moment, the tree--", "upset", "happyCl", "angry", "mid", cheeks="blush")
+    call cho_main("Smacked one of its branches across my breasts and stomach...", "clench", "base", "angry", "mid", cheeks="blush")
+    g9 "Surely a little bit of spanking wouldn't bother a girl as tough as you, would it?"
+    call cho_main("Of course it doesn't! I've taken plenty of bruises playing Quidditch, I was just taken by surprise...", "disgust", "base", "base", "mid", cheeks="blush")
+    call cho_main("Once I got over that initial shock the tree swiftly moved me right up next to Katie.", "mad", "narrow", "base", "downR", cheeks="blush")
+    call cho_main("And I watched as it continuously smacked her with its branches...", "soft", "happyCl", "base", "down", cheeks="blush")
+    g9 "I bet she knew you were looking."
+    call cho_main("Obliviously, no doubt she was enjoying it even more than the spanking.", "annoyed", "base", "angry", "mid", cheeks="blush")
+    call cho_main("And seeing that she was enjoying the attention so much, I decided to revert back to the original plan...", "angry", "base", "base", "R", cheeks="blush")
+    call cho_main("Your plan...", "disgust", "base", "base", "down", cheeks="blush")
     m "Yes?"
-    cho "To form an emotional bond with her instead..." #blush
+    call cho_main("To form an emotional bond with her instead...", "disgust", "closed", "base", "mid", cheeks="blush")
     m "Finally took that stick out of your butt, did you?"
-    cho "What? There was no stick up my butt!" #angry
-    m "Figuratively speaking... all that matters is that you're starting to enjoy yourself."
-    m "To cherish the time you share with Katie... and that spanking willow."
-    cho "Whomping, Sir."
-    cho "I took it for what it was... Endurance training! There's nothing wrong with that..."
-
-    cho "A couple of minutes later, the tree stopped smacking us, and I was able to catch my breath..."
-    m "What a great workout. Maybe we can incorporate that tree into your training..."
-    cho "But Sir, the whomping willow is extremely dangerous!"
-    cho "Everybody knows to stay as far away from it as possible!"
+    call cho_main("What? There was no stick up my butt!", "mad", "base", "angry", "mid", cheeks="blush")
+    m "Figuratively speaking...{w=0.4} All that matters is that you finally accepted that you were enjoying yourself."
+    m "Now you can forever cherish this moment with Katie... and that spanking willow."
+    call cho_main("Whomping, Sir.", "annoyed", "narrow", "angry", "mid", cheeks="blush")
+    call cho_main("And I just took it for what it was... Endurance training! There's nothing wrong with that...", "upset", "base", "base", "mid", cheeks="heavy_blush")
+    m "Whatever you want to call it, I do it at least once or twice a day myself."
+    call cho_main("Anyhow... After a couple more minutes the tree finally stopped smacking us, and I was able to catch my breath...", "angry", "base", "base", "mid", cheeks="blush")
+    m "Sounds like a great workout."
+    call cho_main("Yes, it was a workout and a half that's for sure!", "horny", "base", "base", "down", cheeks="blush")
+    m "Then maybe we should incorporate it into your training."
+    call cho_main("But Sir, the whomping willow is still extremely dangerous!", "mad", "wide", "raised", "mid")
+    call cho_main("Everybody knows to stay as far away from it as possible!", "open", "wide", "base", "mid")
     m "Because of a little ass spanking? Don't be silly..."
     m "That Katie girl sure took it like a champ... you need to be fearless as well, next time that tree spanks you red!"
-    cho "Next time?"
+    call cho_main("Next time?", "clench", "base", "base", "mid", cheeks="blush")
     m "Just agree on a safe-word, if it gets too much."
-    cho "It's a tree! It's not going to agree to anything!"
-    cho "She tricked me into this!"
-    cho "Once the tree lowered us onto the ground again, Katie immediately rushed off!"
-    cho "So I had no oportunity to try and speak to her!"
-    g9 "You kidding me? Talking would’ve just ruined it at that point!"
-    g9 "You just had an amazing experience together, and didn’t exchange a word throughout the entire thing. There’s no better emotional bonding than that..."
-    cho "..." #Blushing
+    call cho_main("It's a tree! It's not going to agree to anything!", "clench", "wide", "base", "mid", cheeks="blush")
+    call cho_main("She tricked me into this!", "scream", "base", "angry", "R", cheeks="blush")
+    g4 "..."
+    call cho_main("I bet I ruined it anyway...", "annoyed", "base", "angry", "R", cheeks="blush")
+    call cho_main("Because as soon as the tree lowered us back to the ground Katie rushed off.", "upset", "base", "base", "downR", cheeks="blush")
+    call cho_main("So I couldn't even talk to her...", "clench", "base", "base", "down", cheeks="blush")
+    g9 "You kidding me? Talking would've just ruined it at that point!"
+    g9 "You just had an amazing experience together, and didn't exchange a word throughout the entire thing. There's no better emotional bonding than that..."
+    call cho_main("...", "mad", "happyCl", "base", "down", cheeks="blush") #Blushing
     m "Well, I'd say we're one step closer to taking on the Lions for the finals."
-    m "I'm confident you’ll be able to tame those lionesses by then."
-    cho "I...{w=0.4} of course..." #Smiles and blushes
+    m "I'm confident you'll be able to tame those lionesses by then."
+    call cho_main("I...{w=0.4} of course...", "open", "happyCl", "base", "mid", cheeks="heavy_blush") #Smiles and blushes
     m "You should take some rest now..."
     g9 "You look beat."
-    cho "Very well... Good night then."
+    call cho_main("Very well... Good night then.", "annoyed", "narrow", "base", "down", cheeks="blush")
     m "Until next time."
 
     # Cho leaves.
@@ -316,51 +317,53 @@ label cc_pr_manipulate_girls_T3_katie_intro_part2:
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
+    call cho_main(face="angry", xpos="mid", ypos="base", trans=fade)
 
     m "Welcome back, any progress?"
-    cho "If your goal was to get my ass red raw again then sure, plenty of progress..."
+    call cho_main("If your goal was to get my ass red raw again then sure, plenty of progress...", "angry", "narrow", "base", "R", cheeks="blush")
     m "Progress is progress... So, what went down today?"
-    cho "I followed Katie... just as you wanted..."
-    cho "This time I asked her directly if she intended to trick me again."
-    cho "But she simply said she was going to the whomping willow, and that if I wanted to join I should just be quiet and follow her..."
+    call cho_main("I followed Katie again... just as you wanted...", "annoyed", "base", "base", "down", cheeks="blush")
+    call cho_main("I attempted to strike up another conversation but just like last time, she wasn't really up for chatting...", "open", "base", "base", "mid", cheeks="blush")
+    call cho_main("So since she as giving me the silent treatment I asked her if this was another attempt of hers to trick me again.", "open", "closed", "base", "mid", cheeks="blush")
+    call cho_main("But she simply shrugged and said that if I was to join her again then I should just be quiet and follow her...", "open", "base", "raised", "mid", cheeks="blush")
     g9 "And, did you?"
-    cho "Well, yes..."
-    cho "Since she put it like that, how could I refuse? I'd look like a total wimp!"
-    cho "I mean... It's only a giant, half-conscious, murderous tree... What's the worst that could happen?"
-    cho "And let me tell you... it was even more intense than last time!"
-    cho "Maybe Katie jinxed it this time around... or she forgot to jinx it... who knows."
-    cho "It janked us into the air with such speed even I wasn’t ready for it!"
-    cho "I had to fight its grip, to at least get some form of control back..."
-    cho "But that was easier said than done as the tree had already snaked some of its branches underneath my clothes... sliding them right off my body."
+    call cho_main("Well, yes...", "disgust", "base", "base", "down", cheeks="blush")
+    call cho_main("Since she put it like that, how could I refuse? I'd look like a total wimp!", "upset", "base", "angry", "mid", cheeks="blush")
+    call cho_main("I mean... It's only a giant, half-conscious, murderous tree... What's the worst that could happen?", "annoyed", "base", "angry", "mid")
+    call cho_main("Having said that...{w=0.4} It ended up being even more intense than last time!", "clench", "base", "base", "R", cheeks="blush")
+    call cho_main("Maybe Katie jinxed it this time around... or she forgot to jinx it... who knows.", "soft", "base", "base", "down", cheeks="blush")
+    call cho_main("It janked us into the air with such speed even I wasn't ready for it!", "angry", "base", "raised", "mid", cheeks="blush")
+    call cho_main("I had to fight its grip, to at least get some form of control back...", "horny", "base", "base", "downR", cheeks="blush")
+    call cho_main("But that was easier said than done as the tree had already snaked some of its branches underneath my clothes... sliding them right off my body.", "soft", "narrow", "base", "down", cheeks="blush")
     g9 "Nice! Just like that?"
-    cho "Well I tried to grab them... but it had already moved its branches away from me..."
+    call cho_main("Well I tried to grab them... but it had already moved its branches away from me...", "mad", "base", "base", "mid", cheeks="blush")
     m "What happened to your reflexes... Are you being bested by a tree now?"
-    cho "No. I simply let it do its thing to... impress Katie..."
-    cho "She for sure didn't mind that her clothing got taken off as well... that slut."
+    call cho_main("No. I simply let it do its thing to...{w=0.4} impress Katie...", "upset", "narrow", "base", "downR", cheeks="blush")
+    call cho_main("I'm sure didn't mind that her clothing got taken off as well... that slut.", "open", "wide", "angry", "mid", cheeks="heavy_blush")
     m "(As well?)"
-    cho "Just eyeing me up and down like a piece of meat... right up until..."
+    call cho_main("Just eyeing me up and down like a piece of meat... right up until...", "clench", "base", "base", "R", cheeks="blush")
     g9 "Yes?"
-    cho "The tree threw one of its branches about and swung it at us, smacking our butts..."
+    call cho_main("The tree threw one of its branches about and swung it at us, smacking our butts...", "soft", "happyCl", "base", "mid", cheeks="blush")
     g9 "Got to bless nature!"
-    cho "And It just kept doing it, over and over, until our cheeks turned all red, a tingling sensation spreading across my butt..."
-    cho "As it continued, Katie reached out to me to grab my hand..."
-    cho "And as she did, the tree smacked us hard one last time."
-    cho "And with the pain came a sudden sudden rush of relief as Katie tightened her hand around mine."
+    call cho_main("And It just kept doing it over and over until our cheeks turned all red...", "clench", "base", "base", "downR", cheeks="blush")
+    call cho_main("It was as if my body was on fire!", "horny", "narrow", "base", "down", cheeks="blush")
+    call cho_main("As it continued, Katie looked up at me and reached out to grab my hand...", "soft", "narrow", "base", "down", cheeks="blush")
+    call cho_main("And as I finally managed to grab it, the tree smacked us hard across our cheeks.", "angry", "narrow", "base", "downR", cheeks="blush")
+    call cho_main("And with that pain came a sudden rush of relief as Katie tightened her hand around mine.", "smile", "narrow", "base", "down", cheeks="blush")
     g9 "An orgasm, Miss Chang?"
-    cho "It...{w=0.4} yes, I think she might’ve."
+    call cho_main("It...{w=0.4} yes, I think she might've.", "upset", "base", "base", "mid", cheeks="heavy_blush")
     m "Still too early to admit it?"
-    cho "Too early to admit what?"
+    call cho_main("Too early to admit what?", "mad", "base", "base", "mid", cheeks="blush")
     m "Never mind... did anything else happen after that?"
-    cho "Not much, as far as I recall..."
-    cho "All I remember is the tree lowering us to the ground and the sound of Katie’s breathing..."
-    cho "I just laid there for a while catching my breath, until the only thing I could hear was the sound of the forest around me..."
-    cho "Once I recovered, I turned to face Katie but again she was already gone..."
-    m "Now that’s how it’s done!"
-    cho "Thank you!"
+    call cho_main("Not much, as far as I recall...", "base", "base", "base", "downR", cheeks="blush")
+    call cho_main("All I remember is the tree lowering us to the ground and the sound of Katie's breathing...", "soft", "closed", "base", "mid", cheeks="blush")
+    call cho_main("I just laid there for a while catching my breath, until the only thing I could hear was the sound of the forest around me...", "open", "closed", "base", "mid", cheeks="blush")
+    call cho_main("Once I recovered, I turned to face Katie but again she was already gone...", "angry", "narrow", "base", "down", cheeks="blush")
+    m "Now that's how it's done!"
+    call cho_main("Thank you!", "smile", "base", "base", "mid", cheeks="blush")
     m "That shall be all for today..."
     m "You may leave now. Dismissed."
-    cho "Good night then."
+    call cho_main("Good night then.", "base", "base", "base", "mid", cheeks="blush")
 
     # Cho leaves.
     call cho_walk(action="leave")
@@ -377,125 +380,129 @@ label cc_pr_manipulate_girls_T3_angelina:
         $ renpy.jump(renpy.random.choice(("cc_pr_manipulate_girls_T3_repeat1", "cc_pr_manipulate_girls_T3_repeat2", "cc_pr_manipulate_girls_T3_repeat3")))
 
     # Angelina Johnson
-
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
+    call cho_main("", "normal", "narrow", "base", "down", cheeks="blush", xpos="mid", ypos="base", trans=fade)
 
     if weather == "rain":
-        g4 "Whoa, you’re soaking!"
-        cho "Oh, yes... I guess my clothes ended up a little wet..." #Blushing
+        g4 "Whoa, you're soaking!"
+        call cho_main("Oh, yes... I guess my clothes ended up a little wet...", "narrow", "base", "down", cheeks="blush") #Blushing
     else:
         g9 "Welcome back..."
-        cho "..."
+        call cho_main("...", "normal", "base", "base", "downR", cheeks="blush")
         g4 "You look soaked."
-        cho "Oh, yes... I guess my clothes ended up a little wet..." #Blushing
+        call cho_main("Oh, yes... I guess my clothes ended up a little wet...", "base", "narrow", "base", "down", cheeks="blush") #Blushing
         m "How? It's not even raining!"
-        cho "*Uhm*...."
+        call cho_main("*Uhm*....", "disgust", "narrow", "base", "mid", cheeks="blush")
 
     m "So, do you have that report for me?"
-    cho "I...{w=0.3} yes..."
-    m "I’m waiting [cho_name]..."
-    cho "Of course!"
-    cho "So...{w=0.4} I went to see if I could catch Angelina talking to Madame Hooch again."
-    cho "Determined to get the full context of what was going on this time!"
-    cho "I immediately went and hid in the boys changing room as soon as they had gone for lunch to listen in."
-    m "On Angelina talking to the Hooch lady?"
-    cho "Yes, although I got there a bit early and they were still in the showers."
-    cho "Doing my best to eavesdrop on their conversation, I went up to the hole I told you about."
-    cho "To my luck, Angelina soon mentioned the spying to the other two, and Alicia piped up saying that she already knew about it."
-    cho "Angelina sounded quite surprised that she knew about it but hadn’t told her."
-    cho "That’s when Katie also joined in and said she knew about it as well but she had already worked out a plan on how to deal with it."
-    m "Very perceptive of those girls..."
-    cho "Quite..."
-    cho "I waited to find out what her plan was, but then they suddenly went quiet, and I couldn't hear any of them."
+    call cho_main("I...{w=0.3} yes...", "horny", "base", "base", "downR", cheeks="blush")
+    m "I'm waiting [cho_name]... give me the deets."
+    call cho_main("Of course!", "open", "happyCl", "base", "mid", cheeks="blush")
+    call cho_main("Well...{w=0.4} I went to see if I could catch Angelina talking to Madame Hooch again.", "soft", "base", "base", "down", cheeks="blush")
+    call cho_main("Determined to get the full context of what was going on this time!", "open", "base", "base", "mid", cheeks="blush")
+    call cho_main("I immediately went and hid in the boys changing room as soon as they had gone for lunch to listen in.", "soft", "base", "base", "L", cheeks="blush")
+    call cho_main("Although I got there a bit early and they were still in the showers, touching each other and gossiping..", "upset", "base", "base", "mid", cheeks="blush")
+    g4 "Hooch and Johnson?!"
+    call cho_main("No, the Gryffindor team!", "clench", "narrow", "base", "mid", cheeks="blush")
+    m "Right..."
+    call cho_main("So, doing my best to eavesdrop on their conversation, I went up to that hole I told you about.", "angry", "closed", "base", "mid", cheeks="blush")
+    call cho_main("After a while, as Angelina brought up the subject of spying to the other two Alicia replied that she was already aware.", "open", "base", "base", "mid")
+    call cho_main("Katie then chimed in, saying she knew about it as well.", "soft", "base", "base", "mid")
+    call cho_main("Which seemed to surprise Angelina at first but she then moved on saying that they need to form some sort of plan.", "open", "base", "base", "mid")
+    m "I bet Miss Johnson didn't think they kept anything secret from her..."
+    call cho_main("For sure...", "soft", "base", "base", "R")
+    m "So, did they come up with a plan?"
+    call cho_main("Well, sort of...", "open", "narrow", "base", "down")
+    call cho_main("Katie had obviously already thought about it as she immediately responded that she knew exactly how to deal with it...", "soft", "base", "base", "mid")
+    call cho_main("But as I waited to find out what it was, they suddenly went quiet, and I couldn't hear any of them.", "angry", "base", "raised", "mid")
     m "Left for the changing room?"
-    cho "That’s what I thought, until I removed my ear from the hole to have a look..."
-    cho "No, they hadn’t left... when I took a peek through the hole I found all three of them staring back at me.."
+    call cho_main("That's what I thought, until I removed my ear from the hole to have a look...", "disgust", "base", "base", "down", cheeks="blush")
+    call cho_main("No, they hadn't left... when I took a peek through the hole I found all three of them staring back at me...", "open", "wide", "base", "mid", cheeks="blush")
     g9 "Busted!"
     g9 "So what did you do, run away?"
-    cho "At first I just sort of stood there in shock, not knowing what to do..."
-    cho "Until Angelina angrily beckoned me to get in there."
+    call cho_main("At first I just sort of stood there in shock, not knowing what to do...", "clench", "narrow", "base", "down", cheeks="blush")
+    call cho_main("Until Angelina angrily beckoned me to get in there.", "clench", "base", "base", "downR", cheeks="blush")
 
     g4 "There goes our plan to separate them from each other..."
-    cho "Let me finish!"
-    cho "Once I got in there and before Angelina got a chance to anything, Spinnet came up to me..."
-    cho "And just leaned in and kissed me again!"
+    call cho_main("Let me finish!", "angry", "happyCl", "base", "mid", cheeks="blush")
+    call cho_main("Once I got in there and before Angelina got a chance to do anything, Spinnet came up to me...", "upset", "base", "base", "down", cheeks="blush")
+    call cho_main("And just like before, she leaned in and kissed me!", "normal", "wide", "base", "mid", cheeks="blush")
     m "Nice, and you kissed her back?"
-    cho "Of course! I wasn’t about to blow the cover, was I!"
+    call cho_main("Of course! I wasn't about to blow my cover, was I?", "upset", "base", "angry", "mid", cheeks="blush")
     g9 "Of course..."
-    cho "So, as she kissed me, Angelina shouted at her asking what the hell she was doing."
-    cho "Alicia stopped and turned her head towards her asking what the problem was..."
-    cho "And Angelina just sort of stared dumbfoundedly at her until she shouted that I’m the seeker of an enemy team."
+    call cho_main("As she kissed me, Angelina shouted at her, asking what the hell she was doing.", "mad", "closed", "base", "mid", cheeks="blush")
+    call cho_main("Alicia then broke off the kiss and turned to her, asking what the problem was...", "soft", "narrow", "base", "downR", cheeks="blush")
+    call cho_main("Angelina just sort of stared dumbfoundedly at us until she shouted that I'm the seeker of an enemy team.", "clench", "base", "base", "mid", cheeks="blush")
     g4 "..."
-    cho "I honestly thought it was over at that point but that’s when Katie joined in..."
-    cho "Telling Angelina off for being mean, saying how it’s unfair that I don’t have a group of girls to play with after practice like she does."
+    call cho_main("I honestly thought it was over at that point but that's when Katie joined in...", "soft", "closed", "base", "down", cheeks="blush")
+    call cho_main("Telling Angelina off for being mean, saying how it's unfair that I don't have a group of girls to play with after practice like she does.", "base", "narrow", "base", "downR", cheeks="blush")
     g9 "Nice... you got both Spinnet and Bell on your side! Told you that bonding with them would do it!"
-    cho "I...{w=0.3} I suppose so." #Smiles
-    cho "Angelina still didn’t look convinced though and just stood there with her arms crossed staring at me..."
-    cho "So as an attempt at convincing her... I grabbed Alicia's head and pressed her lips against mine..."
-    cho "Which was enough to grab Katies attention as she then moved up behind me to try and pull my top off."
-    m "Nice..."
-    cho "Of course I didn’t let her..."
-    g4 "Why not! What about your cover!"
-    cho "Because... I... Well, I didn’t blow it okay!"
-    cho "I wasn’t going to let her undress me like that... so instead I grabbed her hands and put them under my bra to let her play with my breasts."
-    cho "Luckily she didn’t seem to think much of it and began massaging them."
-    cho "Angelina on the other hand was not convinced... telling the other girls to step aside..."
-    cho "Which they did...{w=0.4} both Alicia and Katie jumped back as Angelina walked up, staring me down."
+    call cho_main("I...{w=0.3} I suppose so.", "base", "happyCl", "base", "mid", cheeks="blush") #Smiles
+    call cho_main("Angelina still didn't look convinced though and just stood there with her arms crossed staring at me...", "soft", "base", "base", "downR", cheeks="blush")
+    call cho_main("So as an attempt at convincing her... I grabbed Alicia's head and pressed her lips against mine...", "smile", "base", "angry", "mid", cheeks="blush")
+    call cho_main("Which was enough to grab Katie's attention, as she then moved up behind me to try and pull my top off.", "soft", "wink", "base", "mid", cheeks="blush")
+    g9 "Nicely done!"
+    call cho_main("Of course I didn't let her...", "annoyed", "base", "base", "R", cheeks="heavy_blush")
+    g4 "Why not? What about your cover?"
+    call cho_main("Because...{w=0.3} I...{w=0.4} Well, I didn't blow it okay!", "open", "base", "angry", "downR", cheeks="blush")
+    call cho_main("I wasn't going to let her undress me like that... so instead I grabbed her hands and put them under my bra to let her play with my breasts.", "horny", "narrow", "base", "down", cheeks="blush")
+    call cho_main("Luckily she didn't seem to think much of it and began massaging them.", "soft", "narrow", "base", "mid", cheeks="blush")
+    call cho_main("Angelina on the other hand was not convinced... telling the other girls to step aside...", "angry", "base", "base", "down", cheeks="blush")
+    call cho_main("Which they did...{w=0.4} both Alicia and Katie jumped back as Angelina walked up, staring me down.", "disgust", "base", "base", "mid", cheeks="blush")
     m "Scary..."
-    cho "I don’t think I’ve ever had a girl scrutinize me like that..."
+    call cho_main("I don't think I've ever had a girl scrutinize me like that...", "horny", "base", "base", "down", cheeks="blush")
     m "Especially a naked one..."
-    cho "She then broke the silence to say I must truly be something special if her girls would just throw themselves at me as eagerly as they did."
-    cho "I didn’t really know what to respond so I instinctively took a step back against the wall just as she leaned in and pressed her lips against mine which made me trip and slide down onto the wet floor."
+    call cho_main("She then smirked at me, saying I must truly be something special if her girls would just throw themselves at me as eagerly as they did.", "soft", "base", "base", "mid", cheeks="heavy_blush")
+    call cho_main("I didn't really know how to respond to that so I instinctively took a step back against the wall just as she leaned in and pressed her lips against mine...", "horny", "closed", "base", "mid", cheeks="blush")
+    call cho_main("Which took me by such surprise I tripped and slid down onto the wet floor.", "upset", "closed", "base", "mid", cheeks="blush")
     m "Ouch..."
-    g9 "(Those Lionesses are animals!)"
-    cho "She didn’t even apologize and just looked down at me, telling me I kiss like a highschooler..."
-    cho "That said... didn’t stop her from crouching down for another... although this time she put her tongue in there."
+    g4 "(Those Lionesses are animals!)"
+    call cho_main("She didn't even apologize and just looked down at me, telling me I kiss like a high schooler...", "mad", "base", "base", "mid", cheeks="blush")
+    call cho_main("That said... didn't stop her from crouching down for another... although this time she put her tongue in there.", "angry", "base", "base", "mid", cheeks="blush")
     g9 "Straight in there!"
     g9 "I hope you returned the favour!"
-    cho "I tried to... but as I started making any attempts towards doing so she stopped to stand back up."
-    cho "And as I steadied myself against the wall to get up as well she put her foot beneath my skirt, pressing it against my panties which made me slide back down onto the floor."
+    call cho_main("I tried to... but as I attempted it, she stopped and stood back up.", "upset", "narrow", "base", "R", cheeks="blush")
+    call cho_main("And as I steadied myself to get up as well, she put her foot beneath my skirt and pressed it against my panties which made me slide back down onto the floor.", "open", "wide", "base", "mid", cheeks="blush")
     g9 "..."
-    cho "Then turning back to the others she started chastising them even further, saying she was still mad about what they did..."
-    cho "But when doing so, she also started rubbing her foot up and down against my panties."
-    cho "Both Katie and Alicia didn’t seem to notice as they had turned towards Angelina to defend themselves as she kept rubbing me."
-    cho "I don’t remember exactly what they were saying at that point..."
+    call cho_main("Then, turning back to the others she started chastising them even further, saying she was still mad about what they did...", "open", "base", "base", "mid", cheeks="blush")
+    call cho_main("But when doing so, she also started rubbing her foot up and down against my panties.", "disgust", "base", "base", "down", cheeks="blush")
+    call cho_main("Both Katie and Alicia didn't seem to notice as they had turned towards Angelina to defend themselves.", "horny", "base", "base", "downR", cheeks="blush")
+    call cho_main("I don't remember exactly what they were saying at that point...", "angry", "happyCl", "base", "mid", cheeks="blush")
     m "(not surprising...)"
-    cho "She just kept rubbing me more and more as they were arguing and..."
-    cho "I just...{w} couldn’t...{w} hold it in at that point!" #ahegao?
-    m "She made you-"
-    cho "She made me orgasm as I lay there on the ground!"
-    cho "Which they all realised as they stopped arguing to look at me..."
-    cho "Angelina’s expression quickly changed into a smile and she pressed her foot down even harder, telling me I’ve been such a naughty girl..."
-    cho "And that the other two shouldn't have been so selfish to keep me all for themselves."
-    cho "She then stepped off me and made her way out of the showers, beckoning the other two to come with her."
-    cho "And they just looked at me, giggled, then proceeded to follow her."
+    call cho_main("She just kept rubbing me more and more as they were arguing and...", "horny", "closed", "base", "mid", cheeks="blush")
+    call cho_main("I just...{w} couldn't...{w} hold it in at that point!", "soft", "closed", "base", "mid", cheeks="blush") #ahegao?
+    m "She made you--"
+    call cho_main("She made me orgasm as I lay there on the ground!", "horny", "base", "base", "up", cheeks="blush")
+    call cho_main("Which they all realised as they stopped arguing to look at me...", "clench", "base", "base", "up", cheeks="blush")
+    call cho_main("Angelina's expression quickly changed into a smile as she pressed her foot down even harder, telling me I'd been a naughty girl...", "disgust", "wide", "base", "mid", cheeks="heavy_blush")
+    call cho_main("And that the other two shouldn't have been so selfish to keep me all for themselves.", "disgust", "narrow", "base", "downR", cheeks="blush")
+    call cho_main("She then stepped off me and made her way out of the showers, beckoning the other two to come with her.", "clench", "base", "base", "mid", cheeks="blush")
+    call cho_main("And they just looked at me, giggled, then proceeded to follow her.", "mad", "narrow", "base", "mid", cheeks="blush")
     m "Nice..."
-    cho "What do you mean nice!"  #large text
-    cho "She humiliated me!"  #large text
+    call cho_main("What do you mean nice?", "mad", "base", "angry", "mid", cheeks="blush")  #large text
+    call cho_main("She humiliated me!", "open", "base", "angry", "mid", cheeks="blush")  #large text
     m "She was testing you..."
-    cho "She was..."
+    call cho_main("She was...", "clench", "wide", "base", "down", cheeks="blush")
     g9 "Yes...{w=0.4} Not only that...{w=0.4} I think you passed!"
-    m "Maybe I underestimated those girls... they aren’t easy to boss around that’s for sure..."
+    m "Maybe I underestimated those girls... they aren't easy to boss around that's for sure..."
     m "But no matter..."
-    cho "..." #pout
+    call cho_main("...", "upset", "happyCl", "base", "mid", cheeks="blush") #pout
     m "We shall see soon enough what comes from this..."
     m "In any case, what has happened has happened."
-    cho "You recon I ruined it?" #worried
+    call cho_main("You reckon I ruined it?", "upset", "narrow", "base", "mid", cheeks="blush") #worried
     m "Of course not, you did great!"
-    m "But you can’t let them take charge like that during the game."
-    m "Maybe it’s best to let them get a look at you... at arm's length."
-    cho "Yes [cho_genie_name]."
+    m "But you can't let them take charge like that during the game."
+    call cho_main("Yes [cho_genie_name].", "open", "narrow", "base", "down", cheeks="blush")
     m "Good!"
     m "One step closer towards sipping at the fizzy cup!"
-    cho "You don’t drink from-"
+    call cho_main("You don't drink from--", "clench", "base", "base", "mid")
     m "Better ready yourself [cho_name]. The finals are looming ever so closer."
     m "You got this."
-    cho "Thanks..." #smiles
+    call cho_main("Thanks...", "soft", "narrow", "base", "downR") #smiles
     m "Now, time for some rest."
-    cho "Yes, good night then [cho_genie_name]."
+    call cho_main("Yes, good night then [cho_genie_name].", "open", "base", "base", "mid")
 
     # Cho leaves.
     call cho_walk(action="leave")
@@ -512,23 +519,23 @@ label cc_pr_manipulate_girls_T3_repeat1:
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
+    call cho_main("", "normal", "narrow", "base", "down", cheeks="blush", xpos="mid", ypos="base", trans=fade)
 
     m "Ready for your report B..."
     m "Did you manage to seduce any of them?"
 
-    cho "Katie caught me looking at her during the history of magic..."
-    cho "Binns was droning on as usual and most of the other students were either sleeping or not paying attention."
-    cho "Katie on the other hand found this a great opportunity to move her hand in a spanking motion at the sleeping student next to her."
-    cho "No doubt trying to remind me of the Whomping Willow..."
+    call cho_main("Katie caught me looking at her during the history of magic...", "open", "base", "base", "downR")
+    call cho_main("Binns was droning on as usual and most of the other students were either sleeping or not paying attention.", "open", "closed", "base", "mid")
+    call cho_main("Katie on the other hand found this a great opportunity to move her hand in a spanking motion at the sleeping student next to her.", "disgust", "base", "base", "mid", cheeks="blush")
+    call cho_main("No doubt trying to remind me of the Whomping Willow...", "soft", "base", "base", "down", cheeks="blush")
     m "Ah... the tree..."
     m "Yeah... that was a good episode... I liked that one."
 
     m "Anything else to report?"
-    cho "No, that’s about it..."
+    call cho_main("No, that's about it...", "angry", "base", "base", "mid")
     g9 "Then mission success!"
     g9 "Good work B!"
-    cho "Then if that’s all... I’ll head off for today."
+    call cho_main("Then if that's all... I'll head off for today.", "open", "base", "base", "mid")
     m "Yes, that will be all."
 
     # Cho leaves.
@@ -544,22 +551,22 @@ label cc_pr_manipulate_girls_T3_repeat2:
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
+    call cho_main("", "normal", "narrow", "base", "down", cheeks="blush", xpos="mid", ypos="base", trans=fade)
 
     m "Ready for your report B..."
     m "Did you manage to seduce any of them?"
 
-    cho "Kind of... I was scouting them out during dinner over at the Gryffindor table where all three of them were sitting together."
-    cho "Alicia saw me looking and leaned in and kissed Katie on the cheek."
-    cho "Katies face turned red so I assume they don’t usually do stuff like that in public."
-    cho "Angelina appeared to find her embarrassment pretty funny though."
-    g9 "Nice..."
+    call cho_main("Kind of... I was scouting them out during dinner over at the Gryffindor table where all three of them were sitting together.", "open", "base", "base", "downR")
+    call cho_main("Alicia saw me looking and leaned in and kissed Katie on the cheek.", "soft", "narrow", "base", "mid", cheeks="blush")
+    call cho_main("Katie's face turned red so I assume they don't usually do stuff like that in public.", "base", "narrow", "raised", "mid", cheeks="blush")
+    call cho_main("Angelina appeared to find her embarrassment pretty funny though.", "crooked_smile", "closed", "base", "mid", cheeks="blush")
+    g9 "(More likely they get off on it...)"
 
     m "Anything else to report?"
-    cho "No, that’s about it..."
+    call cho_main("No, that's about it...", "smile", "base", "base", "mid")
     g9 "Then mission success!"
     g9 "Good work B!"
-    cho "Then if that’s all... I’ll head off for today."
+    call cho_main("Then if that's all... I'll head off for today.", "base", "base", "base", "mid")
     m "Yes, that will be all."
 
     # Cho leaves.
@@ -575,25 +582,25 @@ label cc_pr_manipulate_girls_T3_repeat3:
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
+    call cho_main("", "normal", "narrow", "base", "down", cheeks="blush", xpos="mid", ypos="base", trans=fade)
 
     m "Ready for your report B..."
     m "Did you manage to seduce any of them?"
 
-    cho "No, but they sure had a good laugh embarrassing me during practice."
-    cho "They were somehow able to temporarily dispel the cushioning charm from my broom because that handle felt pretty hard between my legs..."
-    cho "Angelina kept laughing as I flinched with every sharp turn whilst chasing the snitch..."
+    call cho_main("No... They actually caught me as I was doing some flying exercises.", "clench", "base", "base", "down", cheeks="blush")
+    call cho_main("And somehow they managed able to temporarily dispel the cushioning charm on my broom because that handle started pressing pretty hard between my legs...", "disgust", "base", "base", "mid", cheeks="blush")
+    call cho_main("Angelina kept laughing as I flinched with every sharp turn whilst chasing the snitch...", "annoyed", "base", "base", "mid", cheeks="blush")
     m "Did it hurt that much?"
-    cho "Oh... no it didn’t really hurt at all really..." #blush
-    m "But you just sai-"
+    call cho_main("Oh... No it didn't really hurt at all really...", "open", "closed", "base", "mid", cheeks="blush") #blush
+    m "But you just sai--"
     m "(Oh, I see...)"
     m "Well then..."
 
     m "Anything else to report?"
-    cho "No, that’s about it..."
+    call cho_main("No, that's about it...", "soft", "base", "base", "mid")
     g9 "Then mission success!"
     g9 "Good work B!"
-    cho "Then if that’s all... I’ll head off for today."
+    call cho_main("Then if that's all... I'll head off for today.", "base", "base", "base", "mid")
     m "Yes, that will be all."
 
     # Cho leaves.

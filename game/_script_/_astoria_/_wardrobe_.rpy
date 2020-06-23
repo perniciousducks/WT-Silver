@@ -55,12 +55,12 @@ default astoria = Doll(name="astoria",
 default ast_hair_base = DollCloth("astoria", ("head", "hair"), "hair", "base", [[229, 198, 129, 255], [163, 125, 80, 255]], unlocked=True)
 default ast_hair_short = DollCloth("astoria", ("head", "hair"), "hair", "short", [[229, 198, 129, 255], [163, 125, 80, 255]], unlocked=True)
 
-default ast_top_school1 = DollCloth("astoria", ("tops", "school"), "top", "top_school_1", [[183, 183, 184, 255], [109, 105, 121, 255], [58, 115, 75, 255], [205, 205, 206, 255]], armfix=True, unlocked=True)
-default ast_top_school2 = DollCloth("astoria", ("tops", "school"), "top", "top_school_2", [[183, 183, 184, 255], [109, 105, 121, 255], [58, 115, 75, 255], [205, 205, 206, 255]], level=4, armfix=True, unlocked=True)
-default ast_top_school3 = DollCloth("astoria", ("tops", "school"), "top", "top_school_3", [[183, 183, 184, 255], [58, 115, 75, 255], [205, 205, 206, 255]], level=8, armfix=True, unlocked=True)
-default ast_top_school4 = DollCloth("astoria", ("tops", "school"), "top", "top_school_4", [[183, 183, 184, 255], [58, 115, 75, 255], [205, 205, 206, 255]], level=8, armfix=True, unlocked=True)
-default ast_top_school5 = DollCloth("astoria", ("tops", "school"), "top", "top_school_5", [[183, 183, 184, 255], [58, 115, 75, 255], [205, 205, 206, 255]], level=12, armfix=True, unlocked=True)
-default ast_top_school6 = DollCloth("astoria", ("tops", "school"), "top", "top_school_6", [[109, 105, 121, 255], [58, 115, 75, 255], [205, 205, 206, 255]], level=12, armfix=True, unlocked=True)
+default ast_top_school1 = DollCloth("astoria", ("tops", "shirts"), "top", "top_school_1", [[183, 183, 184, 255], [109, 105, 121, 255], [58, 115, 75, 255], [205, 205, 206, 255]], armfix=True, unlocked=True)
+default ast_top_school2 = DollCloth("astoria", ("tops", "shirts"), "top", "top_school_2", [[183, 183, 184, 255], [109, 105, 121, 255], [58, 115, 75, 255], [205, 205, 206, 255]], level=4, armfix=True, unlocked=True)
+default ast_top_school3 = DollCloth("astoria", ("tops", "shirts"), "top", "top_school_3", [[183, 183, 184, 255], [58, 115, 75, 255], [205, 205, 206, 255]], level=8, armfix=True, unlocked=True)
+default ast_top_school4 = DollCloth("astoria", ("tops", "shirts"), "top", "top_school_4", [[183, 183, 184, 255], [58, 115, 75, 255], [205, 205, 206, 255]], level=8, armfix=True, unlocked=True)
+default ast_top_school5 = DollCloth("astoria", ("tops", "shirts"), "top", "top_school_5", [[183, 183, 184, 255], [58, 115, 75, 255], [205, 205, 206, 255]], level=12, armfix=True, unlocked=True)
+default ast_top_school6 = DollCloth("astoria", ("tops", "shirts"), "top", "top_school_6", [[109, 105, 121, 255], [58, 115, 75, 255], [205, 205, 206, 255]], level=12, armfix=True, unlocked=True)
 
 default ast_bottom_skirt1 = DollCloth("astoria", ("bottoms", "skirts"), "bottom", "school_skirt_1", [[103, 90, 108, 255], [232, 177, 13, 255]], armfix=True, unlocked=True)
 default ast_bottom_skirt2 = DollCloth("astoria", ("bottoms", "skirts"), "bottom", "school_skirt_2", [[103, 90, 108, 255], [232, 177, 13, 255]], level=4, armfix=True, unlocked=True)
@@ -80,8 +80,8 @@ default ast_outfit_last = DollOutfit([ast_hair_base])
 ################
 
 default ast_hair_ann = DollCloth("astoria", ("head", "hair"), "hair", "ann_takamaki", [[229, 198, 129, 255], [163, 125, 80, 255], [255, 209, 105, 255]])
-default ast_hat_ann = DollCloth("astoria", ("head", "hats"), "hat", "ann_takamaki", [[173, 18, 18, 255], [238, 188, 187, 255]], level=14)
-default ast_top_ann = DollCloth("astoria", ("tops", "school"), "top", "ann_takamaki", [[173, 18, 18, 255], [232, 232, 232, 255], [238, 188, 187, 255]], level=14, blacklist=("bottom", "bra", "garterbelt"), armfix=True)
+default ast_hat_ann = DollCloth("astoria", ("head", "headgear"), "hat", "ann_takamaki", [[173, 18, 18, 255], [238, 188, 187, 255]], level=14)
+default ast_top_ann = DollCloth("astoria", ("tops", "other"), "top", "ann_takamaki", [[173, 18, 18, 255], [232, 232, 232, 255], [238, 188, 187, 255]], level=14, blacklist=("bottom", "bra", "garterbelt"), armfix=True)
 default ast_stockings_ann = DollCloth("astoria", ("legwear", "stockings"), "stockings", "ann_takamaki", [[99, 42, 42, 255], [181, 135, 135, 255]], level=14, blacklist=["bottom"], armfix=True)
 default ast_gloves_ann = DollCloth("astoria", ("misc", "gloves"), "gloves", "ann_takamaki", [[249, 139, 225, 255]], armfix=True)
 default ast_buttplug_ann = DollCloth("astoria", ("misc", "accessory"), "buttplug", "ann_takamaki", [[99, 42, 42, 255], [181, 135, 135, 255]], level=14)
@@ -93,8 +93,8 @@ default ast_outfit_ann = DollOutfit([ast_hair_ann, ast_hat_ann, ast_top_ann, ast
 ##########
 
 default ast_cloth_pants1 = DollCloth("astoria", ("bottoms", "trousers"), "bottom", "pants_1", [[180, 180, 180, 255], [213, 161, 13, 255]], armfix=True, unlocked=True)
-default ast_cloth_shorts1 = DollCloth("astoria", ("bottoms", "trousers"), "bottom", "pants_1_short", [[180, 180, 180, 255], [213, 161, 13, 255]], level=8, armfix=True, unlocked=True)
-default ast_cloth_pantyhose1 = DollCloth("astoria", ("legwear", "stockings"), "stockings", "pantyhose", [[190, 146, 129, 255]], armfix=True, unlocked=True)
+default ast_cloth_shorts1 = DollCloth("astoria", ("bottoms", "shorts"), "bottom", "pants_1_short", [[180, 180, 180, 255], [213, 161, 13, 255]], level=8, armfix=True, unlocked=True)
+default ast_cloth_pantyhose1 = DollCloth("astoria", ("legwear", "pantyhose"), "stockings", "pantyhose", [[190, 146, 129, 255]], armfix=True, unlocked=True)
 
 ################
 ## Pubic Hair ##

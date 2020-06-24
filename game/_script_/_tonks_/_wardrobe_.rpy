@@ -52,8 +52,8 @@ default tonks = Doll(name="tonks",
 ## Auror Outfit ##
 ##################
 
-default ton_hair_base = DollCloth("tonks", ("head", "hair"), "hair", "base", [[243, 158, 189, 255], [255, 200, 230, 255]], unlocked=True)
-default ton_hair_base_new = DollCloth("tonks", ("head", "hair"), "hair", "new", [[243, 158, 189, 255], [255, 200, 230, 255]], unlocked=True)
+default ton_hair_base = DollCloth("tonks", ("head", "hair"), "hair", "base", [[255, 146, 185, 255], [254, 218, 238, 255]], unlocked=True)
+default ton_hair_base_new = DollCloth("tonks", ("head", "hair"), "hair", "new", [[255, 146, 185, 255], [254, 218, 238, 255]], unlocked=True)
 default ton_neckwear_beads = DollCloth("tonks", ("head", "neckwear"), "neckwear", "choker_beads",[[45, 45, 48, 255], [177, 168, 172, 255]], unlocked=True)
 default ton_gloves_auror = DollCloth("tonks", ("misc", "gloves"), "gloves", "auror_gloves",[[45, 45, 48, 255]], armfix=True, unlocked=True)
 default ton_top_auror  = DollCloth("tonks", ("tops", "shirts"), "top", "auror",[[28, 27, 31, 255], [124, 42, 50, 255]], armfix=True, unlocked=True)
@@ -66,12 +66,19 @@ default ton_stockings_auror = DollCloth("tonks", ("legwear", "stockings"), "stoc
 default ton_outfit_default = DollOutfit([ton_hair_base_new, ton_neckwear_beads, ton_gloves_auror, ton_top_auror, ton_robe_auror, ton_bottoms_leggings, ton_stockings_auror], True)
 default ton_outfit_last = DollOutfit([ton_hair_base_new])
 
+###################
+## Casual Outfit ##
+###################
+
+default ton_top_crop_casual  = DollCloth("tonks", ("tops", "shirts"), "top", "crop_top",[[200, 8, 45, 255]], unlocked=True)
+default ton_bottoms_leggings_casual = DollCloth("tonks", ("bottoms", "leggings"), "bottom", "latex_leggings",[[28, 28, 28, 255], [28, 28, 28, 255]], armfix=True, unlocked=True)
+
 ##########
 ## Misc ##
 ##########
 
 default ton_top_corset = DollCloth("tonks", ("tops", "other"), "top", "corset",[[247, 206, 146, 255]], blacklist=["bra"], armfix=True, unlocked=True)
-default ton_bottoms_jeans = DollCloth("tonks", ("bottoms", "trousers"), "bottom", "jeans",[[51, 104, 105, 255]], unlocked=True)
+default ton_bottoms_jeans = DollCloth("tonks", ("bottoms", "trousers"), "bottom", "jeans",[[51, 104, 105, 255]], armfix=True, unlocked=True)
 default ton_panties_base = DollCloth("tonks", ("panties", "bikini panties"), "panties", "base",[[124, 42, 50, 255]], unlocked=True)
 default ton_bra_base = DollCloth("tonks", ("bras", "bikini bras"), "bra", "bikini",[[124, 42, 50, 255], [177, 168, 172, 255]], unlocked=True)
 
@@ -79,7 +86,7 @@ default ton_bra_base = DollCloth("tonks", ("bras", "bikini bras"), "bra", "bikin
 ## Pubic Hair ##
 ################
 
-default ton_pubes_arrow = DollCloth("tonks", ("pelvis", "pubes"), "pubes", "arrow", [[243, 158, 189, 255]], unlocked=True)
-default ton_pubes_beaver = DollCloth("tonks", ("pelvis", "pubes"), "pubes", "beaver", [[243, 158, 189, 255]], unlocked=True)
+default ton_pubes_arrow = DollCloth("tonks", ("pelvis", "pubes"), "pubes", "arrow", [[255, 146, 185, 255]], unlocked=True)
+default ton_pubes_beaver = DollCloth("tonks", ("pelvis", "pubes"), "pubes", "beaver", [[255, 146, 185, 255]], unlocked=True)
 default ton_pubes_stuble = DollCloth("tonks", ("pelvis", "pubes"), "pubes", "stuble", [[132, 64, 89, 255]], unlocked=True)
 default ton_pubes_unshaved = DollCloth("tonks", ("pelvis", "pubes"), "pubes", "unshaved", [[132, 64, 89, 255]], unlocked=True)

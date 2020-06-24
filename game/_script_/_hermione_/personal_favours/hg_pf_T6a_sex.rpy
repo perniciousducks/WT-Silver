@@ -4,7 +4,7 @@
 
 label hg_pf_sex:
 
-    if hg_pf_blowjob.counter < 1:
+    if hg_pf_sex.counter < 1:
         m "{size=-4}(Should I ask her to have sex with me?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -16,7 +16,6 @@ label hg_pf_sex:
     $ current_payout = 65
     $ hermione_tears = None # Default value, can be set in the event to ensure tears keep showing afterwards
     $ hg_pf_sex.start()
-
 
     # End Event
     label end_hg_pf_sex:

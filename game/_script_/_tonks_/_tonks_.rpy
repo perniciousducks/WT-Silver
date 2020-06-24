@@ -151,6 +151,6 @@ screen tonks_main():
 
     default tonks_img = apply_doll_transition(tonks.get_image(), "tonks_main", use_tonks_head)
     if tonks_animation != None:
-        add tonks_img xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) at tonks_animation
+        add tonks_img xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom 0.5 at tonks_animation
     else:
-        add tonks_img xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+        add tonks_img xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom 0.5

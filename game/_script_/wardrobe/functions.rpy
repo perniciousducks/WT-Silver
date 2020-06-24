@@ -1,11 +1,9 @@
 init python:
     def get_progression(name):
         """Returns the progression score (usually whoring) for a given girl"""
-        if name == "astoria":
-            return ast_affection
         if name == "tonks":
             return ton_friendship
-        if name in ("cho", "hermione", "luna", "susan"):
+        elif name in ("cho", "hermione", "luna", "susan", "astoria"):
             return getattr(store, "{}_whoring".format(name[:3]))
 
     def get_character_object(key):
@@ -96,16 +94,13 @@ init python:
 
     def wardrobe_fail_hint(value):
         """Displays required whoring/friendship/affection level."""
-        renpy.block_rollback()
+        word_list = {"tonks": "friendship", "astoria": "affection", "susan": "confidence", "luna": "corruption", "cho": "recklessness", "hermione": "whoring"}
+        word = word_list[active_girl]
+
         if cheats_active or game_difficulty <= 2:
             renpy.show_screen("blktone5")
             renpy.with_statement(d3)
-            if active_girl == "tonks":
-                renpy.say(None, "{size=+6}> Try again at friendship level {color=#7a0000}"+str(value)+"{/color}.{/size}")
-            elif active_girl == "astoria":
-                renpy.say(None, "{size=+6}> Try again at affection level {color=#7a0000}"+str(value)+"{/color}.{/size}")
-            else:
-                renpy.say(None, "{size=+6}> Try again at whoring level {color=#7a0000}"+str(value)+"{/color}.{/size}")
+            renpy.say(None, "{size=+6}> Try again at "+word+" level {color=#7a0000}"+str(value)+"{/color}.{/size}")
             renpy.hide_screen("blktone5")
             renpy.with_statement(d3)
         return

@@ -4,7 +4,7 @@ screen luna_main():
     zorder luna_zorder
     sensitive False
     fixed:
-        at main_sprite_position(luna_xpos, luna_ypos, luna_flip, luna_scaleratio)
+        at main_sprite_position(luna_xpos, luna_ypos, luna_flip, 2)
 
         add luna_base
 
@@ -74,4 +74,4 @@ screen luna_main():
         add "characters/genie/dick_1.png" xpos genie_xpos ypos genie_ypos
         if luna_wear_cum:
             # Cumshot
-            add "characters/luna/body/arms/right_4_2.png" xpos 390 ypos 0 xzoom luna_flip zoom (1.0/luna_scaleratio)
+            add "characters/luna/body/arms/right_4_2.png" xpos 390 ypos 0 xzoom luna_flip zoom 0.5

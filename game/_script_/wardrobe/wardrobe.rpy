@@ -12,13 +12,13 @@ label wardrobe(char_label):
         _char_var_list = {
             "hermione": (her_whoring, her_requirements["change_underwear"]),
             "tonks": (ton_friendship, ton_requirements["change_underwear"]),
-            "astoria": (ast_affection, ast_requirements["change_underwear"]),
+            "astoria": (ast_whoring, ast_requirements["change_underwear"]),
             "cho": (cho_whoring, cho_requirements["change_underwear"])
             }
 
         char_active = getattr(store, active_girl)
         char_nickname = char_active.name
-        char_scale = 1.0/getattr(store, active_girl+"_scaleratio")
+        char_scale = 0.5
         char_level = _char_var_list[active_girl][0]
         char_underwear_allowed = char_level >= _char_var_list[active_girl][1]
 
@@ -284,7 +284,7 @@ screen wardrobe_menu(xx, yy):
         frame xysize (340, 548) xpos 100 style "empty" background wardrobe_background
 
         # Character
-        add char_active.get_image() yoffset -12 corner1 (238, 200) corner2 (872, 1200) zoom char_scale align (0.5, 1.0) events False
+        add char_active.get_image() yoffset -12 corner1 (238, 200) corner2 (872, 1200) zoom 0.5 align (0.5, 1.0) events False
 
         # Switch to body modifications tab
         add "interface/frames/{}/circle.png".format(interface_color) pos (373, 62)

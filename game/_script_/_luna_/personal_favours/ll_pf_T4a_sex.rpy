@@ -897,7 +897,7 @@ label ll_pf_sex_T1_ast_1: # Call label
     m "Pretty much..."
     $ lunCG('open', 'angry', '', 'up')
 
-    if ast_affection > 7: # Level estimated to coincide with second Imperio with Susan event
+    if ast_whoring > 7: # Level estimated to coincide with second Imperio with Susan event
         call ast_main("Well, I guess this is okay then...", "annoyed", "narrow","angry", "R")
         $ lunCG('open_tongue', 'furious', '', 'ahegao')
         call ast_main("So long as you clean this room afterwards, it reeks in here!", "upset","narrow","angry","mid")

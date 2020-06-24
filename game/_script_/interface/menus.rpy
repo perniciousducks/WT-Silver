@@ -319,17 +319,17 @@ screen clothing_menu(menu_items, character, preview):
             if i < len(menu_items):
                 hotspot( 70+(227*(i-page_offset)) , (107) , 175 , 284 ) clicked Return(menu_items[i])
 
-                add menu_items[i].get_image() xpos (-7+(227*(i-page_offset))) ypos 30 zoom 0.6/scaleratio
+                add menu_items[i].get_image() xpos (15+(227*(i-page_offset))) ypos 90 zoom 0.25
 
         #Large Mannequin Preview.
         if preview != None:
-            add preview.get_image() xpos 600 ypos 0 zoom 1.0/scaleratio
+            add preview.get_image() xpos 600 ypos 0 zoom 0.5
         else:
             if character == 1:
-                add hermione.body.get_mannequin() xpos 600 ypos 0 zoom 1.0/scaleratio
+                add hermione.body.get_mannequin() xpos 600 ypos 0 zoom 0.5
             elif character == 3:
-                add astoria.body.get_mannequin() xpos 600 ypos 0 zoom 1.0/scaleratio
+                add astoria.body.get_mannequin() xpos 600 ypos 0 zoom 0.5
             elif character == 5:
-                add cho.body.get_mannequin() xpos 600 ypos 0 zoom 1.0/scaleratio
+                add cho.body.get_mannequin() xpos 600 ypos 0 zoom 0.5
             else:
-                add "interface/icons/outfits/mannequin_"+str(character)+".png" xpos 600 ypos 0 zoom 1.0/scaleratio
+                add "interface/icons/outfits/mannequin_"+str(character)+".png" xpos 600 ypos 0 zoom 0.5

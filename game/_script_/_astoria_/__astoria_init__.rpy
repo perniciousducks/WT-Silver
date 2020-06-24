@@ -21,8 +21,8 @@ default ast_tonks_name = "Old Hag"
 
 # Stats
 default ast_spell_progress = 0 # Training times required to unlock a spell. Resets to 0 after it.
-default ast_affection      = 0 # Affection level with Tonks.
-default ast_mood           = 0
+default ast_whoring = 0 # Affection level
+default ast_mood = 0
 
 # Events
 default snape_gave_spellbook = False
@@ -102,7 +102,7 @@ label reset_astoria_progress:
 
         # Stats
         "ast_spell_progress",
-        "ast_affection",
+        "ast_whoring",
         "ast_mood",
 
         # Events

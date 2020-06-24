@@ -114,18 +114,6 @@ default current_room  = "main_room"
 default room_deco     = ""
 default cupboard_deco = ""
 
-# Scale factors (because most images are 2x larger)
-# Scale-ratio of each character can be changed to be used in custom "CG" scenes. Made larger, more zoomed in,...
-default scaleratio          = 2
-default genie_scaleratio    = 2
-default snape_scaleratio    = 2
-default tonks_scaleratio    = 2
-default hermione_scaleratio = 2
-default luna_scaleratio     = 2
-default astoria_scaleratio  = 2
-default susan_scaleratio    = 2
-default cho_scaleratio      = 2
-
 # CGs
 default ccg_folder = "luna_bj"
 default ccg1       = "herm"

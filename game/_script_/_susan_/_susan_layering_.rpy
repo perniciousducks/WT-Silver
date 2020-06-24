@@ -5,7 +5,7 @@ screen susan_main():
     sensitive False
 
     fixed:
-        at main_sprite_position(susan_xpos, susan_ypos, susan_flip, susan_scaleratio)
+        at main_sprite_position(susan_xpos, susan_ypos, susan_flip, 2)
 
         add susan_hair
         add susan_l_arm
@@ -34,11 +34,11 @@ screen susan_main():
             if susan_wear_panties and not susan_wear_bottom:
                 add susan_panties
             if susan_wear_garterbelt:
-                add susan_garterbelt 
+                add susan_garterbelt
             if susan_wear_stockings:
                 add susan_stockings
             if susan_wear_onepiece and not susan_wear_top and not susan_wear_robe:
-                add susan_onepiece 
+                add susan_onepiece
             if susan_wear_bottom:
                 add susan_bottom
             if susan_wear_top:
@@ -46,7 +46,7 @@ screen susan_main():
             if susan_wear_accs:
                 add susan_accs
             if susan_wear_neckwear:
-                add susan_neckwear 
+                add susan_neckwear
 
         add susan_hair_shadow
 

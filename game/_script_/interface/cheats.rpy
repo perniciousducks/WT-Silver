@@ -38,17 +38,17 @@ label cheats:
                     $ ast_mood = 0
                     ">Astoria is no longer mad at you."
                     jump cheats.astoria
-                "-Max Affection-" if ast_affection < 24:
-                    $ ast_affection = 24
+                "-Max Whoring-" if ast_whoring < 24:
+                    $ ast_whoring = 24
                     ">Astoria has hots for you."
                     jump cheats.astoria
 
-                "-Increase Affection-" if ast_affection < 24:
-                    $ ast_affection += 1
+                "-Increase Whoring-" if ast_whoring < 24:
+                    $ ast_whoring += 1
                     ">Astoria likes you more..."
                     jump cheats.astoria
-                "-Decrease Affection-" if ast_affection > 0:
-                    $ ast_affection += -1
+                "-Decrease Whoring-" if ast_whoring > 0:
+                    $ ast_whoring += -1
                     "Astoria likes you less..."
                     jump cheats.astoria
                 "-Back-":

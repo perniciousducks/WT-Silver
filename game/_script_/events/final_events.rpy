@@ -47,7 +47,7 @@ label ball_quest_E1:
             $ her_mood += 5
             $ d_flag_01 = True
 
-        "\"You will have to sleep with me.\"" if not d_flag_02:
+        "\"You will have to sleep with me.\"" if not d_flag_02 and not hg_pf_sex.counter > 0:
             $ her_mood += 10
             $ d_flag_02 = True
 

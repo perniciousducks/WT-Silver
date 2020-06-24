@@ -14,20 +14,20 @@ label astoria_wardrobe_check(section, arg=None):
             temp_count = [0, 0, 0]
             temp_score = 0
             for item in arg.group:
-                if ast_affection < item.level and temp_count[0] < item.level:
+                if ast_whoring < item.level and temp_count[0] < item.level:
                     temp_count[0] = item.level
                 if item.type in ("bra", "panties"):
                     temp_count[2] += 1
                     if char_active.get_equipped(item.type) != None:
                         if not char_active.get_equipped(item.type).id == item.id:
-                            if ast_affection < ast_requirements["change_underwear"]:
+                            if ast_whoring < ast_requirements["change_underwear"]:
                                 temp_count[1] += 1
 
         # Outfit outrage score check
-        if ast_affection < temp_count[0]:
+        if ast_whoring < temp_count[0]:
             call ast_main("You're joking right? Why'd you think I would ever put this on...",face="annoyed")
             $ temp_score += 1
-        if temp_count[2] < 2 and ast_affection < ast_requirements["unequip_underwear"]:
+        if temp_count[2] < 2 and ast_whoring < ast_requirements["unequip_underwear"]:
             if temp_score > 0:
                 call ast_main("...There's no underwear on that... What kind of pervert created this?",face="annoyed")
             else:
@@ -44,7 +44,7 @@ label astoria_wardrobe_check(section, arg=None):
             return
     else:
         if section == "tabswitch":
-            if ast_affection < ast_requirements["tattoos"]:
+            if ast_whoring < ast_requirements["tattoos"]:
                 if wardrobe_chitchats:
                     call ast_main("Cool idea!",face="happy")
                     call ast_main("Maybe for an idiot like you!",face="angry")
@@ -58,7 +58,7 @@ label astoria_wardrobe_check(section, arg=None):
                 _value = arg
                 _failure = False
                 if arg[1] in ("bras", "panties"): # Intentional double check.
-                    if ast_affection < ast_requirements["change_underwear"]:
+                    if ast_whoring < ast_requirements["change_underwear"]:
                         _value = ("category", None)
                         _failure = True
 
@@ -78,7 +78,7 @@ label astoria_wardrobe_check(section, arg=None):
         elif section == "touching":
             $ random_number = renpy.random.randint(1, 7)
             if arg == "head":
-                if ast_affection < ast_requirements["headpat"]:
+                if ast_whoring < ast_requirements["headpat"]:
                     $ mouse_slap()
                     if wardrobe_chitchats:
                         if random_number == 1:
@@ -110,7 +110,7 @@ label astoria_wardrobe_check(section, arg=None):
                     call ast_main("", face="happy")
                     return
             elif arg == "boobs":
-                if ast_affection < ast_requirements["touch_boobs"]:
+                if ast_whoring < ast_requirements["touch_boobs"]:
                     $ mouse_slap()
                     if wardrobe_chitchats:
                         if random_number == 1:
@@ -129,7 +129,7 @@ label astoria_wardrobe_check(section, arg=None):
                             call ast_main("Stop that!",face="annoyed")
                     return
             elif arg == "pussy":
-                if ast_affection < ast_requirements["touch_pussy"]:
+                if ast_whoring < ast_requirements["touch_pussy"]:
                     $ mouse_slap()
                     if wardrobe_chitchats:
                         if random_number == 1:
@@ -152,7 +152,7 @@ label astoria_wardrobe_check(section, arg=None):
             return
         elif section == "toggle":
             if arg in ("bra", "panties"):
-                if ast_affection < ast_requirements["unequip_underwear"]:
+                if ast_whoring < ast_requirements["unequip_underwear"]:
                     if wardrobe_chitchats:
                         $ random_number = renpy.random.randint(1, 2)
                         if random_number == 1:
@@ -163,7 +163,7 @@ label astoria_wardrobe_check(section, arg=None):
                     $ wardrobe_fail_hint(ast_requirements["unequip_underwear"])
                     return
             elif arg in ("top", "bottom"):
-                if ast_affection < ast_requirements["unequip_clothes"]:
+                if ast_whoring < ast_requirements["unequip_clothes"]:
                     if wardrobe_chitchats:
                         if arg == "top":
                             call ast_main("You want me to take my clothes off... Oh sure, I'll just go ahead and bare my chest and all as well then shall I?",face="annoyed")
@@ -179,7 +179,7 @@ label astoria_wardrobe_check(section, arg=None):
             return
         elif section == "equip":
             if arg.type in ("bra", "panties"):
-                if ast_affection < ast_requirements["unequip_underwear"]:
+                if ast_whoring < ast_requirements["unequip_underwear"]:
                     if char_active.get_equipped("bra"):
                         if arg.id == char_active.get_equipped("bra").id:
                             if wardrobe_chitchats:
@@ -196,11 +196,11 @@ label astoria_wardrobe_check(section, arg=None):
                             #Hint
                             $ wardrobe_fail_hint(ast_requirements["unequip_underwear"])
                             return
-                if ast_affection < arg.level:
+                if ast_whoring < arg.level:
                     call .too_much
                     return
             else:
-                if ast_affection < ast_requirements["unequip_clothes"]:
+                if ast_whoring < ast_requirements["unequip_clothes"]:
                     if arg.type in ("top", "bottom"):
                         if char_active.get_equipped("top"):
                             if arg.id == char_active.get_equipped("top").id:
@@ -218,7 +218,7 @@ label astoria_wardrobe_check(section, arg=None):
                                 return
 
                 label .too_much:
-                if ast_affection < arg.level:
+                if ast_whoring < arg.level:
                     if wardrobe_chitchats:
                         $ random_number = renpy.random.randint(1, 3)
                         if random_number == 1:
@@ -233,10 +233,10 @@ label astoria_wardrobe_check(section, arg=None):
 
                 # Blacklist support
                 if arg.blacklist:
-                    if ast_affection < ast_requirements["unequip_underwear"] and any(x in arg.blacklist for x in ("bra", "panties")):
+                    if ast_whoring < ast_requirements["unequip_underwear"] and any(x in arg.blacklist for x in ("bra", "panties")):
                         call ast_main("How am I supposed to wear my underwear with this?!", face="angry")
                         call ast_main("I guess I could take it off for now...", face="annoyed")
-                    elif ast_affection < ast_requirements["unequip_clothes"] and any(x in arg.blacklist for x in ("top", "bottom")):
+                    elif ast_whoring < ast_requirements["unequip_clothes"] and any(x in arg.blacklist for x in ("top", "bottom")):
                         call ast_main("This looks stupid!", face="angry")
                         call ast_main("...", face="annoyed")
                         call ast_main("J-just give me that!", face="angry")
@@ -251,7 +251,7 @@ label astoria_wardrobe_check(section, arg=None):
     $ char_active.reset_blacklist()
 
     # Blacklist fallbacks
-    if ast_affection < ast_requirements["unequip_underwear"]:
+    if ast_whoring < ast_requirements["unequip_underwear"]:
 
         $ underwear_pass = True
 
@@ -266,7 +266,7 @@ label astoria_wardrobe_check(section, arg=None):
         if not underwear_pass:
             call ast_main("I'm glad to have my underwear back.", face="annoyed")
 
-    if ast_affection < ast_requirements["unequip_clothes"]:
+    if ast_whoring < ast_requirements["unequip_clothes"]:
         $ clothes_pass = True
 
         if not "top" in char_active.blacklist and not char_active.is_equipped("top"):

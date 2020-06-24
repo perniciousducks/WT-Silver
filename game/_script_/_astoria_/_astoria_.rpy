@@ -135,6 +135,6 @@ screen astoria_main():
     sensitive False
     default astoria_img = apply_doll_transition(astoria.get_image(), "astoria_main", use_astoria_head)
     if astoria_animation != None:
-        add astoria_img xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio) at astoria_animation
+        add astoria_img xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom 0.5 at astoria_animation
     else:
-        add astoria_img xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio)
+        add astoria_img xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom 0.5

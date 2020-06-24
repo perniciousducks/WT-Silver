@@ -391,7 +391,7 @@ screen stats_menuitem(xx, yy):
                             elif current_category == "Astoria":
                                 use stat_bar(int(10-ast_mood/1.0), "-Mood-" , ast_mood_word, ast_mood)
                                 use stat_bar(int(1/1), "-Favour Tier-", "", 1)
-                                use stat_bar(int(ast_affection/0.8), "-Affection-", "", ast_affection) # TODO: Add word list
+                                use stat_bar(int(ast_whoring/0.8), "-Affection-", "", ast_whoring) # TODO: Add word list
                                 use stat_bar(int(3/0.9), "-Reputation-", "Mischievous", 4) # TODO: Add word list and variable, starts at level 4
                                 #use stat_bar(int(ast_training_counter/0.9), "-Spell training-" , "Not started", ast_training_counter) # TODO: Add word list
                             elif current_category == "Susan":

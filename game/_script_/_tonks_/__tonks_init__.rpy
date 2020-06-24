@@ -6,7 +6,7 @@ default tonks_flip = 1
 default use_tonks_head = False
 default tonks_animation = None
 
-default tonks_haircolor = [[243, 158, 189, 255], [254, 218, 238, 255]]
+default tonks_haircolor = [[255, 146, 185, 255], [254, 218, 238, 255]]
 
 # Stats
 default ton_tier           = 1

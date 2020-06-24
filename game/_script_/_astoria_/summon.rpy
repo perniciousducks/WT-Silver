@@ -205,7 +205,7 @@ label astoria_talk:
                     call ast_main("Hmpf...", face="angry")
                     call ast_main("Alright, why not. Nobody knows about it anyways.", face="neutral")
                     jump astoria_talk
-                "{color=[menu_disabled]}-Master-{/color}" if ast_affection < 18:
+                "{color=[menu_disabled]}-Master-{/color}" if ast_whoring < 18:
                     label .master_fail:
                     $ ast_genie_name = "Dumby" # Tricked
                     call ast_main("Hahahaha-- you want me to call you master?", face="happy")
@@ -218,7 +218,7 @@ label astoria_talk:
                     call ast_main("Yes... I'm sorry... {w=1.0}Dumby...", face="happy")
                     g4 "(Damn brat! We'll see who will be laughing later.)"
                     jump astoria_talk
-                "-Master-" if ast_affection >= 18:
+                "-Master-" if ast_whoring >= 18:
                     label .master:
                     $ ast_genie_name = "Master"
                     call ast_main("Hahahaha-- you want me to call you master?", face="happy")
@@ -230,16 +230,16 @@ label astoria_talk:
                     g4 "Shut it... or there will be consequences!"
                     call ast_main("I'm sorry... It won't happen again, master...", face="neutral")
                     jump astoria_talk
-                "{color=[menu_disabled]}-Custom Input-{/color}" if ast_affection < 18:
+                "{color=[menu_disabled]}-Custom Input-{/color}" if ast_whoring < 18:
                     m "(I don't think she's yet ready for that)"
                     jump astoria_talk
 
-                "-Custom Input-" if ast_affection >= 18:
+                "-Custom Input-" if ast_whoring >= 18:
                     $ temp_name = renpy.input("(Please enter the name.)", ast_genie_name, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ", length=14)
                     $ temp_name = temp_name.strip()
 
                     if temp_name.lower() in ("sir", "dumbledore", "professor", "old man", "genie", "lord voldemort", "daddy", "master"):
-                        if temp_name.lower() == "master" and ast_affection < 18:
+                        if temp_name.lower() == "master" and ast_whoring < 18:
                             jump astoria_talk.master_fail
                         $ renpy.jump("astoria_talk."+temp_name.lower().replace(" ", "_")) # Jump to local label
                     elif temp_name == "":
@@ -275,14 +275,14 @@ label astoria_talk:
                     $ astoria_name = "Cutie"
                     call ast_main("Fine... If you really have to, [ast_genie_name].", face="disgusted")
                     jump astoria_talk
-                "{color=[menu_disabled]}-Slave-{/color}" if ast_affection < 18:
+                "{color=[menu_disabled]}-Slave-{/color}" if ast_whoring < 18:
                     label .slave_fail:
                     call ast_main("I'm not your slave, [ast_genie_name]!", face="angry")
                     m "Of course you aren't! We are just playing a game, that's all..."
                     call ast_main("Well, I don't like your games!", face="angry")
                     call ast_main("Forget it!", face="angry")
                     jump astoria_talk
-                "-Slave-" if ast_affection >= 18:
+                "-Slave-" if ast_whoring >= 18:
                     label .slave:
                     $ astoria_name = "Slave"
                     call ast_main("I'm not your slave, [ast_genie_name]!", face="angry")
@@ -291,16 +291,16 @@ label astoria_talk:
                     call ast_main("Alrighty then!", face="happy")
                     jump astoria_talk
 
-                "{color=[menu_disabled]}-Custom Input-{/color}" if ast_affection < 18:
+                "{color=[menu_disabled]}-Custom Input-{/color}" if ast_whoring < 18:
                     m "(I don't think she's yet ready for that)"
                     jump astoria_talk
 
-                "-Custom Input-" if ast_affection >= 18:
+                "-Custom Input-" if ast_whoring >= 18:
                     $ temp_name = renpy.input("(Please enter the name.)", astoria_name, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ", length=14)
                     $ temp_name = temp_name.strip()
 
                     if temp_name.lower() in ("miss greengrass", "girl", "princess", "cutie", "slave"):
-                        if temp_name.lower() == "slave" and ast_affection < 18:
+                        if temp_name.lower() == "slave" and ast_whoring < 18:
                             jump astoria_talk.slave_fail
                         $ renpy.jump("astoria_talk."+temp_name.lower().replace(" ", "_")) # Jump to local label
                     elif temp_name == "":

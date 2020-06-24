@@ -52,9 +52,17 @@ default studio_image_xx = 1010
 default studio_image_yy = 1200
 
 init python:
-    def character_dropped(drags, drops):
+    def character_dropped(drags, drop=None):
         drags[0].snap(540, 300)
         return
+
+    # def image_zoom_changed():
+        # global studio_image_offset
+
+        # inc, dec = -1, 1
+        # studio_image_zoom
+        # xoffset =
+        # studio_image_offset = ((), ())
 
 label studio(studio_char):
     python:
@@ -242,14 +250,18 @@ screen studio():
 
     drag:
         drag_name "character"
+        #activated character_dropped
         #dragged character_dropped
         draggable not studio_hide
         drag_offscreen True
-        xpos 160 ypos -75
-        if studio_image_body:
-            add Flatten(char_active.get_image()) zoom studio_image_zoom xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
-        else:
-            add studio_outfit_saves.get(active_girl).get_image() zoom studio_image_zoom xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
+        pos(160, -75)
+
+        add (Flatten(char_active.get_image()) if studio_image_body else studio_outfit_saves.get(active_girl).get_image()):
+            zoom studio_image_zoom
+            xzoom studio_image_flip
+            alpha studio_image_alpha
+            rotate studio_image_rotation
+            events False
 
     if not studio_bg_overlay_list[studio_room_overlay2] == None:
         if studio_room_overlay2_blur > 0.0:
@@ -342,9 +354,9 @@ screen character_studio():
                     xanchor 0.5
                     xsize 96
                     vbox:
-                        bar value VariableValue("studio_image_zoom", 1.0, max_is_zero=False, style=u'bar', offset=0, step=0.01)
-                        bar value VariableValue("studio_image_alpha", 1.0, max_is_zero=False, style=u'bar', offset=0, step=0.01)
-                        bar value VariableValue("studio_image_rotation", 359.0, max_is_zero=False, style=u'bar', offset=0, step=1.0)
+                        bar value VariableValue("studio_image_zoom", 1.0, max_is_zero=False, style=u'bar', offset=0, step=0.1, force_step=True)
+                        bar value VariableValue("studio_image_alpha", 1.0, max_is_zero=False, style=u'bar', offset=0, step=0.05, force_step=True)
+                        bar value VariableValue("studio_image_rotation", 360.0, max_is_zero=False, style=u'bar', offset=0, step=1.0, force_step=True)
 
                 textbutton "{size=11}{color=#FFF}Flip{/color}{/size}" action ToggleVariable("studio_image_flip", -1, 1) xsize 94 xpos 50 xanchor 0.5
                 textbutton "{size=11}{color=#FFF}Reset{/color}{/size}" action Return(["reset", "character"]) xsize 94 xpos 50 xanchor 0.5

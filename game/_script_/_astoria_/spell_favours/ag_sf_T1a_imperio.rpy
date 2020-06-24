@@ -235,7 +235,7 @@ label ag_se_imperio_sb_E1:
 
     # Increase affection once (this is the first event)
     if ag_se_imperio_sb.counter == 1:
-        $ ast_affection += 1
+        $ ast_whoring += 1
 
     jump end_ag_se_imperio_sb
 
@@ -539,7 +539,7 @@ label ag_se_imperio_sb_E2:
 
     # Increase affection once (this is the second event)
     if ag_se_imperio_sb.counter == 2:
-        $ ast_affection += 1
+        $ ast_whoring += 1
 
     jump end_ag_se_imperio_sb
 
@@ -881,8 +881,8 @@ label ag_se_imperio_sb_E3:
     m "(That girl is even worse than me...)"
 
     $ susan_wardrobe_unlocked = True
-    if ast_affection < 24: # Save compatibility
-        $ ast_affection = 24
+    if ast_whoring < 24: # Save compatibility
+        $ ast_whoring = 24
 
         $ TBA_message("This concludes all events for Susan and Astoria as of version %s." % title_version)
         $ TBA_message("Susan's wardrobe has been unlocked!")
@@ -890,6 +890,6 @@ label ag_se_imperio_sb_E3:
 
     # Increase affection once (this is the third event)
     #if ag_se_imperio_sb.counter == 3:
-    #    $ ast_affection += 1
+    #    $ ast_whoring += 1
 
     jump end_ag_se_imperio_sb

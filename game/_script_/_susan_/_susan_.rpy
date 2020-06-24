@@ -36,7 +36,6 @@ label sus_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
     if ypos != None:
         if ypos in ["base","default"]:
             $ susan_ypos = 0
-            $ susan_scaleratio = 2
             $ susan_zorder = 15
             $ use_susan_head = False
         elif ypos in ["head"]:
@@ -44,7 +43,6 @@ label sus_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
             # Use ypos="base" to disable it.
             # Use ypos="200" or any other number to move her head up or down.
             $ use_susan_head = True
-            $ susan_scaleratio = 2
 
             if susan_flip == -1: #Flipped
                 $ susan_xpos = -80

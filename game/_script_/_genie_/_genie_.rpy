@@ -27,7 +27,6 @@ label gen_main(text="", face=None, base=None, xpos=None, ypos=None, flip=True, t
     if ypos != None:
         if ypos in ["base","default"]:
             $ genie_ypos = 0
-            $ genie_scaleratio = 2
             $ genie_zorder = 15
             $ use_genie_head = False
         elif ypos in ["head"]:
@@ -35,7 +34,6 @@ label gen_main(text="", face=None, base=None, xpos=None, ypos=None, flip=True, t
             # Use ypos="base" to disable it.
             # Use ypos="200" or any other number to move her head up or down.
             $ use_genie_head = True
-            $ genie_scaleratio = 2
 
             if genie_flip == -1: # Flipped
                 $ genie_xpos = 590
@@ -78,7 +76,6 @@ label reset_genie:
 label update_genie:
 
     $ genie_flip = 1
-    $ genie_scaleratio = 2 # Reset
     $ genie_zorder = 15
     $ use_genie_head = False
 
@@ -88,5 +85,5 @@ screen genie_main():
     tag genie_main
     zorder genie_zorder
     sensitive False
-    add genie_base xpos genie_xpos ypos genie_ypos xzoom genie_flip zoom (1.0/genie_scaleratio)#Add the base body
-    add genie_face xpos genie_xpos ypos genie_ypos xzoom genie_flip zoom (1.0/genie_scaleratio)#Add genie expression
+    add genie_base xpos genie_xpos ypos genie_ypos xzoom genie_flip zoom 0.5#Add the base body
+    add genie_face xpos genie_xpos ypos genie_ypos xzoom genie_flip zoom 0.5#Add genie expression

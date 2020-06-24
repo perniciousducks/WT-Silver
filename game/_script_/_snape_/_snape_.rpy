@@ -23,7 +23,6 @@ label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, w
     if ypos != None:
         if ypos in ["base","default"]:
             $ snape_ypos = 0
-            $ snape_scaleratio = 2
             $ snape_zorder = 15
             $ use_snape_head = False
         elif ypos in ["head"]:
@@ -31,7 +30,6 @@ label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, w
             # Use ypos="base" to disable it.
             # Use ypos="200" or any other number to move her head up or down.
             $ use_snape_head = True
-            $ snape_scaleratio = 2
 
             if snape_flip == -1: #Flipped #Head is on the left side.
                 $ snape_xpos = -50
@@ -76,11 +74,11 @@ screen snape_main(old_sprite=s_sprite, new_sprite=s_sprite, wand=False):
     sensitive False
 
     add doll_transition(old_sprite, new_sprite):
-        xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)
+        xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom 0.5
 
     if wand:
-        add "characters/snape/main/wand.png" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)
+        add "characters/snape/main/wand.png" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom 0.5
 
 screen snape_picture_frame():
-    add "characters/snape/main/picture_frame.png" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)
+    add "characters/snape/main/picture_frame.png" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom 0.5
     zorder snape_zorder+1

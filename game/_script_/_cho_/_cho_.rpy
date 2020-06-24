@@ -124,6 +124,6 @@ screen cho_main():
     sensitive False
     default cho_img = apply_doll_transition(cho.get_image(), "cho_main", use_cho_head)
     if cho_animation != None:
-        add cho_img xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) at cho_animation
+        add cho_img xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom 0.5 at cho_animation
     else:
-        add cho_img xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
+        add cho_img xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom 0.5

@@ -280,7 +280,7 @@ label ag_st_imperio_E1:
 
     # Increase affection once (this is the first event)
     if ag_st_imperio.counter == 1:
-        $ ast_affection += 1
+        $ ast_whoring += 1
 
     jump end_ag_st_imperio
 
@@ -613,7 +613,7 @@ label ag_st_imperio_E2:
 
             # Increase affection once (this is the second event)
             if ag_st_imperio.counter == 2:
-                $ ast_affection += 1
+                $ ast_whoring += 1
 
             jump end_ag_st_imperio
 
@@ -778,7 +778,7 @@ label ag_st_imperio_E3:
 
     # Increase affection once (this is the third event)
     if ag_st_imperio.counter == 3:
-        $ ast_affection += 1
+        $ ast_whoring += 1
 
     jump end_ag_st_imperio
 
@@ -1097,7 +1097,7 @@ label ag_st_imperio_E4:
 
     # Increase affection once (this is the fourth event)
     if ag_st_imperio.counter == 4:
-        $ ast_affection += 1
+        $ ast_whoring += 1
 
     jump end_ag_st_imperio
 
@@ -1718,7 +1718,7 @@ label ag_st_imperio_E5:
 
     # Increase affection once (this is the fifth event)
     if ag_st_imperio.counter == 5:
-        $ ast_affection += 1
+        $ ast_whoring += 1
 
     jump end_ag_st_imperio
 

@@ -387,7 +387,7 @@ label cc_pr_manipulate_girls_T3_angelina:
 
     if weather == "rain":
         g4 "Whoa, you're soaking!"
-        call cho_main("Oh, yes... I guess my clothes ended up a little wet...", "narrow", "base", "down", cheeks="blush") #Blushing
+        call cho_main("Oh, yes... I guess my clothes ended up a little wet...", "base", "narrow", "base", "down", cheeks="blush") #Blushing
     else:
         g9 "Welcome back..."
         call cho_main("...", "normal", "base", "base", "downR", cheeks="blush")

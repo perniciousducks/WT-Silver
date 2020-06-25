@@ -42,7 +42,7 @@ label tentacle_scene_intro:
         m "To use this scroll that is forbidden-"
         m "You'll need to take a piece of me..."
 
-        m "Key... what ke-"
+        m "Key... what k-"
         $ renpy.play('sounds/magic1.ogg')
         show screen white
         with d9
@@ -109,7 +109,7 @@ label tentacle_scene_intro:
     "*Scribble* *Scribble*"
 
     menu:
-        m "....mhmm...."
+        m "....*mhmm*...."
         "...I had very important business matter to attend to...":
             $ d_flag_01.append("I had very important business matter to attend to,")
         "...I went out to visit a brothel...":
@@ -310,7 +310,7 @@ label tentacle_scene_intro:
     her "Oh no..."
     $ renpy.sound.play("sounds/cloth_rip.mp3")
     ">You rip her top off in a flurry of buttons and cotton..."
-    her "Ahhhh!"
+    her "*Ahhhh*!"
     $ renpy.sound.play("sounds/plant_slithering.mp3")
     ">Sliding your tentacles up her legs and slowly pulling them apart."
     ">Hermione struggles against you but her effort is in vain."
@@ -413,7 +413,7 @@ label tentacle_1: #Public path
     gen "Do you really think that you'll be able to stop yourself from begging me for more?"
     ">You increase the speed of the tentacles."
     play bg_sounds "sounds/slickloopfast.mp3" fadein 2 fadeout 2
-    her "{size=-3}mmmmmmm{/size}"
+    her "{size=-3}*mmmmmmm*{/size}"
     gen "I don't think you will. In fact I know that you won't."
     gen "Because I know what you are. A slut."
     gen "A slut who can only think about getting off when she's being fucked by a plant in front of her classmates."
@@ -586,7 +586,7 @@ label tentacle_2: # Personal path
     with d9
     pause.8
     ">Professor Sprout quickly runs over."
-    spo "Miss Granger are you okay? Miss granger!"
+    spo "Miss Granger are you okay? Miss Granger!"
     her "..................*ah*"
     spo "....She's breathing, thank be Merlin."
     spo "You! Yes, you girls! Take her to the hospital wing at once!"

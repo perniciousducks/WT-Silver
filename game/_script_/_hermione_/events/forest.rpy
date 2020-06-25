@@ -31,7 +31,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     m "Miss Granger? What are you doing out here at this time of night?"
     call her_main("[genie_name]! I, ugh, I wasn't doing anything bad, I swear!", "angry", "wide", "base", "R", xpos="base", ypos="base", trans=d5)
     m "..."
-    call her_main("Ugh, fine! If you must know, I was out here gathering up some mastick resin.", "upset", "narrow", "worried", "down")
+    call her_main("Ugh, fine! If you must know, I was out here gathering up some mastic resin.", "upset", "narrow", "worried", "down")
     call her_main("I know Students aren't {i}technically{/i} supposed to touch the stuff since it's normally just used to make belch powder...", "annoyed", "base", "base", "R")
     call her_main("But I'm using it in my research for a non addictive analgesic!", "open", "closed", "base", "mid")
     m "Whatever..."
@@ -56,7 +56,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
             call her_main("Oh thank goodness... I thought you were going to murder me for a second there...", "base", "happyCl", "base", "mid",trans=hpunch)
             m "What? How could you think such a thing!"
             m "I don't know if I'll be able to-"
-            call her_main("How about I make it up to you with my mouth then, hmmm?", "base", "narrow", "base", "mid")
+            call her_main("How about I make it up to you with my mouth then, *hmmm*?", "base", "narrow", "base", "mid")
             m "Done."
             $ forest_BJ_progress = 2
 
@@ -72,10 +72,10 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     hide screen blkfade
     with d3
 
-    her "Mmmm... I don't think I'll ever get sick of this cock..."
+    her "*Mmmm*... I don't think I'll ever get sick of this cock..."
     m "It'll get sick of having to wait for you to put it in your mouth though."
     $ ccg2 = 2
-    her "Hmph... now, now, [genie_name], patience is a virtue..."
+    her "*Hmph*... now, now, [genie_name], patience is a virtue..."
     $ ccg2 = 3
     her "Besides, doesn't my hand feel nice?"
     m "Not as nice as your mouth."
@@ -96,8 +96,8 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     m "Gods... they'd make you a queen for sucking cock like this in Agrabah..."
     $ ccg2 = 8
     her "(Where?)"
-    m "Mmmmm... Fuck yes..."
-    who2 "{size=-8}tehehehe...{/size}"
+    m "*Mmmmm*... Fuck yes..."
+    who2 "{size=-8}*te-he-he-he*...{/size}"
     $ ccg2 = 5
     her "!!!"
     $ ccg2 = 9
@@ -120,17 +120,17 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
             her "{size=+10}Show yourselves!!!{/size}"
 
     $ ccg1 = "m1"
-    myr "Tehehehe... Hi Hermione..."
+    myr "*Te-he-he-he... Hi Hermione..."
     $ ccg2 = 11
     with hpunch
     g4 "{size=+10}AH! A G-G-GHOST!{/size}"
-    myr "hahahahah!"
-    myr "Good one dumbledore! You always were a joker."
+    myr "*ha-ha-ha-hah*!"
+    myr "Good one Dumbledore! You always were a joker."
     her "Myrtle!"
     her "This isn't what it looks like!"
     myr "Isn't it?"
     myr "I think it looks lovely..."
-    her "Argh! Please don't tell anyone!!!"
+    her "*Argh*! Please don't tell anyone!!!"
     show screen blkfade
     with d3
 
@@ -171,7 +171,7 @@ label forest_BJ_2:
     call her_main("So what are you doing out here?", "base", "base", "base", "mid")
     call her_main("I thought you didn't leave your office anymore?", "soft", "squint", "base", "mid")
     m "Oh, you know me... Always looking to connect with my students..."
-    call her_main("Mhmmm... So that's what you're down here for then? To {i}connect{/i}?", "base", "happy", "base", "mid")
+    call her_main("*Mhmmm*... So that's what you're down here for then? To {i}connect{/i}?", "base", "happy", "base", "mid")
     m "Always..."
     call her_main("Fine... Just let me take my robe off...", "base", "base", "base", "R")
     show screen blkfade
@@ -201,7 +201,7 @@ label forest_BJ_2:
     her "*pop* Not to mention she never forgets! She's {b}still{/b} going on about the whole McCartney thing..."
     $ ccg2 = 8
     her "*shlrp* *schkk* *slurp*"
-    m "Mmmm..."
+    m "*Mmmm*..."
     m "So have you heard any gossip floating around then?"
     $ ccg2 = 10
     her "Surprisingly not..."
@@ -211,7 +211,7 @@ label forest_BJ_2:
     her "although She probably wouldn't want to upset you..."
     $ ccg2 = 4
     her "*shlrp* *schkk* *slurp*"
-    m "Mmmm..."
+    m "*Mmmm*..."
     $ ccg2 = 10
     her "Still... I didn't think she'd be able to help herself..."
     $ ccg2 = 14
@@ -230,7 +230,7 @@ label forest_BJ_2:
     $ ccg2 = 16
     her "*slurp* *schkk* *shlrp*"
     $ ccg2 = 19
-    her "I'd never be able to show my face around hogwarts again..."
+    her "I'd never be able to show my face around Hogwarts again..."
     $ ccg2 = 20
     her "*slurp* *schkk* *shlrp*"
     $ ccg2 = 21
@@ -254,7 +254,7 @@ label forest_BJ_2:
     g9 "ARGH THAT's IT GIRL!"
     g9 "HERE IT COMES"
     $ ccg2 = 22
-    ">You grab a hold of the back of hermione's head and thrust forward, planting your cock firmly down her throat."
+    ">You grab a hold of the back of Hermione's head and thrust forward, planting your cock firmly down her throat."
     $ ccg1 = "m1"
     myr "Wow... I didn't think you'd fit it all in..."
     $ ccg2 = 23
@@ -293,14 +293,14 @@ label forest_BJ_2:
     call her_main("{size=+10}You just came down my throat in front of moaning myrtle!{/size}", "scream", "closed", "angry", "mid")
     call her_main("She's going to tell everyone about this now!", "annoyed", "base", "angry", "mid")
     m "So? Doesn't everyone sort of know by now anyway?"
-    call her_main("Argh! That's not the point and you know it!", "annoyed", "squint", "angry", "mid")
+    call her_main("*Argh*! That's not the point and you know it!", "annoyed", "squint", "angry", "mid")
     call her_main("You can't keep treating me like your {heart}dirty{heart} little {b}cumdump{/b} to use as you please!", "angry", "squint", "base", "mid")
     call her_main("To coat in your filthy nasty {b}{heart}cum{heart}{/b}...", "angry", "narrow", "base", "dead")
     call her_main("In front of whoever, or whatever, you want...", "angry", "narrow", "annoyed", "up")
     call her_main("...", "angry", "narrow", "base", "dead")
     call her_main("Well... I hope you've learned your lesson!", "angry", "narrow", "base", "up")
     call her_main("I'm going to go back and...", "angry", "narrow", "base", "up")
-    call her_main("ge-Clean! myself off...", "open", "squint", "worried", "up")
+    call her_main("*ge*-Clean! myself off...", "open", "squint", "worried", "up")
     call her_main("And remember...", "open", "narrow", "base", "up")
     call her_main("no {size=-1}more... {size=-1}{b}cum{/b}... {size=-1}all... {size=-1}over... {size=-1}me... {size=-1}please...{heart}{heart}{heart}{/size}", "angry", "narrow", "base", "dead")
     show screen blkfade
@@ -322,7 +322,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     $ hermione.wear("all")
     # TODO: Add robe force equip.
 
-    ">Surely enough, the handwritten words \'hermione granger\', manage to lead you to the lone girl at the edge of an imposing forest."
+    ">Surely enough, the handwritten words \"Hermione Granger\", manage to lead you to the lone girl at the edge of an imposing forest."
     ">However she doesn't seem preoccupied with her usual botany."
 
     $ ccg_folder = "herm_forest"
@@ -342,7 +342,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     m "What moon?"
     ">Hermione frantically looks to the cloudy sky, unable to even glimpse the moon through the impenetrable greyness."
     call her_main("Oh... um...", "open", "happy", "base", "R")
-    m "It's alright for you to admit that you're a dirty little cumslut, miss granger."
+    m "It's alright for you to admit that you're a dirty little cumslut, miss Granger."
     call her_main("It's not like that!", "upset", "narrow", "annoyed", "mid")
     call her_main("{size=-4}I just like sucking your dick, OK...{/size}", "upset", "narrow", "base", "R_soft")
     m "So you don't want me to cover you in cum like the cumslut you are?"
@@ -378,7 +378,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     her "*glck* *shlrp* *Gluck*"
     m "If you want me to keep cumming, I suggest you do a little less talking..."
     $ ccg2 = 20
-    her "Hsss hrrr! (Yes sir!)"
+    her "*Khes* *sh-r*! (Yes sir!)"
     $ ccg2 = 27
     ">In response, hermione thrusts her entire lithe frame forwards, forcing your thick cock all the way down her throat."
     $ ccg2 = 28
@@ -386,7 +386,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     $ ccg2 = 29
     m "How are you able go so deep?..."
     $ ccg2 = 17
-    her "Hmmm, I had a good teacher..."
+    her "*Hmmm*, I had a good teacher..."
     $ ccg2 = 19
     m "As flattered as I am..."
     ">You softly low your hand on to the back of the little sluts head..."
@@ -412,7 +412,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     $ ccg2 = 33
     $ ccg1 = "m2"
     $ ccg2 = 33
-    ">You're so focussed in your facefuck session you almost fail to notice the ghostly apparition of an attractive little witch appear behind Hermione."
+    ">You're so focussed in your face fuck session you almost fail to notice the ghostly apparition of an attractive little witch appear behind Hermione."
     $ ccg2 = 32
     g4 "!!!"
     $ ccg2 = 33
@@ -426,33 +426,33 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     $ ccg2 = 34
     ">Coaxed on by the prospect of an ethereal audience, you begin to get into a firm, rough rhythm of properly fucking hermione's throat raw."
     $ ccg2 = 35
-    her "*glck*!!!*glck*!!!*glck*"
+    her "*glck*-*glck*-*glck*!!"
     $ ccg2 = 34
     her "*glck*{heart}*glck*{heart}*glck*"
     $ ccg2 = 35
     myr "..."
     $ ccg2 = 34
-    her "*Slurp!* *Gulp!* *Slurp!*"
+    her "*Slurp*! *Gulp*! *Slurp*!"
     $ ccg2 = 35
     m "Yes, like that... that's a good little slut..."
     $ ccg2 = 34
-    her "*Slurp!* *Slurp!* *Slurp!*"
+    her "*Slurp*! *Slurp*! *Slurp*!"
     $ ccg2 = 35
     m "Deeper now."
     $ ccg2 = 34
-    her "*Slurp!* *Slurp!* *Slurp!*"
+    her "*Slurp*! *Slurp*! *Slurp*!"
     $ ccg2 = 35
     m "Come on cock-slut."
     $ ccg2 = 36
-    her "*Slurp!* *Gobble!* *Gobble!*"
+    her "*Slurp*! *Gobble*! *Gobble*!"
     $ ccg2 = 37
     g4 "Deeper now!"
     $ ccg2 = 36
-    her "*Gobble-goble-slurp-goble!*"
+    her "*Gobble-gobble-slurp-gobble*!"
     $ ccg2 = 37
     g4 "Yes, like that!"
     $ ccg2 = 36
-    her "{size=+5}*Gobble-gobble-slurp-gobble!* !!!{/size}"
+    her "{size=+5}*Gobble-gobble-slurp-gobble*!{/size}"
     $ ccg2 = 34
     g4 "{size=+5}Yes! Yes! Yes! Yes!{/size}"
     $ ccg2 = 35
@@ -476,9 +476,9 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     $ ccg2 = 38
     her "{size=+10}!!!{/size}"
     $ ccg2 = 37
-    myr "hehehe, hi hermione..."
+    myr "*he-he-he*.. Hi Hermione..."
     $ ccg2 = 36
-    her "*glck*Stt-*glck*{heart}*glck*"
+    her "*glck* Sto-... {w=0.3}*glck*{heart}*glck*"
     $ ccg2 = 37
     ">Hermione starts to struggle against you in her embarrassment, her face turns a deep red and tears start to roll down her face."
     $ ccg2 = 36
@@ -525,11 +525,11 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     $ ccg2 = 41
     call cum_block
 
-    her "*gulp* *argggglelggg* *gobble*...."
+    her "*gulp* *gargggglelggg* *gobble*...."
     $ ccg2 = 42
     call cum_block
 
-    myr "More dumbledore MORE!"
+    myr "More, Dumbledore, more!"
     $ ccg2 = 41
     call cum_block
     g4 "{size=+15}ARGH!!!!{/size}"
@@ -562,7 +562,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
         "-clean it-":
             m "(I suppose I should..."
             ">You use a rag and wipe her face clean."
-            her "*zzz* no... *zzz* I wanna be a*zzz* cumslut...*zzz*"
+            her "*zzz* no... *zzz* I wanna be a.. *zzz* cumslut... *zzz*"
             m "*Shhh*... Don't worry, [hermione_name], I will give you more tomorrow."
         "-leave it-":
             m "(She looks better like this anyway...)"
@@ -605,7 +605,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
             m "I'll try and be on time for our blowjobs from now on."
             call her_main("Good... It's the least you can do...", "base", "closed", "angry", "mid")
         "-You know where my office is-":
-            call her_main("Hmph...", "upset", "narrow", "angry", "R")
+            call her_main("*Hmph*...", "upset", "narrow", "angry", "R")
 
     show screen blkfade
     with d3
@@ -622,7 +622,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     hide screen blkfade
     with d3
 
-    her "Mmmmm..."
+    her "*Mmmmm*..."
     $ ccg2 = 17
     her "This almost makes waiting out in the cold worth it..."
     m "Only almost?"
@@ -635,13 +635,13 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     $ ccg2 = 18
     her "*slurp* *glck* *slrp*"
     $ ccg2 = 20
-    m "Ughhhh.... that's it, [hermione_name]..."
+    m "*Ughhhh*.... that's it, [hermione_name]..."
     m "Be a good little cockslut for you headmaster..."
     $ ccg2 = 16
     her "*slurp*{heart}*slurp*{heart}*glck*"
     #Myrtle fade in
     $ ccg1 = "m2"
-    m "And for casper the slutty ghost here..."
+    m "And for Casper the slutty ghost here..."
     $ ccg2 = 43
     her "*slurp*!!!*slurp*!!!*glck*"
 
@@ -659,7 +659,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
             her "Just don't go blabbing to everyone in the girls' bathroom, OK?"
             myr "Deal..."
             m "Good... Now why don't you just sit back and enjoy the show then..."
-        "-facefuck her-":
+        "-Face fuck her-":
             pass
 
     $ ccg2 = 28
@@ -764,7 +764,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     $ ccg2 = 44
     her "{size=+5}*glck*{heart}*glck*{heart}*glck*{/size}"
     $ ccg2 = 34
-    myr "Then gryffindor!"
+    myr "Then Gryffindor!"
     $ ccg2 = 35
     her "{size=+5}*glck*{heart}*glck*{heart}*glck*{/size}"
     $ ccg2 = 34
@@ -784,7 +784,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     $ ccg2 = 35
     her "{size=+5}*glck*{heart}*glck*{heart}*glck*{/size}"
     $ ccg2 = 34
-    myr "Then hogsmeade!"
+    myr "Then Hogsmeade!"
     $ ccg2 = 35
     myr "{size=+2}THEN{/size} {size=+2}THE{/size} {size=+2}WHOLE{/size} {size=+2}WORLD!!!{/size}"
     $ ccg2 = 34
@@ -807,7 +807,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     g4 "{size=+5}What the hell is this?!{/size}"
     $ ccg2 = 46
     her "{size=+5}Cum on sir! Aren't I your dirty little cumslut?{/size}"
-    g4 "Argh! You cum obsessed whore!"
+    g4 "*Argh*! You cum obsessed whore!"
     $ ccg2 = 45
     her "{size=+5}Yes I am!{/size}"
     her "{size=+5}Nothing but your cum hungry little slut, sir!{/size}"
@@ -832,8 +832,8 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     pause .1
     hide screen white
     with hpunch
-    g4 "{size=+7}ARGH!{/size}"
-    g4 "{size=+7}Argh!!! YES!!!{/size}"
+    g4 "{size=+7}*ARGH*!{/size}"
+    g4 "{size=+7}*Argh*!!! YES!!!{/size}"
     $ ccg2 = 50
     her "{heart}{heart}{heart}{heart}"
     show screen blkfade
@@ -856,7 +856,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     show screen blkfade
     with d3
 
-    ">You and Hermione walk back to the castle together, Hermione complaining about how rude Myrtle was for missing the cumshot the whole way..."
+    ">You and Hermione walk back to the castle together, Hermione complaining about how rude Myrtle was for missing the cum shot the whole way..."
 
     return
 
@@ -882,15 +882,15 @@ label hermione_map_sex:
             "asd"
             pass
 
-    m "Mmmm, gods your pussy is just the best..."
+    m "*Mmmm*, gods your pussy is just the best..."
     her "A-Ah... thank you..."
     m "Ugh... so what are you doing out here at this hour anyway?"
     her "I was - ah {heart} at the library..."
-    m "Mmmm, what were you reading? Dick-sucking 101?"
+    m "*Mmmm*, what were you reading? Dick-sucking 101?"
     her "Ah...{heart} I'd like to think... ah{heart} that I'm past the 101 stage [genie_name]..."
     m "True, you could probably write the book!"
-    her "Mmmmm...{heart} I'd probably have to... ah{heart} use a pseudonym..."
-    m "Really? Worried about people finding out what a dirty little cockslut you are?"
+    her "*Mmmmm*...{heart} I'd probably have to... ah{heart} use a pseudonym..."
+    m "Really? Worried about people finding out what a dirty little cock-slut you are?"
     her "I am not a-"
     ">You interrupt her ministrations with a forceful thrust deep into her pussy."
     her "{heart}Ah!!!{heart}"
@@ -901,10 +901,10 @@ label hermione_map_sex:
     m "Besides, if you really were worried about people finding out about you then you probably wouldn't be fucking your headmaster in public!"
     her "Ah...{heart} that's not- ah...{heart} this isn't my fault...{heart}"
     m "Really? And just how am I expected to turn up a chance to fuck this tight little cunt!"
-    her "A-Ah... {heart}you're Professor{heart} dumbledore{heart}... you should...{heart}"
+    her "A-Ah... {heart}you're Professor{heart} Dumbledore{heart}... you should...{heart}"
     m "The gods themselves wouldn't miss an opportunity like this..."
     her "...{heart}"
-    m "I think it's about time you just come to admit what a needy little fuckhole you really are..."
+    m "I think it's about time you just come to admit what a needy little fuck hole you really are..."
     her "Ah...{heart}a-all right...{heart}"
     m "Go on then slut... yell it out!"
     her "Ah...{heart}I-I can't!{heart} people will hear!"
@@ -927,9 +927,9 @@ label hermione_map_sex:
     her "{size=+10}{heart}I'm A CUMSLUT! I'm a bitch in heat!{heart}{/size}"
     her "{size=+10}{heart}JUST FUCK ME HARDER!!!{heart}{/size}"
     g4 "LIKE THIS?"
-    her "{size=+10}{heart}ughhh....{heart}{/size}"
+    her "{size=+10}{heart}*ughhh*....{heart}{/size}"
     her "{size=+10}MORE!{/size}"
-    ">As you and hermione make as much noise as possible through the hallowed hogwarts halls, a soft blue glow begins to appear in front of Hermione."
+    ">As you and hermione make as much noise as possible through the hallowed Hogwarts halls, a soft blue glow begins to appear in front of Hermione."
     myr "Hello again Hermione..."
     myr "\"Professor\"..."
     her "{size=+10}Myrtle!{/size} w-w-what are you doing here?"
@@ -949,7 +949,7 @@ label hermione_map_sex:
     m "I live for fucking pieces of ass like this!"
     m "Plus it's not like I have to worry about people watching me..."
     her "..."
-    myr "You're right... Everyone's going to be far more interested in watching little miss granger be fucked senseless."
+    myr "You're right... Everyone's going to be far more interested in watching little miss Granger be fucked senseless."
     her "Ah...{heart}"
     myr "Isn't that right Hermione? I bet you'd love to be fucked within an inch of your life in front of the whole school!"
     ">Hermione's pussy grips hard onto your cock..."
@@ -959,8 +959,8 @@ label hermione_map_sex:
     her "Ah...{heart}no-{heart}"
     myr "The thought of being drenched in cum-"
     her "Ah...{heart}"
-    myr "While dumbledore breeds you like the whore you are..."
-    her "{heart}{heart}{size=+5}Mmmm...{/size}{heart}{heart}"
+    myr "While Dumbledore breeds you like the whore you are..."
+    her "{heart}{heart}{size=+5}*Mmmm*...{/size}{heart}{heart}"
     myr "While the school watches on..."
     her "{heart}{heart}{size=+10}ah...{/size}{heart}{heart}"
     myr "Along with {i}mummy{/i} and {b}daddy{/b}..."
@@ -971,10 +971,10 @@ label hermione_map_sex:
     her "{heart}{heart}{size=+5}No! I just came! STOP!!!{/size}{heart}{heart}"
     ">The halls resonate with Hermione's incoherent moans and the forceful slapping of her ass against your hips."
     g4 "TAKE THIS!!!"
-    ">You dump your load into hermione's limp body as you hold her up."
-    her "ahhh..."
+    ">You dump your load into Hermione's limp body as you hold her up."
+    her "*ahhh*..."
     g4 "Take this you filthy whore!"
-    ">As you keep pumping more and more cum into hermione's tightness, myrtle watches on with a perverted smile..."
+    ">As you keep pumping more and more cum into Hermione's tightness, myrtle watches on with a perverted smile..."
     her "....."
     myr "Wow... I thought I was a moaner..."
     her "......."

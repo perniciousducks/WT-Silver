@@ -155,9 +155,9 @@ label hg_pf_handjob_T1_intro_E2:
     call her_main("Of course, [genie_name].", "annoyed", "narrow", "angry", "R")
     g9 "The favour being you playing with my cock!"
     call her_main("..............", "disgust", "narrow", "base", "mid_soft")
-    m "Oh, come on. For the honour of the Gryffindors?"
+    m "Oh, come on. For the honour of Gryffindor?"
     call her_main(".............", "angry", "base", "angry", "mid")
-    g9 "Play with my cock for the honour of the Gryffindors, [hermione_name]!"
+    g9 "Play with my cock for the honour of the Gryffindor, [hermione_name]!"
     call her_main("Stop saying that, [genie_name]...", "scream", "base", "angry", "mid", emote="01")
     m "Come on [hermione_name], it's not like I'm asking you to do this for free."
     call her_main(".......", "annoyed", "narrow", "angry", "R")
@@ -263,7 +263,7 @@ label hg_pf_handjob_1:
     else:
         call her_main("[genie_name]...?", "angry", "happyCl", "worried", "mid", emote="05")
         m "What is it?"
-        call her_main("Will you warn me before... uhm... you know...", "angry", "happyCl", "worried", "mid", emote="05")
+        call her_main("Will you warn me before... *uhm*... you know...", "angry", "happyCl", "worried", "mid", emote="05")
 
     $ d_flag_01 = False #If TRUE Genie promised to warn her.
 
@@ -524,7 +524,7 @@ label hg_pf_handjob_1:
             call hide_blkfade
             pause.5
 
-            call her_main("Ew... Your sperm, [genie_name]...", "angry", "narrow", "base", "down")
+            call her_main("*Eww*... Your sperm, [genie_name]...", "angry", "narrow", "base", "down")
             if hermione.is_worn("top"):
                 call her_main("It's everywhere under my top...", "angry", "base", "base", "mid")
             else:
@@ -546,7 +546,7 @@ label hg_pf_handjob_1:
             call cum_block
             $ hermione.set_cum(face="light")
             call bld
-            g4 "{size=+5}ARGH! YES!!!{/size}"
+            g4 "{size=+5}*ARGH*! YES!!!{/size}"
             pause 1.0
             $ hermione.set_cum(breasts="light", body="light")
             call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
@@ -622,10 +622,10 @@ label hg_pf_handjob_2:
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     with hpunch
     g4 "{size=+5}Yes, yes, like that...{/size}"
-    m "Hm... You are getting pretty good at this."
+    m "*Hmm*... You are getting pretty good at this."
     call her_main("Thank you, [genie_name].", "base", "happyCl", "base", "mid")
     call her_main("I figured the better I do this, the sooner it'll be over.")
-    m "Hm..."
+    m "*Hm*..."
 
     menu:
         m "..."
@@ -687,7 +687,7 @@ label hg_pf_handjob_2:
                     call her_main("....................", "angry", "wink", "base", "mid")
                     m ".................."
                 "\"I love to swallow cum!\"":
-                    call her_main("I love to... ehm... swallow cum.", "angry", "wink", "base", "mid")
+                    call her_main("I love to... *ehm*... swallow cum.", "angry", "wink", "base", "mid")
                     m "You hesitated there for a moment."
                     call her_main("Yes, I know....", "angry", "wink", "base", "mid")
                     call her_main("Let me try again...")
@@ -699,7 +699,7 @@ label hg_pf_handjob_2:
                     m "Perfect."
 
         "\"This is really good. Did you practise?\"":
-            call her_main("Hm?", "base", "happyCl", "base", "mid")
+            call her_main("*Hmm*?", "base", "happyCl", "base", "mid")
             call her_main("Sort of... Well not really...")
             call her_main("I had a talk with the girls, and...", "angry", "wink", "base", "mid")
             m "About handjobs?"
@@ -722,9 +722,9 @@ label hg_pf_handjob_2:
             call her_main("She said any boy would fall in love with me if I did this to him...", "base", "narrow", "worried", "down")
             call her_main("There is also this thing when I form a ring with my fingers...")
             call her_main("And then I put one finger here...")
-            m "Hm... I don't feel anything..."
+            m "*Hm*... I don't feel anything..."
             call her_main("Really?", "angry", "narrow", "base", "down")
-            call her_main("Hm...")
+            call her_main("*Hmm*...")
             call her_main("Oh! That's right!", "base", "narrow", "worried", "down")
             call her_main("The finger goes here! Silly me!")
             with hpunch
@@ -789,7 +789,7 @@ label hg_pf_handjob_2_continue:
 
             call her_main("But He doesn't listen! He rips my panties off!", "grin", "narrow", "base", "dead")
             call her_main("I beg him to stop! I scream and I scream!", "angry", "base", "base", "mid", tears="soft")
-            m "Uhm, [hermione_name]?"
+            m "*Uhm*, [hermione_name]?"
             call her_main("Yes?", "angry", "base", "base", "mid", tears="soft")
             m "You are not stroking my cock anymore..."
             call her_main("Oh, I am sorry, [genie_name].", "grin", "happyCl", "worried", "mid", emote="05")
@@ -812,7 +812,7 @@ label hg_pf_handjob_2_continue:
             g9 "Heh. Of course you would."
             m "Also I hear that many women do enjoy getting \"knotted\" quite a bit."
             call her_main("What does getting \"knotted\" mean?", "normal", "squint", "angry", "mid")
-            m "Ehm... Well..."
+            m "*Ehm*... Well..."
             m "Ah, it doesn't matter."
             m "Just say the thing!"
             call her_main("Fine!", "normal", "base", "base", "mid")
@@ -886,7 +886,7 @@ label hg_pf_handjob_2_cumming:
     pause.8
 
     call bld
-    m "Hm..."
+    m "*Hm*..."
     m "I love that thing you do with the palm of your hand!"
     call her_main("You noticed...?", "angry", "wink", "base", "mid")
     call her_main("Shall I do it some more then?")
@@ -925,16 +925,16 @@ label hg_pf_handjob_2_cumming:
 
             call cum_block
             $ hermione.set_cum(breasts="light", body="light")
-            g4 "Argh! You whore!"
+            g4 "*Argh*! You whore!"
             call nar(">The sensation of her skin under your engorged cock almost makes you lightheaded...")
             call her_main("Yes, [genie_name]! Just let it out!", "base", "narrow", "worried", "down", xpos="right", ypos="base")
             $ hermione.set_cum(breasts="heavy", face="light")
-            g4 "Argh! Fucking slut!"
+            g4 "*Argh*! Fucking slut!"
             call her_main("Ah!! It's so hot!", "smile", "narrow", "base", "mid_soft")
             call her_main("And it's getting everywhere! So much of it!", "soft", "narrow", "annoyed", "up")
             call her_main("...[genie_name].")
             $ hermione.set_cum(body="heavy")
-            g4 "Argh!!!"
+            g4 "*Argh*!!!"
             m "............"
             call her_chibi_scene("hj_cum_in_done", trans=d5)
             pause.8
@@ -974,7 +974,7 @@ label hg_pf_handjob_2_cumming:
                 call her_main("It may soak through a little here and there, but I doubt that anyone will notice.", "base", "happyCl", "base", "mid")
             else:
                 call her_main("It may soak through a little here and there, but I doubt that anyone will notice if I wear a robe.", "base", "happyCl", "base", "mid")
-            m "Hm... You could just put it in your mouth next time, and avoid the trouble..."
+            m "*Hm*... You could just put it in your mouth next time, and avoid the trouble..."
             call her_main("And swallow your hot spunk like that, [genie_name]?", "angry", "wink", "base", "mid")
             if hermione.is_worn("top"):
                 m "Would keep your clothes clean."
@@ -996,7 +996,7 @@ label hg_pf_handjob_2_cumming:
             $ hermione.set_cum(face="light")
             call her_chibi_scene("hj_cum_on", trans=d5)
             pause.8
-            g4 "ARGH!"
+            g4 "*ARGH*!"
             $ hermione.set_cum(breasts="light", body="light")
 
             call her_main("WHAT?!", "shock", "wide", "base", "stare", ypos="head")
@@ -1004,7 +1004,7 @@ label hg_pf_handjob_2_cumming:
 
             call cum_block
             $ hermione.set_cum(breasts="heavy")
-            g4 "{size=+5}ARGH! YES!!!{/size}"
+            g4 "{size=+5}*ARGH*! YES!!!{/size}"
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
@@ -1064,19 +1064,19 @@ label hg_pf_handjob_2_cumming:
             call nar(">The simple gesture makes your dick practically explode with pleasure and waves of cum.","end")
 
             call cum_block
-            g4 "{size=+5}ARGH! YES!!!{/size}"
-            call her_main("*Gulp!-Gulp!-Gulp!*", "full", "wide", "base", "stare")
+            g4 "{size=+5}*ARGH*! YES!!!{/size}"
+            call her_main("*Gulp!-Gulp!-Gulp*!", "full", "wide", "base", "stare")
 
             call cum_block
-            g4 "Argh! You little whore!"
+            g4 "*Argh*! You little whore!"
             g4 "Yes, you slut! Drink my cum! Drink all of it!"
-            call her_main("*Gulp!-Gulp!-Gulp!*", "full_cum", "base", "worried", "mid")
-            g4 "Argh... Yes!"
+            call her_main("*Gulp!-Gulp!-Gulp*!", "full_cum", "base", "worried", "mid")
+            g4 "*Argh*... Yes!"
             call nar(">You notice that Hermione is barely able to keep up with the amount of hot cum your cock is pumping into her mouth.")
-            call her_main("*Gulp!-Gulp!-Gulp!*", "full_cum", "happyCl", "worried", "mid")
-            g4 "Ah..."
+            call her_main("*Gulp!-Gulp!-Gulp*!", "full_cum", "happyCl", "worried", "mid")
+            g4 "*Ahh*..."
             g4 "This feels great..."
-            call her_main("*Gulp!* *Gulp!* *Gulp!*", "full_cum", "narrow", "annoyed", "up")
+            call her_main("*Gulp*! *Gulp*! *Gulp*!", "full_cum", "narrow", "annoyed", "up")
             m "I think that's it, [hermione_name]..."
             m "You can let go now..."
             m "...[hermione_name]?"
@@ -1088,8 +1088,8 @@ label hg_pf_handjob_2_cumming:
             call ctc
 
             her "........................................."
-            call her_main("GULP!!!", "cum", "happyCl", "worried", "mid")
-            call her_main("Gu-ah-a...", "open_wide_tongue", "narrow", "base", "down")
+            call her_main("*GULP*!!!", "cum", "happyCl", "worried", "mid")
+            call her_main("*Gu-ah-a*...", "open_wide_tongue", "narrow", "base", "down")
             call her_main("I swallowed it all, [genie_name]!", "grin", "narrow", "base", "dead")
             m "Good girl..."
             call her_main("At one point I thought I was going to choke...", "open", "narrow", "base", "dead")

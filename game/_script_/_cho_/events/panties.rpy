@@ -38,7 +38,7 @@ label cho_panties_response_T2:
         m "That makes sense to me..."
         call cho_main("So you admit that you did it?", "soft", "narrow", "angry", "mid")
         m "It's not my cum..."
-        call cho_main("*Argh!*", "angry", "narrow", "angry", "mid", trans=hpunch)
+        call cho_main("*Argh*!", "angry", "narrow", "angry", "mid", trans=hpunch)
         call cho_main("Well who's is it then?{w} The house-elves?", "soft", "narrow", "base", "mid")
         m "*Uhm*...{w} Yes?"
         call cho_main("It's disgusting!", "annoyed", "narrow", "base", "down")
@@ -69,7 +69,7 @@ label cho_panties_response_T2:
         $ renpy.sound.play("sounds/sniff.mp3")
         call nar(">You take the panties to your nose and give them one last sniff.")
 
-        g4 "*Aaahhh!*{w} Wonderful!"
+        g4 "*Aaahhh*!{w} Wonderful!"
         call cho_main("(...)", "annoyed", "narrow", "base", "mid")
         m "There, take them..."
 

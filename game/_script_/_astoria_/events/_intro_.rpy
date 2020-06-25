@@ -492,7 +492,7 @@ label astoria_intro_E3:
     call her_main("Astoria Greengrass, Sir.", "soft", "narrow", "annoyed", "mid", xpos="560", ypos="base") # Hermione moves closer.
     call her_main("You asked me to bring you the person who cast the unforgivable curse, Sir.", "soft", "narrow", "annoyed", "mid")
     call her_main("And here she is.", "grin", "base", "angry", "mid")
-    m "I thought it would be some angsty girl who listens to death metal - or something..."
+    m "I thought it would be some angst girl who listens to death metal - or something..."
     m "Not some innocent looking gir-"
     call ast_main("I am not!","clench","narrow","angry","mid")
     call ast_main("You don't know what you're talking about, you ancient old man!","annoyed","narrow","angry","R")
@@ -1015,7 +1015,7 @@ label astoria_intro_E4:
     g9 "I'm sure you'll enjoy it!"
     call ast_main("If you say so, Sir.","open","closed","base","mid")
     call ast_main("...","annoyed","narrow","base","R")
-    call ast_main("Would it be ok if I go there some other time?","open","base","base","mid")
+    call ast_main("Would it be okay if I go there some other time?","open","base","base","mid")
     m "Are you trying to weasel yourself out of your punishment?"
     call ast_main("No?","annoyed","base","base","mid")
     call ast_main("It's just that... I really don't have time right now...","open","base","base","down")

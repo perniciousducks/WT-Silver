@@ -93,7 +93,7 @@ label ast_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
 label set_random_nicknames:
     $ random_number = renpy.random.randint(0, 5)
     if random_number in [1,5]:
-        $ ast_susan_name = renpy.random.choice(["Susy","Cow","Cow Tits","Milk Bag","Slut","Whore","Piggy","Pig","Bessie","Moo Moo"])
+        $ ast_susan_name = renpy.random.choice(["Suzy","Cow","Cow Tits","Milk Bag","Slut","Whore","Piggy","Pig","Bessie","Moo Moo"])
     if random_number in [2,5]:
         $ ast_tonks_name = renpy.random.choice(["Hag","Old Hag","Punk","Dyke","Lesbo"])
     if random_number in [3,5]:

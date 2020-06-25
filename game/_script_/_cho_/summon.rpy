@@ -24,7 +24,7 @@ label summon_cho:
         # Main Matches
         "-Start Hufflepuff Match-" (icon="interface/icons/small/huff.png") if (cho_tier == 1 and hufflepuff_match == "ready"):
             if cho_reputation == 0:
-                m "(If I want Cho to do anything in public with those Muffletuffs I better do it before the Match.)"
+                m "(If I want Cho to do anything in public with those {i}Muffletuffs{/i} I better do it before the Match.)"
                 m "(Although maybe not...)"
                 menu:
                     "Are you ready to begin the match?"
@@ -36,7 +36,7 @@ label summon_cho:
 
         "-Start Slytherin Match-" (icon="interface/icons/small/slyt.png") if (cho_tier == 2 and slytherin_match == "ready" and cho_quid.E7_complete):
             if cho_reputation <= 3:
-                m "(If I want Cho to do anything in public with those Slythershits I better do it before the Match.)"
+                m "(If I want Cho to do anything in public with those {i}Slythershits{/i} I better do it before the Match.)"
                 m "(Although maybe not...)"
                 menu:
                     "Are you ready to begin the match?"
@@ -118,9 +118,9 @@ label summon_cho:
             stop music fadeout 3.0
 
             if cho_mood != 0:
-                call cho_main("Good bye, [cho_genie_name].",face="annoyed")
+                call cho_main("Goodbye, [cho_genie_name].",face="annoyed")
             else:
-                call cho_main("Good bye, [cho_genie_name].",face="happy")
+                call cho_main("Goodbye, [cho_genie_name].",face="happy")
 
             call play_sound("door")
 

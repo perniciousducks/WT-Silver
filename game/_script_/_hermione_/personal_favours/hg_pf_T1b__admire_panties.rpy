@@ -199,7 +199,7 @@ label hg_pf_admire_panties_T2: # Call label
     menu:
         "\"You don't look too embarrassed...\"":
             call her_main("That's not true...", "base", "happy", "base", "mid")
-            call her_main("But this is a small price to pay if the Gryffindors keep the cup this year.", "base", "base", "base", "R")
+            call her_main("But it is a small price to pay if the Gryffindor keeps the cup this year.", "base", "base", "base", "R")
             her "I know everyone will be so happy..."
 
         "\"I like your panties...\"":
@@ -249,7 +249,7 @@ label hg_pf_admire_panties_T3_intro_E1:
 
     menu:
         "\"You little slut!\"":
-            her "Hm..."
+            her "*Hmm*..."
             call her_main("I suppose I am...", "base", "narrow", "base", "mid_soft")
             her "Do I get extra points for that?"
 
@@ -301,7 +301,7 @@ label hg_pf_admire_panties_T3_E1:
 
     menu:
         "\"You little slut!\"":
-            her "Hm..."
+            her "*Hmm*..."
             call her_main("I suppose I am...", "base", "narrow", "base", "mid_soft")
             her "Do I get extra points this time?"
 

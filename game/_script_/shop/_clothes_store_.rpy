@@ -93,7 +93,7 @@ label clothing_store_chitchat:
         m "A few things. I haven't decided on anything specific yet."
         maf "Well, while you're making up your mind, feel free to browse the store."
     else:
-        maf "What can I get for you today?"
+        maf "What can I get you today?"
 
     return
 
@@ -233,11 +233,11 @@ label purchase_outfit(item):
         m "I'd like to order a custom outfit today."
         maf "Certainly honey... Repairing these conservative school clothes all day has been quite dull to say the least."
         m "Well, I can assure you that this outfit is not conservative."
-        maf "Hmmm?"
+        maf "*Hmmm*?"
         m "I'd like to order a girls Nightgown."
         maf "Well, that doesn't seem overl-"
         m "And make it out of silk!"
-        maf "Ahh... So I assume that you also want it transparent?"
+        maf "*Ahh*... So I assume that you also want it transparent?"
         m "If that is possible."
         maf "Of course it is possible, who do you take me for?"
         maf "I just have to order in the materials, although silks not cheap."
@@ -249,12 +249,12 @@ label purchase_outfit(item):
         if not ball_quest.E4_complete:
             m "Could you make a dress for me?"
             maf "A dress? Do you mean something like a ball dress, or more burlesque?"
-            m "Hmm... One for the ball, actually."
+            m "*Hmm*... One for the ball, actually."
             maf "How surprising..."
             m "I was thinking that I could have a custom one made. For a very good girl of mine."
         else:
             m "Do you sell Ball dresses?"
-            maf "Hmmm... I suppose I do although they're nothing special... Why do you ask?"
+            maf "*Hmmm*... I suppose I do although they're nothing special... Why do you ask?"
             m "A 'girl' approached me with a problem. Apparently she's unable to acquire a dress for this years autumn ball."
             maf "How tragic.... Well I'm sure that one of these cheap ones will suffice."
             m "I was thinking I could have a custom one made... She is a very good girl."
@@ -416,7 +416,7 @@ label purchase_outfit(item):
             maf "Is that a condo-"
             m "But you'd cut a heart shape here..."
             maf "..."
-            m "And a hole for the head obvio-"
+            m "And a hole for the head obviously."
         else:
             m "It needs to be tight that's for sure."
             maf "Naturally..."
@@ -486,7 +486,7 @@ label purchase_outfit(item):
         maf "A fishnet... outfit, sir?"
         m "Yes, like the stockings but a whole outfit..."
         m "Actually, just a top and underwear shall do."
-        maf "Underwea... surely something like that wouldn't be very effective as underwear, sir?"
+        maf "Underwe-... surely something like that wouldn't be very effective as underwear, sir?"
         m "Effective enough to catch a fish..."
         maf "What?"
         m "So, could you make this for me?"
@@ -540,7 +540,7 @@ label purchase_outfit(item):
         maf "Now, who on earth could this dress be for?"
         m "It's a gift I'll be sending to one of the Chinese wizarding schools."
         maf "Really? Any particular reason to be sending them a dress?"
-        m "Yes... *Ehmm...* It's important to be on good terms with the other wizarding schools is it not?"
+        m "Yes... *Ehmm*... It's important to be on good terms with the other wizarding schools is it not?"
         m "So what better gift than a traditional Chinese dress?"
         maf "Something that they don't have already perhaps..."
         m "Sorry?"
@@ -576,14 +576,14 @@ label purchase_outfit(item):
         maf "Certainly, sir... as long as you could point me to some reference material."
         m "Of course, it's Ann Takamaki from Persona 5."
         maf "What is a Ann Takamaki?"
-        maf "Is it one of them vidya games?"
+        maf "Is it one of them {i}vidya{/i} games?"
         m "Yes, she's from one of them... {i}vidya{/i} games."
         maf "I'll ask my grandson about it, he's constantly in front of those flat muggle crystal balls."
         m "You mean a monitor?"
         maf "Sorry?"
-        m "Nevermind..."
-        maf "Once I've asked him I'll get that souvlaki costume ready for you as soon as possible!"
-        m "Takama...{w=0.4} I'm sure he'll know what you mean..."
+        m "Never mind..."
+        maf "Once I've asked him I'll get that {i}souvlaki{/i} costume ready for you as soon as possible!"
+        m "Takama-...{w=0.4} I'm sure he'll know what you mean..."
 
     #
     # Luna lovegood

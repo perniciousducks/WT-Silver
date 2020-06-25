@@ -149,7 +149,7 @@ label cc_ht_talk:
 
         jump cho_requests
     elif not cc_pf_talk.is_tier_complete(): # Has NOT completed "Talk to me" favour yet.
-        m "Have any ideas on how to beat those huffers?"
+        m "Have any ideas on how to beat those {i}huffers{/i}?"
         call cho_main("Isn't that your job?", "soft", "base", "raised", "mid")
         m "Oh, yeah..."
         m "(How does she expect me to help her without knowing anything about the opponents?)"

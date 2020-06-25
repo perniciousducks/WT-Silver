@@ -19,7 +19,7 @@ label chit_chat:
 
         elif one_of_ten == 3:
             call her_main("The basilisk, also known as the king of serpents.", "open", "closed", "angry", "mid")
-            her "Herpo the Foul was the first to breed a Basilisk."
+            her "{i}Herpo the Foul{/i} was the first to breed a Basilisk."
             her "He accomplished that by--"
             call her_main("Oh, I'm sorry, professor, we have another test tomorrow...", "open", "base", "worried", "R")
             her "I Just want to make sure that I'm ready..."
@@ -142,8 +142,8 @@ label chit_chat:
             call her_main("I'm an awful daughter...", "angry", "narrow", "base", "down")
 
         elif one_of_ten == 6:
-            call her_main("*Yawn!* I read about this technique that supposedly allows you to cut your sleep time in half...", "annoyed", "narrow", "annoyed", "up")
-            call her_main("It don't think it's working though.... *Yawn!*", "annoyed", "narrow", "worried", "down")
+            call her_main("*Yawn*! I read about this technique that supposedly allows you to cut your sleep time in half...", "annoyed", "narrow", "annoyed", "up")
+            call her_main("It don't think it's working though.... *Yawn*!", "annoyed", "narrow", "worried", "down")
 
         elif one_of_ten == 7:
             call her_main("Even after I graduate from Hogwarts I plan to keep on working hard.", "open", "closed", "angry", "mid")
@@ -186,7 +186,7 @@ label chit_chat:
             call her_main("Sir, there is something about professor Snape that I think you should know...", "open", "base", "base", "mid")
             call her_main(".................", "open", "base", "worried", "R")
             call her_main(".........................", "annoyed", "squint", "angry", "mid")
-            call her_main("uhm... Never mind...", "open", "closed", "angry", "mid")
+            call her_main("*uhm*... Never mind...", "open", "closed", "angry", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 5:
@@ -321,7 +321,7 @@ label chit_chat:
 
         elif one_of_ten == 10:
             call her_main("My favourite subject?", "open", "base", "base", "mid")
-            call her_main("Hm...", "soft", "base", "base", "R")
+            call her_main("*Hmm*...", "soft", "base", "base", "R")
             call her_main("I suppose that would be \"charms\"...", "open", "base", "base", "mid")
             call her_main("", "soft", "base", "base", "mid")
 
@@ -335,7 +335,7 @@ label chit_chat:
         elif one_of_ten == 2:
             call her_main("I barely study at all anymore...", "open", "base", "worried", "mid")
             her "Despite that my popularity among the other students seems to be growing..."
-            call her_main("Hm...", "soft", "base", "base", "R")
+            call her_main("*Hmm*...", "soft", "base", "base", "R")
 
         elif one_of_ten == 3:
             call her_main("I wouldn't say \"no\" to a bottle of butterbeer right about now...", "smile", "narrow", "base", "mid_soft")
@@ -358,7 +358,7 @@ label chit_chat:
             call her_main("", "soft", "base", "base", "mid")
 
         elif one_of_ten == 8:
-            call her_main("Add ashwinder egg to cauldron...", "open", "closed", "angry", "mid")
+            call her_main("Add Ashwinder's egg to cauldron...", "open", "closed", "angry", "mid")
             her "Then add horseshoe reddish and heat..."
             her "Then juice a squill bulb..."
             call her_main("Or was it a dash of thyme first?", "open", "base", "worried", "R")

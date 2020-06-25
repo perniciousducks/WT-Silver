@@ -77,7 +77,7 @@ label hg_pf_strip_T0_fail_intro: # Hermione starts dancing, but it will fail any
     call her_main("You want me to...", "open", "base", "worried", "mid")
     call her_main("...dance for you, [genie_name]?", "open", "wink", "base", "mid")
     m "Yes... You think you could manage that?"
-    call her_main("Ehm... I suppose so...", "soft", "base", "base", "R")
+    call her_main("*Ehm*... I suppose so...", "soft", "base", "base", "R")
     her "Am I getting paid for this?"
     m "Of course, [hermione_name]!"
     call her_main("So... Just a little dancing then...", "annoyed", "base", "worried", "R")
@@ -94,7 +94,7 @@ label hg_pf_strip_T0_fail_intro: # Hermione starts dancing, but it will fail any
     with d3
     pause.2
 
-    m "Hm..."
+    m "*Hmm*..."
     call her_main("{size=-5}(...........................................){/size}", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
     call her_main("{size=-5}(This is silly...){/size}", "annoyed", "narrow", "angry", "R", cheeks="blush")
     call nar(">Hermione looks embarrassed but she keeps on \"dancing\"...")
@@ -158,7 +158,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
     call her_main("You want me to...", "open", "base", "worried", "mid")
     call her_main("...dance for you, [genie_name]?", "open", "wink", "base", "mid")
     m "Yes... You think you could manage that?"
-    call her_main("Ehm... I suppose so...", "soft", "base", "base", "R")
+    call her_main("*Ehm*... I suppose so...", "soft", "base", "base", "R")
     her "Am I getting paid for this?"
     m "Of course, [hermione_name]!"
     call her_main("So... Just a little dancing then...", "annoyed", "base", "worried", "R")
@@ -175,7 +175,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
     with d3
     pause.2
 
-    m "Hm..."
+    m "*Hmm*..."
     call her_main("{size=-5}(...........................................){/size}", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
     call her_main("{size=-5}(This is silly...){/size}", "annoyed", "narrow", "angry", "R", cheeks="blush")
     call nar(">Hermione looks embarrassed but she keeps on \"dancing\"...")
@@ -332,11 +332,11 @@ label hg_pf_strip_T1_intro_E1: # Complete
             call her_main("Next time?!", "open", "base", "base", "mid", tears="mascara_crying")
             call her_main("I assure you, [genie_name], there will be no next time...", "angry", "base", "angry", "mid", cheeks="blush", tears="mascara")
             m "We'll see..."
-            call her_main("Tsk!", "disgust", "narrow", "base", "mid_soft", tears="mascara")
+            call her_main("*Tsk*!", "disgust", "narrow", "base", "mid_soft", tears="mascara")
 
             call her_walk(action="leave")
 
-            # Event does not fail. She jsut gets mad, but no whoring increase.
+            # Event does not fail. She just gets mad, but no whoring increase.
             $ her_mood += 25
 
             jump end_hermione_event
@@ -347,7 +347,7 @@ label hg_pf_strip_T1_intro_E2:
     call her_main("That again, [genie_name]...?", "disgust", "narrow", "base", "mid_soft")
     m "You will get paid accordingly of course..."
     call her_main("............................", "annoyed", "narrow", "angry", "R")
-    call her_main("And you expect me to... ehm...", "annoyed", "narrow", "angry", "R")
+    call her_main("And you expect me to... *ehm*...", "annoyed", "narrow", "angry", "R")
     m "Take your clothes off. Naturally."
     stop music fadeout 1.0
 
@@ -356,7 +356,7 @@ label hg_pf_strip_T1_intro_E2:
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Well, why not?", "disgust", "narrow", "base", "mid_soft")
     call her_main("Yes, I don't see why not!", "scream", "base", "angry", "mid", emote="01")
-    m "Hm...? {size=-4}(Look at her, so eager all of a sudden...){/size}"
+    m "*Hmm*...? {size=-4}(Look at her, so eager all of a sudden...){/size}"
     call her_main("After all, as a pupil I am meant to obey your every order, isn't that right, [genie_name]?!", "scream", "closed", "angry", "mid")
     m "...................."
     call her_main("If the Headmaster tells me to strip for him, Then I shall strip!!!", "scream", "closed", "angry", "mid")
@@ -494,7 +494,7 @@ label hg_pf_strip_T1_intro_E2:
             call kiss_her
             call her_main("", "shock", "happyCl", "worried", "mid")
             pause.2
-            g9 "{size=-4}(Yes, motorboating these titties is be the best!){/size}"
+            g9 "{size=-4}(Yes, motor boating these titties is be the best!){/size}"
             call her_main("", "shock", "wide", "worried", "shocked")
             pause.2
 
@@ -594,7 +594,7 @@ label hg_pf_strip_T1_intro_E2:
             call her_main("{size=-5}(There will be no other time!){/size}", "angry", "happyCl", "worried", "mid")
             call her_main("{size=-5}(I will stop selling favours from now on, I swear!){/size}")
 
-    call sna_main("I shall postpone our conversation then, Geni-- *khem!* Albus.","snape_12")
+    call sna_main("I shall postpone our conversation then, Geni-- *ahem*! Albus.","snape_12")
     call sna_main("Miss Granger...","snape_13")
     call her_main(".................................", "angry", "happyCl", "worried", "mid")
 
@@ -820,7 +820,7 @@ label hg_pf_strip_T1_watch:
             call her_main("..............", "disgust", "narrow", "worried", "down")
             m "You have a lot of talent for this!"
             call her_main("Thank you [genie_name].", "soft", "base", "worried", "R", emote="05")
-        "{size=-3}\"Hm... This was quite awful...\"{/size}":
+        "{size=-3}\"*Hmm*... This was quite awful...\"{/size}":
             $ her_mood += 4
             call her_main("............", "annoyed", "base", "angry", "mid")
             m "You just need to practise more..."
@@ -1195,7 +1195,7 @@ label hg_pf_strip_T2_watch:
             call her_main("Really?", "base", "narrow", "base", "mid_soft")
             m "Yes! You have a lot of talent for this!"
             call her_main("Thank you [genie_name].", "silly", "happyCl", "worried", "mid", emote="05")
-        "{size=-3}\"Hm... This was quite awful...\"{/size}":
+        "{size=-3}\"*Hmm*... This was quite awful...\"{/size}":
             call her_main("Oh... I'm sorry...", "soft", "happy", "base", "R")
             m "That's OK... You just need to practise more..."
             call her_main("Em... I will keep that in mind, [genie_name]...", "open", "base", "base", "R")
@@ -1320,7 +1320,7 @@ label hg_pf_strip_T2_masturbate:
         m "Oh, calm down, [hermione_name]."
         m "You earned your points today."
         m "Now, just get dressed and leave before somebody discovers you like this."
-        call her_main("*sob!*........................", "shock", "narrow", "angry", "R", tears="messy")
+        call her_main("*sob*!........................", "shock", "narrow", "angry", "R", tears="messy")
         show screen blkfade
         with d5
 
@@ -1459,7 +1459,7 @@ label hg_pf_strip_T2_masturbate:
                     m "You are dismissed, [hermione_name]!"
                     call her_main("Oh, this is a new low even for you, [genie_name]!", "soft", "base", "angry", "mid")
                     m "I said you are dismissed."
-                    call her_main("*GROAN!*", "clench", "base", "angry", "mid", emote="01")
+                    call her_main("*GROAN*!", "clench", "base", "angry", "mid", emote="01")
                     hide screen bld1
                     call ctc
 

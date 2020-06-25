@@ -122,7 +122,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         m "Well I'm sure they have a crystal clear view of it now."
         call her_main("Hmmph, are you done?", "annoyed", "narrow", "angry", "R")
         m "Yes, you may go now."
-        call her_main("Good bye [genie_name].", "open", "base", "base", "mid")
+        call her_main("Goodbye [genie_name].", "open", "base", "base", "mid")
 
     else: #Highly aroused (doesn't even acknowledge that her clothes are see-through)
         call nar(">Hermione enters the office casually.")

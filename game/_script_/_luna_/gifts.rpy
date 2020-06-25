@@ -16,7 +16,7 @@ label give_lun_gift(gift_item):
     elif gift_item == chocolate_ITEM:
         lun "Chocolate?"
         call give_gift(">You give the chocolate to Luna...", gift_item)
-        lun "Aaah, I heard these helps with dementia... Or was it Dementors?"
+        lun "*Aaah*, I heard these helps with dementia... Or was it Dementors?"
 
     elif gift_item == plush_owl_ITEM:
         lun "A plush owl?"

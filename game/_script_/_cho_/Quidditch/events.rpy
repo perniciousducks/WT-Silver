@@ -42,7 +42,7 @@ label cho_quid_E1:
             $ cho_name = "Cho"
 
     call cho_main("Yes, Sir!", "soft", "closed", "angry", "mid")
-    g4 "Let's start with your \"Quiddesh\" training!"
+    g4 "Let's start with your {i}Quiddesh{/i} training!"
     call cho_main("\"Quidditch\", Sir.", "annoyed", "narrow", "angry", "mid")
     g4 "Let's start with your \"Quidditch\" training, [cho_name]."
     call cho_main("!!!", "smile", "happyCl", "base", "mid", cheeks="blush")
@@ -60,7 +60,7 @@ label cho_quid_E1:
     call cho_main("Yes, [cho_genie_name].", "soft", "base", "base", "mid")
     call cho_main("I do my best flying around the pitch searching for it. But it's just so small and really tricky to see...", "angry", "base", "worried", "down")
     m "Why don't you look for it together? After all there is only one."
-    call cho_main("Hmmm?", "annoyed", "base", "base", "mid")
+    call cho_main("*Hmmm*?", "annoyed", "base", "base", "mid")
     g9 "You just need to grab that Snatch before he does."
     call cho_main("???", "annoyed", "wide", "raised", "mid")
     call cho_main("[cho_genie_name]! It's \"Snitch\"!", "angry", "closed", "angry", "mid")
@@ -526,8 +526,8 @@ label cho_quid_E6:
             m "You agreed to do this, remember..."
             g4 "May I remind you how many house points I gave you?"
             call her_main("No amount of house points was worth the humiliation I got!", "angry", "base", "angry", "mid")
-            m "Well, boo--{w} bloody--{w} hoo..."
-            call her_main("*Tzzzs!*...", "clench", "closed", "angry", "mid", emote="01")
+            m "Well, *boo*--{w=0.3}bloody--{w=0.3}*hoo*..."
+            call her_main("*Tzzzs*!...", "clench", "closed", "angry", "mid", emote="01")
             call her_main("Good luck finding somebody that is more willing to be the school's laughing stock!", "open", "base", "angry", "mid")
 
 
@@ -707,7 +707,7 @@ label cho_quid_E7:
         call her_main("...", "annoyed", "narrow", "angry", "R") # looks away
         call cho_main("I love your bushy hair, your cute little nose, your gorgeous eyes...", "soft", "narrow", "raised", "L")
         call cho_main("Your enormous rack!", "grin", "narrow", "angry", "L")
-        call her_main("*Tzzzs!*", "clench", "closed", "angry", "mid", cheeks="blush") # Starts to blush
+        call her_main("*Tzzzs*!", "clench", "closed", "angry", "mid", cheeks="blush") # Starts to blush
         call her_main("Stop lying!", "open", "base", "angry", "L", cheeks="blush")
         call cho_main("", "horny", "narrow", "angry", "L", cheeks="blush")
         m "She sounds pretty convincing to me..."
@@ -801,10 +801,10 @@ label cho_quid_E8:
     call ton_main("Me? Selling a favour to you?","smile","happyCl","base","mid", ypos="head")
     call ton_main("You sure you can afford me?","base","base","raised","mid") #Horny
     m "Not that kind of favour."
-    call ton_main("Aww...","upset","base","sad","down")
+    call ton_main("*Aww*...","upset","base","sad","down")
 
     # Tell Tonks about Cho.
-    m "You know this Quiddish sport the students play here?"
+    m "You know this {i}Quiddish{/i} sport the students play here?"
     call ton_main("Quidditch?","upset","base","raised","mid")
     m "Close enough."
     m "The next match is coming up, and I require your help with something."
@@ -812,7 +812,7 @@ label cho_quid_E8:
     m "There's this asian girl..."
     call ton_main("Cho Chang?","open","base","raised","mid")
     m "How did you-"
-    m "(Is she the \"token asian\" girl in this school?)"
+    m "(Is she the {i}token asian{/i} girl in this school?)"
     m "Yes, the little Ravenclaw minx, correct."
     call ton_main("Well, I figured you'd be talking about her - if it has to do with Quidditch.","open","base","base","R")
     m "She's one of the girls I buy favours from."
@@ -926,10 +926,10 @@ label cho_quid_E8:
     m "(Puffs?)"
 
     g9 "Well, I'd be happy to have you."
-    call ton_main("Aww, you're so sweet!","base","base","sad","mid")
+    call ton_main("*N'Aww*, you're so sweet!","base","base","sad","mid")
     with hpunch
     $ renpy.play("sounds/hiccup_fem.mp3")
-    call ton_main("*Hick!*... whoopsie...","upset","base","base","ahegao")
+    call ton_main("*Hick*!... whoopsie...","upset","base","base","ahegao")
     call ton_main("Now, I better get going convincing those boys to play again...","horny","base","angry","mid")
 
     if daytime:
@@ -969,7 +969,7 @@ label cho_quid_E9:
     call sna_main("Ha! Do you have another trick up your sleeve?","snape_20")
     call sna_main("What's it gonna be? An even shorter skirt? Prohibit her of wearing panties?","snape_13")
     call sna_main("Well, we'll see during the game if it has any effect...","snape_46")
-    g4 "*Grrrrr!*..."
+    g4 "*Grrrrr*!..."
     g4 "Get your team back on that pitch, you coward!"
     call sna_main("No... I don't think I will...","snape_41")
     g4 "Give me that wine!"

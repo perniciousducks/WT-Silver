@@ -304,13 +304,13 @@ label nt_he_story_intro_E1:
 label nt_he_story_intro_E2:
     call bld
     m "You mentioned an auror last time if I'm not mistaken."
-    call ton_main("Moody?","angry","wide","wide","wide", ypos="head")
+    call ton_main("Alastor Moody?","angry","wide","wide","wide", ypos="head")
     m "Not in particular."
     call ton_main("What?","open","base","raised","mid")
     m "..."
-    call ton_main("You talking about Madeye?","open","base","angry","mid")
+    call ton_main("You talking about Mad-eye?","open","base","angry","mid")
     m "I can see perfectly fine, dear."
-    call ton_main("Madeye Moody is the auror that taught me.","open","base","angry","R")
+    call ton_main("Mad-eye Moody is the auror that taught me.","open","base","angry","R")
     m "Oh, of course."
     m "(His parents must have hated him...)"
     #m "(What's wrong with a normal name... like Will Smith, or Robin Williams?)"
@@ -319,7 +319,7 @@ label nt_he_story_intro_E2:
     call ton_main("I guess if you're as paranoid as him, you'll end up knowing everything there is about the craft...","open","base","sad","R")
     m "Paranoid of what?"
     call ton_main("Dark wizards.","open","base","sad","R")
-    m "So he's a racist?"
+    m "So..{w=0.3} He's a racist?"
     call ton_main("No, but he's old... I think he should just retire to be honest.","open","closed","sad","mid")
     call ton_main("His methods have gotten progressively more nefarious...","open","base","sad","R")
     call ton_main("Some would argue he should be locked up himself, for all the things that he did to catch his targets...","angry","base","base","mid")
@@ -694,7 +694,7 @@ label nt_he_story_centaur: # Not in use.
     call ton_main("Well, yes.{w} They can't easily reach around to do it themselves now, can they?","horny","base","base","mid")
     m "(Those poor bastards!)"
 
-    g4 "Must have been a real...{w}*argh!*- relief for them!"
+    g4 "Must have been a real...{w}*argh*!- relief for them!"
     call ton_main("I believe so too, Sir.","base","base","base","mid")
     call ton_main("You should know, I never shy away from getting my hands dirty!","horny","base","raised","mid", hair="horny")
     g4 "*Agh!* Fuck! I'm getting close..."

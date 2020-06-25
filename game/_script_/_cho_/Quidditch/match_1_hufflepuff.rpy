@@ -142,7 +142,7 @@ label hufflepuff_match:
     call play_sound("grass")
     ">After walking for a while across the school grounds a huge oval shaped pitch with massive towers around it looms before you."
     ">Amazed by...{w=0.6}{nw}"
-    m "Agrabah's towers are larger..."
+    m "Agrabah towers are larger..."
     ">Amazed... by the sight, Snape then leads you to the base of one of the towers."
 
     # Pitch entrance
@@ -572,7 +572,7 @@ label hufflepuff_match:
     call quidditch_stands(crowd_react=["emo8", "emo7", "emo8"])
     with d3
 
-    ">After a moment of confusion the crowd cheers excitedly, eager to see the match kickoff."
+    ">After a moment of confusion the crowd cheers excitedly, eager to see the match kick-off."
 
     call quidditch_stands(crowd_react=[None, None, None])
     with d3
@@ -936,7 +936,7 @@ label hufflepuff_match:
     hide screen hermione_main
     call quidditch_stands(crowd_react=[None, None, None])
     ">You and Snape lean back and watch the game, frequently shifting your focus to Cho, as she darts past the stands..."
-    ">Only Occasionally pausing to refill your wine, while Snape keeps ridiculing Hermione's commentation..."
+    ">Only Occasionally pausing to refill your wine, while Snape keeps ridiculing Hermione's commentary..."
 
     # End of game
     play bg_sounds "sounds/crowd_low.mp3" fadein 2

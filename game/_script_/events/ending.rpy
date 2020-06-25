@@ -115,7 +115,7 @@ label ball_ending_E1:
     call sna_main("If it all goes well...","snape_24")
     call sna_main("Will I find the real Albus Dumbledore in that chair tomorrow?")
     m "I believe so..."
-    call sna_main("Hm...","snape_04")
+    call sna_main("*Hm*...","snape_04")
     call sna_main("Albus can't know that I was aware of his absence...","snape_03")
     call sna_main("Is there a way to tell you guys apart?","snape_01")
     m ".............."
@@ -124,8 +124,8 @@ label ball_ending_E1:
     m "Yes... just ask me tomorrow: \"Who rules?\""
     call sna_main("\"Who rules?\"","snape_01")
     g9 "\"Robin Williams!\""
-    call sna_main("Robin Wil-... ehm...{w=0.3} I'm sorry, who?","snape_05")
-    m "You didn't see \"flubber\"? Great movie. Just came out."
+    call sna_main("Robin Wil-... *ehm*...{w=0.3} I'm sorry, who?","snape_05")
+    m "You didn't see the \"Flubber\"? Great movie. Just came out."
     call sna_main("Can't say that I have...","snape_02")
     call sna_main("Alright then...","snape_06")
     call sna_main("Have a safe trip home...")
@@ -166,7 +166,7 @@ label ball_ending_E1:
         m "It doesn't feel right to leave her without saying goodbye properly..."
         m "And yet I don't want to miss my chance to sneak out unnoticed..."
         m "I don't like long goodbyes..."
-        m "Hm..."
+        m "*Hmm*..."
         m "I suppose I could leave her a note or something..."
 
         m "Let's see..."
@@ -176,7 +176,7 @@ label ball_ending_E1:
         m "\"Dear...\""
         call gen_chibi("paperwork_idle")
         with d3
-        m "Hm... How should I address her?"
+        m "*Hmm*... How should I address her?"
 
         menu:
             m "Dear..."
@@ -302,7 +302,7 @@ label ball_ending_E1:
     stop weather
 
     # Outskirts of Hogwarts
-    centered "{size=+7}{color=#cbcbcb}Outskirts of hogwarts{/color}{/size}"
+    centered "{size=+7}{color=#cbcbcb}Outskirts of Hogwarts{/color}{/size}"
 
     call play_music("night_outside")
 
@@ -342,8 +342,8 @@ label ball_ending_E1:
 
         play music "music/Plaint.mp3" fadein 1 fadeout 1 #SAD CREDITS MUSIC.
 
-        centered "{size=+7}{color=#cbcbcb}Congratulations on completing the game!{/color}{/size}\n\n
-                  {size=+5}{color=#cbcbcb}This is ending \"00\" out of \"02\".{/color}{/size}"
+        centered """{size=+7}{color=#cbcbcb}Congratulations on completing the game!{/color}{/size}\n\n
+                  {size=+5}{color=#cbcbcb}This is ending \"00\" out of \"02\".{/color}{/size}"""
 
         centered "{size=+7}{color=#cbcbcb}Thank you for playing!{/color}{/size}\n\n"
 
@@ -443,12 +443,12 @@ label ball_ending_E2:
         mal2 "That she is a major slut?"
         mal "Huh? No, that's not a rumour, that's a fact."
         mal "The rumour was that she is being paid in house points to whore herself out."
-        mal2 "Hm... I don't believe that. I think she is just a slut."
+        mal2 "*Hm*... I don't believe that. I think she is just a slut."
         fem "Who's a slut?"
         mal "Oh, hey you..."
         fem "So, who's a slut?"
         mal2 "Hermione Granger..."
-        fem "Tsk! You, guys are talking about that whore again?"
+        fem "*Tsk*! You, guys are talking about that whore again?"
         fem "That girl jerks off a couple of dicks, gives a few blowjobs and suddenly she is the school's new sensation."
         fem "Pathetic little muggle-born..."
         mal "You should not be jealous of-"
@@ -469,7 +469,7 @@ label ball_ending_E2:
         pause 2
         fem "Guys...?"
         fem "........................."
-        fem "Tsk... Men......"
+        fem "*Tsk*... Men......"
 
     else:
         # Personal whore ending
@@ -550,17 +550,17 @@ label ball_ending_E2:
     call her_main("Well of course, sir.", "base", "narrow", "base", "mid_soft",cheeks="blush")
     call her_main("Put your dick in my mouth and talk to me.", "open_tongue", "narrow", "worried", "mid_soft",cheeks="blush")
     call her_main("Talk dirty to me...")
-    g4 "*growl!*"
-    m "*Sigh....*"
+    g4 "*growl*!"
+    m "*Sigh*...."
     m "Fine, have it your way..."
     m "But you are abusing your power, girl!"
-    call her_main("*Giggle!*", "crooked_smile", "happyCl", "worried", "mid",cheeks="blush")
+    call her_main("*Giggle*!", "crooked_smile", "happyCl", "worried", "mid",cheeks="blush")
     m "And after we're done, we'll have that talk!"
 
     show screen blkfade
     with d7
 
-    her "*Slurp!* *Slurp!* *Slurp!*"
+    her "*Slurp*! *Slurp*! *Slurp*!"
     m "................."
 
     hide screen bld1
@@ -568,15 +568,15 @@ label ball_ending_E2:
     $ dynamic_cg("ball/bj", "background", "base", "sweat")
     call ctc
 
-    her "*Slurp!* *Gulp!* *Slurp!*"
+    her "*Slurp*! *Gulp*! *Slurp*!"
     her "*Slurp-*"
     $ dynamic_cg("ball/bj", "background", "base2", "sweat2")
     her "Huh?.........."
     her "...................."
     $ dynamic_cg("ball/bj", "background", "base", "sweat")
-    her "*Slurp!* *Gulp!* *Slurp!*"
+    her "*Slurp*! *Gulp*! *Slurp*!"
     m "Yes... Like that.... oh... yes..."
-    her "*Gulp!* *Slurp!* *Slurp!*"
+    her "*Gulp*! *Slurp*! *Slurp*!"
     her "*Gulp-*"
     $ dynamic_cg("ball/bj", "background", "base2", "sweat2")
     her "...................." #LOOKING BACK
@@ -584,17 +584,17 @@ label ball_ending_E2:
     m "I will let you know if I see someone coming..."
     $ dynamic_cg("ball/bj", "background", "base2", "eyes_up2", "mouth_open2", "sweat2")
     her "Oh... I'm not worried about that, sir..."
-    m "Hm?"
+    m "*Hmm*?"
     her "They are supposed to make the announcement soon..."
     $ dynamic_cg("ball/bj", "background", "base", "sweat")
-    her "*Slurp!* *Gulp!* *Slurp!*"
+    her "*Slurp*! *Gulp*! *Slurp*!"
     m "The announcement?"
-    her "*Slurp!* *Slurp!* *Slurp!*"
+    her "*Slurp*! *Slurp*! *Slurp*!"
     her "*Slurp-*"
     $ dynamic_cg("ball/bj", "background", "base2", "eyes_up2", "mouth_open2", "sweat2")
     her "Yes. About the coronation..."
     $ dynamic_cg("ball/bj", "background", "base", "sweat")
-    her "*Gulp!* *Slurp!* *Gulp!*"
+    her "*Gulp*! *Slurp*! *Gulp*!"
     m "What...?"
     her "*Slurp-*"
     $ dynamic_cg("ball/bj", "background", "base2", "eyes_closed2", "mouth_open2", "sweat2")
@@ -609,25 +609,25 @@ label ball_ending_E2:
     her "Wouldn't you agree, sir?"
     m "Well... Sounds like cheat-"
     $ dynamic_cg("ball/bj", "background", "base", "eyes_up", "sweat")
-    her "*Slurp!* *Slurp!* *Slurp!*"
+    her "*Slurp*! *Slurp*! *Slurp*!"
     $ dynamic_cg("ball/bj", "background", "base2", "eyes_up2", "mouth_smile2", "sweat2")
     her "Wouldn't you agree, sir?"
-    m "Ehm..."
+    m "*Ehm*..."
     her "Wouldn't you?"
     with hpunch
     $ dynamic_cg("ball/bj", "background", "base3", "blush3")
-    her "{size=+7}*gobble!*{/size}" #DEEPTHROATING
+    her "{size=+7}*gobble*!{/size}" #DEEPTHROATING
     g4 "{size=+7}Oh, yes!!!{/size}"
-    her "*gobble!* *gobble!* *gobble!*"
-    her "*gobble-*"
+    her "*gobble-gobble-gobble*!"
+    her "*gobble*"
     $ dynamic_cg("ball/bj", "background", "base2", "eyes_up2", "mouth_smile2", "sweat2")
     her "Good. I knew you would approve."
     $ dynamic_cg("ball/bj", "background", "base", "eyes_up", "sweat")
-    her "*Slurp!* *Slurp!* *Gulp!*"
+    her "*Slurp*! *Slurp*! *Gulp*!"
     m "Oh... This is amazing..."
-    her "*Slurp!* *Slurp!* *Gulp!*"
+    her "*Slurp*! *Slurp*! *Gulp*!"
 
-    sna "*Khem!*"
+    sna "*Khem*!"
     sna "Attention, maggots!"
     m "(Snape?)"
     sna "Quiet down everyone!"
@@ -652,7 +652,7 @@ label ball_ending_E2:
     m "If you put some effort into this we'll be done in no time."
     m "I believe in you, girl."
     $ dynamic_cg("ball/bj", "background", "base2", "eyes_closed2", "sweat2")
-    her "Hm..."
+    her "*Hm*..."
     $ dynamic_cg("ball/bj", "background", "base2", "eyes_up2", "mouth_open2", "sweat2")
     her "Then you must promise me something, sir."
     m "Yes, what is it?"
@@ -669,16 +669,16 @@ label ball_ending_E2:
     if public_whore_ending:
         # Public whore ending
         $ dynamic_cg("ball/bj", "background", "base", "sweat")
-        her "*Slurp!* *Gulp!* *Slurp!*"
+        her "*Slurp*! *Gulp*! *Slurp*!"
         m "Yes! That's the spirit!"
         $ dynamic_cg("ball/bj", "background", "base", "lashes", "sweat", "sperm")
-        her "*Gulp!* *Slurp!* *Gulp!*"
+        her "*Gulp*! *Slurp*! *Gulp*!"
         her "*Slurp-*"
         $ dynamic_cg("ball/bj", "background", "base2", "mouth_open2", "eyes_up2", "blush2", "sweat2")
         her "Sir, is this really the proper way to treat one of your students?"
         m "Huh?"
         $ dynamic_cg("ball/bj", "background", "base", "lashes", "sweat", "sperm")
-        her "*Slurp!* *Gulp!* *Gulp!*"
+        her "*Slurp*! *Gulp*! *Gulp*!"
         her "*Slurp-*"
         $ dynamic_cg("ball/bj", "background", "base2", "eyes_closed2", "blush2", "sweat2")
         her "I am like a fragile and impressionable little dove..."
@@ -686,12 +686,12 @@ label ball_ending_E2:
         $ dynamic_cg("ball/bj", "background", "base2", "mouth_grimmace2", "eyes_up2", "brows2", "blush2", "sweat2")
         her "You were supposed to treat me {i}right{/i}, sir..."
         her "And what did you do instead?"
-        m "*Ahem!* Let me repeat my previous statement..."
+        m "*Ahem*! Let me repeat my previous statement..."
         m "{size=+7}\"huh?\"{/size}"
         $ dynamic_cg("ball/bj", "background", "base2", "mouth_happy2", "eyes_down2", "brows2", "blush2", "sweat2")
         her "You put your penis in my innocent mouth, sir!"
         $ dynamic_cg("ball/bj", "background", "base", "eyes_closed", "blush", "sweat")
-        her "*Slurp!* *Slurp!* *Slurp!*"
+        her "*Slurp*! *Slurp*! *Slurp*!"
         g9 "Oh, I see! Yes, I like this innocent girl act!"
         her "*Slurp-*"
         $ dynamic_cg("ball/bj", "background", "base2", "mouth_open2", "eyes_up2", "blush2", "sweat2")
@@ -700,7 +700,7 @@ label ball_ending_E2:
         $ dynamic_cg("ball/bj", "background", "base2", "eyes_closed2", "blush2", "sweat2")
         her "And then....................."
         $ dynamic_cg("ball/bj", "background", "base", "eyes_up", "sweat")
-        her "*Slurp!* *Gulp!* *Gulp!*"
+        her "*Slurp*! *Gulp*! *Gulp*!"
         her "*Slurp-*"
         $ dynamic_cg("ball/bj", "background", "base2", "eyes_closed2", "blush2", "sweat2")
         her "You took advantage of me, sir!"
@@ -711,18 +711,18 @@ label ball_ending_E2:
         $ dynamic_cg("ball/bj", "background", "base2", "mouth_grimmace2", "brows2", "blush2")
         her "But what am I doing instead?"
         $ dynamic_cg("ball/bj", "background", "base", "eyes_up")
-        her "*Slurp!* *Slurp!* *Slurp!*"
+        her "*Slurp*! *Slurp*! *Slurp*!"
         m "Oh..."
         $ dynamic_cg("ball/bj", "background", "base", "eyes_closed", "brows", "blush")
-        her "*Slurp!* *Gulp!* *Slurp!* *Slurp!* *Slurp!*"
+        her "*Slurp*! *Gulp*! *Slurp*! *Slurp*! *Slurp*!"
         her "*Slurp-*"
         $ dynamic_cg("ball/bj", "background", "base2", "eyes_closed2", "mouth_open2", "brows2", "blush2")
         her "I'm on my knees, sucking off my headmaster!"
         $ dynamic_cg("ball/bj", "background", "base", "eyes_closed", "brows", "blush")
-        her "*Slurp!* *Slurp!* *Gulp!*"
+        her "*Slurp*! *Slurp*! *Gulp*!"
         m "Oh, yes you are, you little slut!"
-        her "*Slurp!* *Slurp!* *Slurp!*"
-        her "*Slurp!* *Slurp!* *Gulp!*"
+        her "*Slurp*! *Slurp*! *Slurp*!"
+        her "*Slurp*! *Slurp*! *Gulp*!"
         g4 "You are really good at this dirty talk stuff..."
         g9 "You should try writing a fairy tale, or something..."
         $ dynamic_cg("ball/bj", "background", "base", "eyes_up", "blush")
@@ -732,13 +732,13 @@ label ball_ending_E2:
         $ dynamic_cg("ball/bj", "background", "base2", "eyes_closed2", "blush2")
         g4 "You nasty little thing!"
         $ dynamic_cg("ball/bj", "background", "base", "eyes_closed", "brows", "blush")
-        her "*Slurp!* *Slurp!* *Gulp!* *Slurp!* *Slurp!*"
+        her "*Slurp*! *Slurp*! *Gulp*! *Slurp*! *Slurp*!"
 
         sna "Miss Granger?"
         sna "{size=-4}(Where is that girl?){/size}"
         ">A murmur starts running through the crowd of students."
 
-        her "*Slurp!* *Slurp!* *Gulp!*"
+        her "*Slurp*! *Slurp*! *Gulp*!"
         her "*Gulp-*"
         $ dynamic_cg("ball/bj", "background", "base2", "mouth_open2", "eyes_up2", "blush2")
         her "Sir, am I being an obedient little slut?"
@@ -751,7 +751,7 @@ label ball_ending_E2:
         $ dynamic_cg("ball/bj", "background", "base2", "mouth_smile2", "eyes_down2", "brows2", "blush2")
         her "I'm making my mommy and my daddy proud!"
         $ dynamic_cg("ball/bj", "background", "base", "eyes_closed", "blush")
-        her "*Slurp!* *Slurp!* *Gulp!*"
+        her "*Slurp*! *Slurp*! *Gulp*!"
         g4 "Oh, girl, you are killing me!"
         her "*Slurp-slurp-slurp-slurp!!!*"
         g4 "Oh, yes! Like that!"
@@ -762,7 +762,7 @@ label ball_ending_E2:
         her "I would like you to reward me with your cum, please."
         g4 "*Grh*!"
         $ dynamic_cg("ball/bj", "background", "base", "eyes_closed", "brows", "blush")
-        her "*Slurp!* *Slurp!* *Slurp!*"
+        her "*Slurp*! *Slurp*! *Slurp*!"
         g4 "*Geh*! Almost...!"
         her "{size=+5}*Slurp-gulp-slurp-slurp!!!*{/size}"
         g4 "{size=+5}Here it com-{/size}"
@@ -783,12 +783,12 @@ label ball_ending_E2:
         g4 "{size=+5}What the hell is this?!{/size}"
         $ dynamic_cg("ball/bj", "background", "base4", "eyes_up4", "mouth_smile4", "brows4", "blush4")
         her "{size=+5}Cum for me, sir! I want your hot cum on me!{/size}"
-        g4 "Argh! You whore!"
+        g4 "*Argh*! You whore!"
         $ dynamic_cg("ball/bj", "background", "base4", "eyes_up4", "lashes4", "brows4", "blush4")
         her "{size=+5}Yes I am!{/size}"
         her "{size=+5}Nothing but a cum hungry whore, sir!{/size}"
         with hpunch
-        g4 "{size=+7}Argh!!!{/size}"
+        g4 "{size=+7}*Argh*!!!{/size}"
         g4 "{size=+7}Take this, then!!!{/size}"
 
         show screen white
@@ -796,9 +796,9 @@ label ball_ending_E2:
         hide screen white
         with hpunch
 
-        g4 "{size=+7}ARGH!{/size}"
+        g4 "{size=+7}*ARGH*!{/size}"
         $ dynamic_cg("ball/bj", "background", "base4", "eyes_up4", "lashes4", "blush4")
-        her "{size=+5}Ah! Yes, sir! Yes! cum for me!{/size}"
+        her "{size=+5}*Ah*! Yes, sir! Yes! cum for me!{/size}"
 
         show screen white
         pause.1
@@ -809,8 +809,8 @@ label ball_ending_E2:
         hide screen white
         with hpunch
 
-        g4 "{size=+7}ARGH!{/size}"
-        g4 "{size=+7}Argh!!! YES!!!{/size}"
+        g4 "{size=+7}*ARGH*!{/size}"
+        g4 "{size=+7}*Argh*!!! YES!!!{/size}"
         $ dynamic_cg("ball/bj", "background", "base4", "lashes4", "blush4")
         her "Ah... yes... ah..."
         g4 "Oh... *ght*... *panting*"
@@ -861,7 +861,7 @@ label ball_ending_E2:
     else:
         $ dynamic_cg("ball/bj", "background", "base3", "blush3")
         with hpunch
-        her "{size=+5}*GOBBLE!*{/size}"
+        her "{size=+5}*GOBBLE*!{/size}"
         g4 "{size=+5}Yeeeeeeeeeees!{/size}"
 
         sna "There! Hmm...?"
@@ -872,16 +872,16 @@ label ball_ending_E2:
         $ dynamic_cg("ball/bj", "background", "base3", "blush3")
         sna "Miss Granger, if you would be so kind to grace us with your presence..."
 
-        her "*GOBBLE-GOBBLE-GOBBLE!*"
+        her "*gobble-gobble-gobble*!"
         m "Yes! That's a good slut!"
-        her "{size=+5}*gobble-gobble-gobble!!!*{/size}"
+        her "{size=+5}*gobble-gobble-gobble*!!!{/size}"
         m "Yes. Now, move your tongue..."
         m "Lick my balls, girl. Come on!"
         $ dynamic_cg("ball/bj", "background", "base3", "eyes_closed3", "blush3")
-        her "*gobble!* *Lick!* *Lick!* *gobble!*"
+        her "*gobble*! *Lick*! *Lick*! *gobble*!"
         m "Yes... Like that."
         m "What a good whore you are..."
-        her "*Lick!* *Lick!* *gobble!* *Lick!*"
+        her "*Lick*! *Lick*! *gobble*! *Lick*!"
         m "Now look up at me whore."
         $ dynamic_cg("ball/bj", "background", "base3", "eyes_up3", "blush3")
         her "???................"
@@ -894,10 +894,10 @@ label ball_ending_E2:
         $ dynamic_cg("ball/bj", "background", "base3", "eyes_stare3", "blush3", "spit_base3")
         call ctc
 
-        her "*gobble??!*"
+        her "*gobble*??!"
         m "No, don't you stop now!"
         $ dynamic_cg("ball/bj", "background", "base3", "blush3", "brows_angry3", "spit_base3")
-        her "*gobble-gobble-gobble!*"
+        her "*gobble-gobble-gobble*!"
         m "Yes, whore! Yes!"
 
         sna "Miss Granger?"
@@ -917,14 +917,14 @@ label ball_ending_E2:
         m "What's the matter, my little spit bucket?"
         m "Keep sucking my cock!"
         $ dynamic_cg("ball/bj", "background", "base3", "blush3", "tears_base3", "brows_angry3", "spit_base3", "spit_forehead3")
-        her "*gobble-gobble-gobble!*"
+        her "*gobble-gobble-gobble*!"
         m "Yes. Good whore."
-        her "*gobble-gobble-gobble!*"
-        m "Keep deepthroating me like that, yes!"
-        her "*gobble!* *gobble!* *gobble!*"
+        her "*gobble-gobble-gobble*!"
+        m "Keep deep throating me like that, yes!"
+        her "*gobble*! *gobble*! *gobble*!"
         m "The balls, girl! Don't forget to work your tongue!"
         $ dynamic_cg("ball/bj", "background", "base3", "blush3", "tears_base3", "spit_base3", "spit_forehead3")
-        her "*gobble!* *Lick!...* *Lick!...*"
+        her "*gobble*! *Lick*! *Lick*!"
         m "Yes! Keep at it and we will be done here in no time!"
         m "Oh, I almost forgot..."
         call play_sound("spitting")
@@ -936,12 +936,12 @@ label ball_ending_E2:
         her "..........................."
         her ".................."
         $ dynamic_cg("ball/bj", "background", "base3", "blush3", "eyes_happycl3", "tears_base3", "brows_angry3", "spit_base3", "spit_forehead3", "spit_nose3")
-        her "*gobble!* *gobble!* *Lick...* *gobble!*"
+        her "*gobble*! *gobble*! *Lick*... *gobble*!"
         m "you just look so pretty with your face all covered in my spit!"
         $ dynamic_cg("ball/bj", "background", "base3", "blush3", "tears_base3", "brows_angry3", "spit_base3", "spit_forehead3", "spit_nose3")
-        her "*gobble!* *gobble!* *Lick...* *gobble!*"
+        her "*gobble*! *gobble*! *Lick*... *gobble*!"
         m "Hm..."
-        her "*gobble!* *gobble!* *Lick...* *gobble!*"
+        her "*gobble*! *gobble*! *Lick*... *gobble*!"
         m "Maybe we should show your pretty face to everyone?"
         m "Should I call some of your classmates over?"
         $ dynamic_cg("ball/bj", "background", "base3", "blush3", "eyes_stare3", "tears_base3", "brows_angry3", "spit_base3", "spit_forehead3", "spit_nose3")
@@ -956,7 +956,7 @@ label ball_ending_E2:
 
         m "Alright, listen up, whore."
         $ dynamic_cg("ball/bj", "background", "base3", "blush3", "eyes_squintup3", "tears_base3", "spit_base3", "spit_forehead3", "spit_nose3")
-        her "*gobble??*"
+        her "*gobble*?"
         m "I need you to stay still now."
         her "???"
         $ dynamic_cg("ball/bj", "background", "base3_alt", "blush3", "eyes_up3", "tears_base3", "spit_base3", "spit_forehead3", "spit_nose3")
@@ -1018,16 +1018,16 @@ label ball_ending_E2:
         $ dynamic_cg("ball/bj", "background", "base3_alt", "blush3", "eyes_closed3", "tears_crying3", "brows3", "spit_base3", "spit_forehead3", "spit_nose3", "spit_eye3")
         her "...........................................................*SOB!*"
         with hpunch
-        g4 "*Gght!*"
+        g4 "*Gght*!"
         g4 "Here it comes!"
         g4 "I know you are fighting for air down there..."
         $ dynamic_cg("ball/bj", "background", "base3_alt", "blush3", "eyes_dead3", "tears_crying3", "brows3", "spit_base3", "spit_forehead3", "spit_nose3", "spit_eye3")
         g4 "But all you will get from me is a load of hot cum!"
         $ dynamic_cg("ball/bj", "background", "base3_alt", "cheeks3", "blush3", "eyes_stare3", "tears_crying3", "brows3", "spit_base3", "spit_forehead3", "spit_nose3", "spit_eye3")
         with hpunch
-        her "{size=+9}GHT!!!!!!!!!!!!!!!!{/size}"
+        her "{size=+9}*GHT*!!!!!!!!!!!!!!!!{/size}"
         with hpunch
-        g4 "{size=+9}ARGH!{/size}"
+        g4 "{size=+9}*ARGH*!{/size}"
         with hpunch
         $ dynamic_cg("ball/bj", "background", "base3_alt", "blush3", "eyes_dead3", "tears_crying3", "brows3", "spit_base3", "spit_forehead3", "spit_nose3", "spit_eye3", "sperm3")
         her "{size=+9}*GULP!-GULP!-GULP!-GULP!-GULP!*{/size}"
@@ -1036,7 +1036,7 @@ label ball_ending_E2:
         with hpunch
         g4 "Not done yet!{w=0.3} Not... done... *Argh!*"
         $ dynamic_cg("ball/bj", "background", "base3_alt", "blush3", "tears_crying3", "brows3", "spit_base3", "spit_forehead3", "spit_nose3", "spit_eye3", "sperm3")
-        her "{size=-4}*GULP!* *Gulp!* *Gulp...*{/size}"
+        her "{size=-4}*Gulp*! *Gulp*! *Gulp...*{/size}"
         m "Oh, yes..."
         $ dynamic_cg("ball/bj", "background", "base3_alt", "blush3", "mascara3", "tears_crying3", "brows3", "spit_base3", "spit_forehead3", "spit_nose3", "spit_eye3")
         her "...................................................."
@@ -1111,7 +1111,7 @@ label ball_ending_E2:
         mal "{size=-4}huh?{/size}"
         mal "{size=-4}What's that stuff on her forehead you wager?{/size}"
         mal2 "{size=-4}Sweat...?{/size}"
-        mal "{size=-4}Hm... Probably...{/size}"
+        mal "{size=-4}*Hmm*... Probably...{/size}"
         hide screen blktone5
 
         $ dynamic_cg("ball/speech", "background", "base", "mouth_open", "eyes_squint", "cum3", "overlay")
@@ -1138,12 +1138,12 @@ label ball_ending_E2:
         mal "{size=-4}I bet you do. *Chuckle*{/size}"
         fem "{size=-4}Whatever. Just take a better look...{/size}"
         fem "{size=-4}She must've let some guy bury his cock in her hair and pump it full of semen.{/size}"
-        mal "{size=-4}Hm... Hair fucking then? Is that a thing now?{/size}"
+        mal "{size=-4}*Hm*... Hair fucking then? Is that a thing now?{/size}"
         mal2 "{size=-4}You girls do the craziest things.{/size}"
-        fem "{size=-4}*Humph!* Not all of us are sluts, you know.{/size}"
+        fem "{size=-4}*Humph*! Not all of us are sluts, you know.{/size}"
         mal "{size=-4}Unfortunately not...{/size}"
         fem "{size=-4}\"Unfortunately\"?!{/size}"
-        fem "{size=-4}Tsk! You, men are so clueless about everything!{/size}"
+        fem "{size=-4}*Tsk*! You, men are so clueless about everything!{/size}"
         fem "{size=-4}You could never build a meaningful relationship with a slut!{/size}"
         mal "{size=-4}What's a \"meaningful relationship\"?{/size}"
         fem "{size=-4}It's when your girl is also your best friend.{/size}"
@@ -1160,13 +1160,13 @@ label ball_ending_E2:
         her "I remember when I was just a little girl..."
 
         show screen blktone5
-        m "Huh?"
+        m "*Huh*?"
         hide screen blktone5
 
         her "Frightened of my power... confused..."
 
         show screen blktone5
-        m "Hm..."
+        m "*Hm*..."
         m "There... She did it again..."
         hide screen blktone5
 
@@ -1338,7 +1338,7 @@ label ball_ending_E2:
         call hide_blkfade
         call ctc
 
-        her "Aaah!!!"
+        her "*Aaah*!!!"
         g4 "Your acceptance speech was a disgrace, girl!"
         $ dynamic_cg("ball/sex", "background", "base", "mouth_smile", "eyes_closed", "brows", "blush")
         her "I thought it went rather well..."
@@ -1439,7 +1439,7 @@ label ball_ending_E2:
         with hpunch
 
         $ dynamic_cg("ball/sex", "background", "base", "eyes_stare", "tears2", "blush")
-        her "AAAAAAAAAAAAAAAAH!"
+        her "*AAAAAAAhH*!"
         her "Yes!!! Yeeees! Ah!"
         $ dynamic_cg("ball/sex", "background", "base", "mouth_open_tongue", "eyes_stare", "tears2", "brows", "blush")
         her "Fuck me [genie_name]! Fuck me harder!!!"
@@ -1456,7 +1456,7 @@ label ball_ending_E2:
         $ dynamic_cg("ball/sex", "background", "base", "eyes_stare", "mouth_open", "tears", "blush", "dudes")
         sly1 "Well, well, well... What do we have here?"
         her "!!!"
-        sly1 "I thought it could be you, gryffindor filth..."
+        sly1 "I thought it could be you, Gryffindor filth..."
         sly1 "Moaning like a whore..."
         sly1 "Getting fucked by... Oh..."
         with hpunch
@@ -1485,7 +1485,7 @@ label ball_ending_E2:
         m "So what?"
         her "Our two houses... we have a history."
         m "Oh..."
-        m "Well, then you shall become the bridge between slytherin and gryffindor."
+        m "Well, then you shall become the bridge between Slytherin and Gryffindor."
         m "Hermione Granger, the ambassador of peace!"
         $ dynamic_cg("ball/sex", "background", "base", "eyes_happycl", "mouth_open", "blush", "brows", "dudes")
         her "No, sir! I refuse!"
@@ -1510,9 +1510,9 @@ label ball_ending_E2:
         sly2 "Ha-ha-ha! Nice one! Look at her stupid face!"
         $ dynamic_cg("ball/sex", "background", "base", "eyes_stare", "mouth_open", "blush", "spit_on_face", "brows", "dudes")
         her "You... You...!"
-        sly1 "We really enjoyed your speech, gryffindor slut."
+        sly1 "We really enjoyed your speech, Gryffindor slut."
         sly2 "Yeah... Sure did..."
-        her "That wasn't meant for you, you slytherin scum!"
+        her "That wasn't meant for you, you Slytherin scum!"
         sly1 "Wasn't meant for us? What are you, stupid?"
         sly1 "You bared your filthy, muggle-born flesh on stage! In front of the entire school!"
         sly1 "{size=+7}Of course it was for everyone, you dumb cunt!{/size}"
@@ -1532,7 +1532,7 @@ label ball_ending_E2:
         pause.3
 
         $ dynamic_cg("ball/sex", "background", "base", "eyes_dead", "mouth_open", "blush", "spit_on_face", "dudes")
-        her "Aahah!!!"
+        her "*Ah-ah*!!!"
         sly1 "Yes... You are ours now, slut!"
         call ctc
 
@@ -1572,7 +1572,7 @@ label ball_ending_E2:
 
         $ dynamic_cg("ball/sex", "background", "base", "eyes_dead", "mouth_smile", "blush", "brows", "spit_on_face", "dudes2")
         call play_sound("gulp")
-        her "{size=+5}*Gulp!*{/size}"
+        her "{size=+5}*Gulp*!{/size}"
         sly2 "Ha-ha-ha! Right in the mouth! Good one, mate!"
         sly1 "And she swallowed it too!"
         $ dynamic_cg("ball/sex", "background", "base", "eyes_happycl", "mouth_open", "blush", "brows", "spit_on_face", "dudes2")
@@ -1590,7 +1590,7 @@ label ball_ending_E2:
 
         $ dynamic_cg("ball/sex", "background", "base", "eyes_dead", "mouth_smile", "blush", "brows", "spit_on_face", "dudes2")
         call play_sound("gulp")
-        her "{size=+5}*GULP!*{/size}"
+        her "{size=+5}*Gulp*!{/size}"
 
         sly2 "She did it again!"
         $ dynamic_cg("ball/sex", "background", "base", "eyes_happycl", "mouth_open", "blush", "brows", "spit_on_face", "dudes2")
@@ -1611,7 +1611,7 @@ label ball_ending_E2:
         # Dick in mouth
         her "!!!........................................................."
         sly2 "Cool! I'm next!"
-        her "*Gulp!*"
+        her "*Gulp*!"
         sly1 "Suck my cock, bitch! Suck it!"
         m "Do what the boy tells you, girl."
         call play_sound("slap")
@@ -1622,11 +1622,11 @@ label ball_ending_E2:
 
         m "Come on!"
         $ dynamic_cg("ball/sex", "background", "base", "eyes_happycl", "blush", "spit_on_face", "dudes2", "dude_bj")
-        her "*Slurp...*"
+        her "*Slurp*..."
         sly1 "She's doing it! Hermione Granger sucking me off, lads!"
         sly2 "Awesome! Can't wait to give it a go myself!"
         sly1 "Oh... wow... she's good..."
-        her "*Slurp!* *Slurp!* *Gulp!*"
+        her "*Slurp*! *Slurp*! *Gulp*!"
         sly1 "Oh yes... Yes..."
         sly1 "Oh... You are so good at this, whore!"
         sly1 "It's... I..."
@@ -1639,17 +1639,17 @@ label ball_ending_E2:
         pause .1
         hide screen white
         $ dynamic_cg("ball/sex", "background", "base", "eyes_dead", "blush", "spit_on_face", "dudes2", "dude_bj", "cheeks")
-        her "{size=+7}*gobble?!?*{/size}"
+        her "{size=+7}*gobble*?!?{/size}"
         sly1 "{size=+5}Yes, yes! Swallow it all!!!{/size}"
 
         # Swallowing cum
         $ dynamic_cg("ball/sex", "background", "base", "eyes_happycl", "blush", "brows", "spit_on_face", "dudes2", "dude_bj")
         call play_sound("gulp")
-        her "{size=+5}*Gulp-gulp-gulp-gulp!*{/size}"
+        her "{size=+5}*Gulp-gulp-gulp-gulp*!{/size}"
         call play_sound("gulp")
-        her "*{size=+3}Gulp-gulp-gulp...*{/size}"
+        her "*{size=+3}Gulp-gulp-gulp*...{/size}"
         call play_sound("gulp")
-        her "*Gulp-gulp-gulp...*"
+        her "*Gulp-gulp-gulp*..."
         call play_sound("gulp")
         her "{size=-3}*Gulp* *Gulp*{/size}"
         her "{size=-5}*Gulp*..................{/size}"
@@ -1666,30 +1666,30 @@ label ball_ending_E2:
         call ctc
 
         $ dynamic_cg("ball/sex", "background", "base", "eyes_closed", "blush", "brows", "spit_on_face", "dudes2", "dude_bj")
-        her "*Slurp!* *Slurp!* *Slurp!*"
+        her "*Slurp*! *Slurp*! *Slurp*!"
         g4 "Oh... Yes... Yes!"
         with hpunch
         pause.3
         with hpunch
         pause.3
-        her "*Slurp!* *Slurp!* *Slurp!*"
+        her "*Slurp*! *Slurp*! *Slurp*!"
         sly2 "Oh! Her mouth is so slippery and warm!"
-        her "*Slurp!* *Slurp!* *Slurp!*"
+        her "*Slurp*! *Slurp*! *Slurp*!"
         g4 "Yes! Suck that cock, you whore!"
         with hpunch
         pause.3
         with hpunch
         pause.3
-        her "*Gulp!* Gulp!* *Slurp!*"
-        sly2 "I don't know... gh... How much longer..."
+        her "*Gulp*! Gulp!* *Slurp*!"
+        sly2 "I don't know... *gh*... How much longer..."
         sly2 "...I could keep up like that."
-        her "*Slurp-Slurp-Slurp-slurp!*"
-        her "*Slurp-Gulp-Slurp-Slurp-gulp!!!*"
+        her "*Slurp-Slurp-Slurp-slurp*!"
+        her "*Slurp-Gulp-Slurp-Slurp-gulp*!!!"
         sly2 "Oh, man... Oh man..."
-        her "*Slurp-Slurp-Slurp-Slurp-Slurp!!*"
+        her "*Slurp-Slurp-Slurp-Slurp-Slurp*!!"
         sly2 "I... I..."
         sly2 "..................."
-        her "*Slurp-Slurp-Slurp-Slurp-Slurp!!*"
+        her "*Slurp-Slurp-Slurp-Slurp-Slurp*!!"
         with hpunch
         sly2 "{size=+7}I'm cummiiiiiiiiing!{/size}"
 
@@ -1701,7 +1701,7 @@ label ball_ending_E2:
         pause .1
         hide screen white
         $ dynamic_cg("ball/sex", "background", "base", "eyes_dead", "blush", "brows", "spit_on_face", "dudes2", "dude_bj")
-        her "{size=+7}*gobble?!?*{/size}"
+        her "{size=+7}*gobble*?!?{/size}"
         $ dynamic_cg("ball/sex", "background", "base", "eyes_closed", "blush", "brows", "spit_on_face", "dudes2", "dude_bj")
         call play_sound("gulp")
         her "{size=+5}*Gulp-gulp-gulp-gulp!*{/size}"
@@ -1711,7 +1711,7 @@ label ball_ending_E2:
         her "*Gulp....."
         sly2 "Ah... my cock..."
         $ dynamic_cg("ball/sex", "background", "base", "eyes_happycl", "blush", "brows", "spit", "spit_on_face", "dudes2")
-        her "Gu-aha..."
+        her "*Gu-aha*..."
         $ dynamic_cg("ball/sex", "background", "base", "blush", "brows", "spit", "spit_on_face", "dudes2")
         her "Next! Come on! Is this all you got?"
         sly1 "I'm next, mudblood!"
@@ -1733,7 +1733,7 @@ label ball_ending_E2:
 
         $ dynamic_cg("ball/sex", "background", "base", "eyes_dead", "mouth_smile", "blush", "brows", "spit_on_face", "dudes2")
         call play_sound("gulp")
-        her "{size=+5}*GULP!*{/size}"
+        her "{size=+5}*Gulp*!{/size}"
 
         sly1 "That's what I thought!"
         $ dynamic_cg("ball/sex", "background", "base", "mouth_open", "blush", "lashes", "brows", "spit", "spit_on_face", "dudes2")
@@ -1741,23 +1741,23 @@ label ball_ending_E2:
         $ dynamic_cg("ball/sex", "background", "base", "eyes_down", "blush", "lashes", "brows", "spit_on_face", "dudes2", "dude_bj3")
         her "!!?"
         $ dynamic_cg("ball/sex", "background", "base", "eyes_closed", "blush", "lashes", "brows", "spit_on_face", "dudes2", "dude_bj3")
-        her "*Slurp!* *Slurp!* *Slurp!*"
+        her "*Slurp*! *Slurp*! *Slurp*!"
         sly1 "Yes! Yes, you mudblood filth! Suck my cock! Suck it!"
         m "This is quite extraordinary..."
         sly1 "Sir?"
         m "It's just..."
         m "Her pussy..."
         $ dynamic_cg("ball/sex", "background", "base", "eyes_down", "blush", "lashes", "brows", "spit_on_face", "dudes2", "dude_bj3")
-        her "*Slurp?*"
+        her "*Slurp*?"
         m "It tightens every time you call the girl a \"mudblood\"..."
         m "Try calling her that again, boy."
         sly1 "Gladly, sir."
         $ dynamic_cg("ball/sex", "background", "base", "eyes_closed", "blush", "lashes", "brows", "spit_on_face", "dudes2", "dude_bj3")
-        her "*Slurp!* *Slurp!* *Slurp!*"
+        her "*Slurp*! *Slurp*! *Slurp*!"
         sly1 "Yes, whore! I love fucking your {i}mudblood{/i} face!"
         sly1 "And you're loving every moment of this, aren't you?"
         sly1 "Aren't you, {i}mudblood{/i}?"
-        her "*Slurp!* *Slurp!* *Gulp!*"
+        her "*Slurp*! *Slurp*! *Gulp*!"
         m "Yup... Every time you say that..."
         m "Huh?"
         m "What is this? Her legs are shaking!"
@@ -1787,9 +1787,9 @@ label ball_ending_E2:
 
         her "{size=+7}!!!!!!!!{/size}"
         g4 "Yes! Her pussy is flooded with juice!"
-        sly1 "Agh! Her mouth as well, sir."
+        sly1 "*Agh*! Her mouth as well, sir."
         sly1 "I don't know how much longer I... oh..."
-        sly1 "Argh!"
+        sly1 "*Argh*!"
         sly1 "{size=+3}Take this, whore!{/size}"
 
         show screen white
@@ -1801,7 +1801,7 @@ label ball_ending_E2:
         hide screen white
         with hpunch
         $ dynamic_cg("ball/sex", "background", "base", "eyes_dead", "blush", "lashes", "dudes2", "dude_bj3", "cum_nose")
-        her "{size=+7}*gobble?!?*{/size}"
+        her "{size=+7}*gobble*?!?{/size}"
         sly1 "{size=+5}Yes, yes! Swallow it all!!!{/size}"
 
         # Swallowing cum
@@ -1818,7 +1818,7 @@ label ball_ending_E2:
         her "........................................"
         her "....................."
         $ dynamic_cg("ball/sex", "background", "base", "mouth_open", "blush", "lashes", "brows", "spit", "spit_on_face", "dudes2")
-        her "Gu-aha..."
+        her "*Gu-aha*..."
         sly2 "You drained my balls, bitch..."
         m "Alright, boys! Let's bring this little party to a worthy conclusion."
         her "{size=+7}I'm cumming!{/size}"
@@ -1864,8 +1864,8 @@ label ball_ending_E2:
         $ dynamic_cg("ball/sex", "background", "base", "eyes_dead", "tears2", "blush", "spit", "spit_on_face", "dudes2", "dudes_cum2")
         call ctc
 
-        her "{size=+5}AAAAAAAAAAAAH!{/size}"
-        sly2 "Argh! Here! Me too!"
+        her "{size=+5}*AAAAAAAAAAAAH*!{/size}"
+        sly2 "*Argh*! Here! Me too!"
 
         show screen white
         pause.1
@@ -1885,7 +1885,7 @@ label ball_ending_E2:
         m "Well, don't mind if I do!"
         $ dynamic_cg("ball/sex", "background", "base", "eyes_happycl", "tears2", "blush", "spit", "spit_on_face", "dudes2", "dudes_cum3", "bukkake")
         her "{size=+3}No professor, I............!{/size}"
-        g4 "Argh!"
+        g4 "*Argh*!"
 
         show screen white
         pause.1
@@ -1898,13 +1898,13 @@ label ball_ending_E2:
         $ dynamic_cg("ball/sex", "background", "base", "eyes_happycl", "tears2", "blush", "spit", "spit_on_face", "dudes2", "dudes_cum3", "bukkake", "cum_anal", "cum_pussy")
         call ctc
 
-        her "{size=+8}AAAAAAAAAAAAH!{/size}"
+        her "{size=+8}*AAAAAAAAAAAAH*!{/size}"
         $ dynamic_cg("ball/sex", "background", "base", "eyes_happycl", "tears2", "blush", "spit", "spit_on_face", "dudes2", "cum_after", "bukkake", "cum_anal", "cum_pussy")
         her "{size=+5}No! My face! My pussy! Ah! I can't stop cumming!!!{/size}"
         sly1 "What a slut!"
         sly2 "Whore!"
         sly1 "Mudblood!"
-        her "{size=+8}AAAAAAAAAAAAH!{/size}"
+        her "{size=+8}*AAAAAAAAAAAAH*!{/size}"
 
         call play_sound("spit")
         show screen white
@@ -1916,7 +1916,7 @@ label ball_ending_E2:
 
         $ dynamic_cg("ball/sex", "background", "base", "mouth_smile", "eyes_happycl", "tears2", "blush", "spit", "spit_on_face", "dudes2", "cum_after", "bukkake", "cum_anal", "cum_pussy", )
         call play_sound("gulp")
-        her "{size=+8}*Gulp!*{/size}"
+        her "{size=+8}*Gulp*!{/size}"
 
         $ dynamic_cg("ball/sex", "background", "base", "eyes_happycl", "tears2", "blush", "spit", "spit_on_face", "dudes2", "cum_after", "bukkake", "cum_anal", "cum_pussy")
         her "{size=+8}I'll go insane!{/size}"
@@ -1951,7 +1951,7 @@ label ball_ending_E2:
         sly1 "{size=-4}Man, professor Dumbledore sure is one cool dude.{/size}"
         sly2 "{size=-4}Yeah... Who would have thought...{/size}"
         sly1 "{size=-4}True. I can't help but respect the man...{/size}"
-        m "(Aw... Such nice boys...)"
+        m "(*Aww*... Such nice boys...)"
         sly2 "{size=-4}Yeah... I hope I will be as agile as he is when I am that ancient.{/size}"
         g4 "(I'm not ancient, you punks!)"
         m "(Although I suppose in some way I am...)"
@@ -1966,7 +1966,7 @@ label ball_ending_E2:
         m "Come on, girl. Pull yourself together!"
         call her_main("I... I... What?", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara_soft")
         call her_main("I don't understand... I...",cheeks="blush",tears="mascara_soft")
-        m "Hm..."
+        m "*Hm*..."
         m "I will be leaving now."
         call her_main("Leaving...?", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         m "Yes. Maybe you should too..."
@@ -1977,7 +1977,7 @@ label ball_ending_E2:
         call her_main("No! I am the ball queen! I must....", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         m "Well, suit yourself."
         m "I'm leaving..."
-        call her_main("Good bye... sir...", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
+        call her_main("Goodbye... sir...", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         m "............."
         m "Farewell, girl."
         call ctc
@@ -1990,7 +1990,7 @@ label ball_ending_E2:
         call play_music("festive")
         call ctc
 
-        m "Hm..."
+        m "*Hm*..."
         m "Maybe I should stay and watch Hermione's post-multiple-orgasm dancing?"
         m "No... This ball is almost over. This is my only chance to sneak out unnoticed."
         call ctc
@@ -2005,7 +2005,7 @@ label ball_ending_E2:
         call her_main("...............................", "full", "narrow", "annoyed", "up",cheeks="blush",tears="mascara", ypos="head")
         call sna_main("What happened to your face, girl?","snape_13")
         call her_main(".......................................", "full", "narrow", "worried", "down",cheeks="blush",tears="mascara")
-        call sna_main("Hm... Well, go ahead then...","snape_13")
+        call sna_main("*Hm*... Well, go ahead then...","snape_13")
         call sna_main("Here is the tiara...","snape_13")
         call her_main(".......................................", "full", "narrow", "worried", "down",cheeks="blush",tears="mascara")
 
@@ -2033,12 +2033,12 @@ label ball_ending_E2:
 
         $ dynamic_cg("ball/speech", "background", "base", "mouth_open", "blush", "cum_mouth", "eyes_closed", "brows", "mascara", "sweat", "overlay")
         her "...................................."
-        her "Helwo eweruone..." #Misspelled on purpose.
+        her "*{i}Helwo eweruone{/i}*..." #Misspelled on purpose.
 
         $ dynamic_cg("ball/speech", "background", "base", "mouth_open", "blush", "cum_mouth", "eyes_closed", "brows", "mascara", "sweat", "overlay")
-        her "Fenk you for being heah today..." #Misspelled on purpose.
+        her "{i}Fenk you for being heah today{/i}..." #Misspelled on purpose.
         m "I can barely understand a word she is saying..."
-        her "Fifst of all I would like foo fenk Profeffor Dumblefore..." #Misspelled on purpose.
+        her "{i}Fifst of all I would like foo fenk Profeffor Dumblefore...{/i}" #Misspelled on purpose.
         m "Me?"
         her "................"
 
@@ -2049,9 +2049,9 @@ label ball_ending_E2:
 
         $ dynamic_cg("ball/speech", "background", "base", "blush", "cum_nose2", "eyes_closed", "mascara", "sweat", "overlay")
         call play_sound("gulp")
-        her "{size=+5}*GULP!!!*{/size}"
+        her "{size=+5}*GULP*!!!{/size}"
         $ dynamic_cg("ball/speech", "background", "base", "mouth_open", "blush", "cum_nose2", "eyes_squint", "mascara", "brows", "sweat", "overlay")
-        her "Gua-ha..."
+        her "*Gua-ha*..."
         her "Thank you, professor."
         with hpunch
         g4 "YOU WHORE!!!"
@@ -2072,10 +2072,10 @@ label ball_ending_E2:
 
         call blktone_top
         mal "{size=-4}So it's Hermione Granger again this year...{/size}"
-        fem "{size=-4}Tsk... Why am I not surprised?{/size}"
+        fem "{size=-4}*Tsk*... Why am I not surprised?{/size}"
         mal2 "{size=-4}Maybe because she deserves it?{/size}"
         mal "{size=-4}Yeah! Stop hating on Hermione!{/size}"
-        fem "{size=-4}Tch... Whatever.{/size}"
+        fem "{size=-4}*Tch*... Whatever.{/size}"
         mal "{size=-4}By the way, when Hermione went on stage-{/size}"
         mal2 "{size=-4}Yeah, there was something in her mouth. I noticed it too.{/size}"
         fem "{size=-4}I bet it was someone's cum!{/size}"
@@ -2095,7 +2095,7 @@ label ball_ending_E2:
         fem "{size=-4}And when that happens she cannot control herself and will gladly sleep with the first man she sees.{/size}"
         mal "{size=-4}.............{/size}"
         mal2 "{size=-4}.....................{/size}"
-        fem "{size=-4}Hm? Why are you staring at me like that?{/size}"
+        fem "{size=-4}*Hm*? Why are you staring at me like that?{/size}"
         mal "{size=-4}What? We're not staring.{/size}"
         mal2 "{size=-4}Yes, keep talking. You are good at this!{/size}"
         fem "{size=-4}Good at what?!{/size}"
@@ -2121,7 +2121,7 @@ label ball_ending_E2:
         her "What a pleasant and completely unexpected surprise...!"
         her "And one more thing..."
         $ dynamic_cg("ball/speech", "background", "base", "mouth_open", "blush", "cum_nose2", "mascara", "brows", "sweat", "overlay")
-        her "{size=+5}Go gryffindor!{/size}"
+        her "{size=+5}Go Gryffindor!{/size}"
 
         call play_sound("applause")
         ">The crowd explodes with loud cheers and whistles, interspersed by occasional booing..."
@@ -2133,7 +2133,7 @@ label ball_ending_E2:
 
         stop music fadeout 1.0
         m "Great speech..."
-        m "Very arousing... Ehm, I mean inspiring."
+        m "Very arousing... *Ehm*, I mean inspiring."
         call her_main("Thank you, sir.", "soft", "narrow", "base", "R_soft",cheeks="blush",ypos="head")
         m "Swallowing my load in front of the entire school?"
         g9 "A very nice touch."
@@ -2162,7 +2162,7 @@ label ball_ending_E2:
         call her_main("Of course sir...", "base", "narrow", "base", "mid_soft",cheeks="blush")
         m "Huh?"
         call her_main("Just make sure you don't hit my dress, alright?", "open_tongue", "narrow", "worried", "mid_soft",cheeks="blush")
-        g4 "*growl!*"
+        g4 "*growl*!"
         g4 "Come here, whore!"
         g4 "Suppose I might as well fuck you one last time!"
         call her_main("(One last time?)", "upset", "base", "base", "mid")
@@ -2182,7 +2182,7 @@ label ball_ending_E2:
         call ctc
 
         her "Ah-ah..."
-        m "Hm? Your pussy..."
+        m "*Hm*? Your pussy..."
         m "It's dripping wet, girl."
         $ dynamic_cg("ball/sex", "background", "base", "eyes_down", "mouth_smile", "blush")
         her "Ah...{heart} It is, sir?"
@@ -2202,7 +2202,7 @@ label ball_ending_E2:
         her "............."
         m "Squeezing my cock with your little pussy!"
         her "......................"
-        m "Hm...?"
+        m "*Hm*...?"
         m "Why are you being so quiet?"
         $ dynamic_cg("ball/sex", "background", "base", "eyes_up", "mouth_open", "blush")
         her "Oh... I'm just afraid that someone would-"
@@ -2216,7 +2216,7 @@ label ball_ending_E2:
         with hpunch
         $ dynamic_cg("ball/sex", "background", "base", "eyes_stare", "mouth_open", "brows", "blush", "tears")
 
-        her "EEeeeeeeeegh!"
+        her "*EEeeeeeeeegh*!"
         m "Quiet, whore! Someone could hear you!"
         $ dynamic_cg("ball/sex", "background", "base", "eyes_up", "mouth_open", "brows", "blush", "tears")
         her "Sir, I-"
@@ -2228,7 +2228,7 @@ label ball_ending_E2:
         with hpunch
         $ dynamic_cg("ball/sex", "background", "base", "eyes_stare", "mouth_smile", "brows", "blush", "tears")
 
-        her "{size=+7}EEghh!!!{/size}"
+        her "{size=+7}*EEghh*!!!{/size}"
         m "Be quiet, I said!"
         m "Or do you want to get caught like this, on your headmaster's cock?"
         m "Do you, Miss queen of the autumn ball?"
@@ -2240,7 +2240,7 @@ label ball_ending_E2:
         with hpunch
         $ dynamic_cg("ball/sex", "background", "base", "eyes_dead", "blush", "tears")
 
-        her "Ah..."
+        her "*Ah*..."
         m "Yes, you're liking this aren't you?!"
         $ dynamic_cg("ball/sex", "background", "base", "eyes_happycl", "mouth_smile", "blush")
         her ".............."
@@ -2307,7 +2307,7 @@ label ball_ending_E2:
         $ dynamic_cg("ball/sex", "background", "base", "eyes_dead", "mouth_open_tongue2", "lashes", "blush", "tears", "spank")
         call ctc
 
-        her "{size=+7}Aaaaaah............................{/size}"
+        her "{size=+7}*Aaaaaah*............................{/size}"
 
         call blktone_top
         sna "Attention, maggots!"
@@ -2319,10 +2319,10 @@ label ball_ending_E2:
         her "The dance! I completely forgot!!!"
         $ dynamic_cg("ball/sex", "background", "base", "eyes_up", "mouth_open", "blush", "tears", "spank")
         her "Sir, excuse me, but you have to let me go..."
-        g4 "Ah... Your pussy is something else!"
-        her "Sir... Ah... I am serious."
+        g4 "*Ah*... Your pussy is something else!"
+        her "Sir... *Ah*... I am serious."
         her "As the queen I am expected to lead the dance."
-        g4 "Yes... Like that, just like that... Oh, yes."
+        g4 "Yes... Like that, just like that... *Oh*, yes."
         $ dynamic_cg("ball/sex", "background", "base", "eyes_up", "mouth_open", "brows", "blush", "tears", "spank")
         her "Sir, are you even listening?"
         m "Oh, I hear you alright... But let me make you a counteroffer."
@@ -2344,7 +2344,7 @@ label ball_ending_E2:
         pause.3
 
         # Insertion
-        call her_main("Ah...", "open", "wide", "worried", "stare",cheeks="blush",tears="soft", ypos="head")
+        call her_main("*Ah*...", "open", "wide", "worried", "stare",cheeks="blush",tears="soft", ypos="head")
         call her_main("Sir, no. You must listen to me-", "open_tongue", "narrow", "worried", "mid_soft",cheeks="blush")
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
@@ -2372,12 +2372,12 @@ label ball_ending_E2:
         her "!!!............"
         g4 "That's right, you slut. Keep quiet!"
         $ dynamic_cg("ball/sex", "background", "base2", "open_tongue2", "blush2")
-        her "Ah... Blah..."
+        her "*Ah*... *Blah*..."
         g4 "Your butthole... It's so damn tight..."
         $ dynamic_cg("ball/sex", "background", "base2", "open_tongue2", "blush2", "spit")
-        her "Ah... blah... ah..."
+        her "*Ah*... *blah*... *ah*..."
         g4 "You are drooling all over my hand, you nasty slut!"
-        her "Ah... Blah-blhah... ah... bla-ah..."
+        her "*Ah*... *Blah-blhah*... *ah*... *bla-ah*..."
 
         call blktone_top
         stop music fadeout 1.0
@@ -2391,12 +2391,12 @@ label ball_ending_E2:
         call play_music("festive")
         m "Don't you worry about missing out on your dance, whore."
         m "We will do a little bit of dancing of our own..."
-        her "Ah..."
+        her "*Ah*..."
         m "Yes, this year's ball queen is performing a complicated pirouette with a dick buried deep in her tiny asshole!"
         $ dynamic_cg("ball/sex", "background2", "base", "mouth_open_tongue2", "eyes_stare", "lashes", "blush", "spit")
-        her "Ah... I am ahh..."
+        her "*Ah*... I am *ahh*..."
         m "Did you say something, your majesty?"
-        her "Ah... I am the autumn ball queen... ah..."
+        her "*Ah*... I am the autumn ball queen... *ah*..."
         m "Well of course you are!"
         m "But you're also a whore!"
         her "I'm a whore..."
@@ -2433,7 +2433,7 @@ label ball_ending_E2:
         her "{size=+5} I'm cumming!!!{/size}"
 
         with hpunch
-        g4 "Argh! My cock!"
+        g4 "*Argh*! My cock!"
         $ dynamic_cg("ball/sex", "background2", "base", "eyes_dead", "brows", "blush", "spit")
         her "{size=+10}I'M CUMMING! I'm a whore!{/size}"
         g4 "I can't fucking move it anymore!"
@@ -2446,11 +2446,11 @@ label ball_ending_E2:
         her "{size=+7}I can't! I'm cumming!!!{/size}"
         g4 "Fine! Have it your way. I am switching back to your pussy..."
         $ dynamic_cg("ball/sex", "background2", "base", "eyes_up", "blush", "spit")
-        her "Huh?"
+        her "*Huh*?"
         call blkfade
 
         g4 "Can't pull out!"
-        g4 "Relax your damn anus, girl!..."
+        g4 "Relax your damn anus, girl! ..."
 
         call play_sound("boing")
         with hpunch
@@ -2470,29 +2470,28 @@ label ball_ending_E2:
         hide screen bld1
         hide screen blkfade
         $ dynamic_cg("ball/sex", "background2", "base", "blush", "mascara", "spit")
-        her "{size=+10}AAAAAAAAAAAH!!{/size}"
+        her "{size=+10}*AAAAAAAAAAAH*!!{/size}"
         her "It's in my pussy again..."
         g4 "Yes it is, slut!"
         $ dynamic_cg("ball/sex", "background2", "base", "mouth_open", "eyes_up", "lashes", "blush", "mascara", "spit")
         her "But I'm still cumming!"
         her "What is happening to me, sir!?"
-
         m "Relax girl, I know what I'm doing!"
         m "This is normal for a slut."
         $ dynamic_cg("ball/sex", "background2", "base", "eyes_up", "lashes", "blush", "mascara", "spit")
         her "{size=+5}No! I will go insane!!!{/size}"
         g4 "You will not. Just ride the wave."
         g4 "Enjoy the sensation while I keep on pounding your pussy!"
-        her "{size=+5}Ah!!!{/size}"
+        her "{size=+5}*Ah*!!!{/size}"
 
         $ dynamic_cg("ball/sex", "background2", "base", "mouth_open", "eyes_down", "lashes", "brows", "blush", "mascara", "spit")
-        her "{size=+5}Oh!!!{/size}"
+        her "{size=+5}*Oh*!!!{/size}"
         her "{size=+5}I'm a whore!!!{/size}"
         g4 "Yes you are!"
         her "{size=+5}I'm a slut!!!{/size}"
         g4 "Yes you are!"
-        g4 "Oh... I think I am getting close myself..."
-        g4 "Argh!"
+        g4 "*Oh*... I think I am getting close myself..."
+        g4 "*Argh*!"
 
         $ menu_x = 0.5 #Menu is moved to the left side.
 
@@ -2514,11 +2513,11 @@ label ball_ending_E2:
                 with hpunch
                 $ dynamic_cg("ball/sex", "background2", "base", "eyes_wide", "blush", "mascara", "spit", "cum_pussy")
 
-                her "{size=+5}Ah! AAaaah!!{/size}"
-                g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
+                her "{size=+5}*Ah*! *AAaaah*!!{/size}"
+                g4 "{size=+15}*ARGH*!!!!!!!!!!!!!!!!{/size}"
 
-                her "{size=+5}Ah! I can feel it! It's so hot!{/size}"
-                g4 "Argh! Yes!"
+                her "{size=+5}*Ah*! I can feel it! It's so hot!{/size}"
+                g4 "*Argh*! Yes!"
                 $ dynamic_cg("ball/sex", "background2", "base", "eyes_up", "lashes", "blush", "mascara", "spit", "cum_pussy", "cum_extra")
 
                 her "{size=+5}It's filling me up! It's filling me up!!!{/size}"
@@ -2532,7 +2531,7 @@ label ball_ending_E2:
                 $ dynamic_cg("ball/sex", "background2", "base", "eyes_up", "lashes", "blush", "mascara", "spit", "cum_pussy", "cum_extra")
                 her "{size=+5}I'm sorry! Your whore is sorry!!!!{/size}"
                 g4 "Yes! Much better!"
-                g4 "Oh......."
+                g4 "*Oh*......."
 
             "-Cum inside Hermione's butt-":
                 $ d_flag_01 = False # Came into asshole
@@ -2542,13 +2541,13 @@ label ball_ending_E2:
 
                 call play_sound("insert")
                 pause.5
-                her "Ah..."
+                her "*Ah*..."
 
                 call play_sound("boing")
                 with hpunch
                 with kissiris
                 $ dynamic_cg("ball/sex", "background2", "base", "eyes_stare", "mouth_open", "blush", "brows", "mascara", "spit")
-                her "{size=+10}AAaaaahhhhh!!!{/size}"
+                her "{size=+10}*AAaaaahhhhh*!!!{/size}"
                 her "{size=+5}It's in my butthole again!{/size}"
                 $ dynamic_cg("ball/sex", "background2", "base", "eyes_up", "mouth_open", "blush", "brows", "mascara", "spit")
                 her "{size=+5}No, sir, please! Don't cum in my butt!{/size}"
@@ -2566,10 +2565,10 @@ label ball_ending_E2:
                 hide screen white
                 with hpunch
 
-                g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
+                g4 "{size=+15}*ARGH*!!!!!!!!!!!!!!!!{/size}"
                 $ dynamic_cg("ball/sex", "background2", "base", "eyes_stare", "mouth_open", "blush", "brows", "mascara", "spit")
-                her "{size=+5}Ah! I can feel it!!!{/size}"
-                g4 "Argh! Yes!"
+                her "{size=+5}*Ah*! I can feel it!!!{/size}"
+                g4 "*Argh*! Yes!"
                 $ dynamic_cg("ball/sex", "background2", "base", "eyes_stare", "blush", "brows", "mascara", "spit", "cum_anal")
                 her "{size=+5}It's filling me up! It's filling me up!!!{/size}"
                 g4 "Yes! You whore! I'll pump you full of my cum!"
@@ -2588,7 +2587,7 @@ label ball_ending_E2:
         with d9
 
         stop music fadeout 1.0
-        call her_main("Ah...", "silly", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft", ypos="head")
+        call her_main("*Ah*...", "silly", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft", ypos="head")
         call her_main("I can... barely... stand...")
         g4 "I know what you mean, girl."
         g4 "This was our most intense fucking session yet!"
@@ -2632,7 +2631,7 @@ label ball_ending_E2:
 
         ">There is no doubt that she is tired and exhausted, but she hides it well..."
 
-        m "(Hm... The girl really is strong...)"
+        m "(*Hmm*... The girl really is strong...)"
         m "(In all sorts of ways...)"
 
 
@@ -2683,11 +2682,21 @@ label ball_ending_E2:
     $ ccg(layer3="173")
     pause.5
 
-    m "Good bye, world of bizarre magic..."
-    m "Good bye, my whor-"
-    m "Good bye, Hermione..."
-    m "............"
-    m "......"
+    m "Goodbye, world of bizarre magic..."
+    m "Goodbye, my whores..."
+    m "Goodbye, smart cumslut Hermione..."
+    if cho_unlocked:
+        m "and my token asian Cho..."
+    if astoria_unlocked:
+        m "and my sassy blonde Astoria..."
+    if luna_unlocked:
+        m "and my {i}wackspit-sucking{/i} queen Luna..."
+    if susan_unlocked:
+        m "and my big-titted redhead Susan..."
+    m "and of course, goodbye to my favourite nympho, Tonks..."
+    m "....................."
+    m "..........."
+    "......"
 
     call play_sound("magic")
     with hpunch
@@ -2724,7 +2733,7 @@ label ball_ending_E2:
     pause.5
 
     # Dumbledore is back at Hogwarts
-    centered "{size=+7}{color=#cbcbcb}The morning after...{/color}{/size}"
+    centered "{size=+7}{color=#cbcbcb}The next morning...{/color}{/size}"
 
     $ daytime = True
     call update_interface_color
@@ -2772,7 +2781,7 @@ label ball_ending_E2:
         sna "......................................"
         dum_[1] "But before I do..."
         sna "........................................"
-        dum_[2] "Ehm... Severus?"
+        dum_[2] "*Ehm*... Severus?"
         sna "........................................."
         call sna_main("Who rules?","snape_06")
         dum_[2] "I beg your pardon?"
@@ -2882,7 +2891,7 @@ Farewell, my little [word_03].{/size}
         call ctc
 
         with hpunch
-        dum_[5] "{size=+7}GHT!!!{/size}"
+        dum_[5] "{size=+7}*GHT*!!!{/size}"
         her "I am willing to do anything to get those points, sir!"
 
         call her_main("And I mean {size=+9}ANYTHING!!!{/size}", "scream", "base", "angry", "mid",emote="01", trans=hpunch)

@@ -270,7 +270,7 @@ label ravenclaw_dormitories:
             $ ran = renpy.random.random()
             if ran < 0.3:
                 ">You search around the dorms and manage to find an comb with some hair in it."
-                m "This must be someones hair."
+                m "This must be someone's hair."
                 menu:
                     "-Take the hair-":
                         ">You gain 1 Luna's Hair."
@@ -328,7 +328,7 @@ label outskirts_of_hogwarts:
 
     stop music fadeout 1.0
 
-    centered "{size=+7}{color=#cbcbcb}Outskirts of hogwarts{/color}{/size}"
+    centered "{size=+7}{color=#cbcbcb}Outskirts of Hogwarts{/color}{/size}"
 
     call hide_screens
 

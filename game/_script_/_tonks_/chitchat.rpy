@@ -34,12 +34,12 @@ label tonks_chit_chat:
         call ton_main("I hope she's as much into points as the rest.","horny","base","raised","mid")
 
     elif random_number == 4:
-        call ton_main("Since Metamophmagi can change their skin, I sometimes just don't bother with wearing clothes.","open","base","base","mid")
+        call ton_main("Since Metamorphmagi can change their skin, I sometimes just don't bother wearing any clothes.","open","base","base","mid")
         call ton_main("I once changed the colour of my skin and made it look like a tight shirt...","open","base","base","R")
         call ton_main("I might have worked topless once or twice...","horny","base","raised","mid")
 
     elif random_number == 5:
-        call ton_main("Don't tell professor Mcgonagall, but I once used her appearance to search one of the students underwear drawer...","open","base","worried","L")
+        call ton_main("Don't tell professor McGonagall, but I once used her appearance to search one of the student's underwear drawer...","open","base","worried","L")
         call ton_main("They didn't suspect a thing.","base","base","base","mid")
 
     elif random_number == 6:
@@ -109,11 +109,11 @@ label tonks_chit_chat:
         call ton_main("People think it's pink but that's because I'm horny all the time.","base","base","base","down")
 
     elif random_number == 20:
-        call ton_main("My mother was a pureblood but was burned off the Black family tree after marrying a muggleborn...","open","base","base","down")
+        call ton_main("My mother was a pure-blood but was burned off the Black family tree after marrying a muggle-born...","open","base","base","down")
         call ton_main("Some people won't understand but I think you should be allowed to love whoever you want...","open","base","base","mid")
 
     elif random_number == 21:
-        call ton_main("Don't tell anyone but I must have spent a fortune on Blemish Blitzer in my time studying at Hogwarts...","open","base","base","L")
+        call ton_main("Don't tell anyone but I must have spent a fortune on Tolipan Blemish Blitzer in my time studying at Hogwarts...","open","base","base","L")
         call ton_main("My parents thought I was just being clumsy and needed replacement materials but most of the money they sent me was spent on beauty and hair products...","open","base","base","R")
 
     elif random_number == 22:
@@ -157,7 +157,7 @@ label tonks_chit_chat:
         call ton_main("Imagine the possibilities...","open_wide_tongue","base","raised","up")
 
     elif random_number == 31:
-        call ton_main("Today I taught the students about the Tanglepest...","open","base","base","mid")
+        call ton_main("Today I taught the students about the {i}Tanglepest{/i}...","open","base","base","mid")
         call ton_main("A foul creature that is drawn to footwear...","open","base","base","R")
         call ton_main("It doesn't actually exist, I just wanted an excuse to have the students show me their feet.","horny","base","base","mid")
     return

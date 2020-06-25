@@ -12,7 +12,7 @@ label nothing_to_see_here_048:
     call cho_main("I do...", "quiver", "narrow", "worried", "R")
     call cho_main("But this was too much!","scream","closed","angry","mid")
     call cho_main("I couldn't get them off of me!", "open", "narrow", "angry", "R")
-    call cho_main("Half the slytherin team spent the whole game following me around, trying to get a peak from underneath!", "scream", "narrow", "angry", "mid")
+    call cho_main("Half the Slytherin team spent the whole game following me around, trying to get a peak from underneath!", "scream", "narrow", "angry", "mid")
     m "Hmmm, I was worried this might happen...."
     call cho_main("Well how are you going to fix it then, [cho_genie_name]?", "annoyed", "narrow", "angry", "mid")
 
@@ -44,7 +44,7 @@ label nothing_to_see_here_049:
     m "How about you fight fire with fire then?"
     call cho_main("So you think we should fight dirty too?","horny","narrow","base","mid")
     call cho_main("But how? The rules forbid almost all foul play.", "annoyed", "narrow", "worried", "downR")
-    m "Hmmmm..."
+    m "*Hmmmm*..."
 
 
 
@@ -59,7 +59,7 @@ label nothing_to_see_here_049:
     #call ton_main("Surely a bet like this should be made on equal terms... where's the sportsmanship?", "open", "base", "raised", "mid")
 
     #menu:
-    #    g4 "(Damnit! Two against one... That's not fair!)"
+    #    g4 "(Dammit! Two against one... That's not fair!)"
     #    "-Agree, and call the bet off...-":
     #        # Offer to call off the bet, Snape declines
     #        call ton_main("That's the spirit, now let's just enjoy the... *uhm*...", "horny", "base", "raised", "L", hair="horny")

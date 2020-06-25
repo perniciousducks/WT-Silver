@@ -25,7 +25,7 @@ label give_cho_gift(gift_item):
             call cho_main("Sweets?",pupils="down",face="horny",xpos="mid",ypos="base")
             call give_gift(">You give the sweets to Cho...",gift_item)
             call cho_main("I'll keep it for later, I like licking it in front of my teammates to tease them a bit.","open","base","raised","mid")
-            call cho_main("*mmmh*, but in the future... I'm more of a savoury kind of girl when it comes to sucking on things...","horny","wink","base","mid")
+            call cho_main("*Mmmh*, but in the future... I'm more of a savoury kind of girl when it comes to sucking on things...","horny","wink","base","mid")
             call cho_main("But thanks, [cho_genie_name].","smile","base","base","L")
             call cho_mood(-1)
 
@@ -195,7 +195,7 @@ label give_cho_gift(gift_item):
         elif cho_tier == 2:
             call cho_main("What is this?",pupils="down",face="horny",xpos="mid",ypos="base")
             call cho_main("Porn magazines? Sir, that's too much even for you...", "annoyed", "narrow", "base", "down")
-            call cho_main("Is that a snitch in her sna... No... just no...","open","wide","raised","down")
+            call cho_main("Is that a snitch in her sna-... No... just no...","open","wide","raised","down")
             call cho_main("","angry","base","angry","down")
             call cho_mood(2)
         elif cho_tier == 3:
@@ -215,14 +215,14 @@ label give_cho_gift(gift_item):
 
     elif gift_item == krum_poster_ITEM:
         if cho_tier <= 1:
-            call cho_main("A viktor Krum poster?",mouth="open",eyes="wide",eyebrows="raised",pupils="mid",xpos="mid",ypos="base")
+            call cho_main("A Viktor Krum poster?",mouth="open",eyes="wide",eyebrows="raised",pupils="mid",xpos="mid",ypos="base")
             call cho_main("Professor, he doesn't have his shirt on!","scream","wide","base","down")
             call cho_main("That's...{w=0.3} highly inappropriate...", "open", "narrow", "base", "downR")
             call cho_main("I can't...{w=0.3} I can't accept this.","upset","closed","base","mid")
             call cho_main("","base","base","base","mid")
             call cho_mood(0)
         elif cho_tier == 2:
-            call cho_main("A viktor Krum poster?",mouth="soft",eyes="wide",eyebrows="raised",pupils="mid",xpos="mid",ypos="base")
+            call cho_main("A Viktor Krum poster?",mouth="soft",eyes="wide",eyebrows="raised",pupils="mid",xpos="mid",ypos="base")
             call cho_main("He really is quite muscular isn't he...","open","narrow","base","down")
             call cho_main("I'll use it...","smile","base","base","mid")
             call give_gift(">You give the poster to Cho...",gift_item)

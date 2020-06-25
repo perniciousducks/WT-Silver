@@ -333,7 +333,7 @@ label tonks_talk:
                     m "Once you're immortal, the last thing you need is some annoying brat on your mind..."
                     g9 "All we really want to do is waste a majority of our existence with mindless sex!"
                     call ton_main("Oh my...","horny","base","base","mid", hair="horny")
-                    m "And sometimes a bit of kinky roleplay..."
+                    m "And sometimes a bit of kinky role-play..."
                     m "Are you going to call me \"Lord Voldemort\" now or what?"
                     call ton_main("Fine... I will call you, [ton_genie_name], if it makes you happy...","base","base","base","mid")
                     g9 "Yippee!"
@@ -432,7 +432,7 @@ label tonks_talk:
                 "-Bitch-":
                     label .bitch:
                     $ tonks_name = "Bitch"
-                    call ton_main("Hihi--","base","base","base","R")
+                    call ton_main("*Hi-hi*","base","base","base","R")
                     call ton_main("If only you knew...","horny","base","raised","ahegao")
                     m "(...)"
                     g4 "(What does she mean by that?)"

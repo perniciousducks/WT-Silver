@@ -18,7 +18,7 @@ label hg_pf_admire_breasts_transition:
 
     call ctc
 
-    m "Hm..."
+    m "*Hmm*..."
     if her_tier <= 2:
         call her_main("{size=-5}(My breasts are completely exposed...){/size}", "disgust", "narrow", "base", "down", cheeks="blush")
     m "Come closer [hermione_name], let me take a better look..."
@@ -137,7 +137,7 @@ label hg_pf_admire_breasts_T2_touch: # Not a Call label
     call her_main("And you touched me...", "angry", "base", "angry", "mid", cheeks="blush")
     call her_main("And I am getting nothing in return?", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
     m "You are dismissed, [hermione_name]..."
-    call her_main("Grr..................", "angry", "happyCl", "worried", "mid", cheeks="blush")
+    call her_main("*Grr*..........", "angry", "happyCl", "worried", "mid", cheeks="blush")
     call her_main("{size=-5}(Burn in hell, you wretched old-{/size}", "angry", "happyCl", "worried", "mid", cheeks="blush")
 
     call her_walk(action="leave")
@@ -385,10 +385,10 @@ label hg_pf_admire_breasts_T3_masturbate:
             return
 
         "-Just start cumming-":
-            g4 "Argh! You whore!"
+            g4 "*Argh*! You whore!"
             call her_main("Proff- ??", "scream", "wide", "base", "stare", cheeks="blush")
             call cum_block
-            g4 "Argh! YES!"
+            g4 "*Argh*! YES!"
             hide screen bld1
             with d1
 
@@ -613,7 +613,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
         call her_main("..............", "disgust", "narrow", "base", "down", cheeks="blush")
         call her_main("well, so be it...", "open", "base", "base", "R", cheeks="blush")
         call her_main("But you must promise me not to...", "soft", "base", "base", "R", cheeks="blush")
-        call her_main("Not to... ehm...", "open", "base", "base", "R", cheeks="blush")
+        call her_main("Not to... *ehm*...", "open", "base", "base", "R", cheeks="blush")
         call her_main("Not to discharge...", "annoyed", "narrow", "angry", "R", cheeks="blush")
         call her_main("Not on me, [genie_name]...", "annoyed", "narrow", "angry", "R", cheeks="blush")
         m "Fine, whatever..."
@@ -633,7 +633,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
         call her_main("..............", "base", "narrow", "base", "up", cheeks="blush")
         call her_main("well, so be it...", "open", "base", "base", "R", cheeks="blush")
         call her_main("But you must promise me not to...", "soft", "base", "base", "R", cheeks="blush")
-        call her_main("Not to... ehm...", "open", "base", "base", "R", cheeks="blush")
+        call her_main("Not to... *ehm*...", "open", "base", "base", "R", cheeks="blush")
         call her_main("Not to cum on me, [genie_name]...", "base", "narrow", "base", "up", cheeks="blush")
         m "Fine, whatever..."
         m "Oh, you little slut. You nasty little slut!"
@@ -649,14 +649,14 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             m "Oh, alright..."
             m "I'd better stop now I suppose..."
             call her_main("...............", "disgust", "narrow", "base", "down", cheeks="blush")
-            call her_main("Ehm... I read that that is bad for you, [genie_name]...", "disgust", "narrow", "base", "down", cheeks="blush")
+            call her_main("*Ehm*... I read that that is bad for you, [genie_name]...", "disgust", "narrow", "base", "down", cheeks="blush")
             m "Huh?"
             call her_main("It is bad for your health to just hold it in like this...", "shock", "happyCl", "worried", "mid")
             call her_main("Em...", "disgust", "narrow", "base", "down", cheeks="blush")
             call her_main("If you want to you can--", "base", "base", "base", "R", cheeks="blush")
-            g4 "Argh! You whore!"
+            g4 "*Argh*! You whore!"
             call her_main("???", "mad", "wide", "base", "stare", cheeks="blush")
-            g4 "Argh! YES!"
+            g4 "*Argh*! YES!"
 
             call cum_block
             $ hermione.set_cum(breasts="light")
@@ -707,9 +707,9 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             return
 
         "-Just start cumming-":
-            g4 "Argh! You whore!"
+            g4 "*Argh*! You whore!"
             call her_main("???", "mad", "wide", "base", "stare", cheeks="blush")
-            g4 "Argh! YES!"
+            g4 "*Argh*! YES!"
 
             call cum_block
             $ hermione.set_cum(breasts="light")

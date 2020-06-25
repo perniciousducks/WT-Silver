@@ -204,7 +204,7 @@ label cc_pr_manipulate_girls_T3_alicia_intro:
     m "Don't look so dejected, [cho_name]. You had a beautiful girl kiss you today... surely you can't be disappointed by that?"
     call cho_main("It's...{w=0.4} it's not that...{w=0.4} I'm just used to it being me who...", "annoyed", "closed", "base", "mid", cheeks="blush")
     call cho_main("...", "upset", "closed", "base", "mid", cheeks="blush") #Blush
-    call cho_main("Nevermind, good night then.", "normal", "base", "base", "downR", cheeks="heavy_blush")
+    call cho_main("Never mind, good night then.", "normal", "base", "base", "downR", cheeks="heavy_blush")
 
     # Cho leaves.
     call cho_walk(action="leave")
@@ -246,7 +246,7 @@ label cc_pr_manipulate_girls_T3_katie_intro_part1:
     call cho_main("I know! That's not at all where I was going with the conversation.", "open", "wide", "angry", "mid", cheeks="blush")
     call cho_main("What I hadn't realized during my failed attempts at confronting her she had been leading me off the path.", "clench", "base", "base", "downR", cheeks="blush")
     call cho_main("Because just as I was about to reply, I felt something tighten around my waist and suddenly I found myself dangling several feet off the ground!", "open", "wide", "base", "mid", cheeks="blush")
-    call cho_main("That's when I realized, she had led me all the way to the whomping willow!", "clench", "happyCl", "angry", "mid", cheeks="blush")
+    call cho_main("That's when I realized, she had led me all the way to the Whomping Willow!", "clench", "happyCl", "angry", "mid", cheeks="blush")
     m "The whomping what?"
     call cho_main("That darn tree students are told to stay away from...", "upset", "base", "angry", "mid", cheeks="blush")
     call cho_main("It had grabbed both Katie and I, lifting us into the air... I thought we were done for.", "angry", "narrow", "base", "mid", cheeks="blush")
@@ -280,7 +280,7 @@ label cc_pr_manipulate_girls_T3_katie_intro_part1:
     m "Sounds like a great workout."
     call cho_main("Yes, it was a workout and a half that's for sure!", "horny", "base", "base", "down", cheeks="blush")
     m "Then maybe we should incorporate it into your training."
-    call cho_main("But Sir, the whomping willow is still extremely dangerous!", "mad", "wide", "raised", "mid")
+    call cho_main("But Sir, the Whomping Willow is still extremely dangerous!", "mad", "wide", "raised", "mid")
     call cho_main("Everybody knows to stay as far away from it as possible!", "open", "wide", "base", "mid")
     m "Because of a little ass spanking? Don't be silly..."
     m "That Katie girl sure took it like a champ... you need to be fearless as well, next time that tree spanks you red!"
@@ -332,7 +332,7 @@ label cc_pr_manipulate_girls_T3_katie_intro_part2:
     call cho_main("I mean... It's only a giant, half-conscious, murderous tree... What's the worst that could happen?", "annoyed", "base", "angry", "mid")
     call cho_main("Having said that...{w=0.4} It ended up being even more intense than last time!", "clench", "base", "base", "R", cheeks="blush")
     call cho_main("Maybe Katie jinxed it this time around... or she forgot to jinx it... who knows.", "soft", "base", "base", "down", cheeks="blush")
-    call cho_main("It janked us into the air with such speed even I wasn't ready for it!", "angry", "base", "raised", "mid", cheeks="blush")
+    call cho_main("It yanked us into the air with such speed even I wasn't ready for it!", "angry", "base", "raised", "mid", cheeks="blush")
     call cho_main("I had to fight its grip, to at least get some form of control back...", "horny", "base", "base", "downR", cheeks="blush")
     call cho_main("But that was easier said than done as the tree had already snaked some of its branches underneath my clothes... sliding them right off my body.", "soft", "narrow", "base", "down", cheeks="blush")
     g9 "Nice! Just like that?"
@@ -398,7 +398,7 @@ label cc_pr_manipulate_girls_T3_angelina:
 
     m "So, do you have that report for me?"
     call cho_main("I...{w=0.3} yes...", "horny", "base", "base", "downR", cheeks="blush")
-    m "I'm waiting [cho_name]... give me the deets."
+    m "I'm waiting [cho_name]... give me the {i}deets{/i}."
     call cho_main("Of course!", "open", "happyCl", "base", "mid", cheeks="blush")
     call cho_main("Well...{w=0.4} I went to see if I could catch Angelina talking to Madame Hooch again.", "soft", "base", "base", "down", cheeks="blush")
     call cho_main("Determined to get the full context of what was going on this time!", "open", "base", "base", "mid", cheeks="blush")
@@ -434,7 +434,7 @@ label cc_pr_manipulate_girls_T3_angelina:
     g9 "Of course..."
     call cho_main("As she kissed me, Angelina shouted at her, asking what the hell she was doing.", "mad", "closed", "base", "mid", cheeks="blush")
     call cho_main("Alicia then broke off the kiss and turned to her, asking what the problem was...", "soft", "narrow", "base", "downR", cheeks="blush")
-    call cho_main("Angelina just sort of stared dumbfoundedly at us until she shouted that I'm the seeker of an enemy team.", "clench", "base", "base", "mid", cheeks="blush")
+    call cho_main("Angelina just sort of stared dumbfounded at us until she shouted that I'm the seeker of an enemy team.", "clench", "base", "base", "mid", cheeks="blush")
     g4 "..."
     call cho_main("I honestly thought it was over at that point but that's when Katie joined in...", "soft", "closed", "base", "down", cheeks="blush")
     call cho_main("Telling Angelina off for being mean, saying how it's unfair that I don't have a group of girls to play with after practice like she does.", "base", "narrow", "base", "downR", cheeks="blush")
@@ -459,7 +459,7 @@ label cc_pr_manipulate_girls_T3_angelina:
     call cho_main("Which took me by such surprise I tripped and slid down onto the wet floor.", "upset", "closed", "base", "mid", cheeks="blush")
     m "Ouch..."
     g4 "(Those Lionesses are animals!)"
-    call cho_main("She didn't even apologize and just looked down at me, telling me I kiss like a high schooler...", "mad", "base", "base", "mid", cheeks="blush")
+    call cho_main("She didn't even apologize and just looked down at me, telling me I kiss like a high-schooler...", "mad", "base", "base", "mid", cheeks="blush")
     call cho_main("That said... didn't stop her from crouching down for another... although this time she put her tongue in there.", "angry", "base", "base", "mid", cheeks="blush")
     g9 "Straight in there!"
     g9 "I hope you returned the favour!"

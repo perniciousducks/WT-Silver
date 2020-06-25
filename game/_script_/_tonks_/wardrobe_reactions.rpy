@@ -116,7 +116,7 @@ label tonks_wardrobe_check(section, arg=None):
                         elif random_number == 3:
                             call ton_main("Someone fancy themselves a bit of a bad boy?",face="annoyed",mouth="base")
                         elif random_number == 4:
-                            call ton_main("Hey, those are my funbags... Don't be naughty.",face="annoyed",mouth="horny")
+                            call ton_main("Hey, those are my fun bags... Don't be naughty.",face="annoyed",mouth="horny")
                         elif random_number == 5:
                             call ton_main("Hey now, someone's getting a bit ahead of themselves.",face="annoyed")
                         elif random_number == 6:
@@ -202,7 +202,7 @@ label tonks_wardrobe_check(section, arg=None):
                         if char_active.get_equipped("top"):
                             if arg.id == char_active.get_equipped("top").id:
                                 if wardrobe_chitchats:
-                                    call ton_main("Mmm... I like where your head is at, but I have to refuse.",face="annoyed",eyebrows="angry",mouth="smile")
+                                    call ton_main("*Mmm*... I like where your head is at, but I have to refuse.",face="annoyed",eyebrows="angry",mouth="smile")
                                 #Hint
                                 $ wardrobe_fail_hint(ton_requirements["unequip_clothes"])
                                 return

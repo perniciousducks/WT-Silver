@@ -109,7 +109,7 @@ label cc_pf_strip_T1_intro_E1:
     call cho_main("For as long as nobody else will find out...{w} You have to promise me that, Sir!", "soft", "narrow", "angry", "R")
     g9 "Promised! Now take it off!"
     call cho_main("(...)", "annoyed", "narrow", "angry", "mid")
-    m "*He-hem*{w} Slowly..."
+    m "*Ahem*{w=0.5} Slowly..."
     pause .5
     call cho_main("", "quiver", "happyCl", "worried", "mid", cheeks="blush")
     pause .8
@@ -137,13 +137,13 @@ label cc_pf_strip_T1_intro_E1:
             call cho_main("Promise me you won't tell her!", "quiver", "narrow", "worried", "mid", cheeks="blush")
             m "Her?!"
             call cho_main("Madame Hooch, Sir.", "soft", "narrow", "worried", "mid", cheeks="blush")
-            m "Ah, the old, gray haired lady..."
+            m "Ah, the old, grey haired lady..."
             call cho_main("Yes, she's been eyeing me a lot lately...", "annoyed", "base", "worried", "downR", cheeks="blush")
             call cho_main("Even more so after our recent game against Hufflepuff, I wonder why...", "mad", "narrow", "worried", "R", cheeks="blush")
             g9 "I can't blame her... Your body is very pleasant to look at!"
             call cho_main("Thank you, Sir.", "base", "base", "base", "mid", cheeks="blush")
 
-        "\"You have marvelous abs!\"":
+        "\"You have marvellous abs!\"":
             g4 "Magnificent."
             g4 "Simply...{w} magnificent..."
             call cho_main("*Uhmm*...", "annoyed", "narrow", "worried", "R", cheeks="blush") # Embarrassed
@@ -243,7 +243,7 @@ label cc_pf_strip_T1_intro_E1:
     g4 "YES!"
     g4 "Look at those thighs!"
     g4 "Those tree trunks!"
-    g9 "Even the great \"Chun Lee\" would be jealous of those!"
+    g9 "Even the great \"Chun-Li\" would be jealous of those!"
     call cho_main("I'm sorry Sir, who's that?", "soft", "wink", "raised", "mid")
     m "(...)"
 
@@ -468,7 +468,7 @@ label cc_pf_strip_T1_intro_E2:
             call cho_main("\"Bludgers!\"", "mad", "happyCl", "worried", "mid", cheeks="heavy_blush")
             m "Why would I ever laugh at a pretty girl like you, Miss Chang?"
             call cho_main("Because they...{w} aren't as big as Hermione's...", "soft", "narrow", "worried", "downR", cheeks="blush")
-            call cho_main("Hers are more closer to \"Quaffles\" than mine...", "soft", "base", "worried", "mid", cheeks="blush")
+            call cho_main("Hers are more closer to {i}Quaffles{/i} than mine...", "soft", "base", "worried", "mid", cheeks="blush")
             m "And there will always be a pair of \"Beaters\" that prefer to play with your...{w} balls."
             call cho_main("Only two?...", "upset", "base", "worried", "downR", cheeks="blush")
             g9 "Don't forget to count those lucky enough to get hit by those \"bludgers!\""
@@ -849,7 +849,7 @@ label cc_pf_strip_T1_intro_E3:
     call cho_main("It's just Professor Snape, after all...", "soft", "narrow", "base", "R")
     call cho_main("Everybody knows that he's a creep! Nobody would believe a word he says.", "open", "base", "angry", "down")
     m "So...{w} what if it's not Snape, but some other teacher that makes their way in here?"
-    call cho_main("*Huh?*{w} Oh no!", "soft", "wide", "base", "mid")
+    call cho_main("*Huh*?{w=0.5} Oh no!", "soft", "wide", "base", "mid")
     call cho_main("For a second I forgot we even had other teachers at this school!", "open", "wide", "worried", "L", cheeks="blush")
     call cho_main("What if Professor McGonagall stumbles in here while-{w} while I-...", "angry", "happyCl", "worried", "mid", cheeks="heavy_blush")
 
@@ -1274,7 +1274,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("He's talking about your {b}tits,{/b} you dimwit!", "angry", "closed", "angry", "mid", cheeks="blush")
             call her_main("(...)", "clench", "narrow", "base", "down", cheeks="blush") # Embarrassed
             call cho_main("", "annoyed", "narrow", "angry", "mid")
-            g9 "Yes Miss Granger!{w} Your very round{w}, handsomely sphered{w}, perfectly sized{w}, very voluptuous and-"
+            g9 "Yes Miss Granger!{w=0.5} Your very round{w=0.5}, handsomely spheroid{w=0.5}, perfectly sized{w=0.5}, very voluptuous and-"
             call her_main("I got it, Professor!", "clench", "happyCl", "worried", "mid", cheeks="blush")
             call cho_main("(Cow tits...)", "annoyed", "narrow", "angry", "R", cheeks="blush")
             call her_main("Here...", "base", "narrow", "base", "mid_soft")
@@ -1332,7 +1332,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
 
             m "(...)"
             call her_main("See you in class Chang!", "grin", "narrow", "base", "R_soft")
-            call cho_main("*Tzzzz!*", "angry", "closed", "angry", "mid", cheeks="blush")
+            call cho_main("*Tzzzz*!", "angry", "closed", "angry", "mid", cheeks="blush")
             call cho_main("Cow...", "annoyed", "narrow", "angry", "R", cheeks="heavy_blush")
 
             # Hermione leaves.
@@ -1449,7 +1449,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             else:
                 call her_main("Good night, Sir.", "soft", "base", "angry", "mid")
                 call cho_main("Nighty-night, Granger...", "soft", "narrow", "angry", "L")
-                call her_main("*Tzzzzzh!*", "annoyed", "narrow", "angry", "R")
+                call her_main("*Tzzzzzh*!", "annoyed", "narrow", "angry", "R")
 
             # Hermione leaves.
             call her_walk(action="leave")
@@ -1585,9 +1585,5 @@ label cc_pf_strip_T2_E1:
             call cho_main("Give me those points, or I will walk right out of here!", "open", "narrow", "angry", "mid")
             m "Fine. If you're that insistent on {number=current_payout} meagre points..."
             call cho_main("Thank you.", "soft", "closed", "base", "mid")
-
-
-
-
 
     jump main_room

@@ -31,7 +31,7 @@ label cc_pr_flirt_start: # Not in use.
         cho "But if they laugh or make fun of me we'll stop this at once!"
         m "Fine by me."
         m "Return to my office after classes and tell me how it went."
-        cho "Ok, [cho_genie_name]."
+        cho "Okay, [cho_genie_name]."
         cho "See you after classes..."
         g9 "Off you go!"
 

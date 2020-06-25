@@ -27,7 +27,7 @@ label hat_intro:
     hat "I'm the {i}sorting{/i} hat, and I Just want to talk."
     m "Well go ahead then, it's not like I've got anything better to do in this room."
     hat "So, about what you've been doing to Hermione Granger..."
-    m "Oh, that, Ummmmmm... It's not what it-"
+    m "Oh, that, *Ummmmmm*... It's not what it-"
     hat "I want in."
     g4 "What?"
     hat "I want to help you corrupt another girl."
@@ -42,8 +42,10 @@ label hat_intro:
     m "..."
     m "And how does that help?"
     hat "Well, normally I'm placed on students' heads at the beginning of the year."
-    hat "I then read their personality using Legilimency to decide what house they go in."
-    m "And how does that help us?"
+    hat "I then read their personality using {i}Legilimency{/i} to decide what house they go in."
+    m "Legili-what?"
+    hat "Legilimency."
+    m "And how does that legilifancy help us?"
     hat "I can do more than just read personalities, I can alter them as well."
     g9 "Really?"
     hat "I mean... in theory... The real Dumbledore never let me try it out. Not even on him."
@@ -166,8 +168,8 @@ label hat_intro_3:
     call lun_main("...","normal","base","sad","empty")
     m "is she alright?"
     hat "She's fine. Just having a bit of a rest. Now, about that personality..."
-    hat "Oh yes... {w=0.3}Hmmmm, well I suppose that could work..."
-    hat "{size=-4}yes... I'm sure salazar would be proud...{/size}"
+    hat "Oh yes... {w=0.3}*Hmmmm*, well I suppose that could work..."
+    hat "{size=-4}yes... I'm sure Salazar would be proud...{/size}"
     hat "Just a little longer..."
     call lun_main("...","normal","base","sad","empty")
     call lun_main("...","normal","base","base","empty")
@@ -177,7 +179,7 @@ label hat_intro_3:
 
     call lun_main("...","normal","base","base","empty")
     m "Wait what happened?! Her eyes just changed colour!"
-    hat "Really? Hmmm... didn't expect that... what colour are they?"
+    hat "Really? *Hmmm*... didn't expect that... what colour are they?"
     m "Green."
     hat "Hmm, that seems rather fitting."
     m "Why, what did you do to her personality?"
@@ -199,7 +201,7 @@ label hat_intro_3:
     ">You place the hat back on the cupboard."
     m "So what did you do to her personality?"
     hat "Now now... let's not spoil the fun. You'll just have to wait..."
-    m "Hmmph"
+    m "*Hmmph*"
 
     $ luna_unlocked = True
     $ achievement.unlock("unlocklun", True)
@@ -271,7 +273,7 @@ label luna_reverted_greeting_1:
 
     menu:
         "\"Wrackspurts?... Is that some sort of wizard STD?\"":
-            call lun_main("Hahaha, I guess you could say that!","base","base","sad","R")
+            call lun_main("*Ha-ha-ha*, I guess you could say that!","base","base","sad","R")
             call lun_main("Wrackspurts are invisible creatures which float into a person’s ear and make their brain go all fuzzy.","normal","base","sad","mid")
             $ luna_l_arm = 2
             call lun_main("You can only view them with these spectrespecs!","base","base","base","L")
@@ -288,8 +290,8 @@ label luna_reverted_greeting_1:
             $ luna_l_arm = 1
             $ luna_r_arm = 1
             call lun_main("I am sorry Sir, I am not sure what-","normal","wide","sad","R")
-            g4 "Xenofius! What does it do?"
-            call lun_main("Xenofius? I’ve not heard of that spell before, Sir.","normal","angry","sad","mid")
+            g4 "{i}Xenofius{/i}! What does it do?"
+            call lun_main("{i}Xenofius{/i}? I’ve not heard of that spell before, Sir.","normal","angry","sad","mid")
             m "The spell... That you just... Never mind."
             call lun_main("(A Secret spell?) Sir, your magic is the strongest there is and these wrackspurts are really getting to me.","upset","mad","sad","R")
             m "I see... do go on."
@@ -300,7 +302,7 @@ label luna_reverted_greeting_1:
             m "[lun_name], I am afraid I don’t know what a wrackspurt is, let alone how to cure it."
             call lun_main("Well, professor, wrackspurts are detailed on page six of \"the Quibbler\"! Here!","normal","base","sad","mid")
             ">Luna hands you an issue of \"the Quibbler\"."
-            m "Hmmm... \"Rotfang conspiracy... Three hundred ways to tie up a ghost...\" Ah! Wrackspurts..."
+            m "*Hmmm*... \"Rotfang conspiracy... Three hundred ways to tie up a ghost...\" Ah! Wrackspurts..."
             "\"Invisible creatures which float into a person’s ears, making his/her brain go fuzzy\""
             ">Luna points to her spectrespecs."
             call lun_main("I can see them, Sir.","base","happyCl","base","mid")
@@ -315,16 +317,16 @@ label luna_reverted_greeting_1:
             m "Ah yes, very nice...{w=0.5} Wait, did you say {i}plumb{/i} earrings?"
             call lun_main("Why yes.","normal","base","sad","mid")
             m "I see, I thought I misheard you for a second."
-            m "So about these wrecksputs..."
+            m "So about these {i}wrecksputs{/i}..."
 
     call lun_main("Yes, Sir, they’re proving to be quite a pain.","normal","closed","sad","mid")
     ">You watch Luna, who is visibly rubbing her thighs together."
-    m "(Is she really?... Ohhh){w=0.5} [lun_name], how exactly do these wickspurts make you feel?"
+    m "(Is she really?... *Ohhh*){w=0.5} [lun_name], how exactly do these {i}wickspurts{/i} make you feel?"
     call lun_main("They're Just like \"the Quibbler\" says sir, except...","normal","seductive","sad","R")
     m "Go on..."
     call lun_main("Well, it's not my brain they're making fuzzy.","soft","seductive","sad","down")
     m "Where exactly is fuzzy, [lun_name]?"
-    call lun_main("Umm... I'm not sure if I can say...","normal","seductive","sad","R")
+    call lun_main("*Umm*... I'm not sure if I can say...","normal","seductive","sad","R")
     m "(YES!)"
     m "Now now, [lun_name], as your headmaster there shouldn't be anything that you can't discuss with me."
     call lun_main("Well, okay...","base","seductive","sad","down")
@@ -339,18 +341,18 @@ label luna_reverted_greeting_1:
     m "Let's just focus on this fuzziness of yours."
     call lun_main("... Alright, professor.","normal","seductive","sad","down")
     call lun_main("As I was saying, this fuzziness has really been bothering me the last few days...","normal","seductive","sad","mid")
-    m "Hmmm... Has it been affecting your studies at all?"
+    m "*Hmmm*... Has it been affecting your studies at all?"
     call lun_main("Yes it has, sir...","upset","seductive","sad","down")
     m "Well, we can't have that now, can we?"
     call lun_main("No, sir...","base","seductive","sad","mid")
     m "Are you free at the moment?"
-    call lun_main("Umm... I'm about to go to divination class, sir...","normal","seductive","sad","down")
+    call lun_main("*Umm*... I'm about to go to divination class, sir...","normal","seductive","sad","down")
     m "In that case, we can address that nasty itch of yours later."
     m "Come to my office later tonight, and we'll see what we can do."
     call lun_main("Oh, thank you, sir!","base","wide","sad","mid")
     call lun_main("I can't wait!","base","seductive","sad","mid")
     call lun_main("Do you think you could possibly stop the nargles stealing my shoes as well?","base","base","sad","down")
-    m "(The hell is a nargle?)"
+    m "(The hell is a nargle?!)"
     m "One step at a time, [lun_name]."
     call lun_main("Yes, you're right... the nargles wouldn't like it if we were multitasking...","normal","closed","sad","mid")
     m "..."

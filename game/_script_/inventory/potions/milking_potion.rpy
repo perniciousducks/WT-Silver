@@ -699,7 +699,7 @@ label potion_scene_11_3:
         call set_her_action("none", "update") #Resets clothing.
         call hide_blkfade
 
-        call her_main("Good bye, sir...", "silly", "narrow", "base", "dead")
+        call her_main("Goodbye, sir...", "silly", "narrow", "base", "dead")
 
     else: # Futa version
         m "Well there was an extra ingredient in there..."
@@ -922,7 +922,7 @@ label potion_scene_11_3:
         call set_her_action("none", "update") #Resets clothes.
         call hide_blkfade
 
-        call her_main("good bye sir...", "shock", "narrow", "base", "down",cheeks="blush",tears="crying")
+        call her_main("goodbye sir...", "shock", "narrow", "base", "down",cheeks="blush",tears="crying")
 
     call her_walk(action="leave")
 

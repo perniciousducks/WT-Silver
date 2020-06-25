@@ -134,7 +134,7 @@ label cc_pf_talk_T1_intro_E1:
     g4 "(You should see me, girl. I'm shredded!)"
     m "(Too bad you can only see the body of that wrinkly old geezer...)"
     m "(Maybe there's like a steroid spell...)"
-    g4 "{size=-4}Plexus maximus!{/size}"
+    g4 "{size=-4}Plexus Maximus!{/size}"
     call cho_main("Did you say something?", "soft", "base", "raised", "mid")
     m "Oh, it was nothing... go on."
 
@@ -180,17 +180,17 @@ label cc_pf_talk_T1_intro_E1:
     call cho_main("I was sort of dating somebody else....", "soft", "base", "worried", "downR")
     call cho_main("At the same time.", "horny", "base", "worried", "R") # Embarrassed
     m "No{w} way!"
-    g4 "You were cheating on that Hufflepuffer?"
+    g4 "You were cheating on that {i}Hufflepuffer{/i}?"
     call cho_main("I wouldn't call it cheating, Professor. It wasn't even that serious with Cedric to begin with.", "annoyed", "narrow", "base", "mid")
     call cho_main("I had a unique opportunity, that's all...", "soft", "base", "base", "R")
     call cho_main("One of those \"no strings attached\" kind of things... Trying out new stuff...", "smile", "base", "base", "downR")
     m "Like what?"
     call cho_main("Dating a girl, for example.", "base", "narrow", "base", "mid")
     g9 "(Finally this is getting interesting!)"
-    call cho_main("She was one of the students from Beauxbaton.", "soft", "base", "base", "downR")
+    call cho_main("She was one of the students from Beauxbatons.", "soft", "base", "base", "downR")
     m "(...)"
     call cho_main("A French girl.", "soft", "base", "base", "down")
-    g9 "And I hope you also frenched that french girl!"
+    g9 "And I hope you also {i}frenched{/i} that french girl!"
     call cho_main("Among other things...", "angry", "closed", "worried", "mid") # Super embarrassed
     call cho_main("(Why am I telling him this?)", "horny", "narrow", "worried", "R")
     g9 "And who was it?"
@@ -363,7 +363,7 @@ label cc_pf_talk_T1_intro_E2:
 
     # Genie cums.
     if masturbating:
-        g4 "{size=-4}(You exhibitionistic slut!){/size}"
+        g4 "{size=-4}(You exhibitionist slut!){/size}"
         g4 "*Argh* {size=-4}(Here it comes!){/size}"
 
         call cum_block
@@ -376,7 +376,7 @@ label cc_pf_talk_T1_intro_E2:
 
         call cum_block
         call cho_main("", "base", "narrow", "base", "mid")
-        g4 "*Argh!* {size=-4}(Shower in this, you slut!){/size}"
+        g4 "*Argh*! {size=-4}(Shower in this, you slut!){/size}"
 
         call cum_block
         call cho_main("[cho_genie_name], are you alright?", "soft", "base", "base", "mid")
@@ -497,7 +497,7 @@ label cc_pf_talk_T1_E3:
         call cho_main("*Uhm*...", "annoyed", "base", "base", "R")
         call cho_main("I never wore panties too often...", "angry", "narrow", "base", "downR")
         call cho_main("At least not those fancy ones the other girls are wearing.", "soft", "narrow", "base", "mid")
-        g4 "*Argh!* {size=-4}(I'd love to see those!){/size}"
+        g4 "*Argh*! {size=-4}(I'd love to see those!){/size}"
         call cho_main("If you can even call them that...", "annoyed", "narrow", "base", "R")
         call cho_main("Most of them look like shoelaces!", "annoyed", "narrow", "angry", "R")
         g4 "{size=-4}(What a bunch of sluts!){/size}"
@@ -583,7 +583,7 @@ label cc_pf_talk_T1_E3:
             call cho_main("But it might be worth a try...", "soft", "narrow", "base", "R")
         else:
             m "Well, it worked."
-            m "Beating him at Quayditch was almost too easy!"
+            m "Beating him at {i}Quayditch{/i} was almost too easy!"
             call cho_main("Quidditch, Sir...", "soft", "closed", "base", "mid")
             m "All we had to do was put some good-old panties in front of his face..."
             call cho_main("", "annoyed", "narrow", "base", "mid")
@@ -722,7 +722,7 @@ label cc_pf_talk_T2_intro_E1:
         call cho_main("They should be scared of me, [cho_genie_name]!", "soft", "narrow", "angry", "mid")
         g4 "{size=-4}(Yes! Show them, you slut!){/size}"
         call cho_main("Of what {b}I'm{/b} capable off!", "clench", "base", "angry", "mid")
-        g4 "*Argh!* (I'm getting close!)"
+        g4 "*Argh*! (I'm getting close!)"
         call cho_main("Scared of what's about to come!", "soft", "narrow", "angry", "mid")
 
         # Genie cums.
@@ -737,7 +737,7 @@ label cc_pf_talk_T2_intro_E1:
         pause .8
 
         call bld
-        g4 "*Argh!* {size=-4}(Take it!){/size}"
+        g4 "*Argh*! {size=-4}(Take it!){/size}"
 
         call cum_block
         g4 "*Panting* {size=-4}(You fucking slut!){/size}"
@@ -760,7 +760,7 @@ label cc_pf_talk_T2_intro_E1:
     m "Anything else you could tell me about their team?{p=0.6}Anything that could help us?"
     m "Did you maybe fool around with their seeker as well?"
     call cho_main("Malfoy?", "soft", "wide", "base", "mid") # Shocked
-    call cho_main("*Tzzzz!*{w=0.3} I'd never surround myself with that Slytherin scum!", "angry", "closed", "angry", "mid")
+    call cho_main("*Tzzzz*!{w=0.3} I'd never surround myself with that Slytherin scum!", "angry", "closed", "angry", "mid")
     call cho_main("", "annoyed", "narrow", "angry", "mid")
     m "I guess you and Granger have at least some things in common..."
     call cho_main("His {b}daddy{/b} bought their whole team new brooms, which is the only reason they've even let him in.", "soft", "narrow", "raised", "mid")
@@ -813,7 +813,7 @@ label cc_pf_talk_T2_intro_E2:
             pause .8
 
             call cho_main("", "soft", "base", "base", "up")
-            g4 "*Agh!* Go on!"
+            g4 "*Agh*! Go on!"
             call cho_main("What?", "soft", "narrow", "raised", "mid")
             call cho_main("Oh- I'm sorry, Sir.{w=0.6} Of course!", "soft", "wide", "base", "mid")
             call cho_main("I had my head in the clouds there for a second.", "smile", "happyCl", "base", "mid")
@@ -832,7 +832,7 @@ label cc_pf_talk_T2_intro_E2:
         g4 "{size=-4}And soon you'll be on your knees thanking me for it!{/size}"
     else:
         m "Hey! Don't you forget about me!"
-        m "Where would you be without the great Dooblydore..."
+        m "Where would you be without the great {i}Dooblydore{/i}..."
         call cho_main("Of course, Sir!", "clench", "happyCl", "worried", "mid", cheeks="blush")
         call cho_main("Sorry, Sir!", "soft", "narrow", "worried", "mid", cheeks="blush")
 
@@ -885,7 +885,7 @@ label cc_pf_talk_T2_intro_E2:
     call cho_main("Like a kiss on her cheek, or an uncomfortably long hug!", "soft", "narrow", "base", "mid")
     call cho_main("Or I'll do something more sinister! Something she'd never expect!", "base", "base", "base", "R")
     if masturbating:
-        g4 "*Ugh!* {size=-2}Like what?{/size}"
+        g4 "*Ugh*! {size=-2}Like what?{/size}"
     else:
         m "More sinister? Like what?"
     call cho_main("Give her a proper kiss on the lips, perhaps?", "soft", "narrow", "angry", "mid")
@@ -945,7 +945,7 @@ label cc_pf_talk_T2_intro_E2:
     pause .8
 
     call bld
-    g4 "*Argh!* {size=-4}Take it!{/size}"
+    g4 "*Argh*! {size=-4}Take it!{/size}"
     call cho_main("Oh, I'm so sorry, Sir.", "soft", "narrow", "base", "mid")
     call cho_main("I forgot I was talking to you for a second!", "angry", "closed", "worried", "mid")
 
@@ -1101,26 +1101,26 @@ label cc_pf_talk_T2_E3:
     if masturbating:
         call cho_main("Then there are the two Slytherin beaters, Crabbe and Goyle...", "soft", "narrow", "base", "mid")
     else:
-        call cho_main("Well, there are also the Slytherin's beaters, Crabbe and Goyle...", "soft", "narrow", "base", "mid")
+        call cho_main("Well, there are also the Slytherin beaters, Crabbe and Goyle...", "soft", "narrow", "base", "mid")
     call cho_main("Malfoy's extraordinarily dense thugs...", "angry", "closed", "angry", "mid")
     call cho_main("They've been strutting around school with their two bats...", "soft", "narrow", "angry", "mid")
     call cho_main("Hitting any girl's bum that happens to be in their reach...", "annoyed", "narrow", "angry", "R")
 
     if masturbating:
         call cho_main("It's like they use them as target practice.", "soft", "narrow", "angry", "mid")
-        g4 "*Argh!* {size=-4}(How nasty!){/size}"
+        g4 "*Argh*! {size=-4}(How nasty!){/size}"
         call cho_main("I dare them to try it on me, those bastards!", "clench", "narrow", "angry", "R")
-        g4 "*Yes!* {size=-4}(You deserve a good spanking!){/size}"
+        g4 "*Yes*! {size=-4}(You deserve a good spanking!){/size}"
         call cho_main("I saw them go after Katie Bell today.", "soft", "narrow", "base", "mid")
         call cho_main("She was carrying a whole bunch of books...{w=0.8} so she couldn't simply run off or drop them.", "open", "narrow", "angry", "mid")
         call cho_main("She would have probably beaten them up immediately if that wasn't the case. Those cowards...", "angry", "narrow", "angry", "mid")
-        g4 "*Yes!* {size=-4}(I wouldn't mind borrowing one of those bats!){/size}"
+        g4 "*Yes*! {size=-4}(I wouldn't mind borrowing one of those bats!){/size}"
         call cho_main("They really did her dirty, Sir.{w} Even pulled down her skirt before they ran off!", "annoyed", "narrow", "base", "mid")
         g4 "What a bunch of daredevils!"
         call cho_main("Her bum was so red afterwards...{w=0.6} It was hard not to look at it...", "soft", "narrow", "base", "down", cheeks="blush")
-        g4 "*Fuck yeah!* (You'd love to bury your face in some girl's ass, don't you?!)"
+        g4 "Fuck yeah! (You'd love to bury your face in some girl's ass, don't you?!)"
         call cho_main("She really does have a cute bum...", "horny", "narrow", "base", "downR", cheeks="heavy_blush")
-        g4 "But not as cute as Grangers, right?"
+        g4 "But not as cute as Granger's, right?"
     else:
         call cho_main("They aren't even allowed to make use of any Quidditch equipment outside the Quidditch pitch area!", "soft", "narrow", "angry", "R")
         m "Aren't you a bit too harsh on them?"
@@ -1156,9 +1156,9 @@ label cc_pf_talk_T2_E3:
         g4 "*Argh!*{w=0.3} {size=-4}(What the hell?){/size}"
         call cho_main("While there are bludgers flying around -- hitting her disgusting udders...", "soft", "narrow", "angry", "mid")
         g4 "{size=-4}(That sounds really painful!){/size}"
-        call nar("*Fap* *Fap* *Fap!*")
+        call nar("*Fap* *Fap* *Fap*!")
         call cho_main("Maybe another centaur takes her from the front...", "open", "narrow", "angry", "R")
-        g4 "*Agh!*{w=0.3} {size=-4}(I won't last long if she continues like this!){/size}"
+        g4 "*Agh*!{w=0.3} {size=-4}(I won't last long if she continues like this!){/size}"
         call cho_main("And once those two are done breeding her, they trade places with another batch.", "clench", "narrow", "angry", "R")
         g4 "*Ahh* {size=-4}(This is getting too crazy!){/size}"
         call cho_main("Or even better, let some trolls have their way with her!{p=0.8}Let them rip her apart!", "clench", "base", "angry", "downR")
@@ -1178,7 +1178,7 @@ label cc_pf_talk_T2_E3:
         g4 "{size=-4}(Yes! Here it comes!){/size}"
 
         call cum_block
-        g4 "*Agh!* {size=-4}(Here comes another!){/size}"
+        g4 "*Agh*! {size=-4}(Here comes another!){/size}"
 
         call cum_block
         m "*Phew*... {size=-4}(That was close!){/size}"

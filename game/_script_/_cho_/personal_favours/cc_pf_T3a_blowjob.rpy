@@ -419,7 +419,7 @@ label cc_pf_blowjob_1:
 
             call ctc
 
-            gen "That's it, grip it firmy just like that..."
+            gen "That's it, grip it firmly just like that..."
 
             call ctc
 
@@ -507,7 +507,7 @@ label cc_pf_blowjob_1:
                     "....."
                     gen "(!!!)"
                     cho "[cho_genie_name], are you about to-"
-                    gen "*ARGH!*"
+                    gen "*ARGH*!"
                     cho "[cho_genie_name]!" #Wide eyed
                     "....." #Cum stage 1 #closes eyes #Genie cums on face
                     "....."#Cum stage 2 #Cho moves back and Genie cums rest on tits
@@ -733,7 +733,7 @@ label cc_pf_blowjob_T3_E2:
     cho "Am I doing good [cho_genie_name]?"
     gen "It feels grea-"
     #Cho starts licking the tip a couple of times #looking at dick
-    gen "*Whoa!*"
+    gen "*Whoa*!"
     cho "...." #looks up at genie still licking
     #Cho pulls back and smiles
     cho "Good."
@@ -973,14 +973,14 @@ label cc_pf_blowjob_T3_E2:
             $ cho_bj_choice = "throat"
             gen "[cho_name]..."
             gen "I was wrong...{w=0.4} earlier...{w=0.4} there's one more thing for you to learn today..." #Genie puts hand on cho's head
-            cho "*Hmmf?*" #looks at genie
+            cho "*Hmmf*?" #looks at genie
             gen "How to-"
             gen "Swallow coach's cum!" #big text #Cum stage 1 #Genie pushes cho's head forward a bit
-            cho "*Mff!!!*" #Cum stage 1 #Cho's mouth  #cho's eye expression wide
+            cho "*Mff*!!!" #Cum stage 1 #Cho's mouth  #cho's eye expression wide
             gen "That's it slut!" #Cum stage 2 #Cum splatters from the side of her mouth #Cheeks bulge slightly #cho's pupils on dick
-            cho "*Gah!*" #Cum stage 3 #Genie lets go  #Cho pulls away and genie cums on her face
+            cho "*Gah*!" #Cum stage 3 #Genie lets go  #Cho pulls away and genie cums on her face
             gen "..."
-            cho "*Cough-* *Cough-*...*Ah*...{w=0.4}*Ah*..."
+            cho "*Cough*-*Cough*-...*Ah*...{w=0.4}*Ah*..."
             gen "That was awesome... great jo-"
             cho "What...{w=0.4}the hell...{w=0.4} is wrong with you?!?!" #screen shake
             gen "What do you-"

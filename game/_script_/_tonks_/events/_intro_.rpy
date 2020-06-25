@@ -65,7 +65,7 @@ label tonks_intro_E1:
     pause.1
 
     call bld
-    m "*hmmm?*"
+    m "*hmmm*?"
 
     call ton_walk("mid", "base")
     pause.5
@@ -121,7 +121,7 @@ label tonks_intro_E1:
         call ton_main("They are fascinating creatures, aren't they, Professor?","base","base","base","R")
         m "What?{w} Oh yes, very fascinating..."
 
-        call nar("*Fap!* *Fap!* *Fap!*")
+        call nar("*Fap-Fap-Fap*!")
         m "Don't mind me... Please continue..."
         g9 "I'd like to hear more about the things you did with those centaurs!"
         call ton_main("I'm sorry Professor, but that's classified information.","open","closed","worried","mid")
@@ -492,7 +492,7 @@ label tonks_intro_E3:
         g4 "I am..."
         "Albus Dumbledore!":
             call ton_main("You are most certainly {b}not{/b} Albus Dumbledore!","upset","base","angry","mid")
-            g4 "No wait, it was Albertus Dumblerdore! That's it!"
+            g4 "No wait, it was {i}Albertus Dumblerdore{/i}! That's it!"
             m "(Yes, that was probably it...)"
         "You know who!":
             call ton_main("What?","base","wide","wide","wide")
@@ -567,7 +567,7 @@ label tonks_intro_E3:
     call ton_main("Really?! Is he okay?","open","base","base","mid")
     m "I think so.{w} He travelled to my universe, and I’m stuck in this dull place..."
     m "Believe me, there are a lot more brothels in Agrabah.{w} I bet he's having the time of his life..."
-    call ton_main("So, you just poofed in here and decided to turn this school into your own private brothel...","open","base","angry","mid")
+    call ton_main("So, you just {i}poofed{/i} in here and decided to turn this school into your own private brothel...","open","base","angry","mid")
     call ton_main("Because you were bored?!","upset","base","angry","mid")
     m "Hey! I'm an immortal being... boredom is my worst enemy."
     m "And I didn’t do much, just a nudge in the right direction..."

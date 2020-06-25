@@ -10,7 +10,7 @@ label give_ton_gift(gift_item):
         call ton_friendship(1)
 
     elif gift_item == chocolate_ITEM:
-        call ton_main("Mhmm, Chocolate!",pupils="down",face="happy",xpos="mid",ypos="base",trans=d5)
+        call ton_main("*Mhmm*, Chocolate!",pupils="down",face="happy",xpos="mid",ypos="base",trans=d5)
         call give_gift(">You give the chocolate to Tonks...", gift_item)
         call ton_main("It's said that chocolate is a very effective mood enhancer after a Dementor attack.",mouth="open",face="happy")
         call ton_main("That's because chocolate is considered to be a great aphrodisiac...",face="horny")
@@ -85,7 +85,7 @@ label give_ton_gift(gift_item):
         call ton_friendship(1)
 
     elif gift_item == vibrator_ITEM:
-        call ton_main("A vibra... back massager?",face="disgusted",xpos="mid",ypos="base",trans=d5)
+        call ton_main("A vibra-... back massager?",face="disgusted",xpos="mid",ypos="base",trans=d5)
         call ton_main("Mm, Mine seemingly went missing from my desk. This should do if it doesn't turn up again.",face="annoyed")
         call give_gift(">You give the vibrator to Tonks...", gift_item)
         call ton_main("Thank you, [ton_genie_name].",face="neutral")
@@ -151,7 +151,7 @@ label give_ton_gift(gift_item):
 
     elif gift_item == firewhisky_ITEM:
         call ton_main("Firewhisky?",face="happy",xpos="mid",ypos="base",trans=d5)
-        call ton_main("Mmm.. My favourite. But let's save it for later, shall we?", face="horny")
+        call ton_main("*Mmm*.. My favourite. But let's save it for later, shall we?", face="horny")
         call ton_friendship(0)
 
     call ton_main(xpos="base", ypos="base",trans=d5)

@@ -86,7 +86,7 @@ label hermione_wardrobe_check(section, arg=None):
                         elif random_number == 2:
                             call her_main("Bad [genie_name]!", "annoyed", "happyCl", "angry", "L", cheeks="blush")
                         elif random_number == 3:
-                            call her_main("Grrr...", "clench", "base", "angry", "R")
+                            call her_main("*Grrr*...", "clench", "base", "angry", "R")
                         elif random_number == 4:
                             call her_main("Cut it out..", "open", "narrow", "angry", "mid")
                         elif random_number == 5:

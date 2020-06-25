@@ -24,7 +24,7 @@ label astoria_summon_setup:
         elif 10 > ast_mood >= 5:
             call ast_main("What now?", "annoyed", "base", "worried", "mid", xpos="base", ypos="base", trans=d3)
         elif 20 > ast_mood >= 10:
-            call ast_main("What is it, dumby?", "annoyed", "base", "angry", "R", xpos="base", ypos="base", trans=d3)
+            call ast_main("What is it, Dumby?", "annoyed", "base", "angry", "R", xpos="base", ypos="base", trans=d3)
         elif 30 > ast_mood >= 20:
             call ast_main("What do you want, \"Dumby\"?", "angry", "base", "angry", "mid", xpos="base", ypos="base", trans=d3)
         elif 40 > ast_mood >= 30:

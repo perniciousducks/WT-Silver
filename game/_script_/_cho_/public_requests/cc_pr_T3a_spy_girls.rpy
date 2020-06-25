@@ -242,7 +242,7 @@ label cc_pr_spy_girls_T3_alicia_intro:
     m "Great, tell me what happened."
     call cho_main("She's been assisting the Weasley twins -- by drawing in more customers to their shop.", "open", "narrow", "base", "mid")
     m "How kind."
-    call cho_main("I woulnd't call it that...", "soft", "narrow", "base", "R")
+    call cho_main("I wouldn't call it that...", "soft", "narrow", "base", "R")
     call cho_main("The only reason she's assisting them is because they promised they'd behave during Quidditch.", "open", "narrow", "raised", "mid")
 
     # Has player sent Hermione to work with the Twins, promoting the cardgame?
@@ -270,7 +270,7 @@ label cc_pr_spy_girls_T3_alicia_intro:
     g9 "A girl that takes what she wants... I respect that."
     call cho_main("", "annoyed", "narrow", "angry", "mid")
     m "So, what was she doing with them?"
-    call cho_main("Do you realy have to ask, [cho_genie_name]?", "open", "narrow", "raised", "mid")
+    call cho_main("Do you really have to ask, [cho_genie_name]?", "open", "narrow", "raised", "mid")
     call cho_main("Surely you're able to guess what they did in there...", "soft", "closed", "base", "mid")
     g9 "No, I have no idea!"
     call cho_main("", "annoyed", "narrow", "angry", "mid")
@@ -282,7 +282,7 @@ label cc_pr_spy_girls_T3_alicia_intro:
     call cho_main("And whoever was in there with her wasn't being quiet... that's for sure.", "annoyed", "narrow", "angry", "R", cheeks="blush")
     m "I should get her number."
     call cho_main("Her what?", "annoyed", "narrow", "angry", "mid")
-    m "Nevermind... {w=0.4} So is that all you saw?"
+    m "Never mind... {w=0.4} So is that all you saw?"
     call cho_main("*Uhm*... Yes...{w=0.5} That was it...", "quiver", "narrow", "base", "down", cheeks="blush") #Blushing
     call cho_main("As I said, I could only see her bottom, from underneath that stall...", "open", "narrow", "base", "downR", cheeks="blush") #Blushing
     m "Your face says otherwise... Is that really everything you saw?"
@@ -530,8 +530,8 @@ label cc_pr_spy_girls_T3_repeat3:
 
     m "Ready for your report, B..."
     m "Did you catch them doing anything interesting?"
-    call cho_main("Angelina pulled Katies panties down during practice -- to expose her red butt cheeks to the boys.", "open", "narrow", "raised", "mid")
-    call cho_main("I heard her yelling at them to do better -- or she'd make their butts look like Katies.", "clench", "base", "worried", "down", cheeks="blush")
+    call cho_main("Angelina pulled Katie's panties down during practice -- to expose her red butt cheeks to the boys.", "open", "narrow", "raised", "mid")
+    call cho_main("I heard her yelling at them to do better -- or she'd make their butts look like Katie's.", "clench", "base", "worried", "down", cheeks="blush")
     m "Such a bully..."
     call cho_main("Yeah, Angelina is just looking to get a reaction from the boys...", "annoyed", "narrow", "angry", "mid")
     call cho_main("And Katie didn't seem to mind the attention, that's for sure...", "annoyed", "narrow", "angry", "R")
@@ -544,7 +544,7 @@ label cc_pr_spy_girls_T3_repeat3:
     # Cho leaves.
     call cho_walk(action="leave")
 
-    if cho_reputation < 12: # Points til 12.
+    if cho_reputation < 12: # Points till 12.
         $ cho_reputation += 1
 
     jump end_cho_event

@@ -219,7 +219,7 @@ label hg_pf_admire_breasts_T1_intro_E2:
             call her_main("M-My-... my breasts?!", "angry", "base", "angry", "mid")
 
             # Hermione gets angry
-            call her_main("*Tztzzz!*...", "angry", "closed", "angry", "mid", emote="01")
+            call her_main("*Tztzzz*!...", "angry", "closed", "angry", "mid", emote="01")
 
             call her_main("Good day, Sir.", "scream", "base", "angry", "mid")
 
@@ -342,7 +342,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
                     pass
 
         "\"Fine, leave. I don't care...\"":
-            call her_main("Tsk!", "clench", "closed", "angry", "mid")
+            call her_main("*Tsk*!", "clench", "closed", "angry", "mid")
 
             call her_walk(action="leave")
 
@@ -460,7 +460,7 @@ label hg_pf_admire_breasts_T4_E1:
 label hg_pf_admire_breasts_T4_E2:
     call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
-    m "I have to see your marvelous knockers, [hermione_name]."
+    m "I have to see your marvellous knockers, [hermione_name]."
     call her_main("Of course, [genie_name]", "base", "narrow", "base", "up", cheeks="blush")
 
     $ current_payout = 25

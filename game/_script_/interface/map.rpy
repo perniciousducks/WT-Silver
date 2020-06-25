@@ -14,7 +14,6 @@ default ton_map_location = "room_defense"
 
 default first_time_7th = True
 default pitch_open = True
-default inn_intro = False
 
 default map_animated = "once"
 

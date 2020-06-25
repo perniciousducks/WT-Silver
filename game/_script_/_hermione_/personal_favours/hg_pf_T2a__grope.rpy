@@ -202,7 +202,7 @@ label hg_pf_grope_T2_intro_E1:
     call her_main("[genie_name]! Don't you think this is too much?", "disgust", "narrow", "base", "mid_soft")
     m "You think?"
     her "I am not one of those harlots from Slytherin, you know..."
-    m "I know... You are from \"Gryfonmon\"... or something..." #<- GRYFFINDOR MISSPELLED ON PURPOSE
+    m "I know... You are from {i}Gryfonmon{/i}... or something..." #<- GRYFFINDOR MISSPELLED ON PURPOSE
     call her_main("And if I don't feel like it I don't have to sell you a single favour, [genie_name]!", "annoyed", "base", "worried", "R")
     m "Of course..."
     call her_main("...................", "annoyed", "narrow", "angry", "R")

@@ -61,7 +61,7 @@ label summon_snape:
                             call sna_main("I hope you have some wine at least?", "snape_01")
                             m "I hoped you'd bring your own for once."
                             call sna_main("I see..", "snape_04")
-                            call sna_main("I guess you don't need my help afterall.", "snape_31")
+                            call sna_main("I guess you don't need my help after all.", "snape_31")
                             m "(Bloody alcoholic..)"
                             jump .talk
 
@@ -129,7 +129,7 @@ label snape_potion_menu:
             elif potion_scene_11_progress == 1:
                 call sna_main("Good work on getting her to take it.","snape_37")
                 call sna_main("Her breasts did look magnificently full in class.","snape_41")
-                call sna_main("mmmm, and I think she was even leaking a little...","snape_41")
+                call sna_main("*mmmm*, and I think she was even leaking a little...","snape_41")
                 call sna_main("Get her to take another!","snape_46")
                 call sna_main("Here, I'll even give you a milker for the slut!","snape_02")
                 ">Snape hands you an odd leather and metal harness."
@@ -141,7 +141,7 @@ label snape_potion_menu:
                 call sna_main("I spent a fortune on the self cleaning model...","snape_46")
                 $ potion_inv.add("p_milk_potion")
             else:
-                call sna_main("Mmmm, I wish I could be there to see you milk her...","snape_41")
+                call sna_main("*Mmmm*, I wish I could be there to see you milk her...","snape_41")
                 m "..."
                 m "(That's probably not a good idea...)"
                 call sna_main("All that {b}delicious{/b} milk...","snape_40")
@@ -164,7 +164,7 @@ label snape_potion_menu:
                         $ potion_version = 1
                         call sna_main("Here you are Mr. Adventurous...","snape_35")
 
-                    "-futa potion-":
+                    "-Futa potion-":
                         call sna_main("What? Are you sure you want this one?","snape_44")
                         call sna_main("I mean I figured you were a bit of a pervert...","snape_02")
                         call sna_main("but I didn't think...","snape_45")

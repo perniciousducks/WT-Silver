@@ -25,7 +25,7 @@ label astoria_wardrobe_check(section, arg=None):
 
         # Outfit outrage score check
         if ast_whoring < temp_count[0]:
-            call ast_main("You're joking right? Why'd you think I would ever put this on...",face="annoyed")
+            call ast_main("You're joking right? Why would you think I would ever put this on...",face="annoyed")
             $ temp_score += 1
         if temp_count[2] < 2 and ast_whoring < ast_requirements["unequip_underwear"]:
             if temp_score > 0:

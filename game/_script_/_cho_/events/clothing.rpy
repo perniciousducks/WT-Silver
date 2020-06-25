@@ -77,7 +77,7 @@ label cho_summon_setup:
             call cho_main("Oh...", "base", "base", "raised", "down", cheeks="blush")
             call cho_main("You see, that sort of reaction is just what I wanted to get from the boys...", "soft", "base", "base", "downR", cheeks="blush")
             call cho_main("Stare at my assets any time you want, [cho_genie_name]!", "base", "narrow", "angry", "mid")
-            g4 "*Hngh!!!*"
+            g4 "*Hngh*!!!"
 
             #Unlocks rewards.
             call unlock_clothing(text = ">New clothing items for Cho have been unlocked!", item = cc_party_slut_ITEM)

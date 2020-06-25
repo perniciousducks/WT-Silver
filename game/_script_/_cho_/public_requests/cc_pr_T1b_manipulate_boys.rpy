@@ -91,10 +91,10 @@ label cc_pr_manipulate_boys_start:
                 "\"Make out with them...\"":
                     call cho_main("Make out with?{w=0.6} Those Slytherins-", "soft", "wide", "worried", "mid", cheeks="heavy_blush")
                     call cho_main("*guargh*", "open_tongue", "happyCl", "angry", "mid", cheeks="blush", trans=hpunch)
-                    call cho_main("*cough*{w=0.6} *guargh!*{w=0.8} *cough*", "open_wide_tongue", "happyCl", "worried", "mid", cheeks="blush", trans=hpunch)
+                    call cho_main("*cough*{w=0.6}-*guargh*!{w=0.8}-*cough*", "open_wide_tongue", "happyCl", "worried", "mid", cheeks="blush", trans=hpunch)
                     call nar(">You hear Cho make some inadvertent gag noises...")
                     m "Is everything okay, girl?"
-                    call cho_main("No!{w=0.3} It's not ok!", "angry", "wide", "worried", "mid", cheeks="blush")
+                    call cho_main("No!{w=0.3} It's not okay!", "angry", "wide", "worried", "mid", cheeks="blush")
                     call cho_main("Why would you think I want to snog with those repulsive, yuck-ugly Slytherin degenerates?!", "open", "wide", "worried", "mid", cheeks="blush")
                     call cho_main("The thought alone utterly disgusts me, [cho_genie_name]!", "open_tongue", "happyCL", "worried", "mid", cheeks="blush")
                     call cho_main("I'll do anything but that!", "mad", "narrow", "worried", "mid")

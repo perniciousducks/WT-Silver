@@ -30,7 +30,7 @@ label give_ast_gift(gift_item):
 
         if ast_whoring < 6:
             call ast_main("Some chocolate?", mouth="open", face="neutral")
-            call ast_main("Don't you have any dungbombs?")
+            call ast_main("Don't you have any dung-bombs?")
             call ast_main("They're way more fun!")
             call ast_mood(0)
         elif ast_whoring > 5 and ast_whoring < 12:
@@ -202,7 +202,7 @@ label give_ast_gift(gift_item):
             call ast_main("Viktor Krum?", face="annoyed")
             call ast_main("Is that the Quidditch player everyone seems to fancy?", mouth="open", pupils="mid", face="annoyed")
             call give_gift(">You give the poster to Astoria...", gift_item)
-            call ast_main("Hmph, I guess I'll take it if he's that popular...", mouth="annoyed", pupils="R", face="neutral")
+            call ast_main("*Hmph*, I guess I'll take it if he's that popular...", mouth="annoyed", pupils="R", face="neutral")
             call ast_mood(0)
         elif ast_whoring > 5 and ast_whoring < 12:
             call ast_main("Viktor Krum?", face="annoyed")
@@ -282,7 +282,7 @@ label give_ast_gift(gift_item):
             call ast_main("Why would I need condoms when I could just go in raw?", mouth="grin", face="angry")
             call ast_main("*Ha-Ha-Hah* The look on your face, now that's something money can't buy.", face="happy")
             call give_gift(">You sheepishly give the pack of Condoms to Astoria...", gift_item)
-            call ast_main("Hmmm.... yeah why not.", face="neutral")
+            call ast_main("*Hmmm*.... yeah why not.", face="neutral")
             call ast_mood(-1)
 
     elif gift_item == vibrator_ITEM:
@@ -319,7 +319,7 @@ label give_ast_gift(gift_item):
             call ast_mood(-1)
         elif ast_whoring > 5 and ast_whoring < 12:
             call ast_main("Anal Lube?", mouth="smile", face="happy")
-            call ast_main("Swiggy swooty I'm coming for that booty!", mouth="smile", face="angry")
+            call ast_main("Swiggity swooty I'm coming for that booty!", mouth="smile", face="angry")
             call ast_main("Come on now, what's with that dry humour. Maybe you could use some of that lube?", face="annoyed")
             call give_gift(">You cautiously give the jar of lube to Astoria...", gift_item)
             call ast_main("Boo!", face="annoyed")

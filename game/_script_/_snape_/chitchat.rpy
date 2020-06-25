@@ -98,7 +98,7 @@ label snape_chitchat:
 
         elif one_of_ten == 6:
             call sna_main("Someone broke into my personal storage...","snape_16")
-            call sna_main("Only took some gillyweed... lucky they didn't take any of my amorentia.","snape_29")
+            call sna_main("Only took some Gillyweed... lucky they didn't take any of my amorentia.","snape_29")
             call sna_main("Not that I need or use such things.","snape_09")
 
         elif one_of_ten == 7:
@@ -270,7 +270,7 @@ label snape_chitchat:
         elif one_of_ten == 8:
             call sna_main("You think I ought to cut down on my drinking?","snape_24")
             call sna_main("But my life is so stressful...","snape_06")
-            call sna_main("Hm...","snape_09")
+            call sna_main("*Hmm*...","snape_09")
             call sna_main("I'll try and cut down on the liquor...","snape_06")
             call sna_main("In favour of sweaty monkey-sex with my students!","snape_21")
             call sna_main("","snape_19")
@@ -313,7 +313,7 @@ label snape_chitchat:
             call sna_main("","snape_05")
 
         elif one_of_ten == 5:
-            call sna_main("I can see Thestrals, you know...","snape_06")
+            call sna_main("I can see the thestrals, you know...","snape_06")
             call sna_main("","snape_09")
 
         elif one_of_ten == 6:
@@ -413,7 +413,7 @@ label snape_chitchat:
     if her_whoring >= 21:
         if one_of_ten == 1:
             call sna_main("Do you know what a \"bukkake\" is?","snape_24")
-            sna "What about \"deepthroating\"?"
+            sna "What about \"deep throating\"?"
             sna "And then there is also \"hate-sex\"."
             call sna_main("Students these days, mate...","snape_05")
             sna "They have a special name for everything."
@@ -471,6 +471,5 @@ label snape_chitchat:
             call sna_main("I almost feel bad for having all the fun.","snape_24")
             call sna_main("Do You want me to send you up some fresh Slytherin slut?","snape_14")
             call sna_main("","snape_23")
-
 
     return

@@ -84,7 +84,7 @@ label hg_pr_handjob:
         call play_music("hermione") # Music
         call her_main("...............", "annoyed", "narrow", "angry", "R")
         m "Oh come on. You did it before."
-        call her_main("hm..........", "annoyed", "narrow", "annoyed", "mid")
+        call her_main("*hm*..........", "annoyed", "narrow", "annoyed", "mid")
         her "{number=current_payout} house points?"
         m "Naturally."
         call her_main("Well, alright... I'll see what I can do...", "angry", "narrow", "base", "down")
@@ -198,7 +198,7 @@ label hg_pr_handjob_T1_E1:
             m "If you didn't make him cum then that wasn't a proper handjob. Period."
             call her_main("But... But what was it then...?", "angry", "base", "base", "mid")
             m "How should I know? A cock massage?"
-            call her_main("Aww...", "angry", "narrow", "base", "down")
+            call her_main("*Aww*...", "angry", "narrow", "base", "down")
             her "But I really tried my best..."
             m "No handjob - no payment, [hermione_name]."
             call her_main(".....", "angry", "base", "base", "mid")
@@ -225,7 +225,7 @@ label hg_pr_handjob_T1_E1:
             call her_main("Really?", "angry", "base", "base", "mid")
             call her_main("Thank you, [genie_name]!", "open", "narrow", "worried", "down")
             call her_main("I promise, I will try harder next time!", "base", "base", "base", "mid")
-            call her_main("Ehm... Should you request a similar favour in the future, I mean...", "upset", "wink", "base", "mid")
+            call her_main("*Ehm*... Should you request a similar favour in the future, I mean...", "upset", "wink", "base", "mid")
 
             jump end_hg_pr_handjob
 
@@ -243,7 +243,7 @@ label hg_pr_handjob_T1_E2:
     her "........."
     call her_main("And I asked him to keep the whole thing a secret, but...", "angry", "base", "base", "mid", cheeks="blush")
     m "What's the matter, [hermione_name]?"
-    m "Doubting the honesty of your fellow Gryffindors?"
+    m "Doubting the honesty of your fellow Gryffindor?"
     call her_main("Of course not, [genie_name].", "upset", "closed", "base", "mid")
     call her_main("...........................", "angry", "narrow", "base", "down", cheeks="blush")
     call her_main("Still... Performing this sort of task could really damage my reputation...", "angry", "base", "base", "mid", cheeks="blush")
@@ -285,7 +285,7 @@ label hg_pr_handjob_T1_E3:
     hide screen blkfade
     with d3
 
-    m "Hm... So I suppose you have completed your task?"
+    m "*Hm*... So I suppose you have completed your task?"
     call her_main("I did, [genie_name]...", "annoyed", "narrow", "angry", "R")
     m "What's the problem, then?"
     call her_main("..........", "annoyed", "base", "worried", "R")
@@ -294,7 +294,7 @@ label hg_pr_handjob_T1_E3:
     her "And do you know how he thanked me?"
     call her_main("He got his spunk all over me...", "scream", "base", "angry", "mid", emote="01")
     call her_main("And he did that on purpose, I know he did!", "scream", "closed", "angry", "mid")
-    call her_main("Nasty, good for nothing ravenclaws...", "annoyed", "base", "worried", "R")
+    call her_main("Nasty, good for nothing Ravenclaws...", "annoyed", "base", "worried", "R")
     m "Well, I'd say a job well done."
 
     jump end_hg_pr_handjob
@@ -306,11 +306,11 @@ label hg_pr_handjob_T2_E1:
     call hg_pr_handjob_intro
 
     call play_music("hermione") # Music
-    call her_main("Ehm...", "open", "base", "base", "mid")
+    call her_main("*Ehm*...", "open", "base", "base", "mid")
     her "Not yet, [genie_name]..."
     m "Not yet?"
     call her_main("Yes... Let me explain, [genie_name]...", "annoyed", "base", "worried", "R")
-    call her_main("uhm... Well...", "open", "base", "base", "mid")
+    call her_main("*uhm*... Well...", "open", "base", "base", "mid")
     her "I was wanking this one boy off in one of the empty classrooms..."
     her "And that nasty ghost Peeves walked in..."
     call her_main("Or rather flew in on us...", "annoyed", "base", "worried", "R")
@@ -327,7 +327,7 @@ label hg_pr_handjob_T2_E1:
     m "Did you?"
     call her_main("No, [genie_name]. Not yet...", "angry", "base", "base", "mid")
     her "I am going to meet him as soon as we are done here, [genie_name]."
-    m "Hm..."
+    m "*Hm*..."
     call her_main("So if you could just give those points in advance...", "angry", "narrow", "base", "down")
     her "I would go meet with the boy right away and..."
     call her_main("And give him a proper handjob...", "open", "base", "base", "R", cheeks="blush")
@@ -463,7 +463,7 @@ label hg_pr_handjob_T2_E3:
             m "Of course."
             m "You are a girl and he is a boy..."
             m "You got excited and it made you feel good..."
-            call her_main("Hm...", "base", "base", "base", "R", cheeks="blush")
+            call her_main("*Hm*...", "base", "base", "base", "R", cheeks="blush")
             m "Now if you were to give a handjob and feel completely indifferent about it..."
             m "...that would be... unnatural."
             call her_main("I think you are right, [genie_name].", "open", "happy", "base", "mid", cheeks="blush")
@@ -478,7 +478,7 @@ label hg_pr_handjob_T2_E3:
             m "ensuring that Gryffindor gets the house cup this year."
             m "That's the plan And thanks to your hard work, [hermione_name]..."
             m "All goes according to keik-... I mean, the plan..."
-            call her_main("Hm...", "upset", "closed", "base", "mid")
+            call her_main("*Hm*...", "upset", "closed", "base", "mid")
 
             $ her_mood += 11
 
@@ -521,8 +521,8 @@ label hg_pr_handjob_T3_intro_E1:
     her "...I sucked him off, [genie_name]."
     her "I did not plan to... but..."
     call her_main("Ron is always so nice to me...", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
-    call her_main("And I wanted to thank him...*Sob!*", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
-    call her_main("And now Ginny will kill me! *Sob!*", "angry", "base", "base", "mid", tears="soft")
+    call her_main("And I wanted to thank him...*Sob*!", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
+    call her_main("And now Ginny will kill me! *Sob*!", "angry", "base", "base", "mid", tears="soft")
     her "She will kill me, [genie_name]!"
     call her_main("And if she does not I will probably die of shame anyway.", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     her "No, no, no... How will I ever face her...?"
@@ -530,7 +530,7 @@ label hg_pr_handjob_T3_intro_E1:
     m "I assure you, this is not something a boy would be eager to brag about to his sister."
     call her_main("It is not?", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
     m "Don't be silly, [hermione_name]."
-    call her_main("Hm...", "normal", "base", "base", "R", tears="soft")
+    call her_main("*Hm*...", "normal", "base", "base", "R", tears="soft")
     call her_main("You are probably right, [genie_name]...", "soft", "base", "base", "mid", tears="soft")
     her "And I made Ron give me his word that he will keep the whole incident a secret..."
     call her_main("So, I think I should just trust him to keep his word...", "open", "base", "worried", "R")
@@ -575,7 +575,7 @@ label hg_pr_handjob_T3_E3:
     call hg_pr_handjob_intro
 
     call her_main("Yes I did, [genie_name].", "base", "base", "base", "mid")
-    call her_main("But, ehm...", "open", "base", "worried", "mid")
+    call her_main("But, *ehm*...", "open", "base", "worried", "mid")
     m "...?"
     call her_main("Well, I did not just wank off one of my classmates...", "open", "base", "base", "mid")
     her "I.............."
@@ -618,7 +618,7 @@ label hg_pr_handjob_T3_E3:
     call her_main("Yeah, two huge cocks exploding massive loads of cum everywhere.", "silly", "narrow", "annoyed", "up")
     m "........"
     call her_main(".......", "silly", "narrow", "annoyed", "up")
-    m "Ehm....."
+    m "*Ehm*....."
     call her_main("Oh god, I'm sorry [genie_name], I was thinking of something else.", "angry", "wide", "base", "stare")
     m "Yes... sure, OK."
     call her_main("", "base", "base", "base", "mid")

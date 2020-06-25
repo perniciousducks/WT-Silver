@@ -281,7 +281,7 @@ label nt_pr_teach_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys. Guess who...
     m "Any chance they'll tell their friends about it?"
     call ton_main("Oh yes! The Gryffindor common room is probably a buzz already!","base","base","base","ahegao")
     call ton_main("It wouldn't surprise me if I start getting asked to give more boys detention...","horny","base","angry","mid")
-    m "Fooling around with and rewarding Gryffindors isn't too helpful for our situation..."
+    m "Fooling around with Gryffindors and rewarding them isn't too helpful for our situation..."
     m "But great work nonetheless..."
     call ton_main("Thank you, [ton_genie_name]. That means a lot coming from you.","base","happyCl","base","mid")
     m "Even if it is encouragement for seducing your students?"
@@ -440,7 +440,7 @@ label nt_pr_teach_T2_E1: # Tier 2 - Event 1 - Hufflepuff girl
     call ton_main("She just sort of stood there after I told her, stunned for a little bit...","base","base","base","mid")
     call ton_main("I rushed to the door and made sure it was locked.","open","base","base","R")
     call ton_main("After that, I sat down in the front-row of the class, and told her to sit on my desk...","base","base","angry","mid")
-    m "Mmm, now that's a front-row seat to die for."
+    m "*Mmm*, now that's a front-row seat to die for."
     call ton_main("All that was missing was a bucket of popcorn...","horny","base","angry","mid")
     call ton_main("Eventually, she was able to muster up enough courage to pull up her skirt...","base","base","angry","mid")
     call ton_main("Poor thing only thought to ask how many points she'd be paid after she lifted her skirt though.","smile","happyCl","base","mid")
@@ -563,7 +563,7 @@ label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
     call ton_main("And you have to admit, it's kinda hot... I even joined in on it.","base","base","angry","mid")
     m "Really?"
     call ton_main("What do you think made him fire his load across the room?","horny","base","angry","mid")
-    call ton_main("All I said was \"cum for Mommy\"...and he was shot the biggest load towards me.","open","closed","base","mid")
+    call ton_main("All I said was \"cum for Mommy\"...and he had shot the biggest load towards me.","open","closed","base","mid")
     call ton_main("","base","base","angry","mid")
     m "Fuck... That {b}is{/b} pretty hot..."
     call ton_main("I know...","open","closed","base","mid")
@@ -633,13 +633,13 @@ label nt_pr_teach_T2_E3: # Tier 2 - Event 3 - Slytherin boy
     call ton_main("I demanded of him to start jacking it...","open","base","angry","mid")
     call ton_main("It was actually pretty cute at first...","base","happyCl","base","mid")
     call ton_main("Then just as he was about to blow his load...","open","closed","base","mid")
-    call ton_main("Boom! Petrficus totalus!","scream","base","angry","mid", trans=hpunch)
-    m "Petrifi-{w} Petrifico?-{w} Petrificato-"
+    call ton_main("Boom! Petrficus Totalus!","scream","base","angry","mid", trans=hpunch)
+    m "{i}Petrifi{/i}-{w} {i}Petrifico{/i}?-{w} {i}Petrificato{/i}-"
     call ton_main("I petrified him!","open","closed","angry","mid")
     m "*Ahh*..."
     call ton_main("*Ha-ha-ha*... You should have seen his look on his face!","smile","happyCl","base","mid")
     call ton_main("That's what he gets, the little shit!","angry","base","angry","down")
-    call ton_main("Not only did I leave him blueballed,...I also left him pants down in the class.","base","base","angry","mid")
+    call ton_main("Not only did I leave him blue balled,...I also left him pants down in the class.","base","base","angry","mid")
     m "Forever?"
     call ton_main("No, just until the spell wears off...","open","closed","base","mid")
     call ton_main("In an hour or so...","upset","base","angry","R")

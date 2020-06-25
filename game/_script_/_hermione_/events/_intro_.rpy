@@ -155,7 +155,7 @@ label hermione_intro_E1:
     call her_main("As I was saying, the whole issue is simply ridiculous and I cannot believe that it is taking place in our day and age!", "open", "closed", "angry", "mid")
 
     if masturbating:
-        call nar("*Fap!* *Fap!* *Fap!*","start")
+        call nar("*Fap-fap-fap*","start")
         call nar(">You keep on stroking your cock...","end")
     else:
         m "I see..."
@@ -167,7 +167,7 @@ label hermione_intro_E1:
         g9 "{size=-4}(Would you look at those rosy cheeks? I want to poke 'em with my cock.){/size}"
         call nar(">You keep stroking your cock...")
     else:
-        m "Ehm... I suppose you did. I mean, we did."
+        m "*Ehm*... I suppose you did. I mean, we did."
 
     call her_main("So it hurts the whole house point distribution system.")
     her "But it doesn't even stop there!"
@@ -200,7 +200,7 @@ label hermione_intro_E1:
         call her_main("Professor...?", "normal", "squint", "angry", "mid")
         g4 "{size=-4}(Crap. What does she want now?){/size}"
         g4 "Yes, it's all true. Please keep going..."
-        her "Ehm... So, as I was saying..."
+        her "*Ehm*... So, as I was saying..."
         m "{size=-4}(Oh... That was a good jerk-off session, but I'm getting dangerously close to the \"grand finale\".){/size}"
         m "{size=-4}(Maybe I should stop before I get myself into trouble.){/size}"
 
@@ -221,7 +221,7 @@ label hermione_intro_E1:
 
     if not masturbating:
         m "{size=-4}(Do I? I honestly don't give a damn...){/size}"
-        m "Uhm... I suppose I do..."
+        m "*Uhm*... I suppose I do..."
         call her_main("{size=-4}(\"Suppose\"?){/size}", "annoyed", "base", "base", "mid")
         call her_main("{size=-4}(When did Professor Dumbledore become so... apathetic?){/size}", "annoyed", "base", "worried", "R")
 
@@ -276,13 +276,13 @@ label hermione_intro_E1:
     call play_music("chipper_doodle")
 
     call her_main("Really?", "normal", "squint", "angry", "mid")
-    her "hm..........."
+    her "*Hmm*..........."
 
     call her_main("That's a relief! Thank you, professor.", "open", "closed", "angry", "mid")
 
     if masturbating:
         m "No, no, thank you..."
-        call her_main("Hm...", "normal", "squint", "angry", "mid")
+        call her_main("*Hmm*...", "normal", "squint", "angry", "mid")
 
     call her_main("My classes are about to start, so I'd better go now.", "open", "closed", "angry", "mid")
     call her_main("Thank you for your time...", "base", "base", "base", "mid")
@@ -376,7 +376,7 @@ label ss_he_hermione_E1:
         call sna_main("You... y-you....","snape_31")
         call sna_main("......","snape_40")
         call sna_main("Ha.... ha-ha... HA-HA-HA!!!","snape_28")
-        m "Wha..? What did I say?"
+        m "Wha-..? What did I say?"
         call sna_main("Ha-ha-ha! You are amazing!","snape_42")
         call sna_main("Are all genies so... wonderfully nihilistic?","snape_37")
         m "Yeah... We immortals tend to not give a fuck."
@@ -384,7 +384,7 @@ label ss_he_hermione_E1:
         call sna_main("Unfortunately, us mere mortals cannot afford such a luxury...","snape_38")
     else:
         m "Not sure... She was talking a lot..."
-        m "Something about some \"greefeendo\" points... and..."
+        m "Something about some {i}grief-n-door{/i} points... and..."
         m "Er... I wasn't paying attention to be honest..."
         call sna_main("Nah... Probably another load of self-righteous crap...","snape_01")
         call sna_main("She is famous for that...","snape_35")
@@ -437,7 +437,7 @@ label hermione_intro_E2:
 
         "\"...................................\"":
             call play_sound("knocking")
-            "*Knock-knock-knock!*"
+            "*Knock-knock-knock*!"
             m "............................."
             her "Professor, I'm coming in..."
             m "{size=-4}(Crap!){/size}"
@@ -461,7 +461,7 @@ label hermione_intro_E2:
             m "...................."
             call her_main("................", "annoyed", "squint", "angry", "mid")
         "\"Good morning, miss Granger.\"":
-            her "Ehm... so, about the reason of me being here today then..."
+            her "*Ehm*... so, about the reason of me being here today then..."
         "\"Yeah, yeah, whatever...\"":
             call her_main("................", "annoyed", "squint", "angry", "mid")
 
@@ -605,7 +605,7 @@ label ss_he_hermione_E2:
     $ d_flag_03 = False
 
     label .choices:
-    m "Hm... Let us..."
+    m "*Hmm*... Let us..."
     menu:
         m "..."
         "{size=-3}\"Make sure she is not a top student any longer!\"{/size}" if not d_flag_01:
@@ -681,7 +681,7 @@ label ss_he_hermione_E2:
 label hermione_intro_E3:
     stop music fadeout 1.0
     call play_sound("knocking")
-    "*Knock-knock-knock!*"
+    "*Knock-knock-knock*!"
 
     her "Professor, I'm coming in!"
     m "...."
@@ -759,7 +759,7 @@ label hermione_intro_E3:
             call her_main("I cannot believe this is happening!", "mad", "happyCl", "worried", "mid", tears="soft_blink")
         "{size=-3}\"You could prepare better if I were to tutor you.\"{/size}":
             $ tutoring_offer_made = True
-            call her_main("hm...", "annoyed", "squint", "base", "mid")
+            call her_main("*Hmm*...", "annoyed", "squint", "base", "mid")
             call her_main("Yes, that could help I suppose...", "soft", "base", "base", "R")
             call her_main("I appreciate your offer, professor, but...", "open", "base", "base", "mid")
             call her_main("The best tutor is a book, and I have the entire Hogwarts library at my disposal.", "open", "closed", "base", "mid")
@@ -826,7 +826,7 @@ label hermione_intro_E4:
     call her_main("I'm sorry, sir... I...", "upset", "narrow", "base", "down", tears="mascara")
     call her_main("..................", "angry", "narrow", "base", "down", tears="mascara")
     call her_main("It seems that I did...", "angry", "happyCl", "base", "dead", tears="mascara")
-    call her_main("I did... uhm...", "normal", "happyCl", "base", "dead", tears="mascara")
+    call her_main("I did... *uhm*...", "normal", "happyCl", "base", "dead", tears="mascara")
     call her_main("... I failed that test after all.", "open", "happyCl", "base", "dead", tears="mascara")
     call her_main("I...", "disgust", "narrow", "base", "down", tears="mascara")
     call her_main("I'm sorry, professor...", "upset", "happyCl", "worried", "mid", tears="mascara_soft_blink")
@@ -904,16 +904,16 @@ label hermione_intro_E5:
             "\"Splendid! Starting today?\"":
                 pass
     else:
-        call her_main("I... uhm...", "normal", "squint", "angry", "mid")
+        call her_main("I... *uhm*...", "normal", "squint", "angry", "mid")
         her "Sir, I hope this is not too much to ask..."
         m "Yes?"
-        her "Ehm... would it be alright if..."
+        her "*Ehm*... would it be alright if..."
         her "..............."
         call her_main("do You think you could tutor me a little, sir?", "annoyed", "squint", "angry", "mid")
         menu:
             "\"I suppose that is possible.\"":
                 pass
-            "\"Hm... I'm quite busy actually.\"":
+            "\"*Hmm*... I'm quite busy actually.\"":
                 call her_main("Sir, please, you are the smartest wizard I know!", "open", "base", "worried", "mid")
                 m "{size=-4}(You have no idea, little witch.){/size}"
                 m "Well, it could be arranged, I suppose..."
@@ -927,7 +927,7 @@ label hermione_intro_E5:
     her "I think some sort of foul play might be taking place..."
     m "No way!"
     her "I have a list of suspects already but I will get back to you on this later...."
-    m "Ehm... alright..."
+    m "*Ehm*... alright..."
     call her_main("Oh, my classes are about to start. I'd better go...", "open", "base", "worried", "R")
     call her_main("Good day to you, sir.", "base", "happyCl", "base", "mid")
 
@@ -948,7 +948,7 @@ label hermione_intro_E5:
     jump main_room
 
 ### Tonks Hangout Event ###
-# Tonks will help convince Hermione to buy favors.
+# Tonks will help convince Hermione to buy favours.
 
 label nt_he_hermione_E1:
     call ton_main("So, that Granger girl is causing you two trouble?","open","base","base","mid", ypos="head")
@@ -1028,10 +1028,10 @@ label hermione_intro_E6:
     her "........................"
     call her_main("........................", "annoyed", "base", "worried", "R")
     her "........................"
-    call her_main("Ehm......", "open", "base", "base", "mid")
+    call her_main("*Ehm*......", "open", "base", "base", "mid")
     call her_main(".................", "annoyed", "base", "worried", "R")
     m "What is it, miss Granger?"
-    call her_main("Well, ehm...", "open", "base", "base", "mid")
+    call her_main("Well, *ehm*...", "open", "base", "base", "mid")
     call her_main("You see... The Gryffindor house is not in the lead anymore...", "open", "base", "worried", "R")
     call her_main("And... everyone is working so hard...", "annoyed", "base", "worried", "R")
     call her_main("And they look up to me for help but I don't know what to do...", "disgust", "base", "worried", "down")
@@ -1049,7 +1049,7 @@ label hermione_intro_E6:
 
     menu:
         "\"You mean like a sexual favour?\"":
-            call her_main("Ehm... I'm not sure...", "angry", "wink", "worried", "mid", emote="05")
+            call her_main("*Ehm*... I'm not sure...", "angry", "wink", "worried", "mid", emote="05")
             her "The kind that would gain our house additional points..."
             call her_main("I could write an essay for you or...", "open", "base", "worried", "R")
             call her_main("Or maybe clean your tower..?", "angry", "wink", "worried", "mid", emote="05")
@@ -1114,7 +1114,7 @@ label hermione_intro_E6:
         call her_main("M-my... tongue, sir?", "grin", "happyCl", "worried", "mid", emote="05")
         m "Yes, girl. Open your mouth, and show me your tongue."
         call her_main("{size=-4}(What an odd request...){/size}", "annoyed", "narrow", "angry", "R")
-        call her_main("Ehm... well, alright then...", "soft", "squint", "worried", "mid")
+        call her_main("*Ehm*... well, alright then...", "soft", "squint", "worried", "mid")
         call her_main("Here...", "open", "squint", "base", "mid")
         call her_main(".............", "open_tongue", "narrow", "base", "mid_soft")
         call her_main(".............", "open_tongue", "narrow", "base", "L")
@@ -1132,7 +1132,7 @@ label hermione_intro_E6:
                 call her_main("......................................", "open_wide_tongue", "narrow", "base", "down")
                 her "...................................................................."
                 call her_main(".......................................................................................................", "open_wide_tongue", "closed", "angry", "mid")
-                call her_main("*khow* *ish* *-his?", "open_wide_tongue", "base", "annoyed", "mid")
+                call her_main("*khow* *ish* *thish*?", "open_wide_tongue", "base", "annoyed", "mid")
 
                 menu:
                     "\"Good enough. Here, your points.\"":
@@ -1159,14 +1159,14 @@ label hermione_intro_E6:
                 "\"No, come closer\"" if d_flag_01 == "mid":
                     $ d_flag_01 = "desk"
                     $ d_flag_02 += 1
-                    her "uhm... alright..."
+                    her "*uhm*... alright..."
                     call her_walk("desk", "base")
 
                     jump hermione_intro_E6.stand_there_choices
                 "{size=-4}\"On second thought, go back to the middle\"{/size}" if d_flag_01 == "desk":
                     $ d_flag_01 = "mid"
                     $ d_flag_02 += 1
-                    her "uhm... alright..."
+                    her "*uhm*... alright..."
                     call her_walk("mid", "base")
                     call her_chibi("stand", flip=False)
                     with d3
@@ -1178,7 +1178,7 @@ label hermione_intro_E6:
         call her_main(".................................", "annoyed", "base", "annoyed", "R", trans=d3)
 
         menu:
-            m "Hm..."
+            m "*Hmm*..."
             "\"The uniform suits you, miss Granger...\"":
                 call her_main("............", "soft", "base", "base", "R",cheeks="blush")
                 call her_main("Thank you, professor...", "open", "base", "base", "R",cheeks="blush")
@@ -1237,7 +1237,7 @@ label hermione_intro_E6:
         call her_main("I...", "normal", "squint", "angry", "mid")
         call her_main("I have been a very bad girl...", "open", "squint", "angry", "R")
         g9 "Have you been a very, very, very bad girl?"
-        call her_main("Umm... Maybe?", "grin", "wink", "worried", "mid")
+        call her_main("*Umm*... Maybe?", "grin", "wink", "worried", "mid")
 
         $ d_flag_01 = False
 
@@ -1246,7 +1246,7 @@ label hermione_intro_E6:
             g9 "..."
             "\"Do you need to be punished?\"":
                 call her_main("Do I need to... be punished?", "open", "base", "worried", "mid")
-                call her_main("Ehm...", "upset", "base", "base", "down")
+                call her_main("*Ehm*...", "upset", "base", "base", "down")
                 her "....................."
                 call her_main("Well, I am not perfect, if that's what you mean, sir...", "annoyed", "narrow", "angry", "R")
                 call her_main("But do I need to be punished... hm?", "annoyed", "base", "base", "R")
@@ -1262,11 +1262,11 @@ label hermione_intro_E6:
                 m "Now that wasn't hard at all, was it?"
                 call her_main("N-no , sir, I guess not...", "angry", "happyCl", "worried", "R")
                 call her_main("", "annoyed", "base", "worried", "R")
-                m "Alrighty, then..."
+                m "Alright then..."
             "\"Do you want to get spanked?\"":
                 call her_main("Do I want to...", "open", "base", "worried", "mid")
                 call her_main("Get s-spanked??", "angry", "wide", "base", "stare")
-                call her_main("Tsk!", "angry", "base", "angry", "mid")
+                call her_main("*Tsk*!", "angry", "base", "angry", "mid")
                 call her_main("Professor, I don't think I'm comfortable with--", "open", "closed", "angry", "mid")
                 m "Apologies, let me rephrase the question..."
                 m "How badly do you need those points?"
@@ -1310,7 +1310,7 @@ label hermione_intro_E6:
 
     # Hermione inner thoughts
     if current_favor == "show_tongue":
-        call her_main("{size=-4}(Hm...){/size}", "annoyed", "narrow", "worried", "down", xpos="base", flip=True, trans=d3)
+        call her_main("{size=-4}(*Hmm*...){/size}", "annoyed", "narrow", "worried", "down", xpos="base", flip=True, trans=d3)
         call her_main("{size=-4}(Students show teachers their tongues all the time...){/size}", "soft", "base", "base", "R")
         call her_main("{size=-4}(Although that's usually when the teacher is not looking...){/size}", "base", "narrow", "base", "R_soft")
         call her_main("{size=-4}(But there is nothing wrong with what I did today...){/size}", "annoyed", "base", "base", "L")

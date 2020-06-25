@@ -84,8 +84,8 @@ label ending_after:
             pause.5
             call hide_blkfade
 
-            m "Good bye, world of bizarre magic..."
-            m "Good bye, my whor-"
+            m "Goodbye, world of bizarre magic..."
+            m "Goodbye, my whor-"
             m "Wait..."
 
             # Record scratch, music stops

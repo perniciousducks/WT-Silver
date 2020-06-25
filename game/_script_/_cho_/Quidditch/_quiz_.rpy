@@ -408,7 +408,7 @@ label cho_quiz_checkpoint:
         "Lich":
             m "Lich?"
             $ renpy.block_rollback()
-            call cho_main("A lich? Like those undead skeletal creatures?", "open", "narrow", "raised", "mid")
+            call cho_main("A Lich? Like those undead skeletal creatures?", "open", "narrow", "raised", "mid")
             g4 "Oh, that's what I said?"
             m "I must've had a PTSD flashback from my tomb raiding days..."
             call cho_main("You've been tomb raiding?", "soft", "base", "raised", "mid")
@@ -622,7 +622,7 @@ label cho_quiz_checkpoint:
         call cho_main("...", "annoyed", "base", "raised", "mid")
         g9 "Next time..."
         call cho_main("Oh...", "soft", "narrow", "base", "down")
-        call cho_main("Well, good bye then, Sir...", "soft", "base", "base", "mid")
+        call cho_main("Well, goodbye then, Sir...", "soft", "base", "base", "mid")
 
         # Cho leaves.
         call cho_walk(action="leave")

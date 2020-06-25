@@ -34,7 +34,7 @@ label hg_pr_flirt:
         call her_main("But why Slytherin?", "open", "base", "worried", "mid")
         her "If you need me to be flirtatious today, I think I can manage that..."
         her "But, please, can't it be another house?"
-        call her_main("The Gryffindors maybe?", "upset", "wink", "base", "mid")
+        call her_main("The Gryffindor maybe?", "upset", "wink", "base", "mid")
         m "I am only trying to protect your reputation, [hermione_name]."
         call her_main("[genie_name]?", "soft", "base", "base", "mid")
         m "Do you value the opinion the Slytherin students have of you?"
@@ -134,7 +134,7 @@ label hg_pr_flirt_intro:
 
     if hg_pr_flirt.counter == 1:
         call her_main("......", "annoyed", "narrow", "angry", "R")
-        call her_main("So umm...", "soft", "base", "base", "R")
+        call her_main("So *umm*...", "soft", "base", "base", "R")
 
     m "How many boys did you flirt with today, [hermione_name]?"
 
@@ -258,7 +258,7 @@ label hg_pr_flirt_T1_E3:
     call her_main("I just left [genie_name]...", "annoyed", "narrow", "angry", "R")
 
     menu:
-        m "Hm..."
+        m "*Hmm*..."
         "\"Well, here are your points.\"":
             call her_main("Thank you, [genie_name]...", "open", "closed", "base", "mid")
 
@@ -459,7 +459,7 @@ label hg_pr_flirt_T3_E3:
             her "One of the boys actually took me to the Slytherin common room today..."
             call her_main("There were at least a dozen of them there...", "normal", "base", "base", "mid")
             call her_main("All of the boys knew who I was...", "open", "closed", "angry", "mid")
-            her "I was the center of attention at first..."
+            her "I was the centre of attention at first..."
             call her_main("And it felt sort of wonderful...", "base", "narrow", "base", "up")
             call play_music("hermione") # Music
             call her_main("Then a bunch of those Slytherin harlots stumbled in and...", "disgust", "narrow", "base", "mid_soft")

@@ -91,7 +91,7 @@ label tonks_summon_setup:
                         call ton_main("You think a noble teacher like me- an ex-auror... Would quit her highly regarded job to become a cheap stripper?","open","base","base","mid")
                         m "Well, no. I still want to keep you as a teacher."
                         m "I merely suggested that you could--"
-                        call ton_main("Well, the dueling stage isn't seeing any use...","base","base","base","R")
+                        call ton_main("Well, the duelling stage isn't seeing any use...","base","base","base","R")
                         call ton_main("Maybe I should arrange some extra curricular activities for a couple of my favourite students, give them a little show...","open","base","raised","mid")
                         g9 "I'm sure they would all love to watch their perverted teacher strip!"
                         call ton_main("Maybe I won't just stop at stripping!","horny","base","raised","mid")
@@ -115,7 +115,7 @@ label tonks_summon_setup:
                 m "You went to this school, didn't you? Which house were you in?"
                 call ton_main("Me? I was in Hufflepuff.","open","base","raised","mid")
                 m "Very well then."
-                m "Minus ten points from house hufflepuff!"
+                m "Minus ten points from house Hufflepuff!"
                 $ hufflepuff -=10
                 call ton_main("What? But [ton_genie_name]! I'm not even a student--","open","wide","wide","mid", trans=hpunch)
                 g4 "In addition, from this point forward, you will be forbidden to wear even a single piece of clothing whenever you step into this room!"

@@ -177,7 +177,7 @@ label cc_st_return:
         m "Then what about our strategy, do you think it will work during the game?"
         call cho_main("I can't believe I flaunted my ass at them... but yes, I believe it will work.", "soft", "closed", "raised", "mid")
         call cho_main("Crabbe and Goyle especially should be a great help, turning the game to my favour.", "smile", "narrow", "raised", "R")
-        call cho_main("So long as they don't give my ass too much of a bludgering...", "clench", "base", "raised", "mid")
+        call cho_main("So long as they don't give my ass too much of a {i}bludgering{/i}...", "clench", "base", "raised", "mid")
         m "Just make sure to pick the right moment to distract them and I'm sure you'll be fine."
         m "Very well then, I guess we're ready to take those snakes on for the main match!"
         if not cho_quid.E7_complete:

@@ -58,7 +58,7 @@ label ball_quest_E1:
             call her_main("And I understand that the nature of the favours I have been selling you lately...", "open", "base", "angry", "R", cheeks="blush")
             call her_main("...Might have led you to believe that I would be willing to...", "open", "squint", "angry", "mid", cheeks="blush")
             call her_main("...To let you have your way with me eventually, sir...", "disgust", "squint", "angry", "L_soft", cheeks="blush")
-            m "Wha-a-a...? I would never--"
+            m "Whaaa-...? I would never-"
             call her_main("Please, let me finish, sir.", "scream", "base", "angry", "mid",emote="01", cheeks="blush")
             m "Right..."
             call her_main("I know that you are a rather wise man yourself, sir.", "angry", "base", "angry", "mid", cheeks="blush")
@@ -276,16 +276,16 @@ label ball_quest_E1:
             g4 "What are you doing, girl?!" with hpunch
             g4 "I am your headmaster! Do you have no shame?!"
             call her_main("What?! But--", "angry", "base", "angry", "mid", cheeks="blush")
-            g9 "He-he... Relax, girl. I'm just kidding."
+            g9 "*He-he*... Relax, girl. I'm just kidding."
             call her_main("[genie_name], that was just mean.", "scream", "happyCl", "angry", "mid", cheeks="blush")
-            g9 "He-he..."
+            g9 "*He-he*..."
             call her_main(".....................................", "annoyed", "base", "worried", "R_soft", cheeks="blush")
             m "I do like your cute little pussy though..."
             call her_main(".....Thank you, sir.", "disgust", "base", "angry", "R_soft", cheeks="blush")
 
             jump ball_quest_E1.choices2
 
-        "\"Nevermind. The position is yours.\"" if d_flag_01 or d_flag_02:
+        "\"Never mind. The position is yours.\"" if d_flag_01 or d_flag_02:
             call her_main("Really?", "smile", "base", "base", "mid")
 
             jump ball_quest_E1.end
@@ -343,7 +343,7 @@ label ball_quest_E1:
             call her_main("", "soft", "closed", "base", "R", cheeks="blush")
             pause 0.4
             call ctc
-            call her_main("*Sob!*", "soft", "squint", "worried", "R_soft", cheeks="blush", tears="soft")
+            call her_main("*Sob*!", "soft", "squint", "worried", "R_soft", cheeks="blush", tears="soft")
             m "Huh?"
             call her_main("Oh, please,{w=0.4} don't mind me, sir.", "open", "base", "base", "R", cheeks="blush", tears="crying")
             call her_main("Just enjoy the... {w=0.5}the view...", "upset", "happy", "base", "R", cheeks="blush", tears="soft")
@@ -353,8 +353,8 @@ label ball_quest_E1:
             # Hand down
             $ hermione.set_body(armleft="down")
 
-            call her_main("*Sob!* No, sir... *sob!*...", "angry", "happyCl", "worried", "mid", cheeks="blush", tears="crying_blink")
-            call her_main("I... I enjoy touching myself...{w=0.5} In front of my headmaster *SOB!*", "angry", "squint", "worried", "R_soft", cheeks="blush", tears="crying")
+            call her_main("*Sob*! No, sir... *sob*!...", "angry", "happyCl", "worried", "mid", cheeks="blush", tears="crying_blink")
+            call her_main("I... I enjoy touching myself...{w=0.5} In front of my headmaster *SOB*!", "angry", "squint", "worried", "R_soft", cheeks="blush", tears="crying")
 
             # Hands on pussy, tits
             $ hermione.body.body["armright"][1] = 3 # Hacky hacky, sucky sucky, CG better.
@@ -363,10 +363,10 @@ label ball_quest_E1:
             play bg_sounds "sounds/slickloop.mp3" fadein 2
             call her_main("*Ah*...", "open", "squint", "worried", "R", cheeks="blush")
             call her_main("These...{w=0.4} *Ah*...{w=0.5} are happy tears, sir.", "open", "narrow", "low", "R", cheeks="blush", tears="messy")
-            call her_main("I...{w=0.5} *Ah*...{w=0.5}... I'm sorry...{w=0.5} I can't help it! *Sob!*", "angry", "happyCl", "worried", "mid_soft", cheeks="blush", tears="messy")
-            m "Are you sure that you are ok with this?"
-            call her_main("Yes...{w=0.4} *Ah*...{w=0.5} yes, sir, please.... *Sob!*", "soft", "squint", "worried", "mid", cheeks="blush", tears="messy")
-            call her_main("Please keep looking as I...{w=0.3} pleasure myself *Sob!*", "open", "narrow", "base", "mid_soft", cheeks="blush", tears="messy")
+            call her_main("I...{w=0.5} *Ah*...{w=0.5}... I'm sorry...{w=0.5} I can't help it! *Sob*!", "angry", "happyCl", "worried", "mid_soft", cheeks="blush", tears="messy")
+            m "Are you sure that you are okay with this?"
+            call her_main("Yes...{w=0.4} *Ah*...{w=0.5} yes, sir, please.... *Sob*!", "soft", "squint", "worried", "mid", cheeks="blush", tears="messy")
+            call her_main("Please keep looking as I...{w=0.3} pleasure myself *Sob*!", "open", "narrow", "base", "mid_soft", cheeks="blush", tears="messy")
             call her_main("", "open", "narrow", "angry", "stare_soft", cheeks="blush", tears="messy")
             pause.2
 
@@ -379,7 +379,7 @@ label ball_quest_E1:
             call her_main("...I need to shamelessly present my naked body before you like this!", "soft", "narrow", "base", "up_soft", cheeks="blush", tears="messy")
             with hpunch
             m ".............?"
-            call her_main("I need to feel this embarrassment and humiliation! *SOB!*", "silly", "narrow", "angry", "dead", cheeks="blush", tears="messy")
+            call her_main("I need to feel this embarrassment and humiliation! *SOB*!", "silly", "narrow", "angry", "dead", cheeks="blush", tears="messy")
             play bg_sounds "sounds/slickloopveryfast.mp3"
             call her_main("The fate of the \"Autumn ball\" depends on this...", "silly", "base", "worried", "mid_soft", cheeks="blush", tears="messy")
             her "So, sir, please..."
@@ -390,8 +390,8 @@ label ball_quest_E1:
 
 
             with hpunch
-            call her_main("*Ah*...{w=0.5} Yes! Make my skin burn with shame, sir... *Sob!*", "open", "narrow", "base", "up", cheeks="blush", tears="messy")
-            m "Ehm... right... Ok..."
+            call her_main("*Ah*...{w=0.5} Yes! Make my skin burn with shame, sir... *Sob*!", "open", "narrow", "base", "up", cheeks="blush", tears="messy")
+            m "*Ehm*... right... Okay..."
             m "Listen, I think this will do..."
 
             play bg_sounds "sounds/slickloop.mp3" fadein 2
@@ -515,7 +515,7 @@ label ball_quest_E2:
     call sna_main("Right...","snape_05")
     sna "But you know what else could endanger out little enterprise?"
     call sna_main("Me losing it during class and strangling a couple of Gryffindor maggots with my bare hands...","snape_07")
-    m "Hm... I see your point..."
+    m "*Hm*... I see your point..."
     call sna_main("Seriously, man... I need a drink...","snape_06")
 
     hide screen snape_main
@@ -560,8 +560,8 @@ label ball_quest_E3:
     m "Those inconsiderate bastards!"
     call her_main("Are you making fun of me sir?", "mad", "base", "worried", "mid", tears="soft")
     m "Can you blame me?"
-    call her_main("I will become the laughingstock of Hogwarts! *Sob!*", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
-    call her_main("My reputation is as good as ruined! *Sob!*", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
+    call her_main("I will become the laughingstock of Hogwarts! *Sob*!", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
+    call her_main("My reputation is as good as ruined! *Sob*!", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
     m "Seriously? After all the favours you sold me you care about a thing like this?"
     call her_main("Wearing the same dress to the \"Autumn Ball\" for two years in a row would be more humiliating than any favour I sold you so far, sir.", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     with hpunch
@@ -569,11 +569,11 @@ label ball_quest_E3:
     call her_main("Oh, you wouldn't understand...", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     call her_main("You're just like my father!", "scream", "base", "angry", "mid", cheeks="blush", tears="messy")
     m "I beg your pardon?"
-    call her_main("I mean... ehm...", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
+    call her_main("I mean... *ehm*...", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
     her "Forgive me sir..."
     call her_main("I don't know why I am telling you all of this...", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     m "................"
-    call her_main("......................*sob!*", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
+    call her_main("......................*sob*!", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
     call her_main("I think I'd better go now...*sob*", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     m "Well, don't let me keep you a moment longer, miss Granger...."
 
@@ -586,7 +586,7 @@ label ball_quest_E3:
     call her_chibi("leave")
 
     call bld
-    m "Hm... I don't remember ever seeing the girl this desperate..."
+    m "*Hm*... I don't remember ever seeing the girl this desperate..."
     m "And that says a lot, all things considered..."
     m "I suppose Whoring herself out for house points is a significantly smaller problem than not having a proper prom dress..."
     m ".............."
@@ -617,7 +617,7 @@ label ball_quest_E4:
     m "So the issue has been resolved then?"
     call her_main("Not really...", "open", "base", "worried", "mid")
     call her_main("Not at all actually...", "annoyed", "narrow", "angry", "R")
-    m "Hm..?"
+    m "*Hmm*..?"
     call her_main("But that is not a big deal...", "annoyed", "narrow", "worried", "down")
     her "I'm just overreacting..."
 
@@ -625,8 +625,8 @@ label ball_quest_E4:
     call her_main("I won't be able to attend the ball this year... so what?", "annoyed", "narrow", "worried", "down")
     call her_main("I spent countless hours with organizing the event...", "normal", "happyCl", "worried", "mid")
     call her_main("I worked so hard... and...", "open", "base", "worried", "mid", tears="soft")
-    call her_main("And now I will not even be able to... to... *Sob!*", "shock", "base", "base", "R", cheeks="blush", tears="soft")
-    call her_main("To... *SOB!*", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
+    call her_main("And now I will not even be able to... to... *Sob*!", "shock", "base", "base", "R", cheeks="blush", tears="soft")
+    call her_main("To... *SOB*!", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     call her_main("Excuse me sir!", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     hide screen hermione_main
     hide screen bld1
@@ -639,7 +639,7 @@ label ball_quest_E4:
 
     call bld
     m "......................................."
-    m "Hm..."
+    m "*Hm*..."
 
     $ hermione_busy = True
     $ hg_event_pause += 1
@@ -658,7 +658,7 @@ label ball_quest_E5:
 
     call give_reward(">You give the ball gown to Hermione...","interface/icons/box_red_1.png")
 
-    call her_main("Hm...? What is this?", "base", "base", "base", "mid")
+    call her_main("*Hmm*...? What is this?", "base", "base", "base", "mid")
     call her_main("{size=+7}A DRESS?!{/size}", "angry", "wide", "base", "stare")
     with hpunch
     m "I thought that you--"
@@ -666,10 +666,10 @@ label ball_quest_E5:
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("[genie_name]!", "angry", "base", "base", "mid", tears="soft")
     g4 "What? What happened? Don't tell me it's the wrong colour or something!"
-    call her_main("It's perfect, sir...*sob!*", "angry", "base", "base", "mid", tears="soft")
-    her "It's perfect... *sob!* ...I love it."
+    call her_main("It's perfect, sir...*sob*!", "angry", "base", "base", "mid", tears="soft")
+    her "It's perfect... *sob*! ...I love it."
     m "You sure don't look like it..."
-    her "I am sorry, sir... *Sob!*"
+    her "I am sorry, sir... *Sob*!"
     call her_main("I... I am just...", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
     call her_main("I am so happy...", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     her "Thank you, sir. Thank you so much."
@@ -681,15 +681,15 @@ label ball_quest_E5:
     call her_main("Because I will do it!", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
     her "And I will swallow and everything!"
     call her_main("And you wouldn't have to pay me a single house point!", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
-    m "uhm... Maybe some other time..."
+    m "*uhm*... Maybe some other time..."
     m "This is not the type of crying I find arousing..."
     call her_main("I'm sorry, sir. I'm such a mess...", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     call her_main("But this is so unexpected...", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
-    her "You made me so happy, sir...*sob!*"
-    call her_main("Thank you sir! *SOB!* Thank you! *SOB!*", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
+    her "You made me so happy, sir... *sob*!"
+    call her_main("Thank you sir! *SOB*! Thank you! *SOB*!", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     m "Well... err... there, there..."
     m "Better stop crying before you stain that new dress of yours with those tears..."
-    call her_main("My new dress! *SOB!*", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
+    call her_main("My new dress! *SOB*!", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
     m "Alright, you know what? Just get out of my office."
     m "Just take your dress and leave."
     call her_main("Of course... I am sorry, sir!", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")

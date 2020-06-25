@@ -49,7 +49,7 @@ label nt_pr_kiss_start:
         if nt_pr_kiss.points == 0: # Tell her to be even lewder for the next level of favors.
 
             m "Would you like to help your students with their oral skills again?"
-            call ton_main("Mmmm, yes... Some of them are in dire need of some practice...","horny","base","raised","mid")
+            call ton_main("*Mmmm*, yes... Some of them are in dire need of some practice...","horny","base","raised","mid")
             g9 "Then go give them some practice!"
             call ton_main("I will, [ton_genie_name]...","base","base","base","mid")
 
@@ -172,8 +172,8 @@ label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     m "That shy one?"
     call ton_main("Yes, the cute one!{w} He made a classic mistake today...","smile","happyCl","base","mid")
     m "Which is?"
-    call ton_main("Calling your teacher \"Mommy.\"","base","base","base","mid")
-    g9 "*ha-ha-ha!*... Really?"
+    call ton_main("Calling your teacher \"Mommy\".","base","base","base","mid")
+    g9 "*ha-ha-ha*!... Really?"
     m "I bet the students had a field day with that one!"
     call ton_main("Surprisingly not... Everyone just sort of went quiet.","open","base","base","R")
     m "I know that {b}I{/b} would have given him hell for that..."
@@ -190,7 +190,7 @@ label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     m "How did he take it?"
     call ton_main("Great! That kiss must have awoken something in him...","smile","base","angry","mid")
     call ton_main("He really got into it after a while...","base","base","base","mid")
-    call ton_main("*Ugh!*... I've never had someone attack me with their tongue like that...","horny","base","base","ahegao")
+    call ton_main("*Ugh*!... I've never had someone attack me with their tongue like that...","horny","base","base","ahegao")
     call ton_main("It was intense! And neither of us wanted it to end...","base","base","angry","ahegao")
     g9 "Is that why you were late today?"
     call ton_main("*Hmmm*... Can you blame me?","base","base","base","mid")
@@ -280,7 +280,7 @@ label nt_pr_kiss_T1_E3: # Tier 1 - Event 3 - Slytherin girls
 
 
 label nt_pr_kiss_T1_E4: #Level 1 Event 4
-    #Tender make-out sesh with slytherin lesbian
+    #Tender make-out session with a Slytherin lesbian
     call play_sound("door")
     call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
@@ -292,8 +292,8 @@ label nt_pr_kiss_T1_E4: #Level 1 Event 4
             "\"You are back!\"":
                 pass
             "\"Make it quick!\"":
-                call ton_main("I kissed that cure little Slytherin girl...","open","base","base","mid")
-                call ton_main("She gotting there!","base","happyCl","base","mid")
+                call ton_main("I kissed that cute little Slytherin girl...","open","base","base","mid")
+                call ton_main("She getting there!","base","happyCl","base","mid")
                 m "Very good, [tonks_name]."
                 call ton_main("Thank you, [ton_genie_name]. Have a good night.","base","base","base","mid")
                 call increase_house_points("s", 40)
@@ -387,7 +387,7 @@ label nt_pr_kiss_T2_E1: # Tier 2 Event 1 # Not in use.
     call ton_main("Whispering in his ear I asked if he wanted a little kiss...","base","base","base","mid")
     call ton_main("Making sure to let him know that I'd pay him plenty of points...","base","base","base","mid")
     call ton_main("Just for a kiss...","base","base","base","mid")
-    m "Mmmmm..."
+    m "*Mmmmm*..."
     call ton_main("Of course he said yes... Even if it was so faint I could barely hear it...","base","base","base","mid")
     call ton_main("But once he said it... I was on him...","base","base","base","mid")
     call ton_main("I pinned him down as I held his head in place...","base","base","base","mid")
@@ -402,7 +402,7 @@ label nt_pr_kiss_T2_E1: # Tier 2 Event 1 # Not in use.
     call ton_main("I wrapped his tongue in mine... stuck it down his throat...","base","base","base","mid")
     call ton_main("Ugh... I even licked his face clean...","base","base","base","mid")
     call ton_main("By the time I was done there wasn't a dry spot on his face...","base","base","base","mid")
-    m "Argh..."
+    m "*Argh*..."
     call ton_main("Poor thing... I think I broke him if I'm being honest...","base","base","base","mid")
     m "That's it..."
     call ton_main("I thought he'd like it... but there were so many tears-","base","base","base","mid")
@@ -411,7 +411,7 @@ label nt_pr_kiss_T2_E1: # Tier 2 Event 1 # Not in use.
     # Genie cums
     #">You begin firing a load of under your desk, making a dull thud with each blast hitting against the backboard..."
 
-    call ton_main("Mmmm, looks like you enjoyed our little lesson as well...","base","base","base","mid")
+    call ton_main("*Mmmm*, looks like you enjoyed our little lesson as well...","base","base","base","mid")
     m "Ugh... can you blame me? That was... Ugh..."
     call ton_main("I told you I knew how to kiss...","base","base","base","mid")
     m "I believe you... that'll be all for now..."

@@ -161,7 +161,7 @@ label slytherin_match:
     with d3
     pause .3
 
-    call ton_main("*huh?*... (When did he?)", "upset", "base", "worried", "L", xpos="base", ypos="head")
+    call ton_main("*huh*?... (When did he?)", "upset", "base", "worried", "L", xpos="base", ypos="head")
     call ton_main("(Impressive. I wonder if his stamina can keep up with that speed...)", "horny", "base", "raised", "R")
     g9 "Ladies first."
     call ton_main("What a gentleman.", "base", "happyCl", "base", "mid")
@@ -410,7 +410,7 @@ label slytherin_match:
     call sna_main("I'll give you a dungeon dweller in a minute you--", "snape_08", ypos="head")
 
     call her_main("Professor Tonks, your hair!", "soft", "base", "base", "L", flip=False, xpos="base", ypos="head")
-    call ton_main("Whopsie...{w=0.5} Miss Granger, so glad to see you!", "base", "base", "base", "L", flip=True, xpos="far_left", ypos="head", hair="neutral")
+    call ton_main("Whoopsie...{w=0.5} Miss Granger, so glad to see you!", "base", "base", "base", "L", flip=True, xpos="far_left", ypos="head", hair="neutral")
     call sna_main("{size=-2}*Hmph*{/size}", "snape_31", ypos="head")
     call her_main("Of course, as you know I take my responsibilities seriously!", "open", "base", "angry", "L")
 
@@ -453,7 +453,7 @@ label slytherin_match:
 
     sly2 "{size=+8}Get off the podium, Mudblood!{/size}"
     sly1 "{size=+15}Boooo!{/size}"
-    call her_main("*Hmph!*", "annoyed", "narrow", "angry", "mid")
+    call her_main("*Hmph*!", "annoyed", "narrow", "angry", "mid")
 
     call hide_characters
     with d3
@@ -796,7 +796,7 @@ label slytherin_match:
     pause 1
 
     ton "Bloody stairs!"
-    m "Nevermind..."
+    m "Never mind..."
     call sna_main("This isn't good.", "snape_03")
     g4 "You tell me, her face is fucked, and not in the fun way."
     call sna_chibi(flip=True)
@@ -889,7 +889,7 @@ label slytherin_match:
             call quidditch_stands(crowd_react=[None, "emoq", None])
             with d3
 
-            call gen_main("In less than an hour, aircrafts from here will join others from around the world. And you will be launching the largest aerial battle in this history of mankind.", face="open")
+            call gen_main("In less than an hour, aircraft from here will join others from around the world. And you will be launching the largest aerial battle in this history of mankind.", face="open")
             call gen_main("", face="base")
             call sna_main("Not again...", "snape_17")
             call gen_main("Mankind...{w=0.3} that word should have new meaning for all of us today.", face="open")
@@ -957,7 +957,7 @@ label slytherin_match:
             call gen_main("Nailed it.", face="grin")
 
         "\"Be winners!\"": #"\"Don't care about the scoreboard\"":
-            # Hoosiers
+            # Hoosier
             stop bg_sounds fadeout 3.0
             play music "music/victory1.mp3" fadeout 3 fadein 1.0
             call gen_main("There's a tradition in tournament play to not talk about the next step until you've climbed the one in front of you.", face="base")
@@ -1294,7 +1294,7 @@ label slytherin_match:
 
     cra "She's showing us her ass! That luck potion Snape gave us really is working!"
     goy "Or maybe this little Ravenclaw slut has finally come to her senses, Crabbe."
-    goy "No surprise there... Those Ravenclaw cucks got nothing even close to our sheer strength!" #have is correct grammar here but crabbe and goyle are dumb shits so
+    goy "No surprise there... Those Ravenclaw cucks got nothing even close to our sheer strength!" #have is correct grammar here but Crabbe and Goyle are dumb shits so
     $ camera.set_image("cho_cg quidditch pose2 open")
     call nar("Cho tightens her butt cheeks and flutters her eyelashes in a way that -- to anyone except Crabbe and Goyle -- would be an obvious distraction tactic.")
 
@@ -1568,9 +1568,9 @@ label slytherin_match_return:
     call play_sound("giggle")
     call her_main("*Hi-Hi-Hi*", "base", "happyCl", "base", "mid")
     call her_main("What's wrong sweetie?", "soft", "narrow", "base", "L")
-    call her_main("Want to find out if Gryffindors taste the same as Ravenclaws?", "smile", "narrow", "base", "L")
+    call her_main("Want to find out if Gryffindor's taste the same as Ravenclaw's?", "smile", "narrow", "base", "L")
     call cho_main("...", "angry", "base", "worried", "down", cheeks="heavy_blush") #Blushes
-    call cho_main("*HMPH!*", "annoyed", "narrow", "angry", "L", cheeks="blush")
+    call cho_main("*HMPH*!", "annoyed", "narrow", "angry", "L", cheeks="blush")
 
     # Cho walks out and slams the door
     call play_music("stop")
@@ -1636,7 +1636,7 @@ label slytherin_match_return:
         g4 "You were Miss Granger the whole time?"
         m "Plot twist of the fucking century."
         call ton_main("Of course not, don't be silly...", "open", "closed", "base", "mid")
-        call ton_main("I'm a metamorphmagi...", "base", "base", "base", "mid")
+        call ton_main("I'm a metamorphmagus...", "base", "base", "base", "mid")
         m "A meta what?"
         m "(I thought I was the only one allowed to be meta in this game...)"
 
@@ -1773,7 +1773,7 @@ label slytherin_match_return:
     call ton_main("I doubt Miss Granger would tell anyone, unless she has a really good reason to do so...", "base", "base", "angry", "mid")
     call ton_main("*Urgh*... My head hurts.", "upset", "base", "worried", "up")
     call ton_main("I'm gonna go sleep off whatever this is...", "open", "base", "sad", "mid")
-    call ton_main("Toodaloo!", "base", "happyCl", "base", "mid")
+    call ton_main("Too-da-loo!", "base", "happyCl", "base", "mid")
 
     call ton_walk(action="leave")
     stop music fadeout 11.0
@@ -1787,7 +1787,7 @@ label slytherin_match_return:
     if cho_whoring < 24:
         $ cho_whoring = 24
         $ TBA_message("This concludes all Quidditch events for Cho as of version %s." % title_version)
-        $ TBA_message("Cho's recklesness stat has been maxed out.\nYou can now use all of her wardrobe options.")
+        $ TBA_message("Cho's recklessness stat has been maxed out.\nYou can now use all of her wardrobe options.")
 
     $ tonks_busy = True
     $ snape_busy = True

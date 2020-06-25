@@ -62,7 +62,7 @@ label summon_hermione:
             jump hermione_requests
 
 
-        # Favors
+        # Favours
         "-Sexual favours-" (icon="interface/icons/small/condom.png") if hermione_favors:
             if her_mood >=1 and her_mood < 3:
                 her "I'm sorry, [genie_name], Maybe some other time..."
@@ -97,7 +97,7 @@ label summon_hermione:
             with d2
             jump hermione_requests
 
-        # Cardgame
+        # Card game
         "-Let's Duel-" (icon="interface/cards.png") if snape_second_win:
             jump hermione_cardgame_menu
 
@@ -119,14 +119,14 @@ label summon_hermione:
                 if her_mood >=3 and her_mood < 7:
                     her "..............................."
                 elif her_mood >=7:
-                    her "*Humph!*..."
+                    her "*Humph*!..."
                 else:
                     her "Oh, alright. I will go to classes then."
             else:
                 if her_mood >=3 and her_mood < 7:
                     her "..............................."
                 elif her_mood >=7:
-                    her "Tch..."
+                    her "*Tch*..."
                 else:
                     her "Oh, alright. I will go to bed then."
 
@@ -322,7 +322,7 @@ label hermione_favor_menu:
                 m "Just think about it."
                 jump hermione_favors_convinced_check
         else:
-            her "The Gryffindors are in the lead. I don't need to do this."
+            her "The Gryffindor is in the lead. I don't need to do this."
             if her_whoring >= 15:
                 menu:
                     "-Change her mind-":
@@ -456,7 +456,7 @@ label hermione_talk:
         "-Ask her to help Tonks-" (icon="interface/icons/small/tonks.png") if astoria_intro.E1_complete and not astoria_intro.E3_complete:
             if astoria_intro.E2_hermione:
                 call her_main("I'm still looking for that student, [genie_name]!", "open", "closed", "base", "mid")
-                call her_main("Trust in me, I will find that slytherin scum!", "angry", "base", "angry", "mid")
+                call her_main("Trust in me, I will find that Slytherin scum!", "angry", "base", "angry", "mid")
                 jump hermione_talk
 
             $ hermione_busy = True
@@ -648,7 +648,7 @@ label hermione_talk:
 
 
 label genie_change:
-    call her_main("Ok, from now on I'll call you [genie_name].", "base", "base", "base", "mid")
+    call her_main("Okay, from now on I'll call you [genie_name].", "base", "base", "base", "mid")
     jump hermione_talk
 
 label genie_change_fail:
@@ -868,7 +868,7 @@ label hermione_change:
                     m "That's not an answer..."
                     call her_main("{size=-10}Okay..{/size}", "soft", "narrow", "angry", "R",cheeks="blush")
                     m "What was that? I didn't hear you."
-                    call her_main("I said yes, you can call me a slytherin whore... or whatever.", "normal", "narrow", "annoyed", "mid", cheeks="blush")
+                    call her_main("I said yes, you can call me a Slytherin whore... or whatever.", "normal", "narrow", "annoyed", "mid", cheeks="blush")
                     call her_main("Happy now?!", "open", "closed", "angry", "mid", cheeks="blush")
                     g9 "Very."
                     call her_main("{size=-6}You are the worst.{/size}", "normal", "narrow", "base", "R_soft", cheeks="blush")
@@ -926,7 +926,7 @@ label hermione_change:
                 "-Try to calm her down-":
                     call her_main("", "disgust", "narrow", "worried", "mid_soft", tears="mascara")
                     m "Now, now, there's no need to cry."
-                    m "Do you know why I call you these things miss granger?"
+                    m "Do you know why I call you these things miss Granger?"
                     call her_main("...no?", "disgust", "narrow", "worried", "mid_soft", tears="mascara")
                     m "It's so that you'll come to know that words are just words and they only hurt if you let them."
                     call her_main("...", "normal", "narrow", "worried", "mid_soft", tears="mascara")

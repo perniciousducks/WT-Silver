@@ -71,7 +71,7 @@ label slut_scene: #Locked to her being your slut
     hide screen hermione_main
     call her_main("Please [genie_name], let me suck your cock.", "open", "base", "base", "mid")
     hide screen hermione_main
-    m "Hmmm that was almost good enough. Try again, a little harder."
+    m "*Hmmm* that was almost good enough. Try again, a little harder."
     call her_main("Pretty please [genie_name], please let me suck your big beautiful cock.", "scream", "happyCl", "worried", "mid")
     hide screen hermione_main
     m "Good girl."
@@ -87,22 +87,22 @@ label slut_scene: #Locked to her being your slut
             call her_main("!!!", "shock", "wide", "base", "stare")
             hide screen hermione_main
             ">You feel her push back against your legs."
-            m "Now, now [hermione_name] good sluts know how to deepthroat. Just relax your throat."
-            call her_main("eeettsss hhooooo hhhhggggg!", "open_wide_tongue", "narrow", "base", "down")
+            m "Now, now [hermione_name] good sluts know how to deep throat. Just relax your throat."
+            call her_main("*eeettss-hhooooo-hhhhggggg*!", "open_wide_tongue", "narrow", "base", "down")
             hide screen hermione_main
             m "Come on [hermione_name] you are a good slut aren't you."
             call her_main("...", "open_wide_tongue", "closed", "angry", "mid")
             hide screen hermione_main
             ">Hermione's throat relaxes and allows you to enter."
-            m "Ughhh! Your throat is so tight. You're such a filthy little slut aren't you?"
-            call her_main("*Slurp!* *Gltch!* *Gulp!*", "open_wide_tongue", "base", "base", "mid")
+            m "*Ughhh*! Your throat is so tight. You're such a filthy little slut aren't you?"
+            call her_main("*Slurp*! *Gltch*! *Gulp*!", "open_wide_tongue", "base", "base", "mid")
             hide screen hermione_main
             m "I asked you a question slut."
-            call her_main("hhyyym aaaa hhhhtttt", "open_wide_tongue", "base", "angry", "mid")
+            call her_main("*hhyyym-aaaa-hhhhtttt*", "open_wide_tongue", "base", "angry", "mid")
             hide screen hermione_main
             ">You increase the speed in her throat."
             m "What was that [hermione_name]? I couldn't hear you over you sucking my cock. Try speaking a little louder."
-            call her_main("hhhhyyyyyym aaaaaaa hhhhhhhhttttttt!", "shock", "wide", "base", "stare")
+            call her_main("*hhhhyyyyyym-aaaaaaa-hhhhhhhhttttttt*!", "shock", "wide", "base", "stare")
             hide screen hermione_main
             ">The vibration from her throat on your penis is amazing."
             m "Once more, so that I can hear you."
@@ -122,30 +122,30 @@ label slut_scene: #Locked to her being your slut
         "-Let her suck you-":
             m "Well if you insist [hermione_name]."
             ">Hermione takes you into her waiting mouth."
-            
+
             call her_chibi_scene("bj")
             with d3
 
             m "See, don't you feel better now that you have a cock in your mouth?"
-            call her_main("mmmmmmm", "open_tongue", "narrow", "base", "mid_soft")
+            call her_main("*mmmmmmm*", "open_tongue", "narrow", "base", "mid_soft")
             hide screen hermione_main
             m "Admit it, you love this."
-            call her_main("*Slurp!* *Gulp!* *Slurp!*", "open_wide_tongue", "narrow", "base", "down")
+            call her_main("*Slurp*! *Gulp*! *Slurp*!", "open_wide_tongue", "narrow", "base", "down")
             hide screen hermione_main
             m "You love being used as someone else's plaything."
-            call her_main("*Gulp!* *Gobble!* *Gobble!*", "open_wide_tongue", "closed", "angry", "mid")
+            call her_main("*Gulp*! *Gobble*! *Gobble*!", "open_wide_tongue", "closed", "angry", "mid")
             hide screen hermione_main
             m "You might act upset that people will find out what you are."
-            call her_main("*Gulp!* *Gobble!* *Slurp!*", "open_tongue", "narrow", "base", "mid_soft")
+            call her_main("*Gulp*! *Gobble*! *Slurp*!", "open_tongue", "narrow", "base", "mid_soft")
             hide screen hermione_main
             m "But deep down, you're just glad that you don't have to act like you're not a massive slut."
-            call her_main("*Slurp!* *Gobble!*", "open_wide_tongue", "closed", "angry", "mid")
+            call her_main("*Slurp*! *Gobble*!", "open_wide_tongue", "closed", "angry", "mid")
             hide screen hermione_main
             m "Aren't you"
             call her_main("...", "open_wide_tongue", "narrow", "base", "down")
             hide screen hermione_main
             m "I asked you a question slut."
-            
+
             call her_chibi_scene("bj_pause")
             with d3
 
@@ -160,7 +160,7 @@ label slut_scene: #Locked to her being your slut
             call her_chibi_scene("bj")
             with d3
 
-    m "Ughhh, I'm getting close girl."
+    m "*Ughhh*, I'm getting close girl."
     m "Get ready."
     ">Hermione starts focusing on the tip of your cock, licking your slit."
     m "That did it. Here it comes!"
@@ -335,7 +335,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     m "Of course. I already know what a whore you are, this is so that everyone else will know."
     call her_main("What will people think of me?", "scream", "happyCl", "worried", "mid",cheeks="blush",tears="messy")
     m "They'll think the truth, that you're a shameless whore."
-    call her_main("...Hmmph", "angry", "squint", "base", "mid",cheeks="blush")
+    call her_main("...*Hmmph*", "angry", "squint", "base", "mid",cheeks="blush")
     m "Well whatever you think, I expect you to put it on and then get out of my office."
     call her_main("...Fine", "shock", "narrow", "base", "down",cheeks="blush",tears="crying")
     ">She places the collar around her neck and tightens it."
@@ -459,8 +459,8 @@ label slave_scene:
     ">Hermione starts pushing back against you and rotating her hips as you thrust into her."
     m "That's it girl. Almost there, just a little more..."
     ">You grab her hips and impale her on your throbbing member."
-    m "Ughhh"
-    
+    m "*Ughhh*"
+
     call her_chibi_scene("sex_cum_in")
 
     ">You roar as you cum inside her tight hole."
@@ -518,7 +518,7 @@ label slave_scene:
     m "That look suits you girl."
     call her_main("Thank you master. Will I be getting any points \ntoday?", "base", "narrow", "worried", "down")
     hide screen hermione_main
-    m "Hahaha, of course not. Slaves aren't paid girl, that's what makes them slaves."
+    m "*Ha-ha-ha*, of course not. Slaves aren't paid girl, that's what makes them slaves."
     call her_main("I suppose your right.", "base", "narrow", "base", "mid_soft")
 
     hide screen hermione_main

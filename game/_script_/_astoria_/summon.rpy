@@ -186,14 +186,14 @@ label astoria_talk:
                     call ast_main("That's so cool!", face="happy")
                     m "(Oh right. Nobody is supposed to know that.)"
                     m "It's just my name, [astoria_name]..."
-                    call ast_main("Oh... ok, [ast_genie_name].", face="neutral")
+                    call ast_main("Oh... okay, [ast_genie_name].", face="neutral")
                     jump astoria_talk
                 "-Lord Voldemort-":
                     label .lord_voldemort:
                     $ ast_genie_name = "Lord Voldemort"
                     call ast_main("Voldemort? Like that mean, evil wizard?", face="disgusted")
                     call ast_main("You aren't him, are you?", face="disgusted")
-                    m "No, just roleplaying..."
+                    m "No, just role-playing..."
                     call ast_main("Oh, alrighty then!", face="happy")
                     call ast_main("[ast_genie_name].", face="happy")
                     jump astoria_talk
@@ -310,7 +310,7 @@ label astoria_talk:
                         call ast_main("That's a bit much, don't you think, [ast_genie_name]?", face="disgusted")
                         m "Not at all!"
                         m "I will only call you that when we are alone, promised!"
-                        call ast_main("Well,... Ok then...", face="neutral")
+                        call ast_main("Well,... Okay then...", face="neutral")
                     jump astoria_talk
                 "-Never mind-":
                     jump astoria_talk

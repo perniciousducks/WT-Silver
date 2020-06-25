@@ -103,7 +103,7 @@ label snape_hangout:
 label ss_he_wine_intro:
     call bld
     m "Look what I've got!"
-    call sna_main("Hm..?","snape_05", ypos="head")
+    call sna_main("*Hmm*..?","snape_05", ypos="head")
     call sna_main("Let me see...")
     pause.1
 
@@ -285,7 +285,7 @@ label ss_he_story_intro_E4:
     call sna_main("True...","snape_23")
     call sna_main("So, you think somewhere out there is another version of me?","snape_05")
     m "Probably..."
-    call sna_main("Hm...","snape_23")
+    call sna_main("*Hm*...","snape_23")
     call sna_main("Severus Snape - the ever cheerful white mage...","snape_23")
     m "Sure, why not?"
     call sna_main("What unsettling imagery you put into my mind...","snape_03")
@@ -330,7 +330,7 @@ label ss_he_story_intro_E5:
     m "Right..."
     call blktone
 
-    ">Professor Snape seems to feel awkward about benefitting from your misery..."
+    ">Professor Snape seems to feel awkward about benefiting from your misery..."
     ">The bond of friendship between you two strengthens slightly..."
 
     call sly_plus
@@ -341,7 +341,7 @@ label ss_he_story_intro_E5:
 
 label ss_he_story_E6:
     call bld
-    m "So, tell me about those slytherin sluts some more!"
+    m "So, tell me about those Slytherin sluts some more!"
     call sna_main("What can I say? Life's been good to me lately, my friend.","snape_23", ypos="head")
     call sna_main("These days I have a whole harem of skimpy students to choose from.","snape_22")
     g9 "Nice!"
@@ -435,7 +435,7 @@ label ss_he_story_intro_E9: # Replace this event.
     call sna_main("And I am this miserable muggle guy who lives in this shithole of a town full of run-down buildings.","snape_06")
     call sna_main("I try to make a living by drawing comics and creating games with \"Ren'Py\"...","snape_06")
     call sna_main("And that is so bizarre because I don't even know what a \"Ren'Py\" is!","snape_24")
-    m "Hm... Then what happened?"
+    m "*Hm*... Then what happened?"
     call sna_main("Not much... Mostly worked my ass off for months...","snape_05")
     call sna_main("Then managed to create a relatively successful game somehow...","snape_05")
     call sna_main("Eventually began to make decent money with my craft...","snape_24")
@@ -467,7 +467,7 @@ label ss_he_story_intro_E10:
     call sna_main("Since you are an all-powerful being, you've got to know things like that, right?","snape_05")
     m "Maybe..."
     call sna_main("Great. Tell me then.","snape_06")
-    m "Hm... You sure you're ready for this?"
+    m "*Hm*... You sure you're ready for this?"
     call sna_main("Yes. Lay it on me, friend.","snape_05")
     m "Alright then..."
     call sna_main("................!","snape_01")
@@ -490,7 +490,7 @@ label ss_he_story_intro_E10:
     g9 "I know! It was hard to resist..."
     call blktone
 
-    ">You spend the evening by skillfully avoiding a whole variety of similar questions."
+    ">You spend the evening by skilfully avoiding a whole variety of similar questions."
     ">Despite your refusal to cooperate the bond of friendship between you two strengthens yet again."
 
     call sly_plus
@@ -628,7 +628,7 @@ label ss_he_story_intro_E15:
     call sna_main("No idea...","snape_09")
     call sna_main("But I shall give this some more thought...","snape_09")
     call sna_main("Oh, and one more thing...","snape_24")
-    m "Hm...?"
+    m "*Hmm*...?"
     call sna_main("This time of the year is usually pretty busy...","snape_24")
     call sna_main("Even more so now when I need to constantly cover up for Albus' absence.","snape_24")
     m "..................."
@@ -638,16 +638,16 @@ label ss_he_story_intro_E15:
     call sna_main("I'll still be around for a quick chat from time to time, but that's about it.","snape_06")
     m "I see..."
     m "I will have to find another way of spending my evenings from now on then..."
-    call sna_main("I'm sure miss granger will be happy to help.","snape_02")
-    m "Yes, for as long as slytherin is in the lead."
+    call sna_main("I'm sure miss Granger will be happy to help.","snape_02")
+    m "Yes, for as long as Slytherin is in the lead."
     call sna_main("Seriously? She still cares about that?","snape_05")
     m "Very much so."
-    call sna_main("Well in that case I shall personally ensure that slytherin house gets as many house points as possible.","snape_23")
+    call sna_main("Well in that case I shall personally ensure that Slytherin house gets as many house points as possible.","snape_23")
     pause.1
     call blktone
 
     ">Your friendship level with professor Snape reached its maximum value."
-    ">Congratulations. If this were a \"dating sim\" you would be getting the ending with Severus Snape."
+    ">Congratulations. If this were a \"Dating Sim\" you would be getting the ending with Severus Snape."
     ">The Slytherin house point payout has increased greatly and reached its maximum level as well."
 
     call hide_blktone

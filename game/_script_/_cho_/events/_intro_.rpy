@@ -23,7 +23,7 @@ label cho_intro_E1:
     call play_sound("knocking")
     "*Knock-knock-knock*"
     m "Please, give me a moment..."
-    g4 "I just need to-{w} *urgh!*"
+    g4 "I just need to-{w} *urgh*!"
     call play_sound("equip_inventory")
     m "Adjust my pants...{w} There we go."
 
@@ -125,7 +125,7 @@ label cho_intro_E1:
             m "What did she do this time?"
             pass
         "-That troublemaker...-":
-            g9 "I promise you, I'll give her a good -- ole-fashioned spanking -- next time I see her."
+            g9 "I promise you, I'll give her a good {i}ole fashioned spanking{/i} next time I see her."
             call cho_main("A Spanking?", "angry", "wide", "base", "mid")
             call cho_main("And why would you do that, Professor?", "open", "narrow", "raised", "mid")
             call cho_main("(He really must be old...{w} They probably did stuff like that all the time back in the day...)", "angry", "narrow", "worried", "downR")
@@ -424,7 +424,7 @@ label cho_intro_E2:
     g4 "W-who?"
     call cho_main("Granger!", "scream", "closed", "angry", "mid", trans=hpunch)
     g4 "Aaa-h!" # Girly scream
-    call cho_main("Gryffindor's role model student.", "angry", "narrow", "angry", "mid")
+    call cho_main("The Gryffindor's role model student.", "angry", "narrow", "angry", "mid")
     call cho_main("She's out there spreading mean rumours about me!", "open", "narrow", "angry", "R")
     m "How mean are we talking?"
     call cho_main("The worst kind! That I'm cheating at Quidditch!", "angry", "narrow", "angry", "down")
@@ -507,7 +507,7 @@ label ss_he_cho_E1:
             m "Bless you."
             call sna_main("No. That's her name.", "snape_08")
             call sna_main("We only have one asian girl at our school.", "snape_24")
-            call sna_main("You'd think as the only wizard school in all of britain, our school would be more diverse...", "snape_09")
+            call sna_main("You'd think as the only wizard school in all of Britain, our school would be more diverse...", "snape_09")
 
     call sna_main("And what did she want from you exactly?", "snape_05")
     m "She asked me a couple of things about Quidditch."
@@ -618,7 +618,7 @@ label ss_he_cho_E1:
                 call sna_main("Zone out and dream of stuffing that witch's relentless mouth!", "snape_06")
                 m "I feel you..."
 
-            call sna_main("Hmmm...{w} That reminds me of something I witnessed at the end of last year...", "snape_23")
+            call sna_main("*Hmmm*...{w} That reminds me of something I witnessed at the end of last year...", "snape_23")
             call sna_main("Granger was scolding the poor girl for kissing a boy in the hallways.", "snape_20")
             m "Hot...{w} What happened then?"
             call sna_main("They were screaming and grabbing at each other's hair before I had the chance to interfere.", "snape_18")
@@ -724,7 +724,7 @@ label cho_intro_E3:
                 call her_main("Well...", "soft", "happy", "base", "R")
                 m "Don't push your luck..."
                 call her_main("No, I think that should do...", "smile", "happyCl", "base", "mid")
-                m "Two hundred points to gryffindor...{p=0.6}Happy?"
+                m "Two hundred points to Gryffindor...{p=0.6}Happy?"
                 $ gryffindor += 200
 
                 call her_main("If I'm truly honest with you Sir,{p=0.6}My plans weren't that popular with the Quidditch teams in any case.", "soft", "narrow", "base", "mid_soft")
@@ -738,7 +738,7 @@ label cho_intro_E3:
                 m "And you believe that I'd just throw point at you because of that?"
                 call her_main("{size=-4}It was worth a try...{/size}", "annoyed", "narrow", "worried", "down")
                 m "Try to remember this, Miss Granger. You can't rip me off that easily."
-                call her_main("Tzzzz- I don't need your points anyway.", "angry", "base", "angry", "mid")
+                call her_main("*Tzzzz*- I don't need your points anyway.", "angry", "base", "angry", "mid")
                 g9 "You may leave now."
                 call her_main("I will!{w} Good day, Sir!", "open", "closed", "angry", "mid")
 
@@ -801,7 +801,7 @@ label cho_intro_E3:
 
     call her_main("[genie_name], may I ask.{p=0.6}What exactly were you and Cho talking about when I entered your office?", "open", "base", "base", "R")
     m "Oh. She just wanted my help with Quidditch."
-    call her_main("Pffff-{p=0.4}Why doesn't it surprise me that she'd need your help with it.", "grin", "narrow", "base", "R_soft")
+    call her_main("*Pffff*-{p=0.4} Why doesn't it surprise me that she'd need your help with it.", "grin", "narrow", "base", "R_soft")
     call her_main("How else could she possibly win that stupid Quidditch cup...", "soft", "closed", "angry", "mid")
     m "I thought that cup was so important to you?"
     call her_main("I couldn't care less about it, [genie_name].", "open", "closed", "base", "mid")
@@ -870,7 +870,7 @@ label cho_intro_E3:
     call her_main("About my \"Quidditch equality movement\"...", "normal", "closed", "base", "mid")
     call cho_main("Did our Professor finally convince you what a terrible idea it would be?", "soft", "narrow", "angry", "mid")
     m "Actually, I still think granting more people the ability to-"
-    call cho_main("*Shhush!*, Professor!{p=0.6}I'd like to hear it from her.", "annoyed", "narrow", "angry", "mid")
+    call cho_main("*Shhush*!, Professor!{p=0.6}I'd like to hear it from her.", "annoyed", "narrow", "angry", "mid")
     call cho_main("I'm going to enjoy this!", "horny", "narrow", "base", "L")
     call her_main("...", "annoyed", "base", "angry", "mid")
     call her_main("*Sigh*{p=0.6}I will end my movement. And I won't interfere with Quidditch again...", "open", "closed", "base", "mid") #[Looking bored]

@@ -35,7 +35,7 @@ label hg_pr_kiss:
         m "Dismissed, [hermione_name]."
         call her_main("[genie_name]!......", "normal", "squint", "angry", "mid")
         m "I said you're dismissed."
-        call her_main("*Humph!*...", "annoyed", "squint", "angry", "mid")
+        call her_main("*Humph*!...", "annoyed", "squint", "angry", "mid")
     elif her_tier < 4:
         m "[hermione_name], {number=current_payout} house points are up for grabs today!"
         m "Are you interested?"
@@ -187,7 +187,7 @@ label hg_pr_kiss_T1_E2:
     m "I guess it was embarrassing for you, girl?"
     call her_main("Very much so, [genie_name].", "annoyed", "narrow", "angry", "R")
     m "Did you enjoy it though?"
-    call her_main("*Humph!*...", "annoyed", "narrow", "annoyed", "mid")
+    call her_main("*Humph*!...", "annoyed", "narrow", "annoyed", "mid")
     m "So you kissed a girl and you liked it?"
     call her_main("Yes...", "disgust", "narrow", "base", "mid_soft")
     m "Did your tongues touch?"
@@ -261,7 +261,7 @@ label hg_pr_kiss_T2_E1:
 
     call her_main("I did, [genie_name]...", "open", "closed", "base", "mid")
     m "Well, don't just stand there. Give me the details."
-    call her_main("Ehm, alright...", "open", "base", "base", "mid")
+    call her_main("*Ehm*, alright...", "open", "base", "base", "mid")
     her "The girl was from Ravenclaw..."
     call her_main("I think she may have been an underclassman, but I did not ask...", "soft", "base", "base", "R")
     her "We got to talking about boys..."
@@ -274,7 +274,7 @@ label hg_pr_kiss_T2_E1:
     call her_main("She caught on real quick... I think she could be really good at it with some practice...", "open", "base", "base", "mid")
     call her_main("Also she was quite adorable...", "base", "base", "base", "mid")
     call her_main("She kept calling me \"[hermione_name]\"...", "smile", "base", "base", "R")
-    m "Hm..."
+    m "*Hm*..."
     m "I Don't recall sending you out with a task to confuse some poor girl, [hermione_name]."
     call her_main("\"Confuse\"? [genie_name], please...", "smile", "narrow", "base", "mid_soft")
     her "You should have seen that {i}poor girl{/i}..."
@@ -293,7 +293,7 @@ label hg_pr_kiss_T2_E2:
     call play_music("hermione") # Music
     call her_main("I did, [genie_name].", "open", "closed", "base", "mid")
     m "Tell me how it went."
-    call her_main("Well... Ehm...", "open", "base", "base", "mid")
+    call her_main("Well... *Ehm*...", "open", "base", "base", "mid")
     her "There is this one girl who is into girls..."
     her "I thought she would be the ideal candidate for my task..."
     her "so I told her that I am curious and that I would like to kiss her..."
@@ -309,7 +309,7 @@ label hg_pr_kiss_T2_E2:
     call her_main("Some of them even cheered us on...", "open", "happyCl", "worried", "mid", cheeks="blush")
     call her_main(".....", "base", "squint", "base", "mid")
     her "By the way, the girl I kissed, [genie_name]..."
-    m "Hm...?"
+    m "*Hm*...?"
     call her_main("She is one of those unpopular girls...", "open", "closed", "base", "mid")
     her "I know that other students make fun of her sometimes..."
     call her_main("But today changed everything...", "base", "squint", "base", "mid")
@@ -332,7 +332,7 @@ label hg_pr_kiss_T2_E3:
     m "Yes, [hermione_name]?"
     call her_main("May I ask you a question?", "open", "base", "base", "mid")
     m "By all means."
-    call her_main("Ehm...", "annoyed", "narrow", "angry", "R")
+    call her_main("*Ehm*...", "annoyed", "narrow", "angry", "R")
     call play_music("hermione") # Music
     call her_main("Why are boys so into watching girls make out with each other, [genie_name]?", "disgust", "narrow", "base", "mid_soft")
 
@@ -347,7 +347,7 @@ label hg_pr_kiss_T2_E3:
             call her_main("That is not what I meant, [genie_name]...", "annoyed", "narrow", "annoyed", "mid")
 
         "\"You wouldn't understand, girl.\"":
-            call her_main("Hm...", "upset", "closed", "base", "mid")
+            call her_main("*Hm*...", "upset", "closed", "base", "mid")
             call her_main("What about you, [genie_name]?", "angry", "base", "base", "mid")
             her "Where you like that when you were a boy?"
             m "You mean if I enjoyed watching two girls going at it?"
@@ -356,7 +356,7 @@ label hg_pr_kiss_T2_E3:
             call her_main("Oh...", "upset", "closed", "base", "mid")
 
         "\"Kissing girls? Where?!!\"":
-            call her_main("Tsk!......................", "angry", "base", "angry", "mid", emote="01")
+            call her_main("*Tsk*!......................", "angry", "base", "angry", "mid", emote="01")
 
     call her_main("Well, I am only asking you this, [genie_name], because...", "open", "narrow", "worried", "down")
     call her_main("...it is sort of becoming a new trend in our school...", "angry", "base", "base", "mid")
@@ -387,10 +387,10 @@ label hg_pr_kiss_T3_E1:
     call her_main("I did, [genie_name].", "soft", "base", "base", "mid")
     m "I'm all ears..."
     call her_main("Well, I kissed that annoying blond girl from Slytherin...", "annoyed", "squint", "base", "mid")
-    m "Hm... \"annoying\", huh?"
+    m "*Hm*... \"annoying\", huh?"
     m "Because she happens to be from Slytherin."
     call her_main("Precisely so, [genie_name].", "open", "closed", "base", "mid")
-    m "Hm..."
+    m "*Hm*..."
     m "Don't you think that that's a little bit of prejudice on your part?"
     m "Or shall I say that you are being a \"housist\"?"
     call her_main("...a \"housist\", [genie_name]?", "annoyed", "narrow", "annoyed", "mid")
@@ -414,7 +414,7 @@ label hg_pr_kiss_T3_E1:
     call her_main("And today of all days...", "annoyed", "narrow", "angry", "R")
     her "to be honest..."
     call her_main("She was quite attractive...", "annoyed", "narrow", "annoyed", "mid")
-    call her_main("For someone from slytherin that is...", "upset", "closed", "base", "mid")
+    call her_main("For someone from Slytherin that is...", "upset", "closed", "base", "mid")
     call her_main("I did not ask her why she needed this so desperately...", "open", "closed", "base", "mid")
     her "She was probably just trying to boost her own popularity at my expense..."
     her "Or it could also be that someone from the school staff bought this favour from her..."
@@ -449,7 +449,7 @@ label hg_pr_kiss_T3_E1:
     call her_main("In any case, After that we kissed some more...", "base", "narrow", "worried", "down")
     her "And then the break was over..."
     call her_main("And we had to run to class...", "angry", "wink", "base", "mid")
-    m "*Sigh...* Nonchalant and innocent schooldays..."
+    m "*Sigh*... Nonchalant and innocent schooldays..."
     m "Home assignments... Classes..."
     m "Schoolgirls \"snowballing\" in the courtyard..."
     m "Well done, [hermione_name]."
@@ -462,11 +462,11 @@ label hg_pr_kiss_T3_E2:
     call hg_pr_kiss_intro
 
     call her_main("I did, [genie_name].", "open", "closed", "base", "mid")
-    call her_main("Only... ehm...", "grin", "base", "base", "R")
+    call her_main("Only... *ehm*...", "grin", "base", "base", "R")
     m "What is it?"
     call her_main("Well... I have this friend...", "base", "base", "base", "mid")
     her "Her name is Ginny Weasley..."
-    call her_main("And... uhm...", "base", "base", "base", "R", cheeks="blush")
+    call her_main("And... *uhm*...", "base", "base", "base", "R", cheeks="blush")
     her "I'm Not sure how to say this..."
     m "Just say it, [hermione_name]."
     call her_main("Well, we decided to skip the potions class together...", "open", "base", "base", "mid")

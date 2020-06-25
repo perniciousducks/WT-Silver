@@ -9,13 +9,13 @@ label luna_favour_6:
         m "If it's not too much trouble."
         call lun_main("save your begging [lun_genie_name]... I'm fairly certain I know what you want.","base","seductive","angry","R")
         m "You do?"
-        call lun_main("Mhmmm... unless I'm mistaken, you probably want me to wrap my lips around that filthy old cock of yours...","base","angry","mad","mid")
+        call lun_main("*Mhmmm*... unless I'm mistaken, you probably want me to wrap my lips around that filthy old cock of yours...","base","angry","mad","mid")
         call lun_main("Am I mistaken sir?","base","seductive","angry","R")
         m "Certainly not! let's get started then shall we?"
         call lun_main("Not just yet... I have one condition.","base","seductive","angry","mid")
         m "Name it."
         call lun_main("I want you to summon hermione.","base","suspicious","sad","R")
-        m "Miss granger? Why?"
+        m "Miss Granger? Why?"
         call lun_main("well, because this is my first time doing something like this, it only makes sense to have her here to share her... experience.","base","seductive","base","R")
         call lun_main("heaven knows how many times she's sucked that disgusting cock of yours.","upset","mad","angry","mid")
         m "I've lost count myself."
@@ -28,10 +28,10 @@ label luna_favour_6:
         $ luna_r_arm = 2
         call lun_main(xpos="right", flip=True)
         call her_main("hello Professor...", "base", "closed", "base", "mid", xpos="base", trans=d3)
-        call her_main("oh, hi luna! what's he got you up here for today? Another handjob?", "base", "squint", "base", "mid")
+        call her_main("oh, hi Luna! what's he got you up here for today? Another handjob?", "base", "squint", "base", "mid")
         call lun_main("not quite...","base","angry","base","R")
         call her_main("so he finally asked for a blowjob then?", "base", "narrow", "worried", "down")
-        call lun_main("Mhmmm.","base","seductive","base","mid")
+        call lun_main("*Mhmmm*","base","seductive","base","mid")
         call her_main("great! I was hoping he'd ask for one soon. practising on a dildo is one thing, but there's no substitute for the real deal!", "soft", "narrow", "annoyed", "up")
         m "You've been practising?"
         call her_main("of course! {w=0.5}although she still has a lot to learn...", "upset", "closed", "base", "mid")
@@ -51,11 +51,11 @@ label luna_favour_6:
         call her_main("Don't worry [genie_name], I'll be standing right beside her. I'll make sure she doesn't do anything she shouldn't.", "grin", "happyCl", "worried", "mid")
         m "Alright then..."
         g4 "But if you bite my cock off you're both getting expelled!"
-        call lun_main("Pffft... as if you could have us expelled for failing to give a good blowjob...","base","angry","angry","R")
+        call lun_main("*Pffft*... as if you could have us expelled for failing to give a good blowjob...","base","angry","angry","R")
         m "Watch me..."
         call her_main("can we just get started?", "base", "narrow", "worried", "down")
         m "..."
-        call her_main("good... now take off your clothes luna.", "open", "closed", "base", "mid")
+        call her_main("good... now take off your clothes Luna.", "open", "closed", "base", "mid")
         call lun_main("do I have to?","pout","seductive","sad","R")
         call her_main("I told you that appearance is everything, remember?", "annoyed", "closed", "base", "mid")
         call lun_main("ugh... fine.","normal","seductive","sad","down")
@@ -92,16 +92,16 @@ label luna_favour_6:
         $ ccg2 = 4
         ">Luna leans forwards, giving the tip of your cock a tentative lick."
         m "Ugh... that's it slut."
-        her "mmm... now another one. more tongue this time..."
+        her "*mmm*... now another one. more tongue this time..."
         lun "..."
         $ ccg2 = 5
         ">Luna leans forward again, giving your cock another lick, this time starting further down the shaft."
         m "yes..."
         her "now just keep doing that until you can taste pre-cum."
         $ ccg2 = 6
-        lun "ok..."
+        lun "Okay..."
         $ ccg2 = 7
-        ">luna continues licking the head of your cock, running her tongue around the tip and occasionally down the entire length of it."
+        ">Luna continues licking the head of your cock, running her tongue around the tip and occasionally down the entire length of it."
         her "just pretend it's a big lollipop..."
         lun "..."
         $ ccg2 = 8
@@ -110,7 +110,7 @@ label luna_favour_6:
         $ ccg2 = 7
         lun "..."
         ">Luna keeps going, licking at an even faster pace, eventually focusing entirely on the head of your cock."
-        m "mmmm... keep going..."
+        m "*mmmm*... keep going..."
         $ ccg2 = 8
         lun "I think I can taste it hermione..."
         her "alright then... now, just like we practised. Open wide."
@@ -125,27 +125,27 @@ label luna_favour_6:
         pause
         $ ccg2 = 8
         lun "it's so big... I'm not sure I can-?"
-        her "shhh... it's alright. I'm here..."
+        her "*shhh*... it's alright. I'm here..."
         ">Hermione places a hand on top of Luna's head."
         $ ccg2 = 11
         lun "hey! what do you think-"
-        ">Before luna has a chance to complain, hermione pushes her head forward onto your waiting cock."
+        ">Before Luna has a chance to complain, hermione pushes her head forward onto your waiting cock."
         $ ccg2 = 12
         pause
         lun "!!!"
         her "there we go!"
         ">However, instead of entering her mouth, the head of your cock gets caught at the entrance, grating against her upper teeth."
-        g9 "Ahh... I said no teeth!"
+        g9 "*Ahh*... I said no teeth!"
         $ ccg2 = 13
         lun "!!!"
         ">Hermione tries to push Luna's head forward again..."
-        her "come on luna... open wide!"
+        her "come on Luna... open wide!"
         $ ccg2 = 14
         lun "..."
-        ">You can feel luna trying to stretch her mouth over the head of your enormous cock, managing to get a little more in."
+        ">You can feel Luna trying to stretch her mouth over the head of your enormous cock, managing to get a little more in."
         $ ccg2 = 15
         lun "......"
-        her "hmmm... I guess the dildo we practised on wasn't large enough..."
+        her "*hmmm*... I guess the dildo we practised on wasn't large enough..."
         m "Ugh... maybe we should try again later..."
         her "and stop now? I don't think so [genie_name]. Besides, once she gets the head in her mouth she'll be ok."
         her "she probably just needs one more push-"
@@ -180,9 +180,9 @@ label luna_favour_6:
         $ ccg2 = 17
         lun "*nhihtsnoo*!!!"
         ">You feel Luna try to shout a complaint while her mouth is gagged by your cock."
-        m "mmmm, that's good."
+        m "*mmmm*, that's good."
         her "well then, Time for part two of the lesson!"
-        ">You see hermione's hand strengthen her grip on luna's hair."
+        ">You see Hermione's hand strengthen her grip on Luna's hair."
         her "Now the tip to giving a good blowjob, according to \"witches weekly\" anyway, is to try and emulate the feeling of a vagina."
         $ ccg2 = 19
         her "So I just want you to keep your tongue straight, while I worry about the back and forth motions, ok luna?"
@@ -193,7 +193,7 @@ label luna_favour_6:
         $ ccg2 = 23
         ">Eventually she settles into a rhythm of moving Luna's head forwards until about half your cock is in her mouth and then back out again."
         $ ccg2 = 16
-        m "Mmmm... yes... just like that you little sluts..."
+        m "*Mmmm*... yes... just like that you little sluts..."
         $ ccg2 = 23
         pause
         her "how's she going [genie_name]? Is she keeping her tongue nice and straight?"
@@ -214,7 +214,7 @@ label luna_favour_6:
         $ ccg2 = 22
         ">Thanks to Hermione's instructions, you're ready to blow in no time."
         $ ccg2 = 20
-        her "mmm... where do you want to blow your load, [genie_name]?"
+        her "*mmm*... where do you want to blow your load, [genie_name]?"
         $ ccg2 = 19
         ">Hermione keeps forcefully moving Luna's head back and forth while talking."
         $ ccg2 = 21
@@ -227,7 +227,7 @@ label luna_favour_6:
         $ ccg2 = 17
         her "or would you prefer to cum all over her face?"
         $ ccg2 = 20
-        m "Ugh..."
+        m "*Ugh*..."
         $ ccg2 = 17
         her "I know what she wants..."
         $ ccg2 = 21
@@ -239,7 +239,7 @@ label luna_favour_6:
         $ ccg2 = 21
         lun "..."
         $ ccg2 = 19
-        g9 "Ugh... I can't take it anymore!"
+        g9 "*Ugh*... I can't take it anymore!"
         $ ccg2 = 23
         pause
         g9 "HERE IT COMES SLUTS!!!"
@@ -249,7 +249,7 @@ label luna_favour_6:
         pause
         $ ccg2 = 24
         lun "!!!!!!!!!!!!"
-        her "mmmm, that's it [genie_name]... let it all out..."
+        her "*mmmm*, that's it [genie_name]... let it all out..."
         g4 "{size=+5}AH...{/size}"
         ">Your load fills Luna's mouth to the brim while hermione holds her head firmly in place."
         $ ccg2 = 24
@@ -279,15 +279,15 @@ label luna_favour_6:
         call hide_blkfade
 
         call lun_main()
-        call her_main("So what did you think luna? Not so bad now was it?", "grin", "base", "base", "R", trans=d3)
+        call her_main("So what did you think Luna? Not so bad now was it?", "grin", "base", "base", "R", trans=d3)
         call lun_main("I suppose not. although next time I think I should be able to move my head on my own!","normal","seductive","base","R")
-        call her_main("Hmmm, I'm not sure if you're ready for that just yet...", "grin", "happyCl", "worried", "mid")
+        call her_main("*Hmmm*, I'm not sure if you're ready for that just yet...", "grin", "happyCl", "worried", "mid")
         call lun_main("Whatever... now about our payment, [lun_genie_name]...","normal","suspicious","angry","R")
-        m "Yes, yes. How does sixty points to gryffindor for Hermione and 150 gold for you sound?"
+        m "Yes, yes. How does sixty points to Gryffindor for Hermione and 150 gold for you sound?"
         call her_main("Actually, we wanted to talk to you about that, [genie_name]...", "base", "narrow", "worried", "down")
         call her_main("Luna and I have been talking, and we're not sure it's fair that we both are paid in separate currencies.", "base", "happyCl", "worried", "mid")
         call her_main("We think it would be more fair if we're both paid in points and gold.", "base", "closed", "base", "mid")
-        m "Really? I'm surprised miss lovegood would agree to that."
+        m "Really? I'm surprised miss Lovegood would agree to that."
         call lun_main("Well, I didn't want to-","normal","angry","mad","R")
         call her_main("...", "annoyed", "squint", "base", "mid")
         call lun_main("But... hermione convinced me.","base","suspicious","sad","R")
@@ -295,7 +295,7 @@ label luna_favour_6:
         m "(It's not like I care who gets these worthless points)"
         $ ravenclaw += 30
         $ gryffindor += 30
-        m "Thirty points to gryffindor and ravenclaw!"
+        m "Thirty points to Gryffindor and Ravenclaw!"
         $ luna_gold += 75
         $ gold -= 150
         m "And here's seventy-five gold each."
@@ -331,8 +331,8 @@ label luna_favour_6:
         $ luna_r_arm = 2
         call lun_main(xpos="right", flip=True)
         call her_main("hello Professor!", "base", "closed", "base", "mid", xpos="base", trans=d3)
-        call her_main("hey luna! what does he want this time? Another blowjob?", "base", "squint", "base", "mid")
-        call lun_main("Mhmmm...","base","seductive","base","mid")
+        call her_main("hey Luna! what does he want this time? Another blowjob?", "base", "squint", "base", "mid")
+        call lun_main("*Mhmmm*...","base","seductive","base","mid")
         call her_main("great!!!", "base", "narrow", "worried", "down")
         call her_main("You're going to love it [genie_name], she's been practising whenever she could since last time!", "soft", "narrow", "annoyed", "up")
         m "really? I didn't expect her to be so enthusiastic..."
@@ -341,7 +341,7 @@ label luna_favour_6:
         call her_main("You should have heard her [genie_name]... She was practically begging for more lessons...", "open", "base", "base", "R")
         call lun_main("...","base","seductive","sad","down", cheeks="blush")
         call her_main("she insisted I spend all of our last study session teaching her about proper tongue work...", "base", "happy", "base", "mid")
-        call her_main("I made sure she studied transfiguration and herbology first though...", "grin", "happyCl", "worried", "mid",emote="05")
+        call her_main("I made sure she studied transfiguration and Herbology first though...", "grin", "happyCl", "worried", "mid",emote="05")
         call lun_main("can we stop talking and get started already!","normal","angry","mad","R", cheeks="blush", flip=False)
         call her_main("See, I told you she was eager!", "soft", "happy", "base", "R")
         m "I can hardly believe it..."
@@ -379,16 +379,16 @@ label luna_favour_6:
         $ ccg2 = 4
         ">Luna leans forwards, giving the tip of your cock a loving lick."
         m "Ugh... that's it slut."
-        her "mmm... just like we talked about. remember to work the shaft..."
+        her "*mmm*... just like we talked about. remember to work the shaft..."
         lun "..."
         $ ccg2 = 5
         ">Luna leans forward again, giving your cock another lick, this time starting further down the shaft."
         m "yes..."
         her "don't be afraid to lick the balls either."
         $ ccg2 = 6
-        lun "ok..."
+        lun "Okay..."
         $ ccg2 = 7
-        ">luna continues licking the head of your cock, running her tongue around the tip and occasionally down the entire length of it onto your balls."
+        ">Luna continues licking the head of your cock, running her tongue around the tip and occasionally down the entire length of it onto your balls."
         her "just like we practised..."
         lun "..."
         $ ccg2 = 8
@@ -413,7 +413,7 @@ label luna_favour_6:
                 lun "fine..."
                 $ ccg2 = 2
                 lun "can I suck your cock sir?"
-                m "Hmmm, I'm not sure... that wasn't very convincing."
+                m "*Hmmm*, I'm not sure... that wasn't very convincing."
                 $ ccg2 = 28
                 lun "how dare you make-"
                 her "LUNA!"
@@ -447,11 +447,11 @@ label luna_favour_6:
         pause
         $ ccg2 = 8
         lun "Are you sure-"
-        her "shhh... it's alright. I'm here..."
+        her "*shhh*... it's alright. I'm here..."
         ">Hermione places a hand on top of Luna's head."
         $ ccg2 = 11
         lun "hey! I think I can manage this on my own-"
-        ">Before luna has any further chance to complain, hermione gives her a forceful shove onto your waiting cock."
+        ">Before Luna has any further chance to complain, hermione gives her a forceful shove onto your waiting cock."
         $ ccg2 = 16
         lun "!!!"
         her "There we are! look at how much progress you're making, you got it in first time!"
@@ -464,11 +464,11 @@ label luna_favour_6:
         her "remember to breathe through your nose!"
         lun "............................."
         $ ccg2 = 19
-        m "mmmm, her tongue is moving around like crazy..."
+        m "*mmmm*, her tongue is moving around like crazy..."
         her "good... we practised tongue work for a few hours last night..."
         $ ccg2 = 18
         m "well, that practice is paying off!"
-        her "hear that luna?"
+        her "hear that Luna?"
         $ ccg2 = 31
         lun "{heart}{heart}{heart}"
         pause
@@ -477,9 +477,9 @@ label luna_favour_6:
         $ ccg2 = 17
         lun "*whhttahhhkkkooonn*!!!"
         ">You feel Luna try to shout a complaint while her mouth is gagged by your cock."
-        m "mmmm, that's good."
-        her "alright luna, we're going to go a little bit faster than last time!"
-        ">You see hermione's hand strengthen her grip on luna's hair."
+        m "*mmmm*, that's good."
+        her "alright Luna, we're going to go a little bit faster than last time!"
+        ">You see hermione's hand strengthen her grip on Luna's hair."
         her "Now just let me worry about the speed, while you focus on the tongue work, OK?"
         lun "*oohhhhkkk*"
         $ ccg2 = 19
@@ -491,7 +491,7 @@ label luna_favour_6:
         $ ccg2 = 23
         ">Eventually she settles into a quick rhythm of moving Luna's head forwards until about half your cock is in her mouth and then back out again."
         $ ccg2 = 16
-        m "Mmmm... yes... just like that you little sluts..."
+        m "*Mmmm*... yes... just like that you little sluts..."
         $ ccg2 = 23
         pause
         her "how's she going [genie_name]? how does her tongue feel?"
@@ -513,7 +513,7 @@ label luna_favour_6:
         $ ccg2 = 22
         m "Ugh... get ready sluts... not much longer..."
         $ ccg2 = 20
-        her "mmm... where do you want to blow your load [genie_name]?"
+        her "*mmm*... where do you want to blow your load [genie_name]?"
         $ ccg2 = 19
         ">Hermione keeps forcefully moving Luna's head back and forth while talking."
         $ ccg2 = 21
@@ -551,10 +551,10 @@ label luna_favour_6:
         pause
         $ ccg2 = 35
         lun "!!!!!!!!!!!!"
-        her "mmmm, that's it [genie_name]... let it all out..."
+        her "*mmmm*, that's it [genie_name]... let it all out..."
         her "coat her in it..."
         g4 "{size=+5}AH...{/size}"
-        ">Your cum erupts over luna's face, hitting her eyes and coating her face, all while hermione holds her head firmly in place as she tries to turn away."
+        ">Your cum erupts over Luna's face, hitting her eyes and coating her face, all while hermione holds her head firmly in place as she tries to turn away."
         $ ccg2 = 36
         pause
         lun "..."
@@ -598,7 +598,7 @@ label luna_favour_6:
         call her_main("I can see we're still going to have another lesson after we get paid. speaking of which...", "grin", "happyCl", "worried", "mid")
         $ ravenclaw += 30
         $ gryffindor += 30
-        m "Thirty points to gryffindor and ravenclaw!"
+        m "Thirty points to Gryffindor and Ravenclaw!"
         $ luna_gold += 75
         $ gold -= 150
         m "And here's seventy-five gold each."
@@ -628,9 +628,9 @@ label luna_favour_6:
         call lun_main(xpos="right", flip=True)
         call her_main("hello Professor!", "base", "closed", "base", "mid", xpos="base", trans=d3)
         call her_main("hey luna! another blowjob?", "base", "squint", "base", "mid")
-        call lun_main("Mhmmm...","base","angry","base","R")
+        call lun_main("*Mhmmm*...","base","angry","base","R")
         call her_main("yay!!!", "grin", "happyCl", "worried", "mid")
-        call her_main("we can finally practise deepthroating!", "base", "narrow", "base", "mid_soft")
+        call her_main("we can finally practise deep throating!", "base", "narrow", "base", "mid_soft")
         m "really? are you sure she's ready for that?"
         call lun_main("*hmph* of course I am...","pout","angry","angry","R")
         call her_main("believe me sir, she's been practising really hard!", "open", "base", "base", "R")
@@ -664,7 +664,7 @@ label luna_favour_6:
         lun "..."
         $ ccg2 = 43
         lun "ah..."
-        her "nice work luna..."
+        her "nice work Luna..."
         $ ccg2 = 44
         lun "thank you..."
         her "good... now you know what to do."
@@ -672,7 +672,7 @@ label luna_favour_6:
         $ ccg2 = 5
         ">Luna leans forwards, giving the tip of your cock a loving lick."
         m "Ugh... that's it slut."
-        her "mmm... remember the dirty talk..."
+        her "*mmm*... remember the dirty talk..."
         lun "..."
         $ ccg2 = 45
         ">Luna leans forward again, giving your cock another lick, this time starting further down the shaft."
@@ -693,7 +693,7 @@ label luna_favour_6:
         her "very good... now tell him what you are."
         lun "..."
         $ ccg2 = 47
-        lun "i'm a slut sir..."
+        lun "I'm a slut sir..."
         her "More."
         $ ccg2 = 48
         lun "I'm a slut for your cum..."
@@ -712,7 +712,7 @@ label luna_favour_6:
         $ ccg2 = 20
         lun "............."
         her "how's she going [genie_name]? is she getting it down all the way?"
-        m "Almost, she's not really deepthroating it though..."
+        m "Almost, she's not really deep throating it though..."
         $ ccg2 = 21
         pause
         her "OK, the secret here is to try and swallow it."
@@ -729,10 +729,10 @@ label luna_favour_6:
         her "good work Luna! I knew you could do it!"
         $ ccg2 = 51
         lun "*glllkkk*"
-        ">hermione pulls luna's head back."
+        ">hermione pulls Luna's head back."
         $ ccg2 = 52
         m "gods that feels good..."
-        her "mmmm, I bet... now Luna, make sure you breathe through your nose when I pull your head back, you won't be able to breathe when he's in your throat, OK?"
+        her "*mmmm*, I bet... now Luna, make sure you breathe through your nose when I pull your head back, you won't be able to breathe when he's in your throat, OK?"
         $ ccg2 = 53
         lun "*mmmkkkyyy*"
         ">Hermione shoves Luna forward again."
@@ -743,8 +743,8 @@ label luna_favour_6:
         $ ccg2 = 51
         lun "*whhttahhhkkkooonn*!!!"
         ">You feel Luna try to shout a complaint while her mouth is gagged by your cock."
-        m "mmmm, i love it when she does that..."
-        ">You see hermione's hand strengthen her grip on luna's hair."
+        m "*mmmm*, i love it when she does that..."
+        ">You see Hermione's hand strengthen her grip on luna's hair."
         her "remember to breathe on the back stroke."
         $ ccg2 = 55
         lun "*oohhhhkkk*"
@@ -756,7 +756,7 @@ label luna_favour_6:
         $ ccg2 = 54
         lun "*glckk*agh*glckk*..."
         $ ccg2 = 52
-        m "Mmmm... yes... just like that you little sluts..."
+        m "*Mmmm*... yes... just like that you little sluts..."
         $ ccg2 = 54
         pause
         her "Now, this is a bit faster and harder than what you'd normally do when giving a blowjob by yourself..."
@@ -769,7 +769,7 @@ label luna_favour_6:
         $ ccg2 = 56
         lun "*glckk*... {heart} *glckk*... {heart}"
         $ ccg2 = 52
-        her "mmm, I knew you'd love it."
+        her "*mmm*, I knew you'd love it."
         $ ccg2 = 54
         ">Hermione starts making you relentlessly fuck Luna's throat."
         $ ccg2 = 52
@@ -779,9 +779,9 @@ label luna_favour_6:
         $ ccg2 = 52
         ">This continues for a few more minutes. Luna mindlessly having her throat impaled while hermione gives her further instructions."
         $ ccg2 = 57
-        m "Ugh... get ready sluts... not much longer..."
+        m "*Ugh*... get ready sluts... not much longer..."
         $ ccg2 = 58
-        her "mmm... that's it [genie_name]..."
+        her "*mmm*... that's it [genie_name]..."
         $ ccg2 = 54
         ">Hermione keeps forcefully shoving Luna's head back and forth while talking."
         $ ccg2 = 52
@@ -794,7 +794,7 @@ label luna_favour_6:
         $ ccg2 = 54
         her "but we can't have that, can we?"
         $ ccg2 = 52
-        m "Ugh..."
+        m "*Ugh*..."
         $ ccg2 = 51
         her "sluts like her don't deserve to get what they want..."
         $ ccg2 = 57
@@ -807,8 +807,8 @@ label luna_favour_6:
         lun "..."
         $ ccg2 = 54
         her "so why don't you coat the filthy {i}cumslut{/i}..."
-        g9 "Ugh... I can't take it anymore!"
-        ">Just as you reach your orgasm, hermione yanks luna's head off your cock."
+        g9 "*Ugh*... I can't take it anymore!"
+        ">Just as you reach your orgasm, hermione yanks Luna's head off your cock."
         $ ccg2 = 59
         lun "*hhhhyyy!*"
         pause
@@ -818,10 +818,10 @@ label luna_favour_6:
         $ ccg2 = 60
         call cum_block
         lun "!!!!!!!!!!!!"
-        her "mmmm, that's it [genie_name]... let it all out..."
+        her "*mmmm*, that's it [genie_name]... let it all out..."
         her "coat her in it..."
         g4 "{size=+5}AH...{/size}"
-        ">Your cum erupts over luna's face, hitting her eyes and coating her face, all while hermione holds her head firmly in place as she tries to turn away."
+        ">Your cum erupts over Luna's face, hitting her eyes and coating her face, all while hermione holds her head firmly in place as she tries to turn away."
         $ ccg2 = 61
         pause
         lun "..."
@@ -849,10 +849,10 @@ label luna_favour_6:
         $ ccg2 = 66
         hide screen blkfade
         with d3
-        her "mmmm, I told you that we need to share what he pays us, didn't I?"
+        her "*mmmm*, I told you that we need to share what he pays us, didn't I?"
         lun "y-yes..."
         $ ccg2 = 67
-        her "mmmm... {size=-5}good girl...{/size}"
+        her "*mmmm*... {size=-5}good girl...{/size}"
 
         hide screen ccg
         call blkfade
@@ -873,11 +873,11 @@ label luna_favour_6:
         call her_main("good, now I think we need to go do some actual studying. Could you please pay us [genie_name]?", "grin", "happyCl", "worried", "mid")
         $ ravenclaw += 30
         $ gryffindor += 30
-        m "Thirty points to gryffindor and ravenclaw!"
+        m "Thirty points to Gryffindor and Ravenclaw!"
         $ luna_gold += 75
         $ gold -= 150
         m "And here's seventy-five gold each."
-        call her_main("Thank you [genie_name]! Any time you want to fuck luna's slutty little throat again just let us know!", "base", "base", "base", "mid")
+        call her_main("Thank you [genie_name]! Any time you want to fuck Luna's slutty little throat again just let us know!", "base", "base", "base", "mid")
         call lun_main("...Thank you sir.","base","seductive","sad","down", cheeks="blush",tears="mascara")
         call her_main("Well, we better be off sir, we still have a lot of studying to do!", "grin", "base", "base", "R")
         call her_main("(Not to mention more practice with the {b}big{/b} dildo...)", "soft", "happy", "base", "R")

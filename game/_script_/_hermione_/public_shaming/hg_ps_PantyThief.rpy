@@ -34,7 +34,7 @@ label hg_ps_get_panties:
         call her_main("...panties, [genie_name]?", "angry", "base", "angry", "mid")
         m "Yes I do..."
         call her_main("May I ask what you are planning to do with them...?", "disgust", "narrow", "base", "mid_soft")
-        m "Ehm... I'm conducting research..."
+        m "*Ehm*... I'm conducting research..."
         her "But this is kind of inappropriate, don't you think?"
         m "But don't you hate it that some of the girls from Slytherin..."
         m "Are selling favours for house points, [hermione_name]?"
@@ -144,7 +144,7 @@ label hg_cum_on_panties_response:
     # Hermione responds the cum on her panties
 
     if her_tier == 2:
-        call her_main("Hm....?", "annoyed", "narrow", "worried", "down",xpos="right",ypos="base")
+        call her_main("*Hmm*....?", "annoyed", "narrow", "worried", "down",xpos="right",ypos="base")
         call her_main("[genie_name]? What is this?", "angry", "base", "angry", "mid")
         her "What have you done to them?"
         call her_main("They are covered in something slimy...", "normal", "squint", "angry", "mid")
@@ -214,7 +214,7 @@ label hg_cum_on_panties_response:
         call nar(">Hermione gives her cum-soaked underwear a quizzical look.")
         call her_main("Seems like these will require some serious cleaning before I can put them on again...", "annoyed", "narrow", "worried", "down")
         m "Why not put them on now?"
-        call her_main("Hm...?", "annoyed", "squint", "base", "mid")
+        call her_main("*Hm*...?", "annoyed", "squint", "base", "mid")
         call her_main("Well, I suppose I could wear them one more time before putting them into laundry...", "annoyed", "narrow", "worried", "down")
         hide screen hermione_main
         call nar(">Hermione puts on the panties.")
@@ -232,7 +232,7 @@ label hg_cum_on_panties_response:
         call her_main("My panties...", "annoyed", "narrow", "worried", "down",xpos="right",ypos="base")
         her "They are covered in something slimy..."
         her "And they smell funny..."
-        call her_main("Hm... That smell...", "annoyed", "base", "worried", "R")
+        call her_main("*Hm*... That smell...", "annoyed", "base", "worried", "R")
         her "It's familiar somehow..."
         call her_main("What exactly did you do to them, [genie_name]?", "base", "base", "base", "mid")
 
@@ -251,7 +251,7 @@ label hg_cum_on_panties_response:
                 call her_main("I knew it...", "smile", "narrow", "base", "mid_soft")
                 her "They reek of semen!"
 
-        call her_main("Hm...", "grin", "base", "base", "R")
+        call her_main("*Hm*...", "grin", "base", "base", "R")
         her "Seems like these will require some serious cleaning before I can put them on..."
         call her_main("Unless you want me to put them on now, [genie_name]...?", "smile", "narrow", "base", "mid_soft")
 
@@ -288,7 +288,7 @@ label hg_cum_on_panties_response:
     elif her_tier >= 5:
         call her_main("My panties...", "base", "narrow", "base", "up",xpos="right",ypos="base")
         her "You came all over them..."
-        call her_main("Hm...", "grin", "base", "base", "R")
+        call her_main("*Hm*...", "grin", "base", "base", "R")
         her "Seems like these will require some serious cleaning before I can put them on..."
         call her_main("Unless you want me to put them on now, [genie_name]...?", "smile", "narrow", "base", "mid_soft")
 
@@ -324,7 +324,7 @@ label hg_cum_on_panties_response:
                 call her_main("...", "angry", "narrow", "base", "down")
                 call nar(">Hermione reluctantly puts her cum-soaked panties in her mouth.")
                 $ renpy.play('sounds/gltch.mp3')
-                call her_main("Mmmmhhhhh!", "full_panties", "slit", "worried", "ahegao")
+                call her_main("*Mmmmhhhhh*!", "full_panties", "slit", "worried", "ahegao")
                 m "That's it, not as bad as you thought now is it?"
                 call her_main("...", "full_panties", "slit", "low", "stare")
                 m "Make sure you get them nice and clean now..."
@@ -431,7 +431,7 @@ label hg_ps_get_panties_complete:
                 her "Nothing worth mentioning happened today..."
                 call her_main("Although I have to admit...", "annoyed", "base", "worried", "R")
                 her "It was oddly empowering to have no underwear on..."
-                her "Hm..."
+                her "*Hm*..."
                 hide screen sccg
                 call her_main("Can I have my panties back now please?", "base", "base", "base", "mid",xpos="right",ypos="base",trans=fade)
                 m "Of course..."

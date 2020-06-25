@@ -285,7 +285,7 @@ label hg_pf_titjob_1:
 
     call play_music("playful_tension") # SEX THEME.
     call bld
-    g9 "mmmm..."
+    g9 "*mmmm*..."
     $ ccg1 = 6
     if hg_pf_titjob.counter == 1:
         call her_main("...", "base", "base", "base", "mid")
@@ -309,7 +309,7 @@ label hg_pf_titjob_1:
             $ d_flag_01 = True #If TRUE Genie promised to warn her.
             $ ccg1 = 6
             call her_main("Thank you, [genie_name].", "base", "happy", "base", "mid")
-        "\"Hmmmm...{w=0.3} We'll see how I feel later...\"":
+        "\"*Hmmmm*...{w=0.3} We'll see how I feel later...\"":
             $ ccg1 = 8
             call her_main("*Hmmmmph*...", "annoyed", "narrow", "annoyed", "mid")
             call her_main("At least try and avoid my hair...", "normal", "happyCl", "worried", "mid")
@@ -380,7 +380,7 @@ label hg_pf_titjob_1:
             call her_main("[genie_name]?", "open", "wink", "base", "mid")
             g4 "Just do it, slut!"
             $ ccg1 = 11
-            call her_main("*Uhm*...{w=0.4} *Ike *ees?", "open_wide_tongue", "narrow", "worried", "down")
+            call her_main("*Uhm*...{w=0.4} *Ike* *ees*?", "open_wide_tongue", "narrow", "worried", "down")
             m "Yes, good..."
             m "Now tilt your head down a bit... as far as it'll go."
             call her_main(".....................", "open_wide_tongue", "base", "base", "mid")
@@ -388,10 +388,10 @@ label hg_pf_titjob_1:
             call her_main("...........", "open_wide_tongue", "base", "base", "mid")
             call her_main("...........")
             $ ccg1 = 9
-            call her_main("I *khant *eef *ay *outh *oen...", "open_tongue", "base", "base", "mid")
-            call her_main("I *eel *ool...", "open_wide_tongue", "narrow", "worried", "down")
+            call her_main("I *khant* *eef* *ay* *outh* *oen*...", "open_tongue", "base", "base", "mid")
+            call her_main("I *eel* *ool*...", "open_wide_tongue", "narrow", "worried", "down")
             g4 "Yes! Drool all over those perfect tits of yours!"
-            call her_main("*Erth-ect?", "open_tongue", "base", "base", "mid")
+            call her_main("*Erth-ect*?", "open_tongue", "base", "base", "mid")
             m "As perfect as any mortal, [hermione_name]!"
             $ ccg1 = 11
             call her_main(".......", "base", "narrow", "base", "up")
@@ -584,7 +584,7 @@ label hg_pf_titjob_2:
     call ctc
 
     call her_main("Do you enjoy it when I move them like this, [genie_name]?", "grin", "base", "base", "R", xpos="base", ypos="head")
-    call nar(">Hermione starts alternating her breasts as she titfucks you.")
+    call nar(">Hermione starts alternating her breasts as she tit-fucks you.")
     g9 "Actually...{w=0.3} Yes! Very much!"
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -681,7 +681,7 @@ label hg_pf_titjob_2:
 
         "\"This is really good. Did you practise?\"":
             $ ccg1 = 22
-            call her_main("*Hmm?*...", "base", "happyCl", "base", "mid")
+            call her_main("*Hmm*?...", "base", "happyCl", "base", "mid")
             $ ccg1 = 21
             call her_main("Sort of...{w=0.3} Well not on another cock...", "angry", "wink", "base", "mid")
             m "On what then?"
@@ -809,8 +809,8 @@ label hg_pf_titjob_2_continue:
             call her_main("This one time, when walking back from your office at night, I was barely even covering them...", "angry", "wink", "base", "mid")
             call her_main("I rounded a corner and-", "soft", "narrow", "annoyed", "up")
             $ ccg1 = 24
-            call her_main("A second year boy ran headfirst into them...", "grin", "narrow", "annoyed", "up")
-            m "Headfirst into your first class tits?"
+            call her_main("A second year boy ran head first into them...", "grin", "narrow", "annoyed", "up")
+            m "Head first into your first class tits?"
             call her_main("All I could see was the top of his head...", "grin", "narrow", "base", "dead")
             m "What did he do?"
             call her_main("He immediately attempted to pull away...")
@@ -860,7 +860,7 @@ label hg_pf_titjob_2_cumming:
             call bld
             call nar(">With a final thrust, the sensation of Hermione's wet mouth drives you over the edge.")
             call cum_block
-            g4 "{size=+5}ARGH! YES!!!{/size}"
+            g4 "{size=+5}*ARGH*! YES!!!{/size}"
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             $ ccg1 = 26
@@ -869,11 +869,11 @@ label hg_pf_titjob_2_cumming:
             pause.8
 
             call her_main("!!!!!!!!!!!", "full", "wide", "base", "stare")
-            g4 "Argh! You whore!"
+            g4 "*Argh*! You whore!"
             call her_main("{heart}{heart}{heart}", "full_cum", "narrow", "base", "dead")
             call cum_block
 
-            g4 "Argh! you big-titted slut! Take it all!"
+            g4 "*Argh*! you big-titted slut! Take it all!"
             call her_main("...............", "full_cum", "narrow", "base", "dead")
             m "............"
 
@@ -881,7 +881,7 @@ label hg_pf_titjob_2_cumming:
             pause.8
 
             call bld
-            m "Ok, I think I am done..."
+            m "Okay, I think I am done..."
             call her_main("..............", "full_cum", "narrow", "base", "dead")
             call her_main("........", "full_cum", "narrow", "base", "dead")
             call her_main("...", "full_cum", "narrow", "base", "dead")
@@ -904,7 +904,7 @@ label hg_pf_titjob_2_cumming:
             call her_main("What?", "open", "narrow", "worried", "down")
             call her_main("Oh. I suppose so...", "grin", "base", "base", "R")
             call her_main("I mean... it doesn't taste that bad and I don't have to clean up afterwards.", "base", "happyCl", "base", "mid")
-            m "Hmm... You sure you wouldn't like people seeing your tits covered in cum..."
+            m "*Hmm*... You sure you wouldn't like people seeing your tits covered in cum..."
             call her_main("What? Walk around school covered in your cum, [genie_name]?", "angry", "wink", "base", "mid")
 
             if her_tier < 6:
@@ -922,7 +922,7 @@ label hg_pf_titjob_2_cumming:
             call bld
             g4 "Here! Take this you big-titted whore!"
             with hpunch
-            g4 "ARGH!"
+            g4 "*ARGH*!"
             $ ccg1 = 25
             call her_main("What? Already?!", "shock", "wide", "base", "stare", ypos="head")
             g4 "Yeah, your tits felt great slut!"
@@ -935,7 +935,7 @@ label hg_pf_titjob_2_cumming:
             $ hermione.set_cum(breasts="light")
 
             call bld
-            g4 "{size=+5}ARGH! YES!!!{/size}"
+            g4 "{size=+5}*ARGH*! YES!!!{/size}"
 
             $ hermione.set_cum(breasts="heavy")
 

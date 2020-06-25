@@ -22,7 +22,7 @@ label ll_pf_masturbate_T1_intro:
     pause.5
 
     call lun_main("Hello, Sir...","base","happyCl","base","mid",xpos="right",ypos="base")
-    m "Miss Lovegood. So, Did the wickerspats leave you alone today?"
+    m "Miss Lovegood. So, Did the {i}wickerspats{/i} leave you alone today?"
     call lun_main("Not at all! They were worse than ever!","upset","base","angry","R")
     m "Really?"
     call lun_main("Really, sir. And I don't think it's just me they're affecting either.","normal","base","sad","mid")
@@ -37,12 +37,12 @@ label ll_pf_masturbate_T1_intro:
     call lun_main("They're far too red!","normal","angry","sad","mid")
     m "Too red?"
     call lun_main("I'm afraid so...","upset","angry","sad","R")
-    m "And you think these wackspots are to blame?"
+    m "And you think these {i}wackspots{/i} are to blame?"
     call lun_main("I'm not sure...","normal","seductive","sad","down")
     call lun_main("According to my father's bestiaries, they should only ever produce a grey tinge to an aura...","normal","seductive","sad","R")
     call lun_main("For them to be making auras red...","upset","wide","sad","down")
     call lun_main("It could be very dangerous!","normal","wide","sad","mid")
-    m "(Pffft... auras...)"
+    m "(*Pffft*... auras...)"
     m "Yes, I see how that could be dangerous..."
     call nar(">Luna starts grinding her thighs together.")
     call lun_main("yes...","base","seductive","sad","down")
@@ -95,7 +95,7 @@ label ll_pf_masturbate_T1_intro:
     m "Before we begin I have to explain a few things."
     call nar(">Luna stares at you intently.")
     call lun_main("...","normal","angry","sad","mid")
-    m "From what I can tell these rockspits seem to have infected an unusual part of your body."
+    m "From what I can tell these {i}rockspits{/i} seem to have infected an unusual part of your body."
     call lun_main("Yes... Normally they only make your head fuzzy.","pout","angry","sad","R")
     m "And how do you get rid of them in that situation?"
     call lun_main("By thinking positive thoughts, sir...","base","happyCl","sad","R")
@@ -123,12 +123,12 @@ label ll_pf_masturbate_T1_intro:
     call lun_main("That's nice...","base","closed","sad","R")
     call lun_main("...","normal","base","sad","mid")
     call lun_main("Are you sure this will work, sir?","soft","seductive","sad","mid")
-    m "Of course I am! Do you doubt the powerful Dumbelldoor?"
+    m "Of course I am! Do you doubt the powerful {i}Dumbelldoor{/i}?"
     call lun_main("Certainly not, sir...","normal","wide","sad","R")
     call lun_main("It's just...","normal","seductive","sad","down")
     call lun_main("I'm not sure this is going to get rid of them...","pout","seductive","sad","mid")
     m "What makes you say that?"
-    call lun_main("Do you remember how I said the wickerspats were like a nasty itch, sir?","normal","seductive","sad","R")
+    call lun_main("Do you remember how I said the {i}wickerspats{/i} were like a nasty itch, sir?","normal","seductive","sad","R")
     m "I do."
     call lun_main("As nice as this massage feels...","normal","seductive","sad","down")
     call lun_main("It's not really scratching that itch sir...","pout","angry","sad","mid")
@@ -161,47 +161,47 @@ label ll_pf_masturbate_T1_intro:
     call lun_main("...","base","happyCl","sad","R")
     call lun_main("...","base","happyCl","base","R")
     call nar(">Luna starts dancing her fingers along under her skirt.")
-    call lun_main("Ah...","base","happyCl","sad","R")
-    call lun_main("Mmm...","grin","happyCl","sad","R")
+    call lun_main("*Ah*...","base","happyCl","sad","R")
+    call lun_main("*Mmm*...","grin","happyCl","sad","R")
     call nar(">Luna starts to softly moan under her breath.")
     call lun_main("I'm close sir...","base","happyCl","sad","R")
     m "Good. Just keep your eyes closed and focus on your fingers."
     call lun_main("{heart}","grin","happyCl","base","R")
-    call lun_main("Ah... I think it's working, sir!","base","happyCl","sad","R")
+    call lun_main("*Ah*... I think it's working, sir!","base","happyCl","sad","R")
     call lun_main("I think I'm about to catch it!","base","happyCl","base","R")
-    m "Shhh, don't speak, just focus..."
+    m "*Shhh*, don't speak, just focus..."
     call lun_main("Okay...","normal","happyCl","sad","R")
     call lun_main("...","base","happyCl","sad","R")
-    call lun_main("Ah...","grin","happyCl","sad","R")
+    call lun_main("*Ah*...","grin","happyCl","sad","R")
     call lun_main("{heart}","base","happyCl","sad","R")
     call lun_main("...","upset","happyCl","sad","R")
-    call lun_main("Ah...{w=0.3} sir...","normal","seductive","sad","mid")
+    call lun_main("*Ah*...{w=0.3} sir...","normal","seductive","sad","mid")
     call lun_main("I think...","grin","seductive","sad","down")
-    call lun_main("Ah...","grin","seductive","sad","R")
+    call lun_main("*Ah*...","grin","seductive","sad","R")
     call lun_main("I think I've almost got it...","grin","happyCl","sad","R")
-    m "Shhh..."
-    call lun_main("Ah...","grin","happyCl","angry","mid")
+    m "*Shhh*..."
+    call lun_main("*Ah*...","grin","happyCl","angry","mid")
     call nar(">Luna's fingers start furiously dancing underneath her skirt.")
-    call lun_main("Mmmm...","base","happyCl","angry","mid")
-    call lun_main("Ah...","grin","happyCl","angry","mid")
-    call lun_main("A-ah...","base","seductive","sad","down")
+    call lun_main("*Mmmm*...","base","happyCl","angry","mid")
+    call lun_main("*Ah*...","grin","happyCl","angry","mid")
+    call lun_main("*A-ah*...","base","seductive","sad","down")
     call lun_main("Yes...","base","seductive","angry","mid")
     m "(I think this is it!)"
-    call lun_main("Ah... ah...{heart}","grin","seductive","sad","R")
-    call lun_main("{size=+4}Mmm...{w=0.3} yes...{heart}{/size}","base","seductive","sad","down")
-    call lun_main("{size=+8}ah...{w=0.3} ah...{/size}","grin","seductive","sad","mid")
+    call lun_main("*Ah*... *ah*...{heart}","grin","seductive","sad","R")
+    call lun_main("{size=+4}*Mmm*...{w=0.3} yes...{heart}{/size}","base","seductive","sad","down")
+    call lun_main("{size=+8}*ah*...{w=0.3} ah...{/size}","grin","seductive","sad","mid")
     call lun_main("!!!","grin","wide","base","empty")
     call nar(">There's a blur of movement under Luna's skirt.")
-    call lun_main("Ah! I think they're attacking me, sir!","base","wide","sad","mid")
+    call lun_main("*Ah*! I think they're attacking me, sir!","base","wide","sad","mid")
     call lun_main("!!!","base","base","sad","empty")
     m "Is everything okay?"
-    call lun_main("Ah...{w=0.4} Yes sir...{heart}","normal","seductive","sad","R")
+    call lun_main("*Ah*...{w=0.4} Yes sir...{heart}","normal","seductive","sad","R")
     call lun_main("It's just...","base","seductive","sad","R")
     m "..."
     call lun_main("I-I've never...","normal","seductive","sad","R")
     call lun_main("...","base","seductive","sad","down")
     call lun_main("{size=-5}Ah...{/size}","base","seductive","sad","R")
-    m "So, have the wickspots left you alone?"
+    m "So, have the {i}wickspots{/i} left you alone?"
     call lun_main("I think so, sir...","normal","seductive","sad","mid")
     $ luna_l_arm = 1
     call nar(">Luna slowly pulls her hand out from under her skirt.")
@@ -214,7 +214,7 @@ label ll_pf_masturbate_T1_intro:
     m "Certainly not!"
     call lun_main("Really? Why not?","normal","wide","sad","mid")
     m "As I said earlier, Miss Lovegood, these techniques are to be kept secret."
-    m "Not to mention dispelling wankspits in your common room could lead to a schoolwide outbreak."
+    m "Not to mention dispelling {i}wankspits{/i} in your common room could lead to a school wide outbreak."
     call lun_main("So what can I do if they come back?","normal","base","sad","mid")
     m "If you ever feel like you need to relieve yourself of those pesky little things again, my door is always open."
     call lun_main("Are you sure, sir?","normal","seductive","sad","mid")
@@ -293,7 +293,7 @@ label ll_pf_masturbate_T1_E2:
     call lun_main("And I promise that I wouldn't ask unless it was of the utmost importance!","soft","base","sad","R")
     m "Get on with it, [lun_name]."
     call lun_main("Can I... get some more wrackspurts out? Please?","normal","wink","sad","mid")
-    m "Hmmm, again? so soon?"
+    m "*Hmmm*, again? so soon?"
     call lun_main("If you think that it's too much for you to handle, we could slow down a bit...","normal","seductive","sad","R")
     m "Nonsense! I could never abandon my students in their hour of need."
     call lun_main("You mean it's okay if I?","normal","wide","sad","mid")
@@ -306,7 +306,7 @@ label ll_pf_masturbate_T1_E2:
     call ll_pf_masturbate_T1_continue
 
     m "Will that be all then, Miss Lovegood?"
-    call lun_main("I suppose... Altough I think I could go-","normal","seductive","sad","down")
+    call lun_main("I suppose... Although I think I could go-","normal","seductive","sad","down")
     call lun_main("No...{w=0.3} I better get to bed...","upset","seductive","sad","R")
     call lun_main("Thanks again, [lun_genie_name]!","normal","seductive","sad","down")
 
@@ -333,7 +333,7 @@ label ll_pf_masturbate_T1_E3:
     m "You seem relieved..."
     call lun_main("Ah... {heart} yes...","base","wide","sad","mid")
     call lun_main("These visits are starting to become all I can think about...","base","seductive","sad","down")
-    m "Hmmm...{w=0.3} Do you think that's a bad thing?"
+    m "*Hmmm*...{w=0.3} Do you think that's a bad thing?"
     call lun_main("Ah...{w=0.3} of course not!","normal","happyCl","sad","R")
     call lun_main("It just...*Hngh*{w=0.3} means that it's working...","pout","base","sad","mid")
     call lun_main("If only I could spend all day up here...","base","base","sad","mid")
@@ -347,13 +347,13 @@ label ll_pf_masturbate_T1_E3:
     m "Speaking of feeling nice..."
     call lun_main("Ah...{w=0.3} I think I'm...{w=0.5} Cumming [lun_genie_name]...","open_tongue","seductive","sad","down")
     call lun_main("Ah...{heart}","base","seductive","sad","mid")
-    call lun_main("Mmmmm{heart}","base","seductive","sad","mid")
+    call lun_main("*Mmmmm*{heart}","base","seductive","sad","mid")
     call lun_main("Ah...{w=0.3} I'm cumming...{heart}{heart}","base","wide","sad","up")
-    m "Mmmmm, that's it girl..."
+    m "*Mmmmm*, that's it girl..."
     call lun_main("Ah...{heart}","soft","seductive","sad","down", cheeks="blush")
     call nar(">You see a flush of red roll over Luna's face as her body twitches with the throes of her orgasm.","start")
     call nar(">Her fingers keep casually stroking her needy slit.","end")
-    m "It seems those wickedspots have been giving you a fair bit of grief, haven't they?"
+    m "It seems those {i}wickedspots{/i} have been giving you a fair bit of grief, haven't they?"
 
     menu:
         "-Start jerking off-":
@@ -361,7 +361,7 @@ label ll_pf_masturbate_T1_E3:
         "-Just keep watching-":
             call ll_pf_masturbate_T1_continue
 
-    m "Will that be all, Miss lovegood?"
+    m "Will that be all, Miss Lovegood?"
     lun "Oh, um.{w=0.3} Yes..."
 
     lun "I'll see you next time those wrackspurts come up again..."
@@ -378,7 +378,7 @@ label ll_pf_masturbate_T1_start: # Call label
 
     call lun_main("...","pout","base","sad","mid", xpos="mid", ypos="base", trans=fade)
     m "That's it..."
-    m "Begin when you're ready, Miss lovegood."
+    m "Begin when you're ready, Miss Lovegood."
 
     $ luna_l_arm = 4
     call nar(">Luna quickly puts her hand down her skirt, barely waiting for you to finish your sentence.")
@@ -390,14 +390,14 @@ label ll_pf_masturbate_T1_start: # Call label
     call lun_main("Ah...{w=0.3} ah...","normal","happyCl","sad","R")
     call lun_main("But getting rid of them...{w=0.4} feels...{w=0.4} so...{w=0.3} so...{w=0.3} good...","pout","base","sad","mid")
     call lun_main("I'm almost glad I've got them...","pout","base","sad","mid")
-    m "The positive feelings you have are your body's reactions to the wickerspats being expelled."
+    m "The positive feelings you have are your body's reactions to the {i}wickerspats{/i} being expelled."
     call lun_main("Really?","base","closed","sad","R")
     call lun_main("Ah...","normal","base","sad","mid")
     call lun_main("I must...{w=0.3} ah...{w=0.3} Be expelling a lot then...","soft","seductive","sad","mid")
     call lun_main("In fact...","normal","wide","sad","R")
     call lun_main("Ah...","normal","seductive","sad","down")
     call lun_main("I think...{w=0.3} ah...{w=0.3} I'm about to...{w=0.3} ah...","pout","seductive","sad","mid")
-    call lun_main("Mmmm, it's just like...{w=0.2} last time...","normal","seductive","sad","R")
+    call lun_main("*Mmmm*, it's just like...{w=0.2} last time...","normal","seductive","sad","R")
     m "Oh, are you cumming already?"
 
     if ll_pf_masturbate.counter < 3:
@@ -407,11 +407,11 @@ label ll_pf_masturbate_T1_start: # Call label
         call lun_main("Cumming?{heart}","normal","seductive","sad","mid")
 
     call lun_main("Ah...{w=0.3} I'm cumming...{heart}{heart}","normal","wide","sad","mid")
-    m "Mmmmm that's it girl..."
+    m "*Mmmmm* that's it girl..."
     call lun_main("Ah...{heart}","normal","wide","sad","down")
     call nar(">You see a flush of red roll over Luna's face as her body twitches with the throes of her orgasm.","start")
     call nar(">However, despite this, her fingers remain a flurry of movement under her skirt.","end")
-    m "It seems those wickedspots have been giving you a fair bit of grief, haven't they?"
+    m "It seems those {i}wickedspots{/i} have been giving you a fair bit of grief, haven't they?"
     call lun_main("Ah...{heart}yes{heart}","normal","seductive","sad","mid")
     m "Don't worry, that should sort them out for now..."
 
@@ -421,7 +421,7 @@ label ll_pf_masturbate_T1_start: # Call label
 label ll_pf_masturbate_T1_continue: # Call label
     # Luna continues to masturbate
 
-    call lun_main("Ummm...","base","base","sad","R")
+    call lun_main("*Ummm*...","base","base","sad","R")
     m "What's wrong?"
     call lun_main("...","normal","happyCl","sad","R")
     call lun_main("Is it...","upset","happyCl","sad","R")
@@ -445,7 +445,7 @@ label ll_pf_masturbate_T1_continue: # Call label
     call lun_main("{heart}{heart}{heart}","grin","happyCl","base","R")
     call lun_main("In front of my headmaster...","base","happyCl","sad","R")
     call lun_main("While he helps me to...","base","happyCl","base","R")
-    m "Shhh, don't speak, just focus..."
+    m "*Shhh*, don't speak, just focus..."
     call lun_main("Okay...","normal","happyCl","sad","R")
     call lun_main("...","base","happyCl","sad","R")
     call lun_main("Ah...","grin","happyCl","sad","R")
@@ -455,24 +455,24 @@ label ll_pf_masturbate_T1_continue: # Call label
     call lun_main("I think...","grin","seductive","sad","down")
     call lun_main("Ah...","grin","seductive","sad","R")
     call lun_main("I think I've almost got them...","grin","happyCl","sad","R")
-    m "Shhh..."
+    m "*Shhh*..."
     call lun_main("Ah...","grin","happyCl","angry","mid")
     call nar(">Luna's fingers start furiously dancing underneath her skirt.")
-    call lun_main("Mmmm...","base","happyCl","angry","mid")
+    call lun_main("*Mmmm*...","base","happyCl","angry","mid")
     call lun_main("Ah...","grin","happyCl","angry","mid")
     call lun_main("A-ah...","base","seductive","sad","down")
     call lun_main("Yes...","base","seductive","angry","mid")
     m "(I think this is it!)"
     call lun_main("Ah...{w=0.3} ah...{heart}","grin","seductive","sad","R")
-    call lun_main("{size=+4}Mmm...{w=0.2} Yes...{heart}{/size}","base","seductive","sad","down")
-    call lun_main("{size=+8}ah...{w=0.3} oh...{w=0.3} Frickity!!!{/size}","grin","seductive","sad","mid")
+    call lun_main("{size=+4}*Mmm*...{w=0.2} Yes...{heart}{/size}","base","seductive","sad","down")
+    call lun_main("{size=+8}*ah*...{w=0.3} *oh*...{w=0.3} Frickity Frack!!!{/size}","grin","seductive","sad","mid")
     call lun_main("!!!","grin","wide","sad","mid")
     call nar(">There's a blur of movement under Luna's skirt.")
     call lun_main("Ah! Thank you, [lun_genie_name]!","base","wide","sad","mid")
     call lun_main("!!!","base","wide","sad","mid")
     m "Is everything okay?"
     call lun_main("Ah...{w=0.4} yes{heart} thank you{heart} [lun_genie_name]...{heart}","normal","seductive","sad","R")
-    m "So, have the wickspots left you alone now?"
+    m "So, have the {i}wickspots{/i} left you alone now?"
     call lun_main("I think so, [lun_genie_name]...","normal","seductive","sad","mid")
     $ luna_l_arm = 1
     call nar(">Luna slowly pulls her sopping wet hand out from under her skirt as the liquid slowly starts dripping onto the floor.")
@@ -496,7 +496,7 @@ label ll_pf_masturbate_T1_jerk_off: # Call label
     call lun_main("Would it...","base","seductive","sad","R")
     call lun_main("Would it be okay if I watched [lun_genie_name]?","base","annoyed","sad","mid")
     call lun_main("Just as a way to improve my own technique!","base","wink","base","mid")
-    m "Mmmm, I see nothing wrong with it..."
+    m "*Mmmm*, I see nothing wrong with it..."
     m "Here, I'll give you a nice view..."
     show screen blkfade
     hide screen luna_main
@@ -520,7 +520,7 @@ label ll_pf_masturbate_T1_jerk_off: # Call label
     with d3
 
     lun "Wow..."
-    m "This is the place that those nasty little whiskersprouts like to hide on me..."
+    m "This is the place that those nasty little {i}whiskersprouts{/i} like to hide on me..."
     $ ccg1 = "2"
     lun "It's...{w=0.3} big..."
     m "It is..."
@@ -553,7 +553,7 @@ label ll_pf_masturbate_T1_jerk_off: # Call label
     m "..."
     m "And what did it smell like?"
     $ ccg1 = "10"
-    lun "Hmmm... It reminds me of a certain Bertie Bott's Every-Flavour bean I once had..."
+    lun "*Hmmm*... It reminds me of a certain Bertie Bott's Every-Flavour bean I once had..."
     $ ccg1 = "11"
     lun "It wasn't very good... But it wasn't bad..."
     m "Well now that you've taken it all-"
@@ -562,11 +562,11 @@ label ll_pf_masturbate_T1_jerk_off: # Call label
     m "What!"
     $ ccg1 = "13"
     lun "I was just hav-"
-    m "Argh, you've done it now!"
+    m "*Argh*, you've done it now!"
     m "here it comes You little minx!"
     $ ccg1 = "14"
     lun "Here comes wha-"
-    m "ARGH!!!"
+    m "*ARGH*!!!"
     ">As if in retaliation for her previous interruption, your cock now interrupts Luna's sentence with a thick deluge of semen."
     $ ccg1 = "15"
     m "There it is you horny little thing... here's what you wanted..."
@@ -574,7 +574,7 @@ label ll_pf_masturbate_T1_jerk_off: # Call label
     lun "Oh..."
     $ ccg1 = "17"
     lun "What's this?"
-    m "Argh..."
+    m "*Argh*..."
     $ ccg1 = "18"
     lun "It smells...{w=0.3} so..."
     $ ccg1 = "19"
@@ -604,7 +604,7 @@ label ll_pf_masturbate_T1_jerk_off: # Call label
     lun "It's......"
     $ ccg1 = "27"
     lun "It's perfect... it's just the best..."
-    m "Mmm... that's it...{w=0.3} you always know what to say..."
+    m "*Mmm*... that's it...{w=0.3} you always know what to say..."
     $ ccg1 = "28"
     lun "I'm not just..."
     $ ccg1 = "29"
@@ -658,7 +658,7 @@ label ll_pf_masturbate_T1_E2_old:  # Not in use. Old writing.
             lun "May I please come in?"
             m "Luna who?"
             lun "Lovegood, [lun_genie_name]..."
-            m "Oh miss lovegood! Come in..."
+            m "Oh miss Lovegood! Come in..."
 
     call lun_walk("mid", action="enter")
     pause.5

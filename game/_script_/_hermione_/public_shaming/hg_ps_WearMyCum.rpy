@@ -44,7 +44,7 @@ label hg_ps_cumslut_Scene_1:
     call her_main("Well... I suppose that would be alright...", "annoyed", "narrow", "annoyed", "mid")
     call her_main("But what's the point if they can't see it?", "annoyed", "base", "worried", "R")
     m "You'll know it's there."
-    call her_main("Hmmmm...", "annoyed", "narrow", "angry", "R")
+    call her_main("*Hmmmm*...", "annoyed", "narrow", "angry", "R")
 
     # Haggle
     call her_main("How much will I be paid?", "annoyed", "squint", "base", "mid")
@@ -53,7 +53,7 @@ label hg_ps_cumslut_Scene_1:
     m "Forty."
     call her_main("Sixty!", "scream", "closed", "angry", "mid")
     m "Fifty points, final offer."
-    call her_main("Ok, I'll do it.", "annoyed", "base", "worried", "R")
+    call her_main("Okay, I'll do it.", "annoyed", "base", "worried", "R")
     m "Really?"
     call her_main("As long as nobody can see it then I don't see the big issue.", "annoyed", "narrow", "angry", "R")
     m "Splendid. Care to give me a hand?"
@@ -92,7 +92,7 @@ label hg_ps_cumslut_Scene_1:
     call nar(">You feel her hands tense around your cock.")
     call her_main("You're letting me choose?", "smile", "base", "base", "R")
     m "Anywhere, as long as it's on you. It can be on your shoes for all I care."
-    call her_main("Ok...", "base", "happy", "base", "mid")
+    call her_main("Okay...", "base", "happy", "base", "mid")
     m "Well hurry up [hermione_name], classes will start soon."
     call nar(">She starts jerking your cock with renewed vigour.")
     m "So where are you going to hide it?"
@@ -234,7 +234,7 @@ label hg_ps_cumslut_Scene_2:
     call her_main("Well I guess not...", "annoyed", "base", "base", "mid")
     call her_main("But will it still be hidden this time?", "annoyed", "base", "worried", "R")
     m "That's up to you."
-    call her_main("Hmmmm...", "annoyed", "narrow", "angry", "R")
+    call her_main("*Hmmmm*...", "annoyed", "narrow", "angry", "R")
 
     call her_main("How much will I be paid this time then?", "annoyed", "squint", "base", "mid")
     m "Twenty points."
@@ -258,7 +258,7 @@ label hg_ps_cumslut_Scene_2:
     call her_main("Why are you asking me to do this [genie_name]?", "angry", "base", "base", "mid", xpos="base", ypos="head")
     m "This question again?"
     m "Let me answer your question with one of my own."
-    call her_main("Ok...", "angry", "narrow", "base", "down")
+    call her_main("Okay...", "angry", "narrow", "base", "down")
     m "Why are you jerking me off [hermione_name]?"
     call her_main("Because you asked me to...", "soft", "narrow", "annoyed", "up")
     m "And is that the only reason?"
@@ -285,7 +285,7 @@ label hg_ps_cumslut_Scene_2:
     call her_main("You're making me choose? Between getting eighty points for doing nothing.", "annoyed", "narrow", "annoyed", "mid")
     call her_main("Or getting paid nothing for wearing your cum around the school.", "angry", "narrow", "annoyed", "mid", emote="01")
     m "Indeed I am [hermione_name]."
-    call her_main("{size=-5}Ok...{/size}", "disgust", "narrow", "base", "down")
+    call her_main("{size=-5}Okay...{/size}", "disgust", "narrow", "base", "down")
     m "Well hurry up [hermione_name], classes will start soon, best make your decision."
     call nar(">She starts jerking your cock with renewed vigour.")
     call her_main("...", "annoyed", "squint", "base", "mid")
@@ -569,7 +569,7 @@ label hg_ps_cumslut_complete_1:
         call her_main("I kept your cum on me all day.", "base", "base", "base", "R")
 
         menu:
-            "\"Fifty points to gryffindor!\"":
+            "\"Fifty points to Gryffindor!\"":
                 $ gryffindor += 50
                 call her_main("Thank you [genie_name], will that be all?", "soft", "base", "base", "mid")
                 m "Yes [hermione_name], you may leave now."
@@ -579,7 +579,7 @@ label hg_ps_cumslut_complete_1:
                 m "And do you think that anyone noticed?"
                 call her_main("I don't think so [genie_name]. Ginny Weasley asked me about it during transfiguration class though.", "soft", "base", "base", "mid")
                 m "And what did you tell her?"
-                call her_main("I just said that I spilled some Wiggenweld potion on myself in potions class.", "open", "base", "base", "mid")
+                call her_main("I just said that I spilled some {i}Wiggenweld potion{/i} on myself in potions class.", "open", "base", "base", "mid")
                 m "Very cunning of you. Fifty points to Gryffindor."
                 $ gryffindor += 50
                 call her_main("Thank you [genie_name], if that's all I might head to bed.", "soft", "base", "base", "mid")
@@ -592,7 +592,7 @@ label hg_ps_cumslut_complete_1:
         call her_main("I kept your cum on me all day.", "angry", "happyCl", "worried", "mid",emote="05")
 
         menu:
-            "\"Fifty points to gryffindor!\"":
+            "\"Fifty points to Gryffindor!\"":
                 $ gryffindor += 50
                 call her_main("Thank you [genie_name], will that be all?", "annoyed", "base", "worried", "R")
                 m "Yes [hermione_name], you may leave now. "
@@ -617,12 +617,12 @@ label hg_ps_cumslut_complete_1:
         call her_main("...I did it [genie_name].", "upset", "narrow", "base", "dead",tears="mascara",xpos="right",ypos="base")
         call her_main("I kept your cum on me all day.", "upset", "happyCl", "worried", "mid",tears="mascara_soft_blink")
         menu:
-            "\"Fifty points to gryffindor!\"":
+            "\"Fifty points to Gryffindor!\"":
                 $ gryffindor += 50
                 $ her_mood += 5
                 call her_main("...", "annoyed", "narrow", "annoyed", "mid", tears="mascara_soft")
                 m "Well [hermione_name], you may leave now."
-                call her_main("Hmmmphh...", "angry", "narrow", "annoyed", "mid", emote="01",tears="mascara")
+                call her_main("*Hmmmphh*...", "angry", "narrow", "annoyed", "mid", emote="01",tears="mascara")
 
             "\"Tell me about your day.\"":
                 $ her_mood += 10
@@ -674,7 +674,7 @@ label hg_ps_cumslut_complete_2:
                 call her_main("Luna Lovegood, sir.", "soft", "base", "base", "mid")
                 m "What happened with miss Lovegood?"
                 call her_main("She kept trying to tell me that a Cornish pixie had given me a present.", "annoyed", "narrow", "angry", "R")
-                m "A cornish pixie had given you a present?"
+                m "A Cornish Pixie had given you a present?"
                 call her_main("I didn't know what she was talking about either. Cornish pixies are nasty little things that would never do anything nice.", "disgust", "narrow", "base", "mid_soft")
                 m "Well what happened after that?"
                 call her_main("Well I asked her what she was talking about and then she ran her finger up my leg, scooping up some of your cum!", "smile", "narrow", "base", "mid_soft")

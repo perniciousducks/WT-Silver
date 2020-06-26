@@ -220,7 +220,7 @@ label luna_favour_1:
                         call lun_main("Back to stroking it [lun_genie_name]...","base","suspicious","mad","mid")
                         ">You start stroking your cock again."
                         call lun_main("Doesn't that feel better?","base","suspicious","mad","R")
-                        m "{size=-4}(*argh*... yes...){/size}"
+                        m "{size=-4}(*Argh*... yes...){/size}"
                         call lun_main("Say it out loud.","base","mad","mad","mid")
                         m "{size=-4}yes...{/size}"
                         call lun_main("Good. Now cum for me.","base","suspicious","angry","mid")
@@ -306,7 +306,7 @@ label luna_favour_1:
                         m "..."
                         call lun_main("Well don't worry about that...","normal","mad","mad","mid")
                         call lun_main("Just keep stroking it.","base","mad","mad","R")
-                        m "{size=-4}(*argh*... yes...){/size}"
+                        m "{size=-4}(*Argh*... yes...){/size}"
                         call lun_main("You nasty old man","base","mad","mad","mid")
                         m "{size=-4}yes...{/size}"
                         call lun_main("Get your moneys worth...","upset","suspicious","mad","mid")
@@ -402,7 +402,7 @@ label luna_favour_1:
                 m "..."
                 call lun_main("Just think about how happy I'll be once father becomes a respectable member of society.","base","mad","mad","mid")
                 call lun_main("Think about how much you enjoy making me happy...","base","mad","mad","R")
-                m "{size=-4}(*argh*... yes...){/size}"
+                m "{size=-4}(*Argh*... yes...){/size}"
                 call lun_main("You love making me happy don't you [lun_genie_name]...","base","mad","mad","mid")
                 m "{size=-4}yes...{/size}"
                 call lun_main("say it louder...","base","mad","mad","mid")

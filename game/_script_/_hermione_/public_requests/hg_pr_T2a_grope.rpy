@@ -54,7 +54,7 @@ label hg_pr_grope:
         m "You are a pretty girl, it shouldn't be too hard."
         her "....................."
         call her_main("How many points would I receive after completing such a task, [genie_name]?", "disgust", "narrow", "base", "mid_soft")
-        m "Hm... {number=current_payout} should do..."
+        m "*Hmm*... {number=current_payout} should do..."
         call her_main("{number=current_payout} house points...", "annoyed", "narrow", "angry", "R")
         her "...."
         call her_main("Well, so be it then...", "disgust", "narrow", "base", "mid_soft")
@@ -275,7 +275,7 @@ label hg_pr_grope_T2_E2:
 
     call her_main("Well...", "open", "closed", "base", "mid")
     her "I'm not sure whether or not this counts, but..."
-    her "During the Herbology class today..."
+    her "During Herbology class today..."
     call play_music("hermione") # Music
     call her_main("I let this one boy slide his hand under my skirt...", "upset", "wink", "base", "mid")
     her "So while Professor Sprout explained the differences between {i}mandrake{/i} and {i}mandragore{/i}..."
@@ -342,7 +342,7 @@ label hg_pr_grope_T2_E3:
     call her_main("Nothing! I couldn't bear the humiliation... I just ran...", "angry", "narrow", "base", "mid", cheeks="blush", tears="crying")
     her "I even left my shoes behind and had to come back later to pick them up..."
     call her_main("*Sob*!............", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
-    m "*Hm*..."
+    m "*Hmm*..."
     m "Well, you did get molested..."
     m "Although in a rather unconventional manner..."
     call her_main("*Sob*! I wish he would have just touched my breasts like any normal boy would, [genie_name]... *Sob!*", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
@@ -421,7 +421,7 @@ label hg_pr_grope_T3_E3:
     call her_main("Well, it sort of escalated into something else...", "base", "narrow", "base", "up")
     call play_music("playful_tension") # Music
     m "*Hmm*?"
-    call her_main("*uhm*...", "upset", "wink", "base", "mid")
+    call her_main("*Ehm*...", "upset", "wink", "base", "mid")
     her "I sort of... got caught while I was letting this one boy fondle my breasts..."
     m "You got caught? By one of the teachers?"
     call her_main("No, [genie_name]...", "base", "base", "base", "mid")

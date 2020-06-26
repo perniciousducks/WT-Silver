@@ -285,7 +285,7 @@ label hg_pf_titjob_1:
 
     call play_music("playful_tension") # SEX THEME.
     call bld
-    g9 "*mmmm*..."
+    g9 "*Mmmm*..."
     $ ccg1 = 6
     if hg_pf_titjob.counter == 1:
         call her_main("...", "base", "base", "base", "mid")

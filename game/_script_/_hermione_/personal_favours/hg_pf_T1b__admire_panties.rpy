@@ -199,7 +199,7 @@ label hg_pf_admire_panties_T2: # Call label
     menu:
         "\"You don't look too embarrassed...\"":
             call her_main("That's not true...", "base", "happy", "base", "mid")
-            call her_main("But it is a small price to pay if the Gryffindor keeps the cup this year.", "base", "base", "base", "R")
+            call her_main("But it is a small price to pay if it means the Gryffindor house keeps the cup this year.", "base", "base", "base", "R")
             her "I know everyone will be so happy..."
 
         "\"I like your panties...\"":

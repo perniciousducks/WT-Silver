@@ -241,7 +241,7 @@ label hg_pf_blowjob_T1_intro_E2:
     her "So I was just trying to imagine how the \"old me\" would've reacted to this."
     m "So..."
     g4 "You were messing with me then?"
-    call her_main("*uhm*... I'm sorry [genie_name], I didn't mean to...", "angry", "happyCl", "worried", "mid", emote="05")
+    call her_main("*Uhm*... I'm sorry [genie_name], I didn't mean to...", "angry", "happyCl", "worried", "mid", emote="05")
     g4 "You nasty little slut! You must be punished!"
     g9 "I'll punish you with my cock!"
     call her_main("...............................", "angry", "happyCl", "worried", "mid", emote="05")
@@ -357,7 +357,7 @@ label hg_pf_blowjob_1:
             call her_main("*Slurp*! *Gulp*! *Gulp*!", "open_wide_tongue", "narrow", "worried", "down")
             m "Oh... This is good..."
             call her_main("*Slurp*! *Slurp*! *Slurp*!", "open_wide_tongue", "narrow", "base", "up")
-            m "*Hm*..."
+            m "*Hmm*..."
             m "So you don't mind selling me sexual favours, letting me play with your tits and such..."
             call her_main("*Gobble*! *Gltch*! *Slurp*!", "open_wide_tongue", "narrow", "annoyed", "up")
             m "And then condemn such behaviour in front of the other students."
@@ -371,7 +371,7 @@ label hg_pf_blowjob_1:
             call her_main("The \"MRM\" is about gender equality.", "open", "closed", "base", "mid")
             call her_main("We are not as much against selling sexual favours to the teachers...")
             call her_main("As we are against the gender inequality that the selling of sexual favour creates...")
-            m "*Hm*..."
+            m "*Hmm*..."
             m "This conversation is starting to bore me..."
             m "Suck on my cock some more before we continue."
             call her_main("Of course, [genie_name].", "soft", "narrow", "annoyed", "up")
@@ -438,7 +438,7 @@ label hg_pf_blowjob_1:
             call her_main("But I do not care.")
             call her_main("I am not afraid to \"get my hands dirty\" and do what needs to be done.", "upset", "closed", "base", "mid")
             m "A bit rebellious, aren't you?"
-            call her_main("*Hm*... I suppose I am.", "angry", "wink", "base", "mid")
+            call her_main("*Hmm*... I suppose I am.", "angry", "wink", "base", "mid")
             m "Back to sucking then. Teach your folks a lesson."
 
             call her_chibi_scene("bj", trans=d3)
@@ -486,7 +486,7 @@ label hg_pf_blowjob_1:
 
             call her_chibi_scene("bj")
             call her_main("*Slurp*! *Gulp*! *Slurp*!", "open_wide_tongue", "narrow", "base", "up")
-            m "*Hm*..."
+            m "*Hmm*..."
             m "Well, I thought I could turn this around somehow to make fun of you..."
             call her_main("*Slurp* .....?", "open_wide_tongue", "narrow", "annoyed", "up")
             m "Well, with your house representing courage and righteousness and such..."
@@ -1317,7 +1317,7 @@ label hg_hidden_blowjob_cumming:
 
     call her_chibi_scene("bj", trans=d5)
     call her_main("*Slurp*! *Slurp*! *Slurp*!", "open_wide_tongue", "narrow", "annoyed", "up")
-    m "*Hm*..."
+    m "*Hmm*..."
     m "You are getting better at this [hermione_name]."
     call her_main("*Slurp*! *Slurp*! *Gulp*!", "open_wide_tongue", "narrow", "base", "up")
     m "Okay, say something nasty now..."
@@ -1325,7 +1325,7 @@ label hg_hidden_blowjob_cumming:
     call her_chibi_scene("bj_pause", trans=d5)
 
     if her_tier <= 5:
-        call her_main("*uhm*...", "angry", "narrow", "base", "down")
+        call her_main("*Uhm*...", "angry", "narrow", "base", "down")
         call her_main("I eat cockroaches?", "angry", "base", "base", "mid")
         m "What the fuck?"
         call her_main("T-they are pretty nasty, [genie_name]...", "angry", "base", "base", "mid")
@@ -1446,7 +1446,7 @@ label hg_hidden_blowjob_cumming:
             m "So... Aren't you going to clean up?"
             call her_main("In a moment...", "grin", "narrow", "base", "dead")
             call her_main("I'm giving my skin time to soak in the anti-oxidants...")
-            m "*Hm*... I find this quite hot..."
+            m "*Hmm*... I find this quite hot..."
             m "Take your time, [hermione_name]..."
             call blkfade
 

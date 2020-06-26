@@ -341,7 +341,7 @@ label hg_sex_1:
             call her_main("It hurts a little though, *ah*...", "open", "base", "base", "mid")
             $ ccg1 = 4
             call her_main("Your penis is too big... *ah*...", "open", "happyCl", "worried", "mid")
-            m "*Hm*..."
+            m "*Hmm*..."
             m "You need me to slow down or something?"
             $ ccg1 = 10
             call her_main("No, [genie_name]... You don't have to...", "open", "base", "base", "mid")
@@ -639,7 +639,7 @@ label hg_sex_2:
     call her_main("*Aah*!!!{heart}{heart}{heart} IT HURTS!{heart}{heart}{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     $ ccg1 = 8
     call her_main("It hurts...{heart}{heart}{heart}{w=0.5} It hurts so good...{heart}{heart}{heart}", "silly", "narrow", "annoyed", "up")
-    m "*Hm*?"
+    m "*Hmm*?"
     m "Why are your legs shaking, [hermione_name]?"
     m "Are you cumming?"
     $ ccg1 = 7
@@ -840,7 +840,7 @@ label hg_sex_luna:
     call her_main("I may have given her a suggestibility serum...", "silly", "narrow", "annoyed", "up")
     m "{size=-3}A suggestibility serum?{/size}"
     lun "Who are you talking to sir?"
-    m "Oh, *um*.... no one, just ignore me..."
+    m "Oh, *ehm*.... no one, just ignore me..."
     lun "Okay then, I'll ignore you..."
     call her_main("I may have suggested that she come here...", "silly", "narrow", "annoyed", "up")
     call her_main("And that she be unable to see me...", "silly", "narrow", "annoyed", "up")

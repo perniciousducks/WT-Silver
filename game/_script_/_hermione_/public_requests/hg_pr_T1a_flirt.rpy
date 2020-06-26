@@ -134,7 +134,7 @@ label hg_pr_flirt_intro:
 
     if hg_pr_flirt.counter == 1:
         call her_main("......", "annoyed", "narrow", "angry", "R")
-        call her_main("So *umm*...", "soft", "base", "base", "R")
+        call her_main("So *ehm*...", "soft", "base", "base", "R")
 
     m "How many boys did you flirt with today, [hermione_name]?"
 

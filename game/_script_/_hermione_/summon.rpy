@@ -322,7 +322,7 @@ label hermione_favor_menu:
                 m "Just think about it."
                 jump hermione_favors_convinced_check
         else:
-            her "The Gryffindor is in the lead. I don't need to do this."
+            her "The Gryffindor house is in the lead. I don't need to do this."
             if her_whoring >= 15:
                 menu:
                     "-Change her mind-":

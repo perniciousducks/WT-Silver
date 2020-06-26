@@ -11,7 +11,7 @@ label ball_quest_E1:
     call her_main("Sir, have you made your decision yet on who will be in charge of the \"ABOC\" this year?", "open", "base", "base", "mid")
     m "\"ABOC\"?"
     call her_main("The \"Autumn Ball Organization Committee\", sir...", "open", "closed", "base", "mid")
-    m "Ehm... Sure..."
+    m "*Ehm*... Sure..."
     call her_main("Please excuse me if I am being too direct with this, sir...", "normal", "squint", "angry", "mid")
     call her_main("But I think you should put {b}me{/b} in charge.", "open", "closed", "angry", "mid")
     call her_main("I did it last year and it was the best organised \"autumn ball\" Hogwarts has had in years.", "open", "closed", "base", "mid")
@@ -494,7 +494,7 @@ label ball_quest_E2:
     call sna_main("Show up?","snape_03")
     sna "You are expected to host the bloody thing!"
     call sna_main("But don't you worry! I'll figure something out!","snape_09")
-    call sna_main("Hm... I'll Probably have to host the ball instead...","snape_06")
+    call sna_main("*Hmm*... I'll Probably have to host the ball instead...","snape_06")
     m "............"
     call sna_main("Well, the Autumn ball is about to happen and Hermione Granger is in charge...","snape_09")
     sna "There is no changing it now..."
@@ -515,7 +515,7 @@ label ball_quest_E2:
     call sna_main("Right...","snape_05")
     sna "But you know what else could endanger out little enterprise?"
     call sna_main("Me losing it during class and strangling a couple of Gryffindor maggots with my bare hands...","snape_07")
-    m "*Hm*... I see your point..."
+    m "*Hmm*... I see your point..."
     call sna_main("Seriously, man... I need a drink...","snape_06")
 
     hide screen snape_main
@@ -586,7 +586,7 @@ label ball_quest_E3:
     call her_chibi("leave")
 
     call bld
-    m "*Hm*... I don't remember ever seeing the girl this desperate..."
+    m "*Hmm*... I don't remember ever seeing the girl this desperate..."
     m "And that says a lot, all things considered..."
     m "I suppose Whoring herself out for house points is a significantly smaller problem than not having a proper prom dress..."
     m ".............."
@@ -639,7 +639,7 @@ label ball_quest_E4:
 
     call bld
     m "......................................."
-    m "*Hm*..."
+    m "*Hmm*..."
 
     $ hermione_busy = True
     $ hg_event_pause += 1

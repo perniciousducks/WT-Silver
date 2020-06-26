@@ -118,13 +118,13 @@ label hg_ps_buttplug:
                 call her_main("What? Right now!?.", "angry", "happyCl", "worried", "mid")
                 call her_main("In front of you?", "angry", "wink", "base", "mid")
                 m "One hundred points [hermione_name]..."
-                call her_main("ugh... Fine...", "angry", "narrow", "base", "down")
+                call her_main("*Ugh*... Fine...", "angry", "narrow", "base", "down")
                 call her_main("But I'm not turning around!", "annoyed", "narrow", "annoyed", "mid")
                 m "Whatever suits you best..."
                 ">You hand her the butt plug"
                 call her_main("{size=-7}It's so big...{/size}", "clench", "narrow", "base", "down")
                 ">Hermione lifts her skirt and presses the butt plug against her asshole."
-                call her_main("*ughh*... it's too big...", "shock", "happyCl", "worried", "mid")
+                call her_main("*Ughh*... it's too big...", "shock", "happyCl", "worried", "mid")
                 call her_main("It won't fit!", "open", "happyCl", "worried", "mid")
                 m "Try spitting on it."
                 call her_main(".........", "angry", "narrow", "base", "down")
@@ -346,7 +346,7 @@ label hg_ps_buttplug:
                     call her_main("I didn't promise anything! Besides, I didn't actually expect you to have a jar of lube in your desk.", "open", "narrow", "angry", "R")
                     m "I bought it for just such an occasion..."
                     call her_main("...", "annoyed", "base", "angry", "mid")
-                    call her_main("ugh... fine. I'll {b}try{/b} to fit it in.", "disgust", "narrow", "worried", "down")
+                    call her_main("*Ugh*... fine. I'll {b}try{/b} to fit it in.", "disgust", "narrow", "worried", "down")
                     call her_main("but I'm not promising anything!", "open", "closed", "base", "mid")
                     m "That's all I ask."
                     call nar(">You hand hermione the large butt plug.")
@@ -359,7 +359,7 @@ label hg_ps_buttplug:
                     call her_main("{size=+10}!!!{/size}", "soft", "wide", "base", "stare",cheeks="blush",trans=hpunch)
                     call her_main("{size=+10}It's moving!{/size}", "disgust", "happyCl", "worried", "mid")
                     m "Really?"
-                    call her_main("{size=+5}ugh...{/size}", "disgust", "happyCl", "worried", "mid")
+                    call her_main("{size=+5}*Ugh*...{/size}", "disgust", "happyCl", "worried", "mid")
                     call her_main("{size=+5}it's forcing its way inside me....{/size}", "open", "wide", "worried", "shocked")
                     call her_main("ah...", "shock", "happyCl", "worried", "mid")
                     call her_main("it's...{w=0.3} it's...", "open", "wide", "base", "stare")

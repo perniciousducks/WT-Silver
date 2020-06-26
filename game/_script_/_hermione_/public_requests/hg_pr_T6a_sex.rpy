@@ -108,7 +108,7 @@ label hg_pr_sex_T1_intro_E1:
     m "....."
     m ".........."
     m "She was supposed to be here, by now..."
-    m "Hm..."
+    m "*Hmm*..."
 
     $ hg_pr_sex.inProgress = False
     $ hermione_busy = True
@@ -135,7 +135,7 @@ label hg_pr_sex_T1_intro_E2:
     m "A slumber party with some girlfriends, huh?"
     call her_main("Girlfriends?", "angry", "wink", "base", "mid")
     call her_main("No, [genie_name]. Harry and Ron are boys...", "open", "base", "base", "R", cheeks="blush")
-    m "*Hm*..."
+    m "*Hmm*..."
     call her_main("Yes, we were best friends for such a long time...", "base", "base", "base", "R", cheeks="blush")
     call play_music("playful_tension") # Music
     call her_main("But last night the boys made me their little plaything...", "base", "narrow", "base", "mid_soft")
@@ -186,12 +186,12 @@ label hg_pr_sex_T1_E4:
     call her_main("*Ehm*... well...", "open", "base", "base", "R", cheeks="blush")
     her "I am getting paid well for performing such tasks..."
     her "So I have no right to complain, but..."
-    m "*Hm*...?"
+    m "*Hmm*...?"
     call her_main("My reputation is starting to suffer and it troubles me, [genie_name]...", "open", "base", "base", "mid", cheeks="blush")
     m "Your reputation?"
     call her_main("Well, yes... *ehm*...", "open", "base", "base", "R", cheeks="blush")
     m ".............."
     call her_main("No, sorry, please disregard what I just said, [genie_name].", "upset", "closed", "base", "mid")
-    m "*Hm*..."
+    m "*Hmm*..."
 
     jump end_hg_pr_sex

@@ -274,7 +274,7 @@ label hg_pr_kiss_T2_E1:
     call her_main("She caught on real quick... I think she could be really good at it with some practice...", "open", "base", "base", "mid")
     call her_main("Also she was quite adorable...", "base", "base", "base", "mid")
     call her_main("She kept calling me \"[hermione_name]\"...", "smile", "base", "base", "R")
-    m "*Hm*..."
+    m "*Hmm*..."
     m "I Don't recall sending you out with a task to confuse some poor girl, [hermione_name]."
     call her_main("\"Confuse\"? [genie_name], please...", "smile", "narrow", "base", "mid_soft")
     her "You should have seen that {i}poor girl{/i}..."
@@ -309,7 +309,7 @@ label hg_pr_kiss_T2_E2:
     call her_main("Some of them even cheered us on...", "open", "happyCl", "worried", "mid", cheeks="blush")
     call her_main(".....", "base", "squint", "base", "mid")
     her "By the way, the girl I kissed, [genie_name]..."
-    m "*Hm*...?"
+    m "*Hmm*...?"
     call her_main("She is one of those unpopular girls...", "open", "closed", "base", "mid")
     her "I know that other students make fun of her sometimes..."
     call her_main("But today changed everything...", "base", "squint", "base", "mid")
@@ -347,7 +347,7 @@ label hg_pr_kiss_T2_E3:
             call her_main("That is not what I meant, [genie_name]...", "annoyed", "narrow", "annoyed", "mid")
 
         "\"You wouldn't understand, girl.\"":
-            call her_main("*Hm*...", "upset", "closed", "base", "mid")
+            call her_main("*Hmm*...", "upset", "closed", "base", "mid")
             call her_main("What about you, [genie_name]?", "angry", "base", "base", "mid")
             her "Where you like that when you were a boy?"
             m "You mean if I enjoyed watching two girls going at it?"
@@ -387,10 +387,10 @@ label hg_pr_kiss_T3_E1:
     call her_main("I did, [genie_name].", "soft", "base", "base", "mid")
     m "I'm all ears..."
     call her_main("Well, I kissed that annoying blond girl from Slytherin...", "annoyed", "squint", "base", "mid")
-    m "*Hm*... \"annoying\", huh?"
+    m "*Hmm*... \"annoying\", huh?"
     m "Because she happens to be from Slytherin."
     call her_main("Precisely so, [genie_name].", "open", "closed", "base", "mid")
-    m "*Hm*..."
+    m "*Hmm*..."
     m "Don't you think that that's a little bit of prejudice on your part?"
     m "Or shall I say that you are being a \"housist\"?"
     call her_main("...a \"housist\", [genie_name]?", "annoyed", "narrow", "annoyed", "mid")
@@ -466,7 +466,7 @@ label hg_pr_kiss_T3_E2:
     m "What is it?"
     call her_main("Well... I have this friend...", "base", "base", "base", "mid")
     her "Her name is Ginny Weasley..."
-    call her_main("And... *uhm*...", "base", "base", "base", "R", cheeks="blush")
+    call her_main("And... *ehm*...", "base", "base", "base", "R", cheeks="blush")
     her "I'm Not sure how to say this..."
     m "Just say it, [hermione_name]."
     call her_main("Well, we decided to skip the potions class together...", "open", "base", "base", "mid")

@@ -304,13 +304,13 @@ label nt_he_story_intro_E1:
 label nt_he_story_intro_E2:
     call bld
     m "You mentioned an auror last time if I'm not mistaken."
-    call ton_main("Alastor Moody?","angry","wide","wide","wide", ypos="head")
+    call ton_main("Moody?","angry","wide","wide","wide", ypos="head")
     m "Not in particular."
     call ton_main("What?","open","base","raised","mid")
     m "..."
     call ton_main("You talking about Mad-eye?","open","base","angry","mid")
     m "I can see perfectly fine, dear."
-    call ton_main("Mad-eye Moody is the auror that taught me.","open","base","angry","R")
+    call ton_main("Alastor Moody is the auror that taught me.","open","base","angry","R")
     m "Oh, of course."
     m "(His parents must have hated him...)"
     #m "(What's wrong with a normal name... like Will Smith, or Robin Williams?)"

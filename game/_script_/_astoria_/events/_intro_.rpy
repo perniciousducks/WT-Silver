@@ -492,7 +492,7 @@ label astoria_intro_E3:
     call her_main("Astoria Greengrass, Sir.", "soft", "narrow", "annoyed", "mid", xpos="560", ypos="base") # Hermione moves closer.
     call her_main("You asked me to bring you the person who cast the unforgivable curse, Sir.", "soft", "narrow", "annoyed", "mid")
     call her_main("And here she is.", "grin", "base", "angry", "mid")
-    m "I thought it would be some angst girl who listens to death metal - or something..."
+    m "I thought it would be some angsty girl who listens to death metal - or something..."
     m "Not some innocent looking gir-"
     call ast_main("I am not!","clench","narrow","angry","mid")
     call ast_main("You don't know what you're talking about, you ancient old man!","annoyed","narrow","angry","R")

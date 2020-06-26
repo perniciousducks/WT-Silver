@@ -154,7 +154,7 @@ label hg_pr_blowjob_T1_E1:
     call her_main("What is there to tell, [genie_name]?", "annoyed", "narrow", "angry", "R")
     her "I sucked off one of my classmates today..."
     her "And that's it..."
-    m "*Hm*... I see..."
+    m "*Hmm*... I see..."
     m "..............."
     call her_main("....................................", "angry", "narrow", "base", "down")
     m "Did you swallow?"
@@ -189,9 +189,9 @@ label hg_pr_blowjob_T1_E2:
     her "I failed to complete my task and deserve no praise of any kind..."
     her "And should you pay me out of pity..."
     call her_main("Then That would only worsen the insult...", "annoyed", "narrow", "angry", "R")
-    m "*Hm*... In that case, maybe I should pay you anyway..."
+    m "*Hmm*... In that case, maybe I should pay you anyway..."
     call her_main("No, [genie_name]. I would not accept it...", "annoyed", "narrow", "annoyed", "mid")
-    m "*Hm*... Well, this will be all then."
+    m "*Hmm*... Well, this will be all then."
     her "Have a good night, [genie_name]."
 
     call her_walk(action="leave")
@@ -231,7 +231,7 @@ label hg_pr_blowjob_T2_intro_E1:
     call play_music("playful_tension") # Music
     call her_main("Today I did something I wanted to do for such a long time now...", "base", "narrow", "base", "up")
     her "But never could muster up enough courage for..."
-    m "*Hm*..?"
+    m "*Hmm*..?"
     call her_main("Today I sucked off my two best friends in the entire world!", "soft", "narrow", "annoyed", "up")
     call her_main("And it was every bit as exciting as I thought it would be.", "base", "narrow", "worried", "down")
     call her_main("I made their cocks all sloppy with saliva...", "grin", "narrow", "base", "dead")
@@ -277,7 +277,7 @@ label hg_pr_blowjob_T2_E2:
     call her_main("He came so much I was barely able to swallow it all...", "scream", "base", "angry", "mid", emote="01", tears="mascara")
     her "Bloody bastard!"
     call her_main("You think I could file a complaint, [genie_name]?", "angry", "base", "angry", "mid", cheeks="blush", tears="mascara")
-    m "*Hm*... I suppose..."
+    m "*Hmm*... I suppose..."
     m "But keep in mind that the moment we bring the ministry into this..."
     m "All this \"favour selling business\" will have to stop immediately."
     call her_main("Oh...?", "open", "base", "base", "R", cheeks="blush", tears="mascara")

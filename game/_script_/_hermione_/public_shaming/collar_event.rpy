@@ -71,7 +71,7 @@ label slut_scene: #Locked to her being your slut
     hide screen hermione_main
     call her_main("Please [genie_name], let me suck your cock.", "open", "base", "base", "mid")
     hide screen hermione_main
-    m "*Hmmm* that was almost good enough. Try again, a little harder."
+    m "*Hmmm*... That was almost good enough. Try again, a little harder."
     call her_main("Pretty please [genie_name], please let me suck your big beautiful cock.", "scream", "happyCl", "worried", "mid")
     hide screen hermione_main
     m "Good girl."

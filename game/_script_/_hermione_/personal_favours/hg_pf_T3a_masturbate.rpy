@@ -71,7 +71,7 @@ label hg_pf_strip_T2_fingering:
     m "............."
     call her_main(".............", "normal", "happyCl", "worried", "mid")
     stop bg_sounds
-    call her_main("*umm*... [genie_name]?")
+    call her_main("*Umm*... [genie_name]?")
     m "Yes, what is it?"
     call her_main("For how long did you want me to do this?", "open", "base", "worried", "mid")
     m "Until you finish [hermione_name]..."

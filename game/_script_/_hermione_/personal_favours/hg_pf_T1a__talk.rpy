@@ -790,7 +790,7 @@ label hg_pf_talk_tonks:
                 g9 "(And because you love it...)"
             call ton_main("Well, if you can't beat them...","horny","base","base","R", hair="horny")
             call ton_main("So, how has that been working for you so far, Miss Granger?","open","base","base","L", hair="basic")
-            call ton_main("How is morale amongst the Gryffindor, now?","base","base","raised","L")
+            call ton_main("How is morale amongst the Gryffindor students, now?","base","base","raised","L")
             call her_main("It's great! Although... I still believe that it isn't fair...", "soft", "base", "base", "mid", cheeks="blush")
             call her_main("That is why I created the \"M.R.M\"!", "open", "happy", "base", "mid_soft")
             call ton_main("Yes. The \"Men's Reign Movement\"...","open","closed","base","mid")

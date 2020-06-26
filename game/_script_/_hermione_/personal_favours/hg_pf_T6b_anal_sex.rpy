@@ -22,7 +22,7 @@ label hg_anal_sex_1:
     call her_main("...........", "annoyed", "base", "worried", "R")
     m "Let's see..."
     call her_main(".................", "angry", "happyCl", "worried", "mid",emote="05")
-    m "*Hm*..."
+    m "*Hmm*..."
 
     call her_chibi_scene("sex_pause", trans=fade)
 
@@ -537,7 +537,7 @@ label hg_anal_sex_2:
     call blkfade
 
     call her_main("........", "annoyed", "base", "worried", "R")
-    m "*Hm*..."
+    m "*Hmm*..."
     call her_main("...........", "open", "base", "base", "mid")
     $ renpy.play('sounds/gltch.mp3')
     with hpunch
@@ -582,7 +582,7 @@ label hg_anal_sex_2:
     m "We witchers are-"
     call her_main("Yeah, yeah, I know, you witchers are infertile... {size=-6}Such bullshit...{/size}", "open", "narrow", "angry", "R")
     $ ccg1 = 33
-    call her_main("A-anyway I couldn't get pregnant the way we are doing it, [genie_name]...", "angry", "wink", "base", "mid")
+    call her_main("I couldn't get pregnant the way we are doing it anyhow, [genie_name]...", "angry", "wink", "base", "mid")
     m "What is this talk of marriage then?"
     $ ccg1 = 12
     call her_main("You misunderstood me [genie_name].", "angry", "base", "base", "mid")

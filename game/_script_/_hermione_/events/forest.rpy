@@ -120,7 +120,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
             her "{size=+10}Show yourselves!!!{/size}"
 
     $ ccg1 = "m1"
-    myr "*Te-he-he-he... Hi Hermione..."
+    myr "*Te-he-he-he*... Hi Hermione..."
     $ ccg2 = 11
     with hpunch
     g4 "{size=+10}AH! A G-G-GHOST!{/size}"

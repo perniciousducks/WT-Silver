@@ -625,7 +625,7 @@ label hg_pf_handjob_2:
     m "*Hmm*... You are getting pretty good at this."
     call her_main("Thank you, [genie_name].", "base", "happyCl", "base", "mid")
     call her_main("I figured the better I do this, the sooner it'll be over.")
-    m "*Hm*..."
+    m "*Hmm*..."
 
     menu:
         m "..."
@@ -722,7 +722,7 @@ label hg_pf_handjob_2:
             call her_main("She said any boy would fall in love with me if I did this to him...", "base", "narrow", "worried", "down")
             call her_main("There is also this thing when I form a ring with my fingers...")
             call her_main("And then I put one finger here...")
-            m "*Hm*... I don't feel anything..."
+            m "*Hmm*... I don't feel anything..."
             call her_main("Really?", "angry", "narrow", "base", "down")
             call her_main("*Hmm*...")
             call her_main("Oh! That's right!", "base", "narrow", "worried", "down")
@@ -886,7 +886,7 @@ label hg_pf_handjob_2_cumming:
     pause.8
 
     call bld
-    m "*Hm*..."
+    m "*Hmm*..."
     m "I love that thing you do with the palm of your hand!"
     call her_main("You noticed...?", "angry", "wink", "base", "mid")
     call her_main("Shall I do it some more then?")
@@ -974,7 +974,7 @@ label hg_pf_handjob_2_cumming:
                 call her_main("It may soak through a little here and there, but I doubt that anyone will notice.", "base", "happyCl", "base", "mid")
             else:
                 call her_main("It may soak through a little here and there, but I doubt that anyone will notice if I wear a robe.", "base", "happyCl", "base", "mid")
-            m "*Hm*... You could just put it in your mouth next time, and avoid the trouble..."
+            m "*Hmm*... You could just put it in your mouth next time, and avoid the trouble..."
             call her_main("And swallow your hot spunk like that, [genie_name]?", "angry", "wink", "base", "mid")
             if hermione.is_worn("top"):
                 m "Would keep your clothes clean."

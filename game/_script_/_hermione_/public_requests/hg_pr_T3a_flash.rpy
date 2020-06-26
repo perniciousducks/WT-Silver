@@ -79,7 +79,7 @@ label hg_pr_flash:
         call her_main("Oh...", "soft", "base", "base", "mid")
         call her_main("Production of milk?", "annoyed", "squint", "base", "mid")
         m "Good. What else do women use their tits for?"
-        call her_main("*Hm*..", "soft", "base", "base", "R")
+        call her_main("*Hmm*..", "soft", "base", "base", "R")
         call her_main("...to attract men?", "annoyed", "squint", "base", "mid")
         m "Yes. Let's concentrate on that."
         m "I need you to go out there..."
@@ -198,7 +198,7 @@ label hg_pr_flash_T1_E1:
     call hg_pr_flash_intro
 
     call play_music("playful_tension") # Music
-    call her_main("Ehm... Not too well, actually...", "angry", "happyCl", "worried", "mid",emote="05")
+    call her_main("*Ehm*... Not too well, actually...", "angry", "happyCl", "worried", "mid",emote="05")
     her "................................"
     m "Just tell me what happened, [hermione_name]."
     call her_main("That is the thing, [genie_name]...", "open", "base", "base", "mid")
@@ -226,7 +226,7 @@ label hg_pr_flash_T1_E2:
     call play_music("hermione") # Music
     call her_main("*Ehm*... Sort of...", "annoyed", "base", "worried", "R")
     m "Sort of?"
-    call her_main("Yes... *uhm*...", "open", "base", "base", "mid")
+    call her_main("Yes... *ehm*...", "open", "base", "base", "mid")
     her "Well, I decided to try and flash them to this Hufflepuff boy..."
     call her_main("I've been waiting for the right moment...", "open", "narrow", "worried", "down")
     her "I was worried that something would go wrong..."
@@ -240,7 +240,7 @@ label hg_pr_flash_T1_E2:
     her "So I had to fix my clothes back into place quickly..."
     her "And then the moment was gone..."
     call her_main("............", "normal", "happyCl", "worried", "mid")
-    m "*Hm*..."
+    m "*Hmm*..."
     m "What about the boy? Did he see your tits or not?"
     call her_main("Well, I think he may have seen one of them...", "open", "base", "base", "mid")
     her "But from the way he was looking at me..."
@@ -291,7 +291,7 @@ label hg_pr_flash_T2_E1:
     call her_main("................", "angry", "narrow", "base", "down")
     call play_music("hermione") # Music
     call her_main("Just for the record, [genie_name]...", "annoyed", "narrow", "angry", "R")
-    m "*Hm*?"
+    m "*Hmm*?"
     call her_main("I think that forcing your pupils to do things like this...", "scream", "closed", "angry", "mid")
     call her_main("Is beneath an esteemed wizard such as yourself...", "upset", "closed", "base", "mid")
     m "\"Forcing\"? Nobody is forcing you to do anything, [hermione_name]."
@@ -367,14 +367,14 @@ label hg_pr_flash_T2_E3:
     call her_main("Well...", "open", "base", "base", "mid")
     her "I had to spend a big portion of the day at the school library..."
     her "So I didn't really have the time to perform your task properly, [genie_name]..."
-    m "Hm...?"
+    m "*Hmm*...?"
     call play_music("playful_tension") # Music
     her "Instead I just went to the library window and..."
     call her_main("...I just pulled my shirt up and pressed my bare breasts against the glass...", "angry", "narrow", "base", "down")
     her "I stood there like that for several seconds..."
     her "To make sure that at least someone sees me from the outside..."
     call her_main("I hope this still counts, [genie_name]...", "angry", "base", "base", "mid")
-    m "*Hm*..."
+    m "*Hmm*..."
     m "How many students would you say saw you standing behind that window?"
     call her_main("I am not sure, [genie_name]... A couple maybe...?", "angry", "narrow", "base", "down")
     m "\"Maybe\"?"
@@ -384,7 +384,7 @@ label hg_pr_flash_T2_E3:
     call her_main("I heard someone shout: \"Look! At that window over there!\".", "angry", "squint", "base", "mid",cheeks="blush")
     her "When I heard that I covered up and quickly left..."
     call her_main("....", "angry", "base", "base", "mid")
-    m "*Hm*..."
+    m "*Hmm*..."
     m "Well, alright... I think this counts..."
 
     jump end_hg_pr_flash
@@ -399,7 +399,7 @@ label hg_pr_flash_T3_E1:
     m "I'm listening..."
     call her_main("Well... I had to spend a big portion of the day in the school library...", "upset", "wink", "base", "mid")
     call her_main("So I didn't really have the time to perform your task properly, [genie_name]...")
-    m "*Hm*...?"
+    m "*Hmm*...?"
     call her_main("Instead I just made sure there were no teachers around...", "angry", "base", "base", "mid")
     call play_music("playful_tension") # Music
     call her_main("Pulled my shirt up...")
@@ -410,13 +410,13 @@ label hg_pr_flash_T3_E1:
     call her_main("But they definitely saw my breasts, [genie_name]...", "angry", "base", "base", "mid")
     call her_main("eventually A few first years seemed to notice...", "angry", "narrow", "base", "down")
     call her_main("I had to leave pretty quickly after that...", "angry", "base", "base", "mid")
-    m "*Hm*..."
+    m "*Hmm*..."
     m "How many people would you say saw your tits today, [hermione_name]?"
     call her_main("Hard to say, [genie_name]...", "open", "base", "base", "mid")
     call her_main("Two dozen boys or so I suppose...")
     call her_main("A few girls as well...", "annoyed", "base", "worried", "R")
     call her_main("I think the school librarian may have seen me too...")
-    m "*Hm*... Well, I'd say that's a job well done."
+    m "*Hmm*... Well, I'd say that's a job well done."
 
     jump end_hg_pr_flash
 
@@ -434,11 +434,11 @@ label hg_pr_flash_T3_E2:
     m "....."
     call her_main("Ginny Weasley, [genie_name].", "open", "base", "base", "mid")
     m "Alright, fine, continue..."
-    call her_main("*uhm*...", "soft", "base", "base", "R")
+    call her_main("*Ehm*...", "soft", "base", "base", "R")
     her "......."
     call play_music("hermione") # Music
     call her_main("*Giggle*", "grin", "happyCl", "worried", "mid",emote="05")
-    m "*Hm*...?"
+    m "*Hmm*...?"
     call her_main("Then Ginny grabbed my breasts...", "smile", "base", "base", "R")
     her "And started to squeeze them..."
     her "then she started to kiss my breasts passionately..."

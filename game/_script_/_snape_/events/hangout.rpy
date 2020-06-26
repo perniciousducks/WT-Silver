@@ -244,7 +244,7 @@ label ss_he_story_intro_E2:
     m "Why not just award a couple of hundred points to Slytherin and be done with it?"
     call sna_main("No, we need to be discreet with this...","snape_24")
     call sna_main("Awarding a whole bunch of points to my house without any reason could draw in unnecessary attention...","snape_05")
-    m "Hm... I see your point..."
+    m "*Hmm*... I see your point..."
     call blktone
 
     ">You spend the evening by conspiring against Hermione with professor Snape..."
@@ -285,7 +285,7 @@ label ss_he_story_intro_E4:
     call sna_main("True...","snape_23")
     call sna_main("So, you think somewhere out there is another version of me?","snape_05")
     m "Probably..."
-    call sna_main("*Hm*...","snape_23")
+    call sna_main("*Hmm*...","snape_23")
     call sna_main("Severus Snape - the ever cheerful white mage...","snape_23")
     m "Sure, why not?"
     call sna_main("What unsettling imagery you put into my mind...","snape_03")
@@ -408,7 +408,7 @@ label ss_he_story_intro_E8:
     call sna_main("These days students just completely lack discipline...","snape_16")
     call sna_main("I would like nothing more than to publicly flog every single one of them...","snape_16")
     call sna_main("Especially the girls...","snape_22")
-    m "Hm... Fine by me..."
+    m "*Hmm*... Fine by me..."
     m "But won't a reform like that attract unnecessary attention towards us?"
     call sna_main("Yes. You are right of course.","snape_29")
     call sna_main("I am getting greedy...","snape_29")
@@ -435,7 +435,7 @@ label ss_he_story_intro_E9: # Replace this event.
     call sna_main("And I am this miserable muggle guy who lives in this shithole of a town full of run-down buildings.","snape_06")
     call sna_main("I try to make a living by drawing comics and creating games with \"Ren'Py\"...","snape_06")
     call sna_main("And that is so bizarre because I don't even know what a \"Ren'Py\" is!","snape_24")
-    m "*Hm*... Then what happened?"
+    m "*Hmm*... Then what happened?"
     call sna_main("Not much... Mostly worked my ass off for months...","snape_05")
     call sna_main("Then managed to create a relatively successful game somehow...","snape_05")
     call sna_main("Eventually began to make decent money with my craft...","snape_24")
@@ -467,7 +467,7 @@ label ss_he_story_intro_E10:
     call sna_main("Since you are an all-powerful being, you've got to know things like that, right?","snape_05")
     m "Maybe..."
     call sna_main("Great. Tell me then.","snape_06")
-    m "*Hm*... You sure you're ready for this?"
+    m "*Hmm*... You sure you're ready for this?"
     call sna_main("Yes. Lay it on me, friend.","snape_05")
     m "Alright then..."
     call sna_main("................!","snape_01")

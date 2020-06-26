@@ -696,7 +696,7 @@ label hg_tutor_E8:
     call nar(">You suck her nipples with devotion.")
     call her_main("Yes {heart} like that.", "silly", "narrow", "base", "up", cheeks="blush", tears="sweat")
     call nar(">You start to chew on her nipples.")
-    call her_main("Ah, no, don't...", "open_tongue", "narrow", "base", "up", cheeks="blush")
+    call her_main("*Ahh*, no... Don't.", "open_tongue", "narrow", "base", "up", cheeks="blush")
     call nar(">You chew on them even harder.")
     call her_main("Not that hard, I will...", "open_wide_tongue", "narrow", "base", "up", cheeks="blush")
     g9 "{size=-2}(Time for the grand finale!){/size}"

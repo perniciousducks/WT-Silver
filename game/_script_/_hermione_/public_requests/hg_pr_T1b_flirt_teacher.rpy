@@ -182,7 +182,7 @@ label hg_pr_flirt_teacher_T1_E2: # Snape
     m "Someone else?"
     call her_main("Yes! Someone with more experience at this...", "upset", "wink", "base", "mid")
     her "Someone..."
-    her "Someone, *uhm*..."
+    her "Someone, *ehm*..."
     m "Sluttier?"
     call her_main("Yes, I suppose...", "disgust", "narrow", "base", "mid_soft")
     m "Don't you give up, [hermione_name]. We will make a slut err--"
@@ -470,7 +470,7 @@ label hg_pr_flirt_teacher_T3_E1: # Filch
     her "Some unfortunate freshman could be traumatised for life!"
     m "And who wouldn't be really?"
     call her_main("Does this mean you will take action, [genie_name]?", "open", "base", "base", "mid")
-    m "uhm... Yeah, sure..."
+    m "*Ehm*... Yeah, sure..."
     m "There! Putting it on my {i}to-do-list{/i}..."
     m "\"Take care of the creepy janitor-guy and his crooked cock.\"..."
     m "Yes, first thing tomorrow."

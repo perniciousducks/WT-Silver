@@ -44,7 +44,7 @@ label ball_ending_E1:
     call sna_main("Yes...","snape_23")
     sna "Very powerful, old and nasty magic..."
     call sna_main("Even the land itself is heavily enchanted for miles in every direction...","snape_24")
-    m "Hm..."
+    m "*Hmm*..."
     call sna_main("Basically, any number of spells could be interfering with your powers around here...","snape_25")
     m "Wait, then how come you have no problems casting {i}your{/i} spells?"
     call sna_main("Well, you see, my magic is \"Hogwarts magic\"...","snape_05")
@@ -115,7 +115,7 @@ label ball_ending_E1:
     call sna_main("If it all goes well...","snape_24")
     call sna_main("Will I find the real Albus Dumbledore in that chair tomorrow?")
     m "I believe so..."
-    call sna_main("*Hm*...","snape_04")
+    call sna_main("*Hmm*...","snape_04")
     call sna_main("Albus can't know that I was aware of his absence...","snape_03")
     call sna_main("Is there a way to tell you guys apart?","snape_01")
     m ".............."
@@ -443,7 +443,7 @@ label ball_ending_E2:
         mal2 "That she is a major slut?"
         mal "Huh? No, that's not a rumour, that's a fact."
         mal "The rumour was that she is being paid in house points to whore herself out."
-        mal2 "*Hm*... I don't believe that. I think she is just a slut."
+        mal2 "*Hmm*... I don't believe that. I think she is just a slut."
         fem "Who's a slut?"
         mal "Oh, hey you..."
         fem "So, who's a slut?"
@@ -497,7 +497,7 @@ label ball_ending_E2:
 
     $ dynamic_cg("ball/intro", "background", "bloom", "foreground", "overlay")
     pause 1.0
-    m "(Hmm... I don't see her...)"
+    m "(*Hmm*... I don't see her...)"
     pause 1.0
     $ dynamic_cg("ball/intro", "background", "bloom", "hermione", "foreground", "overlay")
     pause 0.5
@@ -652,7 +652,7 @@ label ball_ending_E2:
     m "If you put some effort into this we'll be done in no time."
     m "I believe in you, girl."
     $ dynamic_cg("ball/bj", "background", "base2", "eyes_closed2", "sweat2")
-    her "*Hm*..."
+    her "*Hmm*..."
     $ dynamic_cg("ball/bj", "background", "base2", "eyes_up2", "mouth_open2", "sweat2")
     her "Then you must promise me something, sir."
     m "Yes, what is it?"
@@ -864,7 +864,7 @@ label ball_ending_E2:
         her "{size=+5}*GOBBLE*!{/size}"
         g4 "{size=+5}Yeeeeeeeeeees!{/size}"
 
-        sna "There! Hmm...?"
+        sna "There! *Hmm*...?"
         sna "(Well of course... Why am I not surprised?)"
         $ dynamic_cg("ball/bj", "background", "base3", "blush3", "eyes_stare3")
         sna "Miss Hermione Granger of the Gryffindor house..."
@@ -940,7 +940,7 @@ label ball_ending_E2:
         m "you just look so pretty with your face all covered in my spit!"
         $ dynamic_cg("ball/bj", "background", "base3", "blush3", "tears_base3", "brows_angry3", "spit_base3", "spit_forehead3", "spit_nose3")
         her "*gobble*! *gobble*! *Lick*... *gobble*!"
-        m "Hm..."
+        m "*Hmm*..."
         her "*gobble*! *gobble*! *Lick*... *gobble*!"
         m "Maybe we should show your pretty face to everyone?"
         m "Should I call some of your classmates over?"
@@ -1050,7 +1050,7 @@ label ball_ending_E2:
         ">Hermione gets up abruptly and runs off without saying a word..."
         call play_sound("running")
         pause 3
-        m "Hm...?"
+        m "*Hmm*...?"
         m "Oh, that's right... The coronation thing..."
         m "............."
 
@@ -1138,7 +1138,7 @@ label ball_ending_E2:
         mal "{size=-4}I bet you do. *Chuckle*{/size}"
         fem "{size=-4}Whatever. Just take a better look...{/size}"
         fem "{size=-4}She must've let some guy bury his cock in her hair and pump it full of semen.{/size}"
-        mal "{size=-4}*Hm*... Hair fucking then? Is that a thing now?{/size}"
+        mal "{size=-4}*Hmm*... Hair fucking then? Is that a thing now?{/size}"
         mal2 "{size=-4}You girls do the craziest things.{/size}"
         fem "{size=-4}*Humph*! Not all of us are sluts, you know.{/size}"
         mal "{size=-4}Unfortunately not...{/size}"
@@ -1166,7 +1166,7 @@ label ball_ending_E2:
         her "Frightened of my power... confused..."
 
         show screen blktone5
-        m "*Hm*..."
+        m "*Hmm*..."
         m "There... She did it again..."
         hide screen blktone5
 
@@ -1966,7 +1966,7 @@ label ball_ending_E2:
         m "Come on, girl. Pull yourself together!"
         call her_main("I... I... What?", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara_soft")
         call her_main("I don't understand... I...",cheeks="blush",tears="mascara_soft")
-        m "*Hm*..."
+        m "*Hmm*..."
         m "I will be leaving now."
         call her_main("Leaving...?", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         m "Yes. Maybe you should too..."
@@ -1990,7 +1990,7 @@ label ball_ending_E2:
         call play_music("festive")
         call ctc
 
-        m "*Hm*..."
+        m "*Hmm*..."
         m "Maybe I should stay and watch Hermione's post-multiple-orgasm dancing?"
         m "No... This ball is almost over. This is my only chance to sneak out unnoticed."
         call ctc
@@ -2005,7 +2005,7 @@ label ball_ending_E2:
         call her_main("...............................", "full", "narrow", "annoyed", "up",cheeks="blush",tears="mascara", ypos="head")
         call sna_main("What happened to your face, girl?","snape_13")
         call her_main(".......................................", "full", "narrow", "worried", "down",cheeks="blush",tears="mascara")
-        call sna_main("*Hm*... Well, go ahead then...","snape_13")
+        call sna_main("*Hmm*... Well, go ahead then...","snape_13")
         call sna_main("Here is the tiara...","snape_13")
         call her_main(".......................................", "full", "narrow", "worried", "down",cheeks="blush",tears="mascara")
 
@@ -2095,7 +2095,7 @@ label ball_ending_E2:
         fem "{size=-4}And when that happens she cannot control herself and will gladly sleep with the first man she sees.{/size}"
         mal "{size=-4}.............{/size}"
         mal2 "{size=-4}.....................{/size}"
-        fem "{size=-4}*Hm*? Why are you staring at me like that?{/size}"
+        fem "{size=-4}*Hmm*? Why are you staring at me like that?{/size}"
         mal "{size=-4}What? We're not staring.{/size}"
         mal2 "{size=-4}Yes, keep talking. You are good at this!{/size}"
         fem "{size=-4}Good at what?!{/size}"
@@ -2182,7 +2182,7 @@ label ball_ending_E2:
         call ctc
 
         her "Ah-ah..."
-        m "*Hm*? Your pussy..."
+        m "*Hmm*? Your pussy..."
         m "It's dripping wet, girl."
         $ dynamic_cg("ball/sex", "background", "base", "eyes_down", "mouth_smile", "blush")
         her "Ah...{heart} It is, sir?"
@@ -2202,7 +2202,7 @@ label ball_ending_E2:
         her "............."
         m "Squeezing my cock with your little pussy!"
         her "......................"
-        m "*Hm*...?"
+        m "*Hmm*...?"
         m "Why are you being so quiet?"
         $ dynamic_cg("ball/sex", "background", "base", "eyes_up", "mouth_open", "blush")
         her "Oh... I'm just afraid that someone would-"

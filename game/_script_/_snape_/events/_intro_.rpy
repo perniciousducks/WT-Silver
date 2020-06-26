@@ -50,7 +50,7 @@ label snape_intro_E1:
         "\"Take me to your leader.\"":
             call sna_main("","snape_01")
             who2 "What?"
-            who2 "*Hm*...?"
+            who2 "*Hmm*...?"
             who2 "You mean the Minister for Magic?"
             call sna_main("","snape_03")
             who2 "I would rather avoid having to deal with that bureaucrat..."
@@ -108,7 +108,7 @@ label snape_intro_E1:
     call sna_walk(action="leave")
 
     call bld
-    m "*Hm*..."
+    m "*Hmm*..."
     m "So that tall, broody dude mistook me for someone else...?"
     m "Which means I must be shrouded in a concealment spell..."
     m "........."
@@ -154,7 +154,7 @@ label snape_intro_E2:
                 "\"Yes, I'm fine. Go on.\"":
                     who2 "If you say so..."
                 "\"You know me. I love my shenanigans.\"":
-                    who2 "*Hm*....."
+                    who2 "*Hmm*....."
 
         "\".....................................................\"":
             pass
@@ -182,7 +182,7 @@ label snape_intro_E2:
             call sna_main("","snape_06")
             who2 "You are probably right..."
 
-    who2 "*Hm*..."
+    who2 "*Hmm*..."
     call sna_main("","snape_06")
     who2 "Perhaps I'd better go get some sleep."
     who2 "I need to be in my top shape every morning..."
@@ -252,7 +252,7 @@ label snape_intro_E3:
             call sna_main("","snape_29")
             who2 "Well, never mind..."
         "{size=-2}\"No, not really. It's just business as usual.\"{/size}":
-            who2 "*Hm*... Maybe I'm just being paranoid..."
+            who2 "*Hmm*... Maybe I'm just being paranoid..."
 
     call sna_main("","snape_24")
     who2 "The reason why I'm here today is the \"Potter Gang\""
@@ -352,7 +352,7 @@ label snape_intro_E3:
     call bld
     if d_flag_01:
         call sna_main("Who are you, scum!","snape_34", ypos="head", wand=True)
-        g4 "What? It's me... *uhm*... {i}Abius{/i}! I mean, Albus!"
+        g4 "What? It's me... *Ehm*... {i}Abius{/i}! I mean, Albus!"
         call sna_main("You cannot fool me.","snape_32", wand=True)
         call sna_main("Just now, you used some sort of alien magic!","snape_32", wand=True)
         call sna_main("Reveal your true self to me now, fiend! Who are you?!","snape_34", wand=True)
@@ -561,7 +561,7 @@ label snape_intro_E4:
         "\"A couple of days.\"":
             call sna_main("I see...","snape_01")
         "\"A week or so...\"":
-            call sna_main("*Hm*.... A week, huh...","snape_01")
+            call sna_main("*Hmm*.... A week, huh...","snape_01")
         "\"Could be months...\"":
              call sna_main("That long?","snape_01")
              call sna_main("Now isn't that just \"perfect\"?","snape_01")
@@ -634,7 +634,7 @@ label snape_intro_E5:
     call sna_main("Also, losing a headmaster, even temporarily, could hurt the school's reputation...","snape_10")
     sna "And what if your spell wears off tomorrow, or even tonight?"
     call sna_main("I see no reason to start a commotion...","snape_09")
-    m "*Hm*..."
+    m "*Hmm*..."
     call sna_main("So we shall keep the charade going for now...","snape_03")
 
     m "By doing what exactly?"
@@ -651,7 +651,7 @@ label snape_intro_E5:
     g9 "I have no idea what Slytherin is, but I think that would work..."
     call sna_main("That was a joke, obviously.","snape_04")
     call sna_main("Although...","snape_09")
-    sna "*Hm*..."
+    sna "*Hmm*..."
     call sna_main("Well, in any case, I don't see how entertaining {size=+7}you{/size} is {size=+7}my{/size} problem.","snape_01")
     m "Oh, but it is!"
     m "I'm immortal and all-powerful..."
@@ -672,13 +672,13 @@ label snape_intro_E5:
     call sna_main("Do you have any choice?","snape_01")
     m "I do..."
     m "Instead of sitting here on my ass all day and being quiet I could explore your world..."
-    call sna_main("*Hm*...","snape_03")
+    call sna_main("*Hmm*...","snape_03")
     call sna_main("Well, alright, what do you want?","snape_01")
     m "Teach me your magic..."
     call sna_main("My magic?","snape_05")
     m "Yes... The way you conjure up your spells is..."
     m "Intriguing..."
-    call sna_main("*Hm*...","snape_04")
+    call sna_main("*Hmm*...","snape_04")
     call sna_main("Agreed.","snape_06")
     m "Oh, and send me some of those Slytherin girls as well.."
     call sna_main("...............","snape_05")
@@ -696,7 +696,7 @@ label snape_intro_E5:
     call sna_main("Ha-ha-ha! Stop it, you're killing me!","snape_28")
     sna "A-Ha-ha-ha!"
     m "No, I'm serious... Is it possible?"
-    call sna_main("*Hm*...","snape_02")
+    call sna_main("*Hmm*...","snape_02")
     sna "We'll see..."
     sna "You being our new headmaster presents me with interesting possibilities..."
     sna "I need some time to figure out how to use this situation to my advantage."
@@ -715,7 +715,7 @@ label snape_intro_E5:
     call sna_chibi("leave")
 
     call bld
-    m "*Hm*... "
+    m "*Hmm*... "
     m "I Suppose I'll just curl up in a ball on top of this desk as usual..."
     pause.2
 

@@ -456,7 +456,7 @@ label hg_ps_cumslut_Scene_3:
     call her_main("about why I do this... sell you these sort of favours.", "upset", "closed", "base", "mid")
     call her_main("At the start it was just to get points, so that gryffindor could win the house cup...", "angry", "wink", "base", "mid")
     call her_main("but lately...", "base", "narrow", "worried", "down")
-    call her_main("it’s been more than that...{w=0.5} now I do it to make you happy, [genie_name].", "base", "narrow", "base", "mid_soft")
+    call her_main("it's been more than that...{w=0.5} now I do it to make you happy, [genie_name].", "base", "narrow", "base", "mid_soft")
     call her_main("Because making you happy, makes me happy...", "base", "squint", "base", "mid")
     m "That's great... but what would really make me happy right now is you focusing a little more on the task at hand..."
     call her_main("Oh! Of course, [genie_name]...", "open", "happyCl", "worried", "mid")
@@ -539,7 +539,7 @@ label hg_ps_cumslut_Scene_3:
     pause.2
 
     call bld
-    m "I’ll see you after classes. And as before, if you come back without any cum on you, I’ll be very disappointed."
+    m "I'll see you after classes. And as before, if you come back without any cum on you, I'll be very disappointed."
     call her_main("of course [genie_name]...", "soft", "narrow", "annoyed", "up", xpos="right", ypos="base")
     call her_main("(I can't wait to see the look on people's faces...)", "grin", "narrow", "base", "dead")
 

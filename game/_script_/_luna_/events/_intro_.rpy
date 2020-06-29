@@ -274,7 +274,7 @@ label luna_reverted_greeting_1:
     menu:
         "\"Wrackspurts?... Is that some sort of wizard STD?\"":
             call lun_main("*Ha-ha-ha*, I guess you could say that!","base","base","sad","R")
-            call lun_main("Wrackspurts are invisible creatures which float into a person’s ear and make their brain go all fuzzy.","normal","base","sad","mid")
+            call lun_main("Wrackspurts are invisible creatures which float into a person's ear and make their brain go all fuzzy.","normal","base","sad","mid")
             $ luna_l_arm = 2
             call lun_main("You can only view them with these spectrespecs!","base","base","base","L")
             $ luna_l_arm = 1
@@ -291,26 +291,26 @@ label luna_reverted_greeting_1:
             $ luna_r_arm = 1
             call lun_main("I am sorry Sir, I am not sure what-","normal","wide","sad","R")
             g4 "{i}Xenofius{/i}! What does it do?"
-            call lun_main("{i}Xenofius{/i}? I’ve not heard of that spell before, Sir.","normal","angry","sad","mid")
+            call lun_main("{i}Xenofius{/i}? I've not heard of that spell before, Sir.","normal","angry","sad","mid")
             m "The spell... That you just... Never mind."
             call lun_main("(A Secret spell?) Sir, your magic is the strongest there is and these wrackspurts are really getting to me.","upset","mad","sad","R")
             m "I see... do go on."
 
-        "\"I am afraid I can’t help you [lun_name].\"":
-            call lun_main("Oh please, Sir! You’re the only one powerful enough to help.","open","wide","sad","mid")
+        "\"I am afraid I can't help you [lun_name].\"":
+            call lun_main("Oh please, Sir! You're the only one powerful enough to help.","open","wide","sad","mid")
             ">You can see Luna is rocking her pelvis as if grinding the air."
-            m "[lun_name], I am afraid I don’t know what a wrackspurt is, let alone how to cure it."
+            m "[lun_name], I am afraid I don't know what a wrackspurt is, let alone how to cure it."
             call lun_main("Well, professor, wrackspurts are detailed on page six of \"the Quibbler\"! Here!","normal","base","sad","mid")
             ">Luna hands you an issue of \"the Quibbler\"."
             m "*Hmmm*... \"Rotfang conspiracy... Three hundred ways to tie up a ghost...\" Ah! Wrackspurts..."
-            "\"Invisible creatures which float into a person’s ears, making his/her brain go fuzzy\""
+            "\"Invisible creatures which float into a person's ears, making his/her brain go fuzzy\""
             ">Luna points to her spectrespecs."
             call lun_main("I can see them, Sir.","base","happyCl","base","mid")
             m "I see...(No wonder Hermione called her Loony Lovegood)"
 
         "\"What in the world are you wearing?\"":
             call lun_main("Oh! These are my spectrespecs, professor!","base","base","sad","crossed")
-            m "(Please don’t be mind reading, please don’t be mind reading-)"
+            m "(Please don't be mind reading, please don't be mind reading-)"
             call lun_main("They help me see the wrackspurts.","normal","base","sad","mid")
             m "(Thank the great desert sands!)"
             call lun_main("And these are my plum earrings.","base","base","sad","L")
@@ -319,7 +319,7 @@ label luna_reverted_greeting_1:
             m "I see, I thought I misheard you for a second."
             m "So about these {i}wrecksputs{/i}..."
 
-    call lun_main("Yes, Sir, they’re proving to be quite a pain.","normal","closed","sad","mid")
+    call lun_main("Yes, Sir, they're proving to be quite a pain.","normal","closed","sad","mid")
     ">You watch Luna, who is visibly rubbing her thighs together."
     m "(Is she really?... *Ohhh*){w=0.5} [lun_name], how exactly do these {i}wickspurts{/i} make you feel?"
     call lun_main("They're Just like \"the Quibbler\" says sir, except...","normal","seductive","sad","R")

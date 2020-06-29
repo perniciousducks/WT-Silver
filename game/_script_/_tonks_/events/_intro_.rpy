@@ -13,7 +13,7 @@ label tonks_intro_E1:
     "*Knock-knock-knock*"
     m "(Can't I even have one quiet day here?...)"
     m "Who is it?"
-    ton "It’s Tonks-"
+    ton "It's Tonks-"
     ton "*Ugh*..."
     m "..................."
     ton "I meant, Nymphadora Tonks, Sir."
@@ -23,7 +23,7 @@ label tonks_intro_E1:
     if letter_min_favors.read:
         g4 "(Oh shit, the fuzz!!!)"
         m "(I thought they would have forgotten about those damn letters by now...)"
-        ton "Sir, I’m here to discuss an important matter with you regarding your students."
+        ton "Sir, I'm here to discuss an important matter with you regarding your students."
         m "(Governments are all the same with their bloody rules.)"
         ton "Sir?"
         m "(...)"
@@ -72,7 +72,7 @@ label tonks_intro_E1:
 
     call play_music("tonks")
     call ton_main("Thank you, Professor.","base","base","base","mid", xpos="right", ypos="base")
-    m "(Oh shit, she’s hot...)"
+    m "(Oh shit, she's hot...)"
     call ton_main("I apologise for arriving unannounced...{w=0.8} And a couple of days late...","open","base","base","R")
     g9 "Please, I'm glad you could make it."
     call ton_main("I was occupied with some unfinished ministry business. Took me a lot longer to solve than I had anticipated...","open","base","base","mid")
@@ -151,7 +151,7 @@ label tonks_intro_E1:
         call ton_main("You'd never be able to guess how I did it, it's quite the story.","horny","base","base","R", hair="horny")
         call ton_main("Unfortunately, I cannot tell you...{w} Strictly confidential Ministry information...","base","base","raised","mid")
         m "(Why? Did she suck them off?)"
-        call ton_main("Okay then, let’s get this over with.","base","base","base","mid")
+        call ton_main("Okay then, let's get this over with.","base","base","base","mid")
 
     call ton_main("Professor Dumbledore, are you aware of why the Ministry has sent me here?","open","base","base","mid")
 
@@ -163,16 +163,16 @@ label tonks_intro_E1:
         m "(I wish...)"
         m "No. She enjoys writing letters...{w} lots of 'em..."
     else:
-        m "I can’t say that I am."
+        m "I can't say that I am."
         call ton_main("So you haven't had any complaints from students in regards to \"favour trading\"?","open","base","raised","mid")
         g4 "(Oh, fuck...)"
         g9 "That depends...{w=0.3} What sort of favours are you referring to?"
         call ton_main("...","base","base","angry","mid")
-        call ton_main("Well, we’ve received a letter from a Miss \"Hermione Granger.\"","open","base","base","L") #same here as line 159
+        call ton_main("Well, we've received a letter from a Miss \"Hermione Granger.\"","open","base","base","L") #same here as line 159
         m "Oh, good..."
         g4 "..."
 
-    call ton_main("I take it that you’re acquainted with Miss Granger?","open","base","base","mid")
+    call ton_main("I take it that you're acquainted with Miss Granger?","open","base","base","mid")
     m "You could say that..."
     call ton_main("Fantastic! Let's get right to it then!","smile","base","base","mid") #the second line was superfluous. You already established the point of the meeting earlier, so the reader knows what "let's get right to it" means
     m "..."
@@ -199,18 +199,18 @@ label tonks_intro_E1:
     call ton_main("Professor, this is a very serious allegation, don't you agree that the ministry is under an obligation to investigate?","open","base","raised","mid")
     m "..........................................{w} No?"
     call ton_main("I'm sorry?","upset","base","raised","mid")
-    g4 "Well, I can’t say I’m very well versed in these...{w=0.8} very,{w=0.6} very rare occurrences."
+    g4 "Well, I can't say I'm very well versed in these...{w=0.8} very,{w=0.6} very rare occurrences."
     m "I was actually just about to begin my own investigation in the matter."
     call ton_main("The Ministry has sent me specifically to determine if there is any truth to Miss Granger's concerns...","open","base","base","L")
-    call ton_main("I’ll be happy to look into this for you.","base","base","base","mid")
+    call ton_main("I'll be happy to look into this for you.","base","base","base","mid")
     m "Now, now. I wouldn't want you to waste your time with this."
     call ton_main("Don't worry, Professor. Investigation is in my job description.","base","base","angry","mid")
-    call ton_main("I’ll just stay for a little while, just to examine these claims and question the students.","open","base","base","R")
+    call ton_main("I'll just stay for a little while, just to examine these claims and question the students.","open","base","base","R")
     m "That won't be necessary."
     call ton_main("Do have some confidence in me, Professor. This is what I was trained for...","horny","base","base","mid")
     m "................................."
-    call ton_main("I’ve already gotten a room down in Hogsmeade.","open","base","base","R")
-    call ton_main("I’ll be staying there, so no need to worry about accommodation.","base","base","base","mid")
+    call ton_main("I've already gotten a room down in Hogsmeade.","open","base","base","R")
+    call ton_main("I'll be staying there, so no need to worry about accommodation.","base","base","base","mid")
     m "Great..."
     call ton_main("I shall start right away!","base","happyCl","base","mid")
     call ton_main("Good day, Sir.","base","base","base","mid")
@@ -234,7 +234,7 @@ label tonks_intro_E2:
     call play_sound("knocking")
     call bld
     "*Knock-knock-knock*"
-    ton "Professor, it’s Tonks."
+    ton "Professor, it's Tonks."
     ton "May I come in?"
     m "(Her again...)"
 
@@ -294,7 +294,7 @@ label tonks_intro_E2:
     m "Found any evidence yet?"
     call ton_main("Sadly no, Professor.","open","base","base","mid")
     call ton_main("I haven't gotten a chance to do my job properly so far.","upset","base","base","mid")
-    call ton_main("I’ve been rather preoccupied listening to Miss Granger's own investigations...","open","base","base","R")
+    call ton_main("I've been rather preoccupied listening to Miss Granger's own investigations...","open","base","base","R")
     call ton_main("That girl sure is something, isn't she?","base","base","base","mid")
     call ton_main("Not that I mind listening to her.","horny","base","base","R", hair="horny")
     call ton_main("She gave me a very long report that went well into the evening, whilst I enjoyed a glass of firewhisky...","open","base","base","mid")
@@ -449,23 +449,23 @@ label tonks_intro_E3:
         "Not right now.":
             ton "But it's urgent, Sir. I need to talk to you about Miss Granger's favour trading accusations..."
             g4 "(Shit. That can't be good.)"
-            m "Do you mind coming another time, I’m very busy...{w} watering the bird."
+            m "Do you mind coming another time, I'm very busy...{w} watering the bird."
             ton "Watering what?"
-            ton "Sir, I’m coming in."
+            ton "Sir, I'm coming in."
         "Who is it?":
             ton "It's Tonks."
             m "Who?"
             ton "..."
             ton "Nymphadora Tonks..."
             m "(That Nympho again...)"
-            ton "Sir, I’m coming in."
+            ton "Sir, I'm coming in."
 
     #Tonks enters the office
     call ton_walk(action="enter", xpos="desk", ypos="base")
 
     call play_music("tonks")
     call ton_main("Professor...","base","base","base","mid", xpos="mid", ypos="base")
-    m "How’s the investigation going? Nothing to report I gather?"
+    m "How's the investigation going? Nothing to report I gather?"
     call ton_main("On the contrary...","open","wide","wide","wide")
     call ton_main("It's worse than I could have ever imagined!","open","base","angry","mid", hair="angry")
     g4 "(........)"
@@ -565,14 +565,14 @@ label tonks_intro_E3:
     call ton_main("So? What happened to him?","upset","base","raised","mid")
     m "I believe we traded places when one of my magical inventions went wrong..."
     call ton_main("Really?! Is he okay?","open","base","base","mid")
-    m "I think so.{w} He travelled to my universe, and I’m stuck in this dull place..."
+    m "I think so.{w} He travelled to my universe, and I'm stuck in this dull place..."
     m "Believe me, there are a lot more brothels in Agrabah.{w} I bet he's having the time of his life..."
     call ton_main("So, you just {i}poofed{/i} in here and decided to turn this school into your own private brothel...","open","base","angry","mid")
     call ton_main("Because you were bored?!","upset","base","angry","mid")
     m "Hey! I'm an immortal being... boredom is my worst enemy."
-    m "And I didn’t do much, just a nudge in the right direction..."
+    m "And I didn't do much, just a nudge in the right direction..."
     call ton_main("You need to bring him back, the real Dumbledore, immediately!","angry","base","angry","mid", hair="angry")
-    m "I don't know how,... yet.{w} We’re still working on it..."
+    m "I don't know how,... yet.{w} We're still working on it..."
     call ton_main("We? Who else knows about this?","angry","base","worried","R")
     m "That Snape guy."
     call ton_main("But of course!{w} After all he was mentioned in Miss Granger's letter as one of the main offenders.","open","wide","wide","wide")
@@ -585,7 +585,7 @@ label tonks_intro_E3:
     m "Are you going to lock us up now?"
     call ton_main("I very well should! It would be the moral thing to do.","open","base","angry","mid")
     m "(Shit...)"
-    call ton_main("You and Professor Snape should be locked in Azkaban for what you’ve done...","angry","base","angry","mid")
+    call ton_main("You and Professor Snape should be locked in Azkaban for what you've done...","angry","base","angry","mid")
     call ton_main("And stay there for the rest of your lives...","open","base","angry","mid")
     g4 "You can't do that to me, I'm immortal! I'd go insane!"
     call ton_main("You should have thought about that before deciding to fuck your own students!","angry","base","angry","mid")

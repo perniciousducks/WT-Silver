@@ -913,7 +913,7 @@ label slytherin_match:
             # Rocky
             stop bg_sounds fadeout 3.0
             play music "music/BattleThemeB.mp3" fadein 3.0
-            call gen_main("The world ain’t all sunshine and rainbows...", face="base")
+            call gen_main("The world ain't all sunshine and rainbows...", face="base")
             call gen_main("It is a very mean and nasty place and it will beat you to your knees and keep you there permanently if you let it.", face="base")
 
             call quidditch_stands(crowd_react=[None, "emo8", None])
@@ -935,7 +935,7 @@ label slytherin_match:
             with d1
             pause .8
 
-            call gen_main("But it ain’t how hard you hit...{w=0.5} it’s about how hard you can get hit, and keep moving forward.", face="angry", trans=d3)
+            call gen_main("But it ain't how hard you hit...{w=0.5} it's about how hard you can get hit, and keep moving forward.", face="angry", trans=d3)
 
             call quidditch_stands(crowd_react=[None, None, "emo8"])
             with d3
@@ -943,10 +943,10 @@ label slytherin_match:
             call quidditch_stands(crowd_react=[None, None, None])
             with d3
 
-            call gen_main("How much you can take, and keep moving forward. That’s how winning is done.", face="open")
-            call gen_main("Now, if you know what you’re worth, then go out and get what you’re worth.", face="open")
-            call gen_main("But you gotta be willing to take the hit, and not pointing fingers saying you ain’t where you are because of him, or her, or anybody.", face="angry")
-            call gen_main("Cowards do that and that ain’t you. You’re better than that!", face="angry")
+            call gen_main("How much you can take, and keep moving forward. That's how winning is done.", face="open")
+            call gen_main("Now, if you know what you're worth, then go out and get what you're worth.", face="open")
+            call gen_main("But you gotta be willing to take the hit, and not pointing fingers saying you ain't where you are because of him, or her, or anybody.", face="angry")
+            call gen_main("Cowards do that and that ain't you. You're better than that!", face="angry")
             stop music fadeout 10
 
             $ renpy.sound.play("sounds/crowd_cheer.mp3")
@@ -1624,7 +1624,7 @@ label slytherin_match_return:
         m "It all makes sense now."
         call ton_main("Hello sweet cheeks!", "base", "base", "base", "mid")
         call ton_main("Thought I was about to lose focus there for a second when you started going at it!", "open", "base", "base", "R")
-        m "You should’ve told me it was you..."
+        m "You should've told me it was you..."
         call ton_main("I tried to!", "upset", "base", "worried", "mid")
         call ton_main("You pretty much pushed me onto the podium when I got back...", "open", "base", "sad", "mid")
         m "Oh, yeah..."

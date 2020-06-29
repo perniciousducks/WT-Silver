@@ -160,7 +160,7 @@ label a_spaced_out_conversation:
     call play_music("anguish")
 
     nar "The flames flickered higher up the fireplace."
-    nar "Licking in greedy hunger, as if wanting to taste the wine the two men sedately drank just out of the fire’s reach."
+    nar "Licking in greedy hunger, as if wanting to taste the wine the two men sedately drank just out of the fire's reach."
     nar "The men took no notice of the flames, except to silently acknowledge the warmth it provided."
     nar "They were an odd pair, these two, sitting as they frequently did, beside the old fireplace sipping wine."
     nar "One, dressed all in black, with matching flowing black hair, stared sullenly at his glass."
@@ -176,12 +176,12 @@ label a_spaced_out_conversation:
     call sna_main("You live in a little bottle?","snape_05")
     nar "The gray figure nodded."
     call sna_main("How does that work?","snape_05")
-    m "I believe it’s based on tessaracted space."
+    m "I believe it's based on tessaracted space."
     nar "Said Genie, his tone becoming akin to a professor lecturing a class."
     m "The whole process is very Loki."
     show screen a_spaced_out_conversation_horns
     with d9
-    nar "Snape didn’t hear the last words as a flicker and shadow from the flames made Genie appear different."
+    nar "Snape didn't hear the last words as a flicker and shadow from the flames made Genie appear different."
     nar "Almost as if gleaming golden horns arose from his head."
     call sna_main("Come again?","snape_03")
     hide screen a_spaced_out_conversation_horns
@@ -207,7 +207,7 @@ label a_spaced_out_conversation:
     nar "Snape flicked his hands impatiently and just decided to move on"
     show screen with_snape(ani=False)
     nar "Determining when Genie was serious or not was still beyond his ability."
-    nar "Plus, there had been another one of those weird flickers and he could have sworn he had seen a multicoloured scarf around Genie’s neck."
+    nar "Plus, there had been another one of those weird flickers and he could have sworn he had seen a multicoloured scarf around Genie's neck."
     call sna_main("And, you then grant the summoner three wishes?","snape_01")
     nar "Snape continued."
     call sna_main("Anything they want? You can make anything come true?","snape_05")
@@ -219,11 +219,11 @@ label a_spaced_out_conversation:
     nar "Genie found it refreshing to talk with someone whose disdain for others so matched his own."
     nar "Snape frowned at that smile. He got along almost perfectly with Genie."
     nar "Their lusts and passions were quite similar..."
-    nar "It’s just Genie’s sense of humour that made Snape doubt his seriousness sometimes."
-    call sna_main("You’ve got the power of a god.","snape_06")
+    nar "It's just Genie's sense of humour that made Snape doubt his seriousness sometimes."
+    call sna_main("You've got the power of a god.","snape_06")
     nar "Snape pushed forward."
-    call sna_main("Can’t you just \"wish\" yourself free?","snape_05")
-    m "It doesn’t work that way."
+    call sna_main("Can't you just \"wish\" yourself free?","snape_05")
+    m "It doesn't work that way."
     nar "Genie said with sadness."
     m "I can only grant wishes to others."
     nar "Snape shook his head."
@@ -231,19 +231,19 @@ label a_spaced_out_conversation:
     call sna_main("What if I were to visit you in your world and make one of my wishes that you be free to use your magic however you should please?","snape_09")
     nar "Genie stared at Snape with something like wonder."
     nar "It takes quite a bit to make an ageless being like Genie gape in awe."
-    g5 "That’s... {w=1.0}That’s brilliant!"
+    g5 "That's... {w=1.0}That's brilliant!"
     nar "Genie shouted."
     g6 "Great Gods, man, that could actually work!"
-    nar "Snape was taken aback by Genie’s enthusiastic shout, but quickly recovered."
-    nar "He was happy for his friend’s excitement, but puzzled."
-    call sna_main("Haven’t you ever thought of that before?","snape_05")
+    nar "Snape was taken aback by Genie's enthusiastic shout, but quickly recovered."
+    nar "He was happy for his friend's excitement, but puzzled."
+    call sna_main("Haven't you ever thought of that before?","snape_05")
     nar "Snape asked."
     m "Well, no..."
-    nar "Said Genie, and if ageless beings could blush, one would assume that’s what Genie would be doing."
-    m "It’s not something that ever came up."
+    nar "Said Genie, and if ageless beings could blush, one would assume that's what Genie would be doing."
+    m "It's not something that ever came up."
     call sna_main("No one suggested it to you?","snape_01")
-    nar "Snape asked, hoping to skip past Genie’s discomfort."
-    m "Surprisingly, when given three opportunities at your fondest dreams, helping others doesn’t seem to come up very often."
+    nar "Snape asked, hoping to skip past Genie's discomfort."
+    m "Surprisingly, when given three opportunities at your fondest dreams, helping others doesn't seem to come up very often."
     nar "Genie said with a sarcastic edge that relieved Snape."
     call sna_main("Well, then...","snape_01")
     nar "Snape said."
@@ -251,7 +251,7 @@ label a_spaced_out_conversation:
     nar "Genie eyed him curiously and then, with a bit of his usual humour asked,"
     g9 "Are you sure you could resist the urge to use all three on yourself?"
     nar "Snape chuckled. He momentarily considered how rarely he chuckled."
-    nar "Not with humour, at least. He hadn’t really done that since..."
+    nar "Not with humour, at least. He hadn't really done that since..."
     call sna_main("Yes.","snape_28")
     nar "Snape said with sudden certainty."
     call sna_main("There is really only one wish I would really want.","snape_23")
@@ -259,7 +259,7 @@ label a_spaced_out_conversation:
     m "What would be your wish, my friend?"
     nar "He asked Snape kindly."
     call sna_main("I wish I could go back and have wooed Lily for my own...","snape_23")
-    nar "Snape said dreamily. In his mind’s eye, he remembered the flaming red hair that lit a fire in his own heart."
+    nar "Snape said dreamily. In his mind's eye, he remembered the flaming red hair that lit a fire in his own heart."
     call sna_main("I sometimes wonder if that would have made all the difference.","snape_29")
     nar "Snape mused."
     call sna_main("If I would have been a better, a kinder man than I am today.","snape_06")
@@ -270,20 +270,20 @@ label a_spaced_out_conversation:
     nar "Snape snapped from his reverie. He looked at Genie in confusion."
     m "I mean, would you have been as powerful."
     nar "Genie said hastily."
-    m "Wasn’t that rejection what drove you to your studies and your mastery?"
+    m "Wasn't that rejection what drove you to your studies and your mastery?"
     nar "Snape eyed Genie suspiciously, but let the matter pass."
     call sna_main("Yes, but I would sacrifice all that to be rid of this loneliness.","snape_06")
     nar "Snape returned to his imaginings."
-    m "Well, even if you didn’t stay together,"
+    m "Well, even if you didn't stay together,"
     nar "Genie said mischievously,"
     m "you could at least have had a little fun with her. Maybe even take her on her wedding night."
-    nar "Snape’s head snapped up angrily. How dare Genie sully the memory of Lily."
+    nar "Snape's head snapped up angrily. How dare Genie sully the memory of Lily."
     nar "But then, a wicked thought entered his head."
-    call sna_main("Hmm, what if the boy wasn’t really James’ after all?","snape_02")
+    call sna_main("Hmm, what if the boy wasn't really James' after all?","snape_02")
     nar "Snape said, and the smile that formed on his face could have frozen the dancing fire beside them."
-    call sna_main("Then, one day, I could reach out to that insipid boy, with his foolish fantasies about Potter and say, ‘Harry, I am your father!’","snape_28")
+    call sna_main("Then, one day, I could reach out to that insipid boy, with his foolish fantasies about Potter and say, ‘Harry, I am your father!'","snape_28")
     nar "Genie nodded."
-    g9 "It could work. You’ve got the black robes already. You just need the helmet."
+    g9 "It could work. You've got the black robes already. You just need the helmet."
     nar "Snape cocked an eyebrow in confusion. The flames leapt and danced and Genie flickered once again."
     g9 "No mind pay you."
     nar "Genie said."
@@ -301,9 +301,9 @@ label a_spaced_out_conversation:
     nar "Snape finally managed to say."
     nar "Genie laughed."
     m "Muppet?"
-    call sna_main("No thanks, I’ll just have the wine,","snape_05")
+    call sna_main("No thanks, I'll just have the wine,","snape_05")
     nar "Snape replied."
-    m "I’m afraid that’s the last of it."
+    m "I'm afraid that's the last of it."
     nar "Genie said, looking mournfully at the bottle."
     nar "He eyed Snape through the red droppings of wine still remaining in his glass. It looked like Snape was bleeding."
     nar "The image disturbed him and he put his glass down."
@@ -320,21 +320,21 @@ label a_spaced_out_conversation:
     call sna_main("Assuming we can find a way to send you back.","snape_09")
     m "Right."
     nar "Genie said, sobering up."
-    m "There’s that."
+    m "There's that."
     nar "Snape looked at his friend and sensed his growing gloom."
     call sna_main("Cheer up, Genie.","snape_23")
     nar "He said, clapping the image of his old wizard master on the shoulder."
-    call sna_main("We just need to be careful. We don’t want to make a mistake and send you somewhere crazy.","snape_05")
+    call sna_main("We just need to be careful. We don't want to make a mistake and send you somewhere crazy.","snape_05")
     m "Like a space station?"
     nar "Genie asked, his humour returning with his hope."
     call sna_main("Exactly.","snape_28")
     nar "Snape replied."
-    nar "Not sure what a ‘space station’ was."
-    call sna_main("We don’t want you to end up far, far away.","snape_24")
+    nar "Not sure what a ‘space station' was."
+    call sna_main("We don't want you to end up far, far away.","snape_24")
     m "In the final frontier?"
     nar "Genie asked, with a wink that to Snape always meant some kind of inside joke Snape never understood."
     nar "He decided to ignore it as he had many other times."
-    call sna_main("Let me continue to research why your powers of transdimensional travel are muted here and we’ll find a way to fix your problem.","snape_05")
+    call sna_main("Let me continue to research why your powers of transdimensional travel are muted here and we'll find a way to fix your problem.","snape_05")
     m "Both our problems."
     nar "Genie suggested and this time, both of them laughed together."
     call sna_main("You know, Genie, this could be the start of a beautiful friendship.","snape_23")

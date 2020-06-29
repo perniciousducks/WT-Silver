@@ -176,7 +176,7 @@ label hg_wager_bj:
                 call sna_main("*Hmm*...{w} it seems the weird sound is gone.", face="snape_04")
                 m "Oh... yes, seems like it..."
                 call sna_main("I bet it was peeves again...", face="snape_16")
-                call sna_main("I’ll leave you to it then...", face="snape_03")
+                call sna_main("I'll leave you to it then...", face="snape_03")
                 call her_main("...", "full_cum", "narrow", "base", "down", cheeks="blush")
 
                 call sna_walk("door", "base") #snape walks to the door, pauses on gulp sound
@@ -202,7 +202,7 @@ label hg_wager_bj:
                     m "What are you doing Severus?"
                     call her_main("...", "soft", "base", "worried", "mid", cheeks="blush")
                     m "You're being very strange..."
-                    g9 "I didn’t know you cared so much about my well being..."
+                    g9 "I didn't know you cared so much about my well being..."
                     call sna_main("But... I swear I heard something...", face="snape_14", wand=True)
                     g4 "..."
                     call sna_main("I guess I must've imagined it... I'll just go then.", face="snape_14", wand=True)

@@ -176,10 +176,10 @@ default quidditch_book_1_ITEM = FictionBook(
         "Two opposing teams with seven people making up each team go up against each other...",
         "The game is played using four balls... One quaffle, two bludgers and one snitch.\nThe beginning of the match is signaled by the quaffle being thrown into the air by the referee...",
         "Quidditch, unlike many other sports is played on an oval shaped pitch with a scoring area on each end...",
-        "Much like other sports, you’re not allowed to go outside the boundary lines with the quaffle or you’d have to hand it over to the opposing team...",
-        "When the game is set in motion each player takes their assigned positions.\nThere’s three chasers, two beaters, one keeper and one seeker...",
+        "Much like other sports, you're not allowed to go outside the boundary lines with the quaffle or you'd have to hand it over to the opposing team...",
+        "When the game is set in motion each player takes their assigned positions.\nThere's three chasers, two beaters, one keeper and one seeker...",
         "The chasers purpose is to score the Quaffle. Beaters on the other hand is to hit them with the bludgers as to knock the ball out of their grasp... The keeper blocks the goal and the seeker needs to catch the snitch.",
-        "As most injuries are easily remedied through magical means there’s nothing to stop a player from knocking into one another as to get a hold of the Quaffle. Distraction tactics are also common even during official matches...",
+        "As most injuries are easily remedied through magical means there's nothing to stop a player from knocking into one another as to get a hold of the Quaffle. Distraction tactics are also common even during official matches...",
         "The way scoring is done is when the chaser has a hold of the quaffle they need to get to the opponent's side of the pitch and score it by getting it through a hoop...",
         "The winning team is decided once the snitch is caught which is worth 150 points to the team of which seeker caught it. Therefore a match could technically go on forever... The longest Quidditch match went on for about 3 months..."
     ]
@@ -420,7 +420,7 @@ label book_complete:
             $ bdsm_imagination += 1
     elif book_choice.id == "quidditch_book_1":
         m "Well, that was quite informative...{w} But who in their right mind wants to watch a game for three months... even with basketball I'd struggle a bit at that point."
-        m "Hopefully that’s enough information to convince Miss Chang I know what I'm doing...{w} basketball is still better though..."
+        m "Hopefully that's enough information to convince Miss Chang I know what I'm doing...{w} basketball is still better though..."
         $ cho_quiz.hint = "{image=interface/check_True.png} "
 
     elif book_choice in book_list.read_books:

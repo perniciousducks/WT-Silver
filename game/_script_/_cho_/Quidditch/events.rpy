@@ -103,7 +103,7 @@ label cho_quid_E1:
     m "Which I proved you wrong, but who cares..."
     call cho_main("Even with my limited time I thought it was at least worth a try.{w} But hearing your suggestions now...", "angry", "narrow", "angry", "mid")
     m "You will learn soon enough, girl."
-    m "It’s very clear that to win we’ll have to go beyond normal conventional methods."
+    m "It's very clear that to win we'll have to go beyond normal conventional methods."
     g4 "The only way you can keep a man from fulfilling his sought-out purpose, is by confronting him with his most primal instinct!"
     call cho_main("Which would be?", "annoyed", "narrow", "angry", "mid")
     g9 "The act of procreation!"

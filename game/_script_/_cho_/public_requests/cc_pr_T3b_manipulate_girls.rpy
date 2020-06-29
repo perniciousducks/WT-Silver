@@ -138,7 +138,7 @@ label cc_pr_manipulate_girls_start:
 
 ### Tier 3 (pre Gryffindor) ###
 
-label cc_pr_manipulate_girls_T3_alicia_intro:
+label cc_pr_manipulate_girls_T3_alicia:
     # Alicia Spinnet
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
@@ -214,7 +214,7 @@ label cc_pr_manipulate_girls_T3_alicia_intro:
 
     jump end_cho_event
 
-label cc_pr_manipulate_girls_T3_katie_intro_part1:
+label cc_pr_manipulate_girls_T3_katie_part1:
     # Katie Bell - Part 1
 
     # Cho enters.
@@ -311,7 +311,7 @@ label cc_pr_manipulate_girls_T3_katie_intro_part1:
 
     jump end_cho_event
 
-label cc_pr_manipulate_girls_T3_katie_intro_part2:
+label cc_pr_manipulate_girls_T3_katie_part2:
     # Katie Bell - Part 2
 
     # Cho enters.
@@ -374,10 +374,6 @@ label cc_pr_manipulate_girls_T3_katie_intro_part2:
     jump end_cho_event
 
 label cc_pr_manipulate_girls_T3_angelina:
-
-    # Since this is the last event in Tier 3, it will handle repeatables.
-    if cc_pr_manipulate_girls.is_complete():
-        $ renpy.jump(renpy.random.choice(("cc_pr_manipulate_girls_T3_repeat1", "cc_pr_manipulate_girls_T3_repeat2", "cc_pr_manipulate_girls_T3_repeat3")))
 
     # Angelina Johnson
     # Cho enters.
@@ -503,105 +499,6 @@ label cc_pr_manipulate_girls_T3_angelina:
     call cho_main("Thanks...", "soft", "narrow", "base", "downR") #smiles
     m "Now, time for some rest."
     call cho_main("Yes, good night then [cho_genie_name].", "open", "base", "base", "mid")
-
-    # Cho leaves.
-    call cho_walk(action="leave")
-
-    if cho_reputation < 12: # Points til 12.
-        $ cho_reputation += 1
-
-    jump end_cho_event
-
-# Repeatable events
-
-label cc_pr_manipulate_girls_T3_repeat1:
-
-    # Cho enters.
-    call cho_walk(action="enter", xpos="desk", ypos="base")
-
-    call cho_main("", "normal", "narrow", "base", "down", cheeks="blush", xpos="mid", ypos="base", trans=fade)
-
-    m "Ready for your report B..."
-    m "Did you manage to seduce any of them?"
-
-    call cho_main("Katie caught me looking at her during the history of magic...", "open", "base", "base", "downR")
-    call cho_main("Binns was droning on as usual and most of the other students were either sleeping or not paying attention.", "open", "closed", "base", "mid")
-    call cho_main("Katie on the other hand found this a great opportunity to move her hand in a spanking motion at the sleeping student next to her.", "disgust", "base", "base", "mid", cheeks="blush")
-    call cho_main("No doubt trying to remind me of the Whomping Willow...", "soft", "base", "base", "down", cheeks="blush")
-    m "Ah... the tree..."
-    m "Yeah... that was a good episode... I liked that one."
-
-    m "Anything else to report?"
-    call cho_main("No, that's about it...", "angry", "base", "base", "mid")
-    g9 "Then mission success!"
-    g9 "Good work B!"
-    call cho_main("Then if that's all... I'll head off for today.", "open", "base", "base", "mid")
-    m "Yes, that will be all."
-
-    # Cho leaves.
-    call cho_walk(action="leave")
-
-    if cho_reputation < 12: # Points til 12.
-        $ cho_reputation += 1
-
-    jump end_cho_event
-
-label cc_pr_manipulate_girls_T3_repeat2:
-
-    # Cho enters.
-    call cho_walk(action="enter", xpos="desk", ypos="base")
-
-    call cho_main("", "normal", "narrow", "base", "down", cheeks="blush", xpos="mid", ypos="base", trans=fade)
-
-    m "Ready for your report B..."
-    m "Did you manage to seduce any of them?"
-
-    call cho_main("Kind of... I was scouting them out during dinner over at the Gryffindor table where all three of them were sitting together.", "open", "base", "base", "downR")
-    call cho_main("Alicia saw me looking and leaned in and kissed Katie on the cheek.", "soft", "narrow", "base", "mid", cheeks="blush")
-    call cho_main("Katie's face turned red so I assume they don't usually do stuff like that in public.", "base", "narrow", "raised", "mid", cheeks="blush")
-    call cho_main("Angelina appeared to find her embarrassment pretty funny though.", "crooked_smile", "closed", "base", "mid", cheeks="blush")
-    g9 "(More likely they get off on it...)"
-
-    m "Anything else to report?"
-    call cho_main("No, that's about it...", "smile", "base", "base", "mid")
-    g9 "Then mission success!"
-    g9 "Good work B!"
-    call cho_main("Then if that's all... I'll head off for today.", "base", "base", "base", "mid")
-    m "Yes, that will be all."
-
-    # Cho leaves.
-    call cho_walk(action="leave")
-
-    if cho_reputation < 12: # Points til 12.
-        $ cho_reputation += 1
-
-    jump end_cho_event
-
-label cc_pr_manipulate_girls_T3_repeat3:
-
-    # Cho enters.
-    call cho_walk(action="enter", xpos="desk", ypos="base")
-
-    call cho_main("", "normal", "narrow", "base", "down", cheeks="blush", xpos="mid", ypos="base", trans=fade)
-
-    m "Ready for your report B..."
-    m "Did you manage to seduce any of them?"
-
-    call cho_main("No... They actually caught me as I was doing some flying exercises.", "clench", "base", "base", "down", cheeks="blush")
-    call cho_main("And somehow they managed able to temporarily dispel the cushioning charm on my broom because that handle started pressing pretty hard between my legs...", "disgust", "base", "base", "mid", cheeks="blush")
-    call cho_main("Angelina kept laughing as I flinched with every sharp turn whilst chasing the snitch...", "annoyed", "base", "base", "mid", cheeks="blush")
-    m "Did it hurt that much?"
-    call cho_main("Oh... No it didn't really hurt at all really...", "open", "closed", "base", "mid", cheeks="blush") #blush
-    m "But you just sai--"
-    m "(Oh, I see...)"
-    m "Well then..."
-
-    m "Anything else to report?"
-    call cho_main("No, that's about it...", "soft", "base", "base", "mid")
-    g9 "Then mission success!"
-    g9 "Good work B!"
-    call cho_main("Then if that's all... I'll head off for today.", "base", "base", "base", "mid")
-    m "Yes, that will be all."
 
     # Cho leaves.
     call cho_walk(action="leave")

@@ -93,6 +93,19 @@ default cc_favor_list = [cc_pf_talk, cc_pf_strip, cc_pf_blowjob]
 
 # Public requests
 # cc_pr = Cho Chang Public Request
+
+default cc_pr_spy_boys = event_class(title = "Spy on the boys!", start_label = "cc_pr_spy_boys_start", start_tier = 3,
+    events = [
+        [
+            ["cc_pr_spy_boys_T3_twins"],
+            ["cc_pr_spy_boys_T3_ron"],
+            ["cc_pr_spy_boys_T3_harry"],
+        ]
+    ],
+    icons = ["gryf"],
+    iconset = [["star_empty", "star_yellow"]]
+)
+
 default cc_pr_manipulate_boys = event_class(title = "Manipulate the boys!", start_label = "cc_pr_manipulate_boys_start",
     events = [
         [
@@ -104,6 +117,11 @@ default cc_pr_manipulate_boys = event_class(title = "Manipulate the boys!", star
             ["cc_pr_manipulate_boys_T2_intro_E1"], ["cc_pr_manipulate_boys_T2_E1"],
             ["cc_pr_manipulate_boys_T2_intro_E2"],
             ["cc_pr_manipulate_boys_T2_intro_E3"], ["cc_pr_manipulate_boys_T2_E3"]
+        ],
+        [
+            ["cc_pr_manipulate_boys_T3_twins"],
+            ["cc_pr_manipulate_boys_T3_ron"],
+            ["cc_pr_manipulate_boys_T3_harry"]
         ]
     ],
     icons = ["huff", "slyt"], #if a tier doesn't need an icon replace with None
@@ -113,9 +131,9 @@ default cc_pr_manipulate_boys = event_class(title = "Manipulate the boys!", star
 default cc_pr_spy_girls = event_class(title = "Spy on the girls!", start_label = "cc_pr_spy_girls_start", start_tier = 3,
     events = [
         [
-            ["cc_pr_spy_girls_T3_showers_intro"],
-            ["cc_pr_spy_girls_T3_alicia_intro"],
-            ["cc_pr_spy_girls_T3_katie_intro"],
+            ["cc_pr_spy_girls_T3_showers"],
+            ["cc_pr_spy_girls_T3_alicia"],
+            ["cc_pr_spy_girls_T3_katie"],
             ["cc_pr_spy_girls_T3_angelina"],
         ]
     ],
@@ -126,8 +144,9 @@ default cc_pr_spy_girls = event_class(title = "Spy on the girls!", start_label =
 default cc_pr_manipulate_girls = event_class(title = "Manipulate the girls!", start_label = "cc_pr_manipulate_girls_start", start_tier = 3,
     events = [
         [
-            ["cc_pr_manipulate_girls_T3_alicia_intro"],
-            ["cc_pr_manipulate_girls_T3_katie_intro_part1"], ["cc_pr_manipulate_girls_T3_katie_intro_part2"],
+            ["cc_pr_manipulate_girls_T3_alicia"],
+            ["cc_pr_manipulate_girls_T3_katie_part1"],
+            ["cc_pr_manipulate_girls_T3_katie_part2"],
             ["cc_pr_manipulate_girls_T3_angelina"]
         ]
     ],
@@ -137,7 +156,7 @@ default cc_pr_manipulate_girls = event_class(title = "Manipulate the girls!", st
 
 # TODO: lock favours until you finish `talk to me` part 3 in tier 3
 
-default cc_requests_list = [cc_pr_manipulate_boys, cc_pr_spy_girls, cc_pr_manipulate_girls]
+default cc_requests_list = [cc_pr_manipulate_boys, cc_pr_spy_girls, cc_pr_manipulate_girls, cc_pr_spy_boys]
 
 label reset_cho_progress:
     $ reset_variables(

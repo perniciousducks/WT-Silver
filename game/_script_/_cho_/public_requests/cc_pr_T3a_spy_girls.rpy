@@ -10,7 +10,7 @@ label cc_pr_spy_girls_start:
     if not cc_pr_spy_girls.is_event_complete(1, 1): # Completed shower event?
         # Shower event - looking through the glory hole
 
-        if True or cc_pr_spy_boys.is_event_complete(1, 1): # TODO: Remove `True` when `cc_pr_spy_boys` object exists.
+        if cc_pr_spy_boys.is_event_complete(1, 1):
             # Player has not spied on boys just yet.
 
             m "Time for some good old espionage!"
@@ -172,7 +172,7 @@ label cc_pr_spy_girls_start:
 
 ### Tier 3 (pre Gryffindor) ###
 
-label cc_pr_spy_girls_T3_showers_intro:
+label cc_pr_spy_girls_T3_showers:
     # Showers - looking through the glory hole
 
     # Cho enters.
@@ -225,7 +225,7 @@ label cc_pr_spy_girls_T3_showers_intro:
 
 
 ## Alicia Spinnet ##
-label cc_pr_spy_girls_T3_alicia_intro:
+label cc_pr_spy_girls_T3_alicia:
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
@@ -318,7 +318,7 @@ label cc_pr_spy_girls_T3_alicia_intro:
 
 
 ## Katie Bell ##
-label cc_pr_spy_girls_T3_katie_intro:
+label cc_pr_spy_girls_T3_katie:
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
@@ -392,14 +392,8 @@ label cc_pr_spy_girls_T3_katie_intro:
     jump end_cho_event
 
 
-## Hooch spies on them! + Repeat Events ##
+## Angelina Johnson ##
 label cc_pr_spy_girls_T3_angelina:
-
-    # Since this is the last event in Tier 3, it will handle repeatables.
-    if cc_pr_spy_girls.is_complete():
-        $ renpy.jump(renpy.random.choice(("cc_pr_spy_girls_T3_repeat1", "cc_pr_spy_girls_T3_repeat2", "cc_pr_spy_girls_T3_repeat3")))
-
-    # Angelina Johnson
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
@@ -446,105 +440,6 @@ label cc_pr_spy_girls_T3_angelina:
     g9 "(Wrapped around your finger...{w} good one...)"
 
     if cho_reputation < 12: # Points til 12.
-        $ cho_reputation += 1
-
-    jump end_cho_event
-
-
-## Angelina slapping Katie's ass ##
-label cc_pr_spy_girls_T3_repeat1:
-
-    # Cho enters.
-    call cho_walk(action="enter", xpos="desk", ypos="base")
-
-    call cho_main("", "annoyed", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
-
-    m "Ready for your report, B..."
-    m "Did you catch them doing anything interesting?"
-    call cho_main("I suppose...", "open", "base", "base", "downR")
-    call cho_main("I went to spy on them in the showers again.", "soft", "base", "base", "mid")
-    m "Go on..."
-    call cho_main("Angelina was slapping Katie on the bum -- with one of the beaters bats.", "horny", "base", "raised", "mid", cheeks="blush")
-    call cho_main("Her butt was bright red... I have no clue how she can even sit on a broom at this point...", "horny", "narrow", "base", "mid", cheeks="blush")
-    call cho_main("She must have some really potent cushioning charm on that thing...", "crooked_smile", "happyCl", "base", "mid", cheeks="heavy_blush")
-    m "That girl sure loves a spanking..."
-    call cho_main("And Angelina seems to thoroughly enjoy giving them as well.", "base", "narrow", "angry", "mid", cheeks="blush")
-    m "Well then, anything else to report?"
-    call cho_main("No, that's about it...", "soft", "base", "base", "R")
-    g9 "Then mission success!"
-    g9 "Good work, B!"
-    call cho_main("Is that all for today, [cho_genie_name]?", "base", "narrow", "base", "mid")
-    m "Yes, that will be all."
-    call cho_main("Until next time...", "base", "happyCl", "base", "mid")
-
-    # Cho leaves.
-    call cho_walk(action="leave")
-
-    if cho_reputation < 12: # Points til 12.
-        $ cho_reputation += 1
-
-    jump end_cho_event
-
-
-## Katie flashing in class ##
-label cc_pr_spy_girls_T3_repeat2:
-
-    # Cho enters.
-    call cho_walk(action="enter", xpos="desk", ypos="base")
-
-    call cho_main("", "annoyed", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
-
-    m "Ready for your report, B..."
-    m "Did you catch them doing anything interesting?"
-    call cho_main("I was keeping an eye on Katie during Defence against the dark arts...", "soft", "closed", "base", "mid")
-    call cho_main("I caught her flashing her breasts at another student...", "open", "narrow", "base", "mid")
-    g4 "Whoa! During classes?!"
-    call cho_main("I know!", "angry", "base", "angry", "mid")
-    call cho_main("I was quite shocked she'd dare to do something like that in class, to be honest.", "soft", "narrow", "angry", "L")
-    g4 "(Holy shit! She really is a freak!)"
-    call cho_main("Obviously I wasn't going to say anything... but it would've been funny to see her get chastised by Professor Tonks.", "smile", "narrow", "angry", "mid", cheeks="blush")
-    m "(Yeah, don't get your hopes up with her...)"
-    m "Anything else to report?"
-    call cho_main("No, that's about it...", "annoyed", "base", "base", "R")
-    g9 "Then mission success!"
-    g9 "Good work, B!"
-    m "You're dismissed..."
-    call cho_main("Have a nice evening, [cho_genie_name].", "base", "happyCl", "base", "mid")
-
-    # Cho leaves.
-    call cho_walk(action="leave")
-
-    if cho_reputation < 12: # Points til 12.
-        $ cho_reputation += 1
-
-    jump end_cho_event
-
-
-## Angelina showing Katie's bruised ass to the team ##
-label cc_pr_spy_girls_T3_repeat3:
-
-    # Cho enters.
-    call cho_walk(action="enter", xpos="desk", ypos="base")
-
-    call cho_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
-
-    m "Ready for your report, B..."
-    m "Did you catch them doing anything interesting?"
-    call cho_main("Angelina pulled Katie's panties down during practice -- to expose her red butt cheeks to the boys.", "open", "narrow", "raised", "mid")
-    call cho_main("I heard her yelling at them to do better -- or she'd make their butts look like Katie's.", "clench", "base", "worried", "down", cheeks="blush")
-    m "Such a bully..."
-    call cho_main("Yeah, Angelina is just looking to get a reaction from the boys...", "annoyed", "narrow", "angry", "mid")
-    call cho_main("And Katie didn't seem to mind the attention, that's for sure...", "annoyed", "narrow", "angry", "R")
-    call cho_main("That's about all that happened today...", "open", "closed", "base", "mid")
-    g9 "Excellent work, B!"
-    call cho_main("I'll head off then, if you don't mind.", "soft", "base", "base", "mid")
-    m "Yes, you're dismissed."
-    call cho_main("Have a nice evening, [cho_genie_name].", "base", "happyCl", "base", "mid")
-
-    # Cho leaves.
-    call cho_walk(action="leave")
-
-    if cho_reputation < 12: # Points till 12.
         $ cho_reputation += 1
 
     jump end_cho_event

@@ -55,30 +55,6 @@ label cc_pr_flirt_start: # Not in use.
     jump end_cho_event
 
 
-label event_class_test:
-    menu:
-        "-Start event-":
-            $ cc_pr_flirt.start()
-        "-Set event tier-":
-            $ cc_pr_flirt.tier = int(renpy.input("Tier (0-2):", str(cc_pr_flirt.tier), "0123456789", length=1))
-            jump event_class_test
-        "-Display current tier values-":
-            python:
-                tmp_values_display = cc_pr_flirt.events[cc_pr_flirt.tier]
-            "{size=-5}[tmp_values_display]{/size}"
-            jump event_class_test
-        "-Reset all flags-":
-            $ cc_pr_flirt.tier = 0
-            python:
-                for i in xrange(cc_pr_flirt.max_tiers):
-                    for j in xrange(len(cc_pr_flirt.events[i])):
-                        cc_pr_flirt.events[i][j][1] = False
-            jump event_class_test
-        "Exit":
-            jump main_room
-
-
-
 # Ideas
 
 ### Tier 1 ###

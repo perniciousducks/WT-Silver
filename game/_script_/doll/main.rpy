@@ -241,6 +241,7 @@ init python:
             self.body.hue = arg
             self.body.rebuild_image()
             self.rebuild_image()
+            self.apply_transition()
 
         def set_cum(self, *args, **kwargs):
             """Takes keyword argument(s) containing string name(s) of cum layers to apply or None."""

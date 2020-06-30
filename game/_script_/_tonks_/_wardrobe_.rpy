@@ -71,7 +71,7 @@ default ton_outfit_last = DollOutfit([ton_hair_base_new])
 ###################
 
 default ton_top_crop_casual  = DollCloth("tonks", ("tops", "shirts"), "top", "crop_top",[[200, 8, 45, 255]], unlocked=True)
-default ton_bottoms_leggings_casual = DollCloth("tonks", ("bottoms", "leggings"), "bottom", "latex_leggings",[[28, 28, 28, 255], [28, 28, 28, 255]], armfix=True, unlocked=True)
+default ton_bottoms_leggings_casual = DollCloth("tonks", ("bottoms", "leggings"), "bottom", "latex_leggings",[[32, 32, 32, 255], [25, 24, 24, 255]], armfix=True, unlocked=True)
 
 ##########
 ## Misc ##

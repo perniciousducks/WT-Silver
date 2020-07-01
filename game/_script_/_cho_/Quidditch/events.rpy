@@ -801,7 +801,7 @@ label cho_quid_E8:
     call ton_main("Me? Selling a favour to you?","smile","happyCl","base","mid", ypos="head")
     call ton_main("You sure you can afford me?","base","base","raised","mid") #Horny
     m "Not that kind of favour."
-    call ton_main("*Aww*...","upset","base","sad","down")
+    call ton_main("*Aww*...", "upset", "base", "worried", "down")
 
     # Tell Tonks about Cho.
     m "You know this {i}Quiddish{/i} sport the students play here?"
@@ -816,9 +816,9 @@ label cho_quid_E8:
     m "Yes, the little Ravenclaw minx, correct."
     call ton_main("Well, I figured you'd be talking about her - if it has to do with Quidditch.","open","base","base","R")
     m "She's one of the girls I buy favours from."
-    call ton_main("No way!","scream","wide","wide","wide", hair="horny")
-    call ton_main("You got that little hotty--","open","base","sad","mid")
-    call ton_main("*Uhm*... hot-head to sell you favours?","angry","base","sad","R")
+    call ton_main("No way!", "scream", "wide", "shocked", "stare", hair="horny")
+    call ton_main("You got that little hotty--", "open", "base", "worried", "mid")
+    call ton_main("*Uhm*... hot-head to sell you favours?", "angry", "base", "worried", "R")
     m "Once or twice..."
     call ton_main("Impressive.","horny","base","raised","mid")
     call ton_main("Tell me everything!","horny","base","angry","mid")
@@ -829,11 +829,11 @@ label cho_quid_E8:
             m "She's been stripping for me."
             call ton_main("Cho?! And I'm supposed to believe that?","upset","wide","raised","mid")
             g9 "Oh, you better believe it!"
-            call ton_main("Holy shit!","upset","wide","wide","wide", hair="horny")
-            call ton_main("I'd pay so many galleons to watch that girl take her clothes off...","upset","base","sad","R")
+            call ton_main("Holy shit!", "upset", "wide", "shocked", "stare", hair="horny")
+            call ton_main("I'd pay so many galleons to watch that girl take her clothes off...", "upset", "base", "worried", "R")
             call ton_main("You need to invite me next time!","angry","base","angry","mid", hair="angry") # angry
             m "And how would I get her to agree to that?"
-            call ton_main("Well... *Uhm*...","upset","base","sad","down", hair="horny")
+            call ton_main("Well... *Uhm*...", "upset", "base", "worried", "down", hair="horny")
             m "It was difficult enough to get her to strip just for me..."
             m "She only did it because I helped her win against Hufflepuff."
             call ton_main("So that was your idea with the skirt? Very clever.","horny","base","worried","mid")
@@ -846,7 +846,7 @@ label cho_quid_E8:
 
         "-Don't tell her-":
             m "I don't think I should..."
-            call ton_main("What? Why not?","open","base","sad","mid")
+            call ton_main("What? Why not?", "open", "base", "worried", "mid")
             m "Miss Chang wouldn't like anybody to know."
             call ton_main("I can keep a secret!","upset","base","worried","R")
             m "I really shouldn't..."
@@ -869,7 +869,7 @@ label cho_quid_E8:
     call ton_main("Can't wait... If it's anything like the first game.","base","base","raised","R")
     m "The main hurdle right now is that I have no way to try out our tactics on the Slytherins..."
     m "They refuse to practice against Ravenclaw."
-    call ton_main("Well that's unfortunate...","upset","base","sad","L")
+    call ton_main("Well that's unfortunate...", "upset", "base", "worried", "L")
     call ton_main("Perhaps you could ask Snape. He should be able to get those lazy gits back on the pitch...","open","base","base","mid")
 
     if cho_quid.E9_complete:
@@ -894,14 +894,14 @@ label cho_quid_E8:
         m "It's about Hermione's role as a commentator..."
         call ton_main("Really? What happened to Miss Granger?","upset","base","worried","mid")
         m "She quit..."
-        call ton_main("Hmm... that's too bad...","open","base","sad","R")
-        call ton_main("But it's understandable... after all that mocking she had to go through last game.","open","base","sad","mid")
-        call ton_main("Poor thing...","angry","base","sad","L")
+        call ton_main("Hmm... that's too bad...", "open", "base", "worried", "R")
+        call ton_main("But it's understandable... after all that mocking she had to go through last game.", "open", "base", "worried", "mid")
+        call ton_main("Poor thing...", "angry", "base", "worried", "L")
         call ton_main("Have you tried talking to her?", "open", "base", "raised", "mid")
         m "Not yet..."
         call ton_main("Well, if anyone could convince her surely you'd be the one to be able to.", "base", "base", "base", "R")
         m "..."
-        call ton_main("Why don't you tell her that a very special someone will be really disappointed if she doesn't show up.", "horny", "base", "base", "wide")
+        call ton_main("Why don't you tell her that a very special someone will be really disappointed if she doesn't show up.", "horny", "base", "base", "stare")
         g9 "(So it's not just me who thinks she's into Cho!)"
         call ton_main("(She was so cute fumbling over her words...)", "base", "happyCl", "base", "mid")
         call ton_main("I'm sure you'll be able to change her mind.", "smile", "base", "base", "mid")
@@ -916,17 +916,17 @@ label cho_quid_E8:
         call ton_main("Really? How?","open","base","raised","mid")
         call ton_main("I'd love to hear it.","horny","base","angry","mid")
         m "*Hmm*... Maybe next time."
-        call ton_main("Very well...","upset","base","sad","R")
+        call ton_main("Very well...", "upset", "base", "worried", "R")
 
     call ton_main("In any case, I could join you in the commentator booth during the next game to help encourage Miss Granger.","base","base","base","mid")
     call ton_main("If anything I'll get a nice view from up there.","smile","happyCl","base","mid")
     call ton_main("Since you already made sure Hufflepuff is out of the competition...","upset","base","angry","R")
     call ton_main("The best we can hope for now is to not get last...","open","closed","base","mid")
-    call ton_main("It's always third or nothing with us Puffs.","open","base","sad","R")
+    call ton_main("It's always third or nothing with us Puffs.", "open", "base", "worried", "R")
     m "(Puffs?)"
 
     g9 "Well, I'd be happy to have you."
-    call ton_main("*N'Aww*, you're so sweet!","base","base","sad","mid")
+    call ton_main("*N'Aww*, you're so sweet!", "base", "base", "worried", "mid")
     with hpunch
     $ renpy.play("sounds/hiccup_fem.mp3")
     call ton_main("*Hick*!... whoopsie...","upset","base","base","ahegao")

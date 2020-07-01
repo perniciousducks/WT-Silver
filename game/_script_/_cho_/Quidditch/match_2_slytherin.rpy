@@ -129,7 +129,7 @@ label slytherin_match:
     call ton_main("So, is Hermione going to show up as well?", "horny", "base", "angry", "mid")
     m "Who knows with her, honestly..."
     call ton_main("In that case, may I be allowed to accompany you?", "upset", "base", "worried", "mid") #sad
-    call ton_main("I'd love to be able to watch her-{w} The game from the commentator booth.", "open", "base", "sad", "R")
+    call ton_main("I'd love to be able to watch her-{w} The game from the commentator booth.", "open", "base", "worried", "R")
     g9 "Of course! I'd be delighted to have you!"
     call ton_main("Thank you, [ton_genie_name].{heart}", "base", "happyCl", "base", "mid", hair="happy")
     call ton_main("Are we to expect another great performance this time around?", "horny", "base", "base", "mid", hair="neutral")
@@ -372,7 +372,7 @@ label slytherin_match:
     pause 1.0
     call sna_main("Indeed!", "snape_02", ypos="head")
 
-    call ton_main("You jinxed it..", "upset", "closed", "sad", "mid", flip=True, xpos="far_left", ypos="head")
+    call ton_main("You jinxed it..", "upset", "closed", "worried", "mid", flip=True, xpos="far_left", ypos="head")
     g4 "Hey!{w=0.4} That wasn't--"
 
     # Hermione walks up to the podium
@@ -719,12 +719,12 @@ label slytherin_match:
 
     call sna_main("I'm surprised she didn't swallow that one - with how wide she was blabbing her mouth.", "snape_42", ypos="head")
     call sna_main("To think that liquid luck-", "snape_45")
-    call ton_main("{size=+5}What?{/size}", "angry", "shocked", "base", "wide", hair="neutral", ypos="head", flip=True, trans=hpunch)
+    call ton_main("{size=+5}What?{/size}", "angry", "shocked", "base", "stare", hair="neutral", ypos="head", flip=True, trans=hpunch)
     g4 "What the fuck is liquid luck?"
     call ton_main("You gave those brutes a luck potion?!", "scream", "base", "angry", "L", hair="angry")
     call sna_main("Well...", "snape_14")
     call ton_main("I can't believe you, Snape...{w=0.5} look what they've done to her face!", "angry", "base", "worried", "down")
-    call ton_main("Her beautiful face...", "upset", "base", "sad", "down", hair="sad")
+    call ton_main("Her beautiful face...", "upset", "base", "worried", "down", hair="sad")
     call sna_main("Looks like an improvement to me.", "snape_46")
 
     menu:
@@ -1626,7 +1626,7 @@ label slytherin_match_return:
         call ton_main("Thought I was about to lose focus there for a second when you started going at it!", "open", "base", "base", "R")
         m "You should've told me it was you..."
         call ton_main("I tried to!", "upset", "base", "worried", "mid")
-        call ton_main("You pretty much pushed me onto the podium when I got back...", "open", "base", "sad", "mid")
+        call ton_main("You pretty much pushed me onto the podium when I got back...", "open", "base", "worried", "mid")
         m "Oh, yeah..."
         m "So this is the ability you were speaking of?"
         call ton_main("Impressive, isn't it?", "horny", "base", "base", "mid")
@@ -1751,7 +1751,7 @@ label slytherin_match_return:
     call ton_main("Nah, I was born with it.", "horny", "base", "base", "mid")
     m "This world, I swear there's something new every day..."
     m "What next?{w=0.2} Can you time travel?"
-    call ton_main("I wish! The ministry won't let me do it...", "open", "base", "sad", "R")
+    call ton_main("I wish! The ministry won't let me do it...", "open", "base", "worried", "R")
     call ton_main("If I could I'd just go back to kill baby \"you know who\"...", "upset", "base", "angry", "mid")
     m "(Why is that always the first thing people consider when talking about time travel...)"
     m "(So predictable...)"
@@ -1761,9 +1761,9 @@ label slytherin_match_return:
     call ton_main("And I replaced her, so she wouldn't get picked on for leaving.", "upset", "base", "worried", "down")
     m "I see..."
     m "And she--"
-    call ton_main("She's fine...", "open", "base", "sad", "R")
+    call ton_main("She's fine...", "open", "base", "worried", "R")
     #TODO If we had the hospital wing drawn she could offer to take you there at this line
-    call ton_main("Your face is cute when you worry, you know that?", "base", "base", "sad", "mid")
+    call ton_main("Your face is cute when you worry, you know that?", "base", "base", "worried", "mid")
     m "Right..."
     m "So, won't people find out you replaced her?"
     call ton_main("I wouldn't worry about that.", "open", "base", "base", "R")
@@ -1772,7 +1772,7 @@ label slytherin_match_return:
     call ton_main("Anyway...", "open", "base", "base", "R")
     call ton_main("I doubt Miss Granger would tell anyone, unless she has a really good reason to do so...", "base", "base", "angry", "mid")
     call ton_main("*Urgh*... My head hurts.", "upset", "base", "worried", "up")
-    call ton_main("I'm gonna go sleep off whatever this is...", "open", "base", "sad", "mid")
+    call ton_main("I'm gonna go sleep off whatever this is...", "open", "base", "worried", "mid")
     call ton_main("Too-da-loo!", "base", "happyCl", "base", "mid")
 
     call ton_walk(action="leave")

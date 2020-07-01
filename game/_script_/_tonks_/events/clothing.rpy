@@ -117,7 +117,7 @@ label tonks_summon_setup:
                 m "Very well then."
                 m "Minus ten points from house Hufflepuff!"
                 $ hufflepuff -=10
-                call ton_main("What? But [ton_genie_name]! I'm not even a student--","open","wide","wide","mid", trans=hpunch)
+                call ton_main("What? But [ton_genie_name]! I'm not even a student--", "open", "wide", "shocked", "mid", trans=hpunch)
                 g4 "In addition, from this point forward, you will be forbidden to wear even a single piece of clothing whenever you step into this room!"
                 call ton_main("Of course, [ton_genie_name].","base","base","raised","down")
                 m "Even if there is a student in here. Or if I call somebody... Anybody!"

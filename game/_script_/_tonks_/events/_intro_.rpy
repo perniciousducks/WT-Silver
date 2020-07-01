@@ -183,8 +183,8 @@ label tonks_intro_E1:
     menu:
         m "..."
         "\"I never even touched her!\"":
-            call ton_main("Sir?","open","wide","wide","wide")
-            call ton_main("I'm sorry Professor, I wasn't accusing you of-","open","base","sad","mid")
+            call ton_main("Sir?", "open", "wide", "shocked", "stare")
+            call ton_main("I'm sorry Professor, I wasn't accusing you of-", "open", "base", "worried", "mid")
             m "I did not have sexual relations with that woman."
             call ton_main("Professor! I wasn't implying that-...","angry","base","raised","mid")
             call ton_main("In the letter she wrote, Miss Granger never accused you of selling favours to your students...","open","base","base","L")
@@ -277,11 +277,11 @@ label tonks_intro_E2:
         "\"Nymphadora!\"":
             call ton_main("Sir?","angry","base","worried","mid")
             m "What? Isn't that your name, or did I get it wrong again?"
-            call ton_main("I'm sorry, Sir.{w} I thought that, when I was a student here, that I made it very clear that I wouldn't want to be called Nymphador-","open","base","sad","down")
+            call ton_main("I'm sorry, Sir.{w} I thought that, when I was a student here, that I made it very clear that I wouldn't want to be called Nymphador-", "open", "base", "worried", "down")
             call ton_main("Please, just call me Tonks, Professor.","base","base","base","mid")
             m "Fine..."
         "\"Nympho-whora!\"":
-            call ton_main("What?!","open","wide","wide","wide")
+            call ton_main("What?!", "open", "wide", "shocked", "stare")
             call ton_main("I'm sorry, Professor. I clearly must have misheard you...","open","closed","angry","mid")
             call ton_main("Sir, what did you just call me?","angry","base","angry","mid")
             m "*Uhm*...{w}isn't that your name?"
@@ -466,7 +466,7 @@ label tonks_intro_E3:
     call play_music("tonks")
     call ton_main("Professor...","base","base","base","mid", xpos="mid", ypos="base")
     m "How's the investigation going? Nothing to report I gather?"
-    call ton_main("On the contrary...","open","wide","wide","wide")
+    call ton_main("On the contrary...", "open", "wide", "shocked", "stare")
     call ton_main("It's worse than I could have ever imagined!","open","base","angry","mid", hair="angry")
     g4 "(........)"
     call ton_main("This school truly has changed since I was a student here.","open","base","base","mid")
@@ -495,13 +495,13 @@ label tonks_intro_E3:
             g4 "No wait, it was {i}Albertus Dumblerdore{/i}! That's it!"
             m "(Yes, that was probably it...)"
         "You know who!":
-            call ton_main("What?","base","wide","wide","wide")
+            call ton_main("What?", "base", "wide", "shocked", "stare")
             m "You...{w=0.8} know...{w=0.8} who..."
             call ton_main("That can't be true!","open","base","worried","mid")
             m "You know who I am. You said it yourself earlier."
             m "(If only I could remember what she called me...)"
         #"The danger!":
-        #    call ton_main("What?","base","wide","wide","wide")
+        #    call ton_main("What?", "base", "wide", "shocked", "stare")
         #    g4 "I am the one who knocks..."
 
     call ton_main("I've had enough of this!","angry","base","angry","mid")
@@ -539,7 +539,7 @@ label tonks_intro_E3:
     with d9
     pause.6
 
-    call ton_main("","open","wide","wide","wide", xpos="right", ypos="base")
+    call ton_main("", "open", "wide", "shocked", "stare", xpos="right", ypos="base")
     m "(...)"
     $ renpy.music.play("music/Under-the-Radar by PhobyAk.mp3")
     call ton_main("No way!","open","base","base","mid")
@@ -575,7 +575,7 @@ label tonks_intro_E3:
     m "I don't know how,... yet.{w} We're still working on it..."
     call ton_main("We? Who else knows about this?","angry","base","worried","R")
     m "That Snape guy."
-    call ton_main("But of course!{w} After all he was mentioned in Miss Granger's letter as one of the main offenders.","open","wide","wide","wide")
+    call ton_main("But of course!{w} After all he was mentioned in Miss Granger's letter as one of the main offenders.", "open", "wide", "shocked", "stare")
     call ton_main("That sleazy, vile snake...{w} Naturally he'd be all over an opportunity such as this.","angry","base","angry","R", hair="angry")
     m "(Snake? Have I been saying his name wrong this entire time?...)"
     m "(I hate when that happens...)"
@@ -643,10 +643,10 @@ label tonks_intro_E3:
             call ton_main("Very well.","base","base","base","mid")
         "Daddy":
             $ ton_genie_name = "Daddy"
-            call ton_main("What? Are you serious?!","open","wide","wide","wide")
-            call ton_main("*Ha-Ha-Ha!*...{w} you're too funny!","smile","base","sad","mid", hair="happy")
+            call ton_main("What? Are you serious?!", "open", "wide", "shocked", "stare")
+            call ton_main("*Ha-Ha-Ha!*...{w} you're too funny!", "smile", "base", "worried", "mid", hair="happy")
             g4 "(What?- Now it's yellow!)"
-            call ton_main("Are all Genies this desperate?","smile","base","sad","mid", hair="happy")
+            call ton_main("Are all Genies this desperate?", "smile", "base", "worried", "mid", hair="happy")
             m "Desperate? Why Desperate?..."
             call ton_main("Nothing...","base","base","base","mid", hair="happy")
             call ton_main("Very well,... \"Daddy\"! {heart}{heart}{heart}","horny","base","base","mid", hair="horny")

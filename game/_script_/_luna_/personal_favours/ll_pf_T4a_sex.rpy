@@ -1334,7 +1334,7 @@ label ll_pf_sex_T1_ton_2: # Call label
     lun "So quick! Ah... You better stay here... ah... to let them all out..."
     call ton_main("I wouldn't miss a show like this for the world...","horny","base","base","mid")
     $ lunCG('base', 'base', 'sad', 'up')
-    call ton_main("I'd normally have to pay a fortune to see this.","open","base","wide","mid")
+    call ton_main("I'd normally have to pay a fortune to see this.", "open", "base", "shocked", "mid")
     m "Maybe I should start charging?"
     $ lunCG('pout', 'wink', 'sad', 'left')
     call ton_main("I could say the same to you...","open","base","base","mid")
@@ -1410,7 +1410,7 @@ label ll_pf_sex_T1_ton_2: # Call label
             lun "{heart}{heart}{heart}"
             ">You slump back into your chair, leaving Luna on your desk, leaking cum."
             $ lunCG('open_tongue', 'angry', 'angry', 'ahegao')
-            call ton_main("Dumbledore, what do you think you're doing?","open","wide","wide","mid")
+            call ton_main("Dumbledore, what do you think you're doing?", "open", "wide", "shocked", "mid")
             m "Busting a load?"
             call ton_main("Inside her! Now she won't be able to show off what a little cumslut she is!","open","base","angry","mid")
             $ lunCG('base', 'angry', 'sad', 'left')

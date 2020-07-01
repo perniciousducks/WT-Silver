@@ -39,7 +39,7 @@ label nt_pr_teach_start:
                 m "Yes, Granger is greedy when it comes to points..."
                 call ton_main("I'm not interested in just chatting with my Students! I get to do that all day...","open","base","angry","R")
             m "Just get them to show you their dicks then."
-            call ton_main("Oh wow! Are you serious?","base","wide","wide","wide")
+            call ton_main("Oh wow! Are you serious?", "base", "wide", "shocked", "stare")
             m "I don't see why not."
             m "It isn't such a big deal for a boy to show a girl his wiener..."
             call ton_main("Seeing the boys dicks... That's good...","horny","base","base","ahegao")
@@ -459,7 +459,7 @@ label nt_pr_teach_T2_E1: # Tier 2 - Event 1 - Hufflepuff girl
     call ton_main("*Ugh*... It was amazing!{w} She was so nervous... her expression looked incredible on her face...","horny","base","base","ahegao")
     call ton_main("That, and the soft mewling she made while she did it...","horny","base","angry","mid")
     call ton_main("It was that perfect combination of \"slutty need\" and \"statuesque beauty\"...","base","base","base","ahegao")
-    call ton_main("I wanted to taste her so badly...","open_wide_tongue","wide","base","ahegao_intense")
+    call ton_main("I wanted to taste her so badly...","open_wide_tongue","wide","base","ahegao")
     g9 "..................."
     call ton_main("It was a struggle to hold myself back... I don't think she would've been ready for that just yet...","open","closed","worried","mid")
     m "...................."
@@ -524,7 +524,7 @@ label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
             $ choice_flag=True
             m "You do know that you've got some cum on you?"
             call ton_main("*Hmm?*...","base","base","base","down")
-            call ton_main("Oh...","angry","base","wide","down")
+            call ton_main("Oh...", "angry", "base", "shocked", "down")
             call ton_main("That cheeky bugger! I can't believe he actually shot it that far...","open","base","base","down")
             m ".................."
             call ton_main("Best to start from the beginning...","open","closed","base","mid")
@@ -557,7 +557,7 @@ label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
     call ton_main("The usual stuff...","upset","base","base","R")
     call ton_main("How pretty I was, how nice my tits looked...","open","base","base","down")
     call ton_main("You know how guys are...","base","base","angry","mid")
-    call ton_main("What was weird was...when he started to call me mommy again...","angry","wide","wide","wide")
+    call ton_main("What was weird was...when he started to call me mommy again...", "angry", "wide", "shocked", "stare")
     m "What a wimp."
     call ton_main("Don't be cruel, [ton_genie_name]! It's just a little dirty talk...","open","base","worried","R")
     call ton_main("And you have to admit, it's kinda hot... I even joined in on it.","base","base","angry","mid")

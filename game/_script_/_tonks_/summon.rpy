@@ -322,13 +322,13 @@ label tonks_talk:
                     call ton_main("You could say that... He corrupted many witches and wizards alike.","upset","base","base","mid")
                     m "....................."
                     m "So he was \"Bi\" is what you're saying?"
-                    call ton_main("What? No.","open","wide","wide","wide")
+                    call ton_main("What? No.", "open", "wide", "shocked", "stare")
                     call ton_main("I mean, I'm not really sure if someone like him would have even be capable of loving anything...","angry","base","worried","R")
                     call ton_main("All that mattered to him was power, and achieving his own immortality...","open","base","angry","mid")
                     m "Both fairly overrated once you have it, if you ask me..."
                     call ton_main("You don't say...","base","base","raised","mid")
                     m "I bet all he secretly wanted was to have a wife, and a kid that loved him..."
-                    call ton_main("Voldemort, having a child? Are you serious?","open","wide","wide","wide")
+                    call ton_main("Voldemort, having a child? Are you serious?", "open", "wide", "shocked", "stare")
                     m "Of course not."
                     m "Once you're immortal, the last thing you need is some annoying brat on your mind..."
                     g9 "All we really want to do is waste a majority of our existence with mindless sex!"

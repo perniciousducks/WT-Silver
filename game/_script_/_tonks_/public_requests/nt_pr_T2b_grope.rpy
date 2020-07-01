@@ -207,7 +207,7 @@ label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     m "How long did this \"hug\" last exactly?"
     call ton_main("*Pfff*... Five...maybe ten minutes...","upset","base","angry","up")
     call ton_main("Eventually, it all got a bit too much...and he broke-off the hug...","open","base","base","R")
-    call ton_main("Stammered a thanks, and ran off.","angry","base","sad","down")
+    call ton_main("Stammered a thanks, and ran off.", "angry", "base", "worried", "down")
     m "Did you even get to reward any points?"
     call ton_main("I did, even if he wasn't there to hear it...","base","happyCl","base","mid")
     m "Very good. That'll be all then."

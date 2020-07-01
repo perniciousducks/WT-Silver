@@ -258,7 +258,7 @@ label nt_pr_kiss_T1_E3: # Tier 1 - Event 3 - Slytherin girls
     call ton_main("Maybe not even each other...","base","base","angry","mid")
     m "Ought to be young again..."
     call ton_main("I couldn't help myself, [ton_genie_name]!","upset","base","base","ahegao")
-    call ton_main("I simply {b}had{/b} to play around while they did it...","open","base","sad","mid")
+    call ton_main("I simply {b}had{/b} to play around while they did it...", "open", "base", "worried", "mid")
     m "Did they care?"
     call ton_main("Not one bit!","base","base","angry","mid")
     call ton_main("They'd just take it in waves...","horny","base","base","L")
@@ -317,8 +317,8 @@ label nt_pr_kiss_T1_E4: #Level 1 Event 4
     m "I never said it was a bad thing..."
     call ton_main("Good!{w} Because I don't intend on slowing down...","open","closed","angry","mid")
     call ton_main("Not after what happened today!","horny","base","angry","mid")
-    call ton_main("She was so cute!...","open","base","sad","mid")
-    call ton_main("Still nervous, but not nearly as cocky...","open","base","sad","R")
+    call ton_main("She was so cute!...", "open", "base", "worried", "mid")
+    call ton_main("Still nervous, but not nearly as cocky...", "open", "base", "worried", "R")
     call ton_main("Today, she simply let her reddened cheeks do most of the talking... Until the end of my lessons...","base","base","base","mid")
     call ton_main("And, once the classroom had emptied out, I offered to purchase another favour from her.","open","base","base","L")
     call ton_main("It's not as if she'd say no at this stage.","base","base","base","mid")

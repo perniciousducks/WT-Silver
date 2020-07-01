@@ -5,9 +5,9 @@
 label nt_he_susan_E1:
     call ton_main(".................","base","base","worried","down", ypos="head")
     m "Something on your mind?"
-    call ton_main("Yes, there's this student in my class. She seems to be having a bad time.","open","base","sad","mid")
+    call ton_main("Yes, there's this student in my class. She seems to be having a bad time.", "open", "base", "worried", "mid")
     m "Education isn't meant to be enjoyable."
-    call ton_main("It's not that, she's being bullied by the other students apparently...","open","base","sad","R")
+    call ton_main("It's not that, she's being bullied by the other students apparently...", "open", "base", "worried", "R")
     m "Why is she being singled out?"
     call ton_main("For being shy,...insecure,...","upset","closed","base","mid")
     m "About what?"
@@ -21,8 +21,8 @@ label nt_he_susan_E1:
     call ton_main("Naturally... Even I'm jealous of those {b}milk-bags{/b} of hers!","open","base","angry","mid")
     g9 "I definitely need to see them!"
     call ton_main("That being said, I'm quite worried about her...","open","closed","worried","mid")
-    call ton_main("Lately she's been too shy to even answer the simplest of questions during my class.","open","base","sad","R")
-    call ton_main("She's lost quite a few points for her house that way.","upset","base","sad","mid")
+    call ton_main("Lately she's been too shy to even answer the simplest of questions during my class.", "open", "base", "worried", "R")
+    call ton_main("She's lost quite a few points for her house that way.", "upset", "base", "worried", "mid")
     call ton_main("Not in my lessons, of course. I'd never take points from Hufflepuff!","upset","base","worried","down")
     g9 "Just send her my way and I'll drown her in house points!"
     m "And show her that her bod-..."

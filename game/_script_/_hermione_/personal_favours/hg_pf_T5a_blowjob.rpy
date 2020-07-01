@@ -1089,7 +1089,7 @@ label hg_hidden_blowjob_tonks:
             m "(...)"
             m "It's Miss Granger."
 
-    call ton_main("Miss Granger?!","open","wide","wide","wide")
+    call ton_main("Miss Granger?!", "open", "wide", "shocked", "stare")
 
     if her_reputation <= 15:
         call ton_main("That cute little tease who always hangs out at the library, pretending to study?","open","base","raised","mid")

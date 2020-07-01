@@ -46,7 +46,7 @@ label astoria_intro_E1:
     m "So? Isn't it your task to cover that sort of stuff?"
     call ton_main("Yes, but...","upset","base","worried","down")
     call ton_main("Please, [ton_genie_name]! I can't cover this up all on my own!","open","base","worried","mid")
-    call ton_main("I require your help...","upset","base","sad","mid")
+    call ton_main("I require your help...", "upset", "base", "worried", "mid")
     m "My help, you say?"
     call ton_main("Yes...","base","base","worried","down")
 
@@ -66,7 +66,7 @@ label astoria_intro_E1:
             call ton_main("Could you please just listen to me?","angry","closed","angry","mid")
 
         "\"What's in it for me?\"":
-            call ton_main("Are you seriously asking me that?","open","wide","wide","wide")
+            call ton_main("Are you seriously asking me that?", "open", "wide", "shocked", "stare")
             call ton_main("If this doesn't get dealt with immediately, they'll have us both locked up in a cell in Azkaban, do you hear me?!","angry","base","angry","mid")
             m "Loud and clear..."
             m "I'll be locked up in a cell - together with you..."
@@ -127,7 +127,7 @@ label astoria_intro_E1:
                     call ton_main("Are we done here?","open","closed","base","mid")
                     m "Want to give it one more try?"
                     call ton_main("I think not...","open","base","base","R")
-                    call ton_main("I expected a bit more from a Genie... A magic trick, perhaps?","upset","base","sad","down")
+                    call ton_main("I expected a bit more from a Genie... A magic trick, perhaps?", "upset", "base", "worried", "down")
                     m "I've told you, I can't do magic anymore..."
                     call ton_main("How very disappointing...","open","closed","base","mid")
                     call ton_main("I'm starting to have my doubts that you ever were a Genie...","angry","base","worried","R")
@@ -181,7 +181,7 @@ label astoria_intro_E1:
                     call ton_main("A poster, you say?...","horny","base","base","mid")
                     call ton_main("What are you gonna do with it? Put it on your wall and fap to it?","horny","base","angry","mid")
                     g9 "You can count on that!"
-                    call ton_main("Hold on!{w} Are you going to hang it up here? In your office?!","open","wide","wide","wide")
+                    call ton_main("Hold on!{w} Are you going to hang it up here? In your office?!", "open", "wide", "shocked", "stare")
                     m "Sure... It's not like there are that many other rooms I can go to..."
                     call ton_main("(Oh my... So everyone would be able to see it...)","upset","base","worried","R", hair="horny")
                     call ton_main("(All those girls that come in here...)","upset","base","base","ahegao")
@@ -200,7 +200,7 @@ label astoria_intro_E1:
     g9 "With the giant tits!"
     call ton_main("...The one with the unfortunate luck of being a constant target of bullying and harassment!","angry","closed","angry","mid") # Annoyed
     m "Yes, that too..."
-    call ton_main("That poor girl! She cried the entire time when she told me about what happened...","open","base","sad","down")
+    call ton_main("That poor girl! She cried the entire time when she told me about what happened...", "open", "base", "worried", "down")
     call ton_main("I can't believe she got hit by a curse!","angry","base","angry","down") # Angry
     m "At least she isn't dead..."
     call ton_main("No, of course not!","open","base","angry","mid")
@@ -210,7 +210,7 @@ label astoria_intro_E1:
     call ton_main("Don't be silly...","open","closed","base","mid")
     m "Then what are you concerned about exactly?"
 
-    call ton_main("This is something quite serious!","angry","base","sad","mid")
+    call ton_main("This is something quite serious!", "angry", "base", "worried", "mid")
     call ton_main("If we don't find the culprit of this, and find them quickly, the Ministry will be on our toes by tomorrow!","open","base","angry","mid")
     m "That bad, huh?"
     call ton_main("Yes, I'm afraid...","upset","base","worried","down")
@@ -231,11 +231,11 @@ label astoria_intro_E1:
     call ton_main("Should the Ministry find out about what happened to... Miss Bones.","upset","base","worried","R")
     g9 "*He-he-he!*..."
     call ton_main("Which they most certainly will, as her aunt is head of the Ministry's department for \"Magical Law Enforcement\"...","open","base","worried","mid")
-    call ton_main("Our whole operation would be busted! And we'd get locked up once and for all!","upset","base","sad","mid")
+    call ton_main("Our whole operation would be busted! And we'd get locked up once and for all!", "upset", "base", "worried", "mid")
 
     m "So, are we in trouble?"
-    call ton_main("Not yet...","open","closed","sad","mid")
-    call ton_main("I could luckily erase Susan's memory of the ordeal - with the obliviate spell.","angry","base","sad","mid")
+    call ton_main("Not yet...", "open", "closed", "worried", "mid")
+    call ton_main("I could luckily erase Susan's memory of the ordeal - with the obliviate spell.", "angry", "base", "worried", "mid")
     m "You can do that? Neat..."
     call ton_main("But, if this should happen to her again, I doubt there is much I could do to prevent her from telling her aunt right away...","open","base","worried","R")
     m "So what do you suggest we do?"
@@ -245,8 +245,8 @@ label astoria_intro_E1:
     call ton_main("Who told her{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8}to lift up her top.","upset","base","worried","R")
     g9 "Oh yes?"
     call ton_main("The imperius curse can make people do {b}unspeakable things{/b} against their will!","open","closed","angry","mid")
-    call ton_main("I have no doubt that someone as sweet and good-hearted as Susan wouldn't know how to defend herself against it...","open","base","sad","mid")
-    call ton_main("So... She showed her breasts to a bunch of other students...{w=1.4} unfortunately...","upset","base","sad","R")
+    call ton_main("I have no doubt that someone as sweet and good-hearted as Susan wouldn't know how to defend herself against it...", "open", "base", "worried", "mid")
+    call ton_main("So... She showed her breasts to a bunch of other students...{w=1.4} unfortunately...", "upset", "base", "worried", "R")
     g9 "I wish I could have been there to stop it!"
     call ton_main("Of course you do...","open","closed","base","mid")
     call ton_main("That's sadly all the information I can share...","upset","base","worried","down")
@@ -691,7 +691,7 @@ label astoria_intro_E3:
     call ton_main("Astoria? What are you doing here?","upset","base","worried","L")
     call ton_main("You didn't cause any mischief, I hope.","base","base","base","L")
     call ast_main("Of course not.","annoyed","base","worried","down")
-    call ton_main("Wait, is she the one who's cursed Susan?","open","wide","wide","wide")
+    call ton_main("Wait, is she the one who's cursed Susan?", "open", "wide", "shocked", "stare")
     call ton_main("","upset","base","worried","mid")
     m "Yep."
     call ton_main("(Oh shit!)","horny","base","raised","L", hair="horny")
@@ -699,7 +699,7 @@ label astoria_intro_E3:
     call ast_main("I'm really sorry! I promise I won't ever cast it again!","open","narrow","base","R")
     call ton_main("Really? It was you who cast the spell?","open","base","worried","L")
     call ast_main("...","annoyed","narrow","worried","down")
-    call ton_main("It couldn't possibly have been someone as cute as you!","upset","base","sad","L")
+    call ton_main("It couldn't possibly have been someone as cute as you!", "upset", "base", "worried", "L")
     call ast_main("...","clench","narrow","worried","down") # Embarrassed, stares down.
     call ast_main("Please don't send me to Azkaban!","scream","closed","base","mid")
     call ast_main("","annoyed","narrow","base","down")
@@ -709,7 +709,7 @@ label astoria_intro_E3:
 
     call ton_main("It's just the Imperius curse.","open","base","worried","R")
     call ton_main("Most students don't have the guts to cast crucio on another person...","open","base","worried","mid")
-    call ton_main("Let alone Avada Kedavra...","upset","wide","wide","wide")
+    call ton_main("Let alone Avada Kedavra...", "upset", "wide", "shocked", "stare")
 
     m "..."
     call ton_main("So, you had some fun with Susan, I gather?","base","happyCl","base","mid")
@@ -720,7 +720,7 @@ label astoria_intro_E3:
     call ast_main("Just for a second!","clench","base","base","mid")
     m "(what's going on here?)"
     call ton_main("Is that all?","open","base","worried","L")
-    call ton_main("You probably did Susan some good then...","base","base","sad","mid")
+    call ton_main("You probably did Susan some good then...", "base", "base", "worried", "mid")
     call ton_main("She sure needs to loosen up a bit.","open","base","base","R")
 
     call ton_main("She always has been very sensitive about her body for some reason.","base","base","raised","mid")
@@ -776,16 +776,16 @@ label astoria_intro_E3:
     call ton_walk("desk","base")
 
     call play_music("playful_tension")
-    call ton_main("She's {size=+5}so cute!{/size} Isn't she? {heart}","upset","base","sad","R", xpos="mid", ypos="base")
+    call ton_main("She's {size=+5}so cute!{/size} Isn't she? {heart}", "upset", "base", "worried", "R", xpos="mid", ypos="base")
 
     if d_flag_01:
         m "You gave her fifty house points..."
         g4 "For what you previously described as a serious crime?"
         call ton_main("I know! I shouldn't have rewarded her, but...","upset","closed","worried","mid")
-        call ton_main("Did you see how her face lit up!","open","base","sad","mid")
-        call ton_main("I thought we were supposed to encourage our students, [ton_genie_name].","upset","base","sad","down")
+        call ton_main("Did you see how her face lit up!", "open", "base", "worried", "mid")
+        call ton_main("I thought we were supposed to encourage our students, [ton_genie_name].", "upset", "base", "worried", "down")
         m "Don't put this one me..."
-        call ton_main("Fine, maybe I got a bit too excited...","angry","base","sad","mid")
+        call ton_main("Fine, maybe I got a bit too excited...", "angry", "base", "worried", "mid")
 
     else:
         m "A couple of hours of detention..."
@@ -797,7 +797,7 @@ label astoria_intro_E3:
 
     m "We should have a chat about Astoria again..."
     m "Discuss the severity of her... \"detention.\""
-    call ton_main("Of course, [ton_genie_name].","base","base","sad","mid")
+    call ton_main("Of course, [ton_genie_name].", "base", "base", "worried", "mid")
     call ton_main("I'm glad we're on the same page...{heart}","smile","happyCl","base","mid")
     m "Until next time, [tonks_name]."
     call ton_main("Until next time!{heart}","base","happyCl","base","mid")
@@ -836,11 +836,11 @@ label nt_he_astoria_E1:
     m "You got the hots for this girl?"
     call ton_main("She's a Slytherin!","angry","base","raised","mid")
     m "People keep saying that as if I'd know what the problem is."
-    call ton_main("Oh yes... I guess I'm a teacher now - so I should be more impartial...","upset","base","sad","down")
+    call ton_main("Oh yes... I guess I'm a teacher now - so I should be more impartial...", "upset", "base", "worried", "down")
     call ton_main("Old habits, I suppose.","open","base","worried","R")
     call ton_main("But no, it's not that.","upset","base","worried","mid")
 
-    call ton_main("This girl you see, she's cursed... and it's quite a hefty curse at that!","open","base","sad","mid")
+    call ton_main("This girl you see, she's cursed... and it's quite a hefty curse at that!", "open", "base", "worried", "mid")
     m "You don't say..."
     #call ton_main("This girl is cursed... and it's quite a problem.","base","base","base","mid")
     #m "Don't you mean this cursed girl {i}is{/i} a problem?"
@@ -848,14 +848,14 @@ label nt_he_astoria_E1:
     #m "..."
     call ton_main("Her family - the Greengrass family - is quite infamous in the wizarding world.","open","base","angry","mid")
     call ton_main("They're known for being a very high class family of witches and wizards...","open","base","angry","R")
-    call ton_main("Some of them are very stuck-up and spoiled, for that reason.","upset","base","sad","R")
+    call ton_main("Some of them are very stuck-up and spoiled, for that reason.", "upset", "base", "worried", "R")
     call ton_main("It's quite the norm for most pure blood families, actually.","open","closed","base","mid")
     m "Get to the point..."
     call ton_main("*Sigh*","upset","base","worried","ahegao")
     call ton_main("One of Astoria's ancestors was put under a blood curse - and I fear that parts of this curse has trickled down the generations - and surfaced in Astoria.","open","base","angry","mid")
     m "And what did this accursed curse do exactly?"
     call ton_main("Originally, its purpose was to bring down the family, and make them appear weak in the eyes of the wizarding community.","open","base","angry","R")
-    call ton_main("Every now and then one of the family members would become frail and live a short life.","open","closed","sad","mid")
+    call ton_main("Every now and then one of the family members would become frail and live a short life.", "open", "closed", "worried", "mid")
     m "Oh shit..."
     call ton_main("Yeah...","upset","base","worried","down")
     m "Hey, at least it's not the other way round, am I right..."
@@ -873,9 +873,9 @@ label nt_he_astoria_E1:
     call ton_main("I have strong reasons to believe that this girl is...","upset","base","angry","R")
     call ton_main("She's...","upset","base","worried","down")
     m "She's what?"
-    call ton_main("She's asexual!","angry","base","sad","mid")
+    call ton_main("She's asexual!", "angry", "base", "worried", "mid")
     m "..."
-    call ton_main("You don't believe me?","upset","base","sad","mid")
+    call ton_main("You don't believe me?", "upset", "base", "worried", "mid")
     m "Oh no, I do believe you."
     m "..."
     m "Mind explaining to me what asexual's supposed to mean?"
@@ -883,7 +883,7 @@ label nt_he_astoria_E1:
     call ton_main("Well that's not too surprising - all things considered...","open","closed","worried","mid")
     call ton_main("It means she feels no sexual feeling or attraction, to anything!","open","base","angry","mid")
     g4 "WHAT?!"
-    call ton_main("I know!","angry","base","sad","mid")
+    call ton_main("I know!", "angry", "base", "worried", "mid")
     m "By the great desert sands... That's a curse worse than death."
     call ton_main("The curse has seemingly gone from killing off random members of their family, to preventing new members from being born.","upset","base","base","R")
     #g4 "Wait, since when can spells change their outcome like that?"
@@ -912,7 +912,7 @@ label nt_he_astoria_E1:
     call ton_main("Yes...","base","base","angry","mid")
     m "So your goal is to somehow awaken her sexuality, and get rid of this curse?"
     call ton_main("It might not be that easy, but I think it would be a good start.","open","base","base","L")
-    call ton_main("I must at least know if my theory is correct...","upset","base","sad","mid")
+    call ton_main("I must at least know if my theory is correct...", "upset", "base", "worried", "mid")
     m "I don't see how this \"Imperio\" thing plays into it, but if you say so..."
     call ton_main("I'll speak to Miss Greengrass.","open","base","base","mid")
     call ton_main("I doubt she'll have many objections...","base","happyCl","base","mid")

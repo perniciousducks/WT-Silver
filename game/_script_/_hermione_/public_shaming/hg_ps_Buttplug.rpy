@@ -142,7 +142,7 @@ label hg_ps_buttplug:
                 call her_main("well.... ah, I... better get to.... class... then...", "angry", "wink", "base", "mid")
                 m "See you tonight [hermione_name]."
 
-            "\"You'll get 70.\"":
+            "\"You'll get seventy points.\"":
                 $ current_payout = 70
                 call her_main("*Hmmmph*...", "annoyed", "narrow", "angry", "R")
                 call her_main("Alright then, just don't expect me to show it to you!", "angry", "base", "angry", "mid")
@@ -397,7 +397,7 @@ label hg_ps_buttplug:
                     hide screen hermione_main
                     with d3
                     pause.2
-                    m "(Maybe those Weasley boys have anything that could help me with my friction problem...)"
+                    m "(Maybe those Weasley boys have anything that could help me with my.. *ahem* {i}her{/i} friction problem...)"
 
         elif buttplug_size == 3:
             # Large buttplug repeat

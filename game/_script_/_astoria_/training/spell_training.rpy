@@ -343,7 +343,7 @@ label ag_st_imperio_E2:
 
     m "..........."
     menu:
-        "Have her turn around.":
+        "-Have her turn around.-":
             call ast_main("Yes, that's a good idea!","smile","base","base","mid")
             call ton_main("................................","base","base","base","ahegao")
             call ast_main("Professor Tonks, I command you to turn around.","open","base","base","L")
@@ -359,7 +359,7 @@ label ag_st_imperio_E2:
             call ton_main("","base","base","base","ahegao",  flip=True)
             pause.8
 
-        "Ask her to remove her coat.":
+        "-Ask her to remove her coat.-":
             call ast_main("Yes, that should be easy.","smile","base","base","mid")
             call ton_main("................................","base","base","base","ahegao")
             call ast_main("Tonks, I command you to remove your coat.","open","closed","base","mid")
@@ -389,7 +389,7 @@ label ag_st_imperio_E2:
 
     menu:
         m "Make her..."
-        "Do pig noises again!" if d_flag_01 == False: # Jumps back to choices.
+        "\"Do pig noises again!\"" if d_flag_01 == False: # Jumps back to choices.
             $ d_flag_01 = True
 
             call ast_main("Do a pig noise?","open","base","worried","mid")
@@ -461,7 +461,7 @@ label ag_st_imperio_E2:
 
             jump ag_st_imperio_E2_choices
 
-        "Let her say something naughty!": # Fails
+        "\"Let her say something naughty!\"": # Fails
             call ast_main("*Huh*?...","open","base","worried","mid")
             g9 "Wouldn't you like to hear your teacher say something shameful?"
             call ast_main("Yes!","smile","base","angry","L")
@@ -537,7 +537,7 @@ label ag_st_imperio_E2:
             $ tonks.wear("all") # wear all previously stripped clothing pieces
             jump main_room
 
-        "Make her show us those tits!": # Succeeds
+        "\"Make her show us those tits!\"": # Succeeds
             call ast_main("What?","clench","base","base","mid")
             g9 "Have her show us her breasts!"
             call ast_main("Professor?!","open","closed","worried","mid")
@@ -887,7 +887,7 @@ label ag_st_imperio_E4:
 
     m "How about..."
     menu:
-        "Make her turn around!": # She's facing Astoria
+        "\"Make her turn around!\"": # She's facing Astoria
             call ast_main("Very well, Sir.","base","base","worried","mid")
             call ast_main("Professor, please turn around for me...","open","base","base","L")
             call ton_main("*hmm*... Yes!","base","base","worried","ahegao")
@@ -909,7 +909,7 @@ label ag_st_imperio_E4:
             call ton_main("........................","horny","base","angry","L")
             call ast_main("*uhm*...","clench","narrow","worried","R") # Astoria is uncomfortable
 
-        "Let her face me!":
+        "\"Let her face me!\"":
             call ast_main("Very well...","open","base","base","mid")
 
     call ast_main("And now?","clench","base","base","mid")
@@ -1276,7 +1276,7 @@ label ag_st_imperio_E5:
 
     g4 "..."
     menu:
-        "Start masturbating!":
+        "-Start masturbating!-":
             $ masturbating = True
             call hide_characters
             hide screen bld1

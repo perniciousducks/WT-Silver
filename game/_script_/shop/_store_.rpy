@@ -347,12 +347,12 @@ label object_purchase_item(item, quantity):
     $ order_cost = item.cost*quantity
     if gold >= (order_cost):
         menu:
-            "-add next day delivery (15 galleons)-" if gold >= order_cost + 15:
+            "-Add next day delivery (15 galleons)-" if gold >= order_cost + 15:
                 $ gold -= 15
                 $ transit_time = 1
             "{color=[menu_disabled]}-add next day delivery (15 galleons)-{/color}" if gold < order_cost + 15:
                 pass
-            "-no thanks-":
+            "-No thanks-":
                 pass
         $ gold -= order_cost
         $ deliveries.send(item, transit_time, quantity,'Gift')

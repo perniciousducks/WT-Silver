@@ -442,7 +442,7 @@ label cho_intro_E2:
 
     menu:
         m "(...)"
-        "-Sure, go for it!-":
+        "\"Sure, go for it!\"":
             call cho_main("What?", "annoyed", "narrow", "angry", "mid")
             call cho_main("Sir, I'm not joking around. This is serious!", "open", "base", "angry", "mid")
             call cho_main("Tell Granger to keep her bushy head out of it!", "clench", "narrow", "angry", "mid")
@@ -450,7 +450,7 @@ label cho_intro_E2:
             m "(I can just bribe Granger with some house-points anyway.)"
             m "I shall talk to her."
 
-        "-I'd prefer you didn't...-":
+        "\"I'd prefer you didn't...\"":
             call cho_main("Then do something about it!", "clench", "closed", "angry", "mid")
             call cho_main("And don't even think about calling me to your office again...", "open", "narrow", "angry", "mid")
             call cho_main("Not until you've dealt with that skank!", "clench", "narrow", "angry", "mid")

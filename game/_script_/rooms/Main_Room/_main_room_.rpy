@@ -15,9 +15,9 @@ screen main_room():
     # Hotkeys
     if room_menu_active and day > 1 and not renpy.variant('android'):
         use hotkeys_main
-    
+
     use weather
-    
+
     # Walls
     if daytime:
         add "images/rooms/_bg_/main_room_day.png" zoom 0.5
@@ -59,7 +59,7 @@ screen main_room():
         else:
             tooltip "Examine Door"
         action Jump("door")
-        sensitive room_menu_active
+        sensitive (room_menu_active and not (day == 1 and door_examined))
 
     # Cupboard
     add cupboard_OBJ.get_room_image() xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
@@ -184,7 +184,7 @@ screen genie_desk_interactive():
             hovered Show("gui_tooltip", img="emo_exclaim", xx=195+140, yy=210)
             unhovered Hide("gui_tooltip")
             action Jump("desk")
-            sensitive room_menu_active
+            sensitive (room_menu_active and not (day == 1 and desk_examined))
 
 screen gui_tooltip(img=None, xx=335, yy=210):
     add img xpos xx ypos yy
@@ -227,7 +227,7 @@ screen fireplace():
     #TODO Replace usage of screen fireplace_fire with flag fire_in_fireplace. Show/hide fire animation with transform effect
     # showif fire_in_fireplace:
     #     add "fireplace_fire" xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos+25 xanchor 0.5 yanchor 0.5
-    
+
     # Fireplace deco
     if fireplace_deco_OBJ.room_image:
         add fireplace_deco_OBJ.get_room_image() xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5

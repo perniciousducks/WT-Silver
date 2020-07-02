@@ -151,7 +151,7 @@ label cc_pf_strip_T1_intro_E1:
             m "I must say I'm very impressed!"
             call cho_main("Thank you, Sir.", "soft", "narrow", "worried", "downR", cheeks="blush")
 
-        "\"I've seen better, but that'll do.\"":
+        "\"*Eh*, I've seen better, but that'll do.\"":
             $ cho_mood += 3
             call cho_main("What?!", "mad", "base", "angry", "mid") # Upset
             g4 "(Crap!)"

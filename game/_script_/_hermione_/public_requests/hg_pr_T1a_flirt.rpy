@@ -349,6 +349,9 @@ label hg_pr_flirt_T2_E2:
 
         "\"The almighty hat is never wrong!\"":
             call her_main("Yes, of course... Everybody knows that...", "soft", "base", "base", "R")
+            if not hat_known:
+                m "(What hat again? I have no fucking clue what's she's blabbing about.)"
+                m "(Doesn't hurt playing along...)"
 
         "\"Could what make what?\"":
             call her_main("Oh, never mind me, [genie_name].", "soft", "base", "base", "R")

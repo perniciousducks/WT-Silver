@@ -871,7 +871,7 @@ label slytherin_match:
 
     menu:
         "(Let's give them what they came for...)"
-        "\"Independence!\"":
+        "-Independence!-":
             # Independence day
             play bg_sounds "music/fanfare.mp3" fadeout 3 fadein 1.0
 
@@ -909,7 +909,7 @@ label slytherin_match:
             $ renpy.sound.play("sounds/microphone_feedback.mp3")
             stop bg_sounds fadeout 5.5
 
-        "\"Sunshine and rainbows.\"":
+        "-Sunshine and rainbows.-":
             # Rocky
             stop bg_sounds fadeout 3.0
             play music "music/BattleThemeB.mp3" fadein 3.0
@@ -956,7 +956,7 @@ label slytherin_match:
             call gen_main("...", face="grin")
             call gen_main("Nailed it.", face="grin")
 
-        "\"Be winners!\"": #"\"Don't care about the scoreboard\"":
+        "-Be winners!-": #"\"Don't care about the scoreboard\"":
             # Hoosier
             stop bg_sounds fadeout 3.0
             play music "music/victory1.mp3" fadeout 3 fadein 1.0

@@ -186,9 +186,9 @@ label ss_he_hermione_strip:
 
     menu:
         m "..."
-        "-Sure, why the hell not-":
+        "\"Sure, why the hell not.\"":
             pass
-        "-Uhh-":
+        "\"*Uhh*\"":
             pass
 
     call sna_main("Splendid!","snape_45")

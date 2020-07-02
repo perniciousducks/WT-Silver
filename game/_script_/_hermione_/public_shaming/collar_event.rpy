@@ -20,18 +20,17 @@ label collar_scene:
     call her_main("Please, You don't think I'm a slut do you [genie_name]?", "open", "base", "base", "mid")
 
     menu:
-        "-You are a slut-":
+        "\"You are a slut!\"":
             jump slut_scene
-        "-You're a whore-" if her_reputation >= 21:
+        "-Tell her she's a whore-" if her_reputation >= 21:
             jump whore_scene
-        "-No, you're a slave-" if her_whoring >= 21:
+        "-Tell her she's a slave-" if her_whoring >= 21:
             jump slave_scene
-        "-Of course not, you're a good girl-":
+        "\"Of course not, you're a good girl...\"":
             jump good_girl_scene
 
 label slut_scene: #Locked to her being your slut
 
-    m "Of course you're a slut."
     call her_main("!!!", "angry", "base", "base", "mid",tears="soft")
     m "You come here nearly every day and do unspeakable things. A normal girl doesn't let her headmaster fuck her in the ass."
     call her_main("I knew it... How will I be able to live this down?", "mad", "base", "worried", "mid", tears="soft")
@@ -535,7 +534,6 @@ label slave_scene:
 
 label good_girl_scene:
 
-    m "Of course you aren't Miss Granger."
     m "You're just doing everything you can to help your friends."
     call her_main("*sob* Really [genie_name]?", "open", "happyCl", "worried", "mid")
     m "Really. You wouldn't have done any of this if the point system was fair would you?"

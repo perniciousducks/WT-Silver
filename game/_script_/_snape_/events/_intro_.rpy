@@ -28,7 +28,7 @@ label snape_intro_E1:
     call sna_walk("mid", "base")
     pause.2
 
-    call sna_main("","snape_01",xpos="base",ypos="base")
+    call sna_main("","snape_01", xpos="base", ypos="base", trans=d3)
     call ctc
 
     who2 "Albus... Do you have a moment?"
@@ -38,24 +38,22 @@ label snape_intro_E1:
     menu:
         m "..."
         "\"Actually I'm a bit busy.\"":
-            call sna_main("","snape_04")
+            call sna_main("","snape_04", trans=d3)
             who2 "Well, aren't you always, Albus?"
         "\"Of course. What is it?\"":
-            pass
+            call sna_main("","snape_06", trans=d3)
         "\"And Albus to you too.\"":
-            call sna_main("","snape_05")
+            call sna_main("","snape_05", trans=d3)
             who2 "What?"
             call sna_main("","snape_04")
             who2 "Albus I'm not in the mood for your... shenanigans."
         "\"Take me to your leader.\"":
-            call sna_main("","snape_01")
+            call sna_main("","snape_01", trans=d3)
             who2 "What?"
             who2 "*Hmm*...?"
             who2 "You mean the Minister for Magic?"
             call sna_main("","snape_03")
             who2 "I would rather avoid having to deal with that bureaucrat..."
-            hide screen snape_main
-            with d3
             m "Fine, never mind... How can I be of help?"
 
     call sna_main("","snape_06")
@@ -83,8 +81,6 @@ label snape_intro_E1:
     m "......................"
     call sna_main("","snape_05")
     who2 "You don't believe those rumours, do you Albus?"
-    hide screen snape_main
-    with d3
 
     menu:
         m ".............."
@@ -103,7 +99,7 @@ label snape_intro_E1:
     call sna_main("","snape_09")
     who2 "................"
 
-    stop music fadeout 1.0
+    stop music fadeout 5.0
 
     call sna_walk(action="leave")
 
@@ -114,6 +110,7 @@ label snape_intro_E1:
     m "........."
     m "So basically, I'm a genie disguised as a human, who is in turn disguised as another human..."
     m "No, that's not stupid at all..."
+    call bld("hide")
 
     $ snape_intro.E1_complete = True
     $ ss_event_pause += 1
@@ -313,7 +310,7 @@ label snape_intro_E3:
             call sna_main("","snape_06")
             who2 "Albus, lately you adopted a peculiar sense of humour, that I do not care for in a slightest..."
             who2 "Maybe you should spend a little less time in the company of that big oaf Hagrid."
-        "-\{Use magic to get the right answer\}-":
+        "-Use magic to get the right answer-":
             $ d_flag_01 = True
             hide screen snape_main
             with d3
@@ -376,7 +373,7 @@ label snape_intro_E3:
             $ d_flag_02 = True
             $ d_points +=1
             call sna_main("You are not going anywhere.","snape_01", wand=True)
-        "\"I work for {i}Albis Doombldore{/i}!\"" if not d_flag_03:
+        "\"I work for {i}Albis Doomblebore{/i}!\"" if not d_flag_03:
             $ d_flag_03 = True
             $ d_points +=1
             call sna_main("It's Albus Dumbledore, you moron!","snape_01", wand=True)
@@ -511,14 +508,15 @@ label snape_intro_E4:
 
     menu:
         "-Undo the spell-":
-            pass
+            $ renpy.play('sounds/fire_woosh.mp3')
     menu:
         "-Undo the spell-":
-            pass
+            $ renpy.play('sounds/fire_woosh.mp3')
     menu:
         "-Undo the spell-":
-            pass
+            $ renpy.play('sounds/fire_woosh.mp3')
 
+    m "(Something's not right, I can't undo the spell...)"
     call sna_main("Did it work? Albus, is that really you?","snape_01")
 
     menu:

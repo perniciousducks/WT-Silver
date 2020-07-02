@@ -13,11 +13,11 @@ label anal_pirate_event:
     "This story is a rewrite of the \"Time for anal\" personal favour. And the genie is a pirate? Who knows... Enjoy."
 
     menu:
-        "Part one":
+        "-Part one-":
             $ d_flag_01 = 0
-        "Part two":
+        "-Part two-":
             $ d_flag_01 = 1
-        "Part three":
+        "-Part three-":
             $ d_flag_01 = 2
 
     call music_block

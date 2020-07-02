@@ -1,4 +1,5 @@
 screen letter_on_desk():
+    tag letter_on_desk
     zorder 3
 
     add "/images/rooms/_objects_/desk/letter.png" zoom 0.5 xpos 334 ypos 356
@@ -22,7 +23,10 @@ label desk:
                 "-Read the letter-":
                     call bld
                     g9 "Of course I will!"
-                    hide screen letter_on_desk
+                "-Leave it be-":
+                    call bld
+                    g4 "Hell no!"
+                    g9 "Of course I will read it!"
 
             # First letter from Hermione
             $ letter_hg_1.send_letter()
@@ -32,6 +36,7 @@ label desk:
             $ menu_y = 0.9
 
             show screen letter
+            hide screen letter_on_desk
             with d5
 
             menu:

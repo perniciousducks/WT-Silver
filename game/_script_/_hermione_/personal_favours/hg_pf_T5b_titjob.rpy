@@ -309,7 +309,7 @@ label hg_pf_titjob_1:
             $ d_flag_01 = True #If TRUE Genie promised to warn her.
             $ ccg1 = 6
             call her_main("Thank you, [genie_name].", "base", "happy", "base", "mid")
-        "\"*Hmmmm*...{w=0.3} We'll see how I feel later...\"":
+        "\"*Hmmmm*... We'll see how I feel later...\"":
             $ ccg1 = 8
             call her_main("*Hmmmmph*...", "annoyed", "narrow", "annoyed", "mid")
             call her_main("At least try and avoid my hair...", "normal", "happyCl", "worried", "mid")
@@ -423,7 +423,7 @@ label hg_pf_titjob_1:
 
     menu:
         m "..."
-        "\"(Cum in her mouth!)\"":
+        "-Cum in her mouth!-":
             $ her_mood += 3
             call bld
             g4 "Here it comes, [hermione_name]!"
@@ -503,7 +503,7 @@ label hg_pf_titjob_1:
             call her_main("I don't think I have enough room in my stomach...")
             call her_main("Could I please have my points now, [genie_name]?", "soft", "base", "angry", "mid")
 
-        "\"(Cover her tits!)\"":
+        "-Cover her tits!-":
             with hpunch
             call bld
             g4 "ARGH!"
@@ -848,7 +848,7 @@ label hg_pf_titjob_2_cumming:
 
     menu:
         m "..."
-        "\"(Cum in her mouth).\"":
+        "-Cum in her mouth-":
             call bld
             g4 "Take this, whore!"
             $ ccg1 = 25
@@ -916,7 +916,7 @@ label hg_pf_titjob_2_cumming:
                 call her_main("Maybe if you ask nicely...", "soft", "narrow", "base", "mid_soft")
             call her_main("Will that be all, [genie_name]?", "base", "closed", "base", "mid")
 
-        "\"(On her tits).\"":
+        "-Cum on her tits-":
             call her_chibi_scene("tj_pause", trans=d5)
 
             call bld

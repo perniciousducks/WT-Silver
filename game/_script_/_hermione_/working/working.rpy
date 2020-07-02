@@ -41,9 +41,8 @@ label maid_responses:
     pause.5
 
     menu:
-        "-Ask her how her day was-":
+        "\"How was your day?\"":
             if day_random <= 4:
-                m "How was your day?"
                 her "It was as normal a day of cleaning rooms could be."
                 her "Although considering that I'm supposed to be in class during the day I guess it's not that normal."
                 m "Don't worry [hermione_name], you'll get your points."
@@ -128,7 +127,7 @@ label barmaid_responses:
     pause.5
 
     menu:
-        "-Ask her how her day was-":
+        "\"How was your day?\"":
             her "Fine..."
             m "Anything unusual happen?"
             her "Not really, I just served people drinks."
@@ -203,9 +202,8 @@ label gryffindor_cheer_responses:
     pause.5
 
     menu:
-        "-Ask her how her day was-":
+        "\"How was your day?\"":
             if day_random <= 2:
-                m "Hello, [hermione_name], how was your day?"
                 call her_main("It was good [genie_name], I think that the team morale has really started to go up.", "base", "base", "base", "mid")
                 m "How so?"
                 call her_main("Well, since I've started they seem to have improved their tactics.", "open", "base", "base", "mid")
@@ -217,7 +215,6 @@ label gryffindor_cheer_responses:
                 ">You receive [payment] gold coins."
                 m "Well done, [hermione_name], twenty points to Gryffindor."
             elif day_random >= 3 and day_random <= 5:
-                m "Hello, [hermione_name], how was your day?"
                 call her_main("Tiring. This cheering thing really is quite exhausting.", "open", "base", "worried", "mid")
                 m "Anything interesting happen?"
                 call her_main("Not unless you count me almost dropping my pom pom.", "normal", "base", "base", "mid")
@@ -226,9 +223,6 @@ label gryffindor_cheer_responses:
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], twenty points to Gryffindor."
             elif day_random >= 6 and day_random <= 8:
-                m "Welcome back [hermione_name]."
-                call her_main("Hello [genie_name].", "open", "base", "base", "mid")
-                m "How did everything go today?"
                 call her_main("Very well thank you, all the boys said that I helped keep their spirits up.", "open", "base", "base", "mid")
                 m "{size=-5}I'm sure that wasn't the only thing you've helped stay up...{/size}"
                 call her_main("What was that [genie_name]?", "open", "squint", "base", "mid")
@@ -252,7 +246,6 @@ label gryffindor_cheer_responses:
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], twenty points to Gryffindor."
             else:
-                m "Welcome back [hermione_name], how was your day?"
                 call her_main("We won! We managed to beat Slytherin.", "base", "base", "base", "mid")
                 m "That must have been very exhilarating. I'm sure your cheering gave the extra motivation needed to win."
                 call her_main("I think it did [genie_name]. They were all very excited to receive their reward for winning the game.", "base", "happyCl", "base", "mid")
@@ -357,7 +350,7 @@ label slytherin_cheer_responses:
     pause.5
 
     menu:
-        "-Ask her how her day was-":
+        "-Ask her about her day-":
             if day_random <= 2:
                 m "How was your day today [hermione_name]?"
                 call her_main("Exhausting... Those Slytherin pigs insisted that I cheer for their entire practice session.", "open", "closed", "angry", "mid")

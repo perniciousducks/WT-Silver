@@ -67,15 +67,15 @@ label hg_pf_admire_breasts_T2:
     call hg_pf_admire_breasts_transition
 
     menu:
-        "\"Break your promise. Grab the tits!\"":     # Event will fail.
+        "-Break your promise. Grab the tits!-":     # Event will fail.
             jump hg_pf_admire_breasts_T2_touch
 
-        "\"Keep promise. Admire visually.\"":
+        "-Keep promise. Admire visually.-":
             call hg_pf_admire_breasts_T2_promise
 
             jump end_hg_pf_admire_breasts
 
-        "\"Start jerking off.\"":                      # 2/3 branches will fail.
+        "-Start jerking off.-":                      # 2/3 branches will fail.
             jump hg_pf_admire_breasts_T2_masturbate
 
 label hg_pf_admire_breasts_T2_promise: # Call label
@@ -241,13 +241,13 @@ label hg_pf_admire_breasts_T3:
     call hg_pf_admire_breasts_transition
 
     menu:
-        "\"Break your promise. Grab the tits!\"":
+        "-Break your promise. Grab the tits!-":
             call hg_pf_admire_breasts_T3_touch
 
-        "\"Keep promise. Admire visually.\"":
+        "-Keep promise. Admire visually.-":
             call hg_pf_admire_breasts_T3_promise
 
-        "\"Start jerking off.\"":
+        "-Start jerking off.-":
             call hg_pf_admire_breasts_T3_masturbate
 
 
@@ -273,7 +273,7 @@ label hg_pf_admire_breasts_T3_promise:
         "\"Hm... I've seen better.\"":
             $ her_mood += 7
 
-            her "Tsk..."
+            her "*Tsk*..."
             her "Are we done then?"
 
             return
@@ -457,13 +457,13 @@ label hg_pf_admire_breasts_T4:
     call hg_pf_admire_breasts_transition
 
     menu:
-        "\"Break your promise. Grab the tits!\"":
+        "-Break your promise. Grab the tits!-":
             call hg_pf_admire_breasts_T4_touch
 
-        "\"Keep promise. Admire visually.\"":
+        "-Keep promise. Admire visually.-":
             call hg_pf_admire_breasts_T4_promise
 
-        "\"Start jerking off.\"":
+        "-Start jerking off.-":
             call hg_pf_admire_breasts_T4_masturbate
 
     jump end_hg_pf_admire_breasts

@@ -184,10 +184,8 @@ label hg_pf_grope_ass_T1_back:
 
             menu:
                 "\"Dammit. Now I feel like crap...\"":
-                    m "Dammit... Now I feel like crap..."
                     g9 "But who could resist slapping that little behind of hers?"
                 "\"She made me do this!\"":
-                    g4 "She made me do this!"
                     m "Acting all wounded now..."
                     g9 "I bet she actually enjoyed the slapping and just won't admit it..."
 
@@ -433,7 +431,7 @@ label hg_pf_grope_ass_T2_continue:
 
             pass
 
-        "-No. That's enough for today. Dismiss her-":
+        "-That's enough for today. Dismiss her-":
             jump end_hg_pf_grope
 
     menu:
@@ -632,7 +630,7 @@ label hg_pf_grope_ass_T3_front:
         "-Slide your hands across her pussy-" if not hermione.is_worn("panties"):
             call her_chibi_scene("grope_ass_front", trans=d7)
 
-        "-No. That's enough for today. Dismiss her-":
+        "-That's enough for today. Dismiss her-":
             jump end_hg_pf_grope
 
     jump hg_pf_grope_ass_T3_continue
@@ -695,7 +693,7 @@ label hg_pf_grope_ass_T3_back:
         "-Slide your hands across her pussy-" if not hermione.is_worn("panties"):
             call her_chibi_scene("grope_ass_back", trans=d7)
 
-        "-No. That's enough for today. Dismiss her-":
+        "-That's enough for today. Dismiss her-":
             jump end_hg_pf_grope
 
     jump hg_pf_grope_ass_T3_continue
@@ -1036,7 +1034,7 @@ label hg_pf_grope_T4_continue:
 
             pass
 
-        "-No. That's enough for today. Dismiss her-":
+        "-That's enough for today. Dismiss her-":
 
             jump end_hg_pf_grope
 

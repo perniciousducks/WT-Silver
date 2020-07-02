@@ -36,7 +36,7 @@ label common_start(set_daytime):
     if letter_queue_list != [] and not owl_away:
         call play_sound("owl")
 
-    call room("main_room", stop_sound=False)
+    call room("main_room", stop_sound=False, hide_screens=False)
 
     hide screen blkfade
     with dissolve

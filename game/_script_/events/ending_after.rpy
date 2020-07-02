@@ -49,7 +49,7 @@ label ending_after:
     # Choose to end the game or continue playing
     menu:
         g14 "What should I do?"
-        "Go home, to Agrabah!\n{size=-4}(exit to main menu){/size}":
+        "-Go home, to Agrabah!\n{size=-4}(exit to main menu){/size}-":
             g14 "Yes, that is probably for the best..."
             show screen white
             pause .1
@@ -63,7 +63,7 @@ label ending_after:
 
             $ renpy.full_restart()
 
-        "Cause a time paradox at Hogwarts":
+        "-Cause a time paradox at Hogwarts-":
             g14 "On the other hand..."
             g14 "Who doesn't love..."
             show screen white

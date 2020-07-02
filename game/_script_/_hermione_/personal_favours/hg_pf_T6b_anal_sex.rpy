@@ -376,7 +376,7 @@ label hg_anal_sex_1:
             g4 "*ARGH*!"
 
     menu:
-        "-Fill Hermione up with cum-":
+        "-Fill her up-":
             $ hermione_tears = "mascara" # Used to show mascara at the end of the event.
 
             g4 "*Argh*!"
@@ -478,7 +478,7 @@ label hg_anal_sex_1:
 
             return
 
-        "-Pull out and cum on Hermione-":
+        "-Pull out and cum on her-":
             if not use_cgs:
                 call her_chibi_scene("sex_cum_out", trans=d5)
             else:
@@ -679,7 +679,7 @@ label hg_anal_sex_2:
 
     menu:
         g4 "!!!"
-        "-Fill Hermione up with cum-":
+        "-Fill her up-":
             if not use_cgs:
                 call her_chibi_scene("sex_cum_in", trans=d5)
             else:
@@ -703,7 +703,7 @@ label hg_anal_sex_2:
             call her_main("*Ah*...{heart}", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
             m "......"
 
-        "-Cum all over Hermione-":
+        "-Cum all over her-":
             if not use_cgs:
                 call her_chibi_scene("sex_cum_out", trans=d5)
             else:

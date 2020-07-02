@@ -518,11 +518,11 @@ label astoria_intro_E3:
 
     menu:
         m "(...)"
-        "You're dismissed, Miss Granger!":
+        "\"You're dismissed, Miss Granger!\"":
             call her_main("What?!", "open", "wide", "worried", "shocked")
             pass
 
-        "Go and fetch Snape!":
+        "\"Go and fetch Snape!\"":
             $ d_flag_01 = True
             pass
 

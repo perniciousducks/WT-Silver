@@ -241,7 +241,7 @@ label cc_pf_blowjob_T3_intro_E1:
 
 label cc_pf_blowjob_1:
     menu:
-        "\"(A deal's a deal...)\"": # FAIL
+        "-A deal's a deal...-": # FAIL
             gen "That's not what we agreed on."
             gen "Get those lips on there..."
 
@@ -327,7 +327,7 @@ label cc_pf_blowjob_1:
 
             jump end_cho_event
 
-        "\"(Take it slow...)\"": #Cho strokes and licks genie then goes back to stroking until climax
+        "-Take it slow...-": #Cho strokes and licks genie then goes back to stroking until climax
             gen "Okay... just keep stroking it for now..."
 
             if cho_bj_choice == None:
@@ -453,7 +453,7 @@ label cc_pf_blowjob_1:
             # End of demo
 
             menu:
-                "\"(Warn her)\"":
+                "-Warn her-":
                     $ warned_her = True
 
                     gen "That's it, almost there...!"
@@ -462,7 +462,7 @@ label cc_pf_blowjob_1:
                     "....."
                     gen "Get ready for your reward [cho_name]!"
                     menu:
-                        "\"(Cum on her face)\"":
+                        "-Cum on her face-":
                             cho "..." #Eyes and mouth closed
                             gen "*ARGH!*"
                             "....." #Cum stage 1 ( Each stage Adds layers of cum)
@@ -477,7 +477,7 @@ label cc_pf_blowjob_1:
                             cho "It's so sticky..." #blush
                             #Adds cum on cho's Doll face when CG ends
 
-                        "\"(Cum on her tits)\"":
+                        "-Cum on her tits-":
                             cho "..." #Eyes and mouth closed
                             gen "*ARGH!*"
                             "....." #Cum stage 1
@@ -498,7 +498,7 @@ label cc_pf_blowjob_1:
                             gen "Now, get on your feet and let me have a proper look at you..."
                             #Cuts back to office screen  (sound of cloth etc as genie puts dick away and Cho moves)
 
-                "\"(Don't)\"":
+                "-Don't-":
                     $ warned_her = False
 
                     gen "(You better be ready slut...)"
@@ -749,7 +749,7 @@ label cc_pf_blowjob_T3_E2:
 
     gen "(Time to fill this slut up... Should I warn her?)"
     menu:
-        "\"(Warn her)\"":
+        "-Warn her-":
             gen "[cho_name]... I think..."
             "....."
             "....."
@@ -969,7 +969,7 @@ label cc_pf_blowjob_T3_E2:
                     #Cho leaves
                     #End Scene #Marks at completed
 
-        "\"(Just cum down her throat)\"":
+        "-Just cum down her throat-":
             $ cho_bj_choice = "throat"
             gen "[cho_name]..."
             gen "I was wrong...{w=0.4} earlier...{w=0.4} there's one more thing for you to learn today..." #Genie puts hand on cho's head

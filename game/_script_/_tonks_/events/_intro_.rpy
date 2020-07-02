@@ -284,7 +284,7 @@ label tonks_intro_E2:
             call ton_main("What?!", "open", "wide", "shocked", "stare")
             call ton_main("I'm sorry, Professor. I clearly must have misheard you...","open","closed","angry","mid")
             call ton_main("Sir, what did you just call me?","angry","base","angry","mid")
-            m "*Uhm*...{w}isn't that your name?"
+            m "*Uhm*...{w=0.5}isn't that your name?"
             call ton_main("My name is \"Tonks\", Professor!","upset","base","angry","mid")
             call ton_main("You of all people should know this...","upset","base","angry","R")
             m ".............."
@@ -444,15 +444,15 @@ label tonks_intro_E3:
     m "(It's that hot Ministry chick again...)"
 
     menu:
-        "Yes, please come on in.":
+        "\"Yes, please come on in.\"":
             pass
-        "Not right now.":
+        "\"Not right now.\"":
             ton "But it's urgent, Sir. I need to talk to you about Miss Granger's favour trading accusations..."
             g4 "(Shit. That can't be good.)"
             m "Do you mind coming another time, I'm very busy...{w} watering the bird."
             ton "Watering what?"
             ton "Sir, I'm coming in."
-        "Who is it?":
+        "\"Who is it?\"":
             ton "It's Tonks."
             m "Who?"
             ton "..."
@@ -490,11 +490,11 @@ label tonks_intro_E3:
 
     menu:
         g4 "I am..."
-        "Albus Dumbledore!":
+        "\"Albus Dumbledore!\"":
             call ton_main("You are most certainly {b}not{/b} Albus Dumbledore!","upset","base","angry","mid")
             g4 "No wait, it was {i}Albertus Dumblerdore{/i}! That's it!"
             m "(Yes, that was probably it...)"
-        "You know who!":
+        "\"You know who!\"":
             call ton_main("What?", "base", "wide", "shocked", "stare")
             m "You...{w=0.8} know...{w=0.8} who..."
             call ton_main("That can't be true!","open","base","worried","mid")
@@ -635,13 +635,13 @@ label tonks_intro_E3:
 
     menu:
         m "You can call me..."
-        "Professor":
+        "\"Professor.\"":
             $ ton_genie_name = "Professor"
             call ton_main("Very well.","base","base","base","mid")
-        "Genie":
+        "\"Genie.\"":
             $ ton_genie_name = "Genie"
             call ton_main("Very well.","base","base","base","mid")
-        "Daddy":
+        "\"Daddy...\"":
             $ ton_genie_name = "Daddy"
             call ton_main("What? Are you serious?!", "open", "wide", "shocked", "stare")
             call ton_main("*Ha-Ha-Ha!*...{w} you're too funny!", "smile", "base", "worried", "mid", hair="happy")

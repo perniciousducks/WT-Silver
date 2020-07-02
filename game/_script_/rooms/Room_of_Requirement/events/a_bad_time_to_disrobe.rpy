@@ -21,9 +21,9 @@ label a_bad_time_to_disrobe:
     nar "And with the cloak come great opportunities."
 
     menu:
-        "Part 1":
+        "-Part 1-":
             jump a_bad_time_to_disrobe_part_1
-        "Part 2":
+        "-Part 2-":
             jump a_bad_time_to_disrobe_part_2
 
 

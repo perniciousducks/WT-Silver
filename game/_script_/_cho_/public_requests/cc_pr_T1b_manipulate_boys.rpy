@@ -741,18 +741,18 @@ label cc_pr_manipulate_boys_T3_twins:
     call cho_main(face="angry", xpos="mid", ypos="base", trans=fade)
 
     menu:
-        "-*Ha-ha-ha-ha*-":
-            g9 "{i}I'm blue, daba dee bada die, {size=-2}daba dee daba die,{/size} {size=-4}daba dee bada die,{/size} {size=-6}daba dee daba die........{/size}{/i}"
+        "\"*Ha-ha-ha-ha*\"":
+            g9 "{i}I'm blue, {size=-2}daba dee bada die,{/size} {size=-3}daba dee daba die,{/size} {size=-6}daba dee bada die,{/size} {size=-9}daba dee daba die........{/size}{/i}"
             cho "*glares daggers*"
             m "*Ahem*.. I meant to ask, what happened?"
 
-        "-Feeling blue today?-":
+        "\"Feeling blue today?\"":
             cho "Oh? What gave it away?" # Rolling eyes
             cho "Was it the grimmace on my face?" # Obviously sarcastic
             g9 "Something like that."
             m "So, what happened?"
 
-        "-What the hell happened?-":
+        "\"What the hell happened?\"":
             g4 "You look like a blueberry!"
             m "Or a bilberry!"
             g9 "Or a gummiberry!"
@@ -1093,7 +1093,7 @@ label cc_pr_manipulate_boys_twins_branch:
         cho "But why Slytherin..."
 
         menu:
-            "-If you don't like it you can go without any!-":
+            "\"If you don't like it you can go without any!\"":
                 cho "What!"
                 m "You heard me..."
                 m "I went out of my way to fetch those clothes for you..."
@@ -1102,9 +1102,9 @@ label cc_pr_manipulate_boys_twins_branch:
                 #Cho storms out
                 #Mood very angry
 
-            "-It's not my fault, Some idiot picked that option!-":
+            "\"It's not my fault, Some idiot picked that option!\"":
                 cho "What?"
-                m "It was decided by some unknown external force."
+                m "It was decided by some unknown {i}external{/i} force."
                 cho "That doesn't make any sense!"
                 m "I know!"
                 cho "..."
@@ -1125,7 +1125,7 @@ label cc_pr_manipulate_boys_twins_branch:
                 #Cho storms out
                 #Mood angry
 
-            "-Sorry...-":
+            "\"{size=-6}Sorry...{/size}\"":
                 cho "..."
                 cho "(Well that's a first...)" #taken aback
                 m "Sorry for going out of my way to help you!"
@@ -1171,7 +1171,7 @@ label cc_pr_manipulate_boys_twins_branch:
         m "Oh..."
 
         menu:
-            "-I could go back and fetch the Slytherin one instead-":
+            "\"I could go back and fetch the Slytherin one instead.\"":
                 cho "No!"
                 cho "I mean... that's fine... you've already gone out of your way."
                 m "You sure? It's not that far-"
@@ -1194,7 +1194,7 @@ label cc_pr_manipulate_boys_twins_branch:
                 cho "Good night..."
                 #Cho leaves
                 #Cho Mood stays the same
-            "-I'm sure none of the Gryffindors will spot you-":
+            "\"I'm sure none of the Gryffindors will spot you.\"":
                 cho "If that's the case then why wear any clothes at all?"
                 m "That is an option..."
                 cho "No!"
@@ -1228,7 +1228,7 @@ label cc_pr_manipulate_boys_twins_branch:
         cho "So, don't you think the Hufflepuffs would assume Cedric threw the match on purpose or start asking questions if they suddenly saw me wearing this?"
 
         menu:
-            "-So what?-":
+            "\"So what?\"":
                 cho "So what?!?"
                 m "You didn't have any problems using his weaknesses during the game so why do you care if he gets in trouble with his house?"
                 cho "That's different..."
@@ -1246,7 +1246,7 @@ label cc_pr_manipulate_boys_twins_branch:
                 #Cho leaves
                 #Mood Slightly mad
 
-            "-That's true, maybe you should just head back naked...-":
+            "\"That's true, maybe you should just head back naked...\"":
                 cho "What!"
                 m "You heard me, make like a bee and buzz off!"
                 g9 "And you better hurry up before those sweets wear off or you'll find it even harder to explain your current state."
@@ -1260,7 +1260,7 @@ label cc_pr_manipulate_boys_twins_branch:
                 #Cho leaves and slams the door
                 #Mood very angry
 
-            "-I'm sure none of the Hufflepuffs will spot you-":
+            "\"I'm sure none of the Hufflepuffs will spot you.\"":
                 cho "How can you be so sure about-"
                 cho "Actually, you're probably right... you're a genius!"
                 g4 "I am?"

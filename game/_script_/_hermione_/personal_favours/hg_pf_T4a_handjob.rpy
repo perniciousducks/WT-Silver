@@ -1047,7 +1047,7 @@ label hg_pf_handjob_2_cumming:
                 call her_main("I will just wipe the worst off and wear a robe, I hope that nobody will notice...", "grin", "narrow", "base", "dead")
             call her_main("Can I get my payment now?", "angry", "wink", "base", "mid")
 
-        "\"(Cum in her mouth!)\"" if hg_blowjob.trigger == True: # Has done blowjobs already.
+        "-Cum in her mouth!-" if hg_blowjob.trigger == True: # Has done blowjobs already.
             call bld
             m "Open your mouth, [hermione_name]!"
             call her_main("What?!", "open", "wide", "base", "stare", ypos="head")

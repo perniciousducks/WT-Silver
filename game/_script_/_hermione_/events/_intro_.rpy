@@ -1086,6 +1086,7 @@ label hermione_intro_E6:
             $ current_favor = "bad_girl"
         "\"Blow me\"" if not d_flag_01:
             $ d_flag_01 = True
+            g9 "(*heh*, if only that worked...)"
             m "(I don't think she's ready for that just yet)"
             m "(Let's start with something simpler.)"
             jump hermione_intro_E6.choices
@@ -1209,7 +1210,7 @@ label hermione_intro_E6:
         call her_main("What about this one then?", "disgust", "slit", "low", "stare")
 
         menu:
-            "\"Ha-ha! You look like an idiot!\"":
+            "\"*Ha-ha*! You look like an idiot!\"":
                 jump hermione_intro_E6.end
             "\"No, not stupid enough.\"":
                 pass
@@ -1227,7 +1228,7 @@ label hermione_intro_E6:
         call her_main("I give up...", "upset", "narrow", "worried", "down")
 
         menu:
-            "\"Ha-ha-ha, perfect!\"":
+            "\"*Ha-ha-ha*, perfect!\"":
                 call her_main("What?", "open", "base", "angry", "mid")
                 call her_main("But that's my normal face!", "angry", "base", "angry", "mid")
                 g9 "*he-he-he* Don't get mad, [hermione_name], I'm just messing with you."

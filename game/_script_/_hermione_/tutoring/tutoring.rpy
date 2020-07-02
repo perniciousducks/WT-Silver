@@ -341,7 +341,7 @@ label hg_tutor_E5:
     call her_main("With the tongue and everything!", "open", "base", "base", "R", cheeks="blush")
 
     menu:
-        "-Start to jerk off while she is talking-":
+        "-Start jerking off-":
             $ masturbating = True
             hide screen hermione_main
             hide screen blktone
@@ -350,7 +350,7 @@ label hg_tutor_E5:
             with d3
             call ctc
 
-        "Do nothing.":
+        "-Just listen-":
             $ masturbating = False
             pass
 

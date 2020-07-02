@@ -416,7 +416,7 @@ label hg_pf_strip_T1_intro_E2:
         "\"Yes, that's right. Take it off!\"":
             call her_main("Of course!")
             call her_main("Here it goes!", "open", "narrow", "worried", "down")
-        "\"You need to calm down, [hermione_name]. \"":
+        "\"You need to calm down, [hermione_name].\"":
             call her_main("Well, {size=+7}EXCUSE ME{/size}, [genie_name]!")
             call her_main("You told me to strip for you, but you never told me your preferences in regards to the pace!")
             m "Well, I'm telling you now, [hermione_name]!"
@@ -662,10 +662,10 @@ label hg_pf_strip_T1_E2:
         m "(Hm... Should I invite Snape to watch as well?)"
 
         menu:
-            "-\"Yes! Hermione needs an audience!\"-":
+            "-Yes! Hermione needs an audience!-":
                 jump hg_pf_strip_T1_Snape
 
-            "-\"Nah... That's not a good idea...\"-":
+            "-Nah. That's not a good idea...-":
                 pass
 
     # Locks Door.

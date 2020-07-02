@@ -132,7 +132,7 @@ label susan_intro_E1:
             call sus_main("Sir?","upset","base","worried","mid")
             m "(Or should say darker?)"
             show screen blktone
-            g4 "(Those tits must cast a huge-ass shadow...)"
+            g9 "(Those tits must cast a huge-ass shadow...)"
             hide screen blktone
 
     call sus_main("Professor Tonks said you wanted to see me?","base","base","base","mid")

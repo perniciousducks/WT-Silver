@@ -41,11 +41,11 @@ label cc_pr_spy_boys_start:
         m "How about..."
 
         menu:
-            "-Jason Porn-":
+            "\"Jason Porn\"":
                 g9 "Explosive truth seeker."
-            "-Agent 69-":
+            "\"Agent 69\"":
                 g9 "Licence to frisk."
-            "-Cody Spanks-":
+            "\"Cody Spanks\"":
                 g9 "No ass left untouched!"
 
         cho "Merlin's beard..." # Facepalm

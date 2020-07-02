@@ -99,22 +99,22 @@ label tentacle_scene_intro:
 
     menu:
         m "(Hmm... how should I start?)"
-        "Dear Hermione, ...":
+        "\"Dear Hermione, ...\"":
             $ d_flag_01.append("Dear Hermione,\n\n")
-        "Dear [hermione_name], ...":
+        "\"Dear [hermione_name], ...\"":
             $ d_flag_01.append("Dear [hermione_name],\n\n")
-        "You, the bimbo, ...":
+        "\"You, the bimbo, ...\"":
             $ d_flag_01.append("You, the bimbo,\n\n")
 
     "*Scribble* *Scribble*"
 
     menu:
         m "....*mhmm*...."
-        "...I had very important business matter to attend to...":
+        "\"...I had very important business matter to attend to...\"":
             $ d_flag_01.append("I had very important business matter to attend to,")
-        "...I went out to visit a brothel...":
+        "\"...I went out to visit a brothel...\"":
             $ d_flag_01.append("I went out to visit a brothel,")
-        "...I have turned myself into a plant...":
+        "\"...I have turned myself into a plant...\"":
             $ d_flag_01.append("I have turned myself into a plant,")
             $ d_flag_02 = True
 
@@ -122,18 +122,18 @@ label tentacle_scene_intro:
 
     menu:
         m "..."
-        "...I ask you kindly...":
+        "\"...I ask you kindly...\"":
             $ d_flag_01.append("I ask you kindly,")
-        "...Just listen for once...":
+        "\"...Just listen for once...\"":
             $ d_flag_01.append("just listen for once and")
 
     "*Scribble* *Scribble*"
 
     menu:
         m "...and now..."
-        "...take this plant with you to your class..." if not d_flag_02:
+        "\"...take this plant with you to your class...\"" if not d_flag_02:
             $ d_flag_01.append("take this plant with you to your class.\n\n")
-        "...take this plant then shove it up your ass..." if not d_flag_02:
+        "\"...take this plant then shove it up your ass...\"" if not d_flag_02:
             $ d_flag_01.append("take this plant then {b}{s}shove it up yo{/s}{/b} bring it to class.\n\n")
             g9 "Shove it up yo-..."
             call gen_chibi("sit_behind_desk")
@@ -142,10 +142,10 @@ label tentacle_scene_intro:
             m "What if she does it and I get shat on... No, no, no, let me change that."
             call gen_chibi("paperwork")
             with d3
-        "...take me to class..." if d_flag_02:
+        "\"...take me to class...\"" if d_flag_02:
             $ d_flag_01.append("take me to class.\n\n")
 
-        "...shove me up your ass..." if d_flag_02:
+        "\"...shove me up your ass...\"" if d_flag_02:
             $ d_flag_01.append("{b}{s}shove me up yo{/s}{/b} take me to class.\n\n")
             g9 "Shove me up yo-..."
             call gen_chibi("sit_behind_desk")
@@ -159,9 +159,9 @@ label tentacle_scene_intro:
 
     menu:
         m "..."
-        "...Sincerely, Dombledure.":
+        "\"...Sincerely, Dombledure.\"":
             $ d_flag_01.append("Sincerely,\nDombledure.")
-        "...Yours truly, [genie_name].":
+        "\"...Yours truly, [genie_name].\"":
             $ d_flag_01.append("Yours truly,\n[genie_name].")
 
     $ d_flag_01 = " ".join(d_flag_01)

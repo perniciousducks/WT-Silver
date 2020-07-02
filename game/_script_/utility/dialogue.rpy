@@ -5,7 +5,7 @@ define sprite_pos = {
     "x": {
         "base": 640,
         "default": 640,
-        "far_right": 640,
+        "far_right": 650,
         "mid": 300,
         "left": 200,
         "far_left": -80,

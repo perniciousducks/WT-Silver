@@ -125,7 +125,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
         m "You can keep your bra on for all I care..."
     call her_main("Three seconds! Not even a second longer!", "angry", "base", "angry", "mid")
     m "How about fi-.."
-    her "{size=+4}Not even a second longer!{/size}"
+    call her_main("{size=+4}Not even a second longer!{/size}", "scream", "narrow", "angry", "mid")
     m "(...)"
 
     menu:

@@ -124,7 +124,7 @@ default cc_pr_manipulate_boys = event_class(title = "Manipulate the boys!", star
             ["cc_pr_manipulate_boys_T3_harry"]
         ]
     ],
-    icons = ["huff", "slyt"], #if a tier doesn't need an icon replace with None
+    icons = ["huff", "slyt", "gryf"], #if a tier doesn't need an icon replace with None
     iconset = [["star_empty", "star_yellow"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
 )
 
@@ -156,7 +156,7 @@ default cc_pr_manipulate_girls = event_class(title = "Manipulate the girls!", st
 
 # TODO: lock favours until you finish `talk to me` part 3 in tier 3
 
-default cc_requests_list = [cc_pr_manipulate_boys, cc_pr_spy_girls, cc_pr_manipulate_girls, cc_pr_spy_boys]
+default cc_requests_list = [cc_pr_spy_boys, cc_pr_manipulate_boys, cc_pr_spy_girls, cc_pr_manipulate_girls]
 
 label reset_cho_progress:
     $ reset_variables(

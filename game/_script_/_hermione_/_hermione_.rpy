@@ -56,10 +56,7 @@ label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
             hermione_xpos = int(sprite_pos["x"].get(xpos, xpos))
 
         if ypos:
-            if ypos == "head":
-                use_hermione_head = True
-            elif ypos in ("base", "default"):
-                use_hermione_head = False
+            use_hermione_head = True if ypos == "head" else False
 
             hermione_ypos = int(sprite_pos["y"].get(ypos, ypos))
 
@@ -121,6 +118,13 @@ screen hermione_main():
     tag hermione_main
     zorder hermione_zorder
     sensitive False
+
+    if use_hermione_head:
+        $ _xpos = sprite_pos["x"]["far_right"] if hermione_flip == 1 else sprite_pos["x"]["far_left"]
+        $ _pos = (_xpos, hermione_ypos)
+    else:
+        $ _pos = (hermione_xpos, hermione_ypos)
+
     default hermione_img = apply_doll_transition(hermione.get_image(), "hermione_main", use_hermione_head)
     if hermione_animation != None:
         #TODO Remove temporary plug image solution once the butt plug events have some kind of CG

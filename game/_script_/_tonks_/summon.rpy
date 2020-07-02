@@ -15,9 +15,6 @@ label summon_tonks:
     call tonks_summon_setup
 
     label tonks_requests:
-    # Hair fix
-    $ tonks.get_equipped("hair").color = tonks_haircolor
-    $ tonks_haircolor = tonks.get_equipped("hair").color
 
     # Reset
     call reset_menu_position
@@ -57,6 +54,9 @@ label summon_tonks:
             $ screenshot_image = ScreenshotImage.capture()
             $ renpy.call_in_new_context("wardrobe", "ton_main")
             with d2
+
+            # Hair fix
+            $ tonks_haircolor = tonks.get_equipped("hair").color
             jump tonks_requests
 
         "{color=[menu_disabled]}-Hidden-{/color}" if not tonks_wardrobe_unlocked:

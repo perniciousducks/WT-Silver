@@ -24,10 +24,7 @@ label lun_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
         $ luna_xpos = int(sprite_pos["x"].get(xpos, xpos))
 
     if ypos:
-        if ypos == "head":
-            $ use_luna_head = True
-        elif ypos in ("base", "default"):
-            $ use_luna_head = False
+        $ use_luna_head = True if ypos == "head" else False
 
         $ luna_ypos = int(sprite_pos["y"].get(ypos, ypos))
 

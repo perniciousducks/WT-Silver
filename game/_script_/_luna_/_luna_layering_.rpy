@@ -3,8 +3,14 @@ screen luna_main():
     tag luna_main
     zorder luna_zorder
     sensitive False
+
+    if use_luna_head:
+        $ _xpos = sprite_pos["x"]["far_right"] if luna_flip == 1 else sprite_pos["x"]["far_left"]
+    else:
+        $ _xpos = luna_xpos
+
     fixed:
-        at main_sprite_position(luna_xpos, luna_ypos, luna_flip, 2)
+        at main_sprite_position(_xpos, luna_ypos, luna_flip, 2)
 
         add luna_base
 

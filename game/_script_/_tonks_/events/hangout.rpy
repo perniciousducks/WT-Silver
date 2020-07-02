@@ -6,6 +6,8 @@ label tonks_hangout:
 
     call setup_fireplace_hangout(char="tonks")##
 
+    $ tonks.strip("robe") # Takes off robe
+
     $ nt_he_counter += 1
     if firewhisky_ITEM.number >= 1:
         $ firewhisky_ITEM.number -= 1
@@ -16,12 +18,6 @@ label tonks_hangout:
         hide screen bld1
         with fade
         call bld
-
-    if daytime:
-        $ temp_txt = "afternoon"
-    else:
-        $ temp_txt = "evening"
-
 
     ### Intro Events ###
 
@@ -64,15 +60,17 @@ label tonks_hangout:
 
     label end_tonks_hangout:
 
-        call bld
-        if ton_friendship < 100:
-            $ renpy.play('sounds/win_04.mp3')
-            show screen notes
-            ">You spend the [temp_txt] hanging out with Tonks.\n>Your relationship with her has improved."
-            hide screen notes
-        else:
-            ">You spend the [temp_txt] hanging out with Tonks."
-        call bld("hide")
+    $ d_flag_01 = "afternoon" if daytime else "evening"
+
+    call bld
+    if ton_friendship < 100:
+        $ renpy.play('sounds/win_04.mp3')
+        show screen notes
+        ">You spend the [d_flag_01] hanging out with Tonks.\n>Your relationship with her has improved."
+        hide screen notes
+    else:
+        ">You spend the [d_flag_01] hanging out with Tonks."
+    call bld("hide")
 
     label end_tonks_hangout_points:
 
@@ -89,6 +87,8 @@ label tonks_hangout:
 
     if ton_friendship > 100:
         $ ton_friendship = 100
+
+    $ tonks.wear("all")
 
     if daytime:
         jump night_start

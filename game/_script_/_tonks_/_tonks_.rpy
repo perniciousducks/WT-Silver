@@ -56,14 +56,11 @@ label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, h
             tonks_xpos = int(sprite_pos["x"].get(xpos, xpos))
 
         if ypos:
-            if ypos == "head":
-                use_tonks_head = True
-            elif ypos in ("base", "default"):
-                use_tonks_head = False
+            use_tonks_head = True if ypos == "head" else False
 
             tonks_ypos = int(sprite_pos["y"].get(ypos, ypos))
 
-        target_color = None
+
         if hair:
             if hair in ("neutral", "basic", "reset"):
                 target_color = tonks_haircolor
@@ -83,6 +80,11 @@ label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, h
                 target_color = [[238, 238, 241, 255], [249, 249, 250, 255]]
             elif hair in ("pink", "horny"):
                 target_color = [[242, 126, 168, 255], [251, 205, 222, 255]]
+        else:
+            target_color = tonks_haircolor
+
+        if target_color != tonks.get_equipped("hair").color:
+            tonks.get_equipped("hair").set_color(target_color)
 
         tonks.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
 
@@ -95,9 +97,6 @@ label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, h
                 tonks.set_face(eyebrows=renpy.random.choice(ton_face["eyebrows"].get(face, None)))
             if not pupils:
                 tonks.set_face(pupils=renpy.random.choice(ton_face["pupils"].get(face, None)))
-
-        if target_color and target_color != tonks.get_equipped("hair").color:
-            tonks.get_equipped("hair").set_color(target_color)
 
     if not renpy.get_screen("wardrobe_menu"):
         hide screen tonks_main
@@ -149,8 +148,14 @@ screen tonks_main():
     zorder tonks_zorder
     sensitive False
 
+    if use_tonks_head:
+        $ _xpos = sprite_pos["x"]["far_right"] if tonks_flip == 1 else sprite_pos["x"]["far_left"]
+        $ _pos = (_xpos, tonks_ypos)
+    else:
+        $ _pos = (tonks_xpos, tonks_ypos)
+
     default tonks_img = apply_doll_transition(tonks.get_image(), "tonks_main", use_tonks_head)
     if tonks_animation != None:
-        add tonks_img xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom 0.5 at tonks_animation
+        add tonks_img pos _pos xzoom tonks_flip zoom 0.5 at tonks_animation
     else:
-        add tonks_img xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom 0.5
+        add tonks_img pos _pos xzoom tonks_flip zoom 0.5

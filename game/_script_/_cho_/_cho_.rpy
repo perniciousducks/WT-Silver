@@ -56,10 +56,7 @@ label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
             cho_xpos = int(sprite_pos["x"].get(xpos, xpos))
 
         if ypos:
-            if ypos == "head":
-                use_cho_head = True
-            elif ypos in ("base", "default"):
-                use_cho_head = False
+            use_cho_head = True if ypos == "head" else False
 
             cho_ypos = int(sprite_pos["y"].get(ypos, ypos))
 
@@ -122,6 +119,13 @@ screen cho_main():
     tag cho_main
     zorder cho_zorder
     sensitive False
+
+    if use_cho_head:
+        $ _xpos = sprite_pos["x"]["far_right"] if cho_flip == 1 else sprite_pos["x"]["far_left"]
+        $ _pos = (_xpos, cho_ypos)
+    else:
+        $ _pos = (cho_xpos, cho_ypos)
+
     default cho_img = apply_doll_transition(cho.get_image(), "cho_main", use_cho_head)
     if cho_animation != None:
         add cho_img xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom 0.5 at cho_animation

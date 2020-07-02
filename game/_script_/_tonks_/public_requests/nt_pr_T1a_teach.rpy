@@ -26,7 +26,7 @@ label nt_pr_teach_start:
             m "Maybe..."
             call ton_main("What did you do with Hermione on her first favour?","base","base","base","mid")
             m "*Ugh*... I think I got her to make \"a silly face\", or something..."
-            call ton_main("You paid her for that? I expected something a little more...perverse...","open","base","base","R")
+            call ton_main("You paid her for that? I expected something a little more...{w=0.4} Perverse.","open","base","base","R")
             if hg_pf_admire_panties.counter != 0:
                 m "In that case, the first \"real\" favour I bought was getting her to lift her skirt for me."
                 call ton_main("That's more like it!","horny","base","base","mid")
@@ -39,12 +39,12 @@ label nt_pr_teach_start:
                 m "Yes, Granger is greedy when it comes to points..."
                 call ton_main("I'm not interested in just chatting with my Students! I get to do that all day...","open","base","angry","R")
             m "Just get them to show you their dicks then."
-            call ton_main("Oh wow! Are you serious?", "base", "wide", "shocked", "stare")
+            call ton_main("Oh, wow! Are you serious?", "base", "wide", "shocked", "stare")
             m "I don't see why not."
             m "It isn't such a big deal for a boy to show a girl his wiener..."
-            call ton_main("Seeing the boys dicks... That's good...","horny","base","base","ahegao")
+            call ton_main("Seeing their dicks... That does sound good...","horny","base","base","ahegao")
             call ton_main("Can I touch them?","horny","base","base","mid")
-            m "Let's just look for now..."
+            m "Let's stick with looking for now..."
             call ton_main("Fine... So how many am I allowed to look at?","open","base","base","down")
             m "As many as you like..."
             call ton_main("And how many points am I allowed to give out?","angry","base","base","L")
@@ -69,9 +69,9 @@ label nt_pr_teach_start:
             m "Would you like to give some boys detention again?"
             call ton_main("And what would you suggest I do with them?", face="horny")
             call ton_main("Make them show me their dicks?", face="horny")
-            call ton_main("Or can we move on to something a little more...progressive?", face="horny")
+            call ton_main("Or can we move on to something a little more... progressive?", face="horny")
             m "If that's what you fancy..."
-            call ton_main("*Hmm*...Yes. I wouldn't mind seeing the \"hard cocks\" of some of my \"favourites\"...", face="horny")
+            call ton_main("*Hmm*...{w=0.4} Yes...{w=0.3} I wouldn't mind seeing the \"hard cocks\" of some of my \"favourites\".", face="horny")
             call ton_main("Might even have them jerk-off for me... I would love to see that!","horny","base","base","ahegao")
             m "And make sure they remember it."
             call ton_main("Yes, [ton_genie_name]. Don't wait for me...","base","base","base","mid")
@@ -196,10 +196,10 @@ label nt_pr_teach_T1_E2: # Tier 1 - Event 2 - Racenclaw boy
     call ton_main("Well, I figured I'd have to be alone with a student, to convince them to whip it out for me...","open","base","base","mid")
     call ton_main("So I gave the cutest little thing I could find detention...","base","base","angry","mid")
     call ton_main("Poor boy... I'm not sure he'd ever even been in trouble before.","open","base","worried","R")
-    call ton_main("So, when the bell rang, he immediately went on babbling about how sorry he was...for speaking in class, and that he'd never do it again...","open","closed","base","mid")
-    call ton_main("*Ugh*... I had to hold myself back from jumping him right then and there...","base","base","angry","ahegao")
-    call ton_main("Anyway, I eventually managed to calm him down and tell him it'll be okay...","open","base","base","R")
-    call ton_main("I even let him know that, if he was a good boy, he could earn some points for his house...","base","base","angry","mid")
+    call ton_main("So, when the bell rang, he immediately began babbling about how sorry he was for speaking in class, and that he'd never do it again...","open","closed","base","mid")
+    call ton_main("*Ugh*... I had to hold myself back from jumping on him right then and there...","base","base","angry","ahegao")
+    call ton_main("Anyway, I eventually managed to calm him down and tell him it'll be okay.","open","base","base","R")
+    call ton_main("I even let him know that, if he was a good boy, he could earn some points for his house.","base","base","angry","mid")
     m "Did he like the sound of that?"
     call ton_main("You should have seen his eyes light up! Like a kid on Christmas!","base","base","base","mid")
     m "You fooled around with a kid?"
@@ -261,7 +261,7 @@ label nt_pr_teach_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys. Guess who...
     call ton_main("Not that they turned down the offer of points, though...","base","base","base","mid")
     m "Care to elaborate?"
     call ton_main("Alright then,...you old perv...","base","base","angry","mid")
-    call ton_main("Normally, I'd just keep the cutest thing that takes my eye back after class...","open","base","base","R")
+    call ton_main("Normally I'd just have the cutest thing that takes my eye stay behind, after class...","open","base","base","R")
     call ton_main("For a little one-on-one time...","base","base","base","ahegao")
     call ton_main("But I actually had to punish these two idiots for real.","angry","base","angry","mid")
     m "What did they do?"
@@ -516,8 +516,8 @@ label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
     call ton_main("I know, I just wanted to get that off my chest.","smile","happyCl","base","mid")
     call ton_main("I'd complain to someone else, but I'm not that fond of the other teachers...","upset","base","worried","down")
     m "Like who?"
-    call ton_main("Well, McGonagall is as stuck-up as ever...{w} Snape is a gross weirdo...{w} And Hooch keeps trying to hit on me...","open","base","worried","R")
-    call ton_main("Anyway, let's get onto the story, shall we?","open","closed","base","mid")
+    call ton_main("Well, McGonagall is as stuck-up as ever and Slughorn is a gross weirdo...","open","base","worried","R")
+    call ton_main("Anyway, let's get on with the story, shall we?","open","closed","base","mid")
 
     menu:
         "-Let her know about the cum-":
@@ -563,7 +563,7 @@ label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
     call ton_main("And you have to admit, it's kinda hot... I even joined in on it.","base","base","angry","mid")
     m "Really?"
     call ton_main("What do you think made him fire his load across the room?","horny","base","angry","mid")
-    call ton_main("All I said was \"cum for Mommy\"...and he had shot the biggest load towards me.","open","closed","base","mid")
+    call ton_main("All it took was me saying \"cum for Mommy\"...and he had shot the biggest load towards me.","open","closed","base","mid")
     call ton_main("","base","base","angry","mid")
     m "Fuck... That {b}is{/b} pretty hot..."
     call ton_main("I know...","open","closed","base","mid")
@@ -574,7 +574,7 @@ label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
         m "Are you going to do anything about the cum?"
         call ton_main("*Hmm?*... The cum?","upset","base","worried","down")
         call ton_main("Oh... Why bother...","base","base","base","ahegao")
-        call ton_main("I already had it on the way here.","open","closed","base","mid")
+        call ton_main("It was already there on my way over here.","open","closed","base","mid")
         call ton_main("Besides, it'll be good for spreading the word, don't you think?","horny","base","angry","mid")
         m "Whatever you say..."
 

@@ -143,9 +143,9 @@ label cc_pr_manipulate_boys_start:
             if not cc_pr_spy_boys.is_event_complete(1, 1):
                 # Return if player has not spied on the Twins just yet.
 
-                m "Let's try and manipulate the girls on the enemy team!"
+                m "Let's try and manipulate the boys on the enemy team!"
                 call cho_main("You're expecting me to just jump in blind?", "angry", "base", "base", "mid")
-                call cho_main("I don't know any of these girls, how do you expect me to manipulate them in any way without knowing what I'm dealing with?", "annoyed", "wide", "base", "mid")
+                call cho_main("I don't know any of these boys, how do you expect me to manipulate them in any way without knowing what I'm dealing with?", "annoyed", "wide", "base", "mid")
                 m "Good point, perhaps we should consider spying on them a bit beforehand."
 
                 call cho_main(xpos="base", ypos="base", trans=fade)

@@ -155,16 +155,16 @@ label cc_pr_manipulate_boys_start:
             m "Time to manipulate the enemy a bit."
 
             m "Today I'd like you to target the boys."
-            cho "Okay..."
+            call cho_main("Okay...", "open", "base", "base", "R")
             m "Let's start off with the twins."
             m "Remind me what we know about them."
-            cho "They mostly focus on trickery and pranks, doing anything for a laugh... ."
+            call cho_main("They mostly focus on trickery and pranks, doing anything for a laugh...", "soft", "narrow", "base", "mid")
             m "Perhaps stooping to the Twins' level could help you learn more about them."
-            cho "What do you mean by that?"
+            call cho_main("What do you mean by that?", "annoyed", "base", "raised", "mid")
             m "Since they're tricksters and love disrupting things..."
             m "I suggest trying to find a way to make them use one of their tricks during the game. Surely they wouldn't be able to help themselves if presented an opportunity."
-            cho "Okay then."
-            cho "Wish me luck!"
+            call cho_main("Okay then.", "soft", "base", "base", "mid")
+            call cho_main("Wish me luck!", "open", "narrow", "base", "mid")
             m "Good luck."
 
         elif not cc_pr_manipulate_boys.is_event_complete(3, 2): # Completed Ron Weasley?
@@ -173,9 +173,9 @@ label cc_pr_manipulate_boys_start:
                 # Return if player has not spied on Ron Weasley just yet.
 
                 m "Let's try and manipulate-"
-                cho "I'm going to stop you there..."
+                call cho_main("I'm going to stop you there...", "angry", "base", "raised", "mid")
                 m "Yes?"
-                cho "There's no way I'll try this again before I know more about the boys."
+                call cho_main("There's no way I'll try this again before I know more about the boys.", "annoyed", "base", "angry", "mid")
                 m "Fine..."
 
                 call cho_main(xpos="base", ypos="base", trans=fade)
@@ -183,29 +183,29 @@ label cc_pr_manipulate_boys_start:
                 jump cho_requests_menu
 
             m "Let's target the other Weasley boy this time."
-            cho "You actually want me to target that pervert?"
+            call cho_main("You actually want me to target that pervert?", "disgust", "narrow", "base", "mid")
             m "Sort of... He won't be the main goal of this operation."
-            cho "Then, what is?"
+            call cho_main("Then, what is?", "annoyed", "base", "base", "mid")
             m "Miss Granger is quite protective of her friends isn't she?"
-            cho "Yes... the few times I've seen them without her she's usually just around the corner talking to some teacher or another."
+            call cho_main("I guess... The few times I've seen them without her she's usually just around the corner talking to some teacher or another.", "open", "narrow", "base", "downR")
             m "Then use those moments to your advantage... Miss Granger is also part of the game isn't she?"
             m "If you can somehow spark that jealousy or protectiveness of her friends..."
             m "Angering her enough could transfer to the game... And since she'll be stuck in the commentator booth the whole time she won't be able to pull them away from you."
-            cho "..."
-            cho "That might actually work..."
-            cho "If anything it gives me an excuse to piss her off..."
-            cho "Not that I've needed one previously." #smirk
+            call cho_main("...", "mad", "wide", "raised", "mid")
+            call cho_main("That might actually work...", "crooked_smile", "base", "base", "R")
+            call cho_main("If anything it gives me an excuse to piss her off...", "crooked_smile", "closed", "base", "mid")
+            call cho_main("Not that I've needed one previously.", "smile", "closed", "base", "mid") #smirk
             m "Then it's settled, report to me in the evening as usual."
-            cho "Will do!"
+            call cho_main("Will do!", "smile", "base", "base", "mid")
 
         elif not cc_pr_manipulate_boys.is_event_complete(3, 3): # Completed Harry Potter?
 
             if not cc_pr_spy_boys.is_event_complete(1, 3):
                 # Return if player has not spied on Harry Potter just yet.
                 m "Let's try and manipulate-"
-                cho "I'm going to stop you there..."
+                call cho_main("I'm going to stop you there...", "angry", "base", "raised", "mid")
                 m "Yes?"
-                cho "There's no way I'll try this again before I know more about the boys."
+                call cho_main("There's no way I'll try this again before I know more about the boys.", "annoyed", "base", "angry", "mid")
                 m "Fine..."
 
                 call cho_main(xpos="base", ypos="base", trans=fade)
@@ -213,26 +213,26 @@ label cc_pr_manipulate_boys_start:
                 jump cho_requests_menu
 
             m "How about we annoy Miss Granger some more?"
-            cho "Of course!"
+            call cho_main("Of course!", "crooked_smile", "base", "base", "mid")
             m "Let's target her other friend today."
-            cho "Harry Po-"
-            m "The Potter boy!"
-            cho "..." #annoyed
+            call cho_main("Harry Po--", "smile", "base", "raised", "mid")
+            g4 "The Potter boy!"
+            call cho_main("...", "mad", "base", "base", "mid") #annoyed
             m "*Ahem*... Yes..."
             m "Try and really get under her skin this time!"
-            cho "That shouldn't be very hard seeing how she reacted last time..."
-            cho "Wish me luck!"
+            call cho_main("That shouldn't be very hard seeing how she reacted last time...", "smile", "base", "raised", "R")
+            call cho_main("Wish me luck!", "smile", "base", "base", "mid")
             m "Good luck."
 
         else:
             # Repeated
 
             m "Let's manipulate those boys some more!"
-            cho "I thought we were done?"
-            cho "Although..."
-            cho "I could annoy Hermione some more!"
+            call cho_main("I thought we were done?", "angry", "base", "base", "mid")
+            call cho_main("Although...", "soft", "base", "base", "R")
+            call cho_main("I could annoy Hermione some more!", "crooked_smile", "wide", "base", "mid")
             m "Don't forget the twi-"
-            cho "This will be so much fun!"
+            call cho_main("This will be so much fun!", "crooked_smile", "happyCl", "base", "mid")
 
             # Cho leaves early!
             call cho_walk(action="leave")
@@ -717,15 +717,6 @@ label cc_pr_manipulate_boys_T2_E3:
 
     jump end_cho_event
 
-### Tier 3 ###
-
-# Intro:
-# Cho meets Harry.
-# Che meets Ginny. Ginny is teasing Cho actually and she's embarrassed about it.
-
-# Random/Repeatable:
-# Cho again tries to flaunt Harry. Maybe he could compliment her ass?
-# Ginny watches her while doing squads.They have a little Chat. Ginny reveals that she likes Cho.
 
 label cc_pr_manipulate_boys_T3_twins:
 
@@ -741,60 +732,60 @@ label cc_pr_manipulate_boys_T3_twins:
     call cho_main(face="angry", xpos="mid", ypos="base", trans=fade)
 
     menu:
-        "-*Ha-ha-ha-ha*-":
+        "\"*Ha-ha-ha-ha*\"":
             g9 "{i}I'm blue, daba dee bada die, {size=-2}daba dee daba die,{/size} {size=-4}daba dee bada die,{/size} {size=-6}daba dee daba die........{/size}{/i}"
-            cho "*glares daggers*"
-            m "*Ahem*.. I meant to ask, what happened?"
+            call cho_main("*grr*.", "clench", "wide", "angry", "mid")
+            m "*Ahem*...{w=0.4} I mean... Oh, no... what happened?"
 
-        "-Feeling blue today?-":
-            cho "Oh? What gave it away?" # Rolling eyes
-            cho "Was it the grimmace on my face?" # Obviously sarcastic
+        "\"Feeling blue today?\"":
+            call cho_main("Oh? What gave it away?", "soft", "base", "angry", "mid")
+            call cho_main("My face?", "clench", "base", "angry", "mid")
             g9 "Something like that."
             m "So, what happened?"
 
-        "-What the hell happened?-":
-            g4 "You look like a blueberry!"
-            m "Or a bilberry!"
-            g9 "Or a gummiberry!"
-            g9 "Or maybe even a-"
-            cho "Could you start acting serious for just a moment?!"
+        "\"What the hell happened?\"":
+            g9 "Didn't expect to see a talking blueberry today!"
+            m "Or are you a bilberry?"
+            g9 "Or a gummiberry?"
+            g9 "Or maybe even a--"
+            call cho_main("Could you start acting serious for just one moment?!", "clench", "wide", "angry", "mid")
             g9 "I'm berry serious."
-            cho "*urghhhh*! I can't believe you!" # Angry noises
+            call cho_main("*urghhhh*! I can't believe you!", "disgust", "base", "angry", "mid") # Angry noises
             m "Alright, alright. Tell me what happened."
 
-    cho "What does it look like what happened?"
+    call cho_main("What does it look like what happened?", "upset", "base", "angry", "down")
     g9 "Well, to me it looks like you caught a case of the smurfs."
-    cho "Those bloody twins!"
-    cho "They tricked me into eating one of their darn sweets!"
-    cho "You should lock those two up..."
+    call cho_main("Those bloody twins!", "angry", "base", "angry", "downR")
+    call cho_main("They tricked me into eating one of their darn sweets!", "open", "base", "angry", "mid")
+    call cho_main("You should lock those two up...", "mad", "base", "angry", "mid")
     g9 "I wish I could've been there..."
-    cho "WHAT?"
+    call cho_main("WHAT?", "clench", "wide", "angry", "mid")
     g4 "To stop them I mean!"
-    cho "..."
+    call cho_main("...", "annoyed", "base", "angry", "mid")
     m "So, why did you come straight to me and not go to your dorm?"
-    cho "And pass through my common room?"
-    cho "No thank you... your office was the closest thing to their stupid shop."
+    call cho_main("And pass through my common room?", "soft", "base", "angry", "mid")
+    call cho_main("No thank you... your office was the closest thing to their stupid shop.", "clench", "base", "angry", "R")
     if not store_intro_done:
         m "Shop? What shop?"
-        cho "Are you kidding me? Surely you must know about them and their shady businesses."
+        call cho_main("Are you kidding me? Surely you must know about them and their shady businesses.", "soft", "base", "angry", "mid")
         m "I have no clue what you're talking about."
-    cho "..."
-    cho "Don't you have any spare robes or anything?"
+    call cho_main("...", "disgust", "base", "base", "down")
+    call cho_main("Don't you have any spare robes or anything?", "open", "base", "worried", "mid")
     m "I suppo-"
 
     menu:
         m "(Actually, I might not get another opportunity like this...)"
         "-Let her deal with it-":
             m "You'll figure something out."
-            cho "What!"
-            cho "You want me to just go out there without any clothes on?"
+            call cho_main("What!?", "open", "wide", "base", "mid")
+            call cho_main("You want me to just go out there without any clothes on?", "clench", "wide", "angry", "mid")
             m "Of course... seems like a great exercise."
-            cho "Exercise? How is this an exercise to you?"
+            call cho_main("Exercise? How is this an exercise to you?", "angry", "base", "angry", "down")
             m "An exercise in confidence miss Chang."
-            cho "You have got to be joking..."
-            cho "So, you're not going to help me?"
+            call cho_main("You have got to be joking...", "disgust", "wide", "base", "mid")
+            call cho_main("So, you're not going to help me?", "disgust", "base", "angry", "mid")
             m "This one's on you Miss Chang."
-            cho "*Grrrr* Whatever..."
+            call cho_main("*Grrrr*, Whatever...", "angry", "base", "angry", "mid")
 
             # Cho leaves.
             call cho_walk(action="leave")
@@ -824,48 +815,47 @@ label cc_pr_manipulate_boys_T3_ron:
 
     m "Mission success?"
     m "Did you manage to sneak up on Rob?"
-    cho "Yes! It could not have gone better!"
+    call cho_main("Yes! It could not have gone better!", "crooked_smile", "base", "base", "mid")
     m "Great, let's hear it."
-    cho "I found the perfect opportunity to approach him after practice as Hermione was arguing with Madam Hooch about some rule or another. "
-    cho "So as she was busy, I went up and praised him on his excellent goal keeping."
-    cho "He was quite taken aback by this at first and I doubt he ever recie-"
+    call cho_main("I found the perfect opportunity to approach him after practice as Hermione was arguing with Madam Hooch about some rule or another. ", "smile", "base", "base", "R")
+    call cho_main("So as she was busy, I went up and praised him on his excellent goal keeping.", "smile", "base", "raised", "mid")
+    call cho_main("He was quite taken aback by this at first and I doubt he ever recie--", "smile", "narrow", "raised", "R")
     m "Surely you didn't just compliment him... That won't be enough to annoy Miss Granger!"
-    cho "Of course not!"
-    cho "The goal was for him to check me out... Which I soon caught him doing."
+    call cho_main("Of course not!", "clench", "base", "raised", "mid")
+    call cho_main("The goal was for him to check me out... Which I soon caught him doing.", "smile", "narrow", "base", "R")
     m "That boy could do with some lecturing!"
-    cho "I know!"
+    call cho_main("I know!", "soft", "base", "angry", "mid")
     m "Getting caught checking someone out that quickly..."
-    cho "Right..."
-    cho "Anyhow, it was if he was trying to stare through my clothing and he was barely paying any attention."
+    call cho_main("Right...", "open", "narrow", "base", "R")
+    call cho_main("Anyhow, it was if he was trying to stare through my clothing and he was barely paying any attention.", "open", "narrow", "base", "down")
     m "Been there, done that..."
-    cho "Yeah, no wonder Hermione is so annoyed at him all the time..."
-    cho "It was at that point Madam Hooch turned and walked away from Hermione."
-    cho "So without any warning I grabbed and planted Rons hands on my breasts."
+    call cho_main("Yeah, no wonder Hermione is so annoyed at him all the time...", "annoyed", "narrow", "base", "L")
+    call cho_main("It was at that point Madam Hooch turned and walked away from Hermione.", "open", "base", "base", "R")
+    call cho_main("So without any warning I grabbed and planted Ron's hands on my breasts.", "crooked_smile", "narrow", "base", "mid")
     m "Nice..."
-    cho "He was so taken aback by this he just froze."
-    cho "You should've seen Hermione's expression as she turned and noticed us! It was if someone had flipped a switch in her brain."
+    call cho_main("He was so taken aback by this he just froze.", "crooked_smile", "closed", "base", "mid")
+    call cho_main("You should've seen Hermione's expression as she turned and noticed us! It was if someone had flipped a switch in her brain.", "smile", "wide", "base", "mid")
     m "Jealousy no doubt..."
-    cho "Yeah right, as I said there's no way anything is going on between those two."
+    call cho_main("Yeah right, as I said there's no way anything is going on between those two.", "smile", "narrow", "base", "R")
     m "I wasn't talking about...{w=0.4} Never mind..."
     m "Please, continue..."
-    cho "Before I could even blink she has rushed up next to us..."
-    cho "And then she smacked Ron right across the face!"
+    call cho_main("Before I could even blink she has rushed up next to us...", "crooked_smile", "narrow", "base", "mid")
+    call cho_main("And then she smacked Ron right across the face!", "smile", "wide", "angry", "mid")
     g9 "*Hah*!"
     g4 "I mean... How could she hit another student like that?!"
-    cho "You don't have to pretend that you care..."
+    call cho_main("You don't have to pretend that you care...", "angry", "narrow", "raised", "mid")
     m "I don't."
     m "What happened next?"
-    cho "She dragged him away, yelling her head off the whole time."
-    cho "I wouldn't be surprised if she's still going." #smirk
+    call cho_main("She dragged him away, yelling her head off the whole time.", "smile", "narrow", "base", "R")
+    call cho_main("I wouldn't be surprised if she's still going.", "grin", "narrow", "base", "mid") #smirk
     m "Excellent work!"
-    cho "Thank you." #blushes
+    call cho_main("Thank you.", "smile", "base", "base", "mid") #blushes
     m "Hopefully we can remind her about this during the game, spark that jealousy once more."
-    cho "If it annoys Hermione then I'm all for it..."
+    call cho_main("If it annoys Hermione then I'm all for it...", "crooked_smile", "base", "base", "R")
     m "Anything else to report?"
-    cho "No, that's about it."
+    call cho_main("No, that's about it.", "soft", "base", "base", "downR")
     m "Great, then that will be all for today."
-    cho "..." #giggles sound
-    cho "Good night then..."
+    call cho_main("Good night then...", "base", "base", "base", "mid")
     m "Good night Miss Chang."
 
     # Cho leaves.
@@ -884,36 +874,37 @@ label cc_pr_manipulate_boys_T3_harry:
     call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
 
     m "Welcome back, mission success?"
-    cho "Yes!"
-    cho "I've been stalk... eh... following them the entire day today and found a good opportunity as they came out from divination."
-    cho "I was flying outside the divination tower and Harry Ron and Hermione were talking at one of the windows."
-    cho "Ron and Hermione had their backs turned towards me but I managed to grab Harry's attention."
+    call cho_main("Yes!", "crooked_smile", "base", "base", "mid")
+    call cho_main("I've been stalk...{w=0.4} eh...{w=0.2} following them... And sure enough, I managed to find the perfect opportunity!", "soft", "base", "base", "R")
+    call cho_main("As I flew by the divination tower, I noticed that Hermione and her friends were talking at one of the windows.", "open", "base", "base", "mid")
+    call cho_main("With Ron and Hermione's backs turned towards me it was easy enough to grab Harry's attention.", "base", "narrow", "base", "R")
     m "Nice, gave him a bit of a show then I presume?"
-    cho "Of course..." #smirk
-    cho "And I found something out."
-    cho "That boy has a broom fetish!"
+    call cho_main("Of course...", "crooked_smile", "closed", "base", "R") #smirk
+    call cho_main("And I found something out.", "crooked_smile", "base", "raised", "mid")
+    call cho_main("That boy has a broom fetish!", "smile", "wide", "base", "mid")
     m "A what?"
-    cho "Broom fetish... it's when a girl plays with herself using a broom."
-    m "Oh... that makes more sense."
-    cho "So as I hovered in the window I stuck my tongue out and moved my hips against the wood."
+    call cho_main("A broom fetish!{w} It's when you enjoy watching a girl play with herself using a broom.", "smile", "narrow", "raised", "mid")
+    m "Oh...{w=0.4} Yeah, that makes more sense."
+    call cho_main("So, I stuck my tongue out at him and then began grinding my hips against the wood.", "crooked_smile", "narrow", "base", "mid", cheeks="blush")
     m "You stuck your tongue out?"
-    m "Wasn't it Hermione that you were going to antagonize?"
-    cho "Not like that!"
-    cho "I mean in a seductive way!"
+    m "I thought it Hermione that you were going to antagonize?"
+    call cho_main("Not like that!", "open", "happyCl", "angry", "mid", cheeks="blush")
+    call cho_main("I mean in a seductive way!", "smile", "narrow", "base", "mid", cheeks="blush")
     m "Like how?"
-    cho "Like this!"
-    cho "..." #Cho sticks her tongue out and eyes look seductive."
+    call cho_main("Like this!", "open", "wink", "base", "mid", cheeks="blush")
+    call cho_main("...{w=1.0}{nw}", "open_tongue", "base", "base", "mid")
+    call cho_main("...", "open_wide_tongue", "narrow", "raised", "mid", cheeks="blush") #Cho sticks her tongue out and eyes look seductive."
     m "Whoa!"
-    cho "*U ikhe*?" #Tongue still out
-    m "Very much... So what was his reaction?"
-    cho "Much like Ron he couldn't focus on their conversation and Hermione soon followed his gaze and noticed me out the window."
-    cho "And after staring daggers at me she yanked the boys away by their robes almost making them tumble down the stairs."
-    m "Looks like you have her well jealous at this point!"
+    call cho_main("*U ikhe*?", "open_wide_tongue", "wink", "raised", "mid", cheeks="blush") #Tongue still out
+    g9 "Very much...{w=0.4} But what about Potter?"
+    call cho_main("Naturally he completely lost focus on their conversation and Hermione soon followed his gaze, noticing me out the window.", "crooked_smile", "closed", "base", "R", cheeks="blush")
+    call cho_main("And after staring daggers at me, she yanked the boys away by their robes almost making them tumble down the stairs.", "crooked_smile", "narrow", "base", "mid")
+    m "Looks like you have her well jealous at this point!" #This is a bit of a British slang
     m "Hopefully this should be enough to affect her during the finals."
-    cho "Let's hope so..."
-    cho "If that's all I'll head off for today."
+    call cho_main("Let's hope so...", "smile", "base", "angry", "R")
+    call cho_main("If that's all, I'll head off for today.", "base", "base", "raised", "mid")
     m "Yes, that will be all."
-    cho "Good night then."
+    call cho_main("Good night then.", "smile", "base", "base", "mid")
     m "Good night, Miss Chang."
 
     # Cho leaves.
@@ -930,24 +921,25 @@ label cc_pr_manipulate_boys_twins_branch:
 
     if clothing_store_intro_done:
         m "Madam Mafkin should be able to sort you out."
-        cho "Mafkin? Don't you mean Malkin?"
+        call cho_main("Mafkin? Don't you mean Malkin?", "open", "base", "base", "mid")
         m "Pretty sure it's Mafkin."
         m "I'll go and check with her and see if there's anything she can spare for the moment..."
     else:
         m "Surely this place has some sort of seamstress."
-        cho "I guess..."
+        call cho_main("I guess...", "soft", "base", "base", "downR")
         m "I'll go and check with her, see if there's anything she can spare for the moment..."
 
-    cho "Please..."
-    cho "I just hope this colour will fade before you get back..."
-    #Genie walks past Cho to the door and turns to her, she turns as he stops
-    m "I don't really see why it's such an issue."
+    call cho_main("Please...", "normal", "base", "base", "down", cheeks="blush")
+    call cho_main("I just hope this colour will fade before you get back...", "disgust", "base", "angry", "downR")
+    m "I'll be back before you can say blueberry."
+    #TODO Genie walks past Cho to the door and turns to her, she turns as he stops
+    m "But personally, I don't really see why it's such an issue."
     m "I've been known to turn blue and swell up as well and you don't see me complaining."
 
-    #Cho question mark chibi
-    #Genie exits the room
+    #TODO Cho question mark chibi
+    #TODO Genie exits the room
 
-    # SHOW CLOTHING STORE
+    #TODO SHOW CLOTHING STORE
 
     if clothing_store_intro_done:
         ">You enter to see an old woman busy sewing together two pieces of long dark fabric."
@@ -969,10 +961,10 @@ label cc_pr_manipulate_boys_twins_branch:
     else:
         m "Miss Mafkin... or was it Malkin?"
         maf "It's Mafkin, Dumbledore... we have been over this before."
-        m "I knew she was wrong!"
-        maf "Anything I could assist you with?"
-        maf "I just got this new plaid fabric in that I was thinking of turning into a kilt."
-        maf "It's the perfect garment for letting the family jewels get some fresh air."
+        g9 "(I knew she was wrong!)"
+        maf "Anything I can assist you with?"
+        maf "I just got this new plaid fabric in, I was thinking of turning it into a kilt."
+        maf "It's the perfect garment for letting the old family jewels get some fresh air."
         m "I'm good thank you."
         maf "Then what can I do you for?"
 
@@ -984,15 +976,17 @@ label cc_pr_manipulate_boys_twins_branch:
     maf "I see... that's an unfortunate situation indeed."
     m "So I require a Female Ravenclaw school uniform."
     maf "Let's see...{w=0.5} Female Ravenclaw uniform...{w=0.4} Looks like I'm running a bit low on those at the moment, what size is she?"
-    m "She's a B."
+    m "She's a C...{w=0.4} or maybe a B actually...."
     maf "She's a... B, sir?"
-    m "No no, she's a Human. That's her size."
+    m "No-no, she's a Human. That's her size."
     maf "I require her clothing measurements..."
     m "Oh, I see..."
     maf "Or the name of this student, If I've had her fitted before I'll have it stored in my records."
     m "Cho Chang."
-    #paper sound
+    $ renpy.sound.play("sounds/pageflip.mp3")
     maf "Cho Chang..."
+    $ renpy.sound.play("sounds/pageflip.mp3")
+    maf "*Hmmm*..."
     maf "Ah yes, here she is..."
     maf "Well, that's unfortunate..."
     m "You don't have any clothing her size?"
@@ -1031,7 +1025,7 @@ label cc_pr_manipulate_boys_twins_branch:
             m "Seems like the safest option all things considered."
             m "How long will it take to get the Ravenclaw outfit ready?"
 
-        "-Take the Smurfette Outfit-" if d_flag_01:
+        "-\"perfect\" Outfit-" if d_flag_01:
             $ d_flag_02 = 4
 
             maf "Are you sure?"
@@ -1049,6 +1043,7 @@ label cc_pr_manipulate_boys_twins_branch:
             maf "I have a few miscellaneous pieces lying around that she could borrow for the time being."
             maf "There's not a lot to pick from, but you can take anything you need from it."
             m "Great."
+            #TODO have his chibi turn and walk so you just see his back inside the screen and then display the next line
             # Rummage sound.
             m "Hmm, doesn't seem to be a lot to pick from..."
             # Rummage sound.
@@ -1056,8 +1051,9 @@ label cc_pr_manipulate_boys_twins_branch:
             # Rummage sound.
             m "Hold on a second."
             # Rummage sound.
-            m "(Oh, this is just perfect... Although perhaps it's a bit mean..."
-            m "Maybe I should just ask for one of the other house's clothing pieces instead..."
+            m "(Oh, this is just perfect... Although perhaps it's a bit mean...)"
+            m "(Maybe I should just ask for one of the other house's clothing pieces instead...)"
+            #TODO genie chibi turns and walks back to normal position
 
             jump .choices
 
@@ -1065,253 +1061,274 @@ label cc_pr_manipulate_boys_twins_branch:
     m "Great, that will be all then."
     maf "Until next time..."
 
-    #Back in Office
-    #Genie Walks in
+    #TODO Back in Office
+    #TODO Genie Walks in
     m "I'm back!"
-    cho "Finally!"
-    cho "I've been freezing my butt off and I couldn't figure out how to light the fire."
+    call cho_main("Finally...", "annoyed", "base", "angry", "mid")
+    call cho_main("I've been freezing my butt off and I couldn't figure out how to light the fire.", "open", "base", "angry", "mid")
     m "Can't you use some spell for that?"
-    cho "Where do you think I keep my wand?"
+    call cho_main("Where do you think I keep my wand?", "annoyed", "base", "angry", "mid")
     m "Well, most people hide it in their night stand or a drawer or something."
-    cho "It's probably at Fred and George's still..."
-    cho "So, where's that outfit you were fetching for me?"
+    call cho_main("Where's that outfit you were fetching for me?", "upset", "base", "base", "mid")
 
     if d_flag_02 == 1:
         # Slytherin
 
         m "Got it right here, brings out the colour of your eyes for sure!"
-        cho  "Such a charmer..."
-        #Clothsound
-        cho  "Oh, good. You managed to get some school uniforms."
-        cho  "I was worried that you'd pick out something-..."
-        cho  "These are Slytherin colours!" #big text yelling
+        #TODO Clothsound
+        #TODO slytherin cloth pile on desk
+        call cho_main("Such a charmer...", "base", "base", "base", "R")
+        call cho_main("I was worried that you'd pick out something-...", "open", "base", "base", "down")
+        call cho_main("{size=+5}These are Slytherin colours!{/size}", "open", "wide", "angry", "mid")
         m "They are?"
         m "That's unfortunate!"
-        cho "Why did you assume it would be a good idea...."
-        cho "To get Slytherin colours!" #big text yelling
+        call cho_main("Why did you assume it would be a good idea....", "clench", "base", "angry", "down")
+        call cho_main("{size=+5}To get Slytherin colours!{/size}", "angry", "base", "angry", "mid") #big text yelling
         m "She didn't have any spare Ravenclaw outfits."
-        cho "But why Slytherin..."
+        call cho_main("But why Slytherin...", "disgust", "base", "angry", "downR")
 
         menu:
-            "-If you don't like it you can go without any!-":
-                cho "What!"
+            "\"If you don't like it you can go without any!\"":
+                call cho_main("What!?", "open", "wide", "angry", "mid")
                 m "You heard me..."
                 m "I went out of my way to fetch those clothes for you..."
                 m "So you can take your smurf looking ass and get out of my office."
-                cho "Fine!"
-                #Cho storms out
-                #Mood very angry
+                call cho_main("Fine!", "clench", "base", "angry", "mid")
+                #TODO Cho storms out and slams door
+                #TODO Mood very angry
+                m "..."
+                #TODO Fades to Black
+                #TODO Remove cloth pile from desk
+                #TODO reset cho colour
 
-            "-It's not my fault, Some idiot picked that option!-":
-                cho "What?"
+            "\"It's not my fault, Some idiot picked that option!\"":
+                call cho_main("What?", "annoyed", "wide", "angry", "mid")
                 m "It was decided by some unknown external force."
-                cho "That doesn't make any sense!"
+                call cho_main("That doesn't make any sense!", "open", "base", "angry", "mid")
                 m "I know!"
-                cho "..."
-                #Cho's colour changes to normal
-                cho "I thought you would know better than to pick a Slytherin uniform for me..."
+                call cho_main("...", "upset", "base", "angry", "mid")
+                #TODO Cho's blue colour fades away
+                call cho_main("I thought you would know better than to pick a Slytherin uniform for me...", "annoyed", "base", "angry", "downR")
                 m "As I said, not my fault."
                 g9 "Although, speaking of colour..."
                 m "You're not blue anymore."
-                cho "Thank Merlin for that..."
-                cho "Just hand me those clothes..."
-                #Cloth sound
-                #Clothes equipped
-                cho "..."
-                cho "This feels wrong..."
+                call cho_main("Thank Merlin for that...", "clench", "base", "worried", "down")
+                call cho_main("Just hand me those clothes...", "annoyed", "base", "angry", "mid")
+                #TODO Cloth sound
+                #TODO Clothes equipped
+                #TODO Remove cloth pile from desk
+                call cho_main("...", "disgust", "base", "base", "down", cheeks="blush")
+                call cho_main("This feels wrong...", "clench", "base", "worried", "downR", cheeks="blush")
                 g9 "I knew it!"
                 g9 "You look great in green!"
-                cho "*Grrr*... I can't believe you!"
-                #Cho storms out
-                #Mood angry
+                call cho_main("*Grrr*... I can't believe you!", "clench", "base", "angry", "mid")
+                #TODO Cho storms out, normal door sound
+                #TODO Mood angry
 
-            "-Sorry...-":
-                cho "..."
-                cho "(Well that's a first...)" #taken aback
+            "\"Sorry...\"":
+                call cho_main("...", "normal", "wide", "base", "mid")
+                call cho_main("(Well that's a first...)", "soft", "base", "base", "R") #taken aback
                 m "Sorry for going out of my way to help you!"
-                #Exasperated but not angry
-                cho "*Sigh*"
-                cho "Why did you think it would be a good idea to pick Slytherin colours..." #pout
+                call cho_main("*Sigh*", "disgust", "base", "base", "down")
+                call cho_main("Why did you think it would be a good idea to pick Slytherin colours...", "annoyed", "base", "angry", "downR") #pout
                 m "As I said, I thought they'd compliment your eyes..."
-                cho "..."
-                cho "Fine, since you almost apologized..."
-                cho "Hand me those clothes."
-                #Cloth sound
-                #Clothes equipped
+                call cho_main("...", "annoyed", "base", "angry", "down", cheeks="blush")
+                call cho_main("Fine, since you almost apologized...", "disgust", "base", "angry", "downR", cheeks="blush")
+                call cho_main("Hand me those clothes.", "annoyed", "base", "angry", "mid", cheeks="blush")
+                #TODO Cloth sound
+                #TODO Clothes equipped
+                #TODO Remove cloth pile from desk
                 m "See, they don't look that bad!"
-                cho "This feels wrong..."
+                call cho_main("This feels wrong...", "angry", "base", "worried", "downR", cheeks="blush")
                 m "You look great in any colour!"
-                cho "That's not why..."
-                #Cho's blue colour fades away
-                cho "Thanks I guess."
+                call cho_main("That's not why...", "normal", "base", "angry", "mid", cheeks="blush")
+                #TODO Cho's blue colour fades away
+                call cho_main("Thanks I guess.", "disgust", "base", "base", "down")
                 m "Speaking of colour..."
                 m "You're not blue anymore."
-                cho "Finally..."
-                cho "Hopefully everyone's gone to bed by now and I can sneak my way past without anyone noticing."
-                cho "So what do I do about my normal uniform?"
+                call cho_main("Finally...", "mad", "base", "base", "mid")
+                call cho_main("Hopefully everyone's gone to bed by now and I can sneak my way past without anyone noticing.", "upset", "base", "base", "R")
+                call cho_main("So what do I do about my normal uniform?", "open", "base", "base", "down")
                 m "I've sorted it, Mafkin will have a new set delivered to your room in the morning."
-                cho "Oh..."
-                cho "Thanks..."
-                cho "Good night then."
-                #Cho leaves
-                #Mood Slightly mad
+                call cho_main("Oh...", "open", "base", "base", "downR", cheeks="blush")
+                call cho_main("Thanks...", "upset", "base", "base", "downR")
+                call cho_main("Good night then.", "normal", "base", "base", "mid")
+                #TODO Cho leaves
+                #TODO Mood Slightly mad
 
     elif d_flag_02 == 2:
         # Gryffindor
 
         m "Got it right here!"
         m "She didn't have any Ravenclaw uniforms your size so I took the next best thing."
-        cho "Next best-"
-        cho "Is that a Gryffindor uniform?" #shocked
+        #TODO Clothsound
+        #TODO Gryffindor cloth pile on desk
+        call cho_main("Next best-", "annoyed", "base", "base", "mid")
+        call cho_main("Is that a Gryffindor uniform?", "open", "wide", "base", "mid") #shocked
         g9 "Yes, I knew you'd like it!"
-        cho "I...{0.5} I don't like Gryffindor!"
+        call cho_main("I...{w=0.5} I don't like Gryffindor!", "annoyed", "base", "angry", "downR", cheeks="blush")
         g4 "What... but I thought Hermione was like your bestie."
-        cho "Bestie?"
-        cho "She...{0.4} is...{0.4} not!"
+        call cho_main("Bestie?", "upset", "wide", "base", "mid")
+        call cho_main("She...{w=0.4} is...{w=0.4} not!", "clench", "wide", "angry", "mid", cheeks="blush")
         m "Oh..."
 
         menu:
-            "-I could go back and fetch the Slytherin one instead-":
-                cho "No!"
-                cho "I mean... that's fine... you've already gone out of your way."
-                m "You sure? It's not that far-"
-                cho "Yes... just hand me the clothes."
-                #Cloth sound
-                #Clothes equipped
-                cho "..."
-                cho "I guess it's not that bad..."
-                cho "What do you think, do I pull off the red as well as...{w=0.6}Do I pull off the red?"
+            "\"I could go back and fetch the Slytherin one instead\"":
+                call cho_main("No!", "angry", "wide", "base", "mid", cheeks="blush")
+                call cho_main("I mean... it's fine... you've already gone out of your way.", "angry", "wide", "base", "downR")
+                m "You sure? It's not that far--"
+                call cho_main("Yes... just hand me the clothes.", "disgust", "base", "angry", "mid")
+                #TODO Cloth sound
+                #TODO Clothes equipped
+                #TODO Remove cloth pile from desk
+                call cho_main("...", "normal", "base", "base", "downR")
+                call cho_main("I guess it's not that bad...", "normal", "base", "base", "down", cheeks="blush")
+                call cho_main("What do you think, do I pull off the red as well as...{w=0.6} Do I pull off the red?", "open", "base", "base", "downR", cheeks="blush")
                 m "Looks great!"
                 m "They look a bit tight around the chest area, did I end up with a size too small?"
-                cho "Oh... no, it's fine... I'm just a bit cold still." #Embarrassed
+                call cho_main("Oh... no, it's fine... I'm just a bit cold still.", "horny", "base", "base", "down", cheeks="blush") #Embarrassed
                 m "You do look a bit blue..."
-                cho "Wait, I'm still..."
-                #Cho's blue colour fades away
-                cho "Thank Merlin..."
-                cho "I'll be on my way then..."
-                #Cho Walks to the door
-                cho "..."
-                cho "Good night..."
-                #Cho leaves
-                #Cho Mood stays the same
-            "-I'm sure none of the Gryffindors will spot you-":
-                cho "If that's the case then why wear any clothes at all?"
+                call cho_main("Wait, I'm still...", "upset", "wide", "angry", "down")
+                #TODO Cho's blue colour fades away
+                call cho_main("...{w} Thank Merlin...", "soft", "base", "base", "down")
+                call cho_main("I'll be on my way then...", "open", "base", "base", "R", cheeks="blush")
+                #TODO Cho Walks to the door
+                call cho_main("...", "base", "base", "base", "down", cheeks="blush")
+                call cho_main("Good night...", "open", "base", "base", "mid", cheeks="blush")
+                #TODO Cho leaves
+                #TODO Cho Mood stays the same
+            "\"I'm sure none of the Gryffindors will spot you\"":
+                call cho_main("If that's the case then why wear any clothes at all?", "angry", "base", "angry", "mid")
                 m "That is an option..."
-                cho "No!"
-                cho "Give me those..."
-                #Cloth sound
-                #skirt equipped
-                m "Actually, can I change my mi-"
-                #Clothes equipped
-                cho "No no, we're good!"
-                m "But could you at least-"
-                #Cho hurriedly walks to the door
-                cho "Nope, these will have to do..."
-                cho "Have a good night!"
-                m "Come ba-"
-                #Cho exits the room
+                call cho_main("No!", "clench", "wide", "base", "mid", cheeks="blush")
+                call cho_main("Give me those...", "mad", "base", "base", "mid")
+                #TODO Cloth sound
+                #TODO Remove cloth pile from desk
+                #TODO skirt equipped
+                m "Actually, can I change my mi--"
+                #TODO Clothes equipped
+                call cho_main("No-no, we're good!", "mad", "base", "base", "R")
+                m "But could you at least--"
+                #TODO Cho hurriedly walks to the door
+                call cho_main("Nope, these will have to do...", "angry", "base", "base", "L")
+                call cho_main("Have a good night!", "clench", "base", "base", "L")
+                #TODO Cho exits the room
+                m "Come ba--"
                 m "Damn...{w=0.4} well at least she isn't angry."
                 #Cho Mood stays the same
+                #TODO reset cho colour
 
     elif d_flag_02 == 3:
         # Hufflepuff
 
         m "Got it right here!"
         m "She didn't have any Ravenclaw uniforms your size so I went wish something mellow."
-        cho "Mellow?"
-        cho "Wait you don't mean..." #Worried
-        cho "A Hufflepuff uniform!" #Shocked
+        #TODO Clothsound
+        #TODO Hufflepuff cloth pile on desk
+        call cho_main("Mellow?", "annoyed", "base", "base", "mid")
+        call cho_main("Wait you don't mean...", "disgust", "base", "base", "down") #Worried
+        call cho_main("A Hufflepuff uniform!", "clench", "wide", "base", "mid") #Shocked
         m "Sure is, I remembered how you can't get enough of those badgers!"
-        cho "I only dated one of them when the Tri-wizard tournament was happening..."
-        cho "And as you remembered, I used it to our advantage to win the match against them."
+        call cho_main("I only dated one of them when the Tri-wizard tournament was happening...", "annoyed", "base", "angry", "mid")
+        call cho_main("And as you remembered, I used it to our advantage to win the match against them.", "clench", "base", "base", "mid")
         m "Sure did!"
-        cho "So, don't you think the Hufflepuffs would assume Cedric threw the match on purpose or start asking questions if they suddenly saw me wearing this?"
+        call cho_main("So, don't you think the Hufflepuffs would assume Cedric threw the match on purpose if they suddenly saw me wearing this?", "angry", "base", "base", "downR")
 
         menu:
-            "-So what?-":
-                cho "So what?!?"
+            "\"So what?\"":
+                call cho_main("So what?!?", "open", "wide", "angry", "mid")
                 m "You didn't have any problems using his weaknesses during the game so why do you care if he gets in trouble with his house?"
-                cho "That's different..."
+                call cho_main("That's different...", "angry", "base", "angry", "mid")
                 m "How is it different?"
                 m "I'm sure his teammates weren't happy with him losing focus like that... fraternizing with the enemy..."
-                cho "..."
+                call cho_main("...", "disgust", "base", "angry", "down")
                 m "They might already think he threw it on purpose."
-                cho "Whatever, just give me the clothes."
-                #Cloth sound
-                #Clothes equipped
-                cho "I can't believe you turned this around on me like that... you're the one that made me do those things to begin with..."
+                call cho_main("Whatever, just give me the clothes.", "open", "base", "angry", "mid")
+                #TODO Cloth sound
+                #TODO Remove cloth pile from desk
+                #TODO Clothes equipped
+                call cho_main("I can't believe you turned this around on me like that... you're the one that made me do those things to begin with...", "soft", "base", "angry", "downR")
                 m "Don't hate the player, hate the game."
-                cho "..."
-                cho "I'm leaving."
-                #Cho leaves
-                #Mood Slightly mad
+                call cho_main("...", "upset", "base", "angry", "R")
+                call cho_main("I'm leaving.", "upset", "base", "angry", "mid")
+                #TODO Cho leaves
+                #TODO Cho Mood Slightly mad
+                #TODO reset cho colour
 
-            "-That's true, maybe you should just head back naked...-":
-                cho "What!"
+            "\"That's true, maybe you should just head back naked...\"":
+                call cho_main("What!?", "disgust", "wide", "base", "mid")
                 m "You heard me, make like a bee and buzz off!"
                 g9 "And you better hurry up before those sweets wear off or you'll find it even harder to explain your current state."
-                cho "But... surely you can't be serious!"
+                call cho_main("But... surely you can't be serious!", "open", "wide", "base", "mid", cheeks="blush")
                 m "I am neither Shirley nor Sirius..."
-                cho "*Grrr*... I can't believe you!"
-                #Cho Walks to the door and turns around
-                cho "..."
+                call cho_main("*Grrr*... I can't believe you!", "clench", "base", "angry", "mid")
+                #TODO Cho Walks to the door and turns around
+                call cho_main("...", "upset", "base", "angry", "down")
                 m "Tick-tock..."
-                cho "Fine!"
-                #Cho leaves and slams the door
-                #Mood very angry
+                call cho_main("Fine!", "clench", "base", "angry", "R")
+                #TODO Cho leaves and slams the door
+                #TODO Cho Mood very angry
+                m "So ungrateful..."
+                #TODO Fades to Black
+                #TODO Remove cloth pile from desk
+                #TODO reset cho colour
 
-            "-I'm sure none of the Hufflepuffs will spot you-":
-                cho "How can you be so sure about-"
-                cho "Actually, you're probably right... you're a genius!"
+            "\"I'm sure none of the Hufflepuffs will spot you\"":
+                call cho_main("How can you be so sure about--", "soft", "base", "angry", "downR")
+                call cho_main("Actually, you're probably right... you're a genius!", "mad", "wide", "base", "mid")
                 g4 "I am?"
-                cho "Of course!"
-                cho "You know this castle inside and out and it's very unlikely any of the Hufflepuffs would be anywhere near the route to the Ravenclaw dorm."
+                call cho_main("Of course!", "crooked_smile", "base", "base", "mid")
+                call cho_main("You know this castle inside out, it's very unlikely any Hufflepuff student would be anywhere near the route to the Ravenclaw dorm.", "smile", "base", "base", "R")
                 g9 "Oh yes... that's it!"
                 m "You know me, always got an ace up my sleeve!"
-                #Cho's blue colour fades away
-                cho "Thank you [cho_genie_name]..."
+                #TODO Cho's blue colour fades away
+                call cho_main("Thank you [cho_genie_name]...", "base", "base", "base", "mid")
                 g9 "Of course!"
                 g9 "And look at that. You're not blue anymore!"
                 g9 "Also your skin is back to normal."
-                cho "Very funny..." #smile
-                #Cloth sound
-                cho "Let's try this on then..."
-                #Clothes equipped
-                cho "So, how do I look?"
+                call cho_main("Very funny...", "base", "base", "base", "down", cheeks="blush") #smile
+                #TODO Cloth sound
+                #TODO Remove cloth pile from desk
+                call cho_main("Let's try this on then...", "open", "base", "base", "mid", cheeks="blush")
+                #TODO Clothes equipped
+                call cho_main("So, how do I look?", "soft", "base", "base", "down")
                 m "Looking good!"
-                cho "I better be off then..."
-                cho "Good night."
+                call cho_main("I better be off then...", "smile", "base", "base", "mid")
+                call cho_main("Good night.", "base", "base", "base", "mid")
                 m "Good night, [cho_name]."
-                #Cho leaves
+                #TODO Cho leaves
                 #Mood stays the same
 
     elif d_flag_02 == 4:
         # Smurfette
 
         m "Got it right here."
-        cho "Thank you, I knew I could count on-"
-        cho "What is this?"
+        call cho_main("Thank you, I knew I could count on--", "base", "base", "base", "mid")
+        call cho_main("What is this?", "open", "wide", "base", "down")
         g9 "I know!"
         g9 "I couldn't believe it when I found it. The perfect outfit for you!"
-        cho "You... are you serious? You actually expect me to wear this?"
+        call cho_main("You... are you serious? You actually expect me to wear this?", "disgust", "wide", "base", "mid")
         m "Wait, don't tell me you don't like it?"
-        cho "..."
-        cho "Why couldn't you pick up a normal school uniform like I asked you to?"
+        call cho_main("...", "disgust", "base", "angry", "down")
+        call cho_main("Why couldn't you pick up a normal school uniform like I asked you to?", "clench", "base", "worried", "down")
 
         m "Just put it on already."
-        cho "..."
+        call cho_main("...", "annoyed", "base", "angry", "down")
         m "Or you could just head back naked!"
-        cho "Fine!"
-        #Black screen, cloth rustle
-        #Cho is now wearing the Smurfette outfit.
+        call cho_main("Fine!", "clench", "base", "angry", "mid")
+        #TODO Cloth sound
+        #TODO Clothes equipped (NOT HAIR!)
         m "Smurfabunga!"
-        cho "..." #Looking livid #red cheeks
+        call cho_main("...", "upset", "base", "angry", "down", cheeks="blush") #Looking livid #red cheeks
         m "I think some colour has started to return on your cheeks!"
         m "I also got you this wig."
-        cho "I am not wearing the wig!"
-        cho "I can't believe you!"
-        #Cho leaves and slams the door
+        call cho_main("I am not wearing the wig!", "clench", "wide", "angry", "mid")
+        call cho_main("I can't believe you!", "angry", "base", "angry", "down")
+        #TODO Cho leaves and slams the door
+        #TODO Cho Mood Very Angry
+        m "I'll just keep the wig for later..."
+        #TODO reset cho colour
+        #TODO Outfit unlock message (Could outfit be added to store if you didn't pick this option?)
 
-        # Outfit unlock message
-
+    #TODO reset cho outfit
     return

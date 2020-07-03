@@ -258,7 +258,7 @@ label hg_pf_strip_T2_Snape:
             call sna_main("(What did he just say to me?!)","snape_08")
             g4 "Shut your stupid mouth or I will send you flying out that bloody window!"
             g4 "That bitch is already stripping for you, so what more do you want?!"
-            call her_main("(That B-Bi--", "shock", "wide", "base", "stare")
+            call her_main("That B-Bitc--", "shock", "wide", "base", "stare")
             g4 "And you,... stripper-whore!"
             g4 "Do what you are paid for and start stripping already!!!"
             call her_main("......", "angry", "closed", "angry", "mid", emote="01")
@@ -508,7 +508,7 @@ label hg_pf_strip_T2_Snape_masturbate:
 
             jump hg_pf_strip_T2_Snape_watch
 
-        "\"(Psst! Remember why we are doing this!)\"":
+        "\"(Psst, Hermione! Remember why we are doing this!)\"":
             pass
 
 

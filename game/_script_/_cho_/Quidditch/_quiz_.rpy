@@ -127,7 +127,7 @@ label cho_quiz:
 
     # Question 1
     menu:
-        "There's five players on each team...":
+        "-There's five players on each team...-":
             m "There's two teams with each one having five players on the court at one time..."
             $ renpy.music.set_volume(0.5)
             $ renpy.block_rollback()
@@ -141,7 +141,7 @@ label cho_quiz:
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Ah,{w=0.4} well..."
 
-        "[cho_quiz.hint]At the start of the game the ball gets thrown in the air...":
+        "-[cho_quiz.hint]At the start of the game the ball gets thrown in the air...-":
             $ cho_quiz.correct_answers += 1
 
             m "You start the game by the referee throwing the ball into the air..."
@@ -157,7 +157,7 @@ label cho_quiz:
 
     # Question 2
     menu:
-        "It's played on a rectangular court...":
+        "-It's played on a rectangular court...-":
             m "The game is played on a rectangular court...{w=1.0}{nw}"
             $ renpy.music.set_volume(0.5)
             $ renpy.block_rollback()
@@ -171,7 +171,7 @@ label cho_quiz:
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             g4 "Of course!{w=0.4}... and in basketball..."
 
-        "[cho_quiz.hint]You may not go out of bounds with the ball...":
+        "-[cho_quiz.hint]You may not go out of bounds with the ball...-":
             $ cho_quiz.correct_answers += 1
 
             m "You're not allowed outside the bounds whilst holding the ball or you'll have to hand it over to your opponents team..."
@@ -187,7 +187,7 @@ label cho_quiz:
 
     # Question 3
     menu:
-        "[cho_quiz.hint]Each player takes a certain position...":
+        "-[cho_quiz.hint]Each player takes a certain position...-":
             $ cho_quiz.correct_answers += 1
 
             m "Each player takes a certain position."
@@ -202,7 +202,7 @@ label cho_quiz:
             $ renpy.music.set_volume(1.0)
             g9 "Exactly, which is obviously why I brought it up, and lastly..."
 
-        "You can't run with the ball unless you dribble or pass":
+        "-You can't run with the ball unless you dribble or pass.-":
             m "You can't run whilst holding the ball,{w} you need to pass it or dribble...{w=1.0}{nw}"
             $ renpy.music.set_volume(0.5)
             $ renpy.block_rollback()
@@ -220,7 +220,7 @@ label cho_quiz:
 
     # Question 4
     menu:
-        "You can't touch your opponent...":
+        "-You can't touch your opponent...-":
             m "You're not allowed to touch your opponent or it would be counted as a foul..."
             $ renpy.music.set_volume(0.5)
             $ renpy.block_rollback()
@@ -235,7 +235,7 @@ label cho_quiz:
             g4 "Well...{w=0.4}"
             m "Fine..."
 
-        "[cho_quiz.hint]You score by getting the ball through a hoop...":
+        "-[cho_quiz.hint]You score by getting the ball through a hoop...-":
             $ cho_quiz.correct_answers += 1
 
             m "The way you score is by getting the ball through a hoop."
@@ -394,7 +394,7 @@ label cho_quiz_checkpoint:
 
     # Question 1
     menu:
-        "Stitch":
+        "-Stitch-":
             m "Stitch?"
             $ renpy.block_rollback()
             call cho_main("No...", "open", "narrow", "angry", "mid")
@@ -405,7 +405,7 @@ label cho_quiz_checkpoint:
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("Next question...", "open", "base", "raised", "down")
 
-        "Lich":
+        "-Lich-":
             m "Lich?"
             $ renpy.block_rollback()
             call cho_main("A Lich? Like those undead skeletal creatures?", "open", "narrow", "raised", "mid")
@@ -419,7 +419,7 @@ label cho_quiz_checkpoint:
             m "Of course not..."
             call cho_main("Next question...", "open", "base", "raised", "down")
 
-        "[cho_quiz.hint]Snitch":
+        "-[cho_quiz.hint]Snitch-":
             m "Snitch?"
             $ renpy.block_rollback()
             $ renpy.sound.play( "sounds/gasp.mp3")
@@ -434,7 +434,7 @@ label cho_quiz_checkpoint:
 
     # Question 2
     menu:
-        "Butter and Waffles":
+        "-Butter and Waffles-":
             m "Butter and Waffles?"
             $ renpy.block_rollback()
             call cho_main("Sir?", "annoyed", "narrow", "raised", "mid")
@@ -446,7 +446,7 @@ label cho_quiz_checkpoint:
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("Next question...", "open", "base", "raised", "down")
 
-        "[cho_quiz.hint]Bludger and Quaffle":
+        "-[cho_quiz.hint]Bludger and Quaffle-":
             m "Bludger and Quaffle?"
             $ renpy.block_rollback()
             $ confidence_meter += 12
@@ -457,7 +457,7 @@ label cho_quiz_checkpoint:
             call cho_main("Next question...", "open", "base", "raised", "down")
             $ cho_quiz.correct_answers += 1
 
-        "Quabble and Bluffer":
+        "-Quabble and Bluffer-":
             m "Quabble and bluffer?"
             $ renpy.block_rollback()
             call cho_main("I think you got some letters mixed up there...", "soft", "narrow", "raised", "R")
@@ -479,7 +479,7 @@ label cho_quiz_checkpoint:
 
     # Question 3
     menu:
-        "[cho_quiz.hint]Three Months":
+        "-[cho_quiz.hint]Three Months-":
             m "Three months?"
             $ renpy.block_rollback()
             $ confidence_meter += 12
@@ -492,7 +492,7 @@ label cho_quiz_checkpoint:
             call cho_main("Anyway, final question...", "open", "base", "raised", "down")
             $ cho_quiz.correct_answers += 1
 
-        "Seven Years":
+        "-Seven Years-":
             m "Seven years?"
             $ renpy.block_rollback()
             $ confidence_meter -= 12
@@ -504,7 +504,7 @@ label cho_quiz_checkpoint:
             call cho_main("Not in this case...", "annoyed", "narrow", "angry", "mid")
             call cho_main("Anyway, final question...", "open", "base", "raised", "down")
 
-        "Two Minutes":
+        "-Two Minutes-":
             m "Two minutes?"
             $ renpy.block_rollback()
             call cho_main("What?", "angry", "base", "raised", "mid")
@@ -524,7 +524,7 @@ label cho_quiz_checkpoint:
 
     # Question 4
     menu:
-        "Three Months":
+        "-Three Months-":
             m "Three months?"
             $ renpy.block_rollback()
             call cho_main("Three months, what?", "annoyed", "narrow", "angry", "mid")
@@ -539,7 +539,7 @@ label cho_quiz_checkpoint:
             call cho_main("I think you're going off track a bit...", "annoyed", "narrow", "raised", "mid")
             g9 "Or off the pitch..."
 
-        "A free shot at the goal":
+        "-A free shot at the goal-":
             m "Free goal shot?"
             $ renpy.block_rollback()
             call cho_main("No that's not right...", "soft", "narrow", "raised", "L")
@@ -551,7 +551,7 @@ label cho_quiz_checkpoint:
             $ renpy.sound.play( "sounds/kung-fu-punch.mp3")
             call cho_main("I'm not sure what else to tell you...", "open", "closed", "base", "mid")
 
-        "[cho_quiz.hint]I don't know...":
+        "-[cho_quiz.hint]I don't know...-":
             m "Uh... I don't know..."
             $ renpy.block_rollback()
             $ confidence_meter += 12

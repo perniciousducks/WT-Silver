@@ -174,7 +174,7 @@ label hg_pf_sex_T1_E3: # repeats
     call bld
 
     menu:
-        g4 "(How should I fuck her this time?)"
+        m "(How should I fuck her this time?)"
         "-Use her pussy!-":
             m "(On second thought, this hole is still good enough for me...)"
             call hg_sex_2
@@ -398,7 +398,7 @@ label hg_sex_1:
     g4 "*ARGH*! YOU WHORE!"
 
     menu:
-        "-Cum all over Hermione-":
+        "-Cum all over her-":
             with hpunch
             g4 "{size=+7}*Argh*!!!{/size}"
             call cum_block
@@ -450,7 +450,7 @@ label hg_sex_1:
 
             return
 
-        "-Cum inside Hermione-":
+        "-Cum inside her-":
             with hpunch
             g4 "{size=+7}*Argh*!!!{/size}"
             call cum_block
@@ -543,7 +543,7 @@ label hg_sex_2:
 
     menu:
         g4 "..."
-        "\"Be sweet but passionate.\"":
+        "-Be sweet but passionate.-":
             m "Yes, you're liking this?"
             $ ccg1 = 8
             call her_main("I do, [genie_name]... *ah*...{heart}", "open", "closed", "base", "mid")
@@ -572,7 +572,7 @@ label hg_sex_2:
             if genie_name == "Daddy":
                 her "[genie_name]...{heart}{heart}{heart}"
 
-        "\"Be mean to her!\"":
+        "-Be mean to her!-":
             m "Yes, you slut!"
             m "I bet you love every second of this!"
             call nar(">You pick up the pace.")
@@ -653,7 +653,7 @@ label hg_sex_2:
     g4 "*Argh*!"
 
     menu:
-        "-Cum inside of Hermione-":
+        "-Cum inside of her-":
             with hpunch
             g4 "{size=+7}*Argh*, TAKE THIS!!!{/size}"
             call cum_block
@@ -716,7 +716,7 @@ label hg_sex_2:
 
             return
 
-        "-Cum all over Hermione-":
+        "-Cum all over her-":
             with hpunch
             g4 "{size=+7}*Argh*!!!{/size}"
             call cum_block

@@ -109,28 +109,28 @@ label wardrobe(char_label):
         $ _return[1].schedule[_return[2]] = not _return[1].schedule[_return[2]]
     elif _return[0] == "export":
         menu:
-            "Export to PNG file" if not renpy.variant('android'):
+            "-Export to PNG file-" if not renpy.variant('android'):
                 $ export_in_progress = True
                 $ getattr(renpy.store, active_girl[:3]+"_outfit_last").save()
                 $ char_active.equip(_return[1])
                 $ item_to_export = _return[1]
                 $ renpy.call_in_new_context("studio", char_label)
-            "Export to clipboard":
+            "-Export to clipboard-":
                 $ _return[1].export_data(False)
-            "Back":
+            "-Back-":
                 pass
         $ achievement.unlock("export")
     elif _return == "import":
         menu:
-            "Import from PNG file" if not renpy.variant('android'):
+            "-Import from PNG file-" if not renpy.variant('android'):
                 #call file_explorer # Unfinished
 
                 $ txt_filename = "exported"
                 $ txt_filename = renpy.input("Filename", txt_filename, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#&_- ", length=64)
                 $ getattr(renpy.store, active_girl[:3]+"_outfit_last").import_data(True, txt_filename)
-            "Import from clipboard":
+            "-Import from clipboard-":
                 $ getattr(renpy.store, active_girl[:3]+"_outfit_last").import_data(False)
-            "Back":
+            "-Back-":
                 pass
         $ menu_items = filter(lambda x: x.unlocked==True, char_active.outfits)
         $ menu_items_length = len(menu_items)

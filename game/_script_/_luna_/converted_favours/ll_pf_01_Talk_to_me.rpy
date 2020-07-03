@@ -254,8 +254,6 @@ label luna_favour_1:
                         m "Don't worry, I'll add an extra fifty gold to your payment."
                         call lun_main("That's the least you could do [lun_genie_name]...","base","suspicious","raised","R")
 
-
-
                     "-Let her know her place-": #note that he could get more for less from those tarts
                         $ lun_sub += 1
                         m "well now that you mention it I'm sure those tarts would probably charge a lot less for a conversation..."
@@ -264,6 +262,7 @@ label luna_favour_1:
                         call lun_main("Getting to Look at me while you stroke your filthy old cock should be payment enough.","normal","angry","mad","mid")
                         m "Well you'll have to excuse my old eyes because I can barely see you..."
                         menu:
+                            m "..."
                             "-Ask her to open her top-":
                                 $ lun_sub += 1
                                 m "Perhaps you should undo a button or two so I can get a better look."
@@ -282,6 +281,7 @@ label luna_favour_1:
                                 call lun_main("...","normal","suspicious","sad","down")
                                 m "Why don't you keep you're shirt like that from now on..."
                                 call lun_main("...","upset","suspicious","sad","R")
+
                             "-Ask her to come closer-":
                                 m "Perhaps you should come stand a little closer."
                                 call lun_main("Really? You want me to come closer while you...?","normal","suspicious","mad","mid")

@@ -17,7 +17,7 @@ label fireplace:
         with d3
         m "(Hmm, there's something glimmering in the fireplace.)"
         menu:
-            "Search fireplace":
+            "-Search fireplace-":
                 m "(A loose brick... If only I could..{nw}{w=1.0}"
                 $ renpy.play('sounds/brick_scrape.mp3')
                 m "(A loose brick... If only I could..{fast} *Hhng*... There we go.)"

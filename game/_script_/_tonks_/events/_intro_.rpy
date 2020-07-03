@@ -284,7 +284,7 @@ label tonks_intro_E2:
             call ton_main("What?!", "open", "wide", "shocked", "stare")
             call ton_main("I'm sorry, Professor. I clearly must have misheard you...","open","closed","angry","mid")
             call ton_main("Sir, what did you just call me?","angry","base","angry","mid")
-            m "*Uhm*...{w}isn't that your name?"
+            m "*Uhm*...{w=0.5}isn't that your name?"
             call ton_main("My name is \"Tonks\", Professor!","upset","base","angry","mid")
             call ton_main("You of all people should know this...","upset","base","angry","R")
             m ".............."
@@ -444,15 +444,15 @@ label tonks_intro_E3:
     m "(It's that hot Ministry chick again...)"
 
     menu:
-        "Yes, please come on in.":
+        "\"Yes, please come on in.\"":
             pass
-        "Not right now.":
+        "\"Not right now.\"":
             ton "But it's urgent, Sir. I need to talk to you about Miss Granger's favour trading accusations..."
             g4 "(Shit. That can't be good.)"
             m "Do you mind coming another time, I'm very busy...{w} watering the bird."
             ton "Watering what?"
             ton "Sir, I'm coming in."
-        "Who is it?":
+        "\"Who is it?\"":
             ton "It's Tonks."
             m "Who?"
             ton "..."
@@ -467,16 +467,16 @@ label tonks_intro_E3:
     call ton_main("Professor...","base","base","base","mid", xpos="mid", ypos="base")
     m "How's the investigation going? Nothing to report I gather?"
     call ton_main("On the contrary...", "open", "wide", "shocked", "stare")
-    call ton_main("It's worse than I could have ever imagined!","open","base","angry","mid", hair="angry")
+    call ton_main("It's worse than I could have ever imagined!", "open", "wide", "angry", "mid", hair="angry")
     g4 "(........)"
     call ton_main("This school truly has changed since I was a student here.","open","base","base","mid")
     call ton_main("I never thought I would see Hogwarts in a state such as this...","open","base","angry","down")
     call ton_main("Corrupted! Right down to the core!","angry","base","angry","mid", hair="angry")
     g4 "(What's the matter with her hair?!)"
-    call ton_main("You don't have to search for too long to uncover the vile debaucheries that are happening at this school...","open","base","angry","mid", hair="angry")
+    call ton_main("You don't have to search for too long to uncover the vile debaucheries that are happening at this school...", "open", "base", "annoyed", "mid", hair="angry")
     g4 "(Snape you fucking idiot! You blew it!!!)"
     call ton_main("Teachers taking advantage of their students, promising house points in return for sexual acts...","open","base","angry","R", hair="angry") #in a sexual favour, the sex act is the favour
-    call ton_main("While they abuse their authority and power to do the most despicable things to them...","open","base","base","R", hair="horny")
+    call ton_main("While they abuse their authority and power to do the most despicable things to them...", "open", "base", "annoyed", "R", hair="horny")
     call ton_main("But the Dumbledore I know would never allow such disgracefulness at his school...","angry","base","angry","mid", hair="angry")
     m "(...)"
 
@@ -490,11 +490,11 @@ label tonks_intro_E3:
 
     menu:
         g4 "I am..."
-        "Albus Dumbledore!":
+        "\"Albus Dumbledore!\"":
             call ton_main("You are most certainly {b}not{/b} Albus Dumbledore!","upset","base","angry","mid")
             g4 "No wait, it was {i}Albertus Dumblerdore{/i}! That's it!"
             m "(Yes, that was probably it...)"
-        "You know who!":
+        "\"You know who!\"":
             call ton_main("What?", "base", "wide", "shocked", "stare")
             m "You...{w=0.8} know...{w=0.8} who..."
             call ton_main("That can't be true!","open","base","worried","mid")
@@ -542,20 +542,20 @@ label tonks_intro_E3:
     call ton_main("", "open", "wide", "shocked", "stare", xpos="right", ypos="base")
     m "(...)"
     $ renpy.music.play("music/Under-the-Radar by PhobyAk.mp3")
-    call ton_main("No way!","open","base","base","mid")
+    call ton_main("No way!", "open", "wide", "base", "mid")
     m "What just happened?"
-    call ton_main("What... are you...?","open","base","worried","down")
+    call ton_main("What... are you...?", "open", "wide", "raised", "mid")
     m "(Can she see through the illusion?)"
-    call ton_main("Wait a minute... Are you...{w} a Genie?","base","base","raised","mid")
+    call ton_main("Wait a minute... Are you...{w} a Genie?", "angry", "wide", "raised", "mid")
     g4 "(This witch knows her shit!)"
     m "..."
 
     g9 "Some people would say I'm \"the\" Genie, actually!"
     m "The most powerful being in the entire universe... Multiple universes even...."
     m "Glad my reputation precedes me..."
-    call ton_main("How curious. I've never had a Genie before...","horny","base","raised","down", hair="horny") # Tonks looks horny.
+    call ton_main("How curious. I've never had a Genie before...", "horny", "narrow", "base", "down", hair="horny") # Tonks looks horny.
     m "I'm sorry- what?"
-    call ton_main("I meant, I've never had the pleasure of meeting a Genie before. This is brilliant!","smile","base","base","mid")
+    call ton_main("I meant, I've never had the pleasure of meeting a Genie before. This is brilliant!", "smile", "base", "shocked", "mid")
     m "(Is she hitting on me?!)"
     m "I'm flattered... But how were you able to tell?"
     call ton_main("I'm an Auror. It's my job to identify and catch magical beings...","open","base","base","R")
@@ -567,21 +567,21 @@ label tonks_intro_E3:
     call ton_main("Really?! Is he okay?","open","base","base","mid")
     m "I think so.{w} He travelled to my universe, and I'm stuck in this dull place..."
     m "Believe me, there are a lot more brothels in Agrabah.{w} I bet he's having the time of his life..."
-    call ton_main("So, you just {i}poofed{/i} in here and decided to turn this school into your own private brothel...","open","base","angry","mid")
+    call ton_main("So, you just {i}poofed{/i} in here and decided to turn this school into your own private brothel...", "open", "narrow", "angry", "mid")
     call ton_main("Because you were bored?!","upset","base","angry","mid")
     m "Hey! I'm an immortal being... boredom is my worst enemy."
     m "And I didn't do much, just a nudge in the right direction..."
     call ton_main("You need to bring him back, the real Dumbledore, immediately!","angry","base","angry","mid", hair="angry")
     m "I don't know how,... yet.{w} We're still working on it..."
-    call ton_main("We? Who else knows about this?","angry","base","worried","R")
+    call ton_main("We? Who else knows about this?", "open", "narrow", "annoyed", "mid")
     m "That Snape guy."
     call ton_main("But of course!{w} After all he was mentioned in Miss Granger's letter as one of the main offenders.", "open", "wide", "shocked", "stare")
     call ton_main("That sleazy, vile snake...{w} Naturally he'd be all over an opportunity such as this.","angry","base","angry","R", hair="angry")
     m "(Snake? Have I been saying his name wrong this entire time?...)"
     m "(I hate when that happens...)"
-    call ton_main("And to think I believed that creep when I questioned him about it.","angry","base","angry","down")
+    call ton_main("And to think I believed that creep when I questioned him about it.", "angry", "base", "angry", "down")
     m "(...)"
-    call ton_main("He's a very skilled liar, I'll give him that.","upset","base","angry","down")
+    call ton_main("He's a very skilled liar, I'll give him that.", "upset", "narrow", "angry", "down")
     m "Are you going to lock us up now?"
     call ton_main("I very well should! It would be the moral thing to do.","open","base","angry","mid")
     m "(Shit...)"
@@ -604,7 +604,7 @@ label tonks_intro_E3:
     stop music fadeout 1.5
     $ renpy.play('sounds/scratch.wav')
     with hpunch
-    call ton_main("Unless...", "upset","base","angry","R")
+    call ton_main("Unless...", "upset", "narrow", "annoyed", "downR")
 
     g4 "Unless?"
     call play_music("tonks")
@@ -613,15 +613,15 @@ label tonks_intro_E3:
     g4 "What?" #screenshake
     call ton_main("The ministry sent me to investigate what they assumed to be a silly rumour a student made up...","open","base","angry","R")
     call ton_main("And whilst I could just squash the rumour and go back to a dull, quiet desk job.","open","base","raised","mid") #rule of 3
-    call ton_main("I simply couldn't pass up an opportunity like this...","base","base","base","mid", hair="horny") #now that she's not being official and talking ministry business, she should slip back into more casual language
-    call ton_main("Keeping quiet would be far more... \"exciting\".","horny","base","base","mid", hair="horny")
+    call ton_main("I simply couldn't pass up an opportunity like this...", "base", "narrow", "base", "mid", hair="horny") #now that she's not being official and talking ministry business, she should slip back into more casual language
+    call ton_main("Keeping quiet would be far more... \"exciting\".", "horny", "narrow", "base", "mid", hair="horny")
     m "How so?"
     call ton_main("I know for a fact that the Ministry has been trying to plant an inside man here at Hogwarts.","open","base","base","R")
     m "Then what are you suggesting?"
     call ton_main("Hire me as a teacher.","base","base","base","mid")
     call ton_main("I could teach the students a thing or two about the \"Defence against the Dark Arts\"...","open","base","base","mid")
     m "(...)"
-    call ton_main("And if you and Snape want this favour trading to continue, you'll need somebody who can keep things quiet with the ministry.","upset","base","angry","mid")
+    call ton_main("And if you and Snape want this favour trading to continue, you'll need somebody who can keep things quiet with the ministry.", "upset", "base", "annoyed", "mid")
     m "Do I even have a choice?"
     call ton_main("The alternative would be me informing the ministry, and locking you both up.","open","base","raised","mid") #formal language here for the 'official procedure'
     g9 "Then welcome aboard!"
@@ -629,19 +629,19 @@ label tonks_intro_E3:
     m "That's a relief..."
     call ton_main("I'll inform the other teachers about my stay.","open","base","base","R")
     call ton_main("And the Ministry too of course. I'll be their inside man at Hogwarts, here at the request of Professor Dumbledore himself, no less.","base","base","base","mid")
-    call ton_main("If only they knew...","horny","base","base","mid")
+    call ton_main("If only they knew...", "horny", "narrow", "base", "mid")
     call ton_main("In any case, Profess-","open","base","base","R")
     call ton_main("I'm sorry, what would you like me to call you?","angry","base","raised","mid")
 
     menu:
         m "You can call me..."
-        "Professor":
+        "\"Professor.\"":
             $ ton_genie_name = "Professor"
             call ton_main("Very well.","base","base","base","mid")
-        "Genie":
+        "\"Genie.\"":
             $ ton_genie_name = "Genie"
             call ton_main("Very well.","base","base","base","mid")
-        "Daddy":
+        "\"Daddy...\"":
             $ ton_genie_name = "Daddy"
             call ton_main("What? Are you serious?!", "open", "wide", "shocked", "stare")
             call ton_main("*Ha-Ha-Ha!*...{w} you're too funny!", "smile", "base", "worried", "mid", hair="happy")
@@ -649,7 +649,7 @@ label tonks_intro_E3:
             call ton_main("Are all Genies this desperate?", "smile", "base", "worried", "mid", hair="happy")
             m "Desperate? Why Desperate?..."
             call ton_main("Nothing...","base","base","base","mid", hair="happy")
-            call ton_main("Very well,... \"Daddy\"! {heart}{heart}{heart}","horny","base","base","mid", hair="horny")
+            call ton_main("Very well,... \"Daddy\"! {heart}{heart}{heart}", "horny", "narrow", "base", "mid", hair="horny")
             g9 "*He*-*He*-*He*-He*..."
 
     call ton_main("Call me to your office whenever you require my help, [ton_genie_name].","base","base","base","mid") #would it be better to have her call him by the requested name here, since later on we have the bit where Tonks submits to genie and calls him sir

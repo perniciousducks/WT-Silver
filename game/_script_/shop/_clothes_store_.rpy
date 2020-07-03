@@ -638,7 +638,7 @@ label purchase_outfit(item):
         $ order_tip = int(item.cost * 0.20) # int() removes decimental
 
         menu:
-            "-add next day delivery (+[order_tip] gold)-" if gold >= order_cost + order_tip:
+            "-Add next day delivery (+[order_tip] gold)-" if gold >= order_cost + order_tip:
                 $ order_cost = order_cost + order_tip
                 $ clothing_mail_timer = 1
                 g9 "I'll tip you handsomely if you can get it done by tomorrow."
@@ -661,9 +661,9 @@ label purchase_outfit(item):
                     maf "Could I use one of the house elves?"
                     m "Use anything that will get it done by tomorrow."
                     maf "Certainly, sir."
-            "{color=[menu_disabled]}-add next day delivery (+[order_tip] gold)-{/color}" if gold < order_cost + order_tip:
+            "{color=[menu_disabled]}-Add next day delivery (+[order_tip] gold)-{/color}" if gold < order_cost + order_tip:
                 m "(I don't have enough money for that.)"
-            "-no thanks-":
+            "-No thanks-":
                 pass
 
     else:

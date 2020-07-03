@@ -221,7 +221,7 @@ label hg_pr_handjob_T1_E1:
 
             jump end_hg_pr_handjob
 
-        "\"Well, you did try. Here are the points.\"":
+        "\"Well, you did try. Here are your points.\"":
             call her_main("Really?", "angry", "base", "base", "mid")
             call her_main("Thank you, [genie_name]!", "open", "narrow", "worried", "down")
             call her_main("I promise, I will try harder next time!", "base", "base", "base", "mid")

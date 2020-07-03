@@ -80,6 +80,8 @@ label room(room=None, hide_screens=True, stop_sound=True):
 # Used to return from event sequences
 label main_room:
     call room("main_room", stop_sound=False)
+    if not desk_examined:
+        show screen letter_on_desk
     with d3
 
     call reset_menu_position

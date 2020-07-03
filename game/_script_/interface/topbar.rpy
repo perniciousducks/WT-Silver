@@ -376,7 +376,7 @@ label decorate_room_menu:
         with d3
         menu:
             ">Remove all decorations?"
-            "Yes":
+            "-Yes-":
                 # Loop through all decorations and deactivate them
                 python:
                     for i in xrange(len(wall_deco_list)):
@@ -399,7 +399,7 @@ label decorate_room_menu:
                     owl_OBJ.room_image = "owl_idle"
                     owl_OBJ.idle_image = "owl_letter"
                     owl_OBJ.hover_image = "owl_hover"
-            "No":
+            "-No-":
                 pass
         jump decorate_room_menu
 

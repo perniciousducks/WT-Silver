@@ -126,7 +126,7 @@ label hg_ps_cumslut_Scene_1:
             m "I'm sure no one will notice."
             call her_main("They better not.", "angry", "base", "angry", "mid")
 
-        "\"Just keep on jerking [hermione_name]!\"":
+        "\"Just keep on jerking, [hermione_name]!\"":
             # Cum on skirt
             $ cum_location = 2
 
@@ -335,7 +335,7 @@ label hg_ps_cumslut_Scene_2:
             call her_chibi_scene("hj_cum_on_done")
             m "Good girl."
 
-        "\"Just keep on jerking [hermione_name]!\"":
+        "\"Just keep on jerking, [hermione_name]!\"":
             # Cum on shirt
             $ cum_location = 5
 
@@ -471,7 +471,7 @@ label hg_ps_cumslut_Scene_3:
     g4 "HERE IT COMES!!!"
     call her_main("Shoot it wherever you want [genie_name]...", "open_wide_tongue", "narrow", "annoyed", "up")
     menu:
-        "\"take it on your tits!\"":
+        "\"Take it on your tits!\"":
             # Cum on shirt
             $ cum_location = 7
             call her_main("Please cover my tits with your sticky cum! I need it, [genie_name]!", "grin", "narrow", "annoyed", "up",ypos="head")

@@ -10,13 +10,13 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
     nar "This event is written by WaxerRed."
 
     menu:
-        "Path 1":
+        "-Part 1-":
             $ pathvalue = 0
-        "Path 2":
+        "-Part 2-":
             $ pathvalue = 1
-        "Path 3":
+        "-Part 3-":
             $ pathvalue = 2
-        "Path 4":
+        "-Part 4-":
             $ pathvalue = 3
 
     call hide_blkfade
@@ -158,12 +158,12 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("... No, no I do not. Not until those Slytherins pay.", "open", "slit", "low", "stare")
         call her_main("[genie_name] I don't care about my points for this. I just want you to do something about Slytherin.", "open", "base", "base", "mid_soft")
         menu:
-            "\"Give eighty points to Gryffindor.\"":
+            "-Give eighty points to Gryffindor.-":
                 m "Sorry [hermione_name], but there isn't much I can do."
                 m "But here, these should cheer you up. Eighty house points to Gryffindor."
                 call her_main("Ugh- It's like you don't even listen to me.", "annoyed", "narrow", "annoyed", "mid")
 
-            "\"Take two hundred points from Slytherin.\"":
+            "-Take two hundred points from Slytherin.-":
                 m "Hmmm. While I doubt I can do anything official just yet..."
                 m "Two hundred house points from Slytherin!"
                 call her_main("Serves them right. Heh, heh heh.", "grin", "happy", "base", "mid_soft")
@@ -176,7 +176,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Yes! I mean...if I must.", "open", "narrow", "base", "mid_soft")
                 call her_main("{size=-5}Totally worth it.{/size}", "smile", "happy", "base", "mid_soft")
 
-            "\"Humiliate her.\"":
+            "-Humiliate her.-":
                 m "I'm sorry can you say that again?"
                 call her_main("Agh! For the hundredth time, DO SOMETHING about Slytherin!", "annoyed", "narrow", "annoyed", "mid")
                 m "...For?"
@@ -330,7 +330,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Of course, was there ever any doubt?", "smile", "base", "base", "mid")
 
         menu:
-            "\"Just give her the points.\"":
+            "-Just give her the points.-":
                 m "Well I trust you at your word, [hermione_name]. Eighty points."
                 call her_main("Oh really? Are you sure you don't want me to give you the details to be sure?", "upset", "squint", "angry", "mid")
                 m "No no, it's quite alright you deserve my trust. I'm sure you have some studying or some such to get to"

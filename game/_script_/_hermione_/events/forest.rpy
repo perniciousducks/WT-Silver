@@ -559,12 +559,12 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
 
     menu:
         m "(Should I clean her up a bit?)"
-        "-clean it-":
+        "-clean her up-":
             m "(I suppose I should..."
             ">You use a rag and wipe her face clean."
             her "*zzz* no... *zzz* I wanna be a.. *zzz* cumslut... *zzz*"
             m "*Shhh*... Don't worry, [hermione_name], I will give you more tomorrow."
-        "-leave it-":
+        "-leave her be-":
             m "(She looks better like this anyway...)"
             ">As you turn to leave, you notice a content smile form over Hermione's face as she pulls her sheets up over her shoulders."
             her "{size=-4}Night sir...{/size}"
@@ -727,7 +727,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     $ ccg2 = 35
 
     menu:
-        "-\"go nuts\"-":
+        "\"Go nuts\"":
             $ ccg2 = 34
             myr "Really?"
             $ ccg2 = 35
@@ -741,7 +741,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
             $ ccg2 = 35
             her "{size=+5}*glck*{heart}*glck*{heart}*glck*{/size}"
             $ ccg2 = 34
-        "-\"you can say it was me\"-":
+        "\"you can say it was me\"":
             $ ccg2 = 34
             myr "{size=+2}{b}Really?{/b}{/size}"
             $ ccg2 = 35

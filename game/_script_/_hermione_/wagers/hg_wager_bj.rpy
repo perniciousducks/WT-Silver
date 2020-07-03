@@ -401,7 +401,7 @@ label hg_wager_bj:
                     #
                     #
                     menu:
-                        "-Hmm.. Actually.. {image=interface/cards.png}":
+                        "\"*Hmm*.. Actually..\" {image=interface/cards.png}":
                             g9 "I don't see why not... I don't have anything else going on at the moment..."
                             label bj_duel_game:
                             call her_main("...", "open_wide_tongue", "narrow", "annoyed", "mid")
@@ -567,7 +567,7 @@ label hg_wager_bj:
                             call blkfade
                             hide screen blkfade
                             jump end_hermione_event
-                        "-I'll pass-":
+                        "\"I'll pass\"":
                             pass
                     #
                     #

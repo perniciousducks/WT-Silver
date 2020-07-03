@@ -953,18 +953,18 @@ label hermione_intro_E5:
 label nt_he_hermione_E1:
     call ton_main("So, that Granger girl is causing you two trouble?","open","base","base","mid", ypos="head")
     m "Quite a bit. She's not too thrilled on the idea of favour trading."
-    call ton_main("Maybe I can be of help with her?", "base", "base", "shocked", "L")
-    call ton_main("I can be very convincing.","horny","base","raised","mid")
+    call ton_main("Maybe I can be of help with her?", "base", "base", "base", "mid")
+    call ton_main("I can be very convincing.", "horny", "narrow", "annoyed", "mid")
     m "What are you suggesting?"
     call ton_main("To persuade her into having a try of it herself, for a start...","open","base","base","R")
     call ton_main("Convince her that trading favours isn't all bad.","base","base","base","mid")
     m "That would indeed be very helpful. She's stubborn in that regard."
     call ton_main("You don't have to tell me. She's been lecturing me about those \"sexual favours\" since the very day I got here...","open","base","base","R")
     call ton_main("But I shouldn't complain about that...","base","base","base","mid")
-    call ton_main("Hearing those naughty words spill out of her gorgeous little mouth really gets me going!","horny","base","base","ahegao", hair="horny")
+    call ton_main("Hearing those naughty words spill out of her gorgeous little mouth really gets me going!", "horny", "base", "base", "ahegao", hair="horny")
     g9 "I can imagine so."
     call ton_main("When she describes all the wrongdoings of those \"filthy Slytherin girls\"...","open","base","angry","mid")
-    call ton_main("How could I possibly get tired of that!","base","base","base","mid")
+    call ton_main("How could I possibly get tired of that!", "base", "narrow", "base", "mid")
     call ton_main("I'm very glad I decided to join you two.","open","base","base","down")
     call ton_main("As an Auror It's just constant busy work...","open","base","angry","mid")
     call ton_main("Not to mention the hours.", "angry", "base", "base", "down")
@@ -1086,6 +1086,7 @@ label hermione_intro_E6:
             $ current_favor = "bad_girl"
         "\"Blow me\"" if not d_flag_01:
             $ d_flag_01 = True
+            g9 "(*heh*, if only that worked...)"
             m "(I don't think she's ready for that just yet)"
             m "(Let's start with something simpler.)"
             jump hermione_intro_E6.choices
@@ -1209,7 +1210,7 @@ label hermione_intro_E6:
         call her_main("What about this one then?", "disgust", "slit", "low", "stare")
 
         menu:
-            "\"Ha-ha! You look like an idiot!\"":
+            "\"*Ha-ha*! You look like an idiot!\"":
                 jump hermione_intro_E6.end
             "\"No, not stupid enough.\"":
                 pass
@@ -1227,7 +1228,7 @@ label hermione_intro_E6:
         call her_main("I give up...", "upset", "narrow", "worried", "down")
 
         menu:
-            "\"Ha-ha-ha, perfect!\"":
+            "\"*Ha-ha-ha*, perfect!\"":
                 call her_main("What?", "open", "base", "angry", "mid")
                 call her_main("But that's my normal face!", "angry", "base", "angry", "mid")
                 g9 "*he-he-he* Don't get mad, [hermione_name], I'm just messing with you."

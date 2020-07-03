@@ -115,13 +115,12 @@ label start_wt:
     call room("main_room")
     call gen_chibi("hide")
     show screen dumbledore
-    show screen letter_on_desk # Gets hidden after examining desk
+    show screen letter_on_desk
     hide screen blkfade
     with d3
     pause 1
 
     call teleport("desk", poof_label="swap_dumb_genie")
-
     call reset_menu_position
 
     $ renpy.block_rollback()

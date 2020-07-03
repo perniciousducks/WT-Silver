@@ -222,7 +222,7 @@ label hg_pf_blowjob_T1_intro_E2:
             call her_main("I got you... [genie_name].", "grin", "happyCl", "worried", "mid", emote="05")
             m "What?"
 
-        "\"Two can play that game...\"":
+        "-Two can play that game...-":
             stop music fadeout 1.0
             m "Oh nooooo... whatever I'm gonna do now."
             call her_main("........?", "soft", "base", "base", "mid")

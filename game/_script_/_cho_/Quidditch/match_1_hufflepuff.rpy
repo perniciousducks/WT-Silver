@@ -372,7 +372,7 @@ label hufflepuff_match:
 
     menu:
         "(Shit, what do I even talk about?)"
-        "\"Miracles\"":
+        "-Miracles-":
             play bg_sounds "music/fanfare.mp3" fadein 1.0
             call gen_main("Great moments are born from great opportunity.",face="base")
             ">A reverent hush falls over the crowd..."
@@ -431,7 +431,7 @@ label hufflepuff_match:
             $ renpy.sound.play("sounds/killswitch_off.mp3")
             call gen_main("Now let the games begin!",face="base")
 
-        "\"Freedom\"":
+        "-Freedom-":
             play bg_sounds "music/fanfare.mp3" fadein 1.0
             call gen_main("Son's of Scotland!",face="angry")
 
@@ -516,7 +516,7 @@ label hufflepuff_match:
             call gen_chibi("stand", flip=False, 280-40, 400)
             with d3
 
-        "\"Nam\"":
+        "-Nam-":
             play bg_sounds "sounds/wind_long_loop.mp3"
 
             hide screen genie_main

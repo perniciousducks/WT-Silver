@@ -106,9 +106,9 @@ label susan_intro_E1:
 
     call bld
     if d_flag_02:
-        g4 "Didn't I say not now-"
+        g4 "Didn't I say not now--"
     else:
-        m "How can I help you-"
+        m "How can I help you--"
 
     call play_music("susan")
     call sus_main("","base","base","base","mid", xpos="right", ypos="base")

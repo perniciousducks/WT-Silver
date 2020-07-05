@@ -58,7 +58,7 @@ label ag_se_imperio_sb_E1:
     pause.8
 
     call play_music("trance")
-    call sus_main("W-what are you-","open","wide","worried","wide")
+    call sus_main("W-what are you--","open","wide","worried","wide")
     call nar("Susan's eyes flicker and a blank expression spreads across her face.")
     call sus_main("-doing...","upset","base","base","up")
     call sus_main("...","upset","narrow","base","up")
@@ -316,9 +316,9 @@ label ag_se_imperio_sb_E2:
     call ast_main("You mean like making her show you her milk duds?","upset","narrow","base","mid")
     m "Well if you insist..."
     call ast_main("*ugh*... you're such a filthy pervert!","clench","narrow","angry","mid")
-    m "We can do something else if you-"
+    m "We can do something else if you--"
     call ast_main("I didn't say no...","upset","closed","base","mid")
-    m "Oh... well how about you make it so-"
+    m "Oh... well how about you make it so--"
     call ast_main("I get to choose, [ast_genie_name]!","scream","closed","angry","mid")
     m "What? Why?"
     call ast_main("Because it's my spell and my wand!","open","narrow","angry","mid")
@@ -448,7 +448,7 @@ label ag_se_imperio_sb_E2:
     call ast_main("Suzy, I want you to speak the truth and nothing but the truth, okay?","open","base","base","L")
     call sus_main("Okay...","open")
     call sus_main("", "upset")
-    m "What are you?-"
+    m "What are you--"
     call ast_main("...","upset","base","base","mid") # Stares at you
     g4 "..."
     call ast_main("Suzy, do you like baring your chest to the headmaster?","open","base","base","L")
@@ -491,7 +491,7 @@ label ag_se_imperio_sb_E2:
     call ast_main("",eyes="closed")
     g4 "..."
     m "Then wouldn't the reason for Susan's shame go away as well?"
-    call ast_main("And they will all be under my comm-","scream","closed")
+    call ast_main("And they will all be under my comm--","scream","closed")
     call ast_main("Oh yeah, that's true...","open","base","base","mid")
     call ast_main("...","annoyed")
 
@@ -588,7 +588,7 @@ label ag_se_imperio_sb_E3:
     pause.8
 
     call play_music("trance")
-    call sus_main("Wait, wha-","open","wide","base","wide")
+    call sus_main("Wait, what--","open","wide","base","wide")
     m "Couldn't even wait this time?"
     call ast_main("Quiet old man.","open","narrow","angry","mid")
     call ast_chibi("wand",530,"base")
@@ -635,7 +635,7 @@ label ag_se_imperio_sb_E3:
     m "Ugh... I'm afraid not Susan..."
     call ast_main("","grin","narrow","angry","L",xpos="base",ypos="base")
     call sus_main("WHAT?!","scream","wide","base","wide")
-    call sus_main("W-w-w-well my aunt will just send you-","upset","narrow","angry","mid")
+    call sus_main("W-w-w-well my aunt will just send you--","upset","narrow","angry","mid")
 
     call nar(">Astoria strengthens her grip on her wand, increasing the effect the spell has on Susan.")
 

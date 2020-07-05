@@ -24,7 +24,7 @@ label potion_scene_2_1_1:
     m "Oh I wouldn't be so sure of that."
     call her_main("So is that what it does? Makes me show you my breasts? Is it some sort of mind control potion?", "base", "base", "base", "mid")
     m "Mind control? Where's the fun in that? No, this is something much more entertaining."
-    call her_main("Well it better happen soon otherwise I'm lea-", "annoyed", "narrow", "angry", "R")
+    call her_main("Well it better happen soon otherwise I'm lea--", "annoyed", "narrow", "angry", "R")
     call nar(">You notice her breasts start to expand ever so slightly.") #Start using facial expressions mixed with Captain Nemo art
     call her_main("...", "annoyed", "narrow", "annoyed", "mid")
     call her_main("As I said, something better happen soon or I'm leaving.", "annoyed", "base", "worried", "R")
@@ -42,7 +42,7 @@ label potion_scene_2_1_1:
     m "You know what they say, can't have too much of a good thing."
     call her_main("It's the other way around [genie_name].", "annoyed", "narrow", "annoyed", "mid")
     m "Is it? Well I prefer my version."
-    call her_main("Well how big are they supposed to-", "angry", "narrow", "base", "down")
+    call her_main("Well how big are they supposed to--", "angry", "narrow", "base", "down")
     call nar(">Her breast swell up again.")
     call her_main("You can't be serious. At this rate they're going to rip my shirt.", "angry", "wide", "base", "stare")
     m "Well they should stop there."
@@ -81,7 +81,7 @@ label potion_scene_2_1_1:
     m "Well that's a matter of personal opinion."
     m "Now how would you like to earn some additional points?"
     call her_main("I want an extra 40.", "annoyed", "narrow", "annoyed", "mid")
-    m "I haven't even told you what I want to-"
+    m "I haven't even told you what I want to--"
     call her_main("If you want to touch my breasts it will be an extra forty points.", "annoyed", "narrow", "angry", "R")
     m "Deal."
 
@@ -106,7 +106,7 @@ label potion_scene_2_1_1:
     m "They're certainly much larger than usual."
     call her_main("...yes", "soft", "narrow", "annoyed", "up")
     call nar(">You continue massaging them gently through her shirt. Pulling them apart and then pressing them into one another.")
-    call her_main("...It feels like they're getting-", "angry", "narrow", "base", "down")
+    call her_main("...It feels like they're getting--", "angry", "narrow", "base", "down")
     call ctc
 
     call set_her_action("expand_breasts")
@@ -278,7 +278,7 @@ label potion_scene_2_2:
             hide screen hermione_main
             m "Well in that case..."
             call nar(">You slowly pull your finger away from her asshole.")
-            call her_main("Thank yo-", "soft", "narrow", "annoyed", "up")
+            call her_main("Thank you--", "soft", "narrow", "annoyed", "up")
             call nar(">And then fully insert it.")
             call her_main("...", "angry", "wide", "base", "stare")
             her "..."
@@ -357,7 +357,7 @@ label potion_scene_2_2:
             m "Not your asshole, [hermione_name], I intend to fuck your entire ass!"
             call nar(">You grab a firm hold of her cheeks and pull them apart, allowing your shaft to rest in between, on top of her asshole.")
             m "A perfect fit wouldn't you say?"
-            call her_main("What do you-", "angry", "base", "base", "mid")
+            call her_main("What do you--", "angry", "base", "base", "mid")
             hide screen hermione_main
             call nar(">You squeeze her ass-cheeks back together around your cock and start pumping in between them.")
             call her_main("!!!", "grin", "narrow", "annoyed", "up")

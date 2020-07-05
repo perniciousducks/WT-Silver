@@ -66,7 +66,7 @@ label hg_ps_buttplug:
         m "Alright, alright, calm down..."
         call her_main("I most certainly will not, [genie_name]! That thing is beyond absurd!", "scream", "closed", "angry", "mid")
         m "Alright, fine, maybe I underestimated how large it is..."
-        call her_main("You think [genie_name]?! I'd like to see you try and fit it up your-", "angry", "base", "angry", "mid")
+        call her_main("You think [genie_name]?! I'd like to see you try and fit it up your--", "angry", "base", "angry", "mid")
         m "alright, alright..."
         call her_main(".........", "annoyed", "narrow", "annoyed", "mid")
         m "How about we try one a little less... ambitious?"
@@ -129,7 +129,7 @@ label hg_ps_buttplug:
                 m "Try spitting on it."
                 call her_main(".........", "angry", "narrow", "base", "down")
                 ">She spits on the end of the butt plug and tries to put it in again."
-                call her_main("it doesn't work, It's just too bi-", "angry", "base", "base", "mid")
+                call her_main("it doesn't work, It's just too bi--", "angry", "base", "base", "mid")
                 stop music
 
                 call set_hermione_plug("medium")
@@ -313,7 +313,7 @@ label hg_ps_buttplug:
             call her_main("!!!", "angry", "narrow", "base", "down")
             call her_main("This isn't the one I meant [genie_name]...", "angry", "narrow", "base", "down")
             m "Didn't you ask for the big one?"
-            call her_main("I did-", "grin", "narrow", "annoyed", "up")
+            call her_main("I did--", "grin", "narrow", "annoyed", "up")
             m "Well here's the {b}big{/b} one."
             call her_main("I didn't know you had one this big!", "disgust", "narrow", "worried", "down")
             call her_main("I don't even think this will fit...", "disgust", "base", "base", "mid",cheeks="blush")
@@ -355,7 +355,7 @@ label hg_ps_buttplug:
                     call her_main("There's barely even enough here to cover it...", "open", "narrow", "worried", "down")
                     call her_main("(There's no way this thing will fit.)", "disgust", "narrow", "base", "down")
                     call nar(">Hermione slowly places the lubed up butt plug to her anus.")
-                    call her_main("I'm telling you, [genie_name], this isn't going to-", "open", "closed", "base", "mid")
+                    call her_main("I'm telling you, [genie_name], this isn't going to--", "open", "closed", "base", "mid")
                     call her_main("{size=+10}!!!{/size}", "soft", "wide", "base", "stare",cheeks="blush",trans=hpunch)
                     call her_main("{size=+10}It's moving!{/size}", "disgust", "happyCl", "worried", "mid")
                     m "Really?"

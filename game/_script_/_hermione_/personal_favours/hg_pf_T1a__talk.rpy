@@ -541,7 +541,7 @@ label hg_pf_talk_T3:
         call her_main("Don't you sorry me...{w=0.5} you expect me to get my fanny out and casually just shove it in there for the whole class to see?", "angry", "base", "angry", "mid", cheeks="blush")
         call her_main("I'm sure they would love that and find it more than educational...", "base", "closed", "angry", "mid", cheeks="blush")
         with hpunch
-        call her_main("How{w=0.8} {size=+6}dare{/size} you suggest-", "open", "base", "angry", "mid", cheeks="blush")
+        call her_main("How{w=0.8} {size=+6}dare{/size} you suggest--", "open", "base", "angry", "mid", cheeks="blush")
         m "What are you talking about? Weren't we talking about back massagers?"
         call her_main("-I'd just tear my clothes off and...", "open", "closed", "angry", "mid", cheeks="blush")
         $ renpy.sound.play("sounds/glass_shatter.mp3")
@@ -922,7 +922,7 @@ label hg_pf_talk_tonks:
                     g4 "(Stripped right in front us is what she did!)"
                     "*fap-fap-fap*"
                 else:
-                    g9 "I can tell you all about Miss Chang's little-"
+                    g9 "I can tell you all about Miss Chang's little--"
                 call her_main("She was dancing! Right here!", "open", "closed", "base", "mid")
                 call ton_main("Oh did she really?", "upset", "base", "worried", "L")
                 call ton_main("With or without clothes?","horny","base","angry","mid")

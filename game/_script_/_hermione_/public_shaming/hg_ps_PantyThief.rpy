@@ -23,7 +23,7 @@ label hg_ps_get_panties:
 
         call her_main("W-what?", "open", "base", "worried", "mid")
         her "My... panties...?"
-        her "[genie_name], this is-"
+        her "[genie_name], this is--"
         m "This is the favour I will be buying from you today, [hermione_name]..."
         m "If you are not interested you are more than welcome to leave."
         her "No, I am interested. I am.... it's just..."
@@ -59,9 +59,9 @@ label hg_ps_get_panties:
             if hermione.is_any_worn("top", "bottom"):
                 call nar(">Suddenly Hermione reaches inside one of her hidden pockets.","start")
             else:
-                call nar(">Suddenly Hermione reaches inside-","start")
+                call nar(">Suddenly Hermione reaches inside--","start")
                 call nar(">Wait, she's not exactly clothed...{w=0.4} Well then...")
-                call nar(">By some kind of magic, a pair of panties suddenly appear in her hand.")
+                call nar(">By some kind of magic, a pair of panties suddenly appears in her hand.")
 
         call nar(">She extends her arm to you, clutching a little piece of fabric in her fist.","end")
         m "??!"
@@ -96,9 +96,9 @@ label hg_ps_get_panties:
                 if hermione.is_any_worn("top", "bottom"):
                     call nar(">Hermione pulls her panties out of her pocket.")
                 else:
-                    call nar(">Suddenly Hermione reaches inside-","start")
+                    call nar(">Suddenly Hermione reaches inside--","start")
                     call nar(">Wait, she's not exactly clothed...{w=0.4} Well then...")
-                    call nar(">By some kind of magic, a pair of panties suddenly appear in her hand.")
+                    call nar(">By some kind of magic, a pair of panties suddenly appears in her hand.")
 
             call nar(">She casually throws them on your desk.", "end")
 
@@ -121,7 +121,7 @@ label hg_ps_get_panties:
                 if hermione.is_any_worn("top", "bottom"):
                     call nar(">Suddenly Hermione reaches inside one of her hidden pockets.", "start")
                 else:
-                    call nar(">Suddenly Hermione reaches inside-", "start")
+                    call nar(">Suddenly Hermione reaches inside--", "start")
                     call nar(">Wait, she's not exactly clothed...{w=0.4} Well...")
                     call nar(">Magically, a pair of panties suddenly appears in her hand.")
 

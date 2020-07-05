@@ -158,7 +158,7 @@ label ll_pf_sex_T1_E2:
     m "Crap!"
     $ lunCG('base', 'wink', 'base', 'left')
     lun "Ah... who do you... think it is?"
-    m "Umm... It's probably-"
+    m "Umm... It's probably--"
 
     show screen blkfade
     with d5
@@ -330,7 +330,7 @@ label ll_pf_sex_T1_E3:
     lun "it's incredible..."
     m "Mmmm..."
     $ lunCG('talk', 'base', 'sad', 'ur', extra_2='blank')
-    lun "The wrackspurts... they-"
+    lun "The wrackspurts... they--"
     m "(Not these things again... I better change the subject...)"
 
     menu:
@@ -392,7 +392,7 @@ label ll_pf_sex_T1_E3:
             lun "Ohh... wow... I...{heart}"
             m "You've got everything you could ever want right here!"
             $ lunCG('talk', 'furious', 'sad', 'ur')
-            lun "Ah... the wrackspurts... we need to do something about-"
+            lun "Ah... the wrackspurts... we need to do something about--"
             ">Tired of hearing about this again, you decide to slam into the blabbering girl to shut her up."
             $ lunCG('open_tongue', 'furious', 'sad', 'ahegao')
             lun "{heart}{heart}{heart}"
@@ -513,7 +513,7 @@ label ll_pf_sex_T1_lake_sex: # Call label
             m "Need what?"
             lun "Your cock...{w=0.3} please, I need it...{w=0.3} The wrackspurts..."
             ">Luna's hips continue to buck in the air almost pathetically."
-            lun "I-I-I-"
+            lun "I-I-I--"
             pass
         "-Slam it in!-":
             pass
@@ -659,7 +659,7 @@ label ll_pf_sex_T1_her_1: # Call label
     with d5
 
     call play_sound("door")
-    call her_main("[genie_name], I hope you're not too busy to ben-", "smile", "happyCl", "base", "mid", xpos="base", ypos="base")
+    call her_main("[genie_name], I hope you're not too busy to--", "smile", "happyCl", "base", "mid", xpos="base", ypos="base")
     call her_main("[genie_name], Luna! What are you two doing?!", "soft", "wide", "worried", "shocked", trans=hpunch)
     m "ah... Isn't it obvious?"
     call her_main("Ugh... Why are you two fucking then?", "scream", "base", "angry", "mid")
@@ -753,7 +753,7 @@ label ll_pf_sex_T1_her_2: # Call label
 
     #TODO Needs posing (disabled event for now)
 
-    call her_main("[genie_name], I really need a good-", "smile", "happyCl", "base", "mid")
+    call her_main("[genie_name], I really need a good--", "smile", "happyCl", "base", "mid")
     call her_main("Oh... Hello, Luna.", "smile", "happyCl", "base", "mid")
     her "Figures I'd find you up here..."
     m "Why's that?"
@@ -764,9 +764,9 @@ label ll_pf_sex_T1_her_2: # Call label
             m "The cum?"
             her "Of course it's the cum!"
         "-The wrackspurts-":
-            m "The wricklespots things?"
+            m "The {i}wricklespots{/i} things?"
             ">You continue to slam into Luna, unperturbed by the conversation."
-            her "The-"
+            her "The--"
             her "You're not going on about that complete nonsense as well as you [genie_name]?"
             her "I expect better from you when it comes to unsubstantiated claims of magical beings."
             lun "ah... but hermione... they are real..."
@@ -793,7 +793,7 @@ label ll_pf_sex_T1_her_2: # Call label
     her "There's nothing wrong!"
     m "..."
     lun "..."
-    her "I just think it's funny that whenever I wear even a little bit of cum around the school-"
+    her "I just think it's funny that whenever I wear even a little bit of cum around the school--"
     her "Every student decides it's their business and that they should get to shout whatever slur they want across the halls at me..."
     her "But when Luna does it, no one so much as bats an eye!"
     lun "Mmmm, they know I'm trying to help them..."
@@ -812,7 +812,7 @@ label ll_pf_sex_T1_her_2: # Call label
     lun "Oh, couldn't you tell?"
     lun "Hermione was just a little jealous I think..."
     lun "You might need to have a conversation with her about the wrackspurts effects on your emotions."
-    lun "And to tell her you care about-"
+    lun "And to tell her you care about--"
     ">Before Luna can prattle on any longer, your hips start helplessly firing their load into the Ravenclaw."
     g9 "HERE'S YOUR CONVERSATION SLUT!"
     g9 "ARGH!!!"
@@ -862,7 +862,7 @@ label ll_pf_sex_T1_ast_1: # Call label
     hide screen blkfade
     with d5
 
-    call ast_main("Ready to continue our impe-","smile","closed","base","mid", xpos="base", ypos="base")
+    call ast_main("Ready to continue our impe--","smile","closed","base","mid", xpos="base", ypos="base")
     $ lunCG('open', 'wide', '', 'right')
     m "!!!"
     lun "!!!"
@@ -919,7 +919,7 @@ label ll_pf_sex_T1_ast_1: # Call label
     $ lunCG('open', 'furious', '', 'up')
     lun "It's just... the {b}best{/b}..."
     $ lunCG('base', 'wink', '', 'right')
-    call ast_main("You want me to watch while he-", "upset","base","worried","mid")
+    call ast_main("You want me to watch while he--", "upset","base","worried","mid")
     g4 "Argh... This is it whores!"
     $ lunCG('open_tongue', 'furious', '', 'ahegao', extra_2='cum_1')
     call ast_main("!!!", "upset","base","worried","mid")
@@ -1178,7 +1178,7 @@ label ll_pf_sex_T1_ton_1: # Call label
 
             ">Luna quickly hops off the desk and kneels in front of your cock."
             $ lunCG('open', 'wink', 'base', 'up', pos=1)
-            lun "Need me to-"
+            lun "Need me to--"
             g4 "Shut up!"
             $ lunCG('base', 'base', 'sad', 'up')
             lun "..."
@@ -1254,7 +1254,7 @@ label ll_pf_sex_T1_ton_1: # Call label
     $ lunCG('base', 'tired', 'sad', 'dl')
     g9 "I've already gone four rounds!"
     $ lunCG('open', 'wide', 'sad', 'left')
-    lun "But there are still so many-"
+    lun "But there are still so many--"
     $ lunCG('pout', 'tired', '', 'dl')
     g9 "Well, too bad, I'm about to pass out."
     call ton_main("Hmmm, he's probably right, Luna... He is pretty old.","base","base","raised","L")

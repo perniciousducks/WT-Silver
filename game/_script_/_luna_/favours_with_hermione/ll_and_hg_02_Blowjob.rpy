@@ -128,7 +128,7 @@ label luna_favour_6:
         her "*shhh*... it's alright. I'm here..."
         ">Hermione places a hand on top of Luna's head."
         $ ccg2 = 11
-        lun "hey! what do you think-"
+        lun "hey! what do you think--"
         ">Before Luna has a chance to complain, hermione pushes her head forward onto your waiting cock."
         $ ccg2 = 12
         pause
@@ -148,13 +148,13 @@ label luna_favour_6:
         her "*hmmm*... I guess the dildo we practised on wasn't large enough..."
         m "Ugh... maybe we should try again later..."
         her "and stop now? I don't think so [genie_name]. Besides, once she gets the head in her mouth she'll be ok."
-        her "she probably just needs one more push-"
+        her "she probably just needs one more push--"
         ">Hermione punctuates the end of her sentence with a forceful shove of Luna's head."
         $ ccg2 = 14
         pause
         lun "!!!"
         ">You can feel Luna's jaw stretch open a little further, but failing to let the tip of your cock in. "
-        m "I really don't think this is going to-"
+        m "I really don't think this is going to--"
         ">Before you can finish your sentence hermione gives one last shove, forcing the head of your cock into luna's straining mouth."
         $ ccg2 = 16
         lun "!!!"
@@ -288,7 +288,7 @@ label luna_favour_6:
         call her_main("Luna and I have been talking, and we're not sure it's fair that we both are paid in separate currencies.", "base", "happyCl", "worried", "mid")
         call her_main("We think it would be more fair if we're both paid in points and gold.", "base", "closed", "base", "mid")
         m "Really? I'm surprised miss Lovegood would agree to that."
-        call lun_main("Well, I didn't want to-","normal","angry","mad","R")
+        call lun_main("Well, I didn't want to--","normal","angry","mad","R")
         call her_main("...", "annoyed", "squint", "base", "mid")
         call lun_main("But... hermione convinced me.","base","suspicious","sad","R")
         m "Alright then..."
@@ -415,7 +415,7 @@ label luna_favour_6:
                 lun "can I suck your cock sir?"
                 m "*Hmmm*, I'm not sure... that wasn't very convincing."
                 $ ccg2 = 28
-                lun "how dare you make-"
+                lun "how dare you make--"
                 her "LUNA!"
                 $ ccg2 = 8
                 lun "..."
@@ -446,11 +446,11 @@ label luna_favour_6:
         lun "..."
         pause
         $ ccg2 = 8
-        lun "Are you sure-"
+        lun "Are you sure--"
         her "*shhh*... it's alright. I'm here..."
         ">Hermione places a hand on top of Luna's head."
         $ ccg2 = 11
-        lun "hey! I think I can manage this on my own-"
+        lun "hey! I think I can manage this on my own--"
         ">Before Luna has any further chance to complain, hermione gives her a forceful shove onto your waiting cock."
         $ ccg2 = 16
         lun "!!!"

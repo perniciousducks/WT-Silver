@@ -225,12 +225,12 @@ label whore_scene: #(locked behind the public her_whoring flag)
     #she then comes back later that night after Ginny makes the quidditch team use her
 
     m "You're not a slut [hermione_name]."
-    call her_main("Thank you si-", "mad", "base", "worried", "mid", tears="soft")
+    call her_main("Thank you sir--", "mad", "base", "worried", "mid", tears="soft")
     m "You're worse than a slut, you're a whore."
     call her_main("What? What's the difference?", "angry", "base", "base", "mid")
     m "A slut is someone who enjoys sex. A whore is someone who's addicted to it."
     m "You don't care where you get it do you? As long as someone uses you couldn't care less."
-    call her_main("I-I-I-", "open", "happyCl", "worried", "mid")
+    call her_main("I-I-I--", "open", "happyCl", "worried", "mid")
     m "You even fucked your best friends didn't you?"
     m "I bet you begged them to do it as well."
     m "Look at what you've become, nothing more than the school toy. Willing to give everyone a go."
@@ -358,7 +358,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
 label slave_scene:
 
     m "Don't be silly [hermione_name], you're not a slut."
-    call her_main("Thank yo-", "base", "base", "base", "mid")
+    call her_main("Thank you--", "base", "base", "base", "mid")
     m "You're a slave."
     call her_main("I'm a what?", "upset", "wink", "base", "mid")
     m "You're a slave Miss Granger. Specifically, my slave."
@@ -368,7 +368,7 @@ label slave_scene:
     m "When was the last time you even said no to me?"
     call her_main("Well, I...", "annoyed", "base", "worried", "R")
     m "Exactly, you've become my slave and you didn't even realise it."
-    call her_main("Just because I care about my house doesn't mean that-", "angry", "happyCl", "worried", "mid",emote="05")
+    call her_main("Just because I care about my house doesn't mean that--", "angry", "happyCl", "worried", "mid",emote="05")
     m "Please, when was the last time you even cared about getting your points?"
     m "You just want to please me. Those points are an excuse you tell yourself so you don't have to acknowledge what you are."
     m "Now be a good girl and bend over the desk."

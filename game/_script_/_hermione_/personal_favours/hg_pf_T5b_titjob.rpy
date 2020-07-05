@@ -101,7 +101,7 @@ label hg_pf_titjob_T1_intro_E1:
     m "Have you ever given someone a \"titjob?\""
     call her_main("A \"titjob?\"", "annoyed", "narrow", "annoyed", "mid")
     m "It's where you wrap those \"fat tits\" of yours around a cock,..."
-    g9 "And then shake them up and down, up and-"
+    g9 "And then shake them up and down, up and--"
     call her_main("[genie_name]!", "angry", "base", "angry", "mid")
     m "Is that a yes?"
     call her_main("...............", "disgust", "narrow", "base", "mid_soft")
@@ -436,7 +436,7 @@ label hg_pf_titjob_1:
             g4 "{size=+5}You little whore!!!{/size}"
             call her_main("No, [genie_name], wait, not on my face!", "angry", "base", "base", "mid")
             g4 "{size=+5}Then open wide, slut!!{/size}"
-            call her_main("Not my mou-", "scream", "wide", "base", "stare")
+            call her_main("Not my mou--", "scream", "wide", "base", "stare")
             call nar(">You grab the back of Hermione's head and force your cock into her open mouth...")
             $ ccg1 = 12
 
@@ -601,7 +601,7 @@ label hg_pf_titjob_2:
             $ ccg1 = 22
             call her_main("Huh?", "open", "base", "base", "mid")
             call her_main("Your cock?", "angry", "happyCl", "worried", "mid", emote="05")
-            m "What do you think about-"
+            m "What do you think about--"
             $ ccg1 = 23
             call her_main("It's magnificent!", "upset", "closed", "base", "mid")
             m "go on..."
@@ -621,7 +621,7 @@ label hg_pf_titjob_2:
             m "..."
             $ ccg1 = 25
             call her_main("I think your perfect cock should be shared around the school.", "scream", "closed", "angry", "mid")
-            m "Well, I wouldn't go that far-"
+            m "Well, I wouldn't go that far--"
             call her_main("Listen to me, [genie_name]!", "angry", "closed", "angry", "mid")
             call her_main("I think it should be worshipped as part of the school curriculum!", "soft", "narrow", "annoyed", "up")
             $ ccg1 = 24
@@ -759,7 +759,7 @@ label hg_pf_titjob_2_continue:
             call her_main("I do not!", "angry", "narrow", "base", "down", ypos="head")
             m "I know. Just say it."
             $ ccg1 = 22
-            call her_main("My father? That's gross, [genie_name]! How could you suggest that I want to fu-", "soft", "narrow", "annoyed", "up")
+            call her_main("My father? That's gross, [genie_name]! How could you suggest that I would want to fu--", "soft", "narrow", "annoyed", "up")
             m "Come on...{w=0.3} Just make something up."
             call her_main("...........", "angry", "wink", "base", "mid")
             call her_main("Fine...", "open", "narrow", "worried", "down")
@@ -807,7 +807,7 @@ label hg_pf_titjob_2_continue:
             m "And how does that make you feel?"
             call her_main("So good...", "silly", "narrow", "base", "dead")
             call her_main("This one time, when walking back from your office at night, I was barely even covering them...", "angry", "wink", "base", "mid")
-            call her_main("I rounded a corner and-", "soft", "narrow", "annoyed", "up")
+            call her_main("I rounded a corner and--", "soft", "narrow", "annoyed", "up")
             $ ccg1 = 24
             call her_main("A second year boy ran head first into them...", "grin", "narrow", "annoyed", "up")
             m "Head first into your first class tits?"
@@ -852,7 +852,7 @@ label hg_pf_titjob_2_cumming:
             call bld
             g4 "Take this, whore!"
             $ ccg1 = 25
-            call her_main("What are you-", "angry", "wink", "base", "mid", ypos="head")
+            call her_main("What are you--", "angry", "wink", "base", "mid", ypos="head")
 
             call her_chibi_scene("tj_mouth", trans=d5)
             pause.8

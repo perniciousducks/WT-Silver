@@ -77,7 +77,7 @@ label cho_training:
                     m "Everything, girl!{w} For some they are the meaning of life!"
                     call cho_main("What are you suggesting exactly?", "clench", "base", "base", "mid", cheeks="blush")
                     m "My plan is that we use Cedric's obsession of panties to distract him during the game."
-                    call cho_main("I don't really see how that would be-", "annoyed", "base", "base", "downR", cheeks="blush")
+                    call cho_main("I don't really see how that would be--", "annoyed", "base", "base", "downR", cheeks="blush")
                     m "You'll have to wear a skirt of course."
                     call cho_main("A skirt?", "clench", "wide", "base", "mid", cheeks="heavy_blush") #shocked
                     g9 "Of course!"
@@ -192,7 +192,7 @@ label cho_training:
                     m "Excellent, then let's discuss some tactics..."
                     m "I'd like you to put on some trousers this time."
                     m "And get rid of your robes, they'll cover it too much."
-                    call cho_main("Get rid of my-", "open", "wide", "angry", "mid", cheeks="heavy_blush") #Shocked
+                    call cho_main("Get rid of my--", "open", "wide", "angry", "mid", cheeks="heavy_blush") #Shocked
                     m "You can put on something else, just something that doesn't cover the goods."
                     call cho_main("Alright...{w=0.5} give me a minute to fetch my gear...", "angry", "closed", "base", "mid", cheeks="blush")
 
@@ -317,7 +317,7 @@ label cho_training:
                     call cho_main("With everyone watching.", "horny", "happyCl", "base", "mid", cheeks="heavy_blush") #blushes but imagining it
                     m "..."
                     call cho_main("No, I wont do it...", "horny", "base", "base", "downR", cheeks="blush")
-                    m "But what if-"
+                    m "But what if--"
 
                     # Cho gets upset and leaves
                     $ cho_mood += 3
@@ -443,7 +443,7 @@ label cho_tactics:
 
             call cho_main("How's this?", "open", "base", "raised", "mid", xpos="base", ypos="head")
             m "Excellent, I told you getting rid of that coat would do it!"
-            m "And those trousers sure emphasise the shape of your-"
+            m "And those trousers sure emphasise the shape of your--"
 
             # Cho turns towards you
 
@@ -506,7 +506,7 @@ label cho_tactics:
             call cho_main("Like this?", "soft", "base", "base", "downR", xpos="base", ypos="head")
             with hpunch
             g4 "Yes, and now...{w=0.4} Higher!"
-            call cho_main("Is this not high enough to see my-", "annoyed", "base", "raised", "mid", xpos="base", ypos="head")
+            call cho_main("Is this not high enough to see my--", "annoyed", "base", "raised", "mid", xpos="base", ypos="head")
             g4 "Fly right above my head!"
             g4 "Show me those panties!"
             call cho_main("Of course, [cho_genie_name]...", "base", "base", "base", cheeks="blush", "downR", xpos="base", ypos="head")
@@ -606,13 +606,13 @@ label cho_tactics:
         if cho_tier == 1:
             # Hufflepuff
 
-            call cho_main("Close? How would you be able to see my-", "annoyed", "base", "base", "mid", xpos="base", ypos="head")
+            call cho_main("Close? How would you be able to see my--", "annoyed", "base", "base", "mid", xpos="base", ypos="head")
             m "Come closer!"
 
             call cho_walk(450, 240+180)
 
             m "Wait a second, I can't see your panties at all from this angle..."
-            call cho_main("No shi-", "open", "narrow", "base", "mid", xpos="base", ypos="head")
+            call cho_main("No shi--", "open", "narrow", "base", "mid", xpos="base", ypos="head")
             m "Let's try this instead..."
 
         elif cho_tier == 2:

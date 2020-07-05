@@ -18,7 +18,7 @@ label potion_scene_11_1:
     m "[hermione_name], how would you like to try a nice little potion?"
     call her_main("...", "open", "closed", "angry", "mid")
     call her_main("If I had the option I'd prefer not to...", "open", "base", "base", "mid")
-    m "well-"
+    m "well--"
     call her_main("but unfortunately, Slytherin winning the house cup this year isn't an option!", "scream", "closed", "angry", "mid")
     m "So you'll drink the potion then?"
     call her_main("Yes [genie_name], I'll drink your potion.", "annoyed", "squint", "base", "mid")
@@ -55,7 +55,7 @@ label potion_scene_11_1:
     m "That's one half of it."
     call her_main("...", "normal", "squint", "angry", "mid")
     call her_main("And the other half?", "annoyed", "narrow", "angry", "R")
-    m "Well you might start to notice a little milk coming from your-"
+    m "Well you might start to notice a little milk coming from your--"
     call her_main("What???", "shock", "wide", "base", "stare")
     call her_main("Professor, Do you mean to say that this potion is going to cause me to lactate?", "annoyed", "squint", "angry", "mid")
     m "That's one way to put it."
@@ -214,7 +214,7 @@ label potion_scene_11_2:
     call her_main("Can't you just do it by hand...", "soft", "narrow", "annoyed", "up")
     call her_main("I though it would be just like when you play with them normally...", "angry", "wink", "base", "mid")
     m "No can do. I don't think I'd be able to get it all out before your classes anyway"
-    call her_main("I'm sure there's tim-", "base", "happyCl", "worried", "mid")
+    call her_main("I'm sure there's time--", "base", "happyCl", "worried", "mid")
 
     if hermione_perm_expand_breasts or hermione_expand_breasts:
         pass
@@ -284,7 +284,7 @@ label potion_scene_11_2:
     call her_main("can we just get this over with...", "annoyed", "narrow", "angry", "R")
     m "Um... It's enchanted..."
     "(Does it have an on switch)"
-    call her_main("Wait... This is an enchanted item? Please don't turn it on-", "angry", "base", "base", "mid")
+    call her_main("Wait... This is an enchanted item? Please don't turn it on--", "angry", "base", "base", "mid")
     call nar(">You hear a faint noise as the harness on hermione's chest springs to life.")
 
     $ milking = 2
@@ -620,7 +620,7 @@ label potion_scene_11_3:
         m "Um..."
         call nar(">The machine struggles to suck any more milk from hermione's heaving chest.")
         m "I'm not sure how... I think it only shuts off when it's full?"
-        call her_main("well I don't think it's going to be able to get much more-", "upset", "closed", "base", "mid")
+        call her_main("well I don't think it's going to be able to get much more--", "upset", "closed", "base", "mid")
         call nar(">You hear the harness start to whir, like a vacuum cleaner caught on carpet.")
         call her_main("!!!", "disgust", "wide", "worried", "shocked",cheeks="blush")
         call nar(">You hear a strange click come from the harness.")
@@ -718,7 +718,7 @@ label potion_scene_11_3:
         m "We'll just have to wait and see..."
         call her_main("You really are a disgusting pervert [genie_name]...", "open", "narrow", "annoyed", "mid", cheeks="blush")
         m "Whatever you say..."
-        call her_main("Please tell me I'm not going to grow a damn d-", "angry", "narrow", "base", "down")
+        call her_main("Please tell me I'm not going to grow a damn di--", "angry", "narrow", "base", "down")
 
         hide screen hermione_main
         call set_her_action("lift_skirt")
@@ -750,7 +750,7 @@ label potion_scene_11_3:
         m "Come on [hermione_name]... where's your sense of adventure?"
         call her_main("Adventure?", "annoyed", "narrow", "annoyed", "mid")
         call her_main("Going into the chamber of secrets was an adventure sir...", "open", "squint", "base", "mid")
-        call her_main("Standing in my headmaster's office while he makes me drink some random potion he probably found in the gutter-", "scream", "closed", "angry", "mid")
+        call her_main("Standing in my headmaster's office while he makes me drink some random potion he probably found in the gutter--", "scream", "closed", "angry", "mid")
         call her_main("-That makes me have huge, {size=+3}lactating{/size}, {size=+5}tits{/size} and a giant {size=+10}{b}DICK{/b}{/size} is {size=+2}not {size=+2}an {size=+4}adventure!{/size}", "scream", "base", "angry", "mid",emote="01")
         m "Don't forget about the magical milking machine..."
         call nar(">You hand hermione the milking harness.")
@@ -766,7 +766,7 @@ label potion_scene_11_3:
         call her_main("Where's my stupid dick supposed to go...", "angry", "base", "base", "mid")
         call her_main("It's in the way of the cannister.", "angry", "narrow", "base", "down")
         m "Try sticking it into the bottom of the cannister."
-        call her_main("What... why would that-", "annoyed", "narrow", "annoyed", "mid")
+        call her_main("What... why would that--", "annoyed", "narrow", "annoyed", "mid")
 
         $ milking = 1
         call set_her_action("milk_breasts")
@@ -780,8 +780,8 @@ label potion_scene_11_3:
         call her_main("I never though sex could be like this...", "silly", "narrow", "base", "dead")
         call her_main("being inside something...", "silly", "narrow", "annoyed", "up")
         call her_main("It's the best!", "grin", "narrow", "annoyed", "up")
-        call her_main("At this rate I'll cum before we even have to turn the thing on-", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
-        call nar(">You hear a faint noise as the harness on hermione's chest springs to life.")
+        call her_main("At this rate I'll cum before we even have to turn the thing on--", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
+        call nar(">You hear a faint noise as the harness on Hermione's chest springs to life.")
 
         $ milking = 2
         call set_her_action("milk_breasts")
@@ -835,7 +835,7 @@ label potion_scene_11_3:
         call her_main("it's made me cum so much...", "silly", "narrow", "annoyed", "up")
         call nar(">The machine struggles to suck any more milk from hermione's heaving chest.")
         m "Well hopefully it has a safety mechanism for when you're out of milk..."
-        call her_main("well that should be soon-", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
+        call her_main("well that should be soon--", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
         call nar(">You hear the harness start to whir, like a vacuum cleaner caught on carpet.")
         call her_main("!!!", "angry", "wide", "base", "stare")
         call nar(">You hear a strange click come from the harness.")

@@ -101,7 +101,7 @@ label hg_ps_cumslut_Scene_1:
     m "Well you better think of some place soon!"
     call her_main("Why's that?", "angry", "wink", "base", "mid")
     g9 "Because I'm about to cum!"
-    call her_main("Already? Where should I-", "angry", "wide", "base", "stare")
+    call her_main("Already? Where should I--", "angry", "wide", "base", "stare")
 
     menu:
         "-Stay Silent-":
@@ -132,7 +132,7 @@ label hg_ps_cumslut_Scene_1:
 
             call nar(">Hermione keeps jerking your cock, her eyes darting between it and herself.")
             g4 "Get ready whore, here it comes!"
-            call her_main("Wait, where am I supposed to-", "angry", "base", "worried", "mid")
+            call her_main("Wait, where am I supposed to--", "angry", "base", "worried", "mid")
             g9 "{size=+5}ARGH! YES!!!{/size}"
 
             call play_music("chipper_doodle")
@@ -293,7 +293,7 @@ label hg_ps_cumslut_Scene_2:
     m "Oh I'm appreciating it!"
     call her_main("Really?", "open", "base", "base", "mid")
     g9 "You're about to see how much I'm appreciating it!"
-    call her_main("What, Already? Where should I-", "angry", "wide", "base", "stare")
+    call her_main("What, Already? Where should I--", "angry", "wide", "base", "stare")
 
     menu:
         "-Stay Silent-":
@@ -302,7 +302,7 @@ label hg_ps_cumslut_Scene_2:
 
             call nar(">Hermione keeps jerking your cock, her eyes darting between it and herself.")
             g4 "Get ready slut, here it comes!"
-            call her_main("Wait, where am I supposed to-", "angry", "base", "worried", "mid")
+            call her_main("Wait, where am I supposed to--", "angry", "base", "worried", "mid")
             g9 "{size=+5}ARGH! YES!!!{/size}"
 
             call play_music("chipper_doodle")
@@ -435,7 +435,7 @@ label hg_ps_cumslut_Scene_3:
     $ hg_ps_cumslut.inProgress = True
     call her_main("Are you serious?", "shock", "wide", "base", "stare")
     call her_main("Can I?", "grin", "narrow", "annoyed", "up")
-    m "well-"
+    m "Well--"
     call her_main("I was going to ask you if I could, seeing as how it made you so happy last time, [genie_name].", "smile", "happyCl", "base", "mid",emote="06")
     call her_main("I'll even do it for free if that would make you happier!", "base", "narrow", "base", "up")
     m "really?"

@@ -168,13 +168,13 @@ label hg_pf_grope_breasts_T2_continue:
     call her_main("Ah...", "open", "happyCl", "worried", "mid")
     m "Enjoying yourself, [hermione_name]?"
 
-    call her_main("[genie_name], I am only doing this-", "upset", "closed", "base", "mid")
+    call her_main("[genie_name], I am only doing this--", "upset", "closed", "base", "mid")
 
     call nar(">You squeeze both of her tits with force...")
 
     call her_main("ah...", "shock", "happyCl", "worried", "mid")
     m "Tell me you like this, [hermione_name]!"
-    call her_main("[genie_name], I am only letting you do this to me because-", "open", "happyCl", "worried", "mid")
+    call her_main("[genie_name], I am only letting you do this to me because--", "open", "happyCl", "worried", "mid")
     m "I know, I know..."
     m "You are starting to sound like a broken record."
     call her_main("....", "annoyed", "narrow", "annoyed", "mid")

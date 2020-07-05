@@ -44,7 +44,7 @@ label luna_favour_5:
         $ luna_r_arm = 2
         call update_her_uniform
 
-        call her_main("hello Prof-", "soft", "base", "base", "R",xpos="base",ypos="base")
+        call her_main("hello Prof--", "soft", "base", "base", "R",xpos="base",ypos="base")
         call her_main("Luna! what are you doing here?", "angry", "wide", "base", "stare")
         call lun_main("same thing as you...","base","seductive","angry","mid", xpos=390)
         call her_main("Oh, um... you must be here to... help Professor Dumbledore then...", "open", "base", "worried", "R")
@@ -106,7 +106,7 @@ label luna_favour_5:
         call her_main("for trying to do what's right!", "annoyed", "narrow", "annoyed", "mid", tears="crying")
         ">Hermione stands naked before you and Luna. Her face is contorted in what seems like an equal mix of rage and embarrassment."
         call her_main("there! are you happy now you two?", "annoyed", "narrow", "annoyed", "mid")
-        m "Ye-"
+        m "Yes--"
         call lun_main("almost...","base","seductive","sad","down")
         call lun_main("now why don't you get on your knees...","upset","angry","angry","mid")
         call her_main("!!!", "angry", "wide", "base", "stare",tears="crying")
@@ -516,7 +516,7 @@ label luna_favour_5:
                 m "Well, if we're being honest, it's mainly because I want to see your naked body again..."
                 call her_main("oh... well alright then.", "base", "happy", "base", "mid")
                 call lun_main("and you don't want to see me naked?","normal","mad","angry","mid")
-                m "I didn't mean it like-"
+                m "I didn't mean it like--"
                 call lun_main("*hmph* I suppose I'll strip then [lun_genie_name]... Just so you remember who has the better body.","normal","seductive","angry","mid")
                 call lun_main("But I expect extra for this [lun_genie_name]!","upset","angry","angry","R")
 
@@ -586,7 +586,7 @@ label luna_favour_5:
         call her_main(".........","annoyed","narrow","annoyed","mid")
         call lun_main("something wrong hermione?","normal","angry","angry","down")
         call her_main("no...","annoyed","narrow","worried","down")
-        call lun_main("good. maybe you sh-","base","seductive","angry","down")
+        call lun_main("Good. maybe you should--","base","seductive","angry","down")
         call her_main("You're doing it all wrong!","scream","base","angry","mid",emote="01")
         call lun_main("What?","normal","wide","base","down")
         call her_main("that's not how he likes it.","annoyed","narrow","angry","R")

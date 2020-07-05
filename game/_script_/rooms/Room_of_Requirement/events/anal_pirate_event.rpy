@@ -137,7 +137,7 @@ label anal_pirate_event_common_1_2: # Call label
             $ renpy.play('sounds/spit.mp3')
             g4 "*SPIT!*"
             call her_main("What are ye doing you Seadog!", "scream", "happyCl", "worried", "mid")
-            call her_main("No, cap'n, Belay that! Ye're nah in open waters-", "open", "base", "base", "mid")
+            call her_main("No, cap'n, Belay that! Ye're nah in open waters--", "open", "base", "base", "mid")
             m "No needs, raise the anchor! Heave Ho!"
             $ renpy.play('sounds/gltch.mp3')
             with hpunch

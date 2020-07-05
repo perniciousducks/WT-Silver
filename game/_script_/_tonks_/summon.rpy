@@ -298,7 +298,7 @@ label tonks_talk:
                     call ton_main("Will I get my three wishes too?","open","base","base","mid")
                     call ton_main("Or would I have to rub your \"thing\" first?","horny","base","base","mid", hair="horny")
                     m "My lamp?"
-                    call ton_main("I was talking about your dick, but-","base","base","base","R")
+                    call ton_main("I was talking about your--","base","base","base","R")
                     with hpunch
                     g4 "My lamp!!!"
                     g4 "Shit, where even is that thing?"
@@ -406,7 +406,7 @@ label tonks_talk:
                 "-Nymphadora-":
                     $ tonks_name = "Nymphadora"
                     label .nymphadora:
-                    call ton_main("*Ugh*-","angry","base","angry","R")
+                    call ton_main("*Ugh*--","angry","base","angry","R")
                     call ton_main("Really, [ton_genie_name]?","open","base","angry","mid")
                     call ton_main("I hate that name,...","open","base","worried","R")
                     m "Well you better get used to hearing it then, [tonks_name]..."

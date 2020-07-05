@@ -395,7 +395,7 @@ label cc_pf_strip_T1_intro_E2:
     m "Are you alright, girl?"
     call cho_main("No.{w} I'm already regretting climbing up here!!!", "mad", "closed", "worried", "mid")
     call cho_main("(What were you thinking, Cho?!)", "angry", "narrow", "worried", "down", cheeks="blush")
-    m "You can come back down if it's too much for yo-"
+    m "You can come back down if it's too much for yo--"
     call cho_main("Shut up!", "scream", "closed", "angry", "mid", trans=hpunch) # Scream
     call cho_main("Can't you see what I'm trying to do here?", "angry", "narrow", "angry", "mid")
     m "Not really, no."
@@ -531,10 +531,10 @@ label cc_pf_strip_T1_intro_E2:
             g4 "(Since I've bet a fortune on it...)"
             m "And I wouldn't be able to call myself a man if I was lying!"
             call cho_main("And you'd be called a dead man, if you try to trick me!", "clench", "narrow", "angry", "mid")
-            m "Well technically I'm a gen-"
+            m "Well technically I'm a geni--"
             call play_sound("kick")
             call cho_main("", "annoyed", "narrow", "angry", "mid", trans=vpunch)
-            g4 "*Aaaaah!*"
+            g4 "*Aaaaah*!"
             call nar("Cho does a daunting stomp on your desk...")
             call cho_main("Don't think for a second I wouldn't do it! After all of this!", "scream", "narrow", "angry", "mid")
             call cho_main("", "angry", "narrow", "angry", "mid")
@@ -762,7 +762,7 @@ label cc_pf_strip_T1_intro_E3:
         # Cho gets dressed again and storms off.
 
         m "Actually, she doesn't..."
-        call cho_main("What? But I thought she'd-", "soft", "wide", "base", "mid")
+        call cho_main("What? But I thought she'd--", "soft", "wide", "base", "mid")
         call cho_main("Why do you ask me to do these favours, and not Granger?", "open", "narrow", "angry", "mid", trans=hpunch)
         m "Let's just say, she isn't as progressive as you...{w} yet."
         call cho_main("You haven't even seen her naked?", "angry", "base", "base", "mid")
@@ -960,7 +960,7 @@ label cc_pf_strip_T1_intro_E3:
     call her_main("You wanted to see me, Sir?", "soft", "closed", "base", "mid", xpos="base", ypos="head", trans=d3)
     call her_main("Cho?", "soft", "wide", "worried", "shocked")
     call cho_main("Hey there, Granger!", "horny", "narrow", "angry", "mid") # Grinning
-    call her_main("What? Why are you-", "disgust", "wide", "worried", "shocked")
+    call her_main("What? Why are you--", "disgust", "wide", "worried", "shocked")
 
     call her_walk(660, "base")
 
@@ -1255,7 +1255,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
 
         "\"Not even close.\"":
             $ cho_mood += 15
-            call cho_main("Not even clo-", "soft", "wide", "base", "mid")
+            call cho_main("Not even clo--", "soft", "wide", "base", "mid")
             call her_main("", "smile", "base", "base", "R")
             call cho_main("Professor, could you please repeat that for me?", "clench", "closed", "angry", "mid")
             m "Hermione's body is superior."
@@ -1274,7 +1274,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("He's talking about your {b}tits,{/b} you dimwit!", "angry", "closed", "angry", "mid", cheeks="blush")
             call her_main("(...)", "clench", "narrow", "base", "down", cheeks="blush") # Embarrassed
             call cho_main("", "annoyed", "narrow", "angry", "mid")
-            g9 "Yes Miss Granger!{w=0.5} Your very round{w=0.5}, handsomely spheroid{w=0.5}, perfectly sized{w=0.5}, very voluptuous and-"
+            g9 "Yes Miss Granger!{w=0.5} Your very round{w=0.5}, handsomely spheroid{w=0.5}, perfectly sized{w=0.5}, very voluptuous and--"
             call her_main("I got it, Professor!", "clench", "happyCl", "worried", "mid", cheeks="blush")
             call cho_main("(Cow tits...)", "annoyed", "narrow", "angry", "R", cheeks="blush")
             call her_main("Here...", "base", "narrow", "base", "mid_soft")
@@ -1475,11 +1475,11 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
 
             if daytime:
                 call cho_main("I have to head back to classes.", "soft", "base", "base", "R")
-                m "I still got your-"
+                m "I still got your--"
                 call cho_main("See ya next time, [cho_genie_name]!", "smile", "narrow", "angry", "mid")
             else:
                 call cho_main("I have to head back to our dorms.", "soft", "base", "base", "R")
-                m "Don't you want your-"
+                m "Don't you want your--"
                 call cho_main("Sweet dreams, [cho_genie_name]!", "smile", "narrow", "angry", "mid")
 
             call cho_walk(action="leave")
@@ -1565,7 +1565,7 @@ label cc_pf_strip_T2_E1:
     m "You'd be just as cheap as Hermione..."
     call cho_main("Please, Sir.{w} Don't compare me to that whore!", "annoyed", "narrow", "angry", "mid")
     g9 "Yes, Miss Chang. A whore!"
-    call cho_main("That's not why-", "angry", "closed", "worried", "mid")
+    call cho_main("That's not why--", "angry", "closed", "worried", "mid")
     call cho_main("Please, Sir. Just this once!", "soft", "narrow", "worried", "mid")
     call cho_main("I won't ask for payment ever again!", "soft", "base", "worried", "mid")
     call cho_main("I'll strip naked for you, for... {number=current_payout} house points!", "angry", "closed", "worried", "mid") # Embarrassed

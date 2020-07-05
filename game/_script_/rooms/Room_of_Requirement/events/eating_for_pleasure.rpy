@@ -257,9 +257,9 @@ label eating_for_pleasure:
     her "Of course!"
     $ hermione.strip("all")
     pause 1.0
-    call her_main("Now, what else would you like to-", "smile", "wink", "base", "mid")
+    call her_main("Now, what else would you like to--", "smile", "wink", "base", "mid")
     m "Get out..."
-    call her_main("Sir, the payme-", "open", "base", "worried", "mid")
+    call her_main("Sir, the payme--", "open", "base", "worried", "mid")
     g4 "I said, get out!"
     call her_main("Okay...", "disgust", "base", "worried", "down")
     call her_walk(action="leave")

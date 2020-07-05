@@ -579,8 +579,8 @@ label hg_anal_sex_2:
     with hpunch
     g4 "{size=+9}WHAT?!{/size}"
     g4 "Don't tell me you're pregnant, [hermione_name]!"
-    m "We witchers are-"
-    call her_main("Yeah, yeah, I know, you witchers are infertile... {size=-6}Such bullshit...{/size}", "open", "narrow", "angry", "R")
+    m "We witchers are--"
+    call her_main("Yeah, yeah, I know-- you witchers are infertile... {size=-6}Such bullshit...{/size}", "open", "narrow", "angry", "R")
     $ ccg1 = 33
     call her_main("I couldn't get pregnant the way we are doing it anyhow, [genie_name]...", "angry", "wink", "base", "mid")
     m "What is this talk of marriage then?"

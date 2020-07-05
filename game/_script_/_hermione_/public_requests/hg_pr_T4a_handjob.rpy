@@ -263,7 +263,7 @@ label hg_pr_handjob_T1_E3:
     stop music fadeout 3.0
     call her_walk(action="enter", xpos="mid", ypos="base")
 
-    m "[hermione_name], how did it-"
+    m "[hermione_name], how did it--"
     $ hermione.set_cum(hair="light")
     show screen blktone
     with d3

@@ -89,7 +89,7 @@ label cc_pr_manipulate_boys_start:
                     call cho_main("But, Sir... What if someone were to see me with them?", "soft", "narrow", "angry", "mid")
 
                 "\"Make out with them...\"":
-                    call cho_main("Make out with?{w=0.6} Those Slytherins-", "soft", "wide", "worried", "mid", cheeks="heavy_blush")
+                    call cho_main("Make out with?{w=0.6} Those Slytherins--", "soft", "wide", "worried", "mid", cheeks="heavy_blush")
                     call cho_main("*guargh*", "open_tongue", "happyCl", "angry", "mid", cheeks="blush", trans=hpunch)
                     call cho_main("*cough*{w=0.6}-*guargh*!{w=0.8}-*cough*", "open_wide_tongue", "happyCl", "worried", "mid", cheeks="blush", trans=hpunch)
                     call nar(">You hear Cho make some inadvertent gag noises...")
@@ -172,7 +172,7 @@ label cc_pr_manipulate_boys_start:
             if not cc_pr_spy_boys.is_event_complete(1, 2):
                 # Return if player has not spied on Ron Weasley just yet.
 
-                m "Let's try and manipulate-"
+                m "Let's try and manipulate--"
                 call cho_main("I'm going to stop you there...", "angry", "base", "raised", "mid")
                 m "Yes?"
                 call cho_main("There's no way I'll try this again before I know more about the boys.", "annoyed", "base", "angry", "mid")
@@ -202,7 +202,7 @@ label cc_pr_manipulate_boys_start:
 
             if not cc_pr_spy_boys.is_event_complete(1, 3):
                 # Return if player has not spied on Harry Potter just yet.
-                m "Let's try and manipulate-"
+                m "Let's try and manipulate--"
                 call cho_main("I'm going to stop you there...", "angry", "base", "raised", "mid")
                 m "Yes?"
                 call cho_main("There's no way I'll try this again before I know more about the boys.", "annoyed", "base", "angry", "mid")
@@ -215,7 +215,7 @@ label cc_pr_manipulate_boys_start:
             m "How about we annoy Miss Granger some more?"
             call cho_main("Of course!", "crooked_smile", "base", "base", "mid")
             m "Let's target her other friend today."
-            call cho_main("Harry Po--", "smile", "base", "raised", "mid")
+            call cho_main("Harry P--", "smile", "base", "raised", "mid")
             g4 "The Potter boy!"
             call cho_main("...", "mad", "base", "base", "mid") #annoyed
             m "*Ahem*... Yes..."
@@ -231,7 +231,7 @@ label cc_pr_manipulate_boys_start:
             call cho_main("I thought we were done?", "angry", "base", "base", "mid")
             call cho_main("Although...", "soft", "base", "base", "R")
             call cho_main("I could annoy Hermione some more!", "crooked_smile", "wide", "base", "mid")
-            m "Don't forget the twi-"
+            m "Don't forget the tw--"
             call cho_main("This will be so much fun!", "crooked_smile", "happyCl", "base", "mid")
 
             # Cho leaves early!
@@ -307,7 +307,7 @@ label cc_pr_manipulate_boys_T1_E1:
     m "*Mhmm*... I can't say I blame him..."
     m "Let me guess, you tried the old \"drop your pencil trick\" on him?"
     call cho_main("\"Pencil trick?\"", "mad", "base", "raised", "mid")
-    m "Yes. You \"accidentally\" drop your pencil, and then when you have the boy's attention, you bent down and-"
+    m "Yes. You \"accidentally\" drop your pencil, and then when you have the boy's attention, you bent down and--"
     call cho_main("Sir, we're only allowed to use \"quills\" here.", "soft", "closed", "base", "mid")
     m "So just use \"quills\" instead?"
     call cho_main("That would just make a mess and get ink everywhere...", "annoyed", "narrow", "angry", "mid")
@@ -661,7 +661,7 @@ label cc_pr_manipulate_boys_T2_E3:
     call cho_main("I... flashed them...", "mad", "closed", "worried", "mid")
     g4 "You showed them your tits again?!"
     call cho_main("What? No!", "soft", "wide", "base", "mid")
-    m "But you just said-"
+    m "But you just said--"
     call cho_main("They... didn't want to see them...", "annoyed", "narrow", "angry", "downR", cheeks="blush")
     m "Oh..."
     m "(Could it be that they aren't into girls?)"
@@ -1163,7 +1163,7 @@ label cc_pr_manipulate_boys_twins_branch:
         m "She didn't have any Ravenclaw uniforms your size so I took the next best thing."
         #TODO Clothsound
         #TODO Gryffindor cloth pile on desk
-        call cho_main("Next best-", "annoyed", "base", "base", "mid")
+        call cho_main("Next best--", "annoyed", "base", "base", "mid")
         call cho_main("Is that a Gryffindor uniform?", "open", "wide", "base", "mid") #shocked
         g9 "Yes, I knew you'd like it!"
         call cho_main("I...{w=0.5} I don't like Gryffindor!", "annoyed", "base", "angry", "downR", cheeks="blush")

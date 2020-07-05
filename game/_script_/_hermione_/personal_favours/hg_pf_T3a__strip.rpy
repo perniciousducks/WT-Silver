@@ -135,7 +135,7 @@ label hg_pf_strip_T0_fail_repeat:
     call her_main("No! I will not!", "scream", "base", "angry", "mid")
     call her_main("And I'd appreciate it if you'd stop making such outrageous requests...", "annoyed", "base", "angry", "mid")
     m "You will get points for it..."
-    call her_main("Shove those points up your-", "angry", "closed", "angry", "mid")
+    call her_main("Shove those points up your--", "angry", "closed", "angry", "mid")
     call her_main("I will be leaving now...", "annoyed", "base", "angry", "mid")
     call her_main("Good day, Sir...", "annoyed", "narrow", "angry", "R")
 
@@ -444,7 +444,7 @@ label hg_pf_strip_T1_intro_E2:
     call her_main("", "angry", "base", "angry", "mid")
 
     call her_main("Shall I shake my breasts for you like one of those harlots?", "scream", "closed", "angry", "mid")
-    m "Well---"
+    m "Well--"
     call her_main("Of course! Why wouldn't I degrade myself for your pleasure?!")
     call her_main("This is completely {size=+7}acceptable!{/size}", "scream", "base", "angry", "mid", emote="01")
     call her_main("", "angry", "base", "angry", "mid")
@@ -558,7 +558,7 @@ label hg_pf_strip_T1_intro_E2:
 
     call sna_walk(action="enter", xpos="mid", ypos="base")
 
-    call sna_main("Listen, Genie. I've been thinki-","snape_01", xpos="base", ypos="base")
+    call sna_main("Listen, Genie. I've been think--","snape_01", xpos="base", ypos="base")
 
     show screen hermione_main
     with d3

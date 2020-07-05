@@ -81,7 +81,7 @@ label cc_ht_return:
     #call cho_main("This should be an easy win for Ravenclaw.", "base", "closed", "base", "mid")
     call cho_main("*Uhm*... [cho_genie_name]...", "horny", "base", "worried", "mid")
     call cho_main("The whole house is celebrating our win at the moment...", "soft", "narrow", "worried", "mid")
-    call cho_main("And I'd rather not miss spending some time with-", "horny", "base", "worried", "R")
+    call cho_main("And I'd rather not miss spending some time with--", "horny", "base", "worried", "R")
     g4 "You did well today, [cho_name]."
     call cho_main("", "horny", "base", "base", "mid")
     g9 "Go and party! You've earned it."

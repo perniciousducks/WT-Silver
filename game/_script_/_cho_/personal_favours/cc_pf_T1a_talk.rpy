@@ -50,7 +50,7 @@ label cc_pf_talk_T1_intro_E1:
     g9 "Or a girlfriend! That would be even better, now that I think about it!"
     call cho_main("Sir that's-{w=0.3} that's not something a headmaster should be concerned about.", "soft", "happyCl", "worried", "L", cheeks="blush")
     call cho_main("And I don't see how this information would be of importance for my training.", "open", "wide", "raised", "downR", cheeks="blush")
-    call cho_main("Why would it matter if- {w=0.5}Even if I did I'd-", "soft", "wide", "base", "down", cheeks="blush")
+    call cho_main("Why would it matter if- {w=0.5}Even if I did I'd--", "soft", "wide", "base", "down", cheeks="blush")
     g9 "So you don't have one?"
     call cho_main("You're making me nervous, [cho_genie_name]. {heart}", "horny", "narrow", "worried", "R", cheeks="blush")
     m "(So cute.{w=0.5} Perhaps this is something I could push her further on...)"
@@ -198,7 +198,7 @@ label cc_pf_talk_T1_intro_E1:
     g4 "I'm in shock!"
 
     # Viktor
-    call cho_main("Then there also was Viktor Krum who-", "open", "base", "base", "R")
+    call cho_main("Then there also was Viktor Krum who--", "open", "base", "base", "R")
     with hpunch
     g4 "Slow down, girl! I'm still not over the fact that you made out with a girl!"
     call cho_main("", "annoyed", "narrow", "base", "mid")
@@ -386,7 +386,7 @@ label cc_pf_talk_T1_intro_E2:
         with d3
         pause .8
 
-        call cho_main("Shall I get Madam Pomfrey to check on you-", "soft", "narrow", "base", "mid")
+        call cho_main("Shall I get Madam Pomfrey to check on you--", "soft", "narrow", "base", "mid")
         g4 "No, no! I'm..."
         m "I'm done.{w=0.3} Let's get back to the topic."
         call cho_main("Which was?", "open", "base", "raised", "mid")
@@ -457,7 +457,7 @@ label cc_pf_talk_T1_E3:
     call cho_main("Very well, [cho_genie_name]...", "open", "closed", "angry", "mid")
     call cho_main("I'll tell you what I know about him.", "open", "narrow", "base", "mid")
     call cho_main("Cedric was always a bit of a loner...", "annoyed", "narrow", "base", "R")
-    call cho_main("He was cold. Focused. Never showed too much affection towards me. Except for-", "open", "base", "angry", "downR")
+    call cho_main("He was cold. Focused. Never showed too much affection towards me. Except for--", "open", "base", "angry", "downR")
     call cho_main("(...)", "annoyed", "narrow", "base", "R")
     m "Yes? Go on..."
     call cho_main("I believe he had a bit of an obsession with my panties, Sir.", "soft", "narrow", "base", "mid")
@@ -951,7 +951,7 @@ label cc_pf_talk_T2_intro_E2:
 
     call cum_block
     g4 "*Argh* {size=-4}You lesbian slut!{/size}"
-    call cho_main("I hope you didn't hear any of it! I would never do-", "soft", "narrow", "worried", "mid")
+    call cho_main("I hope you didn't hear any of it! I would never do--", "soft", "narrow", "worried", "mid")
 
     call cum_block
     call cho_main("Sir?!", "annoyed", "narrow", "raised", "mid")
@@ -1191,7 +1191,7 @@ label cc_pf_talk_T2_E3:
         call gen_chibi("cum_behind_desk_done")
         pause .8
 
-        call cho_main("And put a large bucket under her, so when they-", "soft", "closed", "base", "mid")
+        call cho_main("And put a large bucket under her, so when they--", "soft", "closed", "base", "mid")
         g4 "Stop! No more!"
         call cho_main("", "annoyed", "base", "base", "mid")
         g4 "I've heard enough!"

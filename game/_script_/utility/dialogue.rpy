@@ -33,7 +33,7 @@ init python:
     config.all_character_callbacks.append(set_last_say)
     config.mode_callbacks.append(reset_last_say)
     config.interact_callbacks.append(track_skipping_interact)
-
+    config.replace_text = replace_text
     after_skip_callbacks.append(update_doll_transitions)
 
 init -1 python:
@@ -87,3 +87,7 @@ init -1 python:
             was_skipping = False
             for c in after_skip_callbacks:
                 c()
+
+    def replace_text(s):
+        s = s.replace('--', u'\u2014') # em dash
+        return s

@@ -21,7 +21,7 @@ label hg_pf_strip_T2_fingering:
         m "*Hmmmm*, I'm not sure I believe you..."
         call her_main("What? why would I lie?", "annoyed", "base", "worried", "R")
         m "I'm not sure... maybe it's because you think it's what I want you to say..."
-        call her_main("That doesn't make any-", "annoyed", "base", "worried", "mid")
+        call her_main("That doesn't make any--", "annoyed", "base", "worried", "mid")
         m "But don't worry, I'm sure a quick little demonstration will erase any doubts..."
         call her_main("So that's what you're after......", "annoyed", "narrow", "angry", "R")
         call her_main("*Sigh*...{w=0.4} I suppose I could....", "open", "narrow", "worried", "down")
@@ -107,7 +107,7 @@ label hg_pf_strip_T2_fingering:
             call her_main("ah...{heart}{heart}{heart}", "soft", "narrow", "annoyed", "up")
             call her_main("My classmates win the house cup...", "angry", "wink", "base", "mid")
             g9 "As if that's the only reason..."
-            call her_main("I..{w=0.4}*Ah*... of course it...-", "normal", "happyCl", "worried", "mid")
+            call her_main("I..{w=0.4}*Ah*... of course it...--", "normal", "happyCl", "worried", "mid")
 
             $ hermione.body.body["armright"][1] = 3 # Hacky hacky, sucky sucky, CG better.
             $ hermione.set_body(armleft="on_pussy", armright="on_tits")
@@ -185,7 +185,7 @@ label hg_pf_strip_T2_fingering:
             call her_main("Maybe....", "open_tongue", "narrow", "base", "up", cheeks="blush")
             call her_main("I'm not sure...", "open", "narrow", "base", "R", cheeks="blush")
             m "So you wouldn't mind if they heard me calling you a slut?"
-            call her_main("I...{w=0.4}*mmmh*... Of course I-", "normal", "happyCl", "worried", "mid", cheeks="blush")
+            call her_main("I...{w=0.4}*mmmh*... Of course I--", "normal", "happyCl", "worried", "mid", cheeks="blush")
             m "I bet if they appeared right now you wouldn't even stop touching yourself you filthy slut."
             call her_main("*Ah*...{heart}", "open_tongue", "narrow", "base", "up", cheeks="blush")
             m "You're nothing but a disgrace and a whore..."
@@ -581,7 +581,7 @@ label hg_pf_strip_T4_fingering:
 
             call her_main("[genie_name]!", "shock", "happyCl", "worried", "mid")
             call her_main("This wasn't part of the deal!", "open", "happyCl", "worried", "mid")
-            call her_main("And I was almost about to-", "annoyed", "narrow", "angry", "R", cheeks="blush")
+            call her_main("And I was almost about to--", "annoyed", "narrow", "angry", "R", cheeks="blush")
             m "Can't let you have all the fun by yourself can we [hermione_name]."
             call her_main("*Ah*...{w=0.4}{heart} Well, as long as it's just to make this end faster...", "open", "narrow", "base", "up", cheeks="blush")
             call her_main("I suppose I can...{w=0.4} *Ah*...{w=0.4}{heart} allow it...", "base", "narrow", "base", "down", cheeks="blush")
@@ -667,7 +667,7 @@ label hg_pf_strip_T4_fingering:
     m "what do you love, [hermione_name]?"
     call her_main("ah!!{heart} I love your fingers in my pussy [genie_name]!{heart}", "open_wide_tongue", "happyCl", "annoyed", "dead","blush")
     call nar(">Hermione's legs begin to shake slightly as you finger her with renewed vigour.")
-    m "are you about to-"
+    m "are you about to--"
     call her_main("ah...{heart} yes!!", "mad", "narrow", "annoyed", "dead", cheeks="blush")
     call her_main("I'm about to cum [genie_name]!!{heart}", "grin", "narrow", "base", "dead", cheeks="blush")
     call her_main("From being fucked by your fingers!!{heart}{heart}", "open_tongue", "base", "base", "ahegao", cheeks="blush")
@@ -677,7 +677,7 @@ label hg_pf_strip_T4_fingering:
     $ hermione.body.body["armright"][1] = 3
     $ hermione.set_body(armright="on_tits")
 
-    call her_main("*Ah*...{w=0.4} Yes...{w=0.4}*Ah*... my-", "soft", "narrow", "base", "dead", cheeks="blush")
+    call her_main("*Ah*...{w=0.4} Yes...{w=0.4}*Ah*... my--", "soft", "narrow", "base", "dead", cheeks="blush")
     call her_main("[genie_name]{heart}... I'm...*Ah*...{w=0.4}I'm cumming!{heart}", "silly", "narrow", "annoyed", "dead", cheeks="blush")
     call her_main("{heart}{heart}{heart}!!!{heart}{heart}{heart}", "silly", "narrow", "base", "dead", cheeks="blush")
     with kissiris

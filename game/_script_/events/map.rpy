@@ -101,7 +101,7 @@ label map_attic:
         m "(Let's see what it says...)"
         m "(Turns the user into a magical tentacle plant with the usage of living plant material.)"
         m "Well, well... that could be useful..."
-        m "So I guess this tentacle plant should be here somewhe-"
+        m "So I guess this tentacle plant should be here somewhe--"
         ">As you scan the room you notice a slender piece of vine poking out from behind some crates, as if to avoid the light."
         m "This must be it."
         $ renpy.sound.play("sounds/slash.wav")

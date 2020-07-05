@@ -186,7 +186,7 @@ label tentacle_scene_intro:
     call her_walk(action="enter")
     with d3
     pause 1
-    call her_main("[genie_name], my class is about to-", "open", "base", "worried", "L", trans=d3)
+    call her_main("[genie_name], my class is about to--", "open", "base", "worried", "L", trans=d3)
     call her_main("[genie_name]?", "open", "squint", "base", "L")
     call her_walk(xpos="mid", ypos="base")
     pause 1.0
@@ -194,7 +194,7 @@ label tentacle_scene_intro:
     pause 2.0
     call chibi_emote("hide", "hermione")
     call her_main("Are we playing hide and seek??", "annoyed", "base", "angry", "R", trans=d3)
-    call her_main("[genie_name], I really don't have the-", "annoyed", "narrow", "angry", "stare")
+    call her_main("[genie_name], I really don't have the time--", "annoyed", "narrow", "angry", "stare")
     hide screen hermione_main
     hide screen bld1
     with d3
@@ -269,7 +269,7 @@ label tentacle_scene_intro:
     spo "Hermione Granger was kind enough to bring us a pot with an underdeveloped Devil's Snare."
     spo "It's kind of wilted and looks weak but..."
     g4 "(Oh fuck you, bitch!)"
-    her "Actually, professor that wa-"
+    her "Actually, professor that wa--"
     spo "Miss Granger, please don't interrupt me."
     her "Sorry..."
     spo "Now then..."
@@ -287,7 +287,7 @@ label tentacle_scene_intro:
     spo "Yes Miss Granger, it's how they consume their prey once they have asphyxiated them."
     her "Okay, well what are the eyes for? I thought they sensed their prey by touch?"
     spo "What are you on about Miss Granger? Devil's Snare don't have eyes."
-    her "This one do-"
+    her "This one d--"
     $ renpy.sound.play("sounds/crowd_gasp.mp3")
     $ renpy.sound.play("sounds/plant_burst.mp3")
     stop bg_sounds
@@ -434,7 +434,7 @@ label tentacle_1: #Public path
     ">You begin fiercely fucking her vagina."
     her "Yes, yes, I'm a fucking slut. Fuck me harder."
     gen "See that wasn't so hard now was it. How about I give you a little reward."
-    her "Wha-"
+    her "Wha--"
     call cg_scene("p5")
     ">You thrust a ribbed tentacle deeply into her asshole in one motion."
     $ renpy.sound.play("sounds/slick_02.mp3")
@@ -514,7 +514,7 @@ label tentacle_2: # Personal path
     her "Oh..."
     ">You move a small tentacle with a mouth on the end to her ear so that only she can hear you."
     gen "Enjoying yourself, [hermione_name]?"
-    her "Profes-"
+    her "Profes--"
 
     call cg_scene("e2")
     call ctc
@@ -566,7 +566,7 @@ label tentacle_2: # Personal path
     ">As she exhales, you quickly remove the tentacle from her mouth."
     her "{size=+5}I'm a slut!{/size}"
     ">The realisation of what has just occurred hits her like a ton of bricks."
-    her "I-I'm cumming... Profes-"
+    her "I-I'm cumming... Professor--"
     call cg_scene("e6")
     $ renpy.sound.play("sounds/slick_02.mp3")
     ">You quickly reinsert the tentacle into her mouth, silencing her."

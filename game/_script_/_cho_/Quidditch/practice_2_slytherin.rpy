@@ -171,7 +171,7 @@ label cc_st_return:
 
         m "Welcome back..."
         call cho_main("...", "annoyed", "base", "angry", "R") #Annoyed
-        m "Don't tell me they didn't show up again... Tonks assured me she'd get them to-"
+        m "Don't tell me they didn't show up again... Tonks assured me she'd get them to--"
         call cho_main("No they did show up alright.", "open", "narrow", "angry", "mid")
         g9 "Excellent!"
         m "Then what about our strategy, do you think it will work during the game?"
@@ -192,7 +192,7 @@ label cc_st_return:
         call cho_main("You bet your ass I am!", "smile", "base", "angry", "mid")
         m "..."
         call cho_main("Don't even say it...", "upset", "base", "angry", "mid")
-        m "I... wasn't-"
+        m "I... wasn't--"
         call cho_main("Sure you weren't...", "soft", "closed", "angry", "mid")
         call cho_main("I'll head off to bed then.", "open", "base", "base", "R")
         g4 "{size=+6}*MHHMMMM*{/size}" #Big text

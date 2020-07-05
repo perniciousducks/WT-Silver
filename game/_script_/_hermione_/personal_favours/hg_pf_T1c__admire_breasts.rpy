@@ -135,7 +135,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
 
         "\"That won't be enough, [hermione_name]...\"":
             g4 "I'm not giving Gryffindor {number=current_payout} whole points for a mere glimpse..."
-            call her_main("But-", "open", "wide", "base", "stare")
+            call her_main("But--", "open", "wide", "base", "stare")
             m "No buts! You are dismissed."
             call her_main("Please, [genie_name]. I need those points!", "disgust", "happyCl", "worried", "mid")
             m "Then might I suggest you put in some work to earn them..."

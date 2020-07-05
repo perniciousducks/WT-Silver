@@ -47,7 +47,7 @@ label cc_pr_manipulate_girls_start:
 
         if not cc_pr_spy_girls.is_event_complete(1, 3):
             # Return if player has not spied on Katie just yet.
-            m "Let's try and manipulate-"
+            m "Let's try and manipulate--"
             call cho_main("I'm going to stop you right there...", "soft", "base", "angry", "mid")
             m "Yes?"
             call cho_main("There's no way I'll try this again before I know more about the girls.", "annoyed", "base", "angry", "mid")
@@ -96,7 +96,7 @@ label cc_pr_manipulate_girls_start:
 
         if not cc_pr_spy_girls.is_event_complete(1, 4):
             # Return if player has not spied on Angelina just yet.
-            m "Let's try and manipulate-"
+            m "Let's try and manipulate--"
             call cho_main("I'm going to stop you right there...", "soft", "base", "angry", "mid")
             m "Yes?"
             call cho_main("There's no way I’ll try this again before I know more about the girls.", "annoyed", "base", "angry", "mid")

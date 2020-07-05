@@ -329,7 +329,7 @@ label nt_pr_teach_T1_E4: # Tier 1 - Event 4 - Slytherin girl
     m "I'm desperate to hear {b}anything{/b}..."
     m "This office isn't exactly riveting to listen to..."
     call ton_main("In that case, I'll try and add some flair to it.","base","base","base","mid")
-    call ton_main("Once upon a time-","open","base","base","R")
+    call ton_main("Once upon a time--","open","base","base","R")
     m "*Ahem*..."
     call ton_main("Too much?","smile","happyCl","base","mid")
     m "Just a tad."
@@ -634,7 +634,7 @@ label nt_pr_teach_T2_E3: # Tier 2 - Event 3 - Slytherin boy
     call ton_main("It was actually pretty cute at first...","base","happyCl","base","mid")
     call ton_main("Then just as he was about to blow his load...","open","closed","base","mid")
     call ton_main("Boom! Petrficus Totalus!","scream","base","angry","mid", trans=hpunch)
-    m "{i}Petrifi{/i}-{w} {i}Petrifico{/i}?-{w} {i}Petrificato{/i}-"
+    m "{i}Petrifi{/i}-{w} {i}Petrifico{/i}?-{w} {i}Petrificato{/i}--"
     call ton_main("I petrified him!","open","closed","angry","mid")
     m "*Ahh*..."
     call ton_main("*Ha-ha-ha*... You should have seen his look on his face!","smile","happyCl","base","mid")

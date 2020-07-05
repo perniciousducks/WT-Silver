@@ -249,7 +249,7 @@ label cc_pr_spy_boys_T3_harry:
     m "Anything else?"
     cho "Harry was talking a bit about quidditch but it was mostly bragging about some previous win of his."
     cho "Honestly, that boy could learn to be a bit more humble, I don’t know why Hermione hangs around with him. Quidditch seems to be the only thing that he has going for him."
-    m "Looks like you two have a lot in-"
+    m "Looks like you two have a lot in--"
     cho "Those three seem to constantly have some sort of dick measuring contest in terms of who is best at something. Harry goes on about Quidditch, Ron about Chess and Hermione..."
     cho "Well, Hermione seems to be the best at pretty much any other subject at this school..."
     m "I’m sure she’ll be very impressed if you manage to win the quidditch cup."

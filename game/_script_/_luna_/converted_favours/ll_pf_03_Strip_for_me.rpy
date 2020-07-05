@@ -54,7 +54,7 @@ label luna_favour_3:
                 $ luna_choice = 1
                 call lun_main("you want me to take off my skirt!?","pout","wide","sad","mid")
                 m "Yes... You think you could manage that?"
-                call lun_main("of course I can manag-","normal","angry","sad","R")
+                call lun_main("of course I can manage--","normal","angry","sad","R")
                 m "Fantastic! Why don't you pop it off then so we can take a look..."
                 call lun_main("...","normal","closed","sad","down")
                 call lun_main("Fine... (I hope he doesn't expect me to take off my panties as well)","pout","angry","sad","down")
@@ -188,7 +188,7 @@ label luna_favour_3:
             m "don't you raise your voice at me, [lun_name]!"
             call lun_main(".....!!?","normal","angry","sad","R")
             m "Nobody is forcing you to do this."
-            call lun_main("but-","normal","seductive","sad","R")
+            call lun_main("but--","normal","seductive","sad","R")
             m "I am doing you and your family a favour!"
             m "so If you don't think your father needs help with his failing magazine, please feel free to leave."
             call lun_main(".....................","upset","suspicious","sad","R")
@@ -332,7 +332,7 @@ label luna_favour_3:
             call lun_main("well... seeing as how you seem to be enjoying yourself so much...","base","seductive","angry","mid")
             m "what?"
             call lun_main("why don't you start... touching yourself, [lun_genie_name]...","base","seductive","angry","down")
-            m "I'm not sure if-"
+            m "I'm not sure if--"
             call lun_main("that wasn't a question, [lun_genie_name]...","normal","mad","angry","mid")
 
             call nar(">You reach under the desk and grab your cock...")
@@ -512,9 +512,9 @@ label luna_favour_3:
             call lun_main("(Why can't I stand up for myself?)","upset","base","sad","R", xpos=270)
             call lun_main("...","pout","base","sad","down")
         else:
-            m "If it's not too much trouble-"
+            m "If it's not too much trouble--"
             call lun_main("...","normal","base","angry","R")
-            m "Could you please take your clothes off?"
+            m "--Could you please take your clothes off?"
             call lun_main("*hmph* {w=0.5}Well, seeing as how you seemed to have learned some manners.","normal","angry","angry","mid")
             m "yes, [lun_name]..."
             call lun_main("I suppose there's no harm in it...","base","seductive","angry","R")
@@ -600,7 +600,7 @@ label luna_favour_3:
 
                 call lun_main("There... is that all, [lun_genie_name]?","normal","suspicious","sad","mid")
                 m "Almost... take off your bra next."
-                call lun_main("[lun_genie_name], I really don't-","normal","angry","sad","R")
+                call lun_main("[lun_genie_name], I really don't--","normal","angry","sad","R")
                 m "[lun_name]..."
                 call lun_main("...{w=0.5} fine...","base","angry","sad","R")
                 call lun_main("But you have to close your eyes.","normal","angry","sad","mid")
@@ -802,7 +802,7 @@ label luna_favour_3:
 
                     call lun_main("!!!","upset","wide","mad","mid")
                     call lun_main("(Am I just going to let him do this?)","upset","suspicious","angry","R")
-                    call lun_main("Sir I really thin-","upset","mad","angry","mid")
+                    call lun_main("Sir I really think--","upset","mad","angry","mid")
                     m "*Shhhh*..."
                     ">You start stroking faster."
                     call lun_main("...","upset","seductive","sad","R")
@@ -828,13 +828,13 @@ label luna_favour_3:
                     m "that's it slut... keep looking..."
                     call lun_main("Professor!","normal","mad","angry","down",tears="mascara")
                     m "{size=-4}(*argh*... yes...){/size}"
-                    call lun_main("I really don't-","normal","seductive","sad","down",tears="mascara")
+                    call lun_main("I really don't--","normal","seductive","sad","down",tears="mascara")
                     m "{size=-4}yes...{/size}"
-                    call lun_main("think that-","upset","suspicious","sad","down",tears="mascara")
+                    call lun_main("--think that--","upset","suspicious","sad","down",tears="mascara")
                     g4 "{size=+2}*mmmm*... that's it keep going...{/size}"
-                    call lun_main("we should be-","base","seductive","sad","down",tears="mascara")
+                    call lun_main("--we should be--","base","seductive","sad","down",tears="mascara")
                     g4 "{size=+4}(*agh*... almost there...){/size}"
-                    call lun_main("doing this-","base","suspicious","sad","down",tears="mascara")
+                    call lun_main("--doing this--","base","suspicious","sad","down",tears="mascara")
                     g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
 
                     call gen_chibi("cum_close")
@@ -893,7 +893,7 @@ label luna_favour_3:
             call lun_main("well... why don't you come take a closer look?...","base","seductive","angry","mid")
             m "what?"
             call lun_main("why don't you stand up and take a good look, [lun_genie_name]...","base","mad","mad","mid")
-            m "I don't think that-"
+            m "I don't think that--"
             call lun_main("*shhh*...","soft","angry","angry","mid")
             call lun_main("just stand up sir.....","base","angry","angry","mid")
             m "..."
@@ -1076,7 +1076,7 @@ label luna_favour_3:
 
                 m "That was... amazing"
                 call lun_main("I'm glad you enjoyed yourself...","base","base","base","mid")
-                m "I have to ask though. why did you-"
+                m "I have to ask though. why did you--"
                 call lun_main("Do this?","normal","seductive","angry","R")
                 m "yes."
                 call lun_main("Don't worry about that...","base","mad","angry","mid")

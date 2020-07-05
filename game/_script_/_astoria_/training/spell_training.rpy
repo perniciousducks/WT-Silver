@@ -148,13 +148,13 @@ label ag_st_imperio_E1:
     call ast_chibi("wand_casting",530,"base")
     with d3
     call ton_main("Just like we practised...","open","closed","base","mid")
-    call ton_main("Do the movement with your wand, and then you say-","open","base","base","R")
+    call ton_main("Do the movement with your wand, and then you say--","open","base","base","R")
     call ast_main("Imperio!","scream","narrow","angry","mid") # angry scream
     call ast_main("","clench","narrow","angry","mid")
     call ton_main("Yes...", "angry", "base", "worried", "R")
     call ton_main("....................","upset","base","worried","up")
     call ton_main("You don't have to scream the words, darling.","open","base","raised","L")
-    call ton_main("What's crucial is that your mind is focused and-","open","closed","base","mid")
+    call ton_main("What's crucial is that your mind is focused and--","open","closed","base","mid")
 
     # Astoria casts imperio.
     stop music fadeout 2.0
@@ -306,7 +306,7 @@ label ag_st_imperio_E2:
     m "Very good."
 
     call ton_main("Now, Astoria, just as last time - you will cast the Imperius curse on me...","open","base","base","L")
-    call ton_main("And I'll do my best to resist-","open","closed","base","mid")
+    call ton_main("And I'll do my best to resist--","open","closed","base","mid")
 
     # Astoria casts imperio.
     stop music fadeout 2.0
@@ -366,7 +366,7 @@ label ag_st_imperio_E2:
             call ton_main("*Huh*?","open","base","worried","ahegao")
             call ast_main("Come on, do it!","annoyed","base","angry","L")
             m "Try saying the magic word..."
-            call ast_main("Imperio? But I already did-","open","wink","base","mid")
+            call ast_main("Imperio? But I already did--","open","wink","base","mid")
             m "No... Ask her politely..."
             call ast_main("Oh! I got it!","smile","closed","base","mid")
             call ast_main("Professor Tonks, please remove your coat for me...","open","base","base","L")
@@ -399,11 +399,11 @@ label ag_st_imperio_E2:
             call ast_main("Do it again!","smile","base","angry","L")
             call ton_main("*oink*!","open","base","worried","ahegao")
             call ast_main("*hi-hi-hi-hi*!","smile","closed","base","mid")
-            m "I believe that's enough-"
+            m "I believe that's enough--"
             call ast_main("Do it again! Ten times!","clench","narrow","angry","L") # Angry
-            call ton_main("*oink*{w=0.8}-*oink*{w=0.8}-*oink*{w=1.2}-*oink*{w=0.8}-*oink*{w=1.4}-*oink*{w=1.4}-*oink*{w=1.6}-*oink*{w=2.0}-*oink*{w}-*oink!*","open_wide_tongue","base","base","ahegao")
+            call ton_main("*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*!","open_wide_tongue","base","base","ahegao")
             m "......................."
-            call ast_main("Agai-","scream","closed","angry","mid", trans=hpunch)
+            call ast_main("Agai--","scream","closed","angry","mid", trans=hpunch)
             g4 "That's enough, Astoria!"
             call ast_main("Fine...","annoyed","narrow","angry","R")
 
@@ -472,9 +472,9 @@ label ag_st_imperio_E2:
             call ast_main("Okay... Professor Tonks...","open","base","worried","L")
             call ast_main("I want you to repeat after me...","open","closed","base","mid")
             call ton_main("...................................","horny","base","base","ahegao")
-            call ast_main("I - am - a-","open","base","worried","L")
-            call ton_main("I am a...","open","base","base","ahegao")
-            call ast_main("dirty! - filthy! - pig!","open","narrow","base","L")
+            call ast_main("I -- am -- a--","open","base","worried","L")
+            call ton_main("I am a--...","open","base","base","ahegao")
+            call ast_main("dirty! -- filthy! -- pig!","open","narrow","base","L")
             call ton_main("...................................","base","base","base","ahegao")
             call ast_main("Go on, say it!","clench","narrow","base","L")
             call ast_main("I'm a dirty - filthy - pig!","open","closed","base","mid")
@@ -646,7 +646,7 @@ label ag_st_imperio_E3:
 
     call ast_chibi("wand_casting",530,"base")
     with d3
-    call ton_main("Even the great Albus Dumbledore doesn't know everything about-","horny","base","angry","mid")
+    call ton_main("Even the great Albus Dumbledore doesn't know everything about--","horny","base","angry","mid")
 
     # Astoria casts imperio.
     stop music fadeout 2.0
@@ -817,7 +817,7 @@ label ag_st_imperio_E4:
     m "..."
     call ast_main("Yes...","open","narrow","base","down")
     call ast_main("Sir, I'm sorry about my behaviour during our last training session.","annoyed","base","base","L")
-    m "Sure, no big dea-"
+    m "Sure, no big deal--"
     call ast_main("It was wrong of me to scream at Professor Tonks like that, or scream at you...","open","narrow","base","L")
     m "Fine. Let's just get to-{w=0.8}{nw}"
     call ton_main("And what else?","open","closed","base","mid")
@@ -856,7 +856,7 @@ label ag_st_imperio_E4:
     call ast_main("...","annoyed","base","base","mid")
     call ast_chibi("wand_casting",530,"base")
     with d3
-    call ton_main("Astoria, as soon as I'm ready - I'd like you to-","open","closed","base","mid")
+    call ton_main("Astoria, as soon as I'm ready, I'd like you to--","open","closed","base","mid")
 
     # Astoria casts imperio.
     stop music fadeout 2.0
@@ -1199,7 +1199,7 @@ label ag_st_imperio_E5:
 
     call ast_main("She did it!","smile","base","base","mid")
     g9 "Well{w=0.5} {i}fucking{/i}{w=0.7} done!"
-    m "Next, I'd like you to-"
+    m "Next, I'd like you to--"
     call ast_main("Ask her to take off her trousers!","grin","base","angry","L")
     g9 "Yes please!"
     call ast_main("Professor, please take off your trousers...","open","closed","base","mid")
@@ -1468,7 +1468,7 @@ label ag_st_imperio_E5:
     call ton_main("Well... she was the cause of it...","upset","base","base","down")
     call sna_main("Caused you to strip?","snape_34")
     call sna_main("Which spells are you teaching that girl?!","snape_25")
-    call sna_main("Don't tell me you-","snape_36") # Shocked
+    call sna_main("Don't tell me you--","snape_36") # Shocked
     call ton_main("The Imperius Curse.","open","closed","base","mid")
     call sna_main("I can't believe you two...","snape_08")
     call ast_main("Am I in trouble now, Professor?","annoyed","base","base","L", xpos=10) # Asking Snape
@@ -1585,7 +1585,7 @@ label ag_st_imperio_E5:
             call ton_main("...","angry","base","worried","down")
             call ton_main("How can I not help her, even if she's a Slytherin.", "open", "base", "worried", "mid")
             m "[tonks_name]... You aren't convincing anyone."
-            call ton_main("To think such an innocent girl could be the victim of such an-", "open", "base", "worried", "R")
+            call ton_main("To think such an innocent girl could be the victim of such an--", "open", "base", "worried", "R")
             m "Tonks!"
             call ton_main("Alright...","angry","base","worried","down") #exasperated
             call ton_main("The blood curse may have been a little white lie on my part.","angry","base","base","down")

@@ -9,13 +9,16 @@ label tutorial(entry):
         $ tutorial_dict[entry][2] = True
         $ screenshot_image = ScreenshotImage.capture()
         $ renpy.play("sounds/pop01.mp3")
+        $ renpy.music.set_volume(0.5, 3.0)
         $ renpy.call_in_new_context("tutorial.display", entry)
+        $ renpy.music.set_volume(1.0, 3.0)
     return
 
     label .display(entry):
-        $ renpy.music.set_volume(0.5, 3.0)
-        call screen tutorial(entry)
-        $ renpy.music.set_volume(1.0, 3.0)
+        show screen tutorial(entry)
+
+        $ _return = ui.interact()
+
         return
 
 screen tutorial(entry):
@@ -44,4 +47,4 @@ screen tutorial(entry):
 
             text tutorial_dict[entry][1] size 12
 
-        textbutton "Ok" align (1.0, 1.0) action Return() style _style
+        textbutton "Ok" align (1.0, 1.0) action Return(True) style _style

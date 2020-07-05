@@ -93,7 +93,7 @@ label cho_quid_E1:
     call cho_main("And that would be?", "soft", "base", "angry", "mid")
     m "The balls!"
     call cho_main("What?!?", "mad", "wide", "raised", "mid")
-    call cho_main("Sir, surely you can't be-", "clench", "base", "angry", "mid")
+    call cho_main("Sir, surely you can't be--", "clench", "base", "angry", "mid")
     m "If we entice him during the game he'll lose focus..."
     call cho_main("Entice...{w=0.4} what are you...", "clench", "base", "base", "mid")
 
@@ -111,7 +111,7 @@ label cho_quid_E1:
     m "What? I never said that..."
     call cho_main("", "annoyed", "narrow", "angry", "mid")
     g9 "You have a really dirty mind, girl!"
-    call cho_main("But you just said-", "angry", "closed", "angry", "mid")
+    call cho_main("But you just said--", "angry", "closed", "angry", "mid")
     m "I merely want you to distract him with your body, during the match."
     g9 "And then, when he can't keep his eyes off you..."
     g9 "You grab that Snatch!"
@@ -395,7 +395,7 @@ label cho_quid_E4:
     m "[hermione_name], how much do you know about Quidditch?"
     call her_main("[genie_name], I mean, I've taken flying lessons... they're mandatory.", "open", "base", "base", "R")
     m "Ah, okay... and here I was hoping that you'd be able to commentate this years quidditch games..."
-    call her_main("Me, wasting time on something as stupid as-", "base", "closed", "base", "mid")
+    call her_main("Me, wasting time on something as stupid as--", "base", "closed", "base", "mid")
     call her_main("Wait...{w=0.3} What did you say?", "open", "squint", "base", "mid")
     m "I was going to ask you if you'd commentate this years quidditch games..."
     call her_main("You want me... to commentate this years wizarding school cup?", "open", "wide", "base", "mid")
@@ -411,7 +411,7 @@ label cho_quid_E4:
         call her_main("Everybody will be focused on me...", "soft", "narrow", "annoyed", "up")
 
     call her_main("I accept!", "scream", "closed", "angry", "mid", trans=hpunch)
-    g4 "I thought you just said you didn't-"
+    g4 "I thought you just said you didn't--"
     call her_main("Cho will be so mad!", "crooked_smile", "happy", "base", "mid")
     m "I see..."
     g9 "Congratulations then, [hermione_name]! You got the job."
@@ -811,7 +811,7 @@ label cho_quid_E8:
     call ton_main("Of course. What is it?","base","base","base","mid")
     m "There's this asian girl..."
     call ton_main("Cho Chang?","open","base","raised","mid")
-    m "How did you-"
+    m "How did you--"
     m "(Is she the {i}token asian{/i} girl in this school?)"
     m "Yes, the little Ravenclaw minx, correct."
     call ton_main("Well, I figured you'd be talking about her - if it has to do with Quidditch.","open","base","base","R")

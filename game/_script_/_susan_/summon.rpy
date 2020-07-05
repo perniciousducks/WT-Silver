@@ -117,7 +117,7 @@ label susan_talk:
                     jump susan_talk
                 "-Genie-":
                     $ sus_genie_name = "Genie"
-                    call sus_main("I *uhm*-","upset","base","base","L")
+                    call sus_main("I *uhm*--","upset","base","base","L")
                     call sus_main("Do all the people call you that?","upset","narrow","worried","mid")
                     m "Yes-yes--, everybody!"
                     m "It's perfectly normal!"

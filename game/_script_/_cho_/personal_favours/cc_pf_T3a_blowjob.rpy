@@ -103,7 +103,7 @@ label cc_pf_blowjob_T3_intro_E1:
         cho "By Merlin's beard!" #Wide eyed looking at dick #open mouth
         gen "Something wrong?"
         $ camera.set_image("1")
-        cho "N-No...{w=0.4} It's just...{w=0.4} this close...{w=0.4} it's so much larger than-" #Looking at dick
+        cho "N-No...{w=0.4} It's just...{w=0.4} this close...{w=0.4} it's so much larger than--" #Looking at dick
         gen "Good, then stop staring and put your hand on it..."
         $ camera.set_image("2")
         cho "Okay..." #Blush #Normal mouth
@@ -407,7 +407,7 @@ label cc_pf_blowjob_1:
             gen "Good job [cho_name]..."
             gen "I suppose that will be enough for..."
             $ camera.set_image("up_annoyed")
-            cho "No! I want-"
+            cho "No! I want--"
             $ camera.set_image("away_blush")
             cho "I mean... {w=0.5} you deserve your reward [cho_genie_name]."
             cho "At least let me finish you off with my hand..."
@@ -434,7 +434,7 @@ label cc_pf_blowjob_1:
             $ camera.set(zoom=0.55, pos=(0, 145), t=5.0, pause=True)
 
             $ camera.set_image("cho_hj up")
-            cho "[cho_genie_name]... Will you tell me when-"
+            cho "[cho_genie_name]... Will you tell me when--"
             gen "Faster [cho_name]!"
             cho "Oh... of course!"
 
@@ -506,7 +506,7 @@ label cc_pf_blowjob_1:
                     "....."
                     "....."
                     gen "(!!!)"
-                    cho "[cho_genie_name], are you about to-"
+                    cho "[cho_genie_name], are you about to--"
                     gen "*ARGH*!"
                     cho "[cho_genie_name]!" #Wide eyed
                     "....." #Cum stage 1 #closes eyes #Genie cums on face
@@ -522,7 +522,7 @@ label cc_pf_blowjob_1:
                     cho "My clothes are all ruined now..."
                     cho "There's cum all over them!"
                     gen "That...{w=0.4} was...{w=0.4} amazing!"
-                    cho "Are you even liste-" #annoyed
+                    cho "Are you even liste--" #annoyed
                     gen "That is some talent you have there [cho_name]..."
                     cho "What?!"
                     gen "Get on your feet and let me have a proper look at you..."
@@ -558,7 +558,7 @@ label cc_pf_blowjob_1:
     if hg_kiss.trigger:
         m "Maybe."
         cho "I knew it..."
-        m "Miss Granger knows how to properly dispose-"
+        m "Miss Granger knows how to properly dispose--"
         cho "She swallows?!?" #Shocked #Big text
         cho "I mean..."
         cho "Of course she does...." #small text #Blush
@@ -594,7 +594,7 @@ label cc_pf_blowjob_T3_E2:
     m "Ready for an oral exam [cho_name]?"
     cho "A what?"
     m "Time to put that mouth to good use..."
-    cho "My mouth to-" #Blush
+    cho "My mouth to--" #Blush
     m "Any problems?"
     cho "No... of course not [cho_genie_name]..."
     m "Excellent!"
@@ -663,11 +663,11 @@ label cc_pf_blowjob_T3_E2:
     "....." #Cho strokes genies dick a little faster  #Looks at dick
     "....."
     "....."
-    gen "Now you're getting into it... {w=0.5} Speaking of-"
+    gen "Now you're getting into it... {w=0.5} Speaking of--"
     gen "Time to put that mouth to work..."
     #Cho stops stroking
     cho "Already?"
-    gen "Not agai-"
+    gen "Not again--"
     cho "Yes, [cho_genie_name]... Of course."
     #Cho moves in so her head is closer to genies penis #Still looking at penis #Penis twitches
     gen "[cho_name]?"
@@ -715,7 +715,7 @@ label cc_pf_blowjob_T3_E2:
     "....."
     "....."
     "....."
-    gen "You'll have to do more than just-"
+    gen "You'll have to do more than just--"
     #Cho moves in and starts sucking genie off properly (Not as deep as she attempted)
     cho "..."
     "....."
@@ -731,7 +731,7 @@ label cc_pf_blowjob_T3_E2:
     "...."
     "...."
     cho "Am I doing good [cho_genie_name]?"
-    gen "It feels grea-"
+    gen "It feels great--"
     #Cho starts licking the tip a couple of times #looking at dick
     gen "*Whoa*!"
     cho "...." #looks up at genie still licking
@@ -788,7 +788,7 @@ label cc_pf_blowjob_T3_E2:
                     m "The points were just going to be a bonus."
                     cho "A bonus on top of?"
                     m "Not having to clean up..."
-                    m "Although I guess you didn't see it that way since you-"
+                    m "Although I guess you didn't see it that way since you--"
                     cho "..." #Angry
                     m "Pulled...{w=0.5} back..."
                     cho "I'm not selling my body for points!"
@@ -820,7 +820,7 @@ label cc_pf_blowjob_T3_E2:
 
                     pause 1.0
 
-                    m "Don't say I didn't try to-"
+                    m "Don't say I didn't try to--"
                     cho "Shut... up!"
                     $ renpy.sound.play("sounds/cloth_sound2.mp3")
                     $ cho.wear("top")
@@ -864,7 +864,7 @@ label cc_pf_blowjob_T3_E2:
                     # TODO: Posing, cum layers
                     #Cho has no shirt, cum on her skirt and down her tits
 
-                    m "Although can't say the same for-"
+                    m "Although can't say the same for--"
                     cho "My clothes are all sticky..."
                     m "If you don't want your clothes dirty you'd better swallow next time..."
                     cho "Swallow [cho_genie_name]'s..." #Blush
@@ -911,7 +911,7 @@ label cc_pf_blowjob_T3_E2:
                 "\"Swallow that cum!\"":
                     $ cho_bj_choice = "swallow"
                     #Cho's eyes goes wide and pulls out
-                    cho "But [cho_genie_name]-" #Big text
+                    cho "But [cho_genie_name]--" #Big text
                     gen "[cho_name]!" #Big text #Screenshake?
                     cho "!!!" #wide eyed
                     #Cho quickly goes back in as genie releases in her mouth
@@ -974,18 +974,18 @@ label cc_pf_blowjob_T3_E2:
             gen "[cho_name]..."
             gen "I was wrong...{w=0.4} earlier...{w=0.4} there's one more thing for you to learn today..." #Genie puts hand on cho's head
             cho "*Hmmf*?" #looks at genie
-            gen "How to-"
+            gen "How to--"
             gen "Swallow coach's cum!" #big text #Cum stage 1 #Genie pushes cho's head forward a bit
             cho "*Mff*!!!" #Cum stage 1 #Cho's mouth  #cho's eye expression wide
             gen "That's it slut!" #Cum stage 2 #Cum splatters from the side of her mouth #Cheeks bulge slightly #cho's pupils on dick
             cho "*Gah*!" #Cum stage 3 #Genie lets go  #Cho pulls away and genie cums on her face
             gen "..."
             cho "*Cough*-*Cough*-...*Ah*...{w=0.4}*Ah*..."
-            gen "That was awesome... great jo-"
+            gen "That was awesome... great job--"
             cho "What...{w=0.4}the hell...{w=0.4} is wrong with you?!?!" #screen shake
-            gen "What do you-"
+            gen "What do you--"
             cho "Why didn't you warn me! I almost choked!"
-            cho "I never agreed to-"
+            cho "I never agreed to--"
             gen "It's sort of expected with a blowjob..."
             cho "..." #Wide eyed
 
@@ -993,7 +993,7 @@ label cc_pf_blowjob_T3_E2:
             with d3
 
             cho "For a first blowjob?! It is not!"
-            gen "I mean...{w=0.4} wait did you say first... does that mean you still want to do-"
+            gen "I mean...{w=0.4} wait did you say first... does that mean you still want to do--"
             $ cho.wear("all")
             $ renpy.sound.play("sounds/cloth_sound2.mp3")
             cho "I can't believe you..."
@@ -1010,7 +1010,7 @@ label cc_pf_blowjob_T3_E2:
             cho "You...{w=0.4} you're joking right?"
             m "Deadly serious..."
             m "Unless I fancy covering your face that is..."
-            cho "Unless you-" #disgust
+            cho "Unless you--" #disgust
             cho "*Humph*!"
 
             # Gets upset
@@ -1114,7 +1114,7 @@ label cc_pf_blowjob_T3_E3:
     "...."
     "...."
     "...."
-    cho "What do you-"  #Looks at genie
+    cho "What do you--"  #Looks at genie
     gen "Tell me you want it..."
     cho "[cho_genie_name]?"
     gen "Tell me how much you want my cock in your mouth."
@@ -1133,7 +1133,7 @@ label cc_pf_blowjob_T3_E3:
     #Cho slowly goes half way down his shaft
     gen "That's it..."
     #Cho removes her mouth from genies dick again and looks up at him
-    cho "Sir... How am I supposed to talk dirt-"
+    cho "Sir... How am I supposed to talk dirty--"
     gen "Your reward [cho_name]!"
     cho "Yes, [cho_genie_name]!"
     #Cho looks back down on dick
@@ -1155,7 +1155,7 @@ label cc_pf_blowjob_T3_E3:
     "..."
     "..."
     #Cho suddenly pulls out
-    gen "I didn't say you could-"
+    gen "I didn't say you could--"
     #Cho starts jerking genie off and looks up at him
     cho "Cum for me [cho_genie_name]!"
     cho "I need to taste your delicious cum down my throat!"

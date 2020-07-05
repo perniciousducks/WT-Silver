@@ -18,7 +18,7 @@ label ll_pf_blowjob_T1_intro:
 
     call play_sound("knocking")
     "*knock* *knock* *knock*"
-    g4 "Yea-"
+    g4 "Yeah--"
 
     call lun_walk("mid", action="enter")
     pause.5
@@ -161,7 +161,7 @@ label ll_pf_blowjob_T1_E2:
     m "I suppose if it's been bothering you so much, I could let you get a few out."
     call lun_main("Oh! Thank you, thank you, thank you!","open","happyCl","base","mid",cheeks="blush")
     call lun_main("You don't even know how much better I'll feel once I get them {i}all{/i} out!","base","angry","angry","empty",cheeks="blush")
-    m "I don't think yo-"
+    m "I don't think you--"
 
     call ll_pf_blowjob_T1_marathon
 
@@ -357,7 +357,7 @@ label ll_pf_blowjob_T1_under_desk: # Call label
     g4 "Ah...."
     $ lunCG('base', 'seductive', 'sad', 'up', pos=1)
     lun "Was I doing a bad job, [lun_genie_name]?"
-    m "You were just going a little-"
+    m "You were just going a little--"
     $ lunCG('pout', 'wide', 'sad', 'up', pos=1)
     lun "I knew I was hurting you!"
     $ lunCG('pout', 'base', 'sad', 'down', pos=1)
@@ -394,7 +394,7 @@ label ll_pf_blowjob_T1_under_desk: # Call label
     lun "*Hmmmm*..."
     $ lunCG('sucking', 'closed', 'base', 'up', pos=3)
     lun "*Hhhoohhyyy*! (okay!)"
-    m "Oh, thank-"
+    m "Oh, thank--"
     ">Before you can finish your sentence, Luna suddenly thrusts her head forward, forcing your cock down her throat."
     $ lunCG('sucking', 'angry', 'sad', 'up', pos=10)
     g4 "OH GODS!"
@@ -462,7 +462,7 @@ label ll_pf_blowjob_T1_marathon: # Call label
     m "What's part two?"
     $ ccg("39")
     lun "It's the easiest part! All I need is my wand!"
-    m "What's that fo-"
+    m "What's that for--"
     $ ccg("15")
     show screen white
     $ renpy.play('sounds/magic2.mp3')
@@ -482,7 +482,7 @@ label ll_pf_blowjob_T1_marathon: # Call label
     lun "I already told you that I'm going to get {b}ALL{/b} of those tast- eh... nasty wrackspurts out, didn't I?"
     $ ccg("39")
     lun "The petrification charm is just so you don't hurt yourself."
-    m "Lun-"
+    m "Lun--"
     ">Before you're able to protest any further, your jaw locks in place..."
     lun "Shh... that's it...{w=0.4} Just imagine that you're under the Wiggentree..."
     $ ccg("36")
@@ -816,7 +816,7 @@ label ll_pf_blowjob_T1_slapping: # Call label
             lun "You mean if I don't cry..."
             $ lunCG(pupil='left', eye='sad', mouth='open', tears='tears')
             lun "You won't cover me in wrackspurts?"
-            g9 "Well-"
+            g9 "Well--"
             $ lunCG(pupil='up', eye='wide', mouth='wide')
             lun "*sob* That's so mean sir! *sob*"
             $ lunCG(pupil='dick', eye='sad', mouth='open')
@@ -1254,7 +1254,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG(pos=15)
     m "Oh fuck yes... just like that..."
     $ lunCG(pos=11)
-    call her_main("Is something going-", "upset", "squint", "base", "mid")
+    call her_main("Is something going--", "upset", "squint", "base", "mid")
     m "Shut up and get naked [hermione_name]!"
     $ lunCG(pos=15)
     lun "*glck* *slrp* *glck*"
@@ -1312,7 +1312,7 @@ label ll_pf_blowjob_T1_summon:
     lun "*glck* *slrp* *glck*"
     call her_main("Ginny, is that you?! I told you to stay away from Dumbledore!", "smile", "happyCl", "base", "mid")
     m "Wrong, she's in the blue house."
-    call her_main("A ravenclaw? But which ravenclaw girl would be stupid enough to-", "smile", "happyCl", "base", "mid")
+    call her_main("A ravenclaw? But which ravenclaw girl would be stupid enough to--", "smile", "happyCl", "base", "mid")
     call her_main("...", "smile", "happyCl", "base", "mid")
     lun "*glck* *slrp* *glck*"
     #TODO Check if Hermione has caught you with Luna before and the hat was involved (doesn't happen on normal path)

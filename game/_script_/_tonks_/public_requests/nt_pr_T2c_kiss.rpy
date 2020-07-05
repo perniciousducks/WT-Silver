@@ -405,7 +405,7 @@ label nt_pr_kiss_T2_E1: # Tier 2 Event 1 # Not in use.
     m "*Argh*..."
     call ton_main("Poor thing... I think I broke him if I'm being honest...","base","base","base","mid")
     m "That's it..."
-    call ton_main("I thought he'd like it... but there were so many tears-","base","base","base","mid")
+    call ton_main("I thought he'd like it... but there were so many tears--","base","base","base","mid")
 
     #g9 "UGH... THERE IT IS!!!"
     # Genie cums

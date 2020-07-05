@@ -35,7 +35,7 @@ label nothing_to_see_here_049:
     m "So you don't want to hear my solution then?"
     call cho_main("Wait... You are going to help?!", "smile", "wide", "worried", "mid")
     call cho_main("Thank you, thank you, thank you!","smile","closed","base","mid")
-    call cho_main("I take a small size broom and I'd like gold trim with a dark-","open","base","base","R")
+    call cho_main("I take a small size broom and I'd like gold trim with a dark--","open","base","base","R")
     m "I'm not buying you a broom..."
     m "(Is quidditch like curling then?)"
     call cho_main("Oh...", "annoyed", "wide", "worried", "downR")

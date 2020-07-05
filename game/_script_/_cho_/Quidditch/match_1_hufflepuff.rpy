@@ -260,7 +260,7 @@ label hufflepuff_match:
     call sna_chibi("stand", flip=True)
     with d3
     sna "Well, here we are..."
-    sna "Now we are only waiting for-"
+    sna "Now we are only waiting for--"
     call play_sound("footsteps")
     call her_chibi("stand", flip=True, 40, 295)
     with d3
@@ -278,7 +278,7 @@ label hufflepuff_match:
     call her_chibi("stand", flip=True, 300, 400) # Temp Bugfix
     pause .5
 
-    call her_main("Good Morning everyone, and welcome to the i-inaugural-", "soft", "base", "worried", "mid", flip=True, xpos="290", ypos="base", trans=d3)
+    call her_main("Good Morning everyone, and welcome to the i-inaugural--", "soft", "base", "worried", "mid", flip=True, xpos="290", ypos="base", trans=d3)
     call her_main("", "normal", "base", "worried", "mid")
     call sna_main("Speak up girl! And would it kill you to enunciate?!", "snape_03", ypos="head")
     call her_main("*Grrr*", "mad", "narrow", "angry", "R")
@@ -376,7 +376,7 @@ label hufflepuff_match:
             play bg_sounds "music/fanfare.mp3" fadein 1.0
             call gen_main("Great moments are born from great opportunity.",face="base")
             ">A reverent hush falls over the crowd..."
-            call gen_main("And that's what you have here tonight-",face="base")
+            call gen_main("And that's what you have here tonight--",face="base")
             call gen_main("That's what you've earned here tonight!",face="base")
 
             hide screen genie_main
@@ -655,13 +655,13 @@ label hufflepuff_match:
     $ renpy.sound.play("sounds/sniff.mp3")
     her "..."
     play bg_sounds "sounds/wind_long_loop.mp3" fadein 2
-    call her_main("The capturing of the snitch is worth 150 points-", "open", "narrow", "base", "down", flip=True, xpos="290", ypos="base", trans=d3)
+    call her_main("The capturing of the snitch is worth 150 points--", "open", "narrow", "base", "down", flip=True, xpos="290", ypos="base", trans=d3)
 
     call quidditch_stands(crowd_react=["th", None, None])
     with d3
     $ renpy.sound.play("sounds/murmur.mp3")
 
-    call her_main("The game may not conclude until it has been caught, or an agreement is made between both capt-", "open", "base", "base", "mid")
+    call her_main("The game may not conclude until it has been caught, or an agreement is made between both capt--", "open", "base", "base", "mid")
 
     call quidditch_stands(crowd_react=["th", "an", None])
     with d3
@@ -842,7 +842,7 @@ label hufflepuff_match:
     mal2 "I heard he had an accident with a rogue bludger."
     $ renpy.sound.play("sounds/cough_male.mp3")
     mal "..."
-    call her_main("Wow... that snitch is darting around like nobody's business-", "base", "base", "base", "mid")
+    call her_main("Wow... that snitch is darting around like nobody's business--", "base", "base", "base", "mid")
 
     call quidditch_stands(crowd_react=[None, None, None])
     with d3
@@ -978,7 +978,7 @@ label hufflepuff_match:
     call cho_main("", "mad", "narrow", "angry", "L")
     call her_main("Oh...", "normal", "wide", "worried", "shocked")
     call her_main("So should I announce it now?", "open", "happyCl", "worried", "mid")
-    call sna_main("Obviously-", "snape_12", ypos="head")
+    call sna_main("Obviously--", "snape_12", ypos="head")
     call cho_main("{size=+10}YES!{/size}", "scream", "closed", "angry", "mid", trans=vpunch)
     call her_main("", "normal", "base", "annoyed", "L")
     call cho_main("{size=+6}WHAT ARE YOU EVEN WAITING FOR?{/size}", "clench", "narrow", "angry", "L", trans=hpunch)

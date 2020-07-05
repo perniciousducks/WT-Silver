@@ -117,7 +117,7 @@ label panty_raid:
         pause 1.0
         call her_main("", "soft", "narrow", "worried", "down")
         m "What are you standing there for?"
-        call her_main("Isn't there any other way I coul-", "soft", "narrow", "base", "mid_soft", cheeks="blush")
+        call her_main("Isn't there any other way I coul--", "soft", "narrow", "base", "mid_soft", cheeks="blush")
         m "No."
         call her_main("{size=-4}... fine.{/size}", "soft", "narrow", "worried", "down")
 
@@ -213,7 +213,7 @@ label panty_raid:
 
             "-Yes, they do-":
                 m "I must say...{w=0.3} I am impressed with your courage, [hermione_name]."
-                call her_main("I am sorry [genie_name]. I wo-", "disgust", "narrow", "worried", "down")
+                call her_main("I am sorry [genie_name]. I wo--", "disgust", "narrow", "worried", "down")
                 call her_main("Wait what?", "shock", "base", "worried", "mid")
                 call her_main("", "soft", "base", "worried", "mid")
                 m "I never imagined you'd possess such \"out of the box\" problem solving!"
@@ -491,7 +491,7 @@ label panty_raid:
         call her_main("", "base", "base", "base", "mid")
         m "Connie's linguist?-{w=1.0}{nw}"
         g9 "Connie's linguist?-{fast} oh I see..."
-        call her_main("As embarrassing as the circumstances were, I would never turn down a request to help a student with homework! But I don't think we have a linguistics class or what Connie she was-", "open", "narrow", "worried", "mid_soft")
+        call her_main("As embarrassing as the circumstances were, I would never turn down a request to help a student with homework! But I don't think we have a linguistics class or what Connie she was--", "open", "narrow", "worried", "mid_soft")
         call her_main("", "soft", "base", "base", "mid")
         g9 "{i}Cunnilingus{/i} [hermione_name]... She was asking for Cunnilingus."
         call her_main("Huh? But she said she wanted study help.")
@@ -535,8 +535,8 @@ label panty_raid:
         call her_main("Why would she want that?!", "shock", "wide", "base", "mid", cheeks="blush")
         call her_main("", mouth="angry", cheeks="blush")
         g9 "Because in my experience it feels awesome...{w=0.5}{nw}"
-        m "Because in my experience it feels awesome...{fast} Wait, did that make it sound like I have a vagin-"
-        call her_main("You're wrong! She- She-", "shock", "closed", "angry", "mid", cheeks="blush")
+        m "Because in my experience it feels awesome...{fast} Wait, did that make it sound like I have a vagin--"
+        call her_main("You're wrong! She-- She--", "shock", "closed", "angry", "mid", cheeks="blush")
         call her_main("", "angry", "happyCl", "worried", "mid", cheeks="blush")
         m "What? Never done it before?"
         call her_main("{size=+4}OF COURSE NOT!{/size}", "angry", "base", "angry", "mid", cheeks="blush")
@@ -546,7 +546,7 @@ label panty_raid:
         call her_main("", "annoyed", "narrow", "annoyed", "mid", cheeks="blush")
         call her_main("Maybe I will...", "open", "closed", "angry", "mid")
         call her_main("", "upset", "narrow", "annoyed", "mid")
-        call her_main("She will surely-", "open", "closed", "base", "mid")
+        call her_main("She will surely--", "open", "closed", "base", "mid")
         call her_main("{size=+4}HOLD ON!{/size}", "scream", "wide", "base", "stare")
         call her_main("", mouth="shock")
         m "What?"
@@ -561,7 +561,7 @@ label panty_raid:
         g9 "Sure, and risk her spilling the beans to your entire dorm that the proud Hermione Granger steals girls' panties."
         call her_main("...", "soft", "narrow", "worried", "down")
         call her_main("", "soft", "closed", "angry", "mid", cheeks="blush")
-        g9 "Hey, for sixty points would you let me watc-"
+        g9 "Hey, for sixty points would you let me watch--"
         call her_main("Absolutely not!", "scream", "base", "angry", "mid", cheeks="blush")
         call her_main("", "angry", "base", "angry", "mid", cheeks="blush")
         m "That's a bummer..."
@@ -598,10 +598,10 @@ label panty_raid:
         pause 0.5
         her "It's me... Hermione granger."
         call play_sound("door")
-        her "Hello Katie I-"
+        her "Hello Katie I--"
         $ renpy.play('sounds/giggle2.mp3')
         "Katie" "Hey there sweet cheeks. {heart}{w=0.5} I have been waiting for you. {heart}{heart}{heart}"
-        her "We need to ta-"
+        her "We need to talk--"
         "Katie" "I know exactly what we need. {heart}"
         $ renpy.play('sounds/slap_03.mp3')
         "> Katie grabs Hermione and pulls her in the room{nw}"

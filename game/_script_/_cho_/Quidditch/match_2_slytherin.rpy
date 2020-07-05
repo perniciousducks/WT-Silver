@@ -121,7 +121,7 @@ label slytherin_match:
     call ton_main("Hi, [ton_genie_name].", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=d3)
     m "Tonks... a pleasure as always."
     call ton_main("Pleasure's all mine...", "horny", "base", "raised", "mid")
-    call ton_main("I was afraid you might've forgotten about today's-", "open", "base", "base", "mid")
+    call ton_main("I was afraid you might've forgotten about today's--", "open", "base", "base", "mid")
     g9 "Quidditch match?"
     call ton_main("So you didn't forget!", "open", "base", "raised", "mid")
     g9 "How could I? Last match was a great show!"
@@ -211,7 +211,7 @@ label slytherin_match:
     pause .8
 
     call sna_main("Miss Tonks..", "snape_03", ypos="head")
-    call sna_main("Gen-", "snape_03")
+    call sna_main("Geni--", "snape_03")
     call sna_main("*Ahem*... Albus, Glad you made it in time, I was about to call for you.", "snape_09")
     call ton_main("I know who he is, Snape. There's no need for the pretence.", "open", "closed", "base", "L", xpos="far_left", ypos="head", flip=True)
     call sna_main("Of course there is. We're outside the headmaster's office, after all.", "snape_16")
@@ -718,7 +718,7 @@ label slytherin_match:
     pause .8
 
     call sna_main("I'm surprised she didn't swallow that one - with how wide she was blabbing her mouth.", "snape_42", ypos="head")
-    call sna_main("To think that liquid luck-", "snape_45")
+    call sna_main("To think that liquid luck--", "snape_45")
     call ton_main("{size=+5}What?{/size}", "angry", "shocked", "base", "stare", hair="neutral", ypos="head", flip=True, trans=hpunch)
     g4 "What the fuck is liquid luck?"
     call ton_main("You gave those brutes a luck potion?!", "scream", "base", "angry", "L", hair="angry")
@@ -731,17 +731,17 @@ label slytherin_match:
         "\"Way to go Snape...\"":
             m "You knew you couldn't win so you decided to use one of your dirty tricks..."
             g4 "And now I need to find me a new commentator, thanks to you!"
-            call sna_main("A bit hypocritical of you don't you thi-", "snape_32")
+            call sna_main("A bit hypocritical of you don't you think--", "snape_32")
         "\"You owe me one, Snape...\"":
             call sna_main("I {i}owe you{/i} one? What are you talking about?", "snape_10")
             m "She wont be able to blow me any time soon, thanks to you."
             m "So yes, I think you owe me."
-            call sna_main("Surely you can't be-", "snape_14")
+            call sna_main("Surely you can't be--", "snape_14")
         "\"10 points to Gryffindor!\"":
             call ton_main("Are you mad?", "scream", "base", "angry", "R", hair="angry")
             m "What? I'm just joking, I'm sure she'll be fine..."
             call sna_main("{size=-4}10 points to Slytherin.{/size}", "snape_38")
-            m "Did you say someth-"
+            m "Did you say something--"
             $ gryffindor += 10
             $ slytherin += 10
 
@@ -838,7 +838,7 @@ label slytherin_match:
     m "Also, doesn't this feel a bit like rehashing content?"
 
     #TODO Snape starts walking slowly to the podium
-    call sna_main("Fine, in that case. I'll just go up and give a motivational-", "snape_01")
+    call sna_main("Fine, in that case. I'll just go up and give a motivational--", "snape_01")
 
     # Genie walks past Snape, who stops
     call gen_chibi("stand", flip=True)
@@ -1284,7 +1284,7 @@ label slytherin_match:
     $ camera.set(zoom=0.5, pos=(0, 300), t=3.5)
     cho "Hey boys, check this out..."
     $ camera.set_image("cho_cg quidditch pose1 base")
-    cra "What do you want slut-"
+    cra "What do you want slut--"
     $ camera.set(rotate=-15, zoom=0.65, pos=(-100, -120), t=3.0, pause=True)
     $ camera.set_image("cho_cg quidditch pose2 smirk")
     call nar("Cho spins around, flaunts her butt and gives them a quick wink.")
@@ -1675,7 +1675,7 @@ label slytherin_match_return:
         call sus_chibi("stand", "desk", "base", flip=False)
         call sus_main("You want to s-spank me? W-Why would you want to sp-spank me, professor? Did I do something wrong?", "upset", "base", "worried", "mid", xpos="mid", ypos="base", flip=False, trans=morph)
 
-        call sus_main("Are you going to punish me for flaunting these massive pair of tits-", "open", "base", "worried", "down")
+        call sus_main("Are you going to punish me for flaunting these massive pair of tits--", "open", "base", "worried", "down")
         call sus_main("Wow... They really are big aren't they... And they feel so soft...", "open", "wide", "base", "down")
         call sus_main("(I'll give you two the attention you deserve tonight...)", "grin", "base", "angry", "down")
         m "Tonks?"
@@ -1691,7 +1691,7 @@ label slytherin_match_return:
         call sus_chibi("stand", "desk", "base", flip=False)
         call sus_main("Did I do something wrong, Sir?", "upset", "base", "worried", "mid", xpos="mid", ypos="base", flip=False, trans=morph)
 
-        call sus_main("Are you going to punish me for having these massive pair of tits-", "open", "base", "worried", "down")
+        call sus_main("Are you going to punish me for having these massive pair of tits--", "open", "base", "worried", "down")
         call sus_main("Wow. They really are big... And they feel so soft...", "open", "wide", "base", "down")
         call sus_main("(I think I'm gonna play with them later for a little...)", "grin", "base", "angry", "down")
         m "Tonks?"

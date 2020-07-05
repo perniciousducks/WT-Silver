@@ -284,7 +284,7 @@ label snape_intro_E3:
     who2 "The stories I hear about Minerva McGonagall and those poor Gryffindor freshmen may be true..."
     call sna_main("","snape_01")
     who2 "Well, I just wanted to make sure that you take those rumours about me for what they are..."
-    who2 "Nasty lies made up by a bunch of spoiled-"
+    who2 "Nasty lies made up by a bunch of spoiled--"
 
     who2 "Oh.... Before I go..."
     who2 "There is one thing I meant to ask you for a while now..."

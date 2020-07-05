@@ -6,7 +6,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call lun_main("yes sir...","base","base","sad","mid")
     m "Today I have a new type of favour for you."
     call lun_main("really?","base","wide","base","mid")
-    m "Today, we'll be-"
+    m "Today, we'll be--"
     call lun_main("Wait!","base","wide","angry","mid")
     call lun_main("Before you ask me...","base","seductive","sad","R")
     call lun_main("can you please summon Hermione?","normal","seductive","sad","mid")
@@ -27,7 +27,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call her_main("you mean...", "shock", "happy", "base", "mid_soft")
     call her_main("*N'awww* that's so sweet Luna.", "grin", "base", "base", "mid_soft")
     call her_main("You better ask her nicely sir!", "mad", "slit", "low", "stare")
-    m "You don't even know what-"
+    m "You don't even know what--"
     call her_main("Everyone knows what you're going to ask for next sir.", "open", "closed", "base", "mid")
     call her_main("At least try and make it a little romantic for her...", "smile", "base", "base", "mid_soft")
     m "Romantic?"
@@ -58,7 +58,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
 
     ">Instead, you notice a bright red mark starting to form across Luna's face."
     call her_main("You need to stop thinking that right now!", "open", "base", "angry", "mid")
-    call lun_main("but I'm not as-","pout","base","sad","R", cheeks="blush")
+    call lun_main("but I'm not as--","pout","base","sad","R", cheeks="blush")
     call her_main("Luna... you have to Stop measuring yourself against other people.", "open", "wink", "base", "mid")
     call her_main("You're the cutest, nicest, zaniest girl at this school and I don't know what's happened to you recently, but you need to just calm down and enjoy your life.", "open", "wink", "base", "mid")
     call lun_main("but...","normal","wide","sad","down", cheeks="blush",tears="crying")
@@ -97,7 +97,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
         "-Be gentle...-":
             ">You take a hold of Hermione's legs, slowly parting them as you push the head of your cock up against her tender pussy."
             $ ccg2 = "herm_2"
-            her "Now just take it slowly [genie_name], so Luna can get a good idea of what she's-"
+            her "Now just take it slowly [genie_name], so Luna can get a good idea of what she's--"
             ">You slide the head of your cock softly into her waiting pussy."
             $ ccg2 = "herm_3"
             call ctc
@@ -109,7 +109,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
 
         "-Be rough!-":
             ">You take a hold of Hermione's legs, lining up the head of your cock with her tender pussy."
-            her "Now just take it slowly, so Luna can get an idea of-"
+            her "Now just take it slowly, so Luna can get an idea of--"
             ">You slam into her, burying your cock to the hilt."
             her "!!!"
             g4 "*Mmmm*, that's it slut... You're still so tight."
@@ -375,7 +375,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     $ ccg2 = "herm_23"
     her "no!"
     $ ccg2 = "herm_24"
-    her "It's perfectly natural for you to get turned on by us calling you a good girl-"
+    her "It's perfectly natural for you to get turned on by us calling you a good girl--"
     $ ccg1 = "luna_17"
     lun "a{heart}a{heart}*ahhhhh*{heart}"
     $ ccg2 = "herm_25"

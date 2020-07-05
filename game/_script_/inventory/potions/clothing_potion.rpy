@@ -12,7 +12,7 @@ label potion_scene_4: #Transparent uniform
             m "To be fair I was trying to turn you into another girl..."
             call her_main("That's not much better [genie_name].", "angry", "base", "angry", "mid")
             m "Isn't it?"
-        
+
         call her_main("At least promise me that this one isn't going to embarrass me in the middle of class.", "open", "closed", "angry", "mid")
         call her_main("My reputation is suffering enough as it is. I don't need these constant potions causing me to transform in front of my peers.", "annoyed", "narrow", "angry", "R")
     else:
@@ -23,7 +23,7 @@ label potion_scene_4: #Transparent uniform
     call her_main("Well then what on earth is it going to do?", "angry", "base", "angry", "mid")
 
     if her_potions_drunk:
-        m "As always [hermione_name], you'll ha-"
+        m "As always [hermione_name], you'll ha--"
         call her_main("Have to wait and see. I know.", "normal", "squint", "angry", "mid")
     else:
         m "You'll just have to wait and see..."
@@ -46,7 +46,7 @@ label potion_scene_4: #Transparent uniform
     call her_walk(action="leave")
 
     $ hermione_busy = True
-    
+
     # TODO: Revamp transparency potion scenario logic, do we keep it a wardrobe feature or?
 
     #if her_whoring <= 7:
@@ -111,7 +111,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         call her_main("Hmmmm, well at least ask what I'm doing before you give me the potion.", "open", "base", "worried", "R")
         m "Why, what did you have to do today that was so important?"
         call her_main("I had to give a speech for languages!", "angry", "base", "worried", "mid")
-        call her_main("Do you have any idea how inappropriate it was giving a speech on morality in front of the entire class-", "open", "closed", "base", "mid")
+        call her_main("Do you have any idea how inappropriate it was giving a speech on morality in front of the entire class--", "open", "closed", "base", "mid")
         call her_main("{size=+5}As my clothes became transparent!{/size}", "angry", "base", "worried", "mid")
         m "Well I imagine it depends on what side of morality you were arguing."
         call her_main("It doesn't matter.", "open", "closed", "base", "mid")

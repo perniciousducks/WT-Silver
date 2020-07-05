@@ -271,7 +271,7 @@ label hg_pr_flirt_teacher_T2_E2:
 
     if not hermione.is_worn("bottom"):
         call her_main("I had an amazing day, [genie_name]!", "smile", "happyCl", "base", "mid", emote="06")
-        m "Do te-"
+        m "Glad to--"
         m "[hermione_name]... What have you done to your leg?"
         call her_main("What do you...{w=0.4} Oh, that...", "mad", "base", "base", "down", cheeks="blush")
         m "Yes that..."
@@ -280,7 +280,7 @@ label hg_pr_flirt_teacher_T2_E2:
         if not hermione.is_worn("stockings"):
             m "The hell it is...{w=0.4} is that writing on your leg?"
             call her_main("I... yes...", "normal", "happyCl", "worried", "mid", cheeks="blush")
-            m "Gil... Gilde-"
+            m "Gil... Gilde--"
             call her_main("*sigh*... Gilderoy Lockhart... [genie_name].", "open", "narrow", "base", "down", cheeks="blush")
             m "Now that's dirty!"
             call her_main("What!?", "clench", "base", "worried", "mid")
@@ -288,7 +288,7 @@ label hg_pr_flirt_teacher_T2_E2:
             call her_main("Sir, what are you on about?", "annoyed", "squint", "base", "mid")
             m "Why else would he put his name there?"
             call her_main("Sir, he's a famous author!", "normal", "squint", "angry", "mid", cheeks="blush")
-            m "Doesn't give him the right to-"
+            m "Doesn't give him the right to--"
             m "Oh... It's an autograph!"
             call her_main("I... what else would it be?", "clench", "squint", "worried", "mid", cheeks="blush")
             m "Nothing..."
@@ -305,7 +305,7 @@ label hg_pr_flirt_teacher_T2_E2:
             $ hermione.strip("bottom", "stockings")
             pause.5
 
-            m "Gil... Gilde-"
+            m "Gil... Gilde--"
             call her_main("*sigh*... Gilderoy Lockhart... [genie_name].", "open", "narrow", "base", "down", cheeks="blush")
             call her_main("He very kindly gave me his autograph after today's lesson...", "base", "narrow", "base", "down", cheeks="blush")
             m "And why would you want such a thing?"
@@ -316,7 +316,7 @@ label hg_pr_flirt_teacher_T2_E2:
             call her_main("I didn't ask him to sign my leg specifically...", "angry", "base", "worried", "mid", cheeks="blush")
             m "I see...{w=0.4} Well, can't say I'm surprised..."
             call her_main("Sir?", "annoyed", "base", "worried", "mid", cheeks="blush")
-            m "An esteemed author making dirty requests from a fan is more common than you thi-"
+            m "An esteemed author making dirty requests from a fan is more common than you thi--"
 
             jump hg_pr_flirt_teacher_T2_E2.angry
     else:
@@ -330,9 +330,9 @@ label hg_pr_flirt_teacher_T2_E2:
         m "How kind of him indeed..."
         call her_main("Yes, I can't wait to show it to the girls!", "grin", "base", "base", "R")
         call her_main("It was a bit weird that he wouldn't sign my notebook though...", "annoyed", "base", "base", "mid")
-        m "He wouldn't-"
+        m "He wouldn't--"
         call her_main("It's just going to fade away in the shower now...", "upset", "base", "worried", "mid")
-        m "It's going to-"
+        m "It's going to--"
         g9 "Show me!"
         call her_main("[genie_name]?", "open", "base", "worried", "mid", cheeks="blush")
         call her_main("I... It's just an autograph...", "base", "squint", "worried", "R", cheeks="blush")
@@ -363,7 +363,7 @@ label hg_pr_flirt_teacher_T2_E2:
                 label .angry:
 
                 call her_main("What do you mean?!", "clench", "happy", "base", "mid", cheeks="blush")
-                m "Surely a piece of paper would've been-"
+                m "Surely a piece of paper would've been--"
 
                 call her_main("Professor Lockhart is nothing but an embodiment of everything pure and courageous!", "annoyed", "narrow", "annoyed", "mid")
                 call her_main("You should not worry about professor Lockhart, [genie_name].", "base", "base", "worried", "R")

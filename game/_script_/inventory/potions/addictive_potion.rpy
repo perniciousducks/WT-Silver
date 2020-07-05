@@ -276,7 +276,7 @@ label hg_pp_cumaddict_intro:
             m "There, much better."
             call nar(">Her legs have not stopped quivering since you first came.")
             m "Well aren't you going to say anything [hermione_name]?"
-            call her_main("Thank you maste-", "silly", "narrow", "base", "dead")
+            call her_main("Thank you maste--", "silly", "narrow", "base", "dead")
             hide screen hermione_main
             call nar(">She collapses into a heap on the ground with her legs still shaking.")
 
@@ -307,7 +307,7 @@ label hg_pp_cumaddict_intro:
             hide screen hermione_main
             m "Just from a facial? What sort of cumslut have you become Miss Granger?"
             m "What would your parents think? Looking at you covered in some old man's cum."
-            call her_main("No. Please stop, I'll-", "angry", "happyCl", "worried", "mid", emote="05")
+            call her_main("No. Please stop, I'll--", "angry", "happyCl", "worried", "mid", emote="05")
             with vpunch
             hide screen hermione_main
             m "They'd be ashamed at what you've become. A whore who gets off on being used as a toy."
@@ -766,7 +766,7 @@ label potion_scene_3_3_1:
     call her_main("They're just so soft...", "open", "narrow", "base", "up",cheeks="blush")
     call set_her_action("covering")
     call her_main("And they feel soo good. They're really sensi--", "base", "narrow", "base", "up",cheeks="blush")
-    call her_main("Sensi---", "base", "narrow", "base", "up",cheeks="blush")
+    call her_main("Sensi--", "base", "narrow", "base", "up",cheeks="blush")
     call set_her_action("pinch")
     call her_main("What's the word?", "annoyed", "narrow", "base", "up",cheeks="blush")
     m "Sensitive."

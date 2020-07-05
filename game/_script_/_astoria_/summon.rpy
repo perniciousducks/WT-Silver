@@ -208,12 +208,12 @@ label astoria_talk:
                 "{color=[menu_disabled]}-Master-{/color}" if ast_whoring < 18:
                     label .master_fail:
                     $ ast_genie_name = "Dumby" # Tricked
-                    call ast_main("Hahahaha-- you want me to call you master?", face="happy")
+                    call ast_main("*Ha-ha-ha-ha*-- you want me to call you master?", face="happy")
                     call ast_main("That's so dumb!", face="happy")
                     call ast_main("Oh I know!", face="happy")
                     call ast_main("How about I'll call you \"Dumby\" instead? It fits you really well.", face="happy")
                     m "(...)"
-                    call ast_main("Hahahaha--", face="happy")
+                    call ast_main("*Ha-ha-ha-ha*--", face="happy")
                     m "Are you done now?"
                     call ast_main("Yes... I'm sorry... {w=1.0}Dumby...", face="happy")
                     g4 "(Damn brat! We'll see who will be laughing later.)"
@@ -221,11 +221,11 @@ label astoria_talk:
                 "-Master-" if ast_whoring >= 18:
                     label .master:
                     $ ast_genie_name = "Master"
-                    call ast_main("Hahahaha-- you want me to call you master?", face="happy")
+                    call ast_main("*Ha-ha-ha-ha*-- you want me to call you master?", face="happy")
                     call ast_main("That's so silly!", face="happy")
                     m "(...)"
                     call ast_main("Well alright... M-master--", face="happy")
-                    call ast_main("Hahahaha--{w=1.0}{nw}", face="happy")
+                    call ast_main("*Ha-ha-ha-ha*--{w=1.0}{nw}", face="happy")
                     with hpunch
                     g4 "Shut it... or there will be consequences!"
                     call ast_main("I'm sorry... It won't happen again, master...", face="neutral")

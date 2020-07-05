@@ -306,7 +306,7 @@ label ll_pf_masturbate_T1_E2:
     call ll_pf_masturbate_T1_continue
 
     m "Will that be all then, Miss Lovegood?"
-    call lun_main("I suppose... Although I think I could go-","normal","seductive","sad","down")
+    call lun_main("I suppose... Although I think I could go--","normal","seductive","sad","down")
     call lun_main("No...{w=0.3} I better get to bed...","upset","seductive","sad","R")
     call lun_main("Thanks again, [lun_genie_name]!","normal","seductive","sad","down")
 
@@ -322,7 +322,7 @@ label ll_pf_masturbate_T1_E3:
     # Luna masturbates for Genie and then he cums on her face
 
     call lun_main("","base","closed","angry","mid", xpos="mid", ypos="base")
-    m "[lun_name], are those wrackspurts still causing you-"
+    m "[lun_name], are those wrackspurts still causing you--"
 
     call lun_walk("desk")
 
@@ -556,16 +556,16 @@ label ll_pf_masturbate_T1_jerk_off: # Call label
     lun "*Hmmm*... It reminds me of a certain Bertie Bott's Every-Flavour bean I once had..."
     $ ccg1 = "11"
     lun "It wasn't very good... But it wasn't bad..."
-    m "Well now that you've taken it all-"
+    m "Well now that you've taken it all--"
     ">As if to purposely interrupt you, Luna leans in and quickly runs her tongue across the tip of your sensitive cock."
     $ ccg1 = "12"
     m "What!"
     $ ccg1 = "13"
-    lun "I was just hav-"
+    lun "I was just--"
     m "*Argh*, you've done it now!"
     m "here it comes You little minx!"
     $ ccg1 = "14"
-    lun "Here comes wha-"
+    lun "Here comes what--"
     m "*ARGH*!!!"
     ">As if in retaliation for her previous interruption, your cock now interrupts Luna's sentence with a thick deluge of semen."
     $ ccg1 = "15"

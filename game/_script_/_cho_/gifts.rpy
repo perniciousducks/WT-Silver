@@ -134,7 +134,7 @@ label give_cho_gift(gift_item):
 
     elif gift_item == girls_mag_ITEM:
         if cho_tier <= 1:
-            call cho_main("Girls magazines, what do you think I am... a gi-",pupils="down",face="horny",xpos="mid",ypos="base")
+            call cho_main("Girls magazines, what do you think I am... a gi--",pupils="down",face="horny",xpos="mid",ypos="base")
             call cho_main("I'm good thank you...","open","base","base","L",xpos="mid",ypos="base")
             call cho_mood(0)
         elif cho_tier == 2:
@@ -445,7 +445,7 @@ label give_cho_gift(gift_item):
 
     elif gift_item == broom_2000_ITEM:
         if cho_tier <= 1:
-            call cho_main("A broom... yes! Finally something better than my old-",mouth="scream",eyes="wide",eyebrows="raised",pupils="down",xpos="mid",ypos="base")
+            call cho_main("A broom... yes! Finally something better than my old--",mouth="scream",eyes="wide",eyebrows="raised",pupils="down",xpos="mid",ypos="base")
             call cho_main("Hold on, is that a double ended dildo sticking out of it?!?","angry","wide","base","mid")
             call cho_main("What's wrong with you?","scream","wide","base","L")
             call cho_main("Get that away from my... from me!", "angry", "narrow", "base", "mid")

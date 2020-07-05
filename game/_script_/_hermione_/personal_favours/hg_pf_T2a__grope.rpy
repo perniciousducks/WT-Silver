@@ -145,7 +145,7 @@ label hg_pf_grope_T1_intro_E1:
 
     menu:
         "\"I'm gonna molest your tits now.\"":
-            call her_main("What? What do you mean, [genie_name]-", "soft", "wide", "base", "stare")
+            call her_main("What? What do you mean, [genie_name]--", "soft", "wide", "base", "stare")
             call nar(">You reach out swiftly and grab both of her tits through her clothes...")
 
             jump hg_pf_grope_breasts_T1

@@ -27,7 +27,7 @@ label hat_intro:
     hat "I'm the {i}sorting{/i} hat, and I Just want to talk."
     m "Well go ahead then, it's not like I've got anything better to do in this room."
     hat "So, about what you've been doing to Hermione Granger..."
-    m "Oh, that, *Ummmmmm*... It's not what it-"
+    m "Oh, that, *Ummmmmm*... It's not what it--"
     hat "I want in."
     g4 "What?"
     hat "I want to help you corrupt another girl."
@@ -79,7 +79,7 @@ label hat_intro_2:
     m "(Probably don't want him...)"
     m "Does anyone else come to mind?"
     call her_main("I don't think so...", "open", "base", "worried", "R")
-    m "Oh well, just-"
+    m "Oh well, just--"
     call her_main("Wait, I know! Luna Lovegood!", "scream", "closed", "angry", "mid")
     m "And why is that?"
     call her_main("Well, surely you've seen her grades [genie_name]...", "open", "closed", "base", "mid")
@@ -127,7 +127,7 @@ label hat_intro_3:
             call lun_main("Oh... Why not?","base","wink","sad","mid")
             m "Well, if I let you change house then half the school will probably want a second go."
             m "Better to keep the status quo."
-            hat "Wait, I don't get to-"
+            hat "Wait, I don't get to--"
             ">You slam the hat into a drawer in your desk to silence it."
             call lun_main("oh, alright then!","base","base","base","R")
             call lun_main("But now that I'm here sir, I need to talk to you.","base","base","base","mid")
@@ -159,8 +159,8 @@ label hat_intro_3:
     m "Here we are, Miss Lovegood..."
     ">You place the hat gingerly on her head."
     call lun_main("...","upset","base","base","R")
-    call lun_main("Is it-","upset","base","raised","R")
-    hat "{size=+4}HMMMM{/size} yes...{w=0.3} {size=-4}yes...{/size} I see.{w=0.3} Very interesting...{w=0.3} {size=+4}Very{w=0.3} interesting...{/size}"
+    call lun_main("Is it--","upset","base","raised","R")
+    hat "{size=+4}*HMMMM*{/size} yes...{w=0.3} {size=-4}yes...{/size} I see.{w=0.3} Very interesting...{w=0.3} {size=+4}Very{w=0.3} interesting...{/size}"
     call lun_main("What's interesting?","normal","base","raised","mid")
     hat "What? Oh nothing, nothing. Just close your eyes, try and get a bit of sleep..."
     call lun_main("Sleep?","normal","suspicious","raised","R")
@@ -281,7 +281,7 @@ label luna_reverted_greeting_1:
             m "I see... (This bitch really is crazy!)"
             m "(Maybe the hat did some good for her...)"
             m "Well, [lun_name], what can we do about it?"
-            call lun_main("I'm not sure, professor... Normally, thinking positive thoughts is enough to remove them, but I am having trouble with these. If my father, Xenophilius-","normal","angry","sad","R")
+            call lun_main("I'm not sure, professor... Normally, thinking positive thoughts is enough to remove them, but I am having trouble with these. If my father, Xenophilius--","normal","angry","sad","R")
             g4 "Did you just cast a spell on me?!"
             $ luna_l_arm = 2
             $ luna_r_arm = 2
@@ -289,7 +289,7 @@ label luna_reverted_greeting_1:
             g4 "Explain yourself!"
             $ luna_l_arm = 1
             $ luna_r_arm = 1
-            call lun_main("I am sorry Sir, I am not sure what-","normal","wide","sad","R")
+            call lun_main("I am sorry Sir, I am not sure what--","normal","wide","sad","R")
             g4 "{i}Xenofius{/i}! What does it do?"
             call lun_main("{i}Xenofius{/i}? I've not heard of that spell before, Sir.","normal","angry","sad","mid")
             m "The spell... That you just... Never mind."

@@ -180,7 +180,7 @@ label luna_favour_1:
                 call lun_main("Well are you going to start?","upset","mad","mad","R")
                 m "Start what? You're the one who's supposed to be talking."
                 call lun_main("Oh please... You expect me to believe you're willing to pay your students a hundred gold just to talk?","upset","angry","raised","mid")
-                m "Well I suppose that-"
+                m "Well I suppose that--"
                 call lun_main("Just start stroking your cock already [lun_genie_name].","normal","seductive","base","mid")
                 hide screen blktone
                 with d3
@@ -212,7 +212,7 @@ label luna_favour_1:
                         m "{size=-4}(*mmmm*... yes...){/size}"
                         call lun_main("You'd probably even do it in front of a first year, wouldn't you?","base","suspicious","angry","mid")
                         ">You stop stroking your cock."
-                        m "I'd never do any-"
+                        m "I'd never do any--"
                         call lun_main("Do you even know how old I am?","base","suspicious","raised","mid")
                         m "of course..."
                         call lun_main("*Hmph* Are you sure about that?","soft","angry","raised","mid")

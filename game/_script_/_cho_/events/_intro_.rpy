@@ -85,7 +85,7 @@ label cho_intro_E1:
                 "\"Short\"":
                     pass
 
-            call cho_main("What? Professor how dare you suggest I-", "clench", "wide", "base", "mid")
+            call cho_main("What? Professor how dare you suggest I--", "clench", "wide", "base", "mid")
             g4 "Hold on!"
             m "Silly me I forgot where I put my glasses."
             call cho_main("", "annoyed", "narrow", "angry", "mid")
@@ -168,7 +168,7 @@ label cho_intro_E1:
     call cho_main("Anything!", "clench", "narrow", "angry", "mid")
     g9 "It's your lucky day, Miss Chang!"
     m "I will gladly talk to Miss Granger, but in return..."
-    g9 "How about you come over here and suck on my-"
+    g9 "How about you come over here and suck on my--"
 
     # Hermione walks in
     stop music fadeout 1.0
@@ -336,10 +336,10 @@ label cho_intro_E1:
         call her_main("Professor!", "scream", "base", "angry", "mid", trans=hpunch)
         g4 "*Grunt* {size=-4}Huh, what?{/size}"
         call her_main("I always have a valid reason for coming here, don't I?", "base", "base", "base", "mid")
-        m "Of course you-"
+        m "Of course you--"
         call cho_main("Always? So you \"do\" come here often!", "smile", "narrow", "base", "L")
         call her_main("So what...", "angry", "closed", "angry", "mid")
-        m "Ladies, I think it's time to-"
+        m "Ladies, I think it's time to--"
         call cho_main("Don't worry about it Sir, I was just about to leave anyway...", "soft", "narrow", "angry", "mid")
         call her_main("...", "annoyed", "narrow", "angry", "R")
 
@@ -415,7 +415,7 @@ label cho_intro_E2:
     call cho_main("", "clench", "narrow", "angry", "mid")
 
     g9 "Miss Chang! My favourite student!"
-    g9 "I'm so glad to see you. Is there something I can-"
+    g9 "I'm so glad to see you. Is there something I can--"
 
     call play_music("hitman")
     call cho_main("Cut the crap, Professor!{p=0.6}I know you've told her!", "soft", "narrow", "angry", "mid")
@@ -701,7 +701,7 @@ label cho_intro_E3:
         call her_main("My \"Quidditch equality movement\"?", "soft", "base", "base", "mid")
         call her_main("But Sir, I'm on the verge of a breakthrough with it!", "soft", "closed", "base", "mid")
         call her_main("I worked very hard on gathering all records of past Quidditch matches, throughout the complete history of Quidditch!", "open", "wink", "base", "mid")
-        call her_main("You'd be surprised just how few female-", "soft", "closed", "base", "mid")
+        call her_main("You'd be surprised just how few female--", "soft", "closed", "base", "mid")
         m "I'll give you ten house points."
         call her_main("Ten points?", "soft", "wide", "base", "stare", trans=hpunch)
         call her_main("Sir do you even realise how much time it took me to do all that research?", "angry", "squint", "angry", "mid")
@@ -869,7 +869,7 @@ label cho_intro_E3:
     call her_main("...", "annoyed", "narrow", "base", "up")
     call her_main("About my \"Quidditch equality movement\"...", "normal", "closed", "base", "mid")
     call cho_main("Did our Professor finally convince you what a terrible idea it would be?", "soft", "narrow", "angry", "mid")
-    m "Actually, I still think granting more people the ability to-"
+    m "Actually, I still think granting more people the ability to--"
     call cho_main("*Shhush*!, Professor!{p=0.6}I'd like to hear it from her.", "annoyed", "narrow", "angry", "mid")
     call cho_main("I'm going to enjoy this!", "horny", "narrow", "base", "L")
     call her_main("...", "annoyed", "base", "angry", "mid")

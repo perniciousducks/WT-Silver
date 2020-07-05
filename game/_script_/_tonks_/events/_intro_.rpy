@@ -184,7 +184,7 @@ label tonks_intro_E1:
         m "..."
         "\"I never even touched her!\"":
             call ton_main("Sir?", "open", "wide", "shocked", "stare")
-            call ton_main("I'm sorry Professor, I wasn't accusing you of-", "open", "base", "worried", "mid")
+            call ton_main("I'm sorry Professor, I wasn't accusing you of--", "open", "base", "worried", "mid")
             m "I did not have sexual relations with that woman."
             call ton_main("Professor! I wasn't implying that-...","angry","base","raised","mid")
             call ton_main("In the letter she wrote, Miss Granger never accused you of selling favours to your students...","open","base","base","L")
@@ -277,7 +277,7 @@ label tonks_intro_E2:
         "\"Nymphadora!\"":
             call ton_main("Sir?","angry","base","worried","mid")
             m "What? Isn't that your name, or did I get it wrong again?"
-            call ton_main("I'm sorry, Sir.{w} I thought that, when I was a student here, that I made it very clear that I wouldn't want to be called Nymphador-", "open", "base", "worried", "down")
+            call ton_main("I'm sorry, Sir.{w} I thought that, when I was a student here, that I made it very clear that I wouldn't want to be called Nymphadora--", "open", "base", "worried", "down")
             call ton_main("Please, just call me Tonks, Professor.","base","base","base","mid")
             m "Fine..."
         "\"Nympho-whora!\"":
@@ -630,7 +630,7 @@ label tonks_intro_E3:
     call ton_main("I'll inform the other teachers about my stay.","open","base","base","R")
     call ton_main("And the Ministry too of course. I'll be their inside man at Hogwarts, here at the request of Professor Dumbledore himself, no less.","base","base","base","mid")
     call ton_main("If only they knew...", "horny", "narrow", "base", "mid")
-    call ton_main("In any case, Profess-","open","base","base","R")
+    call ton_main("In any case, Profess--","open","base","base","R")
     call ton_main("I'm sorry, what would you like me to call you?","angry","base","raised","mid")
 
     menu:
@@ -760,7 +760,7 @@ label ss_he_tonks_E2:
     m "I don't know... It just... happened."
     m "She pretty much figured everything out by herself."
     m "Straight away even guessed that I'm a Genie..."
-    call sna_main("So she knows everything? How did she?-","snape_03")
+    call sna_main("So she knows everything? How did she--","snape_03")
     m "It appears the \"illusion charm\" wasn't perfect. She momentarily got a glimpse through it..."
     call sna_main("That's impressive... perhaps I didn't give her enough credit...","snape_01")
 

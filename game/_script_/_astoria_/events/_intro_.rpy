@@ -196,7 +196,7 @@ label astoria_intro_E1:
                         $ tonks_mail_list.remove("poster_1_store")
 
     call ton_main("This girl I've told you about, Susan Bones?","open","base","base","mid")
-    call ton_main("The one with-","open","base","base","R")
+    call ton_main("The one with--","open","base","base","R")
     g9 "With the giant tits!"
     call ton_main("...The one with the unfortunate luck of being a constant target of bullying and harassment!","angry","closed","angry","mid") # Annoyed
     m "Yes, that too..."
@@ -440,7 +440,7 @@ label astoria_intro_E3:
     her "Shut it already!"
     who "Why did you drag me here?"
     her "You know very well why I brought you!"
-    who "Let me go you filthy mudbl-"
+    who "Let me go you filthy mudblo--"
     call play_sound("thump")
 
     m "Who's there?"
@@ -493,7 +493,7 @@ label astoria_intro_E3:
     call her_main("You asked me to bring you the person who cast the unforgivable curse, Sir.", "soft", "narrow", "annoyed", "mid")
     call her_main("And here she is.", "grin", "base", "angry", "mid")
     m "I thought it would be some angsty girl who listens to death metal - or something..."
-    m "Not some innocent looking gir-"
+    m "Not some innocent looking girl--"
     call ast_main("I am not!","clench","narrow","angry","mid")
     call ast_main("You don't know what you're talking about, you ancient old man!","annoyed","narrow","angry","R")
     m "(Oh, you have no idea...)"
@@ -614,8 +614,8 @@ label astoria_intro_E3:
     call sna_main("Truthfully? A Slytherin?","snape_05")
     call sna_main("I expect better than this from my students, Miss Greengrass...","snape_10")
 
-    call sna_main("The very first lesson I give you is don't-","snape_08")
-    call sna_main("get-","snape_08", trans=hpunch)
+    call sna_main("The very first lesson I give you is don't--","snape_08")
+    call sna_main("get--","snape_08", trans=hpunch)
     call sna_main("caught!","snape_15", trans=hpunch)
     pause.5
 
@@ -623,7 +623,7 @@ label astoria_intro_E3:
     call ast_main("I-I'm sorry, sir... It won't happen again.","clench","narrow","base","down")
     call sna_main("Who did you cast them on, you little idiot?","snape_32")
     call ast_main("Susan Bones, Sir...","annoyed","narrow","base","down")
-    call sna_main("The Hufflepuff cow-","snape_44")
+    call sna_main("The Hufflepuff cow--","snape_44")
     call sna_main("*Ahem*...","snape_09")
     m "..."
     call sna_main("That cowardly Hufflepuff girl?","snape_38")

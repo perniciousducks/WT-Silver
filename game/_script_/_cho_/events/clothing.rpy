@@ -71,8 +71,8 @@ label cho_summon_setup:
             m "(...)"
             call cho_main("Is it too much?", "quiver", "base", "raised", "mid")
             m "Too much? Are you really asking me that?"
-            m "If I'm truly honest with you-"
-            g4 "Your body, in an outfit like that..."
+            m "If I'm truly honest with you--"
+            g4 "Your body, in an outfit like that--"
             g9 "Really shows off your best assets."
             call cho_main("Oh...", "base", "base", "raised", "down", cheeks="blush")
             call cho_main("You see, that sort of reaction is just what I wanted to get from the boys...", "soft", "base", "base", "downR", cheeks="blush")

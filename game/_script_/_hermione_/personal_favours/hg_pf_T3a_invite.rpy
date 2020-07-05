@@ -189,7 +189,7 @@ label hg_pf_strip_T2_Snape:
     call her_main("Well, maybe that's because you deserve it... {i}Snivellus{/i}!", "scream", "base", "angry", "mid", emote="01")
     call sna_main("{size=+2}What did you just say?!{/size}","snape_10")
     call sna_main("How dare you....?")
-    call sna_main("Who do you think you are? You filthy mu-","snape_15")
+    call sna_main("Who do you think you are? You filthy mudbl--","snape_15")
     call her_main("[genie_name], one of your staff members is verbally abusing me!", "scream", "closed", "angry", "mid")
     call her_main("Are you going to allow this?")
     call sna_main("Verbally abusing...?! You have some nerve, girl!","snape_08")
@@ -232,7 +232,7 @@ label hg_pf_strip_T2_Snape:
         "\"Both of you, calm the fuck down.\"":
             m "You, tall-dark-and-handsome, calm down a bit, would you?"
             call sna_main("I beg your pardon?","snape_03")
-            call her_main("Yes! You tell him profess-", "annoyed", "narrow", "angry", "R")
+            call her_main("Yes! You tell him profess--", "annoyed", "narrow", "angry", "R")
             m "You as well, you perverted little minx!"
             if hermione.is_worn("bottom"):
                 m "Calm down and take your bottoms off already."
@@ -619,7 +619,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         with d5
         call ctc
 
-        call her_main("Whew... This was-", "open", "closed", "base", "mid")
+        call her_main("Whew... This was--", "open", "closed", "base", "mid")
         with hpunch
 
         g4 "ARGH! YOU FUCKING WHORE!"

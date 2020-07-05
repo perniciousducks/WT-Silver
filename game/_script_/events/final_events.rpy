@@ -58,7 +58,7 @@ label ball_quest_E1:
             call her_main("And I understand that the nature of the favours I have been selling you lately...", "open", "base", "angry", "R", cheeks="blush")
             call her_main("...Might have led you to believe that I would be willing to...", "open", "squint", "angry", "mid", cheeks="blush")
             call her_main("...To let you have your way with me eventually, sir...", "disgust", "squint", "angry", "L_soft", cheeks="blush")
-            m "Whaaa-...? I would never-"
+            m "Whaaa--...? I would never--"
             call her_main("Please, let me finish, sir.", "scream", "base", "angry", "mid",emote="01", cheeks="blush")
             m "Right..."
             call her_main("I know that you are a rather wise man yourself, sir.", "angry", "base", "angry", "mid", cheeks="blush")
@@ -89,7 +89,7 @@ label ball_quest_E1:
             g9 "I only need you to bend over my desk for easy access."
         call her_main("Sir! I thought I established this already... I'm not going to sleep with you!", "angry", "narrow", "angry", "mid", cheeks="blush")
         m "Then the answer is yes..."
-        m "If you want to be in charge of My balls-"
+        m "If you want to be in charge of My balls--"
         call her_main("The \"Autumn Ball\", sir...", "upset", "squint", "annoyed", "mid", cheeks="blush")
         call her_main("But this isn't a favour... this is THE Autumn Ball we're talking about...", "open", "squint", "angry", "mid")
         m "Then would you say the job of organizing it is... an honour?"

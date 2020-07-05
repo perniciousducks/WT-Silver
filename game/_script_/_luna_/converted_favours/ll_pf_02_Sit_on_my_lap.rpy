@@ -476,7 +476,7 @@ label luna_favour_2:
                         m "*mmmm*"
                         call lun_main("are you almost there?","normal","seductive","sad","R")
                         m "yes..."
-                        call lun_main("well, I expect to be-","upset","seductive","angry","R")
+                        call lun_main("well, I expect to be--","upset","seductive","angry","R")
                         m "*shhh*, don't ruin it."
                         call lun_main("...","upset","mad","sad","R")
                         ">Luna starts rolling her hips, your cock pressed between her cheeks."
@@ -914,7 +914,7 @@ label luna_favour_2:
                     $ lun_sub += 1
                 $ luna_grope = False
 
-                m "why don-"
+                m "why don't you--"
                 ">Luna quickly sits down on your lap, wriggling around slightly until your cock rests between her cheeks."
 
                 call lun_chibi_scene("sit_on_lap")
@@ -944,7 +944,7 @@ label luna_favour_2:
                 call lun_main("..........","upset","suspicious","sad","down")
                 call lun_main("Is there anything I can do to speed this up?","base","suspicious","sad","R")
                 call lun_main("Not that I want it to end...","base","suspicious","sad","down")
-                call lun_main("It's just that people will start to ask questions if-","normal","seductive","sad","R")
+                call lun_main("It's just that people will start to ask questions if--","normal","seductive","sad","R")
 
                 menu:
                     "-Do nothing-":
@@ -971,7 +971,7 @@ label luna_favour_2:
                         m "*mmmm*"
                         call lun_main("are you almost there?","base","seductive","sad","R")
                         m "yes..."
-                        call lun_main("well I expect to be-","upset","seductive","angry","R")
+                        call lun_main("well I expect to be--","upset","seductive","angry","R")
                         m "*shhh*, don't ruin it."
                         call lun_main("...","upset","mad","sad","R")
                         ">Luna starts rolling her hips, your cock pressed between her cheeks."
@@ -1067,7 +1067,7 @@ label luna_favour_2:
                         call lun_main("p-please hurry, [lun_genie_name]...","upset","suspicious","sad","R",tears="crying")
                         m "I think I might know a way to speed this up."
                         call lun_main("really?","base","mad","sad","R",tears="crying")
-                        call lun_main("what are-","soft","seductive","sad","R",tears="crying")
+                        call lun_main("what are--","soft","seductive","sad","R",tears="crying")
                         ">You quickly move your hands up and grab a hold of her supple breasts through her vest."
                         call lun_main("!!!!","clench","wide","mad","mid",tears="crying")
                         ">Luna's body quivers as her hips roll against you."

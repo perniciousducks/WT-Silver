@@ -30,6 +30,7 @@ label sna_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=
     if action == "enter":
         call play_sound("door")
         call sna_chibi(None, "door", "base", False)
+        with d3
         if xpos or ypos:
             $ snape_chibi.move((xpos, ypos), speed, reduce)
     elif action == "leave":

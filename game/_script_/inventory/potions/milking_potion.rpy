@@ -35,7 +35,7 @@ label potion_scene_11_1:
 
     call her_chibi("stand","mid","base")
 
-    call her_main("Ah...", "cum", "happyCl", "worried", "mid")
+    call her_main("*Ah*...", "cum", "happyCl", "worried", "mid")
     call her_main("It was milk!", "smile", "base", "base", "R")
     m "Yes. Apparently it's a special kind of milk."
     call her_main("Apparently?", "open", "squint", "base", "mid")
@@ -180,7 +180,7 @@ label potion_scene_11_2:
 
     call her_chibi("stand","mid","base")
 
-    call her_main("Ah...", "cum", "happyCl", "worried", "mid")
+    call her_main("*Ah*...", "cum", "happyCl", "worried", "mid")
     call her_main("That doesn't actually taste too bad.", "smile", "base", "base", "R")
     m "Is it just like cows milk?"
     call her_main("Sort of...", "open", "squint", "base", "mid")
@@ -188,7 +188,7 @@ label potion_scene_11_2:
     call her_main("but not in a bad way...", "base", "base", "base", "R")
     call her_main("It also looks a little more yellow.", "annoyed", "narrow", "worried", "down")
     m "Yes, well, you should notice it start to affect you soon."
-    call her_main("Hmmm...", "annoyed", "narrow", "worried", "down")
+    call her_main("*Hmmm*...", "annoyed", "narrow", "worried", "down")
     call her_main("well how are you going to solve the milk problem, [genie_name]?", "open", "narrow", "worried", "down")
     call her_main("Am I going to have to stand here...", "base", "narrow", "base", "up")
     call her_main("With my shirt off...", "soft", "happy", "base", "R")
@@ -405,7 +405,7 @@ label potion_scene_11_3:
 
     call her_chibi("stand","mid","base")
 
-    call her_main("Ah...", "cum", "happyCl", "worried", "mid")
+    call her_main("*Ah*...", "cum", "happyCl", "worried", "mid")
     call her_main("That wasn't Strawberry!", "annoyed", "narrow", "annoyed", "mid")
     m "Did you really think it would be?"
     call her_main("I mean... Sort of?", "annoyed", "narrow", "worried", "down")
@@ -491,22 +491,22 @@ label potion_scene_11_3:
         call set_her_action("milk_breasts")
 
         call her_main("!!!", "soft", "happy", "base", "R")
-        call her_main("Ugh... it feels different this time...", "open", "happyCl", "worried", "mid")
+        call her_main("*Ugh*... it feels different this time...", "open", "happyCl", "worried", "mid")
         call her_main("like there's so much more in my breasts...", "shock", "happyCl", "worried", "mid")
         call her_main("and it all wants to come out...", "silly", "narrow", "base", "dead")
         call her_main("It's too much...", "silly", "narrow", "annoyed", "up")
         m "What's wrong?"
-        call her_main("ah... it's the sucking...", "grin", "narrow", "annoyed", "up")
+        call her_main("*ah*... it's the sucking...", "grin", "narrow", "annoyed", "up")
         call her_main("It's not like before!", "silly", "narrow", "annoyed", "up")
         m "is it hurting you?"
-        call her_main("ah.... no... {p}It's not bad...", "silly", "narrow", "base", "dead")
+        call her_main("*ah*.... no... {p}It's not bad...", "silly", "narrow", "base", "dead")
 
         $ milking = 3
         call set_her_action("milk_breasts")
 
-        call her_main("ah...{heart}{heart}{heart}", "grin", "narrow", "base", "dead")
+        call her_main("*ah*...{heart}{heart}{heart}", "grin", "narrow", "base", "dead")
         call nar(">You notice the canister in front of her fill with milk at an alarming rate...")
-        call her_main("ah... it's so good...", "grin", "narrow", "annoyed", "up")
+        call her_main("*ah*... it's so good...", "grin", "narrow", "annoyed", "up")
 
         $ milking = 4
         call set_her_action("milk_breasts")
@@ -517,7 +517,7 @@ label potion_scene_11_3:
         call her_main("they're still so full...", "shock", "happyCl", "worried", "mid")
         m "it looks like the machine is full, I'm afraid."
         call her_main("(But I was so close...)", "open", "happyCl", "worried", "mid")
-        call her_main("ah... and if I go to class like this I'll leak everywhere!", "shock", "happyCl", "worried", "mid")
+        call her_main("*ah*... and if I go to class like this I'll leak everywhere!", "shock", "happyCl", "worried", "mid")
         m "well, if you empty the cannister It'll probably turn back on."
         call her_main("empty it...", "angry", "wink", "base", "mid")
         call nar(">Hermione takes a look at the full milk cannister.")
@@ -553,7 +553,7 @@ label potion_scene_11_3:
                 call nar(">She takes the last half into her mouth.")
                 call her_main("...", "full_cum", "narrow", "base", "dead")
                 call her_main("*gulp*", "cum", "happyCl", "worried", "mid")
-                call her_main("ah...", "grin", "narrow", "base", "dead")
+                call her_main("*ah*...", "grin", "narrow", "base", "dead")
                 call her_main("I think I'll need to skip a meal after all this milk...", "angry", "wink", "base", "mid")
                 call nar(">She slowly screws the cannister back into milker.")
 
@@ -604,14 +604,14 @@ label potion_scene_11_3:
         $ milking = 2
         call set_her_action("milk_breasts")
 
-        call her_main("ah... it's like the straps are massaging me while it sucks...", "silly", "narrow", "base", "dead")
-        call her_main("mmmm... it's amazing...", "silly", "narrow", "annoyed", "up")
+        call her_main("*ah*... it's like the straps are massaging me while it sucks...", "silly", "narrow", "base", "dead")
+        call her_main("*mmmm*... it's amazing...", "silly", "narrow", "annoyed", "up")
         call nar(">Hermione lets the machine continue its work.")
 
         $ milking = 3
         call set_her_action("milk_breasts")
 
-        call her_main("ah... I think that's all of it, [genie_name]...", "annoyed", "narrow", "worried", "down")
+        call her_main("*ah*... I think that's all of it, [genie_name]...", "annoyed", "narrow", "worried", "down")
         call nar(">You notice the amount of milk coming from hermione's breasts has almost stopped.")
         m "How was it?"
         call her_main("it felt amazing...", "grin", "narrow", "annoyed", "up")
@@ -792,18 +792,18 @@ label potion_scene_11_3:
         call her_main("{size=+5}I'm serious!!!{/size}", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
         call her_main("{size=+10}It's too much... TURN it off!!!{/size}", "scream", "wide", "base", "stare")
         m "What's wrong?"
-        call her_main("ah... it's sucking {b}everything{/b}...", "silly", "narrow", "annoyed", "up")
-        call her_main("ah... and the milk is splashing on my {heart}dick{heart}......", "grin", "narrow", "annoyed", "up")
+        call her_main("*ah*... it's sucking {b}everything{/b}...", "silly", "narrow", "annoyed", "up")
+        call her_main("*ah*... and the milk is splashing on my {heart}dick{heart}......", "grin", "narrow", "annoyed", "up")
         m "is it hurting you?"
-        call her_main("ah.... no... {p}It's just too good...{heart}", "grin", "narrow", "base", "dead")
+        call her_main("*ah*.... no... {p}It's just too good...{heart}", "grin", "narrow", "base", "dead")
 
         $ milking = 3
         call set_her_action("milk_breasts")
 
-        call her_main("ah...{heart}{heart}{heart}", "silly", "narrow", "base", "dead")
+        call her_main("*ah*...{heart}{heart}{heart}", "silly", "narrow", "base", "dead")
         call nar(">You notice the canister in front of her fill with milk at an alarming rate...")
-        call her_main("ah... please [genie_name]...", "angry", "squint", "base", "mid",cheeks="blush")
-        call her_main("ah... you have to turn it off...", "shock", "narrow", "base", "down",cheeks="blush",tears="crying")
+        call her_main("*ah*... please [genie_name]...", "angry", "squint", "base", "mid",cheeks="blush")
+        call her_main("*ah*... you have to turn it off...", "shock", "narrow", "base", "down",cheeks="blush",tears="crying")
         call her_main("{size=-2}i'll {size=-2}go {size=-2}insane {size=-2}if {size=-2}you {size=-2}don't...{/size}", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
 
         $ milking = 4
@@ -821,13 +821,13 @@ label potion_scene_11_3:
         call her_main("no...", "scream", "happyCl", "worried", "mid",cheeks="blush",tears="messy")
         call nar(">Hermione takes a look at the full milk cannister.")
         call her_main("Will it ever stop?", "shock", "narrow", "base", "down",cheeks="blush",tears="crying")
-        m "ahhhh..."
+        m "*ahhhh*..."
         call her_main("!!!", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
         call her_main("ugh... {heart}it's so{heart} gooood...", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
 
         $ hermione_dribble = True
-        call her_main("ah... the straps are massaging me while it sucks my dick...", "silly", "narrow", "annoyed", "up")
-        call her_main("mmmm... it's amazing...{heart}{heart}", "grin", "narrow", "annoyed", "up")
+        call her_main("*ah*... the straps are massaging me while it sucks my dick...", "silly", "narrow", "annoyed", "up")
+        call her_main("*mmmm*... it's amazing...{heart}{heart}", "grin", "narrow", "annoyed", "up")
         call nar(">Hermione lets the machine continue its work.")
         call her_main("...", "open_wide_tongue", "narrow", "annoyed", "up")
         call nar(">You notice the amount of milk coming from hermione's breasts has almost stopped.")

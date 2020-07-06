@@ -217,7 +217,7 @@ label hg_pf_blowjob_T1_intro_E2:
         "\"*Ehm*... I am sorry?\"":
             stop music fadeout 1.0
             call her_main("*Giggle*", "base", "base", "base", "mid")
-            m "Huh?"
+            m "*huh*?"
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("I got you... [genie_name].", "grin", "happyCl", "worried", "mid", emote="05")
             m "What?"
@@ -620,7 +620,7 @@ label hg_pf_blowjob_1:
             m "Just wipe it off and you'll be alright."
             call her_main("............", "open", "base", "base", "mid")
             m "Unless, you don't want to."
-            call her_main("Huh?", "angry", "happyCl", "worried", "mid", emote="05")
+            call her_main("*huh*?", "angry", "happyCl", "worried", "mid", emote="05")
             m "And would rather go outside looking like this."
             m "Let everyone see what a nasty little slut you are."
             call her_main("Of course not, [genie_name]!", "angry", "happyCl", "worried", "mid", emote="05")

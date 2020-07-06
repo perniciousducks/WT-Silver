@@ -361,7 +361,7 @@ label hg_pf_admire_breasts_T3_masturbate:
     call her_main("well, so be it...", "open", "base", "base", "R", cheeks="blush")
     call her_main("You can keep touching yourself, [genie_name]...", "open", "base", "base", "R", cheeks="blush")
     call her_main("But you must promise me not to...", "soft", "base", "base", "R", cheeks="blush")
-    call her_main("Not to... em...", "open", "base", "base", "R", cheeks="blush")
+    call her_main("Not to... *ehm*...", "open", "base", "base", "R", cheeks="blush")
     call her_main("Not to discharge...", "annoyed", "narrow", "angry", "R", cheeks="blush")
     call her_main("Not in front of me, [genie_name]...", "angry", "base", "angry", "mid")
     m "Fine, whatever..."
@@ -479,7 +479,7 @@ label hg_pf_admire_breasts_T4_promise: # Call label
             call her_main("You really think so [genie_name]?", "annoyed", "base", "base", "mid")
             call her_main("I am glad you like them, [genie_name]...", "base", "closed", "base", "mid")
         "\"Your tits are alright I suppose...\"":
-            call her_main("Huh?", "annoyed", "base", "base", "mid")
+            call her_main("*huh*?", "annoyed", "base", "base", "mid")
             her "Does this mean you don't like them, [genie_name]?"
             call her_main("I'm sorry...", "disgust", "narrow", "base", "down")
 
@@ -650,9 +650,9 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             m "I'd better stop now I suppose..."
             call her_main("...............", "disgust", "narrow", "base", "down", cheeks="blush")
             call her_main("*Ehm*... I read that that is bad for you, [genie_name]...", "disgust", "narrow", "base", "down", cheeks="blush")
-            m "Huh?"
+            m "*huh*?"
             call her_main("It is bad for your health to just hold it in like this...", "shock", "happyCl", "worried", "mid")
-            call her_main("Em...", "disgust", "narrow", "base", "down", cheeks="blush")
+            call her_main("*Ehm*...", "disgust", "narrow", "base", "down", cheeks="blush")
             call her_main("If you want to you can--", "base", "base", "base", "R", cheeks="blush")
             g4 "*Argh*! You whore!"
             call her_main("???", "mad", "wide", "base", "stare", cheeks="blush")

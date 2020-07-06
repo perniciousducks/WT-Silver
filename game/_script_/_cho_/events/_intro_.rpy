@@ -640,14 +640,10 @@ label ss_he_cho_E1:
 
     show screen with_snape(ani=True)
     show screen bld1
-    show screen notes
-    with d3
-    $ renpy.play('sounds/win_04.mp3')
-
+    call notes
     ">You spend the rest of the evening in Snape's company talking about Cho's impressive thighs."
 
     hide screen bld1
-    hide screen notes
     with d3
 
     $ ss_he.cho_E1 = True

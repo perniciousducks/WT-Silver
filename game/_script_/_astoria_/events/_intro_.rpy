@@ -212,7 +212,7 @@ label astoria_intro_E1:
 
     call ton_main("This is something quite serious!", "angry", "base", "worried", "mid")
     call ton_main("If we don't find the culprit of this, and find them quickly, the Ministry will be on our toes by tomorrow!","open","base","angry","mid")
-    m "That bad, huh?"
+    m "That bad, *huh*?"
     call ton_main("Yes, I'm afraid...","upset","base","worried","down")
     call ton_main("She was the target of an \"unforgivable curse!\"","open","base","worried","mid")
     m "A curse?..."

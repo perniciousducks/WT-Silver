@@ -81,46 +81,74 @@ label hg_tutor_E1:
     call her_main("Sorry about that, he thinks he's always right and it annoys me.", "smile", "happyCl", "base", "mid")
     m "..........."
     call her_main("Sir?", "soft", "base", "base", "R")
-
     m "We're going to have to do it my way."
-    m "There's no need for those books."
-    call her_main("Too bad, I love books.", "annoyed", "narrow", "worried", "down")
-    g9 "{size=-2}And soon you'll love cock!{/size}"
-    call her_main("Yes?", "soft", "base", "base", "mid", trans=d5)
-    m "I didn't say anything..."
-    call her_main("If you say so, [genie_name].", "open", "base", "base", "R")
-    m "It's time to talk about your future, child."
-    stop music fadeout 1.0
+
+    $ d_flag_01 = False
+    $ d_flag_02 = False
+
+    menu:
+        m "..."
+        "-No books-":
+            $ d_flag_01 = True
+
+            m "Rule number one, no books allowed past this door."
+            call her_main("Too bad, I love books.", "annoyed", "narrow", "worried", "down")
+            g9 "{size=-4}And soon you'll love cock!{/size}"
+            call her_main("Yes?", "soft", "base", "base", "mid", trans=d5)
+            m "I didn't say anything..."
+            call her_main("If you say so, [genie_name].", "open", "base", "base", "R")
+        "-No back talk-":
+            $ d_flag_02 = True
+
+            m "First rule, no back talking."
+            call her_main("Of course, sir!", "base", "squint", "base", "mid")
+            m "Good."
+
+    m "Now it's time we talk about your future, child."
     call her_main("I'm not a child anymore, professor!", "normal", "squint", "angry", "mid")
-    m "In a way you're right, but..."
-    her "..........."
+
+    if d_flag_01:
+        m "You know what, let's add a second rule--"
+        g4 "No back talking!"
+        call her_main("B-but...--", "open", "happy", "worried", "mid")
+
+    m "What did I just say?"
+    call her_main("S-sorry...", "annoyed", "squint", "worried", "R")
+
+    if d_flag_02:
+        m "Let's add a second rule on top of the first one--"
+        g4 "No{w=0.3} more{w=0.3} books!"
+        m "They're an obsolete and inferior medium anyway, you don't need them."
+        call her_main("(Too bad, I love books...)", "annoyed", "narrow", "worried", "down")
+
+    m "Continuing--"
     m "I can tutor you, but you need to understand certain things about magic."
     m "With proper training, you can learn to increase your magic ability."
-    call play_music("night")
-    call her_main("Yes?", "soft", "base", "base", "R")
+    call her_main("Yes?", "soft", "base", "base", "mid")
     m "Certain emotions like love and hate, pleasure and pain..."
     g9 "{size=-2}(If she falls for that, I'm a true genius!){/size}"
     call her_main("I've been studying magic for years and I've never heard of such a thing.", "normal", "base", "base", "mid")
     g4 "{size=-2}(Shit.){/size}"
     m "And that's exactly why you're still a child. You still have much to learn about magic."
-    call her_main("Please stop that, professor. Nobody considers me a child anymore.", "open", "base", "base", "mid")
+    call her_main("Please stop that, professor. Nobody considers me a child anymore.", "open", "squint", "worried", "mid")
     m "Yes, technically..."
-    call her_main("Technically?!", "open", "base", "base", "mid")
-    g4 "Enough of this. You came to me to ask for my help, and if it starts like that..."
+    call her_main("Technically?!", "annoyed", "base", "base", "mid")
+    g4 "Enough of this. You came to me asking for my help, and if it starts like this--..."
     call her_main("Yes, I suppose you are right...", "angry", "base", "worried", "mid")
     call her_main("Alright, I'm ready to study hard with you!", "base", "base", "base", "mid")
-    g9 "{size=-2}(Yes!){/size}"
+    g9 "{size=-2}Yes, we will study hard-on going forward!{/size}"
     call her_main("What was that?", "open", "narrow", "annoyed", "mid", cheeks="blush")
+    call her_main("", "normal", "narrow", "annoyed", "mid", cheeks="blush")
     m "Uh, yes I'm glad you're beginning to understand, child."
     her "..........."
     m "Alright, I want you to take some time and think about what I've said. Next time we'll start with your first lesson."
     call her_main("Can't we start now?", "open", "base", "base", "mid")
     m "Miss Granger, you're not the only student I must take care of."
-    call her_main("You're tutoring someone else?", "open", "base", "base", "mid")
+    call her_main("You're tutoring someone else?", "open", "wide", "base", "mid")
     m "{size=-2}(If only...){/size}"
     m "I must take care of all the students of this school."
     m "But yes, there is another girl who needs..."
-    call her_main("A Slytherin girl?!", "scream", "wide", "base", "stare")
+    call her_main("A Slytherin girl?!", "shock", "wide", "base", "mid_soft")
     g9 "That is none of your business, miss Granger."
     call her_main("Yes, professor. I'm sorry, but with all the recent events I'm a little on edge.", "angry", "base", "angry", "mid")
     m "Apology accepted, and now goodnight!"
@@ -128,7 +156,7 @@ label hg_tutor_E1:
 
     call her_walk("door", "base")
 
-    call her_main("{size=-4}(I'm glad the professor agreed to tutor me!){/size}", "base", "happyCl", "worried", "mid", cheeks="blush", xpos="base", ypos="head")
+    call her_main("{size=-4}(I'm glad the professor agreed to tutor me!){/size}", "base", "happyCl", "worried", "mid", cheeks="blush", xpos="base", flip=True, trans=d3)
     call her_main("{size=-4}(But pleasure and pain? I don't understand where this is going...){/size}", "annoyed", "base", "base", "R")
 
     call her_chibi("leave")
@@ -149,7 +177,7 @@ label hg_tutor_E2:
     m "And what is this feeling?"
     call her_main("...{w=0.5}an emotion, I suppose...", "normal", "base", "base", "mid")
     m "Yes, and don't you have emotions you prefer over others?"
-    call her_main("When I have the best score at a test.", "smile", "happyCl", "base", "mid")
+    call her_main("When I have the best score on a test.", "smile", "happyCl", "base", "mid")
     m "{size=-2}(This girl is a monomaniac...){/size}"
     m "Don't you have other passions, things you like to do?"
     call her_main("Yes! Studying and reading books.", "smile", "happyCl", "base", "mid")
@@ -160,7 +188,8 @@ label hg_tutor_E2:
     m "Adulthood, Miss Granger, adulthood..."
     call her_main("I am by far the most mature of my peers, professor. What more can you ask?", "open", "closed", "base", "mid")
     m "......{w=0.5}Miss Granger, did we not discuss this already? You need to accept you still have much to learn."
-    m "I'm tired of all this, and I have work to do. Goodnight, child."
+    m "I'm tired of all this, and I have work to do."
+    m "Goodnight, {i}child{/i}."
     call her_main("Tutoring one of those filthy Slytherin girls, maybe?", "open", "narrow", "annoyed", "mid", cheeks="blush")
     m "Maybe that's the right direction, think about what all those girls do with professors."
     call her_main("But...{w=0.5} that's so wrong...{w=0.8} I don't know if I want to think about that.", "open", "base", "base", "mid")
@@ -172,7 +201,7 @@ label hg_tutor_E2:
 
     call her_walk("door", "base")
 
-    call her_main("{size=-4}(Filthy whores...){/size}", "angry", "closed", "angry", "mid", cheeks="blush", xpos="base", ypos="head")
+    call her_main("{size=-4}(Filthy whores...){/size}", "angry", "closed", "angry", "mid", cheeks="blush", xpos="base", flip=True, trans=d3)
     call her_main("{size=-4}(Oh, I should not talk like that...{w=0.5} but it feels so good!){/size}", "base", "happyCl", "worried", "mid", cheeks="blush")
 
     call her_chibi("leave")
@@ -216,7 +245,7 @@ label hg_tutor_E3:
 
     call her_walk("door", "base")
 
-    call her_main("{size=-4}(Hmm, I wonder what he {b}was{/b} thinking about.){/size}", "base", "narrow", "base", "down", cheeks="blush", xpos="base", ypos="head")
+    call her_main("{size=-4}(Hmm, I wonder what he {b}was{/b} thinking about.){/size}", "base", "narrow", "base", "down", cheeks="blush", xpos="base", flip=True, trans=d3)
     call her_main("{size=-4}(Probably all the problems caused by those harlots.){/size}", "base", "narrow", "base", "mid_soft", cheeks="blush")
     call her_main("{size=-4}(Well, I will never be like them, so no need to worry.){/size}", "silly", "narrow", "base", "mid_soft", cheeks="blush")
 

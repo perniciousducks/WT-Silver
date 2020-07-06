@@ -220,7 +220,7 @@ label slytherin_match:
     m "I'm standing right here."
     call sna_main("I would've gone and fetched him myself but...", "snape_03")
     call sna_main("I had some... business to attend to.", "snape_35")
-    call ton_main("Business, huh?", "horny", "base", "angry", "L")
+    call ton_main("Business, *huh*?", "horny", "base", "angry", "L")
 
     call sna_main("You will be accompanying us I presume?", "snape_04")
     call ton_main("If that's okay with you?", "base", "happyCl", "base", "mid")

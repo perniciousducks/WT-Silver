@@ -309,14 +309,14 @@ label anal_pirate_event_common_1_2: # Call label
                 with fade
             call ctc
 
-            call her_main("Ah...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
+            call her_main("*Ah*...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             m "We be smooth sailing lass?"
             $ ccg1 = 20
             call her_main("It still be hurting...", "clench", "base", "worried", "mid", cheeks="blush",tears="soft")
             call her_main("But th' storm has passed.")
             m "I'll adjust th' sails fer now..."
             $ ccg1 = 21
-            call her_main("Ah... I be greatful, captain.", "angry", "squint", "base", "mid",cheeks="blush")
+            call her_main("*Ah*... I be greatful, captain.", "angry", "squint", "base", "mid",cheeks="blush")
             m "Oh... aye... ye secret cavern be great..."
             $ ccg1 = 18
             call her_main("...........", "shock", "base", "base", "R",cheeks="blush",tears="soft")
@@ -584,10 +584,10 @@ label anal_pirate_event_common_1_2: # Call label
             call ctc
 
             $ ccg1 = 7
-            call her_main("Ah...{heart}{heart}{heart}", "silly", "narrow", "base", "dead",ypos="head")
+            call her_main("*Ah*...{heart}{heart}{heart}", "silly", "narrow", "base", "dead",ypos="head")
             g4 "Aye!!! All over yer hold!"
             $ ccg1 = 8
-            call her_main("Ah... No, me hull!", "silly", "narrow", "annoyed", "up")
+            call her_main("*Ah*... No, me hull!", "silly", "narrow", "annoyed", "up")
             hide screen bld1
             with d3
             $ renpy.play('sounds/cannon.mp3')
@@ -607,7 +607,7 @@ label anal_pirate_event_common_1_2: # Call label
             call her_main("Yes, captain. It still hurts a little, but...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             m "But what?"
             call her_main("But in a good way... captain.", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
-            m "In a good way, huh?"
+            m "In a good way, *huh*?"
             g9 "Heh... You naughty, little pirate."
             call her_main("Can I my get my share of the booty now, captain?", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
 
@@ -647,23 +647,23 @@ label anal_pirate_event_3: # Call label
         call her_chibi_scene("sex_slow", trans=d5)
 
     g4 "Oh, ye-es!"
-    call her_main("Ah...", "soft", "narrow", "annoyed", "up")
+    call her_main("*Ah*...", "soft", "narrow", "annoyed", "up")
     m "It seems like yer cavern be a bit more welcomin', lass."
     $ ccg1 = 31
-    call her_main("Ah... It still be a bit tight.", "base", "narrow", "base", "mid_soft")
+    call her_main("*Ah*... It still be a bit tight.", "base", "narrow", "base", "mid_soft")
     call her_main("'n , jus' call me \"wench\", captain.", "base", "squint", "base", "mid")
-    g4 "Agh! Ye wench! Ye always get me wit' yer words!"
+    g4 "*Agh*! Ye wench! Ye always get me wit' yer words!"
 
     play music "music/pirate.mp3" fadein 1 fadeout 1
     play bg_sounds "sounds/CreakingShip.mp3"
     $ ccg1 = 32
-    call her_main("Ah... Ah...", "open", "closed", "base", "mid")
-    call her_main("Ah...")
+    call her_main("*Ah*... *Ah*...", "open", "closed", "base", "mid")
+    call her_main("*Ah*...")
     $ ccg1 = 31
     call her_main("captain?", "base", "narrow", "base", "mid_soft")
     m "Aye, wench?"
     $ ccg1 = 12
-    call her_main("Em...", "angry", "base", "base", "mid")
+    call her_main("*Ehm*...", "angry", "base", "base", "mid")
     $ ccg1 = 13
     call her_main("Would ye settle down fer me, captain?", "angry", "narrow", "base", "down")
     with hpunch
@@ -683,8 +683,8 @@ label anal_pirate_event_3: # Call label
     call her_main("Ah{heart}...", "open", "closed", "base", "mid")
     $ ccg1 = 13
     call her_main("Wha' I meant... ah{heart} {w} ...t' say was ah{heart}... {w}...do ye reckon any pirate would ever ah{heart}... {w} ...leave th' sea fer a lass like me?", "angry", "narrow", "base", "down")
-    m "Huh?"
-    call her_main("I mean, wit' all that booty plunderin happenin' lately... ah{heart}...", "angry", "narrow", "base", "down")
+    m "*huh*?"
+    call her_main("I mean, wit' all that booty plunderin happenin' lately... *ah*{heart}...", "angry", "narrow", "base", "down")
     call her_main("I can nah help but feel like me hull is scratched... leakin even.")
     call her_main("'n in a no way untarnished...")
     $ ccg1 = 33
@@ -701,20 +701,20 @@ label anal_pirate_event_3: # Call label
             call her_main("..............", "base", "happy", "base", "mid")
             $ ccg1 = 35
             call her_main("Aye if only a lass like I, cap'n? So, why neigh me?", "soft", "base", "base", "mid")
-            m "Huh?"
+            m "*huh*?"
             m "Wha' do ye mean \"why\", wench?"
             m "Ye be right out of harbour 'n ye only just set sail..."
             m "Tight cabin, shimering tits, 'n wet wee powder pan..."
             $ ccg1 = 32
-            call her_main("Ah...{heart}", "open", "closed", "base", "mid")
+            call her_main("*Ah*...{heart}", "open", "closed", "base", "mid")
             m "Ye will make some lucky scallywag a mighty happy one, some day, wench."
-            m "Ehm, I mean, lass."
+            m "*Ehm*, I mean, lass."
             $ ccg1 = 15
             call her_main("No, \"wench\" be good. you be calling me that more, captain.", "silly", "narrow", "annoyed", "up")
             m "Thar, ye see? Ye be a great catch, I be tellin' ye, wench."
             $ ccg1 = 22
-            call her_main("Ah...{heart} Thank you, captain.", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
-            m "Huh?"
+            call her_main("*Ah*...{heart} Thank you, captain.", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
+            m "*huh*?"
             m "Ye helm be leakin."
 
         "{size=-3}\"A pirate not plunderin t' be wit' ye be o' th' picture\"{/size}":
@@ -791,12 +791,12 @@ label anal_pirate_event_3: # Call label
             call her_main("Ah! I BE A WENCH!!!!{heart}{heart}{heart}", "scream", "happyCl", "worried", "mid",cheeks="blush",tears="crying")
             $ renpy.play('sounds/cannon.mp3')
             with hpunch
-            m "Agh!"
+            m "*Agh*!"
             $ ccg1 = 15
-            call her_main("Ah...{heart} yer seamen, captain...{heart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
+            call her_main("*Ah*...{heart} yer seamen, captain...{heart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             m "Aye, my seamen..."
             $ ccg1 = 22
-            call her_main("Ah...{heart}", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
+            call her_main("*Ah*...{heart}", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
             m "......"
 
         "-Spread yer cannon fire o'er er hull-":
@@ -824,7 +824,7 @@ label anal_pirate_event_3: # Call label
             call cum_block
             with hpunch
             $ ccg1 = 19
-            call her_main("Ah...{heart} yer cum...{heart}", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
+            call her_main("*Ah*...{heart} yer cum...{heart}", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             $ ccg1 = 17
             call her_main("Ye covered me whole deck{heart}{heart}{heart}")
             g4 "Aye!!! All o'er yer hull!"
@@ -845,7 +845,7 @@ label anal_pirate_event_3: # Call label
     $ hermione_zorder = 15
 
     m "Well, tis been intense..."
-    call her_main("Ah-ha...{heart} ah...{heart}", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy",ypos="head")
+    call her_main("*Ah-ha*...{heart} *ah*...{heart}", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy",ypos="head")
     m "Ye be fine lass?"
     call her_main("I reckon so... I be nah sure...", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")
     call her_main("I reckon I may still be leakin', captain.", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")

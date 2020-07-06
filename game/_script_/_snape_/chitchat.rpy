@@ -162,7 +162,7 @@ label snape_chitchat:
             call sna_main("You are the only person I have to answer to...","snape_04")
             call sna_main("So I can almost literally do whatever the bloody hell I want these days...","snape_05")
             call sna_main("...............","snape_09")
-            call sna_main("So that's what freedom feels like, huh?","snape_06")
+            call sna_main("So that's what freedom feels like, *huh*?","snape_06")
 
         elif one_of_ten == 9:
             call sna_main("Autumn... the most depressing time of the year...","snape_06")
@@ -439,7 +439,7 @@ label snape_chitchat:
 
         elif one_of_ten == 5:
             call sna_main("I am secretly making this special herbal brew that should make her tits lactate...","snape_24")
-            call sna_main("Pretty brilliant, huh?","snape_13")
+            call sna_main("Pretty brilliant, *huh*?","snape_13")
             call sna_main("","snape_23")
 
         elif one_of_ten == 6:

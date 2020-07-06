@@ -1425,7 +1425,7 @@ label ag_st_imperio_E5:
     with d3
     pause.5
 
-    call ast_main("*Huh?!*","annoyed","narrow","worried","L", xpos="mid", flip=True)
+    call ast_main("*Huh*?!","annoyed","narrow","worried","L", xpos="mid", flip=True)
     call ast_main("*Aaaaaaaaaah!!!*.......................","scream","base","base","L", emote="02", trans=hpunch) # Screams
     hide screen astoria_main
     hide screen bld1

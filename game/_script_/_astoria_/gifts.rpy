@@ -323,7 +323,7 @@ label give_ast_gift(gift_item):
             call ast_main("Come on now, what's with that dry humour. Maybe you could use some of that lube?", face="annoyed")
             call give_gift(">You cautiously give the jar of lube to Astoria...", gift_item)
             call ast_main("Boo!", face="annoyed")
-            call ast_main("ha-ha-ha!", face="happy")
+            call ast_main("*ha-ha-ha*!", face="happy")
             call ast_mood(-2)
         else:
             call ast_main("Anal Lube?", face="happy")

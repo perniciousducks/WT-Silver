@@ -84,7 +84,7 @@ label hg_pf_talk_T1_intro_E1:
     pause.8
 
     m "Well?"
-    call her_main("Em... very well...", "open", "base", "worried", "mid")
+    call her_main("*Ehm*... very well...", "open", "base", "worried", "mid")
     call nar(">Hermione is feeling confused...")
     call her_main("...................", "annoyed", "narrow", "angry", "R")
 
@@ -102,7 +102,7 @@ label hg_pf_talk_T1_E1:
     pause.8
 
     m "Yes?"
-    call her_main("Em... very well...", "open", "base", "worried", "mid")
+    call her_main("*Ehm*... very well...", "open", "base", "worried", "mid")
 
     call hg_pf_talk_T1
 
@@ -138,7 +138,7 @@ label hg_pf_talk_T1: # Call label
 
     call her_main("Come to think of it, I don't feel like talking about it anymore...", "annoyed", "narrow", "worried", "down")
     m "Alright, what else has happened lately?"
-    call her_main("Em... Well, I'm doing pretty well at Herbology...", "annoyed", "base", "base", "R")
+    call her_main("*Ehm*... Well, I'm doing pretty well at Herbology...", "annoyed", "base", "base", "R")
     call her_main("I mean, I always score the top marks, but I have been studying really hard anyway...", "open", "closed", "base", "mid")
     call her_main("And now I sort of feel like sometimes I know more than professor Sprout herself...", "base", "base", "base", "mid")
 
@@ -223,7 +223,7 @@ label hg_pf_talk_T2:
     call her_main("How despicable!", "open", "closed", "angry", "mid")
     m "What does this make you then, [hermione_name]?"
     call her_main("Exactly!", "normal", "base", "base", "mid")
-    m "Huh?"
+    m "*huh*?"
     call her_main("I have to work even harder to compensate for the damage those nasty girls are doing...", "open", "closed", "angry", "mid")
     call her_main("Thank you for helping me out, [genie_name].", "normal", "base", "base", "mid")
 
@@ -253,9 +253,9 @@ label hg_pf_talk_T2:
     call her_main("I heard that this one girl sold one of the professors some naughty pictures of herself for ten house points...", "open", "narrow", "angry", "R")
 
     if masturbating:
-        m "{size=-4}(What a slut... ah... Yes...){/size}"
+        m "{size=-4}(What a slut... *ah*... Yes...){/size}"
     else:
-        m "Ten points, huh?"
+        m "Ten points, *huh*?"
 
     call her_main("Yes...", "open", "closed", "base", "mid")
 
@@ -752,7 +752,7 @@ label hg_pf_talk_tonks:
                 $ tmp_word = num_to_word(tmp_val) # Sum up all favour counters and turn them into a word.
 
                 m "{size=-4}...[tmp_word]...{/size}"
-                call her_main("huh?", "open", "squint", "angry", "mid", cheeks="blush")
+                call her_main("*huh*?", "open", "squint", "angry", "mid", cheeks="blush")
                 m "You sold me exactly [tmp_word] favours."
                 call her_main("B-but that's-{w=1.0}{nw}","angry","happy", cheeks="blush")
                 if tmp_val < 10:
@@ -766,7 +766,7 @@ label hg_pf_talk_tonks:
                     m "..."
                     call ton_main("I meant to say, one of {i}your{/i} students, of course.","upset","base","worried","mid", hair="basic")
                 elif tmp_val >= 30 and tmp_val < 40:
-                    call ton_main("Aren't you a sneaky one, huh? Almost tricked me with those doe-like eyes of yours - that you're an innocent girl.","horny","base","angry","L", hair="horny")
+                    call ton_main("Aren't you a sneaky one, *huh*? Almost tricked me with those doe-like eyes of yours - that you're an innocent girl.","horny","base","angry","L", hair="horny")
                     call ton_main("But, as it turns out, you're actually quite high on the list.","open","base","raised","L", hair="basic")
                     call her_main("(...there's a list...?)", "open", "happyCl", "worried", "mid", cheeks="blush")
                     call ton_main("At the the very top!","smile","happyCl","base","mid")
@@ -874,7 +874,7 @@ label hg_pf_talk_tonks:
             call her_main("Well, of course there is... Even if they might not be as successful...", "soft", "narrow", "base", "mid_soft")
             call her_main("With all the teachers, there are plenty of filthy tactics being used - all over the school.", "annoyed", "base", "angry", "mid")
             if masturbating:
-                g4 "(Filthy, huh?)"
+                g4 "(Filthy, *huh*?)"
                 "*fap-fap-fap*"
             else:
                 m "Such-{w=0.5}{nw}"

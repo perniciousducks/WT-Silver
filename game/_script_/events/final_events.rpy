@@ -344,7 +344,7 @@ label ball_quest_E1:
             pause 0.4
             call ctc
             call her_main("*Sob*!", "soft", "squint", "worried", "R_soft", cheeks="blush", tears="soft")
-            m "Huh?"
+            m "*huh*?"
             call her_main("Oh, please,{w=0.4} don't mind me, sir.", "open", "base", "base", "R", cheeks="blush", tears="crying")
             call her_main("Just enjoy the... {w=0.5}the view...", "upset", "happy", "base", "R", cheeks="blush", tears="soft")
             m "Are you... crying?"
@@ -452,7 +452,7 @@ label ball_quest_E1:
 
     call bld
     m "........................................"
-    m "A ball, huh?"
+    m "A ball, *huh*?"
     m "I wonder if I will have to show up for that..."
 
     $ ball_quest.E1_complete = True
@@ -700,7 +700,7 @@ label ball_quest_E5:
 
     call her_chibi("stand","mid","base")
     pause.3
-    call her_chibi("stand","mid","base",flip="True")
+    call her_chibi("stand","mid","base",flip=True)
     pause.2
 
     call her_walk(action="leave")

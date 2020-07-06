@@ -16,7 +16,7 @@ label hg_pf_strip_T2_fingering:
         call her_main("......", "normal", "happyCl", "worried", "mid")
         m "[hermione_name]"
         call her_main("{size=-5}I suppose I do...{/size}", "angry", "happyCl", "worried", "mid", emote="05")
-        m "Huh? What was that?"
+        m "*huh*? What was that?"
         call her_main("I said that I do alright!!!", "scream", "happyCl", "worried", "mid")
         m "*Hmmmm*, I'm not sure I believe you..."
         call her_main("What? why would I lie?", "annoyed", "base", "worried", "R")
@@ -472,8 +472,8 @@ label hg_pf_strip_T4_fingering:
     menu:
         m "..."
         "\"Tell me what you're thinking about.\"":
-            call her_main("Huh?", "open", "wink", "worried", "mid", cheeks="blush")
-            call her_main("Oh, um... nothing...", "soft", "happyCl", "worried", "mid", cheeks="blush")
+            call her_main("*huh*?", "open", "wink", "worried", "mid", cheeks="blush")
+            call her_main("Oh, *umm*... nothing...", "soft", "happyCl", "worried", "mid", cheeks="blush")
             m "[hermione_name]..."
             call her_main("[genie_name],{w=0.4} it's a bit weird...", "disgust", "narrow", "base", "down", cheeks="blush")
             g4 "Even more reason to tell me."
@@ -482,7 +482,7 @@ label hg_pf_strip_T4_fingering:
             call her_main("If you must know... I was thinking about the time I corrected professor Snape on the ingredients of a Hiccoughing potion.", "open", "narrow", "worried", "down", cheeks="blush")
             m "....."
             call her_main("*Ah*...{heart}", "soft", "narrow", "annoyed", "up", cheeks="blush")
-            call her_main("It was...{w=0.4} Ah...{w=0.4} {heart} in front of the entire class as well.", cheeks="blush")
+            call her_main("It was...{w=0.4} *Ah*...{w=0.4} {heart} in front of the entire class as well.", cheeks="blush")
             call her_main("He refused to let me answer any questions for a week after that.", "base", "narrow", "worried", "down", cheeks="blush")
             call her_main("But it was worth it...", "soft", "happy", "base", "R", cheeks="blush")
             call her_main("The look on his face when he realised he was wrong...{heart}", "soft", "narrow", "annoyed", "up", cheeks="blush")

@@ -374,9 +374,7 @@ label read_book:
     if book_choice.progress >= book_choice.chapters:
         return "DONE" #prevents cases where book is done but read_book was called
     call read_chapter
-    $ renpy.play('sounds/win_04.mp3')   #Not loud.
-    hide screen notes
-    show screen notes
+    call notes
     if book_choice in book_list.get_edu():
         $ renpy.say(None,">You've completed \"chapter [book_choice.progress]\" of the book.")
     if book_choice in book_list.get_fic():
@@ -407,8 +405,7 @@ label book_complete:
     else:
         call gen_chibi("read_done")
 
-    $ renpy.play('sounds/win_04.mp3')   #Not loud.
-    show screen notes
+    call notes
     ">That was the last chapter, You finished the entire book."
 
     if book_choice.id == "Dear_Wifu":
@@ -433,12 +430,8 @@ label book_complete:
 
     $ book_choice.done = True
 
-    $ renpy.play('sounds/win_04.mp3')   #Not loud.
-    hide screen notes
-    show screen notes
+    call notes
     ">[book_choice.effect]" # ex. ">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when doing paperwork.."
-    hide screen notes
-
 
     if daytime:
         jump night_start

@@ -222,9 +222,7 @@ label waifu_completed:
         $ waifu_completed_once = True
         if imagination < 8: #Only goes to 8.
             $ imagination += 1
-        $ renpy.play('sounds/win_04.mp3')   #Not loud.
-        hide screen notes
-        show screen notes
+        call notes
         ">Your imagination has improved."
 
     if complited_shea and complited_stevens and complited_leena and waifu_completed_once and not found_voucher: #Harem ending. The DAHR's ticket.
@@ -247,7 +245,7 @@ label waifu_completed:
             if imagination < 8: #Only goes to 8.
                 $ imagination += 1
         else: #Finished with Shea for the second time.
-            m "So I ended up with Shea again, huh?"
+            m "So I ended up with Shea again, *huh*?"
             m "Hm... Maybe I should try and make different choices next time...?"
     elif victoria >= 7:
         if not complited_stevens: #Finished with Ms.Stevens for the first time.

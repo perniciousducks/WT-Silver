@@ -233,7 +233,7 @@ label hg_pr_grope_T1_E3:
     m "There, there..."
     call her_main("*Sob*!", "normal", "base", "base", "R", tears="soft")
     m "Will ten extra points make you feel better?"
-    call her_main("Huh? That would be very sweet of you [genie_name].", "soft", "base", "base", "mid", tears="soft")
+    call her_main("*huh*? That would be very sweet of you [genie_name].", "soft", "base", "base", "mid", tears="soft")
     m "Of course... Don't mention it."
     call her_main("Thank you [genie_name]...", "base", "base", "worried", "mid", cheeks="blush", tears="soft")
     m "Your payment..."
@@ -329,7 +329,7 @@ label hg_pr_grope_T2_E3:
     call her_main(".....................", "normal", "happyCl", "worried", "mid")
     call play_music("despair") # Music
     call her_main("He started to touch my... feet, [genie_name].", "scream", "happyCl", "worried", "mid")
-    m "Huh?"
+    m "*huh*?"
     m "Your \"Feet\"? Is that what zoomers call tits these days?"
     call her_main("I'd wish, [genie_name]...", "disgust", "narrow", "base", "mid_soft")
     her "He asked me to take off my shoes..."

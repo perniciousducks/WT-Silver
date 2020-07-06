@@ -494,7 +494,7 @@ label panty_raid:
         call her_main("As embarrassing as the circumstances were, I would never turn down a request to help a student with homework! But I don't think we have a linguistics class or what Connie she was--", "open", "narrow", "worried", "mid_soft")
         call her_main("", "soft", "base", "base", "mid")
         g9 "{i}Cunnilingus{/i} [hermione_name]... She was asking for Cunnilingus."
-        call her_main("Huh? But she said she wanted study help.")
+        call her_main("*huh*? But she said she wanted study help.")
         m "It was a metaphor... She was assuming you were a bit more worldly than you really are."
         call her_main("I am plenty worldly!", "angry", "base", "angry", "mid")
         call her_main("...", "upset", "narrow", "angry", "R")
@@ -506,7 +506,7 @@ label panty_raid:
         call her_main("Dinner? But if she wanted to eat with me why didn't she-", "open", "base", "base", "mid")
         call her_main("", mouth="upset")
         m "Metaphor, [hermione_name]... She wanted you to sip from her furry cup."
-        call her_main("Huh?", "open", "narrow", "worried", "mid_soft")
+        call her_main("*huh*?", "open", "narrow", "worried", "mid_soft")
         call her_main("", mouth="upset")
         m "Muff Diving..."
         call her_main("", "upset", "base", "worried", "mid")

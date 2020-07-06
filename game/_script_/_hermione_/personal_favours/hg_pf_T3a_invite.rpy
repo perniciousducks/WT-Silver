@@ -743,7 +743,7 @@ label hg_pf_strip_T2_Snape_masturbate:
 
         menu:
             m "..."
-            "\"Huh? What mission?\"":
+            "\"*huh*? What mission?\"":
                 $ her_mood += 7
                 call her_main("I only agreed to this so that you could catch professor Snape in the act, [genie_name]!", "scream", "happyCl", "worried", "mid")
                 call her_main("So that we would have definite proof that he is \"dirty\"!", "normal", "happyCl", "worried", "mid")

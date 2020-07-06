@@ -761,14 +761,14 @@ label ag_se_imperio_sb_E3:
     call ast_main("Why don't you tell me what it's like down there?","smile","narrow","base","down")
     sus "Down here?"
     sus "Under professor Dumbledore's desk?"
-    call ast_main("Mhmm... I bet it's nasty down there...","clench","narrow","angry","down")
+    call ast_main("*Mhmm*... I bet it's nasty down there...","clench","narrow","angry","down")
     call ast_main("It probably smells gross with all the yucky cum he shoots against that desk of his...","open","base","base","R")
     call ast_main("Not to mention his big, smelly old cock...","annoyed","narrow","base","ahegao")
-    m "Ahem..."
+    m "*Ahem*..."
     call ast_main("Quiet, sir!","clench","narrow","angry","mid")
     call ast_main("So go on, Suzy... tell me what it's like...","open","closed","base","mid")
 
-    sus "It... It's..."
+    sus "It... It's--"
     call nar(">you hear Susan take a deep breath before she begins to speak.")
     sus "{size=+10}It's incredible!{/size}"
     call ast_main("","grin","narrow","angry","mid")

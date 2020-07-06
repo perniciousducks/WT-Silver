@@ -71,10 +71,8 @@ label snape_hangout:
     label end_snape_hangout:
         show screen with_snape(ani=True)
         call bld
-        $ renpy.play('sounds/win_04.mp3')
-        show screen notes
+        call notes
         ">You spend the evening hanging out with Professor Snape.\n>Your relationship with him has improved."
-        hide screen notes
 
     label end_snape_hangout_points:
 
@@ -201,9 +199,7 @@ label ss_he_hermione_strip:
 
     hide screen bld1
     with d3
-    $ renpy.play('sounds/win_04.mp3')   #Not loud.
-    hide screen notes
-    show screen notes
+    call notes
 
     jump day_start
 
@@ -222,9 +218,6 @@ label ss_he_story_E1:
     call blktone
 
     ">You spend the evening by discussing all sorts of inappropriate things with Professor Snape."
-    $ renpy.play('sounds/win_04.mp3')   #Not loud.
-    hide screen notes
-    show screen notes
     ">You feel a faint bond forming between you two..."
     call sly_plus
     call hide_blktone
@@ -331,6 +324,7 @@ label ss_he_story_intro_E5:
     call blktone
 
     ">Professor Snape seems to feel awkward about benefiting from your misery..."
+    call notes
     ">The bond of friendship between you two strengthens slightly..."
 
     call sly_plus
@@ -418,7 +412,7 @@ label ss_he_story_intro_E8:
     call blktone
 
     ">Professor Snape seems to be completely at ease around you now."
-    ">The bond of male friendship between you twe strengthens even more.\n>Slytherin house point payouts have increased formidably..."
+    ">The bond of male friendship between you two strengthens even more.\n>Slytherin house point payouts have increased formidably..."
 
     call sly_plus
     call hide_blktone
@@ -656,8 +650,6 @@ label ss_he_story_intro_E15:
 
 
 label sly_plus:
-    $ renpy.play('sounds/win_04.mp3')   #Not loud.
-    hide screen notes
-    show screen notes
+    call notes
     ">The Slytherin house point payout has increased..."
     return

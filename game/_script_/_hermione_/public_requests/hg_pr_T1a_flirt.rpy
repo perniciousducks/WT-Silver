@@ -43,7 +43,7 @@ label hg_pr_flirt:
         call her_main("Their opinion means the world to me--", "annoyed", "base", "worried", "R")
         call her_main("Oh, I see...", "base", "base", "base", "mid")
         m "Exactly... Just looking out for you [hermione_name]."
-        her "Em... Thank you [genie_name]..."
+        her "*Ehm*... Thank you [genie_name]..."
     elif her_whoring < 6:
         m "I need you to go make some new friends at Slytherin house."
         her "You mean you need me to flirt with the Slytherin boys again [genie_name]?"
@@ -314,7 +314,7 @@ label hg_pr_flirt_T2_E1:
     m "Was he looking at your legs at all?"
     call her_main("What?", "open", "base", "base", "mid")
     m "Did he stare at your legs or not, [hermione_name]?"
-    call her_main("Em... He might have...", "upset", "wink", "base", "mid")
+    call her_main("*Ehm*... He might have...", "upset", "wink", "base", "mid")
     m "What about your tits?"
     call her_main("[genie_name]!!!", "angry", "base", "angry", "mid")
     m "Fine. You get your points. Keep up the good work."
@@ -402,7 +402,7 @@ label hg_pr_flirt_T3_E1:
     call her_main("Then one more right before the last period...", "base", "happyCl", "base", "mid")
     call her_main("And finally this last guy that walked me right to your tower, [genie_name]...", "smile", "happyCl", "base", "mid")
     m "So, eleven then?"
-    m "Those Slytherin boys are really starting to like you, huh?"
+    m "Those Slytherin boys are really starting to like you, *huh*?"
     call her_main("I suppose so...", "base", "happyCl", "base", "mid")
     call her_main("Well, not all of them were nice to me at first...", "annoyed", "narrow", "worried", "down")
     call her_main("But I use this trick to \"tame\" them.", "smile", "narrow", "base", "mid_soft")

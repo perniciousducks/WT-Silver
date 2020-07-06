@@ -349,7 +349,7 @@ label cc_pr_spy_girls_T3_katie:
     m "Wait, you're seriously not making this up? Since when do Mermaids have tentacles?"
     call cho_main("I highly doubt it was them...", "open", "closed", "base", "mid")
     call cho_main("I've told you, she's a freak!", "soft", "narrow", "angry", "mid")
-    m "So she's into tentacles, huh?"
+    m "So she's into tentacles, *huh*?"
     call cho_main("Yes... Gross, slimy, green tentacles...", "disgust", "narrow", "angry", "down", cheeks="blush")
     call cho_main("She must've used some charm... It was as if the lake had come to life!", "clench", "narrow", "angry", "R")
     g4 "Shiver me timbers!"

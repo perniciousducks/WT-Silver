@@ -41,7 +41,7 @@ label hg_ps_get_panties:
         call her_main("Yes I do!", "angry", "base", "angry", "mid")
         call her_main("(Those Slytherin tramps have no dignity.)", "annoyed", "narrow", "angry", "R")
         m "Well, there you go then!"
-        call her_main("Huh?", "disgust", "narrow", "base", "mid_soft")
+        call her_main("*huh*?", "disgust", "narrow", "base", "mid_soft")
         m "Beat them at their own game!"
         call her_main("What?", "open", "base", "base", "mid")
         m "Yes! Don't just put the Gryffindor house back on top..."
@@ -238,7 +238,7 @@ label hg_cum_on_panties_response:
 
         menu:
             "\"An experiment went wrong\"":
-                her "An experiment, huh?"
+                her "An experiment, *huh*?"
                 her "Of what nature?"
                 call her_main("No, don't answer that... I think I know...", "smile", "base", "base", "R")
 

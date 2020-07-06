@@ -184,7 +184,7 @@ label hg_pr_flash_intro:
 
     if hg_pr_flash.counter == 1:
         call her_main("......", "annoyed", "narrow", "angry", "R")
-        call her_main("Well... Em...", "soft", "base", "base", "R")
+        call her_main("Well... *Ehm*...", "soft", "base", "base", "R")
         m "Speak up, [hermione_name]."
 
     m "Did you flash some lucky guy? How did it go?"

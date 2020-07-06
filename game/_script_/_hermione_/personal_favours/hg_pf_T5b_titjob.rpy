@@ -599,7 +599,7 @@ label hg_pf_titjob_2:
         m "..."
         "\"What do you think of my cock?\"":
             $ ccg1 = 22
-            call her_main("Huh?", "open", "base", "base", "mid")
+            call her_main("*huh*?", "open", "base", "base", "mid")
             call her_main("Your cock?", "angry", "happyCl", "worried", "mid", emote="05")
             m "What do you think about--"
             $ ccg1 = 23

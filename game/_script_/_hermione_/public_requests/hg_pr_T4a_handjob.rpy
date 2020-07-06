@@ -273,7 +273,7 @@ label hg_pr_handjob_T1_E3:
     call play_music("hermione") # Music
     call her_main("Awful, [genie_name]. Simply awful...", "scream", "happyCl", "worried", "mid")
     m "You've got something... in your hair there..."
-    call her_main("Huh?", "open", "base", "angry", "mid")
+    call her_main("*huh*?", "open", "base", "angry", "mid")
     call her_main("Oh, no! I thought I got it all off...", "angry", "happyCl", "base", "mid", cheeks="blush")
     her "One moment..."
 
@@ -399,7 +399,7 @@ label hg_pr_handjob_T2_E2:
             call play_music("hermione") # Music
             call her_main("Well, of course!", "scream", "wide", "base", "mid")
             call her_main("You are right, as usual, [genie_name]!", "soft", "base", "base", "mid")
-            m "Huh?"
+            m "*huh*?"
             call her_main("I have done a few... naughty things...", "open", "base", "base", "mid")
             her "But that does not mean anything!"
             call her_main("...........", "annoyed", "narrow", "angry", "R")
@@ -512,7 +512,7 @@ label hg_pr_handjob_T3_intro_E1:
     her "And Ron was so up for it..."
     call her_main("But if Ginny were to find out... She...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     call her_main("She would most certainly kill me, [genie_name]...", "angry", "base", "base", "mid", tears="soft")
-    m "A handjob, huh? Are you sure that was all you did?"
+    m "A handjob, *huh*? Are you sure that was all you did?"
     call her_main("[genie_name]?", "angry", "base", "base", "mid", tears="soft")
     m "There is something in your hair..."
     call her_main("What? But I swallowed it all... err...", "soft", "base", "base", "mid", tears="soft")

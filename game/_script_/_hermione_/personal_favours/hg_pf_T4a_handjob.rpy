@@ -98,10 +98,10 @@ label hg_pf_handjob_T1_intro_E1:
     m "Just another favour. No big deal, right?"
     call her_main("......", "disgust", "narrow", "base", "mid_soft")
     call her_main("{size=-7}I want a hundred house points for this...{/size}", "angry", "happyCl", "worried", "mid", emote="05")
-    m "Huh? What was that?"
+    m "*huh*? What was that?"
     call her_main("I want a hundred house points for this!!!", "scream", "happyCl", "worried", "mid")
     call her_main("", "clench", "happyCl", "worried", "mid")
-    m "A Hundred house points, huh?"
+    m "A Hundred house points, *huh*?"
     m "And you will stroke my cock and everything?"
     call her_main("{size=-7}Yes...{/size}", "disgust", "narrow", "base", "mid_soft")
     m "Sorry, I couldn't hear you..."
@@ -630,7 +630,7 @@ label hg_pf_handjob_2:
     menu:
         m "..."
         "\"What do you think of my cock?\"":
-            call her_main("Huh?", "open", "base", "base", "mid")
+            call her_main("*huh*?", "open", "base", "base", "mid")
             call her_main("Oh, that's right...")
             call her_main("I need to compliment your penis! I completely forgot about that!", "angry", "happyCl", "worried", "mid", emote="05")
             m "Well, you don't have to--"
@@ -679,7 +679,7 @@ label hg_pf_handjob_2:
                     call her_main("A dirty little slut, that's what I am.")
                     m "Yes! Good!"
                 "\"I live to suck cock!\"":
-                    call her_main("Em...", "angry", "wink", "base", "mid")
+                    call her_main("*Ehm*...", "angry", "wink", "base", "mid")
                     call her_main("I live to suck penis, er... I mean cock...", "base", "base", "base", "mid")
                     m "Really? Well why don't you suck on this one then?"
                     call her_main("[genie_name], I am just repeating after you...", "smile", "base", "angry", "mid")
@@ -779,7 +779,7 @@ label hg_pf_handjob_2_continue:
             call her_main(".......", "angry", "narrow", "base", "down")
             m "Well, this wasn't that hard, was--"
             call her_main("I scream for my Mommy but she is still at work...", "mad", "base", "worried", "mid", tears="soft")
-            m "Huh?"
+            m "*huh*?"
             call her_main("My daddy takes me to my room...", "normal", "happyCl", "worried", "mid")
             call her_main("He throws me on my bed!")
             call her_main("I cry \"No, daddy, please, I'm still a virgin!\"", "scream", "happyCl", "worried", "mid")
@@ -846,7 +846,7 @@ label hg_pf_handjob_2_continue:
                 call her_main("...........", "annoyed", "base", "worried", "R")
                 call her_main("[tmp_name]", "scream", "closed", "angry", "mid")
             elif one_out_of_three == 2:
-                call her_main("Huh?", "annoyed", "base", "worried", "R")
+                call her_main("*huh*?", "annoyed", "base", "worried", "R")
                 call her_main("What does That have to do with anything?")
                 m "Just say it."
                 call her_main("......", "annoyed", "base", "worried", "R")
@@ -866,7 +866,7 @@ label hg_pf_handjob_2_continue:
                 call her_main("...........", "annoyed", "base", "worried", "R")
                 call her_main("Manual user input...", "scream", "closed", "angry", "mid")
             elif one_out_of_three == 2:
-                call her_main("Huh?", "annoyed", "base", "worried", "R")
+                call her_main("*huh*?", "annoyed", "base", "worried", "R")
                 call her_main("What does That have to do with anything?")
                 m "Just say it."
                 call her_main("......", "annoyed", "base", "worried", "R")

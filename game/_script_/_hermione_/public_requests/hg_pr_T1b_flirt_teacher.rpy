@@ -26,10 +26,10 @@ label hg_pr_flirt_teacher:
             call her_main("Now I understand why you asked me to flirt with these pesky slytherin boys.", "open", "closed", "angry", "mid")
             call her_main("I am glad you finally decided to act, [genie_name]!", "open", "base", "base", "mid")
         else:
-            call her_main("Huh?!", "open", "base", "angry", "mid")
+            call her_main("*huh*?!", "open", "base", "angry", "mid")
             call her_main("Why would I want to flirt with the teach-...", "angry", "base", "angry", "mid")
             call her_main("O-oh... I see...", "grin", "base", "base", "R")
-        m "Huh?"
+        m "*huh*?"
         call her_main("You are finally ready to investigate the teachers who made a habit out of buying favours from the students, aren't you?", "normal", "squint", "angry", "mid")
         call her_main("I am honoured to pose as bait in this noble endeavour.", "open", "closed", "base", "mid")
         m "*Ehm*... Yeah, that's exactly what I'm doing."
@@ -216,7 +216,7 @@ label hg_pr_flirt_teacher_T1_E3: # Filch
     m "I see. {size=-5}(No idea who that is.){/size}"
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Yes, I know that technically Mr. Filch is not a teacher...", "open", "base", "worried", "mid")
-    m "Huh?"
+    m "*huh*?"
     call her_main("But he is part of the school's staff...", "base", "base", "base", "mid")
     her "And we did hit it off quite well too!"
     her "He was surprisingly sweet."
@@ -463,7 +463,7 @@ label hg_pr_flirt_teacher_T3_E1: # Filch
     m "Well, your noble  sacrifice shall not go unnoticed, [hermione_name]!"
     m "{number=current_payout} points to Gryf--"
     call her_main("Professor, please wait.", "soft", "base", "base", "mid", tears="soft")
-    m "Huh?"
+    m "*huh*?"
     call her_main("Well, aren't you going to do something about this?", "open", "base", "base", "mid")
     m "Well..."
     call her_main("What if I am not the first victim..?", "angry", "base", "angry", "mid")
@@ -540,7 +540,7 @@ label hg_pr_flirt_teacher_T3_E3: # Lockhart
     call play_music("playful_tension") # SEX THEME.
     m "{size=-4}(*Agh*! The suspense is killing me!){/size}"
     g4 "What was it, [hermione_name]? Speak up!"
-    call her_main("Huh?", "open", "base", "base", "mid")
+    call her_main("*huh*?", "open", "base", "base", "mid")
     m "What did Professor Lockhart do to you?"
     call her_main("*Ehm*... Nothing, [genie_name]...", "soft", "base", "base", "R")
     m "Nothing?!"

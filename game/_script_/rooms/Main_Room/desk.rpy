@@ -384,10 +384,8 @@ label report_chapters_check:
 
 #Full moon bonus
 label f_moon_bonus:
-    $ renpy.play('sounds/win_04.mp3')
-    hide screen notes
-    show screen notes
     $ report_chapters += 1
+    call notes
     ">The Full moon makes you feel more productive.\n>You finished {number=report_chapters} chapters so far."
 
     return
@@ -395,29 +393,23 @@ label f_moon_bonus:
 #Finished a chapter
 label finished_working_chapter:
     $ report_chapters += 1
-    $ renpy.play('sounds/win_04.mp3')
-    hide screen notes
-    show screen notes
+    call notes
     ">You finished {number=report_chapters} chapters so far."
 
     return
 
 #Concentration
 label concentration_label:
-    $ renpy.play('sounds/win_04.mp3')
-    hide screen notes
-    show screen notes
     $ report_chapters += 1
+    call notes
     ">You maintain perfect concentration during your work.\n>And finish another chapter of the report.\n>You finished {number=report_chapters} chapters so far."
 
     return
 
 #Speed writing
 label speedwriting_label:
-    $ renpy.play('sounds/win_04.mp3')
-    hide screen notes
-    show screen notes
     $ report_chapters += 1
+    call notes
     ">You use your Speedwriting skills.\n>And finish another chapter of the report.\n>You finished {number=report_chapters} chapters so far."
 
     return

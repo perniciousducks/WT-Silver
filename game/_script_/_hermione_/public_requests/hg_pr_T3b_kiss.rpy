@@ -387,7 +387,7 @@ label hg_pr_kiss_T3_E1:
     call her_main("I did, [genie_name].", "soft", "base", "base", "mid")
     m "I'm all ears..."
     call her_main("Well, I kissed that annoying blond girl from Slytherin...", "annoyed", "squint", "base", "mid")
-    m "*Hmm*... \"annoying\", huh?"
+    m "*Hmm*... \"annoying\", *huh*?"
     m "Because she happens to be from Slytherin."
     call her_main("Precisely so, [genie_name].", "open", "closed", "base", "mid")
     m "*Hmm*..."

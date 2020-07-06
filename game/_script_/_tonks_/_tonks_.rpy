@@ -65,7 +65,7 @@ label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, h
             if hair in ("neutral", "basic", "reset"):
                 target_color = tonks_haircolor
             elif hair in ("red", "angry", "furious"):
-                target_color = [[164, 34, 34, 255], [236, 156, 156, 255]]
+                target_color = [[164, 34, 34, 255], [219, 83, 83, 255]]
             elif hair in ("orange", "upset", "annoyed"):
                 target_color = [[228, 93, 34, 255], [246, 193, 170, 255]]
             elif hair in ("yellow", "happy", "cheerful"):
@@ -79,7 +79,7 @@ label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, h
             elif hair in ("white", "scared"):
                 target_color = [[238, 238, 241, 255], [249, 249, 250, 255]]
             elif hair in ("pink", "horny"):
-                target_color = [[242, 126, 168, 255], [251, 205, 222, 255]]
+                target_color = [[255, 105, 180, 255], [251, 205, 222, 255]]
         else:
             target_color = tonks_haircolor
 

@@ -90,21 +90,19 @@ label cum_block:
 
 label increase_house_points(house, points):
     call bld
-    $ renpy.play('sounds/win_04.mp3')
-    show screen notes
+    call notes
     if house.startswith("g"):
         $ gryffindor += points
-        ">Gryffindor has received [points] house points today!"
+        ">Gryffindor has received {number=points} house points today!"
     elif house.startswith("h"):
         $ hufflepuff += points
-        ">Hufflepuff has received [points] house points today!"
+        ">Hufflepuff has received {number=points} house points today!"
     elif house.startswith("r"):
         $ ravenclaw += points
-        ">Ravenclaw has received [points] house points today!"
+        ">Ravenclaw has received {number=points} house points today!"
     else:
         $ slytherin += points
-        ">Slytherin has received [points] house points today!"
-    hide screen notes
+        ">Slytherin has received {number=points} house points today!"
     return
 
 #TODO Check and fix teleport/heal effect position (chibis are now anchored bottom-left)

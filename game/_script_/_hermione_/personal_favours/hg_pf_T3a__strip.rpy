@@ -745,7 +745,7 @@ label hg_pf_strip_T1_E2:
             call her_main("He would not!", "shock", "wide", "base", "stare")
             call her_main("And I am too old for that any way...", "upset", "wink", "base", "mid")
             g9 "I would say that you are in the perfect age for that..."
-            call her_main("Huh?")
+            call her_main("*huh*?")
             call her_main("I do not know what you mean, [genie_name].", "grin", "happyCl", "worried", "mid", emote="05")
 
         "{size=-3}\"Your father would disown you!\"{/size}":
@@ -864,7 +864,7 @@ label hg_pf_strip_T1_masturbate:
             stop music fadeout 1.0
 
             call her_main("No, [genie_name]!", "annoyed", "narrow", "angry", "R", ypos="head")
-            m "Huh?"
+            m "*huh*?"
             show screen blkfade
             with d5
 
@@ -1049,7 +1049,7 @@ label hg_pf_strip_T2:
         call her_main("..............", "annoyed", "narrow", "worried", "down")
 
         call her_main("[genie_name]?", "open", "base", "base", "mid")
-        m "Huh?"
+        m "*huh*?"
         call her_main("Can I ask you a question?", "upset", "wink", "base", "mid")
         m "Go ahead..."
         call her_main("...............", "normal", "happyCl", "worried", "mid")
@@ -1062,7 +1062,7 @@ label hg_pf_strip_T2:
                 call her_main("But you couldn't be more wrong!", "annoyed", "narrow", "annoyed", "mid")
                 call her_main("I believe that true love is what makes the earth turn!", "base", "base", "base", "R")
                 m "Actually the conservation of angular momentum is responsible for that."
-                call her_main("Huh?", "upset", "wink", "base", "mid")
+                call her_main("*huh*?", "upset", "wink", "base", "mid")
                 if hermione.is_worn("bottom"):
                     m "Never mind. Just take off your bottoms already?"
                 else:
@@ -1198,7 +1198,7 @@ label hg_pf_strip_T2_watch:
         "{size=-3}\"*Hmm*... This was quite awful...\"{/size}":
             call her_main("Oh... I'm sorry...", "soft", "happy", "base", "R")
             m "That's OK... You just need to practise more..."
-            call her_main("Em... I will keep that in mind, [genie_name]...", "open", "base", "base", "R")
+            call her_main("*Ehm*... I will keep that in mind, [genie_name]...", "open", "base", "base", "R")
         "{size=-3}\".................................................\"{/size}":
             call her_main(".......................", "silly", "happyCl", "worried", "mid", emote="05")
             call her_chibi("sit_naked_shocked","on_desk","on_desk")
@@ -1315,7 +1315,7 @@ label hg_pf_strip_T2_masturbate:
         call her_main("No, [genie_name]! You promised!", "angry", "happyCl", "worried", "mid", ypos="head")
         g4 "Oh, man... This was pretty intense..."
         call her_main("You went back on your word, [genie_name]!", "scream", "happyCl", "worried", "mid")
-        m "Huh? What are you talking about?"
+        m "*huh*? What are you talking about?"
         call her_main("How could you do this to me, [genie_name]?", "shock", "base", "angry", "mid", tears="crying_blink")
         m "Oh, calm down, [hermione_name]."
         m "You earned your points today."
@@ -1340,7 +1340,7 @@ label hg_pf_strip_T2_masturbate:
         call her_main("You came all over me...", "soft", "happy", "base", "R")
         call her_main("I am your pupil and...")
         call her_main("You just came on me...", "grin", "narrow", "annoyed", "up")
-        g9 "I know! Pretty exciting stuff, huh?!"
+        g9 "I know! Pretty exciting stuff, *huh*?!"
         call her_main("Nothing of that sort!", "open", "base", "base", "R")
         call her_main("You should have restrained yourself like a proper headmaster would!")
         m "Really? What did you expect me to do?"

@@ -233,7 +233,7 @@ label tonks_wardrobe_check(section, arg=None):
                     if ton_friendship < ton_requirements["unequip_underwear"] and any(x in arg.blacklist for x in ("bra", "panties")):
                         call ton_main("I like how it accents my figure and forbids me from wearing underwear.", face="horny")
                     elif ton_friendship < ton_requirements["unequip_clothes"] and any(x in arg.blacklist for x in ("top", "bottom")):
-                        call ton_main("You really want me to whore myself up huh? Fine, but I'm putting my old clothes back on once you change your mind.", face="happy")
+                        call ton_main("You really want me to whore myself up *huh*? Fine, but I'm putting my old clothes back on once you change your mind.", face="happy")
 
     $ renpy.play('sounds/equip.ogg')
     $ current_item = arg

@@ -239,7 +239,7 @@ label ending_after:
                 call sna_main("About the thing I said earlier.","snape_12",ypos="head")
                 m "yes?"
                 call sna_main("The whole friend thing...","snape_14",ypos="head")
-                m "Ah... yes..."
+                m "*Ah*... yes..."
                 m "I mean, I was leaving and all that--"
                 call sna_main("No...{w=0.4} Even that being the case... I did mean it...{w=0.4} good ones are hard to come by.","snape_24",ypos="head")
                 g9 "Well... even if you didn't mean it, I bet you ain't never had a friend like me."

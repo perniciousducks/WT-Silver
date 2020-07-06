@@ -883,8 +883,8 @@ label potion_scene_3_4_1:
     show screen ccg
     hide screen blkfade
     with d3
-    her "Ah...{heart}"
-    g4 "mmmm, you like that don't you slut?"
+    her "*Ah*...{heart}"
+    g4 "*mmmm*, you like that don't you slut?"
     $ ccg2 = 2
     her "yes...{heart}"
     $ ccg2 = 3
@@ -907,18 +907,18 @@ label potion_scene_3_4_1:
     m "..."
     $ ccg2 = 8
     her "What was that?"
-    m "Ugh... nothing... just a bit of spit. Keep going slut."
+    m "*Ugh*... nothing... just a bit of spit. Keep going slut."
     $ ccg2 = 9
-    her "Ah...{heart} alright then..."
+    her "*Ah*...{heart} alright then..."
     ">You quickly put the stopper back into the vial and slip it back into your robes."
     $ ccg2 = 10
-    her "Ah... ah... ah..."
+    her "*Ah*... *ah*... *ah*..."
     pause
     $ ccg2 = 11
-    her "[genie_name], you think you could... ah..."
+    her "[genie_name], you think you could... *ah*..."
     g4 "What is it slut?"
     $ ccg2 = 12
-    her "Could you please... spank me... ah...?"
+    her "Could you please... spank me... *ah*...?"
     g4 "of course!"
     $ renpy.play('sounds/slap.mp3')
     show screen white
@@ -968,7 +968,7 @@ label potion_scene_3_4_1:
     her "Why {heart}does {heart}it {heart}feel {heart}this {heart}goooooooooood...{heart}{heart}{heart}"
     g4 "enjoying yourself are we?"
     $ ccg2 = 25
-    her "No...{heart} ah... yesssss....{heart}"
+    her "No...{heart} *ah*... yesssss....{heart}"
     $ ccg2 = 26
     her "it's like...{heart}"
     $ ccg2 = 27
@@ -998,7 +998,7 @@ label potion_scene_3_4_1:
     pause
     $ ccg2 = 34
     her "I'm not...{heart}"
-    her "Ah.....{heart} some....{heart} thing....{heart} is....{heart} wrong....{heart}"
+    her "*Ah*.....{heart} some....{heart} thing....{heart} is....{heart} wrong....{heart}"
     ">Hermione's words start to slow, eventually only being able to mutter a squeak of a word every time you thrust into her."
     g4 "Maybe it was the potion I poured all over your ass earlier?"
     $ ccg2 = 35

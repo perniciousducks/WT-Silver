@@ -357,3 +357,9 @@ label describe_mood(name, value):
     call hide_blktone
 
     return
+
+label notes():
+    $ renpy.play('sounds/win_04.mp3')   #Not loud.
+    hide screen notes
+    show screen notes
+    return

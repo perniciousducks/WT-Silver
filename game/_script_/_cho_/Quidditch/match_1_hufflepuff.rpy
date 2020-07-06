@@ -1085,7 +1085,7 @@ label hufflepuff_match_return:
     $ renpy.sound.play("sounds/MaleGasp.mp3")
     g4 "{size=+10}IT WASN'T ME!{/size}"
     m "..........."
-    call cho_main("huh?{w=0.5} Are you okay, [cho_genie_name]?", "soft", "narrow", "base", "mid")
+    call cho_main("*huh*?{w=0.5} Are you okay, [cho_genie_name]?", "soft", "narrow", "base", "mid")
     m "Wha-{w=0.5}{nw}"
     g4 "Of course I am!"
     call cho_main("...", "annoyed", "narrow", "raised", "R")

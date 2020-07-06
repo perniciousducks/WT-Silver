@@ -64,10 +64,8 @@ label tonks_hangout:
 
     call bld
     if ton_friendship < 100:
-        $ renpy.play('sounds/win_04.mp3')
-        show screen notes
+        call notes
         ">You spend the [d_flag_01] hanging out with Tonks.\n>Your relationship with her has improved."
-        hide screen notes
     else:
         ">You spend the [d_flag_01] hanging out with Tonks."
     call bld("hide")
@@ -117,6 +115,7 @@ label nt_he_wine_intro:
 
     # Make firewhisky available in the cupboard and store
     $ firewhisky_ITEM.unlockable = False
+    $ wine_ITEM.number -= 1
 
     jump tonks_hangout_continue
 

@@ -368,7 +368,7 @@ label hg_sex_1:
     call her_main("*Ah*...{heart} *ah*...{heart}{heart}", "shock", "happyCl", "worried", "mid")
     $ ccg1 = 1
     call her_main("{size=+7}!!!!!!!!!!!!!!!{/size}{heart}{heart}{heart}", "scream", "wide", "base", "stare", trans=hpunch)
-    m "Huh? You alright?"
+    m "*huh*? You alright?"
     call nar(">Hermione's legs are shaking...")
     m "[hermione_name]?"
     call her_main("{heart}{heart}{heart}I think I'm cumming, [genie_name]!{heart}{heart}{heart}", "scream", "wide", "base", "stare")
@@ -618,7 +618,7 @@ label hg_sex_2:
 
     $ ccg1 = 18
     call her_main("*Aa-a-ah*!{heart}{heart}{heart}", "shock", "base", "base", "R", cheeks="blush", tears="soft")
-    m "You liked that one, huh?"
+    m "You liked that one, *huh*?"
     call slap_her
 
     $ ccg1 = 17

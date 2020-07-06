@@ -509,7 +509,7 @@ label hg_anal_sex_1:
             call her_main("Yes, [genie_name]. It still hurts a little, but...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             m "But what?"
             call her_main("But in a good way... [genie_name].", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
-            m "In a good way, huh?"
+            m "In a good way, *huh*?"
             g9 "*Heh*... You cute, little minx."
             call her_main("Can I get paid now, [genie_name]?", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
 

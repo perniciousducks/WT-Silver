@@ -141,7 +141,7 @@ label nt_he_firewhisky_intro:
     call ton_main("*Cough* *Cough*", "open", "closed", "worried", "mid")
     call ton_main("Yeah, that was a mistake.", "angry", "base", "base", "down")
     m "I don't drink whisky that often, but even I know not to down it in one..."
-    call ton_main("*Mmm*... that's the stuff.","horny","base","base","ahegao")
+    call ton_main("*Mmm*... that's the stuff.", "horny", "base", "base", "up")
     m "Are you even listening?"
 
     jump tonks_hangout_continue

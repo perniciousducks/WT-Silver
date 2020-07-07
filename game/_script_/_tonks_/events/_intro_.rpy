@@ -856,17 +856,31 @@ label ss_he_tonks_E3:
     call sna_main("You know, I've been teaching \"Potions\" at this school for as long as I can remember...","snape_06")
     call sna_main("Of course I'm the best they have.{w=0.8} And they don't call me \"Master of Potions\" for nothing!","snape_17")
     call sna_main("But if we're honest, even a \"dim-witted Demiguise\" could teach potions to those simpletons...","snape_35")
-    m "..............."
-    call sna_main("But when it comes to \"Defence against the dark arts\"...","snape_03")
+
+    menu:
+        m "..............."
+        "\"Are the students really that bad?\"":
+            call sna_main("*sigh* You have no idea, even an ape would show more learning abilities.","snape_06")
+            m "*Hmm*..."
+        "\"...Demiguise?\"":
+            m "What the fuck is that?"
+            call sna_main("*sigh* I keep forgetting you're not from around here...","snape_06")
+            call sna_main("It's a magical beast that can make itself invisible and has precognitive sight.","snape_24")
+            m "...Sounds boring, forget I asked."
+            call sna_main("...........","snape_05")
+            call sna_main("Anyway, back to the topic at hand--","snape_04")
+
+    call sna_main("When it comes to \"Defence against the dark arts\"...","snape_03")
     call sna_main("That's a subject that requires skill and cunning!","snape_02")
     call sna_main("And a very competent and skilled teacher, to guide those hopeless souls through their lessons...","snape_40")
     call sna_main("Now, If you were to assign me for that, and give Tonks my old subject to teach...","snape_20")
-    m "Yeah,...{w=0.4} I think I gave that role to her..."
+    m "Yeah, about that...{w=0.4} I think I might have given that role to her..."
     call sna_main("{size=+5}You did what?!{/size}","snape_33", trans=hpunch)
     m "\"Defence against-...something-something\"..."
     call sna_main("You should have given me the \"defence against the dark arts\" position!","snape_34")
     call sna_main("And she could've had something else,...like \"muggle studies\", or something.","snape_16")
     m "First come, first served, I suppose..."
+    m "And I am not making her teach any \"smuggle studies\", who do you take me for?"
     call sna_main("Curse you...","snape_08")
     m "There wasn't really any room for me to argue with her..."
     m "It was either that, or jail."
@@ -881,10 +895,16 @@ label ss_he_tonks_E3:
     call sna_main("Or learn everything about their secret fetishes...","snape_20")
     g9 "Neat!"
 
+    pause.1
+    call blktone
+
     "You take some time to muse about the fetishes Tonks might have..."
     "For blackmailing,... or to have some fun..."
 
     $ ss_he.tonks_E3 = True
     $ ss_event_pause += 1
 
-    jump day_start
+    call sly_plus
+    call hide_blktone
+
+    jump end_snape_hangout_points

@@ -6,6 +6,16 @@ label too_much:
 
     call her_walk(action="leave")
 
+    $ _responses = [
+        "*Hmm*... I guess it was a little too soon for that.",
+        "Did I say something wrong...?",
+        "Welp, was worth a shot I guess.",
+        "Perhaps I should rethink my appraoch...",
+        "Judging by her reaction she's not yet ready for it..."
+        ]
+
+    $ renpy.say(m, renpy.random.choice(_responses))
+
     $ her_mood += 6
 
     jump end_hermione_event

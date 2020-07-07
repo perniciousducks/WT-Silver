@@ -65,13 +65,13 @@ label hg_pf_admire_breasts:
     call her_walk("door", "base")
 
     if her_tier <= 1 and hg_pf_admire_breasts.points == 1:
-        call her_main("........................", "disgust", "narrow", "base", "down", cheeks="blush", xpos="right", flip=True)
+        call her_main("........................", "disgust", "narrow", "base", "down", cheeks="blush", xpos="right", flip=True, trans=d3)
     elif her_tier <= 2 and hg_pf_admire_breasts.points == 1:
-        call her_main("(How humiliating... What have I become...?)", "disgust", "narrow", "base", "down", cheeks="blush", xpos="right", flip=True)
+        call her_main("(How humiliating... What have I become...?)", "disgust", "narrow", "base", "down", cheeks="blush", xpos="right", flip=True, trans=d3)
     elif her_tier <= 2:
-        call her_main("........................", "disgust", "narrow", "base", "down", cheeks="blush", xpos="right", flip=True)
+        call her_main("........................", "disgust", "narrow", "base", "down", cheeks="blush", xpos="right", flip=True, trans=d3)
     elif her_tier <= 3 and hg_pf_admire_breasts.points == 1:
-        call her_main("{size=-5}(That was so humiliating...){/size}", "base", "narrow", "base", "up", cheeks="blush", xpos="right", flip=True)
+        call her_main("{size=-5}(That was so humiliating...){/size}", "base", "narrow", "base", "up", cheeks="blush", xpos="right", flip=True, trans=d3)
         call her_main("{size=-5}(No, Hermione, you silly girl!){/size}", "angry", "base", "angry", "mid", cheeks="blush")
         call her_main("{size=-5}(We are doing this to protect the honour of our house!){/size}", "angry", "base", "angry", "mid", cheeks="blush")
         call her_main(".................................", "base", "narrow", "base", "up", cheeks="blush")
@@ -168,6 +168,8 @@ label hg_pf_admire_breasts_T1_intro_E1:
     g4 "(I wonder what cup size those are.)"
 
     $ hermione.wear("top")
+    pause .5
+
     call her_main("Sir, I would like to have my points now.", "open", "closed", "angry", "mid")
     m "What? Oh yes. Of course..."
 

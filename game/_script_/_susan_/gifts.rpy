@@ -86,7 +86,7 @@ label give_sus_gift(gift_item):
     elif gift_item == anal_beads_ITEM:
         call give_gift(">You give the anal beads to Susan...",gift_item)
         #Add text
-        
+
     elif gift_item == wine_ITEM:
         call give_gift(">You give the wine to Susan...", gift_item)
         #Add text
@@ -119,6 +119,12 @@ label sus_mood(value=0):
     else:
         "Susan's mood hasn't changed."
 
+    $ was_negative = ((sus_mood > 0) and value < 0)
     $ sus_mood = max(min(sus_mood+value, 100), 0)
+
+    if was_negative:
+        call notes
+        "They're no longer upset at you."
+
     hide screen blktone5
     return

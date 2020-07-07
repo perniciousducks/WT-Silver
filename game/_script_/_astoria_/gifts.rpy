@@ -529,6 +529,12 @@ label ast_mood(value=0):
     else:
         "Astoria's mood hasn't changed."
 
+    $ was_negative = ((ast_mood > 0) and value < 0)
     $ ast_mood = max(min(ast_mood+value, 100), 0)
+
+    if was_negative:
+        call notes
+        "They're no longer upset at you."
+
     hide screen blktone5
     return

@@ -97,10 +97,10 @@ label hg_pf_admire_panties_T1_intro_E1:
     call her_main("{size=+7}A little !?{/size}", "shock", "wide", "base", "stare")
     her "This is completely inappropriate!"
     m "Listen, we need to go through this phase before we get to the good stuff, alright?"
-    call her_main("The \"good stuff\"? [genie_name], I don't understand...", "open", "base", "base", "mid")
+    call her_main("The \"good stuff\"? [genie_name], I don't understand...", "angry", "base", "base", "mid")
     m "What don't you understand, [hermione_name]?"
     m "Do you need these points or not?"
-    call her_main("I do...", "open", "base", "base", "mid")
+    call her_main("I do...", "disgust", "base", "base", "down")
     m "Show them to me then..."
     call her_main(".............", "angry", "base", "angry", "mid")
 
@@ -134,19 +134,23 @@ label hg_pf_admire_panties_T1: # Call label
 
     call play_music("playful_tension")
     show screen blktone
-    call her_main(".....................", "angry", "base", "angry", "mid", xpos="mid", ypos="base")
+    call her_main(".....................", "angry", "base", "angry", "mid", xpos="mid", ypos="base", trans=d3)
     call ctc
 
     menu:
         "-Stare at her face-":
-            ">You study Hermione's face..."
-            pass
-            ">You wonder what's going through her mind right now."
+            ">You study Hermione's face--"
+            ">Wondering what's going through her mind right now."
             call her_main(".......................", "angry", "narrow", "annoyed", "mid", emote="01")
 
         "-Stare at her panties-":
-            ">That's a plain girlish underwear..."
-            call her_main(".......................", "angry", "narrow", "annoyed", "mid", emote="01")
+            ">That's a plain girlish underwear, nothing what an ordinary girl wouldn't wear..."
+
+    if hg_pf_admire_panties.counter > 1: # Second time
+        call her_main(".......................", "angry", "narrow", "base", "R", emote="01")
+    else: # First time
+        call her_main(".......................", "angry", "narrow", "annoyed", "mid", emote="01")
+
     call ctc
     return
 

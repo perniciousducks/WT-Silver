@@ -545,13 +545,13 @@ label nt_he_story_intro_E10:
     m "So, good memories?"
     call ton_main("Mostly, it's a bit different now.","base","base","base","mid")
     m "In what way?"
-    call ton_main("We had to redo tasks constantly instead of actually learning new things. I think I brewed the same potion a million times.", "open", "base", "worried", "R")
-    call ton_main("And it was tied to this weird energy system.", "upset", "base", "worried", "down")
-    m "What's that?"
-    call ton_main("The teachers wanted to restrict the amount of enjoyment and fun we had so they gave us a set amount of energy points each day.","open","base","angry","mid")
-    call ton_main("So if you ran out of energy points during potions, for example, you couldn't finish the lesson.","upset","base","angry","R")
-    m "That doesn't make any sense."
-    call ton_main("I know right... I'm glad they got rid of it.", "open", "base", "worried", "mid")
+    call ton_main("Well, there wasn't any of this favour business going on for one.", "open", "base", "worried", "R")
+    call ton_main("But the students and teachers were pretty much the same.", "upset", "base", "worried", "down")
+    m "So, what was the real old man like?"
+    call ton_main("Unobtrusive....","upset","base","angry","R")
+    m "What does that mean?"
+    call ton_main("I only really saw him during larger festivities, he mostly spent his time in this office.", "open", "base", "worried", "mid")
+    m "So that's why Snape wanted me to stay put..."
 
     jump end_tonks_hangout
 

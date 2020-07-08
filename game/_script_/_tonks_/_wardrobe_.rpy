@@ -67,11 +67,27 @@ default ton_outfit_default = DollOutfit([ton_hair_base_new, ton_neckwear_beads, 
 default ton_outfit_last = DollOutfit([ton_hair_base_new])
 
 ###################
+## School Outfit ##
+###################
+
+#default ton_bottom_school1 = DollCloth("tonks", ("bottoms", "skirts"), "bottom", "school_skirt_1", [[103, 90, 108, 255], [232, 177, 13, 255]], unlocked=True) # Not implemented
+default ton_top_tied = DollCloth("tonks", ("tops", "other"), "top", "tied_top",[[183, 183, 184, 255]], blacklist=["bra"], unlocked=True)
+default ton_bottom_school2 = DollCloth("tonks", ("bottoms", "skirts"), "bottom", "school_skirt_2", [[103, 90, 108, 255], [232, 177, 13, 255]], armfix=True, unlocked=True, level=20)
+default ton_bottom_school3 = DollCloth("tonks", ("bottoms", "skirts"), "bottom", "school_skirt_3", [[103, 90, 108, 255], [232, 177, 13, 255]], armfix=True, unlocked=True, level=40)
+default ton_bottom_school4 = DollCloth("tonks", ("bottoms", "skirts"), "bottom", "school_skirt_4", [[103, 90, 108, 255], [232, 177, 13, 255]], armfix=True, unlocked=True, level=60)
+
+###################
 ## Casual Outfit ##
 ###################
 
-default ton_top_crop_casual  = DollCloth("tonks", ("tops", "shirts"), "top", "crop_top",[[200, 8, 45, 255]], unlocked=True)
+default ton_top_crop_casual = DollCloth("tonks", ("tops", "shirts"), "top", "crop_top",[[200, 8, 45, 255]], unlocked=True)
 default ton_bottoms_leggings_casual = DollCloth("tonks", ("bottoms", "leggings"), "bottom", "latex_leggings",[[32, 32, 32, 255], [25, 24, 24, 255]], armfix=True, unlocked=True)
+
+#############
+## Nightie ##
+#############
+
+default ton_top_nightie_1 = DollCloth("tonks", ("tops", "shirts"), "top", "nightie_1", [[153, 38, 96, 255]], armfix=True, unlocked=True)
 
 ##########
 ## Misc ##
@@ -81,6 +97,7 @@ default ton_top_corset = DollCloth("tonks", ("tops", "other"), "top", "corset",[
 default ton_bottoms_jeans = DollCloth("tonks", ("bottoms", "trousers"), "bottom", "jeans",[[51, 104, 105, 255]], armfix=True, unlocked=True)
 default ton_panties_base = DollCloth("tonks", ("panties", "bikini panties"), "panties", "base",[[124, 42, 50, 255]], unlocked=True)
 default ton_bra_base = DollCloth("tonks", ("bras", "bikini bras"), "bra", "bikini",[[124, 42, 50, 255], [177, 168, 172, 255]], unlocked=True)
+default ton_ruffled_top = DollCloth("tonks", ("tops", "shirts"), "top", "ruffled_top",[[213, 173, 219, 255]], unlocked=True)
 
 ################
 ## Pubic Hair ##

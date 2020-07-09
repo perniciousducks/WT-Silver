@@ -331,5 +331,7 @@ screen clothing_menu(menu_items, character, preview):
                 add astoria.body.get_mannequin() xpos 600 ypos 0 zoom 0.5
             elif character == 5:
                 add cho.body.get_mannequin() xpos 600 ypos 0 zoom 0.5
+            elif character == 6:
+                add tonks.body.get_mannequin() xpos 600 ypos 0 zoom 0.5
             else:
                 add "interface/icons/outfits/mannequin_"+str(character)+".png" xpos 600 ypos 0 zoom 0.5

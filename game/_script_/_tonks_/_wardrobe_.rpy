@@ -71,23 +71,49 @@ default ton_outfit_last = DollOutfit([ton_hair_base_new])
 ###################
 
 #default ton_bottom_school1 = DollCloth("tonks", ("bottoms", "skirts"), "bottom", "school_skirt_1", [[103, 90, 108, 255], [232, 177, 13, 255]], unlocked=True) # Not implemented
-default ton_top_tied = DollCloth("tonks", ("tops", "other"), "top", "tied_top",[[183, 183, 184, 255]], blacklist=["bra"], unlocked=True)
-default ton_bottom_school2 = DollCloth("tonks", ("bottoms", "skirts"), "bottom", "school_skirt_2", [[103, 90, 108, 255], [232, 177, 13, 255]], armfix=True, unlocked=True, level=20)
-default ton_bottom_school3 = DollCloth("tonks", ("bottoms", "skirts"), "bottom", "school_skirt_3", [[103, 90, 108, 255], [232, 177, 13, 255]], armfix=True, unlocked=True, level=40)
-default ton_bottom_school4 = DollCloth("tonks", ("bottoms", "skirts"), "bottom", "school_skirt_4", [[103, 90, 108, 255], [232, 177, 13, 255]], armfix=True, unlocked=True, level=60)
+default ton_top_tied = DollCloth("tonks", ("tops", "other"), "top", "tied_top",[[183, 183, 184, 255]], blacklist=["bra"])
+default ton_bottom_school2 = DollCloth("tonks", ("bottoms", "skirts"), "bottom", "school_skirt_2", [[103, 90, 108, 255], [232, 177, 13, 255]], armfix=True, level=20)
+default ton_bottom_school3 = DollCloth("tonks", ("bottoms", "skirts"), "bottom", "school_skirt_3", [[103, 90, 108, 255], [232, 177, 13, 255]], armfix=True, level=40)
+default ton_bottom_school4 = DollCloth("tonks", ("bottoms", "skirts"), "bottom", "school_skirt_4", [[103, 90, 108, 255], [232, 177, 13, 255]], armfix=True, level=60)
+
+default ton_outfit_school = DollOutfit([ton_hair_base_new, ton_top_tied, ton_bottom_school2], price=350)
 
 ###################
 ## Casual Outfit ##
 ###################
 
-default ton_top_crop_casual = DollCloth("tonks", ("tops", "shirts"), "top", "crop_top",[[200, 8, 45, 255]], unlocked=True)
-default ton_bottoms_leggings_casual = DollCloth("tonks", ("bottoms", "leggings"), "bottom", "latex_leggings",[[32, 32, 32, 255], [25, 24, 24, 255]], armfix=True, unlocked=True)
+default ton_top_crop_casual = DollCloth("tonks", ("tops", "shirts"), "top", "crop_top",[[200, 8, 45, 255]])
+default ton_bottoms_leggings_casual = DollCloth("tonks", ("bottoms", "leggings"), "bottom", "latex_leggings",[[32, 32, 32, 255], [25, 24, 24, 255]], armfix=True)
+
+default ton_outfit_casual = DollOutfit([ton_hair_base_new, ton_top_crop_casual, ton_bottoms_leggings_casual], price=350)
 
 #############
 ## Nightie ##
 #############
 
-default ton_top_nightie_1 = DollCloth("tonks", ("tops", "shirts"), "top", "nightie_1", [[153, 38, 96, 255]], armfix=True, unlocked=True)
+default ton_top_nightie_1 = DollCloth("tonks", ("tops", "shirts"), "top", "nightie_1", [[153, 38, 96, 255]], armfix=True)
+
+default ton_outfit_nightie = DollOutfit([ton_hair_base_new, ton_top_nightie_1], price=350)
+
+##################
+## Bunny outfit ##
+##################
+
+default ton_top_bunny1 = DollCloth("tonks", ("tops", "one-piece suits"), "top", "bunnysuit", [[48, 48, 48, 255]], blacklist=["panties", "bra"], zorder=7, level=40)
+default ton_stockings_bunny1 = DollCloth("tonks", ("legwear", "pantyhose"), "stockings", "bunny_stockings_1", [[81, 81, 81, 255]], armfix=True, level=40)
+default ton_hat_bunny1 = DollCloth("tonks", ("head", "headgear"), "hat", "bunny", [[48, 48, 48, 255], [232, 232, 232, 255]], level=20)
+default ton_neckwear_bunny1 = DollCloth("tonks", ("head", "neckwear"), "neckwear", "bunny_bowtie_1", [[232, 232, 232, 255], [48, 48, 48, 255]], level=10)
+
+default ton_outfit_bunny = DollOutfit([ton_hair_base_new, ton_top_bunny1, ton_stockings_bunny1, ton_hat_bunny1, ton_neckwear_bunny1], price=350)
+
+#################
+## Silky Dress ##
+#################
+
+default ton_top_silk_dress = DollCloth("tonks", ("tops", "dresses"), "top", "silk_dress", [[240, 237, 250, 255], [234, 234, 234, 255]], blacklist=["bra", "bottom"], armfix=True)
+default ton_robe_silk = DollCloth("tonks", ("misc", "robes"), "robe", "silk_robe", [[240, 237, 250, 255]], armfix=True)
+
+default ton_outfit_silky = DollOutfit([ton_hair_base_new, ton_top_silk_dress, ton_robe_silk], price=350)
 
 ##########
 ## Misc ##
@@ -95,9 +121,9 @@ default ton_top_nightie_1 = DollCloth("tonks", ("tops", "shirts"), "top", "night
 
 default ton_top_corset = DollCloth("tonks", ("tops", "other"), "top", "corset",[[247, 206, 146, 255]], blacklist=["bra"], armfix=True, unlocked=True)
 default ton_bottoms_jeans = DollCloth("tonks", ("bottoms", "trousers"), "bottom", "jeans",[[51, 104, 105, 255]], armfix=True, unlocked=True)
-default ton_panties_base = DollCloth("tonks", ("panties", "bikini panties"), "panties", "base",[[124, 42, 50, 255]], unlocked=True)
+default ton_panties_base = DollCloth("tonks", ("panties", "bikini panties"), "panties", "base",[[94, 67, 67, 255], [251, 247, 246, 255]], unlocked=True)
 default ton_bra_base = DollCloth("tonks", ("bras", "bikini bras"), "bra", "bikini",[[124, 42, 50, 255], [177, 168, 172, 255]], unlocked=True)
-default ton_ruffled_top = DollCloth("tonks", ("tops", "shirts"), "top", "ruffled_top",[[213, 173, 219, 255]], unlocked=True)
+default ton_ruffled_top = DollCloth("tonks", ("tops", "shirts"), "top", "ruffled_top",[[213, 173, 219, 255]], level=25, unlocked=True)
 
 ################
 ## Pubic Hair ##

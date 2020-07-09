@@ -420,6 +420,24 @@ default cho_clothing_sets_list = [
 
 init offset = 0
 
+init offset = 1 # Initialize chunk after character class
+
+default nt_school = Item(id="nt_school", name="Schoolgirl Outfit", type="outfit", items=["top", "skirt"], image=ton_outfit_school, cost=ton_outfit_school.price, wait_time=2, description="> A very tight school outfit back from 1995!")
+default nt_casual = Item(id="nt_casual", name="Casual Outfit", type="outfit", items=["top", "trousers"], image=ton_outfit_casual, cost=ton_outfit_casual.price, wait_time=2, description="> Very retro.")
+default nt_nightie = Item(id="nt_nightie", name="Nightie Outfit", type="outfit", items=["top"], image=ton_outfit_nightie, cost=ton_outfit_nightie.price, wait_time=2, description="> Doesn't leave much for the imagination.")
+default nt_bunny = Item(id="nt_bunny", name="Bunny suit Outfit", type="outfit", items=["one-piece suit", "pantyhose", "necktie"], image=ton_outfit_bunny, cost=ton_outfit_bunny.price, wait_time=2, description="> Vewy cute. :3")
+default nt_silky = Item(id="nt_silky", name="Silky Slut Dress", type="outfit", items=["top", "trousers"], image=ton_outfit_silky, cost=ton_outfit_silky.price, wait_time=2, description="> Disclaimer: Madam Mafkin isn't responsible\nfor damaged nipples.")
+
+default tonks_clothing_sets_list = [
+    nt_school,
+    nt_casual,
+    nt_nightie,
+    nt_bunny,
+    nt_silky
+]
+
+init offset = 0 # Back to normal
+
 # Old outfits linked to new outfits (using the variable names)
 
 init offset = 2 # Initialize chunk after character class and character outfits
@@ -456,7 +474,12 @@ default outfit_linking = {
     hg_fishnet.id:                  "her_outfit_fishnet",
     hg_bikini3.id:                  "her_outfit_bikini3",
     hg_cheerleader.id:              "her_outfit_cheerleader_1",
-    hg_cheerleader2.id:              "her_outfit_cheerleader_2"
+    hg_cheerleader2.id:             "her_outfit_cheerleader_2",
+    nt_school.id:                   "ton_outfit_school",
+    nt_casual.id:                   "ton_outfit_casual",
+    nt_nightie.id:                  "ton_outfit_nightie",
+    nt_bunny.id:                    "ton_outfit_bunny",
+    nt_silky.id:                    "ton_outfit_silky"
 }
 
 init offset = 0 # back to normal

@@ -22,7 +22,8 @@ init python:
             luna_outfits_list, luna_costumes_list, luna_dresses_list, luna_clothing_sets_list,
             astoria_outfits_list, astoria_costumes_list, astoria_dresses_list, astoria_clothing_sets_list,
             susan_outfits_list, susan_costumes_list, susan_dresses_list, susan_clothing_sets_list,
-            cho_outfits_list, cho_costumes_list, cho_dresses_list, cho_clothing_sets_list
+            cho_outfits_list, cho_costumes_list, cho_dresses_list, cho_clothing_sets_list,
+            tonks_clothing_sets_list
         ]
         for i in lists:
             for j in i:
@@ -65,7 +66,7 @@ label open_clothing_store:
     $ item_choice = None
     $ current_page = 0
     $ character_choice = 1 #Hermione
-    $ character_choice_list = [1,2,3,4,5]
+    $ character_choice_list = [1,2,3,4,5,6]
     $ store_menu = True #Displays item's gold value.
 
     show screen clothing_store_menu
@@ -137,26 +138,28 @@ label clothing_shop_menu:
             item_list.extend(hermione_costumes_list)
             item_list.extend(hermione_dresses_list)
             item_list.extend(hermione_clothing_sets_list)
-        if character_choice == 2:
+        elif character_choice == 2:
             item_list.extend(luna_outfits_list)
             item_list.extend(luna_costumes_list)
             item_list.extend(luna_dresses_list)
             item_list.extend(luna_clothing_sets_list)
-        if character_choice == 3:
+        elif character_choice == 3:
             item_list.extend(astoria_outfits_list)
             item_list.extend(astoria_costumes_list)
             item_list.extend(astoria_dresses_list)
             item_list.extend(astoria_clothing_sets_list)
-        if character_choice == 4:
+        elif character_choice == 4:
             item_list.extend(susan_outfits_list)
             item_list.extend(susan_costumes_list)
             item_list.extend(susan_dresses_list)
             item_list.extend(susan_clothing_sets_list)
-        if character_choice == 5:
+        elif character_choice == 5:
             item_list.extend(cho_outfits_list)
             item_list.extend(cho_costumes_list)
             item_list.extend(cho_dresses_list)
             item_list.extend(cho_clothing_sets_list)
+        elif character_choice == 6:
+            item_list.extend(tonks_clothing_sets_list)
 
         item_list = list(filter(lambda x: (x.unlocked==False and x.unlockable==False), item_list))
 

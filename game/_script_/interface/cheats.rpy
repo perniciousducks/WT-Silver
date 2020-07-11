@@ -289,6 +289,7 @@ label cheats:
                     jump magic_tutorial
                 "Cho CG demo":
                     call cho_main(xpos="base",ypos="base")
+                    call play_music("cho")
                     call play_sound("door")
                     call cho_chibi("stand", "mid", "base")
                     with d3

@@ -24,6 +24,7 @@ init python:
 
             self.last_image = None
             self.image = None
+            self.overlay = None
 
             self.max_zoom = max_zoom
             self.min_zoom = min_zoom
@@ -61,6 +62,9 @@ init python:
                 renpy.pause(p - 0.1)
                 self.redraw(0)
                 renpy.with_statement(d1)
+
+        def set_overlay(self, overlay):
+            self.overlay = overlay
 
         def set_zoom(self, n):
             self.last_zoom = self.zoom
@@ -115,6 +119,11 @@ init python:
                 self.scale = 1.0
                 self.last_type = self.type
                 self.type = 0
+
+            if self.overlay: # We're assuming the overlay is in 4k as it should be.
+                size = (int(3840/self.scale), int(2160/self.scale))
+                overlay = Transform("{}{}.png".format(self.imagepath, self.overlay), zoom=1.0/self.scale)
+                d = Composite(size, (0, 0), d, (0, 0), overlay)
 
             last_zoom = self.last_zoom * self.scale
             zoom = self.zoom * self.scale

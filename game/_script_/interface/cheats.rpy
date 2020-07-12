@@ -180,6 +180,17 @@ label cheats:
         "-{color=#7a0000}DEVROOM{/color}-" if config.developer:
             label .devroom:
             menu:
+                "-Max all character stats-":
+                    $ sus_whoring = ast_whoring = cho_whoring = her_whoring = lun_whoring = 24
+                    $ ton_friendship = 100
+                    jump cheats.devroom
+
+                "-Unequip all clothes-":
+                    python:
+                        for i in ("hermione", "cho", "astoria", "tonks"):
+                            getattr(renpy.store, i).unequip("all")
+                    jump cheats.devroom
+
                 "-Unlock all characters-" (icon="interface/icons/small/condom.png"):
                     $ snape_unlocked = True
                     $ tonks_unlocked = True

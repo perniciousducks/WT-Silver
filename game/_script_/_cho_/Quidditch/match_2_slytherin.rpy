@@ -405,12 +405,12 @@ label slytherin_match:
 
     call ton_main("{size=-4}Do I hear some jealousy back there?{/size}", "smile", "base", "raised", "R", flip=True, xpos="far_left", ypos="head")
     call sna_main("{size=-4}Of course not... just a cough,{w=0.3} {cps=15}Nymphadora{/cps}.{/size}", "snape_03", ypos="head")
-    call ton_main("{size=-2}That's Tonks to you...{w=0.3} {i}dungeon dweller.{/i}{/size}", "base", "shocked", "angry", "R", flip=True, hair="angry", xpos="far_left", ypos="head")
+    call ton_main("{size=-2}That's Tonks to you...{w=0.3} {i}dungeon dweller.{/i}{/size}", "open", "wide", "angry", "R", hair="angry", xpos="far_left", ypos="head", flip="True")
     call sna_main("Dungeon dw--", "snape_32", ypos="head")
     call sna_main("I'll give you a dungeon dweller in a minute you--", "snape_08", ypos="head")
 
     call her_main("Professor Tonks, your hair!", "soft", "base", "base", "L", flip=False, xpos="base", ypos="head")
-    call ton_main("Whoopsie...{w=0.5} Miss Granger, so glad to see you!", "base", "base", "base", "L", flip=True, xpos="far_left", ypos="head", hair="neutral")
+    call ton_main("Whoopsie...{w=0.5} Miss Granger, so glad to see you!", "base", "happyCl", "base", "L", hair="neutral", xpos="far_left", ypos="head", flip="True")
     call sna_main("{size=-2}*Hmph*{/size}", "snape_31", ypos="head")
     call her_main("Of course, as you know I take my responsibilities seriously!", "open", "base", "angry", "L")
 
@@ -422,7 +422,7 @@ label slytherin_match:
     call ton_main("I'm here if you need me!", "base", "happyCl", "base", "mid")
     call her_main("I appreciate the thought, Professor... but I'll be fine.", "open", "closed", "base", "mid")
     call her_main("I'd be made fun of even more if you had to take over...", "open", "narrow", "angry", "L")
-    call ton_main("Whatever you want, sweetie.", "horny", "base", "base", "L") #smile
+    call ton_main("Whatever you want, sweetie.", "horny", "narrow", "base", "L") #smile
     call her_main("...", "clench", "happyCl", "worried", "mid", cheeks="blush") #smiles and blushes
     pause .2
 
@@ -556,7 +556,7 @@ label slytherin_match:
     call her_main("Oh! Davies catches it and passes to Bradley...", "smile", "base", "angry", "up")
     call ton_main("She's pretty cute when she's excited, isn't she.", "base", "happyCl", "base", "mid")
     m "..."
-    call ton_main("I feel like we've got the best seats in the house, right behind the podium...", "horny", "base", "base", "L", hair="horny")
+    call ton_main("I feel like we've got the best seats in the house, right behind the podium...", "horny", "narrow", "raised", "L", hair="horny")
     call her_main("", "open", "base", "angry", "up")
     call ton_main("Who cares about the match if you got a view like that...", "horny", "base", "angry", "L")
     $ renpy.sound.play("sounds/ball_hit.mp3")
@@ -644,7 +644,7 @@ label slytherin_match:
 
     m "--Doesn't look great..."
     call ton_main("What do you mean?", "open", "base", "base", "L", hair="horny")
-    call ton_main("Only thing that would make this better would be those firm cheeks on my lap!", "horny", "base", "angry", "L", hair="horny")
+    call ton_main("Only thing that would make this better would be those firm cheeks on my lap!", "horny", "narrow", "angry", "L", hair="horny")
     call sna_main("He's talking about the game...", "snape_09")
     call ton_main("Game? What game...", "open", "base", "raised", "L")
     call ton_main("Oh, Quidditch! Of course!", "upset", "base", "worried", "ahegao")

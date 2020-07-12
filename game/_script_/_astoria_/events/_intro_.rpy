@@ -133,9 +133,9 @@ label astoria_intro_E1:
                     call ton_main("I'm starting to have my doubts that you ever were a Genie...","angry","base","worried","R")
                     m "Sorry about that..."
                     m "Can I ask you for something else?"
-                    call ton_main("Still? Even after disappointing me like this?","upset","base","angry","mid")
+                    call ton_main("Still? Even after disappointing me like this?", "upset", "base", "annoyed", "mid")
                     m "Please?"
-                    call ton_main("*Ugh*... Fine...","upset","base","angry","R")
+                    call ton_main("*Ugh*... Fine...", "upset", "narrow", "annoyed", "R")
                     show screen blkfade
                     hide screen bld1
                     with d3
@@ -198,7 +198,7 @@ label astoria_intro_E1:
     call ton_main("This girl I've told you about, Susan Bones?","open","base","base","mid")
     call ton_main("The one with--","open","base","base","R")
     g9 "With the giant tits!"
-    call ton_main("...The one with the unfortunate luck of being a constant target of bullying and harassment!","angry","closed","angry","mid") # Annoyed
+    call ton_main("...The one with the unfortunate luck of being a constant target of bullying and harassment!", "angry", "closed", "annoyed", "mid") # Annoyed
     m "Yes, that too..."
     call ton_main("That poor girl! She cried the entire time when she told me about what happened...", "open", "base", "worried", "down")
     call ton_main("I can't believe she got hit by a curse!","angry","base","angry","down") # Angry
@@ -217,14 +217,14 @@ label astoria_intro_E1:
     call ton_main("She was the target of an \"unforgivable curse!\"","open","base","worried","mid")
     m "A curse?..."
     m "Like...{w=0.5} The c-word?"
-    call ton_main("No! A magical curse!{w} not an insult...","angry","closed","angry","mid")
+    call ton_main("No! A magical curse!{w} not an insult...", "angry", "closed", "annoyed", "mid")
     call ton_main("Those curses are a major transgression of Ministry laws!","open","base","angry","mid")
     call ton_main("If you are caught having cast even one of them, they will put you in Azkaban for the rest of your life!","open","closed","worried","mid")
     call ton_main("Sharing a room with a whole bunch of Dementors!","upset","base","angry","mid")
     m "Dement-{w=0.6}ors?"
     m "Is it like a nursing home or something?"
     call ton_main("No, I've told you before!","angry","closed","angry","mid")
-    call ton_main("Azkaban is a prison! With Dementors roaming all over it...","open","base","angry","mid")
+    call ton_main("Azkaban is a prison! With Dementors roaming all over it...", "open", "narrow", "annoyed", "mid")
     call ton_main("Believe me, you wouldn't want to be around them, I tell you that much...","open","base","angry","R")
     m "(Does she hate old people as well now?)"
 

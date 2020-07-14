@@ -139,7 +139,7 @@ init python:
 
             d = renpy.get_registered_image(self.image)
             if isinstance(d, Movie) and renpy.music.is_playing(d.channel):
-                p = renpy.music.get_pos(d.channel)
+                p = renpy.music.get_pos(d.channel) or 0.0
                 t = renpy.music.get_duration(d.channel)
                 return t - p
             else:

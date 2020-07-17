@@ -183,7 +183,7 @@ label play_sound(sound=""):
     # Interface
     elif sound == "scroll":
         $ renpy.play('sounds/scroll.mp3')
-    elif sound in ["equip", "equip_inventory"]: # equip
+    elif sound in ["equip", "equip_inventory", "cloth"]: # equip
         $ renpy.play('sounds/cloth_sound.mp3')
 
     # Misc

@@ -210,3 +210,23 @@ default cho_pubes_stuble = DollCloth("cho", ("pelvis", "pubes"), "pubes", "stubl
 default cho_pubes_unshaved = DollCloth("cho", ("pelvis", "pubes"), "pubes", "unshaved", [[52, 59, 80, 255]], unlocked=True)
 
 default cho_makeup4_lipstick = DollLipstick("cho", ("makeup", "slot5"), "makeup4", "lipstick", [[185, 124, 81, 255]], unlocked=True)
+
+### Event Specific ###
+
+default cho_top_school1_slyt = DollCloth("cho", ("tops", "shirts"), "top", "top_school_1", [[183, 183, 184, 255], [109, 105, 121, 255], [58, 115, 75, 255], [205, 205, 206, 255]])
+default cho_top_school1_gryf = DollCloth("cho", ("tops", "shirts"), "top", "top_school_1", [[183, 183, 184, 255], [109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
+default cho_top_school1_huff = DollCloth("cho", ("tops", "shirts"), "top", "top_school_1", [[183, 183, 184, 255], [109, 105, 121, 255], [251, 198, 10, 255], [28, 28, 28, 255]])
+default cho_stockings_slyt = DollCloth("cho", ("legwear", "socks"), "stockings", "house", [[58, 115, 75, 255], [205, 205, 206, 255]])
+default cho_stockings_gryf = DollCloth("cho", ("legwear", "socks"), "stockings", "house", [[219, 165, 13, 255], [146, 63, 30, 255]])
+default cho_stockings_huff = DollCloth("cho", ("legwear", "socks"), "stockings", "house", [[251, 198, 10, 255], [28, 28, 28, 255]])
+
+default cho_outfit_slyt = DollOutfit([cho_hair_ponytail1, cho_top_school1_slyt, cho_bottom_school1, cho_bra_basic1, cho_panties_basic1, cho_stockings_slyt])
+default cho_outfit_gryf = DollOutfit([cho_hair_ponytail1, cho_top_school1_gryf, cho_bottom_school1, cho_bra_basic1, cho_panties_basic1, cho_stockings_gryf])
+default cho_outfit_huff = DollOutfit([cho_hair_ponytail1, cho_top_school1_huff, cho_bottom_school1, cho_bra_basic1, cho_panties_basic1, cho_stockings_huff])
+
+default smurfette_hair = DollCloth("cho", ("head", "hair"), "hair", "smurfette", [[255, 221, 71, 255],[255, 237, 158, 255]])
+default smurfette_hat = DollCloth("cho", ("head", "headgear"), "hat", "smurfette", [[251, 251, 251, 255]])
+default smurfette_top = DollCloth("cho", ("tops", "dresses"), "top", "smurfette", [[251, 251, 251, 255],[251, 251, 251, 255]], blacklist=["bottom"], armfix=True)
+
+default cho_outfit_smurfette = DollOutfit([smurfette_hair, smurfette_hat, smurfette_top])
+

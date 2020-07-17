@@ -721,29 +721,37 @@ label cc_pr_manipulate_boys_T2_E3:
 label cc_pr_manipulate_boys_T3_twins:
 
     # Setup
+    $ cho_outfit_last.save() # Save player outfit
     $ cho.strip("all")
     $ cho.set_body_hue(200)
 
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
+    stop music fadeout 1.0
     m "Back so soo-..."
 
     call cho_main(face="angry", xpos="mid", ypos="base", trans=fade)
 
     menu:
         "\"*Ha-ha-ha-ha*\"":
+            call play_music("cho")
+
             g9 "{i}I'm blue, daba dee bada die, {size=-2}daba dee daba die,{/size} {size=-4}daba dee bada die,{/size} {size=-6}daba dee daba die........{/size}{/i}"
             call cho_main("*grr*.", "clench", "wide", "angry", "mid")
             m "*Ahem*...{w=0.4} I mean... Oh, no... what happened?"
 
         "\"Feeling blue today?\"":
+            call play_music("cho")
+
             call cho_main("Oh? What gave it away?", "soft", "base", "angry", "mid")
             call cho_main("My face?", "clench", "base", "angry", "mid")
             g9 "Something like that."
             m "So, what happened?"
 
         "\"What the hell happened?\"":
+            call play_music("cho")
+
             g9 "Didn't expect to see a talking blueberry today!"
             m "Or are you a bilberry?"
             g9 "Or a gummiberry?"
@@ -796,7 +804,6 @@ label cc_pr_manipulate_boys_T3_twins:
 
         "-Offer to fetch her something-":
             call cc_pr_manipulate_boys_twins_branch
-
 
     if cho_reputation < 12: # Points til 12.
         $ cho_reputation += 1
@@ -936,10 +943,16 @@ label cc_pr_manipulate_boys_twins_branch:
     m "But personally, I don't really see why it's such an issue."
     m "I've been known to turn blue and swell up as well and you don't see me complaining."
 
-    #TODO Cho question mark chibi
-    #TODO Genie exits the room
+    call cho_main("...", "disgust", "base", "angry", "mid")
 
-    #TODO SHOW CLOTHING STORE
+    m "Give me some time, be right back."
+
+    call blkfade
+    call play_music("stop")
+    centered "{size=+7}{color=#cbcbcb}{cps=7}...{/cps}{/color}{/size}{w=1.0}{nw}"
+    call room("clothing_store")
+    call play_music("clothing_store")
+    call hide_blkfade
 
     if clothing_store_intro_done:
         ">You enter to see an old woman busy sewing together two pieces of long dark fabric."
@@ -959,6 +972,9 @@ label cc_pr_manipulate_boys_twins_branch:
         maf "Absolutely, although I would have to order the fabrics in. I don't really have a range of colours at the moment."
         maf "What did you have in mind?"
     else:
+        # Alternate intro
+        $ clothing_store_intro_done = True
+
         m "Miss Mafkin... or was it Malkin?"
         maf "It's Mafkin, Dumbledore... we have been over this before."
         g9 "(I knew she was wrong!)"
@@ -967,6 +983,7 @@ label cc_pr_manipulate_boys_twins_branch:
         maf "It's the perfect garment for letting the old family jewels get some fresh air."
         m "I'm good thank you."
         maf "Then what can I do you for?"
+
 
     m "Well... As it happens..."
     m "I'm in quite a pickle... A student was tricked into eating one of the weasel twins' sweets."
@@ -1043,7 +1060,7 @@ label cc_pr_manipulate_boys_twins_branch:
             maf "I have a few miscellaneous pieces lying around that she could borrow for the time being."
             maf "There's not a lot to pick from, but you can take anything you need from it."
             m "Great."
-            #TODO have his chibi turn and walk so you just see his back inside the screen and then display the next line
+            #TODO have his chibi turn and walk so you just see his back inside the screen and then display the next line - No can do, not implemented
             # Rummage sound.
             m "Hmm, doesn't seem to be a lot to pick from..."
             # Rummage sound.
@@ -1053,19 +1070,45 @@ label cc_pr_manipulate_boys_twins_branch:
             # Rummage sound.
             m "(Oh, this is just perfect... Although perhaps it's a bit mean...)"
             m "(Maybe I should just ask for one of the other house's clothing pieces instead...)"
-            #TODO genie chibi turns and walks back to normal position
+            #TODO genie chibi turns and walks back to normal position - No can do, not implemented
 
             jump .choices
 
     maf "I'll have it done and delivered by tomorrow morning."
     m "Great, that will be all then."
+
+    call blkfade
+
     maf "Until next time..."
 
-    #TODO Back in Office
-    #TODO Genie Walks in
+    # Add smurfette outfit to the shop if was not picked during the event
+    if not d_flag_01 and cc_smurfette_ITEM not in cho_clothing_sets_list:
+        $ cho_clothing_sets_list.append(cc_smurfette_ITEM)
+
+    call room("main_room")
+    call play_music("stop")
+    call gen_chibi("hide")
+    show screen chair_left
+    show screen desk
+    call cho_chibi(xpos="desk", ypos="base", flip=True)
+    call hide_blkfade
+    pause 1.0
+
+    call play_sound("door")
+    call gen_chibi("stand", "door", "base", flip=False)
+    with d3
+    pause 0.3
+
     m "I'm back!"
-    call cho_main("Finally...", "annoyed", "base", "angry", "mid")
-    call cho_main("I've been freezing my butt off and I couldn't figure out how to light the fire.", "open", "base", "angry", "mid")
+    call gen_walk("mid", "base")
+    call play_music("cho")
+    call cho_main("Finally...", "annoyed", "base", "angry", "mid", trans=d3)
+
+    if not fire_in_fireplace:
+        call cho_main("I've been freezing my butt off and I couldn't figure out how to light the fire.", "open", "base", "angry", "mid")
+    else:
+        call cho_main("If it weren't for the fire in the fireplace, I'd freeze my butt off!", "open", "base", "angry", "mid")
+
     m "Can't you use some spell for that?"
     call cho_main("Where do you think I keep my wand?", "annoyed", "base", "angry", "mid")
     m "Well, most people hide it in their night stand or a drawer or something."
@@ -1075,8 +1118,12 @@ label cc_pr_manipulate_boys_twins_branch:
         # Slytherin
 
         m "Got it right here, brings out the colour of your eyes for sure!"
-        #TODO Clothsound
-        #TODO slytherin cloth pile on desk
+
+        call blktone
+        call play_sound("cloth")
+        "> You hand the Slytherin uniform to Cho."
+        call hide_blktone
+
         call cho_main("Such a charmer...", "base", "base", "base", "R")
         call cho_main("I was worried that you'd pick out something-...", "open", "base", "base", "down")
         call cho_main("{size=+5}These are Slytherin colours!{/size}", "open", "wide", "angry", "mid")
@@ -1088,42 +1135,46 @@ label cc_pr_manipulate_boys_twins_branch:
         call cho_main("But why Slytherin...", "disgust", "base", "angry", "downR")
 
         menu:
-            "\"If you don't like it you can go without any!\"":
+            "{size=-3}\"If you don't like it you can go without any!\"{/size}":
                 call cho_main("What!?", "open", "wide", "angry", "mid")
                 m "You heard me..."
                 m "I went out of my way to fetch those clothes for you..."
                 m "So you can take your smurf looking ass and get out of my office."
                 call cho_main("Fine!", "clench", "base", "angry", "mid")
-                #TODO Cho storms out and slams door
-                #TODO Mood very angry
+                call cho_walk(action="leave", speed=2.0)
+                $ renpy.play('sounds/door_down.mp3')
+                with hpunch
                 m "..."
-                #TODO Fades to Black
-                #TODO Remove cloth pile from desk
-                #TODO reset cho colour
+                $ cho_mood += 10
 
-            "\"It's not my fault, Some idiot picked that option!\"":
+            "{size=-3}\"It's not my fault, Some idiot picked that option!\"{/size}":
                 call cho_main("What?", "annoyed", "wide", "angry", "mid")
                 m "It was decided by some unknown external force."
                 call cho_main("That doesn't make any sense!", "open", "base", "angry", "mid")
                 m "I know!"
                 call cho_main("...", "upset", "base", "angry", "mid")
-                #TODO Cho's blue colour fades away
-                call cho_main("I thought you would know better than to pick a Slytherin uniform for me...", "annoyed", "base", "angry", "downR")
+
+                $ cho.set_body_hue(0)
+
+                call cho_main("I thought you would know better than to pick a Slytherin uniform for me...", "annoyed", "base", "angry", "downR", trans=d9)
                 m "As I said, not my fault."
                 g9 "Although, speaking of colour..."
                 m "You're not blue anymore."
                 call cho_main("Thank Merlin for that...", "clench", "base", "worried", "down")
                 call cho_main("Just hand me those clothes...", "annoyed", "base", "angry", "mid")
-                #TODO Cloth sound
-                #TODO Clothes equipped
-                #TODO Remove cloth pile from desk
+
+                $ cho.equip(cho_outfit_slyt)
+                with fade
+
                 call cho_main("...", "disgust", "base", "base", "down", cheeks="blush")
                 call cho_main("This feels wrong...", "clench", "base", "worried", "downR", cheeks="blush")
                 g9 "I knew it!"
                 g9 "You look great in green!"
                 call cho_main("*Grrr*... I can't believe you!", "clench", "base", "angry", "mid")
-                #TODO Cho storms out, normal door sound
-                #TODO Mood angry
+                call cho_walk(action="leave", speed=2.0)
+                $ renpy.play('sounds/door_down.mp3')
+                with hpunch
+                $ cho_mood += 5
 
             "\"Sorry...\"":
                 call cho_main("...", "normal", "wide", "base", "mid")
@@ -1135,15 +1186,18 @@ label cc_pr_manipulate_boys_twins_branch:
                 call cho_main("...", "annoyed", "base", "angry", "down", cheeks="blush")
                 call cho_main("Fine, since you almost apologized...", "disgust", "base", "angry", "downR", cheeks="blush")
                 call cho_main("Hand me those clothes.", "annoyed", "base", "angry", "mid", cheeks="blush")
-                #TODO Cloth sound
-                #TODO Clothes equipped
-                #TODO Remove cloth pile from desk
+
+                $ cho.equip(cho_outfit_slyt)
+                with fade
+
                 m "See, they don't look that bad!"
                 call cho_main("This feels wrong...", "angry", "base", "worried", "downR", cheeks="blush")
                 m "You look great in any colour!"
                 call cho_main("That's not why...", "normal", "base", "angry", "mid", cheeks="blush")
-                #TODO Cho's blue colour fades away
-                call cho_main("Thanks I guess.", "disgust", "base", "base", "down")
+
+                $ cho.set_body_hue(0)
+
+                call cho_main("Thanks I guess.", "disgust", "base", "base", "down", trans=d9)
                 m "Speaking of colour..."
                 m "You're not blue anymore."
                 call cho_main("Finally...", "mad", "base", "base", "mid")
@@ -1153,16 +1207,20 @@ label cc_pr_manipulate_boys_twins_branch:
                 call cho_main("Oh...", "open", "base", "base", "downR", cheeks="blush")
                 call cho_main("Thanks...", "upset", "base", "base", "downR")
                 call cho_main("Good night then.", "normal", "base", "base", "mid")
-                #TODO Cho leaves
-                #TODO Mood Slightly mad
+                call cho_walk(action="leave", speed=1.5)
+                $ cho_mood += 2
 
     elif d_flag_02 == 2:
         # Gryffindor
 
         m "Got it right here!"
         m "She didn't have any Ravenclaw uniforms your size so I took the next best thing."
-        #TODO Clothsound
-        #TODO Gryffindor cloth pile on desk
+
+        call blktone
+        call play_sound("cloth")
+        "> You hand the Gryffindor uniform to Cho."
+        call hide_blktone
+
         call cho_main("Next best--", "annoyed", "base", "base", "mid")
         call cho_main("Is that a Gryffindor uniform?", "open", "wide", "base", "mid") #shocked
         g9 "Yes, I knew you'd like it!"
@@ -1178,9 +1236,10 @@ label cc_pr_manipulate_boys_twins_branch:
                 call cho_main("I mean... it's fine... you've already gone out of your way.", "angry", "wide", "base", "downR")
                 m "You sure? It's not that far--"
                 call cho_main("Yes... just hand me the clothes.", "disgust", "base", "angry", "mid")
-                #TODO Cloth sound
-                #TODO Clothes equipped
-                #TODO Remove cloth pile from desk
+
+                $ cho.equip(cho_outfit_gryf)
+                with fade
+
                 call cho_main("...", "normal", "base", "base", "downR")
                 call cho_main("I guess it's not that bad...", "normal", "base", "base", "down", cheeks="blush")
                 call cho_main("What do you think, do I pull off the red as well as...{w=0.6} Do I pull off the red?", "open", "base", "base", "downR", cheeks="blush")
@@ -1189,42 +1248,47 @@ label cc_pr_manipulate_boys_twins_branch:
                 call cho_main("Oh... no, it's fine... I'm just a bit cold still.", "horny", "base", "base", "down", cheeks="blush") #Embarrassed
                 m "You do look a bit blue..."
                 call cho_main("Wait, I'm still...", "upset", "wide", "angry", "down")
-                #TODO Cho's blue colour fades away
-                call cho_main("...{w} Thank Merlin...", "soft", "base", "base", "down")
+
+                $ cho.set_body_hue(0)
+
+                call cho_main("...{w=0.5} Thank Merlin...", "soft", "base", "base", "down", trans=d9)
                 call cho_main("I'll be on my way then...", "open", "base", "base", "R", cheeks="blush")
-                #TODO Cho Walks to the door
-                call cho_main("...", "base", "base", "base", "down", cheeks="blush")
+                call cho_walk(xpos="door", speed=1.5)
+                call cho_main("...", "base", "base", "base", "down", cheeks="blush", flip=True, xpos="far_right", trans=d3)
                 call cho_main("Good night...", "open", "base", "base", "mid", cheeks="blush")
-                #TODO Cho leaves
-                #TODO Cho Mood stays the same
+                call cho_walk(action="leave")
+
             "\"I'm sure none of the Gryffindors will spot you\"":
                 call cho_main("If that's the case then why wear any clothes at all?", "angry", "base", "angry", "mid")
                 m "That is an option..."
                 call cho_main("No!", "clench", "wide", "base", "mid", cheeks="blush")
                 call cho_main("Give me those...", "mad", "base", "base", "mid")
-                #TODO Cloth sound
-                #TODO Remove cloth pile from desk
-                #TODO skirt equipped
+
+                $ cho.equip(cho_outfit_gryf)
+                with fade
+
                 m "Actually, can I change my mi--"
-                #TODO Clothes equipped
                 call cho_main("No-no, we're good!", "mad", "base", "base", "R")
                 m "But could you at least--"
-                #TODO Cho hurriedly walks to the door
                 call cho_main("Nope, these will have to do...", "angry", "base", "base", "L")
                 call cho_main("Have a good night!", "clench", "base", "base", "L")
-                #TODO Cho exits the room
+                call cho_walk(action="leave", speed=1.5)
+
+                call gen_chibi(flip=True)
                 m "Come ba--"
                 m "Damn...{w=0.4} well at least she isn't angry."
-                #Cho Mood stays the same
-                #TODO reset cho colour
 
     elif d_flag_02 == 3:
         # Hufflepuff
 
         m "Got it right here!"
         m "She didn't have any Ravenclaw uniforms your size so I went wish something mellow."
-        #TODO Clothsound
-        #TODO Hufflepuff cloth pile on desk
+
+        call blktone
+        call play_sound("cloth")
+        "> You hand the Hufflepuff uniform to Cho."
+        call hide_blktone
+
         call cho_main("Mellow?", "annoyed", "base", "base", "mid")
         call cho_main("Wait you don't mean...", "disgust", "base", "base", "down") #Worried
         call cho_main("A Hufflepuff uniform!", "clench", "wide", "base", "mid") #Shocked
@@ -1244,16 +1308,16 @@ label cc_pr_manipulate_boys_twins_branch:
                 call cho_main("...", "disgust", "base", "angry", "down")
                 m "They might already think he threw it on purpose."
                 call cho_main("Whatever, just give me the clothes.", "open", "base", "angry", "mid")
-                #TODO Cloth sound
-                #TODO Remove cloth pile from desk
-                #TODO Clothes equipped
+
+                $ cho.equip(cho_outfit_huff)
+                with fade
+
                 call cho_main("I can't believe you turned this around on me like that... you're the one that made me do those things to begin with...", "soft", "base", "angry", "downR")
                 m "Don't hate the player, hate the game."
                 call cho_main("...", "upset", "base", "angry", "R")
                 call cho_main("I'm leaving.", "upset", "base", "angry", "mid")
-                #TODO Cho leaves
-                #TODO Cho Mood Slightly mad
-                #TODO reset cho colour
+                call cho_walk(action="leave", speed=1.5)
+                $ cho_mood+= 2
 
             "\"That's true, maybe you should just head back naked...\"":
                 call cho_main("What!?", "disgust", "wide", "base", "mid")
@@ -1262,16 +1326,21 @@ label cc_pr_manipulate_boys_twins_branch:
                 call cho_main("But... surely you can't be serious!", "open", "wide", "base", "mid", cheeks="blush")
                 m "I am neither Shirley nor Sirius..."
                 call cho_main("*Grrr*... I can't believe you!", "clench", "base", "angry", "mid")
-                #TODO Cho Walks to the door and turns around
-                call cho_main("...", "upset", "base", "angry", "down")
+
+                call cho_walk(xpos="door", speed=1.5)
+                call cho_chibi(flip=True)
+                call gen_chibi(flip=True)
+
+                call cho_main("...", "upset", "base", "angry", "down", flip=True, xpos="far_right", trans=d3)
                 m "Tick-tock..."
                 call cho_main("Fine!", "clench", "base", "angry", "R")
-                #TODO Cho leaves and slams the door
-                #TODO Cho Mood very angry
+
+                call cho_walk(action="leave")
+                $ renpy.play('sounds/door_down.mp3')
+                with hpunch
+
+                $ cho_mood += 10
                 m "So ungrateful..."
-                #TODO Fades to Black
-                #TODO Remove cloth pile from desk
-                #TODO reset cho colour
 
             "\"I'm sure none of the Hufflepuffs will spot you\"":
                 call cho_main("How can you be so sure about--", "soft", "base", "angry", "downR")
@@ -1281,54 +1350,69 @@ label cc_pr_manipulate_boys_twins_branch:
                 call cho_main("You know this castle inside out, it's very unlikely any Hufflepuff student would be anywhere near the route to the Ravenclaw dorm.", "smile", "base", "base", "R")
                 g9 "Oh yes... that's it!"
                 m "You know me, always got an ace up my sleeve!"
-                #TODO Cho's blue colour fades away
-                call cho_main("Thank you [cho_genie_name]...", "base", "base", "base", "mid")
+
+                $ cho.set_body_hue(0)
+
+                call cho_main("Thank you [cho_genie_name]...", "base", "base", "base", "mid", trans=d9)
                 g9 "Of course!"
-                g9 "And look at that. You're not blue anymore!"
-                g9 "Also your skin is back to normal."
+                g9 "And look at that. You're not feeling blue anymore!"
+                g9 "Also, your skin is back to normal."
                 call cho_main("Very funny...", "base", "base", "base", "down", cheeks="blush") #smile
-                #TODO Cloth sound
-                #TODO Remove cloth pile from desk
                 call cho_main("Let's try this on then...", "open", "base", "base", "mid", cheeks="blush")
-                #TODO Clothes equipped
+
+                $ cho.equip(cho_outfit_huff)
+                with fade
+
                 call cho_main("So, how do I look?", "soft", "base", "base", "down")
                 m "Looking good!"
                 call cho_main("I better be off then...", "smile", "base", "base", "mid")
                 call cho_main("Good night.", "base", "base", "base", "mid")
                 m "Good night, [cho_name]."
-                #TODO Cho leaves
-                #Mood stays the same
+                call cho_walk(action="leave", speed=1.5)
 
     elif d_flag_02 == 4:
         # Smurfette
 
         m "Got it right here."
+
+        call blktone
+        call play_sound("cloth")
+        "> You hand the clothes to Cho."
+        call hide_blktone
+
         call cho_main("Thank you, I knew I could count on--", "base", "base", "base", "mid")
         call cho_main("What is this?", "open", "wide", "base", "down")
-        g9 "I know!"
+        g9 "I know right!"
         g9 "I couldn't believe it when I found it. The perfect outfit for you!"
         call cho_main("You... are you serious? You actually expect me to wear this?", "disgust", "wide", "base", "mid")
         m "Wait, don't tell me you don't like it?"
         call cho_main("...", "disgust", "base", "angry", "down")
         call cho_main("Why couldn't you pick up a normal school uniform like I asked you to?", "clench", "base", "worried", "down")
-
         m "Just put it on already."
         call cho_main("...", "annoyed", "base", "angry", "down")
         m "Or you could just head back naked!"
         call cho_main("Fine!", "clench", "base", "angry", "mid")
-        #TODO Cloth sound
-        #TODO Clothes equipped (NOT HAIR!)
-        m "Smurfabunga!"
+
+        $ cho.equip(cho_outfit_smurfette)
+        $ cho.equip(cho_hair_ponytail1) # Override hair
+        with fade
+
+        g9 "Smurfabunga!"
         call cho_main("...", "upset", "base", "angry", "down", cheeks="blush") #Looking livid #red cheeks
         m "I think some colour has started to return on your cheeks!"
         m "I also got you this wig."
         call cho_main("I am not wearing the wig!", "clench", "wide", "angry", "mid")
         call cho_main("I can't believe you!", "angry", "base", "angry", "down")
-        #TODO Cho leaves and slams the door
-        #TODO Cho Mood Very Angry
-        m "I'll just keep the wig for later..."
-        #TODO reset cho colour
-        #TODO Outfit unlock message (Could outfit be added to store if you didn't pick this option?)
 
-    #TODO reset cho outfit
+        call cho_walk(action="leave", speed=1.5)
+        $ renpy.play('sounds/door_down.mp3')
+        with hpunch
+
+        m "I'll just keep the wig for later..."
+        $ cho_mood += 10
+        call unlock_clothing(">Congratulations! You have unlocked a new outfit!", cho_outfit_smurfette)
+
+    $ cho.equip(cho_outfit_last)
+    $ cho.set_body_hue(0)
+
     return

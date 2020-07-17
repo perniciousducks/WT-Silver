@@ -400,6 +400,7 @@ default cc_party_slut_ITEM = Item(id="cc_party", name="Party Clothing", type="se
 
 default cc_lingerie_lace_ITEM = Item(id="cc_lingerie_lace", name="Lace Lingerie", type="set", items=["earrings","choker","bra","garter-belt","panties","stockings"], image=cho_outfit_lacelingerie, cost=500, wait_time=2, description="> This lingerie set turns even the toughest tomboy\n into a cute and sexy princess!")
 default cc_bikini_micro_ITEM  = Item(id="cc_bikini_micro", name="Micro Bikini", type="set", items=["bra","panties"], image=cho_outfit_bikini, cost=69, wait_time=2, description="> The regular size bikinis are out of stock...")
+default cc_smurfette_ITEM = Item(id="cc_smurfette", name="Smurfette Cosplay Outfit", type="set", items=["top","hat","hairstyle"], image=cho_outfit_smurfette, cost=0, wait_time=1, description="> Unleash your inner blue!")
 
 default cho_outfits_list = [
     cc_outfit_sailor_white_ITEM
@@ -450,6 +451,7 @@ default outfit_linking = {
     cc_bikini_micro_ITEM.id:        "cho_outfit_bikini",
     cc_lingerie_lace_ITEM.id:       "cho_outfit_lacelingerie",
     cc_dress_red_ITEM.id:           "cho_outfit_dress1",
+    cc_smurfette_ITEM.id:           "cho_outfit_smurfette",
     ag_anntakamaki_ITEM.id:         "ast_outfit_ann",
     hg_bikini1.id:                  "her_outfit_bikini1",
     hg_bikini2.id:                  "her_outfit_bikini2",

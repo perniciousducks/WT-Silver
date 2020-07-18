@@ -933,7 +933,9 @@ label cc_pr_manipulate_boys_twins_branch:
         m "I'll go and check with her and see if there's anything she can spare for the moment..."
     else:
         m "Surely this place has some sort of seamstress."
-        call cho_main("I guess...", "soft", "base", "base", "downR")
+        call cho_main("I guess there's Malkin... or Mafkin, whatever her name is...", "soft", "base", "base", "downR")
+        m "Don't look at me, I don't remember all the names of every employee here."
+        call cho_main("Of course you don't...", "normal", "base", "base", "R")
         m "I'll go and check with her, see if there's anything she can spare for the moment..."
 
     call cho_main("Please...", "normal", "base", "base", "down", cheeks="blush")
@@ -1106,12 +1108,15 @@ label cc_pr_manipulate_boys_twins_branch:
 
     if not fire_in_fireplace:
         call cho_main("I've been freezing my butt off and I couldn't figure out how to light the fire.", "open", "base", "angry", "mid")
+        m "Can't you use some spell for that?"
+        call cho_main("Where do you think I keep my wand?", "annoyed", "base", "angry", "mid")
+        m "Well, most people hide it in their night stand or a drawer or something."
     else:
         call cho_main("If it weren't for the fire in the fireplace, I'd freeze my butt off!", "open", "base", "angry", "mid")
+        m "Then what are you complaining about?"
+        call cho_main("I don't like standing around stark naked...", "soft", "base", "angry", "mid")
+        m "{size=-2}Sure could've fooled me...{/size}"
 
-    m "Can't you use some spell for that?"
-    call cho_main("Where do you think I keep my wand?", "annoyed", "base", "angry", "mid")
-    m "Well, most people hide it in their night stand or a drawer or something."
     call cho_main("Where's that outfit you were fetching for me?", "upset", "base", "base", "mid")
 
     if d_flag_02 == 1:
@@ -1202,7 +1207,7 @@ label cc_pr_manipulate_boys_twins_branch:
                 m "You're not blue anymore."
                 call cho_main("Finally...", "mad", "base", "base", "mid")
                 call cho_main("Hopefully everyone's gone to bed by now and I can sneak my way past without anyone noticing.", "upset", "base", "base", "R")
-                call cho_main("So what do I do about my normal uniform?", "open", "base", "base", "down")
+                call cho_main("So, what do I do about my normal uniform?", "open", "base", "base", "down")
                 m "I've sorted it, Mafkin will have a new set delivered to your room in the morning."
                 call cho_main("Oh...", "open", "base", "base", "downR", cheeks="blush")
                 call cho_main("Thanks...", "upset", "base", "base", "downR")
@@ -1290,7 +1295,7 @@ label cc_pr_manipulate_boys_twins_branch:
         call hide_blktone
 
         call cho_main("Mellow?", "annoyed", "base", "base", "mid")
-        call cho_main("Wait you don't mean...", "disgust", "base", "base", "down") #Worried
+        call cho_main("Wait, you don't mean...", "disgust", "base", "base", "down") #Worried
         call cho_main("A Hufflepuff uniform!", "clench", "wide", "base", "mid") #Shocked
         m "Sure is, I remembered how you can't get enough of those badgers!"
         call cho_main("I only dated one of them when the Tri-wizard tournament was happening...", "annoyed", "base", "angry", "mid")
@@ -1344,7 +1349,7 @@ label cc_pr_manipulate_boys_twins_branch:
 
             "\"I'm sure none of the Hufflepuffs will spot you\"":
                 call cho_main("How can you be so sure about--", "soft", "base", "angry", "downR")
-                call cho_main("Actually, you're probably right... you're a genius!", "mad", "wide", "base", "mid")
+                call cho_main("Actually, you're right...{w=0.3} You're a genius!", "mad", "wide", "base", "mid")
                 g4 "I am?"
                 call cho_main("Of course!", "crooked_smile", "base", "base", "mid")
                 call cho_main("You know this castle inside out, it's very unlikely any Hufflepuff student would be anywhere near the route to the Ravenclaw dorm.", "smile", "base", "base", "R")
@@ -1354,9 +1359,8 @@ label cc_pr_manipulate_boys_twins_branch:
                 $ cho.set_body_hue(0)
 
                 call cho_main("Thank you [cho_genie_name]...", "base", "base", "base", "mid", trans=d9)
-                g9 "Of course!"
-                g9 "And look at that. You're not feeling blue anymore!"
-                g9 "Also, your skin is back to normal."
+                g9 "Anything not to have my students \"feel blue\"."
+                g9 "Speaking of... Your skin is back to normal."
                 call cho_main("Very funny...", "base", "base", "base", "down", cheeks="blush") #smile
                 call cho_main("Let's try this on then...", "open", "base", "base", "mid", cheeks="blush")
 

@@ -38,8 +38,13 @@ image cho_hj topless mid = Movie(
     image="images/CG/cho_bj/hj/loops/topless/mid.png",
     start_image="images/CG/cho_bj/hj/loops/topless/mid.png"
     )
-image cho_hj topless mid smile = Movie( #22 max
+image cho_hj topless mid smile = Movie(
     play="images/CG/cho_bj/hj/loops/topless/mid_smile.webm",
+    image="images/CG/cho_bj/hj/loops/topless/mid_smile.png",
+    start_image="images/CG/cho_bj/hj/loops/topless/mid_smile.png"
+    )
+image cho_hj topless mid smile fast = Movie(
+    play="images/CG/cho_bj/hj/loops/topless/mid_smile_fast.webm",
     image="images/CG/cho_bj/hj/loops/topless/mid_smile.png",
     start_image="images/CG/cho_bj/hj/loops/topless/mid_smile.png"
     )
@@ -47,6 +52,12 @@ image cho_hj topless up = Movie(
     play="images/CG/cho_bj/hj/loops/topless/up.webm",
     image="images/CG/cho_bj/hj/loops/topless/up.png",
     start_image="images/CG/cho_bj/hj/loops/topless/up.png"
+    )
+
+image cho_hj topless up blush = Movie(
+    play="images/CG/cho_bj/hj/loops/topless/up_blush.webm",
+    image="images/CG/cho_bj/hj/loops/topless/up_blush.png",
+    start_image="images/CG/cho_bj/hj/loops/topless/up_blush.png"
     )
 
 # Handjob (nonloops)
@@ -153,30 +164,65 @@ image cho_bj topless lick start = Movie(
     loop=False
     )
 
+image cho_bj topless lick exit = Movie(
+    play="images/CG/cho_bj/bj/nonloops/topless/lick_exit.webm",
+    image="images/CG/cho_bj/bj/nonloops/topless/lick_exit_end.png",
+    start_image="images/CG/cho_bj/bj/nonloops/topless/lick_exit.png",
+    loop=False
+    )
+
 image cho_bj topless suck start = Movie(
     play="images/CG/cho_bj/bj/nonloops/topless/suck_start.webm",
-    image="images/CG/cho_bj/bj/nonloops/topless/suck_start.png",
-    start_image="images/CG/cho_bj/bj/nonloops/topless/suck_start_end.png",
+    image="images/CG/cho_bj/bj/nonloops/topless/suck_start_end.png",
+    start_image="images/CG/cho_bj/bj/nonloops/topless/suck_start.png",
+    loop=False
+    )
+
+image cho_bj topless suck closed success = Movie(
+    play="images/CG/cho_bj/bj/nonloops/topless/suck_closed_success.webm",
+    image="images/CG/cho_bj/bj/nonloops/topless/suck_closed_start.png",
+    start_image="images/CG/cho_bj/bj/nonloops/topless/suck_closed_start.png",
+    loop=False
+    )
+
+image cho_bj topless suck closed fail = Movie(
+    play="images/CG/cho_bj/bj/nonloops/topless/suck_closed_fail.webm",
+    image="images/CG/cho_bj/bj/nonloops/topless/suck_closed_fail_end.png",
+    start_image="images/CG/cho_bj/bj/nonloops/topless/suck_closed_fail.png",
+    loop=False
+    )
+
+image cho_bj topless suck closed fail exit = Movie(
+    play="images/CG/cho_bj/bj/nonloops/topless/suck_closed_fail_exit.webm",
+    image="images/CG/cho_bj/bj/nonloops/topless/suck_closed_fail_exit_end.png",
+    start_image="images/CG/cho_bj/bj/nonloops/topless/suck_closed_fail_exit.png",
     loop=False
     )
 
 image cho_bj topless suck closed start = Movie(
     play="images/CG/cho_bj/bj/nonloops/topless/suck_closed_start.webm",
-    image="images/CG/cho_bj/bj/nonloops/topless/suck_closed_start.png",
-    start_image="images/CG/cho_bj/bj/nonloops/topless/suck_closed_start_end.png",
+    image="images/CG/cho_bj/bj/nonloops/topless/suck_closed_start_end.png",
+    start_image="images/CG/cho_bj/bj/nonloops/topless/suck_closed_start.png",
+    loop=False
+    )
+
+image cho_bj topless suck closed exit = Movie(
+    play="images/CG/cho_bj/bj/nonloops/topless/suck_closed_exit.webm",
+    image="images/CG/cho_bj/bj/nonloops/topless/suck_closed_exit_end.png",
+    start_image="images/CG/cho_bj/bj/nonloops/topless/suck_closed_exit.png",
     loop=False
     )
 
 image cho_bj topless suck medium start = Movie(
     play="images/CG/cho_bj/bj/nonloops/topless/suck_medium_start.webm",
-    image="images/CG/cho_bj/bj/nonloops/topless/suck_medium_start.png",
-    start_image="images/CG/cho_bj/bj/nonloops/topless/suck_medium_start_end.png",
+    image="images/CG/cho_bj/bj/nonloops/topless/suck_medium_start_end.png",
+    start_image="images/CG/cho_bj/bj/nonloops/topless/suck_medium_start.png",
     loop=False
     )
 
 image cho_bj topless suck deep start = Movie(
     play="images/CG/cho_bj/bj/nonloops/topless/suck_deep_start.webm",
-    image="images/CG/cho_bj/bj/nonloops/topless/suck_deep_start.png",
-    start_image="images/CG/cho_bj/bj/nonloops/topless/suck_deep_start_end.png",
+    image="images/CG/cho_bj/bj/nonloops/topless/suck_deep_start_end.png",
+    start_image="images/CG/cho_bj/bj/nonloops/topless/suck_deep_start.png",
     loop=False
     )

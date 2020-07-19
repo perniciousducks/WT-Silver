@@ -43,7 +43,7 @@ init python:
         def set_imagepath(self, path):
             self.imagepath = "images/CG/{}/".format(path)
 
-        def set_image(self, img):
+        def set_image(self, img, trans=d1):
             p = max(0, self.get_pause())
 
             self.last_image = self.image
@@ -57,11 +57,11 @@ init python:
             if self.last_type == 0:
                 renpy.pause(p - 0.1)
                 self.redraw(0)
-                renpy.with_statement(d1)
+                renpy.with_statement(trans)
             else:
                 renpy.pause(p - 0.1)
                 self.redraw(0)
-                renpy.with_statement(d1)
+                renpy.with_statement(trans)
 
         def set_overlay(self, overlay):
             self.overlay = overlay

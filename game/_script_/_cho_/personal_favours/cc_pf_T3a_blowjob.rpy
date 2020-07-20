@@ -669,7 +669,7 @@ label cc_pf_blowjob_T3_E2:
 
     call ctc
 
-    cho "(...)"
+    cho "......."
     cho "(I can't believe I'm doing this..)"
     cho "(Handling my coach's hot and hard broomstick, doing what's necessary to win the quidditch cup...)"
 
@@ -707,8 +707,13 @@ label cc_pf_blowjob_T3_E2:
 
     call ctc
 
+    $ camera.set_image("cho_hj topless up blush")
+
     cho "Oh please..."
     cho "Pleasuring you is little to nothing compared to what you've done for me so far..."
+
+    $ camera.set_image("cho_hj topless mid smile")
+
     cho "Giving you a bit of a reward is the least I could do..." #Blush
 
     $ camera.set_image("cho_hj topless mid smile fast")
@@ -792,12 +797,12 @@ label cc_pf_blowjob_T3_E2:
     $ camera.set_image("cho_bj topless suck closed exit")
     pause 3
 
-    cho "*Gah*...{w=0.4}*Cough*,{w=0.2} *Cough*"
+    cho "*Gah*...{w=0.4}{nw}"
 
     $ camera.set_imagepath("cho_bj/hj/")
     $ camera.set_image("topless_cough")
 
-    cho "*ah*...{w=0.4}*ah*...{w=0.4}*ah*..."
+    cho "*Gah*...{fast}*Cough*{w=0.2} *Cough*"
 
     $ camera.set_image("topless_mid")
 
@@ -857,7 +862,7 @@ label cc_pf_blowjob_T3_E2:
 
     $ camera.set_imagepath("cho_bj/bj/")
     $ camera.set_image("cho_bj topless lick start")
-    pause 0.8
+    pause 0.65
     $ camera.set_image("cho_bj topless lick")
 
     #Cho starts licking the tip a couple of times #looking at dick
@@ -878,7 +883,7 @@ label cc_pf_blowjob_T3_E2:
 
     $ camera.set_imagepath("cho_bj/bj/")
     $ camera.set_image("cho_bj topless suck start")
-    pause 3.0
+    pause 2.85
     $ camera.set_image("cho_bj topless suck medium up")
 
     #Blowjob starts again
@@ -912,16 +917,17 @@ label cc_pf_blowjob_T3_E2:
     menu:
         "-Warn her-":
             gen "[cho_name]... I think..."
-            "....."
-            "....."
             gen "There's....{w=0.5} one more thing...{w=0.5} I could teach you today..."
-            #Cho looks up at genie
+
+            $ camera.set_image("cho_bj topless suck medium up")
+            cho ".............?"
+
             gen "Time to make your coach proud... Get ready!"
-            "....."
-            "....."
+
+            call ctc
 
             menu:
-                "\"I'll even give you some house points!\"":
+                "\"I'll even give you some house points!\" (Incomplete)":
                     $ cho_bj_choice = "points"
                     #Cho pulls back
                     cho "House points!?" # angry #Wide eyed #Big text
@@ -1000,34 +1006,77 @@ label cc_pf_blowjob_T3_E2:
 
                 "\"Taste that cum in your mouth!\"":
                     $ cho_bj_choice = "taste"
-                    #Cho stops for a second to consider and then starts going again
-                    gen "That's it [cho_name]!"
-                    cho "..." #blush
-                    "...."
-                    "...."
-                    gen "Here it comes!"
-                    gen "*ARGH!*" #Big text screen shake
-                    cho "!!!" #Cum stage 1  #cho's eye expression wide
-                    "..." #Cum stage 2 #Cum splatters from the side of her mouth #Cheeks bulge slightly
-                    "...." #Cum stage 3 #Cho pulls away and genie cums some on her face
-                    #Cho opens her mouth and lets the cum dribble out
-                    cho "*Ah*...{w=0.4}*Ah*....{w=0.4}*Ah*..." #blush
-                    cho "So...{w=0.4} so much...." #blush
-                    cho "But my skirt...{w=0.4} it's ruined again..."
-                    gen "Nicely done [cho_name], I knew you'd have it in you!"
-                    gen "Now, get on your feet so I can have a look at you..."
-                    cho "..." #Blush
 
-                    # TODO: hide CG screen
-                    hide screen placeholder
+                    cho "(T-taste?! But... We never discussed this!)"
+
+                    $ camera.set_image("cho_bj topless suck medium up")
+                    cho "*mhmmmm mmhmmmm*!"
+
+                    #Cho stops for a second to consider and then starts going again
+                    call ctc
+
+                    gen "*ah* That's it [cho_name]!"
+
+                    $ camera.set_image("cho_bj topless suck closed")
+
+                    cho "(Oh god...)" #blush
+                    gen "Here it comes!"
+
+                    $ camera.set_image("cho_bj topless suck medium")
+
+                    cho "(No, wait!)"
+                    cho "*mmmmmhmmm*!!!"
+                    gen "{size=+4}*ARGH!*{/size}"
+
+                    with vpunch
+                    $ camera.set_image("cho_bj topless cum mouth")
+
+                    cho "!!!{w=2.0}{nw}"
+
+                    $ camera.set_imagepath("cho_bj/kneel/")
+                    $ camera.set_image("topless_mid_cum_mouth")
+
+                    call ctc
+
+                    $ camera.set_image("topless_mid_surprised_cum_mouth")
+
+                    #Cho opens her mouth and lets the cum dribble out
+                    cho "*kho*...{w=0.4} *kho mush*...."
+                    cho "(It tastes weird, but it's not that bad...)"
+                    gen "Nicely done [cho_name], I knew you'd have it in you!"
+
+                    # Make her lisp the name, if the name is unsupported fallback and replace 's' occurences with 'sh'
+                    $ _replacement_names = {
+                        "master": "mashter",
+                        "daddy": "dhadhy",
+                        "old man": "oldh mhan",
+                        "professor": "phrofeshor",
+                        "coach": "choach"
+                        }
+
+                    $ _name = cho_genie_name.replace(cho_genie_name, _replacement_names.get(cho_genie_name, cho_genie_name.replace("s", "sh")))
+
+                    $ camera.set_image("topless_up_cum_mouth")
+
+                    cho "*phank you, [_name]*"
+                    gen "Didn't your parents teach you to not speak with your mouth full?"
+
+                    $ camera.set_image("topless_away_blush_cum_mouth")
+
+                    cho "............"
+                    gen "Now, get on your feet so I can have a look at you..."
+
+                    $ cho.strip("top", "bra", "robe")
+
+                    hide screen animatedCG
                     with fade
 
                     # TODO: Posing, cum layers
-                    #Cho has no shirt, cum on her skirt and down her tits
+                    #Cho has no shirt, cum on her face and down her tits
 
                     m "Although can't say the same for--"
-                    cho "My clothes are all sticky..."
-                    m "If you don't want your clothes dirty you'd better swallow next time..."
+                    cho "Did you have to cum this much..."
+                    m "If you don't want my cum on your body, you'd better swallow next time..."
                     cho "Swallow [cho_genie_name]'s..." #Blush
                     cho "I don't know..." #Blush
                     m "In any case, you've excelled today [cho_name]."
@@ -1035,11 +1084,10 @@ label cc_pf_blowjob_T3_E2:
                     cho "It was exhausting..."
                     if hg_kiss.trigger:
                         cho "I don't know how Granger can keep doing this for this long."
-                        g9 "(Heh, you have no idea girl...)"
+                        g9 "(*Heh*, you have no idea girl...)"
 
                     m "Of course..."
                     m "Off you go."
-                    cho "Thank you [cho_genie_name]..."
 
                     if daytime:
                         cho "Good day..."
@@ -1060,7 +1108,7 @@ label cc_pf_blowjob_T3_E2:
                     $ renpy.sound.play("sounds/cloth_sound2.mp3")
 
                     cho "..." #Cho puts on top
-                    cho "Thank you [cho_genie_name]..."
+                    cho "Thank you, [cho_genie_name]..."
 
                     call cho_walk(action="leave")
 
@@ -1068,33 +1116,68 @@ label cc_pf_blowjob_T3_E2:
                     #Cho leaves
                     #End Scene #Marks at completed
 
-
                 "\"Swallow that cum!\"":
                     $ cho_bj_choice = "swallow"
+
+                    $ camera.set_image("cho_bj topless suck closed exit")
+                    pause 3
+                    $ camera.set_imagepath("cho_bj/hj/")
+                    $ camera.set_image("topless_up_cringe")
+
                     #Cho's eyes goes wide and pulls out
                     cho "But [cho_genie_name]--" #Big text
-                    gen "[cho_name]!" #Big text #Screenshake?
-                    cho "!!!" #wide eyed
-                    #Cho quickly goes back in as genie releases in her mouth
-                    "....." #Cum stage 1 #cho's eye expression wide
-                    gen "That's it [cho_name], take it all!"
-                    "....."#Cum stage 2 #cum starts coming out on side of mouth
-                    cho "*Mmmmf*"
-                    "....." #Cum stage 3 #More cum coming out and some out of nose, she has some around her cheeks and a bit on her breasts
-                    #Genie cock now out of her mouth and slightly dripping cho's looks a bit worried as she's standing there with cum still in her mouth.
-                    #Cho then swallows what's still in her mouth
-                    cho "*ah*...{w=0.4}*ah*...{w=0.4}*ah*...!"
-                    cho "I... I just swallowed my coach's cum..."
-                    gen "Nicely done [cho_name]."
+                    gen "*argh*! Get back there at once or forget about your stupid quidditch cup!"
 
-                    # TODO: hide CG screen
-                    hide screen placeholder
+                    $ camera.set_image("topless_away_pout")
+
+                    cho "Y-yes sir!"
+                    $ camera.set_image("topless_mid_angry")
+                    cho "(I'll show this stupid cock who's the boss here!)"
+
+                    $ camera.set_imagepath("cho_bj/bj/")
+                    $ camera.set_image("cho_bj topless suck deep start")
+                    pause 2.0
+                    $ camera.set_image("cho_bj topless suck deep")
+
+                    gen "Yeeees, you fucking slut!"
+                    cho "*Mmmmhh* {heart}{heart}"
+
+                    call ctc
+
+                    gen "Get ready to swallow--"
+
+                    $ camera.set_image("cho_bj topless suck medium")
+
+                    cho "*mhmhm*?!-- (Now?!--)"
+
+                    gen "{size=+4}*ARGH*!{/size}"
+
+                    with vpunch
+                    $ camera.set_image("cho_bj topless cum swallow")
+                    pause 2
+                    $ camera.set_imagepath("cho_bj/kneel/")
+                    $ camera.set_image("topless_mid_cum_swallow")
+
+                    call ctc
+
+                    $ camera.set_image("topless_mid_surprised_cum_swallow")
+
+                    cho "I... I just swallowed my coach's cum..."
+                    gen "Well done, [cho_name], you sucked me dry."
+
+                    $ camera.set_image("topless_away_cum_swallow")
+
+                    cho "...Thanks...."
+
+                    $ cho.strip("top", "bra", "robe")
+
+                    hide screen animatedCG
                     with fade
 
                     # TODO: Posing, cum layers
                     #Cho still has some cum on her cheeks and tits but not a lot
 
-                    m "Now this is the kind of initiative I'm talking about!"
+                    g9 "Now this is the kind of initiative I'm talking about!"
                     cho "..." #blank stare
                     m "[cho_name]?"
                     cho "Yes...{w=0.5} sorry...{w=0.5} thank you [cho_genie_name]."
@@ -1130,7 +1213,7 @@ label cc_pf_blowjob_T3_E2:
                     #Cho leaves
                     #End Scene #Marks at completed
 
-        "-Just cum down her throat-":
+        "-Just cum down her throat- (Incomplete)":
             $ cho_bj_choice = "throat"
             gen "[cho_name]..."
             gen "I was wrong...{w=0.4} earlier...{w=0.4} there's one more thing for you to learn today..." #Genie puts hand on cho's head

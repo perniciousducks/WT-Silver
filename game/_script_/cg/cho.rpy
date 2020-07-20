@@ -226,3 +226,17 @@ image cho_bj topless suck deep start = Movie(
     start_image="images/CG/cho_bj/bj/nonloops/topless/suck_deep_start.png",
     loop=False
     )
+
+image cho_bj topless cum mouth = Movie(
+    play="images/CG/cho_bj/bj/nonloops/topless/cum_mouth.webm",
+    image="images/CG/cho_bj/bj/nonloops/topless/cum_mouth_end.png",
+    start_image="images/CG/cho_bj/bj/nonloops/topless/cum_mouth.png",
+    loop=False
+    )
+
+image cho_bj topless cum swallow = Movie(
+    play="images/CG/cho_bj/bj/nonloops/topless/cum_swallow.webm",
+    image="images/CG/cho_bj/bj/nonloops/topless/cum_swallow_end.png",
+    start_image="images/CG/cho_bj/bj/nonloops/topless/cum_swallow.png",
+    loop=False
+    )

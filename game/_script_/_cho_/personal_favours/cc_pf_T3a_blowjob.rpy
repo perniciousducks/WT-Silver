@@ -30,7 +30,7 @@ label cc_pf_blowjob:
 
     jump end_cho_event
 
-label cc_pf_blowjob_T3_intro_E1:
+label cc_pf_blowjob_T3_intro_E1: #TODO Outside CG event Posing
 
     if cho_bj_choice == None:
         m "[cho_name], ready to reward your coach for a job well done?"
@@ -122,7 +122,7 @@ label cc_pf_blowjob_T3_intro_E1:
         gen "What? Don't tell me this is the first time you've done this..."
         $ camera.set_image("away_blush")
         cho "O-... of course I've done it before!"
-        gen "Then get going, move those muscles!"
+        gen "Then get that arm moving, use those muscles!"
         $ camera.set_image("up")
         cho "..." # annoyed
 
@@ -130,7 +130,7 @@ label cc_pf_blowjob_T3_intro_E1:
 
         call ctc
 
-        gen "That's it... stroke that cock you little Ravenclaw slut..."
+        gen "Yes, that's it...{w=0.4} stroke that cock you little Ravenclaw slut..."
 
         $ camera.set_image("up_annoyed")
 
@@ -140,7 +140,7 @@ label cc_pf_blowjob_T3_intro_E1:
 
         $ camera.set_image("mid_annoyed")
 
-        cho "..." #annoyed
+        cho "*Hmmph*..." #annoyed
 
         $ camera.set_image("away_blush")
 
@@ -168,7 +168,7 @@ label cc_pf_blowjob_T3_intro_E1:
         cho "Already?" #Wide eyed
         $ camera.set_image("up_worried")
         cho "Can't I just keep jerking you off?"
-        gen "You agreed to a blowjob did you not?."
+        gen "You agreed to a blowjob did you not?"
         $ camera.set_image("mid_worried")
         cho "I...{w=0.4} well that was before you showed me your..." #Looks back down
         $ camera.set_image("away_blush")
@@ -196,12 +196,12 @@ label cc_pf_blowjob_T3_intro_E1:
         $ camera.set(pos=(150, 400), t=2.0, pause=True)
 
         $ camera.set(zoom=0.39, pos=(0, 0), t=3.0)
-        cho "Okay, then... I'm ready."
+        cho "Okay... I'm ready."
         $ camera.set_image("mid_surprised_blush")
         cho "..." #blush
         gen "Go on then, I don't have all day..."
         $ camera.set_image("mid_blush")
-        cho "..." #Pout
+        cho "R-Right..." #Pout
         $ camera.set_imagepath("cho_bj/hj/")
         $ camera.set_image("mid_annoyed")
         cho "..." #annoyed
@@ -214,22 +214,20 @@ label cc_pf_blowjob_T3_intro_E1:
         gen "That's it... you keep stroking, slut..."
 
         $ camera.set_image("cho_hj mid annoyed")
-        cho "..." #Annoyed
+        cho "*Hmph*..." #Annoyed
 
         call ctc
 
         gen "Good..."
-        gen "You're doing way better than last time... looks like you had some time to think things over..."
-
-        $ camera.set_image("cho_hj up blush")
-
-        cho "..." #looks up
+        gen "You're doing way better than last time... Perhaps you've had some time to think things over?"
 
         $ camera.set_image("cho_hj mid")
 
         call ctc
 
-        gen "Now let's put that mouth to good use..."
+        cho "..."
+
+        gen "I take that as a yes... So, let's put that mouth to good use then, shall we?"
 
         $ camera.set_imagepath("cho_bj/kneel/")
         $ camera.set_image("up_shock")
@@ -274,13 +272,15 @@ label cc_pf_blowjob_1:
             gen "Good... now put your lips around the tip..."
 
             $ camera.set_image("away_blush")
-            cho "Oh-okay...{w=0.4} Here I go..."
+            cho "Oh-okay..."
+            cho "(You can do this... push your boundaries!)"
+            cho "He-here I go..."
 
             #Cho opens her mouth and moves in towards genies cock #Genie cock twitches
             #She moves in closer and closes her eyes with her mouth wide open and just as she barely touches it she jumps back
             $ camera.set_image("cho_bj lick fail")
             pause 1 # Pauses at last frame.
-            cho "No, I can't!"
+            cho "No, I can't... I can't do it!"
 
             $ camera.set_imagepath("cho_bj/kneel/")
             $ camera.set_image("mid_annoyed")
@@ -290,7 +290,7 @@ label cc_pf_blowjob_1:
                 gen "[cho_name]... You're here to push your limits, stop with the whining!"
                 $ camera.set_image("up_worried")
                 cho "I- I'm sorry [cho_genie_name]..."
-                cho "I... just can't do this, it all happens too fast!"
+                cho "I... I can't...{w=0.4} It's all happening too fast!"
                 gen "[cho_name]..."
                 $ camera.set_image("mid_worried")
                 cho "I'm sorry!" #blush, looking away
@@ -316,10 +316,11 @@ label cc_pf_blowjob_1:
             #Cuts to Office and Cho walks quickly out of the room
             call cho_walk(action="leave")
 
-            m "(Damn...{w=0.4} I'm that type of coach that keep pushing their pupils too hard...)"
-            m "(Speaking of, I should jerk off or something, it kinda hurts...)"
+            m "(Damn...{w=0.4} Am I that type of coach that keep pushing their pupils too hard?)"
+            m "(Speaking of hard, this thing isn't going to go away by itself...)"
+            m "(Well... if there's anything I got good at in that lamp...)"
             if cho_bj_choice == "failed":
-                m "(Again... Perhaps I should ease up on her training a bit.)"
+                m "(Perhaps I should go a bit more easy on her next time...)"
 
             $ cc_pf_blowjob.fail()
             $ cho_bj_choice = "failed"
@@ -344,29 +345,29 @@ label cc_pf_blowjob_1:
                 $ camera.set_imagepath("cho_bj/kneel/")
                 $ camera.set_image("up")
                 cho "Oh... Okay, I can do that..."
-                gen "But you better put some work into it!"
+                gen "But you better put some work into it, show me that stamina of yours!" #Should I use a different word than stamina? Works well I think.
                 $ camera.set_image("mid")
 
             cho "Of course!"
             $ camera.set_imagepath("cho_bj/hj/")
             $ camera.set_image("mid_blush")
-            cho "..." #Blushing
+            cho "(I'll show you stamina!)" #Blushing
 
             $ camera.set_image("cho_hj mid")
 
             call ctc
 
-            gen "That's it, you're finally getting the hang of this..."
-            gen "Who knew quidditch players were so good at handjobs..."
+            gen "*Ah*...{w=0.3} That's it... you're finally getting the hang of this."
+            gen "You should've told me Quidditch players were this good at handjobs sooner."
 
             $ camera.set_image("cho_hj up blush")
-            cho "...." #Looks up at genie #Blushes
+            cho "..." #Looks up at genie #Blushes
 
             call ctc
 
-            gen "Such a good slut... stroking your coach's cock..."
+            gen "And... look at you... stroking your coach's cock..."
 
-            $ camera.set_image("cho_hj mid")
+            $ camera.set_image("cho_hj mid blush")
 
             cho "..."#Looks back down at cock #still stroking
 
@@ -374,9 +375,9 @@ label cc_pf_blowjob_1:
 
             gen "Willing to do anything to win that cup..."
 
-            $ camera.set_image("cho_hj mid blush")
+            $ camera.set_image("cho_hj mid")
 
-            gen "Ready to receive her coach's cum."
+            gen "Begging to receive her coach's cum."
             gen "Now, put your mouth on it [cho_name]..."
             $ camera.set_image("up_wide")
             #Cho stops handjob
@@ -391,7 +392,7 @@ label cc_pf_blowjob_1:
             "...."
             gen "See? That wasn't bad, was it?"
             $ camera.set_image("up_annoyed")
-            cho "..." # Grim look at Genie
+            cho "I--..." # Grim look at Genie
             $ camera.set_image("mid")
             cho "..." #Looks back on cock
             gen "Go on..."
@@ -421,11 +422,11 @@ label cc_pf_blowjob_1:
 
             call ctc
 
-            gen "That's it, grip it firmly just like that..."
+            gen "*Hmmm*... That's it, grip it firmly just like that..."
 
             call ctc
 
-            gen "Not bad... Not bad at all..."
+            gen "*Ah*...{w=0.4} Not bad... Not bad at all..."
             gen "I think someone deserves a reward..."
             gen "Now... a little bit faster [cho_name]..."
 
@@ -469,11 +470,11 @@ label cc_pf_blowjob_1:
                             $ camera.set_image("cum_eye")
                             cho "..." #Opens eyes
                             $ camera.set_image("cum_eye_blush")
-                            cho "So... much..." #blush
+                            cho "So...{w=0.4} much..." #blush
                             $ camera.set_imagepath("cho_bj/kneel/")
                             $ camera.set_image("cum_eye")
                             #Cho takes hand off penis and puts to her side
-                            cho "It's so sticky..." #blush
+                            cho "And so sticky..." #blush
                             "{cps=3}.....{/cps}{nw}"
                             #Adds cum on cho's Doll face when CG ends
 
@@ -539,9 +540,9 @@ label cc_pf_blowjob_1:
     # TODO: Posing, cum layers
 
     if warned_her:
-        m "You've got a little something right there..."
+        m "Well done [cho_name], you've started pushing those limits on your own."
+        m "Also, You've got a little something right there..."
         cho "Very funny [cho_genie_name]..."
-        m "You finally got it, you've started pushing those limits on your own."
         m "Your confidence is showing itself more and more every day."
         cho "I... {w=0.5} You deserved it [cho_genie_name]...{w=0.5} for helping me this far..."
         cho "For teaching me... all this stuff...." #Blush
@@ -569,23 +570,23 @@ label cc_pf_blowjob_1:
         cho "So I am your first?" # blush
         m "In one way or the other."
         cho "What's that supposed to mean?!" # angry
-        cho "Whatever.." # pout
+        cho "Whatever..." # pout
 
-    cho "Are we done?" #Blush
+    cho "Are you...{w=0.4} Are we done?" #Blush
     m "Yes, for now..."
 
     if daytime:
-        cho "Good... I better head back to class then."
+        cho "Alright... In that case I better head back to class."
     else:
-        cho "Good... I better head off to bed then."
-    m "Until next time..."
+        cho "Alright... I'll head off to bed then."
+    m "Until next time."
 
     call cho_walk(action="leave")
 
     m "[cho_name]!"
     m "......"
     m "(Probably should've asked her to clean herself first...)"
-    m "(Oh well, what's done is done.)"
+    m "(Oh well, she'll find out one way or another.)"
 
     jump end_cc_pf_blowjob
 
@@ -656,7 +657,7 @@ label cc_pf_blowjob_T3_E2:
     #Takes off shirt
 
     call play_sound("cloth")
-    $ camera.set_image("topless_mid", trans=fade)
+    $ camera.set_image("topless_mid", trans=fade) #TODO Loafy, I think this fade transition could take just a little bit longer
 
     gen "Excellent... Now continue stroking, [cho_name]."
 
@@ -670,8 +671,10 @@ label cc_pf_blowjob_T3_E2:
     call ctc
 
     cho "......."
-    cho "(I can't believe I'm doing this..)"
-    cho "(Handling my coach's hot and hard broomstick, doing what's necessary to win the quidditch cup...)"
+    cho "(I'm actually doing this...)"
+    cho "(I'm stroking my coach's hard cock, just so I can win the quidditch cup...)"
+    cho "(But...{w=0.4} If this is what it takes...{w=0.3} Then so be it!)"
+    cho "(It won't be long until I have that cup in my hands...)"
 
     $ camera.set_image("cho_hj topless mid smile")
 
@@ -738,7 +741,7 @@ label cc_pf_blowjob_T3_E2:
 
     $ camera.set_image("topless_mid")
 
-    gen "I want you to start by putting those lips around the tip, then slowly work your mouth further down the shaft..."
+    gen "Start by putting those lips around the tip, then slowly work your mouth further down the shaft..."
 
     $ camera.set_image("topless_up")
 
@@ -777,7 +780,7 @@ label cc_pf_blowjob_T3_E2:
     $ camera.set_image("topless_up_blush")
 
     #Cho opens her eyes and looks at Genies penis."
-    cho "I'll do better this time, I promise." #small text
+    cho "I'll keep them open..." #small text
 
     $ camera.set_image("cho_bj topless suck start")
     pause 0.8
@@ -810,22 +813,25 @@ label cc_pf_blowjob_T3_E2:
 
     $ camera.set_image("topless_up")
 
-    cho "How...{w=0.4} how did I do this time, [cho_genie_name]?" #Cho looks up at genie
-    gen "Excellent!... Although... maybe a bit too far. You barely held it there for a second..."
+    cho "Was...{w=0.4} Was that better, [cho_genie_name]?" #Cho looks up at genie
+    gen "Excellent!{w=0.3} Although... maybe a bit too far... You barely held it there for a second."
 
     $ camera.set_image("topless_away_blush")
 
-    cho "Oh... I suspected that..."
+    cho "Oh... Yes, I thought it might've been..."
     gen "(This girl is like a on and off switch...)"
     gen "In any case... I think you got it..."
-    gen "Time to get to head bobbing [cho_name]."
+    gen "So... Let's get that head bobbing, [cho_name]!"
 
-    $ camera.set_image("topless_mid")
+    $ camera.set_image("topless_away_pout")
 
     #Cho looks back down at dick
     cho "Are...{w=0.4} are you going to cum on me again [cho_genie_name]?"
     gen "I wouldn't worry about that yet... just focus on your task..."
-    cho "... {w=0.5}Okay then..."
+
+    $ camera.set_image("topless_mid")
+
+    cho "... {w=0.5}Okay then..." #TODO Loafy is there a different mouth we could use here or slight alteration to previous expression?
     #Cho starts jerking genie off again
 
     $ camera.set_image("cho_hj topless mid")
@@ -835,7 +841,7 @@ label cc_pf_blowjob_T3_E2:
 
     $ camera.set_imagepath("cho_bj/bj/")
     $ camera.set_image("cho_bj topless suck start")
-    cho "*oomph*{w=1.0}{nw}"
+    cho "*mmphh*{w=1.0}{nw}"
     $ camera.set_image("cho_bj topless suck")
 
     #Cho moves in and starts sucking genie off properly (Not as deep as she attempted)
@@ -858,7 +864,7 @@ label cc_pf_blowjob_T3_E2:
     call ctc
 
     cho "Am I doing good [cho_genie_name]?"
-    gen "It feels great--"
+    gen "Yes, It feels--"
 
     $ camera.set_imagepath("cho_bj/bj/")
     $ camera.set_image("cho_bj topless lick start")
@@ -870,7 +876,8 @@ label cc_pf_blowjob_T3_E2:
 
     call ctc
 
-    cho "(*huh*... it's just like quidditch, all I have to do is find a good tactic against him. {heart})" #looks up at genie still licking
+    cho "(*huh*... This is just like quidditch, all I have to do is find a good tactic against him. {heart})" #looks up at genie still licking
+    cho "(Guess he's not immune to his own tricks... {heart})"
 
     $ camera.set_image("cho_bj topless lick exit")
     pause 0.9
@@ -878,8 +885,9 @@ label cc_pf_blowjob_T3_E2:
     $ camera.set_image("topless_up_blush")
 
     #Cho pulls back and smiles
-    cho "Do you like your student sucking your cock?"
-    cho "Making me choke on that {w=0.3}big{w=0.3}, fat{w=0.3}, cock!{w=0.3} *hmm*?"
+    cho "I can't believe you're making your student suck your cock..."
+    cho "Surely that's not something a coach should be doing..."
+    m "Well, I--"
 
     $ camera.set_imagepath("cho_bj/bj/")
     $ camera.set_image("cho_bj topless suck start")
@@ -898,7 +906,7 @@ label cc_pf_blowjob_T3_E2:
     #Faster Blowjob
     cho "{heart}{heart}{heart}"
 
-    gen "[cho_name] if you do that-- oh fuck--"
+    gen "[cho_name], if you do that-- oh fuck--" #TODO Loafy, maybe this line is too much of a warning.
 
     #
     #
@@ -1042,7 +1050,10 @@ label cc_pf_blowjob_T3_E2:
 
                     #Cho opens her mouth and lets the cum dribble out
                     cho "*kho*...{w=0.4} *kho mush*...."
-                    cho "(It tastes weird, but it's not that bad...)"
+
+                    $ camera.set_image("topless_away_blush_cum_mouth")
+
+                    cho "(Although...{w=0.4} it doesn't taste as bad as I--)"
                     gen "Nicely done [cho_name], I knew you'd have it in you!"
 
                     # Make her lisp the name, if the name is unsupported fallback and replace 's' occurences with 'sh'
@@ -1074,25 +1085,34 @@ label cc_pf_blowjob_T3_E2:
                     # TODO: Posing, cum layers
                     #Cho has no shirt, cum on her face and down her tits
 
-                    m "Although can't say the same for--"
+                    m "Well, will look at that... You look great with a fresh coat of paint!"
                     cho "Did you have to cum this much..."
-                    m "If you don't want my cum on your body, you'd better swallow next time..."
+                    m "I can't exactly control it..."
+                    m "If you don't swallow, you'll have to deal with the mess."
                     cho "Swallow [cho_genie_name]'s..." #Blush
                     cho "I don't know..." #Blush
                     m "In any case, you've excelled today [cho_name]."
-                    cho "Thank...{w=0.4} Thank you...{w=0.4} I think I need to lie down for a bit..."
-                    cho "It was exhausting..."
+                    cho "I think I need to lie down for a bit..."
+                    cho "This was exhausting...{w=0.4} Even for me."
                     if hg_kiss.trigger:
-                        cho "I don't know how Granger can keep doing this for this long."
-                        g9 "(*Heh*, you have no idea girl...)"
-
-                    m "Of course..."
-                    m "Off you go."
+                        cho "I don't know how Granger could do this for so long."
+                        g9 "(*Heh*, practice makes perfect...)"
 
                     if daytime:
-                        cho "Good day..."
+                        m "No time for a lie down I'm afraid..."
+                        cho "What, don't tell me you're already--"
+                        m "You've got class to get to."
+                        cho "Oh...{w=0.4} Right..."
+                        cho "Good day then..."
                     else:
-                        cho "Good night..."
+                        m "A lie down you say..."
+                        cho "Don't you get any ideas..."
+                        m "I most certainly was not!"
+                        cho "Yeah right."
+                        m "{size=-4}Pervert...{/size}"
+                        g9 "Well, you've earnt a lie down I suppose..."
+                        cho "Good night then..."
+                        m "Good night, [cho_name]."
 
                     call cho_walk("mid", "base")
                     m "[cho_name]!"
@@ -1130,9 +1150,9 @@ label cc_pf_blowjob_T3_E2:
 
                     $ camera.set_image("topless_away_pout")
 
-                    cho "Y-yes sir!"
+                    cho "Y-yes, sir!"
                     $ camera.set_image("topless_mid_angry")
-                    cho "(I'll show this stupid cock who's the boss here!)"
+                    cho "(I'll show this stupid cock... You're not the boss of me!)"
 
                     $ camera.set_imagepath("cho_bj/bj/")
                     $ camera.set_image("cho_bj topless suck deep start")
@@ -1144,7 +1164,7 @@ label cc_pf_blowjob_T3_E2:
 
                     call ctc
 
-                    gen "Get ready to swallow--"
+                    gen "Get ready, I'm almost..."
 
                     $ camera.set_image("cho_bj topless suck medium")
 
@@ -1162,12 +1182,13 @@ label cc_pf_blowjob_T3_E2:
 
                     $ camera.set_image("topless_mid_surprised_cum_swallow")
 
-                    cho "I... I just swallowed my coach's cum..."
+                    cho "I...{w=0.4} I just swallowed..."
+                    cho "My coach's cum..."
                     gen "Well done, [cho_name], you sucked me dry."
 
                     $ camera.set_image("topless_away_cum_swallow")
 
-                    cho "...Thanks...."
+                    cho "I...{w=0.4} Thanks... I guess."
 
                     $ cho.strip("top", "bra", "robe")
 
@@ -1208,8 +1229,8 @@ label cc_pf_blowjob_T3_E2:
 
                     call cho_walk(action="leave")
 
-                    m "(Heh. She's silly, but adorable.)"
-                    m "(Not the worst of the combinations.)"
+                    m "(Heh. She's silly... but adorable.)"
+                    m "(Not the worst of combinations.)"
                     #Cho leaves
                     #End Scene #Marks at completed
 

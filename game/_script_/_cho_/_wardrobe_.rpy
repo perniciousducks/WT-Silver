@@ -215,10 +215,10 @@ default cho_makeup4_lipstick = DollLipstick("cho", ("makeup", "slot5"), "makeup4
 
 default cho_top_school1_slyt = DollCloth("cho", ("tops", "shirts"), "top", "top_school_1", [[183, 183, 184, 255], [109, 105, 121, 255], [58, 115, 75, 255], [205, 205, 206, 255]])
 default cho_top_school1_gryf = DollCloth("cho", ("tops", "shirts"), "top", "top_school_1", [[183, 183, 184, 255], [109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
-default cho_top_school1_huff = DollCloth("cho", ("tops", "shirts"), "top", "top_school_1", [[183, 183, 184, 255], [109, 105, 121, 255], [251, 198, 10, 255], [28, 28, 28, 255]])
+default cho_top_school1_huff = DollCloth("cho", ("tops", "shirts"), "top", "top_school_1", [[183, 183, 184, 255], [109, 105, 121, 255], [251, 198, 10, 255], [51, 43, 54, 255]])
 default cho_stockings_slyt = DollCloth("cho", ("legwear", "socks"), "stockings", "house", [[58, 115, 75, 255], [205, 205, 206, 255]])
 default cho_stockings_gryf = DollCloth("cho", ("legwear", "socks"), "stockings", "house", [[219, 165, 13, 255], [146, 63, 30, 255]])
-default cho_stockings_huff = DollCloth("cho", ("legwear", "socks"), "stockings", "house", [[251, 198, 10, 255], [28, 28, 28, 255]])
+default cho_stockings_huff = DollCloth("cho", ("legwear", "socks"), "stockings", "house", [[251, 198, 10, 255], [51, 43, 54, 255]])
 
 default cho_outfit_slyt = DollOutfit([cho_hair_ponytail1, cho_top_school1_slyt, cho_bottom_school1, cho_bra_basic1, cho_panties_basic1, cho_stockings_slyt])
 default cho_outfit_gryf = DollOutfit([cho_hair_ponytail1, cho_top_school1_gryf, cho_bottom_school1, cho_bra_basic1, cho_panties_basic1, cho_stockings_gryf])

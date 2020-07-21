@@ -460,41 +460,65 @@ label cc_pf_blowjob_1:
                         "-Cum on her face-":
                             cho "..." #Eyes and mouth closed
                             gen "*ARGH*!"
-                            $ renpy.play("sounds/burp.mp3") # lol
+
+                            with vpunch
                             $ camera.set_image("cho_hj cum face")
                             pause 1.42
                             $ camera.set_image("cum") # Still image
+
                             gen "*Ah*..."
-                            cho "Is...{w=0.5} are you done?"
+                            cho "Are...{w=0.5} are you done?"
                             gen "*Ah*...{w=0.4} yes, you can open your eyes now..."
+
                             $ camera.set_image("cum_eye")
+
                             cho "..." #Opens eyes
+
                             $ camera.set_image("cum_eye_blush")
+
                             cho "So...{w=0.4} much..." #blush
+
                             $ camera.set_imagepath("cho_bj/kneel/")
                             $ camera.set_image("cum_eye")
+
                             #Cho takes hand off penis and puts to her side
                             cho "And so sticky..." #blush
                             "{cps=3}.....{/cps}{nw}"
                             #Adds cum on cho's Doll face when CG ends
 
-                        "-Cum on her tits (No animation yet)-":
-                            cho "..." #Eyes and mouth closed
+                        "-Cum on her tits-":
+                            gen "Get back a little, NOW!"
+
+                            $ camera.set_image("away")
+
                             gen "*ARGH!*"
-                            "....." #Cum stage 1
-                            "....."#Cum stage 2
-                            "....." #Cum stage 3
+
+                            with vpunch
+                            $ camera.set_image("cho_hj cum tits")
+
+                            pause 2
+                            $ camera.set_image("cum_tits")
                             gen "*Ah*..."
-                            cho "..." # Wide eyed
+
+                            $ camera.set_image("look_cum_tits")
+
                             cho "You..." #Looks down on breasts
-                            #Cho takes hand off penis and puts to her side
                             cho "My breasts..."
+
+                            $ camera.set_image("look_blush_cum_tits")
+
                             cho "So much..." #blush
-                            #Adds cum on cho's Doll tits when CG ends
+
                             gen "That...{w=0.4} was...{w=0.4} amazing!"
                             gen "That is some talent you have there [cho_name]..."
-                            cho "..." #blush #looking at penis
+
+                            $ camera.set_image("dreamy_cum_tits")
+
+                            cho "...{heart}{heart}" #blush #looking at penis
                             gen "[cho_name]?"
+
+                            $ camera.set_image("dreamy_up_cum_tits")
+
                             cho "Oh... Thank you [cho_genie_name]." #looks up at genie
                             gen "Now, get on your feet and let me have a proper look at you..."
                             #Cuts back to office screen  (sound of cloth etc as genie puts dick away and Cho moves)
@@ -657,7 +681,7 @@ label cc_pf_blowjob_T3_E2:
     #Takes off shirt
 
     call play_sound("cloth")
-    $ camera.set_image("topless_mid", trans=fade) #TODO Loafy, I think this fade transition could take just a little bit longer
+    $ camera.set_image("topless_mid", trans=Fade(0.5, 2.0, 0.5))
 
     gen "Excellent... Now continue stroking, [cho_name]."
 
@@ -831,7 +855,7 @@ label cc_pf_blowjob_T3_E2:
 
     $ camera.set_image("topless_mid")
 
-    cho "... {w=0.5}Okay then..." #TODO Loafy is there a different mouth we could use here or slight alteration to previous expression?
+    cho "... {w=0.5}Okay then..."
     #Cho starts jerking genie off again
 
     $ camera.set_image("cho_hj topless mid")
@@ -841,7 +865,7 @@ label cc_pf_blowjob_T3_E2:
 
     $ camera.set_imagepath("cho_bj/bj/")
     $ camera.set_image("cho_bj topless suck start")
-    cho "*mmphh*{w=1.0}{nw}"
+    cho "*oomph*{w=1.0}{nw}"
     $ camera.set_image("cho_bj topless suck")
 
     #Cho moves in and starts sucking genie off properly (Not as deep as she attempted)
@@ -887,7 +911,7 @@ label cc_pf_blowjob_T3_E2:
     #Cho pulls back and smiles
     cho "I can't believe you're making your student suck your cock..."
     cho "Surely that's not something a coach should be doing..."
-    m "Well, I--"
+    gen "Well, I--"
 
     $ camera.set_imagepath("cho_bj/bj/")
     $ camera.set_image("cho_bj topless suck start")
@@ -906,21 +930,7 @@ label cc_pf_blowjob_T3_E2:
     #Faster Blowjob
     cho "{heart}{heart}{heart}"
 
-    gen "[cho_name], if you do that-- oh fuck--" #TODO Loafy, maybe this line is too much of a warning.
-
-    #
-    #
-    #
-    #
-    #
-    #
-    #TODO: Finished here.
-    #
-    #
-    #
-    #
-    #
-    #
+    gen "[cho_name], if you do that-- oh fuck--"
 
     menu:
         "-Warn her-":
@@ -935,30 +945,39 @@ label cc_pf_blowjob_T3_E2:
             call ctc
 
             menu:
-                "\"I'll even give you some house points!\" (Incomplete)":
+                "\"I'll even give you some house points!\"":
                     $ cho_bj_choice = "points"
                     #Cho pulls back
-                    cho "House points!?" # angry #Wide eyed #Big text
-                    gen "Fuuuuuuuuuuuuuuuuuuuck!" #Big text #Auto forwards #Text appears slowly and it cuts to next scene before it finishes
-                    #Genie cums on Cho's face and tits
-                    cho "Ah!" #Cum stage 1 #face #Cho pulls back
-                    "....."#Cum stage 2 #tits
-                    "....." #Cum stage 3 #tits
+
+                    $ camera.set_image("cho_bj topless suck medium")
+
+                    cho "(House points!?)" # angry #Wide eyed #Big text
+
+
+                    $ camera.set_image("cho_bj topless suck closed exit")
+                    gen "{cps=5}Fuuuuuuuuu{/cps}{nw}"
+
+                    $ camera.set_image("cho_hj topless cum face tits")
+                    gen "Fuuuuuuuuu{fast}{cps=5}uuuuuuuuuuck!{/cps}{nw}"
+
+                    $ camera.set_imagepath("cho_bj/kneel/")
+                    $ camera.set_image("topless_mid_angry_cum_face_tits")
+
+                    call ctc
 
                     show screen blkfade
-                    with d3
+                    with d5
 
                     cho "My eye!" #Big text
-                    cho "I think I got some in my eye!" #Big text
+                    cho "I got some in my eye!" #Big text
                     gen "*Ah*...{w=0.4} Why'd you pull back!"
 
-                    # TODO: Hide CG
-                    hide screen placeholder
+                    hide screen animatedCG
                     hide screen blkfade
-                    with d3
+                    with fade
 
                     #Office screen (Cho has cum on her face and tits)
-                    cho "House points!"
+                    cho "\"House points\", really?!"
                     cho "You want me to swallow your semen for house points?!"
                     m "The points were just going to be a bonus."
                     cho "A bonus on top of?"
@@ -972,7 +991,7 @@ label cc_pf_blowjob_T3_E2:
 
                     call cho_walk("door", "base")
 
-                    cho "Who does he think I am?{w=0.4} I'm not Hermione, that slut!" #Small text
+                    cho "{size=-3}Who does he think I am?{w=0.4} I'm not Hermione, that slut!{/size}" #Small text
                     m "[cho_name]."
 
                     call cho_chibi("stand", "door", flip=False)
@@ -1234,28 +1253,44 @@ label cc_pf_blowjob_T3_E2:
                     #Cho leaves
                     #End Scene #Marks at completed
 
-        "-Just cum down her throat- (Incomplete)":
+        "-Just cum down her throat-":
             $ cho_bj_choice = "throat"
-            gen "[cho_name]..."
-            gen "I was wrong...{w=0.4} earlier...{w=0.4} there's one more thing for you to learn today..." #Genie puts hand on cho's head
+            gen "That did it, you slut!"
+
+            $ camera.set_image("cho_bj topless suck medium up")
+
             cho "*Hmmf*?" #looks at genie
-            gen "How to--"
-            gen "Swallow coach's cum!" #big text #Cum stage 1 #Genie pushes cho's head forward a bit
-            cho "*Mff*!!!" #Cum stage 1 #Cho's mouth  #cho's eye expression wide
-            gen "That's it slut!" #Cum stage 2 #Cum splatters from the side of her mouth #Cheeks bulge slightly #cho's pupils on dick
-            cho "*Gah*!" #Cum stage 3 #Genie lets go  #Cho pulls away and genie cums on her face
-            gen "..."
+            gen "{size=+4}*ARGH*!{/size}"
+
+            with vpunch
+            $ camera.set_image("cho_bj topless cum swallow")
+
+            cho "*Mphhhh*!!!{w=1.0}{nw}"
+            gen "*Ahhh* I needed that..."
+
+            $ camera.set_imagepath("cho_bj/kneel/")
+            $ camera.set_image("topless_mid_cough_cum_swallow")
+
             cho "*Cough*-*Cough*-...*Ah*...{w=0.4}*Ah*..."
             gen "That was awesome... great job--"
+
+            $ camera.set_image("topless_up_angry_cum_swallow")
+
             cho "What...{w=0.4}the hell...{w=0.4} is wrong with you?!?!" #screen shake
             gen "What do you--"
+
+            $ camera.set_image("topless_up_angry2_cum_swallow")
+
             cho "Why didn't you warn me! I almost choked!"
-            cho "I never agreed to--"
+            cho "I never agreed to this--"
             gen "It's sort of expected with a blowjob..."
-            cho "..." #Wide eyed
+
+            $ camera.set_image("topless_closed_angry_cum_swallow")
+
+            cho "You asshole--" #Wide eyed
 
             show screen blkfade
-            with d3
+            with d5
 
             cho "For a first blowjob?! It is not!"
             gen "I mean...{w=0.4} wait did you say first... does that mean you still want to do--"
@@ -1263,10 +1298,9 @@ label cc_pf_blowjob_T3_E2:
             $ renpy.sound.play("sounds/cloth_sound2.mp3")
             cho "I can't believe you..."
 
-            # TODO: Hide CG
-            hide screen placeholder
+            hide screen animatedCG
             hide screen blkfade
-            with d3
+            with fade
 
             # TODO: Posing, cum layers
 

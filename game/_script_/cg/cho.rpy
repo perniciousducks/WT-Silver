@@ -81,6 +81,20 @@ image cho_hj cum face tits = Movie(
     loop=False
     )
 
+image cho_hj topless cum tits = Movie(
+    play="images/CG/cho_bj/hj/nonloops/topless/cum_tits.webm",
+    image="images/CG/cho_bj/hj/nonloops/topless/cum_tits_end.png",
+    start_image="images/CG/cho_bj/hj/nonloops/topless/cum_tits.png",
+    loop=False
+    )
+
+image cho_hj topless cum face tits = Movie(
+    play="images/CG/cho_bj/hj/nonloops/topless/cum_face_tits.webm",
+    image="images/CG/cho_bj/hj/nonloops/topless/cum_face_tits_end.png",
+    start_image="images/CG/cho_bj/hj/nonloops/topless/cum_face_tits.png",
+    loop=False
+    )
+
 # Blowjob (loops)
 
 image cho_bj lick = Movie(

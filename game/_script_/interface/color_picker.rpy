@@ -1,5 +1,5 @@
 default color_history = []
-default color_favorites = [[167, 77, 42, 255], [237, 179, 14, 255], [89, 116, 194, 255], [216, 163, 10, 255], [58, 115, 75, 255], [205, 205, 206, 255], [251, 198, 10, 255], [28, 28, 28, 255]]
+default color_favorites = [[167, 77, 42, 255], [237, 179, 14, 255], [89, 116, 194, 255], [216, 163, 10, 255], [58, 115, 75, 255], [205, 205, 206, 255], [251, 198, 10, 255], [51, 43, 54, 255]]
 
 screen color_picker(color, alpha, title, pos_xy, color_default):
     tag color_picker
@@ -17,7 +17,7 @@ screen color_picker(color, alpha, title, pos_xy, color_default):
 
     # Set HSVA variables based on RGBA when screen shows
     on "show" action Function(color_picker_update_hsva)
-    
+
     # Colour favourites (Swatches)
     frame:
         style_prefix interface_style
@@ -27,15 +27,15 @@ screen color_picker(color, alpha, title, pos_xy, color_default):
             background "#e9ca7f"
         else:
             background "#7c716a"
-            
+
         text "Colour Swatches" xalign 0.38
         textbutton "Edit":
             xalign 0.8
             text_size 12
             tooltip "Toggle edit mode allowing you to\nremove or add favourite colours"
             action [SelectedIf(edit_mode), ToggleLocalVariable("edit_mode", True, False)]
-            
-        
+
+
         if color_history:
             side "c r":
                 area (410, 10, 80, 80)
@@ -57,7 +57,7 @@ screen color_picker(color, alpha, title, pos_xy, color_default):
                                 action Return(["history", c])
 
                 vbar value YScrollValue("history") xsize 10
-                
+
         text "History" xpos 418 size 12 yoffset -5
         hbox:
             pos (8, 47)
@@ -66,7 +66,7 @@ screen color_picker(color, alpha, title, pos_xy, color_default):
                 frame:
                     style "empty"
                     xysize (32, 33)
-                    if i < len(color_favorites): 
+                    if i < len(color_favorites):
                         add Frame("interface/color_picker/checker.png", tile=True, ysize=31, xsize=31)
                         if not edit_mode:
                             button:
@@ -90,11 +90,11 @@ screen color_picker(color, alpha, title, pos_xy, color_default):
                                 background "interface/icons/small/star_yellow.png"
                                 tooltip "Add to favourites"
                                 action Return(["add_swatch", list(rgba)])
-                        
+
         add "interface/color_picker/"+str(interface_color)+"/frame_swatches.png" pos (-10, -10)
-                    
-            
-        
+
+
+
     # Colour picker
     frame:
         style_prefix interface_style
@@ -203,7 +203,7 @@ screen color_picker(color, alpha, title, pos_xy, color_default):
                     clicked Return("reset")
 
         # Window buttons
-        hbox: 
+        hbox:
             align (1.0, 1.0)
             xoffset -3
             spacing 6
@@ -226,7 +226,7 @@ init -1 python:
         renpy.show_screen("color_picker", tuple(color), alpha, title, pos_xy, color_default)
         while True:
             _return = ui.interact()
-            
+
             if _return[0] == "input":
                 color_picker_input(_return[1])
             elif _return == "reset":
@@ -317,22 +317,22 @@ init -1 python:
         scope["value"] = 1 - float(y) / height
         color_picker_update_rgba()
         color_picker_history()
-        
+
     def color_picker_history():
         global color_history
         scope = renpy.get_screen("color_picker").scope
         color_history.append(scope["rgba"])
         if len(color_history) > 30:
             del color_history[0]
-            
+
     def color_picker_add(item):
         global color_favorites
         color_favorites.append(item)
-        
+
     def color_picker_rem(item):
         global color_favorites
         del color_favorites[item]
-        
+
     def rgba_to_hex(c):
         return '#%02x%02x%02x%02x' % (c[0], c[1], c[2], c[3])
 

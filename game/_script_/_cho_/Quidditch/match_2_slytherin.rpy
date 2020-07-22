@@ -233,7 +233,7 @@ label slytherin_match:
     with d5
 
     call sna_main("I suppose...", "snape_05")
-    call ton_main("Great!", "smile", "base", "angry", "L")
+    call ton_main("Great!", "silly", "base", "angry", "L")
 
     call ton_main("So, are we going?", "base", "base", "angry", "L")
     call sna_main("Ah *ahem*, yes... I suppose.", "snape_12") #throat clear in the middle of the sentence for extra awkardness
@@ -403,7 +403,7 @@ label slytherin_match:
     #hide screen blktone
     #with d5
 
-    call ton_main("{size=-4}Do I hear some jealousy back there?{/size}", "smile", "base", "raised", "R", flip=True, xpos="far_left", ypos="head")
+    call ton_main("{size=-4}Do I hear some jealousy back there?{/size}", "silly", "base", "raised", "R", flip=True, xpos="far_left", ypos="head")
     call sna_main("{size=-4}Of course not... just a cough,{w=0.3} {cps=15}Nymphadora{/cps}.{/size}", "snape_03", ypos="head")
     call ton_main("{size=-2}That's Tonks to you...{w=0.3} {i}dungeon dweller.{/i}{/size}", "open", "wide", "angry", "R", hair="angry", xpos="far_left", ypos="head", flip="True")
     call sna_main("Dungeon dw--", "snape_32", ypos="head")
@@ -719,11 +719,11 @@ label slytherin_match:
 
     call sna_main("I'm surprised she didn't swallow that one - with how wide she was blabbing her mouth.", "snape_42", ypos="head")
     call sna_main("To think that liquid luck--", "snape_45")
-    call ton_main("{size=+5}What?{/size}", "angry", "shocked", "base", "stare", hair="neutral", ypos="head", flip=True, trans=hpunch)
+    call ton_main("{size=+5}What?{/size}", "mad", "shocked", "base", "stare", hair="neutral", ypos="head", flip=True, trans=hpunch)
     g4 "What the fuck is liquid luck?"
     call ton_main("You gave those brutes a luck potion?!", "scream", "base", "angry", "L", hair="angry")
     call sna_main("Well...", "snape_14")
-    call ton_main("I can't believe you, Snape...{w=0.5} look what they've done to her face!", "angry", "base", "worried", "down")
+    call ton_main("I can't believe you, Snape...{w=0.5} look what they've done to her face!", "mad", "base", "worried", "down")
     call ton_main("Her beautiful face...", "upset", "base", "worried", "down", hair="sad")
     call sna_main("Looks like an improvement to me.", "snape_46")
 
@@ -746,7 +746,7 @@ label slytherin_match:
             $ slytherin += 10
 
 
-    call ton_main("Quiet!", "angry", "base", "angry", "L", hair="angry")
+    call ton_main("Quiet!", "mad", "base", "angry", "L", hair="angry")
     m "..."
     call ton_main("I'm taking her to the hospital wing...", "open", "base", "angry", "down", hair="neutral")
     m "What about the game..."
@@ -1745,7 +1745,7 @@ label slytherin_match_return:
     with morph
     call ctc
 
-    call ton_main("I'm especially proud of that last one...", "smile", "happyCl", "base", "mid")
+    call ton_main("I'm especially proud of that last one...", "silly", "happyCl", "base", "mid")
     m "..."
     m "So...{w=0.2} Can all wizards do this?"
     call ton_main("Nah, I was born with it.", "horny", "base", "base", "mid")
@@ -1767,7 +1767,7 @@ label slytherin_match_return:
     m "Right..."
     m "So, won't people find out you replaced her?"
     call ton_main("I wouldn't worry about that.", "open", "base", "base", "R")
-    call ton_main("I can lie if I want! Who would they believe, a teacher or a bunch of delinquents?", "smile", "happyCl", "base", "mid")
+    call ton_main("I can lie if I want! Who would they believe, a teacher or a bunch of delinquents?", "silly", "happyCl", "base", "mid")
     m "Good point..."
     call ton_main("Anyway...", "open", "base", "base", "R")
     call ton_main("I doubt Miss Granger would tell anyone, unless she has a really good reason to do so...", "base", "base", "angry", "mid")

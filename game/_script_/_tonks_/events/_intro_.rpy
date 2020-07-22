@@ -127,7 +127,7 @@ label tonks_intro_E1:
         g9 "I'd like to hear more about the things you did with those centaurs!"
         call ton_main("I'm sorry Professor, but that's classified information.","open","closed","worried","mid")
         call ton_main("The Ministry would be furious if they knew that I'd told you!","open","base","worried","mid")
-        call ton_main("(Not that I'd mention any of it... They'd probably have me sacked on the spot if they knew...)","angry","base","worried","R")
+        call ton_main("(Not that I'd mention any of it... They'd probably have me sacked on the spot if they knew...)", "mad", "base", "worried", "R")
         call ton_main("(I did the job. That's all that should matter to them...)","upset","base","base","down")
         g4 "Come on! ..."
         call ton_main("I'm sorry, Professor, but I really shouldn't!","open","base","base","mid")
@@ -175,7 +175,7 @@ label tonks_intro_E1:
 
     call ton_main("I take it that you're acquainted with Miss Granger?","open","base","base","mid")
     m "You could say that..."
-    call ton_main("Fantastic! Let's get right to it then!","smile","base","base","mid") #the second line was superfluous. You already established the point of the meeting earlier, so the reader knows what "let's get right to it" means
+    call ton_main("Fantastic! Let's get right to it then!", "silly", "base", "base", "mid") #the second line was superfluous. You already established the point of the meeting earlier, so the reader knows what "let's get right to it" means
     m "..."
     show screen blktone
     with d5
@@ -189,7 +189,7 @@ label tonks_intro_E1:
             call ton_main("Sir?", "open", "wide", "shocked", "stare")
             call ton_main("I'm sorry Professor, I wasn't accusing you of--", "open", "base", "worried", "mid")
             m "I did not have sexual relations with that woman."
-            call ton_main("Professor! I wasn't implying that--...","angry","base","raised","mid")
+            call ton_main("Professor! I wasn't implying that--...", "mad", "base", "raised", "mid")
             call ton_main("In the letter she wrote, Miss Granger never accused you of selling favours to your students...","open","base","base","L")
             call ton_main("Nonetheless, she was very persistent that certain other teachers weren't behaving as adequately...","open","base","base","mid")
 
@@ -278,7 +278,7 @@ label tonks_intro_E2:
         "\"Tonks!\"":
             pass
         "\"Nymphadora!\"":
-            call ton_main("Sir?","angry","base","worried","mid")
+            call ton_main("Sir?", "mad", "base", "worried", "mid")
             m "What? Isn't that your name, or did I get it wrong again?"
             call ton_main("I'm sorry, Sir.{w=0.3} I thought that, when I was a student here, I made it very clear that I wouldn't want to be called Nymphadora--", "open", "base", "worried", "down")
             call ton_main("Please, just call me Tonks, Professor.","base","base","base","mid")
@@ -286,7 +286,7 @@ label tonks_intro_E2:
         "\"Nympho-whora!\"":
             call ton_main("What?!", "open", "wide", "shocked", "stare")
             call ton_main("I'm sorry, Professor. I clearly must have misheard you...","open","closed","angry","mid")
-            call ton_main("Sir, what did you just call me?","angry","base","angry","mid")
+            call ton_main("Sir, what did you just call me?", "mad", "base", "angry", "mid")
             m "*Uhm*...{w=0.5}isn't that your name?"
             call ton_main("My name is \"Tonks\", Professor!","upset","base","angry","mid")
             call ton_main("You of all people should know this...","upset","base","angry","R")
@@ -498,13 +498,13 @@ label tonks_intro_E3:
     g4 "(........)"
     call ton_main("This school truly has changed since I was a student here.","open","base","base","mid")
     call ton_main("I never thought I would see Hogwarts in a state such as this...","open","base","angry","down")
-    call ton_main("Corrupted! Right down to the core!","angry","base","angry","mid", hair="angry")
+    call ton_main("Corrupted! Right down to the core!", "mad", "base", "angry", "mid", hair="angry")
     g4 "(What's the matter with her hair?!)"
     call ton_main("You don't have to search for too long to uncover the vile debaucheries that are happening at this school...", "open", "base", "annoyed", "mid", hair="angry")
     g4 "(Snape you fucking idiot! You blew it!!!)"
     call ton_main("Teachers taking advantage of their students, promising house points in return for sexual acts...","open","base","angry","R", hair="angry") #in a sexual favour, the sex act is the favour
     call ton_main("While they abuse their authority and power to do the most despicable things to them...", "open", "base", "annoyed", "R", hair="horny")
-    call ton_main("But the Dumbledore I know would never allow such disgracefulness at his school...","angry","base","angry","mid", hair="angry")
+    call ton_main("But the Dumbledore I know would never allow such disgracefulness at his school...", "mad", "base", "angry", "mid", hair="angry")
     m "(...)"
 
     stop music fadeout 1.0
@@ -512,7 +512,7 @@ label tonks_intro_E3:
     # Tonks threatens Genie.
     # Maybe have her chibi point her wand at him?
     call play_music("hitman")
-    call ton_main("Now tell me, who are you?{w} And you better tell the truth!","angry","base","angry","mid", hair="angry")
+    call ton_main("Now tell me, who are you?{w} And you better tell the truth!", "mad", "base", "angry", "mid", hair="angry")
     g4 "(Shit, how often is this going to happen to me?)"
 
     menu:
@@ -531,10 +531,10 @@ label tonks_intro_E3:
         #    call ton_main("What?", "base", "wide", "shocked", "stare")
         #    g4 "I am the one who knocks..."
 
-    call ton_main("I've had enough of this!","angry","base","angry","mid")
+    call ton_main("I've had enough of this!", "mad", "base", "angry", "mid")
     call ton_main("Reveal your true identity, dark wizard!","open","base","angry","mid")
     g4 "I'm not a dark wizard, you racist twat!"
-    call ton_main("How dare you call me a racist!","angry","base","angry","mid", hair="angry")
+    call ton_main("How dare you call me a racist!", "mad", "base", "angry", "mid", hair="angry")
     g4 "Bring it! Do your worst, witch!"
     call hide_characters
     hide screen bld1
@@ -573,7 +573,7 @@ label tonks_intro_E3:
     m "What just happened?"
     call ton_main("What... are you...?", "open", "wide", "raised", "mid")
     m "(Can she see through the illusion?)"
-    call ton_main("Wait a minute... Are you...{w=0.5} {size=+4}a Genie?{/size}", "angry", "wide", "raised", "mid")
+    call ton_main("Wait a minute... Are you...{w=0.5} {size=+4}a Genie?{/size}", "mad", "wide", "raised", "mid")
     g4 "(This witch knows her shit!)"
     m "..."
 
@@ -582,7 +582,7 @@ label tonks_intro_E3:
     m "Glad my reputation precedes me..."
     call ton_main("How curious. I've never had a Genie before...", "horny", "narrow", "base", "down", hair="horny") # Tonks looks horny.
     m "I'm sorry-- what?"
-    call ton_main("I meant, I've never had the pleasure of meeting a Genie before. This is brilliant!", "smile", "base", "shocked", "mid")
+    call ton_main("I meant, I've never had the pleasure of meeting a Genie before. This is brilliant!", "silly", "base", "shocked", "mid")
     m "(Is she hitting on me?!)"
     m "I'm flattered... But how were you able to tell?"
     call ton_main("I'm an Auror. It's my job to identify and catch magical beings...","open","base","base","R")
@@ -598,7 +598,7 @@ label tonks_intro_E3:
     call ton_main("Because you were bored?!","upset","base","angry","mid")
     m "Hey! I'm an immortal being... boredom is my worst enemy."
     m "And I didn't do much, just a nudge in the right direction..."
-    call ton_main("You need to bring him back, the real Dumbledore, immediately!","angry","base","angry","mid", hair="angry")
+    call ton_main("You need to bring him back, the real Dumbledore, immediately!", "mad", "base", "angry", "mid", hair="angry")
     m "I don't know how, ... yet.{w} We're still working on it..."
     call ton_main("We? Who else knows about this?", "open", "narrow", "annoyed", "mid")
 
@@ -614,19 +614,19 @@ label tonks_intro_E3:
             m "What? But I didn't--"
 
     call ton_main("But of course!{w} After all he was mentioned in Miss Granger's letter as one of the main offenders.", "open", "wide", "shocked", "stare")
-    call ton_main("That sleazy, vile snake...{w} Naturally he'd be all over an opportunity such as this.","angry","base","angry","R", hair="angry")
+    call ton_main("That sleazy, vile snake...{w} Naturally he'd be all over an opportunity such as this.", "mad", "base", "angry", "R", hair="angry")
     m "(Snake? Have I been saying his name wrong this entire time?...)"
     m "(I hate when that happens...)"
-    call ton_main("And to think I believed that creep when I questioned him about it.", "angry", "base", "angry", "down")
+    call ton_main("And to think I believed that creep when I questioned him about it.", "mad", "base", "angry", "down")
     m "(...)"
     call ton_main("He's a very skilled liar, I'll give him that.", "upset", "narrow", "angry", "down")
     m "Are you going to lock us up now?"
     call ton_main("I very well should! It would be the moral thing to do.","open","base","angry","mid")
     m "(Shit...)"
-    call ton_main("You and Professor Snape should be locked in Azkaban for what you've done...","angry","base","angry","mid")
+    call ton_main("You and Professor Snape should be locked in Azkaban for what you've done...", "mad", "base", "angry", "mid")
     call ton_main("And stay there for the rest of your lives...","open","base","angry","mid")
     g4 "You can't do that to me, I'm immortal! I'd go insane!"
-    call ton_main("You should have thought about that before deciding to fuck your own students!","angry","base","angry","mid")
+    call ton_main("You should have thought about that before deciding to fuck your own students!", "mad", "base", "angry", "mid")
     g4 "But I haven't even gotten to that part yet!"
     call ton_main("And you never will!","open","base","angry","mid")
     call ton_main("I'm going to put you in the smallest cell Azkaban has to offer...","open","base","angry","mid")
@@ -671,7 +671,7 @@ label tonks_intro_E3:
     call ton_main("And the Ministry too of course. I'll be their inside man at Hogwarts, here at the request of Professor Dumbledore himself, no less.","base","base","base","mid")
     call ton_main("If only they knew...", "horny", "narrow", "base", "mid", hair="horny")
     call ton_main("In any case, Profess--","open","base","base","R")
-    call ton_main("I'm sorry, what would you like me to call you?","angry","base","raised","mid")
+    call ton_main("I'm sorry, what would you like me to call you?", "mad", "base", "raised", "mid")
 
     menu:
         m "You can call me..."
@@ -684,9 +684,9 @@ label tonks_intro_E3:
         "\"Call me Daddy...\"":
             $ ton_genie_name = "Daddy"
             call ton_main("What? Are you serious?!", "open", "wide", "shocked", "stare")
-            call ton_main("*Ha-Ha-Ha!*...{w=0.3} you're too funny!", "smile", "base", "worried", "mid", hair="happy")
+            call ton_main("*Ha-Ha-Ha!*...{w=0.3} you're too funny!", "silly", "base", "worried", "mid", hair="happy")
             g4 "(What?-- Now it's yellow!)"
-            call ton_main("Are all Genies this desperate?", "smile", "base", "worried", "mid", hair="happy")
+            call ton_main("Are all Genies this desperate?", "silly", "base", "worried", "mid", hair="happy")
             m "Desperate? Why Desperate? ..."
             call ton_main("Nothing...","base","base","base","mid", hair="happy")
             call ton_main("Very well,... \"Daddy\"! {heart}{heart}{heart}", "horny", "narrow", "base", "mid", hair="horny")

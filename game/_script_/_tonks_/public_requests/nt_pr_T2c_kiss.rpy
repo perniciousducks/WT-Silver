@@ -29,7 +29,7 @@ label nt_pr_kiss_start:
                 call ton_main("It's way more intense than anything these students will have ever experienced...","base","base","angry","mid")
             m "*Hmmm*..."
             g9 "So you're not just going to give them a peck on the cheek, are you?"
-            call ton_main("Oh no...","angry","base","base","mid")
+            call ton_main("Oh no...", "mad", "base", "base", "mid")
             call ton_main("They'll be lucky if they can talk straight after I'm done with them...","open","closed","base","mid")
             m "You've set my expectations in you quite high, you know that right?"
             call ton_main("I'll make sure you get your money's worth, don't worry...","base","base","base","mid")
@@ -92,8 +92,8 @@ label nt_pr_kiss_T1_intro_E1: # Tier 1 - Event 1 - Slytherin boy
                 jump end_tonks_event
 
     m "Fun day?"
-    call ton_main("It was!","smile","happyCl","base","mid")
-    call ton_main("I got to show some students a Boggart for the first time...{w} That was pretty entertaining!","smile","base","base","mid")
+    call ton_main("It was!", "silly", "happyCl", "base", "mid")
+    call ton_main("I got to show some students a Boggart for the first time...{w} That was pretty entertaining!", "silly", "base", "base", "mid")
     m ".................."
     call ton_main("Not to mention that I got to take a boy's first kiss...","horny","base","angry","mid")
     g9 "A first for everybody!"
@@ -170,7 +170,7 @@ label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     call ton_main("Alright then, you old perv...","horny","base","angry","mid")
     call ton_main("Today's event was with my favourite little Ravenclaw boy...","base","base","base","mid")
     m "That shy one?"
-    call ton_main("Yes, the cute one!{w} He made a classic mistake today...","smile","happyCl","base","mid")
+    call ton_main("Yes, the cute one!{w} He made a classic mistake today...", "silly", "happyCl", "base", "mid")
     m "Which is?"
     call ton_main("Calling your teacher \"Mommy\".","base","base","base","mid")
     g9 "*ha-ha-ha*!... Really?"
@@ -188,7 +188,7 @@ label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     call ton_main("He just looked up at me with those big puppy eyes...","base","base","base","mid")
     call ton_main("And then I broke our gaze and kissed him...","horny","base","base","mid")
     m "How did he take it?"
-    call ton_main("Great! That kiss must have awoken something in him...","smile","base","angry","mid")
+    call ton_main("Great! That kiss must have awoken something in him...", "silly", "base", "angry", "mid")
     call ton_main("He really got into it after a while...","base","base","base","mid")
     call ton_main("*Ugh*!... I've never had someone attack me with their tongue like that...","horny","base","base","ahegao")
     call ton_main("It was intense! And neither of us wanted it to end...","base","base","angry","ahegao")
@@ -250,7 +250,7 @@ label nt_pr_kiss_T1_E3: # Tier 1 - Event 3 - Slytherin girls
     g9 "Which was?"
     call ton_main("*Mmmm*... They had to make out with each other!","horny","base","angry","mid")
     call ton_main("And they had to do it properly. For at least ten minutes.","open","closed","base","mid")
-    call ton_main("*Ugh*... It was the hottest thing to witness, I tell you...","angry","base","base","ahegao")
+    call ton_main("*Ugh*... It was the hottest thing to witness, I tell you...", "mad", "base", "base", "ahegao")
     g9 "Don't spare any details!"
     call ton_main("Well, they were a bit hesitant at first... which I can't even blame them for...","open","base","worried","mid")
     call ton_main("It doesn't happen often that you have a teacher watch you make out,...and savouring every second of it!","base","base","angry","mid")
@@ -264,7 +264,7 @@ label nt_pr_kiss_T1_E3: # Tier 1 - Event 3 - Slytherin girls
     call ton_main("They'd just take it in waves...","horny","base","base","L")
     call ton_main("Making out... Calling me a pervert...","horny","base","base","ahegao")
     call ton_main("Locking their mouths together, only to break apart again to tease me  more...","base","base","base","ahegao")
-    call ton_main("*Ugh*... It was so {b}bloody hot!{/b}...","angry","base","angry","mid")
+    call ton_main("*Ugh*... It was so {b}bloody hot!{/b}...", "mad", "base", "angry", "mid")
     m "I take your word for it..."
     call ton_main("This really is the best job ever!","horny","base","angry","mid")
     m "Very good! That shall be all for now, [tonks_name]."
@@ -322,7 +322,7 @@ label nt_pr_kiss_T1_E4: #Level 1 Event 4
     call ton_main("Today, she simply let her reddened cheeks do most of the talking... Until the end of my lessons...","base","base","base","mid")
     call ton_main("And, once the classroom had emptied out, I offered to purchase another favour from her.","open","base","base","L")
     call ton_main("It's not as if she'd say no at this stage.","base","base","base","mid")
-    call ton_main("I believe she wasn't expecting me to ask for a kiss though... It really threw her for a loop...","smile","happyCl","base","mid")
+    call ton_main("I believe she wasn't expecting me to ask for a kiss though... It really threw her for a loop...", "silly", "happyCl", "base", "mid")
     m "....................."
     call ton_main("She couldn't quite work out whether it was too extreme of a favour,...or too mild...","upset","base","base","R")
     m "Well, it all depends on how you kiss..."
@@ -335,7 +335,7 @@ label nt_pr_kiss_T1_E4: #Level 1 Event 4
     g9 "Did you slip in some tongue?"
     call ton_main("*Mhmm*... More than some...","horny","base","angry","mid")
     call ton_main("I was surprised just how easily she opened her mouth for me...","base","base","angry","mid")
-    call ton_main("Once my tongue was in there - it was game-over for her!","angry","base","angry","mid")
+    call ton_main("Once my tongue was in there - it was game-over for her!", "mad", "base", "angry", "mid")
     call ton_main("I just softly cradled her head - and spent the next five minutes teaching her how to \"french\"...","horny","base","angry","mid")
     call ton_main("They can't offer you an experience like that at the Ministry!","base","base","base","mid")
     g9 "Consider yourself lucky then."

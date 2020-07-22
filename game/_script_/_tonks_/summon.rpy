@@ -305,9 +305,9 @@ label tonks_talk:
                     g4 "I must have lost it when I got to this place!"
                     call ton_main("Do you even need it? Didn't you say you were a free Genie now?","open","base","worried","mid")
                     g4 "Of course I still need it! What sort of question is that, woman?!"
-                    call ton_main("(................)","angry","base","base","down")
+                    call ton_main("(................)", "mad", "base", "base", "down")
                     g4 "How would you like to suddenly be robbed of your house?!"
-                    call ton_main("(I guess I can jerk him off some other time...)","angry","base","worried","R")
+                    call ton_main("(I guess I can jerk him off some other time...)", "mad", "base", "worried", "R")
                     m "If you find a golden, shiny looking lamp, return it to me..."
                     call ton_main("Sure, [ton_genie_name]...","upset","base","base","R")
                     jump tonks_talk
@@ -323,7 +323,7 @@ label tonks_talk:
                     m "....................."
                     m "So he was \"Bi\" is what you're saying?"
                     call ton_main("What? No.", "open", "wide", "shocked", "stare")
-                    call ton_main("I mean, I'm not really sure if someone like him would have even be capable of loving anything...","angry","base","worried","R")
+                    call ton_main("I mean, I'm not really sure if someone like him would have even be capable of loving anything...", "mad", "base", "worried", "R")
                     call ton_main("All that mattered to him was power, and achieving his own immortality...","open","base","angry","mid")
                     m "Both fairly overrated once you have it, if you ask me..."
                     call ton_main("You don't say...","base","base","raised","mid")
@@ -406,7 +406,7 @@ label tonks_talk:
                 "-Nymphadora-":
                     $ tonks_name = "Nymphadora"
                     label .nymphadora:
-                    call ton_main("*Ugh*--","angry","base","angry","R")
+                    call ton_main("*Ugh*--", "mad", "base", "angry", "R")
                     call ton_main("Really, [ton_genie_name]?","open","base","angry","mid")
                     call ton_main("I hate that name,...","open","base","worried","R")
                     m "Well you better get used to hearing it then, [tonks_name]..."

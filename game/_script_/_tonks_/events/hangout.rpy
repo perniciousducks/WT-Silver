@@ -134,12 +134,12 @@ label nt_he_firewhisky_intro:
     m "..."
     call ton_main("Got a frog in your throat?","open","base","raised","mid")
     m "No, I was just waiting for an opening."
-    call ton_main("Sorry, I guess I talk a lot once I get going...", "angry", "base", "shocked", "mid")
+    call ton_main("Sorry, I guess I talk a lot once I get going...", "mad", "base", "shocked", "mid")
     call ton_main("Bottoms up.","horny","base","base","down")
     call play_sound("gulp")
     call ton_main("*Gulp*{w=0.6}{nw}", "base", "closed", "worried", "mid", trans=hpunch)
     call ton_main("*Cough* *Cough*", "open", "closed", "worried", "mid")
-    call ton_main("Yeah, that was a mistake.", "angry", "base", "base", "down")
+    call ton_main("Yeah, that was a mistake.", "mad", "base", "base", "down")
     m "I don't drink whisky that often, but even I know not to down it in one..."
     call ton_main("*Mmm*... that's the stuff.", "horny", "base", "base", "up")
     m "Are you even listening?"
@@ -161,7 +161,7 @@ label nt_he_firewhisky_E1:
             m "Boring lessons ahead?"
             call ton_main("Not particularly, why?","open","base","base","mid")
             m "You might regret going back to classes after drinking this much."
-            call ton_main("Oh don't you worry, [ton_genie_name].","smile","happyCl","base","mid")
+            call ton_main("Oh don't you worry, [ton_genie_name].", "silly", "happyCl", "base", "mid")
             call ton_main("I could down this entire bottle without anybody being able to notice a thing.","horny","base","base","L")
             m "You're one glass in and swaying like a buoy..."
             call ton_main("*Hic* Oh well-...","open","base","base","ahegao", trans=hpunch)
@@ -188,7 +188,7 @@ label nt_he_firewhisky_E3:
     m "Want to get drunk?"
     call ton_main("Of course.","base","base","base","down", ypos="head")
     if daytime:
-        call ton_main("I'm not going to regret this, am I?","angry","base","worried","down")
+        call ton_main("I'm not going to regret this, am I?", "mad", "base", "worried", "down")
         call ton_main("Hopefully my students won't notice...","horny","base","base","mid")
     else:
         call ton_main("I'd never say no to that!","horny","base","base","down")
@@ -278,8 +278,8 @@ label nt_he_favors_E2:
 label nt_he_story_intro_E1:
     call ton_main("Thanks for accepting my job application by the way.","base","base","base","mid", ypos="head")
     m "I didn't really have that much choice in the matter."
-    call ton_main("Oh, yeah...","smile","happyCl","base","mid")
-    call ton_main("...","angry","base","base","R")
+    call ton_main("Oh, yeah...", "silly", "happyCl", "base", "mid")
+    call ton_main("...", "mad", "base", "base", "R")
     call ton_main("I'll do well, you'll see.","open","base","base","R")
     call ton_main("After all, I was taught by one of the best aurors there is.","base","base","base","mid")
     call ton_main("And I do wish to teach those students a couple of useful things while I'm here...","open","base","worried","R")
@@ -303,7 +303,7 @@ label nt_he_story_intro_E1:
 label nt_he_story_intro_E2:
     call bld
     m "You mentioned an auror last time if I'm not mistaken."
-    call ton_main("Moody?", "angry", "wide", "shocked", "stare", ypos="head")
+    call ton_main("Moody?", "mad", "wide", "shocked", "stare", ypos="head")
     m "Not in particular."
     call ton_main("What?","open","base","raised","mid")
     m "..."
@@ -321,7 +321,7 @@ label nt_he_story_intro_E2:
     m "So..{w=0.3} He's a racist?"
     call ton_main("No, but he's old... I think he should just retire to be honest.", "open", "closed", "worried", "mid")
     call ton_main("His methods have gotten progressively more nefarious...", "open", "base", "worried", "R")
-    call ton_main("Some would argue he should be locked up himself, for all the things that he did to catch his targets...","angry","base","base","mid")
+    call ton_main("Some would argue he should be locked up himself, for all the things that he did to catch his targets...", "mad", "base", "base", "mid")
     g9 "And you?"
     call ton_main("Me? What about me?","upset","base","angry","mid")
     m "You wouldn't say what we do is unethical as well?"
@@ -341,14 +341,14 @@ label nt_he_story_intro_E3:
     m "At least I think that's how it works..."
     m "I may be a Genie, but I can't just turn water into wine...or whisky."
     m "(At least not in this world...)"
-    call ton_main("Yeah, that would be impressive.","smile","happyCl","base","mid")
+    call ton_main("Yeah, that would be impressive.", "silly", "happyCl", "base", "mid")
     call ton_main("I haven't found a single wizard that could do that.","open","base","base","mid")
     m "Ah yes. Because all those cunning bachelors are already taken...{w}or gay..."
     call ton_main("No. Single as in...no one can do it.", "open", "closed", "worried", "mid")
     call ton_main("It's almost impossible to summon drinks and food out of thin air.", "open", "base", "worried", "R")
     call ton_main("Best they can do is conjure water out of the surrounding humidity.","upset","base","base","R")
     m "If only I had my powers...I could do it with a snap of a finger."
-    call ton_main("I'm sure you could...","smile","happyCl","base","mid")
+    call ton_main("I'm sure you could...", "silly", "happyCl", "base", "mid")
 
     ">You brag about your almighty powers in front of the witch..."
     ">If only you hadn't lost them..."
@@ -375,11 +375,11 @@ label nt_he_story_intro_E4:
     call ton_main("Well I don't mind that... Most witches don't.","open","base","base","R")
     g9 "You should ask me about my knowledge of flying carpets instead!"
     g9 "I can tell you everything about the newest model."
-    call ton_main("Do you own one yourself? A carpet?","smile","base","base","mid")
+    call ton_main("Do you own one yourself? A carpet?", "silly", "base", "base", "mid")
     m "No. But a friend of mine does..."
     m "It's more of a pet, actually."
     m "Technically they are sentient beings..."
-    call ton_main("Yes, I've heard of that. How interesting.","smile","happyCl","base","mid")
+    call ton_main("Yes, I've heard of that. How interesting.", "silly", "happyCl", "base", "mid")
     call ton_main("Would you like that? Owning a pet?","base","base","angry","mid")
     m "Sure. Why do you ask?"
     call ton_main("Just out of curiosity...","horny","base","base","mid")
@@ -396,7 +396,7 @@ label nt_he_story_intro_E5:
     call ton_main("Well, what would you like to know?","open","base","worried","R", ypos="head")
     m "That \"moody\" guy taught you, you said. You could start there."
     call ton_main("Well, the job of an auror is a bit different now than how it was ten or so years ago.","open","base","worried","mid")
-    call ton_main("I studied to become an auror with the hopes of taking down evil wizards.","angry","base","worried","down")
+    call ton_main("I studied to become an auror with the hopes of taking down evil wizards.", "mad", "base", "worried", "down")
     m "Sounds like a nineties B movie to me."
     call ton_main("Tell me about it...","upset","base","angry","R")
     call ton_main("But that's not at all how the job is anymore.", "open", "closed", "worried", "mid")
@@ -413,21 +413,21 @@ label nt_he_story_intro_E5:
     m "(You kind of created that opportunity yourself...)"
     call ton_main("I learned a lot, though. And I always wanted to use that knowledge to teach others...","open","closed","base","mid")
     call ton_main("I just didn't think I was up for it yet. Not until I stepped through these halls again...","open","base","base","mid")
-    call ton_main("It made me realise how much I've missed being here.","smile","happyCl","base","mid")
+    call ton_main("It made me realise how much I've missed being here.", "silly", "happyCl", "base", "mid")
 
     jump end_tonks_hangout
 
 
 label nt_he_story_E6:
-    call ton_main("Did I ever tell you about the time we arrested a vampire?","smile","happyCl","base","mid", ypos="head")
+    call ton_main("Did I ever tell you about the time we arrested a vampire?", "silly", "happyCl", "base", "mid", ypos="head")
     m "You haven't even told me about your \"defence against the dark arts\" training yet, but sure, go ahead..."
     call ton_main("Right... Well, there was this vampire guy.","open","base","base","R")
-    call ton_main("We spent ages looking for him, and found that he had been disguising himself as a headmaster of a muggle school.","angry","base","base","R")
+    call ton_main("We spent ages looking for him, and found that he had been disguising himself as a headmaster of a muggle school.", "mad", "base", "base", "R")
     m "..."
-    call ton_main("It was quite disgusting what he was doing to the students actually...","angry","base","angry","mid")
+    call ton_main("It was quite disgusting what he was doing to the students actually...", "mad", "base", "angry", "mid")
     call ton_main("He even brought over some of the teachers... They're never going to be the same...","open","base","angry","R")
     m "..."
-    call ton_main("Corrupted... Forever...","angry","closed","angry","mid")
+    call ton_main("Corrupted... Forever...", "mad", "closed", "angry", "mid")
     m "(Not sure if I should feel bad at this point...)"
     call ton_main("Kind of hot, though,...don't you think?","horny","base","angry","mid")
     m "(Never mind...)"
@@ -442,12 +442,12 @@ label nt_he_story_E6:
 label nt_he_story_intro_E7:
     call bld
     m "Now, I'm starting to feel like you've been avoiding the subject of your auror training."
-    call ton_main("Is it that obvious?","angry","base","base","R", ypos="head")
+    call ton_main("Is it that obvious?", "mad", "base", "base", "R", ypos="head")
     m "You brought up vampires last time without even saying hello."
     call ton_main("Vampires are interesting...","upset","base","worried","up")
     m "..."
     call ton_main("Fine, I didn't want to talk about some of Moody's teaching methods,...","open","closed","base","mid")
-    call ton_main("They tend to be quite...unconventional.","angry","base","worried","R")
+    call ton_main("They tend to be quite...unconventional.", "mad", "base", "worried", "R")
     m "Like how?"
     call ton_main("Well...", "upset", "base", "worried", "down")
     call ton_main("Moody very much believed in learning by doing.", "open", "base", "worried", "mid")
@@ -457,7 +457,7 @@ label nt_he_story_intro_E7:
     m "Surely in a controlled environment where there's no harm to both parties..."
     call ton_main("Well,...most of the time that was the truth...", "open", "base", "worried", "R")
     call ton_main("(I can't believe I'm talking about this...)","upset","base","worried","down")
-    call ton_main("(The ministry will kick Moody out faster than a Blast-ended Skrewt going off if I'm not careful...)","angry","base","worried","R")
+    call ton_main("(The ministry will kick Moody out faster than a Blast-ended Skrewt going off if I'm not careful...)", "mad", "base", "worried", "R")
 
     jump end_tonks_hangout
 
@@ -465,16 +465,16 @@ label nt_he_story_intro_E7:
 label nt_he_story_E8:
     call ton_main("I'll tell you about this one time where Moody went a bit too far.","base","base","base","mid", ypos="head")
     m "Where did this sudden urge of sharing come from?"
-    call ton_main("Oh, I've been wanting to spill the beans about this for ages. I just didn't want to get anyone in trouble at the ministry...","smile","happyCl","base","mid")
+    call ton_main("Oh, I've been wanting to spill the beans about this for ages. I just didn't want to get anyone in trouble at the ministry...", "silly", "happyCl", "base", "mid")
     m "What is there to say I won't get you into trouble?"
     call ton_main("You won't... Would you?","open","base","worried","mid")
     m "No..."
     call ton_main("Right...","base","base","base","R")
-    call ton_main("Anyway, he once brought in this werewolf that we had put in custody.","angry","base","base","mid")
+    call ton_main("Anyway, he once brought in this werewolf that we had put in custody.", "mad", "base", "base", "mid")
     g4 "He did what?!?"
     call ton_main("See, I knew you'd react like that.","base","base","angry","mid")
     m "No, I was just taken by surprise... I didn't know they existed."
-    call ton_main("Of course they do, silly!","smile","happyCl","base","mid")
+    call ton_main("Of course they do, silly!", "silly", "happyCl", "base", "mid")
     call ton_main("So he brought in this werewolf... apparently quite harmless comparatively.","open","base","base","R")
     m "Compared to what? A dog?"
     call ton_main("Compared to werewolves like Fenrir Greyback...","upset","base","angry","L")
@@ -485,7 +485,7 @@ label nt_he_story_E8:
     m "Turn where?"
     call ton_main("Into a werewolf.","upset","base","angry","mid")
     m "Of course."
-    call ton_main("Well... we hadn't taken into account that it was mating season for them...","smile","happyCl","base","mid")
+    call ton_main("Well... we hadn't taken into account that it was mating season for them...", "silly", "happyCl", "base", "mid")
     g9 "You don't say!"
     call ton_main("The guy wasn't that interested in biting me that's for sure.","base","base","base","mid")
     call ton_main("So you can see why I wasn't so keen on reporting it. More of an embarrassing situation sort of thing than anything else.","open","base","base","R")
@@ -506,7 +506,7 @@ label nt_he_story_intro_E9:
     call ton_main("The ministry was mostly concerned about the criminals making up for their crimes.","open","base","angry","mid")
     call ton_main("Not necessarily putting them in prison. I had quite a few... more or less successful techniques.","open","closed","base","mid")
     m "Such as?"
-    call ton_main("Well, there was this one guy using a love potion...","angry","base","base","R")
+    call ton_main("Well, there was this one guy using a love potion...", "mad", "base", "base", "R")
     m "A love potion, too bad they aren't real..."
     call ton_main("Of course they're real, and quite effective as well.","open","closed","base","mid")
     call ton_main("Also... highly illegal.","base","base","base","mid")
@@ -523,7 +523,7 @@ label nt_he_story_intro_E9:
     call ton_main("Truth serum.","horny","base","raised","mid")
     m "And those aren't illegal or regulated as well?"
     call ton_main("I did say that I had my own techniques...", "open", "base", "worried", "R")
-    call ton_main("And as I said... Law is more complicated than that, and in certain instances using a truth serum would be the right thing to do.","angry","base","base","R")
+    call ton_main("And as I said... Law is more complicated than that, and in certain instances using a truth serum would be the right thing to do.", "mad", "base", "base", "R")
     call ton_main("And to be honest, who was he going to tell... It's not like he had the moral high ground.","base","base","base","mid")
     m "I see, how did the situation end up?"
     call ton_main("The girl got out of the abusive relationship and requested to have her memory adjusted.","open","base","base","mid")
@@ -540,7 +540,7 @@ label nt_he_story_intro_E9:
 label nt_he_story_intro_E10:
     call bld
     m "Settled in okay?"
-    call ton_main("Yes, I finally feel like I've found some sort of daily routine.","smile","happyCl","base","mid", ypos="head")
+    call ton_main("Yes, I finally feel like I've found some sort of daily routine.", "silly", "happyCl", "base", "mid", ypos="head")
     call ton_main("This school brings back so many memories. It's like, every time I turn a corner I expect to see one of my old classmates.", "open", "base", "worried", "R")
     m "So, good memories?"
     call ton_main("Mostly, it's a bit different now.","base","base","base","mid")
@@ -586,9 +586,9 @@ label nt_he_story_E11:
     m "And you couldn't just turn into a prefect, and get in there that way?"
     call ton_main("Well, that would've been the clever thing to do...", "open", "base", "worried", "R")
     call ton_main("Although like everything else in this school the bathroom has a password and not a key...", "open", "base", "worried", "mid")
-    call ton_main("Of course I didn't know that... I had just heard rumours about the bathroom.", "angry", "base", "worried", "down")
+    call ton_main("Of course I didn't know that... I had just heard rumours about the bathroom.", "mad", "base", "worried", "down")
     m "So did you manage to get in there in the end?"
-    call ton_main("Oh yeah, it was easy!","smile","happyCl","base","mid")
+    call ton_main("Oh yeah, it was easy!", "silly", "happyCl", "base", "mid")
     call ton_main("Once I knew about the password I just had to pretend to be one of the prefects, and ask another for it.","base","base","base","mid")
     m "Smart..."
 
@@ -605,31 +605,31 @@ label nt_he_story_E12:
     call ton_main("None, that's why. Process of elimination.", "upset", "base", "worried", "R")
     m "So you got punished without any sort of proof?"
     call ton_main("No, but they set up countermeasures after the time when...","open","base","worried","R")
-    call ton_main("I shouldn't really talk about it. They never confronted me about it so fessing up now isn't going to do me any good.","angry","base","worried","down")
+    call ton_main("I shouldn't really talk about it. They never confronted me about it so fessing up now isn't going to do me any good.", "mad", "base", "worried", "down")
     m "Not a word leaves this office."
     call ton_main("Do you think I'm weird?", "open", "base", "worried", "mid")
     m "Everyone is a bit...weird..."
-    call ton_main("Fine, I'll tell you.", "angry", "base", "worried", "down")
+    call ton_main("Fine, I'll tell you.", "mad", "base", "worried", "down")
     call ton_main("You might have noticed but I'm a bit more comfortable with my sexuality than most people.","open","base","base","mid")
     g9 "(Oh, here we go!)"
     call ton_main("I already told you about the whole werewolf thing, and the power play fantasies with the vampire...","open","base","base","R")
     m "Well, you didn't phrase it that bluntly before but I got the gist."
     call ton_main("Well, just like many weird or odd sexual preferences they're often deeply embedded with experiences from your youth.","open","base","worried","L")
     call ton_main("So for me, there was this one time where I pretended to be a teacher...","open","base","worried","mid")
-    call ton_main("As in, I literally took over their lesson when they were ill.","angry","base","base","down")
+    call ton_main("As in, I literally took over their lesson when they were ill.", "mad", "base", "base", "down")
     m "How did you manage that, weren't the students notified of their leave beforehand?"
     call ton_main("No. There was just a note on the door, so I ripped it off before the class got there.","open","closed","base","mid")
     m "Seems like a flawed system..."
-    call ton_main("Yeah, afterwards a lot of the teachers changed the way they do it. Not the new ones though...", "angry", "base", "worried", "R")
+    call ton_main("Yeah, afterwards a lot of the teachers changed the way they do it. Not the new ones though...", "mad", "base", "worried", "R")
     m "You haven't told me which class this was, did you turn into Snape and teach potions?"
     call ton_main("Of course not- Snape would've made my life hell, and I wasn't going to make someone hurt themself. ", "open", "closed", "worried", "mid")
-    call ton_main("It was charms...","angry","base","base","down")
+    call ton_main("It was charms...", "mad", "base", "base", "down")
     m "Right..."
     call ton_main("I had been practising some charms, and taught myself a couple on my own, like the one for invisibility...","base","base","base","down")
     m "Impressive."
-    call ton_main("Thanks... Normally you wouldn't learn that one until much later, so you'd easily be able to dispel it.","smile","happyCl","base","mid")
+    call ton_main("Thanks... Normally you wouldn't learn that one until much later, so you'd easily be able to dispel it.", "silly", "happyCl", "base", "mid")
     m "But you decided it was a good idea to teach it anyway?"
-    call ton_main("I didn't say it was a good idea.","angry","base","base","down")
+    call ton_main("I didn't say it was a good idea.", "mad", "base", "base", "down")
     call ton_main("It didn't end up working anyway...","upset","base","worried","R")
     call ton_main("Instead of the charm making the students' whole body transparent, it just made their clothes vanish!", "open", "closed", "base", "mid")
     call ton_main("Whilst it wasn't intentional, the memory of it still excites me a bit.","base","base","base","down")
@@ -643,9 +643,9 @@ label nt_he_story_E12:
     m "(That sounds disgusting...)"
     call ton_main("Anyway, the teachers played it off as an accident... though poor Flitwick had his magical abilities questioned by the students for a while.", "upset", "base", "worried", "down")
     call ton_main("And they tried to set up some more countermeasures towards my abilities at that point.", "open", "base", "worried", "R")
-    call ton_main("Not that they worked that well... After that I was a bit more selective with my usage, and actually thought about the consequences a bit before using it.", "angry", "base", "worried", "R")
+    call ton_main("Not that they worked that well... After that I was a bit more selective with my usage, and actually thought about the consequences a bit before using it.", "mad", "base", "worried", "R")
     m "Well, you do start thinking more about others as you get older..."
-    call ton_main("Yeah well, my sexual drive started to take the upper hand on my decisions from that points on, so it evened out.","smile","happyCl","base","mid")
+    call ton_main("Yeah well, my sexual drive started to take the upper hand on my decisions from that points on, so it evened out.", "silly", "happyCl", "base", "mid")
     m "(...)"
 
     jump end_tonks_hangout
@@ -675,7 +675,7 @@ label nt_he_story_centaur: # Not in use.
     call ton_main("Centaurs don't do well with Ministry personnel{w} Even less so with female witches such as myself...","open","base","raised","mid")
     call ton_main("Making them a compelling offer so they'd peacefully return to their assigned territory was quite...{w}challenging {heart}","horny","base","base","R")
     g4 "Go on..."
-    call ton_main("All I did was do them a small favour.{w} A little service the Ministry would never even think of providing them with.","angry","base","worried","down")
+    call ton_main("All I did was do them a small favour.{w} A little service the Ministry would never even think of providing them with.", "mad", "base", "worried", "down")
     call ton_main("But I did it anyway...","base","base","angry","mid")
     g4 "*Argh!* What did you do?"
     call ton_main("Well, I simply helped them release some of their stored up tension...","open","base","base","R")
@@ -686,7 +686,7 @@ label nt_he_story_centaur: # Not in use.
     call ton_main("*Uhm*... I mean, it depends on how you look at it...","upset","base","worried","down")
     call ton_main("It's by far the simplest way to calm down a group of wild centaurs...","open","base","worried","R")
     call ton_main("As far as I could tell, they didn't have any females within their group...","open","base","base","mid")
-    call ton_main("You can imagine the amount of tension that gets built up as a result of that...","angry","base","base","mid")
+    call ton_main("You can imagine the amount of tension that gets built up as a result of that...", "mad", "base", "base", "mid")
     call ton_main("(Inside those heavy, cum-filled balls!)","horny","base","base","ahegao", hair="horny") # ahegao
     m "So your idea was to jerk them off?"
 
@@ -715,12 +715,12 @@ label nt_he_story_centaur: # Not in use.
 
     call cum_block
     m "*Argh* You horse-cock-loving whore!"
-    call ton_main("I have to say, Professor, now that I've told you.{w} I feel quite embarrassed about it!","angry","closed","worried","mid")
+    call ton_main("I have to say, Professor, now that I've told you.{w} I feel quite embarrassed about it!", "mad", "closed", "worried", "mid")
 
     call cum_block
     g4 "You dirty slut!"
 
-    call ton_main("(I'd better not tell him what I had to do for their chieftain...)","angry","base","worried","L", hair="horny")
+    call ton_main("(I'd better not tell him what I had to do for their chieftain...)", "mad", "base", "worried", "L", hair="horny")
     call ton_main("(I can still taste him) {heart} {heart} {heart}","horny","base","base","ahegao", hair="horny")
 
     call hide_characters
@@ -739,7 +739,7 @@ label nt_he_story_centaur: # Not in use.
     m "Are you asking me whether or not I'd jerk of a Centaur?..."
     m "Because that would be a clear \"no\" from me..."
 
-    call ton_main("Professor, I've never told anybody about my experiences as an Auror...","angry","base","worried","down")
+    call ton_main("Professor, I've never told anybody about my experiences as an Auror...", "mad", "base", "worried", "down")
     m "Are there more \"experiences\" you could tell me about?"
     call ton_main("Well...I have been an Auror for quite a while now, so...I do have a couple.","open","base","worried","R")
     g9 "Great! I'd love to hear them!"

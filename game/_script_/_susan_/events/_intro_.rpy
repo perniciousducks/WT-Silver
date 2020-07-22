@@ -33,7 +33,7 @@ label nt_he_susan_E1:
     m "I don't know... banter?"
     m "Snape sure as hell hasn't sent me any girls..."
     call ton_main("I can teach him a thing or two about sharing - if you'd like...","horny","base","base","mid")
-    call ton_main("The more the merrier in my opinion...","smile","happyCl","base","mid")
+    call ton_main("The more the merrier in my opinion...", "silly", "happyCl", "base", "mid")
     m "You don't mean Snape and I..."
     call ton_main("Of course not, don't be silly!","base","happyCl","base","mid")
     call ton_main("Maybe he's afraid you'd steal them from him if you got the chance...","horny","base","angry","mid")
@@ -50,7 +50,7 @@ label nt_he_susan_E1:
 
     call ton_main("I'm sure you'll find her less than bony...","base","base","angry","mid")
     m "..."
-    call ton_main("But, you have to promise me that you won't go overboard with her!","angry","base","base","mid")
+    call ton_main("But, you have to promise me that you won't go overboard with her!", "mad", "base", "base", "mid")
     call ton_main("I'd rather not risk having her contact that aunt of hers...","open","base","base","R")
     m "I can be slick and subtle when I want to..."
     call ton_main("...","upset","base","worried","R")

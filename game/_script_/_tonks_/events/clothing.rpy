@@ -151,7 +151,7 @@ label tonks_summon_setup:
         elif 20 > ton_mood >= 10:
             call ton_main("Make it quick, [ton_genie_name]...", "upset", "base", "base", "R", xpos="base", ypos="base", trans=d3)
         elif 30 > ton_mood >= 20:
-            call ton_main("What do you want, \"[ton_genie_name]\", I'm busy.", "angry", "base", "angry", "mid", xpos="base", ypos="base", trans=d3)
+            call ton_main("What do you want, \"[ton_genie_name]\", I'm busy.", "mad", "base", "angry", "mid", xpos="base", ypos="base", trans=d3)
         elif 40 > ton_mood >= 30:
             call ton_main("...............", "upset", "base", "angry", "mid", xpos="base", ypos="base", trans=d3)
         elif 50 > ton_mood >= 40:

@@ -975,7 +975,7 @@ label nt_he_hermione_E1:
     call ton_main("How could I possibly get tired of that!", "base", "narrow", "base", "mid")
     call ton_main("I'm very glad I decided to join you two.","open","base","base","down")
     call ton_main("As an Auror It's just constant busy work...","open","base","angry","mid")
-    call ton_main("Not to mention the hours.", "angry", "base", "base", "down")
+    call ton_main("Not to mention the hours.", "mad", "base", "base", "down")
     call ton_main("And the mortality rate...","upset","base","worried","R")
     call ton_main("If I had known the benefits of being a teacher at Hogwarts, I would have signed up straight away!","horny","base","base","up")
 

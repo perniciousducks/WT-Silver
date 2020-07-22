@@ -76,7 +76,7 @@
             eyes = "" if self.args["eyes"] == False else "\"{}\", ".format(self.args["eyes"])
             eyebrows = "" if self.args["eyebrows"] == False else "\"{}\", ".format(self.args["eyebrows"])
             pupils = "" if self.args["pupils"] == False else "\"{}\", ".format(self.args["pupils"])
-            hair = "" if self.label != "ton_main" or not self.args["hair"] else "hair=\"{}\", ".format(self.args["hair"])
+            hair = "" if self.label != "ton_main" or self.args["hair"] in (None, "(No change)") else "hair=\"{}\", ".format(self.args["hair"])
 
             cheeks = "" if self.args["cheeks"] in (None, "(No change)") else "cheeks=\"{}\", ".format(self.args["cheeks"])
             tears = "" if self.args["tears"] in (None, "(No change)") else "tears=\"{}\", ".format(self.args["tears"])
@@ -122,6 +122,9 @@
                 self.args["cheeks"] = "(No change)"
             if self.args["tears"] == None:
                 self.args["tears"] = "(No change)"
+            if self.label == "ton_main":
+                if self.args["hair"] == None:
+                    self.args["hair"] = "(No change)"
 
             # Lookup transition name
             if self.args["trans"] != None:
@@ -189,6 +192,11 @@
                 if not "No change" in args["tears"]:
                     sprites.append(imagepath+"/game/characters/"+char+"/face/tears/"+args["tears"]+".png")
                 sprites.append(imagepath+"/game/characters/"+char+"/face/mouth/"+args["mouth"]+".png")
+
+                # Hair
+                sprites.extend(hair.get_back())
+                if hair.back_outline:
+                    sprites.append(hair.back_outline)
                 sprites.append(hair.get_image())
 
                 sprites = tuple(itertools.chain.from_iterable(((0,0), x) for x in sprites))
@@ -201,6 +209,32 @@
 
             cheeks = None if self.args["cheeks"] in (None, "(No change)") else self.args["cheeks"]
             tears = None if self.args["tears"] in (None, "(No change)") else self.args["tears"]
+
+            if self.label == "ton_main":
+                hair = None if self.args["hair"] in (None, "(No change)") else self.args["hair"]
+
+                # Hardcoded for tonks
+                if hair:
+                    if hair in ("neutral", "basic", "reset"):
+                        target_color = tonks_haircolor
+                    elif hair in ("red", "angry", "furious"):
+                        target_color = [[164, 34, 34, 255], [219, 83, 83, 255]]
+                    elif hair in ("orange", "upset", "annoyed"):
+                        target_color = [[228, 93, 34, 255], [246, 193, 170, 255]]
+                    elif hair in ("yellow", "happy", "cheerful"):
+                        target_color = [[255, 213, 23, 255], [255, 239, 167, 255]]
+                    elif hair in ("green", "disgusted"):
+                        target_color = [[111, 205, 75, 255], [200, 237, 186, 255]]
+                    elif hair in ("blue", "sad"):
+                        target_color = [[64, 75, 205, 255], [182, 186, 237, 255]]
+                    elif hair in ("purple"):
+                        target_color = [[205, 75, 205, 255], [237, 186, 237, 255]]
+                    elif hair in ("white", "scared"):
+                        target_color = [[238, 238, 241, 255], [249, 249, 250, 255]]
+                    elif hair in ("pink", "horny"):
+                        target_color = [[255, 105, 180, 255], [251, 205, 222, 255]]
+
+                    tonks.get_equipped("hair").set_color(target_color)
 
             c.set_face(mouth=self.args["mouth"], eyes=self.args["eyes"], eyebrows=self.args["eyebrows"], pupils=self.args["pupils"], cheeks=cheeks, tears=tears)
             c.apply_transition()
@@ -217,10 +251,12 @@
 
                 cheeks = ["(No change)"]
                 tears = ["(No change)"]
+                hair = ["(No change)", "neutral", "angry", "upset", "happy", "disgusted", "sad", "purple", "scared", "horny"]
+
                 cheeks.extend([x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/cheeks/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x])
                 tears.extend([x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/tears/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x])
 
-                return _dict([("mouths", mouths), ("eyes", eyes), ("eyebrows", eyebrows), ("pupils", pupils), ("cheeks", cheeks), ("tears", tears)])
+                return _dict([("mouths", mouths), ("eyes", eyes), ("eyebrows", eyebrows), ("pupils", pupils), ("cheeks", cheeks), ("tears", tears), ("hair", hair)])
 
             self.expressions = _dict([(x, scan_files(x)) for x in self.char.itervalues()])
 
@@ -284,8 +320,8 @@ screen editor():
                                     textbutton "[i]" text_size 10 action [SelectedIf(i==str(editor.args["cheeks"])), Function(editor.set_data, "cheeks", i)]
                             if editor.label == "ton_main":
                                 use dropdown_menu(name="Hair: "+str(editor.args["hair"]), pos=(0, 100), items_offset=(0, 0), background="#FFFFFF80"):
-                                    for i in xrange(0, 10):
-                                        textbutton "hello world"
+                                    for i in editor.get_expressions("hair"):
+                                        textbutton "[i]" text_size 10 action [SelectedIf(i==str(editor.args["hair"])), Function(editor.set_data, "hair", i)]
                             use dropdown_menu(name="Pupils: "+str(editor.args["pupils"]), pos=(0, 80), items_offset=(0, 0), background="#FFFFFF80"):
                                 for i in editor.get_expressions("pupils"):
                                     textbutton "[i]" text_size 10 action [SelectedIf(i==str(editor.args["pupils"])), Function(editor.set_data, "pupils", i)]

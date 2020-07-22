@@ -246,6 +246,7 @@ init python:
         def set_cum(self, *args, **kwargs):
             """Takes keyword argument(s) containing string name(s) of cum layers to apply or None."""
             if self.cum.set_cum(*args, **kwargs):
+                self.body.rebuild_image()
                 self.rebuild_image()
                 self.apply_transition()
 

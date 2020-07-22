@@ -15,6 +15,9 @@ init python:
             sprites = tuple(itertools.chain.from_iterable(((0,0), "{}{}/{}.png".format(self.imagepath, k, v)) for k, v in self.cum.iteritems() if v != None))
             return sprites
 
+        def get_skin(self):
+            return ["{}{}/{}_skin.png".format(self.imagepath, k, v) for k, v in self.cum.iteritems() if renpy.loadable("{}{}/{}_skin.png".format(self.imagepath, k, v))]
+
         def set_cum(self, *args, **kwargs):
             """Takes keyword argument(s) containing string name(s) of cum layers to apply or None. Returns True if image is changed."""
             changed = False

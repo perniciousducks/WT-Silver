@@ -798,10 +798,10 @@ label cho_quid_E8:
     # Genie hangouts with Tonks, asks her for help with the Slytherins.
 
     m "I wanted to ask you for a favour..."
-    call ton_main("Me? Selling a favour to you?", "silly", "happyCl", "base", "mid", ypos="head")
+    call ton_main("Me? Selling a favour to you?", "grin", "closed", "base", "mid", ypos="head")
     call ton_main("You sure you can afford me?","base","base","raised","mid") #Horny
     m "Not that kind of favour."
-    call ton_main("*Aww*...", "upset", "base", "worried", "down")
+    call ton_main("*Aww*...", "annoyed", "base", "raised", "down")
 
     # Tell Tonks about Cho.
     m "You know this {i}Quiddish{/i} sport the students play here?"
@@ -816,9 +816,9 @@ label cho_quid_E8:
     m "Yes, the little Ravenclaw minx, correct."
     call ton_main("Well, I figured you'd be talking about her - if it has to do with Quidditch.","open","base","base","R")
     m "She's one of the girls I buy favours from."
-    call ton_main("No way!", "scream", "wide", "shocked", "stare", hair="horny")
-    call ton_main("You got that little hotty--", "open", "base", "worried", "mid")
-    call ton_main("*Uhm*... hot-head to sell you favours?", "mad", "base", "worried", "R")
+    call ton_main("No way!", "open_wide", "shocked", "shocked", "mid", hair="horny")
+    call ton_main("You got that little hotty--", "horny", "base", "raised", "R", hair="horny")
+    call ton_main("*Uhm*... hot-head to sell you favours?", "mad", "base", "raised", "R")
     m "Once or twice..."
     call ton_main("Impressive.","horny","base","raised","mid")
     call ton_main("Tell me everything!","horny","base","angry","mid")
@@ -830,16 +830,16 @@ label cho_quid_E8:
             call ton_main("Cho?! And I'm supposed to believe that?","upset","wide","raised","mid")
             g9 "Oh, you better believe it!"
             call ton_main("Holy shit!", "upset", "wide", "shocked", "stare", hair="horny")
-            call ton_main("I'd pay so many galleons to watch that girl take her clothes off...", "upset", "base", "worried", "R")
-            call ton_main("You need to invite me next time!", "mad", "base", "angry", "mid", hair="angry") # angry
+            call ton_main("I'd pay so many galleons to watch that girl take her clothes off...", "base", "base", "raised", "R")
+            call ton_main("You need to invite me next time!", "annoyed", "base", "angry", "mid", hair="angry") # angry
             m "And how would I get her to agree to that?"
             call ton_main("Well... *Uhm*...", "upset", "base", "worried", "down", hair="horny")
             m "It was difficult enough to get her to strip just for me..."
             m "She only did it because I helped her win against Hufflepuff."
-            call ton_main("So that was your idea with the skirt? Very clever.","horny","base","worried","mid")
+            call ton_main("So that was your idea with the skirt? Very clever.", "horny", "base", "annoyed", "mid")
             m "Maybe I could arrange something once we've beaten those Slytherins..."
             m "For the two of you."
-            call ton_main("Or all three of us!","base","base","angry","mid")
+            call ton_main("Or all three of us!", "soft", "base", "raised", "mid")
             g9 "Yes!"
             g9 "I'm sure that minx would love that!"
             call ton_main("I can't wait!","base","happyCl","base","mid")
@@ -863,13 +863,13 @@ label cho_quid_E8:
     call ton_main("A good strategy for when you're in bed with your partner, but not in Quidditch.","base","base","angry","mid")
     m "You don't say..."
     g4 "Wait, what?"
-    call ton_main("I've seen them play a couple of times. They clearly aren't the brightest bunch...","upset","base","worried","R")
+    call ton_main("I've seen them play a couple of times. They clearly aren't the brightest bunch...", "upset", "base", "annoyed", "R")
     call ton_main("What tactics are you gonna use against them?","base","base","raised","mid")
     g9 "I shouldn't ruin the surprise."
     call ton_main("Can't wait... If it's anything like the first game.","base","base","raised","R")
     m "The main hurdle right now is that I have no way to try out our tactics on the Slytherins..."
     m "They refuse to practice against Ravenclaw."
-    call ton_main("Well that's unfortunate...", "upset", "base", "worried", "L")
+    call ton_main("Well that's unfortunate...", "upset", "base", "shocked", "L")
     call ton_main("Perhaps you could ask Snape. He should be able to get those lazy gits back on the pitch...","open","base","base","mid")
 
     if cho_quid.E9_complete:
@@ -883,14 +883,14 @@ label cho_quid_E8:
     call ton_main("I'll get those shits back on the grass...", "mad", "base", "angry", "mid")
     m "And how will you accomplish that?"
     call ton_main("Oh, don't worry...", "silly", "happyCl", "base", "mid")
-    call ton_main("Perhaps I'll tell you my techniques some other time.","base","base","angry","mid")
+    call ton_main("Perhaps I'll tell you my techniques some other time.", "base", "narrow", "angry", "mid")
 
     m "..."
     if not cho_quid.E7_complete:
         # Has NOT blackmailed Hermione
 
         m "That's not all, though. There's something else I need your help with."
-        call ton_main("You can't expect me to fix all of your problems, Genie.","base","base","base","mid")
+        call ton_main("You can't expect me to fix all of your problems, Genie.", "annoyed", "base", "base", "mid")
         m "It's about Hermione's role as a commentator..."
         call ton_main("Really? What happened to Miss Granger?","upset","base","worried","mid")
         m "She quit..."
@@ -904,7 +904,7 @@ label cho_quid_E8:
         call ton_main("Why don't you tell her that a very special someone will be really disappointed if she doesn't show up.", "horny", "base", "base", "stare")
         g9 "(So it's not just me who thinks she's into Cho!)"
         call ton_main("(She was so cute fumbling over her words...)", "base", "happyCl", "base", "mid")
-        call ton_main("I'm sure you'll be able to change her mind.", "silly", "base", "base", "mid")
+        call ton_main("I'm sure you'll be able to change her mind.", "base", "base", "base", "mid")
     else:
         m "Did you know Hermione wanted to quit her task as a commentator?"
         call ton_main("Did she now? I thought she did well in the Hufflepuff game.","upset","base","raised","mid")
@@ -918,9 +918,9 @@ label cho_quid_E8:
         m "*Hmm*... Maybe next time."
         call ton_main("Very well...", "upset", "base", "worried", "R")
 
-    call ton_main("In any case, I could join you in the commentator booth during the next game to help encourage Miss Granger.","base","base","base","mid")
-    call ton_main("If anything I'll get a nice view from up there.", "silly", "happyCl", "base", "mid")
-    call ton_main("Since you already made sure Hufflepuff is out of the competition...","upset","base","angry","R")
+    call ton_main("In any case, I could join you in the commentator booth during the next game to help encourage Miss Granger.", "open", "base", "base", "mid")
+    call ton_main("If anything I'll get a nice view from up there.", "grin", "happyCl", "base", "mid")
+    call ton_main("Since you already made sure Hufflepuff is out of the competition...", "upset", "base", "raised", "R")
     call ton_main("The best we can hope for now is to not get last...","open","closed","base","mid")
     call ton_main("It's always third or nothing with us Puffs.", "open", "base", "worried", "R")
     m "(Puffs?)"
@@ -929,8 +929,8 @@ label cho_quid_E8:
     call ton_main("*N'Aww*, you're so sweet!", "base", "base", "worried", "mid")
     with hpunch
     $ renpy.play("sounds/hiccup_fem.mp3")
-    call ton_main("*Hick*!... whoopsie...","upset","base","base","ahegao")
-    call ton_main("Now, I better get going convincing those boys to play again...","horny","base","angry","mid")
+    call ton_main("*Hick*!... whoopsie...", "upset", "wide", "base", "mid")
+    call ton_main("Now, I better get going convincing those boys to play again...", "open", "base", "raised", "R", hair="horny")
 
     if daytime:
         ">You finish your drinks before calling it a day."

@@ -696,7 +696,7 @@ label hg_pf_talk_tonks:
             call her_main("About that-{w=0.6}{nw}", "open", "squint", "angry", "mid")
             call ton_main("Actually, let's save that topic for another time...", "normal", "narrow", "base", "L")
             if masturbating:
-                g4 "(You wanted it all for your self, that's why!)"
+                g4 "(You wanted it all for yourself, that's why!)"
             call ton_main("Is there anything else you could tell us about these... naughty Slytherin girls?","horny","base","angry","mid", hair="horny")
             call her_main("Of course!", "open", "closed", "angry", "mid")
             call her_main("I could go on for hours about the vile things they've been up to...", "annoyed", "narrow", "annoyed", "mid")

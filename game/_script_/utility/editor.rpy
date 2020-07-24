@@ -1,4 +1,4 @@
-﻿init python:
+init python:
     def catch_character_call(label, called):
         if called:
             if label.startswith(("her_main", "cho_main", "ast_main", "ton_main")):

@@ -1,4 +1,4 @@
-﻿
+
 define update_available = check_for_updates()
 
 init python:

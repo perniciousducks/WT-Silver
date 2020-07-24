@@ -1,4 +1,4 @@
-﻿
+
 # The game starts here
 label start:
     call game_init

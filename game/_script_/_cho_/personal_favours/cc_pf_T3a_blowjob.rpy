@@ -30,43 +30,43 @@ label cc_pf_blowjob:
 
     jump end_cho_event
 
-label cc_pf_blowjob_T3_intro_E1: #TODO Outside CG event Posing
+label cc_pf_blowjob_T3_intro_E1:
 
     if cho_bj_choice == None:
         m "[cho_name], ready to reward your coach for a job well done?"
-        cho "Of course... a deal's a deal."
+        call cho_main("Of course... a deal's a deal.", "open", "narrow", "base", "mid")
         m "Great, in that case I think a blowjob is in order!"
-        cho "A blowjob?!!"
+        call cho_main("A blowjob?!!", "disgust", "wide", "base", "mid")
         m "And some hand action as well of course!"
-        cho "Sir, I didn't think it'd come to this... I already showed you my naked body and everything..."
+        call cho_main("Sir, I didn't think it'd come to this... I already showed you my naked body and everything...", "clench", "narrow", "base", "down")
         m "There are other tactics you could use that aren't just about showing off your body in public you know..."
-        cho "Oh, yeah? Like what?"
+        call cho_main("Oh, yeah? Like what?", "angry", "narrow", "raised", "mid")
         m "Your dream is to become a professional is it not?"
-        cho "I... yes... I suppose it is."
+        call cho_main("I... yes... I suppose it is.", "soft", "narrow", "base", "R")
         m "Then we should do our best to prepare you for what's out there!"
         m "I won't be your coach forever... Once you're looking for a proper team, you'll be in fierce competition with the other women athletes."
         m "Women that will stop for nothing to get where they want."
         m "So, as your coach, it's my responsibility to prepare you!"
-        cho "And a blowjob is necessary for this?"
+        call cho_main("And a blowjob is necessary for this?", "angry", "narrow", "raised", "mid")
 
         if 1 > 0: # TODO: add a check if Cho has spied on the enemy before.
             m "You've seen the girls on the Gryffindor team... you think they would hesitate with something as simple as a blowjob?"
-            cho "..." #Pout
+            call cho_main("...", "disgust", "closed", "base", "down", cheeks="blush") #Pout
             m "I see how it is..."
             m "I sure didn't think a simple blowjob would dissuade you from pursuing your dreams."
         else:
             m "Well... I can tell you this much. A woman looking to make it professionally should have enough confidence not to get stopped by something as simple as a blowjob."
 
-        cho "..." # angry
-        cho "Alright, I'll do it..."
+        call cho_main("...", "normal", "narrow", "base", "downR", cheeks="blush") # angry
+        call cho_main("Alright, I'll do it...", "open", "happyCl", "angry", "downR", cheeks="blush")
         g9 "That's more like it!"
-        cho "Don't get me wrong sir... I don't believe a word of what you just said is even remotely true."
-        cho "But you've helped me get this far..."
-        cho "So if a blowjob is what it takes, then so be it..."
+        call cho_main("Don't get me wrong sir... I don't believe a word of what you just said is even remotely true.", "upset", "base", "base", "mid", cheeks="blush")
+        call cho_main("But you've helped me get this far...", "annoyed", "narrow", "base", "down", cheeks="blush")
+        call cho_main("So if a blowjob is what it takes, then so be it...", "soft", "base", "base", "downR", cheeks="blush")
         g9 "That's the kind of determination I've been looking for..."
         g9 "Let's find out how a skilled Quidditch player handles this type of wood..."
-        cho "..." #smile #looks away
-        cho "Okay, then... I'm ready."
+        call cho_main("...", "disgust", "narrow", "base", "mid") #smile #looks away
+        call cho_main("Okay, then... I'm ready.", "angry", "narrow", "base", "mid", cheeks="blush")
         g4 "(At last!)"
 
         call gen_chibi("jerk_off_behind_desk")
@@ -175,11 +175,11 @@ label cc_pf_blowjob_T3_intro_E1: #TODO Outside CG event Posing
         cho "How is this even..." #Cuts to dialog Menu choice
     else: # Alternate intro if first event has failed
         m "Ready to continue with your training?"
-        cho "Of course!"
+        call cho_main("Of course!", "open", "base", "base", "mid")
         m "Then you know what is required..."
-        cho "You want me to touch your..."
-        cho "..."
-        cho "Fine... I'll do it."
+        call cho_main("You want me to touch your...", "soft", "base", "base", "downR", cheeks="blush")
+        call cho_main("...", "horny", "closed", "base", "mid", cheeks="blush")
+        call cho_main("Fine... I'll do it.", "angry", "base", "base", "mid", cheeks="blush")
 
         hide screen cho_main
         with d3
@@ -558,52 +558,52 @@ label cc_pf_blowjob_1:
     with fade
 
     # After CG, in the office.
-    # TODO: Posing, cum layers
+    # TODO: cum layers
 
     if warned_her:
         m "Well done [cho_name], you've started pushing those limits on your own."
         m "Also, You've got a little something right there..."
-        cho "Very funny [cho_genie_name]..."
+        call cho_main("Very funny [cho_genie_name]...", "clench", "narrow", "base", "mid", cheeks="blush")
         m "Your confidence is showing itself more and more every day."
-        cho "I... {w=0.5} You deserved it [cho_genie_name]...{w=0.5} for helping me this far..."
-        cho "For teaching me... all this stuff...." #Blush
+        call cho_main("I... {w=0.5} You deserved it [cho_genie_name]...{w=0.5} for helping me this far...", "upset", "narrow", "base", "downR", cheeks="blush")
+        call cho_main("For teaching me... all this stuff....", "angry", "closed", "base", "mid", cheeks="blush") #Blush
         m "(I'm a bloody saint I've waited that long...)"
         m "You're very welcome."
     else:
         gen "That...{w=0.4} was...{w=0.4} amazing!"
-        cho "Why didn't you warn me?!" #Angry
-        cho "My clothes are all ruined now too..."
-        cho "There's cum all over them!"
-        cho "I can't believe you just came all over me like that..." #pout
+        call cho_main("Why didn't you warn me?!", "clench", "base", "angry", "down") #Angry
+        call cho_main("My clothes are all ruined now too...", "angry", "closed", "angry", "mid")
+        call cho_main("There's cum all over them!", "mad", "narrow", "angry", "down")
+        call cho_main("I can't believe you just came all over me like that...", "annoyed", "base", "angry", "downR", cheeks="blush") #pout
         m "Should have put it in your mouth then..."
-        cho "..." #pout
+        call cho_main("...", "disgust", "narrow", "base", "mid", cheeks="blush") #pout
 
-    cho "Is this what you do to Hermione as well?"
+    call cho_main("Is this what you do to Hermione as well?", "upset", "narrow", "base", "down", cheeks="blush")
 
     if hg_kiss.trigger:
         m "Maybe."
-        cho "I knew it..."
+        call cho_main("I knew it...", "smile", "wide", "base", "mid", cheeks="blush")
         m "Miss Granger knows how to properly dispose--"
-        cho "She swallows?!?" #Shocked #Big text
-        cho "I mean..."
-        cho "Of course she does...." #small text #Blush
+        call cho_main("She swallows?!?", "clench", "wide", "base", "mid", cheeks="blush") #Shocked #Big text
+        call cho_main("I mean...", "disgust", "base", "base", "downR", cheeks="blush")
+        call cho_main("Of course she does....", "angry", "base", "base", "down", cheeks="blush") #small text #Blush
     else:
         m "Of course not..."
-        cho "I knew--"
-        cho "Wait, she doesn't do stuff like that?"
+        call cho_main("I knew--", "smile", "happyCl", "base", "mid", cheeks="blush")
+        call cho_main("Wait, she doesn't do stuff like that?", "clench", "narrow", "base", "mid", cheeks="blush")
         m "No."
-        cho "So I am your first?" # blush
+        call cho_main("So I am your first?", "smile", "narrow", "base", "downR", cheeks="blush") # blush
         m "In one way or the other."
-        cho "What's that supposed to mean?!" # angry
-        cho "Whatever..." # pout
+        call cho_main("What's that supposed to mean?!", "upset", "base", "angry", "mid", cheeks="blush") # angry
+        call cho_main("Whatever...", "annoyed", "base", "angry", "R", cheeks="blush") # pout
 
-    cho "Are you...{w=0.4} Are we done?" #Blush
+    call cho_main("Are you...{w=0.4} Are we done?", "open", "narrow", "base", "downR", cheeks="blush") #Blush
     m "Yes, for now..."
 
     if daytime:
-        cho "Alright... In that case I better head back to class."
+        call cho_main("Alright... In that case I better head back to class.", "open", "base", "base", "R")
     else:
-        cho "Alright... I'll head off to bed then."
+        call cho_main("Alright... I'll head off to bed then.", "open", "base", "base", "R")
     m "Until next time."
 
     call cho_walk(action="leave")
@@ -978,26 +978,28 @@ label cc_pf_blowjob_T3_E2:
                     with fade
 
                     #Office screen (Cho has cum on her face and tits)
-                    cho "\"House points\", really?!"
-                    cho "You want me to swallow your semen for house points?!"
+                    # TODO: Add Cho doll flip when at door etc, cum layers
+
+                    call cho_main("\"House points\", really?!", "angry", "base", "angry", "mid", cheeks="blush")
+                    call cho_main("You want me to swallow your semen for house points?!", "mad", "base", "angry", "mid", cheeks="blush")
                     m "The points were just going to be a bonus."
-                    cho "A bonus on top of?"
+                    call cho_main("A bonus on top of?", "open", "base", "angry", "mid", cheeks="blush")
                     m "Not having to clean up..."
                     m "Although I guess you didn't see it that way since you--"
-                    cho "..." #Angry
+                    call cho_main("...", "clench", "closed", "angry", "mid", cheeks="blush") #Angry
                     m "Pulled...{w=0.5} back..."
-                    cho "I'm not selling my body for points!"
+                    call cho_main("I'm not selling my body for points!", "scream", "base", "angry", "mid", cheeks="blush")
                     m "Of course..."
-                    cho "I can't believe you..." #Small text
+                    call cho_main("I can't believe you...", "disgust", "base", "angry", "down", cheeks="blush") #Small text
 
                     call cho_walk("door", "base")
 
-                    cho "{size=-3}Who does he think I am?{w=0.4} I'm not Hermione, that slut!{/size}" #Small text
+                    call cho_main("{size=-3}Who does he think I am?{w=0.4} I'm not Hermione!{/size}", "annoyed", "closed", "angry", "mid", cheeks="blush") #TODO Flip true (needs positioning to stay consistent)
                     m "[cho_name]."
 
                     call cho_chibi("stand", "door", flip=False)
                     with d5
-                    cho "I don't want to hear any of your excuses [cho_genie_name]!"
+                    call cho_main("I don't want to hear any of your excuses [cho_genie_name]!", "scream", "narrow", "angry", "mid", cheeks="blush") #TODO Flip false (needs positioning to stay consistent)
                     call cho_chibi("stand", "door", flip=True)
                     with d5
                     m "At least let m--"
@@ -1016,7 +1018,7 @@ label cc_pf_blowjob_T3_E2:
                     pause 1.0
 
                     m "Don't say I didn't try to--"
-                    cho "Shut... up!"
+                    call cho_main("Shut... up!", "angry", "base", "angry", "mid", cheeks="blush")
                     $ renpy.sound.play("sounds/cloth_sound2.mp3")
                     $ cho.wear("top")
 
@@ -1102,36 +1104,36 @@ label cc_pf_blowjob_T3_E2:
                     hide screen animatedCG
                     with fade
 
-                    # TODO: Posing, cum layers
+                    # TODO: Add Cho doll flip when at door etc, cum layers
                     #Cho has no shirt, cum on her face and down her tits
 
                     m "Well, will look at that... You look great with a fresh coat of paint!"
-                    cho "Did you have to cum this much..."
+                    call cho_main("Did you have to cum this much...", "disgust", "narrow", "base", "down", cheeks="blush")
                     m "I can't exactly control it..."
                     m "If you don't swallow, you'll have to deal with the mess."
-                    cho "Swallow [cho_genie_name]'s..." #Blush
-                    cho "I don't know..." #Blush
+                    call cho_main("Swallow [cho_genie_name]'s...", "upset", "base", "base", "downR", cheeks="blush") #Blush
+                    call cho_main("I don't know...", "soft", "narrow", "base", "downR", cheeks="blush") #Blush
                     m "In any case, you've excelled today [cho_name]."
-                    cho "I think I need to lie down for a bit..."
-                    cho "This was exhausting...{w=0.4} Even for me."
+                    call cho_main("I think I need to lie down for a bit...", "open", "narrow", "base", "down", cheeks="blush")
+                    call cho_main("This was exhausting...{w=0.4} Even for me.", "open", "narrow", "base", "mid", cheeks="blush")
                     if hg_kiss.trigger:
-                        cho "I don't know how Granger could do this for so long."
+                        call cho_main("I don't know how Granger could do this for so long.", "soft", "narrow", "base", "down")
                         g9 "(*Heh*, practice makes perfect...)"
 
                     if daytime:
                         m "No time for a lie down I'm afraid..."
-                        cho "What, don't tell me you're already--"
+                        call cho_main("What, don't tell me you're already--", "clench", "wide", "base", "mid", cheeks="blush")
                         m "You've got class to get to."
-                        cho "Oh...{w=0.4} Right..."
-                        cho "Good day then..."
+                        call cho_main("Oh...{w=0.4} Right...", "open", "base", "base", "down", cheeks="blush")
+                        call cho_main("Good day then...", "soft", "base", "base", "mid", cheeks="blush")
                     else:
                         m "A lie down you say..."
-                        cho "Don't you get any ideas..."
+                        call cho_main("Don't you get any ideas...", "disgust", "narrow", "base", "mid", cheeks="blush")
                         m "I most certainly was not!"
-                        cho "Yeah right."
+                        call cho_main("Yeah right.", "annoyed", "base", "base", "R", cheeks="blush")
                         m "{size=-4}Pervert...{/size}"
-                        g9 "Well, you've earnt a lie down I suppose..."
-                        cho "Good night then..."
+                        m "Well, you've earnt a lie down I suppose..."
+                        call cho_main("Good night then...", "open", "narrow", "base", "mid")
                         m "Good night, [cho_name]."
 
                     call cho_walk("mid", "base")
@@ -1140,15 +1142,15 @@ label cc_pf_blowjob_T3_E2:
                     call cho_chibi("stand", "mid", "base", flip=False)
                     with d5
 
-                    cho "Yes [cho_genie_name]?"
+                    call cho_main("Yes [cho_genie_name]?", "open", "base", "raised", "mid")
                     m "Your top..."
-                    cho "Oh... Of course!" #Blush
+                    call cho_main("Oh... Of course!", "clench", "happyCl", "base", "mid", cheeks="blush") #Blush
 
                     $ cho.wear("top")
                     $ renpy.sound.play("sounds/cloth_sound2.mp3")
 
-                    cho "..." #Cho puts on top
-                    cho "Thank you, [cho_genie_name]..."
+                    call cho_main("...", "soft", "base", "base", "down", cheeks="blush") #Cho puts on top
+                    call cho_main("Thank you, [cho_genie_name]...", "open", "base", "base", "downR", cheeks="blush")
 
                     call cho_walk(action="leave")
 
@@ -1215,19 +1217,19 @@ label cc_pf_blowjob_T3_E2:
                     hide screen animatedCG
                     with fade
 
-                    # TODO: Posing, cum layers
+                    # TODO: Add Cho doll flip when at door etc, cum layers
                     #Cho still has some cum on her cheeks and tits but not a lot
 
                     g9 "Now this is the kind of initiative I'm talking about!"
-                    cho "..." #blank stare
+                    call cho_main("...", "disgust", "narrow", "base", "down", cheeks="blush") #blank stare
                     m "[cho_name]?"
-                    cho "Yes...{w=0.5} sorry...{w=0.5} thank you [cho_genie_name]."
-                    cho "Is that all?"
+                    call cho_main("Yes...{w=0.5} sorry...{w=0.5} thank you [cho_genie_name].", "angry", "base", "base", "downR", cheeks="blush")
+                    call cho_main("Is that all?", "soft", "narrow", "base", "down", cheeks="blush")
                     if daytime:
                         m "That will be all for today..."
                     else:
                         m "That will be all for tonight..."
-                    cho "Okay, good..."
+                    call cho_main("Okay, good...", "angry", "narrow", "base", "down", cheeks="blush")
                     #Cho walks out of door still without shirt on
                     call cho_walk(action="leave")
                     m "[cho_name]!"
@@ -1235,17 +1237,17 @@ label cc_pf_blowjob_T3_E2:
                     call cho_walk(action="enter")
                     with d5
 
-                    cho "Yes [cho_genie_name]?"
+                    call cho_main("Yes [cho_genie_name]?", "soft", "base", "base", "mid", cheeks="blush")
                     m "..."
-                    cho "Oh, of course!" #Wide eyed
+                    call cho_main("Oh, of course!", "clench", "base", "base", "down", cheeks="blush") #Wide eyed
                     #Cho puts on her shirt
                     $ cho.wear("top")
                     $ renpy.sound.play("sounds/cloth_sound2.mp3")
 
                     if daytime:
-                        cho "Bye then!"
+                        call cho_main("Bye then!", "open", "happyCl", "base", "downR", cheeks="blush")
                     else:
-                        cho "Good night then!"
+                        call cho_main("Good night then!", "base", "base", "base", "mid")
 
                     call cho_walk(action="leave")
 
@@ -1303,24 +1305,24 @@ label cc_pf_blowjob_T3_E2:
             hide screen blkfade
             with fade
 
-            # TODO: Posing, cum layers
+            # TODO: Add Cho doll flip when at door etc, cum layers
 
             #Cut to office screen #Cho has put on her top
             m "As I said, it's kind of expected from the whole blowjob thing..."
-            cho "You...{w=0.4} you're joking right?"
+            call cho_main("You...{w=0.4} you're joking right?", "clench", "narrow", "angry", "mid", cheeks="blush")
             m "Deadly serious..."
             m "Unless I fancy covering your face that is..."
-            cho "Unless you--" #disgust
-            cho "*Humph*!"
+            call cho_main("Unless you--", "soft", "wide", "angry", "mid", cheeks="blush") #disgust
+            call cho_main("*Humph*!", "upset", "base", "angry", "mid", cheeks="blush")
 
             # Gets upset
             $ cho_mood += 12
 
-            cho "I'm going to go take a shower now if you don't mind!"
+            call cho_main("I'm going to go take a shower now if you don't mind!", "mad", "base", "angry", "mid", cheeks="blush")
             m "You're dismissed [cho_name]."
-            cho "Good!"
+            call cho_main("Good!", "annoyed", "base", "angry", "mid", cheeks="blush")
             call cho_walk("door", "base")
-            cho "Seriously... just ask first..." #Small text #Pout #Blush
+            call cho_main("{size=-4}Seriously... just ask first...{/size}", "disgust", "base", "angry", "down", cheeks="heavy_blush") #Small text #Pout #Blush
 
             call cho_walk(action="leave")
 
@@ -1328,30 +1330,30 @@ label cc_pf_blowjob_T3_E2:
 
 label cc_pf_blowjob_T3_E3:
     m "Let's see what that mouth can do."
-    cho "You want to...{w=0.4} use my mouth again [cho_genie_name]?"
-    cho "I guess I could..." #Blush #Horny
+    call cho_main("You want to...{w=0.4} use my mouth again [cho_genie_name]?", "soft", "narrow", "base", "downR", cheeks="blush")
+    call cho_main("I guess I could...", "open", "narrow", "base", "down", cheeks="blush") #Blush #Horny
 
     if cho_bj_choice == "points":
         m "And this time I won't make the mistake of offering house points..."
-        cho "You better not."
+        call cho_main("You better not.", "annoyed", "narrow", "base", "downR", cheeks="blush")
         m "But my expectations are still the same..."
         m "For you to push your limits on your own..."
-        cho "So you want me to..."
+        call cho_main("So you want me to...", "soft", "base", "base", "downR", cheeks="blush")
     elif cho_bj_choice == "taste":
         m "And if you don't want those clothes dirty you better swallow this time..."
-        cho "..." #blush
+        call cho_main("...", "annoyed", "narrow", "base", "downR", cheeks="blush") #blush
     elif cho_bj_choice == "swallow":
-        cho "You expect me to swallow again?"
+        call cho_main("You expect me to swallow again?", "open", "base", "base", "downR", cheeks="blush")
         m "Of course, that's part of the deal..."
     else: # cho_bj_choice == throat - Using `else` as a fallback for degenerates that use cheats
-        cho "Will you warn me this time?"
+        call cho_main("Will you warn me this time?", "annoyed", "narrow", "base", "downR", cheeks="blush")
         m "Of course..."
 
-    cho "Fine..."
+    call cho_main("Fine...", "base", "narrow", "base", "R", cheeks="blush")
     m "Good! And one more thing..."
     m "I expect some dirty talk this time."
-    cho "Dirty talk, [cho_genie_name]?" #pout
-    cho "I... If that's what you want..." #Blush
+    call cho_main("Dirty talk, [cho_genie_name]?", "upset", "base", "raised", "mid", cheeks="blush") #pout
+    call cho_main("I... If that's what you want...", "soft", "base", "base", "downR", cheeks="blush") #Blush
     m "Good, then get over here..."
 
     call cho_walk("desk_close", "base")
@@ -1607,41 +1609,43 @@ label cc_pf_blowjob_T3_E3:
     hide screen animatedCG
     with fade
 
+    # TODO: Add Cho doll flip when at door etc, cum layers
+
     if cho_bj_choice in ("taste", "points"):
-        cho "I...{w=0.4} I did it...{w=0.4} I swallowed your cum [cho_genie_name]."
+        call cho_main("I...{w=0.4} I did it...{w=0.4} I swallowed your cum [cho_genie_name].", "base", "happyCl", "base", "mid", cheeks="blush")
         m "As expected."
         m "But an improvement from last time nevertheless..."
-        cho "Thank you [cho_genie_name]..."
+        call cho_main("Thank you [cho_genie_name]...", "base", "narrow", "base", "down", cheeks="blush")
     elif cho_bj_choice == "swallow":
-        cho "I...{w=0.4} I hope you liked it [cho_genie_name]."
+        call cho_main("I...{w=0.4} I hope you liked it [cho_genie_name].", "base", "narrow", "base", "mid", "down", cheeks="blush")
     else: # cho_bj_choice == throat - Using `else` as a fallback for degenerates that use cheats
-        cho "I...{w=0.4} I did it..."
+        call cho_main("I...{w=0.4} I did it...", "base", "narrow", "base", "down", cheeks="blush")
         m "And without my help this time."
 
-    cho "Your...{w=0.4} Your cum...{w=0.4} was delicious [cho_genie_name]..."
+    call cho_main("Your...{w=0.4} Your cum...{w=0.4} was delicious [cho_genie_name]...", "soft", "base", "base", "downR", cheeks="blush")
     g9 "That's right [cho_name]... and if you keep doing such a good job there's even more where that came from..."
     m "You can stop talking dirty now."
-    cho "I wasn--... Yes [cho_genie_name]..." #blush, looking right
-    cho "So... Is that all?"
+    call cho_main("I wasn--... Yes [cho_genie_name]...", "open", "narrow", "base", "down", cheeks="heavy_blush") #blush, looking right
+    call cho_main("So... Is that all?", "soft", "closed", "base", "mid", cheeks="blush")
     m "For now..."
-    cho "Okay then..."
+    call cho_main("Okay then...", "soft", "base", "base", "mid", cheeks="blush")
     if daytime:
-        cho "In that case I'll head back to class."
+        call cho_main("In that case I'll head back to class.", "open", "base", "base", "R", cheeks="blush")
     else:
-        cho "I'll head back to my dorms then..."
+        call cho_main("I'll head back to my dorms then...", "base", "base", "base", "mid")
     m "Of course...{w=0.4} you better be ready for next time..."
-    cho "Next...{w=0.4} yes [cho_genie_name]..."
+    call cho_main("Next...{w=0.4} yes [cho_genie_name]...", "horny", "narrow", "base", "down", cheeks="blush")
     call cho_walk("door", "base")
-    cho "(He's so commanding...)" # horny
-    cho "(And he has such a big stick too!)"
-    cho "(No wonder Hermione enjoys it so much...)"
+    call cho_main("(He's so commanding...)", "horny", "narrow", "base", "R", cheeks="heavy_blush") # horny
+    call cho_main("(And he has such a big stick too!)", "base", "narrow", "base", "down", cheeks="heavy_blush")
+    call cho_main("(No wonder Hermione enjoys it so much...)", "horny", "closed", "base", "mid", cheeks="heavy_blush")
     m "[cho_name]."
 
     call cho_chibi("stand", "door", "base", flip=False)
     with d5
 
-    cho "Yes... sorry!" #Blush
-    cho "Bye then!" #Blush
+    call cho_main("Yes... sorry!", "mad", "base", "base", "L", cheeks="heavy_blush") #Heavy Blush
+    call cho_main("Bye then!", "soft", "happyCl", "base", "mid", cheeks="heavy_blush") #Heavy Blush
 
     call cho_walk(action="leave")
 

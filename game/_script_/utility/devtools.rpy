@@ -1,4 +1,3 @@
-﻿
 init python:
     if not config.developer:
         config.missing_image_callback = missing_image_func
@@ -7,8 +6,8 @@ init python:
         config.lint_hooks.append(lint_char_main_calls)
         renpy.arguments.register_command("whitespace", save_whitespace)
 
-    config.start_interact_callbacks.append(fix_intel_renderer)
-
+    if not renpy.variant('android'):
+        config.start_interact_callbacks.append(fix_intel_renderer)
 
 init -1 python:
     if renpy.version_tuple < (7,3,5,606):

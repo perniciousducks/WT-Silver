@@ -96,14 +96,14 @@ label stats_menu(xx=150, yy=90):
 
     # Stats dictionary
     $ stats_dict = {
-                    "Genie": {"ico": "head_genie_1", "flag": True, "name": "Genie", "sex": "Yes", "height": "6.2ft", "weight": "200lb", "job": "Headmaster", "hates": "Lamps", "likes": "Tits"},
-                    "Snape": {"ico": "head_snape_1", "flag": snape_unlocked, "name": "Severus Snape", "sex": "Male", "height": "5.9ft", "weight": "155lb", "job": "Teacher", "hates": "Everyone", "likes": "Rain"},
-                    "Tonks": {"ico": "head_tonks_1", "flag": tonks_unlocked, "name": "Nymphadora Tonks", "sex": "Fluid", "height": "5.6ft", "weight": "130lb", "job": "Teacher", "hates": "Pineapple Pizza", "likes": "Girls"},
-                    "Hermione": {"ico": "head_hermione_2", "flag": hermione_unlocked, "name": "Hermione Granger", "sex": "Female", "height": "5.2ft", "weight": "126lb", "job": "Student", "hates": "Slytherin", "likes": "Books"},
-                    "Cho": {"ico": "head_cho_2", "flag": cho_unlocked, "name": "Cho Chang", "sex": "Female", "height": "5.1ft", "weight": "122lb", "job": "Student", "hates": "Hermione", "likes": "Winning"},
-                    "Luna": {"ico": "head_luna_2", "flag": luna_unlocked, "name": "Luna Lovegood", "sex": "Female", "height": "5.2ft", "weight": "117lb", "job": "Student", "hates": "Wrackspurts", "likes": "{size=-2}Magical creatures{/size}"},
-                    "Astoria": {"ico": "head_astoria_2", "flag": astoria_unlocked, "name": "Astoria Greengrass", "sex": "Female", "height": "5.0ft", "weight": "102lb", "job": "Student", "hates": "Rules", "likes": "Breaking them"},
-                    "Susan": {"ico": "head_susan_2", "flag": susan_unlocked, "name": "Susan Bones", "sex": "Female", "height": "5.1ft", "weight": "135lb", "job": "Student", "hates": "Chores", "likes": "You {size=-4}Secretly..{/size}"}
+                    "Genie": {"ico": "genie", "flag": True, "name": "Genie", "sex": "Yes", "height": "6.2ft", "weight": "200lb", "job": "Headmaster", "hates": "Lamps", "likes": "Tits"},
+                    "Snape": {"ico": "snape", "flag": snape_unlocked, "name": "Severus Snape", "sex": "Male", "height": "5.9ft", "weight": "155lb", "job": "Teacher", "hates": "Everyone", "likes": "Rain"},
+                    "Tonks": {"ico": "tonks", "flag": tonks_unlocked, "name": "Nymphadora Tonks", "sex": "Fluid", "height": "5.6ft", "weight": "130lb", "job": "Teacher", "hates": "Pineapple Pizza", "likes": "Girls"},
+                    "Hermione": {"ico": "hermione", "flag": hermione_unlocked, "name": "Hermione Granger", "sex": "Female", "height": "5.2ft", "weight": "126lb", "job": "Student", "hates": "Slytherin", "likes": "Books"},
+                    "Cho": {"ico": "cho", "flag": cho_unlocked, "name": "Cho Chang", "sex": "Female", "height": "5.1ft", "weight": "122lb", "job": "Student", "hates": "Hermione", "likes": "Winning"},
+                    "Luna": {"ico": "luna", "flag": luna_unlocked, "name": "Luna Lovegood", "sex": "Female", "height": "5.2ft", "weight": "117lb", "job": "Student", "hates": "Wrackspurts", "likes": "{size=-2}Magical creatures{/size}"},
+                    "Astoria": {"ico": "astoria", "flag": astoria_unlocked, "name": "Astoria Greengrass", "sex": "Female", "height": "5.0ft", "weight": "102lb", "job": "Student", "hates": "Rules", "likes": "Breaking them"},
+                    "Susan": {"ico": "susan", "flag": susan_unlocked, "name": "Susan Bones", "sex": "Female", "height": "5.1ft", "weight": "135lb", "job": "Student", "hates": "Chores", "likes": "You {size=-4}Secretly..{/size}"}
                     }
 
     $ stats_categories_sorted = ["Genie", "Snape", "Tonks", "Hermione", "Cho", "Luna", "Astoria", "Susan"] #"Ginny", "Daphne", "Padma", "Patil", "Myrtle", "Mafkin"

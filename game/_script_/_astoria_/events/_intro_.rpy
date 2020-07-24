@@ -1037,7 +1037,7 @@ label astoria_intro_E4:
 
     $ astoria_unlocked = True
     $ achievement.unlock("unlockast", True)
-    call popup("{size=-4}You can now summon Astoria into your office.{/size}", "Character unlocked!", "interface/icons/head/head_astoria_1.png")
+    call popup("{size=-4}You can now summon Astoria into your office.{/size}", "Character unlocked!", "interface/icons/head/astoria.png")
 
     $ astoria_intro.E4_complete = True
 

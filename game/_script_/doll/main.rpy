@@ -227,6 +227,11 @@ init python:
                     lipstick.rebuild_image()
                 self.rebuild_image()
 
+        def set_face_zorder(self, **kwargs):
+            """Takes keyword argument(s) with the name(s) of body part(s) and integer value(s)"""
+            if self.face.set_zorder(**kwargs):
+                self.rebuild_image()
+
         def get_face(self):
             """Returns a dictionary containing currently set facial expressions. Used in character studio."""
             return self.face.get_face()
@@ -242,6 +247,11 @@ init python:
             self.body.rebuild_image()
             self.rebuild_image()
             self.apply_transition()
+
+        def set_body_zorder(self, **kwargs):
+            """Takes keyword argument(s) with the name(s) of body part(s) and integer value(s)"""
+            if self.body.set_zorder(**kwargs):
+                self.rebuild_image()
 
         def set_cum(self, *args, **kwargs):
             """Takes keyword argument(s) containing string name(s) of cum layers to apply or None."""

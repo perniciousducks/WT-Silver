@@ -49,12 +49,12 @@ label upgrades:
 label upgrades_menu(xx=150, yy=90):
 
     $ upgrades_dict = {
-                    "Tonks": {"ico": "head_tonks_1", "flag": tonks_unlocked, "outfits": {"school": []}},
-                    "Hermione": {"ico": "head_hermione_2", "flag": hermione_unlocked, "outfits": {"school": [her_outfit_default, her_upgrade_school2, her_upgrade_school3, her_upgrade_school4], "other": [her_outfit_default, her2_upgrade_school2, her2_upgrade_school3, her2_upgrade_school4], "other2": [her_outfit_default, her3_upgrade_school2, her3_upgrade_school3, her3_upgrade_school4], "other3": [her_outfit_default, her_upgrade_school2, her_upgrade_school3, her_upgrade_school4]}},
-                    "Cho": {"ico": "head_cho_2", "flag": cho_unlocked, "outfits": {"school": []}},
-                    "Luna": {"ico": "head_luna_2", "flag": luna_unlocked, "outfits": {"school": []}},
-                    "Astoria": {"ico": "head_astoria_2", "flag": astoria_unlocked, "outfits": {"school": []}},
-                    "Susan": {"ico": "head_susan_2", "flag": susan_unlocked, "outfits": {"school": []}}
+                    "Tonks": {"ico": "tonks", "flag": tonks_unlocked, "outfits": {"school": []}},
+                    "Hermione": {"ico": "hermione", "flag": hermione_unlocked, "outfits": {"school": [her_outfit_default, her_upgrade_school2, her_upgrade_school3, her_upgrade_school4], "other": [her_outfit_default, her2_upgrade_school2, her2_upgrade_school3, her2_upgrade_school4], "other2": [her_outfit_default, her3_upgrade_school2, her3_upgrade_school3, her3_upgrade_school4], "other3": [her_outfit_default, her_upgrade_school2, her_upgrade_school3, her_upgrade_school4]}},
+                    "Cho": {"ico": "cho", "flag": cho_unlocked, "outfits": {"school": []}},
+                    "Luna": {"ico": "luna", "flag": luna_unlocked, "outfits": {"school": []}},
+                    "Astoria": {"ico": "astoria", "flag": astoria_unlocked, "outfits": {"school": []}},
+                    "Susan": {"ico": "susan", "flag": susan_unlocked, "outfits": {"school": []}}
                     }
 
     $ upgrades_categories_sorted = ["Tonks", "Hermione", "Cho", "Luna", "Astoria", "Susan"]

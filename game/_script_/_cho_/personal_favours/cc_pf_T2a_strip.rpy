@@ -448,7 +448,7 @@ label cc_pf_strip_T1_intro_E2:
             call cho_main("(...)", "annoyed", "narrow", "angry", "R") # Annoyed
             call play_music("stop")
             m "Very well then..."
-            m "Take of your clothes, [cho_name]."
+            m "Take off your clothes, [cho_name]."
             call cho_main("Yes, Sir!", "soft", "closed", "base", "mid")
             call cho_main("Would you like me to take off my bra first?", "soft", "narrow", "angry", "mid")
             call cho_main("Or pull down my panties so you can get a nice look at my lower half?", "soft", "narrow", "base", "mid")

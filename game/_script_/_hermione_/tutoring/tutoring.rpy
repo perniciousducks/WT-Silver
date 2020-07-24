@@ -1079,7 +1079,7 @@ label hg_tutor_E10:
     call blkfade
 
     ## TODO: show vibrator pose
-    $ hermione.body.body["armright"][1] = 3 # Hacky hacky, sucky sucky, CG better. ## -.-
+    $ hermione.set_body_zorder(armright=3)
     $ hermione.set_body(armleft="on_pussy", armright="on_tits")
 
     hide screen blkfade
@@ -1103,7 +1103,7 @@ label hg_tutor_E10:
     ">Hermione catches her breath and puts her clothes back on."
 
     # Reset pose
-    $ hermione.body.body["armright"][1] = 0 # Hacky hacky, sucky sucky, CG better.
+    $ hermione.set_body_zorder(armright=0)
     $ hermione.set_body(armleft="down", armright="down")
     $ hermione.set_pose(None)
     $ hermione.wear("all")

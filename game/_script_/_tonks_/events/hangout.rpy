@@ -240,7 +240,7 @@ label nt_he_favors_E1:
     m "Whatever floats your boat."
 
     $ tonks_requests_unlocked = True
-    call popup("You can now ask Tonks to do \"Public Requests\" with her students!", "Congratulations!", "interface/icons/head/head_tonks_1.png")
+    call popup("You can now ask Tonks to do \"Public Requests\" with her students!", "Congratulations!", "interface/icons/head/tonks.png")
 
     $ nt_he.favors_E1 = True
 
@@ -265,7 +265,7 @@ label nt_he_favors_E2:
     g9 "Promise me you'll reward them if they do."
     call ton_main("I promise, [ton_genie_name].", "base", "wink", "base", "mid")
 
-    call popup("Tonks can now reach the next level!", "Congratulations!", "interface/icons/head/head_tonks_1.png", sound=False)
+    call popup("Tonks can now reach the next level!", "Congratulations!", "interface/icons/head/tonks.png", sound=False)
 
     $ nt_he.favors_E2 = True
 

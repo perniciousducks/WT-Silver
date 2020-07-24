@@ -14,13 +14,13 @@ label door_menu(xx=723, yy=90):
 
     # Door dictionary
     $ door_dict = {
-                    "Snape": {"ico": "head_snape_1", "flag": snape_unlocked, "busy": snape_busy, "loc": "randomsnape"},
-                    "Tonks": {"ico": "head_tonks_1", "flag": tonks_unlocked, "busy": tonks_busy, "loc": "randomtonks"},
-                    "Hermione": {"ico": "head_hermione_2", "flag": hermione_unlocked, "busy": hermione_busy, "loc": her_map_location},
-                    "Cho": {"ico": "head_cho_2", "flag": cho_unlocked, "busy": cho_busy, "loc": cho_map_location},
-                    "Luna": {"ico": "head_luna_2", "flag": luna_unlocked, "busy": luna_busy, "loc": lun_map_location},
-                    "Astoria": {"ico": "head_astoria_2", "flag": astoria_unlocked, "busy": astoria_busy, "loc": ast_map_location},
-                    "Susan": {"ico": "head_susan_2", "flag": susan_unlocked, "busy": susan_busy, "loc": sus_map_location}
+                    "Snape": {"ico": "snape", "flag": snape_unlocked, "busy": snape_busy, "loc": "randomsnape"},
+                    "Tonks": {"ico": "tonks", "flag": tonks_unlocked, "busy": tonks_busy, "loc": "randomtonks"},
+                    "Hermione": {"ico": "hermione", "flag": hermione_unlocked, "busy": hermione_busy, "loc": her_map_location},
+                    "Cho": {"ico": "cho", "flag": cho_unlocked, "busy": cho_busy, "loc": cho_map_location},
+                    "Luna": {"ico": "luna", "flag": luna_unlocked, "busy": luna_busy, "loc": lun_map_location},
+                    "Astoria": {"ico": "astoria", "flag": astoria_unlocked, "busy": astoria_busy, "loc": ast_map_location},
+                    "Susan": {"ico": "susan", "flag": susan_unlocked, "busy": susan_busy, "loc": sus_map_location}
                     }
 
     $ door_categories_sorted = ["Snape", "Tonks", "Hermione", "Cho", "Luna", "Astoria", "Susan"] #"Ginny", "Daphne", "Padma", "Patil", "Myrtle", "Mafkin"

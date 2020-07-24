@@ -704,7 +704,7 @@ label tonks_intro_E3:
 
     $ tonks_unlocked = True
     $ achievement.unlock("unlockton", True)
-    call popup("{size=-4}You can now summon Tonks into your office.{/size}", "Character unlocked!", "interface/icons/head/head_tonks_1.png")
+    call popup("{size=-4}You can now summon Tonks into your office.{/size}", "Character unlocked!", "interface/icons/head/tonks.png")
 
     $ tonks_busy = True
 

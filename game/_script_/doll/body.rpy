@@ -64,3 +64,17 @@ init python:
                 self.imagepath = "characters/{}/poses/{}/body/".format(self.name, pose)
             self.rebuild_image()
             return
+
+        def set_zorder(self, **kwargs):
+            """Takes keyword argument(s) with the string name of body type(s) and int value(s). Returns True if image is changed."""
+            changed = False
+
+            for arg, value in kwargs.iteritems():
+                if value != self.body[str(arg)][1]:
+                    self.body[str(arg)][1] = value
+                    changed = True
+
+            if changed:
+                self.rebuild_image()
+
+            return changed

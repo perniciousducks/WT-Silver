@@ -605,7 +605,7 @@ label cho_quiz_checkpoint:
 
         $ cho_quiz.complete = True
 
-        call popup("You've unlocked the ability to train Cho in Quidditch.", "Congratulations!", "interface/icons/head/head_cho_1.png")
+        call popup("You've unlocked the ability to train Cho in Quidditch.", "Congratulations!", "interface/icons/head/cho.png")
 
     # Failed
     else:

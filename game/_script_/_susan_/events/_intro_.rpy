@@ -1,41 +1,40 @@
 
-
 ### Susan Intro ###
 
 label nt_he_susan_E1:
-    call ton_main(".................","base","base","worried","down", ypos="head")
+    call ton_main(".................", "annoyed", "base", "shocked", "down", ypos="head")
     m "Something on your mind?"
-    call ton_main("Yes, there's this student in my class. She seems to be having a bad time.", "open", "base", "worried", "mid")
+    call ton_main("Yes, there's this student in my class. She seems to be having a bad time.", "open", "narrow", "worried", "mid")
     m "Education isn't meant to be enjoyable."
-    call ton_main("It's not that, she's being bullied by the other students apparently...", "open", "base", "worried", "R")
+    call ton_main("It's not that, she's being bullied by the other students apparently...", "normal", "base", "worried", "R")
     m "Why is she being singled out?"
     call ton_main("For being shy,...insecure,...","upset","closed","base","mid")
     m "About what?"
-    call ton_main("About her massive tits!","upset","base","base","mid")
+    call ton_main("About her massive tits!", "open", "wide", "base", "mid")
     g4 "!!!"
     m "Why would she be insecure about that?"
     g9 "Surely that's something most girls would kill for!"
-    call ton_main("That's what I said...","open","closed","base","mid")
-    call ton_main("She didn't seem to think I was being genuine.","upset","base","worried","down")
+    call ton_main("That's what I said...", "open", "closed", "shocked", "mid")
+    call ton_main("She didn't seem to think I was being genuine.", "soft", "base", "worried", "down")
     m "They're probably just jealous of her."
-    call ton_main("Naturally... Even I'm jealous of those {b}milk-bags{/b} of hers!","open","base","angry","mid")
+    call ton_main("Naturally... Even I'm jealous of those {b}milk-bags{/b} of hers!", "open", "shocked", "shocked", "mid")
     g9 "I definitely need to see them!"
     call ton_main("That being said, I'm quite worried about her...","open","closed","worried","mid")
-    call ton_main("Lately she's been too shy to even answer the simplest of questions during my class.", "open", "base", "worried", "R")
+    call ton_main("Lately she's been too shy to even answer the simplest of questions during my class.", "annoyed", "base", "worried", "R")
     call ton_main("She's lost quite a few points for her house that way.", "upset", "base", "worried", "mid")
-    call ton_main("Not in my lessons, of course. I'd never take points from Hufflepuff!","upset","base","worried","down")
+    call ton_main("Not in my lessons, of course. I'd never take points from Hufflepuff!", "soft", "base", "worried", "R")
     g9 "Just send her my way and I'll drown her in house points!"
     m "And show her that her bod-..."
     g4 "*Ahem!* Show her that she's appreciated..."
-    call ton_main("That's what I was thinking...","open","base","base","mid")
+    call ton_main("That's what I was thinking...", "open", "closed", "base", "mid")
     g4 "Wait, you were?"
-    call ton_main("Of course, why else would I be telling you about her?","open","closed","angry","mid")
+    call ton_main("Of course, why else would I be telling you about her?", "open", "wide", "annoyed", "mid")
     m "I don't know... banter?"
     m "Snape sure as hell hasn't sent me any girls..."
-    call ton_main("I can teach him a thing or two about sharing - if you'd like...","horny","base","base","mid")
-    call ton_main("The more the merrier in my opinion...", "silly", "happyCl", "base", "mid")
+    call ton_main("I can teach him a thing or two about sharing - if you'd like...", "soft", "base", "annoyed", "mid")
+    call ton_main("The more the merrier in my opinion...", "base", "happyCl", "base", "mid")
     m "You don't mean Snape and I..."
-    call ton_main("Of course not, don't be silly!","base","happyCl","base","mid")
+    call ton_main("Of course not, don't be silly!", "base", "narrow", "base", "mid")
     call ton_main("Maybe he's afraid you'd steal them from him if you got the chance...","horny","base","angry","mid")
     m "I have my doubts those girls he's talking about even exist..."
     m "But don't tell him I said that."

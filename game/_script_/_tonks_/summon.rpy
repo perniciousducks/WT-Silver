@@ -276,11 +276,11 @@ label tonks_talk:
                 "-Old man-":
                     label .old_man:
                     $ ton_genie_name = "Old man"
-                    call ton_main("I have to say, for your age you are in a really great shape...","horny","base","base","down")
+                    call ton_main("I have to say, for your age you are in a really great shape...", "soft", "base", "base", "down")
                     m "That's part of the benefits of being immortal. Your body doesn't age..."
                     call ton_main("You're lucky then... I've had men that were a couple hundred years old, who's bodies were quite fragile...","open","base","base","R")
                     m "All mortals? How did they get that old?"
-                    call ton_main("Ever heard of the \"philosopher stone?\"","base","base","base","mid")
+                    call ton_main("Ever heard of the \"philosopher stone?\"", "base", "narrow", "base", "mid")
                     m "*Ah!* Is it a tiny, red, stone-looking gem, that lengthens the owner's life?"
                     m "It's called the \"sorcerer's stone\" in my world, however."
                     call ton_main("Really? Why is that?","open","base","raised","mid")
@@ -303,7 +303,7 @@ label tonks_talk:
                     g4 "My lamp!!!"
                     g4 "Shit, where even is that thing?"
                     g4 "I must have lost it when I got to this place!"
-                    call ton_main("Do you even need it? Didn't you say you were a free Genie now?","open","base","worried","mid")
+                    call ton_main("Do you even need it? Didn't you say you were a free Genie now?", "open", "base", "raised", "mid")
                     g4 "Of course I still need it! What sort of question is that, woman?!"
                     call ton_main("(................)", "mad", "base", "base", "down")
                     g4 "How would you like to suddenly be robbed of your house?!"
@@ -416,24 +416,23 @@ label tonks_talk:
                     label .nympho:
                     $ tonks_name = "Nympho"
                     call ton_main("You think I'm a nympho, [ton_genie_name]?","horny","base","raised","mid")
-                    call ton_main("Like a filthy, sex craved maniac? Who wouldn't shy away from fulfilling every single one of her fantasies?","open","base","worried","mid")
-                    call ton_main("It fits quite well, actually.","base","base","base","ahegao")
+                    call ton_main("Like a filthy, sex craved maniac? Who wouldn't shy away from fulfilling every single one of her fantasies?", "grin", "base", "shocked", "mid")
+                    call ton_main("It fits quite well, actually.", "base", "base", "base", "R")
                     jump tonks_talk
                 "-Fuck Puppet-":
                     label .fuck_puppet:
                     $ tonks_name = "Fuck Puppet"
                     call ton_main("A fuck puppet?","open","base","raised","mid")
-                    call ton_main("[ton_genie_name], did you know I can take the shape of every person or being imaginable?","horny","base","base","mid")
-                    m "You might have mentioned that..."
-                    call ton_main("You could say I'm perfect for that job.","open_wide_tongue","base","raised","ahegao")
-                    m "You need to show me one day. That ability of yours!"
-                    call ton_main("Of course, [ton_genie_name].","horny","base","base","mid")
+                    call ton_main("So you want me to be your personal toy?","horny","base","base","mid")
+                    m "Wouldn't anyone."
+                    call ton_main("Such a charmer...", "base", "base", "raised", "R")
+                    call ton_main("Of course, [ton_genie_name]... you can call me that if you like.","horny","base","base","mid")
                     jump tonks_talk
                 "-Bitch-":
                     label .bitch:
                     $ tonks_name = "Bitch"
                     call ton_main("*Hi-hi*","base","base","base","R")
-                    call ton_main("If only you knew...","horny","base","raised","ahegao")
+                    call ton_main("If only you knew...", "horny", "base", "raised", "R")
                     m "(...)"
                     g4 "(What does she mean by that?)"
                     jump tonks_talk

@@ -1,4 +1,4 @@
-﻿init python:
+init python:
     def credits_title(title):
         return "{k=5.0}{size=+15}{outlinecolor=#842500}{color=#f9a001}{{" + title + "}{/color}{/outlinecolor}{/size}{/k}\n"
 

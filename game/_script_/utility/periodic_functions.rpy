@@ -1,4 +1,4 @@
-﻿init python:
+init python:
     def periodic_achievements():
         if not achievement.status('gold') and gold >= 10000:
             achievement.unlock("gold")

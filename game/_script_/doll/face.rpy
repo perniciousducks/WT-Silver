@@ -58,3 +58,17 @@ init python:
                 self.blink = "spr_{} blink {}".format(self.name, pose) if renpy.has_image("spr_{} blink {}".format(self.name, pose)) else None
             self.rebuild_image()
             return
+
+        def set_zorder(self, **kwargs):
+            """Takes keyword argument(s) with the string name of face type(s) and int value(s). Returns True if image is changed."""
+            changed = False
+
+            for arg, value in kwargs.iteritems():
+                if value != self.face[str(arg)][1]:
+                    self.face[str(arg)][1] = value
+                    changed = True
+
+            if changed:
+                self.rebuild_image()
+
+            return changed

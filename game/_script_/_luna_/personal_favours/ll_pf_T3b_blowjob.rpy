@@ -1401,7 +1401,7 @@ label ll_pf_blowjob_T1_summon:
 
     # Hermione starts touching herself
     $ hermione.set_pose("masturbate")
-    $ hermione.body.body["armright"][1] = 3
+    $ hermione.set_body_zorder(armright=3)
     $ hermione.set_body(armleft="on_pussy", armright="on_tits")
 
     $ lunCG('', 'angry', '', 'up', pos=8)
@@ -1452,7 +1452,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG('sucking', 'angry', 'angry', 'ahegao')
 
     # Reset pose
-    $ hermione.body.body["armright"][1] = 0
+    $ hermione.set_body_zorder(armright=0)
     $ hermione.set_body(armleft="down", armright="down")
     $ hermione.set_pose(None)
 

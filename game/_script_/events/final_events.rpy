@@ -357,7 +357,7 @@ label ball_quest_E1:
             call her_main("I... I enjoy touching myself...{w=0.5} In front of my headmaster *SOB*!", "angry", "squint", "worried", "R_soft", cheeks="blush", tears="crying")
 
             # Hands on pussy, tits
-            $ hermione.body.body["armright"][1] = 3 # Hacky hacky, sucky sucky, CG better.
+            $ hermione.set_body_zorder(armright=3)
             $ hermione.set_body(armleft="on_pussy", armright="on_tits")
 
             play bg_sounds "sounds/slickloop.mp3" fadein 2
@@ -409,7 +409,7 @@ label ball_quest_E1:
             her "..."
 
             # Reset pose
-            $ hermione.body.body["armright"][1] = 0 # Hacky hacky, sucky sucky, CG better.
+            $ hermione.set_body_zorder(armright=0)
             $ hermione.set_body(armleft="down", armright="down")
             $ hermione.set_pose(None)
 

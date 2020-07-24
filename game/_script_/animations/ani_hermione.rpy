@@ -507,3 +507,29 @@ image ch_hem lift_top:
     pause 1
     # End with blink loop
     random_blink("characters/hermione/chibis/lift_top/boing06.png", "characters/hermione/chibis/lift_top/boing05.png")
+
+image ch_hem reading:
+    "characters/hermione/chibis/reading/0.png"
+    pause.15
+    "characters/hermione/chibis/reading/1.png"
+    pause.15
+    "characters/hermione/chibis/reading/2.png"
+    pause.15
+    "characters/hermione/chibis/reading/3.png"
+    pause.15
+    "characters/hermione/chibis/reading/4.png"
+    pause.15
+    "characters/hermione/chibis/reading/0.png"
+    pause.5
+    "characters/hermione/chibis/reading/5.png"
+    pause.5
+    "characters/hermione/chibis/reading/0.png"
+    pause.15
+    repeat
+
+image ch_hem reading sleep:
+    "characters/hermione/chibis/reading/0_sleep.png"
+    pause.15
+    "characters/hermione/chibis/reading/1_sleep.png"
+    pause.15
+    repeat

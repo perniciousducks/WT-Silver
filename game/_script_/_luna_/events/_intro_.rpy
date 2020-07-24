@@ -145,7 +145,7 @@ label hat_intro_3:
 
             $ luna_unlocked = True
             $ achievement.unlock("unlocklun", True)
-            call popup("{size=-4}You can now summon Luna into your office.{/size}", "Character unlocked!", "interface/icons/head/head_luna_1.png")
+            call popup("{size=-4}You can now summon Luna into your office.{/size}", "Character unlocked!", "interface/icons/head/luna.png")
 
             jump main_room
 
@@ -205,7 +205,7 @@ label hat_intro_3:
 
     $ luna_unlocked = True
     $ achievement.unlock("unlocklun", True)
-    call popup("{size=-4}You can now summon Luna into your office.{/size}", "Character unlocked!", "interface/icons/head/head_luna_1.png")
+    call popup("{size=-4}You can now summon Luna into your office.{/size}", "Character unlocked!", "interface/icons/head/luna.png")
 
     $ luna_busy = True
 

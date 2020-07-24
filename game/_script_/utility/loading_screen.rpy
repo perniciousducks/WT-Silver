@@ -83,6 +83,7 @@ screen loading():
         thumb None
         thumb_shadow None
 
+    add "ch_hem reading" align (0.5, 0.92) zoom 0.45
     text "Loading" size 32 color "#ffffff" align (0.5, 0.4)
     text ("{}%".format(int(float(step) / step_max * 100))) size 32 color "#808080" align (0.5, 0.5)
     text ("{}".format(steps[step])) size 18 color "#808080" align (0.5, 0.6)

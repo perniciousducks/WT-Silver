@@ -136,6 +136,7 @@ screen bottom_menu(menu_id, group_names, menu_groups, func_btn=None):
 
     default current_page = 0 if old_scope is None else old_scope["current_page"]
     default current_group = 0 if old_scope is None else old_scope["current_group"]
+    $ current_group = min(len(menu_groups)-1, current_group)
 
     # Menu items from enabled groups
     default menu_items = []

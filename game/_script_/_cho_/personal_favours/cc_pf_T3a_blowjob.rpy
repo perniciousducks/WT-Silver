@@ -1377,7 +1377,7 @@ label cc_pf_blowjob_T3_E3:
 
     $ camera.set_image("up_neutral")
 
-    cho "Do you want me to take my top off again [cho_genie_name]?"
+    cho "Did you want me to take my top off again [cho_genie_name]?"
     gen "Taking initiative, *huh*? I like it."
 
     $ camera.set_image("up_smile")
@@ -1390,15 +1390,15 @@ label cc_pf_blowjob_T3_E3:
     #Cho moves up closer
     cho "..."
     cho "Your--... your cock is so big [cho_genie_name]!"
-    gen "*Heh*-- Heard that a lot lately."
-    gen "Why don't you put your hand on it."
+    gen "That's it [cho_name], keep talking just like that..."
+    gen "Put your hand on it and tell me how it feels..."
 
     $ camera.set_imagepath("cho_bj/hj/")
     $ camera.set_image("topless_mid_dreamy")
 
     #Cho grabs genies dick
-    cho "Oh wow, it's almost as if I was holding a beater's bat!"
-    cho "It's actually this hard!"
+    cho "It...{w=0.4} it feels like I'm holding a beater's bat!"
+    cho "I can't believe how hard it is..."
 
     #Cho starts jacking genie off #Looking at dick
     $ camera.set_image("cho_hj topless mid smile")
@@ -1417,50 +1417,70 @@ label cc_pf_blowjob_T3_E3:
 
     $ camera.set_image("cho_hj topless up blush")
 
-    cho "I'll go faster now, get ready."#Looks at genie
+    cho "Although this is far too slow, let's pick up the pace a little..."#Looks at genie
 
     $ camera.set_image("cho_hj topless mid smile fast")
 
-    gen "*Ahh* You make me proud, [cho_name], I've taught you well..."
+    gen "*Ahh* You make me proud, [cho_name]...{w=0.3} I've taught you well."
 
     $ camera.set_image("cho_hj topless up blush")
 
-    cho "Thank you, [cho_genie_name]. {heart}" #Worried #Looks at dick
+    cho "Thank you, [cho_genie_name]... it's my pleasure. {heart}" #Worried #Looks at dick
 
     $ camera.set_image("cho_hj topless mid smile fast")
 
-    gen "*Ahh* You're most welcome, [cho_name]."
+    gen "*Ahh*...{w=0.3} Pleasure's all mine, [cho_name]."
 
     call ctc
 
     $ camera.set_image("cho_hj topless up blush")
 
-    cho "I wouldn't be here now without your help, [cho_genie_name]."
+    cho "You've been such a help to me, [cho_genie_name]."
 
     $ camera.set_image("cho_hj topless up blush")
-    cho "The least I could do is provide you some.. release."
+    cho "I would never have been able to get this far without you..."
 
     gen "That's it, [cho_name], keep talking..."
 
     $ camera.set_image("cho_hj topless mid smile")
 
     cho "I love how your cock barely fits in my hand..."
+    cho "And the feeling as it goes in and out of my mouth..."
 
     $ camera.set_image("cho_hj topless up blush")
 
-    cho "And when it twitches happily... It makes me happy knowing I am making you feel good--"
+    cho "And when it twitches happily... It makes me glad, knowing I am making you feel good--"
 
     $ camera.set_image("cho_hj topless mid smile")
 
-    cho "And when you finally cum in my mouth, the taste of your jizz is so--" #Looks at dick
+    cho "The look of pleasure on your face once you cum in my mouth--"
+    if cho_bj_choice in ("swallow", "throat"):
+        cho "The sensation of your jizz going down my throat is so--" #Looks at dick
 
-    $ camera.set_image("cho_bj topless lick success")
-    pause 1
-    $ camera.set_image("topless_mid_dreamy")
+        $ camera.set_image("cho_bj topless lick success")
+        pause 1
+        $ camera.set_image("topless_mid_dreamy")
 
-    "--Delicious! {heart}{heart}"
+        "--addicting! {heart}{heart}"
+    elif cho_bj_choice == "points":
+        cho "To finally feel your jizz slide down my throat, I--"
 
-    gen "(If that continues she'll make me blow before an actual blow-job...)"
+        $ camera.set_image("cho_bj topless lick success")
+        pause 1
+        $ camera.set_image("topless_mid_dreamy")
+
+        "--can't wait! {heart}{heart}"
+
+    else:
+        cho "And the taste of your jizz is so--"
+
+        $ camera.set_image("cho_bj topless lick success")
+        pause 1
+        $ camera.set_image("topless_mid_dreamy")
+
+        "--delicious! {heart}{heart}"
+
+    gen "(If she keeps going like this, I'll blow before an actual blow-job...)"
 
     $ camera.set_image("topless_up_blush2")
 
@@ -1511,7 +1531,7 @@ label cc_pf_blowjob_T3_E3:
     $ camera.set_image("topless_up_blush2")
 
     cho "I need your cock in my mouth, and to feel your cum going down my throat..."
-    gen "(...I have created a monster...{w=0.5} a sexy,{w=0.2} dirty talking{w=0.2} monster!)"
+    gen "(She sure is a quick learner...)"
     gen "That's it [cho_name]... Now work that mouth of yours for your reward..."
 
     $ camera.set_image("topless_mid_dreamy")
@@ -1582,17 +1602,16 @@ label cc_pf_blowjob_T3_E3:
 
     call ctc
 
-    gen "Don't spill it!"
-
     $ camera.set_image("topless_mid_full_worried2")
 
-    cho "*slurp*..." #Mouth full
-    gen "Good. Now play with it with your tongue."
-    gen "Do you like it?"
+    gen "Don't swallow yet!"
+
+    cho "*Mfff*..." #Mouth full
+    gen "Good... Now play with it with your tongue."
 
     $ camera.set_image("topless_mid_full_worried")
-    cho "..............."
-    gen "Now swallow."
+    cho "....{w}......{w}....."
+    gen "Now you can swallow."
     pause 1
 
     $ camera.set_image("topless_mid_full_angry")
@@ -1608,8 +1627,9 @@ label cc_pf_blowjob_T3_E3:
 
     hide screen animatedCG
     with fade
+    # TODO: remove shirt from doll
 
-    # TODO: Add Cho doll flip when at door etc, cum layers
+    # TODO: Add Cho doll flip when at door etc, cum layers, Add clothes equip (marked further down)
 
     if cho_bj_choice in ("taste", "points"):
         call cho_main("I...{w=0.4} I did it...{w=0.4} I swallowed your cum [cho_genie_name].", "base", "happyCl", "base", "mid", cheeks="blush")
@@ -1622,13 +1642,14 @@ label cc_pf_blowjob_T3_E3:
         call cho_main("I...{w=0.4} I did it...", "base", "narrow", "base", "down", cheeks="blush")
         m "And without my help this time."
 
-    call cho_main("Your...{w=0.4} Your cum...{w=0.4} was delicious [cho_genie_name]...", "soft", "base", "base", "downR", cheeks="blush")
+    call cho_main("Your...{w=0.4} Your cum...{w=0.4} was delicious [cho_genie_name]...", "soft", "closed", "base", "mid", cheeks="blush")
     g9 "That's right [cho_name]... and if you keep doing such a good job there's even more where that came from..."
     m "You can stop talking dirty now."
     call cho_main("I wasn--... Yes [cho_genie_name]...", "open", "narrow", "base", "down", cheeks="heavy_blush") #blush, looking right
-    call cho_main("So... Is that all?", "soft", "closed", "base", "mid", cheeks="blush")
+    call cho_main("So... Is that all?", "soft", "narrow", "base", "R", cheeks="blush")
     m "For now..."
     call cho_main("Okay then...", "soft", "base", "base", "mid", cheeks="blush")
+    # TODO: Add shirt equip fade/sound
     if daytime:
         call cho_main("In that case I'll head back to class.", "open", "base", "base", "R", cheeks="blush")
     else:
@@ -1637,7 +1658,6 @@ label cc_pf_blowjob_T3_E3:
     call cho_main("Next...{w=0.4} yes [cho_genie_name]...", "horny", "narrow", "base", "down", cheeks="blush")
     call cho_walk("door", "base")
     call cho_main("(He's so commanding...)", "horny", "narrow", "base", "R", cheeks="heavy_blush") # horny
-    call cho_main("(And he has such a big stick too!)", "base", "narrow", "base", "down", cheeks="heavy_blush")
     call cho_main("(No wonder Hermione enjoys it so much...)", "horny", "closed", "base", "mid", cheeks="heavy_blush")
     m "[cho_name]."
 

@@ -120,21 +120,21 @@ label slytherin_match:
     call play_music("tonks")
     call ton_main("Hi, [ton_genie_name].", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=d3)
     m "Tonks... a pleasure as always."
-    call ton_main("Pleasure's all mine...", "horny", "base", "raised", "mid")
-    call ton_main("I was afraid you might've forgotten about today's--", "open", "base", "base", "mid")
+    call ton_main("Pleasure's all mine...", "soft", "base", "base", "mid")
+    call ton_main("I was afraid you might've forgotten about today's--", "open", "base", "raised", "mid")
     g9 "Quidditch match?"
-    call ton_main("So you didn't forget!", "open", "base", "raised", "mid")
+    call ton_main("So you didn't forget!", "grin", "wide", "shocked", "mid")
     g9 "How could I? Last match was a great show!"
-    call ton_main("It sure was...", "base", "base", "angry", "mid")
-    call ton_main("So, is Hermione going to show up as well?", "horny", "base", "angry", "mid")
+    call ton_main("It sure was...", "horny", "base", "raised", "R")
+    call ton_main("So, is Hermione going to show up as well?", "soft", "wide", "shocked", "mid")
     m "Who knows with her, honestly..."
-    call ton_main("In that case, may I be allowed to accompany you?", "upset", "base", "worried", "mid") #sad
-    call ton_main("I'd love to be able to watch her-{w} The game from the commentator booth.", "open", "base", "worried", "R")
+    call ton_main("In that case, may I be allowed to accompany you?", "base", "base", "base", "mid") #sad
+    call ton_main("I'd love to be able to watch her-{w} The game from the commentator booth.", "clench", "narrow", "raised", "R")
     g9 "Of course! I'd be delighted to have you!"
     call ton_main("Thank you, [ton_genie_name].{heart}", "base", "happyCl", "base", "mid", hair="happy")
-    call ton_main("Are we to expect another great performance this time around?", "horny", "base", "base", "mid", hair="neutral")
+    call ton_main("Are we to expect another great performance this time around?", "horny", "narrow", "base", "downR", hair="neutral")
     g9 "Oh, you'll see..."
-    call ton_main("Great, shall we?", "base", "base", "angry", "mid")
+    call ton_main("Great, shall we?", "base", "wink", "shocked", "mid")
     g9 "We certainly shall!"
 
     call play_music("stop")
@@ -161,8 +161,8 @@ label slytherin_match:
     with d3
     pause .3
 
-    call ton_main("*huh*?... (When did he?)", "upset", "base", "worried", "L", xpos="base", ypos="head")
-    call ton_main("(Impressive. I wonder if his stamina can keep up with that speed...)", "horny", "base", "raised", "R")
+    call ton_main("*huh*?... (When did he?)", "upset", "shocked", "raised", "L", xpos="base", ypos="head")
+    call ton_main("(Impressive. I wonder if his stamina can keep up with that speed...)", "mad", "narrow", "raised", "R")
     g9 "Ladies first."
     call ton_main("What a gentleman.", "base", "happyCl", "base", "mid")
 
@@ -220,7 +220,7 @@ label slytherin_match:
     m "I'm standing right here."
     call sna_main("I would've gone and fetched him myself but...", "snape_03")
     call sna_main("I had some... business to attend to.", "snape_35")
-    call ton_main("Business, *huh*?", "horny", "base", "angry", "L")
+    call ton_main("Business, *huh*?", "horny", "wide", "raised", "L")
 
     call sna_main("You will be accompanying us I presume?", "snape_04")
     call ton_main("If that's okay with you?", "base", "happyCl", "base", "mid")
@@ -233,9 +233,9 @@ label slytherin_match:
     with d5
 
     call sna_main("I suppose...", "snape_05")
-    call ton_main("Great!", "silly", "base", "angry", "L")
+    call ton_main("Great!", "grin", "base", "raised", "L")
 
-    call ton_main("So, are we going?", "base", "base", "angry", "L")
+    call ton_main("So, are we going?", "base", "base", "shocked", "L")
     call sna_main("Ah *ahem*, yes... I suppose.", "snape_12") #throat clear in the middle of the sentence for extra awkardness
     m "I may be immortal but I'm afraid I'll die from this awkwardness..."
     m "I'd take a hundred years in the lamp over this."
@@ -335,7 +335,7 @@ label slytherin_match:
     call ton_chibi("stand", flip=False)
     with d3
 
-    call ton_main("Mind your head!", "base", "base", "worried", "down", xpos="base", ypos="head", flip=False)
+    call ton_main("Mind your head!", "open", "shocked", "shocked", "down", xpos="base", ypos="head", flip="False")
 
     call play_sound("kick")
     with hpunch
@@ -358,10 +358,10 @@ label slytherin_match:
     with d3
     pause 1
 
-    call ton_main("Oh, what a view! Much better than the one from the Hufflepuff stands!", "base", "happyCl", "base", "mid", flip=True, xpos="far_left", ypos="head")
+    call ton_main("Oh, what a view! Much better than the one from the Hufflepuff stands!", "grin", "wide", "base", "L", xpos="far_left", ypos="head", flip="True")
 
     m "Nice weather too."
-    call ton_main("Indeed!", "base", "happyCl", "base", "mid", flip=True, xpos="far_left", ypos="head")
+    call ton_main("Indeed!", "base", "wide", "base", "mid", xpos="far_left", ypos="head", flip="True")
 
     $ renpy.sound.play("sounds/thunder.ogg")
     call quidditch_stands(weather="overcast", tree_fire=True, rain=True, puddles=True)
@@ -403,7 +403,7 @@ label slytherin_match:
     #hide screen blktone
     #with d5
 
-    call ton_main("{size=-4}Do I hear some jealousy back there?{/size}", "silly", "base", "raised", "R", flip=True, xpos="far_left", ypos="head")
+    call ton_main("{size=-4}Do I hear some jealousy back there?{/size}", "grin", "narrow", "raised", "R", xpos="far_left", ypos="head", flip="True")
     call sna_main("{size=-4}Of course not... just a cough,{w=0.3} {cps=15}Nymphadora{/cps}.{/size}", "snape_03", ypos="head")
     call ton_main("{size=-2}That's Tonks to you...{w=0.3} {i}dungeon dweller.{/i}{/size}", "open", "wide", "angry", "R", hair="angry", xpos="far_left", ypos="head", flip="True")
     call sna_main("Dungeon dw--", "snape_32", ypos="head")
@@ -554,7 +554,7 @@ label slytherin_match:
     call her_main("Ravenclaw chaser and team captain Roger Davies immediately goes for the quaffle...", "open", "base", "angry", "L")
     call her_main("The Slytherin captain Graham Montague not far behind.", "open", "base", "angry", "up")
     call her_main("Oh! Davies catches it and passes to Bradley...", "smile", "base", "angry", "up")
-    call ton_main("She's pretty cute when she's excited, isn't she.", "base", "happyCl", "base", "mid")
+    call ton_main("She's pretty cute when she's excited, isn't she.", "soft", "narrow", "base", "L")
     m "..."
     call ton_main("I feel like we've got the best seats in the house, right behind the podium...", "horny", "narrow", "raised", "L", hair="horny")
     call her_main("", "open", "base", "angry", "up")
@@ -615,9 +615,9 @@ label slytherin_match:
     call sna_main("Thick as oatmeal, but built like a brick shithouse.", "snape_28")
     $ renpy.sound.play("sounds/ball_hit.mp3")
     call ton_main("They're so strong... I've never seen a bludger hit its target from that far before...", "horny", "base", "base", "up", hair="horny") #horny
-    call ton_main("Is it me or is it getting a bit hot in here?", "upset", "base", "worried", "ahegao")
+    call ton_main("Is it me or is it getting a bit hot in here?", "normal", "closed", "raised", "downR", cheeks="blush")
     call sna_main("Something to cool you down perhaps?", "snape_02")
-    call ton_main("Good idea, did you bring any of that firewhisky, Professor Dumbledore?", "base", "base", "angry", "mid")
+    call ton_main("Good idea, did you bring any of that firewhisky, Professor Dumbledore?", "soft", "wink", "raised", "mid")
     m "Err..."
     call sna_main("Firewhisky? For such a special day as today I've brought some of my finest wine.", "snape_20")
 
@@ -628,8 +628,8 @@ label slytherin_match:
     with d5
 
     call sna_main("Now, if I may, Miss Tonks?", "snape_13")
-    call ton_main("*Hmm*... I tend not to drink wine too often...", "upset", "base", "raised", "down")
-    call ton_main("Oh what the heck, go on then. I'll have a glass.", "base", "base", "angry", "down")
+    call ton_main("*Hmm*... I tend not to drink wine too often...", "annoyed", "narrow", "raised", "down")
+    call ton_main("Oh what the heck, go on then. I'll have a glass.", "base", "base", "annoyed", "down")
 
     hide screen bld1
     show screen blkfade
@@ -644,10 +644,10 @@ label slytherin_match:
 
     m "--Doesn't look great..."
     call ton_main("What do you mean?", "open", "base", "base", "L", hair="horny")
-    call ton_main("Only thing that would make this better would be those firm cheeks on my lap!", "horny", "narrow", "angry", "L", hair="horny")
+    call ton_main("Only thing that would make this better would be those firm cheeks on my lap!", "horny", "narrow", "annoyed", "L", hair="horny")
     call sna_main("He's talking about the game...", "snape_09")
-    call ton_main("Game? What game...", "open", "base", "raised", "L")
-    call ton_main("Oh, Quidditch! Of course!", "upset", "base", "worried", "ahegao")
+    call ton_main("Game? What game...", "open", "wide", "raised", "L")
+    call ton_main("Oh, Quidditch! Of course!", "clench", "wide", "base", "mid")
 
     call her_main("And we're now 60-0 to Slytherin as their onslaught continues, the seekers not yet having spotted the snitch.", "open", "base", "angry", "L")
     call her_main("If it wasn't for those foul tactics -- from the brutes on the Slytherin team...", "angry", "base", "angry", "L")
@@ -719,12 +719,12 @@ label slytherin_match:
 
     call sna_main("I'm surprised she didn't swallow that one - with how wide she was blabbing her mouth.", "snape_42", ypos="head")
     call sna_main("To think that liquid luck--", "snape_45")
-    call ton_main("{size=+5}What?{/size}", "mad", "shocked", "base", "stare", hair="neutral", ypos="head", flip=True, trans=hpunch)
+    call ton_main("{size=+5}What?{/size}", "scream", "shocked", "base", "stare", hair="neutral", cheeks="blush", ypos="head", flip="True", trans=vpunch_repeat)
     g4 "What the fuck is liquid luck?"
-    call ton_main("You gave those brutes a luck potion?!", "scream", "base", "angry", "L", hair="angry")
+    call ton_main("You gave those brutes a luck potion?!", "mad", "base", "angry", "L", hair="angry", cheeks="blush")
     call sna_main("Well...", "snape_14")
-    call ton_main("I can't believe you, Snape...{w=0.5} look what they've done to her face!", "mad", "base", "worried", "down")
-    call ton_main("Her beautiful face...", "upset", "base", "worried", "down", hair="sad")
+    call ton_main("I can't believe you, Snape...{w=0.5} look what they've done to her face!", "mad", "base", "worried", "down", cheeks="blush")
+    call ton_main("Her beautiful face...", "upset", "base", "worried", "down", hair="sad", cheeks="blush")
     call sna_main("Looks like an improvement to me.", "snape_46")
 
     menu:
@@ -1043,7 +1043,7 @@ label slytherin_match:
     pause .5
 
     $ renpy.sound.play("sounds/microphone_feedback.mp3")
-    call her_main("*Ahem*...", "base", "base", "base", "mid", flip=True, xpos="290", ypos="base", trans=d3)
+    call her_main("*Ahem*...", "base", "base", "base", "mid", xpos="290", ypos="base", flip="True", trans=dissolve)
     call her_main("{size=-4}Oh, these boobs are so heavy...{/size}", "disgust", "base", "worried", "down", cheeks="blush")
     call her_main("{size=-4}And why is this shirt so hot...{/size}", "soft", "base", "base", "down", cheeks="blush")
 
@@ -1620,7 +1620,7 @@ label slytherin_match_return:
     call ton_main("", "horny", "base", "base", "mid", trans=d5)
     pause .8
 
-    if tonks_morph_known:
+    if tonks_morph_known: #This wont be used if we make it so you learn it first time here and hangouts unlock after this
         m "It all makes sense now."
         call ton_main("Hello sweet cheeks!", "base", "base", "base", "mid")
         call ton_main("Thought I was about to lose focus there for a second when you started going at it!", "open", "base", "base", "R")
@@ -1636,13 +1636,13 @@ label slytherin_match_return:
         g4 "You were Miss Granger the whole time?"
         m "Plot twist of the fucking century."
         call ton_main("Of course not, don't be silly...", "open", "closed", "base", "mid")
-        call ton_main("I'm a metamorphmagus...", "base", "base", "base", "mid")
+        call ton_main("I'm a metamorphmagus...", "soft", "base", "raised", "mid")
         m "A meta what?"
         m "(I thought I was the only one allowed to be meta in this game...)"
 
     call ton_main("I can change my appearance to whatever I want.", "open", "base", "base", "R")
     m "Really?"
-    call ton_main("Of course!", "base", "base", "angry", "mid")
+    call ton_main("Of course!", "base", "wide", "annoyed", "mid")
 
     # Tonks turns into cho
     call play_sound("magic")
@@ -1745,28 +1745,28 @@ label slytherin_match_return:
     with morph
     call ctc
 
-    call ton_main("I'm especially proud of that last one...", "silly", "happyCl", "base", "mid")
+    call ton_main("I'm especially proud of that last one...", "grin", "happyCl", "base", "mid")
     m "..."
     m "So...{w=0.2} Can all wizards do this?"
-    call ton_main("Nah, I was born with it.", "horny", "base", "base", "mid")
+    call ton_main("Nah, I was born with it.", "horny", "base", "base", "R")
     m "This world, I swear there's something new every day..."
     m "What next?{w=0.2} Can you time travel?"
-    call ton_main("I wish! The ministry won't let me do it...", "open", "base", "worried", "R")
-    call ton_main("If I could I'd just go back to kill baby \"you know who\"...", "upset", "base", "angry", "mid")
+    call ton_main("I wish! The ministry won't let me do it...", "open", "base", "annoyed", "mid")
+    call ton_main("If I could I'd just go back to kill baby \"you know who\"...", "upset", "closed", "angry", "mid")
     m "(Why is that always the first thing people consider when talking about time travel...)"
     m "(So predictable...)"
 
     m "So...when Miss Granger got hit by that bludger..."
-    call ton_main("I took her to the hospital wing...", "open", "closed", "base", "mid")
-    call ton_main("And I replaced her, so she wouldn't get picked on for leaving.", "upset", "base", "worried", "down")
+    call ton_main("I took her to the hospital wing...", "open", "base", "base", "mid")
+    call ton_main("And I replaced her, so she wouldn't get picked on for leaving.", "annoyed", "base", "base", "down")
     m "I see..."
     m "And she--"
-    call ton_main("She's fine...", "open", "base", "worried", "R")
+    call ton_main("She's fine...", "open", "base", "raised", "R")
     #TODO If we had the hospital wing drawn she could offer to take you there at this line
-    call ton_main("Your face is cute when you worry, you know that?", "base", "base", "worried", "mid")
+    call ton_main("Your face is cute when you worry, you know that?", "base", "narrow", "worried", "mid")
     m "Right..."
     m "So, won't people find out you replaced her?"
-    call ton_main("I wouldn't worry about that.", "open", "base", "base", "R")
+    call ton_main("I wouldn't worry about that.", "base", "base", "base", "R")
     call ton_main("I can lie if I want! Who would they believe, a teacher or a bunch of delinquents?", "silly", "happyCl", "base", "mid")
     m "Good point..."
     call ton_main("Anyway...", "open", "base", "base", "R")

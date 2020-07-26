@@ -82,8 +82,8 @@ label summon_snape:
             jump snape_ready
 
         # Potions
-        "-Get a potion-" (icon="interface/icons/small/potion.png") if her_whoring > 10:
-            jump snape_potion_menu
+        # "-Get a potion-" (icon="interface/icons/small/potion.png") if her_whoring > 10:
+        #     jump snape_potion_menu
 
 
         # Cardgame

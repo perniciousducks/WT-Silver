@@ -1,4 +1,4 @@
-
+default chitchat_number = 1 # Johnny, remove this line when you're done
 
 ### Tonks Chitchats ###
 
@@ -17,6 +17,7 @@ label tonks_chit_chat:
         $ chitchat_choices -= set([1])
 
     $ random_number = renpy.random.choice(list(chitchat_choices))
+    $ random_number = chitchat_number # Johnny, remove this line when you're done
 
     # Chitchats
     if random_number == 1:

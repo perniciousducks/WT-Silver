@@ -871,7 +871,7 @@ label hg_sex_luna:
     if sus_whoring > 16:
         lun "...and Susan Bones..."
     if ton_friendship > 50:
-        lun "...and perhaps Miss Tonks, but she's our teacher!"
+        lun "...and perhaps professor Tonks, but she's our teacher!"
 
     call her_main("*ah*...", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     m "{size=-3}What else did you do to her?{/size}"

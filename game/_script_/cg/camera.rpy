@@ -1,5 +1,7 @@
 
 transform CGCamera(zoom, endzoom, pos, endpos, rotate, endrotate, t):
+    subpixel True
+
     offset pos
     zoom zoom
     rotate rotate

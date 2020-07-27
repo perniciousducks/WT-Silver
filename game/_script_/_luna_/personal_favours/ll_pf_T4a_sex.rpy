@@ -1098,7 +1098,7 @@ label ll_pf_sex_T1_ton_1: # Call label
     $ lunCG(pupil='up', eye='furious')
     call ton_main("...","horny","base","raised","L")
     $ lunCG('open', 'wink', 'sad', 'right')
-    lun "You should... ah... be careful, Miss Tonks... {heart} we're expelling a lot... of them... {heart}"
+    lun "You should... ah... be careful, professor Tonks... {heart} we're expelling a lot... of them... {heart}"
     $ lunCG('base', 'seductive', 'sad', 'dl')
     call ton_main("Really? And how will I know if these \"wrackspurts\" are after me...?","horny","base","raised","L")
     $ lunCG('base', 'angry', 'base', 'dr')
@@ -1269,7 +1269,7 @@ label ll_pf_sex_T1_ton_1: # Call label
     $ lunCG('open', 'tired', 'sad', 'right')
     call ton_main("Well, come on then, Luna, hurry up and get dressed! I'll walk you home.","horny","base","raised","L")
     $ lunCG('base', 'base', 'sad', 'dr')
-    lun "Alright then Miss Tonks..."
+    lun "Alright then professor Tonks..."
     show screen blkfade
     with d3
 

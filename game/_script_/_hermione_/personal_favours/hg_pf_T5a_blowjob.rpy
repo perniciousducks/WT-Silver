@@ -1164,7 +1164,7 @@ label hg_hidden_blowjob_tonks:
 
     call ton_main("Oh my!","horny","base","base","down")
 
-    call her_main("H-Hello, Miss Tonks.", "clench", "happyCl", "worried", "mid")
+    call her_main("H-Hello, professor Tonks.", "clench", "happyCl", "worried", "mid")
 
     call ton_main("Miss Granger, what a pleasant surprise.","base","base","raised","mid")
     call ton_main("Are you having a good time back there?","open","base","base","down")
@@ -1216,7 +1216,7 @@ label hg_hidden_blowjob_tonks:
     m "Didn't you say fifty earlier?"
     call ton_main("Yes, but sixty-nine is so much better!","horny","base","raised","mid")
     call ton_main("Don't you think so too, Miss Granger?","base","base","angry","down")
-    call her_main("*Uhm*... Yes. Thank you, Miss Tonks.", "disgust", "happyCl", "worried", "mid")
+    call her_main("*Uhm*... Yes. Thank you, professor Tonks.", "disgust", "happyCl", "worried", "mid")
     m "Less talking, more sucking, [hermione_name]!"
     call her_main("Sorry, [genie_name]...", "soft", "narrow", "annoyed", "up")
 

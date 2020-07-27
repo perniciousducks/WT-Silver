@@ -1274,6 +1274,7 @@ label slytherin_match:
     # Cho CG
     $ camera.set_imagepath(None)
     $ camera.set_image("cho_cg quidditch pose1 open")
+    $ camera.set_overlay(None)
     $ camera.set(zoom=1.0, pos=(1300, 300), initialize=True)
     show screen animatedCG
     with fade
@@ -1729,7 +1730,7 @@ label slytherin_match_return:
 
     call play_sound("gasp")
     with hpunch
-    g4 "Aaaah!"
+    g4 "*Aaaah*!"
     call sna_main("Mind if I...{w=0.4} Slithered in?", "snape_clown")
     g4 "..."
     call play_sound("giggle")
@@ -1787,6 +1788,7 @@ label slytherin_match_return:
     if cho_whoring < 24:
         $ cho_whoring = 24
         $ TBA_message("This concludes all Quidditch events for Cho as of version %s." % title_version)
+        call notes
         $ TBA_message("Cho's recklessness stat has been maxed out.\nYou can now use all of her wardrobe options.")
 
     $ tonks_busy = True

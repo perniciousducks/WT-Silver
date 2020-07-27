@@ -21,8 +21,24 @@ label hg_pr_sex:
         m "[hermione_name]..."
         m "Today I need you to have sex with a classmate of your choice."
 
-        if her_tier < 6 or hg_sex.trigger == False or her_reputation < 18:
-            jump too_much
+        if not hg_sex.trigger: # She will refuse unless she slept with you
+            call her_main("But we--.. I..", "shock", "wide", "base", "stare")
+            call her_main("I've never done it before!", "angry", "wide", "base", "mid")
+            m "So?"
+            call her_main("{size=+5}\"So\"?!{/size}", "annoyed", "narrow", "angry", "R")
+            call her_main("I'm leaving this instant.", "scream", "closed", "angry", "mid")
+
+            call her_walk(action="leave")
+
+            $ her_mood += 16
+
+            m "(*Hmm*...)"
+            m "(Maybe if I have popped her cherry first, she would be more willing...)"
+
+            jump end_hermione_event
+
+        if her_reputation < 19:
+            jump too_much_public
 
         call play_music("hermione") # Music
         call her_main("..............", "angry", "base", "angry", "mid")
@@ -33,7 +49,6 @@ label hg_pr_sex:
         call her_main("Well, then I will do it, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
         m "Great. See you after your classes then."
         call her_main(".............", "upset", "closed", "base", "mid")
-
     else:
         m "[hermione_name]..."
         m "I need you to go have sex with another classmate of yours."
@@ -69,7 +84,7 @@ label end_hg_pr_sex:
     $ hg_pr_sex.inProgress = False
 
     # Increase Points
-    if her_reputation < 24: # Points til 24
+    if her_reputation < 24:
         $ her_reputation += 1
 
     jump end_hermione_event
@@ -100,9 +115,9 @@ label hg_pr_sex_intro:
 
     return
 
-### Tier 1 - LVL 21-X ###
+### Tier 6 ###
 
-label hg_pr_sex_T1_intro_E1:
+label hg_pr_sex_T6_intro_E1:
 
     call bld
     m "....."
@@ -117,7 +132,7 @@ label hg_pr_sex_T1_intro_E1:
     # Next Morning.
     jump day_start
 
-label hg_pr_sex_T1_intro_E2:
+label hg_pr_sex_T6_intro_E2:
     $ hg_pr_sex_skip = False
 
     # Special intro
@@ -147,7 +162,7 @@ label hg_pr_sex_T1_intro_E2:
 
     jump end_hg_pr_sex
 
-label hg_pr_sex_T1_E3:
+label hg_pr_sex_T6_E3:
 
     call hg_pr_sex_intro
 
@@ -160,19 +175,29 @@ label hg_pr_sex_T1_E3:
     m "You are quite attractive, he probably got too excited..."
     call her_main("Nevertheless...", "upset", "closed", "base", "mid")
     her "A dozen or so of rather gingerly thrusts and he is cumming already?"
-    her "As a girl I cannot help but feel disappointed..."
+    her "As a girl, I cannot help but feel disappointed..."
     m "I see..."
     m "What did you do afterwards?"
     m "Pulled up your panties and went about your business as if nothing happened?"
+
+
     call her_main("My panties?", "open", "narrow", "worried", "down")
     call her_main("I rarely bother to wear them anymore, [genie_name].", "annoyed", "narrow", "angry", "R")
+
+    if hermione.is_worn("panties"):
+        her "Unless you ask me to wear them, [genie_name]."
+
     m "Oh really?"
     call her_main("Yes... I find not wearing any underwear very empowering.", "annoyed", "narrow", "annoyed", "mid")
+
+    if hermione.is_worn("panties"):
+        her "But if that's what makes you happy, so be it."
+
     m "Good for you, [hermione_name]."
 
     jump end_hg_pr_sex
 
-label hg_pr_sex_T1_E4:
+label hg_pr_sex_T6_E4:
 
     call hg_pr_sex_intro
 
@@ -192,6 +217,6 @@ label hg_pr_sex_T1_E4:
     call her_main("Well, yes... *ehm*...", "open", "base", "base", "R", cheeks="blush")
     m ".............."
     call her_main("No, sorry, please disregard what I just said, [genie_name].", "upset", "closed", "base", "mid")
-    m "*Hmm*..."
+    m "(At this point I'm not sure she has any reputation left.)"
 
     jump end_hg_pr_sex

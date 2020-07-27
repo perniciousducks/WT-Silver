@@ -22,12 +22,30 @@ label hg_pr_blowjob:
         call her_main("Thank you, [genie_name]. I really appreciate it.", "open", "closed", "base", "mid")
         m "Sure, Happy to help."
         m "I need you to go give a blowjob to one of your classmates."
+
         stop music fadeout 1.0
         call her_main("!!!", "shock", "wide", "base", "stare")
         her "...with my mouth?"
 
-        if her_tier < 5 or hg_blowjob.trigger == False or her_reputation < 15:
-            jump too_much
+        if not hg_blowjob.trigger: # She will refuse unless she gave you a blowjob
+            call her_main("But we--.. I..", "shock", "wide", "base", "stare")
+            call her_main("I've never done it before!", "angry", "wide", "base", "mid")
+            m "I guess it's time you've learnt what {i}giving head{/i} means."
+            call her_main("Absolutely not!", "annoyed", "narrow", "angry", "R")
+            her "I'll show you that my integrity and honour as a Gryffindor cannot be bought!"
+            call her_main("I'm leaving this instant.", "scream", "closed", "angry", "mid")
+
+            call her_walk(action="leave")
+
+            $ her_mood += 9
+
+            m "(*Hmm*...)"
+            m "(Perhaps I should show her the ropes first before sending her off to blow her classmates.)"
+
+            jump end_hermione_event
+
+        if her_reputation < 15:
+            jump too_much_public
 
         call play_music("hermione") # Music
         m "Yes, that's how it's usually done..."
@@ -44,7 +62,7 @@ label hg_pr_blowjob:
         call her_main("*Tch*...", "angry", "base", "angry", "mid", cheeks="blush")
         her "............................"
         m ".........................................."
-        call her_main("...alright.", "annoyed", "narrow", "angry", "R")
+        call her_main("...Alright.", "annoyed", "narrow", "angry", "R")
         her "I'll do it..."
         m "Go do it, then!"
         m "Report back to me after your classes."
@@ -53,25 +71,26 @@ label hg_pr_blowjob:
         her "......."
         m "You may leave, [hermione_name]."
         her "..."
-    elif her_tier < 6:
-        m "Go give some lucky boy another blowjob, [hermione_name]."
-        call her_main("......Again?", "disgust", "narrow", "base", "mid_soft")
-        m "Yes, again."
-        call her_main("..........", "annoyed", "narrow", "annoyed", "mid")
     else:
-        call play_music("hermione") # Music
-        m "[hermione_name]..."
-        m "Do you believe in horoscopes?"
-        call her_main("Not even a little bit, [genie_name]...", "annoyed", "narrow", "angry", "R")
-        m "Well, maybe you should..."
-        call her_main("...?", "open", "base", "base", "mid")
-        m "Because I got yours right here and it says..."
-        m "\"Dedicate today to something you do well\"..."
-        call her_main("Something I do well...?", "soft", "base", "base", "R")
-        m "Go suck on some cocks, [hermione_name]."
-        call her_main(".....................", "annoyed", "narrow", "annoyed", "mid") # :(
-        m "Report back to me after your classes as usual..."
-        call her_main("Of course...", "annoyed", "narrow", "angry", "R")
+        if her_tier >= 6:
+            call play_music("hermione") # Music
+            m "[hermione_name]..."
+            m "Do you believe in horoscopes?"
+            call her_main("Not even a little bit, [genie_name]...", "annoyed", "narrow", "angry", "R")
+            m "Well, maybe you should..."
+            call her_main("...?", "open", "base", "base", "mid")
+            m "Because I got yours right here and it says..."
+            m "\"Dedicate today to something you do well\"..."
+            call her_main("Something I do well...?", "soft", "base", "base", "R")
+            g9 "Go suck on some cocks, [hermione_name]."
+            call her_main(".....................", "annoyed", "narrow", "annoyed", "mid") # :(
+            m "Report back to me after your classes as usual..."
+            call her_main("Of course...", "annoyed", "narrow", "angry", "R")
+        else:
+            m "Go give some lucky boy another blowjob, [hermione_name]."
+            call her_main("......Again?", "disgust", "narrow", "base", "mid_soft")
+            m "Yes, again."
+            call her_main("..........", "annoyed", "narrow", "annoyed", "mid")
 
     call her_walk(action="leave")
 
@@ -104,11 +123,8 @@ label end_hg_pr_blowjob:
     $ hg_pr_blowjob.inProgress = False
 
     # Increase Points
-    if her_tier == 5:
-        if her_whoring < 21: # Points til 21
-            $ her_whoring += 1
 
-    if her_reputation < 21: # Points til 21
+    if her_reputation < 19:
         $ her_reputation += 1
 
     jump end_hermione_event
@@ -141,9 +157,9 @@ label hg_pr_blowjob_intro:
 
     return
 
-### Tier 1 - LVL 18-21 ###
+### Tier 5 ###
 
-label hg_pr_blowjob_T1_E1:
+label hg_pr_blowjob_T5_E1:
 
     call hg_pr_blowjob_intro
 
@@ -165,7 +181,7 @@ label hg_pr_blowjob_T1_E1:
 
     jump end_hg_pr_blowjob
 
-label hg_pr_blowjob_T1_E2:
+label hg_pr_blowjob_T5_E2:
 
     call hg_pr_blowjob_intro
 
@@ -180,7 +196,7 @@ label hg_pr_blowjob_T1_E2:
     her "Why would he insult me like that?!"
     m "So you're insulted because that boy refused to put his cock in your mouth?"
     call her_main("Wouldn't you be, [genie_name]?", "angry", "base", "angry", "mid", tears="crying")
-    m "I think I would get over it rather quickly..."
+    m "I.. I never considered that option myself, but I think I would get over it rather quickly..."
     call her_main("He rejected me [genie_name]...", "angry", "base", "angry", "mid", cheeks="blush")
     her "Who does he think he is?!"
     call her_main("With all due respect, [genie_name], you wouldn't understand...", "open", "narrow", "annoyed", "mid", cheeks="blush")
@@ -201,7 +217,7 @@ label hg_pr_blowjob_T1_E2:
     jump end_hermione_event
 
 
-label hg_pr_blowjob_T1_E3:
+label hg_pr_blowjob_T5_E3:
 
     call hg_pr_blowjob_intro
 
@@ -214,15 +230,15 @@ label hg_pr_blowjob_T1_E3:
     m "A true gentleman indeed."
     m "Did you swallow?"
     call her_main("Of course I did, [genie_name].", "upset", "closed", "base", "mid")
-    her "I told you - I gave the boy a proper blowjob."
-    call her_main("The least I could do for someone who treated me with respect for a change...", "angry", "narrow", "base", "down")
+    her "I told you -- I gave the boy a {b}proper{/b} blowjob."
+    call her_main("It's the least I could do for someone who treated me with respect for a change...", "angry", "narrow", "base", "down")
     m "Well, in that case."
 
     jump end_hg_pr_blowjob
 
-### Tier 2 - LVL 21-X ###
+### Tier 6 ###
 
-label hg_pr_blowjob_T2_intro_E1:
+label hg_pr_blowjob_T6_intro_E1:
 
     call hg_pr_blowjob_intro
 
@@ -239,17 +255,17 @@ label hg_pr_blowjob_T2_intro_E1:
     call her_main("But the best part was to see their faces...", "silly", "narrow", "annoyed", "up")
     her "The boys could not believe it was actually happening..."
     call her_main("To be honest, neither could I...", "silly", "narrow", "base", "dead")
-    her "I, Hermione Granger - the girl they knew for years..."
+    her "I, Hermione Granger -- the girl they knew for years..."
     call her_main("Sucking on their cocks...", "open_wide_tongue", "narrow", "annoyed", "up")
-    call her_main("Like some nasty little slut...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
+    call her_main("Like some nasty slut...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     m "Are you in love with those boys, [hermione_name]?"
-    call her_main("I don't know, [genie_name]... Maybe...", "base", "happyCl", "base", "mid")
+    call her_main("I don't know, [genie_name]... But I surely like their cocks...", "base", "happyCl", "base", "mid")
     her "Could I get paid now please?"
     m "Sure..."
 
     jump end_hg_pr_blowjob
 
-label hg_pr_blowjob_T2_E2:
+label hg_pr_blowjob_T6_E2:
 
     # Special intro
     stop music fadeout 3.0
@@ -269,11 +285,11 @@ label hg_pr_blowjob_T2_E2:
     g4 "Seriously?!"
     call her_main("Yes, [genie_name].", "annoyed", "narrow", "annoyed", "mid", tears="mascara")
     her "That nasty boy from Slytherin raped me..."
-    call her_main("Or raped my face rather I suppose...", "open", "narrow", "worried", "down", tears="mascara")
+    call her_main("Or...{w=0.5} raped my face rather I suppose...", "open", "narrow", "worried", "down", tears="mascara")
     her "And--"
     play sound "sounds/burp.mp3"
     call her_main("*Burp*!...", "shock", "happyCl", "worried", "mid", tears="mascara")
-    call her_main("Excuse me.", "angry", "narrow", "base", "down", tears="mascara")
+    call her_main("{i}Excuse moi{/i}.", "angry", "narrow", "base", "down", tears="mascara")
     call her_main("He came so much I was barely able to swallow it all...", "scream", "base", "angry", "mid", emote="01", tears="mascara")
     her "Bloody bastard!"
     call her_main("You think I could file a complaint, [genie_name]?", "angry", "base", "angry", "mid", cheeks="blush", tears="mascara")
@@ -298,7 +314,7 @@ label hg_pr_blowjob_T2_E2:
 
     jump end_hg_pr_blowjob
 
-label hg_pr_blowjob_T2_E3:
+label hg_pr_blowjob_T6_E3:
 
     # Special intro
     stop music fadeout 3.0
@@ -316,16 +332,16 @@ label hg_pr_blowjob_T2_E3:
     g4 "What happened to you, [hermione_name]?"
     g4 "All I asked you to do was to give a blowjob to one of your classmates."
     call play_music("hermione") # Music
-    call her_main("That... that was exactly what I did, [genie_name].", "angry", "narrow", "base", "down")
+    call her_main("That... That was exactly what I did, [genie_name].", "angry", "narrow", "base", "down")
     m "[hermione_name], you are covered in cum head to toe."
     call her_main("I am?", "soft", "narrow", "annoyed", "up")
     her "Oh... Did I forget to clean myself up?"
     call her_main("How embarrassing...", "base", "narrow", "base", "mid_soft")
     her "That thing at the boy's restroom sort of escalated I suppose..."
     her "Before I knew what happened I was surrounded with hard throbbing cocks..."
-    call her_main("Oh... Just talking about it makes me shiver with excitement... err..", "silly", "narrow", "base", "dead")
+    call her_main("Oh... Just talking about it makes me shiver with excitement... *err*..", "silly", "narrow", "base", "dead")
     call her_main("...I mean, with fear... no, not fear...", "grin", "narrow", "annoyed", "up")
-    call her_main("Embarrassment?", "base", "base", "base", "R", cheeks="blush")
+    call her_main("Embarrassment...? No, that's not it... *hmm*", "base", "base", "base", "R", cheeks="blush")
     m "Are you asking me?"
     call her_main("Oh, excuse me, [genie_name]... I feel a little lightheaded...", "grin", "narrow", "base", "dead")
     her "I think I need to go lie down for a while..."

@@ -229,7 +229,7 @@ label hermione_favor_menu:
                         if i in []: # Not in the game yet.
                             menu_choices.append(("{color=[menu_disabled]}-Not Available-{/color}","na"))
                         elif i.start_tier > her_tier:
-                            menu_choices.append(("{color=[menu_disabled]}-Not ready-{/color}","vague"))
+                            menu_choices.append(("{color=[menu_disabled]}-Vague idea-{/color}","vague"))
                         else:
                             menu_choices.append(i.get_menu_item())
 
@@ -256,7 +256,7 @@ label hermione_favor_menu:
                     # Public whore ending choice
                     $ renpy.choice_for_skipping()
                     $ renpy.music.set_volume(0.5, 1.0)
-                    nar "Attention!{w=1.0} If you continue raising Hermione's reputation you will lock yourself towards certain game ending. (Public route)"
+                    nar "Attention!{w=1.0} If you continue tarnishing Hermione's reputation you will lock yourself towards certain game ending. (Public route)"
                     menu:
                         nar "Do you wish to continue?\n{size=-4}(You won't be asked again){/size}"
                         "Yes, I do.":
@@ -265,15 +265,29 @@ label hermione_favor_menu:
                         "No, go back.":
                             $ renpy.music.set_volume(1.0, 1.0)
                             jump silver_requests_root
+
+                label .public:
                 python:
                     menu_choices = []
                     for i in hg_requests_list:
-                        menu_choices.append(i.get_menu_item())
+                        if i in []: # Not in the game yet.
+                            menu_choices.append(("{color=[menu_disabled]}-Not Available-{/color}","na"))
+                        elif i.start_tier > her_tier:
+                            menu_choices.append(("{color=[menu_disabled]}-Vague idea-{/color}","vague"))
+                        else:
+                            menu_choices.append(i.get_menu_item())
+
                     menu_choices.append(("-Never mind-", "nvm"))
                     result = renpy.display_menu(menu_choices)
 
                 if result == "nvm":
                     jump silver_requests_root
+                elif result == "vague":
+                    call favor_not_ready
+                    jump .public
+                elif result == "na":
+                    call not_available
+                    jump .public
                 else:
                     $ renpy.jump(result)
 
@@ -287,7 +301,7 @@ label hermione_favor_menu:
                     menu_choices = []
                     for i in hg_ps_list:
                         if i.tier > her_tier:
-                            menu_choices.append(("{color=[menu_disabled]}-Not ready-{/color}","vague"))
+                            menu_choices.append(("{color=[menu_disabled]}-Vague idea-{/color}","vague"))
                         else:
                             menu_choices.append(i.get_menu_item())
                     menu_choices.append(("-Never mind-", "nvm"))

@@ -447,13 +447,7 @@ default hg_pr_flirt_teacher = event_class(title = "She's bait", start_label = "h
     iconset = [["star_empty", "star_yellow"], ["star_empty", "star_yellow"], ["star_empty", "star_yellow"]]
     )
 
-default hg_pr_grope = event_class(title = "Let a classmate molest you", start_label = "hg_pr_grope", start_tier = 1, events = [
-    [
-    ["hg_pr_grope_T1_E1"],
-    ["hg_pr_grope_T1_E2"],
-    ["hg_pr_grope_T1_E3"]
-    ],
-
+default hg_pr_grope = event_class(title = "Let a classmate molest you", start_label = "hg_pr_grope", start_tier = 2, events = [
     [
     ["hg_pr_grope_T2_E1"],
     ["hg_pr_grope_T2_E2"],
@@ -464,6 +458,12 @@ default hg_pr_grope = event_class(title = "Let a classmate molest you", start_la
     ["hg_pr_grope_T3_E1"],
     ["hg_pr_grope_T3_E2"],
     ["hg_pr_grope_T3_E3"]
+    ],
+
+    [
+    ["hg_pr_grope_T4_E1"],
+    ["hg_pr_grope_T4_E2"],
+    ["hg_pr_grope_T4_E3"]
     ]
 
     ],
@@ -471,23 +471,23 @@ default hg_pr_grope = event_class(title = "Let a classmate molest you", start_la
     iconset = [["star_empty", "star_yellow"], ["star_empty", "star_yellow"], ["star_empty", "star_yellow"]]
     )
 
-default hg_pr_flash = event_class(title = "Flash your tits to a classmate", start_label = "hg_pr_flash", start_tier = 1, events = [
-    [
-    ["hg_pr_flash_T1_E1"],
-    ["hg_pr_flash_T1_E2"],
-    ["hg_pr_flash_T1_E3"]
-    ],
-
-    [
-    ["hg_pr_flash_T2_E1"],
-    ["hg_pr_flash_T2_E2"],
-    ["hg_pr_flash_T2_E3"]
-    ],
-
+default hg_pr_flash = event_class(title = "Flash your tits to a classmate", start_label = "hg_pr_flash", start_tier = 3, events = [
     [
     ["hg_pr_flash_T3_E1"],
     ["hg_pr_flash_T3_E2"],
     ["hg_pr_flash_T3_E3"]
+    ],
+
+    [
+    ["hg_pr_flash_T4_E1"],
+    ["hg_pr_flash_T4_E2"],
+    ["hg_pr_flash_T4_E3"]
+    ],
+
+    [
+    ["hg_pr_flash_T5_E1"],
+    ["hg_pr_flash_T5_E2"],
+    ["hg_pr_flash_T5_E3"]
     ]
 
     ],
@@ -496,22 +496,22 @@ default hg_pr_flash = event_class(title = "Flash your tits to a classmate", star
     monologue_glass = False # Event specific
     )
 
-default hg_pr_kiss = event_class(title = "Kiss a girl", start_label = "hg_pr_kiss", start_tier = 1, events = [
-    [
-    ["hg_pr_kiss_T1_E1"],
-    ["hg_pr_kiss_T1_E2"],
-    ["hg_pr_kiss_T1_E3"]
-    ],
-
-    [
-    ["hg_pr_kiss_T2_E1"],
-    ["hg_pr_kiss_T2_E2"],
-    ["hg_pr_kiss_T2_E3"]
-    ],
-
+default hg_pr_kiss = event_class(title = "Kiss a girl", start_label = "hg_pr_kiss", start_tier = 3, events = [
     [
     ["hg_pr_kiss_T3_E1"],
-    ["hg_pr_kiss_T3_E2"]
+    ["hg_pr_kiss_T3_E2"],
+    ["hg_pr_kiss_T3_E3"]
+    ],
+
+    [
+    ["hg_pr_kiss_T4_E1"],
+    ["hg_pr_kiss_T4_E2"],
+    ["hg_pr_kiss_T4_E3"]
+    ],
+
+    [
+    ["hg_pr_kiss_T5_E1"],
+    ["hg_pr_kiss_T5_E2"]
     ]
 
     ],
@@ -519,23 +519,23 @@ default hg_pr_kiss = event_class(title = "Kiss a girl", start_label = "hg_pr_kis
     iconset = [["star_empty", "star_yellow"], ["star_empty", "star_yellow"], ["star_empty", "star_yellow"]]
     )
 
-default hg_pr_handjob = event_class(title = "Give a handjob to a classmate", start_label = "hg_pr_handjob", start_tier = 1, events = [
+default hg_pr_handjob = event_class(title = "Give a handjob to a classmate", start_label = "hg_pr_handjob", start_tier = 4, events = [
     [
-    ["hg_pr_handjob_T1_E1"],
-    ["hg_pr_handjob_T1_E2"],
-    ["hg_pr_handjob_T1_E3"]
+    ["hg_pr_handjob_T4_E1"],
+    ["hg_pr_handjob_T4_E2"],
+    ["hg_pr_handjob_T4_E3"]
     ],
 
     [
-    ["hg_pr_handjob_T2_E1"],
-    ["hg_pr_handjob_T2_E2"],
-    ["hg_pr_handjob_T2_E3"]
+    ["hg_pr_handjob_T5_E1"],
+    ["hg_pr_handjob_T5_E2"],
+    ["hg_pr_handjob_T5_E3"]
     ],
 
     [
-    ["hg_pr_handjob_T3_intro_E1"], # Ron
-    ["hg_pr_handjob_T3_E2"],
-    ["hg_pr_handjob_T3_E3"] # Ron & Harry
+    ["hg_pr_handjob_T6_intro_E1"], # Ron
+    ["hg_pr_handjob_T6_E2"],
+    ["hg_pr_handjob_T6_E3"] # Ron & Harry
     ]
 
     ],
@@ -543,17 +543,17 @@ default hg_pr_handjob = event_class(title = "Give a handjob to a classmate", sta
     iconset = [["star_empty", "star_yellow"], ["star_empty", "star_yellow"], ["star_empty", "star_yellow"]]
     )
 
-default hg_pr_blowjob = event_class(title = "Give a blowjob to a classmate", start_label = "hg_pr_blowjob", start_tier = 1, events = [
+default hg_pr_blowjob = event_class(title = "Give a blowjob to a classmate", start_label = "hg_pr_blowjob", start_tier = 5, events = [
     [
-    ["hg_pr_blowjob_T1_E1"],
-    ["hg_pr_blowjob_T1_E2"],
-    ["hg_pr_blowjob_T1_E3"]
+    ["hg_pr_blowjob_T5_E1"],
+    ["hg_pr_blowjob_T5_E2"],
+    ["hg_pr_blowjob_T5_E3"]
     ],
 
     [
-    ["hg_pr_blowjob_T2_intro_E1"], # Ron & Harry
-    ["hg_pr_blowjob_T2_E2"], # Slytherin
-    ["hg_pr_blowjob_T2_E3"] # Restroom bukkake :O
+    ["hg_pr_blowjob_T6_intro_E1"], # Ron & Harry
+    ["hg_pr_blowjob_T6_E2"], # Slytherin
+    ["hg_pr_blowjob_T6_E3"] # Restroom bukkake :O
     ]
 
     ],
@@ -562,12 +562,12 @@ default hg_pr_blowjob = event_class(title = "Give a blowjob to a classmate", sta
     )
 
 
-default hg_pr_sex = event_class(title = "Have sex with a classmate", start_label = "hg_pr_sex", start_tier = 1, events = [
+default hg_pr_sex = event_class(title = "Have sex with a classmate", start_label = "hg_pr_sex", start_tier = 6, events = [
     [
-    ["hg_pr_sex_T1_intro_E1"],
-    ["hg_pr_sex_T1_intro_E2"],
-    ["hg_pr_sex_T1_E3"],
-    ["hg_pr_sex_T1_E4"]
+    ["hg_pr_sex_T6_intro_E1"],
+    ["hg_pr_sex_T6_intro_E2"],
+    ["hg_pr_sex_T6_E3"],
+    ["hg_pr_sex_T6_E4"]
     ]
 
     ],

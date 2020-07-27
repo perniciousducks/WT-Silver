@@ -21,8 +21,8 @@ label hg_pr_kiss:
         m "Have You ever kissed another girl, [hermione_name]?"
         call her_main("?!", "normal", "squint", "angry", "mid")
 
-        if her_tier < 3 or her_reputation < 6:
-            jump too_much
+        if her_reputation < 9:
+            jump too_much_public
 
         call her_main("I am not a... lesbian, [genie_name].", "open", "base", "base", "mid")
         m "Silly girl... You don't need to be a lesbian to kiss girls."
@@ -36,40 +36,41 @@ label hg_pr_kiss:
         call her_main("[genie_name]!......", "normal", "squint", "angry", "mid")
         m "I said you're dismissed."
         call her_main("*Humph*!...", "annoyed", "squint", "angry", "mid")
-    elif her_tier < 4:
-        m "[hermione_name], {number=current_payout} house points are up for grabs today!"
-        m "Are you interested?"
-        call her_main("It depends...", "normal", "base", "base", "mid")
-        her "Will I have to do something depraved again?"
-        m "\"Depraved\"??! When did I ever--?"
-        call her_main("Really, [genie_name]?", "open", "closed", "angry", "mid")
-        m "Fine, fine... But all I want you to do today is to make out with another girl."
-        call her_main("Oh, is that all?", "angry", "base", "angry", "mid") # :(
-        m "Yes... Pretty basic stuff for you, right?"
-        m "And you will be getting {number=current_payout} house points afterwards of course."
-        call her_main(".............", "normal", "squint", "angry", "mid")
-        m "So... Are you up for it?"
-        call her_main("I will see what I can do, [genie_name]...", "annoyed", "narrow", "angry", "R")
-        m "Great. See you after your classes then."
-        call her_main("................", "annoyed", "narrow", "annoyed", "mid")
-    elif her_tier < 5:
-        m "[hermione_name], {number=current_payout} house points are up for grabs today!"
-        m "Are you interested?"
-        call her_main("I suppose...", "annoyed", "narrow", "annoyed", "up")
-        m "Great. All you need to do is make out with another girl."
-        call her_main("I see...", "annoyed", "narrow", "worried", "down")
-        m "Up for the task, [hermione_name]?"
-        call her_main("I suppose...", "annoyed", "base", "worried", "R")
-        m "Great. See you after your classes then."
     else:
-        m "[hermione_name], {number=current_payout} house points are up for grabs today!"
-        m "Are you interested?"
-        call her_main("Sure, why not?", "base", "base", "base", "mid")
-        m "Great."
-        m "I want you to make out with another girl today."
-        call her_main("Alright.", "soft", "base", "base", "R")
-        call her_main("I know a couple of girls who are hungry for attention and wouldn't mind putting on a little show.", "smile", "narrow", "base", "mid_soft")
-        m "Great. See you after your classes then."
+        if her_tier >= 5:
+            m "[hermione_name], {number=current_payout} house points are up for grabs today!"
+            m "Are you interested?"
+            call her_main("Sure, why not?", "base", "base", "base", "mid")
+            m "Great."
+            m "I want you to make out with another girl today."
+            call her_main("Alright.", "soft", "base", "base", "R")
+            call her_main("I know a couple of girls who are hungry for attention and wouldn't mind putting on a little show.", "smile", "narrow", "base", "mid_soft")
+            m "Great. See you after your classes then."
+        elif her_tier >= 4:
+            m "[hermione_name], {number=current_payout} house points are up for grabs today!"
+            m "Are you interested?"
+            call her_main("I suppose...", "annoyed", "narrow", "annoyed", "up")
+            m "Great. All you need to do is make out with another girl."
+            call her_main("I see...", "annoyed", "narrow", "worried", "down")
+            m "Up for the task, [hermione_name]?"
+            call her_main("I guess...", "annoyed", "base", "worried", "R")
+            m "Great. See you after your classes then."
+        else:
+            m "[hermione_name], {number=current_payout} house points are up for grabs today!"
+            m "Are you interested?"
+            call her_main("It depends...", "normal", "base", "base", "mid")
+            her "Will I have to do something depraved again?"
+            m "\"Depraved\"??! When did I ever--?"
+            call her_main("Really, [genie_name]?", "open", "closed", "angry", "mid")
+            m "Fine, fine... But all I want you to do today is to make out with another girl."
+            call her_main("Oh, is that all?", "angry", "base", "angry", "mid") # :(
+            m "Yes... Pretty basic stuff for you, right?"
+            m "And you will be getting {number=current_payout} house points afterwards of course."
+            call her_main(".............", "normal", "squint", "angry", "mid")
+            m "So... Are you up for it?"
+            call her_main("I will see what I can do, [genie_name]...", "annoyed", "narrow", "angry", "R")
+            m "Great. See you after your classes then."
+            call her_main("................", "annoyed", "narrow", "annoyed", "mid")
 
     call her_walk(action="leave")
 
@@ -100,11 +101,8 @@ label end_hg_pr_kiss:
     $ hg_pr_kiss.inProgress = False
 
     # Increase Points
-    if her_tier == 3:
-        if her_whoring < 12: # Points til 12
-            $ her_whoring += 1
 
-    if her_reputation < 12: # Points til 12
+    if her_reputation < 12:
         $ her_reputation += 1
 
     jump end_hermione_event
@@ -137,9 +135,9 @@ label hg_pr_kiss_intro:
 
     return
 
-### Tier 1 - LVL 12-15 ###
+### Tier 3 ###
 
-label hg_pr_kiss_T1_E1:
+label hg_pr_kiss_T3_E1:
 
     call hg_pr_kiss_intro
 
@@ -176,7 +174,7 @@ label hg_pr_kiss_T1_E1:
 
     jump end_hermione_event
 
-label hg_pr_kiss_T1_E2:
+label hg_pr_kiss_T3_E2:
 
     call hg_pr_kiss_intro
 
@@ -199,7 +197,7 @@ label hg_pr_kiss_T1_E2:
 
     jump end_hg_pr_kiss
 
-label hg_pr_kiss_T1_E3:
+label hg_pr_kiss_T3_E3:
 
     call hg_pr_kiss_intro
 
@@ -253,9 +251,9 @@ label hg_pr_kiss_T1_E3:
 
             jump end_hermione_event
 
-### Tier 2 - LVL 15-17 ###
+### Tier 4 ###
 
-label hg_pr_kiss_T2_E1:
+label hg_pr_kiss_T4_E1:
 
     call hg_pr_kiss_intro
 
@@ -286,7 +284,7 @@ label hg_pr_kiss_T2_E1:
 
     jump end_hg_pr_kiss
 
-label hg_pr_kiss_T2_E2:
+label hg_pr_kiss_T4_E2:
 
     call hg_pr_kiss_intro
 
@@ -322,7 +320,7 @@ label hg_pr_kiss_T2_E2:
 
     jump end_hg_pr_kiss
 
-label hg_pr_kiss_T2_E3:
+label hg_pr_kiss_T4_E3:
 
     call hg_pr_kiss_intro
 
@@ -349,7 +347,7 @@ label hg_pr_kiss_T2_E3:
         "\"You wouldn't understand, girl.\"":
             call her_main("*Hmm*...", "upset", "closed", "base", "mid")
             call her_main("What about you, [genie_name]?", "angry", "base", "base", "mid")
-            her "Where you like that when you were a boy?"
+            her "Were you like that when you were younger?"
             m "You mean if I enjoyed watching two girls going at it?"
             m "Well of course."
             m "I still do..."
@@ -377,9 +375,9 @@ label hg_pr_kiss_T2_E3:
 
     jump end_hg_pr_kiss
 
-### Tier 3 - LVL 18-X ###
+### Tier 5 ###
 
-label hg_pr_kiss_T3_E1:
+label hg_pr_kiss_T5_E1:
 
     call hg_pr_kiss_intro
 
@@ -457,7 +455,7 @@ label hg_pr_kiss_T3_E1:
 
     jump end_hg_pr_kiss
 
-label hg_pr_kiss_T3_E2:
+label hg_pr_kiss_T5_E2:
 
     call hg_pr_kiss_intro
 

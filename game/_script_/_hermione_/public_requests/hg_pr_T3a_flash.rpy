@@ -32,8 +32,10 @@ label hg_pr_flash:
         m "You know, flash your breasts to some boys..."
         call her_main("?!!", "shock", "wide", "base", "stare")
 
-        if her_tier < 3 or her_reputation < 6:
-            jump too_much
+        if her_reputation < 9:
+            jump too_much_public
+
+        call play_music("hermione")
 
         her "[genie_name]!"
         call her_main("This is a completely new level of inappropriate, even for you, [genie_name]!", "angry", "base", "angry", "mid")
@@ -59,51 +61,42 @@ label hg_pr_flash:
         m "A pretty nifty deal, wouldn't you agree?"
         her "I suppose..."
         her "Well alright, I'll see what I can do..."
-    elif her_tier < 4:
-        m "I think you need to show off your tits some more, [hermione_name]."
-        call her_main("You mean to you, [genie_name]?", "upset", "wink", "base", "mid")
-        m "No, to your classmates..."
-        call her_main("Oh...", "angry", "base", "base", "mid")
-        m "Yes, go do that and then report back to me..."
-        call her_main("Will I get paid for this?", "annoyed", "narrow", "angry", "R")
-        m "Of course you will get paid for this, [hermione_name]. Don't be silly."
-        m "{number=current_payout} house points. The usual rate..."
-        call her_main(".................", "annoyed", "narrow", "angry", "R")
-        call her_main("Well alright... I will see what I can do, [genie_name]...", "disgust", "narrow", "base", "mid_soft")
-    elif her_tier < 5:
-        m "[hermione_name]. I have a question for you."
-        m "Why do you think women have breasts?"
-        call her_main("...what do you mean, [genie_name]?", "upset", "wink", "base", "mid")
-        m "Alright, let me rephrase this..."
-        m "What would you say is the most common application for the female mammary glands?"
-        call her_main("Oh...", "soft", "base", "base", "mid")
-        call her_main("Production of milk?", "annoyed", "squint", "base", "mid")
-        m "Good. What else do women use their tits for?"
-        call her_main("*Hmm*..", "soft", "base", "base", "R")
-        call her_main("...to attract men?", "annoyed", "squint", "base", "mid")
-        m "Yes. Let's concentrate on that."
-        m "I need you to go out there..."
-        m "Find some lucky bastard..."
-        m "And flash him your tits..."
-        call her_main("{size=-3}(I just knew that this was exactly where this conversation was heading...){/size}", "disgust", "narrow", "base", "mid_soft")
-        m "What was that, [hermione_name]?"
-        call her_main("I said I'd better go then, [genie_name].", "annoyed", "narrow", "angry", "R")
-        her "my classes are about to start..."
-        m "{number=current_payout} house points will be waiting for you here upon your return, [hermione_name]."
-        call her_main("..............", "annoyed", "narrow", "annoyed", "mid")
     else:
-        m "[hermione_name] I need you to go out there and flash your tits to one of your classmates."
-        call her_main("I will do my best [genie_name].", "open", "closed", "base", "mid")
-        m "Really? Just like that? No complaints or anything?"
-        call her_main("I am getting paid for this, am I not?", "base", "narrow", "base", "mid_soft")
-        m "Of course."
-        call her_main("Why would I complain about a simple task like this then?", "open", "closed", "base", "mid")
-        her "{number=current_payout} house points is a fair prices for a few seconds of excitement... err..."
-        call her_main("...I mean, embarrassment.", "base", "happyCl", "base", "mid")
-        m "{size=-3}(She changed this much already?){/size}"
-        g9 "{size=-3}(I'm so good at this training thing that it's starting to get creepy!){/size}"
-        call her_main("Classes are about to start... I'd better leave now.", "base", "base", "base", "mid")
-        her "I will see you later tonight, [genie_name]."
+        if her_tier >= 5:
+            m "[hermione_name] I need you to go out there and flash your tits to one of your classmates."
+            call her_main("I will do my best [genie_name].", "open", "closed", "base", "mid")
+            m "Really? Just like that? No complaints or anything?"
+            call her_main("I am getting paid for this, am I not?", "base", "narrow", "base", "mid_soft")
+            m "Of course."
+            call her_main("Why would I complain about a simple task like this then?", "open", "closed", "base", "mid")
+            her "{number=current_payout} house points is a fair prices for a few seconds of excitement... err..."
+            call her_main("...I mean, embarrassment.", "base", "happyCl", "base", "mid")
+            m "{size=-3}(She changed this much already?){/size}"
+            g9 "{size=-3}(I'm so good at this training thing that it's starting to get creepy!){/size}"
+            call her_main("Classes are about to start... I'd better leave now.", "base", "base", "base", "mid")
+            her "I will see you later tonight, [genie_name]."
+        elif her_tier >= 4:
+            m "I think you need to show off your tits some more, [hermione_name]."
+            call her_main("You mean to you, [genie_name]?", "upset", "wink", "base", "mid")
+            m "No, to your classmates..."
+            call her_main("Oh...", "angry", "base", "base", "mid")
+            m "Yes, go do that and then report back to me..."
+            call her_main("Will I get paid for this?", "annoyed", "narrow", "angry", "R")
+            m "Of course you will get paid for this, [hermione_name]. Don't be silly."
+            m "{number=current_payout} house points. The usual rate..."
+            call her_main(".................", "annoyed", "narrow", "angry", "R")
+            call her_main("Well alright... I will see what I can do, [genie_name]...", "disgust", "narrow", "base", "mid_soft")
+        else:
+            m "I think you need to show off your tits some more, [hermione_name]."
+            call her_main("You mean to you, [genie_name]?", "upset", "wink", "base", "mid")
+            m "No, to your classmates..."
+            call her_main("Oh...", "angry", "base", "base", "mid")
+            m "Yes, go do that and then report back to me..."
+            call her_main("Will I get paid for this?", "annoyed", "narrow", "angry", "R")
+            m "Of course you will get paid for this, [hermione_name]. Don't be silly."
+            m "{number=current_payout} house points. The usual rate..."
+            call her_main(".................", "annoyed", "narrow", "angry", "R")
+            call her_main("Well alright... I will see what I can do, [genie_name]...", "disgust", "narrow", "base", "mid_soft")
 
     call her_walk(action="leave")
 
@@ -154,9 +147,6 @@ label end_hg_pr_flash:
     $ hg_pr_flash.inProgress = False
 
     # Increase Points
-    if her_tier == 3:
-        if her_whoring < 12: # Points til 12
-            $ her_whoring += 1
 
     if her_reputation < 12: # Points til 12
         $ her_reputation += 1
@@ -191,9 +181,9 @@ label hg_pr_flash_intro:
 
     return
 
-### Tier 1 - LVL 9-12 ###
+### Tier 3 ###
 
-label hg_pr_flash_T1_E1:
+label hg_pr_flash_T3_E1:
 
     call hg_pr_flash_intro
 
@@ -219,7 +209,7 @@ label hg_pr_flash_T1_E1:
 
     jump end_hermione_event
 
-label hg_pr_flash_T1_E2:
+label hg_pr_flash_T3_E2:
 
     call hg_pr_flash_intro
 
@@ -253,7 +243,7 @@ label hg_pr_flash_T1_E2:
 
     jump end_hg_pr_flash
 
-label hg_pr_flash_T1_E3:
+label hg_pr_flash_T3_E3:
 
     call hg_pr_flash_intro
 
@@ -277,9 +267,9 @@ label hg_pr_flash_T1_E3:
 
     jump end_hg_pr_flash
 
-### Tier 2 - LVL 12-15 ###
+### Tier 4 ###
 
-label hg_pr_flash_T2_E1:
+label hg_pr_flash_T4_E1:
 
     call hg_pr_flash_intro
 
@@ -320,7 +310,7 @@ label hg_pr_flash_T2_E1:
 
     jump end_hg_pr_flash
 
-label hg_pr_flash_T2_E2:
+label hg_pr_flash_T4_E2:
 
     call hg_pr_flash_intro
 
@@ -358,7 +348,7 @@ label hg_pr_flash_T2_E2:
 
     jump end_hg_pr_flash
 
-label hg_pr_flash_T2_E3:
+label hg_pr_flash_T4_E3:
 
     call hg_pr_flash_intro
 
@@ -389,9 +379,9 @@ label hg_pr_flash_T2_E3:
 
     jump end_hg_pr_flash
 
-### Tier 3 - LVL 15-X ###
+### Tier 5 ###
 
-label hg_pr_flash_T3_E1:
+label hg_pr_flash_T5_E1:
 
     call hg_pr_flash_intro
 
@@ -420,7 +410,7 @@ label hg_pr_flash_T3_E1:
 
     jump end_hg_pr_flash
 
-label hg_pr_flash_T3_E2:
+label hg_pr_flash_T5_E2:
 
     call hg_pr_flash_intro
 
@@ -467,7 +457,7 @@ label hg_pr_flash_T3_E2:
 
     jump end_hg_pr_flash
 
-label hg_pr_flash_T3_E3:
+label hg_pr_flash_T5_E3:
 
     call hg_pr_flash_intro
 

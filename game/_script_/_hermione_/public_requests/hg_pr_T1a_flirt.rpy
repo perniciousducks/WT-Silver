@@ -20,7 +20,7 @@ label hg_pr_flirt:
     call her_main("Yes?", "soft", "base", "base", "R")
 
     #Intro.
-    if hg_pr_flirt.counter == 0 and her_whoring < 6:
+    if hg_pr_flirt.counter == 0:
         m "What is your opinion on the boys of the Slytherin house?"
         call her_main("I detest them, [genie_name].", "angry", "base", "angry", "mid")
         m "Well, too bad. Because I want you to get really friendly with a few of them today."
@@ -44,30 +44,37 @@ label hg_pr_flirt:
         call her_main("Oh, I see...", "base", "base", "base", "mid")
         m "Exactly... Just looking out for you [hermione_name]."
         her "*Ehm*... Thank you [genie_name]..."
-    elif her_whoring < 6:
-        m "I need you to go make some new friends at Slytherin house."
-        her "You mean you need me to flirt with the Slytherin boys again [genie_name]?"
-
-        if hg_pr_flirt.counter == 1:
-            m "That's exactly what I need you to do today, [hermione_name]."
-            m "Just do it properly this time."
-            call her_main("Must I really do this [genie_name]?", "open", "base", "base", "mid")
-            m "We have been through this, [hermione_name]."
-            m "Going to the Slytherin boys is in your best interests."
-            call her_main("Yes, I know, [genie_name].", "open", "closed", "angry", "mid")
-            her "But why must I do this at all?"
-            m "Nobody is forcing you, [hermione_name]..."
-            call her_main("You don't need to remind me of that, [genie_name]...", "angry", "base", "angry", "mid")
-            call her_main("Alright if I must... [genie_name]...", "normal", "squint", "angry", "mid")
-        else:
-            call her_main("Must I really do this [genie_name]?", "upset", "base", "worried", "mid")
-            m "This again?"
-            call her_main("Fine.............", "upset", "base", "angry", "R")
-            call her_main("If I must... [genie_name]...", "normal", "squint", "angry", "mid")
     else:
-        m "I need you to flirt with some boys from Slytherin today."
-        her "I'll see what I can do, [genie_name]."
-        m "Great. I'll be expecting your report today after classes."
+        if her_tier >= 3:
+            m "I need you to flirt with some boys from Slytherin today."
+            her "I'll see what I can do, [genie_name]."
+            m "Great. I'll be expecting your report today after classes."
+        elif her_tier >= 2:
+            m "I need you to go make some new friends at Slytherin house."
+            her "You mean you need me to flirt with the Slytherin boys again [genie_name]?"
+            call her_main("Fine.", "upset", "base", "angry", "R")
+            call her_main("If I have to, [genie_name]...", "normal", "squint", "angry", "mid")
+        else:
+            if hg_pr_flirt.counter == 1:
+                m "I need you to go make some new friends at Slytherin house."
+                her "You mean you need me to flirt with the Slytherin boys again [genie_name]?"
+                m "That's exactly what I need you to do today, [hermione_name]."
+                m "Just do it properly this time."
+                call her_main("Must I really do this [genie_name]?", "open", "base", "base", "mid")
+                m "We have been through this, [hermione_name]."
+                m "Going to the Slytherin boys is in your best interests."
+                call her_main("Yes, I know, [genie_name].", "open", "closed", "angry", "mid")
+                her "But why must I do this at all?"
+                m "Nobody is forcing you, [hermione_name]..."
+                call her_main("You don't need to remind me of that, [genie_name]...", "angry", "base", "angry", "mid")
+                call her_main("Alright if I must... [genie_name]...", "normal", "squint", "angry", "mid")
+            else:
+                m "I need you to go make some new friends at Slytherin house."
+                her "You mean you need me to flirt with the Slytherin boys again [genie_name]?"
+                call her_main("Must I really do this [genie_name]?", "upset", "base", "worried", "mid")
+                m "This again?"
+                call her_main("Fine.............", "upset", "base", "angry", "R")
+                call her_main("If I must... [genie_name]...", "normal", "squint", "angry", "mid")
 
     her "Well, I'd better go now. Classes are about to start..."
     call her_walk(action="leave")
@@ -102,11 +109,8 @@ label end_hg_pr_flirt:
     $ hg_pr_flirt.inProgress = False
 
     # Increase Points
-    if her_tier == 1:
-        if her_whoring < 6: # Points til 6
-            $ her_whoring += 1
 
-    if her_reputation < 6: # Points til 6
+    if her_reputation < 3:
         $ her_reputation += 1
 
     jump end_hermione_event
@@ -217,7 +221,8 @@ label hg_pr_flirt_T1_E2:
     menu:
         m "..."
         "\"Well, at least you are trying.\"":
-            call her_main("Apparently flirting is not my forte...", "angry", "happyCl", "worried", "mid", emote="05")
+            call her_main("I truly am...", "angry", "happyCl", "worried", "mid")
+            call her_main("But Apparently flirting is not my forte...", "angry", "base", "worried", "down", emote="05")
 
             jump end_hg_pr_flirt
 
@@ -260,6 +265,7 @@ label hg_pr_flirt_T1_E3:
     menu:
         m "*Hmm*..."
         "\"Well, here are your points.\"":
+            m "Maybe you didn't do exactly as was asked of you, you at least tried."
             call her_main("Thank you, [genie_name]...", "open", "closed", "base", "mid")
 
             jump end_hg_pr_flirt
@@ -289,12 +295,12 @@ label hg_pr_flirt_T2_E1:
     her "He let me finish the assignment for him..."
     call her_main("While I was working he made a couple of inappropriate comments, but I just smiled in response...", "angry", "happyCl", "worried", "mid", emote="05")
     m "So, basically, he was the one doing the flirting..."
-    call her_main("well... yes.", "grin", "happyCl", "worried", "mid", emote="05")
+    call her_main("well... I guess.", "grin", "happyCl", "worried", "mid", emote="05")
     call her_main("But, despite my better judgment, I did encourage his improper behaviour...", "base", "base", "base", "mid")
     m "By being quiet?"
     her "Yes, [genie_name]..."
     her "I mean, this does amount to something, right?"
-    m "Meh..."
+    m "*Meh*..."
     m "What else do you have for me?"
     call her_main("Right...", "annoyed", "narrow", "angry", "R")
     her "Later in a corridor these two other guys complimented my appearance in a very vulgar manner..."
@@ -304,6 +310,7 @@ label hg_pr_flirt_T2_E1:
     call her_main("I know, [genie_name]!", "angry", "happyCl", "worried", "mid", emote="05")
     call her_main("But I am so busy. Between the \"MRM\" meetings and the classes...", "annoyed", "narrow", "angry", "R")
     her "I barely have any time--"
+    # TODO: Check if this part fits the current story line, Johnny.
     m "Is this all you got for me this time then?"
     call her_main("No, [genie_name].", "annoyed", "narrow", "angry", "R")
     her "On my way here I ran into Draco Malfoy, [genie_name]."
@@ -371,7 +378,7 @@ label hg_pr_flirt_T2_E3:
     call her_main("This one guy this morning.", "base", "happyCl", "base", "mid")
     her "Then another two right after the first period."
     her "And then another one before the third period."
-    call her_main("And after that I had a surprisingly pleasant conversation with one more.", "grin", "base", "base", "R")
+    call her_main("And after that, I had a surprisingly pleasant conversation with one more.", "grin", "base", "base", "R")
     call her_main("That last one was quite smart and well-mannered too.", "base", "happyCl", "base", "mid")
     her "............................"
     her "................"
@@ -405,11 +412,12 @@ label hg_pr_flirt_T3_E1:
     m "Those Slytherin boys are really starting to like you, *huh*?"
     call her_main("I suppose so...", "base", "happyCl", "base", "mid")
     call her_main("Well, not all of them were nice to me at first...", "annoyed", "narrow", "worried", "down")
-    call her_main("But I use this trick to \"tame\" them.", "smile", "narrow", "base", "mid_soft")
-    m "A trick?"
-    call her_main("Yes... Whenever a boy from Slytherin is being mean to me or calls me a name...", "base", "happyCl", "base", "mid")
+    call her_main("But I use this one trick to \"tame\" them.", "smile", "narrow", "base", "mid_soft")
+    m "A trick you say?"
+    call her_main("Yes... Whenever a boy from Slytherin is being mean to me or calls me a name...", "open", "base", "base", "R")
+    call her_main("Like so!", "base", "happyCl", "base", "mid")
     her "I just swallow my pride and smile in response."
-    m "Hm..."
+    m "*Hm*..."
     m "So, if for example, somebody were to call you a \"whore\" you would just smile at them?"
     call her_main("Well, yes, [genie_name]...", "angry", "happyCl", "worried", "mid", emote="05")
     m "Yeah, I'm sure that wins them over."
@@ -424,15 +432,20 @@ label hg_pr_flirt_T3_E2:
 
     call play_music("hermione") # Music
     call her_main("Two dates, seven quite pleasant conversations...", "smile", "happyCl", "base", "mid")
-    call her_main("And I even let this one guy kiss me...", "grin", "base", "base", "R")
+
+    if hg_pr_kiss.counter >= 1:
+        call her_main("And I even let this one guy kiss me on the lips...", "soft", "base", "base", "R", cheeks="blush")
+    else:
+        call her_main("And I even let this one guy kiss me on the cheek...", "grin", "base", "base", "R")
+
     m "Quite impressive, [hermione_name]."
     call her_main("I think so too, [genie_name]. Thank you.", "base", "happyCl", "base", "mid")
     call her_main("Oh, and there was also this little freshman kid...", "smile", "happyCl", "base", "mid")
     her "I tried to flirt with him too, but we ended up just chatting..."
-    her "He kept calling me \"Miss Hermione\"..."
+    call her_main("He kept calling me \"Miss Hermione\"...", "base", "happyCl", "base", "mid")
     her "So adorable..."
     m "Well, I didn't send you to harass people, [hermione_name]."
-    call her_main("I didn't haras--", "disgust", "narrow", "base", "mid_soft")
+    call her_main("I didn't harass--", "disgust", "narrow", "base", "mid_soft")
     call her_main("[genie_name]! Seven flirts and two dates amount to something, don't they?", "angry", "happyCl", "worried", "mid", emote="05")
     m "Oh, absolutely."
     call her_main("Then I would like to receive my payment now...", "scream", "closed", "angry", "mid")
@@ -468,6 +481,7 @@ label hg_pr_flirt_T3_E3:
             call her_main("Then a bunch of those Slytherin harlots stumbled in and...", "disgust", "narrow", "base", "mid_soft")
             m "And?"
             call her_main("Well, they started saying stuff and doing things...", "annoyed", "narrow", "angry", "R")
+            g9 "\"Doing Things\"? What kind of things?"
             her "Anyway, I had to leave..."
             m "I see..."
             m "Well, I say you deserve your points anyway, [hermione_name]."

@@ -228,7 +228,7 @@ label genie_attack:
 
     if pentogram:
         hide screen duel_damage
-        if game_difficulty <= 2: #Easy
+        if game_difficulty <= 1: #Easy
             show screen duel_damage(500)
             $ snape_hp -= 500
         elif game_difficulty == 2: #Normal
@@ -239,7 +239,7 @@ label genie_attack:
             $ snape_hp -= 500
     else:
         hide screen duel_damage
-        if game_difficulty <= 2: #Easy
+        if game_difficulty <= 1: #Easy
             show screen duel_damage(300)
             $ snape_hp -= 300
         elif game_difficulty == 2: #Normal
@@ -281,7 +281,7 @@ label snapes_turn:
             $ duel_OBJ.snape = ""
 
             hide screen duel_damage
-            if game_difficulty <= 2: #Easy
+            if game_difficulty <= 1: #Easy
                 show screen duel_damage(0, False)
             elif game_difficulty == 2: #Normal
                 show screen duel_damage(50, False)
@@ -308,7 +308,7 @@ label snapes_turn:
             $ duel_OBJ.snape = ""
 
             hide screen duel_damage
-            if game_difficulty <= 2: #Easy
+            if game_difficulty <= 1: #Easy
                 show screen duel_damage(300, False)
                 $ genie_hp -= 300
             elif game_difficulty == 2: #Normal
@@ -388,7 +388,7 @@ label snape_attack:
     $ duel_OBJ.snape = ""
 
     hide screen duel_damage
-    if game_difficulty <= 2: #Easy
+    if game_difficulty <= 1: #Easy
         show screen duel_damage(100, False)
         $ genie_hp -= 100
     elif game_difficulty == 2: #Normal

@@ -45,19 +45,19 @@ screen sccg(base, a, b, c):
 
 # Snape CG
 screen snape_groping():
-    add "images/CG/scene_01.png"
+    add "images/CG/scene_01.png" zoom 0.5
     zorder 14
 
 screen snape_facial():
-    add "images/CG/scene_03.png"
+    add "images/CG/scene_03.png" zoom 0.5
     zorder 14
 
 screen snape_sex():
-    add "images/CG/scene_04.png"
+    add "images/CG/scene_04.png" zoom 0.5
     zorder 14
 
 screen dual_hand_job():
-    add "images/CG/scene_02.png"
+    add "images/CG/scene_02.png" zoom 0.5
     zorder 14
 
 init python:###THANKS TO CLEANZO FOR WRITING THIS CODE

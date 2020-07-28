@@ -1,10 +1,10 @@
 
 
-### Tier 1 ###
+### Tier 3 ###
 
 # Invite Snape
 
-label hg_pf_strip_T1_Snape: # Fails
+label hg_pf_strip_T3_Snape: # Fails
     hide screen blktone
     hide screen hermione_main
     with d3
@@ -32,11 +32,11 @@ label hg_pf_strip_T1_Snape: # Fails
 
 
 
-### Tier 2 ###
+### Tier 4 ###
 
 # Invite Snape
 
-label hg_pf_strip_T2_Snape:
+label hg_pf_strip_T4_Snape:
     if hg_strip.ss_counter == 0:
         $ hg_strip.ss_counter += 1
 
@@ -352,12 +352,12 @@ label hg_pf_strip_T2_Snape:
     menu:
         m "..."
         "-Start jerking off-":
-            jump hg_pf_strip_T2_Snape_masturbate
+            jump hg_pf_strip_T4_Snape_masturbate
 
         "-Just keep on watching-":
-            jump hg_pf_strip_T2_Snape_watch
+            jump hg_pf_strip_T4_Snape_watch
 
-label hg_pf_strip_T2_Snape_watch:
+label hg_pf_strip_T4_Snape_watch:
     call play_music("dark_fog")
 
     call her_main("I will just keep on dancing then...", "open", "closed", "base", "mid")
@@ -457,7 +457,7 @@ label hg_pf_strip_T2_Snape_watch:
 
     jump end_hg_pf_strip
 
-label hg_pf_strip_T2_Snape_masturbate:
+label hg_pf_strip_T4_Snape_masturbate:
     call play_music("playful_tension")
     pause.2
 
@@ -506,7 +506,7 @@ label hg_pf_strip_T2_Snape_masturbate:
             with fade
             pause.3
 
-            jump hg_pf_strip_T2_Snape_watch
+            jump hg_pf_strip_T4_Snape_watch
 
         "\"(Psst, Hermione! Remember why we are doing this!)\"":
             pass

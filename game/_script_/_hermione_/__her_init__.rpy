@@ -235,13 +235,8 @@ default hg_pf_admire_breasts = event_class(title = "Show me your tits!", start_l
 
 default hg_pf_grope = event_class(title = "Grope her!", start_label = "hg_pf_grope", start_tier = 1, events = [
     [
-    ["hg_pf_grope_T0_fail_intro"],
-    ["hg_pf_grope_T0_fail_repeat"],
-    ],
-
-    [
-    ["hg_pf_grope_T1_intro_E1"],
-    ["hg_pf_grope_T1_E1"]
+    ["hg_pf_grope_T1_fail_intro"],
+    ["hg_pf_grope_T1_fail_repeat"],
     ],
 
     [
@@ -251,8 +246,13 @@ default hg_pf_grope = event_class(title = "Grope her!", start_label = "hg_pf_gro
 
     [
     ["hg_pf_grope_T3_intro_E1"],
-    ["hg_pf_grope_T3_intro_E2"],
-    ["hg_pf_grope_T3_E2"]
+    ["hg_pf_grope_T3_E1"]
+    ],
+
+    [
+    ["hg_pf_grope_T4_intro_E1"],
+    ["hg_pf_grope_T4_intro_E2"],
+    ["hg_pf_grope_T4_E2"]
     ]
 
     ],
@@ -265,20 +265,20 @@ default hg_pf_strip = event_class(title = "Dance for Me!", start_label = "hg_pf_
     [["hg_pf_strip_fail"]], # Tier 1
 
     [
-    ["hg_pf_strip_T0_fail_intro"],
-    ["hg_pf_strip_T0_fail_repeat"],
+    ["hg_pf_strip_T2_fail_intro"],
+    ["hg_pf_strip_T2_fail_repeat"],
     ],
 
     [
-    ["hg_pf_strip_T1_intro_E1"], # First Strip event.
-    ["hg_pf_strip_T1_intro_E2"], # Strip event where Snape enters.
-    ["hg_pf_strip_T1_E2"]        # Clumsy Strip. Has branches.
+    ["hg_pf_strip_T3_intro_E1"], # First Strip event.
+    ["hg_pf_strip_T3_intro_E2"], # Strip event where Snape enters.
+    ["hg_pf_strip_T3_E2"]        # Clumsy Strip. Has branches.
     ],
 
     [
-    ["hg_pf_strip_T2_intro_E1"], # Hermione has improved.
-    ["hg_pf_strip_T2_intro_E2"], # Hermione doesn't mind stripping.
-    ["hg_pf_strip_T2_E2"]        # She's happy to strip.
+    ["hg_pf_strip_T4_intro_E1"], # Hermione has improved.
+    ["hg_pf_strip_T4_intro_E2"], # Hermione doesn't mind stripping.
+    ["hg_pf_strip_T4_E2"]        # She's happy to strip.
     ]
 
     ],
@@ -293,15 +293,15 @@ default hg_pf_handjob = event_class(title = "Touch me!", start_label = "hg_pf_ha
     [["hg_pf_handjob_fail"]], # Tier 3
 
     [
-    ["hg_pf_handjob_T1_intro_E1"], # First time handjob
-    ["hg_pf_handjob_T1_intro_E2"], # Second time handjob
-    ["hg_pf_handjob_T1_repeat"]   # Repeated handjob
+    ["hg_pf_handjob_T4_intro_E1"], # First time handjob
+    ["hg_pf_handjob_T4_intro_E2"], # Second time handjob
+    ["hg_pf_handjob_T4_repeat"]   # Repeated handjob
     ],
 
     [
-    ["hg_pf_handjob_T2_intro_E1"], # New interaction
-    ["hg_pf_handjob_T2_intro_E2"], # More reply options
-    ["hg_pf_handjob_T2_repeat"]    # Repeated handjob
+    ["hg_pf_handjob_T5_intro_E1"], # New interaction
+    ["hg_pf_handjob_T5_intro_E2"], # More reply options
+    ["hg_pf_handjob_T5_repeat"]    # Repeated handjob
     ]
 
     ],
@@ -317,14 +317,14 @@ default hg_pf_titjob = event_class(title = "Let me fuck them!", start_label = "h
     [["hg_pf_titjob_fail"]], # Tier 4
 
     [
-    ["hg_pf_titjob_T1_intro_E1"], # First time titjob
-    ["hg_pf_titjob_T1_repeat"]   # Repeated titjob
+    ["hg_pf_titjob_T5_intro_E1"], # First time titjob
+    ["hg_pf_titjob_T5_repeat"]   # Repeated titjob
     ],
 
     [
-    ["hg_pf_titjob_T2_intro_E1"], # Couple of choices
-    ["hg_pf_titjob_T2_intro_E2"], # New interactions
-    ["hg_pf_titjob_T2_repeat"]    # Repeated titjob
+    ["hg_pf_titjob_T6_intro_E1"], # Couple of choices
+    ["hg_pf_titjob_T6_intro_E2"], # New interactions
+    ["hg_pf_titjob_T6_repeat"]    # Repeated titjob
     ]
 
     ],
@@ -339,20 +339,20 @@ default hg_pf_blowjob = event_class(title = "Suck it!", start_label = "hg_pf_blo
     [["hg_pf_blowjob_fail"]], # Tier 3
 
     [
-    ["hg_pf_blowjob_T0_fail_intro"], # Hermione refuses
-    ["hg_pf_blowjob_T0_fail_repeat"] # Repeat fail
+    ["hg_pf_blowjob_T4_fail_intro"], # Hermione refuses
+    ["hg_pf_blowjob_T4_fail_repeat"] # Repeat fail
     ],
 
     [
-    ["hg_pf_blowjob_T1_intro_E1"], # First time blowjob
-    ["hg_pf_blowjob_T1_intro_E2"], # Snape visit
-    ["hg_pf_blowjob_T1_repeat"]   # Repeated blowjob
+    ["hg_pf_blowjob_T5_intro_E1"], # First time blowjob
+    ["hg_pf_blowjob_T5_intro_E2"], # Snape visit
+    ["hg_pf_blowjob_T5_repeat"]   # Repeated blowjob
     ],
 
     [
-    ["hg_pf_blowjob_T2_intro_E1"], # Couple of choices
-    ["hg_pf_blowjob_T2_hidden_repeat"], # Repeat: Random visit
-    ["hg_pf_blowjob_T2_repeat"]    # Repeat: Regular + Facefuck
+    ["hg_pf_blowjob_T6_intro_E1"], # Couple of choices
+    ["hg_pf_blowjob_T6_hidden_repeat"], # Repeat: Random visit
+    ["hg_pf_blowjob_T6_repeat"]    # Repeat: Regular + Facefuck
     ]
 
     ],
@@ -366,16 +366,13 @@ default hg_pf_sex = event_class(title = "Let's have sex!", start_label = "hg_pf_
     [["hg_pf_sex_fail"]], # Tier 2
     [["hg_pf_sex_fail"]], # Tier 3
     [["hg_pf_sex_fail"]], # Tier 4
+    [["hg_pf_sex_fail"]], # Tier 5 (Add tier 0 events that fail.)
 
     [
-    ["hg_pf_sex_fail"] # Tier 5 (Add tier 0 events that fail.)
-    ],
-
-    [
-    ["hg_pf_sex_T1_intro_E1"], # First time sex
-    ["hg_pf_sex_T1_intro_E2"], # Second time sex
-    ["hg_pf_sex_T1_intro_E3"], # Choice to do anal
-    ["hg_pf_sex_T1_E3"]        # Regular or anal sex
+    ["hg_pf_sex_T6_intro_E1"], # First time sex
+    ["hg_pf_sex_T6_intro_E2"], # Second time sex
+    ["hg_pf_sex_T6_intro_E3"], # Choice to do anal
+    ["hg_pf_sex_T6_E3"]        # Regular or anal sex
     ]
 
     ],

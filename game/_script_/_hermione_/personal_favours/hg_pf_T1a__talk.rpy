@@ -17,7 +17,6 @@ label hg_pf_talk:
     $ current_payout = 5
     $ hg_pf_talk.start()
 
-
     # End Event
     label end_hg_pf_talk:
 

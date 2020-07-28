@@ -125,8 +125,25 @@ label end_hg_pr_grope:
 
     # Increase Points
 
-    if her_reputation < 9: # Points til 9
-        $ her_reputation += 1
+    if her_tier == 2:
+        if her_reputation < 9:
+            $ her_reputation += 1
+
+        if her_whoring < 9:
+            $ her_whoring += 1
+    elif her_tier == 3:
+        if her_reputation < 12:
+            $ her_reputation += 1
+
+        if her_whoring < 12:
+            $ her_whoring += 1
+
+    elif her_tier == 4:
+        if her_reputation < 18:
+            $ her_reputation += 1
+
+        if her_whoring < 18:
+            $ her_whoring += 1
 
     jump end_hermione_event
 

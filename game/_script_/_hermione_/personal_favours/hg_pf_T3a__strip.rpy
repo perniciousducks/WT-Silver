@@ -71,7 +71,7 @@ label hg_pf_strip_fail:
 
     jump too_much
 
-label hg_pf_strip_T0_fail_intro: # Hermione starts dancing, but it will fail anyway.
+label hg_pf_strip_T2_fail_intro: # Hermione starts dancing, but it will fail anyway.
     call bld
     m "[hermione_name], I need you to dance for me a little."
     call her_main("You want me to...", "open", "base", "worried", "mid")
@@ -127,7 +127,7 @@ label hg_pf_strip_T0_fail_intro: # Hermione starts dancing, but it will fail any
 
     jump end_hermione_event
 
-label hg_pf_strip_T0_fail_repeat:
+label hg_pf_strip_T2_fail_repeat:
     call bld
     m "[hermione_name], I need you to dance for me a little."
     call her_main("And would you like me to take off my clothes as well?", "soft", "closed", "base", "mid")
@@ -146,13 +146,13 @@ label hg_pf_strip_T0_fail_repeat:
 
     jump end_hermione_event
 
-### Tier 1 ###
+### Tier 3 ###
 
 # Event 1 (i) - Hermione tries to stip for you but fails.
 # Event 2 (i) - Hermione strips for you on your desk. Snape then enters.
 # Event 3 (r) - Hermione strips for. You will get some event choices.
 
-label hg_pf_strip_T1_intro_E1: # Complete
+label hg_pf_strip_T3_intro_E1: # Complete
     call bld
     m "[hermione_name], I need you to dance for me a little."
     call her_main("You want me to...", "open", "base", "worried", "mid")
@@ -341,7 +341,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
 
             jump end_hermione_event
 
-label hg_pf_strip_T1_intro_E2:
+label hg_pf_strip_T3_intro_E2:
     call bld
     m "[hermione_name], I need you to dance for me."
     call her_main("That again, [genie_name]...?", "disgust", "narrow", "base", "mid_soft")
@@ -648,7 +648,7 @@ label hg_pf_strip_T1_intro_E2:
 
     jump end_hg_pf_strip
 
-label hg_pf_strip_T1_E2:
+label hg_pf_strip_T3_E2:
     m "[hermione_name], how about another strip?"
     call her_main("..............", "disgust", "narrow", "base", "mid_soft", xpos="base", ypos="base")
     her "I would really rather not, [genie_name]..."
@@ -663,7 +663,7 @@ label hg_pf_strip_T1_E2:
 
         menu:
             "-Yes! Hermione needs an audience!-":
-                jump hg_pf_strip_T1_Snape
+                jump hg_pf_strip_T3_Snape
 
             "-Nah. That's not a good idea...-":
                 pass
@@ -772,12 +772,12 @@ label hg_pf_strip_T1_E2:
 
     menu:
         "-Take your cock out, start jerking off-":
-            jump hg_pf_strip_T1_masturbate
+            jump hg_pf_strip_T3_masturbate
 
         "-Show some manners, just watch-":
-            jump hg_pf_strip_T1_watch
+            jump hg_pf_strip_T3_watch
 
-label hg_pf_strip_T1_watch:
+label hg_pf_strip_T3_watch:
     call nar(">You watch Hermione Dance...")
     call her_main("(Time for the finishing act I suppose...)", "angry", "happyCl", "worried", "mid", xpos="mid", ypos="base")
 
@@ -834,7 +834,7 @@ label hg_pf_strip_T1_watch:
 
     jump end_hg_pf_strip
 
-label hg_pf_strip_T1_masturbate:
+label hg_pf_strip_T3_masturbate:
     show screen blkfade
     with d5
 
@@ -897,16 +897,16 @@ label hg_pf_strip_T1_masturbate:
             with fade
             pause.5
 
-            jump hg_pf_strip_T1_watch
+            jump hg_pf_strip_T3_watch
 
-### Tier 2 ###
+### Tier 4 ###
 
 
 # Event 1 (i) - Hermione tries her best at stripping.
 # Event 2 (i) -
 # Event 3 (r) -
 
-label hg_pf_strip_T2_intro_E1:
+label hg_pf_strip_T4_intro_E1:
     m "[hermione_name], how about another strip?"
     call her_main("..............", "disgust", "narrow", "base", "mid_soft", xpos="base", ypos="base")
     her "I would really rather not, [genie_name]..."
@@ -916,9 +916,9 @@ label hg_pf_strip_T2_intro_E1:
     g9 "Sure!"
     call her_main("Very well, then...", "base", "base", "base", "R")
 
-    jump hg_pf_strip_T2
+    jump hg_pf_strip_T4
 
-label hg_pf_strip_T2_intro_E2:
+label hg_pf_strip_T4_intro_E2:
     m "[hermione_name], would you like to provide me with about another strip show?"
     m "(I'm bored as fuck in here after all...)"
     call her_main("*Hmm*...", "annoyed", "base", "base", "R", xpos="base", ypos="base")
@@ -928,22 +928,22 @@ label hg_pf_strip_T2_intro_E2:
     m "Very good. I'd love to see your progress."
     call her_main("Of course, [genie_name]...", "base", "narrow", "base", "mid_soft")
 
-    jump hg_pf_strip_T2
+    jump hg_pf_strip_T4
 
-label hg_pf_strip_T2_E2:
+label hg_pf_strip_T4_E2:
     m "[hermione_name], would you like to strip for me again?"
     if her_tier <= 5:
         call her_main("Of course, [genie_name]...", "base", "base", "base", "mid", xpos="base", ypos="base")
     else:
         call her_main("I'd love to, [genie_name]!", "open_tongue", "narrow", "annoyed", "up", xpos="base", ypos="base")
 
-    jump hg_pf_strip_T2
+    jump hg_pf_strip_T4
 
-label hg_pf_strip_T2:
+label hg_pf_strip_T4:
     menu:
         m "(...)"
         "-Invite Snape to watch!-" if ss_he.hermione_strip:
-            jump hg_pf_strip_T2_Snape
+            jump hg_pf_strip_T4_Snape
 
         "-Ask her to lock the door.-":
             $ lock_door = True
@@ -1126,20 +1126,20 @@ label hg_pf_strip_T2:
 
     menu:
         "-Ask her to masturbate-":
-            if her_tier <= 4:
-                jump hg_pf_strip_T2_fingering
-            elif her_tier == 5:
-                jump hg_pf_strip_T3_fingering
-            else:
+            if her_tier == 4:
                 jump hg_pf_strip_T4_fingering
+            elif her_tier == 5:
+                jump hg_pf_strip_T5_fingering
+            else: # Tier 6, and a fallback for cheaters!
+                jump hg_pf_strip_T6_fingering
 
         "-Take your cock out, start jerking off-":
-            jump hg_pf_strip_T2_masturbate
+            jump hg_pf_strip_T4_masturbate
 
         "-Show some manners, just watch-":
-            jump hg_pf_strip_T2_watch
+            jump hg_pf_strip_T4_watch
 
-label hg_pf_strip_T2_watch:
+label hg_pf_strip_T4_watch:
     call blktone
     call nar(">You watch Hermione Dance...")
     call her_main("(Time for the finishing act I suppose...)", "angry", "happyCl", "worried", "mid", xpos="mid", ypos="base")
@@ -1208,7 +1208,7 @@ label hg_pf_strip_T2_watch:
 
     jump end_hg_pf_strip
 
-label hg_pf_strip_T2_masturbate:
+label hg_pf_strip_T4_masturbate:
     show screen blkfade
     with d5
 

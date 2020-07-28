@@ -1,8 +1,8 @@
 
 
-### Tier 1 ###
+### Tier 2 ###
 
-label hg_pf_grope_breasts_T1:
+label hg_pf_grope_breasts_T2:
     stop music fadeout 1.0
     call her_chibi_scene("grope_tits", trans=d7)
     pause.8
@@ -79,9 +79,9 @@ label hg_pf_grope_breasts_T1:
 
             jump end_hg_pf_grope
 
-### Tier 2 ###
+### Tier 3 ###
 
-label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
+label hg_pf_grope_breasts_T3: # Favor fails if you Slap them.
     stop music fadeout 1.0
     call her_chibi_scene("behind_desk_front", trans=d7)
 
@@ -114,7 +114,7 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
     menu:
         m "..."
         "-Grab them-":
-            jump hg_pf_grope_breasts_T2_continue
+            jump hg_pf_grope_breasts_T3_continue
 
         "-Slap them-":
             pass
@@ -146,7 +146,7 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
 
     jump end_hermione_event
 
-label hg_pf_grope_breasts_T2_continue:
+label hg_pf_grope_breasts_T3_continue:
     call her_chibi_scene("grope_tits", trans=d7)
     call ctc
 
@@ -183,9 +183,9 @@ label hg_pf_grope_breasts_T2_continue:
 
     jump end_hg_pf_grope
 
-### Tier 3 ###
+### Tier 4 ###
 
-label hg_pf_grope_breasts_T3:
+label hg_pf_grope_breasts_T4:
     stop music fadeout 1.0
     call her_chibi_scene("behind_desk_front", trans=d7)
     pause.8
@@ -209,11 +209,11 @@ label hg_pf_grope_breasts_T3:
             "\"No, leave it on.\"":
                 m "I want to massage them while you are fully dressed..."
                 call her_main("Oh, I see...", "base", "base", "base", "R", cheeks="blush", ypos="head")
-                jump hg_pf_grope_breasts_T3_clothed
+                jump hg_pf_grope_breasts_T4_clothed
 
-    jump hg_pf_grope_breasts_T3_naked
+    jump hg_pf_grope_breasts_T4_naked
 
-label hg_pf_grope_breasts_T3_naked:
+label hg_pf_grope_breasts_T4_naked:
     stop music fadeout 1.0
     call her_chibi_scene("behind_desk_show_tits", trans=d7)
     call ctc
@@ -228,7 +228,7 @@ label hg_pf_grope_breasts_T3_naked:
     menu:
         m "..."
         "-Grab them-":
-            jump hg_pf_grope_breasts_T3_continue
+            jump hg_pf_grope_breasts_T4_continue
 
         "-Slap them-":
             pass
@@ -255,9 +255,9 @@ label hg_pf_grope_breasts_T3_naked:
     call her_main("...then I think I should leave.", "annoyed", "narrow", "annoyed", "mid")
     m "Fine, fine..."
 
-    jump hg_pf_grope_breasts_T3_continue
+    jump hg_pf_grope_breasts_T4_continue
 
-label hg_pf_grope_breasts_T3_clothed:
+label hg_pf_grope_breasts_T4_clothed:
     call her_chibi_scene("grope_tits", trans=d7)
     call ctc
 
@@ -289,7 +289,7 @@ label hg_pf_grope_breasts_T3_clothed:
                 m "What would you say then, [hermione_name]?"
                 call her_main("I just like it, {size=-4}a lot{heart}{/size}", "base", "narrow", "base", "up", cheeks="blush")
 
-            jump hg_pf_grope_breasts_T3_continue
+            jump hg_pf_grope_breasts_T4_continue
 
         "-Pull on them abruptly with force-":
             call nar(">You give Hermione's tits a sudden but firm pull...","start")
@@ -305,9 +305,9 @@ label hg_pf_grope_breasts_T3_clothed:
             call her_main("*Panting* What are you doing, [genie_name]...?", "open", "base", "base", "R", cheeks="blush")
             call her_main("You don't need to be so rough with me....{heart}", "base", "base", "base", "R", cheeks="blush")
 
-            jump hg_pf_grope_breasts_T3_continue
+            jump hg_pf_grope_breasts_T4_continue
 
-label hg_pf_grope_breasts_T3_continue:
+label hg_pf_grope_breasts_T4_continue:
     call her_chibi_scene("grope_tits", trans=d7)
     call ctc
 
@@ -354,151 +354,3 @@ label hg_pf_grope_breasts_T3_continue:
     call nar(">You let go of Hermione's breasts...")
 
     jump end_hg_pf_grope
-
-### Tier 4 ###
-
-label hg_pf_grope_breasts_T4_naked: # No top.
-    stop music fadeout 1.0
-    call her_chibi_scene("behind_desk_show_tits", trans=d7)
-    call ctc
-
-    call play_music("playful_tension") # SEX THEME.
-
-    hide screen hermione_main
-    show screen blktone
-    call her_main(xpos="mid", ypos="base")
-    call ctc
-
-    menu:
-        m "..."
-        "-Grab them-":
-            return
-
-        "-Slap them-":
-            pass
-
-    show screen blktone
-    call nar(">You give Hermione's tits a loud slap!")
-    call slap_her
-
-    #elif her_whoring >= 15:
-    call her_main("Ah!!!", "scream", "wide", "base", "stare", cheeks="blush")
-    call her_main("[genie_name], why did you do that?", "grin", "narrow", "base", "mid_soft", cheeks="blush")
-    m "Dunno... Seemed like a good idea..."
-    m "Did you like it?"
-    call her_main("..........", "annoyed", "base", "base", "mid")
-    call her_main("I am not a pervert...")
-    call nar(">You give Hermione's tits another loud smack!")
-    call slap_her
-
-    call her_main("A-ah!!!", "silly", "narrow", "worried", "down", cheeks="blush")
-    m "Tell me you like it!"
-    her "[genie_name]... I..."
-    call nar(">You unleash a whole series of slaps!")
-
-    call slap_her
-    call slap_her
-    call slap_her
-
-    call nar(">Hermione's tits bounce all over the place, completely out of control")
-    call her_main("A-ah!!! Ah!!! A-a-aha!!!", "silly", "narrow", "annoyed", "up", cheeks="blush", tears="soft")
-    m "You enjoy this. Admit it."
-    call her_main("...........", "base", "narrow", "base", "dead", cheeks="blush", tears="soft")
-    call nar(">You smack her tits again.")
-
-    call slap_her
-    call slap_her
-    call slap_her
-
-    call her_main("A-ah! Yes! I do, I do! A-ah...", "silly", "narrow", "annoyed", "up", cheeks="blush", tears="soft")
-    call her_main("...does this mean I'm a pervert, [genie_name]?", "angry", "base", "worried", "mid", cheeks="blush", tears="soft")
-    m "What?"
-    m "Stop being silly, [hermione_name]."
-    m "It is completely natural for a girl to enjoy her tits getting smacked around a little."
-    her "......"
-    her "Are you sure about that, [genie_name]?"
-    m "Yes. Believe me, I know."
-    call nar(">You give her tits one more slap!")
-    call slap_her
-
-    call her_main("*A-ah*... Yes... Thank you, [genie_name].", "silly", "narrow", "annoyed", "up", cheeks="blush", tears="soft")
-    m "Well... Enough with the slapping for now..."
-
-    return
-
-
-
-### Tier 5 ###
-
-label hg_pf_grope_breasts_T5_naked:
-    call set_her_action("lift_top")
-    call her_chibi_scene("grope_tits", trans=d7)
-    call ctc
-
-    show screen blktone
-    call her_main("*Ah*...", "soft", "narrow", "annoyed", "up")
-    m "A bit sensitive today, aren't you?"
-    call her_main("I suppose...", "base", "narrow", "base", "mid_soft")
-    call her_main("*Ah*...", "open", "happyCl", "worried", "mid")
-    m "You like it when I squeeze them like this?"
-    call her_main("I do, [genie_name]... *Ah*...", "base", "narrow", "base", "mid_soft")
-    m "Heh..."
-    m "What if I pinch your nipples?"
-    call her_main("!!!", "angry", "base", "base", "mid")
-    call her_main("*Ah*! [genie_name]...", "open", "happyCl", "worried", "mid")
-    m "And what if I do this?"
-    call nar(">You grab the girl by her hard nipples and start pulling...")
-    call her_main("*Ah*... *Ah*... *Ah*... [genie_name]...", "shock", "happyCl", "worried", "mid")
-    m "What if I pull even harder?"
-    with hpunch
-
-    call her_main("*Ah*... [genie_name], please...", "scream", "wide", "base", "stare")
-    call nar(">Hermione clutches the edge of your desk to keep herself from taking a step towards you...")
-    m "Good girl..."
-    call her_main("*Panting heavily*", "grin", "narrow", "base", "dead")
-    m "Do you enjoy this?"
-    call her_main("You are hurting me, [genie_name]...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
-    m "But do you enjoy it?"
-
-    if her_whoring < 18:
-        call her_main("*Ah*... Yes, [genie_name]... I don't know why, but I do...", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
-    else:
-        call her_main("*Ah*... Yes, [genie_name]... I love it...", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
-
-    m "Good girl..."
-    call nar(">You let go of her nipples...")
-    call her_main("*Ah*...", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
-
-    show screen bld1
-    call hide_blktone
-
-    m "This will be all for today, [hermione_name]..."
-    call her_main("*Oh*...?", "shock", "base", "base", "R", cheeks="blush", tears="soft")
-    m "What is it? You look disappointed."
-    m "I will pay you of course..."
-    call her_main("That's not it, [genie_name]...", "angry", "squint", "base", "mid", cheeks="blush")
-    call her_main("It's...", "angry", "squint", "base", "mid", cheeks="blush")
-
-    if daytime:
-        call her_main("It's just that I still have some time left before I have to leave for the classes and...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
-    else:
-        call her_main("It's not really that late yet, is it?", "shock", "base", "base", "R", cheeks="blush", tears="soft")
-
-    call her_main("*uhm*...", "angry", "squint", "base", "mid", cheeks="blush")
-    call her_main("...................", "angry", "squint", "base", "mid", cheeks="blush")
-    m "You want me to hurt you some more, don't you?"
-
-    if her_whoring < 18:
-        call her_main("I don't \"want to\"... ", "shock", "base", "base", "R", cheeks="blush", tears="soft")
-        call her_main("But if you insist [genie_name]...", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
-        m "Well, I do insist... apparently."
-    else:
-        call her_main("Yes please, [genie_name]!", "shock", "base", "base", "R", cheeks="blush", tears="soft")
-        call her_main("I'll even let you do it for free...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
-        m "Well, in that case..."
-
-    call her_main("Ah...", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
-
-    call nar(">You spend some more time with Hermione's breasts...")
-
-    return

@@ -91,12 +91,12 @@ label hg_pf_blowjob_fail:
 
     jump too_much
 
-### Tier 0 - Fails ###
+### Tier 4 - Fails ###
 
 # Event 1 (i) - Hermione refuses.
 # Event 2 (r) - Repeat.
 
-label hg_pf_blowjob_T0_fail_intro:
+label hg_pf_blowjob_T4_fail_intro:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
@@ -133,7 +133,7 @@ label hg_pf_blowjob_T0_fail_intro:
 
     jump end_hermione_event
 
-label hg_pf_blowjob_T0_fail_repeat:
+label hg_pf_blowjob_T4_fail_repeat:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
@@ -165,13 +165,13 @@ label hg_pf_blowjob_T0_fail_repeat:
 
     jump end_hermione_event
 
-### Tier 1 ###
+### Tier 5 ###
 
 # Event 1 (i) - Hermione is ok with it.
 # Event 2 (i) - Hidden blowjob with Snape watching.
 # Event 3 (r) - Normal blowjob with choices.
 
-label hg_pf_blowjob_T1_intro_E1:
+label hg_pf_blowjob_T5_intro_E1:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
@@ -194,7 +194,7 @@ label hg_pf_blowjob_T1_intro_E1:
     jump hg_pf_blowjob_1
 
 
-label hg_pf_blowjob_T1_intro_E2:
+label hg_pf_blowjob_T5_intro_E2:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("[genie_name]?", "base", "base", "base", "mid")
@@ -248,7 +248,7 @@ label hg_pf_blowjob_T1_intro_E2:
 
     jump hg_pf_hidden_blowjob # Snape
 
-label hg_pf_blowjob_T1_repeat:
+label hg_pf_blowjob_T5_repeat:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     call play_music("playful_tension") # SEX THEME.
     m "How would you like to give me another blowjob, [hermione_name]?"
@@ -257,13 +257,13 @@ label hg_pf_blowjob_T1_repeat:
 
     jump hg_pf_blowjob_1
 
-### Tier 2 ###
+### Tier 6 ###
 
 # Event 1 (i) - New event with a couple of choices.
 # Event 2 (r) - Hidden blowjob (Snape, Tonks, or Luna.)
 # Event 3 (r) - Blowjob with choices.
 
-label hg_pf_blowjob_T2_intro_E1:
+label hg_pf_blowjob_T6_intro_E1:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "Tell me, [hermione_name]..."
     g9 "Have you been behaving yourself lately?"
@@ -299,7 +299,7 @@ label hg_pf_blowjob_T2_intro_E1:
 
     jump hg_pf_blowjob_2
 
-label hg_pf_blowjob_T2_hidden_repeat:
+label hg_pf_blowjob_T6_hidden_repeat:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     call play_music("playful_tension") # SEX THEME.
     m "Suck my dick, [hermione_name]."
@@ -307,7 +307,7 @@ label hg_pf_blowjob_T2_hidden_repeat:
 
     jump hg_pf_hidden_blowjob
 
-label hg_pf_blowjob_T2_repeat:
+label hg_pf_blowjob_T6_repeat:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     call play_music("playful_tension") # SEX THEME.
     m "Suck my dick, [hermione_name]."

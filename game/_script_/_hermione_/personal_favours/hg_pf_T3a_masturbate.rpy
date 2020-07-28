@@ -1,8 +1,8 @@
 ### Masturbate ###
 
-### Tier 2 (Intro) ###
+### Tier 4 (Intro) ###
 
-label hg_pf_strip_T2_fingering:
+label hg_pf_strip_T4_fingering:
     if not hg_masturbated.trigger:
         $ hg_masturbated.triggered()
 
@@ -302,9 +302,9 @@ label hg_pf_strip_T2_fingering:
     $ hermione.wear("all")
     jump end_hg_pf_strip
 
-### Tier 3 ###
+### Tier 5 ###
 
-label hg_pf_strip_T3_fingering:
+label hg_pf_strip_T5_fingering:
 
     $ hg_masturbated.triggered()
 
@@ -410,9 +410,9 @@ label hg_pf_strip_T3_fingering:
 
     jump end_hg_pf_strip
 
-### Tier 4 ###
+### Tier 6 ###
 
-label hg_pf_strip_T4_fingering:
+label hg_pf_strip_T6_fingering:
 
     $ hg_masturbated.triggered()
 

@@ -72,14 +72,14 @@ label hg_pf_sex_fail:
 
     jump too_much
 
-### Tier 1 ###
+### Tier 6 ###
 
 # Event 1 (i) - First time sex
 # Event 2 (i) - Sex with different dialogue
 # Event 2 (i) - Anal option
 # Event 3 (r) - Regular or anal sex
 
-label hg_pf_sex_T1_intro_E1:
+label hg_pf_sex_T6_intro_E1:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("[genie_name]?", "soft", "base", "base", "mid")
@@ -105,7 +105,7 @@ label hg_pf_sex_T1_intro_E1:
     jump end_hg_pf_sex
 
 
-label hg_pf_sex_T1_intro_E2:
+label hg_pf_sex_T6_intro_E2:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]..."
     m "Last night I had a dream..."
@@ -123,7 +123,7 @@ label hg_pf_sex_T1_intro_E2:
 
     jump end_hg_pf_sex
 
-label hg_pf_sex_T1_intro_E3:
+label hg_pf_sex_T6_intro_E3:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name], are you keeping your pussy wet and ready for me?"
     call her_main("[genie_name]!", "scream", "closed", "angry", "mid")
@@ -157,7 +157,7 @@ label hg_pf_sex_T1_intro_E3:
     jump end_hg_pf_sex
 
 
-label hg_pf_sex_T1_E3: # repeats
+label hg_pf_sex_T6_E3: # repeats
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name], are you keeping your pussy wet and ready for me?"
     call her_main("[genie_name]...", "upset", "base", "worried", "down")

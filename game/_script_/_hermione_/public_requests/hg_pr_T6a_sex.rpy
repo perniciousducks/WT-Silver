@@ -37,7 +37,7 @@ label hg_pr_sex:
 
             jump end_hermione_event
 
-        if her_reputation < 19:
+        if her_reputation < 18:
             jump too_much_public
 
         call play_music("hermione") # Music
@@ -84,8 +84,13 @@ label end_hg_pr_sex:
     $ hg_pr_sex.inProgress = False
 
     # Increase Points
-    if her_reputation < 24:
-        $ her_reputation += 1
+
+    if her_tier == 6:
+        if her_reputation < 24:
+            $ her_reputation += 1
+
+        if her_whoring < 24:
+            $ her_whoring += 1
 
     jump end_hermione_event
 

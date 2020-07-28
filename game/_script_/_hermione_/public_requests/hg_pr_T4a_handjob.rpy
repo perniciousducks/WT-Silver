@@ -132,8 +132,26 @@ label end_hg_pr_handjob:
 
     # Increase Points
 
-    if her_reputation < 15:
-        $ her_reputation += 1
+    if her_tier == 4:
+        if her_reputation < 18:
+            $ her_reputation += 1
+
+        if her_whoring < 18:
+            $ her_whoring += 1
+
+    elif her_tier == 5:
+        if her_reputation < 21:
+            $ her_reputation += 1
+
+        if her_whoring < 21:
+            $ her_whoring += 1
+
+    elif her_tier == 6:
+        if her_reputation < 24:
+            $ her_reputation += 1
+
+        if her_whoring < 24:
+            $ her_whoring += 1
 
     jump end_hermione_event
 

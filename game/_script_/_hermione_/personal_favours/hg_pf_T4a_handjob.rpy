@@ -81,13 +81,13 @@ label hg_pf_handjob_fail:
 
     jump too_much
 
-### Tier 1 ###
+### Tier 4 ###
 
 # Event 1 (i) - Hermione wants 100 house points for it!
 # Event 2 (i) - Reluctantly does it again.
 # Event 3 (r) -
 
-label hg_pf_handjob_T1_intro_E1:
+label hg_pf_handjob_T4_intro_E1:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]."
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
@@ -141,7 +141,7 @@ label hg_pf_handjob_T1_intro_E1:
 
     jump hg_pf_handjob_1
 
-label hg_pf_handjob_T1_intro_E2:
+label hg_pf_handjob_T4_intro_E2:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
@@ -164,7 +164,7 @@ label hg_pf_handjob_T1_intro_E2:
 
     jump hg_pf_handjob_1
 
-label hg_pf_handjob_T1_repeat:
+label hg_pf_handjob_T4_repeat:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("[genie_name]?", "base", "base", "base", "mid")
@@ -177,12 +177,12 @@ label hg_pf_handjob_T1_repeat:
 
     jump hg_pf_handjob_1
 
-### Tier 2 ###
+### Tier 5 ###
 
 # Event 1 (i) -
 # Event 3 (r) -
 
-label hg_pf_handjob_T2_intro_E1:
+label hg_pf_handjob_T5_intro_E1:
     call her_main("[genie_name]?", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("[genie_name]?", "base", "base", "base", "mid")
@@ -193,7 +193,7 @@ label hg_pf_handjob_T2_intro_E1:
 
     jump hg_pf_handjob_2
 
-label hg_pf_handjob_T2_intro_E2:
+label hg_pf_handjob_T5_intro_E2:
     call her_main("[genie_name]?", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("[genie_name]?", "base", "base", "base", "mid")
@@ -203,7 +203,7 @@ label hg_pf_handjob_T2_intro_E2:
 
     jump hg_pf_handjob_2
 
-label hg_pf_handjob_T2_repeat:
+label hg_pf_handjob_T5_repeat:
     call her_main("[genie_name]?", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("[genie_name]?", "base", "base", "base", "mid")

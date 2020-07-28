@@ -89,12 +89,12 @@ label hg_pf_titjob_fail:
 
     jump too_much
 
-### Tier 1 ###
+### Tier 5 ###
 
 # Event 1 (i) - Hermione wants 100 house points for it!
 # Event 2 (r) - Reluctantly does it again.
 
-label hg_pf_titjob_T1_intro_E1:
+label hg_pf_titjob_T5_intro_E1:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "Now, [hermione_name]..."
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
@@ -159,7 +159,7 @@ label hg_pf_titjob_T1_intro_E1:
 
     jump hg_pf_titjob_1
 
-label hg_pf_titjob_T1_repeat:
+label hg_pf_titjob_T5_repeat:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name], would you like to earn some house points again?"
     call her_main("Of course, [genie_name]...", "base", "base", "base", "mid")
@@ -177,13 +177,13 @@ label hg_pf_titjob_T1_repeat:
 
     jump hg_pf_titjob_1
 
-### Tier 2 ###
+### Tier 6 ###
 
 # Event 1 (i) - Event with a couple of choices.
 # Event 2 (i) - Some new interactions.
 # Event 3 (r) - Repeat.
 
-label hg_pf_titjob_T2_intro_E1:
+label hg_pf_titjob_T6_intro_E1:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
@@ -200,7 +200,7 @@ label hg_pf_titjob_T2_intro_E1:
 
     jump hg_pf_titjob_2
 
-label hg_pf_titjob_T2_intro_E2:
+label hg_pf_titjob_T6_intro_E2:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
@@ -215,7 +215,7 @@ label hg_pf_titjob_T2_intro_E2:
 
     jump hg_pf_titjob_2
 
-label hg_pf_titjob_T2_repeat:
+label hg_pf_titjob_T6_repeat:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name], how would you like wrapping those perfect tits of yours around my cock again?"
     call her_main("As long as I am getting paid...", "soft", "happy", "base", "R")

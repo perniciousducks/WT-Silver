@@ -1043,15 +1043,15 @@ label hg_hidden_blowjob_tonks:
     if daytime:
         call ton_main("Hello, Sir.","base","base","base","mid", xpos="right", ypos="base", trans=d3)
     else:
-        call ton_main("Good evening, Sir.","base","base","base","mid", xpos="right", ypos="base", trans=d3)
+        call ton_main("Good evening, Sir.", "base", "base", "shocked", "mid", xpos="right", ypos="base", trans=dissolve)
 
     call her_chibi_scene("bj", trans=d5)
 
     call her_main("{size=-4}(*Slurp*... *Slurp*... *Gulp*...){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
     g9 "Tonks! What can I do for you?"
     call ton_main("I was wondering if we could--","open","base","raised","R")
-    call ton_main("(...)","base","base","base","mid")
-    call ton_main("Am I interrupting something?","horny","base","raised","down")
+    call ton_main("(...)", "annoyed", "narrow", "raised", "L")
+    call ton_main("Am I interrupting something?", "soft", "base", "raised", "down")
     call her_main("(She's going to find out!!!)", "open_wide_tongue", "narrow", "annoyed", "up")
     m "Nothing important..."
 
@@ -1063,47 +1063,47 @@ label hg_hidden_blowjob_tonks:
 
         "-Lie-":
             m "...Just polishing...{w=0.5} the woodwork."
-            call ton_main("Like I'm going to believe that...","open","base","base","mid")
+            call ton_main("Like I'm going to believe that...", "upset", "base", "base", "downR")
             call ton_main("Are you masturbating, [ton_genie_name]?","horny","base","raised","mid")
 
             if ton_friendship < 50:
-                call ton_main("Or perhaps somebody else has their tongue wrapped around it?","horny","base","raised","L")
-                call her_main("{size=-4}(*Blergchhhgh*... *Cough*... *Cough*... *Cough*...){/size}", "open_wide_tongue", "slit", "worried", "ahegao")
+                call ton_main("Or perhaps somebody else has their tongue wrapped around it?", "soft", "base", "raised", "L")
+                call her_main("{size=-4}(*Blergchhhgh*... *Cough*... *Cough*... *Cough*...){/size}", "open_wide_tongue", "base", "worried", "ahegao")
                 call ton_main("What was that?","base","base","raised","mid")
-                call ton_main("Surely there's nobody at this school who would be able to pleasure you properly...","open","base","raised","mid")
+                call ton_main("Surely there's nobody at this school who would be able to pleasure you properly...", "grin", "base", "raised", "mid")
             else:
-                call ton_main("Are you stroking your hard, {w=0.3}magnificent, {w=0.3}cock?","open_wide_tongue","base","base","ahegao")
+                call ton_main("Are you stroking your hard, {w=0.3}magnificent, {w=0.3}cock?","soft","base","base","stare")
                 with hpunch
                 call her_main("{size=-4}(*Blergchhhgh*... *Cough*... *Cough*... *Cough*...){/size}", "open_wide_tongue", "slit", "worried", "ahegao")
                 call her_chibi_scene("bj_pause", trans=d5)
                 call her_main("{size=-4}What??{/size}", "open_wide_tongue", "narrow", "base", "up")
-                call ton_main("What was that?","base","base","raised","mid")
-                call ton_main("[ton_genie_name]?!","open","base","angry","mid")
+                call ton_main("What was that?","open","base","raised","mid")
+                call ton_main("[ton_genie_name]?!","grin","base","base","mid")
                 m "*Uhm*-{w=0.5} My belly?"
                 call ton_main("Sounded like somebody doesn't know how to deep throat a dick properly...","open","base","base","R")
 
             call her_main("(Excuse me?!)", "open_wide_tongue", "narrow", "annoyed", "up")
             m "Don't be mean, she's doing her best..."
-            call ton_main("So there is a girl behind you!","horny","base","raised","down")
-            call ton_main("Who is it? Tell me!","base","base","base","mid")
+            call ton_main("So there is a girl behind you!", "horny", "wide", "raised", "down")
+            call ton_main("Who is it? Tell me!", "soft", "shocked", "shocked", "mid")
             m "(...)"
             m "It's Miss Granger."
 
     call ton_main("Miss Granger?!", "open", "wide", "shocked", "stare")
 
     if her_reputation <= 15:
-        call ton_main("That cute little tease who always hangs out at the library, pretending to study?","open","base","raised","mid")
+        call ton_main("*Hmmm?*... I thought she'd be busy pretending to study in the library.","open","base","raised","mid")
         call her_main("(Pretending???)", "open_wide_tongue", "narrow", "base", "up")
     else:
-        call ton_main("That Gryffindor slut? The one who always hangs around flirting with some Slytherins?","open","base","raised","mid")
-        call her_main("(Gryffindor slut !!?)", "open_wide_tongue", "narrow", "annoyed", "up")
+        call ton_main("*Oh?* I could've sworn I just saw her in the library fluttering her eyelashes to some Slytherin boy...","open","base","raised","mid")
+        call her_main("(What!!?)", "open_wide_tongue", "narrow", "annoyed", "up")
         with hpunch
         m "Ouch, I felt that..."
 
     if ton_friendship < 50:
-        call ton_main("And she has her lips wrapped around you? {w=0.5}Right now???","open","base","worried","mid")
+        call ton_main("So she has her lips wrapped around you? {w=0.5}Right now???", "soft", "base", "shocked", "L")
     else:
-        call ton_main("And you are telling me, you are fucking her mouth? {w=0.5}Right now???","open","base","worried","mid")
+        call ton_main("You're telling me that you are fucking her mouth? {w=0.5}Right now???","soft","base","shocked","mid")
 
     call ton_main("Oh I've got to see this...","horny","base","base","down")
     call ton_main("","horny","base","base","down", xpos="mid", trans=d3)
@@ -1122,15 +1122,15 @@ label hg_hidden_blowjob_tonks:
     call ton_main("Very well...","base","base","raised","R", xpos="right", trans=d3)
     call her_main("{size=-4}(*Slurp*... *Slurp*... *Gulp*...){/size}", "open_wide_tongue", "squint", "worried", "up")
 
-    call ton_main("Is that really, {w=0.5}Miss Hermione Granger,{w=0.5} back there?","horny","base","base","mid")
+    call ton_main("Is that really, {w=0.5}Miss Hermione Granger,{w=0.5} back there?", "horny", "narrow", "base", "mid")
     call ton_main("That's so hard to believe!","open","base","raised","L")
-    call ton_main("Or perhaps, you are just fucking with me, [ton_genie_name]...","horny","base","angry","mid")
+    call ton_main("Or perhaps, you are just fucking with me, [ton_genie_name]...", "soft", "base", "base", "mid")
     m "I'm not fucking with you..."
     g9 "...I'm fucking her mouth."
-    call ton_main("That's too good to be true!","base","base","base","ahegao")
+    call ton_main("That's too good to be true!", "horny", "narrow", "base", "stare")
     call her_main("{size=-4}(*Slurp*... *Slurp*... *Gulp*...){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
 
-    call ton_main("Miss Granger, If that's really you back there, why don't you say hi to your favourite teacher?","horny","base","raised","down")
+    call ton_main("Miss Granger, If that's really you back there, why don't you say hi to your favourite teacher?", "grin", "base", "raised", "down")
     m "(...)"
     call ton_main("I will reward you with fifty house points if you show yourself!","base","base","raised","down")
     with hpunch
@@ -1138,18 +1138,18 @@ label hg_hidden_blowjob_tonks:
 
     call her_chibi_scene("bj_pause", trans=d5)
 
-    call her_main("(Oh wow, that's a lot of points!)", "open_wide_tongue", "narrow", "annoyed", "up")
+    call her_main("(Oh wow, that's a lot of points!)", "open_wide_tongue", "narrow", "annoyed", "down_soft")
 
     call her_chibi_scene("bj", trans=d5)
 
     g4 "You can't give her that many points, [tonks_name]! She's already getting {number=current_payout} from me!"
     m "Do you even realise how many days I'll have to spend with Snape, of all people, to get even with Slytherin again, after this?"
-    call ton_main("So what? The girl has clearly earned it!","open","base","angry","mid")
-    call ton_main("Sucking her headmaster's cock...","horny","base","angry","down")
+    call ton_main("So what? The girl has clearly earned it!", "soft", "base", "annoyed", "mid")
+    call ton_main("Sucking her headmaster's cock...", "horny", "base", "annoyed", "down")
     call ton_main("Fifty points could be yours, Miss Granger!","open","base","raised","down")
     call ton_main("You only have to stick your gorgeous head out and say hi to me, and of course...","open","base","base","R")
     call ton_main("I promise I won't tell anybody.","base","base","base","down")
-    call ton_main("It will be our little secret.","horny","base","angry","down")
+    call ton_main("It will be our little secret.", "soft", "base", "shocked", "down")
     call her_main("(...)", "open_wide_tongue", "narrow", "annoyed", "up")
     m "Do what you must, girl..."
     call her_main("(...............)", "open_wide_tongue", "narrow", "base", "up")
@@ -1166,8 +1166,8 @@ label hg_hidden_blowjob_tonks:
 
     call her_main("H-Hello, professor Tonks.", "clench", "happyCl", "worried", "mid")
 
-    call ton_main("Miss Granger, what a pleasant surprise.","base","base","raised","mid")
-    call ton_main("Are you having a good time back there?","open","base","base","down")
+    call ton_main("Miss Granger, what a pleasant surprise.", "grin", "wide", "raised", "L")
+    call ton_main("Are you having a good time back there?", "base", "wide", "base", "L")
 
     if her_reputation <= 15:
         call ton_main("It sure sounded like you were...","horny","base","raised","mid")
@@ -1184,32 +1184,36 @@ label hg_hidden_blowjob_tonks:
 
     if ton_friendship < 50:
         call ton_main("You're really going to town, aren't you...","base","base","base","down")
-        call ton_main("You should make sure you breathe every once in a while dear girl.","horny","base","angry","mid")
+        call ton_main("You should make sure you breathe every once in a while dear girl.", "horny", "base", "base", "mid")
         g9 "If you need to have her vitals checked out afterwards - I'm sure we could come to an arrangement."
     else:
         call ton_main("I'd love to join you back there, Miss Granger...","base","base","base","down")
         call ton_main("Suck your Headmaster's dick with you!","horny","base","angry","mid")
-        call her_main("{size=-4}(She'd do what?... *Slurp*... *Slurp*... *Gulp*...){/size}", "open_wide_tongue", "squint", "worried", "up")
+        call her_main("{size=-4}(She'd do what?... *Slurp*... *Slurp*... *Gulp*...){/size}", "open_wide_tongue", "narrow", "worried", "up")
         g9 "You can both have it!"
 
-    call ton_main("I'm sorry, [ton_genie_name]... I'm already pre-occupied with something...","open","base","worried","R")
-    call ton_main("Teaching our second-years how to cast a simple deflection spell...","open","base","raised","down")
-    call ton_main("We are already two sessions behind my planned class schedule.","open","base","worried","mid")
-    call ton_main("I came to you to get consultation about some material I had prepared for them.","open","base","worried","down")
+    call ton_main("I'm sorry, [ton_genie_name]... I'm already pre-occupied with something...", "open", "narrow", "base", "R")
+    if daytime:
+        call ton_main("Teaching our second-years how to cast a simple deflection spell...","open","base","raised","down")
+    else:
+        call ton_main("I'm preparing some material for our second-years how to cast a simple deflection spell...","open","base","raised","down")
+    call ton_main("We are already two sessions behind my planned class schedule.", "annoyed", "base", "base", "mid")
+    call ton_main("I came to you to get consultation about some of the material I had prepared for them.", "open", "base", "shocked", "down")
+    m "(Yeah right, more like she wanted some of my firewhisky...)"
     call ton_main("But since you have to take care of Miss Granger right now...","base","base","raised","down")
-    call ton_main("I suppose it can wait.","open","base","worried","R")
-    call ton_main("Who said teaching would be easy, am I right?","base","base","worried","ahegao")
+    call ton_main("I suppose it can wait.", "base", "base", "raised", "R")
+    call ton_main("Who said teaching would be easy, am I right?", "open", "closed", "shocked", "mid")
     m "It's quite easy, actually."
-    call ton_main("As a headmaster maybe... I'm sure your private tutelage is very popular...","horny","base","raised","down")
+    call ton_main("As a headmaster maybe... I'm sure your private tutelage is very popular...", "horny", "base", "raised", "down")
     m "It can get quite hard, taking care of all those girls."
-    call ton_main("I can certainly see that...","horny","base","angry","mid")
+    call ton_main("I can certainly see that...", "base", "base", "annoyed", "down")
     call her_main("{size=-4}(*Slurp*... *Slurp*... *Gulp*...){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
 
     call ton_main("Anyhow...","open","base","raised","R")
-    call ton_main("Hermione, for your exceptional and benevolent effort of sucking your headmaster's cock, {w=0.5}I hereby reward the house Gryffindor...","open","base","base","down")
+    call ton_main("Hermione, for your exceptional and benevolent effort of sucking your headmaster's cock, {w=0.5}I hereby reward the house Gryffindor...", "soft", "base", "base", "down")
 
     call her_chibi_scene("bj_pause", trans=d5)
-    call ton_main("Sixty-nine points!","horny","base","base","mid")
+    call ton_main("Sixty-nine points!", "grin", "wide", "base", "mid")
     $ gryffindor += 69
 
     call her_main("(Sixty-nine! That's even more than she agreed on!)", "shock", "wide", "base", "up")
@@ -1222,9 +1226,9 @@ label hg_hidden_blowjob_tonks:
 
     call her_chibi_scene("bj", trans=d5)
     call her_main("{size=-4}(*Slurp*... *Slurp*... *Gulp*...){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
-    call ton_main("I'm going to have to go, [ton_genie_name].","open","base","worried","R")
-    call ton_main("Wish I could watch you two a little longer...","base","base","worried","mid")
-    call ton_main("But I have to head back to my office.","open","base","worried","L")
+    call ton_main("I'm going to have to go, [ton_genie_name].", "open", "closed", "shocked", "mid")
+    call ton_main("Wish I could watch you two a little longer...", "soft", "base", "base", "L")
+    call ton_main("But I have to head back to my office.", "open", "base", "base", "downR")
     m "What a shame."
     if ton_friendship < 50:
         call ton_main("Make sure she gets a good taste.","horny","base","base","mid")
@@ -1235,9 +1239,9 @@ label hg_hidden_blowjob_tonks:
     if daytime:
         call ton_main("See you in class, {i}Parseltongue{/i}!","horny","base","angry","down")
     else:
-        call ton_main("Have a good night, {i}Parseltongue{/i}!","horny","base","angry","down")
+        call ton_main("Have a good night, {i}Parseltongue{/i}!", "horny", "base", "annoyed", "down")
 
-    call her_main("..........", "silly", "happyCl", "worried", "mid")
+    call her_main("..........", "open_wide_tongue", "happyCl", "worried", "mid")
 
     #Tonks leaves.
     stop music fadeout 1.0

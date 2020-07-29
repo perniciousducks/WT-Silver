@@ -4,7 +4,7 @@
 label hg_pr_kiss:
 
     # Setup
-    $ current_payout += 45
+    $ current_payout = 45
 
     if hg_pr_kiss.counter == 0:
         m "{size=-4}(Tell her to go make out with one of her female classmates?){/size}"
@@ -87,7 +87,7 @@ label end_hg_pr_kiss:
     pause.2
 
     # Inner monologue
-    if hg_pr_grope.counter == 1:
+    if hg_pr_kiss.counter == 1:
         show screen blktone
         with d3
 
@@ -289,7 +289,7 @@ label hg_pr_kiss_T4_E1:
     call her_main("Making out...", "base", "base", "base", "mid")
     call her_main("She caught on real quick... I think she could be really good at it with some practice...", "open", "base", "base", "mid")
     call her_main("Also she was quite adorable...", "base", "base", "base", "mid")
-    call her_main("She kept calling me \"[hermione_name]\"...", "smile", "base", "base", "R")
+    call her_main("She kept calling me \"Miss Hermione\"...", "smile", "base", "base", "R")
     m "*Hmm*..."
     m "I Don't recall sending you out with a task to confuse some poor girl, [hermione_name]."
     call her_main("\"Confuse\"? [genie_name], please...", "smile", "narrow", "base", "mid_soft")

@@ -82,15 +82,20 @@ default ton_outfit_school = DollOutfit([ton_hair_base_new, ton_top_tied, ton_bot
 ## Flag Bikinis ##
 ##################
 
-default ton_bra_bikini_1 = DollCloth("tonks", ("bras", "bikini bras"), "bra", "bikini_bra_1", [[255, 255, 255, 255], [255, 255, 255, 255]], unlocked=True)
-default ton_bra_bikini_1_striped = DollCloth("tonks", ("bras", "bikini bras"), "bra", "bikini_bra_1_striped", [[255, 255, 255, 255], [139, 0, 0, 255], [255, 255, 255, 255]], unlocked=True)
-default ton_bra_bikini_1_UK = DollCloth("tonks", ("bras", "bikini bras"), "bra", "bikini_bra_1_UK", [[255, 255, 255, 255], [200, 16, 46, 255], [1, 33, 105, 255], [255, 255, 255, 255]], unlocked=True)
-default ton_bra_bikini_1_USA = DollCloth("tonks", ("bras", "bikini bras"), "bra", "bikini_bra_1_USA", [[255, 255, 255, 255], [139, 0, 0, 255], [12, 99, 216, 255], [255, 255, 255, 255]], unlocked=True)
+default ton_bra_bikini_1 = DollCloth("tonks", ("bras", "bikini bras"), "bra", "bikini_bra_1", [[255, 255, 255, 255], [255, 255, 255, 255]])
+default ton_bra_bikini_1_striped = DollCloth("tonks", ("bras", "bikini bras"), "bra", "bikini_bra_1_striped", [[255, 255, 255, 255], [139, 0, 0, 255], [255, 255, 255, 255]])
+default ton_bra_bikini_1_UK = DollCloth("tonks", ("bras", "bikini bras"), "bra", "bikini_bra_1_UK", [[255, 255, 255, 255], [200, 16, 46, 255], [1, 33, 105, 255], [255, 255, 255, 255]])
+default ton_bra_bikini_1_USA = DollCloth("tonks", ("bras", "bikini bras"), "bra", "bikini_bra_1_USA", [[255, 255, 255, 255], [139, 0, 0, 255], [12, 99, 216, 255], [255, 255, 255, 255]])
 
-default ton_panties_bikini_1 = DollCloth("tonks", ("panties", "bikini panties"), "panties", "bikini_panties_1", [[255, 255, 255, 255], [255, 255, 255, 255]], unlocked=True)
-default ton_panties_bikini_1_jock = DollCloth("tonks", ("panties", "bikini panties"), "panties", "bikini_panties_1_jock", [[255, 255, 255, 255]], unlocked=True)
-default ton_panties_bikini_1_striped = DollCloth("tonks", ("panties", "bikini panties"), "panties", "bikini_panties_1_striped", [[255, 255, 255, 255], [139, 0, 0, 255]], unlocked=True)
-default ton_panties_bikini_1_UK = DollCloth("tonks", ("panties", "bikini panties"), "panties", "bikini_panties_1_UK", [[255, 255, 255, 255], [200, 16, 46, 255], [1, 33, 105, 255]], unlocked=True)
+default ton_panties_bikini_1 = DollCloth("tonks", ("panties", "bikini panties"), "panties", "bikini_panties_1", [[255, 255, 255, 255], [255, 255, 255, 255]])
+default ton_panties_bikini_1_jock = DollCloth("tonks", ("panties", "bikini panties"), "panties", "bikini_panties_1_jock", [[255, 255, 255, 255]])
+default ton_panties_bikini_1_striped = DollCloth("tonks", ("panties", "bikini panties"), "panties", "bikini_panties_1_striped", [[255, 255, 255, 255], [139, 0, 0, 255]])
+default ton_panties_bikini_1_UK = DollCloth("tonks", ("panties", "bikini panties"), "panties", "bikini_panties_1_UK", [[255, 255, 255, 255], [200, 16, 46, 255], [1, 33, 105, 255]])
+
+default ton_outfit_bikini_1 = DollOutfit([ton_hair_base_new, ton_bra_bikini_1, ton_panties_bikini_1], price=250)
+default ton_outfit_bikini_2 = DollOutfit([ton_hair_base_new, ton_bra_bikini_1_striped, ton_panties_bikini_1_striped], price=250)
+default ton_outfit_bikini_3 = DollOutfit([ton_hair_base_new, ton_bra_bikini_1_UK, ton_panties_bikini_1_UK], price=250)
+default ton_outfit_bikini_4 = DollOutfit([ton_hair_base_new, ton_bra_bikini_1_USA, ton_panties_bikini_1_jock], price=250)
 
 ###################
 ## Casual Outfit ##

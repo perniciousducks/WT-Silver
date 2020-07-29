@@ -308,7 +308,11 @@ screen clothing_menu(menu_items, character, preview):
 
             #Item Information Display Panel.
             text preview.get_name() xpos 83 ypos 458 size 16
-            text preview.get_description() xpos 85 ypos 490 size 12
+
+            frame:
+                style "empty"
+                xysize (410, 200)
+                text preview.get_description() xpos 85 ypos 490 size 12
             text preview.get_type() xpos 509 ypos 458 size 16
             text ", ".join(preview.get_items()) pos (511, 490) xmaximum 180 size 12
             text preview.get_wait_time() xpos 83 ypos 557 size 16

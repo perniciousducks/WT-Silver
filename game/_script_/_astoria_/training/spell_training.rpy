@@ -297,14 +297,14 @@ label ag_st_imperio_E2:
     call ton_main("Hello, Professor.","base","happyCl","base","mid", xpos="right", ypos="base")
     call ast_main(".........................","upset","base","base","L")
     m "Back already?"
-    call ton_main("Yes, I gave Astoria a couple more pointers on how to improve the persuasiveness of the curse...","open","base","base","mid")
-    call ton_main("The trick is to not lose your temper after casting it!","open","closed","base","mid")
+    call ton_main("Yes, I gave Astoria a couple more pointers on how to improve the persuasiveness of the curse...", "open", "wide", "base", "L")
+    call ton_main("The trick is to not lose your temper after casting it!", "soft", "closed", "base", "mid")
     call ast_chibi("wand",530,"base")
     call ast_main(".........................","annoyed","base","base","down")
-    call ton_main("This should be fun!", "silly", "happyCl", "base", "mid")
+    call ton_main("This should be fun!", "grin", "happyCl", "base", "mid")
     m "Very good."
 
-    call ton_main("Now, Astoria, just as last time - you will cast the Imperius curse on me...","open","base","base","L")
+    call ton_main("Now, Astoria, just as last time - you will cast the Imperius curse on me...", "soft", "base", "base", "L")
     call ton_main("And I'll do my best to resist--","open","closed","base","mid")
 
     # Astoria casts imperio.
@@ -330,10 +330,10 @@ label ag_st_imperio_E2:
     m "Give me a warning next time. You scared the crap out of me..."
     call ast_main("Sorry Professor!","smile","base","base","mid") # Cute face
 
-    call ton_main("..........................","base","base","base","ahegao")
-    call ton_main("*uhhhh*... I looooooove this!","horny","base","base","ahegao")
-    call ton_main("It's like - I'm floating...","open","base","worried","ahegao")
-    call ton_main("It feels...sooooooooooooo...goooooooooooood!","open_wide_tongue","base","base","ahegao")
+    call ton_main("..........................", "normal", "wide", "base", "stare")
+    call ton_main("*uhhhh*... I looooooove this!", "soft", "base", "base", "stare")
+    call ton_main("It's like - I'm floating...", "open", "wide", "shocked", "stare")
+    call ton_main("It feels...sooooooooooooo...goooooooooooood!", "open_wide_tongue", "base", "base", "ahegao")
     call ton_main("", "mad", "base", "base", "ahegao")
     call ast_chibi("wand",530,"base")
     m "(Is she getting off on this?)"
@@ -344,37 +344,40 @@ label ag_st_imperio_E2:
     menu:
         "-Have her turn around.-":
             call ast_main("Yes, that's a good idea!","smile","base","base","mid")
-            call ton_main("................................","base","base","base","ahegao")
+            call ton_main("................................", "normal", "wide", "base", "stare")
             call ast_main("Professor Tonks, I command you to turn around.","open","base","base","L")
-            call ton_main("*Huh*?","open","base","worried","ahegao")
+            call ton_main("*Huh*?", "open", "wide", "raised", "stare")
             call ast_main("Turn around!","clench","base","angry","L")
             m "Remember what she said about your temper, Astoria..."
             call ast_main("Oh... yes Sir! Of course...","smile","closed","base","mid")
             call ast_main("Turn around.","open","narrow","base","L")
-            call ton_main("......................","base","base","base","ahegao")
+            call ton_main("......................", "soft", "wide", "base", "stare")
 
             # Tonks turns around. (mirror sprite)
             call ton_chibi("stand","desk","base", flip=True)
-            call ton_main("","base","base","base","ahegao",  flip=True)
+            call ton_main("","normal","base","base","stare",  flip=True)
             pause.8
 
         "-Ask her to remove her coat.-":
             call ast_main("Yes, that should be easy.","smile","base","base","mid")
-            call ton_main("................................","base","base","base","ahegao")
+            call ton_main("................................", "normal", "wide", "base", "stare")
             call ast_main("Tonks, I command you to remove your coat.","open","closed","base","mid")
-            call ton_main("*Huh*?","open","base","worried","ahegao")
+            call ton_main("*Huh*?", "open", "wide", "raised", "stare")
             call ast_main("Come on, do it!","annoyed","base","angry","L")
             m "Try saying the magic word..."
             call ast_main("Imperio? But I already did--","open","wink","base","mid")
             m "No... Ask her politely..."
             call ast_main("Oh! I got it!","smile","closed","base","mid")
             call ast_main("Professor Tonks, please remove your coat for me...","open","base","base","L")
-            call ton_main("*Hmmm*... okay...","base","base","base","ahegao")
+            call ton_main("*Hmmm*... okay...", "soft", "wide", "base", "stare")
 
             # Tonks removes her coat.
             call play_sound("equip")
             $ tonks.strip("robe")
-            call ton_main("","base","base","base","ahegao", flip=False)
+
+            call ctc
+
+            call ton_main("","normal","wide","base","stare", cheeks="blush", flip=False)
             pause.8
 
 
@@ -392,15 +395,17 @@ label ag_st_imperio_E2:
             $ d_flag_01 = True
 
             call ast_main("Do a pig noise?","open","base","worried","mid")
-            call ton_main("*oink*!","horny","base","base","ahegao")
+            call ton_main("*oink*!", "open_wide", "happyCl", "base", "stare")
             call ast_main("She did it!","smile","closed","base","mid")
+            call ton_main("", "normal", "happyCl", "base", "mid")
             g9 "Well done!"
             call ast_main("Do it again!","smile","base","angry","L")
-            call ton_main("*oink*!","open","base","worried","ahegao")
+            call ton_main("*oink*!", "open_wide", "shocked", "worried", "stare", cheeks="blush")
             call ast_main("*hi-hi-hi-hi*!","smile","closed","base","mid")
+            call ton_main("", "normal", "wide", "worried", "stare", cheeks="blush")
             m "I believe that's enough--"
-            call ast_main("Do it again! Ten times!","clench","narrow","angry","L") # Angry
-            call ton_main("*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*!","open_wide_tongue","base","base","ahegao")
+            call ast_main("Do it again piggy! Ten times!","clench","narrow","angry","L") # Angry
+            call ton_main("*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*{w=0.2}-*oink*!", "open_wide_tongue", "wide", "base", "ahegao", cheeks="blush")
             m "......................."
             call ast_main("Agai--","scream","closed","angry","mid", trans=hpunch)
             g4 "That's enough, Astoria!"
@@ -415,23 +420,23 @@ label ag_st_imperio_E2:
 
             call play_music("astoria")
             call ast_main("","open","base","base","down")
-            call ton_main("Oh wow...", "mad", "base", "worried", "down", flip=False)
-            call ton_main("You made me squeal like a pig!", "silly", "happyCl", "base", "mid")
-            call ton_main("That was quite good!","base","base","base","mid")
-            call ast_main("Thank you!","open","base","base","down")
+            call ton_main("Oh wow...", "mad", "base", "shocked", "down", cheeks="blush", flip="False")
+            call ton_main("You made me squeal like a pig!", "mad", "happyCl", "base", "mid", cheeks="blush")
+            call ton_main("You've made quite some progress, well done Astoria!", "grin", "narrow", "shocked", "R")
+            call ast_main("Thank you!", "smile", "base", "base", "L")
             m "..."
             m "I have to say, I'm not that impressed..."
-            call ton_main("You aren't?","open","base","raised","mid")
-            call ast_main("But, Professor!","clench","base","worried","mid")
+            call ton_main("You aren't?", "open", "wide", "shocked", "mid")
+            call ast_main("But, Professor!", "clench", "base", "worried", "mid")
             m "Tonks, would you please do the noise again..."
-            call ton_main("The noise, Professor?", "mad", "base", "worried", "mid")
+            call ton_main("The noise, Professor?", "soft", "base", "raised", "mid")
             m "Yes. Squeal for me."
-            call ton_main("Very well...","base","base","worried","down")
-            call ton_main("*oink*-*oink*!","open","base","worried","mid")
+            call ton_main("Very well...", "open", "narrow", "shocked", "down")
+            call ton_main("*oink*-*oink*!", "open", "happyCl", "base", "mid")
             g9 "See, I don't even have to use magic to make her do it!"
-            call ton_main("Very funny, Sir...","open","closed","base","mid")
+            call ton_main("Very funny, Sir...", "soft", "narrow", "base", "downR")
             m "I'd like us to try this again..."
-            call ton_main("Right now? Are you sure?","open","base","raised","mid")
+            call ton_main("Right now? Are you sure?", "soft", "wide", "raised", "mid")
             g4 "(I want to see some tits - damn it! Or hear her talk dirty...)"
             m "Yes, cast that spell again, Astoria..."
             call ast_chibi("wand",530,"base")
@@ -467,17 +472,17 @@ label ag_st_imperio_E2:
             call ast_main("And what exactly?","clench","base","base","mid")
             m "I don't know... You should think of something..."
             m "You're the one with the magic stick, after all..."
-            call ton_main(".......................","base","base","base","ahegao")
+            call ton_main(".......................", "normal", "wide", "base", "stare")
             call ast_main("Okay... Professor Tonks...","open","base","worried","L")
             call ast_main("I want you to repeat after me...","open","closed","base","mid")
-            call ton_main("...................................","horny","base","base","ahegao")
+            call ton_main("...................................", "horny", "wide", "base", "stare")
             call ast_main("I -- am -- a--","open","base","worried","L")
-            call ton_main("I am a--...","open","base","base","ahegao")
+            call ton_main("I am a--...", "soft", "wide", "base", "stare")
             call ast_main("dirty! -- filthy! -- pig!","open","narrow","base","L")
-            call ton_main("...................................","base","base","base","ahegao")
+            call ton_main("...................................", "soft", "base", "base", "stare", cheeks="blush")
             call ast_main("Go on, say it!","clench","narrow","base","L")
             call ast_main("I'm a dirty - filthy - pig!","open","closed","base","mid")
-            call ton_main("*hi-hi*!...", "mad", "happyCl", "base", "mid")
+            call ton_main("*hi-hi*!...", "base", "happyCl", "shocked", "mid", cheeks="blush")
             call ast_main("SAY IT!","scream","base","angry","L") # Scream
             g4 "Time-out!"
             call ast_main("No! She has to do what she's told!","clench","narrow","angry","mid")
@@ -496,19 +501,19 @@ label ag_st_imperio_E2:
 
             call play_music("tonks")
             call ast_main("","annoyed","base","angry","mid")
-            call ton_main("*huh*...","open","base","worried","mid", flip=False)
-            call ton_main("Well that was something, wasn't it?", "silly", "happyCl", "base", "mid")
+            call ton_main("*huh*...", "disgust", "base", "base", "down", flip="False")
+            call ton_main("Well that was something, wasn't it?", "soft", "closed", "base", "mid")
             call ast_main("..................................","annoyed","narrow","angry","L")
             m "You resisted her curse again."
-            call ton_main("Yes...","upset","base","worried","L")
-            call ton_main("I'm sorry, honey!", "open", "base", "worried", "L")
+            call ton_main("Yes...", "upset", "base", "base", "L")
+            call ton_main("I'm sorry, honey!", "annoyed", "narrow", "worried", "R")
             call ast_main("..................................","annoyed","narrow","angry","down")
-            call ton_main("You can't expect to succeed right away now, can you?", "open", "base", "worried", "L")
-            call ton_main("To master a spell it takes time - and regular practising...","open","closed","base","mid")
-            call ton_main("Or else anyone could do it.","base","base","base","mid")
-            call ton_main("We'll try again next time...", "base", "base", "worried", "L")
+            call ton_main("You can't expect to succeed right away now, can you?", "normal", "closed", "raised", "mid")
+            call ton_main("To master a spell it takes time - and regular practising...", "normal", "narrow", "base", "R")
+            call ton_main("Or else anyone could do it.", "open", "closed", "shocked", "mid")
+            call ton_main("We'll try again next time...", "base", "narrow", "raised", "R")
             call ast_main("............................","upset","narrow","base","down")
-            call ton_main("Have a good night, Professor.","base","base","base","mid")
+            call ton_main("Have a good night, Professor.", "soft", "base", "base", "mid")
 
             call ton_walk("door", "base")
             call ton_chibi("stand","door","base", flip=False)
@@ -550,26 +555,28 @@ label ag_st_imperio_E2:
             call ast_main("Professor Tonks, I'd like you to show us your...","open","base","base","mid")
             call ast_main("*uhm*...","upset","base","base","down")
             call ast_main("Your breasts!","clench","closed","base","mid") # embarrassed
-            call ton_main("Oh...","open","base","raised","ahegao")
-            call ton_main("............................", "mad", "base", "worried", "ahegao")
+            call ton_main("Oh...", "open", "wide", "shocked", "up")
+            call ton_main("............................", "soft", "wide", "worried", "stare")
             g4 "(Fingers crossed!)"
-            call ton_main("............................", "mad", "wide", "worried", "ahegao") # Clenched teeth
+            call ton_main("............................", "clench", "narrow", "base", "stare") # Clenched teeth
             call ast_main("I think she's struggling!","smile","base","base","L")
             g4 "Very good, girl!"
             g4 "Pressure her more! I want to see those puppies!"
             call ast_main("Professor Tonks, show us your breasts! Now!","open","base","angry","L")
             m "(It was easier for her to resist doing pig noises...)"
             m "(Could it be that she {b}wants{/b} to show them to us?{w} And is resisting that inner urge?)"
-            call ton_main("................................", "mad", "wide", "worried", "ahegao") # Really struggling!
+            call ton_main("................................", "mad", "wide", "worried", "stare", hair="horny") # Really struggling!
             g4 "(What a slut!)" # Small text
             call ast_main("Come on, do it!","clench","narrow","angry","L")
-            call ton_main("*Hnnnngh*!...", "mad", "wide", "worried", "ahegao")
+            call ton_main("*Hnnnngh*!...", "mad", "wide", "worried", "ahegao", hair="horny")
             call cum_block
-            call ton_main("*Aaaaahhh*...","open_wide_tongue","base","worried","ahegao") # Relieved
+            call ton_main("*Aaaaahhh*...", "open_wide_tongue", "base", "worried", "ahegao", cheeks="blush") # Relieved
             g4 "(Did she just?!)"
+            call ton_main("", "open", "narrow", "worried", "stare", cheeks="blush")
             m "..."
             m "Girl, I think your teacher is done for..."
             call ast_main("What?","clench","base","worried","mid")
+            call ton_main("", "normal", "closed", "worried", "stare", cheeks="blush")
             m "She \"broke the curse.\" You can stop now..."
             call ast_main("*Aww*...","upset","narrow","base","down")
             call ast_main("If you say so, Professor...","annoyed","base","base","mid")
@@ -584,20 +591,19 @@ label ag_st_imperio_E2:
 
             call play_music("astoria")
             call ast_main("","annoyed","base","base","mid")
-            call ton_main("*Ouch*... That was painful!", "mad", "closed", "angry", "mid", flip=False)
-            call ton_main("You nearly got me there.", "silly", "base", "worried", "mid")
+            call ton_main("*Ouch*... That was painful!", "mad", "closed", "base", "mid", cheeks="blush", flip="False")
+            call ton_main("You nearly got me there.", "disgust", "base", "shocked", "R", cheeks="blush")
             call ast_main("Did I really?","smile","base","base","mid")
-            call ton_main("Yes, well done, Astoria!","base","base","base","L")
+            call ton_main("Yes, well done, Astoria!", "open", "base", "base", "down", cheeks="blush")
             call ast_main("Thank you!","smile","closed","base","mid")
             m "Was it really such a struggle for you to not get your breasts out?"
-            call ton_main("*Uhm*...", "mad", "base", "worried", "down")
-            call ton_main("Yes!", "mad", "closed", "worried", "mid") # Embarrassed
+            call ton_main("*Uhm*...", "mad", "base", "base", "down", cheeks="heavy_blush")
             g9 "*He-he-he*!"
-            call ton_main("Shall we wrap it up for today?","open","base","worried","L")
-            call ton_main("I'm sure next time you'll have better luck, Astoria.","base","base","base","mid")
-            call ast_main("Okay...","annoyed","base","base","R")
-            call ton_main("Have a good night, Professor!", "silly", "happyCl", "base", "mid")
-            m "See ya..."
+            call ton_main("Shall we wrap it up for today?", "upset", "base", "shocked", "downR", cheeks="blush")
+            call ton_main("I'm sure next time you'll have better luck, Astoria.", "soft", "base", "shocked", "R")
+            call ast_main("Okay.", "smile", "base", "base", "R")
+            call ton_main("Have a good night, Professor!", "base", "happyCl", "base", "mid")
+            m "Until next time..."
 
             # They both leave
             call play_sound("door")
@@ -628,24 +634,24 @@ label ag_st_imperio_E3:
     call play_music("tonks")
     call ast_main("","annoyed","base","base","mid", xpos="base", ypos="base")
     call ton_main("Well, Professor.","open","closed","base","mid", xpos="right", ypos="base")
-    call ton_main("We're back...","base","base","base","mid")
+    call ton_main("We're back...", "soft", "wink", "base", "mid")
     call ast_main("...","annoyed","base","base","L")
     m "Did you make any progress today?"
-    call ton_main("Of course we did!", "silly", "happyCl", "base", "mid")
-    call ton_main("Professor, you aren't questioning my abilities as a teacher, are you?","base","base","angry","mid")
+    call ton_main("Of course we did!", "base", "wide", "base", "mid")
+    call ton_main("Professor, you aren't questioning my abilities as a teacher, are you?", "base", "closed", "annoyed", "mid")
     m "Of course not..."
     g9 "You're very skilled at what you do!"
     g9 "You've shown me many times."
-    call ton_main("Thank you! {heart}","base","happyCl","base","mid")
+    call ton_main("Thank you! {heart}", "base", "narrow", "base", "mid")
     call ast_main("*Ugh*...","clench","narrow","base","down") # Disgusted from the flirting?
 
     call ast_chibi("wand",530,"base")
     with d3
-    call ton_main("I could teach you a thing or two as well, Professor.","base","base","angry","mid")
+    call ton_main("I could teach you a thing or two as well, Professor.", "base", "base", "shocked", "down")
 
     call ast_chibi("wand_casting",530,"base")
     with d3
-    call ton_main("Even the great Albus Dumbledore doesn't know everything about--","horny","base","angry","mid")
+    call ton_main("Even the great Albus Dumbledore doesn't know everything about--", "soft", "closed", "angry", "mid")
 
     # Astoria casts imperio.
     stop music fadeout 2.0
@@ -672,6 +678,7 @@ label ag_st_imperio_E3:
     call ast_main("Sir, I'm not here to listen to you two banter...","angry","closed","angry","mid")
     m "That's fair."
     m "Time is precious, after all..."
+    call ton_main("...", "normal", "wide", "base", "stare")
     call ast_main("I've spent enough time today getting lectured by her...","annoyed","base","angry","L")
     m "Isn't she supposed to do that? Teach you?"
     call ast_main("I don't need to be taught!","annoyed","narrow","angry","mid")
@@ -679,30 +686,34 @@ label ag_st_imperio_E3:
     m "Surely there is some room for you to improve."
 
     call ast_main("Professor Tonks, take off that coat!","open","closed","base","mid")
-    call ton_main("...","upset","base","worried","ahegao")
+    call ton_main("...", "soft", "wide", "worried", "stare")
+    call ton_main("...{fast}...", "base", "wide", "worried", "stare")
 
     # Remove coat.
     call play_sound("equip")
     $ tonks.strip("robe")
-    call ton_main("","base","base","base","ahegao")
+
+    call ctc
+
+    call ton_main("","base","base","base","stare", cheeks="blush")
     pause.8
 
     call ast_main("See, I told you I could do it!","smile","narrow","base","mid")
-    m "Great, kid. Don't get cocky..."
+    m "Great... Don't get cocky..."
     call ast_main("Don't you see, Professor?","annoyed","narrow","base","mid")
     call ast_main("I can make her do whatever I want!","smile","narrow","base","mid")
     call ast_main("I'm the greatest witch of all time!","clench","base","angry","L")
-    call ton_main("...","upset","base","worried","ahegao")
+    call ton_main("...", "normal", "base", "raised", "stare")
     call ast_main("If I can pull off the Imperius curse on Professor Tonks...","open","closed","base","mid")
-    call ast_main("Any of the other girls will be easy game for me!","clench","narrow","angry","down") # Game as in "prey".
+    call ast_main("Any of the other girls will be easy game for me!", "smile", "narrow", "angry", "down") # Game as in "prey".
     call ast_main("I'll make them rue the day they ever made fun of me!","clench","closed","angry","mid")
-    call ton_main("...................................................","upset","base","angry","ahegao", hair="annoyed") # Angry at Astoria
+    call ton_main("...................................................", "annoyed", "wide", "shocked", "stare", hair="annoyed") # Angry at Astoria
     m "......................."
     call ast_main("Tomorrow, I shall have Susan walk through school - parading those ridiculous breasts of hers for all to see! That'll show her!","angry","narrow","angry","R")
-    call ton_main("!!!", "mad", "base", "angry", "R", hair="angry") # Very angry
+    call ton_main("!!!", "upset", "wide", "shocked", "stare", hair="angry") # Very angry
     call ast_main("And then shove her into our common room - and all the boys will laugh at her cow udders!","annoyed","narrow","angry","R")
-    call ton_main("*Tzzzzz*!...", "mad", "closed", "angry", "mid", emote="01")
-    call ton_main("That's enough!{w=0.8}{nw}","scream","base","angry","R", trans=hpunch)
+    call ton_main("*Tzzzzz*!...", "upset", "closed", "annoyed", "mid", hair="angry", emote="01")
+    call ton_main("That's enough!","scream","base","angry","R", trans=hpunch)
 
     # Tonks returns to normal, and puts her clothes back on.
     call play_sound("equip")
@@ -713,57 +724,58 @@ label ag_st_imperio_E3:
     call ast_chibi("reset",530,"base")
     call ast_main("What?","clench","base","worried","L")
     call ton_main("Astoria, you are dismissed!","open","closed","angry","mid")
-    call ast_main("No! I still wanted to-{w=0.8}{nw}","scream","base","angry","mid")
-    call ton_main("Dismissed!", "mad", "closed", "angry", "mid")
+    call ast_main("No! I still wanted to--", "angry", "base", "angry", "mid")
+    call ton_main("Dismissed!", "normal", "closed", "angry", "mid")
     call ast_main("........................","annoyed","narrow","angry","R")
     call ast_main("*Tzzz!*...","clench","base","angry","mid")
 
     # Astoria leaves.
     call ast_walk(action="leave")
 
-    call ton_main("The nerve on that girl, I can't believe it!","open","base","angry","mid", hair="angry", xpos="mid", ypos="base")
-    call ton_main("I'm beginning to think teaching her an \"unforgivable curse\" might've been a bad idea after all...","upset","base","base","R")
+    call ton_main("The nerve on that girl, I can't believe it!", "open", "base", "angry", "R", hair="angry", xpos="mid", ypos="base")
+    call ton_main("I'm beginning to think teaching her an \"unforgivable curse\" might've been a bad idea after all...", "normal", "closed", "annoyed", "mid")
     m "How so?"
     call ton_main("Didn't you hear her?","open","base","angry","mid")
-    call ton_main("She's disregarding all of our advice!... Or at least planning to...", "mad", "base", "angry", "mid")
-    call ton_main("She's been ignoring my lessons all day!","open","closed","base","mid")
-    call ton_main("She's such a cute and stubborn girl...", "mad", "closed", "angry", "mid")
-    call ton_main("We can't have her roaming the school - cursing people as she pleases!","upset","base","angry","mid")
+    call ton_main("She's disregarding all of our advice!... Or at least planning to...", "mad", "base", "angry", "R")
+    call ton_main("She's been ignoring my lessons all day!", "annoyed", "closed", "base", "mid")
+    call ton_main("She's such a cute and stubborn girl...", "soft", "closed", "angry", "mid")
+    call ton_main("We can't have her roaming the school - cursing people as she pleases!", "annoyed", "base", "annoyed", "mid")
 
     m "So, should we stop?"
-    call ton_main("..................","upset","base","worried","R", hair="neutral")
-    call ton_main("Only if she refuses to follow our rules...","open","base","angry","mid")
-    call ton_main("As long as what we're doing stays within these walls, it shouldn't be too bad.","open","base","worried","R")
-    call ton_main("And besides, Imperio isn't the worst curse you could be a target of, all things considered...","upset","base","worried","down")
+    call ton_main("..................", "annoyed", "closed", "annoyed", "mid", hair="neutral")
+    call ton_main("Only if she refuses to follow our rules...", "open", "narrow", "annoyed", "downR")
+    call ton_main("As long as what we're doing stays within these walls, it shouldn't be too bad.", "normal", "base", "annoyed", "R")
+    call ton_main("And besides, Imperio isn't the worst curse you could be a target of, all things considered...", "upset", "base", "annoyed", "down")
     m "I thought it was dangerous?"
-    call ton_main("Only if you use it in such a way!", "open", "base", "worried", "mid")
-    call ton_main("The curse itself is quite harmless...","base","base","worried","down")
-    call ton_main("And it feels really good when you're under its effect...","base","base","base","mid")
+    call ton_main("Only if you use it in such a way!", "open", "narrow", "annoyed", "down")
+    call ton_main("The curse itself is quite harmless...", "annoyed", "closed", "base", "mid")
+    call ton_main("And it feels really good when you're under its effect...", "soft", "base", "base", "R")
     m "It does?"
-    call ton_main("*Mhmm*... yeah...","horny","base","angry","mid", hair="horny")
-    call ton_main("It's so goood! {heart}","open_wide_tongue","base","worried","ahegao")
+    call ton_main("*Mhmm*... yeah...", "horny", "base", "annoyed", "up", hair="horny")
+    call ton_main("It's so goood! {heart}", "soft", "narrow", "worried", "ahegao")
     g9 "I think you're enjoying this a bit too much!"
     g9 "Just what would your students think if they knew their teacher gets off on being mind controlled?"
-    call ton_main("Oh - be quiet you...","base","base","angry","mid")
-    call ton_main("................................","upset","base","worried","R")
-    call ton_main("Is it that obvious?", "open", "base", "worried", "mid")
+    call ton_main("Oh - be quiet you...", "annoyed", "wide", "annoyed", "up")
+    call ton_main("................................", "upset", "wide", "worried", "stare")
+    call ton_main("Is it that obvious?", "disgust", "base", "worried", "L")
     g9 "Can't fool a genie..."
     m "I'm a genius, it's in the name."
-    g4 "G{w=0.3} E{w=0.3} N{w=0.5} I{w=0.7} U...{w=1.0} hold on a second..."
-    call ton_main("Anyway...","open","base","base","R")
-    call ton_main("I'll have to talk some sense into that girl before we can continue, that's for certain...","upset","base","worried","mid")
+    m "G{w=0.3} E{w=0.3} N{w=0.5} I{w=0.5} U...{w=1.0}{nw}"
+    g4 "G E N I U...{fast} hold on a second..." #This makes the line change expression mid sentence
+    call ton_main("Anyway...", "normal", "base", "base", "down")
+    call ton_main("I'll have to talk some sense into that girl before we can continue, that's for certain...", "annoyed", "wide", "annoyed", "downR")
     m "Of course..."
 
-    call ton_main("I'm sorry I let this situation get out of hand...", "open", "base", "worried", "down")
-    call ton_main("It won't happen again, I promise.", "mad", "base", "worried", "mid")
+    call ton_main("I'm sorry I let this situation get out of hand...", "open", "closed", "worried", "mid")
+    call ton_main("It won't happen again, I promise.", "disgust", "base", "worried", "mid")
     m "You did great..."
     g9 "But next time I'd like to see some tits!"
-    call ton_main("Of course you would.","horny","base","angry","mid")
-    call ton_main("You love 'em - don't you?","horny","base","raised","mid")
+    call ton_main("Of course you would.", "base", "base", "annoyed", "R")
+    call ton_main("You love 'em - don't you?", "base", "wide", "annoyed", "mid")
     g9 "That I do!"
-    call ton_main("I should get going. It's getting late...", "open", "base", "worried", "R")
+    call ton_main("I should get going. It's getting late...", "normal", "base", "shocked", "down")
     m "Until next time..."
-    call ton_main("Have a good night, [ton_genie_name].","open","base","base","mid")
+    call ton_main("Have a good night, [ton_genie_name].", "soft", "base", "base", "mid")
 
     # Tonks leaves.
     call ton_walk(action="leave")
@@ -812,13 +824,14 @@ label ag_st_imperio_E4:
     call ton_main("","base","base","base","L", xpos="right", ypos="base")
     call ast_main("...","annoyed","narrow","base","down", xpos="base", ypos="base")
 
-    call ton_main("Astoria... isn't there something you'd like to say to our Professor?","base","base","worried","mid")
+    call ton_main("Astoria... isn't there something you'd like to say to our Headmaster?", "soft", "base", "shocked", "mid")
     m "..."
     call ast_main("Yes...","open","narrow","base","down")
+    call ton_main("", "base", "base", "base", "R")
     call ast_main("Sir, I'm sorry about my behaviour during our last training session.","annoyed","base","base","L")
     m "Sure, no big deal--"
-    call ast_main("It was wrong of me to scream at Professor Tonks like that, or scream at you...","open","narrow","base","L")
-    m "Fine. Let's just get to-{w=0.8}{nw}"
+    call ast_main("It was wrong of me to scream at Professor Tonks like that, or scream at you...", "open", "narrow", "base", "L")
+    m "Fine. Let's just get to--"
     call ton_main("And what else?","open","closed","base","mid")
     call ton_main("","base","base","base","L")
     call ast_main("I was disrespectful, selfish, and mean.","open","closed","base","mid")
@@ -830,28 +843,28 @@ label ag_st_imperio_E4:
     g4 "(I'm dying to see some tits!)"
     call ast_main("........................","annoyed","base","base","R")
     call ton_main("Very good, Astoria.","base","happyCl","base","mid")
-    call ton_main("I'm proud of you. {heart}","base","base","base","L")
+    call ton_main("I'm proud of you. {heart}", "grin", "base", "base", "R")
     call ast_main(".........................","annoyed","base","base","down") # embarrassed
     m "......................."
 
-    call ton_main("So, let's begin...", "silly", "happyCl", "base", "mid")
+    call ton_main("So, let's begin...", "base", "wide", "base", "mid")
     call ast_chibi("wand",530,"base")
     with d3
-    call ton_main("Astoria, try and focus on what we went through today...","base","base","base","L")
+    call ton_main("Astoria, try and focus on what we went through today...", "open", "base", "base", "down")
     call ton_main("Keep good track of your emotions after channelling the spell...","open","closed","base","mid")
-    call ton_main("Anger and rage will cause you to lose control - and eventually break the connection with the target...","open","base","angry","L")
+    call ton_main("Anger and rage will cause you to lose control - and eventually break the connection with the target...", "normal", "base", "annoyed", "L")
     call ton_main("Do your best to be as thoughtful, nice, and endearing as you possibly can towards your target...","base","base","base","L")
     call ast_main("","annoyed","base","base","R")
     call ton_main("The stronger the emotional bond - the better.","open","closed","base","mid")
-    call ton_main("So try to charm them a bit while you're at it!","base","base","base","L")
+    call ton_main("So try to charm them a bit while you're at it!", "soft", "base", "base", "L")
     call ton_main("It is called a charm for a reason, after all!","base","happyCl","base","mid")
     call ast_main(".....................","annoyed","base","worried","down")
     m "...................."
-    call ton_main("Not a very good joke - I gather...", "mad", "base", "worried", "mid")
+    call ton_main("Not a very good joke - I gather...", "annoyed", "wide", "raised", "mid")
     m "I'm sorry. I was only half paying attention..."
-    call ton_main("Very well...", "upset", "base", "worried", "L")
+    call ton_main("Very well...", "upset", "base", "shocked", "L")
 
-    call ton_main("Now then, let's get on with it, shall we?","base","base","angry","mid")
+    call ton_main("Now then, let's get on with it, shall we?", "base", "wink", "annoyed", "mid")
     call ast_main("...","annoyed","base","base","mid")
     call ast_chibi("wand_casting",530,"base")
     with d3
@@ -874,14 +887,14 @@ label ag_st_imperio_E4:
 
     call play_music("trance")
     call ast_main("","annoyed","base","base","L")
-    call ton_main(".........................", "mad", "wide", "shocked", "ahegao") # shock
+    call ton_main(".........................", "mad", "wide", "shocked", "ahegao", hair="horny") # shock
 
     m "......................"
-    call ton_main("*Aaaaah*...","open","base","worried","ahegao", hair="horny")
+    call ton_main("*Aaaaah*...", "open", "base", "shocked", "ahegao", hair="horny", cheeks="blush")
     call ast_chibi("wand",530,"base")
     with d3
     call ast_main("I'm getting really good at this!","smile","base","angry","L")
-    call ton_main(".......................","base","base","base","ahegao")
+    call ton_main(".......................", "normal", "wide", "base", "stare")
     call ast_main("What shall I have her do, Professor?","smile","base","base","mid")
 
     m "How about..."
@@ -889,7 +902,7 @@ label ag_st_imperio_E4:
         "\"Make her turn around!\"": # She's facing Astoria
             call ast_main("Very well, Sir.","base","base","worried","mid")
             call ast_main("Professor, please turn around for me...","open","base","base","L")
-            call ton_main("*hmm*... Yes!","base","base","worried","ahegao")
+            call ton_main("*hmm*... Yes!", "base", "base", "worried", "stare")
 
             # Tonks turns around
             call hide_characters
@@ -905,26 +918,26 @@ label ag_st_imperio_E4:
             call ton_main("","base","base","base","L", flip=True)
             pause.8
 
-            call ton_main("........................","horny","base","angry","L")
+            call ton_main("........................", "horny", "wide", "base", "stare")
             call ast_main("*uhm*...","clench","narrow","worried","R") # Astoria is uncomfortable
 
         "\"Let her face me!\"":
             call ast_main("Very well...","open","base","base","mid")
 
-    call ast_main("And now?","clench","base","base","mid")
+    call ast_main("And now?", "base", "base", "base", "mid")
     g9 "Her coat! Tell her to take it off!"
     call ast_main("Professor Tonks, please remove your coat for me.","open","base","worried","L")
-    call ton_main("Of course, honey! {heart}","base","happyCl","base","mid")
+    call ton_main("...","base","base","base","stare")
 
     # Remove coat.
     call play_sound("equip")
     $ tonks.strip("robe")
-    call ton_main("","base","base","base","ahegao")
+    call ton_main("", "base", "base", "base", "ahegao")
     pause.8
 
     g9 "You're doing great, Astoria!"
     g9 "It's like watching you teach a puppy new tricks..."
-    call ton_main("..........................", "mad", "base", "base", "ahegao") # ahegao
+    call ton_main("..........................", "soft", "narrow", "base", "ahegao") # ahegao
     call ast_main("If you say so, Sir.","clench","base","base","down")
     m "Let's move on to the next trick, shall we?"
     g9 "Ask her to get those tits out!"
@@ -939,7 +952,7 @@ label ag_st_imperio_E4:
         m "Why? Scared of your teacher's enormous rack?"
         call ast_main("What?{w} As if!","annoyed","narrow","angry","R")
         g9 "I doubt she'd like to show them to you anyway..."
-        call ton_main("......................","horny","base","base","ahegao") # Ahegao
+        call ton_main("......................", "soft", "base", "base", "ahegao", hair="horny") # Ahegao
         call ast_main("............","annoyed","base","worried","mid")
         m "Go on...."
 
@@ -959,7 +972,7 @@ label ag_st_imperio_E4:
     g9 "Let's get those tits out!"
     call ast_main("Professor Tonks, I need you to remove your-...","open","base","worried","R")
     call ast_main("Your shirt...","clench","base","base","down")
-    call ton_main("................","base","base","angry","ahegao")
+    call ton_main("................", "normal", "base", "shocked", "stare")
     g9 "!!!"
 
     # Remove top.
@@ -969,39 +982,40 @@ label ag_st_imperio_E4:
         call ast_main("and your bra...","clench","base","base","down")
         call play_sound("equip")
         $ tonks.strip("bra")
-    call ton_main("","horny","base","angry","ahegao")
+    call ton_main("", "base", "wide", "shocked", "ahegao", cheeks="blush")
     call ast_main("","annoyed","closed","base","mid")
     call ctc
 
     if tonks_flip == -1: # Facing Astoria
         call ast_main("Is she-... is she doing it?","clench","closed","worried","mid") # closed eyes
-        call ton_main(".............","horny","base","angry","L") # horny
+        call ton_main(".............", "grin", "wink", "base", "L", cheeks="blush") # horny
         g9 "Why don't you see for yourself?"
         g9 "Open your eyes, girl!"
         call ast_main("I don't want to...","open","closed","worried","mid")
         m "How rude..."
         g9 "It seems to me like your teacher would really like to show you something!"
         call ast_main("....................","clench","closed","base","mid") # eyes still closed
+        call ton_main("", "base", "wide", "base", "stare", cheeks="blush")
         call ast_main("*Eeeeehig*...","clench","wink","base","mid") # Weird sound.
         call ast_main("....................","annoyed","narrow","worried","R")
         g9 "That wasn't too bad now, was it?"
-        call ton_main(".......................","horny","base","base","ahegao") # ahegao
+        call ton_main(".......................", "base", "base", "base", "ahegao", hair="horny", cheeks="blush") # ahegao
 
     else:
         g9 "Now would you look at that!"
-        call ton_main("................","horny","base","angry","mid") # horny
+        call ton_main("................", "soft", "wide", "shocked", "stare") # horny
         m "Those are some great breasts your teacher has there!"
-        call ton_main("................","base","base","base","ahegao") # ahegao
+        call ton_main("................", "soft", "wide", "base", "stare", hair="horny") # ahegao
         call ast_main("I asked you not to look, Professor!","open","closed","angry","mid")
         g9 "I don't believe she minds, does she?"
         call ast_main("","clench","narrow","worried","R")
-        call ton_main("................","horny","base","base","ahegao") # ahegao
+        call ton_main("................", "horny", "wide", "base", "stare", cheeks="blush") # ahegao
 
     m "*hmm*..."
     m "We might be able to push her even further!"
     call ast_main("Further, Sir? How?","annoyed","wink","base","mid")
     g9 "By getting her to remove the rest of her clothing, of course!"
-    call ton_main("..............","horny","base","angry","mid") # angry/horny expression
+    call ton_main("..............", "horny", "base", "shocked", "ahegao", hair="horny", cheeks="heavy_blush") # angry/horny expression
     g9 "What do you think? Want to give it a try?"
     call ast_main("Would that really be necessary, Sir?","open","base","base","R")
     m "Yes{w=0.3} - it{w=0.3} - would."
@@ -1011,7 +1025,8 @@ label ag_st_imperio_E4:
     m "Weren't you so eager to practise this spell?"
     call ast_main("Yes, but...","annoyed","narrow","base","down")
     m "Yes?"
-    call ast_main("I don't have to explain myself to you!","annoyed","narrow","angry","mid")
+    call ast_main("I don't have to explain myself to you!", "annoyed", "narrow", "angry", "down")
+    call ton_main("", "annoyed", "wide", "shocked", "ahegao", cheeks="blush")
     call ast_main("...","annoyed","narrow","angry","R")
 
     stop music fadeout 2.0
@@ -1019,7 +1034,7 @@ label ag_st_imperio_E4:
     call ast_main("I should go to bed...","open","narrow","base","R")
     m "Is that so..."
     call ast_main("I- *uhm*...{w=0.5} I'm tired, Sir.","open","narrow","base","mid")
-    call ast_main("*yaaaaawn*!...{w=0.8}{nw}","open","closed","worried","mid")
+    call ast_main("*yaaaaawn*!...","open","closed","worried","mid")
     call ast_main("See?","annoyed","base","base","mid")
     m "..."
     m "Very well..."
@@ -1044,47 +1059,50 @@ label ag_st_imperio_E4:
     pause.8
 
     call play_music("tonks")
-    call ton_main("Well, that was interesting...","open","base","base","R", hair="neutral", xpos="mid", ypos="base", flip=False)
+    call ton_main("Well, that was interesting...", "annoyed", "wide", "base", "downR", hair="neutral", xpos="mid", ypos="base", flip="False") #TODO For some reason she doesn't seem to turn to the left here like she should
     m "Do you have any idea why she wanted to leave so abruptly?"
-    call ton_main("I have a couple of theories, actually...", "mad", "base", "worried", "down")
+    call ton_main("I have a couple of theories, actually...", "soft", "closed", "base", "mid")
     m "*Mhmm*..."
-    call ton_main("..................","base","base","angry","mid", hair="horny") # horny stare
-    call ton_main("Would you like me to put my clothes back on?","horny","base","raised","mid")
+    call ton_main("..................", "soft", "wide", "base", "down", hair="horny") # horny stare
+    call ton_main("Would you like me to put my clothes back on?", "grin", "narrow", "raised", "mid")
     g9 "Don't feel pressured!"
-    call ton_main("Very well, then...","base","base","angry","mid")
+    call ton_main("Very well, then...", "base", "narrow", "base", "mid")
 
     # screenshake
     with hpunch
     call nar(">Tonks gives her breasts a quick shake for you.")
 
     g9 "Sweet!"
-    call ton_main("...............","base","base","base","ahegao")
-    call ton_main("She made some good progress today, unlike last time...","open","base","worried","R")
+    call ton_main("...............", "horny", "wink", "base", "L")
+    call ton_main("She made some good progress today, unlike last time...", "base", "base", "shocked", "L")
     call ton_main("And she was very polite!","base","happyCl","base","mid")
-    call ton_main("But she isn't quite there yet...", "mad", "base", "worried", "down")
+    call ton_main("But she isn't quite there yet...", "upset", "base", "shocked", "down")
 
     m "Does she require more training?"
-    call ton_main("Yes, actually...","open","base","worried","mid")
-    call ton_main("She'll need a lot more training to pull off the Imperius curse properly...", "open", "base", "worried", "R")
-    call ton_main("And, as you could see... it doesn't have much of an effect on me.", "base", "base", "worried", "down")
-    call ton_main("I could have easily avoided doing everything she's told me today, if I wanted to...","base","base","base","mid")
+    call ton_main("Yes, actually...", "soft", "narrow", "shocked", "downR")
+    call ton_main("She'll need a lot more training to pull off the Imperius curse properly...", "open", "closed", "base", "R")
+    call ton_main("And, as you could see... it doesn't have much of an effect on me.", "soft", "base", "shocked", "down")
+    call ton_main("I could have easily avoided doing everything she's told me today, if I wanted to...", "open", "closed", "base", "mid")
     g9 "But you didn't!"
-    call ton_main("It wasn't my intention to break her spirit again... She was really trying!", "mad", "base", "worried", "R")
-    call ton_main("Now, as you know, I'm a trained Auror...","open","closed","base","mid")
+    call ton_main("It wasn't my intention to break her spirit again... She was really trying!", "upset", "closed", "worried", "R")
+    call ton_main("Now, as you know, I'm a trained Auror...", "normal", "wide", "shocked", "mid")
     m "A very \"talented\" one at that!"
-    call ton_main("Are you just praising my tits, Sir?","base","base","angry","mid")
+    call ton_main("Are you just praising my tits, Sir?", "soft", "narrow", "annoyed", "mid")
     g9 "Every part of your body is worthy of praise!"
-    call ton_main("Well... thank you, [ton_genie_name].","horny","base","raised","mid")
+    call ton_main("Well... thank you, [ton_genie_name].", "base", "happyCl", "shocked", "mid")
 
     # Screenshake
     with hpunch
+    call ton_main("", "horny", "narrow", "shocked", "mid")
     call nar(">Tonks gives her breasts another quick shake for you.")
 
-    call ton_main("I suggest we do one more training session, and then call it from there...","open","base","base","mid")
+    call ctc
+
+    call ton_main("I suggest we do one more training session, and then call it from there...", "base", "wide", "base", "mid")
     m "Sounds good to me..."
-    call ton_main("Believe me, it's gonna be a great one!","base","base","base","mid")
+    call ton_main("Believe me, it's gonna be a great one!", "soft", "wink", "base", "mid")
     g9 "Are we going to see more of your...talents?"
-    call ton_main("How would you like to see {b}all{/b} this Auror has to offer?","horny","base","angry","mid") # horny
+    call ton_main("How would you like to see {b}all{/b} this Auror has to offer?", "horny", "closed", "annoyed", "mid") # horny
     g9 "Looking forward to it!"
     call ton_main("Have a good night, [ton_genie_name]!","base","base","angry","mid")
 

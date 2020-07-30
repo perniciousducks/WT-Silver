@@ -39,7 +39,7 @@ label potion_scene_1_1_1:
                 call her_main("Depends whose enjoyment you're talking about...", "open", "squint", "base", "mid")
                 m "Twenty points."
                 call her_main("Hmmm, can't you tell me what kind of potion it is?", "annoyed", "squint", "base", "mid")
-                call her_main("Polyjuice? Amortentia? Babbling Beverage? Felix Felicis?", "grin", "happyCl", "worried", "mid",emote="05")
+                call her_main("Polyjuice? Amortentia? Babbling Beverage? Felix Felicis?", "grin", "happyCl", "worried", "mid",emote="sweat")
                 m "That's going to have to stay a secret [hermione_name]."
                 call her_main("...", "annoyed", "narrow", "worried", "down")
                 m "Well [hermione_name], what do you say? Will you drink a harmless little potion?"
@@ -214,7 +214,7 @@ label potion_scene_1_1_2:
                 call her_main("I can't help it [genie_name], when someone touches my ears I just purr.", "base", "happyCl", "base", "mid")
                 hide screen hermione_main
                 m "It feels amazing, now cock back in the mouth girl."
-                call her_main("Yes [genie_name].", "smile", "happyCl", "base", "mid",emote="06")
+                call her_main("Yes [genie_name].", "smile", "happyCl", "base", "mid",emote="happy")
                 call her_chibi_scene("bj")
                 hide screen hermione_main
                 with d3
@@ -448,7 +448,7 @@ label potion_scene_1_1_2_alt:
         call her_main("I can't help it [genie_name], whenever \nanything touches my ears I just purr.", "base", "happyCl", "base", "mid")
         hide screen hermione_main
         m "It feels amazing, now cock back in the mouth girl."
-        call her_main("Yes [genie_name].", "smile", "happyCl", "base", "mid",emote="06")
+        call her_main("Yes [genie_name].", "smile", "happyCl", "base", "mid",emote="happy")
         call her_chibi_scene("bj")
         with d3
         hide screen hermione_main

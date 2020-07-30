@@ -341,7 +341,7 @@ label luna_favour_6:
         call her_main("You should have heard her [genie_name]... She was practically begging for more lessons...", "open", "base", "base", "R")
         call lun_main("...","base","seductive","sad","down", cheeks="blush")
         call her_main("she insisted I spend all of our last study session teaching her about proper tongue work...", "base", "happy", "base", "mid")
-        call her_main("I made sure she studied transfiguration and Herbology first though...", "grin", "happyCl", "worried", "mid",emote="05")
+        call her_main("I made sure she studied transfiguration and Herbology first though...", "grin", "happyCl", "worried", "mid",emote="sweat")
         call lun_main("can we stop talking and get started already!","normal","angry","mad","R", cheeks="blush", flip=False)
         call her_main("See, I told you she was eager!", "soft", "happy", "base", "R")
         m "I can hardly believe it..."

@@ -109,7 +109,7 @@ label anal_pirate_event_common_1_2: # Call label
 
     call her_main("...........", "annoyed", "base", "worried", "R")
     m "Time to get me ole cannon out..."
-    call her_main(".................", "angry", "happyCl", "worried", "mid",emote="05")
+    call her_main(".................", "angry", "happyCl", "worried", "mid",emote="sweat")
     call blkfade
     call play_sound("climb_desk")
     pause 2
@@ -677,7 +677,7 @@ label anal_pirate_event_3: # Call label
     $ ccg1 = 13
     call her_main("I meant t' say, would ye stop plunderin for a lass {size=+5}like{/size} me?", "angry", "narrow", "base", "down")
     $ ccg1 = 11
-    call her_main("I would ne'er propose t' a scallywag wit' his pegleg in me arse, captain...", "angry", "happyCl", "worried", "mid",emote="05")
+    call her_main("I would ne'er propose t' a scallywag wit' his pegleg in me arse, captain...", "angry", "happyCl", "worried", "mid",emote="sweat")
     m "Good. 'cause I don't reckon any scallywag would be able t' say \"neigh\" to you lassie."
     $ ccg1 = 32
     call her_main("Ah{heart}...", "open", "closed", "base", "mid")

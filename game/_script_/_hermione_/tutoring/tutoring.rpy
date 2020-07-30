@@ -259,7 +259,7 @@ label hg_tutor_E4:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     call her_main("Sir, I want to apologise for doubting you.", "open", "base", "base", "mid")
     m "Yes?"
-    call her_main("Your \"atypical\" method works!", "angry", "happyCl", "worried", "mid", emote="05")
+    call her_main("Your \"atypical\" method works!", "angry", "happyCl", "worried", "mid", emote="sweat")
     m "{size=-2}(Impossible!){/size}"
     m "It works? I mean, yes, naturally it works!"
     m "I'm glad you've succeeded. Now tell me more."
@@ -274,7 +274,7 @@ label hg_tutor_E4:
     call her_main("I feel at the same level as those harlots, I'm so ashamed.", "angry", "base", "angry", "mid", cheeks="blush")
     m "But you succeeded."
     g9 "{size=-2}(To my surprise...){/size}"
-    call her_main("Yes! With this method I'll have better grades in my tests and win the House Cup for Gryffindor!", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="05")
+    call her_main("Yes! With this method I'll have better grades in my tests and win the House Cup for Gryffindor!", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="sweat")
     g9 "{size=-2}(In your dreams.){/size}"
     m "Good, good. Now I want to know more about those two girls."
     call her_main("It's not very relevant, professor. And I'm not sure this is appropriate.", "annoyed", "narrow", "angry", "R", cheeks="blush")
@@ -343,7 +343,7 @@ label hg_tutor_E5:
     m "Your \"hunt,\" Miss Granger?"
     call her_main("Yes, professor!", "smile", "happyCl", "base", "mid")
     call her_main("Like an explorer in the wild jungle, I tracked those two filthy animals.", "base", "narrow", "worried", "mid_soft", cheeks="blush")
-    call her_main("With success, sir!", "smile", "happyCl", "base", "mid", cheeks="blush", emote="06")
+    call her_main("With success, sir!", "smile", "happyCl", "base", "mid", cheeks="blush", emote="happy")
     call her_main("Hogwarts has so many dark and discreet corners...", "annoyed", "base", "base", "mid")
     call her_main("Believe me, it wasn't easy, professor.", "base", "narrow", "worried", "mid_soft")
     m "I'm sure you gave it your best."
@@ -570,7 +570,7 @@ label hg_tutor_E7:
     m "But you shouldn't only caress your nipples but also grab your tits and squeeze them."
     m "And in the meanwhile, you can think of those two girls."
     g9 "Or what you want to do with those girls."
-    call her_main("What makes you think... No, I don't want...", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="05")
+    call her_main("What makes you think... No, I don't want...", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="sweat")
     call her_main("I definitely don't want to have {b}anything{/b} to do with those harlots!", "scream", "happyCl", "worried", "mid", cheeks="blush")
     m "Don't lie to yourself. It's obvious that you feel a form of attraction to those two girls."
     call her_main("I...{w=0.3} I honestly don't know what to think anymore.", "mad", "base", "angry", "mid", cheeks="blush")
@@ -623,7 +623,7 @@ label hg_tutor_E7:
     call blkfade
     call nar(">You abruptly stop.")
     pause .5
-    call her_main("*Hmpf*...{w=0.3} Why did you stop, [genie_name]?", "clench", "base", "worried", "mid", cheeks="blush", emote="01", xpos="base", ypos="head")
+    call her_main("*Hmpf*...{w=0.3} Why did you stop, [genie_name]?", "clench", "base", "worried", "mid", cheeks="blush", emote="angry", xpos="base", ypos="head")
     m "Lesson is over. Time to practise by yourself."
 
     call gen_chibi("sit_behind_desk")
@@ -655,7 +655,7 @@ label hg_tutor_E8:
     m "So, Miss Granger, have you practised my teachings?"
     call her_main("Yes...{w=0.2} a little.", "annoyed", "narrow", "angry", "R", cheeks="blush")
     m "And?"
-    call her_main("It feels even better when I'm naked.", "smile", "happyCl", "base", "mid", cheeks="blush", emote="06")
+    call her_main("It feels even better when I'm naked.", "smile", "happyCl", "base", "mid", cheeks="blush", emote="happy")
     call her_main("{size=-2}(Oh no, I shouldn't have said that...){/size}", "mad", "wide", "base", "stare", cheeks="blush")
     m "Well come here and undress, we'll practise."
     call her_main("Completely?!", "annoyed", "base", "worried", "mid", cheeks="blush")
@@ -663,7 +663,7 @@ label hg_tutor_E8:
     g9 "{size=-2}(For the moment...){/size}"
     call her_main("I'll be showing you my breasts without even earning any points?", "open", "squint", "base", "mid")
     m "You can't have both points and lessons."
-    call her_main("Okay...", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="05")
+    call her_main("Okay...", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="sweat")
 
     $ hermione.strip("robe")
     call her_chibi("lift_top")
@@ -848,7 +848,7 @@ label hg_tutor_E9:
     if hermione.is_worn("panties"):
         call her_main("You love my pussy don't you?", "base", "narrow", "base", "up", cheeks="blush")
         g9 "Oh yes, I love your smell, especially when you're wet."
-        call her_main("Professor...", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="05")
+        call her_main("Professor...", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="sweat")
         call her_chibi_scene("grope_ass_front")
         with d3
         call nar(">You caress her clit.")
@@ -856,7 +856,7 @@ label hg_tutor_E9:
     else:
         call her_main("You love my panties don't you?", "base", "narrow", "base", "up", cheeks="blush")
         g9 "Oh yes, I love their smell, especially when you're wet."
-        call her_main("Professor...", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="05")
+        call her_main("Professor...", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="sweat")
         call her_chibi_scene("grope_ass_front")
         with d3
         call nar(">You caress her clit through the fabric.")
@@ -1156,7 +1156,7 @@ label hg_tutor_E11:
     her "{size=-2}(Once again, not that I mind...){/size}"
     call her_main("{size=-2}(I'm such a whore, even the Slytherin girls can't compete...){/size}", "base", "narrow", "base", "up", cheeks="blush")
     m "Come again, Miss Granger?"
-    call her_main("In this school nobody can compete with me, right professor?", "smile", "happyCl", "base", "mid", cheeks="blush", emote="06")
+    call her_main("In this school nobody can compete with me, right professor?", "smile", "happyCl", "base", "mid", cheeks="blush", emote="happy")
     call her_main("In any field!", "smile", "base", "angry", "mid", cheeks="blush")
     m "In any field? I'm not sure."
     m "You still have things to learn..."
@@ -1201,7 +1201,7 @@ label hg_tutor_E11:
     m "So, can we start the lesson?"
     call her_main("Yes for Merlin's sake!", "open", "base", "base", "mid", cheeks="blush")
     m "But before that..."
-    call her_main("If you say another word I swear I will go back to my dorm right now!", "scream", "base", "angry", "mid", cheeks="blush", emote="01")
+    call her_main("If you say another word I swear I will go back to my dorm right now!", "scream", "base", "angry", "mid", cheeks="blush", emote="angry")
     call nar(">You suddenly insert the anal plug.")
     call her_main("Yesss {heart} like that!", "silly", "narrow", "base", "up", cheeks="blush")
     call nar(">You remove it just as quickly while giving her butt a loud slap.")
@@ -1340,7 +1340,7 @@ label hg_tutor_E12:
     call her_main("Maybe...", "open_tongue", "narrow", "base", "up", cheeks="blush")
     her "........"
     m "Don't be ashamed, it's alright my little whore."
-    call her_main("I wear it all the time and...{w=0.3} I love it!", "smile", "happyCl", "base", "mid", cheeks="blush", emote="06")
+    call her_main("I wear it all the time and...{w=0.3} I love it!", "smile", "happyCl", "base", "mid", cheeks="blush", emote="happy")
     g9 "{size=-2}(Marvellous){/size}"
     m "I've taught you good."
     call her_main("To be a slut? Yes you have...", "open", "closed", "base", "mid")

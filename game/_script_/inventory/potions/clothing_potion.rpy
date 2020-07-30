@@ -82,7 +82,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
 
     elif her_whoring <= 13: #Mildly aggravated
         call nar(">Hermione comes into your office quickly without knocking.")
-        call her_main("Again?", "angry", "happyCl", "worried", "mid",emote="05")
+        call her_main("Again?", "angry", "happyCl", "worried", "mid",emote="sweat")
         m "What's this about [hermione_name]?"
         call her_main("Why would you make my clothes invisible again?", "open", "base", "base", "mid")
         m "Why not?"

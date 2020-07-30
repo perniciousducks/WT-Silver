@@ -1,5 +1,28 @@
 
 init -1 python:
+
+    ### Global Functions ###
+
+    def get_character_emote(char, emote):
+        return "characters/{}/emotes/{}.png".format(char, emote) if emote else None
+
+    def get_character_pos(char):
+        global sprite_pos
+
+        flip = getattr(renpy.store, char+"_flip", None)
+        use_head = getattr(renpy.store, "use_"+char+"_head", None)
+
+        # Resolve X position for head state
+        if use_head:
+            xpos = sprite_pos["x"]["far_right"] if flip == 1 else sprite_pos["x"]["far_left"]
+        else:
+            xpos = getattr(renpy.store, char+"_xpos", None)
+        ypos = getattr(renpy.store, char+"_ypos", None)
+
+        return (xpos, ypos)
+
+    ### Classes ###
+
     class DollMethods(object):
         """Container class for commonly used methods and attributes"""
         size = (1010, 1200)
@@ -48,9 +71,3 @@ init -1 python:
 
         def visit(self):
             return [ self.child ]
-
-# Notes and todo's:
-#   Avoid passing generators to the cache through first or third party functions, Ren'py will have problems pickling the manipulated images causing no image being displayed at all after the game reloads, alternatively the game may refuse to load at all. Use a tuple instead. This applies to renpy.start_predict(x) as well.
-#   AlphaMask and Flatten are costly operations which cause noticeable slowdowns, an alternative would be nice.
-#
-#

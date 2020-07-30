@@ -40,7 +40,7 @@ label hg_pr_grope:
         m "Yes, touch you. The way boys touch girls?"
         m "How old are you, [hermione_name]? You look mature enough..."
         m "Haven't you had \"the talk\" with your parents already?"
-        call her_main("\"The talk\", [genie_name]?", "angry", "happyCl", "worried", "mid", emote="05")
+        call her_main("\"The talk\", [genie_name]?", "angry", "happyCl", "worried", "mid", emote="sweat")
         m "Yes, \"the talk\"! About how boys are different than the girls...?"
         m "Boys have a \"pee-pee\" and girls like to put that \"pee-pee\" in their mouths?"
         call her_main("[genie_name]!!!", "normal", "base", "base", "mid")
@@ -67,7 +67,7 @@ label hg_pr_grope:
             call her_main("You mean like...", "base", "base", "base", "mid")
             call her_main("In a sexual way, [genie_name]?", "angry", "wink", "base", "mid")
             m "What? No, I mean just let him get under your uniform that's all..."
-            call her_main("Oh, I see...", "grin", "happyCl", "worried", "mid", emote="05")
+            call her_main("Oh, I see...", "grin", "happyCl", "worried", "mid", emote="sweat")
             call her_main("I wonder who it should be this time...", "grin", "base", "base", "R")
             call her_main("More than one boy, is not a problem, is it, [genie_name]?", "angry", "base", "base", "mid")
             m "A problem? Of course not!"
@@ -193,7 +193,7 @@ label hg_pr_grope_T2_E1:
     m "That's all?"
     call her_main("Yes, [genie_name]...", "open", "base", "base", "mid")
     call her_main("It's getting late... I think I'd better leave now...", "normal", "happyCl", "worried", "mid")
-    call her_main("I'm sorry, [genie_name]...", "angry", "happyCl", "worried", "mid", emote="05")
+    call her_main("I'm sorry, [genie_name]...", "angry", "happyCl", "worried", "mid", emote="sweat")
     m "Nothing to be sorry about, [hermione_name]."
     m "You did good. This will do for now."
 
@@ -459,7 +459,7 @@ label hg_pr_grope_T4_E3:
     m "Totally..."
     m "Seems that true love {size=+5}does{/size} exist after all."
     m "Then what happened?"
-    call her_main("*Ehm*... Well...", "grin", "happyCl", "worried", "mid", emote="05")
+    call her_main("*Ehm*... Well...", "grin", "happyCl", "worried", "mid", emote="sweat")
     call her_main("They both started touching me a little again...", "upset", "wink", "base", "mid")
     call her_main("And then they started kissing in front of me...", "annoyed", "base", "worried", "R")
     her "A moment later their hands were all over each other."

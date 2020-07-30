@@ -527,7 +527,7 @@ label cho_quid_E6:
             g4 "May I remind you how many house points I gave you?"
             call her_main("No amount of house points was worth the humiliation I got!", "angry", "base", "angry", "mid")
             m "Well, *boo*--{w=0.3}bloody--{w=0.3}*hoo*..."
-            call her_main("*Tzzzs*!...", "clench", "closed", "angry", "mid", emote="01")
+            call her_main("*Tzzzs*!...", "clench", "closed", "angry", "mid", emote="angry")
             call her_main("Good luck finding somebody that is more willing to be the school's laughing stock!", "open", "base", "angry", "mid")
 
 

@@ -26,7 +26,6 @@ default luna_pupil_color       = "blue"
 
 default luna_cheeks            = "characters/luna/face/extras/cheeks_blank.png"
 default luna_tears             = "characters/luna/face/extras/tears_blank.png"
-default luna_extra             = "characters/luna/face/extras/blank.png"
 default luna_emote             = "characters/emotes/blank.png"
 
 # Cum
@@ -289,7 +288,6 @@ label reset_luna_base:
         "luna_pupil_color",
         "luna_cheeks",
         "luna_tears",
-        "luna_extra",
         "luna_emote",
         #Cum
         "luna_cum",

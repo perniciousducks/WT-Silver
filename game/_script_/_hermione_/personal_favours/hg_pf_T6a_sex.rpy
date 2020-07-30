@@ -284,7 +284,7 @@ label hg_sex_1:
             call her_main("Ah-ah...{heart} But... ah...{heart}{heart}", "open", "base", "base", "mid")
             m "Any news from your folks?"
             $ ccg1 = 11
-            call her_main("My parents?", "angry", "happyCl", "worried", "mid", emote="05")
+            call her_main("My parents?", "angry", "happyCl", "worried", "mid", emote="sweat")
             $ ccg1 = 4
             call her_main("[genie_name], please, *ah-ah* I cannot talk...", "open", "happyCl", "worried", "mid")
             m "Why not? Enjoying this too much?"

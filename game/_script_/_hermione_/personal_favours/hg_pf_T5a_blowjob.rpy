@@ -187,7 +187,7 @@ label hg_pf_blowjob_T5_intro_E1:
     m "Well, alright then."
     call her_main("Although, now when I say it out loud like this...", "angry", "narrow", "base", "down")
     m "Too late! You already said \"yes\"!"
-    call her_main("I know...", "grin", "happyCl", "worried", "mid", emote="05")
+    call her_main("I know...", "grin", "happyCl", "worried", "mid", emote="sweat")
     call her_walk("desk", "base", reduce=0.8)
     call blkfade
 
@@ -201,17 +201,17 @@ label hg_pf_blowjob_T5_intro_E2:
     m "How about another blowjob?"
 
     call play_music("playful_tension") # SEX THEME.
-    call her_main("[genie_name], how dare you propose such a thing to one of your pupils!", "scream", "base", "angry", "mid", emote="01")
+    call her_main("[genie_name], how dare you propose such a thing to one of your pupils!", "scream", "base", "angry", "mid", emote="angry")
     m "Wha-...?"
-    call her_main("This is unbecoming of a man of your standing.", "scream", "base", "angry", "mid", emote="01")
+    call her_main("This is unbecoming of a man of your standing.", "scream", "base", "angry", "mid", emote="angry")
     call her_main("You should be ashamed of yourself [genie_name]!", "angry", "base", "angry", "mid")
     menu:
         m "???"
         "\"Fine. No points to you then! Leave!\"":
             call play_music("chipper_doodle") # HERMIONE'S THEME.
-            call her_main("[genie_name], calm down, please.", "grin", "happyCl", "worried", "mid", emote="05")
+            call her_main("[genie_name], calm down, please.", "grin", "happyCl", "worried", "mid", emote="sweat")
             m "You are dismissed, [hermione_name]."
-            call her_main("[genie_name], please, I didn't mean any of the things I said.", "grin", "happyCl", "worried", "mid", emote="05")
+            call her_main("[genie_name], please, I didn't mean any of the things I said.", "grin", "happyCl", "worried", "mid", emote="sweat")
             m "What?"
 
         "\"*Ehm*... I am sorry?\"":
@@ -219,7 +219,7 @@ label hg_pf_blowjob_T5_intro_E2:
             call her_main("*Giggle*", "base", "base", "base", "mid")
             m "*huh*?"
             call play_music("chipper_doodle") # HERMIONE'S THEME.
-            call her_main("I got you... [genie_name].", "grin", "happyCl", "worried", "mid", emote="05")
+            call her_main("I got you... [genie_name].", "grin", "happyCl", "worried", "mid", emote="sweat")
             m "What?"
 
         "-Two can play that game...-":
@@ -241,10 +241,10 @@ label hg_pf_blowjob_T5_intro_E2:
     her "So I was just trying to imagine how the \"old me\" would've reacted to this."
     m "So..."
     g4 "You were messing with me then?"
-    call her_main("*Uhm*... I'm sorry [genie_name], I didn't mean to...", "angry", "happyCl", "worried", "mid", emote="05")
+    call her_main("*Uhm*... I'm sorry [genie_name], I didn't mean to...", "angry", "happyCl", "worried", "mid", emote="sweat")
     g4 "You nasty little slut! You must be punished!"
     g9 "I'll punish you with my cock!"
-    call her_main("...............................", "angry", "happyCl", "worried", "mid", emote="05")
+    call her_main("...............................", "angry", "happyCl", "worried", "mid", emote="sweat")
 
     jump hg_pf_hidden_blowjob # Snape
 
@@ -454,7 +454,7 @@ label hg_pf_blowjob_1:
             m "But I want to see how much you know."
             m "To test your knowledge on the subject."
             call nar(">As soon as you mention \"test\" Hermione's eyes light up with excitement.")
-            call her_main("OK. But I need a moment gather my thoughts...", "smile", "happyCl", "base", "mid", emote="06")
+            call her_main("OK. But I need a moment gather my thoughts...", "smile", "happyCl", "base", "mid", emote="happy")
 
             call her_chibi_scene("bj", trans=d3)
             pause.8
@@ -493,7 +493,7 @@ label hg_pf_blowjob_1:
             m "And you being a nasty slut..."
 
             call her_chibi_scene("bj_pause")
-            call her_main("[genie_name]!", "scream", "base", "angry", "mid", emote="01")
+            call her_main("[genie_name]!", "scream", "base", "angry", "mid", emote="angry")
             m "But to be honest..."
             m "\"Daring, nerve, fire, recklessness\"..."
             m "That sort of describes your personality quite well..."
@@ -620,17 +620,17 @@ label hg_pf_blowjob_1:
             m "Just wipe it off and you'll be alright."
             call her_main("............", "open", "base", "base", "mid")
             m "Unless, you don't want to."
-            call her_main("*huh*?", "angry", "happyCl", "worried", "mid", emote="05")
+            call her_main("*huh*?", "angry", "happyCl", "worried", "mid", emote="sweat")
             m "And would rather go outside looking like this."
             m "Let everyone see what a nasty little slut you are."
-            call her_main("Of course not, [genie_name]!", "angry", "happyCl", "worried", "mid", emote="05")
+            call her_main("Of course not, [genie_name]!", "angry", "happyCl", "worried", "mid", emote="sweat")
 
             stop music fadeout 1.0
             if daytime:
                 m "You better go before you are late for your classes..."
             else:
                 m "It's getting late..."
-                call her_main("Yes...", "angry", "happyCl", "worried", "mid", emote="05")
+                call her_main("Yes...", "angry", "happyCl", "worried", "mid", emote="sweat")
 
             call her_main("Can I get paid before I leave, [genie_name]?", "upset", "wink", "base", "mid")
 
@@ -723,7 +723,7 @@ label hg_hidden_blowjob_snape:
     $ her_mood = 30
 
     stop music fadeout 1.0
-    call her_main("{size=-2}[genie_name], no!{/size}", "angry", "base", "angry", "mid", emote="01")
+    call her_main("{size=-2}[genie_name], no!{/size}", "angry", "base", "angry", "mid", emote="angry")
 
     call nar(">Hermione gives your balls a firm twist full of frustration.")
     g4 "Ouch!"
@@ -831,7 +831,7 @@ label hg_hidden_blowjob_luna:
     $ her_mood += 30
 
     stop music fadeout 1.0
-    call her_main("{size=-2}[genie_name], no! Why would you let-{/size}", "angry", "base", "angry", "mid", emote="01")
+    call her_main("{size=-2}[genie_name], no! Why would you let-{/size}", "angry", "base", "angry", "mid", emote="angry")
     m "Quiet, [hermione_name]! Unless you want to be noticed..."
 
     #Luna comes in
@@ -1021,7 +1021,7 @@ label hg_hidden_blowjob_tonks:
     $ tonks.equip(ton_outfit_default)
 
     stop music fadeout 1.0
-    call her_main("{size=-2}[genie_name], no! Please she will know that-{/size}", "angry", "base", "angry", "mid", emote="01")
+    call her_main("{size=-2}[genie_name], no! Please she will know that-{/size}", "angry", "base", "angry", "mid", emote="angry")
     m "*Shhhhsh*... Keep your voice down..."
 
     #Tonks comes in
@@ -1789,7 +1789,7 @@ label hg_pf_blowjob_2:
             call her_main("But can you cum in my mouth?", "angry", "wink", "base", "mid")
             call her_main("{size=-4}Please...{/size} I promise I won't waste a drop.", "soft", "narrow", "annoyed", "up")
             m "I think that can be arranged "
-            call her_main("Thank you [genie_name]!", "smile", "happyCl", "base", "mid", cheeks="blush", emote="06")
+            call her_main("Thank you [genie_name]!", "smile", "happyCl", "base", "mid", cheeks="blush", emote="happy")
             call her_chibi_scene("bj", trans=d5)
             call nar(">Hermione devours your cock with renewed vigour.")
             call her_main("*Slurp*! *Gulp*! *Slurp*!", "open_wide_tongue", "narrow", "annoyed", "up")

@@ -136,7 +136,7 @@ label cc_st_return:
         call cho_main("We can't possibly win if we don't know their tactics.", "soft", "base", "base", "R")
         call cho_main("Or know if our tactics work against them, for that matter...", "annoyed", "narrow", "base", "mid")
         m "I'm on it..."
-        call cho_main("And that's not all... I heard some people saying that Hermione won't commentate anymore!", "angry", "narrow", "angry", "mid", emote="01")
+        call cho_main("And that's not all... I heard some people saying that Hermione won't commentate anymore!", "angry", "narrow", "angry", "mid", emote="angry")
         g4 "What?"
         call cho_main("I know, you better do something about it!", "open", "narrow", "angry", "mid")
         g4 "*Ugh*... Do I have to?"

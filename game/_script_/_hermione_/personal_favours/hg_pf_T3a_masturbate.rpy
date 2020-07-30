@@ -15,7 +15,7 @@ label hg_pf_strip_T4_fingering:
         m "And I want you to speak truthfully..."
         call her_main("......", "normal", "happyCl", "worried", "mid")
         m "Well, [hermione_name]?"
-        call her_main("{size=-5}I suppose I do...{/size}", "angry", "happyCl", "worried", "mid", emote="05")
+        call her_main("{size=-5}I suppose I do...{/size}", "angry", "happyCl", "worried", "mid", emote="sweat")
         m "*huh*? What was that?"
         call her_main("I said that I do alright!!!", "scream", "happyCl", "worried", "mid")
         m "*Hmmmm*, I'm not sure I believe you..."

@@ -39,9 +39,9 @@ label hg_pr_handjob:
         her "I know I did sell you a couple of rather questionable favours in the past..."
         m "{size=-4}*Heh* a couple she says...{/size}"
         with vpunch
-        call her_main("{size=+5}--But THIS?!{/size}", "scream", "base", "angry", "mid", emote="01")
+        call her_main("{size=+5}--But THIS?!{/size}", "scream", "base", "angry", "mid", emote="angry")
         her "I cannot believe that you would ask one of your pupils to... to..."
-        call her_main("We are done here, [genie_name]!", "angry", "base", "angry", "mid", emote="01")
+        call her_main("We are done here, [genie_name]!", "angry", "base", "angry", "mid", emote="angry")
         m "Alright, alright, calm down, would you?"
         call her_main("I most certainly will not, [genie_name]! This is beyond inappropriate!", "scream", "closed", "angry", "mid")
         m "Alright, fine, maybe I really did cross some sort of line this time..."
@@ -311,7 +311,7 @@ label hg_pr_handjob_T4_E3:
     call her_main("All boys are jerks! That is the problem, [genie_name]!", "scream", "closed", "angry", "mid")
     call her_main("I gave this one boy a good wanking...", "open", "narrow", "worried", "down")
     her "And do you know how he thanked me?"
-    call her_main("He got his spunk all over me...", "scream", "base", "angry", "mid", emote="01")
+    call her_main("He got his spunk all over me...", "scream", "base", "angry", "mid", emote="angry")
     call her_main("And he did that on purpose, I know he did!", "scream", "closed", "angry", "mid")
     call her_main("Nasty, good for nothing Ravenclaws...", "annoyed", "base", "worried", "R")
     m "Well, I'd say a job well done."

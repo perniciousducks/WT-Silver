@@ -3,6 +3,7 @@ default hermione_xpos = 300
 default hermione_ypos = 0
 default hermione_zorder = 15
 default hermione_flip = 1
+default hermione_emote = None
 default hermione_animation = None
 default use_hermione_head = False
 

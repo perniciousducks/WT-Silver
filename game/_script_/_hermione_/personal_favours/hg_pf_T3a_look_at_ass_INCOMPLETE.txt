@@ -305,7 +305,7 @@ label hg_pr_strip_T2_grope_rear:
     m "This won't take long, just stand still and look forward."
     call her_main("[genie_name], I didn't agree to this!", "angry", "base", "angry", "mid", cheeks="blush")
     with hpunch
-    call her_main("You must let go of me now!!!", "scream", "base", "angry", "mid", cheeks="blush", emote="01")
+    call her_main("You must let go of me now!!!", "scream", "base", "angry", "mid", cheeks="blush", emote="angry")
     call hide_characters
     show screen blkfade
     with d5
@@ -388,7 +388,7 @@ label hg_pr_strip_T2_masturbate_rear:
 
         "-Start jerking your cock faster-":
             call nar(">You start jerking your cock furiously!")
-            call her_main("...", "scream", "base", "angry", "mid", cheeks="blush", emote="01")
+            call her_main("...", "scream", "base", "angry", "mid", cheeks="blush", emote="angry")
             call nar(">You jerk it even faster!")
             call her_main("you're going to do it aren't you...", "annoyed", "narrow", "angry", "R", cheeks="blush")
             g4 "almost there slut!"
@@ -500,9 +500,9 @@ label hg_pr_strip_T3_grope_rear:
 
     if current_payout < 100:
         call her_main("well if you wanted to touch you should have offered to pay me more.", "soft", "base", "base", "R", cheeks="blush", xpos="right", ypos="base")
-        call her_main("speaking of which Can I get paid now please?", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="05")
+        call her_main("speaking of which Can I get paid now please?", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="sweat")
     else:
-        call her_main("I'd like to get paid now please [genie_name].", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="05", xpos="right", ypos="base")
+        call her_main("I'd like to get paid now please [genie_name].", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="sweat", xpos="right", ypos="base")
     m "Sure..."
 
     jump end_hg_pf_strip
@@ -782,7 +782,7 @@ label hg_show_ass_cumming:
                 call hide_blkfade
                 call ctc
 
-                call her_main("[genie_name]!", "scream", "base", "angry", "mid", cheeks="blush", emote="01")
+                call her_main("[genie_name]!", "scream", "base", "angry", "mid", cheeks="blush", emote="angry")
                 g4 "Oh, that's better..."
                 call gen_chibi("cum_behind_desk_done")
                 with d3
@@ -830,7 +830,7 @@ label hg_show_ass_cumming:
                 call ctc
 
                 $ hermione_ass_cum = True
-                call her_main("[genie_name], no, you promised!", "scream", "base", "angry", "mid", cheeks="blush", emote="01")
+                call her_main("[genie_name], no, you promised!", "scream", "base", "angry", "mid", cheeks="blush", emote="angry")
                 g4 "Oh, this is great, yes..."
                 call gen_chibi("cum_close_done","on_girl","base")
                 call ctc
@@ -906,7 +906,7 @@ label hg_show_ass_cumming:
                 show screen hermione_ass
                 with fade
 
-                call her_main("that's it [genie_name], release your... semen on me...", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="05")
+                call her_main("that's it [genie_name], release your... semen on me...", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="sweat")
                 g4 "Oh, this is great, yes..."
                 call her_main("ah{heart}, what's done is done I suppose...", "base", "base", "base", "R", cheeks="blush")
 
@@ -931,9 +931,9 @@ label hg_show_ass_cumming:
                 with fade
 
                 call her_main("ah...{heart} It's so hot...{heart}", "shock", "happyCl", "worried", "mid")
-                call her_main("there's so much...{heart}", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="05")
+                call her_main("there's so much...{heart}", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="sweat")
                 g4 "Oh, this is great, yes..."
-                call her_main("ah...{heart}", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="05")
+                call her_main("ah...{heart}", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="sweat")
 
                 call her_main("Well, what's done is done I suppose...", "angry", "happyCl", "worried", "mid", cheeks="blush")
 

@@ -355,7 +355,7 @@ label hg_pf_strip_T3_intro_E2:
     call her_main("......................", "annoyed", "narrow", "angry", "R")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Well, why not?", "disgust", "narrow", "base", "mid_soft")
-    call her_main("Yes, I don't see why not!", "scream", "base", "angry", "mid", emote="01")
+    call her_main("Yes, I don't see why not!", "scream", "base", "angry", "mid", emote="angry")
     m "*Hmm*...? {size=-4}(Look at her, so eager all of a sudden...){/size}"
     call her_main("After all, as a pupil I am meant to obey your every order, isn't that right, [genie_name]?!", "scream", "closed", "angry", "mid")
     m "...................."
@@ -389,7 +389,7 @@ label hg_pf_strip_T3_intro_E2:
 
     call her_main("If I must degrade myself in order to protect the honour of my house...", "scream", "closed", "angry", "mid", xpos="mid", ypos="base")
 
-    call her_main("So be it then!", "scream", "base", "angry", "mid", emote="01")
+    call her_main("So be it then!", "scream", "base", "angry", "mid", emote="angry")
     call her_main("Just...", "open", "narrow", "worried", "down")
     $ hermione.strip("robe", "accessory")
     call her_main("*groan*", "clench", "narrow", "base", "down")
@@ -431,7 +431,7 @@ label hg_pf_strip_T3_intro_E2:
     m "{size=-4}(Wow, she is getting really worked up over this...){/size}"
     m "{size=-4}(Maybe it was still too early to--{/size}"
     call her_main("Clothes?!!", "disgust", "narrow", "base", "mid_soft")
-    call her_main("{size=+9}I don't need them!{/size}", "scream", "base", "angry", "mid", emote="01")
+    call her_main("{size=+9}I don't need them!{/size}", "scream", "base", "angry", "mid", emote="angry")
     if hermione.is_worn("bra"):
         call nar(">Hermione keeps dancing angrily, and then...")
         call her_main("", "angry", "base", "angry", "mid")
@@ -446,7 +446,7 @@ label hg_pf_strip_T3_intro_E2:
     call her_main("Shall I shake my breasts for you like one of those harlots?", "scream", "closed", "angry", "mid")
     m "Well--"
     call her_main("Of course! Why wouldn't I degrade myself for your pleasure?!")
-    call her_main("This is completely {size=+7}acceptable!{/size}", "scream", "base", "angry", "mid", emote="01")
+    call her_main("This is completely {size=+7}acceptable!{/size}", "scream", "base", "angry", "mid", emote="angry")
     call her_main("", "angry", "base", "angry", "mid")
 
     pause.2
@@ -637,7 +637,7 @@ label hg_pf_strip_T3_intro_E2:
 
     call her_main("........................", "normal", "happyCl", "worried", "mid", xpos="base", ypos="base")
     stop music fadeout 2.0
-    call her_main("Can I just get my points now, please?", "angry", "happyCl", "worried", "mid", emote="05")
+    call her_main("Can I just get my points now, please?", "angry", "happyCl", "worried", "mid", emote="sweat")
     pause.5
 
     if hg_strip.trigger == False:
@@ -746,10 +746,10 @@ label hg_pf_strip_T3_E2:
             call her_main("And I am too old for that any way...", "upset", "wink", "base", "mid")
             g9 "I would say that you are in the perfect age for that..."
             call her_main("*huh*?")
-            call her_main("I do not know what you mean, [genie_name].", "grin", "happyCl", "worried", "mid", emote="05")
+            call her_main("I do not know what you mean, [genie_name].", "grin", "happyCl", "worried", "mid", emote="sweat")
 
         "{size=-3}\"Your father would disown you!\"{/size}":
-            call her_main("You are probably right, [genie_name]...", "angry", "happyCl", "worried", "mid", emote="05")
+            call her_main("You are probably right, [genie_name]...", "angry", "happyCl", "worried", "mid", emote="sweat")
             call her_main("(Oh father, I am so sorry...)", "angry", "base", "base", "mid", tears="soft")
             call her_main("he must never find out...", "angry", "base", "base", "mid", tears="soft")
 
@@ -811,7 +811,7 @@ label hg_pf_strip_T3_watch:
     with d5
     call ctc
 
-    call her_main("I'm sorry, Sir. Was this good enough?...", "disgust", "narrow", "base", "down", emote="05", ypos="head")
+    call her_main("I'm sorry, Sir. Was this good enough?...", "disgust", "narrow", "base", "down", emote="sweat", ypos="head")
 
     menu:
         m "..."
@@ -819,14 +819,14 @@ label hg_pf_strip_T3_watch:
             m "Good job [hermione_name]!"
             call her_main("..............", "disgust", "narrow", "worried", "down")
             m "You have a lot of talent for this!"
-            call her_main("Thank you [genie_name].", "soft", "base", "worried", "R", emote="05")
+            call her_main("Thank you [genie_name].", "soft", "base", "worried", "R", emote="sweat")
         "{size=-3}\"*Hmm*... This was quite awful...\"{/size}":
             $ her_mood += 4
             call her_main("............", "annoyed", "base", "angry", "mid")
             m "You just need to practise more..."
             call her_main("Whatever..........", "annoyed", "narrow", "angry", "R")
         "{size=-3}\".................................................\"{/size}":
-            call her_main(".......................", "silly", "happyCl", "worried", "mid", emote="05")
+            call her_main(".......................", "silly", "happyCl", "worried", "mid", emote="sweat")
             call her_chibi("sit_naked_shocked","on_desk","on_desk")
 
     hide screen bld1
@@ -1053,7 +1053,7 @@ label hg_pf_strip_T4:
         call her_main("Can I ask you a question?", "upset", "wink", "base", "mid")
         m "Go ahead..."
         call her_main("...............", "normal", "happyCl", "worried", "mid")
-        call her_main("Have you ever been in love...?", "grin", "happyCl", "worried", "mid", emote="05")
+        call her_main("Have you ever been in love...?", "grin", "happyCl", "worried", "mid", emote="sweat")
 
         menu:
             m "..."
@@ -1102,14 +1102,14 @@ label hg_pf_strip_T4:
                 m "Oh, but I mean it!"
                 call her_main("[genie_name], please!", "disgust", "narrow", "base", "mid_soft")
                 call her_main("I am one of your students!", "soft", "base", "base", "mid")
-                call her_main("And you are older than my father!", "grin", "happyCl", "worried", "mid", emote="05")
+                call her_main("And you are older than my father!", "grin", "happyCl", "worried", "mid", emote="sweat")
                 m "{size=-4}(You have no idea, girl.){/size}"
                 call her_main("Although some scientists insist that what we consider \"love\" is actually nothing but a chemical reaction...", "soft", "base", "base", "mid")
                 call her_main("And when a man is experiencing sexual arousal, the same type of hormones--", "open", "closed", "base", "mid")
                 m "[hermione_name]!"
                 call her_main("Yes, [genie_name]?", "soft", "base", "base", "mid")
                 m "Did you forget where you are?"
-                call her_main("Oh, my apologies, [genie_name]... I get distracted sometimes.", "grin", "happyCl", "worried", "mid", emote="05")
+                call her_main("Oh, my apologies, [genie_name]... I get distracted sometimes.", "grin", "happyCl", "worried", "mid", emote="sweat")
                 if hermione.is_worn("bottom"):
                     m "Take off your bottoms already, would you?!"
                 else:
@@ -1186,7 +1186,7 @@ label hg_pf_strip_T4_watch:
     with d5
     call ctc
 
-    call her_main("Whew... This was rather exciting...", "silly", "happyCl", "worried", "mid", emote="05", ypos="head")
+    call her_main("Whew... This was rather exciting...", "silly", "happyCl", "worried", "mid", emote="sweat", ypos="head")
 
     menu:
         m "..."
@@ -1194,13 +1194,13 @@ label hg_pf_strip_T4_watch:
             m "Good job [hermione_name]!"
             call her_main("Really?", "base", "narrow", "base", "mid_soft")
             m "Yes! You have a lot of talent for this!"
-            call her_main("Thank you [genie_name].", "silly", "happyCl", "worried", "mid", emote="05")
+            call her_main("Thank you [genie_name].", "silly", "happyCl", "worried", "mid", emote="sweat")
         "{size=-3}\"*Hmm*... This was quite awful...\"{/size}":
             call her_main("Oh... I'm sorry...", "soft", "happy", "base", "R")
             m "That's OK... You just need to practise more..."
             call her_main("*Ehm*... I will keep that in mind, [genie_name]...", "open", "base", "base", "R")
         "{size=-3}\".................................................\"{/size}":
-            call her_main(".......................", "silly", "happyCl", "worried", "mid", emote="05")
+            call her_main(".......................", "silly", "happyCl", "worried", "mid", emote="sweat")
             call her_chibi("sit_naked_shocked","on_desk","on_desk")
 
     hide screen bld1
@@ -1419,10 +1419,10 @@ label hg_pf_strip_T4_masturbate:
             m "I enjoyed your performance [hermione_name]."
             call her_main("Thank you [genie_name]...", "base", "narrow", "base", "mid_soft")
             m "I also enjoyed plastering your agile little body with cum..."
-            call her_main("[genie_name]......", "silly", "happyCl", "worried", "mid", emote="05")
+            call her_main("[genie_name]......", "silly", "happyCl", "worried", "mid", emote="sweat")
             m "So, just allow me to show my appreciation."
             m "Fifty extra points. Well deserved, [hermione_name]."
-            call her_main("Thank very much, [genie_name].", "silly", "happyCl", "worried", "mid", emote="05")
+            call her_main("Thank very much, [genie_name].", "silly", "happyCl", "worried", "mid", emote="sweat")
             hide screen bld1
             call ctc
 
@@ -1455,11 +1455,11 @@ label hg_pf_strip_T4_masturbate:
                     call her_main("I degraded myself for your amusement...", "soft", "happy", "base", "R")
                     call her_main("I let you cum on me...", "open", "base", "base", "R")
                     with hpunch
-                    call her_main("And I get NOTHING?!", "clench", "base", "angry", "mid", emote="01")
+                    call her_main("And I get NOTHING?!", "clench", "base", "angry", "mid", emote="angry")
                     m "You are dismissed, [hermione_name]!"
                     call her_main("Oh, this is a new low even for you, [genie_name]!", "soft", "base", "angry", "mid")
                     m "I said you are dismissed."
-                    call her_main("*GROAN*!", "clench", "base", "angry", "mid", emote="01")
+                    call her_main("*GROAN*!", "clench", "base", "angry", "mid", emote="angry")
                     hide screen bld1
                     call ctc
 

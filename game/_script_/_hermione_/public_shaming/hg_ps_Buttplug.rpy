@@ -62,7 +62,7 @@ label hg_ps_buttplug:
         m "It just looks like a fake tail, No one will be able to tell what it really is."
         call her_main("{size=+5}That's not the point!{/size}", "scream", "closed", "angry", "mid")
         her "I'm not going to put that ridiculous thing anywhere near my butt!"
-        call her_main("We are done here, [genie_name]!", "angry", "base", "angry", "mid",emote="01")
+        call her_main("We are done here, [genie_name]!", "angry", "base", "angry", "mid",emote="angry")
         m "Alright, alright, calm down..."
         call her_main("I most certainly will not, [genie_name]! That thing is beyond absurd!", "scream", "closed", "angry", "mid")
         m "Alright, fine, maybe I underestimated how large it is..."
@@ -109,7 +109,7 @@ label hg_ps_buttplug:
         m "I can and do, unless you want our little trading game to come to a halt..."
         call her_main("but it's so long! everyone will be able to see it!", "normal", "happyCl", "worried", "mid")
         m "That's the point, [hermione_name]..."
-        call her_main("...........", "angry", "happyCl", "worried", "mid",emote="05")
+        call her_main("...........", "angry", "happyCl", "worried", "mid",emote="sweat")
         call her_main("I want a hundred points.", "annoyed", "base", "angry", "mid")
 
         menu:
@@ -179,7 +179,7 @@ label hg_ps_buttplug:
             call her_main("Of course not! That thing would tear me--", "scream", "closed", "angry", "mid")
             ">you pull out the small butt plug"
             m "How about this one then?"
-            call her_main("Oh, okay then!", "smile", "happyCl", "base", "mid",emote="06")
+            call her_main("Oh, okay then!", "smile", "happyCl", "base", "mid",emote="happy")
             m "You'll do it that easily?"
             call her_main("Well for fifty-five house points I'd be crazy not to.", "base", "closed", "base", "mid")
             call her_main("Plus I don't hate the way it feels", "open", "base", "base", "R")
@@ -505,7 +505,7 @@ label hg_ps_buttplug_complete:
             call her_main("Relieve myself...", "annoyed", "base", "worried", "R")
             call her_main("When all of a sudden that annoying ghost poked her head through the door!", "scream", "closed", "angry", "mid")
             call her_main("As it if wasn't bad enough that she saw me...", "open", "narrow", "worried", "down")
-            call her_main("She then started yelling \"Hermione has a butt plug\" to everyone in the toilets!", "scream", "base", "angry", "mid",emote="01")
+            call her_main("She then started yelling \"Hermione has a butt plug\" to everyone in the toilets!", "scream", "base", "angry", "mid",emote="angry")
             call her_main("Luckily the stalls where empty! Imagine if they weren't!", "annoyed", "narrow", "annoyed", "mid")
             m "Well, it certainly sounds like you've earned your points."
 
@@ -676,7 +676,7 @@ label hg_ps_buttplug_complete:
             her "I turned around and there was Colin Creevey..."
             her "with the biggest grin on his face!"
             m "You let your photo be taken?!"
-            call her_main("I didn't let anything of the sort happen! It was without my consent!", "scream", "base", "angry", "mid", emote="01")
+            call her_main("I didn't let anything of the sort happen! It was without my consent!", "scream", "base", "angry", "mid", emote="angry")
             call her_main("I even made him promise not to show anyone the photo...", "open", "narrow", "worried", "down")
             her "...in exchange I did have to let him take a few more..."
             her "but he insisted that he wouldn't show anyone else..."

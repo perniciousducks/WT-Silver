@@ -122,8 +122,8 @@ label hg_pf_grope_ass_T2_back:
     call her_main("You said all you were going to do is touch...", "angry", "base", "angry", "mid", cheeks="blush")
     g4 "Just stand still, [hermione_name]!"
     call her_main("I don't think so, [genie_name]!", "angry", "happyCl", "worried", "mid", cheeks="blush")
-    call her_main("No amount of points are worth this humiliation!", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
-    call her_main("You are abusing your power, [genie_name]!", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
+    call her_main("No amount of points are worth this humiliation!", "scream", "base", "angry", "mid", cheeks="blush",emote="angry")
+    call her_main("You are abusing your power, [genie_name]!", "scream", "base", "angry", "mid", cheeks="blush",emote="angry")
     g4 "What?"
     call her_main("I'm leaving!", "angry", "happyCl", "worried", "mid", cheeks="blush", ypos="head")
 
@@ -750,7 +750,7 @@ label hg_pf_grope_ass_T4_continue:
                             if her_tier <= 4:
                                 call her_main("No...", "angry", "happyCl", "worried", "mid", cheeks="blush")
                                 m "Well it sure looks like you just--"
-                                call her_main("I think we're done here!", "soft", "happyCl", "worried", "mid", cheeks="blush", emote="01")
+                                call her_main("I think we're done here!", "soft", "happyCl", "worried", "mid", cheeks="blush", emote="angry")
                                 m "I see..."
                                 m "Well, in that case..."
                             else:

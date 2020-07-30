@@ -372,7 +372,7 @@ label hg_pr_kiss_T4_E3:
             call her_main("Oh...", "upset", "closed", "base", "mid")
 
         "\"Kissing girls? Where?!!\"":
-            call her_main("*Tsk*!......................", "angry", "base", "angry", "mid", emote="01")
+            call her_main("*Tsk*!......................", "angry", "base", "angry", "mid", emote="angry")
 
     call her_main("Well, I am only asking you this, [genie_name], because...", "open", "narrow", "worried", "down")
     call her_main("...it is sort of becoming a new trend in our school...", "angry", "base", "base", "mid")
@@ -381,7 +381,7 @@ label hg_pr_kiss_T4_E3:
     call her_main("I suppose...", "angry", "narrow", "base", "down")
     call her_main("I mean, only because of the favours you buy from me, [genie_name]...", "upset", "closed", "base", "mid")
     m "Good... Tell me more."
-    call her_main("Well, as you know, I am quite popular...", "smile", "happyCl", "base", "mid", emote="06")
+    call her_main("Well, as you know, I am quite popular...", "smile", "happyCl", "base", "mid", emote="happy")
     call her_main("So all I had to do is just mention that I would not mind doing it today...", "base", "happyCl", "base", "mid")
     her "And I had half a dozen girls lined up instantly..."
     call her_main("I chose a girl from Gryffindor of course...", "base", "base", "base", "mid")

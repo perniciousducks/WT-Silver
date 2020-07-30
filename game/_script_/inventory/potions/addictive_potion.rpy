@@ -137,7 +137,7 @@ label hg_pp_cumaddict_intro:
             m "Perhaps if you asked nicely..."
             call her_main("Fine. Please let me suck your dick [genie_name].", "upset", "wink", "base", "mid")
             m "Hmmm, I don't think that was sincere enough."
-            call her_main("Please [genie_name], let me suck your big, thick dick. Pretty please.", "angry", "happyCl", "worried", "mid",emote="05")
+            call her_main("Please [genie_name], let me suck your big, thick dick. Pretty please.", "angry", "happyCl", "worried", "mid",emote="sweat")
             m "Much better."
     label hg_pp_cumaddict_sucking:
 
@@ -307,7 +307,7 @@ label hg_pp_cumaddict_intro:
             hide screen hermione_main
             m "Just from a facial? What sort of cumslut have you become Miss Granger?"
             m "What would your parents think? Looking at you covered in some old man's cum."
-            call her_main("No. Please stop, I'll--", "angry", "happyCl", "worried", "mid", emote="05")
+            call her_main("No. Please stop, I'll--", "angry", "happyCl", "worried", "mid", emote="sweat")
             with vpunch
             hide screen hermione_main
             m "They'd be ashamed at what you've become. A whore who gets off on being used as a toy."
@@ -652,12 +652,12 @@ label potion_scene_3_3_1:
     call her_main("(...)", "annoyed", "base", "angry", "mid")
     call her_main("(And here I was hoping he'd just ask to fuck...)", "annoyed", "narrow", "angry", "R")
     call her_main("(Questions are so boooring! I hope they are at least naughty...)", "annoyed", "narrow", "annoyed", "up")
-    call her_main("Are those questions going to be hard, mistah?","grin", "base", "worried", "mid", emote="05")
+    call her_main("Are those questions going to be hard, mistah?","grin", "base", "worried", "mid", emote="sweat")
     call her_main("I don't like hard questions.", "grin", "happyCl", "worried", "mid")
     m "Don't worry they'll be nice and easy for you."
     call her_main("yay!", "smile", "happyCl", "base", "mid")
     m "First question, Who are you?"
-    call her_main("That's an easy one! I'm Hermione Granger, the prettiest girl in the whole school!", "smile", "happyCl", "base", "mid",emote="06")
+    call her_main("That's an easy one! I'm Hermione Granger, the prettiest girl in the whole school!", "smile", "happyCl", "base", "mid",emote="happy")
     m "And what are your hobbies?"
     call her_main("Doing my makeup{heart}, dancing{heart} and dressing happy{heart}!", "base", "happyCl", "base", "mid")
     m "Dressing happy?"
@@ -670,7 +670,7 @@ label potion_scene_3_3_1:
     call her_main("Make myself happy?", "annoyed", "narrow", "worried", "down")
     call her_main("But I'm already happy, silly!", "base", "happyCl", "base", "mid")
     m "Even happier."
-    call her_main("Even happier? {size=+10}YAY!{/size}", "smile", "happyCl", "base", "mid",emote="06")
+    call her_main("Even happier? {size=+10}YAY!{/size}", "smile", "happyCl", "base", "mid",emote="happy")
     call her_main("So how am I going to be happier? Am I going to get naked?", "grin", "base", "base", "R")
     m "That'd be a good start."
     call her_main("{heart}AAAAAAWWWEEESOOOOOOOOMMME!{heart}", "grin", "narrow", "annoyed", "up")
@@ -738,7 +738,7 @@ label potion_scene_3_3_1:
     call her_main("could you please cum on me?", "open_tongue", "narrow", "base", "up",cheeks="blush")
     m "Well if it makes you happy."
     call nar(">you stand up and head towards her.")
-    call her_main("thank you, thank you thank you! You're the best headmaster {size=+5}EVER!{/size}", "smile", "happyCl", "base", "mid",emote="06")
+    call her_main("thank you, thank you thank you! You're the best headmaster {size=+5}EVER!{/size}", "smile", "happyCl", "base", "mid",emote="happy")
 
     hide screen hermione_main
     call blkfade
@@ -833,7 +833,7 @@ label potion_scene_3_3_1:
     m "I think you need to have a little nap and let this wear off."
     call her_main("whatever you say sir!", "annoyed", "closed", "base", "mid")
     call set_her_action("none","skip_update")
-    call her_main("And thanks again!{heart} You're the best!", "smile", "happyCl", "base", "mid",emote="06")
+    call her_main("And thanks again!{heart} You're the best!", "smile", "happyCl", "base", "mid",emote="happy")
 
     call her_walk(action="leave")
 

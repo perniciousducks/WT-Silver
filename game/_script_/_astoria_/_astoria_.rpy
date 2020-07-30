@@ -40,7 +40,7 @@ define ast_face = {
     }
 }
 
-label ast_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
+label ast_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=None, tears=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
     if renpy.predicting():
         ast "predict"
 
@@ -61,6 +61,7 @@ label ast_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
             astoria_ypos = int(sprite_pos["y"].get(ypos, ypos))
 
         astoria.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
+        astoria_emote = get_character_emote("astoria", emote)
 
         if face:
             if not mouth:
@@ -131,14 +132,15 @@ screen astoria_main():
     zorder astoria_zorder
     sensitive False
 
-    if use_astoria_head:
-        $ _xpos = sprite_pos["x"]["far_right"] if astoria_flip == 1 else sprite_pos["x"]["far_left"]
-        $ _pos = (_xpos, astoria_ypos)
-    else:
-        $ _pos = (astoria_xpos, astoria_ypos)
-
+    # Get image and apply transition and set position
     default astoria_img = apply_doll_transition(astoria.get_image(), "astoria_main", use_astoria_head)
-    if astoria_animation != None:
-        add astoria_img pos _pos xzoom astoria_flip zoom 0.5 at astoria_animation
-    else:
-        add astoria_img pos _pos xzoom astoria_flip zoom 0.5
+    default astoria_pos = get_character_pos("astoria")
+    default properties = {"zoom": 0.5, "xzoom": astoria_flip}
+
+    fixed:
+        pos astoria_pos
+        at astoria_animation
+
+        add astoria_img properties properties
+        if astoria_emote:
+            add astoria_emote properties properties

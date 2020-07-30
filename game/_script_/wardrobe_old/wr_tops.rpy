@@ -198,7 +198,7 @@ label equip_top:
                         # call her_main("Show some...", "open", "squint", "base", "mid")
                         # call her_main("Cleavage?", "angry", "base", "angry", "mid")
                         # call her_main("[genie_name], with all due respect,...", "open", "closed", "base", "mid")
-                        # call her_main("I'm not going to walk around school looking like some... {w=0.9}harlot!", "angry", "base", "angry", "mid",emote="01")
+                        # call her_main("I'm not going to walk around school looking like some... {w=0.9}harlot!", "angry", "base", "angry", "mid",emote="angry")
                         # call her_main("(What does he think I am? A Slytherin?)", "annoyed", "narrow", "angry", "R")
                         # m "It can greatly boost a women's self-confidence if she's willing to show some--"
                         # call her_main("I feel very self-confident just the way am, [genie_name].", "open", "closed", "base", "mid")
@@ -234,7 +234,7 @@ label equip_top:
                         # call her_main("I will just change right here, if you don't mind.", "base", "narrow", "base", "mid_soft")
                     # else: #20+
                         # call her_main("Of course, [genie_name].", "soft", "base", "base", "R") #soft, baseL
-                        # call her_main("I love wearing my top like this! It's so handy!", "smile", "happyCl", "base", "mid",emote="06")
+                        # call her_main("I love wearing my top like this! It's so handy!", "smile", "happyCl", "base", "mid",emote="happy")
                         # call her_main("I can just untie it whenever a Slytherin boy walks past me!", "soft", "narrow", "annoyed", "up")
                         # call her_main("Or a Slytherin girl of course! I'm not saying that I'm leaving them out!", "smile", "happyCl", "base", "mid")
                         # m "And what about students of other houses?"
@@ -666,7 +666,7 @@ label equip_top:
                 # else:
                     # if her_whoring < 5:
                         # call her_main("A--...", "shock", "happyCl", "worried", "mid")
-                        # call her_main("A--Achou!!", "angry", "happyCl", "worried", "mid",cheeks="blush",emote="05",trans=hpunch)
+                        # call her_main("A--Achou!!", "angry", "happyCl", "worried", "mid",cheeks="blush",emote="sweat",trans=hpunch)
                         # call nar(">Hermione sneezed.")
                         # call her_main("Ahh,...", "silly", "narrow", "annoyed", "up")
                         # call her_main("I'm terribly sorry [genie_name]...", "angry", "wink", "base", "mid")
@@ -679,7 +679,7 @@ label equip_top:
                         # m "Nothing, girl..."
                     # elif her_whoring < 11:
                         # call her_main("What?... What is this?!", "shock", "wide", "base", "stare")
-                        # call her_main("Wizard... Sex?!", "scream", "base", "angry", "mid",emote="01")
+                        # call her_main("Wizard... Sex?!", "scream", "base", "angry", "mid",emote="angry")
                         # call her_main("What is this even supposed to mean?", "angry", "base", "angry", "mid")
                         # m "It's just something they say nowadays!"
                         # call her_main("It most certainly is not!", "annoyed", "narrow", "annoyed", "mid")

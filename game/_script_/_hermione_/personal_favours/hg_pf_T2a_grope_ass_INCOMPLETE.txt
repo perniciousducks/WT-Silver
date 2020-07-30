@@ -39,7 +39,7 @@ label hg_pf_grope_ass_T5_front:
     m "do you enjoy this so much?"
     call her_main("I wouldn't phrase it like that...", "annoyed", "wink", "base", "mid", cheeks="blush")
 
-    call her_main("Can we just start, please...?", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="05")
+    call her_main("Can we just start, please...?", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="sweat")
     m "Well, since you asked so nicely..."
     call her_chibi_scene("grope_ass_front")
     with d7

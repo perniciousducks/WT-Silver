@@ -129,7 +129,7 @@ label chit_chat:
         elif one_of_ten == 3:
             call her_main("Ashwinder eggs, rose thorns, moonstone...", "open", "base", "worried", "R")
             call her_main("*huh*? Am I thinking out loud again?", "open", "base", "worried", "mid")
-            call her_main("I apologise...", "grin", "happyCl", "worried", "mid",emote="05")
+            call her_main("I apologise...", "grin", "happyCl", "worried", "mid",emote="sweat")
             call her_main("It's just that we have another test soon...", "soft", "base", "base", "R")
 
         elif one_of_ten == 4:
@@ -200,13 +200,13 @@ label chit_chat:
             call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 7:
-            call her_main("Slytherins...", "angry", "base", "angry", "mid",emote="01")
+            call her_main("Slytherins...", "angry", "base", "angry", "mid",emote="angry")
             call her_main("", "angry", "base", "angry", "mid")
 
         elif one_of_ten == 8:
             call her_main("I've been spending so much time in your office lately, sir...", "open", "base", "worried", "R")
             call her_main("If I'm not careful some people may think that I have become your pet...", "open", "base", "worried", "mid")
-            call her_main("I meant to say the teacher's pet...", "angry", "happyCl", "worried", "mid",emote="05")
+            call her_main("I meant to say the teacher's pet...", "angry", "happyCl", "worried", "mid",emote="sweat")
             call her_main("", "normal", "happyCl", "worried", "mid")
 
         elif one_of_ten == 9:
@@ -312,7 +312,7 @@ label chit_chat:
             her "I am starting to understand how important it really is for a girl to look pretty."
             call her_main("...............", "annoyed", "base", "worried", "R")
             call her_main("I've been on a diet lately...", "angry", "wink", "base", "mid")
-            call her_main("", "angry", "happyCl", "worried", "mid",emote="05")
+            call her_main("", "angry", "happyCl", "worried", "mid",emote="sweat")
             call her_main("", "normal", "happyCl", "worried", "mid")
 
         elif one_of_ten == 9:
@@ -354,7 +354,7 @@ label chit_chat:
 
         elif one_of_ten == 7:
             call her_main("I remember that I used to say that books were my friends...", "open", "closed", "base", "mid")
-            call her_main("Now that sounds so lame.", "grin", "happyCl", "worried", "mid",emote="05")
+            call her_main("Now that sounds so lame.", "grin", "happyCl", "worried", "mid",emote="sweat")
             call her_main("", "soft", "base", "base", "mid")
 
         elif one_of_ten == 8:
@@ -363,7 +363,7 @@ label chit_chat:
             her "Then juice a squill bulb..."
             call her_main("Or was it a dash of thyme first?", "open", "base", "worried", "R")
             call her_main("..............", "soft", "base", "base", "R")
-            call her_main("Oh, who cares?", "grin", "happyCl", "worried", "mid",emote="05")
+            call her_main("Oh, who cares?", "grin", "happyCl", "worried", "mid",emote="sweat")
             call her_main("", "base", "base", "base", "mid")
 
         elif one_of_ten == 9:
@@ -394,7 +394,7 @@ label chit_chat:
 
         elif one_of_ten == 4:
             call her_main("Jump and scream for the Gryffindor team!", "open", "closed", "base", "mid")
-            call her_main("So daring and bold, sporting red and gold!", "smile", "happyCl", "base", "mid",emote="06")
+            call her_main("So daring and bold, sporting red and gold!", "smile", "happyCl", "base", "mid",emote="happy")
             call her_main("", "base", "base", "base", "mid")
 
         elif one_of_ten == 5:
@@ -435,18 +435,18 @@ label chit_chat:
         elif one_of_ten == 2:
             call her_main("I am sorry to bother you with this, sir...", "open", "base", "base", "mid")
             her "But do you have any condoms?"
-            call her_main("Sadly the ones I've bought are already gone...", "annoyed", "happyCl", "worried", "mid",emote="05")
+            call her_main("Sadly the ones I've bought are already gone...", "annoyed", "happyCl", "worried", "mid",emote="sweat")
             call her_main("", "base", "base", "base", "R")
 
         elif one_of_ten == 3:
             call her_main("It's been getting so cold lately...", "open", "base", "base", "mid")
             call her_main("I hope it's going to start snowing soon...", "base", "base", "base", "mid")
-            call her_main("You will let me wear a coat at least right?", "angry", "happyCl", "worried", "mid",emote="05")
+            call her_main("You will let me wear a coat at least right?", "angry", "happyCl", "worried", "mid",emote="sweat")
             call her_main("", "base", "narrow", "base", "mid_soft")
 
         elif one_of_ten == 4:
             call her_main("Jump and scream for the Gryffindor team!", "open", "closed", "base", "mid")
-            call her_main("So daring and bold, sporting red and gold!", "smile", "happyCl", "base", "mid",emote="06")
+            call her_main("So daring and bold, sporting red and gold!", "smile", "happyCl", "base", "mid",emote="happy")
             call her_main("", "base", "base", "base", "mid")
 
         elif one_of_ten == 5:

@@ -90,7 +90,7 @@ label luna_favour_5:
         call her_main("[genie_name]... please...", "scream", "happyCl", "worried", "mid")
         m "I'm sorry [hermione_name], my hands are tied..."
         call her_main("...", "normal", "happyCl", "worried", "mid")
-        call her_main("Do I have to?", "angry", "happyCl", "worried", "mid",emote="05")
+        call her_main("Do I have to?", "angry", "happyCl", "worried", "mid",emote="sweat")
         call lun_main("Of course not... So long as you don't mind me telling your precious \"MRM\" what's been going on.","base","mad","mad","mid")
         call her_main("...", "mad", "base", "worried", "mid", tears="soft")
         call her_main("FINE!", "mad", "happyCl", "worried", "mid",tears="soft_blink")
@@ -401,7 +401,7 @@ label luna_favour_5:
         call her_main("Why on earth was Luna in here?", "annoyed", "narrow", "angry", "R")
         call her_main("how on earth does she know about me selling favours?", "angry", "base", "angry", "mid")
         if luna_addicted == True:
-            call her_main("And {size=+5}why on earth{/size} does she love the taste of your cum?", "angry", "base", "angry", "mid",emote="01")
+            call her_main("And {size=+5}why on earth{/size} does she love the taste of your cum?", "angry", "base", "angry", "mid",emote="angry")
         m "I can explain everything..."
         call her_main("Please do...", "annoyed", "narrow", "annoyed", "mid")
         m "do you remember how you yourself described Luna Lovegood as crazy?"
@@ -449,7 +449,7 @@ label luna_favour_5:
         m "I'm sure she'd be happy to spend some more time with you."
         call her_main("Do you think so sir? She seemed pretty mean today.", "open", "narrow", "worried", "down")
         m "She'll come around, just give it time."
-        call her_main("I hope so sir! A Ravenclaw study buddy would be great!", "smile", "happyCl", "base", "mid",emote="06")
+        call her_main("I hope so sir! A Ravenclaw study buddy would be great!", "smile", "happyCl", "base", "mid",emote="happy")
         m "(more like fuck buddy...)"
         call her_main("...", "base", "happyCl", "base", "mid")
 
@@ -587,7 +587,7 @@ label luna_favour_5:
         call lun_main("something wrong hermione?","normal","angry","angry","down")
         call her_main("no...","annoyed","narrow","worried","down")
         call lun_main("Good. maybe you should--","base","seductive","angry","down")
-        call her_main("You're doing it all wrong!","scream","base","angry","mid",emote="01")
+        call her_main("You're doing it all wrong!","scream","base","angry","mid",emote="angry")
         call lun_main("What?","normal","wide","base","down")
         call her_main("that's not how he likes it.","annoyed","narrow","angry","R")
         call lun_main("are you sure? He seems to be enjoying it to me...","upset","angry","angry","down")
@@ -599,7 +599,7 @@ label luna_favour_5:
 
         menu:
             "-Luna-":
-                call her_main("What!","angry","base","angry","mid",emote="01")
+                call her_main("What!","angry","base","angry","mid",emote="angry")
                 call her_main("That's ridiculous! I'm much better than her at giving handjobs!","annoyed","narrow","annoyed","mid")
                 call lun_main("It's about more than just jerking his cock hermione.","base","angry","base","mid")
                 call her_main("like what?","annoyed","narrow","angry","R")
@@ -773,7 +773,7 @@ label luna_favour_5:
         call her_main("Well then, let's go Luna, we still have got a little bit of free time before classes.", "smile", "base", "base", "R")
         call her_main("Perhaps we should visit the library.", "smile", "happyCl", "base", "R")
         call lun_main("You want to go there now?","normal","wide","angry","mid")
-        call her_main("No offence, but with your grades it's better to start early.", "grin", "happyCl", "worried", "mid",emote="05")
+        call her_main("No offence, but with your grades it's better to start early.", "grin", "happyCl", "worried", "mid",emote="sweat")
         call her_main("No time to waste. {heart}", "base", "happyCl", "worried", "mid")
         m "It's not going to impact our \"lessons\", I hope?"
         call her_main("of course not, [genie_name]...", "grin", "base", "base", "R")
@@ -842,7 +842,7 @@ label luna_favour_5:
         m "You seem cheerful."
         call her_main("why wouldn't I be? are we going to work on handjobs today?", "open", "base", "base", "R")
         call lun_main("just hurry up and get on your knees slut...","upset","seductive","angry","mid")
-        call her_main("someone's eager!", "smile", "happyCl", "base", "mid",emote="06")
+        call her_main("someone's eager!", "smile", "happyCl", "base", "mid",emote="happy")
         call lun_main("...","base","suspicious","angry","mid")
 
         show screen blkfade
@@ -1063,7 +1063,7 @@ label luna_favour_5:
                 m "So how have your recent study sessions been going?"
                 $ luna_l_arm = 2
                 call lun_main("they've been OK...","normal","suspicious","sad","R")
-                call her_main("stop being such a negative nancy, Luna. They have been amazing [genie_name]!", "smile", "happyCl", "base", "mid",emote="06")
+                call her_main("stop being such a negative nancy, Luna. They have been amazing [genie_name]!", "smile", "happyCl", "base", "mid",emote="happy")
                 call lun_main("...","normal","suspicious","sad","down")
                 call her_main("Luna quizzed me on advanced transmogrification spells, advanced potion recipes and even complex herbology!", "smile", "happyCl", "base", "mid")
                 call lun_main("I don't even thinks she needs quizzing, she got everything right...","upset","angry","angry","R")
@@ -1076,7 +1076,7 @@ label luna_favour_5:
 
                 if not luna_herm_talk:
                     $ luna_herm_talk = True
-                    call her_main("I can't wait to see what mark she gets when she has to do them!", "smile", "happyCl", "base", "mid",emote="06")
+                    call her_main("I can't wait to see what mark she gets when she has to do them!", "smile", "happyCl", "base", "mid",emote="happy")
                     call lun_main("I think you mean when {b}we{/b} have to do them...","normal","suspicious","angry","mid")
                     call her_main("Oh, I don't have to do my {i}O.W.L.{/i}s anymore...", "base", "happyCl", "base", "mid")
                     call lun_main("What? Why not?","normal","wide","sad","mid")
@@ -1084,12 +1084,12 @@ label luna_favour_5:
                     m "(I have no idea what she's talking about)"
                     m "Why don't you fill her in?"
                     call her_main("alright then...", "base", "narrow", "base", "mid_soft")
-                    call her_main("I already did my {i}O.W.L.{/i}s last year.", "grin", "happyCl", "worried", "mid",emote="05")
+                    call her_main("I already did my {i}O.W.L.{/i}s last year.", "grin", "happyCl", "worried", "mid",emote="sweat")
                     call lun_main("Really? How?","normal","angry","sad","mid")
                     call her_main("Well, I'd already been testing myself on past years' exams since I was a third year.", "grin", "happyCl", "worried", "mid")
                     call her_main("Last year I finally felt that I was ready for the real thing. So I spoke to Professor Dumbledore and Professor McGonagall.", "base", "base", "base", "R")
                     call her_main("I explained my situation and they agreed to test me early.", "base", "base", "base", "R")
-                    call her_main("I got the highest mark since Dumbledore himself took them!", "smile", "happyCl", "base", "mid",emote="06")
+                    call her_main("I got the highest mark since Dumbledore himself took them!", "smile", "happyCl", "base", "mid",emote="happy")
                     call lun_main("Wait... If you've already completed your {i}O.W.L.{/i}s, why are you still at school?","upset","suspicious","angry","mid")
                     call her_main("I didn't want to miss out on school work or spending time with my friends...", "base", "happyCl", "base", "mid")
                     call her_main("So I've just been doing additional study in the library after classes in exchange for a special recommendation from the school.", "smile", "happyCl", "base", "mid")

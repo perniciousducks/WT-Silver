@@ -432,7 +432,7 @@ label slytherin_match:
     pause .5
 
     call sna_main("The crowd is waiting, Miss Granger...", "snape_31")
-    call her_main("Sorry!", "clench", "happyCl", "worried", "mid", emote="05")
+    call her_main("Sorry!", "clench", "happyCl", "worried", "mid", emote="sweat")
 
     call her_chibi(flip=True)
     with d3
@@ -520,7 +520,7 @@ label slytherin_match:
     with d3
 
     $ renpy.sound.play("sounds/microphone_feedback.mp3")
-    call her_main("The team known for their thick skin... or should I say, thick skulls...", "angry", "base", "angry", "mid", emote="01")
+    call her_main("The team known for their thick skin... or should I say, thick skulls...", "angry", "base", "angry", "mid", emote="angry")
     call her_main("Team Slytherin!", "annoyed", "narrow", "angry", "mid")
 
     $ renpy.sound.play("sounds/crowd_stomping.mp3")

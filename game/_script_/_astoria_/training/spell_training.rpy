@@ -712,7 +712,7 @@ label ag_st_imperio_E3:
     call ast_main("Tomorrow, I shall have Susan walk through school - parading those ridiculous breasts of hers for all to see! That'll show her!","angry","narrow","angry","R")
     call ton_main("!!!", "upset", "wide", "shocked", "stare", hair="angry") # Very angry
     call ast_main("And then shove her into our common room - and all the boys will laugh at her cow udders!","annoyed","narrow","angry","R")
-    call ton_main("*Tzzzzz*!...", "upset", "closed", "annoyed", "mid", hair="angry", emote="01")
+    call ton_main("*Tzzzzz*!...", "upset", "closed", "annoyed", "mid", hair="angry", emote="angry")
     call ton_main("That's enough!","scream","base","angry","R", trans=hpunch)
 
     # Tonks returns to normal, and puts her clothes back on.
@@ -1059,7 +1059,7 @@ label ag_st_imperio_E4:
     pause.8
 
     call play_music("tonks")
-    call ton_main("Well, that was interesting...", "annoyed", "wide", "base", "downR", hair="neutral", xpos="mid", ypos="base", flip="False") #TODO For some reason she doesn't seem to turn to the left here like she should
+    call ton_main("Well, that was interesting...", "annoyed", "wide", "base", "downR", hair="neutral", xpos="mid", ypos="base", flip=False)
     m "Do you have any idea why she wanted to leave so abruptly?"
     call ton_main("I have a couple of theories, actually...", "soft", "closed", "base", "mid")
     m "*Mhmm*..."
@@ -1131,7 +1131,7 @@ label ag_st_imperio_E5:
     call ast_main("","smile","base","base","mid", xpos="base", ypos="base")
     call ton_main("Hi, Professor!","base","base","base","mid", xpos="right", ypos="base")
 
-    call ast_main("Hello!","smile","closed","base","mid", emote="06") # Happy
+    call ast_main("Hello!","smile","closed","base","mid", emote="happy") # Happy
     m "All cheered up today, Astoria?"
     call ast_main("Yes, Sir.","grin","base","base","mid")
     call ton_main("She should be. We made some real progress today.", "silly", "happyCl", "base", "mid")
@@ -1243,7 +1243,7 @@ label ag_st_imperio_E5:
     call ton_main("I don't like to wear them...","open","base","worried","ahegao")
     call ast_main("Why?!","open","narrow","angry","L") # angry
     call ton_main("I feel so much better without a bra on... or panties...","open","base","base","ahegao")
-    call ast_main("You're a teacher! This is disgusting!","clench","closed","angry","mid", emote="01")
+    call ast_main("You're a teacher! This is disgusting!","clench","closed","angry","mid", emote="angry")
     g4 "Dis-{w=0.8}gusting!"
     call ton_main("{heart} {heart} {heart}", "base", "base", "worried", "ahegao")
     call ast_main("I can't believe my teacher is such a slut!","angry","narrow","angry","L")
@@ -1360,7 +1360,7 @@ label ag_st_imperio_E5:
     call ast_main("","horny","base","angry","L")
     call ton_main("............","base","base","base","mid")
     call ast_main("She's really doing everything I tell her!","smile","base","angry","mid")
-    call ast_main("Look how easy it is, Professor!","smile","closed","base","mid", emote="03" ,trans=hpunch)
+    call ast_main("Look how easy it is, Professor!","smile","closed","base","mid", emote="hearts" ,trans=hpunch)
 
     call nar(">Astoria joyfully jumps up and down on the spot, making a happy squeal...")
     call hide_characters
@@ -1404,7 +1404,7 @@ label ag_st_imperio_E5:
     call ast_main("As long as I don't have to look at it...","angry","narrow","base","R")
     call ast_main("Professor Tonks, you can get under Professor Dumbledore's desk... and...","open","closed","base","mid")
     call ast_main("Do \"that\" thing...","angry","base","worried","mid")
-    call ton_main(".............","base","base","raised","mid", emote="03")
+    call ton_main(".............","base","base","raised","mid", emote="hearts")
 
     call hide_characters
     hide screen bld1
@@ -1443,7 +1443,7 @@ label ag_st_imperio_E5:
     pause.5
 
     call ast_main("*Huh*?!","annoyed","narrow","worried","L", xpos="mid", flip=True)
-    call ast_main("*Aaaaaaaaaah!!!*.......................","scream","base","base","L", emote="02", trans=hpunch) # Screams
+    call ast_main("*Aaaaaaaaaah!!!*.......................","scream","base","base","L", emote="shocked", trans=hpunch) # Screams
     hide screen astoria_main
     hide screen bld1
     with d3
@@ -1497,7 +1497,7 @@ label ag_st_imperio_E5:
     call ast_main("Oh no, I must have dropped it when you came in, Sir.","clench","closed","worried","mid")
     call sna_main("Well, pick it back up!","snape_32")
     call sna_main("A Slytherin takes better care of her equipment...","snape_10")
-    call ast_main("Yes. I'm sorry, Professor.","clench","closed","angry","mid", emote="05")
+    call ast_main("Yes. I'm sorry, Professor.","clench","closed","angry","mid", emote="sweat")
 
     call ast_walk(path=[(270, 290+180), (370,290+180), ("desk","base")])
     call ast_chibi("stand","desk","base", flip=False)

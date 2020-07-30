@@ -692,10 +692,10 @@ label hermione_change:
             call her_main("*tsk* ...", "soft", "narrow", "base", "R_soft")
             call her_main("", "normal", "narrow", "base", "R_soft")
         elif her_whoring >= 5 and her_whoring < 19:
-            call her_main("I can be a bit nerdy sometimes I suppose..", "angry", "happyCl", "base", "mid", emote="05")
+            call her_main("I can be a bit nerdy sometimes I suppose..", "angry", "happyCl", "base", "mid", emote="sweat")
             call her_main("", "base", "base", "base", "mid")
         elif her_whoring >= 19:
-            call her_main("I don't read as much as I used to anymore.", "grin", "narrow", "base", "R_soft", emote="05")
+            call her_main("I don't read as much as I used to anymore.", "grin", "narrow", "base", "R_soft", emote="sweat")
             call her_main("", "base", "narrow", "base", "mid_soft")
     elif temp_name == "Hottie":
         if her_whoring >=5 and her_whoring < 7:
@@ -770,7 +770,7 @@ label hermione_change:
         elif her_whoring >= 13:
             call her_main("Yes... My prince.","smile","happy")
             m "..."
-            call her_main("I-I mean, [genie_name].", "smile", "happyCl", "base", "mid", emote="05")
+            call her_main("I-I mean, [genie_name].", "smile", "happyCl", "base", "mid", emote="sweat")
             call her_main("", "base", "base", "base", "mid")
     elif temp_name == "Pet":
         if her_whoring >= 11 and her_whoring < 13:
@@ -808,9 +808,9 @@ label hermione_change:
             m "It'll just be between us..."
             call her_main("...", "disgust", "squint", "base", "mid")
             m "Nothing to add?"
-            call her_main("", "clench", "closed", "base", "mid", emote="01")
+            call her_main("", "clench", "closed", "base", "mid", emote="angry")
             m "So you'll let me call you that or not?"
-            call her_main("{size=+5}FINE!{/size}", "clench", "closed", "angry", "mid", emote="01")
+            call her_main("{size=+5}FINE!{/size}", "clench", "closed", "angry", "mid", emote="angry")
             m "..."
             call her_main("", "normal", "narrow", "angry", "R")
         elif her_whoring >= 17:
@@ -848,9 +848,9 @@ label hermione_change:
                     call her_main("I am glad we're on the same page on this one, [genie_name].", "open", "closed", "base", "mid")
                     call her_main("", "base", "closed", "base", "mid")
                     m "In fact, from this point forward you don't have to call me [genie_name] or exchange any favours..."
-                    call her_main("", "soft", "base", "base", "mid", emote="04")
+                    call her_main("", "soft", "base", "base", "mid", emote="confused")
                     m "Let's just void this whole... deal of yours shall we."
-                    call her_main("B-but, [genie_name]?!", "mad", "wide", "base", "mid", emote="02")
+                    call her_main("B-but, [genie_name]?!", "mad", "wide", "base", "mid", emote="shocked")
                     call her_main("", "mad", "wide", "base", "mid")
                     m "I must apologise {b}Miss Granger{/b}, I thought we had come to some kind of agreeable arrangement by now..."
                     call her_main("But I...", "mad", "wide", "worried", "stare")
@@ -866,7 +866,7 @@ label hermione_change:
                     m "..."
                     call her_main("Now please, [genie_name]... Let's just forget this conversation ever happened.", "disgust", "base", "worried", "mid")
                     m "Are you sure that's what you want, [temp_name]?"
-                    call her_main("... Yes.", "disgust", "narrow", "worried", "down", emote="05")
+                    call her_main("... Yes.", "disgust", "narrow", "worried", "down", emote="sweat")
                     m "\"This girl really is beyond redemption...\""
                     call her_main("", "base", "narrow", "worried", "down")
                 "-Threaten her-":

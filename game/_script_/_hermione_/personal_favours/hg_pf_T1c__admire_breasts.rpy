@@ -119,7 +119,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
 
     m "I will award Gryffindor {number=current_payout} whole house points if you remove your top."
     g9 "Isn't that a steal?"
-    call her_main("No it isn't!", "clench", "closed", "angry", "mid", emote="01")
+    call her_main("No it isn't!", "clench", "closed", "angry", "mid", emote="angry")
     m "Please?"
     if hermione.is_worn("bra"):
         m "You can keep your bra on for all I care..."
@@ -221,7 +221,7 @@ label hg_pf_admire_breasts_T1_intro_E2:
             call her_main("M-My-... my breasts?!", "angry", "base", "angry", "mid")
 
             # Hermione gets angry
-            call her_main("*Tztzzz*!...", "angry", "closed", "angry", "mid", emote="01")
+            call her_main("*Tztzzz*!...", "angry", "closed", "angry", "mid", emote="angry")
 
             call her_main("Good day, Sir.", "scream", "base", "angry", "mid")
 
@@ -318,7 +318,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
 
         "\"I will give you five points to see your tits.\"":
             call her_main("Five?!", "scream", "wide", "base", "mid")
-            call her_main("[genie_name], I am not going to expose myself for a meagre five points!", "angry", "base", "angry", "mid",emote="01")
+            call her_main("[genie_name], I am not going to expose myself for a meagre five points!", "angry", "base", "angry", "mid",emote="angry")
             m "Well, your tits sure aren't worth two hundred, [hermione_name]!"
             call her_main("(They aren't?)", "annoyed", "narrow", "worried", "down")
             call her_main("Maybe one hundred - then?", "annoyed", "narrow", "angry", "R")

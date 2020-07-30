@@ -2819,10 +2819,10 @@ label ball_ending_E2:
         dum_[1]"Miss Granger, I found this letter on my desk..."
         dum_[1]"It's addressed to you..."
         call her_main("A letter, sir?", "soft", "base", "base", "mid")
-        call her_main("Oh, of course! The one you wrote for me, sir.", "grin", "happyCl", "worried", "mid",emote="05")
+        call her_main("Oh, of course! The one you wrote for me, sir.", "grin", "happyCl", "worried", "mid",emote="sweat")
         dum_[1]"This letter is not from me, miss Granger."
         call her_main("It is not?", "annoyed", "squint", "base", "mid")
-        call her_main("Oh, I see...", "grin", "happyCl", "worried", "mid",emote="05")
+        call her_main("Oh, I see...", "grin", "happyCl", "worried", "mid",emote="sweat")
         call her_main("There is no need to be so shy about this, sir. It's alright.")
         dum_[1]"*ahem*... here it is."
         call her_main("Thank you, sir.", "base", "base", "base", "mid")
@@ -2865,7 +2865,7 @@ Farewell, my little [word_03].{/size}
         call her_main( "...........................................................................................................","disgust","wide","worried","shocked",cheeks="blush")
         dum_[1] "Well, now that I am back..."
         dum_[1] "I will be putting an end to all that \"favour selling business\", of course."
-        call her_main("", "scream", "base", "angry", "mid",emote="01")
+        call her_main("", "scream", "base", "angry", "mid",emote="angry")
         pause.1
         with hpunch
         call play_music("hermione")
@@ -2884,7 +2884,7 @@ Farewell, my little [word_03].{/size}
         call ctc
 
         dum_[3] "{size=+4}!!!{/size}"
-        call her_main("Or would you rather see my pussy, sir?", "scream", "base", "angry", "mid",emote="01")
+        call her_main("Or would you rather see my pussy, sir?", "scream", "base", "angry", "mid",emote="angry")
         call her_main("", "annoyed", "base", "angry", "mid")
 
         $ hermione.strip("bottom", "panties")
@@ -2894,7 +2894,7 @@ Farewell, my little [word_03].{/size}
         dum_[5] "{size=+7}*GHT*!!!{/size}"
         her "I am willing to do anything to get those points, sir!"
 
-        call her_main("And I mean {size=+9}ANYTHING!!!{/size}", "scream", "base", "angry", "mid",emote="01", trans=hpunch)
+        call her_main("And I mean {size=+9}ANYTHING!!!{/size}", "scream", "base", "angry", "mid",emote="angry", trans=hpunch)
         call her_walk("desk", "base", reduce=0.8)
         call blkfade
 

@@ -2,7 +2,7 @@
 
 ### Luna Lovegood ###
 
-label lun_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
+label lun_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=None, tears=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
 
     #Flip
     if flip == False:
@@ -15,8 +15,6 @@ label lun_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
         $ cheeks = "blank"
     if tears == None:
         $ tears = "blank"
-    if extra == None:
-        $ extra = "blank"
     if emote == None:
         $ emote = "blank"
 
@@ -38,7 +36,7 @@ label lun_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
         if pupils == None:
             call set_lun_face(pupils = face)
 
-    $ changeLuna(mouth, eye, brows, pupils, cheeks, tears, extra, emote)
+    $ changeLuna(mouth, eye, brows, pupils, cheeks, tears, emote)
 
     show screen luna_main
     show screen bld1
@@ -150,7 +148,6 @@ init python: ###Method Definition for new characters
                     pupils=None,
                     cheeks=None,
                     tears=None,
-                    extra=None,
                     emote=None):
 
         ### DEFINE GLOBAL VARIABLES ###
@@ -160,7 +157,6 @@ init python: ###Method Definition for new characters
         global luna_pupil
         global luna_cheeks
         global luna_tears
-        global luna_extra
         global luna_emote
 
         ### FACE CONTROL ###
@@ -176,7 +172,5 @@ init python: ###Method Definition for new characters
             luna_cheeks      = "characters/luna/face/extras/cheeks_"+str(cheeks)+".png"
         if tears is not None:
             luna_tears       = "characters/luna/face/extras/tears_"+str(tears)+".png"
-        if extra is not None:
-            luna_extra       = "characters/luna/face/extras/"+str(extra)+".png"
         if emote is not None:
-            luna_emote       = "characters/emotes/"+str(emote)+".png"
+            luna_emote       = "characters/luna/emotes/"+str(emote)+".png"

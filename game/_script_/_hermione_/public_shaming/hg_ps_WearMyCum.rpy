@@ -37,7 +37,7 @@ label hg_ps_cumslut_Scene_1:
     call her_main("What?!?", "shock", "wide", "base", "stare")
     call her_main("You can't be serious!", "angry", "base", "angry", "mid")
     call her_main("It's bad enough that I let you cum on me in private!", "annoyed", "narrow", "annoyed", "mid")
-    call her_main("But in public?", "angry", "narrow", "annoyed", "mid", emote="01")
+    call her_main("But in public?", "angry", "narrow", "annoyed", "mid", emote="angry")
     call her_main("I think I better leave...", "annoyed", "base", "angry", "mid")
     m "Wait, wait, wait."
     m "What about if nobody could see it?"
@@ -279,11 +279,11 @@ label hg_ps_cumslut_Scene_2:
     m "Or, you can keep jerking me off, wear my cum around the school and get no points."
     call her_main("NO POINTS?", "scream", "happyCl", "worried", "mid")
     m "None. You will make an old man very happy though."
-    call her_main("Can't you just pay me for wearing your cum?", "angry", "happyCl", "worried", "mid", emote="05")
+    call her_main("Can't you just pay me for wearing your cum?", "angry", "happyCl", "worried", "mid", emote="sweat")
     m "No."
     call nar(">You feel her hands tense around your cock.")
     call her_main("You're making me choose? Between getting eighty points for doing nothing.", "annoyed", "narrow", "annoyed", "mid")
-    call her_main("Or getting paid nothing for wearing your cum around the school.", "angry", "narrow", "annoyed", "mid", emote="01")
+    call her_main("Or getting paid nothing for wearing your cum around the school.", "angry", "narrow", "annoyed", "mid", emote="angry")
     m "Indeed I am [hermione_name]."
     call her_main("{size=-5}Okay...{/size}", "disgust", "narrow", "base", "down")
     m "Well hurry up [hermione_name], classes will start soon, best make your decision."
@@ -436,7 +436,7 @@ label hg_ps_cumslut_Scene_3:
     call her_main("Are you serious?", "shock", "wide", "base", "stare")
     call her_main("Can I?", "grin", "narrow", "annoyed", "up")
     m "Well--"
-    call her_main("I was going to ask you if I could, seeing as how it made you so happy last time, [genie_name].", "smile", "happyCl", "base", "mid",emote="06")
+    call her_main("I was going to ask you if I could, seeing as how it made you so happy last time, [genie_name].", "smile", "happyCl", "base", "mid",emote="happy")
     call her_main("I'll even do it for free if that would make you happier!", "base", "narrow", "base", "up")
     m "really?"
     m "Well let's get started then!"
@@ -589,7 +589,7 @@ label hg_ps_cumslut_complete_1:
     elif cum_location == 2:
         # Cum on skirt
         call her_main("...I did it [genie_name].", "normal", "happyCl", "worried", "mid",xpos="right",ypos="base")
-        call her_main("I kept your cum on me all day.", "angry", "happyCl", "worried", "mid",emote="05")
+        call her_main("I kept your cum on me all day.", "angry", "happyCl", "worried", "mid",emote="sweat")
 
         menu:
             "\"Fifty points to Gryffindor!\"":
@@ -622,7 +622,7 @@ label hg_ps_cumslut_complete_1:
                 $ her_mood += 5
                 call her_main("...", "annoyed", "narrow", "annoyed", "mid", tears="mascara_soft")
                 m "Well [hermione_name], you may leave now."
-                call her_main("*Hmmmphh*...", "angry", "narrow", "annoyed", "mid", emote="01",tears="mascara")
+                call her_main("*Hmmmphh*...", "angry", "narrow", "annoyed", "mid", emote="angry",tears="mascara")
 
             "\"Tell me about your day.\"":
                 $ her_mood += 10
@@ -631,7 +631,7 @@ label hg_ps_cumslut_complete_1:
                 with d5
                 call her_main("My day...", "normal", "happyCl", "worried", "mid",tears="mascara_soft_blink",xpos="base",ypos="base")
                 call her_main("This was the worst day of my life!", "scream", "happyCl", "worried", "mid",tears="mascara_soft_blink")
-                call her_main("I've never been so ashamed!", "angry", "happyCl", "worried", "mid",emote="05",tears="mascara_soft_blink")
+                call her_main("I've never been so ashamed!", "angry", "happyCl", "worried", "mid",emote="sweat",tears="mascara_soft_blink")
                 m "Did your friends treat you poorly?"
                 call her_main("No! That's the worst part!", "scream", "closed", "angry", "mid",tears="mascara_soft_blink")
                 call her_main("I expected to be an outcast, to sit by myself and not have Ginny or Luna talk to me.", "annoyed", "base", "worried", "R",tears="mascara_soft_blink")
@@ -690,7 +690,7 @@ label hg_ps_cumslut_complete_2:
     elif cum_location == 5:
         # Cum on shirt
         call her_main("...I did it, [genie_name].", "normal", "happyCl", "worried", "mid",xpos="right",ypos="base")
-        call her_main("I kept your cum on me all day.", "angry", "happyCl", "worried", "mid",emote="05")
+        call her_main("I kept your cum on me all day.", "angry", "happyCl", "worried", "mid",emote="sweat")
         menu:
             "\"Good Work!\"":
                 call her_main("Thank you [genie_name], will that be all?", "annoyed", "base", "worried", "R")
@@ -761,7 +761,7 @@ label hg_ps_cumslut_complete_3:
 
         ">Hermione returns to your office, her shirt still covered in cum."
         call her_main("...I did it [genie_name].", "open", "squint", "base", "mid")
-        call her_main("I kept your cum on me all day.", "grin", "happyCl", "worried", "mid",emote="05")
+        call her_main("I kept your cum on me all day.", "grin", "happyCl", "worried", "mid",emote="sweat")
 
         menu:
             "\"Good Work!\"":

@@ -18,7 +18,7 @@ label hg_pf_grope_breasts_T2:
 
     call her_main("??!", "base", "narrow", "base", "up", cheeks="blush")
     call play_music("playful_tension") #SEX THEME.
-    call her_main("[genie_name], what are you-?", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="05")
+    call her_main("[genie_name], what are you-?", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="sweat")
     call nar(">She tries to pull away again.")
     call nar(">You squeeze her tits like a vice.")
 
@@ -294,10 +294,10 @@ label hg_pf_grope_breasts_T4_clothed:
         "-Pull on them abruptly with force-":
             call nar(">You give Hermione's tits a sudden but firm pull...","start")
             with vpunch
-            call her_main("Ouch....", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="05")
+            call her_main("Ouch....", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="sweat")
             call nar(">You pull on her tits again. This time much stronger.","start")
             with vpunch
-            call her_main("Ouch! [genie_name], what are you trying to do...?", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="05")
+            call her_main("Ouch! [genie_name], what are you trying to do...?", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="sweat")
             call nar(">You jerk the girl down by her tits with all your strength...","start")
             with vpunch
             with vpunch

@@ -21,7 +21,6 @@ screen susan_main():
         add susan_mouth
         add susan_cheeks
         add susan_tears
-        add susan_extra
 
         if susan_wear_top and susan_wear_outfit:
             # Outfit

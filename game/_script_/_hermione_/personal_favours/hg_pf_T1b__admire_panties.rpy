@@ -141,15 +141,15 @@ label hg_pf_admire_panties_T1: # Call label
         "-Stare at her face-":
             ">You study Hermione's face--"
             ">Wondering what's going through her mind right now."
-            call her_main(".......................", "angry", "narrow", "annoyed", "mid", emote="01")
+            call her_main(".......................", "angry", "narrow", "annoyed", "mid", emote="angry")
 
         "-Stare at her panties-":
             ">That's a plain girlish underwear, nothing what an ordinary girl wouldn't wear..."
 
     if hg_pf_admire_panties.counter > 1: # Second time
-        call her_main(".......................", "angry", "narrow", "base", "R", emote="01")
+        call her_main(".......................", "angry", "narrow", "base", "R", emote="angry")
     else: # First time
-        call her_main(".......................", "angry", "narrow", "annoyed", "mid", emote="01")
+        call her_main(".......................", "angry", "narrow", "annoyed", "mid", emote="angry")
 
     call ctc
     return
@@ -215,7 +215,7 @@ label hg_pf_admire_panties_T2: # Call label
             call her_main("..............................", "soft", "base", "base", "mid")
             her "...........................?"
             call her_main("................................", "grin", "base", "base", "R")
-            call her_main("[genie_name], please... You are embarrassing me.", "grin", "happyCl", "worried", "mid",emote="05")
+            call her_main("[genie_name], please... You are embarrassing me.", "grin", "happyCl", "worried", "mid",emote="sweat")
     call ctc
     return
 

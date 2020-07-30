@@ -122,7 +122,7 @@ label hg_pf_admire_breasts_T2_touch: # Not a Call label
     m "This won't take long, just stand still."
     call her_main("[genie_name], I didn't agree to this!", "angry", "base", "angry", "mid", cheeks="blush")
     with hpunch
-    call her_main("You must unhand me now!!!", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
+    call her_main("You must unhand me now!!!", "scream", "base", "angry", "mid", cheeks="blush",emote="angry")
 
     # End Groping
     call blkfade
@@ -135,7 +135,7 @@ label hg_pf_admire_breasts_T2_touch: # Not a Call label
     m "Go ahead, [hermione_name]. You are not getting paid if you do..."
     call her_main("But I showed you my...", "angry", "happyCl", "worried", "mid", cheeks="blush")
     call her_main("And you touched me...", "angry", "base", "angry", "mid", cheeks="blush")
-    call her_main("And I am getting nothing in return?", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
+    call her_main("And I am getting nothing in return?", "scream", "base", "angry", "mid", cheeks="blush",emote="angry")
     m "You are dismissed, [hermione_name]..."
     call her_main("*Grr*..........", "angry", "happyCl", "worried", "mid", cheeks="blush")
     call her_main("{size=-5}(Burn in hell, you wretched old-{/size}", "angry", "happyCl", "worried", "mid", cheeks="blush")
@@ -222,7 +222,7 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
             $ her_mood += 35
 
             ">You start jerking your cock furiously!"
-            call her_main("No, [genie_name], stop!", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
+            call her_main("No, [genie_name], stop!", "scream", "base", "angry", "mid", cheeks="blush",emote="angry")
             ">You jerk it even faster!"
             call her_main("[genie_name], think I will be leaving now...", "annoyed", "narrow", "angry", "R", cheeks="blush")
             g4 "No, wait, I'm almost there!"
@@ -321,7 +321,7 @@ label hg_pf_admire_breasts_T3_touch:
     pause.8
 
     call her_main(".............", "soft", "base", "base", "R", cheeks="blush")
-    call her_main("Can I get paid now please?", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="05")
+    call her_main("Can I get paid now please?", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="sweat")
     m "Sure..."
 
     $ her_mood += 9
@@ -405,7 +405,7 @@ label hg_pf_admire_breasts_T3_masturbate:
 
 
 
-            call her_main("[genie_name], no, you promised!", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
+            call her_main("[genie_name], no, you promised!", "scream", "base", "angry", "mid", cheeks="blush",emote="angry")
             g4 "Oh, this is great, yes..."
 
             call her_chibi_scene("grope_tits_cum_done")
@@ -669,7 +669,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             $ hermione.set_cum(body="light")
 
             call bld
-            call her_main("[genie_name], I didn't mean that you can release your... semen on me, [genie_name]...", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="05")
+            call her_main("[genie_name], I didn't mean that you can release your... semen on me, [genie_name]...", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="sweat")
             g4 "Oh, this is great, yes..."
             call her_chibi_scene("grope_tits_cum_done")
             with d5
@@ -724,7 +724,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             call ctc
 
             call her_main("ah...{heart} It's so hot...{heart}", "shock", "happyCl", "worried", "mid")
-            call her_main("[genie_name], you promised...", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="05")
+            call her_main("[genie_name], you promised...", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="sweat")
             g4 "Oh, this is great, yes..."
 
             call her_chibi_scene("grope_tits_cum_done")

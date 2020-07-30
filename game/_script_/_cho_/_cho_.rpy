@@ -40,7 +40,7 @@ define cho_face = {
     }
 }
 
-label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
+label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=None, tears=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
     if renpy.predicting():
         cho "predict"
 
@@ -61,6 +61,7 @@ label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
             cho_ypos = int(sprite_pos["y"].get(ypos, ypos))
 
         cho.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
+        cho_emote = get_character_emote("cho", emote)
 
         if face:
             if not mouth:
@@ -120,14 +121,14 @@ screen cho_main():
     zorder cho_zorder
     sensitive False
 
-    if use_cho_head:
-        $ _xpos = sprite_pos["x"]["far_right"] if cho_flip == 1 else sprite_pos["x"]["far_left"]
-        $ _pos = (_xpos, cho_ypos)
-    else:
-        $ _pos = (cho_xpos, cho_ypos)
-
     default cho_img = apply_doll_transition(cho.get_image(), "cho_main", use_cho_head)
-    if cho_animation != None:
-        add cho_img xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom 0.5 at cho_animation
-    else:
-        add cho_img xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom 0.5
+    default cho_pos = get_character_pos("cho")
+    default properties = {"zoom": 0.5, "xzoom": cho_flip}
+
+    fixed:
+        pos cho_pos
+        at cho_animation
+
+        add cho_img properties properties
+        if cho_emote:
+            add cho_emote properties properties

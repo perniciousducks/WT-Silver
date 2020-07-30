@@ -62,7 +62,7 @@ label potion_scene_2_1_1:
             m "Just tell them that you are still developing. I'm sure that they're used to enormous breasts anyway, what's a few extra sizes."
             call her_main("...Fine. Just promise me that they won't get any bigger.", "upset", "closed", "base", "mid")
             m "I can't promise that, you're still in school. A lot of girls don't stop growing until they're thirty."
-            call her_main("You know what I mean [genie_name].", "scream", "base", "angry", "mid", emote="01")
+            call her_main("You know what I mean [genie_name].", "scream", "base", "angry", "mid", emote="angry")
             m "I'm afraid that I don't, [hermione_name], now you'd best hurry if you don't want to be late."
             call her_main("...Yes [genie_name].", "annoyed", "narrow", "annoyed", "mid")
 
@@ -113,7 +113,7 @@ label potion_scene_2_1_1:
     with vpunch
 
     call her_main("!!!", "angry", "wide", "base", "stare")
-    call her_main("You said that they wouldn't get any bigger! Now how would you explain this?!", "scream", "base", "angry", "mid",emote="01")
+    call her_main("You said that they wouldn't get any bigger! Now how would you explain this?!", "scream", "base", "angry", "mid",emote="angry")
     m "Don't worry about that [hermione_name], worry about earning your forty points."
     call her_main("Just hurry up.", "annoyed", "narrow", "annoyed", "mid")
     menu: # TODO Add titfuck writing here
@@ -199,7 +199,7 @@ label potion_scene_2_2:
     call her_chibi("stand","mid","base")
     pause.5
 
-    call her_main("Ahhh, that was good! So what was it?", "grin", "happyCl", "worried", "mid",emote="05")
+    call her_main("Ahhh, that was good! So what was it?", "grin", "happyCl", "worried", "mid",emote="sweat")
     m "The effects should be visible soon enough."
     call her_main("Well can you at least give me a hint?", "open", "base", "base", "mid")
     m "Let's just say that it's a redistribution of ass{w}ets." ###Added {w} instead of your ...

@@ -301,7 +301,7 @@ label hg_pr_blowjob_T6_E2:
     play sound "sounds/burp.mp3"
     call her_main("*Burp*!...", "shock", "happyCl", "worried", "mid", tears="mascara")
     call her_main("{i}Excuse moi{/i}.", "angry", "narrow", "base", "down", tears="mascara")
-    call her_main("He came so much I was barely able to swallow it all...", "scream", "base", "angry", "mid", emote="01", tears="mascara")
+    call her_main("He came so much I was barely able to swallow it all...", "scream", "base", "angry", "mid", emote="angry", tears="mascara")
     her "Bloody bastard!"
     call her_main("You think I could file a complaint, [genie_name]?", "angry", "base", "angry", "mid", cheeks="blush", tears="mascara")
     m "*Hmm*... I suppose..."
@@ -320,7 +320,7 @@ label hg_pr_blowjob_T6_E2:
     play sound "sounds/burp.mp3"
     call her_main("*Burp*!...", "shock", "wide", "base", "stare", tears="mascara")
     call her_main("Excuse me, [genie_name].", "angry", "narrow", "base", "down", tears="mascara")
-    call her_main("{size=-3}(He just kept on cumming... My stomach feels so full...){/size}", "angry", "happyCl", "worried", "mid", emote="05", tears="mascara")
+    call her_main("{size=-3}(He just kept on cumming... My stomach feels so full...){/size}", "angry", "happyCl", "worried", "mid", emote="sweat", tears="mascara")
     call her_main("Can I get my payment now, please?", "open", "base", "base", "mid", tears="mascara")
 
     jump end_hg_pr_blowjob

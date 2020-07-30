@@ -21,7 +21,7 @@ label hg_anal_sex_1:
     stop music fadeout 1.0
     call her_main("...........", "annoyed", "base", "worried", "R")
     m "Let's see..."
-    call her_main(".................", "angry", "happyCl", "worried", "mid",emote="05")
+    call her_main(".................", "angry", "happyCl", "worried", "mid",emote="sweat")
     m "*Hmm*..."
 
     call her_chibi_scene("sex_pause", trans=fade)
@@ -589,7 +589,7 @@ label hg_anal_sex_2:
     $ ccg1 = 13
     call her_main("I meant to say, would you marry a girl {size=+5}like{/size} me?", "angry", "narrow", "base", "down")
     $ ccg1 = 11
-    call her_main("I would never propose to a man with his cock in my ass, [genie_name]...", "angry", "happyCl", "worried", "mid",emote="05")
+    call her_main("I would never propose to a man with his cock in my ass, [genie_name]...", "angry", "happyCl", "worried", "mid",emote="sweat")
     m "Good. Because I don't think any man would be able to say {i}no{/i} then."
     $ ccg1 = 32
     call her_main("*Ah*{heart}...", "open", "closed", "base", "mid")

@@ -97,7 +97,7 @@ label hg_pf_handjob_T4_intro_E1:
     call her_main("[genie_name]!", "angry", "base", "angry", "mid")
     m "Just another favour. No big deal, right?"
     call her_main("......", "disgust", "narrow", "base", "mid_soft")
-    call her_main("{size=-7}I want a hundred house points for this...{/size}", "angry", "happyCl", "worried", "mid", emote="05")
+    call her_main("{size=-7}I want a hundred house points for this...{/size}", "angry", "happyCl", "worried", "mid", emote="sweat")
     m "*huh*? What was that?"
     call her_main("I want a hundred house points for this!!!", "scream", "happyCl", "worried", "mid")
     call her_main("", "clench", "happyCl", "worried", "mid")
@@ -112,14 +112,15 @@ label hg_pf_handjob_T4_intro_E1:
 
     menu:
         m "..."
-        "\"You will get fifteen house points.\"" if her_mood != 0:
+        "\"You will get fifteen house points.\"":
             $ her_mood += 7
             call her_main("For fifteen house points I suppose I could let you molest me a little, but that is all you'll be getting, [genie_name].", "annoyed", "narrow", "angry", "R")
             her "I will not stoop as low as to sell handjobs for fifteen house points."
             her "That is just insulting, [genie_name]."
+
             jump back_to_handjob_choices
 
-        "\"you will get forty-five house points.\"":
+        "\"You will get forty-five house points.\"":
             $ her_mood += 3
             call her_main(".....", "annoyed", "narrow", "angry", "R")
             call her_main("{number=current_payout} house points...?", "open", "narrow", "worried", "down")
@@ -129,14 +130,14 @@ label hg_pf_handjob_T4_intro_E1:
             m "Great!"
             pass
 
-        "\"you will get one hundred house points.\"":
+        "\"You will get one hundred house points.\"":
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             $ current_payout = 100
             call her_main("{number=current_payout} points?!", "scream", "wide", "base", "mid")
             her "This will definitely put Gryffindor in the lead!"
             m "Is that a \"yes\" then?"
             call her_main("Of course!", "smile", "happyCl", "base", "mid")
-            call her_main("If it will bring Gryffindor a hundred house points, I don't mind touching your... thing a little.", "smile", "happyCl", "base", "mid", emote="06")
+            call her_main("If it will bring Gryffindor a hundred house points, I don't mind touching your... thing a little.", "smile", "happyCl", "base", "mid", emote="happy")
             pass
 
     jump hg_pf_handjob_1
@@ -158,7 +159,7 @@ label hg_pf_handjob_T4_intro_E2:
     m "Oh, come on. For the honour of Gryffindor?"
     call her_main(".............", "angry", "base", "angry", "mid")
     g9 "Play with my cock for the honour of the Gryffindor, [hermione_name]!"
-    call her_main("Stop saying that, [genie_name]...", "scream", "base", "angry", "mid", emote="01")
+    call her_main("Stop saying that, [genie_name]...", "scream", "base", "angry", "mid", emote="angry")
     m "Come on [hermione_name], it's not like I'm asking you to do this for free."
     call her_main(".......", "annoyed", "narrow", "angry", "R")
 
@@ -242,7 +243,7 @@ label hg_pf_handjob_1:
 
     call bld
     m "Good. Now stroke it."
-    call her_main("Right...", "angry", "happyCl", "worried", "mid", emote="05")
+    call her_main("Right...", "angry", "happyCl", "worried", "mid", emote="sweat")
 
     call her_chibi_scene("hj", trans=d5)
     call ctc
@@ -251,19 +252,18 @@ label hg_pf_handjob_1:
     call bld
     g9 "Nice..."
 
-    if hg_pf_handjob.points == 0:
+    if hg_pf_handjob.counter == 1:
         call her_main("!!!", "shock", "wide", "base", "stare")
         call her_main("Are you about to finish, [genie_name]?!")
         m "About to finish?"
         m "Don't be ridiculous [hermione_name], we are just getting started."
-        call her_main("Oh...", "angry", "happyCl", "worried", "mid", emote="05")
+        call her_main("Oh...", "angry", "happyCl", "worried", "mid", emote="sweat")
         call her_main("......")
         call her_main("You will give me a warning though, won't you, [genie_name]?", "upset", "wink", "base", "mid")
-
     else:
-        call her_main("[genie_name]...?", "angry", "happyCl", "worried", "mid", emote="05")
+        call her_main("[genie_name]...?", "angry", "happyCl", "worried", "mid", emote="sweat")
         m "What is it?"
-        call her_main("Will you warn me before... *uhm*... you know...", "angry", "happyCl", "worried", "mid", emote="05")
+        call her_main("Will you warn me before... *uhm*... you know...", "angry", "happyCl", "worried", "mid", emote="sweat")
 
     $ d_flag_01 = False #If TRUE Genie promised to warn her.
 
@@ -488,29 +488,30 @@ label hg_pf_handjob_1:
             m "...What the fuck just happened?"
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
-            call her_main("I don't know... I suppose I just panicked...", "angry", "happyCl", "worried", "mid", emote="05")
+            call her_main("I don't know... I suppose I just panicked...", "angry", "happyCl", "worried", "mid", emote="sweat")
 
             if daytime:
                 if hermione.is_worn("top"):
-                    call her_main("My classes are about to start and I didn't want you to ruin my clothes, [genie_name]...", "angry", "happyCl", "worried", "mid", emote="05")
-                    m "So you'll go to classes like this now?"
+                    call her_main("My classes are about to start and I didn't want you to ruin my clothes, [genie_name]...", "angry", "happyCl", "worried", "mid", emote="sweat")
+                    m "So you'll go to classes, looking like this?"
                     m "With your top all sperm-soaked from the inside?"
                 else:
-                    call her_main("My classes are about to start and I didn't want you to ruin my face, [genie_name]...", "angry", "happyCl", "worried", "mid", emote="05")
-                    m "So you'll go to classes like this now?"
+                    call her_main("My classes are about to start and I didn't want you to ruin my face, [genie_name]...", "angry", "happyCl", "worried", "mid", emote="sweat")
+                    m "So you'll go to classes, looking like this?"
                     m "With your tits and chin all sperm-soaked?"
                 call her_main("What choice do I have?", "angry", "narrow", "base", "down")
                 call her_main("I can't just skip a class...")
             else:
-                call her_main("At this hour The Gryffindor common room will be full of people...", "angry", "happyCl", "worried", "mid", emote="05")
+                call her_main("At this hour The Gryffindor common room will be full of people...", "angry", "happyCl", "worried", "mid", emote="sweat")
                 call her_main("I didn't want to have to return there all covered in your... spunk, [genie_name].")
                 call her_main("Oh, it's getting pretty late...", "angry", "base", "base", "mid")
+                m "So you will go to your dorm, looking like this?"
+
                 if hermione.is_worn("top"):
-                    m "So you will go like this, instead?"
                     m "With your top all sperm-soaked from the inside?"
                 else:
-                    m "So you'll go to classes like this now?"
                     m "With your tits and chin all sperm-soaked?"
+
                 call her_main("What choice do I have?", "angry", "narrow", "base", "down")
 
             call ctc
@@ -632,7 +633,7 @@ label hg_pf_handjob_2:
         "\"What do you think of my cock?\"":
             call her_main("*huh*?", "open", "base", "base", "mid")
             call her_main("Oh, that's right...")
-            call her_main("I need to compliment your penis! I completely forgot about that!", "angry", "happyCl", "worried", "mid", emote="05")
+            call her_main("I need to compliment your penis! I completely forgot about that!", "angry", "happyCl", "worried", "mid", emote="sweat")
             m "Well, you don't have to--"
             call her_main("[genie_name], let me be honest with you...", "upset", "closed", "base", "mid")
             m "Yes?"
@@ -655,7 +656,7 @@ label hg_pf_handjob_2:
             m "OK, I think I've heard enough."
             call her_main("Too much?", "angry", "wink", "base", "mid")
             m "Yeah, just a bit."
-            call her_main("Sorry...", "angry", "happyCl", "worried", "mid", emote="05")
+            call her_main("Sorry...", "angry", "happyCl", "worried", "mid", emote="sweat")
             m "No biggie. Just keep on stroking it."
             call her_main(".................", "soft", "narrow", "annoyed", "up")
             call nar(">Hermione keeps on stroking your cock.","start")
@@ -703,7 +704,7 @@ label hg_pf_handjob_2:
             call her_main("Sort of... Well not really...")
             call her_main("I had a talk with the girls, and...", "angry", "wink", "base", "mid")
             m "About handjobs?"
-            call her_main("Among other things...", "smile", "happyCl", "base", "mid", emote="06")
+            call her_main("Among other things...", "smile", "happyCl", "base", "mid", emote="happy")
             m "So those girls of yours, they know a lot about such things?"
             call her_main("Actually, yes. I was surprised myself.", "shock", "wide", "base", "stare")
             call her_main("All sorts of weird sexual things seem to be happening lately in our school...", "grin", "base", "base", "R")
@@ -730,10 +731,10 @@ label hg_pf_handjob_2:
             with hpunch
             with kissiris
             g4 "Oh!!! By the great desert sands, yes!"
-            call her_main("Really? That good?", "smile", "happyCl", "base", "mid", emote="06")
+            call her_main("Really? That good?", "smile", "happyCl", "base", "mid", emote="happy")
             call her_main("What if I keep doing this but stick my finger here and press a little...", "base", "narrow", "worried", "down")
             g4 "[hermione_name], you are killing me!"
-            call her_main("Really? Really?!", "smile", "happyCl", "base", "mid", emote="06")
+            call her_main("Really? Really?!", "smile", "happyCl", "base", "mid", emote="happy")
             call her_main("This is actually quite fun!")
             call her_main("Err... I mean...", "angry", "wink", "base", "mid")
             call her_main("I am only doing this to help my house of course...")
@@ -764,7 +765,7 @@ label hg_pf_handjob_2_continue:
             $ her_mood += 11
             call her_main("I do not!", "angry", "base", "angry", "mid")
             m "I know. Just say it."
-            call her_main("My father? That's disgusting, [genie_name]!", "angry", "base", "angry", "mid", emote="01")
+            call her_main("My father? That's disgusting, [genie_name]!", "angry", "base", "angry", "mid", emote="angry")
             m "Humour me."
             call her_main("...........", "annoyed", "narrow", "annoyed", "mid")
             call her_main("Well...", "open", "narrow", "worried", "down")
@@ -792,7 +793,7 @@ label hg_pf_handjob_2_continue:
             m "*Uhm*, [hermione_name]?"
             call her_main("Yes?", "angry", "base", "base", "mid", tears="soft")
             m "You are not stroking my cock anymore..."
-            call her_main("Oh, I am sorry, [genie_name].", "grin", "happyCl", "worried", "mid", emote="05")
+            call her_main("Oh, I am sorry, [genie_name].", "grin", "happyCl", "worried", "mid", emote="sweat")
             call her_main("I got lost in thought...")
 
             call her_chibi_scene("hj", trans=d5)

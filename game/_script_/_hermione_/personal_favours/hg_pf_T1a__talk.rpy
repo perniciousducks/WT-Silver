@@ -299,7 +299,7 @@ label hg_pf_talk_T2:
         call her_main("This is disgusting! How could you!?", "scream", "happyCl", "worried", "mid")
         call her_main("[genie_name], you are the headmaster! You are supposed to set a good example!", "scream", "base", "angry", "mid")
         m "Hey, little Missy, are you going to judge me or do you want your points?"
-        call her_main("My points please, I believe I earned those.", "angry", "happyCl", "worried", "mid",emote="05")
+        call her_main("My points please, I believe I earned those.", "angry", "happyCl", "worried", "mid",emote="sweat")
         m "Yes, you did."
         call her_main("*Eww*... I feel so dirty now...", "angry", "base", "angry", "mid")
 

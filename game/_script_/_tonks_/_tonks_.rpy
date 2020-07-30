@@ -40,7 +40,7 @@ define ton_face = {
     }
 }
 
-label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, hair=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
+label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, hair=None, cheeks=None, tears=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
     if renpy.predicting():
         ton "predict"
 
@@ -87,6 +87,7 @@ label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, h
             tonks.get_equipped("hair").set_color(target_color)
 
         tonks.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
+        tonks_emote = get_character_emote("tonks", emote)
 
         if face:
             if not mouth:
@@ -148,14 +149,15 @@ screen tonks_main():
     zorder tonks_zorder
     sensitive False
 
-    if use_tonks_head:
-        $ _xpos = sprite_pos["x"]["far_right"] if tonks_flip == 1 else sprite_pos["x"]["far_left"]
-        $ _pos = (_xpos, tonks_ypos)
-    else:
-        $ _pos = (tonks_xpos, tonks_ypos)
-
+    # Get image and apply transition and set position
     default tonks_img = apply_doll_transition(tonks.get_image(), "tonks_main", use_tonks_head)
-    if tonks_animation != None:
-        add tonks_img pos _pos xzoom tonks_flip zoom 0.5 at tonks_animation
-    else:
-        add tonks_img pos _pos xzoom tonks_flip zoom 0.5
+    default tonks_pos = get_character_pos("tonks")
+    default properties = {"zoom": 0.5, "xzoom": tonks_flip}
+
+    fixed:
+        pos tonks_pos
+        at tonks_animation
+
+        add tonks_img properties properties
+        if tonks_emote:
+            add tonks_emote properties properties

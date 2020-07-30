@@ -206,7 +206,7 @@ label hg_pr_flash_T3_E1:
     call hg_pr_flash_intro
 
     call play_music("playful_tension") # Music
-    call her_main("*Ehm*... Not too well, actually...", "angry", "happyCl", "worried", "mid",emote="05")
+    call her_main("*Ehm*... Not too well, actually...", "angry", "happyCl", "worried", "mid",emote="sweat")
     her "................................"
     m "Just tell me what happened, [hermione_name]."
     call her_main("That is the thing, [genie_name]...", "open", "base", "base", "mid")
@@ -445,7 +445,7 @@ label hg_pr_flash_T5_E2:
     call her_main("*Ehm*...", "soft", "base", "base", "R")
     her "......."
     call play_music("hermione") # Music
-    call her_main("*Giggle*", "grin", "happyCl", "worried", "mid",emote="05")
+    call her_main("*Giggle*", "grin", "happyCl", "worried", "mid",emote="sweat")
     m "*Hmm*...?"
     call her_main("Then Ginny grabbed my breasts...", "smile", "base", "base", "R")
     her "And started to squeeze them..."
@@ -459,7 +459,7 @@ label hg_pr_flash_T5_E2:
     call her_main("And then me and Ginny, we licked his hot sperm off of our bodies...", "smile", "base", "angry", "mid")
     m ".............."
     m "Are you making this up, [hermione_name]?"
-    call her_main("...maybe.", "grin", "happyCl", "worried", "mid",emote="05")
+    call her_main("...maybe.", "grin", "happyCl", "worried", "mid",emote="sweat")
     call her_main("I just thought that you would like to hear something like that, [genie_name]...", "base", "narrow", "base", "mid_soft")
     m "What I would like to hear, [hermione_name], is the truth."
     call her_main("Even if it's incredibly dull, [genie_name]?", "open", "closed", "base", "mid")
@@ -487,7 +487,7 @@ label hg_pr_flash_T5_E3:
     call her_main("Then to that upperclassman from Hufflepuff...", "open", "base", "base", "mid")
     call her_main("Then there was this other boy from Ravenclaw.", "base", "base", "base", "mid")
     m "???"
-    call her_main("After that I flashed my tits to some Gryffindor underclassman by mistake...", "angry", "happyCl", "worried", "mid",emote="05")
+    call her_main("After that I flashed my tits to some Gryffindor underclassman by mistake...", "angry", "happyCl", "worried", "mid",emote="sweat")
     call her_main("No, wait...  the boy from Gryffindor was after that other boy...", "annoyed", "base", "worried", "R")
     m "How many boys did you flash your tits to today, [hermione_name]?"
     call her_main("Half a dozen or so?", "angry", "base", "base", "mid")

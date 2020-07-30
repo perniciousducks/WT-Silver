@@ -59,7 +59,7 @@ label ball_quest_E1:
             call her_main("...Might have led you to believe that I would be willing to...", "open", "squint", "angry", "mid", cheeks="blush")
             call her_main("...To let you have your way with me eventually, sir...", "disgust", "squint", "angry", "L_soft", cheeks="blush")
             m "Whaaa--...? I would never--"
-            call her_main("Please, let me finish, sir.", "scream", "base", "angry", "mid",emote="01", cheeks="blush")
+            call her_main("Please, let me finish, sir.", "scream", "base", "angry", "mid",emote="angry", cheeks="blush")
             m "Right..."
             call her_main("I know that you are a rather wise man yourself, sir.", "angry", "base", "angry", "mid", cheeks="blush")
             call her_main("So, please... understand this...", "disgust", "narrow", "base", "L_soft", cheeks="blush")

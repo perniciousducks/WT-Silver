@@ -75,7 +75,7 @@ label hg_ps_get_panties:
         call her_main("I hope nobody will notice that I have no underwear on today...", "annoyed", "base", "worried", "R")
         call her_main("Oh, and I will be back tonight to pick them up, [genie_name].", "open", "base", "base", "mid")
         m "Of course. Your panties will be right here on my desk, waiting for you..."
-        call her_main(".............", "angry", "happyCl", "worried", "mid",emote="05")
+        call her_main(".............", "angry", "happyCl", "worried", "mid",emote="sweat")
 
     else:
         label dev:
@@ -191,7 +191,7 @@ label hg_cum_on_panties_response:
 
                 call nar(">A tiny stream of cum trickles down her leg.")
                 call nar(">Hermione looks very uncomfortable.","end")
-                call her_main("......................", "angry", "happyCl", "worried", "mid",emote="05")
+                call her_main("......................", "angry", "happyCl", "worried", "mid",emote="sweat")
 
             "\"Well, suit yourself...\"":
                 pass
@@ -224,7 +224,7 @@ label hg_cum_on_panties_response:
         else:
             $ hermione.equip(her_panties_base1)
 
-        call her_main("(This feels funny...)", "angry", "happyCl", "worried", "mid",emote="05")
+        call her_main("(This feels funny...)", "angry", "happyCl", "worried", "mid",emote="sweat")
         call her_main("And my payment, [genie_name]?", "upset", "wink", "base", "mid")
 
 
@@ -410,7 +410,7 @@ label hg_ps_get_panties_complete:
                         call her_main("(But we need the points...)", "annoyed", "narrow", "angry", "R")
                         call her_main("Can I have my payment now please?", "disgust", "narrow", "base", "mid_soft")
                         m "What about your panties?"
-                        call her_main("Oh, them too of course...", "angry", "happyCl", "worried", "mid",emote="05")
+                        call her_main("Oh, them too of course...", "angry", "happyCl", "worried", "mid",emote="sweat")
                         if her_panties_soaked:
                             jump hg_cum_on_panties_response
 

@@ -286,7 +286,7 @@ label change_hair:
                     # call her_main("Let me go change.", "base", "narrow", "base", "mid_soft")
                 # else:
                     # call her_main("Dye my hair...", "angry", "base", "angry", "mid") #mad, angry
-                    # call her_main("Dye my hair Pink?... {w=0.9}Pink?!", "angry", "base", "angry", "mid",emote="01")
+                    # call her_main("Dye my hair Pink?... {w=0.9}Pink?!", "angry", "base", "angry", "mid",emote="angry")
                     # call her_main("I can't dye my hair pink, [genie_name]!", "scream", "happyCl", "worried", "mid")
                     # call her_main("(What does he think I am? Some cheap dress-up doll?)", "annoyed", "narrow", "angry", "R")
                     # call her_main("It's an ugly colour anyway.", "open", "closed", "base", "mid")

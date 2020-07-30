@@ -80,7 +80,6 @@ init python:
 
             cheeks = "" if self.args["cheeks"] in (None, "(No change)") else "cheeks=\"{}\", ".format(self.args["cheeks"])
             tears = "" if self.args["tears"] in (None, "(No change)") else "tears=\"{}\", ".format(self.args["tears"])
-            extra = "" if self.args["extra"] == None else "extra=\"{}\", ".format(self.args["extra"])
             emote = "" if self.args["emote"] == None else "emote=\"{}\", ".format(self.args["emote"])
             face = "" if self.args["face"] == None else "face=\"{}\", ".format(self.args["face"])
 
@@ -91,7 +90,7 @@ init python:
             trans = "" if self.args["trans"] == None else "trans={}, ".format(self.args["trans"])
             animation = "" if self.args["animation"] == False else "animation={}".format(self.args["animation"])
 
-            new = "call {}({}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{})".format(self.label, text, mouth, eyes, eyebrows, pupils, hair, cheeks, tears, extra, emote, face, xpos, ypos, flip, trans, animation)
+            new = "call {}({}{}{}{}{}{}{}{}{}{}{}{}{}{}{})".format(self.label, text, mouth, eyes, eyebrows, pupils, hair, cheeks, tears, emote, face, xpos, ypos, flip, trans, animation)
 
             new = new.replace(", )", ")")
             return new

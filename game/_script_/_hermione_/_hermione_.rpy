@@ -40,7 +40,7 @@ define her_face = {
     }
 }
 
-label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
+label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=None, tears=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
     if renpy.predicting():
         her "predict"
 
@@ -61,6 +61,7 @@ label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
             hermione_ypos = int(sprite_pos["y"].get(ypos, ypos))
 
         hermione.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
+        hermione_emote = get_character_emote("hermione", emote)
 
         if face:
             if not mouth:
@@ -119,17 +120,16 @@ screen hermione_main():
     zorder hermione_zorder
     sensitive False
 
-    if use_hermione_head:
-        $ _xpos = sprite_pos["x"]["far_right"] if hermione_flip == 1 else sprite_pos["x"]["far_left"]
-        $ _pos = (_xpos, hermione_ypos)
-    else:
-        $ _pos = (hermione_xpos, hermione_ypos)
-
+    # Get image and apply transition and set position
     default hermione_img = apply_doll_transition(hermione.get_image(), "hermione_main", use_hermione_head)
-    if hermione_animation != None:
-        #TODO Remove temporary plug image solution once the butt plug events have some kind of CG
-        add hermione_plug_img xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom 0.5 at hermione_animation
-        add hermione_img xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom 0.5 at hermione_animation
-    else:
-        add hermione_plug_img xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom 0.5
-        add hermione_img xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom 0.5
+    default hermione_pos = get_character_pos("hermione")
+    default properties = {"zoom": 0.5, "xzoom": hermione_flip}
+
+    fixed:
+        pos hermione_pos
+        at hermione_animation
+
+        add hermione_img properties properties
+        add hermione_plug_img properties properties # TODO: Remove after buttplug CGs are added
+        if hermione_emote:
+            add hermione_emote properties properties

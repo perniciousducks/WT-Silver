@@ -25,7 +25,6 @@ default susan_eyebrow = "characters/susan/face/brow/base.png"
 
 default susan_cheeks = "characters/susan/face/extras/cheeks_blank.png"
 default susan_tears  = "characters/susan/face/extras/tears_blank.png"
-default susan_extra  = "characters/susan/face/extras/blank.png"
 default susan_emote  = "characters/emotes/blank.png"
 
 # Hair
@@ -235,7 +234,6 @@ label reset_susan_clothing:
         "susan_eyebrow",
         "susan_cheeks",
         "susan_tears",
-        "susan_extra",
         "susan_emote",
 
         # Hair

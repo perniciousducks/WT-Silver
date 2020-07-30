@@ -37,7 +37,7 @@ label slut_scene: #Locked to her being your slut
     m "You won't. You'll have to embrace it."
     call her_main("What?", "angry", "base", "base", "mid",tears="soft")
     m "There's no coming back for a slut like this. Even if I leave you'll just find some other cock to please."
-    call her_main("Sir... please.", "angry", "happyCl", "worried", "mid",emote="05")
+    call her_main("Sir... please.", "angry", "happyCl", "worried", "mid",emote="sweat")
     m "Don't act like you don't already know this. You know that deep down you're a filthy slut."
     call her_main("I am not!", "scream", "happyCl", "worried", "mid")
     m "Suck my cock."
@@ -368,7 +368,7 @@ label slave_scene:
     m "When was the last time you even said no to me?"
     call her_main("Well, I...", "annoyed", "base", "worried", "R")
     m "Exactly, you've become my slave and you didn't even realise it."
-    call her_main("Just because I care about my house doesn't mean that--", "angry", "happyCl", "worried", "mid",emote="05")
+    call her_main("Just because I care about my house doesn't mean that--", "angry", "happyCl", "worried", "mid",emote="sweat")
     m "Please, when was the last time you even cared about getting your points?"
     m "You just want to please me. Those points are an excuse you tell yourself so you don't have to acknowledge what you are."
     m "Now be a good girl and bend over the desk."

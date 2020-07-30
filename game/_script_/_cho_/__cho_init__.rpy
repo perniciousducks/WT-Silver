@@ -3,6 +3,7 @@ default cho_xpos = 300
 default cho_ypos = 0
 default cho_zorder = 15
 default cho_flip = 1
+default cho_emote = None
 default cho_animation = None
 default use_cho_head = False
 

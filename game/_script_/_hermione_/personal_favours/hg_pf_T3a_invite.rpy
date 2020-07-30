@@ -110,9 +110,9 @@ label hg_pf_strip_T4_Snape:
     m "Yes. Are you in the mood for a little striptease?"
     call sna_main("Oh...?","snape_05")
     sna "Miss Granger here will be performing I assume?"
-    call her_main("..............", "angry", "happyCl", "worried", "mid", emote="05", xpos="mid", ypos="base")
+    call her_main("..............", "angry", "happyCl", "worried", "mid", emote="sweat", xpos="mid", ypos="base")
     m "Yes, our little minx is more than happy to take off her clothes for our entertainment."
-    call her_main("............", "angry", "happyCl", "worried", "mid", emote="05")
+    call her_main("............", "angry", "happyCl", "worried", "mid", emote="sweat")
     m "Aren't you [hermione_name]?"
     pause.5
 
@@ -123,7 +123,7 @@ label hg_pf_strip_T4_Snape:
     pause 1.5
 
     show screen snape_main
-    call her_main("Yes, [genie_name].", "angry", "happyCl", "worried", "mid", emote="05")
+    call her_main("Yes, [genie_name].", "angry", "happyCl", "worried", "mid", emote="sweat")
     m "Let's get started then!"
     hide screen hermione_main
     with d3
@@ -176,17 +176,17 @@ label hg_pf_strip_T4_Snape:
     call her_main("...................", "open", "narrow", "worried", "down")
     call sna_main("*Hmm*... You are being suspiciously quiet, Miss Granger.","snape_05")
     call her_main("{size=-4}(Oh no! Is he onto us?){/size}", "shock", "wide", "base", "stare")
-    call her_main("I'm just doing what the headmaster told me to, Professor Snape...", "grin", "happyCl", "worried", "mid", emote="05")
+    call her_main("I'm just doing what the headmaster told me to, Professor Snape...", "grin", "happyCl", "worried", "mid", emote="sweat")
     call sna_main("Aren't you going to lecture me on the \"corruption that is taking over Hogwarts\" like you do every other day during classes?","snape_03")
     m "Severus..."
     call sna_main("No Albus, I want to hear what little miss perfect has to say.","snape_03")
-    call her_main("I just want you to have a good time, Professor Snape...", "grin", "happyCl", "worried", "mid", emote="05")
+    call her_main("I just want you to have a good time, Professor Snape...", "grin", "happyCl", "worried", "mid", emote="sweat")
     call sna_main("Oh! It's \"Professor Snape\" now, is it?","snape_03")
     call sna_main("What happened to \"snape'o'doodle\" and \"Professor Snivellus\"??!","snape_10")
     g9 "{size=-5}({i}snape'o'doodle{/i}, heh... that's funny.){/size}"
-    call her_main(".............", "grin", "happyCl", "worried", "mid", emote="05")
+    call her_main(".............", "grin", "happyCl", "worried", "mid", emote="sweat")
     call sna_main("Yes, I know what are you calling me behind my back, you wretched girl!","snape_08")
-    call her_main("Well, maybe that's because you deserve it... {i}Snivellus{/i}!", "scream", "base", "angry", "mid", emote="01")
+    call her_main("Well, maybe that's because you deserve it... {i}Snivellus{/i}!", "scream", "base", "angry", "mid", emote="angry")
     call sna_main("{size=+2}What did you just say?!{/size}","snape_10")
     call sna_main("How dare you....?")
     call sna_main("Who do you think you are? You filthy mudbl--","snape_15")
@@ -261,7 +261,7 @@ label hg_pf_strip_T4_Snape:
             call her_main("That B-Bitc--", "shock", "wide", "base", "stare")
             g4 "And you,... stripper-whore!"
             g4 "Do what you are paid for and start stripping already!!!"
-            call her_main("......", "angry", "closed", "angry", "mid", emote="01")
+            call her_main("......", "angry", "closed", "angry", "mid", emote="angry")
             call sna_main(".............","snape_05")
             call her_main("...", "mad", "squint", "angry", "mid")
 
@@ -332,7 +332,7 @@ label hg_pf_strip_T4_Snape:
             call her_main("(What?!)", "shock", "wide", "base", "stare")
             call sna_main("Unsatisfactory...","snape_09")
             sna "Look at that pitiful thing. Tiny and skinny... That's a boy's butt."
-            call her_main("!!!!!!!!!!", "angry", "narrow", "annoyed", "mid", emote="01")
+            call her_main("!!!!!!!!!!", "angry", "narrow", "annoyed", "mid", emote="angry")
 
     if hermione.is_worn("bra"):
         m "Why don't you take off your bra now, [hermione_name]?"
@@ -488,7 +488,7 @@ label hg_pf_strip_T4_Snape_masturbate:
     call her_main("No! I refuse to dance with those things pointed at me!", "angry", "happyCl", "worried", "mid")
     call her_main("You need to put them away or the dance is over!")
     m "You aren't in any position to give us orders, [hermione_name]."
-    call her_main("that was not an order, [genie_name]. It was an ultimatum.", "clench", "base", "angry", "mid", emote="01")
+    call her_main("that was not an order, [genie_name]. It was an ultimatum.", "clench", "base", "angry", "mid", emote="angry")
 
     menu:
         m "..."
@@ -547,9 +547,9 @@ label hg_pf_strip_T4_Snape_masturbate:
     else: # Hermione IS ok with it.
         call her_main("Oh, right...", "shock", "wide", "base", "stare")
         call sna_main("What was that?","snape_05")
-        call her_main("Please don't mind what I just said...", "silly", "happyCl", "worried", "mid", emote="05")
+        call her_main("Please don't mind what I just said...", "silly", "happyCl", "worried", "mid", emote="sweat")
         call sna_main("*Hmm*...?","snape_05")
-        call her_main("I do not mind you touching yourself in front of me...", "silly", "happyCl", "worried", "mid", emote="05")
+        call her_main("I do not mind you touching yourself in front of me...", "silly", "happyCl", "worried", "mid", emote="sweat")
         call her_main("Yes, I do not mind it at all...")
         call her_main("I will just keep on dancing then...")
 
@@ -686,7 +686,7 @@ label hg_pf_strip_T4_Snape_masturbate:
         call her_main("{size=+5}WHAT?!!!{/size}", "shock", "wide", "base", "stare")
         call sna_main("Yes... Quite a few things could use some improvement actually.","snape_09")
         call play_music("chipper_doodle")
-        call her_main("I cannot believe this!", "clench", "base", "angry", "mid", emote="01")
+        call her_main("I cannot believe this!", "clench", "base", "angry", "mid", emote="angry")
         pause.5
 
         call hide_characters
@@ -758,6 +758,6 @@ label hg_pf_strip_T4_Snape_masturbate:
         show screen blkfade
         with d5
 
-        call her_main("...Can I get paid now, please?", "angry", "happyCl", "worried", "mid", emote="05", ypos="head")
+        call her_main("...Can I get paid now, please?", "angry", "happyCl", "worried", "mid", emote="sweat", ypos="head")
 
         jump end_hg_pf_strip

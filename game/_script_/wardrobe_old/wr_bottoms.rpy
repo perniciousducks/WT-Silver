@@ -524,7 +524,7 @@ label equip_bottom:
                 # else:
                     # if her_whoring < 5:
                         # call her_main("What?!...", "angry", "base", "angry", "mid")
-                        # call her_main("What?!... What is this?", "angry", "base", "angry", "mid",emote="01")
+                        # call her_main("What?!... What is this?", "angry", "base", "angry", "mid",emote="angry")
                         # m "I just said those are--"
                         # call her_main("[genie_name]!", "shock", "wide", "base", "stare")
                         # call her_main("You can't just hand underwear to your students!", "angry", "base", "worried", "mid")

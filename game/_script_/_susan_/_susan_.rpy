@@ -2,7 +2,7 @@
 
 ### Susan Bones ###
 
-label sus_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
+label sus_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=None, tears=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
 
     #Flip
     if flip == False:
@@ -15,8 +15,6 @@ label sus_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
         $ cheeks = "blank"
     if tears == None:
         $ tears = "blank"
-    if extra == None:
-        $ extra = "blank"
     if emote == None:
         $ emote = "blank"
 
@@ -63,7 +61,7 @@ label sus_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
         if pupils == None:
             call set_sus_face(pupils = face)
 
-    $ changeSusan(mouth, eye, brows, pupils, cheeks, tears, extra, emote)
+    $ changeSusan(mouth, eye, brows, pupils, cheeks, tears, emote)
 
     show screen susan_main
     show screen bld1
@@ -97,7 +95,6 @@ init python:
                         pupils=None,
                         cheeks=None,
                         tears=None,
-                        extra=None,
                         emote=None):
 
         ### GLOBAL VARIABLES ###
@@ -107,7 +104,6 @@ init python:
         global susan_pupil
         global susan_cheeks
         global susan_tears
-        global susan_extra
         global susan_emote
 
         ### FACE CONTROL ###
@@ -123,7 +119,5 @@ init python:
             susan_cheeks      = "characters/susan/face/extras/"+cheeks+".png"
         if tears is not None:
             susan_tears       = "characters/susan/face/extras/"+tears+".png"
-        if extra is not None:
-            susan_extra       = "characters/susan/face/extras/"+extra+".png"
         if emote is not None:
-            susan_emote       = "characters/emotes/"+str(emote)+".png"
+            susan_emote       = "characters/susan/emotes/"+str(emote)+".png"

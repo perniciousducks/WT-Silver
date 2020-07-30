@@ -779,7 +779,7 @@ label hermione_intro_E3:
             jump hermione_intro_E3.choices
 
     m "............"
-    call her_main("I'm sorry, professor, I'm probably just overreacting anyway...", "grin", "happyCl", "worried", "mid", emote="05")
+    call her_main("I'm sorry, professor, I'm probably just overreacting anyway...", "grin", "happyCl", "worried", "mid", emote="sweat")
     call her_main("But you must understand that my reputation is at stake here!", "open", "base", "base", "mid")
     call her_main("There's gotta be something wrong with the test...", "annoyed", "narrow", "angry", "R")
     her "And although the entire class might have failed, I probably still got the most points on the test..."
@@ -901,7 +901,7 @@ label hermione_intro_E5:
                                 m "Of course not, miss Granger."
                                 m "It was a test...{w=0.5} You passed. Good job."
                                 call her_main("What...?", "open", "base", "base", "mid")
-                                call her_main("Oh, of course. I'm so silly sometimes. Sorry about the yelling, sir.", "grin", "happyCl", "worried", "mid", emote="05")
+                                call her_main("Oh, of course. I'm so silly sometimes. Sorry about the yelling, sir.", "grin", "happyCl", "worried", "mid", emote="sweat")
                                 m "My offer is still valid. If you want me to then I can tutor you."
                                 call her_main("..............", "annoyed", "base", "worried", "R")
                             "\"Well, alright, alright...\"":
@@ -1066,10 +1066,10 @@ label hermione_intro_E6:
 
     menu:
         "\"You mean like a sexual favour?\"":
-            call her_main("*Ehm*... I'm not sure...", "angry", "wink", "worried", "mid", emote="05")
+            call her_main("*Ehm*... I'm not sure...", "angry", "wink", "worried", "mid", emote="sweat")
             her "The kind that would gain our house additional points..."
             call her_main("I could write an essay for you or...", "open", "base", "worried", "R")
-            call her_main("Or maybe clean your tower..?", "angry", "wink", "worried", "mid", emote="05")
+            call her_main("Or maybe clean your tower..?", "angry", "wink", "worried", "mid", emote="sweat")
             m "{size=-4}(Clean my tower? Heh... There's gotta be dirty joke in there somewhere...){/size}"
             m "Well, alright then, I think we can figure something out."
         "\"Well, if you insist...\"":
@@ -1129,7 +1129,7 @@ label hermione_intro_E6:
     call her_main("Em, alright...", xpos="mid", ypos="base", trans=fade)
 
     if current_favor == "show_tongue":
-        call her_main("M-my... tongue, sir?", "grin", "happyCl", "worried", "mid", emote="05")
+        call her_main("M-my... tongue, sir?", "grin", "happyCl", "worried", "mid", emote="sweat")
         m "Yes, girl. Open your mouth, and show me your tongue."
         call her_main("{size=-4}(What an odd request...){/size}", "annoyed", "narrow", "angry", "R")
         call her_main("*Ehm*... well, alright then...", "soft", "squint", "worried", "mid")
@@ -1208,7 +1208,7 @@ label hermione_intro_E6:
             "\"That's enough. Here are your points...\"":
                 jump hermione_intro_E6.end
     elif current_favor == "silly_face":
-        call her_main("A silly face then...", "grin", "happyCl", "worried", "mid", emote="05")
+        call her_main("A silly face then...", "grin", "happyCl", "worried", "mid", emote="sweat")
         her "Let's see..."
         label .silly_face_choices:
 
@@ -1304,7 +1304,7 @@ label hermione_intro_E6:
             m "{number=current_payout} points to the Gryffindor house."
         $ gryffindor += current_payout
 
-    call her_main(".....Yay!.......", "grin", "happyCl", "worried", "mid", emote="05")
+    call her_main(".....Yay!.......", "grin", "happyCl", "worried", "mid", emote="sweat")
     her "This was quite easy..."
     call her_main("Do you think you could buy some more favours from me in the future, professor?", "grin", "wink", "worried", "mid")
 

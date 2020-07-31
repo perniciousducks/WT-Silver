@@ -24,6 +24,8 @@ label cc_pf_blowjob:
     # End Event Jump
     label end_cc_pf_blowjob:
 
+    $ cho.set_cum(None)
+
     if cho_tier == 3:
         if cho_whoring < 12: # Points til 16
             $ cho_whoring += 1
@@ -479,9 +481,11 @@ label cc_pf_blowjob_1:
 
                             #Cho takes hand off penis and puts to her side
                             cho "And so sticky..." #blush
-                            #Adds cum on cho's Doll face when CG ends
 
                             $ camera.set(zoom=0.6, pos=(220, 180), t=5.0, pause=True)
+
+                            # Set cum on doll
+                            $ cho.set_cum(face="heavy", hair="light")
 
                         "-Cum on her tits-":
                             gen "Get back a little, quick!"
@@ -525,6 +529,8 @@ label cc_pf_blowjob_1:
 
                             $ camera.set(zoom=0.6, pos=(220, 180), t=5.0, pause=True)
                             #Cuts back to office screen  (sound of cloth etc as genie puts dick away and Cho moves)
+                            # Set cum on doll
+                            $ cho.set_cum(breasts="heavy")
 
                 "-Don't-":
                     $ warned_her = False
@@ -560,14 +566,14 @@ label cc_pf_blowjob_1:
 
                     $ camera.set(zoom=0.6, pos=(220, 180), t=5.0, pause=True)
 
-                    #Adds cum on cho's Doll face and tits when CG ends
                     #Cuts back to office screen (sound of cloth etc as genie puts dick away and Cho moves)
+                    # Set cum on doll
+                    $ cho.set_cum(face="heavy", hair="light", breasts="heavy")
 
     hide screen animatedCG
     with fade
 
     # After CG, in the office.
-    # TODO: cum layers
 
     if warned_her:
         m "Well done [cho_name], you've started pushing those limits on your own."
@@ -984,12 +990,15 @@ label cc_pf_blowjob_T3_E2:
                     cho "I got some in my eye!" #Big text
                     gen "*Ah*...{w=0.4} Why'd you pull back!"
 
+                    # Set cum on doll and strip her
+                    $ cho.set_cum(face="heavy", hair="light", breasts="heavy")
+                    $ cho.strip("robe", "top", "bra")
+
                     hide screen animatedCG
                     hide screen blkfade
                     with fade
 
                     #Office screen (Cho has cum on her face and tits)
-                    # TODO: Add Cho doll flip when at door etc, cum layers
 
                     call cho_main("\"House points\", really?!", "angry", "base", "angry", "mid", cheeks="blush", trans=d3)
                     call cho_main("You want me to swallow your semen for house points?!", "mad", "base", "angry", "mid", cheeks="blush")
@@ -1015,9 +1024,9 @@ label cc_pf_blowjob_T3_E2:
                     with d5
                     m "At least let m--"
 
+                    call cho_walk(action="leave")
                     $ renpy.play('sounds/door_down.mp3')
                     with hpunch
-                    call cho_walk(action="leave")
 
                     pause 1.0
                     m "..."
@@ -1031,7 +1040,8 @@ label cc_pf_blowjob_T3_E2:
                     m "Don't say I didn't try to--"
                     call cho_main("Shut... up!", "angry", "base", "angry", "mid", cheeks="blush", trans=d3)
                     $ renpy.sound.play("sounds/cloth_sound2.mp3")
-                    $ cho.wear("top")
+                    $ cho.wear("all")
+                    with fade
 
                     pause 1.0
                     call cho_walk("door", "base")
@@ -1111,7 +1121,9 @@ label cc_pf_blowjob_T3_E2:
                     cho "............"
                     gen "Now, get on your feet so I can have a look at you..."
 
-                    $ cho.strip("top", "bra", "robe")
+                    # Set cum on doll and strip her
+                    $ cho.set_cum(face="light")
+                    $ cho.strip("robe", "top", "bra")
 
                     hide screen animatedCG
                     with fade
@@ -1151,15 +1163,15 @@ label cc_pf_blowjob_T3_E2:
                     call cho_walk("mid", "base")
                     m "[cho_name]!"
 
-                    call cho_chibi("stand", "mid", "base", flip=False)
-                    with d5
+                    call cho_chibi("stand", "mid", "base", flip=False, trans=d3)
 
                     call cho_main("Yes [cho_genie_name]?", "open", "base", "raised", "mid")
                     m "Your top..."
                     call cho_main("Oh... Of course!", "clench", "happyCl", "base", "mid", cheeks="blush") #Blush
 
-                    $ cho.wear("top")
                     $ renpy.sound.play("sounds/cloth_sound2.mp3")
+                    $ cho.wear("all")
+                    with fade
 
                     call cho_main("...", "soft", "base", "base", "down", cheeks="blush") #Cho puts on top
                     call cho_main("Thank you, [cho_genie_name]...", "open", "base", "base", "downR", cheeks="blush")
@@ -1226,13 +1238,11 @@ label cc_pf_blowjob_T3_E2:
 
                     cho "I...{w=0.4} Thanks... I guess."
 
+                    # Strip doll (no cum necessary it seems)
                     $ cho.strip("top", "bra", "robe")
 
                     hide screen animatedCG
                     with fade
-
-                    # TODO: Add Cho doll flip when at door etc, cum layers
-                    #Cho still has some cum on her cheeks and tits but not a lot
 
                     g9 "Now this is the kind of initiative I'm talking about!"
                     call cho_main("...", "disgust", "narrow", "base", "down", cheeks="blush", trans=d3) #blank stare
@@ -1251,12 +1261,14 @@ label cc_pf_blowjob_T3_E2:
                     call cho_walk(action="enter")
                     with d5
 
-                    call cho_main("Yes [cho_genie_name]?", "soft", "base", "base", "mid", cheeks="blush")
+                    call cho_main("Yes [cho_genie_name]?", "soft", "base", "base", "mid", cheeks="blush", trans=d3)
                     m "..."
                     call cho_main("Oh, of course!", "clench", "base", "base", "down", cheeks="blush") #Wide eyed
+
                     #Cho puts on her shirt
-                    $ cho.wear("top")
                     $ renpy.sound.play("sounds/cloth_sound2.mp3")
+                    $ cho.wear("all")
+                    with fade
 
                     if daytime:
                         call cho_main("Bye then!", "open", "happyCl", "base", "downR", cheeks="blush")
@@ -1324,8 +1336,6 @@ label cc_pf_blowjob_T3_E2:
             hide screen blkfade
             with fade
 
-            # TODO: Add Cho doll flip when at door etc, cum layers
-
             #Cut to office screen #Cho has put on her top
             m "As I said, it's kind of expected from the whole blowjob thing..."
             call cho_main("You...{w=0.4} you're joking right?", "clench", "narrow", "angry", "mid", cheeks="blush", trans=d3)
@@ -1341,7 +1351,7 @@ label cc_pf_blowjob_T3_E2:
             m "You're dismissed [cho_name]."
             call cho_main("Good!", "annoyed", "base", "angry", "mid", cheeks="blush")
             call cho_walk("door", "base")
-            call cho_main("{size=-4}Seriously... just ask first...{/size}", "disgust", "base", "angry", "down", cheeks="heavy_blush") #Small text #Pout #Blush
+            call cho_main("{size=-4}Seriously... just ask first...{/size}", "disgust", "base", "angry", "down", cheeks="heavy_blush", flip=True, trans=d3) #Small text #Pout #Blush
 
             call cho_walk(action="leave")
 
@@ -1648,31 +1658,38 @@ label cc_pf_blowjob_T3_E3:
 
     $ camera.set(zoom=1.0, pos=(300, 400), t=5.0, pause=True)
 
+    # Set cum on doll and strip her
+    $ cho.set_cum(face="light")
+    $ cho.strip("robe", "top", "bra")
+
     hide screen animatedCG
     with fade
-    # TODO: remove shirt from doll
-
-    # TODO: Add Cho doll flip when at door etc, cum layers, Add clothes equip (marked further down)
 
     if cho_bj_choice in ("taste", "points"):
-        call cho_main("I...{w=0.4} I did it...{w=0.4} I swallowed your cum [cho_genie_name].", "base", "happyCl", "base", "mid", cheeks="blush")
+        call cho_main("I...{w=0.4} I did it...{w=0.4} I swallowed your cum [cho_genie_name].", "base", "happyCl", "base", "mid", cheeks="blush", trans=d3)
         m "As expected."
         m "But an improvement from last time nevertheless..."
         call cho_main("Thank you [cho_genie_name]...", "base", "narrow", "base", "down", cheeks="blush")
     elif cho_bj_choice == "swallow":
-        call cho_main("I...{w=0.4} I hope you liked it [cho_genie_name].", "base", "narrow", "base", "down", cheeks="blush")
+        call cho_main("I...{w=0.4} I hope you liked it [cho_genie_name].", "base", "narrow", "base", "down", cheeks="blush", trans=d3)
     else: # cho_bj_choice == throat - Using `else` as a fallback for degenerates that use cheats
-        call cho_main("I...{w=0.4} I did it...", "base", "narrow", "base", "down", cheeks="blush")
+        call cho_main("I...{w=0.4} I did it...", "base", "narrow", "base", "down", cheeks="blush", trans=d3)
         m "And without my help this time."
 
     call cho_main("Your...{w=0.4} Your cum...{w=0.4} was delicious [cho_genie_name]...", "soft", "closed", "base", "mid", cheeks="blush")
     g9 "That's right [cho_name]... and if you keep doing such a good job there's even more where that came from..."
     m "You can stop talking dirty now."
-    call cho_main("I wasn--... Yes [cho_genie_name]...", "open", "narrow", "base", "down", cheeks="heavy_blush") #blush, looking right
+    call cho_main("I wasn't--...", "open", "narrow", "base", "down", cheeks="heavy_blush") #blush, looking right
+    call cho_main("Yes, [cho_genie_name]...", "upset", "narrow", "base", "R", cheeks="heavy_blush")
     call cho_main("So... Is that all?", "soft", "narrow", "base", "R", cheeks="blush")
     m "For now..."
     call cho_main("Okay then...", "soft", "base", "base", "mid", cheeks="blush")
-    # TODO: Add shirt equip fade/sound
+
+    $ renpy.sound.play("sounds/cloth_sound2.mp3")
+    $ cho.wear("all")
+    $ cho.set_cum(None)
+    with fade
+
     if daytime:
         call cho_main("In that case I'll head back to class.", "open", "base", "base", "R", cheeks="blush")
     else:
@@ -1680,16 +1697,21 @@ label cc_pf_blowjob_T3_E3:
     m "Of course...{w=0.4} you better be ready for next time..."
     call cho_main("Next...{w=0.4} yes [cho_genie_name]...", "horny", "narrow", "base", "down", cheeks="blush")
     call cho_walk("door", "base")
-    call cho_main("(He's so commanding...)", "horny", "narrow", "base", "R", cheeks="heavy_blush") # horny
+    call cho_main("(He's so commanding...)", "horny", "narrow", "base", "R", cheeks="heavy_blush", flip=True, trans=d3) # horny
     call cho_main("(No wonder Hermione enjoys it so much...)", "horny", "closed", "base", "mid", cheeks="heavy_blush")
     m "[cho_name]."
 
     call cho_chibi("stand", "door", "base", flip=False)
-    with d5
+    call cho_main(flip=False, trans=d5)
 
     call cho_main("Yes... sorry!", "mad", "base", "base", "L", cheeks="heavy_blush") #Heavy Blush
     call cho_main("Bye then!", "soft", "happyCl", "base", "mid", cheeks="heavy_blush") #Heavy Blush
 
     call cho_walk(action="leave")
+
+    pause 1
+
+    m "Turns out I'm a better couch than I gave myself credit for."
+    g9 "Time for the next step!"
 
     jump end_cc_pf_blowjob

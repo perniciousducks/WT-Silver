@@ -24,15 +24,15 @@ default preferences.tutorials = True
 ################################################
 
 # Pre-Release related flags and variables
-define is_release = True
+define is_release = False
 define _experimental = "" if is_release else " EXPERIMENTAL"
 define config.autoreload = False
 define config.debug = not is_release
 define config.developer = "auto"
 
 # Game version and naming
-define config.version = "1.385"
-define compatible_version = 1.38
+define config.version = "1.39"
+define compatible_version = 1.39
 define title_version = config.version if len(config.version) < 5 else (config.version[:4] + "." + config.version[4:6])
 define config.name = "WT Silver{}".format(_experimental)
 define config.window_title = "Witch Trainer (Silver) {}{}".format(title_version, _experimental)

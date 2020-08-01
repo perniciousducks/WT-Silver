@@ -1711,7 +1711,7 @@ label cc_pf_blowjob_T3_E3:
 
     pause 1
 
-    m "Turns out I'm a better couch than I gave myself credit for."
+    m "Turns out I'm a better coach than I gave myself credit for."
     g9 "Time for the next step!"
 
     jump end_cc_pf_blowjob

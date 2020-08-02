@@ -1163,9 +1163,9 @@ label cc_pf_blowjob_T3_E2:
                     call cho_walk("mid", "base")
                     m "[cho_name]!"
 
-                    call cho_chibi("stand", "mid", "base", flip=False, trans=d3)
+                    call cho_chibi("stand", "mid", "base", flip=False)
 
-                    call cho_main("Yes [cho_genie_name]?", "open", "base", "raised", "mid")
+                    call cho_main("Yes [cho_genie_name]?", "open", "base", "raised", "mid", trans=d3)
                     m "Your top..."
                     call cho_main("Oh... Of course!", "clench", "happyCl", "base", "mid", cheeks="blush") #Blush
 

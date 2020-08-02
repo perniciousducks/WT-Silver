@@ -283,7 +283,7 @@ label get_package:
             renpy.block_rollback()
             if len(gift_list) == 1:
                 if gift_list[0][2] == 1:
-                    renpy.call("give_reward","You have received a "+gift_list[0][0]+".", gift_list[0][1])
+                    renpy.call("give_reward","You have received "+gift_list[0][0]+".", gift_list[0][1])
                 else:
                     renpy.call("give_reward","You have received "+str(gift_list[0][2])+" pieces of "+gift_list[0][0]+".", gift_list[0][1])
             else:

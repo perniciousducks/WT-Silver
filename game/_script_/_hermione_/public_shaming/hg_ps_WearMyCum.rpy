@@ -713,7 +713,7 @@ label hg_ps_cumslut_complete_2:
     else:
         # Cum on face
         call her_main("...I did it, [genie_name].", "annoyed", "narrow", "base", "dead",tears="mascara",xpos="right",ypos="base")
-        call her_main("I kept your cum on me {p}all day.", "annoyed", "narrow", "base", "dead",tears="mascara")
+        call her_main("I kept your cum on me...{w=0.8} all day.", "annoyed", "narrow", "base", "dead",tears="mascara")
         menu:
             "\"Good Work!\"":
                 call her_main("...", "annoyed", "narrow", "base", "dead",tears="mascara")

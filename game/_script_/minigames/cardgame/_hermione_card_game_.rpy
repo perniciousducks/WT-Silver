@@ -164,7 +164,7 @@ label hermione_third_duel:
     hide screen genie_vs_hermione
     hide screen genie_vs_hermione_smile
     play music "music/vs_hermione.mp3"
-    
+
     $ renpy.call_in_new_context("start_duel", her_third_deck, her_after)
 
     if duel_response == "Close":
@@ -262,7 +262,7 @@ label hermione_random_duel:
     call her_main("I noticed...", "normal", "base", "worried", "R")
     m "You do know what this means, don't you?"
     call her_main("...", "normal", "base", "worried", "mid")
-    g9 "This means I'm going to have to deduct twenty points from Gryffindor house."
+    g9 "This means I'm going to have to deduct twenty points from the Gryffindor house."
     call her_main("Please, don't. I don't want the others to wake up tomorrow wondering why there's twenty house points missing...", "open", "happyCl", "worried", "mid")
     m "Well, in that case..."
 

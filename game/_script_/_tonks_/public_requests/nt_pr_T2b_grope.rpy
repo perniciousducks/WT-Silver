@@ -99,7 +99,7 @@ label nt_pr_grope_T1_E1: # Tier 1 - Event 1 - Slytherin boy
     call ton_main("Saying I was lucky he didn't \"report me\" for making him pull down his pants...", "mad", "base", "angry", "mid")
     call ton_main("It was all empty words, of course...","open","closed","base","mid")
     call ton_main("And I could tell by the {b}bulge{/b} in his pants that he {b}wanted{/b} to be there - more than anything.","horny","base","angry","mid")
-    call ton_main("Still, I let him act tough...just so he wouldn't run away...","open","base","base","L")
+    call ton_main("Still, I let him act tough... just so he wouldn't run away...","open","base","base","L")
     m "So? How did you manage to get him to grab a handful?"
     call ton_main("I let him know today wasn't a \"punishment.\"","base","base","angry","mid")
     call ton_main("Asked what kept him distracted in class...","open","base","base","R")
@@ -163,7 +163,7 @@ label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     m "So, how are you finding the education industry?"
     call ton_main("Fun!", "silly", "happyCl", "base", "mid")
     call ton_main("I never thought lesson planning and marking tests would actually be enjoyable, but there's something rather cathartic to it...","open","base","base","mid")
-    m "And your...other tasks?"
+    m "And your... other tasks?"
     call ton_main("Oh, of course messing around with our students is a nice bonus!","horny","base","base","mid")
     m "Speaking of..."
     call ton_main("Don't worry, I've got a story for you, old man.","base","base","angry","mid")
@@ -171,8 +171,8 @@ label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     m "Maybe, but go on..."
     call ton_main("He stayed behind after class today...","base","base","base","mid")
     m "He asked you to buy a favour from him?"
-    call ton_main("No,...he's too shy. He wouldn't have the courage to do that...","open","base","worried","down")
-    call ton_main("He just - sort of - stayed in his seat after class...while looking down at his desk.","open","base","worried","mid")
+    call ton_main("No,... he's too shy. He wouldn't have the courage to do that...","open","base","worried","down")
+    call ton_main("He just - sort of - stayed in his seat after class... while looking down at his desk.","open","base","worried","mid")
     call ton_main("I waited until every other student had left, and then locked the door...","open","closed","base","mid")
     g9 "Who wouldn't want to be locked-up together with you!"
     call ton_main("It's more to keep the other students out...", "mad", "base", "worried", "R")
@@ -183,7 +183,7 @@ label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     call ton_main("Those poor Ravenclaws sure do care about school!", "silly", "happyCl", "base", "mid")
     call ton_main("I made sure to let him know he was forgiven...","base","base","base","mid")
     m "How very wholesome of you..."
-    call ton_main("However,...after this was done, he didn't give any inclination he wanted to get up from his seat...","open","closed","base","mid")
+    call ton_main("However,... after this was done, he didn't give any inclination he wanted to get up from his seat...","open","closed","base","mid")
     call ton_main("So, I figured he wanted to fool around again...","base","base","angry","mid")
     call ton_main("And boy was I right!","horny","base","base","ahegao")
     call ton_main("His face lit right up, when I asked if he wanted to buy another favour...","base","base","base","mid")
@@ -205,8 +205,8 @@ label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     m "Sounds like heaven..."
     call ton_main("It was pretty cute if you ask me.","base","happyCl","base","mid")
     m "How long did this \"hug\" last exactly?"
-    call ton_main("*Pfff*... Five...maybe ten minutes...","upset","base","angry","up")
-    call ton_main("Eventually, it all got a bit too much...and he broke-off the hug...","open","base","base","R")
+    call ton_main("*Pfff*... Five... maybe ten minutes...","upset","base","angry","up")
+    call ton_main("Eventually, it all got a bit too much... and he broke-off the hug...","open","base","base","R")
     call ton_main("Stammered a thanks, and ran off.", "mad", "base", "worried", "down")
     m "Did you even get to reward any points?"
     call ton_main("I did, even if he wasn't there to hear it...","base","happyCl","base","mid")
@@ -245,7 +245,7 @@ label nt_pr_grope_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys
     m "I think I noticed a few extra points for Gryffindor today..."
     m "Does that mean what I think it does?"
     call ton_main("Perhaps...","base","base","base","mid")
-    m "So,...you let one of Granger's friends cop a feel?"
+    m "So,... you let one of Granger's friends cop a feel?"
     call ton_main("Kind of...","upset","base","base","R")
     call ton_main("It might have been \"two boys\" today...","open","base","base","R")
     m "Nice, selling two favours in one day should get the word around..."
@@ -264,13 +264,13 @@ label nt_pr_grope_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys
     call ton_main("I don't think I would have been able to stop them at all if I didn't...","open","closed","base","mid")
     call ton_main("Or myself, for that matter...","upset","base","base","ahegao")
     call ton_main("Not that it would have been the worst-thing-in-the-world to let them touch my tits directly...","open","base","base","R")
-    call ton_main("Anyhow, I offered them some house points for it,...but to my surprise they both kindly refused...","open","closed","base","mid")
+    call ton_main("Anyhow, I offered them some house points for it,... but to my surprise they both kindly refused...","open","closed","base","mid")
     call ton_main("Said they'd much rather have a go-at-it again...","base","base","angry","mid")
     m "Think they'll spread the word this time?"
     call ton_main("They were both pitching a pretty-big-tent when they left class... that was noticeable to say the least...", "silly", "happyCl", "base", "mid")
     m "Very good, [tonks_name], very good..."
     call ton_main("Thank you, sir.","base","happyCl","base","mid")
-    call ton_main("Now, if you don't mind,...I think I better head to my room for some...{w} \"unwinding\"...", "mad", "base", "worried", "R")
+    call ton_main("Now, if you don't mind,... I think I better head to my room for some...{w} \"unwinding\"...", "mad", "base", "worried", "R")
     m "Have a good night then..."
     call ton_main("Night, [ton_genie_name]!", "silly", "happyCl", "base", "mid")
 
@@ -341,7 +341,7 @@ label nt_pr_grope_T1_E4: # Tier 1 - Event 4 - Slytherin girl
     call ton_main("Couple that with her being a stubborn Slytherin...","open","base","base","R")
     call ton_main("She's a whole mix of confused emotions... but she'll figure it out.","base","base","base","mid")
     m "Let's hope this isn't a hopeless cause..."
-    call ton_main("Don't be silly,...she's perfect!{w} Just the way I like them.","horny","base","base","ahegao")
+    call ton_main("Don't be silly,... she's perfect!{w} Just the way I like them.","horny","base","base","ahegao")
     m "........................"
     m "Well, keep me informed... That should be all for now..."
     call ton_main("Yes, [ton_genie_name]!","base","base","base","mid")

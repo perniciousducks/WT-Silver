@@ -34,7 +34,7 @@ label hg_pr_flirt:
         call her_main("But why Slytherin?", "open", "base", "worried", "mid")
         her "If you need me to be flirtatious today, I think I can manage that..."
         her "But, please, can't it be another house?"
-        call her_main("The Gryffindor maybe?", "upset", "wink", "base", "mid")
+        call her_main("Gryffindor maybe?", "upset", "wink", "base", "mid")
         m "I am only trying to protect your reputation, [hermione_name]."
         call her_main("[genie_name]?", "soft", "base", "base", "mid")
         m "Do you value the opinion the Slytherin students have of you?"
@@ -50,27 +50,27 @@ label hg_pr_flirt:
             her "I'll see what I can do, [genie_name]."
             m "Great. I'll be expecting your report today after classes."
         elif her_tier >= 2:
-            m "I need you to go make some new friends at Slytherin house."
+            m "I need you to go make some new friends at the Slytherin house."
             her "You mean you need me to flirt with the Slytherin boys again [genie_name]?"
             call her_main("Fine.", "upset", "base", "angry", "R")
             call her_main("If I have to, [genie_name]...", "normal", "squint", "angry", "mid")
         else:
             if hg_pr_flirt.counter == 1:
-                m "I need you to go make some new friends at Slytherin house."
+                m "I need you to go make some new friends at the Slytherin house."
                 her "You mean you need me to flirt with the Slytherin boys again [genie_name]?"
                 m "That's exactly what I need you to do today, [hermione_name]."
                 m "Just do it properly this time."
                 call her_main("Must I really do this [genie_name]?", "open", "base", "base", "mid")
                 m "We have been through this, [hermione_name]."
-                m "Going to the Slytherin boys is in your best interests."
+                m "Going to the Slytherin boys is in your best interest."
                 call her_main("Yes, I know, [genie_name].", "open", "closed", "angry", "mid")
                 her "But why must I do this at all?"
                 m "Nobody is forcing you, [hermione_name]..."
                 call her_main("You don't need to remind me of that, [genie_name]...", "angry", "base", "angry", "mid")
                 call her_main("Alright if I must... [genie_name]...", "normal", "squint", "angry", "mid")
             else:
-                m "I need you to go make some new friends at Slytherin house."
-                her "You mean you need me to flirt with the Slytherin boys again [genie_name]?"
+                m "I need you to go make some new friends at the Slytherin house."
+                her "You mean you need me to flirt with the Slytherin boys again, [genie_name]?"
                 call her_main("Must I really do this [genie_name]?", "upset", "base", "worried", "mid")
                 m "This again?"
                 call her_main("Fine.............", "upset", "base", "angry", "R")
@@ -157,7 +157,7 @@ label hg_pr_flirt_T1_E1:
     her "So... I went to him and I said \"Hey, handsome!\"."
     m "And?"
     call play_music("hermione") # Music
-    call her_main("He showed me his tongue and ran off, [genie_name].", "normal", "squint", "angry", "mid")
+    call her_main("He stuck out his tongue and ran off, [genie_name].", "normal", "squint", "angry", "mid")
     m "Did you try to lure him in with a lollipop?"
     call her_main("I did not, [genie_name]...", "open", "base", "worried", "R")
     her "The thought never crossed my mind, but--"
@@ -207,13 +207,13 @@ label hg_pr_flirt_T1_E2:
     her "He was obviously struggling with a problem..."
     her "So I offered my help..."
     m "And?"
-    call her_main("He called me a \"Patronizing Gryffindor Whore\", [genie_name]...", "angry", "base", "angry", "mid", emote="angry")
+    call her_main("He called me a \"Patronising Gryffindor Whore\", [genie_name]...", "angry", "base", "angry", "mid", emote="angry")
     m "Did you threaten to report him as well?"
     call her_main("Of course, [genie_name].", "open", "closed", "angry", "mid")
     m "*sigh*"
     m "Anything else?"
     call her_main("Well, there was one more incident but the outcome was pretty much the same...", "annoyed", "squint", "angry", "mid")
-    m "\"The Gryffindor whore\"?"
+    m "\"Gryffindor whore\"?"
     call her_main(".........yes, [genie_name].", "disgust", "narrow", "base", "mid_soft")
     m "You are doing it all wrong, [hermione_name]."
     call her_main("I am sorry, [genie_name]. I thought this would be easy...", "annoyed", "narrow", "angry", "R")

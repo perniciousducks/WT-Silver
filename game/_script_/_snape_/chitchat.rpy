@@ -394,7 +394,7 @@ label snape_chitchat:
             call sna_main("","snape_23")
 
         elif one_of_ten == 9:
-            call sna_main("This one girl confessed to me that she has frequent fantasises about being abused by that squib mr.Filch.","snape_19")
+            call sna_main("This one girl confessed to me that she has frequent fantasises about being abused by that squib misterFilch.","snape_19")
             call sna_main("I think I could arrange that. Should I?","snape_14")
             call sna_main("","snape_02")
 

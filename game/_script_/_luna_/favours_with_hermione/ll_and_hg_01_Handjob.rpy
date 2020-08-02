@@ -200,7 +200,7 @@ label luna_favour_5:
         call lun_main("do you know what sort of student that is hermione?","base","angry","sad","mid")
         call her_main("ah...{heart} a...","soft","happy","base","R")
         call lun_main("*Mhmmm*, go on...","base","seductive","angry","down")
-        call her_main("ah... {p}a slut...{heart}","open","base","base","R")
+        call her_main("ah...{w} a slut...{heart}","open","base","base","R")
         call lun_main("good girl...","base","seductive","sad","down")
         call her_main("{heart}{heart}{heart}","grin","narrow","base","dead")
         m "Ah... almost there [lun_name]..."
@@ -352,7 +352,7 @@ label luna_favour_5:
             call her_main("why?","open","base","base","R",cheeks="blush")
             call lun_main("Just look at the mess you made!","normal","angry","angry","down")
             call lun_main("You'll have to clean that up before you can go to class!","base","angry","mad","down")
-            call her_main("well normally I just go the prefect bathroom...","annoyed","base","worried","R")
+            call her_main("well normally I just go the prefects' bathroom...","annoyed","base","worried","R")
             call her_main("or I use a towel...","annoyed","narrow","worried","down")
             call her_main("{size=-5}but never Scourgify for some reason...{/size}","annoyed","narrow","angry","R")
             call lun_main("And waste all that perfectly good cum the Professor gave you?!","upset","wide","angry","down")

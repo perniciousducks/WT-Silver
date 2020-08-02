@@ -24,7 +24,7 @@ label floor_7th:
             call gen_walk("right", speed=1.5)
             call bld
 
-            m "Maybe if I...or I could..."
+            m "Maybe if I... or I could..."
 
             call gen_walk("left", speed=1.5)
             call bld

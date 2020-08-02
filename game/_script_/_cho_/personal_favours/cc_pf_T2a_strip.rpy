@@ -575,7 +575,7 @@ label cc_pf_strip_T1_intro_E2:
     call cho_main("May I go now?", "soft", "narrow", "angry", "R")
     m "Haven't you forgotten something?"
     call cho_main("Didn't I do enough for you already?", "angry", "narrow", "angry", "mid")
-    g9 "For me, you did more than enough!{p=0.6}I'm more than pleased with what you've shown me..."
+    g9 "For me, you did more than enough!{w=0.6} I'm more than pleased with what you've shown me..."
     call cho_main("*Ugh*...", "disgust", "narrow", "base", "down", cheeks="blush") # Disgusted
     m "But, wasn't your goal earlier to undress entirely?"
     m "To prove to yourself that you {b}could{/b} do it?"

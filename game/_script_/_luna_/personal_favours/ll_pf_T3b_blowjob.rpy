@@ -88,7 +88,7 @@ label ll_pf_blowjob_T1_intro:
     m "You sure did..."
     m "Now if you don't mind Miss Granger..."
     call lun_main("Lovegood, [lun_genie_name]...","pout","wink","sad","mid")
-    m "Right, right... miss Love...{b}good{/b}..."
+    m "Right, right... miss Love... {b}good{/b}..."
     m "This encounter with those...{w=0.4} things... has left me rather exhausted..."
     call lun_main("Oh...","soft","wide","base","mid")
     call lun_main("Of course, [lun_genie_name]! I best be off to divination class anyway...","base","base","sad","R")
@@ -147,9 +147,9 @@ label ll_pf_blowjob_T1_E2:
     m "Miss Lovegood, care to help me with my {i}wackspurts{/i} infection again?"
     call lun_main("You are lucky, [lun_genie_name]!{w=0.4} Because today is a Sunday!","base","seductive","sad","mid")
     m "It is?"
-    call lun_main("Of course! Can't you tell how happy Mr. Sun is?","base","wide","base","mid")
+    call lun_main("Of course! Can't you tell how happy mister Sun is?","base","wide","base","mid")
     m "..."
-    call lun_main("Because it's Mr. Sun's happy day...","base","seductive","base","mid")
+    call lun_main("Because it's mister Sun's happy day...","base","seductive","base","mid")
     call lun_main("I don't have any classes...","base","seductive","sad","R")
     call lun_main("So I was wondering...{w=0.4} maybe I could get a few more of those nasty wrackspurts out for you?","base","wink","angry","mid")
     call lun_main("I just feel so bad knowing that I gave them to you...","pout","wide","sad","mid")

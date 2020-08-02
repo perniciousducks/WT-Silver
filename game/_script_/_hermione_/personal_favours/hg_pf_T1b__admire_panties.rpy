@@ -144,7 +144,7 @@ label hg_pf_admire_panties_T1: # Call label
             call her_main(".......................", "angry", "narrow", "annoyed", "mid", emote="angry")
 
         "-Stare at her panties-":
-            ">That's a plain girlish underwear, nothing what an ordinary girl wouldn't wear..."
+            ">It's plain girlish underwear, nothing that an ordinary girl wouldn't wear."
 
     if hg_pf_admire_panties.counter > 1: # Second time
         call her_main(".......................", "angry", "narrow", "base", "R", emote="angry")

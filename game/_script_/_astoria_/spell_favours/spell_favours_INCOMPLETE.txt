@@ -520,7 +520,7 @@ label hornify_spell_3: #third level hornify spell
     call ast_main("That's not all though is it, Susy?","base","base","base","mid")
     call sus_main("N-no...","base","base","base","base")
     call ast_main("I think you want to change your top as well don't you?","base","base","base","mid")
-    call sus_main("Ah... yes... I want to show you... my... {p}ideas...","base","base","base","base")
+    call sus_main("Ah... yes... I want to show you... my...{w=0.4} ideas...","base","base","base","base")
     call ast_main("Mmmm... go on then...","base","base","base","mid")
     ">Astoria has shamelessly started to grind against your cock while teasing the poor redhead..."
     call sus_main("First th-things first... The vest needs to go...","base","base","base","base")
@@ -817,7 +817,7 @@ label hermione_breaks_astoria:
     ast "How to jerk off old man cock? Ha, I bet you're an expert..."
     m "Mmmmm... That she is..."
     her "Thank you, sir..."
-    ast "Wait... {p}how often has she been coming up here, sir?"
+    ast "Wait...{w=0.4} how often has she been coming up here, sir?"
     m "Oh, um... A little bit..."
     her "*ahem*"
     m "OK... A lot..."

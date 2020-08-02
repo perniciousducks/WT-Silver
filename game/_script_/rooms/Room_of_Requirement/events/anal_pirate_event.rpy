@@ -64,7 +64,7 @@ label anal_pirate_event:
 
 
 label anal_pirate_event_1: # Call label
-    m "lass...I'd like you to roleplay with me."
+    m "lass... I'd like you to roleplay with me."
     call her_main("captain..?", "annoyed", "squint", "base", "mid")
     m "How familiar ye be wit' th' term \" Swabbing ye poop deck\"?"
 

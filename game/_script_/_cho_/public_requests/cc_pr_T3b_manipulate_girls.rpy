@@ -238,7 +238,7 @@ label cc_pr_manipulate_girls_T3_katie_part1:
     call cho_main("So to try and catch her off guard I bluntly asked her if she wasn't going for another round with those tentacles.", "open", "base", "raised", "mid", cheeks="blush")
     m "Whoa, right to the point!"
     call cho_main("Yes, although she didn't even respond to it and just started walking again...", "angry", "base", "base", "mid", cheeks="blush")
-    call cho_main("So I pushed her further and asked what Gryffindor house would think if they knew...", "soft", "base", "angry", "mid", cheeks="blush")
+    call cho_main("So I pushed her further and asked what the Gryffindor house would think if they knew...", "soft", "base", "angry", "mid", cheeks="blush")
     call cho_main("But she just kept walking, completely ignoring me.", "upset", "base", "angry", "mid", cheeks="blush")
     call cho_main("I wasn't able to get through to her at all until I said that I would snitch to her captain unless she did something for me.", "clench", "narrow", "base", "mid", cheeks="blush")
     call cho_main("That's when she stopped in her tracks, eyed me up and down and asked what her punishment was going to be.", "disgust", "base", "base", "down", cheeks="blush")

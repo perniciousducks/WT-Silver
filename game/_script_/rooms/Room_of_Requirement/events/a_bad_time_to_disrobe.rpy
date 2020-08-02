@@ -90,8 +90,8 @@ label a_bad_time_to_disrobe_part_1:
     m "It's just an expression, tell me... did you complete your assignment?"
     call her_main("I did sir. I snuck into the boys dormitory using the cloak as you suggested.", "soft", "happyCl", "base", "mid")
     m "Naked?"
-    call her_main("Naked..ish", "disgust", "base", "base", "R")
-    m "How can you be naked...ish?"
+    call her_main("Naked... -ish", "disgust", "base", "base", "R")
+    m "How can you be naked... -ish?"
     call her_main("Well, I had my underwear on, I'd be cold otherwise", "base", "base", "base", "mid")
     m "Cold? You'd have the cloak on you..."
     m "What happened next then?"
@@ -158,7 +158,7 @@ label a_bad_time_to_disrobe_part_1:
     call her_main("I thought I would be short enough to fit under it...", "base", "base", "base", "mid", tears="mascara")
     call her_main("I didn't notice that my feet were visible...", "upset", "base", "angry", "mid", tears="mascara")
     m "\"Well, that's a shame.\""
-    call her_main("One of the boys saw me shuffle and moved to see what it was so I tried to get away but I slipped...and...and.", "upset", "wide", "base", "shocked", tears="mascara")
+    call her_main("One of the boys saw me shuffle and moved to see what it was so I tried to get away but I slipped... and... and.", "upset", "wide", "base", "shocked", tears="mascara")
     g11 "And what?"
     call her_main("And I slipped and my butt fell out!", "scream", "wide", "worried", "stare", tears="mascara")
 

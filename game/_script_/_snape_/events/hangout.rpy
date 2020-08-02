@@ -128,7 +128,7 @@ label ss_he_wine_intro_E2:
     m "It's more of a \"wine cabinet\", I'd say."
     m "And I believe there is more where this came from..."
     call sna_main("Seriously, how big is that stash?","snape_05")
-    g9 "Why don't we find that out?"
+    g9 "Why don't we find out?"
     call sna_main("It's sure good to be us! let's uncork that bastard!","snape_02")
 
     jump snape_hangout_continue
@@ -149,7 +149,7 @@ label ss_he_wine_repeat:
     elif random_number == 2:
         call sna_main("Well done, my friend!","snape_02")
     elif random_number == 3:
-        call sna_main("Lately I am having hard time drinking anything but this!","snape_02")
+        call sna_main("Lately I am having a hard time drinking anything but this!","snape_02")
     elif random_number == 4:
         call sna_main("Great! I feel less stressed out already!","snape_02")
     elif random_number == 5:
@@ -636,7 +636,7 @@ label ss_he_story_intro_E15:
     m "Yes, for as long as Slytherin is in the lead."
     call sna_main("Seriously? She still cares about that?","snape_05")
     m "Very much so."
-    call sna_main("Well in that case I shall personally ensure that Slytherin house gets as many house points as possible.","snape_23")
+    call sna_main("Well in that case I shall personally ensure that the Slytherin house gets as many house points as possible.","snape_23")
     pause.1
     call blktone
 

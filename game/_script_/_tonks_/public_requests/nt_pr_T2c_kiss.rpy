@@ -119,9 +119,9 @@ label nt_pr_kiss_T1_intro_E1: # Tier 1 - Event 1 - Slytherin boy
     m "Was it as intense as you promised?"
     call ton_main("Not that intense, per say... I wanted to take it slow for his first time...","open","base","base","R")
     call ton_main("I just sat next to him, and slowly peppered a few kisses on his lips...","open","base","base","mid")
-    call ton_main("After the initial excitement died down, we eventually got into a nice rhythm of kissing...and some light tongue-play...","horny","base","base","mid")
+    call ton_main("After the initial excitement died down, we eventually got into a nice rhythm of kissing... and some light tongue-play...","horny","base","base","mid")
     call ton_main("He was very inexperienced, but definitely eager to learn.","horny","base","angry","mid")
-    call ton_main("Then, after five minutes or so, I awarded him some house points...and sent him on his way...","open","base","base","R")
+    call ton_main("Then, after five minutes or so, I awarded him some house points... and sent him on his way...","open","base","base","R")
     m "And that was all?"
     call ton_main("I don't think it's the last I'll see of him... Besides, I don't want to push him too far.","base","happyCl","base","mid")
     call ton_main("This favour trading might actually be a good way to address student behaviour!","base","base","base","mid")
@@ -239,21 +239,21 @@ label nt_pr_kiss_T1_E3: # Tier 1 - Event 3 - Slytherin girls
     g9 "Don't let me stop you then..."
     call ton_main("As always, there were a few Slytherins messing around in class...","open","base","base","R")
     call ton_main("With an especially annoying pair of girls that wouldn't shut up!","open","closed","base","mid")
-    call ton_main("So,... I gave them detention,...which thankfully got them to quiet down a little.","open","base","base","L")
+    call ton_main("So,... I gave them detention,... which thankfully got them to quiet down a little.","open","base","base","L")
     m "So far so good..."
     call ton_main("Normally, I only try and buy favours from one person at a time...","open","closed","base","mid")
     call ton_main("But then I figured, why not give both those Slytherin sluts a shot.","base","base","base","mid")
     g9 "So you took turns kissing the girls?"
     call ton_main("No, but I could have...","open","base","base","R")
     call ton_main("I gave them the option of staying behind - for a full hour of detention...","open","closed","base","mid")
-    call ton_main("Or,...have them do their teacher a little favour...","base","base","base","mid")
+    call ton_main("Or,... have them do their teacher a little favour...","base","base","base","mid")
     g9 "Which was?"
     call ton_main("*Mmmm*... They had to make out with each other!","horny","base","angry","mid")
     call ton_main("And they had to do it properly. For at least ten minutes.","open","closed","base","mid")
     call ton_main("*Ugh*... It was the hottest thing to witness, I tell you...", "mad", "base", "base", "ahegao")
     g9 "Don't spare any details!"
     call ton_main("Well, they were a bit hesitant at first... which I can't even blame them for...","open","base","worried","mid")
-    call ton_main("It doesn't happen often that you have a teacher watch you make out,...and savouring every second of it!","base","base","angry","mid")
+    call ton_main("It doesn't happen often that you have a teacher watch you make out,... and savouring every second of it!","base","base","angry","mid")
     call ton_main("But, I have a feeling that wasn't their first time kissing another girl...","open","closed","base","mid")
     call ton_main("Maybe not even each other...","base","base","angry","mid")
     m "Ought to be young again..."
@@ -311,7 +311,7 @@ label nt_pr_kiss_T1_E4: #Level 1 Event 4
     call ton_main("That little Slytherin girl is starting to come around to me more often - as of late...","base","base","base","mid")
     call ton_main("So, I figured now might be a good time to take it to the next level...","open","base","base","R")
     call ton_main("Getting her to stay after class is easy enough now...","open","closed","base","mid")
-    call ton_main("I just brush her hand as I walk past her,...and throw her a subtle wink.","base","base","base","mid")
+    call ton_main("I just brush her hand as I walk past her,... and throw her a subtle wink.","base","base","base","mid")
     g9 "You're getting brazen!"
     call ton_main("Wasn't that the plan?","open","base","worried","R")
     m "I never said it was a bad thing..."
@@ -324,11 +324,11 @@ label nt_pr_kiss_T1_E4: #Level 1 Event 4
     call ton_main("It's not as if she'd say no at this stage.","base","base","base","mid")
     call ton_main("I believe she wasn't expecting me to ask for a kiss though... It really threw her for a loop...", "silly", "happyCl", "base", "mid")
     m "....................."
-    call ton_main("She couldn't quite work out whether it was too extreme of a favour,...or too mild...","upset","base","base","R")
+    call ton_main("She couldn't quite work out whether it was too extreme of a favour,... or too mild...","upset","base","base","R")
     m "Well, it all depends on how you kiss..."
     call ton_main("*Hmmm*... Yes!","horny","base","base","ahegao")
     call ton_main("For an emotionally charged schoolgirl, she really didn't let me down one bit...","horny","base","angry","mid")
-    call ton_main("Her lips kept quivering...{w} And I'm not sure if it was because of fear...or anticipation...","open","base","worried","R")
+    call ton_main("Her lips kept quivering...{w} And I'm not sure if it was because of fear... or anticipation...","open","base","worried","R")
     call ton_main("And she gazed at me like a stunned deer... Waiting for me to make the first move...","horny","base","base","mid")
     call ton_main("*Mmmm*... Her lips were so soft!","open_wide_tongue","base","base","ahegao")
     g9 "This is good!"

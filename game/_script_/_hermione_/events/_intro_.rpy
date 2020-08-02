@@ -545,7 +545,7 @@ label ss_he_hermione_E2:
     m "My name is not--"
     call sna_main("An esteemed wizard...","snape_08")
     m "Well, alright, let it out..."
-    call sna_main("How come one tiny...cunt, is able to cause me so much grief?!","snape_31")
+    call sna_main("How come one tiny... cunt, is able to cause me so much grief?!","snape_31")
     call sna_main("I thought with you as my ally I will have a chance to--","snape_32")
     m "To unclench?"
     call sna_main("Yeah, that could be the word...","snape_31")

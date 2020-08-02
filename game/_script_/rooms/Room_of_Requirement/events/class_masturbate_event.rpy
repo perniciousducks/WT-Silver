@@ -66,7 +66,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("I'd really rather not.", "upset", "narrow", "annoyed", "mid")
         m "Come on, you masturbated during class, is this really so hard in comparison?"
         call her_main("I did it during Professor Flitwick's class.", "annoyed", "narrow", "annoyed", "mid")
-        call her_main("He's...well he's a sweet short old man but not a very good teacher.", "open", "base", "base", "mid")
+        call her_main("He's... well he's a sweet short old man but not a very good teacher.", "open", "base", "base", "mid")
         call her_main("He might be the SECOND most senile person at Hogwarts.", "smile", "slit", "low", "stare")
         m "Who's the first?"
         call her_main("", "clench", "slit", "low", "stare")
@@ -151,7 +151,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("The face he made had the whole class laughed at me! I was--", "open", "wide", "base", "stare", cheeks="blush")
         call her_main("I was- They-aghh!", "angry", "base", "angry", "mid")
         m "Just let it out [hermione_name]"
-        call her_main("Those...THose...THOSE!", "scream", "wide", "base", "stare")
+        call her_main("Those... THose... THOSE!", "scream", "wide", "base", "stare")
         call her_main("THOSE DISGUSTING WORMS! TALK TO ME LIKE THAT? TWO FACED HYPOCRITES! FUCK THEM!", "scream", "wide", "base", "stare")
         m "Feel better?"
         call her_main("...", "normal", "base", "base", "mid")
@@ -173,7 +173,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("In this case I don't think I'd mind 'showing you some of that appreciate--", "soft", "base", "base", "mid_soft")
                 call her_main("Ahem. I mean.... uhm It's getting time for dinner. So, goodnight [genie_name]", "open", "narrow", "worried", "down", cheeks="blush")
                 m "See you tomorrow [hermione_name]"
-                call her_main("Yes! I mean...if I must.", "open", "narrow", "base", "mid_soft")
+                call her_main("Yes! I mean... if I must.", "open", "narrow", "base", "mid_soft")
                 call her_main("{size=-5}Totally worth it.{/size}", "smile", "happy", "base", "mid_soft")
 
             "-Humiliate her.-":
@@ -195,7 +195,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 m "Making? All I did was offer you some house points. And not that many, what eighty? I'm sure you could have done a little book report and gotten that many."
                 m "Instead you choose to ignore your lesson in favour of pleasuring yourself in class."
                 m "Are you sure that you aren't you the..."
-                call her_main("Stop it...please.", "upset", "narrow", "worried", "down")
+                call her_main("Stop it... please.", "upset", "narrow", "worried", "down")
                 m "The hypocritical harlot?"
 
         call her_walk(action="leave")
@@ -218,7 +218,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         m "Hey you got it in the end! That's progress from before!"
         call her_main("Hmm, good point. Anyway, you wanted me to masturbate during class?", "open", "base", "base", "mid")
         m "Up for it?"
-        call her_main("Sure why not...though I wish you had asked yesterday.", "annoyed", "narrow", "annoyed", "mid")
+        call her_main("Sure why not... though I wish you had asked yesterday.", "annoyed", "narrow", "annoyed", "mid")
         call her_main("Snape gave a 2-hour lecture on the 'Rich and Pure' History of Slytherin.", "open", "base", "base", "mid")
         m "You don't ALWAYS need my permission to masturbate [hermione_name]"
         call her_main("Oh trust me, I know.", "soft", "base", "base", "mid_soft", cheeks="blush")
@@ -251,7 +251,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Not trying hard enough? [genie_name] to put it delicately... Hmmm.", "open", "base", "base", "R")
         call her_main("How would you put shoving three fingers down my slit, rubbing my clit with my thumb, and using my free hand to pinch my nipples delicately?", "soft", "base", "base", "mid_soft", cheeks="blush")
         m "Sounds plenty delicate to me! But maybe it was just nerves."
-        call her_main("I mean people were staring but...I'm pretty used to that by now.", "upset", "squint", "angry", "mid")
+        call her_main("I mean people were staring but... I'm pretty used to that by now.", "upset", "squint", "angry", "mid")
         m "Maybe it was--"
         call her_main("Can I just tell you what it was?", "open", "base", "angry", "mid")
         m "Oh, fine."
@@ -267,13 +267,13 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("I came really really hard.", "grin", "wide", "base", "stare", cheeks="blush")
         m "Sounds pretty standard to me."
         call her_main("Does it? I guess. I just--", "open", "narrow", "worried", "down")
-        call her_main("I was wondering if you put the imperio curse on me, or some potion...Something that MADE me follow your orders.", "open", "base", "base", "mid")
+        call her_main("I was wondering if you put the imperio curse on me, or some potion... Something that MADE me follow your orders.", "open", "base", "base", "mid")
         call her_main("I was just- Sorry I was being s--", "clench", "narrow", "worried", "mid_soft")
         m "[hermione_name]"
         m "I've never made you do anything. I've just offered you a reason."
         m "The choice to do all this has ALWAYS been yours. If you need ‘my voice' in order to find completion there's no one to blame but yourself."
         call her_main("Ah.", "upset", "narrow", "worried", "down", cheeks="blush")
-        call her_main("... Thinking about something like that would've used upset me...but now.", "open", "base", "base", "mid")
+        call her_main("... Thinking about something like that would've used upset me... but now.", "open", "base", "base", "mid")
         call her_main("Well the only person who doesn't seem to like the new me, is the old me.", "clench", "narrow", "base", "mid_soft")
         call her_main("And I think the new me is starting to listen to the old me less and less.", "smile", "happy", "base", "mid_soft", cheeks="blush")
         call her_main("Does that make sense?", "open", "base", "base", "mid")
@@ -305,7 +305,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Can there be bonus points?", "open", "base", "base", "mid")
         call her_main("", "base", "base", "base", "mid")
         m "Bonus points?"
-        call her_main("You know...for masturbating during more than one class, or masturbating more than once per class...", "open", "base", "base", "mid_soft", cheeks="blush")
+        call her_main("You know... for masturbating during more than one class, or masturbating more than once per class...", "open", "base", "base", "mid_soft", cheeks="blush")
         her "...for smuggling in and using a dildo."
         her ".... Or getting caught on purpose."
         call her_main("", "soft", "base", "base", "mid_soft", cheeks="blush")
@@ -313,9 +313,9 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("I thought we were done with the nicknames.", "annoyed", "base", "base", "mid")
         m "Hmm yes, well unfortunately according to the official rules, I may only give eighty points per day for masturbation related favours."
         call her_main("Oh I see, that's too bad.", "upset", "narrow", "worried", "down")
-        g9 "A real shame...but there nothing preventing you from doing those 'bonus' acts on your own."
+        g9 "A real shame... but there nothing preventing you from doing those 'bonus' acts on your own."
         call her_main("I guess...", "upset", "squint", "angry", "mid")
-        m "I'd certainly be happy about it...And perhaps my happiness will be its own reward?"
+        m "I'd certainly be happy about it... And perhaps my happiness will be its own reward?"
         call her_main("Heh. Yes, maybe it will. Well I better get to work then.", "smile", "base", "base", "mid")
 
         call her_walk(action="leave")
@@ -365,17 +365,17 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("I thought if I was going to fail no matter what...", "upset", "narrow", "worried", "down")
                 call her_main("Then I needed to make sure everyone else did too!", "grin", "happy", "base", "mid_soft")
                 m "And how did you accomplish that?"
-                call her_main("Oh you know...I might have offered a bit of a distraction.", "soft", "base", "base", "mid_soft")
+                call her_main("Oh you know... I might have offered a bit of a distraction.", "soft", "base", "base", "mid_soft")
                 call her_main("At first, I just began with some light rubbing, but when that wasn't enough, I knew I needed to step up my performance.", "soft", "base", "base", "mid_soft", cheeks="blush")
                 call her_main("I started to make a little noise. You know, sneezing, squeaking my chair, complaining how hot the room was for some reason....", "soft", "base", "base", "mid_soft", cheeks="blush")
                 m "Moaning?"
-                call her_main("Maybe just a bit...mmmmh.", "grin", "base", "base", "mid_soft", cheeks="blush")
+                call her_main("Maybe just a bit... mmmmh.", "grin", "base", "base", "mid_soft", cheeks="blush")
                 call her_main("And it started to work, one after another students would start to glance up.", "smile", "base", "base", "mid_soft", cheeks="blush")
                 call her_main("Hehehehe. Their reactions were all the same and funny every time.", "grin", "happy", "base", "mid_soft")
                 call her_main("They'd glance up annoyed at the noise, and do the biggest double take at me.", "grin", "base", "base", "mid_soft", cheeks="blush")
                 call her_main("All the desks have a bottom covering unfortunately, but I think they could quite clearly see my hand moving.", "soft", "base", "base", "mid_soft", cheeks="blush")
                 call her_main("I could see the doubt in their eyes, telling themselves I was just itching my legs and they were imagining things...", "smile", "closed", "base", "mid", cheeks="blush")
-                call her_main("Then they'd look up...see my grin, the look in my eyes...mphhh..and let's say they wouldn't look at their own tests again.", "grin", "narrow", "annoyed", "up", cheeks="blush")
+                call her_main("Then they'd look up... see my grin, the look in my eyes... mphhh..and let's say they wouldn't look at their own tests again.", "grin", "narrow", "annoyed", "up", cheeks="blush")
                 m "Need to take care of something, [hermione_name]?"
                 hide screen hermione_main
                 with d3
@@ -399,7 +399,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("I needed to make sure they failed the tests in particular. Of course, mhh No other reasons mhhh.", "soft", "slit", "worried", "ahegao", cheeks="blush")
                 call her_main("But There was no need, by the time the bell rang there wasn't a single person not staring at me mhhhh- ah", "smile", "narrow", "annoyed", "up", cheeks="blush")
                 $ hermione_squirt = True
-                call her_main("And from the looks on some of their faces...and the dripping down the desks...I wasn't the only one getting 'hot' in that room.", "open", "narrow", "annoyed", "up", cheeks="blush")
+                call her_main("And from the looks on some of their faces... and the dripping down the desks... I wasn't the only one getting 'hot' in that room.", "open", "narrow", "annoyed", "up", cheeks="blush")
                 m "And Rad nose Booty didn't mind his entire class watching you get off?"
                 call her_main("Oh him. *Ha-ha* Let's just say his eye wasn't doing much spinning that class. I hear it can even see through walls to so--", "soft", "base", "base", "mid_soft", cheeks="blush")
                 call her_main("and *ah-ah-ah*, that was the best part. I got an owl delivering my graded test back, before coming here. ah ah", "smile", "narrow", "annoyed", "up", cheeks="blush")

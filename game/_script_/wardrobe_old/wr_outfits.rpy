@@ -67,7 +67,7 @@ label equip_outfit:
                 # else: #Fail
                     # call her_main( "Doesn't really sound like my kind of thing to be honest [genie_name].","base","baseL")
                     # m "I thought you might be a fan of seamen..."
-                    # call her_main( "I don't really have anything against seamen...but pirates aren't really the same thing.","open","base")
+                    # call her_main( "I don't really have anything against seamen... but pirates aren't really the same thing.","open","base")
                     # m "Butt pirates?"
                     # call her_main( "What?","base","base")
                     # call her_main( "It's a bit to revealing... drop it for now okay?","disgust","base")
@@ -100,7 +100,7 @@ label equip_outfit:
                 # g9 "Santa Claus is going to town!"
                 # if her_whoring >= 17: #Success
                     # call her_main("Oh...", "soft", "base", "base", "R")
-                    # call her_main("Am I on the naughty list, Mr. Santa?", "soft", "narrow", "base", "mid_soft",cheeks="blush")
+                    # call her_main("Am I on the naughty list, mister Santa?", "soft", "narrow", "base", "mid_soft",cheeks="blush")
                     # g4 "You are!"
                     # call her_main("Does that mean I'm not getting any presents?", "base", "narrow", "base", "mid_soft")
                     # m "No [hermione_name],..."

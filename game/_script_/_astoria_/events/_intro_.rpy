@@ -42,7 +42,7 @@ label astoria_intro_E1:
     call ton_main("I'm not joking, [ton_genie_name]!", "soft", "base", "annoyed", "mid")
     call ton_main("Something terrible has happened at school today!", "open", "closed", "annoyed", "R")
     call ton_main("I believe one of our students has conducted some highly illegal activities against another student!", "normal", "base", "annoyed", "downR")
-    call ton_main("We have to take action!{p=0.6}The last thing we need is for this to reach the Ministry's attention!","open","base","angry","mid")
+    call ton_main("We have to take action!{w=0.6} The last thing we need is for this to reach the Ministry's attention!","open","base","angry","mid")
     m "So? Isn't it your task to cover that sort of stuff?"
     call ton_main("Yes, but...","upset","base","worried","down")
     call ton_main("Please, [ton_genie_name]! I can't cover this up all on my own!","open","base","worried","mid")

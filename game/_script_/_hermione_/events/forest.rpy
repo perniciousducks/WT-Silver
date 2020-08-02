@@ -776,7 +776,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     $ ccg2 = 35
     her "{size=+5}*glck*{heart}*glck*{heart}*glck*{/size}"
     $ ccg2 = 34
-    myr "The prefect's bathroom!"
+    myr "The prefects' bathroom!"
     $ ccg2 = 35
     her "{size=+5}*glck*{heart}*glck*{heart}*glck*{/size}"
     $ ccg2 = 34

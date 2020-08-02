@@ -68,7 +68,7 @@ label susan_chit_chat:
         call sus_main("They're a lot tighter than when I bought them...", "open", "base", "base", "down")
 
     elif random_number == 14:
-        call sus_main("Just because Hufflepuff house is next to the kitchen, doesn't mean we can get food whenever we like.", "open", "base", "base", "mid")
+        call sus_main("Just because the Hufflepuff house is next to the kitchen, doesn't mean we can get food whenever we like.", "open", "base", "base", "mid")
         call sus_main("So why does the Slytherin students keep asking me to show where I hide my melons?", "upset", "base", "base", "R")
 
     elif random_number == 15:

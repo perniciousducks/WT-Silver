@@ -502,7 +502,7 @@ label snape_intro_E4:
             call sna_main("And these days this school needs a proper headmaster more than ever.","snape_01")
 
     call sna_main("Have a safe trip home now.","snape_01")
-    m "*Ehm*... Thank you, Mr. Severus. Good luck with your students and the \"potter gang\"."
+    m "*Ehm*... Thank you, mister Severus. Good luck with your students and the \"potter gang\"."
     call sna_main("\"The potter gang\"?","snape_01")
     call sna_main("Oh, right, those buggers...","snape_35")
 

@@ -19,7 +19,7 @@ label genie_house_elf:
     nar "This story takes place after the introduction of Snape and before meeting Hermione."
     m "(How does that door work?)"
     nar "The genie thought."
-    m "(How do the people know I've summoned them? I don't have a secretary...that I know of anyway.)"
+    m "(How do the people know I've summoned them? I don't have a secretary... that I know of anyway.)"
     m "Have they been keeping a secretary from me? I should ask Sn..."
     nar "Snape then opened the door, his pointy nose protruding under his silky hair."
 

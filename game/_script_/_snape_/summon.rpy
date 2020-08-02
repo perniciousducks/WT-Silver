@@ -162,7 +162,7 @@ label snape_potion_menu:
                 menu:
                     "-Normal potion-":
                         $ potion_version = 1
-                        call sna_main("Here you are Mr. Adventurous...","snape_35")
+                        call sna_main("Here you are mister Adventurous...","snape_35")
 
                     "-Futa potion-":
                         call sna_main("What? Are you sure you want this one?","snape_44")

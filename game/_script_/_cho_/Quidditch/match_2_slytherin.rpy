@@ -22,7 +22,7 @@ label start_slytherin_match:
             call cho_main("What?", "angry", "wide", "base", "mid")
             with hpunch
             g4 "{size=+5}Show me the money!{/size}" # loud
-            call cho_main("(He knows I'm a girl...why would he say that?)", "annoyed", "narrow", "angry", "mid")
+            call cho_main("(He knows I'm a girl... why would he say that?)", "annoyed", "narrow", "angry", "mid")
             with hpunch
             call cho_main("Sir, Are you all right?", "soft", "narrow", "worried", "mid")
             g9 "What you gonna do, [cho_name]?"
@@ -1757,7 +1757,7 @@ label slytherin_match_return:
     m "(Why is that always the first thing people consider when talking about time travel...)"
     m "(So predictable...)"
 
-    m "So...when Miss Granger got hit by that bludger..."
+    m "So... when Miss Granger got hit by that bludger..."
     call ton_main("I took her to the hospital wing...", "open", "base", "base", "mid")
     call ton_main("And I replaced her, so she wouldn't get picked on for leaving.", "annoyed", "base", "base", "down")
     m "I see..."

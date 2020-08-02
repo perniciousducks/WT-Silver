@@ -877,7 +877,7 @@ label ss_he_tonks_E3:
     call sna_main("{size=+5}You did what?!{/size}","snape_33", trans=hpunch)
     m "\"Defence against-...something-something\"..."
     call sna_main("You should have given me the \"defence against the dark arts\" position!","snape_34")
-    call sna_main("And she could've had something else,...like \"muggle studies\", or something.","snape_16")
+    call sna_main("And she could've had something else,... like \"muggle studies\", or something.","snape_16")
     m "First come, first served, I suppose..."
     m "And I am not making her teach any \"smuggle studies\", who do you take me for?"
     call sna_main("Curse you...","snape_08")

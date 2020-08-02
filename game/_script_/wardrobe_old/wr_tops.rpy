@@ -441,7 +441,7 @@ label equip_top:
                                 # call her_main("Yes, rats! They are everywhere in Hogwarts.", "open", "base", "worried", "mid")
                                 # call her_main("And I'm not talking about pet rats.", "disgust", "narrow", "base", "mid_soft")
                                 # m "(People here keep rats as their pet?)"
-                                # call her_main("You should talk with Mr. Filch. He will surely know what to do about it!", "open", "closed", "base", "mid")
+                                # call her_main("You should talk with mister Filch. He will surely know what to do about it!", "open", "closed", "base", "mid")
                                 # call her_main("And throw this away while you're at it. It has holes everywhere!", "annoyed", "narrow", "annoyed", "mid")
                             # else:
                                 # g9 "The skimpy one!"

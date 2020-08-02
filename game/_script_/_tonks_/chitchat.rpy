@@ -58,7 +58,7 @@ label tonks_chit_chat:
 
     elif random_number == 9:
         call ton_main("I often got detentions by morphing into prefects...", "normal", "base", "base", "R")
-        call ton_main("It was worth it though as I had free range to the prefects bathroom...", "base", "wide", "base", "mid")
+        call ton_main("It was worth it though as I had free range to the prefects' bathroom...", "base", "wide", "base", "mid")
 
     elif random_number == 10:
         call ton_main("I had to keep one of the students after class for special tutoring.", "open", "base", "base", "R")

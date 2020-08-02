@@ -454,7 +454,7 @@ label ag_se_imperio_sb_E2:
     call ast_main("Suzy, do you like baring your chest to the headmaster?","open","base","base","L")
     call ast_main("Are you just another one of those closeted sluts?","clench","narrow")
     m "(Oh shit...)"
-    call sus_main("I...I...","open","base","worried")
+    call sus_main("I... I...","open","base","worried")
     call ast_main("Tell me!","scream")
     call ast_main("","clench")
     call sus_main("I...{w=0.8} I do!","open","closed")

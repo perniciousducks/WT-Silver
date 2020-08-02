@@ -333,7 +333,7 @@ label ag_st_imperio_E2:
     call ton_main("..........................", "normal", "wide", "base", "stare")
     call ton_main("*uhhhh*... I looooooove this!", "soft", "base", "base", "stare")
     call ton_main("It's like - I'm floating...", "open", "wide", "shocked", "stare")
-    call ton_main("It feels...sooooooooooooo...goooooooooooood!", "open_wide_tongue", "base", "base", "ahegao")
+    call ton_main("It feels... sooooooooooooo... goooooooooooood!", "open_wide_tongue", "base", "base", "ahegao")
     call ton_main("", "mad", "base", "base", "ahegao")
     call ast_chibi("wand",530,"base")
     m "(Is she getting off on this?)"
@@ -1101,7 +1101,7 @@ label ag_st_imperio_E4:
     call ton_main("I suggest we do one more training session, and then call it from there...", "base", "wide", "base", "mid")
     m "Sounds good to me..."
     call ton_main("Believe me, it's gonna be a great one!", "soft", "wink", "base", "mid")
-    g9 "Are we going to see more of your...talents?"
+    g9 "Are we going to see more of your... talents?"
     call ton_main("How would you like to see {b}all{/b} this Auror has to offer?", "horny", "closed", "annoyed", "mid") # horny
     g9 "Looking forward to it!"
     call ton_main("Have a good night, [ton_genie_name]!","base","base","angry","mid")
@@ -1150,7 +1150,7 @@ label ag_st_imperio_E5:
     call ton_main("Today we are going to try to push me to the limit.","base","base","base","L")
     call ton_main("You will have me do whatever Professor Dumbledore commands, without question!", "soft", "wide", "annoyed", "L")
     call ast_main("I suppose...","annoyed","base","base","down")
-    call ton_main("We will only stop with today's training once I'm able to...resist, am I clear?", "open", "closed", "base", "L")
+    call ton_main("We will only stop with today's training once I'm able to... resist, am I clear?", "open", "closed", "base", "L")
     call ast_main("Okay, Professor...","annoyed","base","base","R")
 
     call ton_main("You may start now, Astoria...", "base", "narrow", "base", "L")

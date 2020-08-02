@@ -8,13 +8,13 @@ label potion_scene_3_1_1:
         m "Well, that's going to be a surprise..."
         if her_whoring <= 17: #Under when she stops caring about points too Much
                 her "And you'll pay me if I drink this?"
-                m "Of course...{w} I'll give you thirty points for Gryffindor house."
+                m "Of course...{w} I'll give you thirty points for the Gryffindor house."
     else:
         call her_main("What does this one do?", "normal", "squint", "angry", "mid")
         m "As always, it's going to be a surprise."
         if her_whoring <= 17: #Under when she stops caring about points too Much
                 her "And you'll pay me if I drink this?"
-                m "Of course...{w} I'll give you thirty points for Gryffindor house."
+                m "Of course...{w} I'll give you thirty points for the Gryffindor house."
 
     #TODO There are many more potions she could mention
     if "cat_polyjuice" in her_potions_drunk:
@@ -474,7 +474,7 @@ label potion_scene_3_2_1: #TODO Hyper sensitive breasts potion
     m "Are you sure?"
     her "Positive."
     m "Ok, I'll make a bet with you then."
-    her "...{p}Go on..."
+    her "...Go on..."
     m "I'll start massaging you. If you don't like it after two minutes then you can tell me to stop."
     her "And what do I get for telling you to stop?"
     m "two hundred points."

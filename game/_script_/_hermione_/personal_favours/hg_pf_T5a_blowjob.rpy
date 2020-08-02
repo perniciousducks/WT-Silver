@@ -113,7 +113,7 @@ label hg_pf_blowjob_T4_fail_intro:
         call her_main("All I wanted was to get done with that favour early, so I...", "open", "narrow", "base", "down")
         call her_main("I helped...", "disgust", "base", "worried", "R")
         g9 "By sucking on my cock! Indeed you did!"
-        call her_main("No! I was merely stroking it...and...", "silly", "happyCl", "worried", "mid")
+        call her_main("No! I was merely stroking it... and...", "silly", "happyCl", "worried", "mid")
         call her_main("I gave it a short kiss, but...", "disgust", "narrow", "worried", "down", cheeks="blush")
         call her_main("I'm sorry [genie_name], but I don't think I can do \"that!\"", "open", "base", "worried", "R", cheeks="blush")
     else:
@@ -512,7 +512,7 @@ label hg_pf_blowjob_1:
     call her_main("*Slurp*--", "open_wide_tongue", "narrow", "annoyed", "up")
 
     call her_chibi_scene("bj_pause")
-    call her_main("[genie_name]... I am a...whore.", "open", "narrow", "worried", "down")
+    call her_main("[genie_name]... I am a... whore.", "open", "narrow", "worried", "down")
     m "What?"
 
     call her_chibi_scene("bj")
@@ -1727,7 +1727,7 @@ label hg_pf_blowjob_2:
                 call her_chibi_scene("bj", trans=d5)
                 call her_main("*lick*! *Slurp*! *Slurp*!", "open_wide_tongue", "narrow", "base", "up")
                 call her_chibi_scene("bj_pause", trans=d5)
-                call her_main("Just your {p}perfect, {p}beautiful {p}{size=-4}cock{/size}!", "grin", "narrow", "base", "dead")
+                call her_main("Just your {w}perfect, {w}beautiful {w}{size=-4}cock{/size}!", "grin", "narrow", "base", "dead")
                 call her_chibi_scene("bj", trans=d5)
                 call her_main("*Gobble*! *Slurp*! *lick*!", "open_wide_tongue", "narrow", "annoyed", "up")
             else:

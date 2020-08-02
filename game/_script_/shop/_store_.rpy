@@ -62,7 +62,7 @@ label store_chit_chat:
         # m "Hmmmm. What sort of potions are you \'not\' selling?"
         # fre "Well we aren't selling polyjuice potion."
         # ger "Wouldn't dream of it."
-        m "What sort of items are you \'not\' selling?"
+        m "What sort of items are you \"not selling\"?"
         ger "We have books, treats, and knick-knacks for sale."
         fre "Take a look."
 

@@ -227,7 +227,7 @@ label hg_tutor_E3:
     call her_main("But...", "open", "base", "base", "mid", cheeks="blush")
     m "Last time you were talking about your sacred duty and at the first hurdle you hesitate."
     call her_main("{size=-2}(\"Sacred\"? Don't exaggerate, old man){/size}", "annoyed", "narrow", "worried", "down")
-    call her_main("{size=-2}(Or not! Maybe I'll be remembered later for being the saviour of Gryffindor house!){/size}", "open", "happyCl", "worried", "mid", cheeks="blush")
+    call her_main("{size=-2}(Or not! Maybe I'll be remembered later for being the saviour of the Gryffindor house!){/size}", "open", "happyCl", "worried", "mid", cheeks="blush")
     call her_main("Yes, you're right! It {b}is{/b} my sacred duty!", "smile", "base", "base", "R")
     g9 "{size=-2}(It works every time, it's too easy... She looks so proud of herself.){/size}"
     call her_main("I'll do my best, professor!", "open", "base", "base", "mid", cheeks="blush")

@@ -56,7 +56,7 @@ label hg_pr_flirt_teacher:
 # End Event
 label end_hg_pr_flirt_teacher:
     $ gryffindor += current_payout
-    m "The Gryffindor gets {number=current_payout} points!"
+    m "The Gryffindor house gets {number=current_payout} points!"
     her "Thank you, [genie_name]."
 
     call her_walk(action="leave")
@@ -108,7 +108,7 @@ label hg_pr_flirt_teacher_intro:
             "\"Give me the details.\"":
                 pass
 
-    m "Tell me how many teachers did you flirt with, [hermione_name]?"
+    m "Tell me, [hermione_name], how many teachers did you flirt with?"
 
     if hg_pr_flirt_teacher.counter == 1:
         call her_main("*Uhm*... Okay...", "soft", "base", "base", "R")
@@ -139,11 +139,11 @@ label hg_pr_flirt_teacher_T1_E1: # Flitwick
     call her_main("He likes to look up under girl's skirts, [genie_name]!", "annoyed", "base", "worried", "R")
     m "Don't we all?"
     call her_main("What?", "open", "base", "base", "mid")
-    m "I said, don't we all hate it and must be outraged by the a man like Professor Flick-flick."
+    m "I mean, don't we all hate it and must be outraged by a man like Professor Flick-flick?"
     call her_main("Er... It's \"Professor Flitwick\", [genie_name].", "normal", "squint", "angry", "mid")
     m "Right. Putting him on my \"Naughty list\" as we speak."
     call her_main("......................", "annoyed", "squint", "base", "mid")
-    m "Well, I hate to admit it but you did a lousy job of today's favour, [hermione_name]."
+    m "Well, I hate to admit it, but you did a lousy job of today's favour, [hermione_name]."
     call her_main("................................", "annoyed", "narrow", "angry", "R")
 
     menu:
@@ -202,7 +202,7 @@ label hg_pr_flirt_teacher_T1_E2: # Snape
     call her_main("But I know that professor Snape is \"dirty\"!", "angry", "base", "angry", "mid")
     her "If you were to send someone else to him the outcome would be different, I know it!"
     m "Someone else?"
-    call her_main("Yes! Someone with more experience at this...", "upset", "wink", "base", "mid")
+    call her_main("Yes! Someone with more experience in this...", "upset", "wink", "base", "mid")
     her "Someone..."
     her "Someone, *ehm*..."
     m "Sluttier?"
@@ -234,17 +234,17 @@ label hg_pr_flirt_teacher_T1_E3: # Filch
     call hg_pr_flirt_teacher_intro
 
     stop music fadeout 1.0
-    call her_main("I tried to flirt with Mr. Filch, [genie_name]...", "open", "base", "worried", "R")
+    call her_main("I tried to flirt with mister Filch, [genie_name]...", "open", "base", "worried", "R")
     m "I see. {size=-5}(No idea who that is.){/size}"
     call play_music("hermione") # HERMIONE'S THEME.
-    call her_main("Yes, I know that technically Mr. Filch is not a teacher...", "open", "base", "worried", "mid")
+    call her_main("Yes, I know that technically mister Filch is not a teacher...", "open", "base", "worried", "mid")
     m "*huh*?"
     call her_main("But he is part of the school's staff...", "base", "base", "base", "mid")
     her "And we did hit it off quite well too!"
     her "He was surprisingly sweet."
     her "But I don't think he is \"dirty\", [genie_name]."
-    m "Gotcha... Mr. Filth is off the list then."
-    call her_main("It's \"Mr. Filch\", [genie_name]...", "normal", "squint", "angry", "mid")
+    m "Gotcha... mister Filth is off the list then."
+    call her_main("It's \"mister Filch\", [genie_name]...", "normal", "squint", "angry", "mid")
     m "What did I say?"
     call her_main(".......", "normal", "squint", "angry", "R")
     call her_main("Can I get my points now?", "open", "base", "worried", "mid")
@@ -408,23 +408,23 @@ label hg_pr_flirt_teacher_T2_E3: # Filch
     call hg_pr_flirt_teacher_intro
 
     call play_music("hermione") # HERMIONE'S THEME.
-    call her_main("Well, I spent quite some time by flirting with Mr. Filch today.", "soft", "base", "base", "mid",xpos="right",ypos="base")
-    call her_main("What a well-read and exceptionally well-mannered gentleman Mr. Filch is.", "open", "closed", "base", "mid")
+    call her_main("Well, I spent quite some time by flirting with mister Filch today.", "soft", "base", "base", "mid",xpos="right",ypos="base")
+    call her_main("What a well-read and exceptionally well-mannered gentleman mister Filch is.", "open", "closed", "base", "mid")
     m "........"
     call her_main("But I don't think anyone knows him like that...", "soft", "base", "base", "R")
-    her "I don't think anyone knows Mr. Filch like I do."
+    her "I don't think anyone knows mister Filch like I do."
     call her_main("I feel like he really opened up to me, [genie_name].", "base", "base", "base", "mid")
     m "Right..."
-    m "This, Mr. Fli{size=+7}nt{/size}--"
-    call her_main("It's Mr. Filch, [genie_name].", "open", "closed", "angry", "mid")
+    m "This, mister Fli{size=+7}nt{/size}--"
+    call her_main("It's mister Filch, [genie_name].", "open", "closed", "angry", "mid")
     m "Yeah, whatever... Is he a teacher here then?"
-    her "Mr.Filch? A teacher? No, [genie_name]..."
+    her "Mister Filch? A teacher? No, [genie_name]..."
     call her_main("He is the caretaker... Shouldn't you know your school personnel, [genie_name]?", "base", "base", "base", "mid")
     m "A caretaker...?"
     m "You mean he is a janitor?"
     call her_main("Well...", "open", "base", "worried", "R")
     m "[hermione_name], I did not send you out there to charm school janitors!"
-    call her_main("But Mr. Filch is part of the school staff, [genie_name]!", "open", "base", "base", "mid")
+    call her_main("But mister Filch is part of the school staff, [genie_name]!", "open", "base", "base", "mid")
 
     menu:
         "\"Just take your points and go!\"":
@@ -462,7 +462,7 @@ label hg_pr_flirt_teacher_T3_E1: # Filch
     call her_main("[genie_name], I.....", "angry", "happyCl", "worried", "mid", emote="sweat")
     m "What is it? What happened?"
     call her_main("Well...", "annoyed", "base", "worried", "R")
-    her "It's Mr. Filch, [genie_name]..."
+    her "It's mister Filch, [genie_name]..."
     m "The janitor?"
     call her_main("I flirted with him a little...", "open", "base", "base", "mid")
     her "And it went great at first..."
@@ -568,17 +568,17 @@ label hg_pr_flirt_teacher_T3_E3: # Lockhart
     m "What did Professor Lockhart do to you?"
     call her_main("*Ehm*... Nothing, [genie_name]...", "soft", "base", "base", "R")
     m "Nothing?!"
-    call her_main("Yes, I sort of cornered Mr. Lockhart today...", "open", "base", "worried", "mid")
+    call her_main("Yes, I sort of cornered mister Lockhart today...", "open", "base", "worried", "mid")
     call her_main("And I also may have sort of made a pass at him...", "open", "base", "base", "mid")
     m "Seriously?"
     call her_main("Yes... Not sure what had gotten into me, [genie_name]...", "angry", "happyCl", "worried", "mid", emote="sweat")
     g9 "Way to go, [hermione_name]!"
     call her_main("Hear me out first [genie_name], please!", "scream", "happyCl", "worried", "mid")
     m "My apologies. Please continue."
-    call her_main("Well, I always knew that Mr. Lockhart was a true gentleman and...", "open", "base", "base", "mid")
+    call her_main("Well, I always knew that mister Lockhart was a true gentleman and...", "open", "base", "base", "mid")
     her "And... and I just wanted to clear his name from any suspicions once and for all..."
     call her_main("...............", "annoyed", "base", "worried", "R")
-    her "Well Mr. Lockhart did not reject me..."
+    her "Well mister Lockhart did not reject me..."
     m "You are killing me [hermione_name]!"
     m "He didn't reject you, he didn't do anything to you..."
     m "What the hell happened then?"
@@ -589,7 +589,7 @@ label hg_pr_flirt_teacher_T3_E3: # Lockhart
     call her_main("He gave me a bewildered look and then started to sob...", "angry", "base", "worried", "mid")
     her "He looked like he was genuinely afraid of me, [genie_name]."
     call her_main("I think...", "annoyed", "base", "worried", "R")
-    her "I think Mr. Lockhart might be afraid of women..."
+    her "I think mister Lockhart might be afraid of women..."
     m "Afraid of women?"
     m "What is that supposed to mean?"
     call her_main("That he is into boys, [genie_name]?", "angry", "happyCl", "worried", "mid", emote="sweat")

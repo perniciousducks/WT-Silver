@@ -118,7 +118,7 @@ label cho_quid_E1:
     call cho_main("(...)", "annoyed", "narrow", "angry", "mid")
     call cho_main("I'm sorry Sir, but I feel methods like those would get us nowhere!", "open", "closed", "raised", "mid")
     call cho_main("And it's very improper for a teacher to suggest such things! Not to mention right out vulgar!", "open", "base", "angry", "R")
-    call cho_main("I'll be leaving now.{p=0.8}Please only call me should you decide to finally take things seriously...", "soft", "narrow", "angry", "mid")
+    call cho_main("I'll be leaving now.{w=0.8} Please only call me should you decide to finally take things seriously...", "soft", "narrow", "angry", "mid")
     g9 "And you, think about using that petite body of yours to get closer to your dreams!"
     call cho_main("*Tzzzz*", "angry", "closed", "angry", "mid")
 
@@ -147,7 +147,7 @@ label cho_quid_E2:
     call cho_main(xpos="mid",ypos="base", trans=fade)
     m "So, have you consider going with my training methods?"
     call cho_main("I... Yes...", "soft", "closed", "angry", "mid")
-    call cho_main("I've simply run out of options.{p}If we want to win the cup this year, you're the only hope we have left...", "open", "narrow", "angry", "mid")
+    call cho_main("I've simply run out of options.{w=0.8} If we want to win the cup this year, you're the only hope we have left...", "open", "narrow", "angry", "mid")
     call cho_main("I have no choice but to try your methods, Sir.", "annoyed", "narrow", "angry", "mid")
     g9 "I'm glad you've come to your senses."
     call cho_main("(...)", "annoyed", "narrow", "angry", "R")

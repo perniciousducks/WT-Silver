@@ -232,8 +232,8 @@ label cc_pf_talk_T1_intro_E1:
     if masturbating:
         g4 "What? Please don't go now. I've only just started!"
         call cho_main("Started with what, [cho_genie_name]?", "annoyed", "narrow", "angry", "mid")
-        g4 "I'll give you ten house points if you stay!{p=0.8}Just a tiny bit longer!"
-        call cho_main("And what makes you believe that I'd agree to such a thing?{p=0.8}Getting rewarded with points for doing nothing?", "open", "closed", "base", "mid")
+        g4 "I'll give you ten house points if you stay!{w=0.8} Just a tiny bit longer!"
+        call cho_main("And what makes you believe that I'd agree to such a thing?{w=0.8} Getting rewarded with points for doing nothing?", "open", "closed", "base", "mid")
         call cho_main("Earning house points in such a way is despicable, and it would be unfair towards the other school houses, as well as my fellow students...", "open", "narrow", "base", "mid")
         call cho_main("", "annoyed", "narrow", "angry", "mid")
         g4 "Fifty points?"
@@ -689,11 +689,11 @@ label cc_pf_talk_T2_intro_E1:
             call cho_main("No, Sir.", "soft", "closed", "base", "mid")
             m "No?"
 
-    call cho_main("I do not endorse their behaviour, Sir.{p=0.6}And I hope no other student has to share the same harassment that I received.", "soft", "narrow", "angry", "mid")
+    call cho_main("I do not endorse their behaviour, Sir.{w=0.6} And I hope no other student has to share the same harassment that I received.", "soft", "narrow", "angry", "mid")
     call cho_main("{size=-4}Unless maybe Granger...{/size}", "annoyed", "narrow", "angry", "R") # Small text.
     call cho_main("But{w=0.3}, watching them succumb to me has been rather fun...", "base", "narrow", "angry", "mid")
     m "Succumb to you?"
-    call cho_main("Yes.{w=0.3} They're so desperately trying to embarrass me.{p=0.6}To make me doubt myself before the big game...", "smile", "narrow", "angry", "mid")
+    call cho_main("Yes.{w=0.3} They're so desperately trying to embarrass me.{w=0.6} To make me doubt myself before the big game...", "smile", "narrow", "angry", "mid")
 
     if masturbating:
         g4 "Those asshole bullies...{w=0.6} Show them who's boss!"
@@ -709,10 +709,10 @@ label cc_pf_talk_T2_intro_E1:
     call cho_main("Stealing my underwear while I'm taking a shower after practice...", "angry", "narrow", "angry", "downR")
     if masturbating:
         g4 "*Argh!* {size=-4}(Dirty panty muggers!){/size}"
-    call cho_main("They even had the audaciousness to write --{p=0.6}{b}\"Cho, the Ravenclaw ho\"{/b}{w=0.8} on the blackboard during divination class.", "open", "narrow", "angry", "mid")
+    call cho_main("They even had the audaciousness to write --{w=0.6} {b}\"Cho, the Ravenclaw ho\"{/b}{w=0.8} on the blackboard during divination class.", "open", "narrow", "angry", "mid")
     if masturbating:
         g4 "{size=-4}(They must have seen your future, you whore!){/size}"
-    call cho_main("Half the class saw it before I could get there...{p=0.8}Not that I care much about it...", "annoyed", "narrow", "base", "downR", cheeks="blush")
+    call cho_main("Half the class saw it before I could get there...{w=0.8} Not that I care much about it...", "annoyed", "narrow", "base", "downR", cheeks="blush")
     call cho_main("If I'm honest, I'm surprised they could even spell my name correctly...", "soft", "narrow", "angry", "mid")
     if masturbating:
         call nar("*Fap* *Fap* *Fap*...")
@@ -757,7 +757,7 @@ label cc_pf_talk_T2_intro_E1:
     call cho_main("Not in a million years!", "base", "narrow", "base", "mid")
     m "Admirable."
 
-    m "Anything else you could tell me about their team?{p=0.6}Anything that could help us?"
+    m "Anything else you could tell me about their team?{w=0.6} Anything that could help us?"
     m "Did you maybe fool around with their seeker as well?"
     call cho_main("Malfoy?", "soft", "wide", "base", "mid") # Shocked
     call cho_main("*Tzzzz*!{w=0.3} I'd never surround myself with that Slytherin scum!", "angry", "closed", "angry", "mid")
@@ -827,7 +827,7 @@ label cc_pf_talk_T2_intro_E2:
             call cho_main("Please don't try to diminish my achievement, Sir!", "annoyed", "narrow", "base", "R")
 
     call cho_main("It's like I'm a celebrity now!{w=0.6} I'm getting so much attention!", "soft", "base", "base", "R")
-    call cho_main("It never happened that Ravenclaw won a game.{p=0.6}And I made that possible!", "smile", "base", "base", "mid")
+    call cho_main("It never happened that Ravenclaw won a game.{w=0.6} And I made that possible!", "smile", "base", "base", "mid")
     if masturbating:
         g4 "{size=-4}And soon you'll be on your knees thanking me for it!{/size}"
     else:
@@ -861,7 +861,7 @@ label cc_pf_talk_T2_intro_E2:
 
         call cho_main("Of course, Sir.", "base", "base", "base", "mid")
 
-    call cho_main("It's fun receiving all of the boys attention!{p=0.8}And seeing how jealous it makes all of the girls!", "soft", "base", "base", "mid")
+    call cho_main("It's fun receiving all of the boys attention!{w=0.8} And seeing how jealous it makes all of the girls!", "soft", "base", "base", "mid")
     call cho_main("Especially Granger!", "smile", "narrow", "base", "mid")
     if masturbating:
         g4 "{size=-4}Yes, the Gryffindor whore!{/size}"
@@ -873,8 +873,8 @@ label cc_pf_talk_T2_intro_E2:
     call cho_main("Which resulted in Hufflepuff playing far more defensively, when they should have been aggressive!", "base", "narrow", "base", "mid")
     if masturbating:
         g4 "{size=-4}Oh you are one of those girls! I like going aggressive!{/size}"
-    call cho_main("I caught the Snitch at just the right time!{p=0.6}If Hufflepuff had gone too far in the lead, we would have lost!", "open", "narrow", "angry", "mid")
-    call cho_main("I really need to thank Granger the next time I see her.{p=0.6}I owe her a great deal...", "soft", "narrow", "angry", "R")
+    call cho_main("I caught the Snitch at just the right time!{w=0.6} If Hufflepuff had gone too far in the lead, we would have lost!", "open", "narrow", "angry", "mid")
+    call cho_main("I really need to thank Granger the next time I see her.{w=0.6} I owe her a great deal...", "soft", "narrow", "angry", "R")
     if masturbating:
         g4 "{size=-2}I'd love to watch you \"thank her!\"{/size}"
         call cho_main("Maybe I'll do something fun with her the next time I see her...", "base", "narrow", "base", "R")
@@ -891,7 +891,7 @@ label cc_pf_talk_T2_intro_E2:
     call cho_main("Give her a proper kiss on the lips, perhaps?", "soft", "narrow", "angry", "mid")
     with hpunch
     g4 "!!!"
-    call cho_main("Yes! I bet a prude like her would be {b}so{/b} shocked by that!{p=0.8}I might even be her first!", "soft", "base", "angry", "downR", cheeks="blush")
+    call cho_main("Yes! I bet a prude like her would be {b}so{/b} shocked by that!{w=0.8} I might even be her first!", "soft", "base", "angry", "downR", cheeks="blush")
 
     # Forced to jerk off.
     if masturbating:
@@ -1161,7 +1161,7 @@ label cc_pf_talk_T2_E3:
         g4 "*Agh*!{w=0.3} {size=-4}(I won't last long if she continues like this!){/size}"
         call cho_main("And once those two are done breeding her, they trade places with another batch.", "clench", "narrow", "angry", "R")
         g4 "*Ahh* {size=-4}(This is getting too crazy!){/size}"
-        call cho_main("Or even better, let some trolls have their way with her!{p=0.8}Let them rip her apart!", "clench", "base", "angry", "downR")
+        call cho_main("Or even better, let some trolls have their way with her!{w=0.8} Let them rip her apart!", "clench", "base", "angry", "downR")
         g4 "*Fuck!* {size=-4}(Come on! Unload! Before it's too late!!!){/size}"
 
         # Genie cums.

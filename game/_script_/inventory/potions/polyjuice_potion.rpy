@@ -187,7 +187,7 @@ label potion_scene_1_1_2:
                 call her_chibi_scene("bj")
 
                 call nar(">Hermione swallows your cock again, taking care not to apply too much pressure with her tongue.") #start sucking scene. might insert more sucking noises for a little while or add pauses
-                m "So..{w=1.0} did you attend all your classes today?"
+                m "So...{w=1.0} did you attend all your classes today?"
 
                 call her_chibi_scene("bj_pause")
 

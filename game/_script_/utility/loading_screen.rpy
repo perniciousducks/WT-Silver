@@ -46,7 +46,24 @@ define loading_step_list = [
         "Loading pointless bird petting mechanics",
         "Applying desk chair cushioning charm",
         "Calculating semen trajectory",
-        "Opening spank-bank account at Gringotts"
+        "Opening spank-bank account at Gringotts",
+        "Scratching Genie's leg",
+        "Polishing Genie's wand",
+        "Defiling Cho's panties",
+        "Eliminating common sense",
+        "Applying lube",
+        "Restocking chocolate frog supply",
+        "Charming students",
+        "Breaking the fourth wall",
+        "Shortening skirts",
+        "Undressing house-elves",
+        "Lewdifying spells",
+        "Inserting sexual innuendoes",
+        "Searching for the g-spot",
+        "Adjusting refractory period levels",
+        "Indexing breast sizes",
+        "Prolonging the inevitable heat death of the universe",
+        "Redefining the big bang"
         ]
 
 init python:
@@ -105,5 +122,3 @@ screen loading():
     elif step is 5:
         if not renpy.predicting():
             timer 0.01 action Return()
-
-

@@ -485,7 +485,7 @@ label hufflepuff_match:
             ">Snape then begins to drag you away from the podium."
             play bg_sounds "sounds/wind_long_loop.mp3"
 
-            call gen_main("This is our chance... they may take away our microphones...{w=1.0} But they...{nw}{w=0.3}But they...{nw}",face="angry")
+            call gen_main("This is our chance... they may take away our microphones...{w=1.0} But they...{nw}{w=0.3} But they...{nw}",face="angry")
             $ renpy.sound.play("sounds/microphone_feedback.mp3")
 
             hide screen genie_main
@@ -493,7 +493,7 @@ label hufflepuff_match:
             call gen_chibi("stand", flip=True, 280+0, 400)
             with d3
 
-            call gen_main("This is our chance... they may take away our microphones... {w=0.3}But they...{nw}{fast}{w=1.0}But they...{w=0.5}{nw}",face="angry")
+            call gen_main("This is our chance... they may take away our microphones...{w=0.3} But they...{nw}{fast}{w=1.0} But they...{w=0.5}{nw}",face="angry")
 
             hide screen genie_main
             call sna_chibi("stand", flip=True, 230-40, 400)

@@ -775,7 +775,7 @@ label hermione_change:
             call her_main("", "base", "base", "base", "mid")
     elif temp_name == "Pet":
         if her_whoring >= 11 and her_whoring < 13:
-            call her_main("You want to call me.... {w=0.5}a pet?", "normal", "squint", "angry", "mid")
+            call her_main("You want to call me....{w=0.5} a pet?", "normal", "squint", "angry", "mid")
             m "Yes."
             call her_main(".... {w=0.5}.... {w=0.5}.... {w=0.5}....", "normal", "happy", "base", "mid")
             call her_main("", "normal", "squint", "base", "mid")
@@ -912,7 +912,7 @@ label hermione_change:
                                 call her_main("I was pretty sure you said-...", "open", "base", "base", "mid")
                                 call her_main("", "normal", "base", "base", "R")
                                 m "Look outside the window, it's raining is it not?"
-                                call her_main("I{w=0.5}... {w=0.5}Yes, you are right [genie_name].", "normal", "closed", "base", "mid")
+                                call her_main("I{w=0.5}...{w=0.5} Yes, you are right [genie_name].", "normal", "closed", "base", "mid")
                                 m "Of course I am."
                                 call her_main("So what did you want to talk about?", "base", "base", "base", "mid")
                             else:

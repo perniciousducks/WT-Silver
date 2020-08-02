@@ -242,7 +242,7 @@ label cc_pr_spy_boys_T3_harry:
     m "I see, then what were they talking about?"
     call cho_main("Ron was going on about wizard's chess.", "open", "closed", "angry", "mid")
     m "Wizard's chess?"
-    call cho_main("Yes, wizard's...{w=0.4}Surely you know about wizard's chess...", "angry", "narrow", "raised", "mid")
+    call cho_main("Yes, wizard's...{w=0.4} Surely you know about wizard's chess...", "angry", "narrow", "raised", "mid")
     call cho_main("It's like regular chess except the pieces move on their own.", "soft", "narrow", "base", "mid")
     m "Sounds as dull as regular chess."
     m "Anything else?"

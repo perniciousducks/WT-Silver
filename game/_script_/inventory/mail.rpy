@@ -158,7 +158,7 @@ label letter_paperwork_report:
     return
 
 label letter_favor_complaint:
-    m "Amelia...{w=1.0}Bones?"
+    m "Amelia...{w=1.0} Bones?"
     g9 "*He-he-he-he-he*..."
     m "Wait a second..."
     m "Does that mean I'm in trouble?"

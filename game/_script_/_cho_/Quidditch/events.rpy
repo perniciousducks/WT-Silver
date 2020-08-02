@@ -526,7 +526,7 @@ label cho_quid_E6:
             m "You agreed to do this, remember..."
             g4 "May I remind you how many house points I gave you?"
             call her_main("No amount of house points was worth the humiliation I got!", "angry", "base", "angry", "mid")
-            m "Well, *boo*--{w=0.3}bloody--{w=0.3}*hoo*..."
+            m "Well, *boo* --{w=0.3} bloody --{w=0.3} *hoo*..."
             call her_main("*Tzzzs*!...", "clench", "closed", "angry", "mid", emote="angry")
             call her_main("Good luck finding somebody that is more willing to be the school's laughing stock!", "open", "base", "angry", "mid")
 
@@ -580,7 +580,7 @@ label cho_quid_E7:
 
     menu:
         "\"I'll give you house points.\"":
-            call her_main("Not...{w=0.3}interested.", "annoyed", "narrow", "angry", "R")
+            call her_main("Not...{w=0.3} interested.", "annoyed", "narrow", "angry", "R")
             g4 "But you're always eager for those points!"
             call her_main("No amount of points would be worth it.", "open", "base", "angry", "mid")
             m "So, you don't even want to hear my offer?"

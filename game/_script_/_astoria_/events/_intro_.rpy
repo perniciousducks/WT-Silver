@@ -242,7 +242,7 @@ label astoria_intro_E1:
     call ton_main("Find the student who cursed her, and then talk some sense into her - to never do it again...","open","closed","base","mid")
     m "Find{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8} her?"
     call ton_main("Yes! She heard a girl's voice in her head - while she was under the influence of the imperius curse...","open","base","angry","mid")
-    call ton_main("Who told her{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8}to lift up her top.","upset","base","worried","R")
+    call ton_main("Who told her{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8} to lift up her top.","upset","base","worried","R")
     g9 "Oh yes?"
     call ton_main("The imperius curse can make people do {b}unspeakable things{/b} against their will!","open","closed","angry","mid")
     call ton_main("I have no doubt that someone as sweet and good-hearted as Susan wouldn't know how to defend herself against it...", "open", "base", "worried", "mid")

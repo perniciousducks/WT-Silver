@@ -17,7 +17,7 @@ label tonks_intro_E1:
     ton "*Ugh*..."
     m "..................."
     ton "I meant, Nymphadora Tonks, Sir."
-    m "(Nympho...{w=0.6}what?)"
+    m "(Nympho...{w=0.6} what?)"
     ton "Ministry of Magic, Auror division.{w=0.8} May I come in, Sir?"
 
     if letter_min_favors.read:
@@ -287,7 +287,7 @@ label tonks_intro_E2:
             call ton_main("What?!", "clench", "wide", "shocked", "stare")
             call ton_main("I'm sorry, Professor. I clearly must have misheard you...", "disgust", "narrow", "annoyed", "down")
             call ton_main("What did you just call me?", "mad", "base", "angry", "mid")
-            m "*Uhm*...{w=0.5}isn't that your name?"
+            m "*Uhm*...{w=0.5} isn't that your name?"
             call ton_main("My name is \"Tonks\", Professor!","upset","base","angry","mid")
             call ton_main("You of all people should know this...", "annoyed", "base", "angry", "R")
             m ".............."
@@ -382,7 +382,7 @@ label ss_he_tonks_E1:
     m "I thought I traded places with just one person..."
     call sna_main("That {b}is{/b} one person!","snape_30", trans=hpunch)
     call sna_main("It's our headmaster's full name. And it's your name now!{w} You best make sure to remember it.","snape_34")
-    m "Yeah...{w=0.5}I'm not even going to try..."
+    m "Yeah...{w=0.5} I'm not even going to try..."
     call sna_main("Let's just hope this whole Ministry situation will solve itself...","snape_31")
 
     call sna_main("Thankfully, out of all the people the ministry could have sent...","snape_06")

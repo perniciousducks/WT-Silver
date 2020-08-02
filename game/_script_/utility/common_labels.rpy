@@ -358,6 +358,19 @@ label describe_mood(name, value):
 
     return
 
+
+label describe_mood_after_gift(was_negative, mood, change):
+    if was_negative and mood == 0:
+        call notes
+        "She's no longer upset with you."
+    elif was_negative and change < 0:
+        "But she's still upset with you."
+    elif was_negative:
+        "She's still upset with you."
+
+    return
+
+
 label notes():
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     hide screen notes

@@ -170,18 +170,19 @@ label hermione_level_up(tier=None):
     if tier == 1:
         show screen blktone5
         with d3
-        ">Hermione's second \"favour tier\" is now available."
-        ">You can move up \"favour tiers\" by increasing her \"whoring level\", and by triggering \"favour milestones.\""
+        ">Hermione's second {i}favour tier{/i} is now available."
+        ">You can move up {i}favour tiers{/i} by increasing her {i}whoring level{/i}, and by triggering {i}favour milestones{/i}."
         if game_difficulty >= 3: # Hardcore, books are required.
-            ">In addition, it is also required of you to increase your \"imagination level\" by reading \"fictional books\", to unlock Hermione's next tier of favours."
+            ">In addition, it is also required of you to increase your {i}imagination level{/i} by reading {i}fictional books{/i}, to unlock Hermione's next tier of favours."
+        ">Each tier unlocks a new set of favours, but favours of the previous tier will no longer be availabe."
         hide screen blktone5
         with d3
         pause.5
         menu:
-            "Would you like to increase Hermione's \"tier-level\" to 2?"
-            "-Yes, increase her level-":
+            "Would you like to increase Hermione's {i}favour tier{/i} now?"
+            "-Yes, increase her tier-":
                 pass
-            "-No, stay on current level.-":
+            "-No, stay on her current tier-":
                 return
 
     elif tier == 2:
@@ -201,7 +202,7 @@ label hermione_level_up(tier=None):
     $ her_mood = 0
 
     pause.5
-    call nar(">Hermione has reached level "+str(her_tier)+"!")
+    call nar(">Hermione has reached {i}favour tier{/i} "+str(her_tier)+"!")
 
     call update_her_tier
 

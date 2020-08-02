@@ -126,12 +126,10 @@ label lun_mood(value=0):
     else:
         "Luna's mood hasn't changed."
 
-    $ was_negative = ((lun_mood > 0) and value < 0)
+    $ was_negative = lun_mood > 0
     $ lun_mood = max(min(lun_mood+value, 100), 0)
 
-    if was_negative:
-        call notes
-        "They're no longer upset at you."
+    call describe_mood_after_gift(was_negative, lun_mood, value)
 
     hide screen blktone5
     return

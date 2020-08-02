@@ -100,7 +100,7 @@ label hg_pr_flirt_teacher_intro:
     m "Did you complete your task?"
     her "I did as you asked [genie_name]..."
 
-    if hg_pr_flirt_Teacher.is_tier_complete(): # If you have seen all events in this tier once, you get the choice to skip it.
+    if hg_pr_flirt_teacher.is_tier_complete(): # If you have seen all events in this tier once, you get the choice to skip it.
         menu:
             "\"Great. Here are your points.\"":
                 jump end_hg_pr_flirt

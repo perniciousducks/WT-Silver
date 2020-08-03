@@ -679,7 +679,7 @@ label hg_pf_strip_T6_fingering:
     $ hermione.set_body(armright="on_tits")
 
     call her_main("*Ah*...{w=0.4} Yes...{w=0.4}*Ah*... my--", "soft", "narrow", "base", "dead", cheeks="blush")
-    call her_main("[genie_name]{heart}... I'm...*Ah*...{w=0.4}I'm cumming!{heart}", "silly", "narrow", "annoyed", "dead", cheeks="blush")
+    call her_main("[genie_name]{heart}... I'm...*Ah*...{w=0.4} I'm cumming!{heart}", "silly", "narrow", "annoyed", "dead", cheeks="blush")
     call her_main("{heart}{heart}{heart}!!!{heart}{heart}{heart}", "silly", "narrow", "base", "dead", cheeks="blush")
     with kissiris
     with hpunch

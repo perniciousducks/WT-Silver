@@ -228,7 +228,7 @@ label ending_after:
                 m "I have returned..."
                 call sna_main ("*Ahem...*{w=0.4} I see...","snape_06",ypos="head")
                 call sna_main ("Well...{w=0.5} Here it goes...","snape_04",ypos="head")
-                call sna_main ("Who...{w=0.5}who rules?","snape_09",ypos="head")
+                call sna_main ("Who...{w=0.5} who rules?","snape_09",ypos="head")
                 m "..."
                 call sna_main (".............","snape_25",ypos="head")
                 call sna_main ("...","snape_26",ypos="head")

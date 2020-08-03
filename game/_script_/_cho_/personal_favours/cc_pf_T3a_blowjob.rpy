@@ -1308,7 +1308,7 @@ label cc_pf_blowjob_T3_E2:
 
             $ camera.set_image("topless_up_angry_cum_swallow")
 
-            cho "What...{w=0.4}the hell...{w=0.4} is wrong with you?!?!" #screen shake
+            cho "What...{w=0.4} the hell...{w=0.4} is wrong with you?!?!" #screen shake
             gen "What do you--"
 
             $ camera.set_image("topless_up_angry2_cum_swallow")

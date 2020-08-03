@@ -112,7 +112,7 @@ label cho_intro_E1:
            call cho_main("Anyway...", "open", "closed", "base", "mid")
 
 
-    call cho_main("I'm terribly sorry for bothering you, Sir.{w=0.8}I hope I'm not interrupting anything important.", "open", "base", "worried", "mid")
+    call cho_main("I'm terribly sorry for bothering you, Sir.{w=0.8} I hope I'm not interrupting anything important.", "open", "base", "worried", "mid")
     m "No worries, I can always spare some of my...{w=0.6} valuable time...{w=1.0} *Ahem*{w=0.6} for my dear students..."
     g9 "What's on your mind?"
 
@@ -198,7 +198,7 @@ label cho_intro_E1:
     call cho_main("{size=-5}Whore...{/size}", "clench", "closed", "angry", "mid", trans=hpunch)
     call her_main("...", "normal", "squint", "angry", "L", cheeks="blush")
     call cho_main("...", "upset", "narrow", "base", "L")
-    call her_main("So... What have you been discussing?{w=0.4}Anything I should know?", "open", "squint", "base", "mid", cheeks="blush")
+    call her_main("So... What have you been discussing?{w=0.4} Anything I should know?", "open", "squint", "base", "mid", cheeks="blush")
     call cho_main("Oh, it's nothing that you need to worry your pretty little head about...", "smile", "narrow", "angry", "L")
     m "(This could take a while...)"
 
@@ -235,7 +235,7 @@ label cho_intro_E1:
         call her_main("I heard about how you were flaunting those...  \"things\" of yours at Seamus Finnigan.", "crooked_smile", "narrow", "base", "R_soft")
         with hpunch
         call cho_main("\"Things?\"", "angry", "wide", "base", "L")
-        call cho_main("Oh, miss perfect Hermione Granger.{w=0.8}Too afraid to even use the word \"tits\"...", "open", "narrow", "angry", "L")
+        call cho_main("Oh, miss perfect Hermione Granger.{w=0.8} Too afraid to even use the word \"tits\"...", "open", "narrow", "angry", "L")
         call her_main("Well yours hardly qualify as such...", "annoyed", "narrow", "angry", "R", cheeks="blush")
         call cho_main("How dare you!", "clench", "closed", "angry", "mid")
         call cho_main("And so what? What's wrong with being confident about your body...", "open", "narrow", "angry", "L")
@@ -797,7 +797,7 @@ label cho_intro_E3:
 
     call her_main("[genie_name], may I ask.{w=0.6} What exactly were you and Cho talking about when I entered your office?", "open", "base", "base", "R")
     m "Oh. She just wanted my help with Quidditch."
-    call her_main("*Pffff*-{w=0.4}  Why doesn't it surprise me that she'd need your help with it.", "grin", "narrow", "base", "R_soft")
+    call her_main("*Pffff*-{w=0.4} Why doesn't it surprise me that she'd need your help with it.", "grin", "narrow", "base", "R_soft")
     call her_main("How else could she possibly win that stupid Quidditch cup...", "soft", "closed", "angry", "mid")
     m "I thought that cup was so important to you?"
     call her_main("I couldn't care less about it, [genie_name].", "open", "closed", "base", "mid")

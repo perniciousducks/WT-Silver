@@ -102,7 +102,7 @@ label hg_pf_blowjob_T4_fail_intro:
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "I plan to grant Gryffindor {number=current_payout} house points today..."
     m "If you suck me off..."
-    call her_main("Suck you...{w=0.3}off?", "disgust", "wide", "base", "mid")
+    call her_main("Suck you...{w=0.3} off?", "disgust", "wide", "base", "mid")
     call her_main("With my mouth?!", "disgust", "wide", "base", "stare")
 
     if hg_kiss.trigger:

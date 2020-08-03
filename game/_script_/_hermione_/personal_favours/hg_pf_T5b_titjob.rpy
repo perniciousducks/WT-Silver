@@ -320,11 +320,11 @@ label hg_pf_titjob_1:
     call her_main(".............", "normal", "happyCl", "worried", "mid")
     call her_main("Err... [genie_name]?")
     m "Yes, what is it?"
-    call her_main("Are you almost...{w=0.3}there?", "open", "base", "base", "mid")
+    call her_main("Are you almost...{w=0.3} there?", "open", "base", "base", "mid")
     m "Why?"
     $ ccg1 = 7
     if daytime:
-        call her_main("Well, it's just that...{w=0.3}my classes are about to start...", "upset", "wink", "base", "mid")
+        call her_main("Well, it's just that...{w=0.3} my classes are about to start...", "upset", "wink", "base", "mid")
     else:
         call her_main("Well, it's just that...{w=0.3} I promised I would meet with Ginny tonight...", "upset", "wink", "base", "mid")
         call her_main("She's already pretty upset with how much time I'm spending in here...")

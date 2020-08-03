@@ -53,7 +53,7 @@ screen quick_menu():
         textbutton _("Auto") action Preference("auto-forward", "toggle")
         textbutton _("Preferences") action ShowMenu("preferences")
 
-    if renpy.variant("android"):
+    if renpy.android:
         imagebutton idle "interface/frames/"+interface_color+"/arrow.png" action Rollback() xoffset -120 yalign 0.5 yanchor 0.5
         imagebutton idle im.Flip("interface/frames/"+interface_color+"/arrow.png", horizontal=True) action Skip(fast=True, confirm=True) xoffset 600 yalign 0.5 yanchor 0.5
 
@@ -301,7 +301,7 @@ screen preferences():
 
     use navigation
 
-    if not renpy.variant('android'):
+    if not renpy.android:
         $ columns = 4
         $ rows = 1
     else:
@@ -317,7 +317,7 @@ screen preferences():
         vbox:
             spacing 5
 
-            if not renpy.variant('android'):
+            if not renpy.android:
                 frame:
                     has vbox
 
@@ -336,7 +336,7 @@ screen preferences():
                 has vbox
 
                 label _("Interface")
-                if not renpy.variant('android'):
+                if not renpy.android:
                     textbutton "Tooltips" action ToggleVariable("preferences.tooltip", True, False)
                     textbutton _("Custom Cursor") action [ToggleVariable("preferences.customcursor", True, False), ToggleVariable("config.mouse", { 'default' : [ ('interface/cursor.png', 0, 0)] }, None) ]
                 textbutton _("Nightmode") action [ToggleVariable("preferences.nightmode", True, False), Function(renpy.call_in_new_context, "update_interface_color")]
@@ -481,7 +481,7 @@ screen preferences():
                         Function(set_use_drawable_resolution)
                     ]
 
-        if not renpy.variant('android'):
+        if not renpy.android:
             vbox:
                 frame:
                     has vbox

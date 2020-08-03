@@ -6,7 +6,7 @@ init python:
         config.lint_hooks.append(lint_char_main_calls)
         renpy.arguments.register_command("whitespace", save_whitespace)
 
-    if not renpy.variant('android'):
+    if not renpy.android:
         config.start_interact_callbacks.append(fix_intel_renderer)
 
 init -1 python:

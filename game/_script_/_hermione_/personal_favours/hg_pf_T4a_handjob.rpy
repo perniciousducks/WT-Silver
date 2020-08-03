@@ -822,7 +822,7 @@ label hg_pf_handjob_2_continue:
             call her_main("Because we don't even own a dog!", "normal", "squint", "angry", "mid")
             m "Fine, whatever, let's just move on then..."
 
-        "{size=-4}\"-Manual user input-\"{/size}" if not renpy.variant("android"):
+        "{size=-4}\"-Manual user input-\"{/size}" if not renpy.android:
 
             # The phrase in the brackets is the text that the game will display to prompt
             # the player to enter the name they've chosen.
@@ -860,7 +860,7 @@ label hg_pf_handjob_2_continue:
                 call her_main("[tmp_name]", "scream", "closed", "angry", "mid")
             g9 "He-he..."
 
-        "{size=-4}\"-Manual user input-\"{/size}" if renpy.variant("android"):
+        "{size=-4}\"-Manual user input-\"{/size}" if renpy.android:
             if one_out_of_three == 1:
                 call her_main("I don't want to say that...", "annoyed", "base", "worried", "R")
                 m "Oh, just do it, [hermione_name]."

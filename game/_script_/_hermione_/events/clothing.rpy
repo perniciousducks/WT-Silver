@@ -3,8 +3,10 @@ label hermione_summon_setup:
 
     $ random_number = renpy.random.randint(1, 10)
 
+    # Reset doll state
     $ hermione.wear("all")
     $ hermione.set_cum(None)
+    $ hermione_animation = None
 
     #
     # TODO: Remove obsolete variables and fix the code after clothes have been added.

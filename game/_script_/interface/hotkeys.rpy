@@ -62,7 +62,7 @@ screen hotkeys_main():
 # Add hotkeys to say screen (screens.rpy)
 screen hotkeys_say():
     tag hotkeys_say
-    if renpy.variant('android'):
+    if renpy.android:
         key "game_menu" action ToggleVariable("hkey_chat_hidden", False, True)
     else:
         key hkey_hide action ToggleVariable("hkey_chat_hidden", False, True)

@@ -39,7 +39,7 @@ label inventory_menu(xx=150, yy=90):
     $ menu_items = inventory_sortfilter(category_items, current_sorting)
     $ menu_items_length = len(menu_items)
 
-    if not renpy.variant("android"):
+    if not renpy.android:
         show screen mouse_tooltip
 
     show screen inventory_menu(xx, yy)

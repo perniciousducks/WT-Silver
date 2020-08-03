@@ -12,7 +12,7 @@ default preferences.text_color_day = "#402313"
 default preferences.text_color_night = "#341c0f"
 default preferences.text_outline = "#00000000"
 default preferences.nightmode = False
-default preferences.use_drawable_resolution = False if renpy.variant("android") else True
+default preferences.use_drawable_resolution = False if renpy.android else True
 default preferences.tutorials = True
 
 # DO NOT MODIFY ANYTHING BELOW THIS LINE IF YOU DON'T KNOW WHAT YOU'RE DOING.

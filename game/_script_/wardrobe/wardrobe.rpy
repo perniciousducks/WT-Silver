@@ -48,7 +48,7 @@ label wardrobe(char_label):
     if wardrobe_music:
         call play_music("wardrobe")
 
-    if not renpy.variant("android"):
+    if not renpy.android:
         show screen mouse_tooltip
 
     show screen wardrobe_menu(550, 50)
@@ -109,7 +109,7 @@ label wardrobe(char_label):
         $ _return[1].schedule[_return[2]] = not _return[1].schedule[_return[2]]
     elif _return[0] == "export":
         menu:
-            "-Export to PNG file-" if not renpy.variant('android'):
+            "-Export to PNG file-" if not renpy.android:
                 $ export_in_progress = True
                 $ getattr(renpy.store, active_girl[:3]+"_outfit_last").save()
                 $ char_active.equip(_return[1])
@@ -122,7 +122,7 @@ label wardrobe(char_label):
         $ achievement.unlock("export")
     elif _return == "import":
         menu:
-            "-Import from PNG file-" if not renpy.variant('android'):
+            "-Import from PNG file-" if not renpy.android:
                 #call file_explorer # Unfinished
 
                 $ txt_filename = "exported"
@@ -309,7 +309,7 @@ screen wardrobe_menu(xx, yy):
             action Return(["category", "outfits"])
 
         # Studio
-        if not renpy.variant('android'):
+        if not renpy.android:
             add "interface/frames/{}/circle.png".format(interface_color) pos (373, 172)
             button:
                 style "empty"

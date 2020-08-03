@@ -193,7 +193,7 @@ label achievement_menu(xx=150, yy=90):
     $ menu_items = achievement_sortfilter(category_items, current_sorting, current_filter)
     $ menu_items_length = len(menu_items)
 
-    if not renpy.variant("android"):
+    if not renpy.android:
         show screen mouse_tooltip
 
     show screen achievement_menu(xx, yy)

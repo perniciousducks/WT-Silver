@@ -2,7 +2,7 @@ init python:
     import zipfile
     import re
 
-    if not renpy.variant("android"):
+    if not renpy.android:
         patchfn = system.path.join(config.basedir, "patch.zip")
 
     def semver(flat):
@@ -38,7 +38,7 @@ init python:
             ))
 
 label before_main_menu():
-    if not renpy.variant("android"):
+    if not renpy.android:
         $ run_patcher()
     return
 

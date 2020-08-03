@@ -2,8 +2,10 @@ label tonks_summon_setup:
 
     $ tonks_wardrobe_unlocked = True
 
+    # Reset doll state
     $ tonks.wear("all")
     $ tonks.set_cum(None)
+    $ tonks_animation = None
 
     $ random_number = renpy.random.randint(1, 20)
     if random_number in [1,2,3,4,5] and tonks.is_worn("top") and ton_friendship >= 50: #Naked

@@ -1036,6 +1036,7 @@ label astoria_intro_E4:
     $ astoria_busy = True
 
     $ astoria_unlocked = True
+    $ astoria_wardrobe_unlocked = True # TODO: Move to a proper event once they've been added.
     $ achievement.unlock("unlockast", True)
     call popup("{size=-4}You can now summon Astoria into your office.{/size}", "Character unlocked!", "interface/icons/head/astoria.png")
 

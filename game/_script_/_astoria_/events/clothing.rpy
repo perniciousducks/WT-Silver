@@ -4,9 +4,10 @@
 
 label astoria_summon_setup:
 
+    # Reset doll state
     $ astoria.wear("all")
     $ astoria.set_cum(None)
-    $ astoria_wardrobe_unlocked = True
+    $ astoria_animation = None
 
     if astoria_outfits_schedule:
         $ astoria.equip_random_outfit()

@@ -85,7 +85,7 @@ screen ui_top_bar():
                     tooltip "Sleep (s)"
 
         hbox:
-            if renpy.variant('android'):
+            if renpy.android:
                 spacing 10
                 xpos 800
             else:
@@ -137,7 +137,7 @@ screen ui_top_bar():
                 #xpos 10 ypos 40
                 #text "{size=-3}{color=#FFF}[total_points] [housepoints]\n[housepoints_y]\nToggle display:[persistent.toggle_points]\n\nSly:[slytherin_place]\nGry:[gryffindor_place]\nRav:[ravenclaw_place]\nHuf:[hufflepuff_place]\nUI lock:[toggle_ui_lock]{/color}{/size}"
 
-        # if tooltip and preferences.tooltip and not renpy.variant('android'):
+        # if tooltip and preferences.tooltip and not renpy.android:
             # text "{color=#FFF}{size=+4}[tooltip]{/size}{/color}" xalign 0.5 text_align 0.5 ypos 540
 
 screen ui_points():
@@ -242,7 +242,7 @@ screen ui_menu():
             textbutton "Load" action ShowMenu("load") background None xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
             if cheats_active and game_difficulty <= 2 and day > 1:
                 textbutton "Cheats" action [SetVariable("toggle_menu", False), Jump("cheats")] background None xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
-            if day > 1 and renpy.variant('android'):
+            if day > 1 and renpy.android:
                 textbutton "Preferences" action ShowMenu("preferences") background None xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
             if day > 1 and persistent.game_complete:
                 textbutton "Gallery" action [SetVariable("toggle_menu", False), Jump("scene_gallery")] background None xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]

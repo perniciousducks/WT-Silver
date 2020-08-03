@@ -13,7 +13,7 @@ screen main_room():
     sensitive room_menu_active
 
     # Hotkeys
-    if room_menu_active and day > 1 and not renpy.variant('android'):
+    if room_menu_active and day > 1 and not renpy.android:
         use hotkeys_main
 
     use weather
@@ -65,7 +65,7 @@ screen main_room():
     add cupboard_OBJ.get_room_image() xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
 
     # Scrolls (interactive overlay)
-    if renpy.variant('android'):
+    if renpy.android:
         imagemap:
             xpos cupboard_top_OBJ.xpos
             ypos cupboard_top_OBJ.ypos
@@ -92,7 +92,7 @@ screen main_room():
                 sensitive room_menu_active
 
     # Cupboard (interactive overlay)
-    if renpy.variant('android'):
+    if renpy.android:
         imagemap:
             xpos cupboard_OBJ.xpos
             ypos cupboard_OBJ.ypos
@@ -156,7 +156,7 @@ screen main_room():
 # Genie at desk
 screen genie_desk_interactive():
     tag genie_chibi # Uses same tag as chibi screens
-    if renpy.variant('android'):
+    if renpy.android:
         add "ch_gen sit_behind_desk" xpos 370 ypos 336 xanchor 0.5 yanchor 0.5
         imagemap:
             xpos 384

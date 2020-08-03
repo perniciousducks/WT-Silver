@@ -2,8 +2,10 @@ label cho_summon_setup:
 
     $ cho_wardrobe_unlocked = True
 
+    # Reset doll state
     $ cho.wear("all")
     $ cho.set_cum(None)
+    $ cho_animation = None
 
     if has_cho_panties:
         jump cho_panties_response_T2

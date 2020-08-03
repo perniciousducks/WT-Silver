@@ -63,7 +63,8 @@ define loading_step_list = [
         "Adjusting refractory period levels",
         "Indexing breast sizes",
         "Prolonging the inevitable heat death of the universe",
-        "Redefining the big bang"
+        "Redefining the big bang",
+        "Insert disc 2"
         ]
 
 init python:

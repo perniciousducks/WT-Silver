@@ -243,7 +243,7 @@ label hg_pf_titjob_1:
 
     call play_music("playful_tension") # SEX THEME.
     call her_main("...........", "disgust", "narrow", "worried", "down")
-    if hg_pf_titjob.counter == 0:
+    if hg_pf_titjob.counter == 1:
         call her_main("(It's so big...)", "disgust", "narrow", "base", "down")
     m "Get to it, [hermione_name]..."
     call her_main("Right...", "angry", "happyCl", "worried", "mid", emote="sweat")

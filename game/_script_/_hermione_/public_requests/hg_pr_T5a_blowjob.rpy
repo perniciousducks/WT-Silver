@@ -107,7 +107,7 @@ label end_hg_pr_blowjob:
     pause.2
 
     # Inner monologue
-    if hg_pr_grope.counter == 1:
+    if hg_pr_blowjob.counter == 1:
         show screen blktone
         with d3
 

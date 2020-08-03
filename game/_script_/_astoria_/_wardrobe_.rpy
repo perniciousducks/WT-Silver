@@ -104,3 +104,6 @@ default ast_pubes_arrow = DollCloth("astoria", ("pelvis", "pubes"), "pubes", "ar
 default ast_pubes_beaver = DollCloth("astoria", ("pelvis", "pubes"), "pubes", "beaver", [[229, 198, 129, 255]], unlocked=True)
 default ast_pubes_stuble = DollCloth("astoria", ("pelvis", "pubes"), "pubes", "stuble", [[139, 107, 69, 255]], unlocked=True)
 default ast_pubes_unshaved = DollCloth("astoria", ("pelvis", "pubes"), "pubes", "unshaved", [[139, 107, 69, 255]], unlocked=True)
+
+# Lipstick (DollLipstick)
+default ast_makeup4_lipstick = DollLipstick("astoria", ("makeup", "slot5"), "makeup4", "lipstick", [[255, 70, 70, 255]], unlocked=True)

@@ -209,7 +209,7 @@ default cho_pubes_beaver = DollCloth("cho", ("pelvis", "pubes"), "pubes", "beave
 default cho_pubes_stuble = DollCloth("cho", ("pelvis", "pubes"), "pubes", "stuble", [[52, 59, 80, 255]], unlocked=True)
 default cho_pubes_unshaved = DollCloth("cho", ("pelvis", "pubes"), "pubes", "unshaved", [[52, 59, 80, 255]], unlocked=True)
 
-default cho_makeup4_lipstick = DollLipstick("cho", ("makeup", "slot5"), "makeup4", "lipstick", [[185, 124, 81, 255]], unlocked=True)
+default cho_makeup4_lipstick = DollLipstick("cho", ("makeup", "slot5"), "makeup4", "lipstick", [[255, 70, 70, 255]], unlocked=True)
 
 ### Event Specific ###
 

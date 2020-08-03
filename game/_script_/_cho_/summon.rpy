@@ -81,7 +81,7 @@ label summon_cho:
             jump cho_requests
 
         "-Sexual favours-" (icon="interface/icons/small/condom.png") if cho_favors_unlocked:
-            if 3 > cho_mood > 1:
+            if cho_mood > 0:
                 call cho_main("I'm sorry, [cho_genie_name]. But I don't feel like it today...", "upset", "base", "worried", "mid")
                 jump cho_requests
             else:
@@ -117,10 +117,10 @@ label summon_cho:
         "-Dismiss Her-":
             stop music fadeout 3.0
 
-            if cho_mood != 0:
-                call cho_main("Goodbye, [cho_genie_name].",face="annoyed")
-            else:
+            if cho_mood == 0:
                 call cho_main("Goodbye, [cho_genie_name].",face="happy")
+            else:
+                call cho_main("Goodbye, [cho_genie_name].",face="annoyed")
 
             call play_sound("door")
 

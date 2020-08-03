@@ -699,7 +699,11 @@ label hg_pf_strip_T6_fingering:
     call her_main("........................", "grin", "base", "annoyed", "dead", cheeks="blush")
     stop bg_sounds
 
-    call nar(">You remove your hands from underneath Hermione's skirt, fingers drenched by her love juices.")
+    if hermione.is_worn("bottom"):
+        call nar(">You remove your hands from underneath Hermione's skirt, fingers drenched by her love juices.")
+    else:
+        call nar(">You remove your hands from Hermione's love canal, fingers drenched by her love juices.")
+
     call her_chibi_scene("behind_desk_front")
     show screen bld1
     with d3

@@ -152,3 +152,6 @@ default ton_pubes_arrow = DollCloth("tonks", ("pelvis", "pubes"), "pubes", "arro
 default ton_pubes_beaver = DollCloth("tonks", ("pelvis", "pubes"), "pubes", "beaver", [[255, 146, 185, 255]], unlocked=True)
 default ton_pubes_stuble = DollCloth("tonks", ("pelvis", "pubes"), "pubes", "stuble", [[132, 64, 89, 255]], unlocked=True)
 default ton_pubes_unshaved = DollCloth("tonks", ("pelvis", "pubes"), "pubes", "unshaved", [[132, 64, 89, 255]], unlocked=True)
+
+# Lipstick (DollLipstick)
+default ton_makeup4_lipstick = DollLipstick("tonks", ("makeup", "slot5"), "makeup4", "lipstick", [[255, 70, 70, 255]], unlocked=True)

@@ -39,7 +39,7 @@ init python:
                 return
 
             # Backup file contents
-            with open(self._file, "r", newline="\n") as f:
+            with open(self._file, "rU") as f:
                 self._file_contents = f.readlines()
 
             try:
@@ -47,7 +47,7 @@ init python:
                 old = self.line_contents
 
                 # Overwrite the file contents
-                with open(self._file, "w", newline="\n") as f:
+                with open(self._file, "wU") as f:
                     for n, l in enumerate(self._file_contents, 1):
                         if n == self.line:
                             f.writelines(l.replace(self.line_contents, new))
@@ -59,7 +59,7 @@ init python:
                             f.writelines(l)
             except:
                 # Restore backup
-                with open(self._file, "w", newline="\n") as f:
+                with open(self._file, "wU") as f:
                     for l in self._file_contents:
                         f.writelines(l)
                 renpy.notify("An error occurred, no changes were made.")
@@ -140,7 +140,7 @@ init python:
                 self.line_contents = self.changes[self._file][self.line][1]
             else:
                 # Read file and find the line in question
-                with open(self._file, newline="\n") as f:
+                with open(self._file, "U") as f:
                     for n, l in enumerate(f, 1):
                         if n == self.line:
                             l = l.partition("#")[0].strip() # Ignore comments and strip spaces

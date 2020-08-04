@@ -1,20 +1,20 @@
 define ton_face = {
     "mouth": {
-        "neutral":      ["base"],
-        "happy":        ["base", "smile"],
-        "naughty":      ["horny","base"],
+        "neutral":      ["base","open"],
+        "happy":        ["base","grin"],
+        "naughty":      ["soft","base"],
         "horny":        ["horny","base"],
-        "annoyed":      ["upset"],
-        "disgusted":    ["angry","upset"],
-        "angry":        ["angry"]
+        "annoyed":      ["upset","annoyed"],
+        "disgusted":    ["disgust","upset"],
+        "angry":        ["clench","mad","upset"]
     },
 
     "eyes": {
         "neutral":      ["base"],
-        "happy":        ["base"],
-        "naughty":      ["base"],
-        "horny":        ["base"],
-        "annoyed":      ["base"],
+        "happy":        ["happyCl"],
+        "naughty":      ["narrow"],
+        "horny":        ["narrow"],
+        "annoyed":      ["narrow","base"],
         "disgusted":    ["base"],
         "angry":        ["base"]
     },
@@ -22,19 +22,19 @@ define ton_face = {
     "eyebrows": {
         "neutral":      ["base"],
         "happy":        ["base","raised"],
-        "naughty":      ["base","raised","angry"],
-        "horny":        ["base","raised","angry"],
-        "annoyed":      ["base","angry"],
+        "naughty":      ["base","raised"],
+        "horny":        ["base","raised"],
+        "annoyed":      ["annoyed"],
         "disgusted":    ["raised","worried"],
         "angry":        ["angry"]
     },
 
     "pupils": {
         "neutral":      ["mid"],
-        "happy":        ["mid","L","R"],
-        "naughty":      ["mid","up","ahegao"],
-        "horny":        ["mid","up","ahegao"],
-        "annoyed":      ["mid","L","R"],
+        "happy":        ["mid"],
+        "naughty":      ["mid","up","downR"],
+        "horny":        ["mid","stare","down"],
+        "annoyed":      ["mid","downR","R"],
         "disgusted":    ["mid","down"],
         "angry":        ["mid"]
     }

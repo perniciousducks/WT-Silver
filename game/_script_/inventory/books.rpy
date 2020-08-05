@@ -462,8 +462,8 @@ label read_scroll_menu:
         jump main_room_menu
 
     elif isinstance(_return, tuple):
-        if _return[0] == "toggle4":
-            $ commentaries = _return[1]
+        if _return[0] == "toggle3":
+            $ commentaries = not _return[1]
 
     jump .interact
 

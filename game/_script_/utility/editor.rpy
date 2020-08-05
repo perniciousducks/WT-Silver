@@ -39,7 +39,7 @@ init python:
                 return
 
             # Backup file contents
-            with open(self._file, "rU") as f:
+            with open(self._file, "r") as f:
                 self._file_contents = f.readlines()
 
             try:
@@ -47,7 +47,7 @@ init python:
                 old = self.line_contents
 
                 # Overwrite the file contents
-                with open(self._file, "wU") as f:
+                with open(self._file, "w") as f:
                     for n, l in enumerate(self._file_contents, 1):
                         if n == self.line:
                             f.writelines(l.replace(self.line_contents, new))
@@ -59,7 +59,7 @@ init python:
                             f.writelines(l)
             except:
                 # Restore backup
-                with open(self._file, "wU") as f:
+                with open(self._file, "w") as f:
                     for l in self._file_contents:
                         f.writelines(l)
                 renpy.notify("An error occurred, no changes were made.")

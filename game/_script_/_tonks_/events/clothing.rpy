@@ -1,5 +1,9 @@
 label tonks_summon_setup:
 
+    #TODO I was thinking this event could trigger after certain events for now: some days after Astoria imperio training and some days after Cho/Tonks strip event (would that mess up with other story stuff happening around that time?)
+    #TODO add a variable for which event it has triggered from (for dialog variation in this event)
+    #TODO remove friendship check (not really relevant to her lewdness level atm plus it could mess up other checks)
+    #TODO Added a choice if she should stay naked or put on clothes, move wardrobe functions to each option
     $ tonks_wardrobe_unlocked = True
 
     # Reset doll state
@@ -8,21 +12,18 @@ label tonks_summon_setup:
     $ tonks_animation = None
 
     $ random_number = renpy.random.randint(1, 20)
-    if random_number in [1,2,3,4,5] and tonks.is_worn("top") and ton_friendship >= 50: #Naked
+    if random_number and tonks.is_worn("top") and ton_friendship >= 50:
 
         if not tonks_strip_happened: #First time.
             $ tonks_strip_happened = True
 
             $ tonks.strip("all")
-            call play_sound("door")
-            call ton_chibi("stand","mid","base")
-            with d3
+            call ton_walk(action="enter", xpos="mid", ypos="base")
 
             call play_sound("scratch")
             with hpunch
             g4 "!!!"
 
-            call play_music("chipper_doodle")
             call ton_main("","base","base","base","mid", hair="horny", xpos="mid", ypos="base", trans=d5)
             call ctc
 
@@ -30,74 +31,93 @@ label tonks_summon_setup:
             g9 "You're naked!"
             call ton_main("Indeed I am.","open","base","raised","mid")
             call ton_main("Is that a problem, [ton_genie_name]?","horny","base","raised","mid")
-            call ton_main("Am I going to get fired now?","open","base","base","R")
-             #don't think there needs to be a line here tbh
-            call ton_main("For inappropriate behaviour?","open","base","base","ahegao")
-            call ton_main("Am I going to get punished?","horny","base","raised","mid")
+            call ton_main("Am I going to get fired for inappropriate behaviour?","open","base","base","R")
+            call ton_main("Are you going to report me to the ministry?","horny","base","raised","mid")
+            m "..."
+            m "Have you been drinking?"
+            call ton_main("Maybe...","base","base","base","mid")
 
         else: #Repeated Event.
 
             $ tonks.strip("all")
-            call play_sound("door")
-            call ton_chibi("stand","mid","base")
-            with d3
+            call ton_walk(action="enter", xpos="mid", ypos="base")
 
             call play_music("chipper_doodle")
             call ton_main("","base","base","base","mid", hair="horny", xpos="mid", ypos="base", trans=d5)
             call ctc
 
             call ton_main("Hi, [ton_genie_name].","horny","base","raised","mid")
-            g9 "You are naked again."
-            call ton_main("Yes. Just felt like it.","base","base","raised","ahegao")
-            m "What if someone sees you?"
+            g9 "You're naked again."
+            call ton_main("Yes... I just felt like it.","base","base","raised","stare")
+            m "(She's smashed...)"
+            m "Miss Tonks, you should be more careful."
 
-            if random_number in [1,2]:
-                m "Snape could have been in here."
-                call ton_main("Snape? He already knows how I roll...","open","base","raised","mid")
-                call ton_main("He asked me for a blowjob yesterday...","open","base","base","R")
-                m "And? Did you?"
-                call ton_main("Let's just say I'm still toying with him...","base","base","base","mid")
-            else: #3,4
-                m "One of the girl could have seen you..."
-                call ton_main("Oh I would love for them to see me like this...","horny","base","raised","mid")
-                call ton_main("Why don't you invite one to your office!","horny","base","base","mid")
+        m "One of the girls could have seen you..."
+        call ton_main("Oh, I would love for them to see me like this...","horny","base","raised","mid")
+        call ton_main("Why don't you invite one to your office?","horny","base","base","mid")
 
-            m "Are you always such a slut?"
-            call ton_main("I'm sorry, [ton_genie_name]! But it's in my nature.","horny","base","raised","mid")
-            call ton_main("Are you going to punish me? For being such a masochistic freak?","open_wide_tongue","base","base","ahegao")
+        if ag_st_imperio.counter > 0:
+            m "You'd like that wouldn't you..."
+            ton "Very much!"
+            m "Like that Astoria girl you're so infatuated with?"
+            m "Want me to call her up here to have her shame you on your bad behaviour?"
+            ton "Oh, yes please!"
 
-        menu: #Continuation.
+        #TODO if triggered after last Cho strip favour with tonks done (Gryffindor tier)
+        # Note: No such event exists in the game yet (?)
+            #m "Would you like me to bring Miss Chang up here so you rub your bodies together?"
+            #ton "Yes please!"
+            #m "You sure you're ready to find out just how flexible she is?"
+            #ton "Yes!"
+
+        m "I bet you'd love that..."
+        m "(Although that's probably not the best idea in her current status...)"
+        g9 "(Doesn't mean I can't tease her a bit though...)"
+
+        menu:
             "-Play nice-":
-                g9 "How about a raise instead?"
-                call ton_main("(Fuck me... I love this job...)","base","base","raised","ahegao")
-                call ton_main("A raise? For showing my body to my own boss?","open","base","raised","mid")
+                g9 "How about a bonus instead?"
+                call ton_main("A bonus? For showing my body to my own boss?","open","base","raised","mid")
                 call ton_main("How much am I worth to you, [ton_genie_name]?","base","base","raised","mid")
 
                 menu:
-                    "-One gold-":
-                        m "A gold, if anything..."
+                    "-Zero gold-" if gold <= 0:
+                        # This option should be unreachable on a normal playthrough, but if somehow the player triggers it,
+                        # it should fix gold counter
+
+                        m "Zero gold."
+                        call ton_main("Seriously?","angry","base","raised","mid")
+                        m "Yes, I'm a cheap bastard."
+                        call ton_main("I can see that...","upset","base","base","mid")
+                        $ gold = 0 # Fix overflow if it somehow happened
+
+                    "-One gold-" if gold > 0:
+                        m "A single gold coin, if anything..."
                         call ton_main("(Bastard... How humiliating.)","base","base","raised","ahegao")
                         call ton_main("Thank you so much, [ton_genie_name].","base","base","base","mid")
                         m "Don't mention it, [tonks_name]."
                         $ gold -= 1
+
                     "-Twenty gold-" if gold >= 20:
                         m "How does twenty gold sound?"
                         call ton_main("(Hmm... I kind of expected more.)","base","base","base","R")
                         call ton_main("Thank you, [ton_genie_name].","base","base","base","mid")
-                        g9 "No, [tonks_name]. I have to thank you."
+                        g9 "No, [tonks_name]... Thank you."
                         $ gold -= 20
+
                     "-A hundred gold-" if gold >= 100:
                         m "Does one hundred gold sound nice to you?"
                         g9 "With a body like that, you could earn a fortune at a strip club!"
                         call ton_main("Really...","horny","base","raised","mid")
                         call ton_main("You think a noble teacher like me- an ex-auror... Would quit her highly regarded job to become a cheap stripper?","open","base","base","mid")
                         m "Well, no. I still want to keep you as a teacher."
-                        m "I merely suggested that you could--"
-                        call ton_main("Well, the duelling stage isn't seeing any use...","base","base","base","R")
-                        call ton_main("Maybe I should arrange some extra curricular activities for a couple of my favourite students, give them a little show...","open","base","raised","mid")
+                        m "I merely suggested that you could."
+                        call ton_main("Maybe the duelling stage could find some extra use...","base","base","base","R")
+                        call ton_main("Perhaps some extra curricular activities for a couple of my favourite students could be arranged...","open","base","raised","mid")
                         g9 "I'm sure they would all love to watch their perverted teacher strip!"
-                        call ton_main("Maybe I won't just stop at stripping!","horny","base","raised","mid")
                         $ gold -= 100
+
+                m "Now..."
 
             "-Scold her-":
                 m "You know I have to, Miss [tonks_name]."
@@ -106,29 +126,64 @@ label tonks_summon_setup:
                 call ton_main("I'm terribly sorry, [ton_genie_name]...","open","base","base","down")
                 m "What will you do next? Climb under my desk and suck my cock?"
                 g4 "Spread your legs for one of your students?"
-                call ton_main("(Hngh-- I'd love to. All of it!)","base","base","raised","ahegao")
-                g4 "A bitch like you doesn't deserve to be a teacher. You are nothing more than a disgusting whore!"
-                call ton_main("You are so right, [ton_genie_name]!","open_wide_tongue","base","worried","ahegao")
-                m "I should make you the school's cum-dumpster instead. How would you like that position?"
-                m "Boys lining up in front of the school toilets, waiting their turn to dump their cum into their teacher's mouth, day after day!"
-                call ton_main("You're making me so wet, [ton_genie_name]!","base","base","base","ahegao")
-                call ton_main("Maybe some day I'll get bored of my current position here at Hogwarts,... you never know...","horny","base","raised","mid")
-                m "I'm not done with your punishment, Miss [tonks_name]!"
-                m "You went to this school, didn't you? Which house were you in?"
-                call ton_main("Me? I was in Hufflepuff.","open","base","raised","mid")
-                m "Very well then."
-                m "Minus ten points from house Hufflepuff!"
-                $ hufflepuff -=10
-                call ton_main("What? But [ton_genie_name]! I'm not even a student--", "open", "wide", "shocked", "mid", trans=hpunch)
-                g4 "In addition, from this point forward, you will be forbidden to wear even a single piece of clothing whenever you step into this room!"
-                call ton_main("Of course, [ton_genie_name].","base","base","raised","down")
-                m "Even if there is a student in here. Or if I call somebody... Anybody!"
-                m "You will remain naked!"
-                g4 "Did you hear me, [tonks_name]?"
-                call ton_main("Yes, [ton_genie_name]!","base","base","base","mid")
-                m "Good."
+                call ton_main("...","base","base","raised","stare")
+                g4 "How's this befitting for a teacher... strutting into the headmasters office in your birthday suit."
+                g9 "That surely calls for some punishment don't you think?"
+                call ton_main("You are so right, [ton_genie_name]!","base","base","worried","mid")
 
-        call ton_main("Whenever you want me to put my clothes back on, just tell me...","base","base","base","mid")
+                #TODO This section will be under some whoring check later
+                # m "I should make you the school's cum-dumpster instead. How would you like that position?"
+                # m "Boys lining up in front of the school toilets, waiting their turn to dump their cum into their teacher's mouth, day after day!"
+                # call ton_main("You're making me so wet, [ton_genie_name]!","base","base","base","ahegao")
+                # call ton_main("Maybe some day I'll get bored of my current position here at Hogwarts,... you never know...","horny","base","raised","mid")
+                # m "I'm not done with your punishment, Miss [tonks_name]!"
+                if not tonks_strip_happened:
+                    m "You went to this school, didn't you? Which house were you in?"
+                    call ton_main("Me? I was in Hufflepuff.","open","base","raised","mid")
+                    m "Very well then."
+                    m "Minus ten points from Hufflepuff!"
+                    $ hufflepuff -=10
+                    call ton_main("What? But [ton_genie_name]! I'm not even a student--", "open", "wide", "shocked", "mid", trans=hpunch)
+                else:
+                    m "Then that's another minus ten points from Hufflepuff!"
+                    ton "Again? But please, sir!"
+                    ton "What will they say once I get back to the common room?"
+                    m "What?"
+                    ton "Oh... I'm a teacher now aren't I... silly me."
+
+                m "Also--"
+
+        menu:
+            "-Those clothes stay off!-":
+                $ tonks.unequip("all")
+
+                ton "*Hmm*?"
+                m "That's right... since they're so bothersome, why bother wearing them at all?"
+                m "When you're in here with me I want you on full display!"
+                ton "Of course sir..." #Horny
+                call ton_main("If you want me to put my clothes back on at any time, just let me know...","base","base","base","mid")
+
+            "-Get dressed!-":
+                m "No teacher of mine will strut around naked unless I'm there to see it!"
+                ton "Yes sir..."
+                m "Now, put your clothes back on..."
+                ton "*Ehm*... Okay..."
+
+                call play_sound("magic")
+                $ tonks.wear("all")
+                call ton_main(trans=morph)
+
+                if tonks_morph_known:
+                    m "...{w} You used your meta-what-sit ability just then didn't you?"
+                    ton "You can tell?"
+                    m "Whatever, just wear your actual clothing next time..."
+                else:
+                    m "Much better..."
+                    ton "..." #smirks #looking down (She's just morphed so she looks like she has clothes)
+
+        m "Now, get back to your room and think about what you've done..."
+        ton "Of course sir..." #look down, blush
+        m "On second thought, stay here, we're not done yet."
 
         call ton_main(xpos="base", ypos="base", trans=fade)
 

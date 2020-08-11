@@ -70,7 +70,7 @@ label end_hg_pr_sex:
     pause.2
 
     # Inner monologue
-    if hg_pr_sex.counter == 1:
+    if hg_pr_sex.counter == 2:
         show screen blktone
         with d3
 

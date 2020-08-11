@@ -52,7 +52,6 @@ label hg_pf_sex:
 
     # Increase level
     $ hg_sex.trigger = True
-    $ hg_anal.trigger = True
     if her_whoring < 24: #Adds points till 24.
         $ her_whoring += 1
 

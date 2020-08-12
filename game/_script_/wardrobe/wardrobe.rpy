@@ -1,3 +1,6 @@
+init python:
+    from collections import OrderedDict
+
 default wardrobe_background_day = "#e8c97e"
 default wardrobe_background_night = "#7d756e"
 
@@ -5,6 +8,14 @@ default wardrobe_toggles = False
 default wardrobe_music = False
 default wardrobe_chitchats = True
 default wardrobe_requirements = False
+
+# Used as custom order for the sorting
+define wardrobe_subcategories_sorted = {
+    "hair": 5, "shirts": 5, "skirts": 5, "pantyhose": 5, "robes": 5,
+    "earrings": 4, "sweaters": 4, "trousers": 4, "stockings": 4,
+    "neckwear": 3, "dresses": 3, "shorts": 3, "socks": 3,
+    "other": -1
+}
 
 label wardrobe(char_label):
     python:
@@ -33,8 +44,8 @@ label wardrobe(char_label):
         current_category = ""
         current_subcategory = ""
         current_item = None
-        wardrobe_categories_sorted = ("head", "tops", "bottoms", "legwear", "makeup", "bras", "panties", "misc")
-        wardrobe_categories = char_active.wardrobe
+        wardrobe_categories = ("head", "tops", "bottoms", "legwear", "makeup", "bras", "panties", "misc")
+        wardrobe_subcategories = char_active.wardrobe
         export_in_progress = False
         item_to_export = None
         wardrobe_outfit_schedule = ("Day", "Night", "Cloudy", "Rainy", "Snowy")
@@ -75,13 +86,13 @@ label wardrobe(char_label):
             $ current_subcategory = ""
             $ current_item = None
             $ renpy.play('sounds/click3.mp3')
-            if "head" in wardrobe_categories_sorted:
-                $ wardrobe_categories_sorted = ("face", "torso", "hips", "legs", "makeup", "breasts", "pelvis", "misc")
+            if "head" in wardrobe_categories:
+                $ wardrobe_categories = ("face", "torso", "hips", "legs", "makeup", "breasts", "pelvis", "misc")
                 $ char_active.strip("all")
                 $ char_active.strip("accessory")
 
             else:
-                $ wardrobe_categories_sorted = ("head", "tops", "bottoms", "legwear", "makeup", "bras", "panties", "misc")
+                $ wardrobe_categories = ("head", "tops", "bottoms", "legwear", "makeup", "bras", "panties", "misc")
                 $ char_active.wear("all")
                 $ char_active.wear("accessory")
             hide screen wardrobe_menuitem
@@ -156,7 +167,7 @@ label wardrobe(char_label):
             $ renpy.play('sounds/door2.mp3')
             $ current_category = ""
             $ current_subcategory = ""
-            if "head" in wardrobe_categories_sorted:
+            if "head" in wardrobe_categories:
                 $ char_active.wear("all")
             hide screen wardrobe_menuitem
             hide screen wardrobe_outfit_menuitem
@@ -178,9 +189,11 @@ label wardrobe(char_label):
                     if current_category in ("bras", "panties"):
                         $ char_active.strip("top", "bottom", "robe", "accessory")
                     else:
-                        if 'head' in wardrobe_categories_sorted:
+                        if 'head' in wardrobe_categories:
                             $ char_active.wear("top", "bottom", "robe", "accessory")
-                    $ category_items = wardrobe_categories.get(current_category)
+
+                    $ category_items = OrderedDict(sorted(wardrobe_subcategories.get(current_category).iteritems(), key=lambda x: wardrobe_subcategories_sorted.get(x[0], 0), reverse=True))
+
                     # Default subcategory
                     if category_items:
                         $ current_subcategory = category_items.keys()[0]
@@ -253,7 +266,7 @@ screen wardrobe_menu(xx, yy):
         xysize (540, 548)
 
         # Main Categories
-        for i, category in enumerate(wardrobe_categories_sorted):
+        for i, category in enumerate(wardrobe_categories):
             $ cat_row = (i // 4) % 2
             $ cat_col = i % 4
             if current_category == category:
@@ -278,7 +291,7 @@ screen wardrobe_menu(xx, yy):
                     xysize (44, 96)
                     hover_background btn_hover
                     tooltip category
-                    action Return(["category", wardrobe_categories_sorted[i]])
+                    action Return(["category", wardrobe_categories[i]])
 
         # Background
         frame xysize (340, 548) xpos 100 style "empty" background wardrobe_background
@@ -437,7 +450,7 @@ screen wardrobe_menuitem(xx, yy):
                 tooltip "Reset all colours"
                 action Return("item_reset")
 
-        # Add subcategory list
+        # Add subcategory list and sort them based on custom order
         if len(category_items) > 0:
             for i, subcategory in enumerate(category_items.keys()):
                 if current_subcategory == subcategory:

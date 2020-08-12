@@ -10,14 +10,16 @@ label hg_ps_buttplug:
 
     if hg_ps_buttplug.points == 0:
         m "{size=-4}(I could ask her to wear a butt plug around the school today.){/size}"
+
+        menu:
+            "\"(Yes, let's do it!)\"":
+                pass
+            "\"(Not right now.)\"":
+                jump hermione_favor_menu
     else:
         m "{size=-4}(I feel like making her walk around with a butt plug again!){/size}"
 
-    menu:
-        "\"(Yes, let's do it!)\"":
-            pass
-        "\"(Not right now.)\"":
-            jump hermione_favor_menu
+
 
     m "{size=-4}(But which one?){/size}"
     label .plug_choice:
@@ -322,10 +324,14 @@ label hg_ps_buttplug:
             call her_main("This thing is ridiculous!", "open", "closed", "base", "mid")
             m "You said the same thing about the smaller one."
             call her_main("That was different...", "disgust", "narrow", "base", "down")
-            m "I have confidence in you! Besides, you were pretty great when you were taking my cock up your ass!"
+            m "I have confidence in you!"
+
+            if hg_anal.trigger:
+                g9 "Besides, you were pretty great when you were taking my cock up your ass!"
+
             call her_main("[genie_name]!", "shock", "wide", "base", "mid",cheeks="blush")
             m "Come on..."
-            call her_main("This is too much sir! even your cock wasn't this {b}thick{/b}...", "open", "narrow", "angry", "R")
+            call her_main("This is too much sir! even your cock isn't this {b}thick{/b}...", "open", "narrow", "angry", "R")
             m "Nothing a little spit won't solve!"
             call her_main("Don't be ridiculous! This is beyond spit!", "open", "closed", "base", "mid")
             call her_main("Unless you have some sort of actual {i}lubricant{/i} in your possession, I don't think I'll be letting this thing anywhere near me...", "open", "base", "angry", "mid")

@@ -43,7 +43,7 @@ label astoria_intro_E1:
     call ton_main("Something terrible has happened at school today!", "open", "closed", "annoyed", "R")
     call ton_main("I believe one of our students has conducted some highly illegal activities against another student!", "normal", "base", "annoyed", "downR")
     call ton_main("We have to take action!{w=0.6} The last thing we need is for this to reach the Ministry's attention!","open","base","angry","mid")
-    m "So? Isn't it your task to cover that sort of stuff?"
+    m "So? Isn't it your task to cover up that sort of stuff?"
     call ton_main("Yes, but...","upset","base","worried","down")
     call ton_main("Please, [ton_genie_name]! I can't cover this up all on my own!","open","base","worried","mid")
     call ton_main("I require your help...", "upset", "base", "worried", "mid")
@@ -67,7 +67,7 @@ label astoria_intro_E1:
 
         "\"What's in it for me?\"":
             call ton_main("Are you seriously asking me that?", "clench", "shocked", "shocked", "stare")
-            call ton_main("If this doesn't get dealt with immediately, they'll have us both locked up in a cell in Azkaban, do you hear me?!", "mad", "base", "angry", "mid")
+            call ton_main("If this doesn't get dealt with immediately they'll have us both locked up in a cell in Azkaban, do you hear me?!", "mad", "base", "angry", "mid")
             m "Loud and clear..."
             m "I'll be locked up in a cell - together with you..."
             g9 "I can think of many fates worse than that, if I'm honest."
@@ -171,7 +171,7 @@ label astoria_intro_E1:
                 #    call ton_main("Now, could we get back to discuss what I came here for in the first place?","base","base","base","mid")
                 #    m "Fine. I know when I'm outwitted..."
                 #    call ton_main("I will suck your delicious cock some other time, [ton_genie_name]... I promise!","base","base","base","mid")
-                #    call ton_main("But now, we simply don't have time to fool around, I'm afraid...","base","base","base","mid")
+                #    call ton_main("But right now we simply don't have time to fool around I'm afraid...","base","base","base","mid")
 
                 "\"Send Nudes.\"":
                     call ton_main("Nudes, [ton_genie_name]?", "annoyed", "base", "raised", "mid")
@@ -219,7 +219,7 @@ label astoria_intro_E1:
     m "Like...{w=0.5} The c-word?"
     call ton_main("No! A magical curse!{w} not an insult...", "mad", "closed", "annoyed", "mid")
     call ton_main("Those curses are a major transgression of Ministry laws!","open","base","angry","mid")
-    call ton_main("If you are caught having cast even one of them, they will put you in Azkaban for the rest of your life!", "open", "shocked", "worried", "mid")
+    call ton_main("If you are caught having cast even one of them they will put you in Azkaban for the rest of your life!", "open", "shocked", "worried", "mid")
     call ton_main("Sharing a room with a whole bunch of Dementors!","upset","base","angry","mid")
     m "Dement-{w=0.6}ors?"
     m "Is it like a nursing home or something?"
@@ -235,11 +235,11 @@ label astoria_intro_E1:
 
     m "So, are we in trouble?"
     call ton_main("Not yet...", "open", "closed", "worried", "mid")
-    call ton_main("I could luckily erase Susan's memory of the ordeal - with the obliviate spell.", "mad", "base", "worried", "downR")
+    call ton_main("Luckily I was able to erase Susan's memory of the ordeal with the obliviate spell.", "mad", "base", "worried", "downR")
     m "You can do that? Neat..."
     call ton_main("But, if this should happen to her again, I doubt there is much I could do to prevent her from telling her aunt right away...","open","base","worried","R")
     m "So what do you suggest we do?"
-    call ton_main("Find the student who cursed her, and then talk some sense into her - to never do it again...","open","closed","base","mid")
+    call ton_main("Find the student who cursed her, and then talk some sense into her so that she never does it again...","open","closed","base","mid")
     m "Find{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8} her?"
     call ton_main("Yes! She heard a girl's voice in her head - while she was under the influence of the imperius curse...","open","base","angry","mid")
     call ton_main("Who told her{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8} to lift up her top.","upset","base","worried","R")
@@ -253,7 +253,7 @@ label astoria_intro_E1:
     call ton_main("Nobody there saw who might have cursed her...","open","base","worried","mid")
 
     m "Should we get some help finding them?"
-    call ton_main("*Hmmm*... That wouldn't be such a bad idea.", "normal", "base", "base", "R")
+    call ton_main("*Hmmm*... Good idea.", "normal", "base", "base", "R")
     m "Shall I ask Snape? Maybe even Miss Granger?"
     call ton_main("Yes. Professor Snape might prove himself useful for once...","open","base","base","down")
     call ton_main("I don't know about Granger... She'd need to keep quiet at all cost!", "normal", "base", "raised", "down")
@@ -350,7 +350,7 @@ label astoria_intro_E2_hermione:
     if astoria_intro.E2_snape:
         m "I wonder if she'll find her before Snape..."
     else:
-        m "I should probably go tell Snape as well..."
+        m "I should probably tell Snape as well..."
 
     $ hermione_busy = True
     $ astoria_intro.E2_hermione = True
@@ -377,7 +377,7 @@ label astoria_intro_E2_snape:
     call sna_main("If they send an auror here they might find out what we've been doing!","snape_10")
 
     m "Didn't they already do that?"
-    call sna_main("We've got lucky with Tonks, but if they were to send another Auror investigating the curses.","snape_03")
+    call sna_main("We got lucky with Tonks, but if they were to send another Auror investigating the curses.","snape_03")
     call sna_main("They might get wind of all the favour trading that we've been doing as well.","snape_10")
     call sna_main("Fucking our students isn't something teachers are supposed to do genie!","snape_25")
     sna "We can't risk receiving any more attention on the matter."
@@ -563,7 +563,7 @@ label astoria_intro_E3:
                     $ her_mood = 0
                     $ gryffindor += 20
 
-    call her_main("In a few days, everyone at Hogwarts will know what happened to her...", "grin", "base", "angry", "mid")
+    call her_main("In a few days everyone at Hogwarts will know what happened to her...", "grin", "base", "angry", "mid")
     call her_main("When she's sent to Azkaban!", "soft", "squint", "angry", "mid")
     m "Nobody's going anywhere, except for you, Miss Granger..."
 
@@ -610,7 +610,7 @@ label astoria_intro_E3:
     call sna_main("Why is one of my students in your office? Don't tell me you...","snape_03")
     m "It's not that sort of visit."
     call sna_main("Really? Then what's she doing here?","snape_01")
-    m "She's the one who's been casting those curses."
+    m "She's the one who cast that curse."
     call sna_main("Truthfully? A Slytherin?","snape_05")
     call sna_main("I expect better than this from my students, Miss Greengrass...","snape_10")
 
@@ -621,7 +621,7 @@ label astoria_intro_E3:
 
     call sna_main("Do you have anything to say for yourself?","snape_10")
     call ast_main("I-I'm sorry, sir... It won't happen again.","clench","narrow","base","down")
-    call sna_main("Who did you cast them on, you little idiot?","snape_32")
+    call sna_main("Who did you cast it on you little idiot?","snape_32")
     call ast_main("Susan Bones, Sir...","annoyed","narrow","base","down")
     call sna_main("The Hufflepuff cow--","snape_44")
     call sna_main("*Ahem*...","snape_09")
@@ -691,7 +691,7 @@ label astoria_intro_E3:
     call ton_main("Astoria? What are you doing here?","upset","base","worried","L")
     call ton_main("You didn't cause any mischief, I hope.", "open", "narrow", "base", "L")
     call ast_main("Of course not.","annoyed","base","worried","down")
-    call ton_main("Wait, is she the one who's cursed Susan?", "clench", "wide", "shocked", "stare")
+    call ton_main("Wait. Is she the one who cursed Susan?", "clench", "wide", "shocked", "stare")
     call ton_main("","upset","base","worried","mid")
     m "Yep."
     call ton_main("(Oh shit!)","horny","base","raised","L", hair="horny")
@@ -721,7 +721,7 @@ label astoria_intro_E3:
     m "(what's going on here?)"
     call ton_main("Is that all?", "open", "base", "raised", "L")
     call ton_main("You probably did Susan some good then...", "crooked_smile", "base", "raised", "mid")
-    call ton_main("She sure needs to loosen up a bit.", "soft", "base", "base", "R")
+    call ton_main("She sure need to loosen up a bit.", "soft", "base", "base", "R")
 
     call ton_main("She always has been very sensitive about her body for some reason.","base","base","raised","mid")
     call ast_main("So I'm not going to get in trouble?","open","base","worried","mid")
@@ -784,7 +784,7 @@ label astoria_intro_E3:
         call ton_main("I know! I shouldn't have rewarded her, but...","upset","closed","worried","mid")
         call ton_main("Did you see how her face lit up!", "grin", "narrow", "raised", "mid")
         call ton_main("I thought we were supposed to encourage our students, [ton_genie_name].", "upset", "base", "shocked", "down")
-        m "Don't put this one me..."
+        m "Don't put this on me..."
         call ton_main("Fine, maybe I got a bit too excited...", "mad", "base", "worried", "mid")
 
     else:
@@ -833,7 +833,7 @@ label nt_he_astoria_E1:
     call ton_main("Yes, she's pretty cute isn't she...","base","happyCl","base","mid")
     call ton_main("I wouldn't mind giving her a thorough robe inspection - if you know what I'm saying.", "horny", "base", "raised", "mid", hair="horny")
     call ton_main("This girl...{w=0.5} she's special...{w=0.8} different...","open","base","base","R", hair="neutral")
-    m "You got the hots for this girl?"
+    m "You've got the hots for this girl?"
     call ton_main("She's a Slytherin!", "mad", "base", "raised", "mid")
     m "People keep saying that as if I'd know what the problem is."
     call ton_main("Oh yes... I guess I'm a teacher now - so I should be more impartial...", "upset", "base", "raised", "down")
@@ -852,9 +852,8 @@ label nt_he_astoria_E1:
     call ton_main("It's quite the norm for most pure blood families, actually.","open","closed","base","mid")
     m "Get to the point..."
     call ton_main("*Sigh*", "disgust", "base", "base", "down")
-    call ton_main("One of Astoria's ancestors was put under a blood curse - and I fear that parts of this curse has trickled down the generations - and surfaced in Astoria.", "upset", "base", "worried", "mid")
-    m "And what did this accursed curse do exactly?"
-    call ton_main("Originally, its purpose was to bring down the family, and make them appear weak in the eyes of the wizarding community.", "normal", "base", "base", "R")
+    call ton_main("One of the Greengrass ancestors was put under a blood curse, and I fear that parts of this curse have trickled down through the generations and surfaced in Astoria.", "upset", "base", "worried", "mid")
+    call ton_main("Its original purpose was to bring down the family and make them appear weak in the eyes of the wizarding community.", "normal", "base", "base", "R")
     call ton_main("Every now and then one of the family members would become frail and live a short life.", "normal", "closed", "worried", "mid")
     m "Oh shit..."
     call ton_main("Yeah...","upset","base","worried","down")
@@ -864,7 +863,7 @@ label nt_he_astoria_E1:
     call ton_main("The opportunity to have sex with some of the most attractive women in all of history must really suck.", "soft", "base", "raised", "mid")
     m "I'll live with it..."
 
-    call ton_main("Fortunately, this curse has faded after many generations, but in turn appears to have evolved into something else...","open","closed","base","mid")
+    call ton_main("Fortunately this curse has faded after many generations, but in turn it appears to have evolved into something else...","open","closed","base","mid")
     m "How would you know?"
     call ton_main("I'm an auror...", "base", "shocked", "base", "mid")
     m "Is that your answer for everything now?"
@@ -876,16 +875,16 @@ label nt_he_astoria_E1:
     call ton_main("She's asexual!", "mad", "shocked", "worried", "mid")
     m "..."
     call ton_main("You don't believe me?", "mad", "narrow", "base", "down")
-    m "Oh no, I do believe you."
+    m "Oh no, I believe you."
     m "..."
     m "Mind explaining to me what asexual's supposed to mean?"
     call ton_main("You don't know?", "open", "shocked", "raised", "mid")
     call ton_main("Well that's not too surprising - all things considered...", "normal", "narrow", "base", "L")
-    call ton_main("It means she feels no sexual feeling or attraction, to anything!", "annoyed", "narrow", "shocked", "mid")
+    call ton_main("It means she experiences no sexual desires or attractions. To anything!", "annoyed", "narrow", "shocked", "mid")
     g4 "WHAT?!"
     call ton_main("I know!", "mad", "base", "worried", "mid")
     m "By the great desert sands... That's a curse worse than death."
-    call ton_main("The curse has seemingly gone from killing off random members of their family, to preventing new members from being born.","upset","base","base","R")
+    call ton_main("The curse has seemingly gone from killing off random members of their family to preventing new members from being born.","upset","base","base","R")
     #g4 "Wait, since when can spells change their outcome like that?"
     m "Magic doesn't make any fucking sense in this universe..."
     call ton_main("Hey, it makes perfect sense!","open","base","angry","mid")
@@ -897,9 +896,9 @@ label nt_he_astoria_E1:
     with hpunch
     g4 "Hold on a second...{w=0.8} what?!"
     g4 "You want to teach this {b}sadist{/b} how to cast those illegal curses?"
-    m "That's what got us in all this trouble in the first place!"
+    m "That's what caused all this trouble in the first place!"
     call ton_main("Don't worry, I'm just gonna teach her the basics...","open","closed","base","mid")
-    call ton_main("She won't go out and curse students at random anymore... I won't allow that.", "mad", "closed", "annoyed", "mid")
+    call ton_main("I won't allow her to go out and curse students at random.", "mad", "closed", "annoyed", "mid")
     call ton_main("But... Maybe this can help ignite that \"sexual urge\" - deep inside of her...", "mad", "base", "raised", "R")
     call ton_main("She clearly isn't ready to do it with some boy...","open","base","raised","mid")
     call ton_main("Or you, for that matter.", "upset", "base", "raised", "R")
@@ -910,7 +909,7 @@ label nt_he_astoria_E1:
     call ton_main("That being said, I'd rather have her do it with me...", "base", "base", "raised", "R", hair="horny")
     m "Are we still talking about the curse thingy?"
     call ton_main("Yes...", "soft", "narrow", "raised", "downR")
-    m "So your goal is to somehow awaken her sexuality, and get rid of this curse?"
+    m "So your goal is to get rid of this curse by somehow awakening her sexuality?"
     call ton_main("It might not be that easy, but I think it would be a good start.","open","base","base","L")
     call ton_main("I must at least know if my theory is correct...", "normal", "base", "base", "R")
     m "I don't see how this \"Imperio\" thing plays into it, but if you say so..."
@@ -980,7 +979,7 @@ label astoria_intro_E4:
     m "(Shit, was I supposed to do anything with her?)"
     call ast_main("....................","annoyed","base","base","R")
     m  "(Oh that's right. Freeing her from her curse...)"
-    call ast_main("Sir, If there is nothing you need of me, then I'd like to leave...","open","narrow","base","mid")
+    call ast_main("Sir, If there's nothing you need of me then I'd like to leave...","open","narrow","base","mid")
 
     menu:
         m "..."
@@ -992,7 +991,7 @@ label astoria_intro_E4:
 
         "\"You still need to be punished!\"":
             call ast_main("Punished?!","clench","base","base","mid")
-            call ast_main("I thought I was only going to get detention?","open","base","worried","mid")
+            call ast_main("I thought I was only getting detention?","open","base","worried","mid")
             m "Yes, detention."
             pass
 
@@ -1031,7 +1030,7 @@ label astoria_intro_E4:
     call bld
     m "..."
     g9 "I'd like to go on detention with that nympho myself!"
-    m "That girl can consider herself lucky..."
+    m "That girl should consider herself lucky..."
 
     $ astoria_busy = True
 

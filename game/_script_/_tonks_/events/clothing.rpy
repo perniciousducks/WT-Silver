@@ -12,7 +12,7 @@ label tonks_summon_setup:
     $ tonks_animation = None
 
     $ random_number = renpy.random.randint(1, 20)
-    if random_number and tonks.is_worn("top") and ton_friendship >= 50:
+    if 5 > random_number > 0 and tonks.is_worn("top") and ton_friendship >= 50:
 
         if not tonks_strip_happened: #First time.
             $ tonks_strip_happened = True

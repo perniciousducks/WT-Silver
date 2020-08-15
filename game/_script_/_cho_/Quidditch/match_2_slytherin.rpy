@@ -909,7 +909,7 @@ label slytherin_match:
             $ renpy.sound.play("sounds/microphone_feedback.mp3")
             stop bg_sounds fadeout 5.5
 
-        "-Sunshine and rainbows.-":
+        "-Sunshine and rainbows-":
             # Rocky
             stop bg_sounds fadeout 3.0
             play music "music/BattleThemeB.mp3" fadein 3.0

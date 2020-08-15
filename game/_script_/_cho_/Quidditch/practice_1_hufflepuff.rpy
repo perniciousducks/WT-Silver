@@ -25,7 +25,6 @@ label cc_ht_start:
     # Cho leaves.
     call cho_walk(action="leave")
 
-    $ hermione_busy = True
     $ cho_quid.in_progress = True
 
     jump end_cho_event
@@ -123,7 +122,7 @@ label cc_ht_talk:
         call cho_main("But I'm surprised she even took up the task...", "annoyed", "base", "base", "R")
         g9 "Right away. No questions asked."
         call cho_main("And little miss Granger wasn't even the slightest bit intimidated by her new obligation?", "open", "base", "raised", "mid")
-        g9 "Not at all. She seemed rather joyous of her situation."
+        g9 "Not at all. She seemed rather joyous about her situation."
         call cho_main("Oh...", "annoyed", "base", "worried", "down") # Bit sad.
         call cho_main("Well she just doesn't know what's coming towards her yet!", "annoyed", "narrow", "angry", "mid")
         call cho_main("{size=-4}I hope she gets hit by a bludger as well! I might even tell the boys to aim at her once or twice!{/size}", "angry", "narrow", "angry", "R") # Small text.

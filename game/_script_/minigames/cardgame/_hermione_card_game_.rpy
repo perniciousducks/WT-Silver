@@ -267,7 +267,7 @@ label hermione_random_duel:
     m "Well, in that case..."
 
     menu:
-        "-Send Hermione to work, promoting the card game.-" if not cardgame_work:
+        "-Send Hermione to work, promoting the card game-" if not cardgame_work:
             $ cardgame_work = True
             g9 "In that case, I think I have a good idea for a job..."
             call her_main("A job?", "open", "happy", "base", "mid")

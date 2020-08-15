@@ -342,7 +342,7 @@ label ag_st_imperio_E2:
 
     m "..........."
     menu:
-        "-Have her turn around.-":
+        "-Have her turn around-":
             call ast_main("Yes, that's a good idea!","smile","base","base","mid")
             call ton_main("................................", "normal", "wide", "base", "stare")
             call ast_main("Professor Tonks, I command you to turn around.","open","base","base","L")
@@ -358,7 +358,7 @@ label ag_st_imperio_E2:
             call ton_main("","normal","base","base","stare",  flip=True)
             pause.8
 
-        "-Ask her to remove her coat.-":
+        "-Ask her to remove her coat-":
             call ast_main("Yes, that should be easy.","smile","base","base","mid")
             call ton_main("................................", "normal", "wide", "base", "stare")
             call ast_main("Tonks, I command you to remove your coat.","open","closed","base","mid")

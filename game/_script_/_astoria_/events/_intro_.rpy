@@ -252,7 +252,7 @@ label astoria_intro_E1:
     call ton_main("That's sadly all the information I can share...", "annoyed", "base", "annoyed", "down")
     call ton_main("Nobody there saw who might have cursed her...","open","base","worried","mid")
 
-    m "Should we get some help finding them?"
+    m "Should we get some help finding her?" # "her" because they know it's a girl
     call ton_main("*Hmmm*... Good idea.", "normal", "base", "base", "R")
     m "Shall I ask Snape? Maybe even Miss Granger?"
     call ton_main("Yes. Professor Snape might prove himself useful for once...","open","base","base","down")
@@ -286,7 +286,7 @@ label astoria_intro_E1:
 label astoria_intro_E2_hermione:
     m "I require your help with something."
     m "Tonks came by earlier and informed me about a student making a ruckus."
-    m "I- *uhm*...{w} She thought maybe you could be of help finding them?"
+    m "I- *uhm*...{w} She thought maybe you could be of help finding her?"
     call her_main("Of course, Sir.", "base", "happyCl", "base", "mid")
     m "Apparently a student got hit by an \"unforgivable curse\" here at the school."
     call her_main("AN unforgivable CURSE!!!", "scream", "wide", "base", "stare", trans=hpunch)
@@ -298,7 +298,7 @@ label astoria_intro_E2_hermione:
     call her_main("Those are the only things that can happen with an unforgivable curse, [genie_name]!", "angry", "base", "worried", "mid")
     m "of course... I'm just making sure you were aware of them..."
     call her_main("It's the first lesson we ever received in defence against the dark arts.", "open", "closed", "base", "mid")
-    m "Well, one's been cast somewhere on the school."
+    m "Well, one's been cast somewhere in the school."
     m "and I need your help finding out who did it..."
     call her_main("Why do you need my help?", "soft", "wink", "base", "mid")
     call her_main("Surely you're able to detect them?", "base", "base", "base", "mid")
@@ -312,7 +312,7 @@ label astoria_intro_E2_hermione:
     m "If it's not too much troub--"
     call her_main("I'd be honoured, [genie_name]!", "scream", "closed", "base", "mid")
     call her_main("It's no doubt the work of one of those despicable slytherins...", "open", "closed", "angry", "mid")
-    call her_main("Nothing would give me greater pleasure than to see scum like that sent to \'Azkaban\'...", "angry", "narrow", "angry", "R")
+    call her_main("Nothing would give me greater pleasure than to see scum like that sent to Azkaban...", "angry", "narrow", "angry", "R")
 
     # Genie already knows about Azkaban.
     #m "And what's Azkaban?"
@@ -548,8 +548,8 @@ label astoria_intro_E3:
 
             menu:
                 m "(...)"
-                "\"How about 10?\"":
-                    call her_main("10?", "disgust", "base", "worried", "mid")
+                "\"How about ten?\"":
+                    call her_main("Ten?", "disgust", "base", "worried", "mid")
                     call her_main("I expected more for this, Professor!", "open", "base", "angry", "mid")
                     m "Take 'em or leave 'em..."
                     call her_main("...", "annoyed", "narrow", "angry", "R")
@@ -557,7 +557,7 @@ label astoria_intro_E3:
                     $ her_mood += 6
                     $ gryffindor += 10
 
-                "\"You'll get 20.\"":
+                "\"You'll get twenty.\"":
                     call her_main("...", "annoyed", "base", "base", "R")
                     call her_main("I suppose that's fair.", "open", "closed", "base", "mid")
                     $ her_mood = 0
@@ -591,12 +591,14 @@ label astoria_intro_E3:
     call ast_main("...","annoyed","base","base","L")
     m "..."
 
+    call ast_main("Now what, sir?","annoyed","base","worried","mid")
     if d_flag_01:
-        call ast_main("Sir, weren't you going to summon Professor Snape?","annoyed","base","worried","mid")
-        m "Oh, that's right!"
+        m "You'll find out when professor Snape gets here."
+    else:
+        m "You'll find out once I've summoned professor Snape."
         m "Give me a second..."
-        call ast_main("...","annoyed","narrow","worried","down")
-        call ast_main("(Better him than any of the other teachers...)","clench","narrow","base","down")
+    call ast_main("...","annoyed","narrow","worried","down")
+    call ast_main("(Better him than any of the other teachers...)","clench","narrow","base","down")
 
     $ snape_chibi.zorder = 4 # In front of Astoria
     call sna_walk(action="enter", xpos="mid", ypos="base")
@@ -721,7 +723,7 @@ label astoria_intro_E3:
     m "(what's going on here?)"
     call ton_main("Is that all?", "open", "base", "raised", "L")
     call ton_main("You probably did Susan some good then...", "crooked_smile", "base", "raised", "mid")
-    call ton_main("She sure need to loosen up a bit.", "soft", "base", "base", "R")
+    call ton_main("She sure needs to loosen up a bit.", "soft", "base", "base", "R")
 
     call ton_main("She always has been very sensitive about her body for some reason.","base","base","raised","mid")
     call ast_main("So I'm not going to get in trouble?","open","base","worried","mid")

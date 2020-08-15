@@ -20,7 +20,7 @@ label cc_pr_manipulate_boys_start:
             call cho_main("Oh- I'm sorry, Sir.", "soft", "narrow", "worried", "mid")
             call cho_main("I should be more respectful of your age.", "soft", "narrow", "base", "downR")
             m "(Because at my age you stop giving a damn...)"
-            call cho_main("Cedric is a bit of a block head, but he's quite a competent seeker.", "open", "base", "raised", "R")
+            call cho_main("Cedric is a bit of a blockhead, but he's quite a competent seeker.", "open", "base", "raised", "R")
             call cho_main("And very popular with the girls...", "soft", "base", "raised", "mid")
             m "Do I sense a little bit of something in your voice?"
             call cho_main("Of course not! We stopped dating ages ago!", "soft", "base", "base", "downR", cheeks="blush")
@@ -46,7 +46,7 @@ label cc_pr_manipulate_boys_start:
             m "And don't worry about him.{w} He's hardly going to complain about having a pretty little thing like you to talk to..."
             g9 "Not to mention look at..."
             call cho_main("Hey!", "soft", "base", "base", "mid")
-            m "I'm just saying, he hasn't got anything to be whine about."
+            m "I'm just saying, he hasn't got anything to whine about."
             m "And if you are worried about his feelings..."
             m "Maybe you can fool around a little... I'm sure that would make him forget all about the garden path..."
             call cho_main("Sir!", "mad", "narrow", "base", "mid")
@@ -271,7 +271,7 @@ label cc_pr_manipulate_boys_T1_intro_E1:
     m "Why not?"
     call cho_main("Because I'm not some slut who gives it away for free!", "annoyed", "narrow", "angry", "mid")
     m "It was only a kiss..."
-    m "(Now I'm falling asleep)"
+    m "(Now I'm falling asleep {unicode}♫{/unicode})"
     call cho_main("A kiss is very personal!", "soft", "closed", "base", "mid")
     call cho_main("Besides, he didn't even try to make it special!", "annoyed", "narrow", "angry", "R")
     call cho_main("He just leaned in while I was in the middle of a conversation...", "annoyed", "narrow", "angry", "mid")

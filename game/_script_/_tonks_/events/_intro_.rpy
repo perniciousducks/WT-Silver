@@ -91,7 +91,7 @@ label tonks_intro_E1:
             $ jerked_off_during_tonks_intro = True
             g9 "Tell me more!"
 
-        "-Pay attention.-":
+        "-Pay attention-":
             $ masturbating = False
             $ jerked_off_during_tonks_intro = False
             m "Tell me about it..."

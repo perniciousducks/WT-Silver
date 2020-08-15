@@ -76,7 +76,7 @@ label cho_training:
                     call cho_main("Panties? What does panties have to do with Quidditch?", "soft", "wide", "raised", "mid")
                     m "Everything, girl!{w} For some they are the meaning of life!"
                     call cho_main("What are you suggesting exactly?", "clench", "base", "base", "mid", cheeks="blush")
-                    m "My plan is that we use Cedric's obsession of panties to distract him during the game."
+                    m "My plan is that we use Cedric's obsession with panties to distract him during the game."
                     call cho_main("I don't really see how that would be--", "annoyed", "base", "base", "downR", cheeks="blush")
                     m "You'll have to wear a skirt of course."
                     call cho_main("A skirt?", "clench", "wide", "base", "mid", cheeks="heavy_blush") #shocked
@@ -545,7 +545,7 @@ label cho_tactics:
             call cho_main("Then I'm sure Cedric will like it too...", "base", "closed", "base", "mid")
             m "Who?"
             m "Oh yeah, that guy!"
-            m "Yes, we should definitely try this during your next practice against them."
+            m "Yes, we should definitely try this during your next practice match against them."
             call cho_main("...", "normal", "base", "raised", "mid") #annoyed
             m "When is that again?"
             call cho_main("*Sigh* Just let me know when and I'll set one up with their captain.", "open", "narrow", "base", "R")

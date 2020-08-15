@@ -70,7 +70,7 @@ label store_chit_chat:
     # If you haven't yet beaten the Quiz.
     elif ss_he.cho_E1 and quidditch_book_1_ITEM.unlocked == False and cho_quiz.complete == False:
         m "Boys..."
-        twi "Hello again mr Dumbledore sir..."
+        twi "Hello again mister Dumbledore sir..."
         ger "What can we do for you?"
         m "Just having a look around at your fine merchandise..."
         fre "If you're worried, don't be... Everything is completely above board and procured from totally legitimate sources."
@@ -84,7 +84,7 @@ label store_chit_chat:
         m "Well... as you boys may know, the Quidditch season is starting soon..."
         fre "Yes?"
         m "Well, I realised that I haven't actually gone in depth with the sport yet."
-        fre "I find that hard to believe... You're telling me that \"the\" Dumbledore doesn't know anything about Quidditch?"
+        fre "I find that hard to believe... You're telling me that {b}the{/b} Dumbledore doesn't know anything about Quidditch?"
         ger "Explains why you'd always just stare out in the distance and just clap politely..."
         m "I was always more fond of Basketball myself."
         fre "Sounds like the muggle sport our dad always goes on about...."

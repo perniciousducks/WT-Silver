@@ -140,7 +140,7 @@ label eating_for_pleasure:
     with d3
     g16 "{size=+16}That's all, thanks!{/size}" with hpunch
     "And your address?"
-    m "{size=+8}Headmasters office, Hogwash!{/size}"
+    m "{size=+8}Headmaster's office, Hogwash!{/size}"
     "Hogwarts sir?"
     if flag == 0:
         g16 "{size=+8}No, just pepperoni thanks!{/size}" with vpunch
@@ -153,7 +153,7 @@ label eating_for_pleasure:
     "hold on a second..."
     "It seems like your floo-network fireplace has blocked incoming travel."
     g9 "{size=+8}What a shame... I guess you'll have to make your way here the old fashioned way.{/size}"
-    g9 "{size=+8}Headmasters office is on the seventh floor, enjoy the moving staircases!{/size}"
+    g9 "{size=+8}Headmaster's office is on the seventh floor, enjoy the moving staircases!{/size}"
     "But sir..."
     $ renpy.sound.play("sounds/microphone_feedback.mp3")
     g16 "{size=+16}Clock's ticking...{/size}" with hpunch

@@ -59,7 +59,7 @@ label cc_pf_talk_T1_intro_E1:
     call cho_main("I hope that answers your question.", "annoyed", "narrow", "base", "mid")
     g9 "So, a girlfriend then?"
     call cho_main("!!!", "angry", "wide", "raised", "mid", cheeks="blush")
-    call cho_main("No. Why would you even think that, [cho_genie_name].", "open", "closed", "angry", "mid")
+    call cho_main("No. Why would you even think that, [cho_genie_name]?!", "open", "closed", "angry", "mid")
     call cho_main("", "annoyed", "narrow", "angry", "mid")
     m "(She doesn't seem that keen on the subject, perhaps I could tell her...)"
 
@@ -111,7 +111,7 @@ label cc_pf_talk_T1_intro_E1:
             jump cc_pf_talk_T1_intro_E1.choices
 
     # Cedric Diggory
-    call cho_main("Cedric was my boyfriend during the time Hogwarts was hosting the \"triwizards tournament\".", "soft", "base", "base", "R")
+    call cho_main("Cedric Diggory was my boyfriend during the time Hogwarts was hosting the \"triwizards tournament\".", "soft", "base", "base", "R")
     m "(They host tournaments here? Interesting...)"
     call cho_main("That year was the most fun I've ever had!", "smile", "base", "base", "mid")
     m "Was he that good?"
@@ -281,7 +281,7 @@ label cc_pf_talk_T1_intro_E2:
     m "Training session?"
     call cho_main("Yes. We are preparing ourselves for the Quidditch match against Hufflepuff.", "open", "narrow", "base", "mid")
     call cho_main("Our team really believes that we have a chance to win this time!", "smile", "base", "base", "mid")
-    call cho_main("They got a huge boost of confidence after I told 'em that the great \"Albus Dumbledore\" would be training us himself!", "base", "narrow", "base", "mid")
+    call cho_main("They got a huge boost of confidence after I told 'em that the {i}great Albus Dumbledore{/i} would be training us himself!", "base", "narrow", "base", "mid")
     m "Are you getting along with your team well?"
     call cho_main("I'd say so.{w=1.0} But there has been a time when...", "soft", "base", "base", "mid")
     call cho_main("Let's just say that it has been difficult for me at first. After all Quidditch is largely dominated by men...", "open", "narrow", "worried", "down")
@@ -296,7 +296,7 @@ label cc_pf_talk_T1_intro_E2:
     call cho_main("And I've been the only female seeker at this school in over half a century!", "open", "wide", "base", "mid")
     call cho_main("Can you even believe that, [cho_genie_name]?", "soft", "base", "raised", "mid")
     m "(Half a century? That's like a coffee break for me girl...)"
-    call cho_main("I don't want to brag, [cho_genie_name], but the role of a seeker is \"the\" most important position in a team by far!", "smile", "narrow", "base", "mid")
+    call cho_main("I don't want to brag, [cho_genie_name], but the role of a seeker is {b}the{/b} most important position in a team by far!", "smile", "narrow", "base", "mid")
     call cho_main("If you don't have a good seeker, you have no chance of winning!", "soft", "closed", "base", "mid")
     m "Which is why you need my help so badly..."
     m "Because you are great at it..."

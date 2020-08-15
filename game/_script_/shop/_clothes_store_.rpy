@@ -404,7 +404,7 @@ label purchase_outfit(item):
         maf "That would require some metal work... Perhaps one of my contacts in Diagon alley..."
         m "So... up for the challenge?"
         maf "Hmm..."
-        m "Or is this too much for \"The\" Mafkin?"
+        m "Or is this too much for {b}the{/b} Mafkin?"
         maf "It most certain isn't!"
         maf "I'll have it ready for you in no time!"
         maf "Although I'd prefer to be paid in gold rather than in camels."

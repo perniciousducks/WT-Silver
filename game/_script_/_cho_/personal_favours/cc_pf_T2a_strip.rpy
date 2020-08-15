@@ -1478,7 +1478,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
                 m "I still got your--"
                 call cho_main("See ya next time, [cho_genie_name]!", "smile", "narrow", "angry", "mid")
             else:
-                call cho_main("I have to head back to our dorms.", "soft", "base", "base", "R")
+                call cho_main("I have to head back to my dorms.", "soft", "base", "base", "R")
                 m "Don't you want your--"
                 call cho_main("Sweet dreams, [cho_genie_name]!", "smile", "narrow", "angry", "mid")
 

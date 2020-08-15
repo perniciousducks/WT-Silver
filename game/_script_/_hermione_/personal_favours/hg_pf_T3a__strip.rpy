@@ -117,7 +117,7 @@ label hg_pf_strip_T2_fail_intro: # Hermione starts dancing, but it will fail any
     m "Nobody is forcing you to do this."
     m "If you don't need the points, please feel free to leave."
     call her_main("Yes. I believe you're right Sir.", "soft", "closed", "angry", "mid")
-    call her_main("Stripping for you won't be worth \"any\" amount of points!", "angry", "base", "angry", "mid")
+    call her_main("Stripping for you won't be worth {b}any{/b} amount of points!", "angry", "base", "angry", "mid")
     call her_main("I will be leaving now!", "annoyed", "base", "angry", "mid")
 
     call her_walk(action="leave")
@@ -274,7 +274,7 @@ label hg_pf_strip_T3_intro_E1: # Complete
             # call her_chibi("dance","mid","base")
 
 
-            call her_main("{size=-5}([genie_name] can see my breasts while I'm dancing for him...){/size}", "angry", "happyCl", "worried", "mid", cheeks="blush")
+            call her_main("{size=-5}(He can see my breasts while I'm dancing for him...){/size}", "angry", "happyCl", "worried", "mid", cheeks="blush")
             call her_main("{size=-5}(This is so demeaning...){/size}", "angry", "happyCl", "worried", "mid", cheeks="blush")
             call her_main("{size=-5}(But I am doing this for my house...){/size}", "angry", "happyCl", "worried", "mid", cheeks="blush")
 
@@ -744,7 +744,7 @@ label hg_pf_strip_T3_E2:
         "{size=-3}\"Your father would spank you hard!\"{/size}":
             call her_main("He would not!", "shock", "wide", "base", "stare")
             call her_main("And I am too old for that any way...", "upset", "wink", "base", "mid")
-            g9 "I would say that you are in the perfect age for that..."
+            g9 "I would say that you are the perfect age for that..."
             call her_main("*huh*?")
             call her_main("I do not know what you mean, [genie_name].", "grin", "happyCl", "worried", "mid", emote="sweat")
 
@@ -945,7 +945,7 @@ label hg_pf_strip_T4:
         "-Invite Snape to watch!-" if ss_he.hermione_strip:
             jump hg_pf_strip_T4_Snape
 
-        "-Ask her to lock the door.-":
+        "-Ask her to lock the door-":
             $ lock_door = True
 
         "-Tell her to leave the door open...-":

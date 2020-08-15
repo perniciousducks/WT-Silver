@@ -55,7 +55,7 @@ label update_puzzle_slide:
 
 label open_puzzle_box:
     hide screen exp_o_meter
-    
+
     if unlocked_7th or p_move == -2:
         g4 "Fuck it..."
         $ renpy.play('sounds/door_down.mp3')
@@ -96,9 +96,9 @@ label open_puzzle_box:
     call update_quest_items
     if deck_unlocked:
         m "What's this?"
-        call give_reward("You have found a card on the bottom of the box!", "images/cardgame/t1/other/elf_v1.png")
+        call give_reward("You have found a card at the bottom of the box!", "images/cardgame/t1/other/elf_v1.png")
     $ unlocked_cards += [card_item_elf]
-    
+
     show screen chair_right
     call gen_chibi("sit_behind_desk")
     with d3

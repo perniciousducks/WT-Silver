@@ -15,11 +15,11 @@ label start_hufflepuff_match:
     g9 "Well then, tomorrow it is!"
 
     if weather == "rain":
-        call cho_main("Sounds great, [cho_genie_name]. I just hope it stops raining until then.", "soft", "base", "base", "R")
+        call cho_main("Sounds great, [cho_genie_name]. I just hope it stops raining before then.", "soft", "base", "base", "R")
     elif weather == "snow":
-        call cho_main("Sounds great, [cho_genie_name]. I just hope it stops snowing until then.", "soft", "base", "base", "R")
+        call cho_main("Sounds great, [cho_genie_name]. I just hope it stops snowing before then.", "soft", "base", "base", "R")
     else:
-        call cho_main("Sounds great, [cho_genie_name]. I just hope the weather stays like it is too.", "soft", "base", "base", "R")
+        call cho_main("Sounds great, [cho_genie_name]. I just hope the weather stays like it is.", "soft", "base", "base", "R")
 
     m "With our tactics, this will be a piece of cake!"
     call cho_main("I hope you're right, [cho_genie_name].", "base", "base", "base", "mid")

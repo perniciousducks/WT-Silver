@@ -304,7 +304,7 @@ label cho_quid_E3:
     call cho_main("What?{w=0.5} No Sir, Lee is our quidditch commentator!", "soft", "narrow", "base", "mid")
     call cho_main("He got hit in the throat by a bludger!", "disgust", "base", "raised", "down")
     call cho_main("Madam Pomfrey says he'll be able to talk in a few days, but yelling is out of the picture for the rest of the season.", "soft", "closed", "worried", "mid")
-    call cho_main("What are we going to do! We can't have a \"W.S.C.\" without a commentator!", "soft", "base", "worried", "mid")
+    call cho_main("What are we going to do! We can't have a Quidditch Cup without a commentator!", "soft", "base", "worried", "mid")
     m "Can't you play without one?"
     call cho_main("No. Someone has to announce the points after all.", "annoyed", "narrow", "base", "mid")
     m "I see..."
@@ -362,7 +362,7 @@ label cho_quid_E3:
     call cho_main("No...", "smile", "base", "base", "mid") #Mischievous smile
     g9 "I'll ask her... What's the worst that could happen..."
     call cho_main("Yeah, actually you're probably right...", "grin", "narrow", "angry", "mid")
-    m "Don't worry she'll do a-{w=1.0}{nw}"
+    m "Don't worry she'll do a-"
     g4 "Wait... what did you say?"
     call cho_main("I'm sure she'll do a heckin' good job!", "smile", "narrow", "angry", "mid")
     call cho_main("(She'll flub the whole thing and everyone will laugh at her.)", "smile", "narrow", "angry", "R") #Mischievous smile
@@ -397,8 +397,8 @@ label cho_quid_E4:
     m "Ah, okay... and here I was hoping that you'd be able to commentate this years quidditch games..."
     call her_main("Me, wasting time on something as stupid as--", "base", "closed", "base", "mid")
     call her_main("Wait...{w=0.3} What did you say?", "open", "squint", "base", "mid")
-    m "I was going to ask you if you'd commentate this years quidditch games..."
-    call her_main("You want me... to commentate this years wizarding school cup?", "open", "wide", "base", "mid")
+    m "I was going to ask you if you'd commentate this year's quidditch games..."
+    call her_main("You want me... to commentate this year's Quidditch cup?", "open", "wide", "base", "mid")
     call her_main("I'd be honoured, sir!", "scream", "closed", "base", "mid", trans=hpunch)
     call her_main("Quidditch has always been one of my passions, to be able to commentate it...", "open", "base", "angry", "mid")
     call her_main("Not to mention getting to make all the announcements...", "smile", "base", "base", "R")

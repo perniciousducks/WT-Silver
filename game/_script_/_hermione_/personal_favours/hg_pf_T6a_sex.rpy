@@ -542,7 +542,7 @@ label hg_sex_2:
 
     menu:
         g4 "..."
-        "-Be sweet but passionate.-":
+        "-Be sweet but passionate-":
             m "Yes, you're liking this?"
             $ ccg1 = 8
             call her_main("I do, [genie_name]... *ah*...{heart}", "open", "closed", "base", "mid")
@@ -812,7 +812,7 @@ label hg_sex_luna:
             m "{size=-3}Who's that again, [hermione_name]?{/size}"
             call her_main("the crazy blonde... *ah*...{heart}... with the nice breasts...", "open", "closed", "base", "mid")
             m "Come on in!"
-        "-Tell them to go away.-":
+        "-Tell them to go away-":
             m "Go aw-!"
             call her_main("No [genie_name]... let them in...", "open", "happyCl", "worried", "mid")
             m "You want to get caught?!"

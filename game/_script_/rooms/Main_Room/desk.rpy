@@ -94,7 +94,7 @@ label desk:
         if her_map_location == "forest":
             call nar(">Hermione is currently at the Forbidden Forest.\n>Would you like to go there?")
             menu:
-                "-Yes, pay her a visit.-":
+                "-Yes, pay her a visit-":
                     jump hermione_map_BJ
                 "-No, summon her to your office-":
                     pass

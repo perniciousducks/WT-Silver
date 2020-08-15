@@ -61,7 +61,7 @@ label hg_pf_grope_breasts_T2:
             m "The points, [hermione_name]... You need the points. Concentrate on that."
             call her_main("Yes...", "annoyed", "narrow", "angry", "R", cheeks="blush")
             call her_main("Yes, for the honour of the Gryffindor house...", "angry", "happyCl", "worried", "mid", cheeks="blush")
-            "*Squeeze-squeeze!*"
+            "*Squeeze-squeeze*"
             call nar(">You keep massaging her tits...","start")
             call nar(">You give one of her breasts a few pinches trying to locate the nipple...","end")
             call her_main("[genie_name]... you're pinching me...?", "shock", "happyCl", "worried", "mid")

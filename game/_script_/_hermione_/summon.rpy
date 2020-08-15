@@ -186,7 +186,7 @@ label hermione_level_up(tier=None):
                 return
 
     elif tier == 2:
-        m "I wonder she's ready for some more advanced favours now..."
+        m "I wonder if she's ready for some more advanced favours now..."
     elif tier == 3:
         m "(...)"
         m "Does she know what a handjob is?..."

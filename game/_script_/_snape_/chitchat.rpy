@@ -195,7 +195,7 @@ label snape_chitchat:
 
         elif one_of_ten == 4:
             call sna_main("According to a recent study nine out of ten girls secretly fantasise about being abused by their teacher.","snape_24")
-            call sna_main("I bet that 10th girl was Hermione Granger.","snape_03")
+            call sna_main("I bet that tenth girl was Hermione Granger.","snape_03")
             call sna_main("","snape_01")
 
         elif one_of_ten == 5:

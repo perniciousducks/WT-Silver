@@ -38,7 +38,7 @@ label floor_7th:
             pause.8
             call bld
 
-            g9 "Well... will you look at that"
+            g9 "Well... will you look at that!"
 
             hide screen bld1
             with d3

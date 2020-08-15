@@ -340,7 +340,7 @@ label hg_pf_talk_T3_intro_E1:
     m "I can't guarantee I won't...."
     m "You will be awarded with house points - as usual."
     call her_main("...", "mad", "narrow", "worried", "down", cheeks="blush") #mad Blush
-    m "You've not walked out the door so please, tell me about your day."
+    m "You've not walked out the door, so please, tell me about your day."
 
     call hg_pf_talk_T3
 
@@ -412,7 +412,7 @@ label hg_pf_talk_T3:
     call her_main("Professor Burbage babbled on about things she doesn't understand as usual.", "open", "base", "base", "R")
     call her_main("As I'm a muggle born I've been considering dropping the subject. It's a waste of time.", "base", "base", "base", "mid")
     call her_main("Although since I failed that test I feel like I need all the extra points I can get...", "open", "narrow", "worried", "down")
-    call her_main("Her views on muggle and wizarding relations and the fact that we're not that different is also quite refreshing...", "base", "happy", "base", "mid_soft")
+    call her_main("Her views on muggle and wizarding relations, and the fact that we're not that different is also quite refreshing...", "base", "happy", "base", "mid_soft")
     call her_main("Not that the Slytherins aren't constantly trying to disrupt her classes...", "annoyed", "happyCl", "base", "mid")
     if masturbating:
         m "*Hmm* I bet they were...."
@@ -424,7 +424,7 @@ label hg_pf_talk_T3:
         m "So, what were they doing exactly?"
 
     call her_main("Well, her room is filled with a bunch of muggle toys, instruments and trinkets...", "open", "base", "base", "mid")
-    call her_main("Her collection would even bring Mr Weasley's to shame.", "base", "base", "base", "mid")
+    call her_main("Her collection would even bring mister Weasley's to shame.", "base", "base", "base", "mid")
 
     if masturbating:
         m "(I bet she has a bunch of sex toys in there...)"
@@ -433,7 +433,7 @@ label hg_pf_talk_T3:
 
     call her_main("There's obviously nothing that stands out as odd to me in any way.", "open", "base", "base", "mid", cheeks="blush")
     call her_main("But since most of the Slytherins are pure-blood they were handling her items with little to no care.", "mad", "base", "base", "R")
-    call her_main("So when they weren't silently insulting her about her views they were constantly making suggestive remarks about the objects asking where she'd insert that one...", "annoyed", "base", "worried", "R")
+    call her_main("So when they weren't silently insulting her about her views, they were constantly making suggestive remarks about the objects, asking where she'd insert them...", "annoyed", "base", "worried", "R")
     call her_main("She's quite oblivious to it most of the time but the constant giggling from the Slytherin girls is very distracting and annoying.", "open", "narrow", "worried", "down", cheeks="blush")
     call her_main("It didn't help when they discovered what professor Burbage actually believed to be a back massager...", "angry", "happyCl", "base", "mid", cheeks="blush")
     m "I mean, that's what it says on the box..."
@@ -562,7 +562,7 @@ label hg_pf_talk_tonks_T3_intro_E1:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name], for today's favour I'd like to bring in a guest to join us."
     call her_main("What? Didn't we decide it was going to be between just you and I?", "open", "squint", "angry", "mid")
-    m "Well, why only the two of us when there was the option to bring another person in?"
+    m "Well, why only the two of us when there is the option to bring another person in?"
     call her_main("The option to?", "normal", "squint", "angry", "mid")
     call her_main("Sorry, I'm not following...", "normal", "squint", "base", "mid")
     m "[hermione_name], what is your opinion of Miss Tonks?"
@@ -809,7 +809,7 @@ label hg_pf_talk_tonks:
     g9 "..."
     call her_main("*Ugh!*... I assumed you read through the initial letter more thoroughly...", "open", "narrow", "worried", "mid_soft")
     if masturbating:
-        m "(to busy staring her down I bet...)"
+        m "(too busy staring her down I bet...)"
     else:
         m "Now-now, Miss Granger... Tonks was very quick to get here when she heard about your accusations."
     call her_main("I suppose...", "annoyed", "narrow", "base", "R_soft")
@@ -1044,14 +1044,14 @@ label hg_pf_talk_tonks:
         "\"Yourself.\"":
             call her_main("Well...", "angry", "narrow", "worried", "down")
             call ton_main("Yes...","base","base","raised","L")
-            call ton_main("What does our Headmaster ask of you? To earn those house points.","horny","base","angry","mid", hair="horny")
+            call ton_main("What does our Headmaster ask of you to earn those house points?","horny","base","angry","mid", hair="horny")
             g4 "..."
             if masturbating:
                 g9 "(Let's take a short break, my hands are getting tired.)"
                 call gen_chibi("sit_behind_desk")
             call her_main("I...", "angry", "happyCl", "worried", "mid")
             call ton_main("Go on, I'm sure the Headmaster doesn't mind.", "grin", "narrow", "raised", "L")
-            call ton_main("My lips are sealed.{heart}","horny","base","base","mid")
+            call ton_main("My lips are sealed. {heart}","horny","base","base","mid")
             call her_main("Professor...", "disgust", "narrow", "base", "down")
             m "Miss Granger, your professor asked you a question..."
             call her_main("But, I thought it was supposed to stay between just you and I...", "disgust", "narrow", "base", "mid_soft")
@@ -1081,7 +1081,7 @@ label hg_pf_talk_tonks:
                     $ masturbating = False
 
                 "\"Tonks isn't some kind of snitch\"":
-                    m "I'm sure we can take Miss Tonks by her word."
+                    m "I'm sure we can take Miss Tonks at her word."
                     call her_main("But...", "disgust", "narrow", "worried", "mid_soft")
                     m "I'm sure Miss Tonks would be happy to provide additional points, as you'd basically be providing a favour for us both."
                     call ton_main("*Hmmm* Oh yes, I'd love to be of help for the Gryffindor house.", "horny", "base", "base", "mid", hair="horny")

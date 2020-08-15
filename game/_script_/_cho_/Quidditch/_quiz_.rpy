@@ -174,7 +174,7 @@ label cho_quiz:
         "-[cho_quiz.hint]You may not go out of bounds with the ball...-":
             $ cho_quiz.correct_answers += 1
 
-            m "You're not allowed outside the bounds whilst holding the ball or you'll have to hand it over to your opponents team..."
+            m "You're not allowed outside the bounds whilst holding the ball or you'll have to hand it over to the opponent team..."
             $ confidence_meter += 12
             call exp_o_meter(fill=confidence_meter)
             $ renpy.music.set_volume(0.5)
@@ -202,7 +202,7 @@ label cho_quiz:
             $ renpy.music.set_volume(1.0)
             g9 "Exactly, which is obviously why I brought it up, and lastly..."
 
-        "-You can't run with the ball unless you dribble or pass.-":
+        "-You can't run with the ball unless you dribble or pass...-":
             m "You can't run whilst holding the ball,{w} you need to pass it or dribble...{w=1.0}{nw}"
             $ renpy.music.set_volume(0.5)
             $ renpy.block_rollback()
@@ -308,12 +308,12 @@ label cho_quiz:
     # Success! Or did you?
     elif cho_quiz.correct_answers == 4:
         call exp_o_meter(fill=confidence_meter, opacity=0.0)
-        m "So as you can see, Basketball and Quidditch is pretty much the same game..."
+        m "So as you can see, Basketball and Quidditch are pretty much the same game..."
         call cho_main("I'm sure that can't be right...", "annoyed", "base", "base", "mid")
         call cho_main("I'll have to look up this \"Space Jamming\"...{w=1.0} thing.", "open", "narrow", "base", "mid")
         g9 "You should! It has Bugs Bunny in it!"
         call cho_main("And now you stopped making sense again...", "annoyed", "base", "raised", "L")
-        call cho_main("Also I'm still quite unsure if you actually know Quidditch or am just trying to confuse me with Basketball terms...", "annoyed", "narrow", "raised", "mid")
+        call cho_main("Also I'm still quite unsure if you actually know Quidditch or are just trying to confuse me with Basketball terms...", "annoyed", "narrow", "raised", "mid")
         call exp_o_meter(fill=75)
         pause .3
         call bld
@@ -581,9 +581,9 @@ label cho_quiz_checkpoint:
     if cho_quiz.correct_answers >= 4:
         call cho_main("Well Sir, I thought for a minute that you only cared about basketball, but it looks like I was wrong...", "smile", "base", "base", "mid")
         m "Of course, I am well versed in all sports. I just thought I'd teach you a thing or two."
-        m "So, you will you let me train you then?"
+        m "So, will you let me train you then?"
         call cho_main("I suppose...", "soft", "base", "raised", "R")
-        g9 "(Fuck yeah, here we go!)" # Small text.
+        g9 "{size=-4}(Fuck yeah, here we go!){/size}"
         call cho_main("And I will stay true to my word... I'll sell you favours...{w} For wins...", "soft", "closed", "base", "mid")
         g4 "(Hell yes!)"
         call cho_main("But keep it civil. I won't do anything those Slytherin skanks do!", "angry", "narrow", "worried", "R")
@@ -593,10 +593,10 @@ label cho_quiz_checkpoint:
         if daytime:
             call cho_main("Anyway, got to go now, or I'll be too late for classes.", "smile", "base", "base", "mid")
         else:
-            call cho_main("Anyway, it's getting late. I should better head to our dorms.", "soft", "base", "base", "R")
+            call cho_main("Anyway, it's getting late. I should better head to my dorms.", "soft", "base", "base", "R")
 
         call cho_main("I'll be ready for training by tomorrow morning.", "soft", "base", "base", "down")
-        m "{size=-5}Oh, I'm not so sure you'll be that prepared...{/size}" # Small text.
+        m "{size=-4}Oh, I'm not so sure you'll be that prepared...{/size}"
         call cho_main("Until then, Sir.", "smile", "base", "base", "mid")
         m "Looking forward to it."
 

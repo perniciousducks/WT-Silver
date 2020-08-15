@@ -801,7 +801,7 @@ label cho_intro_E3:
     call her_main("How else could she possibly win that stupid Quidditch cup...", "soft", "closed", "angry", "mid")
     m "I thought that cup was so important to you?"
     call her_main("I couldn't care less about it, [genie_name].", "open", "closed", "base", "mid")
-    call her_main("The only cup that is worth winning is the \"house cup\".", "open", "narrow", "base", "R_soft")
+    call her_main("The only cup that is worth winning is the {i}house cup{/i}.", "open", "narrow", "base", "R_soft")
     call her_main("They're completely different...", "annoyed", "base", "angry", "mid")
     m "Totally different..."
 
@@ -819,7 +819,7 @@ label cho_intro_E3:
     m "Well... The quidditch teams are none of your concern anymore..."
     m "You'll tell Cho that you are sorry about your previous interferences."
     call her_main("(...)", "annoyed", "base", "angry", "mid")
-    m "And that the \"Quidditch equality movement\" will be...{w}\n\"no more\"."
+    m "And that the \"Quidditch equality movement\" will be...{w} \n\"no more.\""
 
     if her_whoring < 18:
         call her_main("Do I really have to do all that?", "upset", "base", "base", "R")
@@ -866,10 +866,10 @@ label cho_intro_E3:
     call her_main("About my \"Quidditch equality movement\"...", "normal", "closed", "base", "mid")
     call cho_main("Did our Professor finally convince you what a terrible idea it would be?", "soft", "narrow", "angry", "mid")
     m "Actually, I still think granting more people the ability to--"
-    call cho_main("*Shhush*!, Professor!{w=0.6} I'd like to hear it from her.", "annoyed", "narrow", "angry", "mid")
+    call cho_main("*Shhsh!* Professor!{w=0.6} I'd like to hear it from her.", "annoyed", "narrow", "angry", "mid")
     call cho_main("I'm going to enjoy this!", "horny", "narrow", "base", "L")
     call her_main("...", "annoyed", "base", "angry", "mid")
-    call her_main("*Sigh*{w=0.6} I will end my movement. And I won't interfere with Quidditch again...", "open", "closed", "base", "mid") #[Looking bored]
+    call her_main("*Sigh*{w=0.6} I will end my movement, and I won't interfere with Quidditch again...", "open", "closed", "base", "mid") #[Looking bored]
     call cho_main("This is amazing! I feel as if it's my birthday!", "smile", "base", "base", "mid")
     call her_main("After all, Quidditch is a huge waste of everyone's time.{w=0.6} Including mine...", "soft", "narrow", "base", "R_soft") #[Still looking bored]
     call cho_main("You're just jealous that I'm better than you at something.", "smile", "narrow", "angry", "L")

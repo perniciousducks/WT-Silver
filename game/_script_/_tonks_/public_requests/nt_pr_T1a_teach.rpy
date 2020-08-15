@@ -53,7 +53,7 @@ label nt_pr_teach_start:
             $ gryffindor += 10
             m "So as far as I'm concerned, hand out as many as you want."
             call ton_main("All right... Well, I better get to class.","base","base","base","R")
-            call ton_main("I've got some boys to {b}teach{/b}...", "horny", "narrow", "raised", "mid", hair="neutral")
+            call ton_main("I've got some boys to \"teach\"...", "horny", "narrow", "raised", "mid", hair="neutral")
             m "Don't forget to come back here after classes to fill me in."
             call ton_main("Will do...","base","happyCl","base","mid")
 
@@ -116,7 +116,7 @@ label nt_pr_teach_T1_E1: #Tier 1 - Event 1 - Slytherin boy
                 call ton_walk(action="leave")
                 jump end_tonks_event
 
-    m "How were your...\"extra curricular activities\" today?"
+    m "How were your... \"extra curricular activities\" today?"
     call ton_main("It's such a rush!", "grin", "happyCl", "base", "mid")
     call ton_main("I can't believe how naughty I feel!", "soft", "base", "base", "ahegao")
     m "So I take it you managed to sneak a peek?"
@@ -267,7 +267,7 @@ label nt_pr_teach_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys. Guess who...
     call ton_main("Not that they turned down the offer of points, though...", "base", "base", "base", "mid")
     m "Care to elaborate?"
     call ton_main("Alright then,... you old perv...", "base", "base", "shocked", "R")
-    call ton_main("Normally I'd just have the cutest thing that takes my eye stay behind, after class...","open","base","base","R")
+    call ton_main("Normally I'd just have the cutest thing that takes my eye stay behind after class...","open","base","base","R")
     call ton_main("For a little one-on-one time...", "horny", "base", "base", "stare")
     call ton_main("But I actually had to punish these two idiots for real.", "upset", "closed", "annoyed", "mid")
     m "What did they do?"
@@ -523,7 +523,7 @@ label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
     call ton_main("The teaching was a little dull...", "upset", "base", "base", "stare")
     call ton_main("Simple wards, hex-detection, basic stuff...", "soft", "base", "base", "stare")
     call ton_main("Not that anyone else would think so, with how much they all struggled with it...", "upset", "base", "annoyed", "R")
-    m "I was more interested in hearing about your...\"extracurricular\" activities..."
+    m "I was more interested in hearing about your... \"extracurricular\" activities..."
     call ton_main("I know, I just wanted to get that off my chest.", "upset", "closed", "base", "mid")
     call ton_main("I'd complain to someone else, but I'm not that fond of the other teachers...", "annoyed", "base", "base", "down")
     m "Like who?"

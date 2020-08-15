@@ -272,7 +272,7 @@ label ll_pf_masturbate_T1_E1:
     call lun_main("Yes. I'm feeling much better now.","normal","seductive","sad","down")
     m "Glad I could be of help..."
     call lun_main("Thank you, [lun_genie_name]!","normal","seductive","sad","mid")
-    call lun_main("I have to head back to our dorms now...","upset","seductive","sad","R")
+    call lun_main("I have to head back to my dorms now...","upset","seductive","sad","R")
 
     call lun_walk(action="leave")
 

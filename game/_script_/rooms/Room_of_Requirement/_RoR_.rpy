@@ -205,6 +205,7 @@ label enter_room_of_req:
         call sna_main("Now, this mirror that you've found...", "snape_01")
         call sna_main("I thought Albus would've moved it out of the school after the last incident...", "snape_22")
         call gen_chibi("stand", flip=False)
+        with d3
         show screen bld1
         m "What kind of incident? It's just some dusty old mirror... why would Dumbledore care about it? And what's going on with this room?"
         call sna_main("I don't know about the room, I'm more concerned by this mirror. Why don't you have a look in it and tell me what you see?", "snape_01")
@@ -227,7 +228,7 @@ label enter_room_of_req:
         call sna_main("It's a porn creator...", "snape_03")
         $ mirror_image = 0
         call gen_chibi("stand", flip=True)
-        g5 "A what, sorry?"
+        g5 "A what?!"
         call sna_main("A porn creator. Well, technically it's used to let you live out your fantasies, be they impure or not. So not necessarily porn.", "snape_01")
         g5 "And you didn't tell me a thing like this existed?"
         call sna_main("Well, it didn't exist until I made it... and I thought it was moved or destroyed.", "snape_26")

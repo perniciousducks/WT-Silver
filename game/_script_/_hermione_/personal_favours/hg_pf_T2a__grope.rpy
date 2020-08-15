@@ -203,10 +203,10 @@ label hg_pf_grope_T3_intro_E1:
     m "You think?"
     her "I am not one of those harlots from Slytherin, you know..."
     m "I know... You are from {i}Gryfonmon{/i}... or something..." #<- GRYFFINDOR MISSPELLED ON PURPOSE
-    call her_main("And if I don't feel like it I don't have to sell you a single favour, [genie_name]!", "annoyed", "base", "worried", "R")
+    call her_main("And if I don't feel like it, I don't have to sell you a single favour, [genie_name]!", "annoyed", "base", "worried", "R")
     m "Of course..."
     call her_main("...................", "annoyed", "narrow", "angry", "R")
-    m "I'll give you thirty-five house points for this."
+    m "I'll give you {number=current_payout} house points for this."
     call her_main(".......................", "disgust", "narrow", "base", "mid_soft")
     her "All you are going to do is watch, [genie_name]?"
     m "Well, I feel more like touching, actually..."

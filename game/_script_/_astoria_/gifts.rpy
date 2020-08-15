@@ -23,7 +23,7 @@ label give_ast_gift(gift_item):
             call ast_main("A lollipop?", mouth="open", face="neutral")
             call give_gift(">You give the lollipop to Astoria...", gift_item)
             call ast_main("That's going to take all day to suck on...")
-            call ast_main("I guess my mouth will be to busy to do anything else for the entire day!")
+            call ast_main("I guess my mouth will be too busy to do anything else for the entire day!")
             call ast_mood(-2)
 
     elif gift_item == chocolate_ITEM:

@@ -164,7 +164,7 @@ label hg_wager_bj:
         menu:
         #Tell him not to worry about it.
         #Tell him the ghost is gone.
-            "-Tell him not to worry about it.-":
+            "-Tell him not to worry about it-":
                 g4 "There's nothing suspicious happening here...{w} {size=-5}Ugh!{/size}"
                 pause.5
                 call her_chibi_scene("bj_cum_in")

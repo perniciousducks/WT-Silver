@@ -71,7 +71,7 @@ label tonks_summon_setup:
             #ton "Yes!"
 
         m "I bet you'd love that..."
-        m "(Although that's probably not the best idea in her current status...)"
+        m "(Although that's probably not the best idea in her current state...)"
         g9 "(Doesn't mean I can't tease her a bit though...)"
 
         menu:
@@ -122,13 +122,13 @@ label tonks_summon_setup:
             "-Scold her-":
                 m "You know I have to, Miss [tonks_name]."
                 m "Walking into your boss' office, completely naked?"
-                m "A behaviour like that from a teacher... that's just unspeakable!"
+                m "Behaviour like that from a teacher... that's just unspeakable!"
                 call ton_main("I'm terribly sorry, [ton_genie_name]...","open","base","base","down")
                 m "What will you do next? Climb under my desk and suck my cock?"
                 g4 "Spread your legs for one of your students?"
                 call ton_main("...","base","base","raised","stare")
-                g4 "How's this befitting for a teacher... strutting into the headmasters office in your birthday suit."
-                g9 "That surely calls for some punishment don't you think?"
+                g4 "How's this befitting for a teacher... strutting into the headmaster's office in your birthday suit."
+                g9 "That surely calls for some punishment, don't you think?"
                 call ton_main("You are so right, [ton_genie_name]!","base","base","worried","mid")
 
                 #TODO This section will be under some whoring check later

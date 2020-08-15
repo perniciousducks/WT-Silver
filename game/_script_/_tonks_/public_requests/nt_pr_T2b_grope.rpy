@@ -60,6 +60,7 @@ label nt_pr_grope_start:
 
     $ nt_pr_grope.inProgress = True
 
+    call ton_walk(action="leave")
     jump end_tonks_event
 
 
@@ -67,7 +68,7 @@ label nt_pr_grope_start:
 ### Tier 1 ###
 
 label nt_pr_grope_T1_E1: # Tier 1 - Event 1 - Slytherin boy
-    call play_sound("door")
+    call ton_walk(action="enter", xpos="mid", ypos="base")
     call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if ton_reputation <= 7 and nt_pr_grope.points < 4: # First time.
@@ -85,6 +86,7 @@ label nt_pr_grope_T1_E1: # Tier 1 - Event 1 - Slytherin boy
                 call increase_house_points("s", 40)
                 if ton_reputation < 9: # Points til 9.
                     $ ton_reputation += 1
+                call ton_walk(action="leave")
                 jump end_tonks_event
 
     m "How were classes today, [tonks_name]?"
@@ -136,11 +138,12 @@ label nt_pr_grope_T1_E1: # Tier 1 - Event 1 - Slytherin boy
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
 
+    call ton_walk(action="leave")
     jump end_tonks_event
 
 
 label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
-    call play_sound("door")
+    call ton_walk(action="enter", xpos="mid", ypos="base")
     call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if ton_reputation <= 7 and nt_pr_grope.points < 4: # First time.
@@ -158,6 +161,7 @@ label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
                 call increase_house_points("r", 20)
                 if ton_reputation < 9: # Points til 9.
                     $ ton_reputation += 1
+                call ton_walk(action="leave")
                 jump end_tonks_event
 
     m "So, how are you finding the education industry?"
@@ -219,11 +223,12 @@ label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
 
+    call ton_walk(action="leave")
     jump end_tonks_event
 
 
 label nt_pr_grope_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys
-    call play_sound("door")
+    call ton_walk(action="enter", xpos="mid", ypos="base")
     call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if ton_reputation <= 7 and nt_pr_grope.points < 4: # First time.
@@ -240,6 +245,7 @@ label nt_pr_grope_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys
                 call ton_main("Thank you, [ton_genie_name]. Have a good night.","base","base","base","mid")
                 if ton_reputation < 9: # Points til 9.
                     $ ton_reputation += 1
+                call ton_walk(action="leave")
                 jump end_tonks_event
 
     m "I didn't notice any extra point today..."
@@ -280,11 +286,12 @@ label nt_pr_grope_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
 
+    call ton_walk(action="leave")
     jump end_tonks_event
 
 
 label nt_pr_grope_T1_E4: # Tier 1 - Event 4 - Slytherin girl
-    call play_sound("door")
+    call ton_walk(action="enter", xpos="mid", ypos="base")
     call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if ton_reputation <= 7 and nt_pr_grope.points < 4: # First time.
@@ -302,6 +309,7 @@ label nt_pr_grope_T1_E4: # Tier 1 - Event 4 - Slytherin girl
                 call increase_house_points("s", 40)
                 if ton_reputation < 9: # Points til 9.
                     $ ton_reputation += 1
+                call ton_walk(action="leave")
                 jump end_tonks_event
 
     m "How's my favourite teacher doing today?"
@@ -352,6 +360,7 @@ label nt_pr_grope_T1_E4: # Tier 1 - Event 4 - Slytherin girl
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
 
+    call ton_walk(action="leave")
     jump end_tonks_event
 
 

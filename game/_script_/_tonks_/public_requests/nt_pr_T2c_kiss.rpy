@@ -63,6 +63,7 @@ label nt_pr_kiss_start:
 
     $ nt_pr_kiss.inProgress = True
 
+    call ton_walk(action="leave")
     jump end_tonks_event
 
 
@@ -71,7 +72,7 @@ label nt_pr_kiss_start:
 
 label nt_pr_kiss_T1_intro_E1: # Tier 1 - Event 1 - Slytherin boy
     #Gentle kissing
-    call play_sound("door")
+    call ton_walk(action="enter", xpos="mid", ypos="base")
     call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if ton_reputation <= 7 and nt_pr_kiss.points < 4: # First time.
@@ -89,6 +90,7 @@ label nt_pr_kiss_T1_intro_E1: # Tier 1 - Event 1 - Slytherin boy
                 call increase_house_points("s", 40)
                 if ton_reputation < 9: # Points til 9.
                     $ ton_reputation += 1
+                call ton_walk(action="leave")
                 jump end_tonks_event
 
     m "Fun day?"
@@ -138,11 +140,12 @@ label nt_pr_kiss_T1_intro_E1: # Tier 1 - Event 1 - Slytherin boy
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
 
+    call ton_walk(action="leave")
     jump end_tonks_event
 
 
 label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
-    call play_sound("door")
+    call ton_walk(action="enter", xpos="mid", ypos="base")
     call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if ton_reputation <= 7 and nt_pr_kiss.points < 4: # First time.
@@ -160,6 +163,7 @@ label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
                 call increase_house_points("r", 20)
                 if ton_reputation < 9: # Points til 9.
                     $ ton_reputation += 1
+                call ton_walk(action="leave")
                 jump end_tonks_event
 
     m "You're a bit late..."
@@ -208,12 +212,13 @@ label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
 
+    call ton_walk(action="leave")
     jump end_tonks_event
 
 
 label nt_pr_kiss_T1_E3: # Tier 1 - Event 3 - Slytherin girls
     #Tonks pays two best friends to make out
-    call play_sound("door")
+    call ton_walk(action="enter", xpos="mid", ypos="base")
     call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if ton_reputation <= 7 and nt_pr_kiss.points < 4: # First time.
@@ -232,6 +237,7 @@ label nt_pr_kiss_T1_E3: # Tier 1 - Event 3 - Slytherin girls
                 call increase_house_points("s", 40)
                 if ton_reputation < 9: # Points til 9.
                     $ ton_reputation += 1
+                call ton_walk(action="leave")
                 jump end_tonks_event
 
     m "How was your day?"
@@ -276,12 +282,13 @@ label nt_pr_kiss_T1_E3: # Tier 1 - Event 3 - Slytherin girls
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
 
+    call ton_walk(action="leave")
     jump end_tonks_event
 
 
 label nt_pr_kiss_T1_E4: #Level 1 Event 4
     #Tender make-out session with a Slytherin lesbian
-    call play_sound("door")
+    call ton_walk(action="enter", xpos="mid", ypos="base")
     call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if ton_reputation <= 7 and nt_pr_kiss.points < 4: # First time.
@@ -299,6 +306,7 @@ label nt_pr_kiss_T1_E4: #Level 1 Event 4
                 call increase_house_points("s", 40)
                 if ton_reputation < 9: # Points til 9.
                     $ ton_reputation += 1
+                call ton_walk(action="leave")
                 jump end_tonks_event
 
     call ton_main("I have a story for you!", "grin", "base", "shocked", "mid")
@@ -349,6 +357,7 @@ label nt_pr_kiss_T1_E4: #Level 1 Event 4
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
 
+    call ton_walk(action="leave")
     jump end_tonks_event
 
 
@@ -356,7 +365,7 @@ label nt_pr_kiss_T1_E4: #Level 1 Event 4
 ### Tier 2 ###
 
 label nt_pr_kiss_T2_E1: # Tier 2 Event 1 # Not in use.
-    call play_sound("door")
+    call ton_walk(action="enter", xpos="mid", ypos="base")
     call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
     m "How did your extracurricular activities pan out today?"
     call ton_main("Honestly? I don't think I've ever been as turned on in my life...","base","base","base","mid")
@@ -418,6 +427,7 @@ label nt_pr_kiss_T2_E1: # Tier 2 Event 1 # Not in use.
     m "I need to clean up..."
     call ton_main("Very well... Thank you, sir.","base","base","base","mid")
 
+    call ton_walk(action="leave")
     jump end_tonks_event
 
 label tonks_teacher_event_3_6: #Level 2 Event 2
@@ -433,4 +443,5 @@ label tonks_teacher_event_3_7: #Level 2 Event 3
 label tonks_teacher_event_3_8: #Level 2 Event 4
     #Another make out sesh with slytherin involving tonks fingering the student
 
+    call ton_walk(action="leave")
     jump end_tonks_event

@@ -828,7 +828,7 @@ label hg_hidden_blowjob_luna:
             jump hg_pf_blowjob_1
 
     $ hg_blowjob.ll_counter += 1
-    $ her_mood += 30
+    $ her_mood += 10
 
     stop music fadeout 1.0
     call her_main("{size=-2}[genie_name], no! Why would you let-{/size}", "angry", "base", "angry", "mid", emote="angry")

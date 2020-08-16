@@ -843,7 +843,7 @@ label hg_pf_strip_T3_masturbate:
 
     show screen chair_left
     show screen desk
-    call gen_chibi("jerk_off","behind_desk","behind_desk")
+    call gen_chibi("jerk_off","behind_desk","base")
     call her_chibi("dance","on_desk","on_desk")
     hide screen blktone
     hide screen blkfade
@@ -1213,7 +1213,7 @@ label hg_pf_strip_T4_masturbate:
     with d5
 
     show screen chair_left
-    call gen_chibi("jerk_off","behind_desk","behind_desk")
+    call gen_chibi("jerk_off","behind_desk","base")
     show screen desk
     hide screen blkfade
     with fade
@@ -1256,14 +1256,14 @@ label hg_pf_strip_T4_masturbate:
     call nar(">But she looks rather ridiculous in her attempts to act like a professional stripper...","end")
     call ctc
 
-    call nar(">None the less you decide to show her some appreciation...","start")
+    call nar(">Nonetheless you decide to show her some appreciation...","start")
     call nar(">By stroking your cock even faster!","end")
     call her_main("..........", "annoyed", "narrow", "base", "dead")
-    call nar(">Suddenly Hermione breaks into a whole series of rather complex pirouettes...")
+    call nar(">Suddenly Hermione breaks into a whole series of rather complex pirouettes.")
     m "{size=-4}(This looks quite impressive actually...){/size}"
     pause.5
 
-    call nar(">Hermione gives her breasts a squeeze followed by another series of rather complex (and naughty) movements...")
+    call nar(">Hermione gives her breasts a squeeze followed by another series of rather complex (and naughty) movements.")
     call ctc
 
     m "{size=-4}(Did she practise this?){/size}"
@@ -1274,7 +1274,7 @@ label hg_pf_strip_T4_masturbate:
     pause.5
 
     call nar(">Hermione performs another set of movements that could be considered classy...","start")
-    call nar(">if not for her naked tits bouncing all over the place...","end")
+    call nar(">if not for her naked tits bouncing all over the place.","end")
 
     g9 "Yes, yes, you little whore!"
     call nar(">A few more movements, a couple of gestures and a little curtsy bow to the imaginary public...")
@@ -1296,7 +1296,7 @@ label hg_pf_strip_T4_masturbate:
     g4 "ARGH! YOU FUCKING CUNT!"
 
     call cum_block
-    call gen_chibi("cum","behind_desk","behind_desk")
+    call gen_chibi("cum","behind_desk","base")
     $ hermione.set_cum(hair="light")
     pause 0.7
     $ hermione.set_cum(face="light")
@@ -1305,11 +1305,12 @@ label hg_pf_strip_T4_masturbate:
     call ctc
 
     call her_chibi("sit_naked_shocked","on_desk","on_desk")
+    call gen_chibi("cum","behind_desk","base")
 
     call her_main("??!!!", "shock", "wide", "base", "stare")
     call her_main("[genie_name]!!!", "angry", "happyCl", "worried", "mid")
 
-    call gen_chibi("cum_done","behind_desk","behind_desk")
+    call gen_chibi("cum_done","behind_desk","base")
 
     if d_flag_07: #Promised to hold it.
         call her_main("No, [genie_name]! You promised!", "angry", "happyCl", "worried", "mid", ypos="head")
@@ -1329,13 +1330,13 @@ label hg_pf_strip_T4_masturbate:
         ">.................{w}.................{w}.................{w}................."
         call her_main("...Can I just get paid now, [genie_name]... please?", "annoyed", "narrow", "angry", "R")
 
-        $ her_mood += 30
+        $ her_mood += 20
 
         jump end_hg_pf_strip
 
     else:
         call her_main("it's so hot...", "angry", "happyCl", "worried", "mid", ypos="head")
-        call gen_chibi("hold_dick","behind_desk","behind_desk")
+        call gen_chibi("hold_dick","behind_desk","base")
         m "Aha... Yeah... This feels great..."
         call her_main("You came all over me...", "soft", "happy", "base", "R")
         call her_main("I am your pupil and...")
@@ -1366,8 +1367,8 @@ label hg_pf_strip_T4_masturbate:
 
             call her_main(".............", "annoyed", "narrow", "angry", "R")
             call her_main("I'll take it.", "soft", "base", "angry", "mid")
-            $ her_mood += 30
-            $ current_payout = 36
+            $ her_mood += 20
+            $ current_payout += 1
             hide screen bld1
             call ctc
 
@@ -1377,7 +1378,7 @@ label hg_pf_strip_T4_masturbate:
             jump end_hg_pf_strip
 
         "\"You get ten extra points.\"":
-            $ current_payout = 45
+            $ current_payout += 10
             call her_main("Ten extra points [genie_name]?", "soft", "base", "angry", "mid")
             call her_main("But that is not even nearly enough!")
             m "Ten extra points. Take 'em or leave 'em [hermione_name]."
@@ -1385,7 +1386,7 @@ label hg_pf_strip_T4_masturbate:
 
             call her_main("...............", "annoyed", "narrow", "angry", "R")
             call her_main("Well, alright... Better than nothing I suppose...", "soft", "base", "angry", "mid")
-            $ her_mood += 11
+            $ her_mood += 10
             hide screen bld1
             call ctc
 
@@ -1395,7 +1396,7 @@ label hg_pf_strip_T4_masturbate:
             jump end_hg_pf_strip
 
         "\"You get twenty-five extra points.\"":
-            $ current_payout = 60
+            $ current_payout += 25
             call her_chibi("sit_naked","on_desk","on_desk")
 
             call her_main("Yes, I believe this would be an appropriate amount.", "open", "closed", "base", "mid")
@@ -1411,7 +1412,7 @@ label hg_pf_strip_T4_masturbate:
             jump end_hg_pf_strip
 
         "\"You get fifty extra points.\"":
-            $ current_payout = 85
+            $ current_payout += 50
             call her_main("Seriously?!", "angry", "wide", "base", "stare")
             call her_chibi("sit_naked","on_desk","on_desk")
 
@@ -1438,7 +1439,7 @@ label hg_pf_strip_T4_masturbate:
             menu:
                 m "..."
                 "\"Oh, no, you are still getting that.\"":
-                    $ her_mood += 30
+                    $ her_mood += 20
                     call her_main("How generous of you, [genie_name].", "soft", "base", "angry", "mid")
                     hide screen bld1
                     call ctc
@@ -1474,6 +1475,6 @@ label hg_pf_strip_T4_masturbate:
 
                     call her_walk(action="leave")
 
-                    $ her_mood += 50
+                    $ her_mood += 30
 
                     jump end_hermione_event

@@ -473,7 +473,7 @@ label hg_pf_strip_T4_Snape_masturbate:
     call her_main("!!!", animation=None)
 
     show screen chair_left
-    call gen_chibi("jerk_off","behind_desk","behind_desk")
+    call gen_chibi("jerk_off","behind_desk","base")
     show screen desk
     call her_chibi("dance_pause","on_desk","on_desk")
     call sna_chibi("jerk_off","desk_close", "desk_close")

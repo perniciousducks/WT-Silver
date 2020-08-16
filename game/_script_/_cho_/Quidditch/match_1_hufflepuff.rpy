@@ -638,7 +638,7 @@ label hufflepuff_match:
     call her_main("If I'm not mistaken, there's some history between our seekers, Cho Chang and Cedric Diggory...", "crooked_smile", "closed", "base", "mid")
     call her_main("", "smile", "happy", "base", "mid_soft")
     ">Even though they are far down below on the pitch, you can clearly see Cho and Cedric glaring up at Hermione."
-    call her_main("Given how essential the seekers role are in Quidditch, their complex past might cost one of them the game...", "open", "base", "base", "mid_soft")
+    call her_main("Given how essential the seeker's role is in Quidditch, their complex past might cost one of them the game...", "open", "base", "base", "mid_soft")
     call sna_main("Complex past...", "snape_01", ypos="head")
     call her_main("", "base", "closed", "base", "mid")
     call sna_main("I practically caught them chew each other's tongues off at one point.", "snape_02", ypos="head")
@@ -649,9 +649,9 @@ label hufflepuff_match:
     stop bg_sounds fadeout 2
     hide screen hermione_main
     with d3
-    ">Hermione heaves a heavy rule book{nw}"
+    ">Hermione heaves a heavy rulebook{nw}"
     $ renpy.sound.play("sounds/punch01.mp3")
-    ">Hermione heaves a heavy rule book{fast} from under the table and begins to monotonously recite it to the crowd."
+    ">Hermione heaves a heavy rulebook{fast} from under the table and begins to monotonously recite it to the crowd."
     $ renpy.sound.play("sounds/sniff.mp3")
     her "..."
     play bg_sounds "sounds/wind_long_loop.mp3" fadein 2
@@ -702,7 +702,7 @@ label hufflepuff_match:
     # Start of the game
     $ renpy.sound.play("sounds/referee.mp3")
     call play_music("quidditch")
-    ">A Grey haired woman then throws the quaffle into the air -- which signals the start of the match and the players quickly take off!"
+    ">A Grey haired woman then throws the quaffle into the air -- which signals the start of the match -- and the players quickly take off!"
 
     call her_main("Oh, wow... They're going quite f-fast...", "normal", "wide", "worried", "shocked", flip=True, xpos="290", ypos="base", trans=d3)
     call her_main("", "normal", "happyCl", "base", "mid")
@@ -742,7 +742,7 @@ label hufflepuff_match:
     $ renpy.sound.play("sounds/giggle2_loud.mp3")
     hide screen hermione_main
     with d3
-    "Female Student #1" "What a slut!"
+    fem "What a slut!"
     call ctc
 
     # Pack to stands.
@@ -790,7 +790,7 @@ label hufflepuff_match:
     call quidditch_stands(crowd_react=["emo8", "emo7", "sur"])
     with d3
 
-    "Female Student #1" "We want to see them!"
+    fem "We want to see them!"
 
     $ renpy.sound.play("sounds/crowd_cheer.mp3")
     call quidditch_stands(crowd_react=["emo8", "emo7", "emo8"])
@@ -805,7 +805,7 @@ label hufflepuff_match:
     call her_main("", "normal", "closed", "base", "mid")
     call sna_main("...", "snape_13", ypos="head")
     call her_main("I think it's 10-20!", "open", "happy", "base", "mid")
-    call her_main("Or is that 20-10... I'm not sure, aren't they both home teams...", "annoyed", "squint", "base", "mid")
+    call her_main("Or is that 20-10... I'm not sure, aren't they both home teams...?", "annoyed", "squint", "base", "mid")
     call sna_main("Surely you must have learnt how to read by now, Miss Granger?", "snape_03", ypos="head")
 
     $ renpy.sound.play("sounds/ball_hit.mp3")
@@ -831,7 +831,7 @@ label hufflepuff_match:
     with d3
 
     mal2 "She can't help herself answering questions in class...."
-    mal2 "I suppose the rule book was more for her benefit than ours."
+    mal2 "I suppose the rulebook was more for her benefit than ours."
 
     #call quidditch_stands(crowd_react=["th", "th", "emo3"]) # emo3 image is missing?
     call quidditch_stands(crowd_react=["th", "th", None]) # Temp fix, use above line.
@@ -1086,12 +1086,12 @@ label hufflepuff_match_return:
     g4 "{size=+10}IT WASN'T ME!{/size}"
     m "..........."
     call cho_main("*huh*?{w=0.5} Are you okay, [cho_genie_name]?", "soft", "narrow", "base", "mid")
-    m "Wha-{w=0.5}{nw}"
+    m "Wha-"
     g4 "Of course I am!"
     call cho_main("...", "annoyed", "narrow", "raised", "R")
     call cho_main("If you say so.....", "annoyed", "narrow", "base", "mid")
     call play_music("cho")
-    call cho_main("I can't believe that we've broken our 6 year dry streak and won a real game!", "smile", "happyCl", "base", "mid")
+    call cho_main("I can't believe that we've broken our six year dry streak and won a real game!", "smile", "happyCl", "base", "mid")
     call cho_main("We could actually win the cup!", "open", "wide", "base", "mid")
     m "And you weren't embarrassed?"
     call cho_main("I was a little at the start of the game...", "quiver", "narrow", "worried", "downR", cheeks="blush")

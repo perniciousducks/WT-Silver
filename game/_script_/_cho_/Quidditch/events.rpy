@@ -441,7 +441,7 @@ label cho_quid_E5:
     else:
         call cho_main("Good evening, [cho_genie_name]...", "annoyed", "narrow", "worried", "downR", xpos="right", ypos="base", trans=d3)
         m "Evenin'."
-    m "[cho_name], before we get back to our usual diversions, why don't we have a little chat about the recent happenings."
+    m "[cho_name], before we get back to our usual diversions, why don't we have a little chat about the recent happenings?"
     call cho_main("Very well, [cho_genie_name]...", "open", "narrow", "worried", "mid")
     m "Cheer up, will you..."
     m "Where did that high-spirit from your \"big win\" fly off to?"

@@ -186,16 +186,16 @@ label hermione_level_up(tier=None):
                 return
 
     elif tier == 2:
-        m "I wonder if she's ready for some more advanced favours now..."
+        m "(I wonder if she's ready for some more advanced favours now...)"
     elif tier == 3:
         m "(...)"
-        m "Does she know what a handjob is?..."
+        m "(Would she know what a handjob is...?)"
     elif tier == 4:
-        m "I wonder if I can get her to suck me off today..."
-        g4 "I'm dying to feel that mouth around my cock!"
+        m "(I wonder if I can get her to suck me off today...)"
+        g4 "(I'm dying to feel that mouth around my cock!)"
     elif tier == 5:
-        m "Yes, I think it's time..."
-        g4 "I'm gonna put my \"P\" in her \"V\"!"
+        m "(Yes, I think it's time...)"
+        g4 "(I'm gonna put my \"P\" in her \"V\"!)"
 
     $ her_tier = tier+1
     $ her_level_up = None

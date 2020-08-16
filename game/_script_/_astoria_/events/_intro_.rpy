@@ -851,7 +851,7 @@ label nt_he_astoria_E1:
     call ton_main("Her family - the Greengrass family - is quite infamous in the wizarding world.", "open", "base", "base", "L")
     call ton_main("They're known for being a very high class family of witches and wizards...", "open", "base", "raised", "R")
     call ton_main("Some of them are very stuck-up and spoiled, for that reason.", "upset", "base", "base", "R")
-    call ton_main("It's quite the norm for most pure blood families, actually.","open","closed","base","mid")
+    call ton_main("It's quite the norm for most pure-blood families, actually.","open","closed","base","mid")
     m "Get to the point..."
     call ton_main("*Sigh*", "disgust", "base", "base", "down")
     call ton_main("One of the Greengrass ancestors was put under a blood curse, and I fear that parts of this curse have trickled down through the generations and surfaced in Astoria.", "upset", "base", "worried", "mid")
@@ -892,7 +892,7 @@ label nt_he_astoria_E1:
     call ton_main("Hey, it makes perfect sense!","open","base","angry","mid")
     call ton_main("...","upset","base","worried","R")
     call ton_main("In any case, I'd like to keep an eye on her - if you don't mind.","open","base","angry","mid")
-    m "Go right ahea-{w=0.8}{nw}"
+    m "Go right ahea-"
     call ton_main("Maybe even teach her how to cast Imperio properly.", "annoyed", "base", "base", "R")
     m "..."
     with hpunch

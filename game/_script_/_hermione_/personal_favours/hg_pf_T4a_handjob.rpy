@@ -279,7 +279,7 @@ label hg_pf_handjob_1:
     call her_main("........", "open", "base", "base", "mid")
     m "............."
     call her_main(".............", "normal", "happyCl", "worried", "mid")
-    call her_main("Err... [genie_name]?")
+    call her_main("*ehh*... [genie_name]?")
     m "Yes, what is it?"
     call her_main("How long do you think this will take?", "open", "base", "base", "mid")
     m "Why?"

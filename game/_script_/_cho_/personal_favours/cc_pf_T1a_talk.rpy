@@ -709,7 +709,7 @@ label cc_pf_talk_T2_intro_E1:
     call cho_main("Stealing my underwear while I'm taking a shower after practice...", "angry", "narrow", "angry", "downR")
     if masturbating:
         g4 "*Argh!* {size=-4}(Dirty panty muggers!){/size}"
-    call cho_main("They even had the audaciousness to write --{w=0.6} {b}\"Cho, the Ravenclaw ho\"{/b}{w=0.8} on the blackboard during divination class.", "open", "narrow", "angry", "mid")
+    call cho_main("They even had the audaciousness to write \"Cho, the Ravenclaw ho\" on the blackboard during divination class.", "open", "narrow", "angry", "mid")
     if masturbating:
         g4 "{size=-4}(They must have seen your future, you whore!){/size}"
     call cho_main("Half the class saw it before I could get there...{w=0.8} Not that I care much about it...", "annoyed", "narrow", "base", "downR", cheeks="blush")

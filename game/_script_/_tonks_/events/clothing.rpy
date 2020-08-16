@@ -174,7 +174,7 @@ label tonks_summon_setup:
                 call ton_main(trans=morph)
 
                 if tonks_morph_known:
-                    m "...{w} You used your meta-what-sit ability just then didn't you?"
+                    m "...{w} You used your meta-whatsit ability just then didn't you?"
                     ton "You can tell?"
                     m "Whatever, just wear your actual clothing next time..."
                 else:

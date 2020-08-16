@@ -77,7 +77,7 @@ label cc_pf_strip_T1_intro_E1:
     g9 "Your guardian angel!"
     call cho_main("I don't think taking off my clothes will be necessary for our training, [cho_genie_name].", "annoyed", "narrow", "angry", "R")
     m "I'm very disappointed I've got to say..."
-    m "You aren't this shy with undressing in front of your team, are you?"
+    m "You aren't this shy about undressing in front of your team, are you?"
     call cho_main("Sir, that's entirely different!", "soft", "narrow", "angry", "mid")
     m "How so?"
     call cho_main("I'm just not comfortable doing this in front of you, Sir!", "soft", "closed", "worried", "mid")
@@ -333,7 +333,9 @@ label cc_pf_strip_T1_intro_E2:
 
     # Remove top.
     $ cho.strip("robe", "top")
-    call cho_main("", "upset", "narrow", "base", "mid")
+    show screen cho_cloth_pile
+    show screen cho_main
+    with d3
     pause .5
 
     call cho_main("", "upset", "narrow", "angry", "mid")
@@ -462,8 +464,8 @@ label cc_pf_strip_T1_intro_E2:
             g9 "Those two mean, hearty \"bludgers!\""
             call cho_main("Sir? Could it be that you are talking about my breasts?", "soft", "narrow", "worried", "mid", cheeks="heavy_blush")
             m "Yes indeed! Very good."
-            m "I had hoped you would eventually catch on."
-            m "Because I had also run out of balls to compare them to..."
+            m "I was hoping you would eventually catch on."
+            m "Also because I ran out of balls to compare them to..."
             call cho_main("Promise me that you won't laugh when I show you my...", "soft", "narrow", "worried", "R", cheeks="blush")
             call cho_main("\"Bludgers!\"", "mad", "happyCl", "worried", "mid", cheeks="heavy_blush")
             m "Why would I ever laugh at a pretty girl like you, Miss Chang?"

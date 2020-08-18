@@ -330,40 +330,27 @@ label paperwork:
     with d3
     ">You do some paperwork."
 
-    call finished_working_chapter #Chapter finished. $ report_chapters += 1
-
-    call report_chapters_check #Checks whether or not the completed chapter was the final one.
+    call paperwork_progress_chapter
 
     if not daytime and full_moon:
-        call f_moon_bonus
+        call paperwork_full_moon
 
-    call report_chapters_check #Checks whether or not the completed chapter was the final one.
+    $ speedwriting_check = renpy.random.randint(1, 3)
 
-    ### SPEEDWRITING CHECK ###========================================================================
-    if speed_writing == 1:
-        $ speedwriting_check = renpy.random.randint(1, 3) #"\"Speedwriting for dummies.\"" # 1/10 chance
-        if speedwriting_check == 1:
-            call speedwriting_label
-    if speed_writing == 2:
-        $ speedwriting_check = renpy.random.randint(1, 3) #"\"Speedwriting for beginners.\"" # 1/8 chance of it to pop up.
-        if speedwriting_check > 1:
-            call speedwriting_label
+    if speed_writing == 1 and speedwriting_check == 1:
+        # 1/3 chance
+        call paperwork_speedwriting
+
+    if speed_writing == 2 and speedwriting_check > 1:
+        # 2/3 chance
+        call paperwork_speedwriting
+
     if speed_writing == 3:
-            call speedwriting_label
+        call paperwork_speedwriting
+
     if speed_writing >= 4:
-            call speedwriting_label
-            call report_chapters_check #Checks whether or not the completed chapter was the final one.
-
-            call concentration_label
-
-#    if speed_writing == 5:
-#        $ speedwriting_check = renpy.random.randint(1, 2) #"\"Speedwriting for experts.\"" # 1/2 chance of it to pop up.
-#        if speedwriting_check == 1:
-#            call speedwriting_label
-#    if speed_writing == 6:
-#        call speedwriting_label #""\"Speedwriting for maniacs.\"" # 1 (sure) chance of it to pop up.
-
-    call report_chapters_check #Checks whether or not the completed chapter was the final one.
+        call paperwork_speedwriting
+        call paperwork_concentration
 
     call gen_chibi("sit_behind_desk")
 
@@ -372,8 +359,8 @@ label paperwork:
     else:
         jump day_start
 
-#Completed one chapter
-label report_chapters_check:
+label paperwork_report_check:
+    # Check if a report was completed
     if report_chapters >= 4:
         ">You've completed a report."
         $ report_chapters = 0
@@ -382,34 +369,26 @@ label report_chapters_check:
 
     return
 
-#Full moon bonus
-label f_moon_bonus:
+label paperwork_progress_chapter(message = ""):
     $ report_chapters += 1
     call notes
-    ">The Full moon makes you feel more productive.\n>You finished {number=report_chapters} chapters so far."
 
+    if report_chapters == 1:
+        "[message]>You finished one chapter so far."
+    else:
+        "[message]>You finished {number=report_chapters} chapters so far."
+
+    call paperwork_report_check
     return
 
-#Finished a chapter
-label finished_working_chapter:
-    $ report_chapters += 1
-    call notes
-    ">You finished {number=report_chapters} chapters so far."
-
+label paperwork_full_moon:
+    call paperwork_progress_chapter(">The Full moon makes you feel more productive.\n")
     return
 
-#Concentration
-label concentration_label:
-    $ report_chapters += 1
-    call notes
-    ">You maintain perfect concentration during your work.\n>And finish another chapter of the report.\n>You finished {number=report_chapters} chapters so far."
-
+label paperwork_concentration:
+    call paperwork_progress_chapter(">You maintain perfect concentration during your work and finish another chapter of the report.\n")
     return
 
-#Speed writing
-label speedwriting_label:
-    $ report_chapters += 1
-    call notes
-    ">You use your Speedwriting skills.\n>And finish another chapter of the report.\n>You finished {number=report_chapters} chapters so far."
-
+label paperwork_speedwriting:
+    call paperwork_progress_chapter(">You use your Speedwriting skills and finish another chapter of the report.\n")
     return

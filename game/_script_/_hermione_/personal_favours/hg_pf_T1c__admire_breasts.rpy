@@ -445,6 +445,9 @@ label hg_pf_admire_breasts_T4_intro_E1:
     m "Just take the compliment and show them to me..."
     call her_main("Yes, [genie_name]...", "base", "narrow", "worried", "down", cheeks="blush")
 
+    call her_main("Are you only going to watch, [genie_name]?", "angry", "happyCl", "worried", "mid", cheeks="blush")
+    m "Of course..."
+
     $ current_payout = 25
 
     jump hg_pf_admire_breasts_T4
@@ -455,6 +458,9 @@ label hg_pf_admire_breasts_T4_E1:
     m "I need to see your tits, [hermione_name]."
     call her_main("Of course, [genie_name].", "base", "narrow", "base", "up", cheeks="blush")
 
+    call her_main("Are you only going to watch, [genie_name]?", "angry", "happyCl", "worried", "mid", cheeks="blush")
+    m "Of course..."
+
     $ current_payout = 25
 
     jump hg_pf_admire_breasts_T4
@@ -464,6 +470,9 @@ label hg_pf_admire_breasts_T4_E2:
 
     m "I have to see your marvellous knockers, [hermione_name]."
     call her_main("Of course, [genie_name]", "base", "narrow", "base", "up", cheeks="blush")
+
+    call her_main("Are you only going to watch, [genie_name]?", "angry", "happyCl", "worried", "mid", cheeks="blush")
+    m "Of course..."
 
     $ current_payout = 25
 

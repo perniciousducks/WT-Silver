@@ -226,7 +226,7 @@ label cho_intro_E1:
 
     # Masturbating
     if masturbating:
-        call nar("You pull your cock out and and begin masturbating... focusing on the now heated argument between the two girls in front of you.")
+        call nar(">You pull your cock out and and begin masturbating... focusing on the now heated argument between the two girls in front of you.")
 
         show screen cho_main
         call her_main("Oh yeah, well... I bet it can't be anything good seeing how you usually act around men...", "mad", "narrow", "angry", "R")

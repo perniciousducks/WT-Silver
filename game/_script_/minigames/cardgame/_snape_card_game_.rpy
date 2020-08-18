@@ -391,7 +391,7 @@ label snape_random_duel:
             call sna_main("Dammit!","snape_17")
             g4 "Hey, chill out... it's just a game."
             call sna_main("Just a game?!","snape_18")
-            call sna_main("Do you know what students came from the slytherin house are known for Genie?","snape_07")
+            call sna_main("Do you know what students from the slytherin house are known for Genie?","snape_07")
             g9 "Well, from what you've told me... being massive sluts?"
             call sna_main("YES...","snape_08")
             call sna_main("Wait, no...","snape_16")

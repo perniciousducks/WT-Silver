@@ -513,7 +513,7 @@ label ball_quest_E2:
     m "To maintain the charade?"
     m "for the Same reason why I never leave this room...?"
     call sna_main("Right...","snape_05")
-    sna "But you know what else could endanger out little enterprise?"
+    sna "But you know what else could endanger our little enterprise?"
     call sna_main("Me losing it during class and strangling a couple of Gryffindor maggots with my bare hands...","snape_07")
     m "*Hmm*... I see your point..."
     call sna_main("Seriously, man... I need a drink...","snape_06")
@@ -534,7 +534,7 @@ label ball_quest_E2:
     call hide_blkfade
 
     call bld
-    call nar("Professor Snape spends the day in your chamber, drinking the stress away.")
+    call nar(">Professor Snape spends the day in your chamber, drinking the stress away.")
 
     if sna_friendship < 100:
         call nar(">Your relationship with him has improved.")

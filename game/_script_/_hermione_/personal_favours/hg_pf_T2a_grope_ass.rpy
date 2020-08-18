@@ -587,7 +587,7 @@ label hg_pf_grope_ass_T4_front:
     call her_main("...", "clench", "narrow", "annoyed", "up", cheeks="blush")
     g9 "..."
 
-    call nar(">Maintaining eye contact - you move your hand down, a split second of disappointment is seen on Hermione's face...")
+    call nar(">Maintaining eye contact, you move your hand down. A split second of disappointment is seen on Hermione's face...")
     m "Enjoying yourself?"
     call her_main("W-What...", "disgust", "narrow", "worried", "down", cheeks="blush")
     m "The massage... You seem less tense than last time."
@@ -742,8 +742,8 @@ label hg_pf_grope_ass_T4_continue:
                             call her_main("Ah...", "silly", "happyCl", "worried", "mid", cheeks="blush")
                             call nar(">With no more objections you move your index finger across her clit and begin rubbing it gently...")
                             call her_main("...", "soft", "closed", "base", "mid", cheeks="blush")
-                            call nar("Completely lost in the moment Hermione moves around as you massage her.")
-                            call nar("In response to her movement you start rubbing her faster - and as you do she squeals and lets out a gentle moan.")
+                            call nar(">Completely lost in the moment, Hermione moves around as you massage her.")
+                            call nar(">In response to her movement you start rubbing her faster, and as you do so, she squeals and lets out a gentle moan.")
                             call her_main("*Hnnngh*", "clench", "happyCl", "worried", "mid", cheeks="blush") #still has eyes closed
                             call her_main("....", "disgust", "wide", "base", "stare", cheeks="blush") #Opens her eyes wide
                             m "Did you just?"

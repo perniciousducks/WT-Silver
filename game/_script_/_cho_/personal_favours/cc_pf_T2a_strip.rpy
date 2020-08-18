@@ -537,7 +537,7 @@ label cc_pf_strip_T1_intro_E2:
             call play_sound("kick")
             call cho_main("", "annoyed", "narrow", "angry", "mid", trans=vpunch)
             g4 "*Aaaaah*!"
-            call nar("Cho does a daunting stomp on your desk...")
+            call nar(">Cho does a daunting stomp on your desk...")
             call cho_main("Don't think for a second I wouldn't do it! After all of this!", "scream", "narrow", "angry", "mid")
             call cho_main("", "angry", "narrow", "angry", "mid")
             call play_sound("gulp")
@@ -806,7 +806,7 @@ label cc_pf_strip_T1_intro_E3:
     # After you got Hermione to strip.
     m "She does indeed."
     call cho_main("Really?!{w} You got that cow to take off her clothes?", "soft", "wide", "base", "mid")
-    call cho_main("Did you get any prove of it?", "soft", "base", "worried", "mid")
+    call cho_main("Did you get any proof of that?", "soft", "base", "worried", "mid")
     m "What?{w} Why would I need to do that?"
     call cho_main("To blackmail her!{w} To prove that she's in on this whole \"favour trading\" business too...", "open", "narrow", "angry", "mid")
     m "We had an eye witness, for what it's worth..."
@@ -875,8 +875,8 @@ label cc_pf_strip_T1_intro_E3:
     pause .5
 
     call cho_main("Are you sure, Sir?", "soft", "narrow", "worried", "mid", cheeks="blush")
-    m "You have my word on it..."
-    call cho_main("O-{w}okay...", "soft", "narrow", "worried", "R", cheeks="blush")
+    m "You have my word..."
+    call cho_main("O-{w=0.2}okay...", "soft", "narrow", "worried", "R", cheeks="blush")
     m "Now then, Miss Chang!{w} It's time for the grand finale..."
     g9 "Take off your panties!"
     call cho_main("(...)", "annoyed", "base", "worried", "down", cheeks="blush")
@@ -894,7 +894,7 @@ label cc_pf_strip_T1_intro_E3:
     g4 "I've got to say, once again I'm very impressed by you!"
     call cho_main("Glad to hear it, [cho_genie_name].", "smile", "narrow", "angry", "mid")
     call cho_main("You can have those, by the way.", "base", "narrow", "angry", "mid")
-    call nar(">Cho throws a pair of panties onto your desk.")
+    call nar(">Cho throws her panties onto your desk.")
     call cho_main("You can keep them, for now...", "soft", "narrow", "base", "R")
     g9 "I appreciate the notion!"
     call cho_main("", "base", "narrow", "base", "mid")
@@ -1064,7 +1064,7 @@ label cc_pf_strip_T1_E3: # Repeats
     call ctc
 
     call cho_main("Catch, [cho_genie_name]!", "soft", "base", "base", "mid")
-    call nar("Cho throws her panties at you.")
+    call nar(">Cho throws her panties at you.")
 
     # Panties acquired message!
     if cho.is_equipped("panties"): # Cheats fallback
@@ -1161,7 +1161,6 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
 
     menu:
         "\"Definitely!\"":
-            $ cho_mood = 0
             $ her_mood += 10
 
             #cho "You see, Granger..."
@@ -1370,7 +1369,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             pause .5
             m "Give me just a moment..."
             $ renpy.sound.play("sounds/sniff.mp3")
-            call nar("You miss Chang's panties one last sniff before handing them back to the girl.")
+            call nar(">You give Cho's panties one last sniff before handing them back to the girl.")
             g4 "There."
             call cho_main("(Pervert...)", "annoyed", "narrow", "angry", "R", cheeks="blush")
             call cho_main("I think it's time for me to go now.", "soft", "closed", "angry", "mid")
@@ -1417,7 +1416,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call her_main("Very well...", "soft", "closed", "base", "mid")
             call her_main("For one, you are a {b}narcissistic bitch!{/b}{w} That makes the presumption her body is superior to all others...", "open", "base", "angry", "L")
             call cho_main("Because it is.", "smile", "narrow", "angry", "mid")
-            call her_main("Not to mention that you have even fever curves than some of the boys I know...", "grin", "base", "angry", "mid")
+            call her_main("Not to mention that you have even fewer curves than some of the boys I know...", "grin", "base", "angry", "mid")
             call cho_main("", "annoyed", "narrow", "angry", "mid", cheeks="blush")
             call her_main("Maybe once your Quidditch endeavours all fail, you can apply for a profession to model male underwear...", "soft", "closed", "base", "mid")
             call cho_main("I wonder where you're getting {b}your{/b} undergarments from...", "soft", "closed", "base", "mid")
@@ -1434,7 +1433,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("If you were to start doing hourly exercises, our Professor might even be attracted to you by the end of the year...", "soft", "closed", "raised", "mid")
             call her_main("Hourly exercises?", "soft", "wide", "base", "stare") # Shocked
             call cho_main("But I wouldn't say all hope is lost!", "smile", "narrow", "angry", "L")
-            call cho_main("While your figure might be a bit repulsive on the eyes...", "soft", "closed", "base", "mid")
+            call cho_main("While your figure might be a bit repulsive to the eyes...", "soft", "closed", "base", "mid")
             call cho_main("I don't mind looking at those {b}huge melons{/b} of yours.", "soft", "narrow", "base", "L", cheeks="blush")
             call her_main("How dare you talk of them like that!", "angry", "narrow", "angry", "R")
             g9 "*Heh*... melons..."

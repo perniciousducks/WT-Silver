@@ -196,7 +196,7 @@ label use_luna_potion:
         # call nar(">You watch Tonks swallow the potion and cum mixture in one go...","start")
         # "Wait a second,... where did you even get that from?"
         # m "Does it matter?"
-        # call nar("I guess not... not really... Please, continue.","end")
+        # call nar(">I guess not... not really... Please, continue.","end")
         # m "(...)"
         # call ton_main("Fuck me! That tasted good!","open_wide_tongue","base","base","ahegao",trans=hpunch)
         # call ton_main("I'm not used to potions this tasty! With so much delicious cum in it...","horny","base","base","mid")

@@ -301,7 +301,7 @@ label cc_pf_talk_T1_intro_E2:
     m "Which is why you need my help so badly..."
     m "Because you are great at it..."
     call cho_main("That we're losing is neither my fault, nor my team's, [cho_genie_name]!", "open", "base", "angry", "mid")
-    m "So who's is it then?"
+    m "So whose is it then?"
     call cho_main("The enemy team's, obviously!", "soft", "narrow", "angry", "mid")
     call cho_main("They are cheating! And they have done so for years!", "mad", "narrow", "angry", "R")
     call cho_main("This is my last chance! And I'm growing more and more desperate with my situation...", "mad", "narrow", "angry", "mid")
@@ -678,7 +678,7 @@ label cc_pf_talk_T2_intro_E1:
             show screen bld1
             with d3
             m "(Just to make this clear, I'm not getting off because I like the thought that she's getting bullied...)"
-            call nar("Right...")
+            call nar(">Right...")
             g4 "I hope you fought back those bullies?"
             call cho_main("Of course, [cho_genie_name]!", "base", "base", "base", "mid")
 

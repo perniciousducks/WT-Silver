@@ -614,7 +614,7 @@ label hg_pf_titjob_2:
             call her_main("The shape...", "base", "narrow", "worried", "down")
             call her_main("Everything about it...", "base", "narrow", "base", "mid_soft")
             $ ccg1 = 24
-            call nar("Hermione tilts her head down and licks the tip of your cock.")
+            call nar(">Hermione tilts her head down and licks the tip of your cock.")
             call her_main("...........", "open_tongue", "narrow", "annoyed", "up")
             $ ccg1 = 23
             call her_main("Perfect taste...", "soft", "narrow", "annoyed", "up")

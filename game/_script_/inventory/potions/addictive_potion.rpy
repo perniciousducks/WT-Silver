@@ -615,7 +615,7 @@ label potion_scene_3_3_1:
     hide screen hermione_main
     call blkfade
 
-    call nar("Hermione pulls out her wand and casts a spell...")
+    call nar(">Hermione pulls out her wand and casts a spell...")
 
     # TODO: Hermione's bimbo clothes should be temporary for this potion. revamp this event.
     # Setting up Bimbo clothes
@@ -640,7 +640,7 @@ label potion_scene_3_3_1:
             call her_main("Oh no I forgot that!", "soft", "wide", "base", "stare")
             call her_main("I'm soooo sorry!!!", "shock", "happyCl", "worried", "mid", cheeks="blush")
             call her_main("It's this one, isn't it...", "soft", "narrow", "worried", "down")
-            call nar("Hermione conjures an -I {heart} Cum- badge, which magically attaches itself to her breasts.")
+            call nar(">Hermione conjures an -I {heart} Cum- badge, which magically attaches itself to her breasts.")
 
             # TODO: Uncomment once badges have been added.
             # hermione.equip(cumslut_badge)

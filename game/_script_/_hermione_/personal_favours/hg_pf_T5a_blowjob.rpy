@@ -1407,7 +1407,7 @@ label hg_hidden_blowjob_cumming:
             m "Going to skip your next meal?"
             call her_main("I think so...", "grin", "narrow", "base", "dead")
             call her_main("You always cum so much, [genie_name]...")
-            m "Heh... And who's fault is that??"
+            m "Heh... And whose fault is that??"
             call her_main(".............", "grin", "narrow", "base", "dead") #Smile.
             call her_main("Can I get paid now?")
 

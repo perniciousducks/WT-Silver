@@ -468,7 +468,7 @@ label hg_pf_admire_breasts_T4:
 
     jump end_hg_pf_admire_breasts
 
-label hg_pf_admire_breasts_T4_promise: # Call label
+label hg_pf_admire_breasts_T4_look: # Call label
     ">You take a long look at Hermione's naked tits..."
     # elif her_whoring >= 12:
 
@@ -728,7 +728,6 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             g4 "Oh, this is great, yes..."
 
             call her_chibi_scene("grope_tits_cum_done")
-            with d3
 
             call her_main("Well, what's done is done I suppose...", "angry", "happyCl", "worried", "mid", cheeks="blush")
             m "Oh, this was quite amazing..."
@@ -751,10 +750,9 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             $ hermione.wear("all")
             call her_chibi("stand","desk","base")
             call gen_chibi("sit_behind_desk")
+            call her_main("", "base", "base", "base", "mid")
             hide screen blkfade
             with d5
-
-            call her_main("", "base", "base", "base", "mid")
             call ctc
 
             her "Well, this should do for now..."

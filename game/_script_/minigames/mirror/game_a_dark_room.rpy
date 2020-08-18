@@ -142,7 +142,7 @@ label dark_room_main:
         jump enter_room_of_req
 
     #Jump next day
-    call nar("Night gathers,...\nAnd a new day begins.")
+    call nar(">Night gathers,...\nAnd a new day begins.")
     $ DRgame.day += 1
     jump dark_room_main
 
@@ -464,7 +464,7 @@ label DRgame_random_event:
             hide screen fireplace_fire
             with d9
             pause.8
-            call nar("The fire wasn't strong enough.\nIt failed fighting the bitter cold, and went out...")
+            call nar(">The fire wasn't strong enough.\nIt failed fighting the bitter cold, and went out...")
             pause.8
 
         $ DRgame.time = "night"
@@ -658,7 +658,7 @@ label DRgame_fireplace:
         "The fire is burning..."
         jump DRgame_fireplace
     elif DRgame.wood <= 0 and DRgame.fire <= 0:
-        call nar("You don't have any more wood to burn.\nSoon you will all freeze to death.")
+        call nar(">You don't have any more wood to burn.\nSoon you will all freeze to death.")
         jump DRgame_resume
 
     menu:
@@ -675,13 +675,13 @@ label DRgame_fireplace:
                 "It will burn until night falls."
         "{color=[menu_disabled]}-Stoke the fire-{/color}" if DRgame.wood < 1 or DRgame.fire >= 2:
             if DRgame.fire >= 2:
-                call nar("The fire burns more than enough.")
+                call nar(">The fire burns more than enough.")
             else:
-                call nar("You don't have any more wood to burn.\nSoon you will all freeze to death.")
+                call nar(">You don't have any more wood to burn.\nSoon you will all freeze to death.")
         "-Cook some meat-" if DRgame.fire >= 1 and DRgame.meat >= 1:
             jump DRgame_cook_meat
         "{color=[menu_disabled]}-Cook some meat-{/color}" if DRgame.fire >= 1 and DRgame.meat < 1:
-            call nar("You don't have any meat to cook.")
+            call nar(">You don't have any meat to cook.")
         "-Leave the fireplace-":
             jump DRgame_resume
     jump DRgame_fireplace

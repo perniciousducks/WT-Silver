@@ -638,7 +638,7 @@ label cho_quid_E7:
     pause .2
 
     if her_tier < 4: # Hermione changes into her school outfit
-        call nar("While Hermione hastily puts on some less revealing clothes.")
+        call nar(">While Hermione hastily puts on some less revealing clothes.")
         $ her_outfit_last.save()
         $ hermione.equip(her_outfit_default)
     else:

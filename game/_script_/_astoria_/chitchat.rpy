@@ -87,7 +87,7 @@ label astoria_chit_chat:
 
     elif chitchat_number == 12:
         call ast_main("I was bored during class and doodled a bit on one of the books I brought from the library and it started smacking me on the head.", "upset", "narrow", "angry", "mid")
-        call ast_main("Why is Miss Pince allowed to jinx books when I get in trouble for making somebody's quill turn onto a worm when touched?","base","base","base","mid")
+        call ast_main("Why is Miss Pince allowed to jinx books when I get in trouble for making somebody's quill turn into a worm when touched?","base","base","base","mid")
 
     elif chitchat_number == 13:
         call ast_main("Flying is probably one of my favourite subjects...", "open", "base", "base", "mid")

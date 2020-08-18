@@ -375,7 +375,7 @@ label give_ast_gift(gift_item):
             call ast_main("anal plugs?", face="neutral")
             call give_gift(">You give the anal plugs to Astoria...", gift_item)
             call ast_main("You do know these hurts a bit if you're not used to them?", face="annoyed")
-            call nar("Astoria absent-mindedly pockets the anal plug.")
+            call nar(">Astoria absent-mindedly pockets the anal plug.")
             call ast_main("Don't see why you'd give these out as if they were sweets...", mouth="annoyed", face="neutral")
             call ast_mood(-1)
 

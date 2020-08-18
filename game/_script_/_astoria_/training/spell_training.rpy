@@ -1624,7 +1624,7 @@ label ag_st_imperio_E5:
             call ton_main("And I can't help that I'm just so god...{w=0.4} damn...{w=0.3} horny!", "open_wide", "closed", "angry", "mid", hair="angry")
             call ton_main("All the bloody time!", "open_wide_tongue", "base", "base", "ahegao", hair="horny")
             call ton_main("See!", "annoyed", "base", "annoyed", "up", hair="horny")
-            call nar("You notice the bright pink colour of her hair - once again...")
+            call nar(">You notice the bright pink colour of her hair - once again...")
             m "You should stop lying to yourself, it's not healthy..."
             m "I'm immortal - and even I know that!"
             m "Embrace why you chose to be a part of this, you've got a pretty good gig here."

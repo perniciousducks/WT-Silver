@@ -59,7 +59,7 @@ label ag_se_imperio_sb_E1:
 
     call play_music("trance")
     call sus_main("W-what are you--","open","wide","worried","wide")
-    call nar("Susan's eyes flicker and a blank expression spreads across her face.")
+    call nar(">Susan's eyes flicker and a blank expression spreads across her face.")
     call sus_main("-doing...","upset","base","base","up")
     call sus_main("...","upset","narrow","base","up")
 
@@ -172,14 +172,14 @@ label ag_se_imperio_sb_E1:
     call update_sus_uniform
     call sus_main("","upset","narrow","worried","mid")
     pause.5
-    call nar("Susan begins dressing herself in silence...")
+    call nar(">Susan begins dressing herself in silence...")
 
     hide screen susan_main
     $ susan_wear_top = True
     call update_sus_uniform
     call sus_main("","upset","narrow","base","mid")
     pause.5
-    call nar("Her eyes unfocused, staring blankly into space.")
+    call nar(">Her eyes unfocused, staring blankly into space.")
 
     m "Aww... why would you do that?"
     call ast_main("You were getting too excited, old man.","clench","base","angry","mid")
@@ -499,7 +499,7 @@ label ag_se_imperio_sb_E2:
 
     call sus_main("","base","narrow","base","mid")
     pause.5
-    call nar("Susan begins dressing herself in silence...")
+    call nar(">Susan begins dressing herself in silence...")
 
     hide screen susan_main
     $ susan_wear_top = True
@@ -683,7 +683,7 @@ label ag_se_imperio_sb_E3:
     hide screen blktone
     call blkfade
 
-    call nar("Susan slowly starts walking around your desk before obediently crawling under.")
+    call nar(">Susan slowly starts walking around your desk before obediently crawling under.")
     pause.5
     hide screen blkfade
     call ast_main("","smile","base","base","down",xpos="mid",ypos="base",trans=fade)
@@ -808,7 +808,7 @@ label ag_se_imperio_sb_E3:
     sus "No wait! Astoria, you said I could go--"
     call cum_block
     g4 "ARGHHHH!!!"
-    call nar("Susan's sudden yelps prove too much for you as your cock begins to fire off an immense load onto Susan's face...")
+    call nar(">Susan's sudden yelps prove too much for you as your cock begins to fire off an immense load onto Susan's face...")
     g4 "HERE IT IS SLUT!!!"
     call cum_block
     sus "..."

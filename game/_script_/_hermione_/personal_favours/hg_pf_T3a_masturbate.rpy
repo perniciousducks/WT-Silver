@@ -321,7 +321,7 @@ label hg_pf_strip_T5_fingering:
     call her_main("(I can't believe I'm agreeing to do this...{w=0.4} again...)", "soft", "narrow", "base", "down")
 
     if hermione.is_worn("panties"):
-        call nar("Hermione bends over and takes off her panties.")
+        call nar(">Hermione bends over and takes off her panties.")
         pause 1.0
         $ hermione.strip("panties")
         pause 1.0
@@ -429,7 +429,7 @@ label hg_pf_strip_T6_fingering:
 
     call her_main("...", "base", "narrow", "base", "mid_soft")
     if hermione.is_worn("panties"):
-        call nar("Hermione hastily takes off her panties.")
+        call nar(">Hermione hastily takes off her panties.")
         pause 1.0
         $ hermione.strip("panties")
         pause 1.0

@@ -245,7 +245,7 @@ label gryffindor_dormitories:
         "-Search the area-":#Cat Hair
             $ ran = renpy.random.random()
             if ran < 0.3:
-                ">You search around the dorms and manage to find a clump for bright orange fur."
+                ">You search around the dorms and manage to find a clump of bright orange fur."
                 m "This must belong to some sort of animal."
                 menu:
                     "-Take the Fur-":

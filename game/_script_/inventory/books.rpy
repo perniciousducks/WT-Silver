@@ -101,7 +101,7 @@ default Galadriel_II_ITEM = FictionBook(
         "Galadriel soon gets lost in the vast city and is forced to spend the night on the street.",
         "Food is hard to come by on the streets. Galadriel fights a pack of stray dogs over some scraps and one of them bites her hand badly.",
         "The Pregnant Galadriel offers her company to a couple of filthy-looking homeless men in exchange for food. She spends the night with them.",
-        "Galadriel realises that her live back in the brothel was a heaven compared to the live she's been leading for the past several days. She decides to return.",
+        "Galadriel realises that her life back in the brothel was heaven compared to the live she's been leading for the past several days. She decides to return.",
         "Galadriel's owner - the fat, wealthy man does not punish Galadriel for escaping. He is happy to have one of his most popular girls back.",
         "Galadriel is, yet again, warm, clean and well fed. She is glad to be back and as popular as ever.",
         "Galadriel keeps servicing the clients throughout the rest of her pregnancy. The baby is due any day now...",

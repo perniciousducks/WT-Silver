@@ -214,7 +214,7 @@ label update_cho_requests:
     return
 
 label favor_not_ready:
-    call nar("You can't do this favour just yet.")
+    call nar(">You can't do this favour just yet.")
     return
 
 label not_available:

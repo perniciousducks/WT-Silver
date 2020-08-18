@@ -147,7 +147,7 @@ label main_tease:
 
     if not used_tease:
         $ used_tease = True
-        call nar("You turn around and start shaking your buttocks violently.")
+        call nar(">You turn around and start shaking your buttocks violently.")
         call sna_main("What the hell are you doing?","snape_05", wand=True)
         m ".......{w=1.0} teasing you?"
         call sna_main(".........","snape_14", wand=True)

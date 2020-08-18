@@ -547,10 +547,10 @@ label slytherin_match:
     play bg_sounds "sounds/crowd_low.mp3" fadeout 1.0 fadein 3.0
     $ renpy.sound.play("sounds/referee.mp3")
     call play_music("quidditch")
-    call nar("The grey haired lady glances up to the podium and gives Hermione a wink - as she throws the quaffle into the air.")
+    call nar(">The grey haired lady glances up to the podium and gives Hermione a wink - as she throws the quaffle into the air.")
 
     call her_main("And we're off!", "base", "happyCl", "base", "mid", trans=d3)
-    call nar("Looking up -- you can see Cho giving Malfoy a quick smirk -- as she darts off towards the Slytherin half of the pitch.")
+    call nar(">Looking up -- you can see Cho giving Malfoy a quick smirk -- as she darts off towards the Slytherin half of the pitch.")
     call her_main("Ravenclaw chaser and team captain Roger Davies immediately goes for the quaffle...", "open", "base", "angry", "L")
     call her_main("The Slytherin captain Graham Montague not far behind.", "open", "base", "angry", "up")
     call her_main("Oh! Davies catches it and passes to Bradley...", "smile", "base", "angry", "up")
@@ -635,8 +635,8 @@ label slytherin_match:
     show screen blkfade
     with d5
 
-    call nar("You sit down with Snape and Tonks to enjoy the match -- drinking some of the finest wine you've tasted.", "start")
-    call nar("Tonks' cheeks turning redder as the game continues.", "end")
+    call nar(">You sit down with Snape and Tonks to enjoy the match -- drinking some of the finest wine you've tasted.", "start")
+    call nar(">Tonks' cheeks turning redder as the game continues.", "end")
 
     call her_main("", "annoyed", "base", "base", "up")
     hide screen blkfade
@@ -763,7 +763,7 @@ label slytherin_match:
     pause .5
 
     $ renpy.sound.play("sounds/referee.mp3")
-    call nar("Tonks Signals Hooch -- and a whistle is heard to signify a short break... a murmur erupts across the crowd, some not realizing what has gone down.")
+    call nar(">Tonks Signals Hooch -- and a whistle is heard to signify a short break... a murmur erupts across the crowd, some not realizing what has gone down.")
 
     call ton_chibi(flip=False)
     with d3
@@ -1269,7 +1269,7 @@ label slytherin_match:
     call sna_main("Ravenclaw has no chance, We've got this game in the bag.", "snape_01")
     g9 "You say that..."
 
-    call nar("Cho, now with her eyes fixed behind one of the goalposts -- seemingly having spotted the snitch -- gives you a quick glance and a smile as she flies up to Crabbe and Goyle.")
+    call nar(">Cho, now with her eyes fixed behind one of the goalposts -- seemingly having spotted the snitch -- gives you a quick glance and a smile as she flies up to Crabbe and Goyle.")
 
     # Cho CG
     $ camera.set_imagepath(None)
@@ -1288,7 +1288,7 @@ label slytherin_match:
     cra "What do you want slut--"
     $ camera.set(rotate=-15, zoom=0.65, pos=(-100, -120), t=3.0, pause=True)
     $ camera.set_image("cho_cg quidditch pose2 smirk")
-    call nar("Cho spins around, flaunts her butt and gives them a quick wink.")
+    call nar(">Cho spins around, flaunts her butt and gives them a quick wink.")
     $ camera.set(rotate=0, zoom=0.3, pos=(0, 0), t=2.0, pause=True)
 
     call ctc
@@ -1297,7 +1297,7 @@ label slytherin_match:
     goy "Or maybe this little Ravenclaw slut has finally come to her senses, Crabbe."
     goy "No surprise there... Those Ravenclaw cucks got nothing even close to our sheer strength!" #have is correct grammar here but Crabbe and Goyle are dumb shits so
     $ camera.set_image("cho_cg quidditch pose2 open")
-    call nar("Cho tightens her butt cheeks and flutters her eyelashes in a way that -- to anyone except Crabbe and Goyle -- would be an obvious distraction tactic.")
+    call nar(">Cho tightens her butt cheeks and flutters her eyelashes in a way that -- to anyone except Crabbe and Goyle -- would be an obvious distraction tactic.")
 
     $ camera.set_image("cho_cg quidditch pose2 smirk")
     play sound "sounds/crowd_cheer.mp3"
@@ -1309,7 +1309,7 @@ label slytherin_match:
 
     $ camera.set_image("cho_cg quidditch pose1 base")
 
-    call nar("Malfoy suddenly turns around with a surprised look on his face that a goal was let in and then angrily flies up to Crabbe and Goyle.")
+    call nar(">Malfoy suddenly turns around with a surprised look on his face that a goal was let in and then angrily flies up to Crabbe and Goyle.")
     malf "What the hell are you guys doing?{w=0.8} Have those bludgers been hitting you too hard?"
     malf "You're supposed to be blocking the goal until that Ravenclaw girl spots the snitch!"
     $ camera.set_image("cho_cg quidditch pose1 run")
@@ -1319,7 +1319,7 @@ label slytherin_match:
     malf "What?!?"
     cra "She's going after the Snitch!"
 
-    call nar("Malfoy spins his head around. Finally noticing that Cho's currently chasing the snitch in the distance, he quickly darts after her.")
+    call nar(">Malfoy spins his head around. Finally noticing that Cho's currently chasing the snitch in the distance, he quickly darts after her.")
     malf "You fucking idiots!"
 
 
@@ -1516,7 +1516,7 @@ label slytherin_match_return:
     pause .8
 
     with hpunch
-    call nar("Hermione playfully shakes her breasts at you.")
+    call nar(">Hermione playfully shakes her breasts at you.")
     call her_main("Much better without the bra, don't you think?", "soft", "narrow", "base", "mid")
     m "I..."
     call her_main("Don't you just love this body?", "base", "narrow", "base", "down")

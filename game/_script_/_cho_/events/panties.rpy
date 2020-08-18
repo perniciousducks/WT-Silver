@@ -39,7 +39,7 @@ label cho_panties_response_T2:
         call cho_main("So you admit that you did it?", "soft", "narrow", "angry", "mid")
         m "It's not my cum..."
         call cho_main("*Argh*!", "angry", "narrow", "angry", "mid", trans=hpunch)
-        call cho_main("Well who's is it then?{w} The house-elves?", "soft", "narrow", "base", "mid")
+        call cho_main("Well whose is it then?{w} The house-elves?", "soft", "narrow", "base", "mid")
         m "*Uhm*...{w} Yes?"
         call cho_main("It's disgusting!", "annoyed", "narrow", "base", "down")
         call cho_main("I better get them cleaned immediately...", "angry", "narrow", "worried", "down")

@@ -129,7 +129,7 @@ label person_is_busy:
     return
 
 label spell_not_known:
-    call nar("You haven't unlocked this spell yet.")
+    call nar(">You haven't unlocked this spell yet.")
     return
 
 label astoria_talk:

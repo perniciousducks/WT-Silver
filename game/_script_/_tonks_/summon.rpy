@@ -278,7 +278,7 @@ label tonks_talk:
                     $ ton_genie_name = "Old man"
                     call ton_main("I have to say, for your age you are in a really great shape...", "soft", "base", "base", "down")
                     m "That's part of the benefits of being immortal. Your body doesn't age..."
-                    call ton_main("You're lucky then... I've had men that were a couple hundred years old, who's bodies were quite fragile...","open","base","base","R")
+                    call ton_main("You're lucky then... I've had men that were a couple hundred years old, whose bodies were quite fragile...","open","base","base","R")
                     m "All mortals? How did they get that old?"
                     call ton_main("Ever heard of the \"philosopher stone?\"", "base", "narrow", "base", "mid")
                     m "*Ah!* Is it a tiny, red, stone-looking gem, that lengthens the owner's life?"

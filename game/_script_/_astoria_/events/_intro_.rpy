@@ -163,7 +163,7 @@ label astoria_intro_E1:
                     # Genie and Tonks stand behind the desk.
                     # Genie has his dick in hand, jerking off.
 
-                #    call nar("To your surprise, Tonks \"blows\" a gust of wind over \"your cock\"...")
+                #    call nar(">To your surprise, Tonks \"blows\" a gust of wind over \"your cock\"...")
                 #    call ton_main("There, all done.","base","base","base","mid")
                 #    m ".............."
                 #    call ton_main("What? I did what you asked for... I blew your cock...","base","base","base","mid")

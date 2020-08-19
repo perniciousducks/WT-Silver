@@ -10,13 +10,16 @@ label cc_pf_strip:
     # End Event Jump
     label end_cho_strip_event:
 
-        if cho_whoring < 9: # Points til 9
+        if cho_tier == 2 and cho_whoring < 9: # Points til 9
+            $ cho_whoring += 1
+
+        if cho_tier == 3 and cho_whoring < 15: # Points til 15
             $ cho_whoring += 1
 
     $ cho.wear("all") # Reset clothes
     jump end_cho_event
 
-
+# TODO: Add Fail events as Tier 1, currently named Tier 1 events become Tier 2.
 
 ### Tier 1 (pre Slytherin) ###
 
@@ -115,10 +118,8 @@ label cc_pf_strip_T1_intro_E1:
     pause .8
 
     # Remove top.
-    hide screen cho_main
     $ cho.strip("robe", "top")
     show screen cho_cloth_pile
-    show screen cho_main
     with d3
     pause .5
 
@@ -730,10 +731,8 @@ label cc_pf_strip_T1_intro_E3:
     pause .8
 
     # Remove top.
-    hide screen cho_main
     $ cho.strip("robe", "top")
     show screen cho_cloth_pile
-    show screen cho_main
     with d3
     pause .5
 
@@ -1281,7 +1280,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call her_main("Here...", "base", "narrow", "base", "mid_soft")
 
             # Hermione shows her breasts.
-            $ hermione.strip("robe","top","bra")
+            $ hermione.strip("robe", "top", "bra")
             with d3
             pause .5
 
@@ -1498,93 +1497,1010 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
 
 
 
-### Tier 2 (pre Gryffindor) ###
+##############
+### Tier 3 ###
+##############
 
-label cc_pf_strip_T2_E1:
 
-    # Cho asks if you could give her house points for once.
-    call cho_main("But, before that, may I ask you about something?", "soft", "base", "worried", "mid")
-    m "Sure..."
-    call cho_main("Does Granger only ask for house points? To do this sort of thing?", "open", "base", "base", "mid")
-    m "She does."
-    call cho_main("And, just out of curiosity, how much do you pay her for such a favour?", "soft", "base", "base", "R")
-    call blktone
-    m "(What should I tell her? Should I exaggerate a bit to get her more motivated?)"
+## Tier 3 - Event 1 ##
 
-    menu:
-        "\"Five points.\"":
-            $ current_payout = 5
+# Cho hops on your desk and she strips for you.
+# You talk about the last match and Tonks' role in it.
+# You tell Cho about Tonks' ability, and what she did to help winning the game.
 
-            call hide_blktone
-            call cho_main("Only five points? I expected more, Sir.", "horny", "narrow", "worried", "downR")
-            call cho_main("I've gotten more points for answering Quidditch questions to Madam Hooch!", "open", "base", "base", "mid")
-            m "I'm sure that wasn't the only reason she gave you those points..."
-            call cho_main("Just to be clear... She completely undresses?{w} For five mere points?", "soft", "narrow", "raised", "mid")
-            m "Yep."
-            call cho_main("What a slut! I can't believe it!", "smile", "narrow", "angry", "R")
-            g9 "Sometimes I only reward her with two points!{w} If she doesn't sway her hips enough..."
-            call cho_main("You don't say!", "smile", "base", "angry", "mid")
-            m "Why were you asking?"
+label cc_pf_strip_T3_intro_E1:
+    m "Come closer, [cho_name]"
+    call cho_main("Yes, [cho_genie_name]...", "base", "narrow", "base", "mid")
 
-        "\"One hundred points!\"":
-            $ current_payout = 30
-            $ cho_mood += 6
+    call cho_chibi("stand", "desk", "base")
 
-            call hide_blktone
-            call cho_main("So many? But...", "soft", "wide", "base", "mid")
-            call cho_main("Sir, don't you think that's a bit outrageous?", "open", "closed", "angry", "mid")
-            call cho_main("People in house Ravenclaw work hard to earn that amount of points!", "open", "base", "raised", "L")
-            call cho_main("And you're telling me that you give that cow \"one hundred bloody points\"{w}, for showing you her tits?!", "angry", "narrow", "angry", "mid")
-            m "Not just her tits, [cho_name]."
-            g4 "Everything!!!"
-            call cho_main("Sir, how can you agree to such a thing?", "angry", "closed", "angry", "mid")
-            m "Calm down, would you. I was joking..."
-            m "She doesn't get that many points from me. It's closer to thirty..."
-            call cho_main("That's still far too many points!", "annoyed", "narrow", "angry", "mid")
-            m "Why are you even so invested in this all of a sudden?"
-            call cho_main("(...)", "annoyed", "narrow", "angry", "R")
+    call cho_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
-    call cho_main("I thought,...{w} maybe...{w} just this once...", "angry", "base", "worried", "down")
-    call cho_main("You could give me house points as well?", "soft", "base", "worried", "mid")
-    m "Really? I thought you didn't give a flying fuck about that house cup?"
-    call cho_main("Sir?!", "angry", "wide", "base", "mid") # Shock
-    m "Why do you want points all of a sudden?"
-    call cho_main("I have my reasons....", "annoyed", "narrow", "angry", "mid")
-    call cho_main("And, as I've said, this will be a one-time-only request of mine. I promise!", "open", "base", "base", "R")
-    call cho_main("I'm a fair sportsman, [cho_genie_name]. You know that...", "base", "closed", "base", "mid")
-    call cho_main("I'd never subject myself to earning house points this way!", "soft", "narrow", "angry", "mid")
-    call cho_main("Unlike a certain other student at this school...", "angry", "narrow", "angry", "R")
-    m "And yet you asked me for that very thing?{w} I wonder why, Miss Chang..."
-    call cho_main("Just as additional motivation, Sir!", "angry", "closed", "worried", "mid")
-    m "Additional motivation, so so..."
-    call cho_main("Yes.", "soft", "narrow", "worried", "mid")
-    m "Does that motivation come from the noble deed of earning those points for your house?"
-    g4 "Or getting that dirty, corruptive feeling from the way you acquired them?"
-    call cho_main("(...)", "angry", "closed", "worried", "mid") # Embarrassed
-    g9 "Stripping down for points! Don't you know what that would make you?"
-    call cho_main("*Uhm*", "soft", "narrow", "worried", "mid")
-    m "You'd be just as cheap as Hermione..."
-    call cho_main("Please, Sir.{w} Don't compare me to that whore!", "annoyed", "narrow", "angry", "mid")
-    g9 "Yes, Miss Chang. A whore!"
-    call cho_main("That's not why--", "angry", "closed", "worried", "mid")
-    call cho_main("Please, Sir. Just this once!", "soft", "narrow", "worried", "mid")
-    call cho_main("I won't ask for payment ever again!", "soft", "base", "worried", "mid")
-    call cho_main("I'll strip naked for you, for... {number=current_payout} house points!", "angry", "closed", "worried", "mid") # Embarrassed
+    g9 "Would you like to hop on my desk and strip for me again?"
+    call cho_main("Strip for you, huh?", "soft", "narrow", "raised", "mid")
+    call cho_main("Naturally you'd like me to undress to see if I've been keeping up with my workout? Staying in shape and all that...", "soft", "narrow", "angry", "mid")
 
     menu:
-        "\"Yes! Make your house proud, you slut! Earn those points!\"":
-            call cho_main("Yes, Sir!", "base", "narrow", "angry", "mid")
-            g9 "Take off those panties!"
+        "\"Of course...\"":
+            call cho_main("[cho_genie_name], no need to continue the pretence...", "open", "closed", "base", "mid")
+            call cho_main("We both know you don't really care about that stuff.", "open", "narrow", "base", "mid")
+            call cho_main("All you want to do is ogle at my naked body.", "soft", "narrow", "angry", "mid")
+            call cho_main("You're just like all the other teachers...", "annoyed", "narrow", "base", "R")
+            m "You are one to say, you little slut!"
+            m "You went through quite the effort to show the whole school your ass on that broom..."
+            call cho_main("I only did that so we'd win!", "normal", "narrow", "angry", "mid")
+            g9 "Keep telling yourself that, you little show-off!"
+            g9 "Come here and hop on my desk already!"
+            call cho_main("...", "annoyed", "narrow", "angry", "mid")
 
-        "\"No. You are better than that...\"":
-            $ cho_mood += 6
-            call cho_main("But Sir! I asked for them!", "soft", "wide", "worried", "mid")
-            m "And I'm sure you wouldn't want to sink as low as Miss Granger, would you?"
-            call cho_main("Yes! I would!", "angry", "closed", "angry", "mid")
-            call cho_main("That's the entire reason I want them!!!", "open", "narrow", "angry", "R")
-            m "Seriously?"
-            call cho_main("Give me those points, or I will walk right out of here!", "open", "narrow", "angry", "mid")
-            m "Fine. If you're that insistent on {number=current_payout} meagre points..."
-            call cho_main("Thank you.", "soft", "closed", "base", "mid")
+        "\"No, I just want a good, indecent strip-show!\"":
+            g9 "I want to see that ass of yours bounce, baby!"
+            call cho_main("At least you are honest with me...", "open", "closed", "base", "mid")
+            call cho_main("I can't really blame you, you're just a man, after all...", "soft", "narrow", "base", "L")
+            call cho_main("And I'm simply irresistible.", "smile", "narrow", "angry", "mid")
+            g9 "That you are, you little slut!"
+            g9 "Now hop onto my desk so I can have a good look at you."
+            call cho_main("Yes, [cho_genie_name].", "base", "narrow", "angry", "mid")
 
-    jump main_room
+
+    # Cho hops on your desk.
+    call hide_characters
+    show screen blkfade
+    with d5
+    call play_sound("climb_desk")
+    pause 2
+
+    call cho_chibi("stand", "on_desk", "on_desk", flip=False)
+    hide screen bld1
+    hide screen blkfade
+    with d5
+    call ctc
+
+    call cho_main("", "base", "narrow", "base", "mid", xpos="mid", ypos="base", trans=fade)
+    call ctc
+
+    g9 "Yes! Strip for me, you naughty girl!"
+    call cho_main("...", "horny", "narrow", "base", "down", cheeks="blush")
+    pause .2
+
+    # Remove top.
+    $ cho.strip("robe", "top", "bra")
+    show screen cho_cloth_pile
+    with d3
+    pause .5
+
+    call cho_main("", "horny", "narrow", "angry", "mid", cheeks="blush")
+    call ctc
+
+    g9 "Marvelous as always."
+    call cho_main("I'm glad you're enjoying yourself, [cho_genie_name]...", "base", "narrow", "angry", "mid")
+    g9 "That I do!"
+    pause .2
+
+    # Remove bottom.
+    $ cho.strip("bottom")
+    with d3
+    pause .5
+
+    call cho_main("", "base", "narrow", "base", "mid")
+
+    if cho.is_equipped("panties"):
+        call ctc
+
+        g9 "And now those panties!"
+        call cho_main("Of course, [cho_genie_name]...", "smile", "happyCl", "base", "mid")
+        pause .2
+
+        # Remove panties.
+        $ cho.strip("all")
+        with d3
+        pause .5
+
+        call cho_main("...", "grin", "narrow", "angry", "mid", cheeks="blush")
+        call cho_main("Here, [cho_genie_name]... You can have them.", "horny", "narrow", "angry", "mid", cheeks="blush")
+        pause .5
+
+        # Panties acquired message!
+        if cho.is_equipped("panties"): # Cheats fallback
+            call give_reward(">You have acquired Cho's panties!", cho.get_equipped("panties").get_icon())
+        $ has_cho_panties = True
+
+    else:
+        pause .8
+
+        # Remove panties.
+        $ cho.strip("all")
+        with d3
+        pause .5
+
+        call cho_main("", "horny", "narrow", "base", "mid", cheeks="blush")
+        call ctc
+
+    call cho_main("Do you like watching me, [cho_genie_name]?", "soft", "narrow", "base", "mid")
+    call cho_main("You should know, Sir, I'm {b}incredibly{/b} thankful for your help.", "open", "closed", "base", "mid")
+    call cho_main("Thanks to you, I get to do what I love...", "smile", "narrow", "base", "mid")
+    m "Stripping?"
+    call cho_main("No. Quidditch!", "annoyed", "narrow", "angry", "mid")
+    call cho_main("Winning, to be precise...", "soft", "narrow", "base", "mid")
+    g9 "Yes. I feel like a winner as well!"
+    call cho_main("But, to tell you a secret...", "soft", "closed", "base", "mid")
+
+    # mirror sprite
+    call hide_characters
+    hide screen bld1
+    with d3
+    pause .2
+
+    call cho_chibi(flip=True)
+    with d3
+    pause .8
+
+    call cho_main("", "smile", "narrow", "angry", "R", xpos=360, ypos="base", flip=True)
+    pause .8
+
+    call cho_main("I am starting to love doing {b}this{/b} as well.", "soft", "narrow", "base", "R", cheeks="blush")
+    g9 "Yes, you little slut! Shake that ass for me!"
+    call cho_main("I love the reaction I get from people...", "angry", "narrow", "base", "up")
+    call cho_main("From you... From Hermione...", "soft", "narrow", "base", "mid")
+    call cho_main("Why don't we summon her? Maybe she'll join me this time...", "grin", "narrow", "angry", "mid")
+    call cho_main("I think that could be fun.", "base", "narrow", "base", "mid")
+    m "Hermione, you say?"
+    g9 "How about we invite somebody else in her stead?"
+    pause .2
+
+    # mirror sprite
+    call hide_characters
+    hide screen bld1
+    with d3
+    pause .2
+
+    call cho_chibi(flip=False)
+    with d3
+    pause .5
+
+    call cho_main("Somebody else?", "open", "narrow", "raised", "mid", xpos="mid", ypos="base", flip=False)
+    g9 "Yes, to keep things interesting."
+    call cho_main("*Hmm*...", "annoyed", "base", "raised", "mid")
+    call cho_main("I suppose...", "soft", "base", "base", "R")
+    m "Or are you only prepared to do it -- if you get to tease Miss Granger at the same time?"
+    call cho_main("Alright, what's one student over another...", "base", "happyCl", "base", "mid")
+    m "It's not a student I'm thinking of."
+    call cho_main("What do you mean, Sir?", "open", "base", "base", "mid")
+    m "I want you to strip for one of your teachers!"
+    call cho_main("A teacher?", "disgust", "wide", "base", "mid", cheeks="blush") # shocked
+    call cho_main("No way I could do that!", "clench", "wide", "base", "mid", cheeks="blush")
+    g9 "Look at it as just another challenge."
+    call cho_main("", "annoyed", "base", "base", "mid")
+    m "The teachers already got a good look at your assets during the last couple of games."
+    m "And I know for a fact that a couple of them are quite interested in a closer look."
+    call cho_main("Oh, yeah?", "quiver", "base", "base", "mid", cheeks="blush")
+    call cho_main("Then who are you thinking of in particular?", "annoyed", "base", "base", "mid")
+
+    $ cc_strip_no_snape = False # throwaway var used only in the next event.
+
+    label .choice:
+
+    menu:
+        "\"Tonks\"":
+            pass
+
+        "\"Snape\"" if cc_strip_no_snape == False:
+            $ cc_strip_no_snape = True # throwaway var used only in the next event.
+            call cho_main("What?!", "clench", "wide", "base", "mid", cheeks="blush")
+            call cho_main("You can't be serious!", "angry", "base", "angry", "mid") # angry
+            call cho_main("[cho_genie_name], thanks to him we almost lost the match!", "open", "narrow", "angry", "mid")
+            call cho_main("He gave those idiots a luck potion, remember?", "open", "closed", "angry", "mid")
+            call cho_main("You should have thrown him out for that!", "clench", "narrow", "angry", "mid")
+            m "All I care about is that he and his band of greenhorns lost the match against us..."
+            call cho_main("...", "annoyed", "narrow", "angry", "mid")
+            call cho_main("There is no way I'd ever strip for that greasy old bastard!", "open", "narrow", "angry", "mid")
+            call cho_main("I'm not giving him that satisfaction.", "annoyed", "narrow", "angry", "R")
+            m "Very well, forget about Snape."
+            m "But what about..."
+            jump cc_pf_strip_T3_intro_E1.choice
+
+
+    call cho_main("Professor Tonks?", "quiver", "base", "base", "mid")
+    m "You have yet to show her your gratitude for the help she provided..."
+    m "She was such an important player during that last match, and greatly helped us secure that win."
+    call cho_main("She did?", "smile", "base", "raised", "mid")
+    call cho_main("I mean, she did get the Slytherins to join practice, but...", "annoyed", "base", "raised", "mid")
+    call cho_main("She wasn't even present for most of the actual game.", "annoyed", "base", "base", "R")
+    g9 "Are you sure about that?"
+    m "Well, you would have hardly been able to recognize her..."
+    call cho_main("*Hmm*...?", "annoyed", "base", "raised", "mid")
+    g9 "Curly long hair, and tits as big as honeydews."
+
+    m "Didn't the way Hermione acted, the way she flirted with those Slytherin players, struck you as a bit odd?"
+    g9 "You might even say... familiar?"
+    call cho_main("Are you suggesting that Professor Tonks...", "mad", "base", "base", "mid")
+    call cho_main("But how?", "clench", "base", "raised", "mid")
+    m "Magic...{w=0.8} duh!"
+    m "How about we call her on your next visit, then you can ask her yourself..."
+    call cho_main("I suppose we could do that...", "crooked_smile", "base", "base", "mid", cheeks="blush")
+    g9 "Splendid!"
+    m "That should be all for today, [cho_name]."
+    m "You're dismissed..."
+    call cho_main("Yes, [cho_genie_name].", "base", "happyCl", "base", "mid")
+
+    # Cho hops off your desk.
+    call hide_characters
+    hide screen bld1
+    show screen blkfade
+    with d5
+
+    call play_sound("climb_desk")
+    call cho_chibi("stand", "desk", "base", flip=False)
+    pause 1
+
+    hide screen blkfade
+    call cho_main("", "base", "narrow", "base", "mid", xpos="mid", ypos="base", trans=fade)
+    pause .5
+
+    if daytime:
+        call cho_main("I'm gonna head back to classes, then.", "soft", "narrow", "base", "mid")
+    else:
+        call cho_main("I'm gonna head back to our dorms, then.", "soft", "narrow", "base", "mid")
+
+    m "Don't forget to put your clothes back on..."
+    call cho_main("Right...", "silly", "happyCl", "base", "mid")
+    pause .2
+
+    # Cho puts her clothes back on.
+    call play_sound("equip")
+    hide screen cho_main
+    $ cho.wear("all")
+    hide screen cho_cloth_pile
+    pause .8
+
+    call cho_main("Until next time, [cho_genie_name].", "base", "narrow", "base", "mid", cheeks="blush", xpos="right", ypos="base")
+
+    # Cho leaves.
+    call cho_walk(action="leave")
+
+    jump end_cho_strip_event
+
+
+### Tier 3 - Event 2 ###
+
+# Cho prompts genie to summon Tonks as she wants to know how she turned into Hermione
+# Tonks enters and is immediately enticed by cho, she flirts with her a bit before cho starts asking questions.
+
+label cc_pf_strip_T3_intro_E2:
+    m "Alright, let's do this again."
+    m "We're gonna get your teacher up here -- and you'll strip for us, understood?"
+    call cho_main("Yes, [cho_genie_name].", "smile", "base", "base", "mid")
+    m "You might want to change into your school clothing before she gets here..."
+    call cho_main("Of course.", "base", "happyCl", "base", "mid")
+
+    call hide_characters
+    hide screen bld1
+    show screen blkfade
+    with d5
+    pause 1
+
+    # Equip Cho & Tonks default clothing.
+    $ cho_outfit_last.save() # Store current outfit.
+    $ ton_outfit_last.save() # Store current outfit.
+    $ cho.equip(cho_outfit_default)
+    $ tonks.equip(ton_outfit_default)
+
+    call cho_chibi("stand", "desk", "base")
+
+    hide screen blkfade
+    call cho_main("*Uhm*...", "quiver", "narrow", "base", "downR", xpos="mid", ypos="base", trans=fade)
+    call cho_main("The teacher you're about to summon, [cho_genie_name]...", "open", "narrow", "base", "mid")
+    call cho_main("You are talking about Professor Tonks, are you?", "soft", "narrow", "base", "mid") # suspicious
+    m "Oh... of course."
+    call cho_main("Well then, I'm ready.", "base", "base", "base", "mid")
+    g9 "Ready to strip for your teacher?"
+    call cho_main("I'm well aware of what I'm about to do, [cho_genie_name], and I'm not going to falter.", "annoyed", "narrow", "angry", "mid")
+    call cho_main("Besides, it's not like I have any bits that she doesn't...", "open", "closed", "base", "mid")
+    m "Not even trying to play coy anymore, are you?"
+    call cho_main("Why should I? It's good practice.", "crooked_smile", "narrow", "base", "mid") # confident
+    g9 "Great positive thinking, [cho_name].{w=0.8} You'll make it far with that mindset."
+    call cho_main("It's no big deal for me, [cho_genie_name].", "base", "narrow", "base", "mid")
+    call cho_main("I'm not as prude and buttoned up as Hermione, you know...", "soft", "narrow", "base", "mid")
+    call cho_main("And I'll finally get to know how Professor Tonks helped us during the Slytherin match!", "base", "happyCl", "base", "mid")
+    g9 "Oh boy, you're in for a treat!"
+    m "Just wait here at my desk while I summon her..."
+    call cho_main("Yes, [cho_genie_name].", "base", "narrow", "base", "mid")
+
+    call hide_characters
+    hide screen bld1
+    show screen blkfade
+    with d5
+    pause 1
+
+    call cho_chibi(flip=True)
+
+    # end blkfade
+    hide screen blkfade
+    with d5
+    pause .8
+
+    # Tonks enters.
+    call play_sound("door")
+    call ton_chibi("stand", "door", "base")
+    with d3
+    pause .5
+
+    # thought emote
+    call chibi_emote("thought", "tonks")
+    pause .8
+
+    # Tonks walks next to Cho.
+    call ton_walk(540, "base")
+
+    call cho_main("", "soft", "narrow", "worried", "L", cheeks="blush", xpos="left", ypos="base", flip=True)
+    if daytime:
+        call ton_main("Hello, Professor.", "base", "base", "base", "mid", xpos="right", ypos="base")
+    else:
+        call ton_main("Good evening, Professor.", "base", "base", "base", "mid", xpos="right", ypos="base")
+
+    call ton_main("Miss Chang. Didn't expect to see you here...", "base", "narrow", "base", "L")
+    call ton_main("What a nice surprise.", "horny", "narrow", "base", "mid") # horny tongue
+    call cho_main("...", "quiver", "narrow", "worried", "downR", cheeks="blush") # nervous
+    call cho_main("*Uhm*...", "soft", "narrow", "worried", "down", cheeks="blush")
+    m "Go on, Cho. She's not going to bite you..."
+    call ton_main("*Hmm*?", "base", "base", "raised", "mid")
+    g9 "Miss Chang was hoping she could repay you with a favour. For the help you provided against Slytherin."
+    call ton_main("A favour, you say...", "crooked_smile", "narrow", "base", "mid")
+    call cho_main("Y-yes, if that's okay with you, professor...", "horny", "narrow", "worried", "L", cheeks="blush") # blushing, still nervous
+    call ton_main("Oh, anything for you, darling.", "base", "narrow", "base", "L")
+    call ton_main("So, what will it be then?", "open", "base", "base", "mid")
+    call ton_main("I presume you didn't invite me for a cup of tea, did you?", "base", "narrow", "base", "mid") # why remove?
+
+    menu:
+        "\"We need a second opinion on the girl's physique.\"":
+            call ton_main("*Mhmm*?", "base", "base", "base", "mid")
+            call ton_main("So naturally you thought of me to provide this... opinion?", "open", "narrow", "raised", "mid")
+            m "You're quite the athletic witch yourself, are you not?"
+            call ton_main("", "base", "narrow", "base", "mid")
+            g9 "I'm certain there's no one better suited to judge the girl's body than yourself."
+            call ton_main("Very well, professor...", "base", "base", "base", "mid")
+            call ton_main("I'm not the one to question the headmaster's judgement.", "base", "narrow", "base", "mid")
+            g9 "Great, then maybe you could give her your assessment -- from head to toe -- see if there's anything she could improve."
+            call cho_main("", "normal", "happyCl", "worried", "mid", cheeks="blush")
+            call ton_main("Oh, I doubt I'd find anything to improve on this one...", "horny", "narrow", "base", "L", hair="horny") # horny
+            m "Okay then..."
+            m "Girl, You may start with the show."
+            call ton_main("The show?!", "soft", "base", "raised", "mid")
+            g9 "She'll have to take her clothes off, obviously!"
+            call ton_main("Oh my!", "grin", "base", "shocked", "mid", hair="horny") # lip bite?
+            m "Let's get started then, shall we."
+            call ton_main("", "base", "narrow", "base", "L", hair="horny")
+            g9 "Get on that desk, Miss Chang!"
+            call cho_main("Okay.", "soft", "narrow", "worried", "downR", cheeks="blush")
+
+        "\"She's going to strip for us...\"":
+            call cho_main("", "normal", "happyCl", "worried", "mid", cheeks="heavy_blush")
+            call ton_main("Really?", "crooked_smile", "base", "shocked", "mid", hair="horny")
+            call cho_main("...", "mad", "narrow", "worried", "downR", cheeks="blush") # embarrassed
+            m "It's all just part of the girl's training..."
+            g9 "To improve her confidence, and all that. And not shy away from a bit of nudity."
+            call ton_main("I see... so this is why you've been such a daredevil on the pitch lately...", "horny", "narrow", "base", "L", hair="horny")
+            call cho_main("...", "normal", "happyCl", "worried", "mid", cheeks="blush") #Blushes
+            call ton_main("Well, if you think I can be of assistance, then you have my full support.", "base", "base", "base", "L")
+            call cho_main("Thank you, Professor.", "soft", "narrow", "worried", "L", cheeks="blush")
+            g9 "Great! Then get on that desk, Cho!"
+            call cho_main("Okay.", "soft", "narrow", "worried", "down", cheeks="blush")
+
+
+    # Cho starts stripping.
+    call hide_characters
+    hide screen bld1
+    show screen blkfade
+    with d5
+    call play_sound("climb_desk")
+    pause 1
+
+    call cho_chibi("stand", 330, 360)
+    call ton_chibi("stand", 410, "base")
+
+    hide screen blkfade
+    with d5
+    pause .8
+
+    call bld
+    m "Excellent..."
+    m "Now, what would you say are Miss Chang's best assets, Professor?"
+    call bld("hide")
+    pause .2
+
+    # Cho turns around.
+    call cho_chibi(flip=True)
+    with d3
+    pause .3
+
+    call cho_main("", "quiver", "narrow", "worried", "L", cheeks="blush", xpos=330, ypos="base", flip=True)
+    call ton_main("", "base", "narrow", "base", "L", xpos=460, ypos="base")
+    g9 "Are you more into the girl's tits... or her ass?"
+    call ton_main("*Hmm*--", "base", "narrow", "annoyed", "L", hair="horny")
+    call cho_main("Professor!", "soft", "happyCl", "worried", "mid", cheeks="heavy_blush")
+    m "It's a fair question..."
+    call cho_main("...", "soft", "narrow", "worried", "L", cheeks="blush")
+    call ton_main("If you're not comfortable with this, Miss Chang, then I'm not going to--", "open", "base", "base", "L")
+    call cho_main("No!", "clench", "happyCl", "worried", "mid", cheeks="blush")
+    call ton_main("*Hmm*?", "base", "narrow", "raised", "L")
+    call cho_main("I mean...{w=0.5} It's fine...", "open", "narrow", "worried", "down", cheeks="blush")
+    call cho_main("Feel free to answer him, Professor...", "soft", "narrow", "worried", "L", cheeks="blush")
+    call play_sound("giggle")
+    call ton_main("*giggles*", "base", "happyCl", "base", "mid")
+    call ton_main("She's so cute when she's all flustered, isn't she?", "crooked_smile", "base", "base", "mid")
+    call cho_main("...", "quiver", "happyCl", "base", "mid", cheeks="blush") #Heavy blush
+    m "..."
+    m "So, what's your opinion?"
+    g9 "I'm sure Miss Cho is dying to know..."
+    call ton_main("I don't know how I could possibly answer such a difficult question, Professor.", "soft", "narrow", "base", "mid")
+    m "Then let me help you with your decision..."
+
+    g9 "Cho, do your thing."
+    call ton_main("", "base", "narrow", "base", "L")
+    call cho_main("Of course, Sir...", "open", "narrow", "worried", "mid", cheeks="blush")
+    call cho_main("...", "angry", "narrow", "base", "down", cheeks="blush")
+    pause .2
+
+    # Remove top.
+    $ cho.strip("robe", "top")
+    show screen cho_cloth_pile
+    with d3
+    pause .5
+
+    call cho_main("", "horny", "happyCl", "worried", "mid", cheeks="blush")
+    call ctc
+
+    call ton_main("*Hmm*... Very promising.", "base", "narrow", "base", "L")
+    call cho_main("...", "horny", "narrow", "worried", "down", cheeks="blush")
+    pause .2
+
+    # Remove bra.
+    $ cho.strip("bra")
+    with d3
+    pause .5
+
+    call ton_main("", "base", "narrow", "raised", "L", hair="horny")
+    call cho_main("", "quiver", "narrow", "base", "downR", cheeks="heavy_blush")
+    call ctc
+
+    call ton_main("Merlin's burly bosom!", "grin", "narrow", "annoyed", "L", hair="horny")
+    call cho_main("", "upset", "happyCl", "worried", "mid", cheeks="heavy_blush")
+    g9 "How about now?"
+    m "Ever seen such a perfectly shaped pair of quaffles before?"
+    call ton_main("Did you just call them quaffles?", "soft", "narrow", "raised", "mid", hair="horny")
+    call cho_main("...", "mad", "narrow", "worried", "downR", cheeks="blush")
+    m "So, what's your opinion?"
+    call ton_main("What would you like me to say, Professor?", "base", "narrow", "base", "mid", hair="horny")
+    call ton_main("That I'd like to run my mouth all over those perky nipples of hers?", "horny", "narrow", "angry", "L", hair="horny")
+    call cho_main("Professor!", "open", "happyCl", "worried", "mid", cheeks="heavy_blush") # closed eyes, worried, embarrassed.
+    call ton_main("Sorry sweetie, but Professor Dumbledore wanted my honest opinion.", "open", "closed", "raised", "mid", hair="horny")
+    call ton_main("Your breasts are quite perfect, Miss Chang.", "base", "narrow", "base", "L", hair="horny")
+    call cho_main("...", "normal", "narrow", "worried", "L", cheeks="blush")
+    call cho_main("I don't think they're big enough.", "open", "narrow", "worried", "downR", cheeks="heavy_blush") # sad
+    call cho_main("", "normal", "narrow", "worried", "down", cheeks="heavy_blush")
+    call ton_main("Big enough for what? Impress some idiot?", "open", "narrow", "annoyed", "L", hair="angry")
+    call ton_main("No offense, Professor.", "soft", "narrow", "base", "mid")
+    m "None taken..."
+    call ton_main("You don't need large breasts. Especially not if you want to have a career in Quidditch.", "open", "base", "base", "L")
+    call cho_main("", "annoyed", "narrow", "base", "L", cheeks="blush")
+    call ton_main("Just have a look at mine... They're bothersome to fly with even at my size...", "soft", "base", "shocked", "down")
+    pause .2
+
+    # Tonks starts stripping.
+
+    # Remove robe.
+    $ tonks.strip("robe")
+    with d3
+    pause .5
+
+    call cho_main("", "disgust", "base", "raised", "L", cheeks="blush")
+    call ton_main("", "base", "happyCl", "base", "mid")
+    call ctc
+
+    call cho_main("Professor, you don't have to--", "mad", "base", "raised", "L", cheeks="blush") #blush
+    pause .2
+
+    # Remove top and bra.
+    $ tonks.strip("top","bra")
+    with d3
+    pause .5
+
+    call ton_main("", "horny", "narrow", "annoyed", "L", hair="horny")
+    call ctc
+
+    call cho_main("P-{w=0.3}Professor!", "silly", "happyCl", "worried", "mid", cheeks="heavy_blush") #lip bite "glances away from Tonks #Heavy blush
+    g9 "*He-he-he!*"
+    call ton_main("No need to be shy, Miss Chang.", "base", "narrow", "base", "L", hair="horny")
+    g9 "Yes, it's not like she has any bits you haven't seen before... wasn't that what you said?, Cho?"
+    call cho_main("R-Right.", "angry", "happyCl", "worried", "mid", cheeks="heavy_blush")
+    call cho_main("", "horny", "narrow", "worried", "L", cheeks="blush")
+    m "So... what would you like to see next, Miss Tonks?"
+    call ton_main("Her ass cheeks sure looked great on top of that broom...", "soft", "narrow", "base", "mid", hair="horny")
+    call ton_main("I'd love to see them up close...", "base", "narrow", "base", "L", hair="horny")
+    g9 "Couldn't agree more!"
+    m "Cho, you heard your teacher's request."
+    call cho_main("", "horny", "narrow", "worried", "mid", cheeks="blush")
+    m "Turn around, and take off your skirt."
+    call cho_main("Yes, Sir.", "clench", "narrow", "worried", "mid", cheeks="blush")
+    pause .2
+
+    # Cho faces Genie.
+    hide screen cho_main
+    with d5
+    call cho_chibi(flip=False)
+    call cho_main("", "quiver", "narrow", "worried", "down", cheeks="blush", xpos=260, ypos="base", flip=False, trans=d5)
+    pause .8
+    call ton_main("", "base", "narrow", "base", "down", hair="horny")
+    m "Slowly..."
+    pause .5
+
+    # Remove bottom.
+    $ cho.strip("bottom")
+    with d5
+    pause .5
+
+    call cho_main("", "normal", "happyCl", "base", "mid", cheeks="blush")
+    call ctc
+
+    # Remove panties.
+    m "And now your panties, Miss Chang."
+    call ton_main("...", "horny", "narrow", "base", "down", hair="horny") # horny
+    pause .2
+
+    # Remove bottom.
+    $ cho.strip("all")
+    with d3
+    pause .5
+
+    call cho_main("", "horny", "narrow", "raised", "R", cheeks="heavy_blush")
+    call ctc
+
+    g9 "Quite firm, aren't they?"
+    call play_sound("giggle")
+    call ton_main("*giggles*", "base", "happyCl", "base", "mid", hair="horny")
+    call ton_main("Yes, Indeed...", "grin", "narrow", "base", "mid", hair="horny")
+    call ton_main("No wonder she's so steady on that broomstick.", "horny", "narrow", "angry", "down", hair="horny")
+    call cho_main("...", "horny", "narrow", "base", "mid", cheeks="blush") # blushing
+    call ton_main("Can't see anyone beating that, that's for sure.", "open", "narrow", "raised", "down", hair="horny")
+    #call ton_main("Although, maybe in a physical--"
+
+    m "So... what's your opinion, what do you prefer?"
+    m "Her tits, or her ass?"
+    call ton_main("*Hmm*...", "base", "narrow", "base", "down", hair="horny")
+    call ton_main("You're not holding out on me, are you, Miss Chang?", "open", "narrow", "base", "L", hair="horny")
+    call cho_main("What do you--", "angry", "narrow", "worried", "R", cheeks="blush")
+    call ton_main("There's something missing...{w=0.5} I haven't seen everything yet, have I?", "crooked_smile", "narrow", "raised", "mid", hair="horny")
+    g9 "But of course!"
+    call ton_main("If I were to do any sort of judgement, I'd first need to see that cute little Snitch of yours.", "soft", "narrow", "base", "down", cheeks="blush", hair="horny")
+    call cho_main("!!!", "clench", "wide", "base", "mid", cheeks="heavy_blush") # shock
+    g9 "Miss Chang, why don't you turn around so Professor Tonks can give you a proper assessment."
+    call cho_main("...", "clench", "happyCl", "worried", "mid", cheeks="heavy_blush") # blush
+    pause .2
+
+    # Cho faces Tonks.
+    hide screen cho_main
+    with d5
+    call cho_chibi(flip=True)
+    call cho_main("", "normal", "happyCl", "worried", "mid", cheeks="heavy_blush", xpos=330, ypos="base", flip=True, trans=d5)
+    pause .8
+
+    call ton_main("*Hmm*... Will you look at that...", "base", "narrow", "base", "down", hair="horny")
+    call cho_main("...", "horny", "narrow", "worried", "L", cheeks="heavy_blush")
+    call ton_main("Now, this is a level of confidence I haven't seen in a student before...", "horny", "narrow", "base", "mid", hair="horny")
+    g9 "Yes, she's quite something, isn't she?"
+    call cho_main("...", "base", "closed", "base", "mid", cheeks="blush") # blushing but faking confidence
+    call ton_main("Although...", "base", "narrow", "base", "L", hair="horny")
+    call ton_main("Does this snitch get frightened and dart away, once you try and get up close to it?", "grin", "narrow", "raised", "mid", hair="horny")
+    call cho_main("..........", "base", "closed", "base", "mid", cheeks="blush") #not paying much attention/didn't know she was being addressed
+    call ton_main("Miss Chang?", "open", "narrow", "raised", "L", hair="horny")
+    call cho_main("Oh, sorry!", "crooked_smile", "happyCl", "worried", "mid", cheeks="heavy_blush")
+    call cho_main("Of course not, Professor -- I don't dart away from anything!", "soft", "narrow", "worried", "downR", cheeks="blush")
+
+    ## Tonks wants to strip too. ##
+    call ton_main("Excellent, since that question has been answered...", "base", "happyCl", "base", "mid", hair="horny")
+    call ton_main("I assume you don't mind if I joined you on that desk, do you?", "horny", "narrow", "angry", "L", hair="horny")
+    call cho_main("What?!", "soft", "wide", "raised", "mid", cheeks="blush") # blushing
+    g9 "!!!"
+    call ton_main("*Hmmm*... Or is that snitch of yours going to dart off after all?", "soft", "narrow", "base", "down", hair="horny")
+    call cho_main("", "angry", "happyCl", "worried", "mid", cheeks="blush")
+    show screen blktone5
+    with d3
+    g4 "(She's good!)"
+    m "(I sure hope the desk is sturdy enough...)"
+    call hide_characters
+    hide screen bld1
+    hide screen blktone5
+    show screen blkfade
+    with d5
+
+    # Tonks chibi on desk next to Cho's. #Tonks is facing left
+
+    call cho_chibi("stand", flip=True, 314, 366)
+    call ton_chibi("stand", flip=False, 370, 360)
+
+    call play_sound("climb_desk")
+    pause 2
+
+    hide screen blkfade
+    with d5
+    pause .8
+
+    $ cho_zorder = 16 # in front of Tonks. 15 is default.
+    call ton_main("", "base", "narrow", "base", "L", hair="horny", xpos=345, ypos="base")
+    call cho_main("T-Tonks!", "clench", "happyCl", "raised", "L", cheeks="heavy_blush", xpos=280, ypos="base", flip=True) #Closed eyes, embarrassed
+    call ton_main("That's {b}Professor Tonks{/b} to you, Miss Chang.", "open", "narrow", "angry", "L", hair="angry") # stern look
+    call cho_main("Sorry!", "clench", "happyCl", "worried", "mid", cheeks="heavy_blush")
+    call play_sound("giggle")
+    call ton_main("*giggles*", "base", "happyCl", "base", "mid", hair="horny")
+    call ton_main("I'm just kidding, you can call me whatever you like, sweetie...", "soft", "narrow", "base", "L", hair="horny")
+    call ton_main("Catch that Snitch for me, will you...", "horny", "narrow", "base", "L", hair="horny")
+    call cho_main("Snitch? What Snitch?", "soft", "narrow", "base", "L", cheeks="blush")
+    call ton_main("Down here.", "grin", "narrow", "base", "down", hair="horny")
+    call cho_main("", "annoyed", "narrow", "base", "down", cheeks="blush")
+    pause .2
+
+    # Remove bottom.
+    $ tonks.strip("bottom","panties")
+    with d3
+    pause .5
+
+    call ton_main("", "horny", "narrow", "base", "down", hair="horny")
+    pause .8
+
+    call cho_main("!!!", "normal", "wide", "raised", "down", cheeks="blush")
+    g9 "Now that's what I'm talking about!"
+    call cho_main("Professor!", "clench", "wide", "raised", "down", cheeks="heavy_blush")
+    call ton_main("Believe me, I'm just getting started...", "base", "narrow", "base", "mid", hair="horny")
+    pause .5
+
+    # Remove other clothes.
+    $ tonks.strip("all")
+    with d3
+    pause .5
+
+    call ton_main("", "horny", "narrow", "base", "L", hair="horny")
+    call cho_main("", "base", "narrow", "worried", "down", cheeks="heavy_blush")
+    call ctc
+
+    call cho_main("...", "angry", "narrow", "worried", "downR", cheeks="heavy_blush") # heavy blush
+    g9 "Don't be shy, Miss Chang."
+    call ton_main("*Hmm*... Yes, don't be shy.", "crooked_smile", "narrow", "base", "L", hair="horny")
+    call ton_main("I've yet to give you my verdict.", "soft", "narrow", "raised", "down", hair="horny")
+    call cho_main("...", "normal", "happyCl", "worried", "mid", cheeks="heavy_blush")
+    call ton_main("Now, up this close, it's obvious what your best feature is, Miss Chang...", "open", "narrow", "base", "down", hair="horny")
+    call ton_main("I must say I simply love your--", "horny", "narrow", "base", "down", hair="horny")
+
+    # Snape enters.
+    call play_music("stop")
+    call hide_characters
+    hide screen bld1
+    with d3
+
+    call play_sound("door")
+    call sna_chibi("stand", "door", "base")
+    with d3
+    pause .5
+
+    call bld
+    g4 "{b}Balls!{/b}"
+    call sna_main("...", "snape_47", ypos="head") #smirk
+    call ton_main("What? No I was talking about her--", "soft", "narrow", "base", "mid", ypos="head")
+    call play_sound("scratch")
+    with hpunch
+    call cho_main("Professor Snape?!", "open", "wide", "raised", "L", xpos="far_left", ypos="head") # shock
+    call sna_main("Oh-- now what do we have here?...", "snape_13", ypos="head")
+    call bld("hide")
+    pause .2
+
+    # Tonks turns around.
+    call ton_chibi(xpos=360, ypos=360, flip=True)
+    with d3
+
+    # Snape walks closer to the middle.
+    call sna_walk(xpos="mid", ypos="base")
+    pause .8
+
+    # Position Cho's sprite behind Tonks.
+    $ cho_zorder = 15 # reset to default.
+    $ tonks_zorder = 16 # in front of Cho. 15 is default.
+
+    call sna_main("", "snape_40", xpos=560, ypos="base")
+    call cho_main("", "normal", "wide", "base", "L", xpos=275, ypos="base", flip=True)
+    call ton_main("", "annoyed", "narrow", "annoyed", "L", xpos=390, ypos="base", flip=True)
+
+    call ton_main("Severus?", "mad", "base", "base", "L", trans=dissolve)
+    call ton_main("{size=-4}Get behind me, Cho...{/size}", "open", "narrow", "base", "R") #small text
+
+    $ cho_chibi.zorder = 2 # default is 3
+    call cho_chibi("stand", flip=True, 320, 366)
+    call cho_main("{size=-4}Yes-- Thank you.{/size}", "disgust", "happyCl", "worried", "mid", cheeks="heavy_blush", xpos=295, ypos=17, flip=True, trans=d3) # Sprite is slightly lowered.
+
+    call ton_main("What are you doing here?", "annoyed", "base", "angry", "stare")
+    call ton_main("Have you been spying on us behind that door?", "soft", "narrow", "base", "up", hair="horny")
+    call sna_main("Of course not...", "snape_46")
+    call cho_main("P-{w=0.3}Professor...", "open", "happyCl", "worried", "mid", cheeks="heavy_blush")
+    call ton_main("", "base", "narrow", "base", "downR", hair="horny")
+
+    call sna_main("Ah, Miss Chang... Hiding behind Professor Tonks, are we?", "snape_02")
+    call sna_main("I take it you're here to repay our headmaster for his help with your sudden Quidditch success?", "snape_37")
+    #call sna_main("But how come Professor Tonks--", "snape_01")
+    call ton_main("Well, what if she is,{w=0.5} Snivellus?", "horny", "narrow", "angry", "up", hair="horny")
+    call sna_main("", "snape_38")
+    call ton_main("She isn't doing anything wrong... at least not by your standards.", "grin", "closed", "shocked", "mid", hair="horny")
+    call sna_main("Did I accuse her of doing anything wrong?", "snape_09")
+    call sna_main("On the contrary...", "snape_02")
+    call ton_main("", "annoyed", "narrow", "raised", "up")
+    call sna_main("As head of the slytherin house, I'd like to personally congratulate her on her fair play.", "snape_37")
+    call sna_main("Your performance was quite remarkable, Miss Chang.", "snape_13")
+    call sna_main("Putting your best {b}ass{/b}ets on display for everyone was quite the sight.", "snape_46")
+    call cho_main("...", "angry", "narrow", "worried", "downR", cheeks="heavy_blush") # embarrassed
+    call sna_main("How very -- {b}ass{/b}piring of you...", "snape_41")
+    call cho_main("Please do something, Professor.", "soft", "base", "angry", "mid", cheeks="heavy_blush") #small text
+    m "What?"
+    m "(Oh, right... I should probably do something about this...)"
+
+    menu:
+        m "(...)"
+        "\"Severus, I think you should leave.\"":
+            call cho_main("", "normal", "base", "angry", "L", cheeks="blush")
+            call sna_main("Already? But I just got here...", "snape_05")
+            call ton_main("I can't recall us inviting you, Severus.", "soft", "narrow", "shocked", "L")
+            call sna_main("Do I require some kind of appointment to see the headmaster?", "snape_09")
+            call sna_main("If there's a schedule I could look at, then perhaps I could plan my visits for when Miss Chang is not busy working on her insecurities...", "snape_03")
+            #call sna_main("If there's a schedule I could look at, then perhaps I could plan my visits for when you two aren't taking advantage of Miss Chang's insecurities...", "snape_03") # Alternative line instead of the one above?
+            call cho_main("...", "angry", "narrow", "angry", "L", cheeks="blush") #Blush #closed eyes #embarrassed
+            #m "How did you--"
+            call ton_main("What do you want, Snape?", "upset", "narrow", "annoyed", "L")
+            pass
+
+        "\"Severus! Please, stay and watch.\"":
+            if cc_strip_no_snape: # Cho clearly told you she won't strip for Snape.
+                $ cho_mood += 30
+                call cho_main("Are you mad?!", "clench", "base", "angry", "mid", trans=hpunch)
+                call cho_main("Sir, I clearly told you before, I won't do this in front of Professor Snape!", "open", "base", "angry", "mid")
+                call sna_main("So you actually considered inviting me...", "snape_20")
+                call cho_main("", "normal", "base", "angry", "L", cheeks="blush")
+                call sna_main("That's surprising, considering our current bet...", "snape_21")
+                call sna_main("I must say though, that I appreciate the notion, Albus.", "snape_22")
+                g9 "Bros before--"
+                call ton_main("Quiet! Both of you!", "open", "closed", "base", "mid")
+                call sna_main("*Tssz*...", "snape_46")
+                call sna_main("Well, I can read the room...", "snape_09")
+                call ton_main("Clearly...", "upset", "narrow", "raised", "L")
+                call sna_main("As it happens, I can't stay for too much longer anyway.", "snape_03")
+                pass
+
+            else:
+                $ cho_mood += 12
+                call cho_main("Professor, you can't be serious!", "angry", "wide", "raised", "mid", cheeks="heavy_blush")
+                m "Calm yourself, girl."
+                m "There's no touching allowed anyway... Those are the rules."
+                call ton_main("Really? You never told me--", "annoyed", "narrow", "raised", "mid", hair="horny") #pout
+                call cho_main("Send him away!", "clench", "base", "angry", "mid", cheeks="heavy_blush")
+                g4 "Whatever... no need to get all indignant about this."
+                call sna_main("...", "snape_09")
+                m "You more than happily strip for all your other teachers... so why not Snape?"
+                call cho_main("All my other teachers? It was only you and Tonks that I agreed to do this for!", "clench", "wide", "raised", "mid")
+                pass
+
+    call sna_main("As much as I'd like to watch you make a fool of yourself for us, Miss Chang, I have more important things to do.", "snape_13")
+    show screen blktone5
+    m "(More important than this?...)"
+    hide screen blktone5
+    call sna_main("I merely came here to discuss an important matter with our headmaster.", "snape_24")
+    call sna_main("Have a private talk about this... Misunderstanding that occurred during the last Quidditch game.", "snape_09")
+
+    call cho_main("There is nothing more to discuss.", "base", "base", "base", "mid")
+    call cho_main("We won against you, fair and square, you cheat...", "base", "base", "base", "mid")
+    call sna_main("Hold your tongue, Miss Chang, or I'll have to dock some points from your house...", "snape_03")
+    call sna_main("Or worse...", "snape_20") #smirks
+    call cho_main("*Pfff*... only first years care about house points...", "base", "base", "base", "mid") # small text
+    g9 "Not taking that loss easy, are you? Disappointed that we won -- against all odds?"
+    call sna_main("*Tzzzs*... by sheer luck you did.", "snape_32")
+    call cho_main("Says the one who literally gave his team liquid luck!", "clench", "narrow", "angry", "L", cheeks="blush")
+    call sna_main("Ten points from Ravenclaw!", "snape_31")
+    #remove 10 points
+    call cho_main("{size=-4}Like I give a shit...{/size}", "annoyed", "narrow", "angry", "down", cheeks="blush")
+    call ton_main("Let the girl speak her mind, Severus!", "open", "closed", "shocked", "mid")
+    call ton_main("Or shall I remind you that you were the one who barged in here uninvited...", "base", "narrow", "base", "L")
+    call sna_main("*Hmpf*...", "snape_35")
+    call sna_main("Can't let her spew such lies in the headmaster's presence, can I?", "snape_03")
+    m "The hell is that supposed to mean?"
+    call sna_main("I merely gave those boys some encouragement.", "snape_04")
+    call sna_main("There was no need to involve something as valuable as a luck potion...", "snape_09")
+    call cho_main("What?!", "angry", "closed", "angry", "mid", cheeks="blush")
+
+    # Cho stops hiding behind Tonks.
+    $ cho_chibi.zorder = 3 # Reset to default.
+    call cho_chibi("stand", flip=True, 314, 366)
+    call ton_main("", "annoyed", "narrow", "raised", "downR")
+    call cho_main("But the entire Slytherin team drank some! They were even bragging about it!", "clench", "narrow", "angry", "L", xpos=275, ypos="base", flip=True, trans=hpunch)
+
+    call sna_main("Which is why Madam Hooch checked them -- right after the game ended.", "snape_03")
+    call sna_main("And no evidence of doping was found.", "snape_37") #smirk
+    call sna_main("Now, if you'll excuse me...", "snape_09")
+    call sna_main("I'll leave you three to indulge further in your...{w=0.8} debaucheries...", "snape_47")
+    call cho_main("No! You stay where you are!", "scream", "base", "angry", "L")
+    call hide_characters
+    hide screen bld1
+    with d3
+    pause .2
+
+    # Cho moves in front of Tonks.
+    hide screen cho_chibi
+    hide screen tonks_chibi
+    with d3
+    $ cho_chibi.zorder = 2 # Behind Tonks, so her ponytail doesn't cover her head.
+    call ton_chibi("stand", flip=True, 322, 360)
+    call cho_chibi("stand", flip=True, 360, 360)
+    with d3
+    pause .5
+
+    $ tonks_zorder = 15 # Reset to default.
+    $ cho_zorder = 16 # In front of Tonks. Default is 15.
+    call ton_main("", "annoyed", "shocked", "raised", "stare", hair="horny", xpos=310, ypos="base", flip=True)
+    call cho_main("First you're going to explain yourself!", "clench", "base", "angry", "L", xpos=415, ypos="base", flip=True, trans=hpunch)
+    call sna_main("", "snape_13")
+    call ton_main("", "clench", "wide", "shocked", "L", hair="horny", cheeks="blush")
+    call cho_main("You somehow tricked them! They played far better than usual.", "mad", "base", "angry", "L")
+    call ton_main("", "horny", "narrow", "worried", "down", hair="horny", cheeks="heavy_blush")
+    call sna_main("*Hmm*... Very well, Miss Chang.", "snape_20")
+
+    # Space Jam
+    call sna_main("You truly believe I'd waste such a valuable potion on those blokes?", "snape_18")
+    call cho_main("", "annoyed", "base", "angry", "L")
+    call sna_main("It takes three months to brew and distill only a tiny vial of Felix Felicis... and it's quite the tedious endeavour to do so.", "snape_12")
+    call sna_main("That prize money would barely cover half of the materials...", "snape_03")
+    call cho_main("Prize money? What prize money?!", "open", "base", "angry", "mid")
+    m "Don't interrupt your teacher."
+    call cho_main("", "annoyed", "narrow", "angry", "mid")
+    m "..."
+    call ton_main("", "base", "narrow", "worried", "L", hair="horny", cheeks="heavy_blush")
+    call cho_main("", "annoyed", "narrow", "angry", "L")
+    call sna_main("All I did was give them a vial of pumpkin juice...", "snape_41")
+    call sna_main("Then I told them I mixed in some liquid luck.", "snape_13")
+    call cho_main("What stupid kind of tactic is that?", "soft", "narrow", "angry", "mid")
+    call sna_main("", "snape_39")
+    call ton_main("", "base", "narrow", "base", "mid", hair="horny", cheeks="blush")
+    g4 "Hold on a minute..."
+    m "Are you seriously telling me you gave them pumpkin juice... and pretended it was \"{b}Michael's secret stuff{/b}\"?"
+    call sna_main("Michael's...{w=0.3} what?", "snape_38")
+    g4 "You ripped off {b}Space Jam{/b}!"
+    call sna_main("I'm sorry?", "snape_25") # confused
+    g4 "You ripped off the plot of Space Jam!"
+    call sna_main("I have no idea what you're talking about...", "snape_44")
+    call ton_main("Neither do I.", "annoyed", "base", "raised", "mid", hair="horny")
+    call cho_main("Sir, is this about that basketball thing again?", "disgust", "narrow", "angry", "mid")
+    #m "Well you clearly didn't watch the outcome, did you?"
+    g9 "Even Bugs Bunny couldn't help him win. Serves you right!"
+    call ton_main("Who's Bugs Bunny?", "soft", "narrow", "raised", "mid", hair="horny")
+    g9 "Oh boy, let me tell you--"
+    call sna_main("Anyway.", "snape_31")
+    call cho_main("", "annoyed", "narrow", "angry", "L")
+    call sna_main("Miss Chang, I wish you the very best of luck on your next match.", "snape_45")
+    call ton_main("", "normal", "narrow", "base", "L", hair="horny")
+    call sna_main("You lot look like you're going to need it...", "snape_42")
+    call cho_main("*Hmpf*...", "annoyed", "base", "angry", "L")
+    m "(...)"
+    call hide_characters
+    hide screen bld1
+    with d3
+    pause .1
+
+    # Snape walks to the door.
+    call sna_walk("door", "base")
+    pause .2
+
+    call sna_chibi("stand", "door", "base", flip=False)
+    with d3
+    pause .5
+
+    call sna_main("Until then, Albus... Miss Chang...", "snape_20")
+    call sna_main("{cps=5}Nymphadora...{/cps}", "snape_41")
+    call ton_main("Stop calling me--", "clench", "closed", "angry", "mid", hair="angry", xpos="far_left", ypos="head")
+
+    # Snape leaves.
+    call sna_chibi("stand", "door", "base", flip=True)
+    with d3
+    call sna_chibi("leave")
+    pause .5
+
+    call bld
+    m "Fucking guy..."
+
+    # The girls face Genie.
+    hide screen cho_chibi
+    hide screen tonks_chibi
+    $ cho_chibi.zorder = 2
+    call cho_chibi("stand", flip=False, 330, 364)
+    call ton_chibi("stand", flip=False, 370, 360)
+    with d3
+
+    call cho_main("", "annoyed", "narrow", "base", "mid", xpos=190, ypos="base", flip=False)
+    call ton_main("Well, that was a bit uncalled for... even for him.", "open", "narrow", "annoyed", "R", xpos=350, ypos="base", flip=False, trans=d5)
+
+    call ton_main("When did I step on his toes?", "upset", "base", "base", "mid")
+    m "Maybe when you called him Snivellus--"
+    call ton_main("I'm not even part of your silly bet...", "upset", "base", "shocked", "downR")
+    call cho_main("Bet?", "angry", "narrow", "raised", "mid")
+    m "L-let's not concern ourselves with Snape. He's out of the picture anyway."
+    call cho_main("What bet?", "open", "narrow", "angry", "mid")
+    call ton_main("So, shall we wrap things up, Professor?", "base", "happyCl", "base", "mid")
+    m "Yes please."
+    call cho_main("", "annoyed", "narrow", "angry", "mid")
+    call ton_main("Next time I can show Miss Chang my little trick.", "grin", "base", "annoyed", "L", hair="horny")
+    call ton_main("If we aren't getting interrupted again, that is...", "annoyed", "narrow", "base", "mid")
+    call cho_main("Alright.", "annoyed", "base", "base", "R") # bit disappointed.
+
+    if daytime:
+        call ton_main("Let's head back to classes, shall we.", "soft", "base", "base", "L", hair="horny")
+    else:
+        call ton_main("Let me escort you back to your common room. It's getting late.", "soft", "base", "base", "L", hair="horny")
+
+    # Fade to black.
+    call hide_characters
+    hide screen bld1
+    show screen blkfade
+    with d5
+
+    # The girls get dressed and wait at the door.
+    $ cho.wear("all")
+    $ tonks.wear("all")
+
+    # Reset zorder.
+    $ cho_zorder = 15 # reset to default.
+    $ tonks_zorder = 15 # reset to default.
+    $ cho_chibi.zorder = 3 # reset to default.
+    $ tonks_chibi.zorder = 3 # reset to default.
+    hide screen cho_cloth_pile
+
+    call cho_chibi("stand", 690, "base", flip=False)
+    call ton_chibi("stand", "door", "base", flip=False)
+
+    call play_sound("climb_desk")
+    pause 2
+
+    hide screen blkfade
+    with d5
+    pause .5
+
+    call ton_main("Thank you for your time, Professor.", "base", "base", "base", "mid", xpos="far_right", ypos="head")
+    if daytime:
+        call cho_main("Good day, Sir.", "base", "base", "base", "mid", xpos="far_right", ypos="head")
+    else:
+        call cho_main("Good night, Sir.", "base", "base", "base", "mid", xpos="far_right", ypos="head")
+    g9 "Until next time."
+    call bld("hide")
+    pause .1
+
+    # They both leave.
+    call cho_chibi(flip=True)
+    with d3
+    pause .2
+
+    call play_sound("door")
+    hide screen cho_chibi
+    hide screen tonks_chibi
+    with d3
+    pause .5
+
+
+    # Reset clothing.
+    $ cho.equip(cho_outfit_last)
+    $ tonks.equip(ton_outfit_last)
+
+    # End event.
+    jump end_cho_strip_event
+
+
+
+
+    ## Chibi Pos - for multiple people ##
+
+    #call ton_chibi("stand", flip=False, 380, 360)
+    #call cho_chibi("stand", flip=True, 322, 360)
+
+    #call cho_chibi("stand", flip=True, 320, 370)
+
+    #call cho_chibi("stand", flip=True, 314, 366)
+    #call cho_chibi("stand", flip=False, 370, 360)

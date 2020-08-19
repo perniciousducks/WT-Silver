@@ -9,6 +9,7 @@ init python:
     config.keymap['reload_game'].remove('R')
     config.keymap['reload_game'].append('shift_R')
     config.keymap['console'].append('K_BACKQUOTE')
+    config.keymap['director'].remove('d')
 
     config.keymap['hide_windows'].remove('mouseup_2')
     config.keymap['hide_windows'].remove('h')
@@ -29,6 +30,7 @@ init python:
     hkey_inventory = "i"
     hkey_sleep = "s"
     hkey_fap = "f"
+    hkey_summon = "d"
     hkey_ui_lock = "L"
 
     hkey_hide = "h"
@@ -51,6 +53,7 @@ screen hotkeys_main():
     key hkey_stats action Jump("stats")
     key hkey_inventory action Jump("inventory")
     key hkey_fap action Jump("jerk_off")
+    key hkey_summon action Jump("door")
 
     if daytime:
         key hkey_sleep action Jump("night_start") #Skip to night

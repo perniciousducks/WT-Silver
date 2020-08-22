@@ -1322,7 +1322,8 @@ label hg_pf_strip_T4_masturbate:
 
         $ hermione.wear("all")
         stop music fadeout 5.0
-        ">.................{w}.................{w}.................{w}................."
+        pause 1.5
+
         call her_main("... Can I just get paid now, [genie_name]... please?", "annoyed", "narrow", "angry", "R")
 
         $ her_mood += 20

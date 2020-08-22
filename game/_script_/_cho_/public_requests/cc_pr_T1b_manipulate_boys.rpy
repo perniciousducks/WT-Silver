@@ -956,10 +956,10 @@ label cc_pr_manipulate_boys_twins_branch:
     call play_music("clothing_store")
     call hide_blkfade
 
-    if clothing_store_intro_done:
-        ">You enter to see an old woman busy sewing together two pieces of long dark fabric."
+    if not clothing_store_intro_done:
+        $ clothing_store_intro_done = True
+        ">You enter to see an old woman sewing together two pieces of long dark fabric."
         ">The woman is dressed almost entirely in pink and has a warm, approachable air to her."
-
         m "Hello."
         maf "Hello, Professor Dumbledore."
         maf "What can I do for you? Would you like a new cloak, or do you require some alterations to an existing item?"
@@ -974,9 +974,6 @@ label cc_pr_manipulate_boys_twins_branch:
         maf "Absolutely, although I would have to order the fabrics in. I don't really have a range of colours at the moment."
         maf "What did you have in mind?"
     else:
-        # Alternate intro
-        $ clothing_store_intro_done = True
-
         m "Miss Mafkin... or was it Malkin?"
         maf "It's Mafkin, Dumbledore... we have been over this before."
         g9 "(I knew she was wrong!)"
@@ -985,7 +982,6 @@ label cc_pr_manipulate_boys_twins_branch:
         maf "It's the perfect garment for letting the old family jewels get some fresh air."
         m "I'm good thank you."
         maf "Then what can I do you for?"
-
 
     m "Well... As it happens..."
     m "I'm in quite a pickle... A student was tricked into eating one of the weasel twins' sweets."

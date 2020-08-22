@@ -76,7 +76,7 @@ label open_clothing_store:
 label clothing_store_chitchat:
     if not clothing_store_intro_done:
         $ clothing_store_intro_done = True
-        ">You enter to see an old woman busy sewing together two pieces of long dark fabric."
+        ">You enter to see an old woman sewing together two pieces of long dark fabric."
         ">The woman is dressed almost entirely in pink and has a warm, approachable air to her."
         m "Hello."
         maf "Hello, Professor Dumbledore."

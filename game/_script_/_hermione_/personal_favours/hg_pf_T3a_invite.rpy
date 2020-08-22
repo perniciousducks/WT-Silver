@@ -412,7 +412,7 @@ label hg_pf_strip_T4_snape_watch:
 
     ">Hermione performs another set of movements and pirouettes..."
     ">Gives a little curtsy bow to the imaginary audience..."
-    ">And then slumps down on her butt exhausted."
+    ">And then exhaustedly slumps down on her butt."
 
     call her_chibi("sit_naked","on_desk","on_desk")
 
@@ -451,7 +451,6 @@ label hg_pf_strip_T4_snape_watch:
     stop music fadeout 1.0
     call her_main("....................", "annoyed", "narrow", "base", "dead", ypos="head")
     pause.5
-    ">.................{w=0.5}.................{w=0.5}.................{w=0.5}................."
 
     call her_main("May I... may I get paid now... [genie_name]...?", "normal", "happyCl", "worried", "mid")
 

@@ -577,7 +577,7 @@ label tonks_intro_E3:
     m "..."
 
     g9 "Some people would say I'm {b}the{/b} Genie, actually!"
-    m "The most powerful being in the entire universe... Multiple universes even...."
+    m "The most powerful being in the entire universe... Multiple universes even..."
     m "Glad my reputation precedes me..."
     call ton_main("How curious. I've never had a Genie before...", "horny", "wide", "base", "down", hair="horny") # Tonks looks horny.
     m "I'm sorry-- what?"
@@ -861,11 +861,11 @@ label ss_he_tonks_E3:
         "\"Are the students really that bad?\"":
             call sna_main("*sigh* You have no idea, even an ape would show more learning abilities.","snape_06")
             m "*Hmm*..."
-        "\"...Demiguise?\"":
+        "\"... Demiguise?\"":
             m "What the fuck is that?"
             call sna_main("*sigh* I keep forgetting you're not from around here...","snape_06")
             call sna_main("It's a magical beast that can make itself invisible and has precognitive sight.","snape_24")
-            m "...Sounds boring, forget I asked."
+            m "... Sounds boring, forget I asked."
             call sna_main("...........","snape_05")
             call sna_main("Anyway, back to the topic at hand--","snape_04")
 
@@ -875,7 +875,7 @@ label ss_he_tonks_E3:
     call sna_main("Now, If you were to assign me for that, and give Tonks my old subject to teach...","snape_20")
     m "Yeah, about that...{w=0.4} I think I might have given that role to her..."
     call sna_main("{size=+5}You did what?!{/size}","snape_33", trans=hpunch)
-    m "\"Defence against-...something-something\"..."
+    m "\"Defence against... something-something\"..."
     call sna_main("You should have given me the \"defence against the dark arts\" position!","snape_34")
     call sna_main("And she could've had something else,... like \"muggle studies\", or something.","snape_16")
     m "First come, first served, I suppose..."

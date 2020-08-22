@@ -84,7 +84,7 @@ label cc_pr_manipulate_boys_start:
 
             menu:
                 "\"Be affectionate and flirty!\"":
-                    g4 "Just go and talk to them. And flirt with them for a bit..."
+                    g4 "Just go and talk to them, and flirt with them for a bit..."
                     call cho_main("I suppose I can do that.", "annoyed", "base", "base", "downR")
                     call cho_main("But, Sir... What if someone were to see me with them?", "soft", "narrow", "angry", "mid")
 
@@ -106,7 +106,7 @@ label cc_pr_manipulate_boys_start:
             m "Would that be an issue?"
             call cho_main("Since they are on the enemy team, yes!", "annoyed", "narrow", "angry", "mid")
             call cho_main("What if my team was to find out I hang around Slytherins?", "angry", "base", "base", "mid")
-            call cho_main("{b}Slytherins?!{/b}", "clench", "wide", "base", "mid")
+            call cho_main("{b}Slytherins!!{/b}", "clench", "wide", "base", "mid")
             m "So? Just do it in secret then."
             call cho_main("That...{w=0.3} might work.", "annoyed", "base", "base", "R")
             m "Don't you have any classes with them?"
@@ -131,7 +131,7 @@ label cc_pr_manipulate_boys_start:
         # Repeated
         else:
             m "Time to brighten up some Slytherin's day again..."
-            g9 "Go and get their players on \"your\" side!"
+            g9 "Go and get their players on {i}your{/i} side!"
             call cho_main("I will try my best, [cho_genie_name]!", mouth="smile", face="happy")
             g9 "Report to me later as usual, [cho_name]!"
             call cho_main("Yes, Sir!", "base", "base", "base", "mid")
@@ -432,7 +432,7 @@ label cc_pr_manipulate_boys_T2_intro_E1:
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
     call cho_main("", "annoyed", "narrow", "angry", "mid", xpos="mid", ypos="base", trans=fade)
-    m "Good evening [cho_name].{w=0.6} How did today's task go?"
+    m "Good evening [cho_name]... How did today's task go?"
     call cho_main("I can't believe you convinced me to do this!", "clench", "narrow", "angry", "mid")
     m "So...{w=0.3} badly I take it?"
     call cho_main("No, it went perfectly...", "angry", "narrow", "worried", "down")
@@ -455,8 +455,8 @@ label cc_pr_manipulate_boys_T2_intro_E1:
     call cho_main("They didn't really seem to know what I meant. They just do whatever Draco tells them to do.", "soft", "narrow", "base", "mid")
     m "Sounds like trying to make a cat understand how to bark."
     call cho_main("Exactly...", "annoyed", "narrow", "worried", "R")
-    call cho_main("I was a bit frustrated at that point, and running out of options on how I could make my intentions even clear to them...", "soft", "narrow", "worried", "mid")
-    call cho_main("So lifted my skirt a bit to show them my panties.", "soft", "happyCl", "worried", "mid", cheeks="heavy_blush")
+    call cho_main("I was a bit frustrated at that point, and running out of options on how I could even make my intentions clear to them...", "soft", "narrow", "worried", "mid")
+    call cho_main("So I lifted my skirt a bit to show them my panties.", "soft", "happyCl", "worried", "mid", cheeks="heavy_blush")
     g9 "You go girl!"
     call cho_main("Well, there's where I messed up...{w=0.6} They took it as an invitation and squeezed my butt cheeks quite hard and painfully.", "quiver", "narrow", "worried", "mid", cheeks="blush")
     m "Ouch, then what happened?"
@@ -474,7 +474,7 @@ label cc_pr_manipulate_boys_T2_intro_E1:
     m "Yes, [cho_name]."
     m "You've done a great job today getting closer to beating those pesky Slytherins."
     call cho_main("Thank you, Sir.", "base", "narrow", "base", "mid")
-    m "Make sure they'll remember your meeting during the match, and I'm sure any sort of desire to win -- will wash away."
+    m "Make sure they'll remember your meeting during the match, and I'm sure any sort of desire to win... will wash away."
     call cho_main("*Hmph*...", "horny", "narrow", "base", "downR", cheeks="blush")
     call cho_main("I'll do my best.", "soft", "narrow", "base", "mid")
 
@@ -514,7 +514,7 @@ label cc_pr_manipulate_boys_T2_E1:
     call cho_main("It was quite thrilling actually.", "base", "narrow", "angry", "mid")
     m "Why wouldn't you be, you've worked hard on your body."
     m "Now you're starting to see some of the benefits."
-    call cho_main("Yeah... yeah you're right!", "soft", "wide", "base", "mid")
+    call cho_main("Yeah... yeah! You're right!", "soft", "wide", "base", "mid")
     m "And he's not going to forget it.{w=0.6} I'm sure the snitch will be the last thing on his mind during the upcoming game!"
     call cho_main("You know...", "soft", "base", "base", "R")
     call cho_main("You're smarter than I gave you credit for... you've not been wrong so far...", "annoyed", "base", "base", "R")
@@ -995,7 +995,7 @@ label cc_pr_manipulate_boys_twins_branch:
     maf "I see... that's an unfortunate situation indeed."
     m "So I require a Female Ravenclaw school uniform."
     maf "Let's see...{w=0.5} Female Ravenclaw uniform...{w=0.4} Looks like I'm running a bit low on those at the moment, what size is she?"
-    m "She's a C...{w=0.4} or maybe a B actually...."
+    m "She's a C...{w=0.4} or maybe a B actually..."
     maf "She's a... B, sir?"
     m "No-no, she's a Human. That's her size."
     maf "I require her clothing measurements..."
@@ -1134,7 +1134,7 @@ label cc_pr_manipulate_boys_twins_branch:
         call cho_main("{size=+5}These are Slytherin colours!{/size}", "open", "wide", "angry", "mid")
         m "They are?"
         m "That's unfortunate!"
-        call cho_main("Why did you assume it would be a good idea....", "clench", "base", "angry", "down")
+        call cho_main("Why did you assume it would be a good idea...", "clench", "base", "angry", "down")
         call cho_main("{size=+5}To get Slytherin colours!{/size}", "angry", "base", "angry", "mid") #big text yelling
         m "She didn't have any spare Ravenclaw outfits."
         call cho_main("But why Slytherin...", "disgust", "base", "angry", "downR")

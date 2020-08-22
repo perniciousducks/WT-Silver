@@ -161,7 +161,7 @@ label cho_training:
                     m "I got it!"
                     m "I've got the perfect idea on how to beat those snakes!"
                     call cho_main("...", "normal", "narrow", "raised", "mid")
-                    m "Do we say phrasing anymore?"
+                    m "Do we even say \"phrasing\" anymore?"
                     call cho_main("Just tell me your plan.", "open", "narrow", "raised", "mid")
                     m "It's all about the ass!"
                     call cho_main("The ass?", "upset", "base", "raised", "mid", cheeks="blush") #shocked

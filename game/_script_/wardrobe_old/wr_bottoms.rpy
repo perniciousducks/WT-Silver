@@ -88,7 +88,7 @@ label equip_bottom:
                         # call her_main("Of course, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("Let me just change real quick.", "base", "narrow", "base", "mid_soft")
                     # else: #20+
-                        # call her_main("...that old thing?", "annoyed", "narrow", "angry", "R")
+                        # call her_main("... that old thing?", "annoyed", "narrow", "angry", "R")
                         # m "Sure, is that a problem?"
                         # call her_main("...", "annoyed", "narrow", "annoyed", "up")
                         # call her_main("I suppose not...", "annoyed", "narrow", "worried", "down")
@@ -186,7 +186,7 @@ label equip_bottom:
                         # call her_main("Of course, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("Let me just change real quick.", "base", "narrow", "base", "mid_soft")
                     # else: #20+
-                        # call her_main("...that old thing?", "annoyed", "narrow", "angry", "R")
+                        # call her_main("... that old thing?", "annoyed", "narrow", "angry", "R")
                         # m "Sure, is that a problem?"
                         # call her_main("...", "annoyed", "narrow", "annoyed", "up")
                         # call her_main("I suppose not...", "annoyed", "narrow", "worried", "down")

@@ -128,7 +128,7 @@ label hg_pf_sex_T6_intro_E3:
     call her_main("[genie_name]!", "scream", "closed", "angry", "mid")
     m "Just say \"I do\" and come over here, [hermione_name]."
     call her_main("...........", "open", "base", "base", "mid")
-    call her_main("I do....", "angry", "narrow", "base", "down")
+    call her_main("I do...", "angry", "narrow", "base", "down")
     stop music fadeout 1.0
 
     call her_walk("desk", "base", reduce=0.8)
@@ -162,7 +162,7 @@ label hg_pf_sex_T6_E3: # repeats
     call her_main("[genie_name]...", "upset", "base", "worried", "down")
     m "Just say \"I do\" and come over here, [hermione_name]."
     call her_main("...........", "open", "base", "base", "mid")
-    call her_main("I do....", "soft", "narrow", "base", "R")
+    call her_main("I do...", "soft", "narrow", "base", "R")
     stop music fadeout 1.0
 
     hide screen hermione_main
@@ -268,7 +268,7 @@ label hg_sex_1:
             call her_main("......................", "normal", "happyCl", "worried", "mid")
             m "Then why is your pussy so wet?"
             $ ccg1 = 4
-            call her_main("....................a-ha.{heart}", "open", "happyCl", "worried", "mid")
+            call her_main(".................... a-ha.{heart}", "open", "happyCl", "worried", "mid")
             m "Admit it, you enjoy getting fucked by your [genie_name]!"
             $ ccg1 = 2
             call her_main("I do not!", "normal", "happyCl", "worried", "mid")
@@ -594,7 +594,7 @@ label hg_sex_2:
             if not use_cgs:
                 call her_chibi_scene("sex_fast", trans=d5)
 
-            call nar(">The room fills up with rhythmical sound of a flesh hitting flesh...","end")
+            call nar(">The room fills up with the rhythmical sound of flesh hitting flesh...","end")
             m "You let me molest you... You suck my cock..."
             m "What are you after that I ask you!?"
             $ ccg1 = 16
@@ -700,7 +700,7 @@ label hg_sex_2:
             call her_main("You shouldn't have...", "open", "happyCl", "worried", "mid")
             m "Didn't you enjoy it?"
             $ ccg1 = 16
-            call her_main("....maybe.", "grin", "narrow", "base", "dead")
+            call her_main("... maybe.", "grin", "narrow", "base", "dead")
             $ ccg1 = 15
             call her_main("I think I came several times...", "soft", "narrow", "annoyed", "up")
 
@@ -748,7 +748,7 @@ label hg_sex_2:
             call her_main("Yes... I...", "silly", "narrow", "base", "dead")
             m "Did you enjoy this?"
             $ ccg1 = 16
-            call her_main("....I think so...", "grin", "narrow", "base", "dead")
+            call her_main("... I think so...", "grin", "narrow", "base", "dead")
             call ctc
 
             hide screen ccg
@@ -854,7 +854,7 @@ label hg_sex_luna:
     call her_chibi_scene("sex_fast", trans=d5)
     pause.8
 
-    call nar(">The room fills up with rhythmical sound of a flesh hitting flesh...")
+    call nar(">The room fills up with the rhythmical sound of flesh hitting flesh...")
     call her_main("*Ah*...{heart} *ah*...{heart} *ah*...{heart}", "angry", "narrow", "base", "down")
     m "{size=-3}So let me get this straight.{/size}"
     m "{size=-3}You drugged your class mate...{/size}"
@@ -868,14 +868,14 @@ label hg_sex_luna:
     if ast_whoring > 16:
         lun "And.. Astoria Greengrass..."
     if sus_whoring > 16:
-        lun "...and Susan Bones..."
+        lun "... and Susan Bones..."
     if ton_friendship > 50:
-        lun "...and perhaps professor Tonks, but she's our teacher!"
+        lun "... and perhaps professor Tonks, but she's our teacher!"
 
     call her_main("*ah*...", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     m "{size=-3}What else did you do to her?{/size}"
     call her_main("I may have suggested to her that she... *ah*...{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
-    call her_main("...act like a total slut...{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
+    call her_main("... act like a total slut...{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     m "{size=-3}So just like you then?{/size}"
     call her_main("Yessss...{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     lun "[lun_genie_name], are you listening?"
@@ -929,7 +929,7 @@ label hg_sex_luna:
     m "You good, slut?"
     call her_main("Yes...", "silly", "narrow", "base", "dead")
     m "Enjoyed yourself?"
-    call her_main("....A whole lot...", "grin", "narrow", "base", "dead")
+    call her_main("... A whole lot...", "grin", "narrow", "base", "dead")
     call ctc
 
     call blkfade

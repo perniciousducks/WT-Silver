@@ -184,7 +184,7 @@ label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     call ton_main("I might have blushed as much as him - after he said it...", "upset", "base", "base", "down")
     call ton_main("Anyhow... I decided that it was reason enough to hold him back...","open","closed","base","mid")
     call ton_main("Not that I needed to... He seemed almost paralysed for the rest of the lesson...", "crooked_smile", "base", "raised", "R")
-    call ton_main("He just sat there with his head down,...waiting for everyone to leave the classroom...", "soft", "closed", "base", "mid")
+    call ton_main("He just sat there with his head down,... waiting for everyone to leave the classroom...", "soft", "closed", "base", "mid")
     call ton_main("So, I figured I'd indulge him...", "soft", "narrow", "base", "mid")
     call ton_main("I walked over - and plonked myself onto his lap, facing him...", "grin", "base", "base", "mid")
     g9 "Bet that woke him up!"

@@ -114,7 +114,7 @@ label cho_quiz:
 
     # Repeat
     else:
-        m "I'm ready to make my case on how Quidditch is a knock off of basketball..."
+        m "I'm ready to make my case on how Quidditch is a knock-off of basketball..."
         call cho_main("Really sir... again?", "open", "narrow", "angry", "L")
         m "Of course, it's an important subject for your education..."
         call cho_main("I can't really see how, but I'm sure you know what you're talking about...", "open", "base", "base", "mid")
@@ -158,7 +158,7 @@ label cho_quiz:
     # Question 2
     menu:
         "-It's played on a rectangular court...-":
-            m "The game is played on a rectangular court...{w=1.0}{nw}"
+            m "The game is played on a rectangular court..."
             $ renpy.music.set_volume(0.5)
             $ renpy.block_rollback()
             call cho_main("Well, that's not similar at all then. The Quidditch pitch is oval shaped...", "annoyed", "narrow", "base", "L")
@@ -203,7 +203,7 @@ label cho_quiz:
             g9 "Exactly, which is obviously why I brought it up, and lastly..."
 
         "-You can't run with the ball unless you dribble or pass...-":
-            m "You can't run whilst holding the ball,{w} you need to pass it or dribble...{w=1.0}{nw}"
+            m "You can't run whilst holding the ball,{w=0.4} you need to pass it or dribble..."
             $ renpy.music.set_volume(0.5)
             $ renpy.block_rollback()
             call cho_main("Well, you can move with the ball freely without passing in Quidditch, that's why we have the beaters...", "annoyed", "narrow", "raised", "mid")
@@ -426,7 +426,7 @@ label cho_quiz_checkpoint:
             $ confidence_meter += 12
             call exp_o_meter(fill=confidence_meter)
             call cho_main("Yes!", "smile", "wide", "base", "mid")
-            g9 "Well then, surely that should show you how superio...{w=1.2}{nw}"
+            g9 "Well then, surely that should show you how superi-"
             call cho_main("Next question...", "open", "closed", "base", "down")
             $ cho_quiz.correct_answers += 1
 
@@ -453,7 +453,7 @@ label cho_quiz_checkpoint:
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/gasp.mp3")
             call cho_main("Yes!", "smile", "wide", "base", "mid")
-            g9 "Great! Then let's get started with the...{w=1.2}{nw}"
+            g9 "Great! Then let's get started with the-"
             call cho_main("Next question...", "open", "base", "raised", "down")
             $ cho_quiz.correct_answers += 1
 
@@ -462,7 +462,7 @@ label cho_quiz_checkpoint:
             $ renpy.block_rollback()
             call cho_main("I think you got some letters mixed up there...", "soft", "narrow", "raised", "R")
             m "Quibble and Blodger?"
-            call cho_main("No, that's also not-{w=1.0}{nw}", "annoyed", "base", "base", "up")
+            call cho_main("No, that's also not-", "annoyed", "base", "base", "up")
             m "Qacker and Blugger?"
             call cho_main("Professor...", "annoyed", "narrow", "angry", "mid")
             $ confidence_meter -= 12
@@ -660,7 +660,7 @@ label ss_he_cho_E2:
     call sna_main("Of course you can't teach the girl Quidditch if you know nothing about it...", "snape_09")
     call sna_main("Did she call your bluff?", "snape_13")
     m "Of course not..."
-    call sna_main("Well, whilst I could drone on for hours about Quidditch rules....", "snape_06")
+    call sna_main("Well, whilst I could drone on for hours about Quidditch rules...", "snape_06")
     call sna_main("I'd rather not spend my time on such a topic.", "snape_03")
     m "Where am I supposed to learn the basics then?"
     call sna_main("Why do you think I care where you'd learn it from?", "snape_09")

@@ -147,7 +147,7 @@ label cc_pr_spy_boys_T3_twins:
     call cho_main("They're pigs. I'll tell you that much.", "annoyed", "base", "angry", "mid")
     m "Really?"
     call cho_main("Well, I guess calling them pigs is a bit uncalled for. They're a pair of pranksters that's for sure.", "open", "closed", "angry", "mid")
-    call cho_main("Those two would do anything for a laugh....", "clench", "narrow", "angry", "mid")
+    call cho_main("Those two would do anything for a laugh...", "clench", "narrow", "angry", "mid")
     m "So, what did they do?"
     call cho_main("They tricked some poor Hufflepuff girls by giving them sweets that they had tampered with...", "angry", "base", "angry", "downR")
     call cho_main("All with various effects to embarrass whoever ate them...", "open", "narrow", "angry", "mid")

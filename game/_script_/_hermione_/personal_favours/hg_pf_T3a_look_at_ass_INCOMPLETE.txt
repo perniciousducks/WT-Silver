@@ -368,7 +368,7 @@ label hg_pr_strip_T2_masturbate_rear:
     call her_main("[genie_name]...", "disgust", "narrow", "base", "down", cheeks="blush")
     call her_main("You're not... touching yourself are you...?", "disgust", "narrow", "base", "down", cheeks="blush")
     m "ah... of course not [hermione_name]. you know I'd never do... such a thing..."
-    call her_main("hmmm.....", "angry", "happyCl", "worried", "mid", cheeks="blush")
+    call her_main("hmmm...", "angry", "happyCl", "worried", "mid", cheeks="blush")
     call her_main("well if you did do such a thing...", "angry", "base", "angry", "mid", cheeks="blush")
     call her_main("I'd hope that you would make the right decision...'", "angry", "happyCl", "worried", "mid", cheeks="blush")
     call her_main("and not... {size=-5}cum...{/size} on me...", "angry", "happyCl", "worried", "mid", cheeks="blush")
@@ -802,7 +802,7 @@ label hg_show_ass_cumming:
                 pause.5
 
                 her "the floor..."
-                her "It's covered...."
+                her "It's covered..."
                 m "all because of your ass, [hermione_name]."
                 her "................"
                 call her_main("I need to get dressed...", "open", "closed", "base", "mid")
@@ -854,7 +854,7 @@ label hg_show_ass_cumming:
                 else:
                     call her_main("[genie_name], how could you...?", "angry", "squint", "base", "mid", cheeks="blush")
                     call her_main("My ass...", "disgust", "narrow", "worried", "down")
-                    call her_main("It's covered....", "disgust", "narrow", "base", "down")
+                    call her_main("It's covered...", "disgust", "narrow", "base", "down")
 
                 m "Don't worry, I will give you your house points, [hermione_name]."
                 m "You did good."

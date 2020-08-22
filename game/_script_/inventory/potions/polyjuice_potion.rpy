@@ -26,7 +26,7 @@ label potion_scene_1_1_1:
                 her "You're lying..."
                 her "Do I have to?"
                 m "You don't have to do anything [hermione_name]..."
-                m "But if you do decide to, it would make me very happy...."
+                m "But if you do decide to, it would make me very happy..."
                 her "..."
                 m "And there's some points in it for you as well..."
         else:
@@ -549,7 +549,7 @@ label potion_scene_1_2:
         her "So what exactly is it then?"
         m "It's your regular, run-off-the-mill Polyjuice Potion."
         call her_main("Ugh. Those taste like muck.", "normal", "happyCl", "worried", "mid")
-        her "...and what will it turn me into?"
+        her "... and what will it turn me into?"
         m "That, Miss Granger, is a secret."
         call her_main("Typical.", "base", "base", "worried", "R",tears="soft")
         m "It'll taste a lot sweeter if you imagine all the points you'll earn for Gryffindor."
@@ -616,7 +616,7 @@ label potion_scene_1_2:
             m "Oh don't be so modest. If sucking dick was a class, you'd be Magna Cum Laude."
             call her_main("Thank you professor. You know, there's time to earn some more points before class. If you're feeling generous I could...", "scream", "closed", "angry", "mid")
             m "I'd have to know on whose face I'll be cumming though "
-            call her_main("What do you mean? ...My face of course... I mean ...*urp*", "scream", "closed", "angry", "mid")
+            call her_main("What do you mean?... My face of course... I mean... *urp*", "scream", "closed", "angry", "mid")
 
     hide screen hermione_main
     with hpunch

@@ -110,11 +110,11 @@ label tentacle_scene_intro:
 
     menu:
         m "....*mhmm*...."
-        "\"...I had very important business matter to attend to...\"":
+        "\"... I had very important business matter to attend to...\"":
             $ d_flag_01.append("I had very important business matter to attend to,")
-        "\"...I went out to visit a brothel...\"":
+        "\"... I went out to visit a brothel...\"":
             $ d_flag_01.append("I went out to visit a brothel,")
-        "\"...I have turned myself into a plant...\"":
+        "\"... I have turned myself into a plant...\"":
             $ d_flag_01.append("I have turned myself into a plant,")
             $ d_flag_02 = True
 
@@ -122,18 +122,18 @@ label tentacle_scene_intro:
 
     menu:
         m "..."
-        "\"...I ask you kindly...\"":
+        "\"... I ask you kindly...\"":
             $ d_flag_01.append("I ask you kindly,")
-        "\"...Just listen for once...\"":
+        "\"... Just listen for once...\"":
             $ d_flag_01.append("just listen for once and")
 
     "*Scribble* *Scribble*"
 
     menu:
-        m "...and now..."
-        "\"...take this plant with you to your class...\"" if not d_flag_02:
+        m "... and now..."
+        "\"... take this plant with you to your class...\"" if not d_flag_02:
             $ d_flag_01.append("take this plant with you to your class.\n\n")
-        "\"...take this plant then shove it up your ass...\"" if not d_flag_02:
+        "\"... take this plant then shove it up your ass...\"" if not d_flag_02:
             $ d_flag_01.append("take this plant then {b}{s}shove it up yo{/s}{/b} bring it to class.\n\n")
             g9 "Shove it up yo-..."
             call gen_chibi("sit_behind_desk")
@@ -142,10 +142,10 @@ label tentacle_scene_intro:
             m "What if she does it and I get shat on... No, no, no, let me change that."
             call gen_chibi("paperwork")
             with d3
-        "\"...take me to class...\"" if d_flag_02:
+        "\"... take me to class...\"" if d_flag_02:
             $ d_flag_01.append("take me to class.\n\n")
 
-        "\"...shove me up your ass...\"" if d_flag_02:
+        "\"... shove me up your ass...\"" if d_flag_02:
             $ d_flag_01.append("{b}{s}shove me up yo{/s}{/b} take me to class.\n\n")
             g9 "Shove me up yo-..."
             call gen_chibi("sit_behind_desk")
@@ -159,9 +159,9 @@ label tentacle_scene_intro:
 
     menu:
         m "..."
-        "\"...Sincerely, Dombledure.\"":
+        "\"... Sincerely, Dombledure.\"":
             $ d_flag_01.append("Sincerely,\nDombledure.")
-        "\"...Yours truly, [genie_name].\"":
+        "\"... Yours truly, [genie_name].\"":
             $ d_flag_01.append("Yours truly,\n[genie_name].")
 
     $ d_flag_01 = " ".join(d_flag_01)
@@ -209,7 +209,7 @@ label tentacle_scene_intro:
     call her_main("What's with this ugly plant?", "disgust", "narrow", "angry", "stare", trans=d3)
     with vpunch
     g4 "(I'm not ugly!)"
-    m "(...Just haven't blossomed yet...)"
+    m "(... Just haven't blossomed yet...)"
     pause 1.0
     call her_chibi("stand", flip=True)
     with d3
@@ -359,7 +359,7 @@ label tentacle_scene_intro:
     gen "That was hot!"
     "> You notice that something is amiss..."
     gen "What happened to my clothes?!"
-    gen "...I was expecting this other-wordly magic to cover the basics of transmutations at the very least."
+    gen "... I was expecting this other-wordly magic to cover the basics of transmutations at the very least."
     gen "Guess I was wrong..."
     gen "I must get out of here before anyone spots me."
 
@@ -449,7 +449,7 @@ label tentacle_1: #Public path
     her "Please... no more... I'll faint..."
     ">You start to feel a strange energy flowing through the vines, moving towards the tips."
     gen "This is it girl, get ready."
-    her "...ready?..."
+    her "... ready?..."
     call cg_scene("p7")
     stop bg_sounds fadeout 2
     $ renpy.sound.play("sounds/slick_01.mp3")
@@ -544,7 +544,7 @@ label tentacle_2: # Personal path
     her "*HMMMMMMm...!!!*"
     ">The sensation of fucking Hermione in two different holes is almost overwhelming."
     gen "I know you are loving every second of this..."
-    gen "...Being fucked in front of your classmates."
+    gen "... Being fucked in front of your classmates."
     gen "Having your tits and pussy on display..."
 
     ">You move a ridged tentacle towards her ass."
@@ -588,7 +588,7 @@ label tentacle_2: # Personal path
     ">Professor Sprout quickly runs over."
     spo "Miss Granger are you okay? Miss Granger!"
     her "..................*ah*"
-    spo "....She's breathing, thank be Merlin."
+    spo ".... She's breathing, thank be Merlin."
     spo "You! Yes, you girls! Take her to the hospital wing at once!"
     fem "W-wha-.. But..."
     spo "What are you waiting for!"

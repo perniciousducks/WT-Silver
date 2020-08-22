@@ -60,11 +60,11 @@ label potion_scene_2_1_1:
             m "Why not? Everything is covered."
             call her_main("Barely. And what will people think of me.", "angry", "narrow", "base", "down")
             m "Just tell them that you are still developing. I'm sure that they're used to enormous breasts anyway, what's a few extra sizes."
-            call her_main("...Fine. Just promise me that they won't get any bigger.", "upset", "closed", "base", "mid")
+            call her_main("... Fine. Just promise me that they won't get any bigger.", "upset", "closed", "base", "mid")
             m "I can't promise that, you're still in school. A lot of girls don't stop growing until they're thirty."
             call her_main("You know what I mean [genie_name].", "scream", "base", "angry", "mid", emote="angry")
             m "I'm afraid that I don't, [hermione_name], now you'd best hurry if you don't want to be late."
-            call her_main("...Yes [genie_name].", "annoyed", "narrow", "annoyed", "mid")
+            call her_main("... Yes [genie_name].", "annoyed", "narrow", "annoyed", "mid")
 
             call her_walk(action="leave")
 
@@ -104,9 +104,9 @@ label potion_scene_2_1_1:
     call nar(">You take a breast in each hand and start kneading them with your fingers.")
     call her_main("...", "open", "closed", "base", "mid")
     m "They're certainly much larger than usual."
-    call her_main("...yes", "soft", "narrow", "annoyed", "up")
+    call her_main("... yes", "soft", "narrow", "annoyed", "up")
     call nar(">You continue massaging them gently through her shirt. Pulling them apart and then pressing them into one another.")
-    call her_main("...It feels like they're getting--", "angry", "narrow", "base", "down")
+    call her_main("... It feels like they're getting--", "angry", "narrow", "base", "down")
     call ctc
 
     call set_her_action("expand_breasts")
@@ -187,7 +187,7 @@ label potion_scene_2_2:
     m "[hermione_name], I have another potion for you to try today."
     call her_main("Another one? Where are you getting these?", "open", "squint", "base", "mid")
     m "That's of no concern to you. What should concern you is the twenty points that you are able to earn should you drink it."
-    call her_main("...Fine, give me the bottle.", "normal", "squint", "angry", "mid")
+    call her_main("... Fine, give me the bottle.", "normal", "squint", "angry", "mid")
     call nar(">She takes a quizzical smell of the bottle.")
     call her_main("At least this one smells good.", "base", "base", "base", "mid")
 
@@ -316,11 +316,11 @@ label potion_scene_2_2:
                     call nar(">You feel her body go limp as her asshole relentlessly quivers around your fingers.")
                     m "There, wasn't that nice?"
                     call nar(">You slow down and pull out of her asshole.")
-                    call her_main("...yeeess...[genie_name]...", "grin", "narrow", "base", "dead")
+                    call her_main("... yeeess...[genie_name]...", "grin", "narrow", "base", "dead")
                     m "Good girl."
 
             m "Well you best be off to class."
-            call her_main("...With my butt looking like this?", "angry", "narrow", "base", "down")
+            call her_main("... With my butt looking like this?", "angry", "narrow", "base", "down")
             m "I'm sure no one will be able to tell \nwith your skirt on. Now hurry up \nI have things to attend to."
             call blkfade
             pause 1
@@ -378,7 +378,7 @@ label potion_scene_2_2:
             hide screen hermione_main
             call nar(">You feel her asshole starts to quiver as you glide over it.")
             m "Of course you wouldn't, you're enjoying this more than I am, aren't you?"
-            call her_main("...yes... I'm loving... you using my ass as your toy...", "silly", "narrow", "annoyed", "up")
+            call her_main("... yes... I'm loving... you using my ass as your toy...", "silly", "narrow", "annoyed", "up")
             hide screen hermione_main
             m "That's it girl, here I come!"
             call nar(">With one final thrust you cum, covering her fat ass with your seed.")
@@ -405,7 +405,7 @@ label potion_scene_2_2:
             pause.5
 
             show screen bld1
-            call her_main("...With my butt looking like this?", "angry", "squint", "base", "mid",cheeks="blush")
+            call her_main("... With my butt looking like this?", "angry", "squint", "base", "mid",cheeks="blush")
             m "I'm sure no one will be able to tell with your skirt on. Now hurry up, I feel like a nap."
             #call her_main("Yes [genie_name].", "angry", "squint", "base", "mid",cheeks="blush")
             m "Oh I almost forgot, twenty points to Gryffindor!"

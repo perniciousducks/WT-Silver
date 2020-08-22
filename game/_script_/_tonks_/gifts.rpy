@@ -81,7 +81,7 @@ label give_ton_gift(gift_item):
         call ton_main("Some condoms?",face="neutral",xpos="mid",ypos="base",trans=d5)
         call give_gift(">You give some condoms to Tonks...", gift_item)
         call ton_main("Safe sex is important...",face="neutral")
-        call ton_main("I don't remember taking sex ed when I was in school,... maybe I was too busy experimenting it myself that day....",face="horny")
+        call ton_main("I don't remember taking sex ed when I was in school,... maybe I was too busy experimenting it myself that day...",face="horny")
         call ton_friendship(1)
 
     elif gift_item == vibrator_ITEM:

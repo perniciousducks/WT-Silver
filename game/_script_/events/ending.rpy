@@ -198,13 +198,13 @@ label ball_ending_E1:
         m "Yes, \"Dear [word_01]\" fits perfectly..."
         "*scribble-scribble-scribble*"
         "*scribble-scribble-scribble*"
-        m "\"...it is time for me to go back...\""
+        m "\"... it is time for me to go back...\""
         call gen_chibi("paperwork_idle")
         with d3
         m "What should I write now?"
 
         menu:
-            m "...time to go back..."
+            m "... time to go back..."
             "\"home\"":
                 $ word_02 = "home"
             "\"to the mother-ship\"":
@@ -221,13 +221,13 @@ label ball_ending_E1:
         m "Yes, \"Time to go back [word_02]\" that will do..."
         "*scribble-scribble-scribble*"
         "*scribble-scribble-scribble*"
-        m "\"...farewell my little...\""
+        m "\"... farewell my little...\""
         call gen_chibi("paperwork_idle")
         with d3
         m "What should I write now?"
 
         menu:
-            m "...farewell my little... "
+            m "... farewell my little... "
             "\"cock-hungry slut\"":
                 $ word_03 = "cock-hungry slut"
             "\"cum receptacle\"":
@@ -698,7 +698,7 @@ label ball_ending_E2:
         her "You pretended to be kind to me..."
         her "You bought me this dress..."
         $ dynamic_cg("ball/bj", "background", "base2", "eyes_closed2", "blush2", "sweat2")
-        her "And then....................."
+        her "And then........."
         $ dynamic_cg("ball/bj", "background", "base", "eyes_up", "sweat")
         her "*Slurp*! *Gulp*! *Gulp*!"
         her "*Slurp*--"
@@ -834,7 +834,7 @@ label ball_ending_E2:
         m "Yes... \"the hair thing\"..."
         call her_main("Well, what did you expect me to do, sir?", "crooked_smile", "happyCl", "worried", "mid",cheeks="blush")
         m "Literally anything..."
-        g4 "...but {size=+7}THAT!{/size}"
+        g4 "... but {size=+7}THAT!{/size}"
         call her_main("But... I need to look my best for the coronation...", "open", "base", "base", "mid")
         m "And a hairdo full of cum is supposed to ensure that?"
         call her_main("Well... yes...", "soft", "narrow", "base", "R_soft",cheeks="blush")
@@ -1682,7 +1682,7 @@ label ball_ending_E2:
         pause.3
         her "*Gulp*! Gulp!* *Slurp*!"
         sly2 "I don't know... *gh*... How much longer..."
-        sly2 "...I could keep up like that."
+        sly2 "... I could keep up like that."
         her "*Slurp-Slurp-Slurp-slurp*!"
         her "*Slurp-Gulp-Slurp-Slurp-gulp*!!!"
         sly2 "Oh, man... Oh man..."
@@ -1708,7 +1708,7 @@ label ball_ending_E2:
         call play_sound("gulp")
         her "{size=+3}*Gulp-gulp*...{/size}"
         call play_sound("gulp")
-        her "*Gulp....."
+        her "*Gulp..."
         sly2 "*Argh*... my cock..."
         $ dynamic_cg("ball/sex", "background", "base", "eyes_happycl", "blush", "brows", "spit", "spit_on_face", "dudes2")
         her "*Gu-aha*..."
@@ -1962,7 +1962,7 @@ label ball_ending_E2:
         m "Whore! Why are you so quiet?"
         call her_main("I...", "silly", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         call her_main("I am... not sure...",cheeks="blush",tears="mascara_soft")
-        call her_main("What...? What is.......", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
+        call her_main("What...? What is...", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         m "Come on, girl. Pull yourself together!"
         call her_main("I... I... What?", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara_soft")
         call her_main("I don't understand... I...",cheeks="blush",tears="mascara_soft")
@@ -1974,7 +1974,7 @@ label ball_ending_E2:
         call her_main("But I can't leave... No... I must...", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara_soft")
         call her_main("The formal dance... I must...",cheeks="blush",tears="mascara_soft")
         m "A dance? You can't dance in this condition."
-        call her_main("No! I am the ball queen! I must....", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
+        call her_main("No! I am the ball queen! I must...", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         m "Well, suit yourself."
         m "I'm leaving..."
         call her_main("Goodbye... sir...", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
@@ -2025,7 +2025,7 @@ label ball_ending_E2:
 
         call play_music("ball")
         $ dynamic_cg("ball/speech", "background", "base", "mouth_open", "blush", "cum_mouth", "eyes_squint", "brows", "mascara", "sweat", "overlay")
-        her "Ah-a.........................................."
+        her "Ah-a........."
 
         m "Is that...?"
         m "are Leftovers of my cum still in her mouth?"
@@ -2605,7 +2605,7 @@ label ball_ending_E2:
         call her_main("Sir...?", "base", "base", "worried", "mid", cheeks="blush",tears="mascara")
         m "Stop it with the eyes! You're making me feel uncomfortable..."
         m "I wrote you a letter, so what?"
-        call her_main("I think it's sweet.............", "base", "base", "worried", "mid", cheeks="blush",tears="mascara")
+        call her_main("I think it's sweet.........", "base", "base", "worried", "mid", cheeks="blush",tears="mascara")
         g4 "I said stop gawking at me girl. I thought you were late for your dance or something!"
         call her_main("{size=+5}THE DANCE!{/size}", "open", "wide", "base", "stare",cheeks="blush",tears="mascara")
         call her_main("I'm sorry, I have to go!")
@@ -2614,7 +2614,7 @@ label ball_ending_E2:
         call play_sound("running")
         pause 3
         m "......................"
-        m "No you won't......."
+        m "No you won't..."
         m "Farewell...{w=0.3} Hermione..."
 
         pause 2
@@ -2786,12 +2786,12 @@ label ball_ending_E2:
         call sna_main("Who rules?","snape_06")
         dum_[2] "I beg your pardon?"
         call sna_main("Who rules?","snape_26")
-        dum_[2] "...who rules what?"
+        dum_[2] "... who rules what?"
         sna "R...?"
         dum_[2] "R?"
         call sna_main("Robin....?","snape_27")
         dum_[2] "You don't make any sense, Severus."
-        call sna_main("Ah, bloody hell...................","snape_29")
+        call sna_main("Ah, bloody hell.........","snape_29")
         pause.5
         call ctc
 
@@ -2826,7 +2826,7 @@ label ball_ending_E2:
         call her_main("There is no need to be so shy about this, sir. It's alright.")
         dum_[1]"*ahem*... here it is."
         call her_main("Thank you, sir.", "base", "base", "base", "mid")
-        call her_main("Let's see....", "annoyed", "narrow", "worried", "down")
+        call her_main("Let's see...", "annoyed", "narrow", "worried", "down")
         hide screen hermione_main
         with d3
         stop music fadeout 7.0

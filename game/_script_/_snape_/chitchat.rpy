@@ -113,7 +113,7 @@ label snape_chitchat:
         elif one_of_ten == 9:
             call sna_main("There are four student houses at Hogwarts...","snape_24")
             sna "Slytherin, Ravenclaw, Gryffindor and..."
-            call sna_main("...and Huff-something...","snape_05")
+            call sna_main("... and Huff-something...","snape_05")
             call sna_main("No one really cares.","snape_29")
             call sna_main("","snape_09")
 
@@ -146,7 +146,7 @@ label snape_chitchat:
         elif one_of_ten == 5:
             call sna_main("My life was incredibly dull before your arrival...","snape_24")
             call sna_main("Nowadays it's...","snape_05")
-            call sna_main("...less dull.","snape_02")
+            call sna_main("... less dull.","snape_02")
 
         elif one_of_ten == 6:
             call sna_main("Regrets? I don't know the meaning of the word!","snape_05")
@@ -205,7 +205,7 @@ label snape_chitchat:
         elif one_of_ten == 6:
             call sna_main("Do You have a few condoms to spare?","snape_24")
             call sna_main("I have a whole pack but...","snape_25")
-            call sna_main("...they've expired years ago...","snape_06")
+            call sna_main("... they've expired years ago...","snape_06")
             call sna_main("The changes you brought into my life, mate.","snape_02")
             call sna_main("","snape_23")
 
@@ -265,7 +265,7 @@ label snape_chitchat:
             call sna_main("I have two major passions in life...","snape_24")
             sna "Dark arts..."
             call sna_main("......","snape_12")
-            call sna_main("...and sluts.","snape_13")
+            call sna_main("... and sluts.","snape_13")
 
         elif one_of_ten == 8:
             call sna_main("You think I ought to cut down on my drinking?","snape_24")
@@ -363,9 +363,9 @@ label snape_chitchat:
             call sna_main("","snape_02")
 
         elif one_of_ten == 4:
-            call sna_main("I ...hate my life.","snape_24")
+            call sna_main("I... hate my life.","snape_24")
             call sna_main("No, wait, let me try this again...","snape_16")
-            call sna_main("I ...hate my life.","snape_17")
+            call sna_main("I... hate my life.","snape_17")
             call sna_main("Dammit! I'm trying to say \"love\" but it just won't come out...","snape_25")
             call sna_main("I don't think I've ever used the words \"love\" and \"life\" in one sentence before.","snape_29")
             call sna_main("Let me try this again...","snape_06")

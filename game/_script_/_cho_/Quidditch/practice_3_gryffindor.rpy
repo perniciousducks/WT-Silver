@@ -13,7 +13,7 @@ label nothing_to_see_here_048:
     call cho_main("But this was too much!","scream","closed","angry","mid")
     call cho_main("I couldn't get them off of me!", "open", "narrow", "angry", "R")
     call cho_main("Half the Slytherin team spent the whole game following me around, trying to get a peak from underneath!", "scream", "narrow", "angry", "mid")
-    m "Hmmm, I was worried this might happen...."
+    m "Hmmm, I was worried this might happen..."
     call cho_main("Well how are you going to fix it then, [cho_genie_name]?", "annoyed", "narrow", "angry", "mid")
 
 

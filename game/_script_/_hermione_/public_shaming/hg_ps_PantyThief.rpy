@@ -31,7 +31,7 @@ label hg_ps_get_panties:
 
         call play_music("chipper_doodle")
 
-        call her_main("...panties, [genie_name]?", "angry", "base", "angry", "mid")
+        call her_main("... panties, [genie_name]?", "angry", "base", "angry", "mid")
         m "Yes I do..."
         call her_main("May I ask what you are planning to do with them...?", "disgust", "narrow", "base", "mid_soft")
         m "*Ehm*... I'm conducting research..."

@@ -134,7 +134,7 @@ label shoo_owl_away:
 
 # Hermione Granger Letters.
 label letter_from_hermione_A:
-    m "Ehm..............................."
+    m "Ehm........."
     m "What?"
     m "................................."
 

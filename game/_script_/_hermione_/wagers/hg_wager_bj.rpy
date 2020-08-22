@@ -159,7 +159,7 @@ label hg_wager_bj:
         g4 "{size=-5}I'm about to cum [hermione_name]!{/size}"
         call her_main("*Gurk*, *Gulp*, *Gulp*", "open_wide_tongue", "base", "worried", "mid", cheeks="blush")
         call sna_main("No, something is going on here, what are you doing?", face="snape_07")
-        m "...Just standing at my desk."
+        m "... Just standing at my desk."
         hide screen snape_main
         menu:
         #Tell him not to worry about it.
@@ -235,12 +235,12 @@ label hg_wager_bj:
                             call sna_main("Sure... And I'm the sheriff of Nottingham...", face="snape_02")
                         else:
                             call sna_main("Sure... And my name is {i}Hans Gruber{/i}...", face="snape_02")
-                    m "I believe that your work is done Miss Granger, I'll refrain from deducting those points...."
+                    m "I believe that your work is done Miss Granger, I'll refrain from deducting those points..."
                     call sna_main("Avoiding house point deductions are we? Is it that simple to get in your pants miss Granger?", face="snape_01")
                     call sna_main("If I had known...", face="snape_20")
                     call her_main("In your dreams...!", "mad", "narrow", "annoyed", "mid")
                     call sna_main("In any case, you're a lucky man... Albus.", face="snape_13")
-                    call sna_main("I'll leave you two to it....", face="snape_02")
+                    call sna_main("I'll leave you two to it...", face="snape_02")
                     call sna_chibi("stand","mid","base",flip=True) #snape turns and leaves
                     hide screen bld1
                     with d3
@@ -298,7 +298,7 @@ label hg_wager_bj:
                             call sna_main("Well, I'd love to see that...","snape_02")
                             g4 "No...{w=0.4} *Gngh*...{w=0.2} Trust me, You don't...{w=0.4} Now, if you could..."
                             call sna_main("Fine, but you're going to have to teach me how to do that later...","snape_01")
-                            g4 "Not sure if that's...."
+                            g4 "Not sure if that's..."
                             call her_main("*Slurp*, *Slurp*, *Gobble*")
                             g4 "Oh, holy spirit that resides in this place..."
                             call her_main("*Slurp*, *Slurp*, *Urk*", "open_wide_tongue", "squint", "worried", "up", cheeks="blush")
@@ -571,7 +571,7 @@ label hg_wager_bj:
                             pass
                     #
                     #
-                    m "Yes, I'm not in the mood now anyway...."
+                    m "Yes, I'm not in the mood now anyway..."
                     call sna_main("...",face="snape_05")
                     call sna_main("I'll just go then.",face="snape_01")
                     hide screen bld1
@@ -581,7 +581,7 @@ label hg_wager_bj:
                     call sna_walk(action="leave")
 
                     m "..."
-                    g4 "...Why did you stop?"
+                    g4 "... Why did you stop?"
                     call her_main("What?", "annoyed", "narrow", "annoyed", "mid")
                     call her_main("I thought you wanted me to...", "clench", "narrow", "worried", "down")
                     m "If I wanted you to then I would've said so..."

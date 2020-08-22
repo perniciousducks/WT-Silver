@@ -86,7 +86,7 @@ label susan_intro_E1:
             $ d_flag_01 = True # Knows name.
             sus "Sus-...{w=0.6} Susan Bones, Sir."
             g9 "Susan Bones who?"
-            sus "...I'm sorry?"
+            sus "... I'm sorry?"
             g9 "*Ha-ha-ha-ha!*"
             show screen blktone
             with d1

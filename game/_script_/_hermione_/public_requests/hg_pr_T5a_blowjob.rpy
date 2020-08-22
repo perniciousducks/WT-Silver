@@ -25,7 +25,7 @@ label hg_pr_blowjob:
 
         stop music fadeout 1.0
         call her_main("!!!", "shock", "wide", "base", "stare")
-        her "...with my mouth?"
+        her "... with my mouth?"
 
         if not hg_blowjob.trigger: # She will refuse unless she gave you a blowjob
             call her_main("But we--.. I..", "shock", "wide", "base", "stare")
@@ -62,7 +62,7 @@ label hg_pr_blowjob:
         call her_main("*Tch*...", "angry", "base", "angry", "mid", cheeks="blush")
         her "............................"
         m ".........................................."
-        call her_main("...Alright.", "annoyed", "narrow", "angry", "R")
+        call her_main("... Alright.", "annoyed", "narrow", "angry", "R")
         her "I'll do it..."
         m "Go do it, then!"
         m "Report back to me after your classes."
@@ -88,7 +88,7 @@ label hg_pr_blowjob:
             call her_main("Of course...", "annoyed", "narrow", "angry", "R")
         else:
             m "Go give some lucky boy another blowjob, [hermione_name]."
-            call her_main("......Again?", "disgust", "narrow", "base", "mid_soft")
+            call her_main("...... Again?", "disgust", "narrow", "base", "mid_soft")
             m "Yes, again."
             call her_main("..........", "annoyed", "narrow", "annoyed", "mid")
 
@@ -351,7 +351,7 @@ label hg_pr_blowjob_T6_E3:
     her "That thing at the boy's restroom sort of escalated I suppose..."
     her "Before I knew what happened I was surrounded with hard throbbing cocks..."
     call her_main("Oh... Just talking about it makes me shiver with excitement... *err*..", "silly", "narrow", "base", "dead")
-    call her_main("...I mean, with fear... no, not fear...", "grin", "narrow", "annoyed", "up")
+    call her_main("... I mean, with fear... no, not fear...", "grin", "narrow", "annoyed", "up")
     call her_main("Embarrassment...? No, that's not it... *hmm*", "base", "base", "base", "R", cheeks="blush")
     m "Are you asking me?"
     call her_main("Oh, excuse me, [genie_name]... I feel a little lightheaded...", "grin", "narrow", "base", "dead")

@@ -556,7 +556,7 @@ label nt_he_story_intro_E10:
     call ton_main("Well, there wasn't any of this favour business going on for one.", "horny", "base", "base", "R")
     call ton_main("But the students and teachers were pretty much the same.", "base", "base", "raised", "down")
     m "So, what was the real old man like?"
-    call ton_main("Unobtrusive....", "open", "base", "raised", "R")
+    call ton_main("Unobtrusive...", "open", "base", "raised", "R")
     m "What does that mean?"
     call ton_main("I only really saw him during larger festivities, he mostly spent his time in this office.", "open", "base", "base", "down")
     m "So that's why Snape wanted me to stay put..."

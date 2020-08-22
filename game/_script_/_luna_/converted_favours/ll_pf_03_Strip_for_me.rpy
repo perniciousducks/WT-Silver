@@ -42,7 +42,7 @@ label luna_favour_3:
             call lun_main("I suppose not...","normal","base","angry","R")
             call lun_main("So long as you're prepared to show some {i}appreciation...{/i}","normal","angry","angry","mid")
             m "Yes, [lun_name]..."
-            call lun_main("...pervert...","normal","angry","angry","R")
+            call lun_main("... pervert...","normal","angry","angry","R")
             hide screen luna_main
             with d3
             $ luna_xpos = 270
@@ -74,7 +74,7 @@ label luna_favour_3:
 
                 call lun_main("There... are you happy now [lun_genie_name]?","upset","mad","sad","down")
                 m "Almost... take off your shirt next."
-                call lun_main("...alright...","clench","suspicious","sad","R")
+                call lun_main("... alright...","clench","suspicious","sad","R")
                 hide screen luna_main
                 show screen blkfade
                 with d3
@@ -112,7 +112,7 @@ label luna_favour_3:
 
                 call lun_main("There... are you happy now, [lun_genie_name]?","normal","suspicious","sad","mid")
                 m "Almost... take off your skirt next."
-                call lun_main("...fine...","normal","angry","sad","R")
+                call lun_main("... fine...","normal","angry","sad","R")
                 hide screen luna_main
                 show screen blkfade
                 with d3
@@ -456,7 +456,7 @@ label luna_favour_3:
             m "Thank you princess..."
             $ lun_name = "Princess"
             call lun_main("*hmph*","normal","suspicious","angry","R")
-            call lun_main("Well seeing as how you've ...finished... I suppose I better get dressed.","normal","angry","angry","R")
+            call lun_main("Well seeing as how you've... finished... I suppose I better get dressed.","normal","angry","angry","R")
 
             hide screen luna_main
             show screen blkfade
@@ -747,7 +747,7 @@ label luna_favour_3:
                 "-Grab her tits-":
                     $ current_payout = 40
                     m "Come closer, [lun_name]."
-                    call lun_main("Okay....","normal","mad","sad","R")
+                    call lun_main("Okay...","normal","mad","sad","R")
 
                     show screen blkfade
                     with d3
@@ -871,7 +871,10 @@ label luna_favour_3:
 
             $ luna_cum = 2
             call update_lun_uniform
-            ">Luna quickly picks her clothes up off your desk and gets dressed, putting on her shirt over the cum."
+            if luna_wear_cum:
+                ">Luna quickly picks her clothes up off your desk and gets dressed, putting on her shirt over the cum."
+            else:
+                ">Luna quickly picks her clothes up off your desk and gets dressed."
             hide screen blkfade
 
             call lun_main("I think I'd like to leave now, [lun_genie_name]...","normal","angry","sad","down")
@@ -895,7 +898,7 @@ label luna_favour_3:
             call lun_main("why don't you stand up and take a good look, [lun_genie_name]...","base","mad","mad","mid")
             m "I don't think that--"
             call lun_main("*shhh*...","soft","angry","angry","mid")
-            call lun_main("just stand up sir.....","base","angry","angry","mid")
+            call lun_main("just stand up sir...","base","angry","angry","mid")
             m "..."
             show screen blkfade
             with d3
@@ -924,7 +927,7 @@ label luna_favour_3:
             m "ah, gods yes..."
             call lun_main("*mmmmm*... why don't you take it out [lun_genie_name]...","base","suspicious","sad","mid")
             m "..."
-            call lun_main("be a good boy....","base","seductive","sad","mid")
+            call lun_main("be a good boy...","base","seductive","sad","mid")
             show screen blkfade
             with d5
             ">You take your cock out and start stroking it..."
@@ -1058,7 +1061,7 @@ label luna_favour_3:
                 call lun_main("Good boy...","base","seductive","angry","R")
 
                 call gen_chibi("hold_dick")
-                call lun_main("Well seeing as how you've ...finished... I suppose I better get dressed.","normal","angry","angry","R")
+                call lun_main("Well seeing as how you've... finished... I suppose I better get dressed.","normal","angry","angry","R")
 
                 show screen blkfade
                 with d5

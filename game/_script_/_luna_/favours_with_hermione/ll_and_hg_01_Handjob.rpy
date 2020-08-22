@@ -285,7 +285,7 @@ label luna_favour_5:
 
         if luna_addicted == True:
             call lun_main("well it's not over yet...","base","seductive","sad","R")
-            call her_main("...what?","mad","wide","base","stare",cheeks="blush")
+            call her_main("... what?","mad","wide","base","stare",cheeks="blush")
             call her_main("why?","open","base","base","R",cheeks="blush")
             call lun_main("Just look at you!","grin","wide","sad","down")
             call lun_main("Covered in the [lun_genie_name]s delicious cum!","base","seductive","sad","down")
@@ -348,7 +348,7 @@ label luna_favour_5:
 
         else:
             call lun_main("well it's not over yet...","base","suspicious","angry","R")
-            call her_main("...what?","mad","wide","base","stare",cheeks="blush")
+            call her_main("... what?","mad","wide","base","stare",cheeks="blush")
             call her_main("why?","open","base","base","R",cheeks="blush")
             call lun_main("Just look at the mess you made!","normal","angry","angry","down")
             call lun_main("You'll have to clean that up before you can go to class!","base","angry","mad","down")

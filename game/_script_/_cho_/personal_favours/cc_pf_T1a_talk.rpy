@@ -177,7 +177,7 @@ label cc_pf_talk_T1_intro_E1:
     # Fleur
     call cho_main("Well, Cedric wasn't the only one I was with during the year of the tourney...", "open", "base", "raised", "down")
     g9 "Is that so...{w} feel free to elaborate!"
-    call cho_main("I was sort of dating somebody else....", "soft", "base", "worried", "downR")
+    call cho_main("I was sort of dating somebody else...", "soft", "base", "worried", "downR")
     call cho_main("At the same time.", "horny", "base", "worried", "R") # Embarrassed
     m "No{w} way!"
     g4 "You were cheating on that {i}Hufflepuffer{/i}?"
@@ -1232,7 +1232,7 @@ label cc_pf_talk_T2_E3:
 
     call bld
     m "(Well that was weird.)"
-    m "(That girl has a very comprehensive imagination, I got to say...)"
+    m "(That girl has a very wild imagination, I got to say...)"
     m "(Although I have to admit, I'm a bit of a fanboy now...)"
     g4 "Go! Go! Ravenclaw!"
 

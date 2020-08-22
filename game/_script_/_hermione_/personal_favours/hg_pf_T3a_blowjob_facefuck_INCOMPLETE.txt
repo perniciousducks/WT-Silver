@@ -159,10 +159,10 @@ label hg_pf_facefuck_1: # Bondage facefuck scene (NOT IMPLEMENTED)
     $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glp*glp*glp*"
     ">Hermione helplessly starts to struggle against her cuffs as you cut off her air supply to pump her full of cum."
-    g9 "Mmmmm...."
+    g9 "Mmmmm..."
     ">Eventually, you let her head go, allowing her to pull herself off your cock to take a much needed breath."
     $ herCG(xpos=-renpy.random.randint(0, 50))
-    her "aaaaaaahhh...."
+    her "aaaaaaahhh..."
     $ herCG(pupil='up', eye='squint_m', xpos=-renpy.random.randint(0, 50))
     her "[genie_name]! *pant* You almost killed me!"
     m "You're fine..."
@@ -243,7 +243,7 @@ label hg_pf_facefuck_1: # Bondage facefuck scene (NOT IMPLEMENTED)
             ">You shift your cock head so it's firmly sealed against her right nostril before you continue unloading into the poor girl."
             call her_main("Ah.... it's... your shooting it on my brain!", "full_cum", "narrow", "annoyed", "up")
             call her_main("Agh.... the smell... it's so much... I can't...", "full_cum", "narrow", "annoyed", "up")
-            call her_main("ah........", "full_cum", "narrow", "annoyed", "up")
+            call her_main("ah.........", "full_cum", "narrow", "annoyed", "up")
 
         "-Cum down her throat-":
             ">You firmly hold hermione's head against your body as you shamelessly unload down her throat for the second time..."

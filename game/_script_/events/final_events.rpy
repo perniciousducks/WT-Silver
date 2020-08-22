@@ -56,8 +56,8 @@ label ball_quest_E1:
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("I am not stupid, sir... Quite the opposite in fact.", "angry", "closed", "angry", "mid", cheeks="blush")
             call her_main("And I understand that the nature of the favours I have been selling you lately...", "open", "base", "angry", "R", cheeks="blush")
-            call her_main("...Might have led you to believe that I would be willing to...", "open", "squint", "angry", "mid", cheeks="blush")
-            call her_main("...To let you have your way with me eventually, sir...", "disgust", "squint", "angry", "L_soft", cheeks="blush")
+            call her_main("... Might have led you to believe that I would be willing to...", "open", "squint", "angry", "mid", cheeks="blush")
+            call her_main("... To let you have your way with me eventually, sir...", "disgust", "squint", "angry", "L_soft", cheeks="blush")
             m "Whaaa--...? I would never--"
             call her_main("Please, let me finish, sir.", "scream", "base", "angry", "mid",emote="angry", cheeks="blush")
             m "Right..."
@@ -117,7 +117,7 @@ label ball_quest_E1:
         call her_main("My... selfishness?", "annoyed", "base", "worried", "R")
         m "Your classmates deserve the best organised ball possible!"
         m "And only {size=+5}YOU{/size} can give them that!"
-        call her_main("...that is true actually.", "angry", "narrow", "base", "down")
+        call her_main("... that is true actually.", "angry", "narrow", "base", "down")
         m "People depend on you, girl!"
         call her_main("You... maybe you're right, [genie_name].", "open", "narrow", "worried", "down")
         call her_main("I must do this... Everyone depends on me.", "upset", "closed", "base", "mid")
@@ -194,9 +194,11 @@ label ball_quest_E1:
             with d5
             pause.3
 
-            call her_chibi("lift_top","mid","base")
-            with d3
-            pause 2.0
+            # TODO Animation doesn't work if this option is chosen second.
+            # The standing chibi will reflect clothing state (once we have a topless chibi, that is)
+            # call her_chibi("lift_top","mid","base")
+            # with d3
+            # pause 2.0
 
             $ hermione.strip("top", "robe", "accessory")
 
@@ -247,9 +249,10 @@ label ball_quest_E1:
             with d5
             pause.3
 
-            call her_chibi("lift_skirt","mid","base")
-            with d3
-            pause 2.0
+            # TODO Animation doesn't work if this option is chosen second. Just use the standing chibi (ie. remove the commented code)
+            # call her_chibi("lift_skirt","mid","base")
+            # with d3
+            # pause 2.0
 
             $ hermione.strip("bottom", "accessory")
 
@@ -276,12 +279,12 @@ label ball_quest_E1:
             g4 "What are you doing, girl?!" with hpunch
             g4 "I am your headmaster! Do you have no shame?!"
             call her_main("What?! But--", "angry", "base", "angry", "mid", cheeks="blush")
-            g9 "*He-he*... Relax, girl. I'm just kidding."
+            g9 "*He-he*... Relax, [hermione_name]. I'm just kidding."
             call her_main("[genie_name], that was just mean.", "scream", "happyCl", "angry", "mid", cheeks="blush")
             g9 "*He-he*..."
             call her_main(".....................................", "annoyed", "base", "worried", "R_soft", cheeks="blush")
             m "I do like your cute little pussy though..."
-            call her_main(".....Thank you, sir.", "disgust", "base", "angry", "R_soft", cheeks="blush")
+            call her_main("..... Thank you, sir.", "disgust", "base", "angry", "R_soft", cheeks="blush")
 
             jump ball_quest_E1.choices2
 
@@ -298,7 +301,7 @@ label ball_quest_E1:
 
     g9 "Looking good [hermione_name]..."
     call her_main("Happy now?", "annoyed", "base", "worried", "R", cheeks="blush")
-    call her_main("Will you let me have the \"privilege\" of being in charge of the ABOC this year?", "normal", "base", "worried", "mid")
+    call her_main("Will you let me have the \"privilege\" of being in charge of the \"ABOC\" this year?", "normal", "base", "worried", "mid")
 
     menu:
         "\"Of course... the Position is yours.\"":
@@ -376,7 +379,7 @@ label ball_quest_E1:
             m "Kind of sounds like an order--"
             play bg_sounds "sounds/slickloopfast.mp3"
             call her_main("I need it!", "open", "narrow", "worried", "up_soft", cheeks="blush", tears="messy")
-            call her_main("...I need to shamelessly present my naked body before you like this!", "soft", "narrow", "base", "up_soft", cheeks="blush", tears="messy")
+            call her_main("... I need to shamelessly present my naked body before you like this!", "soft", "narrow", "base", "up_soft", cheeks="blush", tears="messy")
             with hpunch
             m ".............?"
             call her_main("I need to feel this embarrassment and humiliation! *SOB*!", "silly", "narrow", "angry", "dead", cheeks="blush", tears="messy")
@@ -436,7 +439,7 @@ label ball_quest_E1:
     if d_flag_03:
         call blktone
         m "(That was weird... she sure changed her mood quick.)"
-        m "(Maybe she gets off from humiliation...)"
+        m "(Maybe she gets off on being humiliated...)"
         m "(Guess I'll have to find out.)"
         call hide_blktone
     else:
@@ -475,7 +478,7 @@ label ball_quest_E2:
     call sna_main("Are you bloody insane?!","snape_01", xpos="base", ypos="base")
     m "You know, sometimes I think I may be..."
 
-    call sna_main("You appointed the girl as the head of the \"Autumn Ball Organization Committee\"?!!","snape_01")
+    call sna_main("You appointed {b}that{/b} girl as the head of the \"Autumn Ball Organization Committee\"?!!","snape_01")
     m "I'm guessing that's bad?"
     call sna_main("Bad?{w} {size=+5}BAD?!{/size}","snape_10")
     call sna_main("{size=+5}That's a catastrophe!{/size}","snape_15")
@@ -488,7 +491,7 @@ label ball_quest_E2:
     m "Really? Like what?"
     call sna_main("Oh, that doesn't matter now...","snape_06")
     #sna "The girl is a complete control freak..."
-    sna "Now the girl will use prefects or the ghosts to keep an eye on me throughout entire thing..."
+    sna "Now the girl will use the prefects or the ghosts to keep an eye on me throughout entire thing..."
     m "Right, that reminds me..."
     m "Am I supposed to show up as well?"
     call sna_main("Show up?","snape_03")
@@ -507,7 +510,7 @@ label ball_quest_E2:
     m "I believe so..."
     call sna_main("Great! Pour me some...","snape_02")
     m "Seriously? You're just gonna bail on your class like that?"
-    call sna_main("Yeah, big news - I hate my job.","snape_03")
+    call sna_main("Yeah, big news -- I hate my job.","snape_03")
     sna "And since you are my boss..."
     call sna_main("I don't know why I even bother teaching those so-called students...","snape_06")
     m "To maintain the charade?"
@@ -575,7 +578,7 @@ label ball_quest_E3:
     m "................"
     call her_main("......................*sob*!", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
     call her_main("I think I'd better go now...*sob*", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
-    m "Well, don't let me keep you a moment longer, miss Granger...."
+    m "Well, don't let me keep you a moment longer, miss Granger..."
 
     call her_walk("door", "base")
     pause.3
@@ -610,7 +613,7 @@ label ball_quest_E4:
     m "Miss Granger?"
     call her_main("Sorry to disturb you sir...", "open", "base", "worried", "mid", xpos="right", ypos="base")
     call her_main("I came to apologise for my...", "open", "base", "worried", "R")
-    her "...my hysterical behaviour yesterday."
+    her "... my hysterical behaviour yesterday."
     m "Sure thing, don't worry about it."
     call her_main("Thank you, sir.", "open", "base", "base", "mid")
     call her_main("Still, I cannot help but feel awful for causing a scene...", "open", "closed", "angry", "mid")
@@ -667,7 +670,7 @@ label ball_quest_E5:
     call her_main("[genie_name]!", "angry", "base", "base", "mid", tears="soft")
     g4 "What? What happened? Don't tell me it's the wrong colour or something!"
     call her_main("It's perfect, sir...*sob*!", "angry", "base", "base", "mid", tears="soft")
-    her "It's perfect... *sob*! ...I love it."
+    her "It's perfect... *sob*!... I love it."
     m "You sure don't look like it..."
     her "I am sorry, sir... *Sob*!"
     call her_main("I... I am just...", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")

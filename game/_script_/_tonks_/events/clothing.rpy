@@ -164,7 +164,7 @@ label tonks_summon_setup:
                 call ton_main("If you want me to put my clothes back on at any time, just let me know...","base","base","base","mid")
 
             "-Get dressed!-":
-                m "No teacher of mine will strut around naked unless I'm there to see it!"
+                m "No teacher of mine will strut around naked...{w} unless I say so!"
                 ton "Yes sir..."
                 m "Now, put your clothes back on..."
                 ton "*Ehm*... Okay..."

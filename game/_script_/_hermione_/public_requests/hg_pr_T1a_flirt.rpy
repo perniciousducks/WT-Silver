@@ -73,7 +73,7 @@ label hg_pr_flirt:
                 her "You mean you need me to flirt with the Slytherin boys again, [genie_name]?"
                 call her_main("Must I really do this [genie_name]?", "upset", "base", "worried", "mid")
                 m "This again?"
-                call her_main("Fine.............", "upset", "base", "angry", "R")
+                call her_main("Fine.........", "upset", "base", "angry", "R")
                 call her_main("If I must... [genie_name]...", "normal", "squint", "angry", "mid")
 
     her "Well, I'd better go now. Classes are about to start..."
@@ -214,7 +214,7 @@ label hg_pr_flirt_T1_E2:
     m "Anything else?"
     call her_main("Well, there was one more incident but the outcome was pretty much the same...", "annoyed", "squint", "angry", "mid")
     m "\"Gryffindor whore\"?"
-    call her_main(".........yes, [genie_name].", "disgust", "narrow", "base", "mid_soft")
+    call her_main("......... yes, [genie_name].", "disgust", "narrow", "base", "mid_soft")
     m "You are doing it all wrong, [hermione_name]."
     call her_main("I am sorry, [genie_name]. I thought this would be easy...", "annoyed", "narrow", "angry", "R")
 

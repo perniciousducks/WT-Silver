@@ -29,7 +29,7 @@ label astoria_wardrobe_check(section, arg=None):
             $ temp_score += 1
         if temp_count[2] < 2 and ast_whoring < ast_requirements["unequip_underwear"]:
             if temp_score > 0:
-                call ast_main("...There's no underwear on that... What kind of pervert created this?",face="annoyed")
+                call ast_main("... There's no underwear on that... What kind of pervert created this?",face="annoyed")
             else:
                 call ast_main("No panties? I'd rather keep mine on thank you very much...",face="annoyed")
             $ temp_score += 1

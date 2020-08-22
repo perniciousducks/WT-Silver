@@ -72,7 +72,7 @@ label summon_hermione:
                 her "Maybe in a couple of days..."
                 jump hermione_requests
             elif her_mood >= 10 and her_mood < 20:
-                her "No thank you...."
+                her "No thank you..."
                 jump hermione_requests
             elif her_mood >= 20 and her_mood < 30:
                 her "After what you did, [genie_name]?"
@@ -322,7 +322,7 @@ label hermione_favor_menu:
         show screen hermione_main
         with d3
         if hermione_favors_convinced:
-            call her_main("But we're in the lead already....", "base", "base", "base", "mid_soft")
+            call her_main("But we're in the lead already...", "base", "base", "base", "mid_soft")
             if her_whoring >=20 and hermione_favors_convinced == 2:
                 call her_main("But I'll do anything for you, [genie_name]...", "smile", "happy", "base", "mid")
                 jump silver_requests_root
@@ -330,7 +330,7 @@ label hermione_favor_menu:
                 call her_main("I guess you do have a way with words,[genie_name]... I'll do it.", "soft", "wink", "base", "mid")
                 jump silver_requests_root
             elif her_whoring >=16:
-                call her_main("I have told you before, [genie_name], it was just a one time thing....", "open", "happy", "base", "mid")
+                call her_main("I have told you before, [genie_name], it was just a one time thing...", "open", "happy", "base", "mid")
                 m "What about tomorrow though?"
                 call her_main("What about tomorrow?","base","squint")
                 g9 "I made a graph detailing the current daily average points Slytherin gain... doesn't look that great."
@@ -708,7 +708,7 @@ label hermione_change:
             call her_main("Thank you, [genie_name].", "soft", "wink", "base", "mid")
             call her_main("", "normal", "base", "base", "mid")
         elif her_whoring >=19:
-            call her_main("...Glad you think so.", "smile", "wink", "base", "mid", cheeks="blush")
+            call her_main("... Glad you think so.", "smile", "wink", "base", "mid", cheeks="blush")
             call her_main("","base","happy", cheeks="blush")
     elif temp_name == "Good Girl":
         if her_whoring >=5 and her_whoring < 7:
@@ -855,12 +855,12 @@ label hermione_change:
                     call her_main("", "mad", "wide", "base", "mid")
                     m "I must apologise {b}Miss Granger{/b}, I thought we had come to some kind of agreeable arrangement by now..."
                     call her_main("But I...", "mad", "wide", "worried", "stare")
-                    m "...I should have known better to believe that this sort of thing would work out..."
+                    m "... I should have known better to believe that this sort of thing would work out..."
                     call her_main("Maybe I coul-...","clench","happyCl")
-                    m "...I thought we both had what we wanted..."
+                    m "... I thought we both had what we wanted..."
                     call her_main("List-...", "soft", "narrow", "worried", "down")
                     call her_main("", "normal", "closed", "angry", "mid")
-                    m "...Might as well hand in my resignation with the ministry and..."
+                    m "... Might as well hand in my resignation with the ministry and..."
                     with hpunch
                     call her_main("{size=+10}I AM A SLYTHERIN WHORE!!!{/size}", "scream", "closed", "angry", "mid",cheeks="blush")
                     call her_main("", "normal", "closed", "base", "mid")
@@ -942,7 +942,7 @@ label hermione_change:
                     call her_main("", "disgust", "narrow", "worried", "mid_soft", tears="mascara")
                     m "Now, now, there's no need to cry."
                     m "Do you know why I call you these things miss Granger?"
-                    call her_main("...no?", "disgust", "narrow", "worried", "mid_soft", tears="mascara")
+                    call her_main("... no?", "disgust", "narrow", "worried", "mid_soft", tears="mascara")
                     m "It's so that you'll come to know that words are just words and they only hurt if you let them."
                     call her_main("...", "normal", "narrow", "worried", "mid_soft", tears="mascara")
                     m "Once you truly understand that nothing will hold you back."

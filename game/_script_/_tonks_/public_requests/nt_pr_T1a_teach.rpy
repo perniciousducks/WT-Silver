@@ -70,15 +70,15 @@ label nt_pr_teach_start:
             call ton_main("And what would you suggest I do with them?", face="horny")
             call ton_main("Make them show me their dicks?", face="horny")
             call ton_main("Or can we move on to something a little more... progressive?", face="horny")
-            m "If that's what you fancy..."
-            call ton_main("*Hmm*...{w=0.4} Yes...{w=0.3} I wouldn't mind seeing the \"hard cocks\" of some of my \"favourites\".", face="horny")
-            call ton_main("Might even have them jerk-off for me... I would love to see that!","horny","base","base","ahegao")
+            m "If that's what you want..."
+            call ton_main("*Hmm*...{w=0.4} Yes...{w=0.3} I wouldn't mind seeing the {b}hard cocks{/b} of some of my favourites.", face="horny")
+            call ton_main("Might even have them jerk off for me... I would love to see that!","horny","base","base","ahegao")
             m "And make sure they remember it."
             call ton_main("Yes, [ton_genie_name]. Don't wait for me...","base","base","base","mid")
 
         else: # Repeat
             m "Ready to give some boys detention again?"
-            call ton_main("Yes. I'm very much in the mood for some \"hard cocks!\"", face="horny")
+            call ton_main("Yes. I'm very much in the mood for some {b}hard cocks{/b}!", face="horny")
             g9 "Go on then... Teach them a lesson..."
             call ton_main("I shall see you later, [ton_genie_name]...","base","base","base","mid")
 
@@ -360,7 +360,7 @@ label nt_pr_teach_T1_E4: # Tier 1 - Event 4 - Slytherin girl
     call ton_main("I just {b}had{/b} to play with her!","horny","base","base","ahegao")
     m "*Mmmm*... what happened?"
     call ton_main("Nothing much... I'm pretty sure she would have freaked if I tried anything...", "soft", "base", "base", "stare")
-    call ton_main("So I just asked her to stay after class for a little...\"chat.\"", "base", "base", "shocked", "mid")
+    call ton_main("So I just asked her to stay after class for a little... \"chat.\"", "base", "base", "shocked", "mid")
     m "What did that chat involve?"
     call ton_main("Well, what do you think?", "horny", "base", "shocked", "mid")
     call ton_main("I just sat directly in front of her desk...","open","base","base","mid")
@@ -430,7 +430,7 @@ label nt_pr_teach_T2_E1: # Tier 2 - Event 1 - Hufflepuff girl
     call ton_main("Better! I had a student come to me to sell a favour!", "grin", "base", "base", "mid")
     m "And you haven't bought a favour from them before?"
     call ton_main("Not one! They're not even in any of my classes!", "grin", "base", "base", "R")
-    m "Very good! Word must be getting around that you're...\"purchasing.\""
+    m "Very good! Word must be getting around that you're... \"purchasing.\""
     m "So what house is he in?"
     call ton_main("Oh... *Umm*... it wasn't a he...","base","base","base","down")
     call ton_main("I hope that's fine... I know I'm supposed to be balancing out the favours for the boys...", "mad", "base", "shocked", "mid")
@@ -448,8 +448,8 @@ label nt_pr_teach_T2_E1: # Tier 2 - Event 1 - Hufflepuff girl
     call ton_main("Naturally...", "horny", "closed", "base", "mid")
     call ton_main("She just sort of stood there after I told her, stunned for a little bit...", "soft", "closed", "base", "mid")
     call ton_main("I rushed to the door and made sure it was locked.", "soft", "base", "base", "R")
-    call ton_main("After that, I sat down in the front-row of the class, and told her to sit on my desk...", "grin", "base", "shocked", "mid")
-    m "*Mmm*, now that's a front-row seat to die for."
+    call ton_main("After that, I sat down in the front row of the class, and told her to sit on my desk...", "grin", "base", "shocked", "mid")
+    m "*Mmm*, now that's a front row seat to die for."
     call ton_main("All that was missing was a bucket of popcorn...", "horny", "wide", "annoyed", "mid")
     call ton_main("Eventually, she was able to muster up enough courage to pull up her skirt...","base","base","angry","mid")
     call ton_main("Poor thing only thought to ask how many points she'd be paid after she lifted her skirt though.", "silly", "happyCl", "base", "mid")
@@ -465,8 +465,8 @@ label nt_pr_teach_T2_E1: # Tier 2 - Event 1 - Hufflepuff girl
     call ton_main("After soaking in the view for a while, I started to notice she was soaking as well...","horny","base","angry","mid")
     call ton_main("So... I offered her forty points to play with herself... for me...","open","closed","base","mid")
     m "*Mmmm*... Go on..."
-    call ton_main("*Ugh*... It was amazing!{w} She was so nervous... her expression looked incredible on her face...","horny","base","base","ahegao")
-    call ton_main("That, and the soft mewling she made while she did it...","horny","base","angry","mid")
+    call ton_main("*Ugh*... It was amazing!{w} She was so nervous... the expression on her face looked incredible...","horny","base","base","ahegao")
+    call ton_main("That, and the soft mewling while she did it...","horny","base","angry","mid")
     call ton_main("It was that perfect combination of \"slutty need\" and \"statuesque beauty\"...","base","base","base","ahegao")
     call ton_main("I wanted to taste her so badly...","open_wide_tongue","wide","base","ahegao")
     g9 "..................."
@@ -574,7 +574,7 @@ label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
     call ton_main("And you have to admit, it's kinda hot... I even joined in on it.", "base", "narrow", "base", "mid")
     m "Really?"
     call ton_main("What do you think made him fire his load across the room?", "horny", "narrow", "base", "mid")
-    call ton_main("All it took was me saying \"cum for Mommy\"...and he had shot the biggest load towards me.", "horny", "closed", "base", "mid")
+    call ton_main("All it took was me saying \"cum for Mommy\"... and he had shot the biggest load towards me.", "horny", "closed", "base", "mid")
     call ton_main("","base","base","angry","mid")
     m "Fuck... That {b}is{/b} pretty hot..."
     call ton_main("I know...", "crooked_smile", "narrow", "base", "mid")

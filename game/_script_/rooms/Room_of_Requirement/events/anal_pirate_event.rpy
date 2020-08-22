@@ -422,7 +422,7 @@ label anal_pirate_event_common_1_2: # Call label
             m "Oh, 'tis worked."
 
             call her_main("*sob!*", "mad", "base", "angry", "down",cheeks="blush",tears="soft")
-            call her_main("...me cavern... me poor cavern... *sob*","mad", "base", "angry", "mid",cheeks="blush",tears="soft")
+            call her_main("... me cavern... me poor cavern... *sob*","mad", "base", "angry", "mid",cheeks="blush",tears="soft")
             g9 "In that case, let's try it again."
             $ ccg1 = 19
             call her_main("No! Avast! Cap'n!", "open", "wide", "worried", "mid",cheeks="blush",tears="soft")
@@ -682,7 +682,7 @@ label anal_pirate_event_3: # Call label
     $ ccg1 = 32
     call her_main("Ah{heart}...", "open", "closed", "base", "mid")
     $ ccg1 = 13
-    call her_main("Wha' I meant... ah{heart} {w} ...t' say was ah{heart}... {w}...do ye reckon any pirate would ever ah{heart}... {w} ...leave th' sea fer a lass like me?", "angry", "narrow", "base", "down")
+    call her_main("Wha' I meant... ah{heart}... {w}t' say was ah{heart}... {w}do ye reckon any pirate would ever ah{heart}... {w}leave th' sea fer a lass like me?", "angry", "narrow", "base", "down")
     m "*huh*?"
     call her_main("I mean, wit' all that booty plunderin happenin' lately... *ah*{heart}...", "angry", "narrow", "base", "down")
     call her_main("I can nah help but feel like me hull is scratched... leakin even.")
@@ -697,7 +697,7 @@ label anal_pirate_event_3: # Call label
             call her_main("What?", "open", "base", "base", "mid",ypos="head")
             m "Aye, if only a lass like ye would board me ship..."
             $ ccg1 = 34
-            call her_main("...Aye...{heart}", "base", "base", "base", "R")
+            call her_main("... Aye...{heart}", "base", "base", "base", "R")
             call her_main("..............", "base", "happy", "base", "mid")
             $ ccg1 = 35
             call her_main("Aye if only a lass like I, cap'n? So, why neigh me?", "soft", "base", "base", "mid")
@@ -725,7 +725,7 @@ label anal_pirate_event_3: # Call label
             call her_main(".....................", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             $ ccg1 = 22
             call her_main("Aye... Aft all th' thin's I had t' do fer me crew...")
-            call her_main("...nah one we pirate would leave th' sea fer me...", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
+            call her_main("... nah one we pirate would leave th' sea fer me...", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
             m "Oh, they be leavin th's sea fer ye alright!"
             $ ccg1 = 19
             call her_main("Wha'? But ye said...", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")

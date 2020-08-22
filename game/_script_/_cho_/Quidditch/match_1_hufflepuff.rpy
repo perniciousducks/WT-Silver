@@ -287,7 +287,7 @@ label hufflepuff_match:
 
     call quidditch_stands(crowd=crowd_full)
     with d5
-    call sna_main("Better... You've advanced from Troll to Dreadful....", "snape_09", ypos="head")
+    call sna_main("Better... You've advanced from Troll to Dreadful...", "snape_09", ypos="head")
     call her_main("", "normal", "closed", "base", "mid")
     m "{size=-4}Troll?{/size}"
     call sna_main("{size=-4}Those are grades we give out to our students, for decidedly poor performances, like Granger's...{/size}", "snape_01", ypos="head")
@@ -830,7 +830,7 @@ label hufflepuff_match:
     call quidditch_stands(crowd_react=["th", "th", None])
     with d3
 
-    mal2 "She can't help herself answering questions in class...."
+    mal2 "She can't help herself answering questions in class..."
     mal2 "I suppose the rulebook was more for her benefit than ours."
 
     #call quidditch_stands(crowd_react=["th", "th", "emo3"]) # emo3 image is missing?
@@ -1089,7 +1089,7 @@ label hufflepuff_match_return:
     m "Wha-"
     g4 "Of course I am!"
     call cho_main("...", "annoyed", "narrow", "raised", "R")
-    call cho_main("If you say so.....", "annoyed", "narrow", "base", "mid")
+    call cho_main("If you say so...", "annoyed", "narrow", "base", "mid")
     call play_music("cho")
     call cho_main("I can't believe that we've broken our six year dry streak and won a real game!", "smile", "happyCl", "base", "mid")
     call cho_main("We could actually win the cup!", "open", "wide", "base", "mid")
@@ -1111,7 +1111,7 @@ label hufflepuff_match_return:
     #
     # TODO: Add panty flash in form of a reward/tease
     #
-    # cho "But before I go...." # blushes
+    # cho "But before I go..." # blushes
     # (flashes panties)
     # g4 "!!!"
     # (equips skirt again)

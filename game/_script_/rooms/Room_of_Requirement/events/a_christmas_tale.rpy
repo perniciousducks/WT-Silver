@@ -111,7 +111,7 @@ label a_christmas_tale:
     san_[1] "I don't know what you mean."
     nar "Said the large bearded man..."
     san_[2] "I'm santa of course."
-    san_[2] "I bring presents...."
+    san_[2] "I bring presents..."
     san_[2] "That's the plan!"
     pause.8
 

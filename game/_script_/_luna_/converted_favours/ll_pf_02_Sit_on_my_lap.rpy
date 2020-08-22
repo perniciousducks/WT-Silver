@@ -1059,7 +1059,7 @@ label luna_favour_2:
                         call lun_main("[lun_genie_name]... this isn't right...","upset","angry","sad","R",tears="crying")
                         m "you don't seem to mind..."
                         call lun_main("(I'll let him keep going for a little bit more...)","normal","seductive","sad","down",tears="crying")
-                        call lun_main("(Then I'll make him stop).......ah... {heart}","soft","seductive","sad","down",tears="crying")
+                        call lun_main("(Then I'll make him stop)....... ah... {heart}","soft","seductive","sad","down",tears="crying")
                         call lun_main("[lun_genie_name], how much longer do you need?...","upset","angry","sad","R",tears="crying")
                         m "Just a bit longer..."
                         ">Luna keeps rubbing her ass against your sensitive cock."
@@ -1459,7 +1459,7 @@ label luna_favour_2:
         m "and here's your gold."
         ">You hand Luna and hermione forty gold each."
         call her_main("Thank you [genie_name]!", "base", "base", "base", "mid")
-        call lun_main("...Thank you [lun_genie_name].","normal","seductive","sad","R")
+        call lun_main("... Thank you [lun_genie_name].","normal","seductive","sad","R")
         ">Luna and hermione leave your office, talking as they go."
 
         $ hermione_busy = True

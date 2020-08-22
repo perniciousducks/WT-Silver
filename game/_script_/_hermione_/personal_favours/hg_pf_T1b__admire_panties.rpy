@@ -273,7 +273,7 @@ label hg_pf_admire_panties_T3_intro_E1:
                     m "That's what makes them sluts."
                     call her_main("Well are you even going to pay me {number=current_payout} points?", "annoyed", "base", "angry", "mid")
                     m "Are you a slut or are you a prostitute?"
-                    her "{size=-4}...a slut {/size}"
+                    her "{size=-4}... a slut {/size}"
                     m "Good girl."
                     $ current_payout = 0 # No points for sluts
                     call ctc
@@ -326,7 +326,7 @@ label hg_pf_admire_panties_T3_E1:
                     m "That's what makes them sluts."
                     call her_main("Well are you even going to pay me {number=current_payout} points?", "annoyed", "base", "angry", "mid")
                     m "Are you a slut or are you a prostitute?"
-                    her "{size=-4}...a slut {/size}"
+                    her "{size=-4}... a slut {/size}"
                     m "Good girl."
                     $ current_payout = 0 # No points for sluts
                     call ctc

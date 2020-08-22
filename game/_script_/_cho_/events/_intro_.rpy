@@ -232,7 +232,7 @@ label cho_intro_E1:
         call her_main("Oh yeah, well... I bet it can't be anything good seeing how you usually act around men...", "mad", "narrow", "angry", "R")
         call cho_main("What's that supposed to mean?!?", "clench", "narrow", "angry", "L")
         call her_main("You know exactly what I mean...", "crooked_smile", "narrow", "base", "R_soft")
-        call her_main("I heard about how you were flaunting those...  \"things\" of yours at Seamus Finnigan.", "crooked_smile", "narrow", "base", "R_soft")
+        call her_main("I heard about how you were flaunting those... \"things\" of yours at Seamus Finnigan.", "crooked_smile", "narrow", "base", "R_soft")
         with hpunch
         call cho_main("\"Things?\"", "angry", "wide", "base", "L")
         call cho_main("Oh, miss perfect Hermione Granger.{w=0.8} Too afraid to even use the word \"tits\"...", "open", "narrow", "angry", "L")
@@ -386,7 +386,7 @@ label cho_intro_E1:
 
     $ cho_intro.E1_complete = True
 
-    m ".......{w=0.5}women....."
+    m ".......{w=0.5}women..."
 
     jump main_room
 
@@ -831,7 +831,7 @@ label cho_intro_E3:
 
     # Summon Cho
     g9 "Great!"
-    g9 "Let's call her up here then...."
+    g9 "Let's call her up here then..."
     call her_main("What? Now?", "clench", "wide", "base", "stare")
 
     # Hermione quickly gets dressed.

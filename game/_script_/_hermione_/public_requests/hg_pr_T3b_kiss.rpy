@@ -169,7 +169,7 @@ label hg_pr_kiss_T3_E1:
     call play_music("hermione") # Music
     her "It was awkward and embarrassing..."
     m "did you do it or not?"
-    call her_main("...no I did not, [genie_name]...", "annoyed", "narrow", "angry", "R")
+    call her_main("... no I did not, [genie_name]...", "annoyed", "narrow", "angry", "R")
     her "All I did was making a complete fool out of myself..."
     call her_main("In front of the entire class...", "angry", "base", "angry", "mid")
     m "Tell me what happened, [hermione_name]."
@@ -357,7 +357,7 @@ label hg_pr_kiss_T4_E3:
         "\"Who knows? Boys are weird.\"":
             call her_main("Yes, they are, aren't they...?", "angry", "narrow", "base", "down")
             m "Yes, yes..."
-            m "And that is why young girls such as yourself...."
+            m "And that is why young girls such as yourself..."
             m "Are often interested in a much older gentleman..."
             call her_main("??!", "angry", "base", "base", "mid")
             call her_main("That is not what I meant, [genie_name]...", "annoyed", "narrow", "annoyed", "mid")
@@ -375,7 +375,7 @@ label hg_pr_kiss_T4_E3:
             call her_main("*Tsk*!......................", "angry", "base", "angry", "mid", emote="angry")
 
     call her_main("Well, I am only asking you this, [genie_name], because...", "open", "narrow", "worried", "down")
-    call her_main("...it is sort of becoming a new trend in our school...", "angry", "base", "base", "mid")
+    call her_main("... it is sort of becoming a new trend in our school...", "angry", "base", "base", "mid")
     her "Some girls are willing to do this simply to catch the attention of the boy they fancy..."
     m "Are you one of those girls, [hermione_name]?"
     call her_main("I suppose...", "angry", "narrow", "base", "down")
@@ -409,7 +409,7 @@ label hg_pr_kiss_T5_E1:
     m "*Hmm*..."
     m "Don't you think that that's a little bit of prejudice on your part?"
     m "Or shall I say that you are being a \"housist\"?"
-    call her_main("...a \"housist\", [genie_name]?", "annoyed", "narrow", "annoyed", "mid")
+    call her_main("... a \"housist\", [genie_name]?", "annoyed", "narrow", "annoyed", "mid")
     m "Well, you know... It's like \"sexist\" or \"ageist\"..."
     m "You just put an \"ist\" after something and it automatically becomes a bad thing..."
     call her_main("\"housist\" is not an actual word, [genie_name]...", "soft", "base", "base", "R")

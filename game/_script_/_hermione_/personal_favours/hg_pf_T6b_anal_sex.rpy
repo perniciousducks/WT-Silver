@@ -334,7 +334,7 @@ label hg_anal_sex_1:
             m "Oh, it worked."
 
             call her_main("*sob*!", "mad", "base", "angry", "down",cheeks="blush",tears="soft")
-            call her_main("...my asshole... my poor asshole... *sob*","mad", "base", "angry", "mid",cheeks="blush",tears="soft")
+            call her_main("... my asshole... my poor asshole... *sob*","mad", "base", "angry", "mid",cheeks="blush",tears="soft")
             g9 "In that case, let's try it again."
             $ ccg1 = 19
             call her_main("No! Stop, [genie_name]!", "open", "wide", "worried", "mid",cheeks="blush",tears="soft")
@@ -422,7 +422,7 @@ label hg_anal_sex_1:
             $ ccg1 = 25
             call her_main("{size=+5}I HATE YOU AND YOUR NASTY OLD COCK?{/size}", "scream", "base", "angry", "mid",cheeks="blush",tears="messy")
             call her_main("{size=+5}I HATE YOU! YOU HEAR ME?!{/size}")
-            g4 "*Agh*...Shut it, whore!"
+            g4 "*Agh*... Shut it, whore!"
             $ ccg1 = 24
             call her_main("*sob*! *Sob*!...", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
             call ctc
@@ -594,7 +594,7 @@ label hg_anal_sex_2:
     $ ccg1 = 32
     call her_main("*Ah*{heart}...", "open", "closed", "base", "mid")
     $ ccg1 = 13
-    call her_main("What I meant... *ah*{heart} {w=0.3}...to say was *ah*{heart}... {w=0.3}do you think someone would ever *ah*{heart}... {w=0.3} want to marry a girl like me?", "angry", "narrow", "base", "down")
+    call her_main("What I meant... *ah*{heart}... {w=0.3}to say was *ah*{heart}... {w=0.3}do you think someone would ever *ah*{heart}... {w=0.3}want to marry a girl like me?", "angry", "narrow", "base", "down")
     m "*Huh*?"
     call her_main("I mean, with all that was happening lately... ah{heart}...", "angry", "narrow", "base", "down")
     call her_main("I can't help but feel unclean... damaged even.")
@@ -609,7 +609,7 @@ label hg_anal_sex_2:
             call her_main("What?", "open", "base", "base", "mid")
             m "Well, hypothetically speaking of course..."
             $ ccg1 = 34
-            call her_main("...of course...{heart}", "base", "base", "base", "R")
+            call her_main("... of course...{heart}", "base", "base", "base", "R")
             call her_main("..............", "base", "happy", "base", "mid")
             $ ccg1 = 35
             call her_main("But why do you say that, [genie_name]?", "soft", "base", "base", "mid")
@@ -637,7 +637,7 @@ label hg_anal_sex_2:
             call her_main(".....................", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             $ ccg1 = 22
             call her_main("Yes... After all the things I had to do for my house...")
-            call her_main("...no one will ever want me...", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
+            call her_main("... no one will ever want me...", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
             m "Oh, they will want you alright!"
             $ ccg1 = 19
             call her_main("What? But you said...", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")

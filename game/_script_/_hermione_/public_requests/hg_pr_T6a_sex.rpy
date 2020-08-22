@@ -209,7 +209,7 @@ label hg_pr_sex_T6_E4:
     call play_music("playful_tension") # Music
     call her_main("I did, [genie_name].", "upset", "closed", "base", "mid")
     call her_main("I took one of the Ravenclaw boys to the girl's restroom...", "base", "narrow", "worried", "down")
-    her "...and let him have his way with me in one of the stalls."
+    her "... and let him have his way with me in one of the stalls."
     m "Well done, [hermione_name]."
     call her_main(".....................", "annoyed", "narrow", "angry", "R")
     m "I said you did great. What's the matter?"

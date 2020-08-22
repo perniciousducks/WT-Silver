@@ -397,7 +397,7 @@ label hg_pf_titjob_1:
             call her_main(".......", "base", "narrow", "base", "up")
             m "Try to get it as close to the tip of my cock as you can..."
             call her_main("............", "normal", "happyCl", "worried", "mid")
-            call her_main("A-ha.....", "open_wide_tongue", "base", "base", "mid")
+            call her_main("A-ha...", "open_wide_tongue", "base", "base", "mid")
             m "Good, [hermione_name]."
             call her_main("..............", "open_wide_tongue", "base", "base", "mid")
             m "Yes, keep on stroking my cock."
@@ -458,7 +458,7 @@ label hg_pf_titjob_1:
             call her_chibi_scene("tj_cum_in_done", trans=d5)
 
             call her_main(".......................", "full_cum", "narrow", "worried", "down",cheeks="blush")
-            m "*Mmm*... That felt great...."
+            m "*Mmm*... That felt great..."
             call her_main(".......................", "full_cum", "narrow", "worried", "down",cheeks="blush")
             m "How are you feeling?"
             call her_main(".......................", "full_cum", "narrow", "worried", "down",cheeks="blush")

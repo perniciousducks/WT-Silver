@@ -122,7 +122,7 @@ label whose_points:
     g9 "\"Things you might do in Quidditch, but also with your lover...\""
 
     call ast_main("I'm going first this time! I have a good one!","smile","base","base","mid")
-    m "Go on...."
+    m "Go on..."
     call ast_main("Madam Hooch! Get your gross hands off my quidditch robes, you creep!" ,"clench","narrow","angry","mid")
     m "Again, I don't think you understand the game..."
     call ast_main("Give me the points!","scream","narrow","angry","mid", trans=hpunch)
@@ -161,7 +161,7 @@ label whose_points:
     m "If you please..."
     hat "I'm all out, looks like you only wrote two after all."
 
-    g4 "That can't be right...."
+    g4 "That can't be right..."
 
     call ast_main("Let me check professor!","smile","base","base","mid")
     $ renpy.play("sounds/cloth_sound.mp3")

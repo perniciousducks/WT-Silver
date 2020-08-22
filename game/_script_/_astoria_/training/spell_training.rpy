@@ -213,7 +213,7 @@ label ag_st_imperio_E1:
     call ton_main("I want you to play with me!", "open_wide_tongue", "narrow", "shocked", "stare") # horny
     m "I think she's tripping..."
     call ast_main("No!{w=0.6} Keep{w=0.4} - standing{w=0.4} - still!","clench","closed","worried","mid")
-    call ton_main("Ok...................", "soft", "base", "base", "stare")
+    call ton_main("Ok.........", "soft", "base", "base", "stare")
     g9 "This is quite funny to watch!"
     g9 "Can you make her *oink*?"
     call ast_main("*oink*?","open","wink","base","mid")
@@ -954,7 +954,7 @@ label ag_st_imperio_E4:
         g9 "I doubt she'd like to show them to you anyway..."
         call ton_main("......................", "soft", "base", "base", "ahegao", hair="horny") # Ahegao
         call ast_main("............","annoyed","base","worried","mid")
-        m "Go on...."
+        m "Go on..."
 
     else: # Facing Genie
         call ast_main("I'm not sure if she'd be okay with that.","open","base","worried","mid")
@@ -1555,7 +1555,7 @@ label ag_st_imperio_E5:
 
     call sna_main("The question...","snape_18")
     call ton_main("It's this Astoria girl...", "soft", "base", "annoyed", "R", cheeks="blush")
-    call ton_main("There's something wrong with her....", "open", "narrow", "base", "down")
+    call ton_main("There's something wrong with her...", "open", "narrow", "base", "down")
     call ton_main("She's cursed you see!", "open", "wide", "worried", "L")
     call ton_main("A blood curse... very unfortunate.", "mad", "base", "worried", "down")
     call sna_main("A blood curse you say?","snape_09") #incredulous

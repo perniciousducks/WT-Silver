@@ -479,7 +479,7 @@ label luna_favour_1:
                         m "have you ever considered wearing it a little... shorter?"
                         call lun_main("...","normal","angry","angry","R")
                         m "I'm waiting..."
-                        call lun_main("...how short?","upset","suspicious","sad","down")
+                        call lun_main("... how short?","upset","suspicious","sad","down")
                         m "Just an inch or so higher."
                         call lun_main("...","upset","suspicious","sad","down")
                         call lun_main("(my father better appreciate this...)","upset","suspicious","sad","down")
@@ -502,7 +502,7 @@ label luna_favour_1:
                         m "I want you to refer to me as sir from now on."
                         call lun_main("...","normal","angry","angry","R")
                         m "Is that clear?"
-                        call lun_main("...Yes...{size=-8}sir{/size}","upset","suspicious","sad","down")
+                        call lun_main("... Yes...{size=-8}sir{/size}","upset","suspicious","sad","down")
                         m "Speak up [lun_name]..."
                         call lun_main("Yes sir...","upset","suspicious","sad","R")
                         m "{size=-4}(yes...){/size}"
@@ -680,7 +680,7 @@ label luna_favour_1:
         m "Here's your gold."
         ">You hand Luna and hermione twenty-five gold each."
         call her_main("Thank you [genie_name]!", "base", "base", "base", "mid")
-        call lun_main("...Thank you sir.","normal","seductive","sad","R")
+        call lun_main("... Thank you sir.","normal","seductive","sad","R")
         ">Luna and hermione leave your office, talking as they go."
 
         $ hermione_busy = True

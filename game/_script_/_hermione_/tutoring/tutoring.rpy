@@ -1352,7 +1352,7 @@ label hg_tutor_E12:
     call her_main("Oh! That's even better than a butt plug.", "shock", "wide", "base", "stare", cheeks="blush")
     g9 "And they can be useful for your pussy too."
     call her_main("So many possibilities...", "smile", "base", "angry", "mid", cheeks="blush")
-    her "...so little time."
+    her "... so little time."
     call her_main("I suppose you want me to try them out?", "smile", "happyCl", "base", "mid")
     her "Or would you rather try them out on me yourself?"
     g9 "Oh yes."
@@ -1654,7 +1654,7 @@ label hg_tutor_E13:
     $ hermione.strip("robe")
 
     call her_chibi("dance","on_desk","on_desk")
-    call her_main(animation=bob)
+    # call her_main(animation=bob)
 
     call hide_blkfade
     pause 1
@@ -1673,7 +1673,7 @@ label hg_tutor_E13:
     m "{size=-2}(Severus still hasn't sent those Slytherin whores up){/size}"
     m "{size=-2}(I wonder if I can fire him for that...){/size}"
     call her_main("Thank you, professor.", "open", "happyCl", "worried", "mid", cheeks="blush")
-    call her_main("Feel free to do use my body as you please.", "angry", "happyCl", "worried", "mid", cheeks="blush")
+    call her_main("Feel free to use my body as you please.", "angry", "happyCl", "worried", "mid", cheeks="blush")
     m "{size=-2}(*sigh* women...){/size}"
     m "Bend over the desk my dear little witch."
     call her_main("{size=-2}(It starts with my dear little witch and ends up with my dear anal whore...){/size}", "annoyed", "narrow", "base", "up", cheeks="blush")

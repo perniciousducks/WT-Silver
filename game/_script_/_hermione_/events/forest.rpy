@@ -15,7 +15,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     call play_sound("walking_on_grass")
 
     ">Sure enough, the map seems to {b}magically{/b} guide you to the girl, alone in the midnight air..."
-    ">Seemingly scrapping the resin off of a tree..."
+    ">Seemingly scraping some resin off a tree..."
 
     $ hermione.wear("all")
     # TODO: Add robe force equip.
@@ -221,7 +221,7 @@ label forest_BJ_2:
     $ ccg2 = 16
     her "*slurp* *schkk* *shlrp*"
     $ ccg2 = 12
-    her "It'd be the gossip of the century...."
+    her "It'd be the gossip of the century..."
     $ ccg2 = 18
     her "*slurp* *schkk* *shlrp*"
     m "You almost sound disappointed that she didn't tell anyone."

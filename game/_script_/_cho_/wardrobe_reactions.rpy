@@ -29,7 +29,7 @@ label cho_wardrobe_check(section, arg=None):
             $ temp_score += 1
         if temp_count[2] < 2 and cho_whoring < cho_requirements["unequip_underwear"]:
             if temp_score > 0:
-                call cho_main("...not to mention missing underwear!",face="annoyed")
+                call cho_main("... not to mention missing underwear!",face="annoyed")
             else:
                 call cho_main("It's missing underwear!",face="annoyed")
             $ temp_score += 1

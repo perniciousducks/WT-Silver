@@ -41,7 +41,7 @@ label slut_scene: #Locked to her being your slut
     m "Don't act like you don't already know this. You know that deep down you're a filthy slut."
     call her_main("I am not!", "scream", "happyCl", "worried", "mid")
     m "Suck my cock."
-    call her_main("...What?", "open", "base", "base", "mid")
+    call her_main("... What?", "open", "base", "base", "mid")
     m "I said suck. My. Cock. Slut."
     call her_main("...", "annoyed", "base", "worried", "R")
     hide screen hermione_main
@@ -149,7 +149,7 @@ label slut_scene: #Locked to her being your slut
             with d3
 
             ">She takes you out of her mouth."
-            call her_main("...yes. I am a massive slut.", "normal", "happyCl", "worried", "mid")
+            call her_main("... yes. I am a massive slut.", "normal", "happyCl", "worried", "mid")
             hide screen hermione_main
             m "Good to hear you finally admit it. Now, back in the mouth."
             call her_main("Yes [genie_name]", "smile", "narrow", "base", "mid_soft")
@@ -186,7 +186,7 @@ label slut_scene: #Locked to her being your slut
     hide screen hermione_main
     m "You can and will wear this."
     m "You are MY slut and you will do well to remember it. Now put it on and get out of my office."
-    call her_main("...Fine", "angry", "narrow", "base", "down")
+    call her_main("... Fine", "angry", "narrow", "base", "down")
     hide screen hermione_main
     ">She tightens the collar around the neck."
 
@@ -202,7 +202,7 @@ label slut_scene: #Locked to her being your slut
     call her_main("You can't be serious?!", "upset", "closed", "base", "mid")
     hide screen hermione_main
     m "I am, and if you ever want to suck my cock again you will do as I say."
-    call her_main("...yes [genie_name].", "open", "closed", "base", "mid")
+    call her_main("... yes [genie_name].", "open", "closed", "base", "mid")
     hide screen hermione_main
     m "Well get going."
     call her_main("Good night [genie_name].", "base", "narrow", "base", "mid_soft")
@@ -304,7 +304,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_main("...", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")
     hide screen hermione_main
     m "Well aren't you going to at least be grateful."
-    call her_main("...Thank you [genie_name].", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
+    call her_main("... Thank you [genie_name].", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
     hide screen hermione_main
     m "Thank you for what?"
     call her_main("Thank you for ... cumming in my pussy.", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")
@@ -336,7 +336,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     m "They'll think the truth, that you're a shameless whore."
     call her_main("...*Hmmph*", "angry", "squint", "base", "mid",cheeks="blush")
     m "Well whatever you think, I expect you to put it on and then get out of my office."
-    call her_main("...Fine", "shock", "narrow", "base", "down",cheeks="blush",tears="crying")
+    call her_main("... Fine", "shock", "narrow", "base", "down",cheeks="blush",tears="crying")
     ">She places the collar around her neck and tightens it."
 
     $ h_neckwear = "collar_whore_shackle"

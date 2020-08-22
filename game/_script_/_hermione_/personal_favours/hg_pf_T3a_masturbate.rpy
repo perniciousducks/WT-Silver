@@ -24,7 +24,7 @@ label hg_pf_strip_T4_fingering:
         call her_main("That doesn't make any--", "annoyed", "base", "worried", "mid")
         m "But don't worry, I'm sure a quick little demonstration will erase any doubts..."
         call her_main("So that's what you're after......", "annoyed", "narrow", "angry", "R")
-        call her_main("*Sigh*...{w=0.4} I suppose I could....", "open", "narrow", "worried", "down")
+        call her_main("*Sigh*...{w=0.4} I suppose I could...", "open", "narrow", "worried", "down")
         call her_main("But you better keep your hands to yourself...", "angry", "narrow", "worried", "mid")
         m "Witcher's promise."
         call her_main("...", "annoyed", "squint", "base", "mid")
@@ -183,7 +183,7 @@ label hg_pf_strip_T4_fingering:
             call her_main("Really...{heart}", "silly", "narrow", "base", "mid_soft", cheeks="blush")
             m "Would you at least stop?"
             call her_main("*Ah*...{heart}", "open_tongue", "narrow", "base", "up", cheeks="blush")
-            call her_main("Maybe....", "open_tongue", "narrow", "base", "up", cheeks="blush")
+            call her_main("Maybe...", "open_tongue", "narrow", "base", "up", cheeks="blush")
             call her_main("I'm not sure...", "open", "narrow", "base", "R", cheeks="blush")
             m "So you wouldn't mind if they heard me calling you a slut?"
             call her_main("I...{w=0.4}*mmmh*... Of course I--", "normal", "happyCl", "worried", "mid", cheeks="blush")
@@ -218,7 +218,7 @@ label hg_pf_strip_T4_fingering:
             m "Very good..."
             call her_main("...{heart}", "silly", "narrow", "base", "up", cheeks="blush")
             call her_main("Ah...{heart}", "open_tongue", "narrow", "base", "up", cheeks="blush")
-            m "That's it slut... Try going a little deeper...."
+            m "That's it slut... Try going a little deeper..."
             call her_main("...", "open_tongue", "narrow", "base", "up", cheeks="blush")
 
             call her_main("...{heart}", "open", "happyCl", "worried", "mid", cheeks="blush")
@@ -240,7 +240,7 @@ label hg_pf_strip_T4_fingering:
     call her_main("[genie_name]... I don't think I can...")
     m "what?"
     stop bg_sounds
-    call her_main("...Finish...", "angry", "happyCl", "base", "down", cheeks="blush", tears="soft")
+    call her_main("... Finish...", "angry", "happyCl", "base", "down", cheeks="blush", tears="soft")
 
     menu:
         "-Chastise her-":
@@ -371,7 +371,7 @@ label hg_pf_strip_T5_fingering:
     call her_main("Please... *Ah*...{w=0.4} more...{heart}", "grin", "base", "angry", "mid", cheeks="blush")
     g4 "You deserve to be punished for being such a filthy slut!"
     call her_main("Yes, [genie_name]... punish me...", "open", "narrow", "base", "up", cheeks="blush")
-    call her_main("Make me your little slut....", "open", "narrow", "base", "up", cheeks="blush")
+    call her_main("Make me your little slut...", "open", "narrow", "base", "up", cheeks="blush")
     play bg_sounds "sounds/slickloopveryfast.mp3"
     call her_main("I will... *Ah*...{w=0.4} {heart}do anything...{w=0.4} *Ah*...{heart}", "silly", "narrow", "base", "dead")
     m "Anything [hermione_name]?"
@@ -534,7 +534,7 @@ label hg_pf_strip_T6_fingering:
             $ renpy.play("sounds/gasp2.mp3")
             call her_main("*Ah*...", "grin", "narrow", "base", "up", cheeks="blush")
             g9 "..."
-            call nar(">You gaze at Hermione's breasts as she runs the tips of her fingers across her nipple....")
+            call nar(">You gaze at Hermione's breasts as she runs the tips of her fingers across her nipple...")
             call her_main("*Ah*...", "silly", "narrow", "base", "dead")
             g9 "So you do like playing with those big tits of yours."
             call her_main("I do, [genie_name]... {w=0.4}*Ah*...{heart}", "soft", "narrow", "annoyed", "up")

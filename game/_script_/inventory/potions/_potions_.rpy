@@ -264,7 +264,7 @@ label potions_menu:
     elif isinstance(potion_choice, Potion):
         $ renpy.say( None, potion_choice.get_mix_text() )
         if potion_choice.id == "p_cum_addiction":
-            ">...but it's missing the most important part."
+            ">... but it's missing the most important part."
             menu:
                 "-Cum into the Potion-":
                     # TODO: add jerk_off here at some point

@@ -337,7 +337,7 @@ label hg_pp_cumaddict_intro:
             hide screen hermione_main
             m "No [hermione_name], I'm a tired old man and it's time for me to go to sleep."
             m "You can either eat off the floor or you can come back tomorrow."
-            call her_main("...Fine.", "upset", "closed", "base", "mid")
+            call her_main("... Fine.", "upset", "closed", "base", "mid")
             hide screen hermione_main
             call nar(">She begrudgingly starts scooping your cum off the floor with her fingers.")
             #TODO Add chibi animation (?): Hermione eats cum off the floor
@@ -474,7 +474,7 @@ label potion_scene_3_2_1: #TODO Hyper sensitive breasts potion
     m "Are you sure?"
     her "Positive."
     m "Ok, I'll make a bet with you then."
-    her "...Go on..."
+    her "... Go on..."
     m "I'll start massaging you. If you don't like it after two minutes then you can tell me to stop."
     her "And what do I get for telling you to stop?"
     m "two hundred points."

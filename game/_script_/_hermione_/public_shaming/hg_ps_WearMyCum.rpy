@@ -565,7 +565,7 @@ label hg_ps_cumslut_complete_1:
 
     #if cum_location == 1: # TODO: No can do. Requires rewrite.
         # Cum under shirt
-        #call her_main("...I did it, [genie_name].", "base", "happy", "base", "mid",xpos="right",ypos="base")
+        #call her_main("... I did it, [genie_name].", "base", "happy", "base", "mid",xpos="right",ypos="base")
         #call her_main("I kept your cum on me all day.", "base", "base", "base", "R")
 
         #menu:
@@ -591,7 +591,7 @@ label hg_ps_cumslut_complete_1:
 
         $ hermione.set_cum(crotch="heavy")
 
-        call her_main("...I did it [genie_name].", "normal", "happyCl", "worried", "mid",xpos="right",ypos="base", trans=d3)
+        call her_main("... I did it [genie_name].", "normal", "happyCl", "worried", "mid",xpos="right",ypos="base", trans=d3)
         call her_main("I kept your cum on me all day.", "angry", "happyCl", "worried", "mid",emote="sweat")
 
         menu:
@@ -620,7 +620,7 @@ label hg_ps_cumslut_complete_1:
 
         $ hermione.set_cum(hair="heavy")
 
-        call her_main("...I did it [genie_name].", "upset", "narrow", "base", "dead",tears="mascara",xpos="right",ypos="base", trans=d3)
+        call her_main("... I did it [genie_name].", "upset", "narrow", "base", "dead",tears="mascara",xpos="right",ypos="base", trans=d3)
         call her_main("I kept your cum on me all day.", "upset", "happyCl", "worried", "mid",tears="mascara_soft_blink")
         menu:
             "\"Fifty points to Gryffindor!\"":
@@ -666,7 +666,7 @@ label hg_ps_cumslut_complete_2:
 
         $ hermione.set_cum(legs="heavy")
 
-        call her_main("...I did it, [genie_name].", "base", "happy", "base", "mid",xpos="right",ypos="base", trans=d3)
+        call her_main("... I did it, [genie_name].", "base", "happy", "base", "mid",xpos="right",ypos="base", trans=d3)
         call her_main("I kept your cum on me all day.", "base", "base", "base", "R")
 
         menu:
@@ -698,7 +698,7 @@ label hg_ps_cumslut_complete_2:
 
         $ hermione.set_cum(breasts="heavy", body="light")
 
-        call her_main("...I did it, [genie_name].", "normal", "happyCl", "worried", "mid",xpos="right",ypos="base", trans=d3)
+        call her_main("... I did it, [genie_name].", "normal", "happyCl", "worried", "mid",xpos="right",ypos="base", trans=d3)
         call her_main("I kept your cum on me all day.", "angry", "happyCl", "worried", "mid",emote="sweat")
 
         menu:
@@ -725,7 +725,7 @@ label hg_ps_cumslut_complete_2:
 
         $ hermione.set_cum(face="heavy", hair="light")
 
-        call her_main("...I did it, [genie_name].", "annoyed", "narrow", "base", "dead",tears="mascara",xpos="right",ypos="base", trans=d3)
+        call her_main("... I did it, [genie_name].", "annoyed", "narrow", "base", "dead",tears="mascara",xpos="right",ypos="base", trans=d3)
         call her_main("I kept your cum on me...{w=0.8} all day.", "annoyed", "narrow", "base", "dead",tears="mascara")
 
         menu:
@@ -774,7 +774,7 @@ label hg_ps_cumslut_complete_3:
         $ hermione.set_cum(breasts="heavy")
 
         ">Hermione returns to your office, her breasts still covered in cum."
-        call her_main("...I did it [genie_name].", "open", "squint", "base", "mid")
+        call her_main("... I did it [genie_name].", "open", "squint", "base", "mid")
         call her_main("I kept your cum on me all day.", "grin", "happyCl", "worried", "mid",emote="sweat")
 
         menu:

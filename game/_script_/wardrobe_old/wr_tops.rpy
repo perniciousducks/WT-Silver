@@ -152,14 +152,14 @@ label equip_top:
                     # m "..."
                     # call her_main("Every Gryffindor student knows that--", "open", "narrow", "worried", "down")
                     # m "(There she goes again, rambling on about her school house...)"
-                    # call her_main("...when Godric Gryffindor, the greatest of the four founders of Hogwarts, choose the colours red and gold for his house he...", "open", "closed", "base", "mid")
+                    # call her_main("... when Godric Gryffindor, the greatest of the four founders of Hogwarts, choose the colours red and gold for his house he...", "open", "closed", "base", "mid")
                     # m "(I don't understand a word she's is saying,... {w=0.9}but she has a lovely accent!)"
-                    # call her_main("...the golden mane of a lion, which is also our houses emblematic animal,...", "smile", "happyCl", "base", "mid")
+                    # call her_main("... the golden mane of a lion, which is also our houses emblematic animal,...", "smile", "happyCl", "base", "mid")
                     # m "(Should I just jerk off again while she's talking?)"
                     # m "(Probably too late now... {w=0.9}Please tell me she's almost done...)"
-                    # call her_main("...as can be read about in \"Hogwarts: A History\", which you [genie_name], of course have read a great many times...", "open", "closed", "base", "mid")
+                    # call her_main("... as can be read about in \"Hogwarts: A History\", which you [genie_name], of course have read a great many times...", "open", "closed", "base", "mid")
                     # m "(...)"
-                    # call her_main("...it is also important for a student of Hogwarts to--", "soft", "base", "base", "R")
+                    # call her_main("... it is also important for a student of Hogwarts to--", "soft", "base", "base", "R")
                     # g4 "Enough, girl!"
                     # m "Leave your tie on."
                     # g4 "(And stop talking!)"

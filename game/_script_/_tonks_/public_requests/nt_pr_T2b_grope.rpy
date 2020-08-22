@@ -328,7 +328,7 @@ label nt_pr_grope_T1_E4: # Tier 1 - Event 4 - Slytherin girl
     call ton_main("And that - maybe - she just needed to get it all out of her system...", "base", "narrow", "base", "mid")
     m "How did she take that?"
     call ton_main("She kept insisting of not having the slightest idea of what I was talking about.", "soft", "narrow", "raised", "R")
-    call ton_main("Even though her eyes were glued to my chest as she spoke....", "base", "base", "base", "down")
+    call ton_main("Even though her eyes were glued to my chest as she spoke...", "base", "base", "base", "down")
     m "*Mhmm*................"
     call ton_main("Eventually, I just grabbed her wrist and pulled it up to meet my chest...", "open", "closed", "shocked", "mid")
     m "Just like that?"

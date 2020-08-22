@@ -124,7 +124,7 @@ label hermione_second_duel:
     if not her_second_win:
         call her_main("I got 5 boosters, how isn't that enough to build a better deck than yours?", "mad", "narrow", "annoyed", "mid")
         m "It's more important where you place those cards..."
-        call her_main("I know what I'm doing....", "open", "closed", "angry", "mid")
+        call her_main("I know what I'm doing...", "open", "closed", "angry", "mid")
         g9 "So, do you want to take a break?"
         call her_main("No, I'm ready...", "soft", "narrow", "worried", "mid_soft")
         m "You sure?"

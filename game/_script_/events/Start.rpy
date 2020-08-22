@@ -147,10 +147,10 @@ label genie_intro_E1:
     m "....................."
     m "Although..."
     m "There is something odd about this place... it's..."
-    m "It's almost brimming with...."
+    m "It's almost brimming with..."
     g4 "{size=+5}MAGIC?!{/size}"
     m "Yes... magic, I can feel it. So powerful and yet somehow..."
-    m "....alien."
+    m "... alien."
     m "Interesting..."
     m "I think I will stick around for a little bit..."
 

@@ -263,7 +263,7 @@ label hermione_intro_E1:
 
         g4 "Ah... YESSSSS.....!"
         her "???"
-        g4 "*breathing heavily* Yes! yes...."
+        g4 "*breathing heavily* Yes! yes..."
 
         call gen_chibi("cum_behind_desk_done")
         with d3
@@ -373,7 +373,7 @@ label ss_he_hermione_E1:
         call sna_main("... doing what?","snape_31")
         m "Hey, don't judge me!"
         m "You don't know what it's like to be cooped up in this tower like a prisoner!"
-        call sna_main("You... y-you....","snape_31")
+        call sna_main("You... y-you...","snape_31")
         call sna_main("......","snape_40")
         call sna_main("Ha.... ha-ha... HA-HA-HA!!!","snape_28")
         m "Wha-..? What did I say?"
@@ -573,7 +573,7 @@ label ss_he_hermione_E2:
     call sna_main("Well... don't mind me then...","snape_31")
     call sna_main("I'm all talk...","snape_31")
     call sna_main("I would never actually harm a student...","snape_31")
-    call sna_main("(...permanently that is.)","snape_08")
+    call sna_main("(... permanently that is.)","snape_08")
     m "Listen, if she bugs you so much, why not just find a less radical way to deal with her?"
     call sna_main("Nah... Flogging has been outlawed for years now...","snape_35")
     m "That's not what I mean..."
@@ -749,7 +749,7 @@ label hermione_intro_E3:
     call her_main("Yes, I'm sure everyone else failed as well...", "soft", "base", "base", "R")
     call her_main("I mean, they must have, right?", "open", "base", "worried", "mid")
     call her_main(".....................", "soft", "base", "base", "R")
-    call her_main("....right?", "open", "base", "worried", "mid")
+    call her_main(".... right?", "open", "base", "worried", "mid")
 
     $ d_flag_01 = False
 
@@ -886,7 +886,7 @@ label hermione_intro_E5:
                     "\"Oh... That offer has expired.\"":
                         call her_main("It...", "open", "base", "base", "mid")
                         call her_main("Expired, sir?", "angry", "base", "base", "mid")
-                        call her_main("B-but....", "open", "base", "worried", "mid")
+                        call her_main("B-but...", "open", "base", "worried", "mid")
                         call her_main("But I require tutoring, and you are the smartest wizard I know...", "annoyed", "base", "worried", "mid")
                         call her_main("Please, sir. I really need your help.", "angry", "base", "worried", "mid")
                         menu:
@@ -934,7 +934,7 @@ label hermione_intro_E5:
     her "The \"MRM\" shall investigate our education system much closer now..."
     her "I think some sort of foul play might be taking place..."
     m "*exagerrated gasp* No way!"
-    her "I have a list of suspects already but I will get back to you on this later...."
+    her "I have a list of suspects already but I will get back to you on this later..."
     m "*Ehm*... alright..."
     call her_main("Oh, my classes are about to start. I'd better go...", "open", "base", "worried", "R")
     call her_main("Good day to you, sir.", "base", "happyCl", "base", "mid")
@@ -1053,7 +1053,7 @@ label hermione_intro_E6:
     call her_main("And... everyone is working so hard...", "annoyed", "base", "worried", "R")
     call her_main("And they look up to me for help but I don't know what to do...", "disgust", "base", "worried", "down")
     m "............................"
-    call her_main("Professor Dumbledore....", "open", "base", "worried", "mid")
+    call her_main("Professor Dumbledore...", "open", "base", "worried", "mid")
 
     $ renpy.music.set_volume(0.0, 1.0)
     pause 1.0
@@ -1145,7 +1145,7 @@ label hermione_intro_E6:
                 call her_main("...............", "annoyed", "narrow", "angry", "R")
                 call her_main("Alright, I will try to do better, sir...", "open", "closed", "angry", "R")
                 call her_main("How about this?", "open", "base", "worried", "mid")
-                call her_main("A-a-ah..................", "scream", "base", "base", "R")
+                call her_main("A-a-ah.........", "scream", "base", "base", "R")
                 call her_main("............................", "open_wide_tongue", "happy", "base", "R")
                 call her_main("......................................", "open_wide_tongue", "narrow", "base", "down")
                 her "...................................................................."
@@ -1304,7 +1304,7 @@ label hermione_intro_E6:
             m "{number=current_payout} points to the Gryffindor house."
         $ gryffindor += current_payout
 
-    call her_main(".....Yay!.......", "grin", "happyCl", "worried", "mid", emote="sweat")
+    call her_main("..... Yay!.......", "grin", "happyCl", "worried", "mid", emote="sweat")
     her "This was quite easy..."
     call her_main("Do you think you could buy some more favours from me in the future, professor?", "grin", "wink", "worried", "mid")
 

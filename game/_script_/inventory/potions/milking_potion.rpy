@@ -462,7 +462,7 @@ label potion_scene_11_3:
         m "What are you talking about, they're the same size as always."
         call her_main("are you sure...", "annoyed", "squint", "angry", "mid")
         call nar(">Hermione jiggles her boobs side to side.")
-        call her_main("They just feel so much ...heavier... than before.", "annoyed", "narrow", "worried", "down")
+        call her_main("They just feel so much... heavier... than before.", "annoyed", "narrow", "worried", "down")
         m "Well seeing as how you emptied them of their milk last time, maybe they made more..."
         call her_main("they better not have...", "shock", "happyCl", "worried", "mid")
         call her_main("just hand me the milker so I can get to class...", "annoyed", "narrow", "annoyed", "mid")
@@ -814,7 +814,7 @@ label potion_scene_11_3:
         call her_main("it should turn off...", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
         call her_main("please... let it turn off...", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
         m "(What did snape say again? untellable extension ham?)"
-        m "Well i should have mentioned something about that cannister being extended invisibly...."
+        m "Well i should have mentioned something about that cannister being extended invisibly..."
         call her_main("Did you put an undetectable extension charm on this cannister?", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
         call her_main("{size=+5}did you?!{/size}", "scream", "squint", "base", "mid",cheeks="blush",tears="messy")
         m "Possibly."

@@ -56,7 +56,7 @@ label an_odd_circumstance:
     "Taken aback by my own automatic response, I thought to myself... "
     m "(What am I doing, this girl seems to think I'm someone called... mister D?)"
     "Surely that can't be me... unless this is some other secret alias of mine... It appears she may know me though, I better press further..."
-    her "I knew you were good, but I didn't think you'd manage to do it as discretely as you did...."
+    her "I knew you were good, but I didn't think you'd manage to do it as discretely as you did..."
     her "How professional..."
     her "And such a looker too... I can't believe we've just met..."
     "The only thing I could gather so far is that I must've helped her with some sort of delicate matter..."

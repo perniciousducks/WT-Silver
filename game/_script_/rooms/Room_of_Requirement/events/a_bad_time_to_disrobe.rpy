@@ -174,7 +174,7 @@ label a_bad_time_to_disrobe_part_1:
     m "Just trying to lighten the mood."
     m "Here's an extra five points for a job well done, miss Granger."
     g9 "Thirty-five points to Gryffindor!"
-    call her_main("Thank you professor....", "grin", "base", "base", "mid", tears="mascara")
+    call her_main("Thank you professor...", "grin", "base", "base", "mid", tears="mascara")
 
     call her_walk ("door", "base")
 

@@ -142,7 +142,7 @@ label cc_pf_blowjob_T3_intro_E1:
 
         $ camera.set_image("away_blush")
 
-        cho "Fine...."
+        cho "Fine..."
 
         $ camera.set_image("cho_hj mid")
 
@@ -581,7 +581,7 @@ label cc_pf_blowjob_1:
         call cho_main("Very funny [cho_genie_name]...", "clench", "narrow", "base", "mid", cheeks="blush", trans=d3)
         m "Your confidence is showing itself more and more every day."
         call cho_main("I... {w=0.5} You deserved it [cho_genie_name]...{w=0.5} for helping me this far...", "upset", "narrow", "base", "downR", cheeks="blush")
-        call cho_main("For teaching me... all this stuff....", "angry", "closed", "base", "mid", cheeks="blush") #Blush
+        call cho_main("For teaching me... all this stuff...", "angry", "closed", "base", "mid", cheeks="blush") #Blush
         m "(I'm a bloody saint I've waited that long...)"
         m "You're very welcome."
     else:
@@ -601,7 +601,7 @@ label cc_pf_blowjob_1:
         m "Miss Granger knows how to properly dispose--"
         call cho_main("She swallows?!?", "clench", "wide", "base", "mid", cheeks="blush") #Shocked #Big text
         call cho_main("I mean...", "disgust", "base", "base", "downR", cheeks="blush")
-        call cho_main("Of course she does....", "angry", "base", "base", "down", cheeks="blush") #small text #Blush
+        call cho_main("Of course she does...", "angry", "base", "base", "down", cheeks="blush") #small text #Blush
     else:
         m "Of course not..."
         call cho_main("I knew--", "smile", "happyCl", "base", "mid", cheeks="blush")
@@ -1518,7 +1518,7 @@ label cc_pf_blowjob_T3_E3:
 
     $ camera.set_image("topless_up_worried")
 
-    cho "...Perhaps?"  #Looks at genie
+    cho "... Perhaps?"  #Looks at genie
     gen "Tell me you want it..."
 
     $ camera.set_image("topless_up_blush2")

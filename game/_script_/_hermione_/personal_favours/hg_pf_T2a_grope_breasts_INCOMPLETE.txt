@@ -54,7 +54,7 @@ label hg_pf_grope_breasts_T5_naked: # No top.
     call slap_her
 
     call her_main("A-ah! Yes! I do, I do! A-ah...", "silly", "narrow", "annoyed", "up", cheeks="blush", tears="soft")
-    call her_main("...does this mean I'm a pervert, [genie_name]?", "angry", "base", "worried", "mid", cheeks="blush", tears="soft")
+    call her_main("... does this mean I'm a pervert, [genie_name]?", "angry", "base", "worried", "mid", cheeks="blush", tears="soft")
     m "What?"
     m "Stop being silly, [hermione_name]."
     m "It is completely natural for a girl to enjoy her tits getting smacked around a little."

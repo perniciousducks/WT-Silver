@@ -354,7 +354,7 @@ label ll_pf_blowjob_T1_under_desk: # Call label
     g4 "Would you please slow down miss Lovegood!"
     $ lunCG('sucking', 'wink', 'base', 'up', pos=3)
     ">Luna takes your cock out of her mouth."
-    g4 "Ah...."
+    g4 "Ah..."
     $ lunCG('base', 'seductive', 'sad', 'up', pos=1)
     lun "Was I doing a bad job, [lun_genie_name]?"
     m "You were just going a little--"
@@ -1434,7 +1434,7 @@ label ll_pf_blowjob_T1_summon:
     lun "*glck* *slrp* *glck*"
     call her_main("Or would you make them stay...", "grin", "squint", "base", "mid")
     $ lunCG(pos=13)
-    g4 "Mmmm...."
+    g4 "Mmmm..."
     $ lunCG(pos=15)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=16)
@@ -1446,7 +1446,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG('', '', '', 'up')
     lun "*glp* *glp* *glp*"
     $ lunCG(pupil='ahegao')
-    g4 "Mmmm...."
+    g4 "Mmmm..."
     $ lunCG('', 'seductive', '', 'ahegao')
     lun "*glp* *glp* *glp*"
     $ lunCG('sucking', 'angry', 'angry', 'ahegao')

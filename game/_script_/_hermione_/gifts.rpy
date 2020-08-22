@@ -199,7 +199,7 @@ label give_her_gift(gift_item):
             call her_mood(3)
         elif her_whoring >= 12 and her_whoring <= 17: # Lv 5-6.
             call her_main("Adult magazines?", "open", "base", "base", "mid")
-            call her_main("[genie_name], this is such an inappropriate present for a girl my age...", "angry", "happyCl", "worried", "mid",emote="sweat")
+            call her_main("[genie_name], this is such an inappropriate present for a girl like me...", "angry", "happyCl", "worried", "mid",emote="sweat")
             call give_gift(">You give an assortment of adult magazines to Hermione...",gift_item)
             call her_main("I shall throw these away myself...", "annoyed", "narrow", "annoyed", "mid")
             call her_mood(-8)
@@ -226,7 +226,7 @@ label give_her_gift(gift_item):
             call her_mood(8)
         elif her_whoring >= 12 and her_whoring <= 17: # Lv 5-6.
             call her_main("That's hardcore porn, [genie_name].", "open", "base", "base", "mid")
-            call her_main("Which is a completely inappropriate gift for a girl my age!", "angry", "happyCl", "worried", "mid",emote="sweat")
+            call her_main("Which is a completely inappropriate gift for a girl like me!", "angry", "happyCl", "worried", "mid",emote="sweat")
             call her_main("..............", "angry", "narrow", "base", "down")
             call her_main("But I will take them...", "angry", "base", "base", "mid")
             call give_gift(">You give an assortment of porn magazines to Hermione...",gift_item)
@@ -319,7 +319,7 @@ label give_her_gift(gift_item):
             call her_main("[genie_name], I wouldn't even know what to do with them...", "scream", "closed", "angry", "mid")
             call her_mood(6)
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
-            call her_main("...Condoms?", "normal", "squint", "angry", "mid")
+            call her_main("... Condoms?", "normal", "squint", "angry", "mid")
             call her_main("*Ehm*... Is this a part of some new Hogwarts sex ed program or something?", "open", "closed", "angry", "mid")
             call her_main("No, [genie_name]... It feels wrong to accept a thing like this from you...", "open", "base", "base", "R",cheeks="blush")
             call her_mood(0)

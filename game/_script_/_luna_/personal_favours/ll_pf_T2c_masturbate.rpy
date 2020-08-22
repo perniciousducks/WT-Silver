@@ -578,7 +578,7 @@ label ll_pf_masturbate_T1_jerk_off: # Call label
     $ ccg1 = "18"
     lun "It smells...{w=0.3} so..."
     $ ccg1 = "19"
-    lun "Goood...."
+    lun "Goood..."
     $ ccg1 = "20"
     lun "Can I...{w=0.3} Taste it?"
     m "I don't see why not."

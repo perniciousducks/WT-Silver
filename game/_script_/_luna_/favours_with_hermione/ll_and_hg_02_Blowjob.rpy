@@ -302,7 +302,7 @@ label luna_favour_6:
         call her_main("Thank you [genie_name]!", "base", "base", "base", "mid")
         call lun_main("...","normal","angry","angry","R")
         call her_main("Luna! Don't be rude.", "angry", "base", "angry", "mid")
-        call lun_main("...Thanks [lun_genie_name].","normal","seductive","sad","R")
+        call lun_main("... Thanks [lun_genie_name].","normal","seductive","sad","R")
         call her_main("...", "disgust", "narrow", "base", "down")
         call her_main("Well, we better be off sir, we still have a lot of studying to do!", "grin", "base", "base", "R")
         call her_main("(Not to mention more practice with the dildo...)", "soft", "happy", "base", "R")
@@ -605,7 +605,7 @@ label luna_favour_6:
         call her_main("Thank you [genie_name]!", "base", "base", "base", "mid")
         call lun_main("...","normal","angry","angry","R")
         call her_main("...", "disgust", "narrow", "base", "down")
-        call lun_main("...Thank you sir.","normal","seductive","sad","R")
+        call lun_main("... Thank you sir.","normal","seductive","sad","R")
         call her_main("Well, we better be off sir, we still have a lot of studying to do!", "grin", "base", "base", "R")
         call her_main("(Not to mention more practice with the dildo...)", "soft", "happy", "base", "R")
         call her_main("Come on Luna!", "open", "base", "base", "R")
@@ -833,7 +833,7 @@ label luna_favour_6:
         pause
         lun "............."
         $ ccg2 = 64
-        lun "ugh....."
+        lun "ugh..."
         her "I don't think she can even speak anymore..."
         lun "*grbbble*"
         her "you must have fucked her throat too hard [genie_name]..."
@@ -878,7 +878,7 @@ label luna_favour_6:
         $ gold -= 150
         m "And here's seventy-five gold each."
         call her_main("Thank you [genie_name]! Any time you want to fuck Luna's slutty little throat again just let us know!", "base", "base", "base", "mid")
-        call lun_main("...Thank you sir.","base","seductive","sad","down", cheeks="blush",tears="mascara")
+        call lun_main("... Thank you sir.","base","seductive","sad","down", cheeks="blush",tears="mascara")
         call her_main("Well, we better be off sir, we still have a lot of studying to do!", "grin", "base", "base", "R")
         call her_main("(Not to mention more practice with the {b}big{/b} dildo...)", "soft", "happy", "base", "R")
         call her_main("Come on Luna!", "open", "base", "base", "R")

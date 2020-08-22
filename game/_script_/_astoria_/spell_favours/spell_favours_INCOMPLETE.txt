@@ -144,7 +144,7 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("You should be!","base","base","base","mid")
     call ast_main("It's not easy cumming from just your tits...","base","base","base","mid")
     call ast_main("Only the biggest sluts in the world can do it!","base","base","base","mid")
-    call sus_main("...The biggest...","base","base","base","base")
+    call sus_main("... The biggest...","base","base","base","base")
     call ast_main("That's right...","base","base","base","mid")
     call ast_main("Now go on...","base","base","base","mid")
     m "Argh..."
@@ -333,7 +333,7 @@ label hornify_spell_2: #second level hornify spell
     call sus_main("!!!","base","base","base","base")
     call ast_main("Told you!","base","base","base","mid")
     ">You close your eyes as you furiously jerk your cock off onto Susan's blank face..."
-    call sus_main("...this...","base","base","base","base")
+    call sus_main("... this...","base","base","base","base")
     ">With that, Susan's mind seems to have taken too much, saving the poor girl from the excess pleasure by fainting..."
     call sus_main("...","base","base","base","base")
     ">She slumps to the floor, her hips still jerking intermittently..."

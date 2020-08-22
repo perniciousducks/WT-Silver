@@ -29,7 +29,7 @@ label hermione_wardrobe_check(section, arg=None):
             $ temp_score += 1
         if temp_count[2] < 2 and her_whoring < her_requirements["unequip_underwear"]:
             if temp_score > 0:
-                call her_main("...not to mention missing underwear!",face="annoyed")
+                call her_main("... not to mention missing underwear!",face="annoyed")
             else:
                 call her_main("It's missing underwear!",face="annoyed")
             $ temp_score += 1

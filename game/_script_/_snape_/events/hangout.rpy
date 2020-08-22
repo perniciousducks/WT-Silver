@@ -190,7 +190,7 @@ label ss_he_hermione_strip:
             pass
 
     call sna_main("Splendid!","snape_45")
-    call sna_main("I can hardly wait I tell you!","snape_37")
+    call sna_main("I can hardly wait, I tell you!","snape_37")
     call sna_main("Do you think she will let me touch them...?","snape_47")
 
     ">You spend the rest of the evening in Snape's company talking about Hermione's naked breasts."
@@ -364,7 +364,7 @@ label ss_he_story_intro_E7:
     m "Yeah, sort of..."
     call sna_main("Then how come you do the bidding of that Jasmine woman?","snape_05")
     m "Oh... Well..."
-    m "...she is a princess."
+    m "... she is a princess."
     call sna_main("So?","snape_05")
     call sna_main("Is she your princess? You are not even human.","snape_05")
     call sna_main("Did you swear your loyalty to her?","snape_05")
@@ -421,7 +421,7 @@ label ss_he_story_intro_E8:
 
 
 label ss_he_story_intro_E9: # Replace this event.
-    call sna_main("...so, after that I return back to Russia, right?","snape_24", ypos="head")
+    call sna_main("... so, after that I return back to Russia, right?","snape_24", ypos="head")
     g4 "Back to Russia?"
     call sna_main("But wait, it gets worse.","snape_01")
     call sna_main("Apparently I am fluent in Russian now.","snape_05")
@@ -580,7 +580,7 @@ label ss_he_story_intro_E13:
 
 
 label ss_he_story_E14:
-    call sna_main("...so she says: \"Sir, could you choke me a little, please!\"","snape_02", ypos="head")
+    call sna_main("... so she says: \"Sir, could you choke me a little, please!\"","snape_02", ypos="head")
     call sna_main("And I am happy to oblige of course!","snape_13")
     call sna_main("So, I choke that little bitch while I'm fucking her, right?","snape_19")
     call sna_main("And she rolls her eyes up to the point where I can't even see her pupils anymore!","snape_19")

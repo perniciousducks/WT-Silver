@@ -653,7 +653,7 @@ label hermione_helping_selling_cards:
         call her_main("Oh, sorry... Well, I was trying out a new sales tactic...", "open", "happy", "base", "R", cheeks="blush")
         m "Something the twins came up with I assume?"
         call her_main("No, I read about it in one of their books actually.", "grin", "happy", "base", "mid_soft")
-        call her_main("Much like how you should always put the most lucrative cheap items at the counter to make the customer....", "open", "base", "base", "mid")
+        call her_main("Much like how you should always put the most lucrative cheap items at the counter to make the customer...", "open", "base", "base", "mid")
         g4 "Get on with it."
         call her_main("Fine...", "annoyed", "narrow", "base", "R_soft", cheeks="blush")
         call her_main("I read that by putting the customer in a state of peace and happiness it would make them more susceptible to making hasty decisions.", "smile", "happyCl", "base", "mid", cheeks="blush")

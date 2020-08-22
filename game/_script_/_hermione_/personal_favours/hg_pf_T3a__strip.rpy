@@ -65,7 +65,7 @@ label hg_pf_strip_fail:
     m "[hermione_name], I need you to dance for me a little."
     call her_main("You want me to...", "soft", "wide", "base", "stare")
 
-    call her_main("...dance for you, [genie_name]?", "open", "wide", "base", "stare")
+    call her_main("... dance for you, [genie_name]?", "open", "wide", "base", "stare")
 
     $ hg_pf_strip.counter -= 1
 
@@ -75,7 +75,7 @@ label hg_pf_strip_T2_fail_intro: # Hermione starts dancing, but it will fail any
     call bld
     m "[hermione_name], I need you to dance for me a little."
     call her_main("You want me to...", "open", "base", "worried", "mid")
-    call her_main("...dance for you, [genie_name]?", "open", "wink", "base", "mid")
+    call her_main("... dance for you, [genie_name]?", "open", "wink", "base", "mid")
     m "Yes... You think you could manage that?"
     call her_main("*Ehm*... I suppose so...", "soft", "base", "base", "R")
     her "Am I getting paid for this?"
@@ -156,7 +156,7 @@ label hg_pf_strip_T3_intro_E1: # Complete
     call bld
     m "[hermione_name], I need you to dance for me a little."
     call her_main("You want me to...", "open", "base", "worried", "mid")
-    call her_main("...dance for you, [genie_name]?", "open", "wink", "base", "mid")
+    call her_main("... dance for you, [genie_name]?", "open", "wink", "base", "mid")
     m "Yes... You think you could manage that?"
     call her_main("*Ehm*... I suppose so...", "soft", "base", "base", "R")
     her "Am I getting paid for this?"
@@ -278,7 +278,7 @@ label hg_pf_strip_T3_intro_E1: # Complete
             call her_main("{size=-5}(This is so demeaning...){/size}", "angry", "happyCl", "worried", "mid", cheeks="blush")
             call her_main("{size=-5}(But I am doing this for my house...){/size}", "angry", "happyCl", "worried", "mid", cheeks="blush")
 
-            m "Not bad...."
+            m "Not bad..."
             call her_main("{size=-5}(.........................................){/size}", "angry", "happyCl", "worried", "mid", cheeks="blush")
 
             call nar(">Hermione is topless now...","start")
@@ -663,7 +663,7 @@ label hg_pf_strip_T3_E2:
 
         menu:
             "-Yes! Hermione needs an audience!-":
-                jump hg_pf_strip_T3_Snape
+                jump hg_pf_strip_T3_snape
 
             "-Nah. That's not a good idea...-":
                 pass
@@ -824,7 +824,7 @@ label hg_pf_strip_T3_watch:
             $ her_mood += 4
             call her_main("............", "annoyed", "base", "angry", "mid")
             m "You just need to practise more..."
-            call her_main("Whatever..........", "annoyed", "narrow", "angry", "R")
+            call her_main("Whatever.........", "annoyed", "narrow", "angry", "R")
         "{size=-3}\".................................................\"{/size}":
             call her_main(".......................", "silly", "happyCl", "worried", "mid", emote="sweat")
             call her_chibi("sit_naked_shocked","on_desk","on_desk")
@@ -856,7 +856,7 @@ label hg_pf_strip_T3_masturbate:
     m "Yes... Ah, yes, this is good..."
     call her_main("[genie_name]!!!", "scream", "happyCl", "worried", "mid")
     call her_main("I must insist that you put away your...", "angry", "happyCl", "worried", "mid")
-    call her_main("...thing.")
+    call her_main("... thing.")
 
     menu:
         m "..."
@@ -942,55 +942,50 @@ label hg_pf_strip_T4_E2:
 label hg_pf_strip_T4:
     menu:
         m "(...)"
-        "-Invite Snape to watch!-" if ss_he.hermione_strip:
-            jump hg_pf_strip_T4_Snape
+        "-Invite Snape to watch-" if ss_he.hermione_strip:
+            jump hg_pf_strip_T4_snape
 
         "-Ask her to lock the door-":
-            $ lock_door = True
+            if her_tier <= 5:
+                call her_main("Of course...", "base", "base", "base", "mid")
+            else:
+                call her_main("(How boring...)", "annoyed", "narrow", "annoyed", "up")
 
-        "-Tell her to leave the door open...-":
-            $ lock_door = False
+            call hide_characters
+            hide screen bld1
+            with d3
+            pause.5
 
-    if lock_door: # Locks door.
-        if her_tier <= 5:
-            call her_main("Of course...", "base", "base", "base", "mid")
-        else:
-            call her_main("(How boring...)", "annoyed", "narrow", "annoyed", "up")
+            call her_walk("door", "base")
 
-        call hide_characters
-        hide screen bld1
-        with d3
-        pause.5
+            pause.5
+            call play_sound("lock")
 
-        call her_walk("door", "base")
+            # Walks back.
+            call her_chibi("stand","door","base")
+            pause.1
 
-        pause.5
-        call play_sound("lock")
+            call her_walk("mid", "base")
+            pause.2
 
-        # Walks back.
-        call her_chibi("stand","door","base")
-        pause.1
+            call her_main("All done!", "smile", "closed", "base", "mid", trans=d3)
 
-        call her_walk("mid", "base")
-        pause.2
+        "-Tell her to leave the door open-":
+            if her_tier <= 4:
+                call her_main("But, what if somebody walks in again!", "shock", "wide", "base", "stare")
+                m "Nonsense. No such thing will happen..."
+                call her_main("It happened once already!", "angry", "base", "angry", "mid")
+                m "Stop being such a fuzzy and get over here..."
+                call her_main("..................", "annoyed", "narrow", "angry", "R")
 
-        call her_main("All done!", "smile", "closed", "base", "mid", trans=d3)
-    else: # Leave door open.
-        if her_tier <= 4:
-            call her_main("But, what if somebody walks in again!", "shock", "wide", "base", "stare")
-            m "Nonsense. No such thing will happen..."
-            call her_main("It happened once already!", "angry", "base", "angry", "mid")
-            m "Stop being such a fuzzy and get over here..."
-            call her_main("..................", "annoyed", "narrow", "angry", "R")
+                stop music fadeout 1.0
+                call her_walk("desk", "base", reduce=0.8)
 
-            stop music fadeout 1.0
-            call her_walk("desk", "base", reduce=0.8)
+                $ her_mood += 4
+            else:
+                call her_main("Yes, [genie_name].", "base", "narrow", "base", "mid_soft")
 
-            $ her_mood += 4
-        else:
-            call her_main("Yes, [genie_name].", "base", "narrow", "base", "mid_soft")
-
-            stop music fadeout 1.0
+                stop music fadeout 1.0
 
     # Climb desk
     call blkfade
@@ -1220,7 +1215,7 @@ label hg_pf_strip_T4_masturbate:
 
     call her_main("But...", "angry", "happyCl", "worried", "mid", xpos="mid", ypos="base")
     call her_main(".............................")
-    call her_main("Well, alright, but only if you will promise me not to....finish, [genie_name].", "soft", "base", "angry", "mid")
+    call her_main("Well, alright, but only if you will promise me not to... finish, [genie_name].", "soft", "base", "angry", "mid")
 
     menu:
         m "..."
@@ -1328,7 +1323,7 @@ label hg_pf_strip_T4_masturbate:
         $ hermione.wear("all")
         stop music fadeout 5.0
         ">.................{w}.................{w}.................{w}................."
-        call her_main("...Can I just get paid now, [genie_name]... please?", "annoyed", "narrow", "angry", "R")
+        call her_main("... Can I just get paid now, [genie_name]... please?", "annoyed", "narrow", "angry", "R")
 
         $ her_mood += 20
 

@@ -418,7 +418,7 @@ label hg_pf_admire_breasts_T3_masturbate:
             call ctc
 
             her "My body..."
-            her "It's been defiled...."
+            her "It's been defiled..."
             m "Don't worry, I will give you your house points, [hermione_name]."
             m "You did good."
 
@@ -542,7 +542,7 @@ label hg_pf_admire_breasts_T4_touch: # Call label
         m "I know, I know... But it's hard to resist..."
         call her_main(".................", "angry", "base", "angry", "mid", cheeks="blush")
 
-    call her_main("....................ah...{heart}", "base", "narrow", "base", "up", cheeks="blush")
+    call her_main(".................... ah...{heart}", "base", "narrow", "base", "up", cheeks="blush")
     call her_main("[genie_name], you need to stop now...", "base", "narrow", "base", "up", cheeks="blush")
     m "Just a bit longer..."
 
@@ -629,7 +629,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
         call her_main("You just couldn't help yourself, could you [genie_name]?", "base", "base", "base", "R", cheeks="blush")
         call her_main("..................", "base", "narrow", "base", "up", cheeks="blush")
         m "Yes... Yes, just like that..."
-        m "...with your tits all exposed..."
+        m "... with your tits all exposed..."
         call her_main("..............", "base", "narrow", "base", "up", cheeks="blush")
         call her_main("well, so be it...", "open", "base", "base", "R", cheeks="blush")
         call her_main("But you must promise me not to...", "soft", "base", "base", "R", cheeks="blush")

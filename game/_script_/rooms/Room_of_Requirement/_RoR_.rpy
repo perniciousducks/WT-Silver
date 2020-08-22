@@ -165,7 +165,7 @@ label enter_room_of_req:
         m "..."
         $ renpy.music.play("music/RoomOfReqIntro.mp3")
         call gen_chibi("stand","door","base")
-        g4 "It's just a room filled with a bunch of crap...."
+        g4 "It's just a room filled with a bunch of crap..."
         call gen_chibi("stand","door","base",flip=False)
         m "And a mirror?"
 

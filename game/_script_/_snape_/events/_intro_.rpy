@@ -67,7 +67,7 @@ label snape_intro_E1:
     who2 "Most of them belong to your precious Gryffindor house of course..."
     m "......?"
     call sna_main("","snape_03")
-    who2 "The wretched Weasley family, that noisy Granger girl and of course the hero of all the juvenile delinquents around the globe...."
+    who2 "The wretched Weasley family, that noisy Granger girl and of course the hero of all the juvenile delinquents around the globe..."
     call sna_main("","snape_08")
     who2 "{size=+3}The Potter boy!{/size}"
     call sna_main("","snape_01")
@@ -451,7 +451,7 @@ label snape_intro_E4:
     call bld
     g4 "*Panting*"
     g4 "Ready to talk now?!"
-    call sna_main("(...i-impossible...)","snape_36", ypos="head")
+    call sna_main("(... i-impossible...)","snape_36", ypos="head")
 
     call play_music("dark_fog")
 
@@ -470,7 +470,7 @@ label snape_intro_E4:
     m "And I sure as heck don't work for \"I don't know who\"!"
     call sna_main(".............................","snape_01")
     m "I've been *ehm*..."
-    m "...Conducting an experiment back in my world, during which something went wrong and I ended up here."
+    m "... Conducting an experiment back in my world, during which something went wrong and I ended up here."
     m "That's all..."
     call sna_main("..........................","snape_01")
     call sna_main("What became of the real Albus Dumbledore then?","snape_01")
@@ -531,7 +531,7 @@ label snape_intro_E4:
                 m "..."
                 "\"Yes, I missed you so much!\"":
                     call sna_main(".......................","snape_01")
-                    call sna_main("Yeah, right....","snape_01")
+                    call sna_main("Yeah, right...","snape_01")
                 "\"I don't have a brother, Severus.\"":
                      call sna_main("........................","snape_01")
                      call sna_main("You may not have one, but the real Albus Dumbledore does.","snape_01")
@@ -587,7 +587,7 @@ label snape_intro_E4:
     call sna_main("........","snape_31")
     call sna_main("If you are not a human, then...","snape_01")
     call sna_main("What are you?","snape_35")
-    m "...I'm a genie."
+    m "... I'm a genie."
     call sna_main("A genie?","snape_01")
     m "Yes, I possess phenomenal cosmic powers and all that..."
     call sna_main("Seriously?","snape_01")
@@ -637,7 +637,7 @@ label snape_intro_E5:
 
     m "By doing what exactly?"
     call sna_main("Just act like Albus always does: never leave this tower and try to avoid any human contact...","snape_05")
-    m "That...."
+    m "That..."
     m "Sounds..."
     g4 "Incredibly boring!"
     g4 "What am I supposed to do here?"

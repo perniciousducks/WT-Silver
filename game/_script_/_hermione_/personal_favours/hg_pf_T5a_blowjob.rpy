@@ -1062,7 +1062,7 @@ label hg_hidden_blowjob_tonks:
             call her_chibi_scene("bj_pause", trans=d5)
 
         "-Lie-":
-            m "...Just polishing...{w=0.5} the woodwork."
+            m "... Just polishing...{w=0.5} the woodwork."
             call ton_main("Like I'm going to believe that...", "upset", "base", "base", "downR")
             call ton_main("Are you masturbating, [ton_genie_name]?","horny","base","raised","mid")
 
@@ -1126,7 +1126,7 @@ label hg_hidden_blowjob_tonks:
     call ton_main("That's so hard to believe!","open","base","raised","L")
     call ton_main("Or perhaps, you are just fucking with me, [ton_genie_name]...", "soft", "base", "base", "mid")
     m "I'm not fucking with you..."
-    g9 "...I'm fucking her mouth."
+    g9 "... I'm fucking her mouth."
     call ton_main("That's too good to be true!", "horny", "narrow", "base", "stare")
     call her_main("{size=-4}(*Slurp*... *Slurp*... *Gulp*...){/size}", "open_wide_tongue", "narrow", "annoyed", "up")
 
@@ -1175,7 +1175,7 @@ label hg_hidden_blowjob_tonks:
         call ton_main("You nasty little cock sucker.","horny","base","raised","mid")
 
     call her_main("(.......)", "soft", "narrow", "annoyed", "up")
-    call her_main("I suppose so...................", "disgust", "narrow", "worried", "down")
+    call her_main("I suppose so.........", "disgust", "narrow", "worried", "down")
     call ton_main("What a sight to see...","base","base","base","mid")
 
     $ use_hermione_head = True

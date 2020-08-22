@@ -198,7 +198,7 @@ label astoria_intro_E1:
     call ton_main("This girl I've told you about, Susan Bones?", "soft", "base", "shocked", "mid")
     call ton_main("The one with--", "base", "base", "base", "R")
     g9 "With the giant tits!"
-    call ton_main("...The one with the unfortunate luck of being a constant target of bullying and harassment!", "mad", "closed", "base", "mid") # Annoyed
+    call ton_main("... The one with the unfortunate luck of being a constant target of bullying and harassment!", "mad", "closed", "base", "mid") # Annoyed
     m "Yes, that too..."
     call ton_main("That poor girl! She cried the entire time when she told me about what happened...", "open", "base", "worried", "down")
     call ton_main("I can't believe she got hit by a curse!", "mad", "base", "angry", "down") # Angry
@@ -316,7 +316,7 @@ label astoria_intro_E2_hermione:
 
     # Genie already knows about Azkaban.
     #m "And what's Azkaban?"
-    #call her_main("...Is this another test sir?", "open", "wink", "base", "mid")
+    #call her_main("... Is this another test sir?", "open", "wink", "base", "mid")
     #m "Sure..."
     #call her_main("Of course! I know everything about it!", "smile", "happy", "base", "mid_soft")
     #call her_main("It's the prison of the damned... An impenetrable rocky outcrop surrounded by the harsh North Sea...", "open", "happyCl", "base", "mid")
@@ -638,7 +638,7 @@ label astoria_intro_E3:
     call sna_main("You should count yourself lucky the ministry hasn't been notified...","snape_31")
     call sna_main("Miss Tonks has been kind enough to wipe the co-...","snape_01")
     call sna_main("Susan's memory of the event.","snape_03")
-    call sna_main("You owe her big time....","snape_25")
+    call sna_main("You owe her big time...","snape_25")
     call ast_main("Of course...","annoyed","narrow","worried","L")
     call sna_main("I'll leave her punishment to the two of you...","snape_04")
     call sna_main("I have someone-...","snape_09")

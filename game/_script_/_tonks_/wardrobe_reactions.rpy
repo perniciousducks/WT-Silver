@@ -29,7 +29,7 @@ label tonks_wardrobe_check(section, arg=None):
             $ temp_score += 1
         if temp_count[2] < 2 and ton_friendship < ton_requirements["unequip_underwear"]:
             if temp_score > 0:
-                call ton_main("...especially something without underwear",face="annoyed",eyebrows="angry",mouth="horny")
+                call ton_main("... especially something without underwear",face="annoyed",eyebrows="angry",mouth="horny")
             else:
                 call ton_main("No panties? I like that, but no thanks, I'm at work.",face="annoyed",eyebrows="angry",mouth="base")
             $ temp_score += 1

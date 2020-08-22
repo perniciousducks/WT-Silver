@@ -87,7 +87,7 @@ label store_chit_chat:
         fre "I find that hard to believe... You're telling me that {b}the{/b} Dumbledore doesn't know anything about Quidditch?"
         ger "Explains why you'd always just stare out in the distance and just clap politely..."
         m "I was always more fond of Basketball myself."
-        fre "Sounds like the muggle sport our dad always goes on about...."
+        fre "Sounds like the muggle sport our dad always goes on about..."
         fre "But in any case, since both George and I are on the Gryffindor team."
         m "You are?"
         ger "Yes... don't you keep any kind of records on these things?"

@@ -50,7 +50,7 @@ label chit_chat:
 
         elif one_of_ten == 9:
             call her_main("Very few people know this...", "open", "base", "worried", "R")
-            call her_main("...But I really like chocolate.", "base", "base", "base", "mid")
+            call her_main("... But I really like chocolate.", "base", "base", "base", "mid")
             call her_main("", "base", "base", "base", "mid")
 
         elif one_of_ten == 10:
@@ -96,7 +96,7 @@ label chit_chat:
         elif one_of_ten == 8:
             call her_main("As one of the top students in this school I have a reputation to keep...", "open", "base", "worried", "R")
             her "People look up to me..."
-            call her_main("...So, your discretion is very appreciated, sir.", "open", "base", "base", "mid")
+            call her_main("... So, your discretion is very appreciated, sir.", "open", "base", "base", "mid")
             call her_main("", "annoyed", "base", "worried", "R")
 
         elif one_of_ten == 9:

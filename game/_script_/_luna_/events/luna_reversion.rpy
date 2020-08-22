@@ -766,7 +766,7 @@ label luna_revert_2:
     call lun_main("just to relieve some... tension. {w=0.4}Don't worry he isn't going to pay me in points... *tssk*","base","angry","base","L")
     call her_main("what?", "angry", "base", "angry", "mid",emote="angry")
     call her_main("[genie_name]! What are you doing!", "scream", "closed", "angry", "mid")
-    m "Ah...."
+    m "Ah..."
     call lun_main("don't blame him. It's not his fault you fail to satisfy...","base","mad","angry","mid")
     call her_main("You... you...", "annoyed", "narrow", "annoyed", "mid")
     call her_main("{size=+10}You Stupid whore!{/size}", "angry", "base", "angry", "mid")

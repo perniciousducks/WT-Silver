@@ -205,7 +205,7 @@ label eating_for_pleasure:
 
     g4 "They sure are taking their goddamn time!"
     m "..."
-    m "Maybe I could jerk-off a little..."
+    m "Maybe I could jerk off a little..."
     call gen_chibi("jerk_off_behind_desk")
     with d5
     pause 1.2
@@ -216,7 +216,7 @@ label eating_for_pleasure:
     g4 "Ah fuck!"
     m "You're still here..."
     g4 "How am I supposed to jerk off in peace... It will never be the same with a pervert hat ogling me!"
-    hat "{size=-4}.....It never seemed to bother you before......{/size}"
+    hat "{size=-4}..... It never seemed to bother you before......{/size}"
     if not hat_known:
         g4 "Because I wasn't aware of your existence!"
     pause 1.0
@@ -239,7 +239,7 @@ label eating_for_pleasure:
     call her_main("What do you mean... Did we get the wrong toppings?", "annoyed", "base", "worried", "mid")
     g4 "Toppings?!"
     g4 "There's only two slices! And they're on your body!"
-    call her_main("A-Actually,{w=0.5} sir,{w=0.5} there are three slices....", "open", "base", "base", "R", cheeks="blush")
+    call her_main("A-Actually,{w=0.5} sir,{w=0.5} there are three slices...", "open", "base", "base", "R", cheeks="blush")
     g4 "Don't lie to me, I can clearly see just tw-..."
     pause 0.5
     $ hermione.strip("bottom")

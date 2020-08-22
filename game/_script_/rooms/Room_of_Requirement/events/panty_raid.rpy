@@ -476,7 +476,7 @@ label panty_raid:
         call her_main("She caught me red handed!", "disgust", "narrow", "worried", "down", cheeks="blush")
         call her_main("", "normal", "narrow", "worried", "mid_soft")
         g9 "Or silky handed!{w=1.0}{nw}"
-        m "Or silky handed!{fast} ...panty handed?"
+        m "Or silky handed!{fast}... panty handed?"
         call her_main("", "normal", "narrow", "worried", "down")
         m "..."
         m "Sounded better in my head...{w=0.5} give me a minute and I'll come up with something that works..."
@@ -550,7 +550,7 @@ label panty_raid:
         call her_main("{size=+4}HOLD ON!{/size}", "scream", "wide", "base", "stare")
         call her_main("", mouth="shock")
         m "What?"
-        call her_main("I-I-I-I-I.....", "angry", "wide", "base", "mid", cheeks="blush")
+        call her_main("I-I-I-I-I...", "angry", "wide", "base", "mid", cheeks="blush")
         m "Just spit it out!"
         call her_main("I was so nervous with her that I just said yes! She'll be expecting me soon!", "mad", "narrow", "base", "down", cheeks="blush")
         g9 "You better get to it then, [hermione_name]!"
@@ -745,7 +745,7 @@ label panty_raid:
         call her_walk(action="leave")
 
         pause 1.0
-        m "...Hmmm...{w=1.0} I don't think I ever gave her points."
+        m "... Hmmm...{w=1.0} I don't think I ever gave her points."
         pause 0.5
 
         show screen blkfade with d9

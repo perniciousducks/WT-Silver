@@ -196,7 +196,7 @@ label hg_pr_flirt_teacher_T1_E2: # Snape
     call her_main("Nothing happened, [genie_name]. He just laughed at me...", "annoyed", "squint", "angry", "mid")
     call her_main("I may not have much feminine charm, but I tried to be nice...", "annoyed", "base", "worried", "R")
     call her_main("And he just started laughing in my face!", "scream", "closed", "angry", "mid")
-    call her_main("...it is really scary to see professor Snape laugh...", "angry", "happyCl", "worried", "mid", emote="sweat")
+    call her_main("... it is really scary to see professor Snape laugh...", "angry", "happyCl", "worried", "mid", emote="sweat")
     her "........"
     her "I am awful at flirting, I am sorry [genie_name]..."
     call her_main("But I know that professor Snape is \"dirty\"!", "angry", "base", "angry", "mid")
@@ -215,7 +215,7 @@ label hg_pr_flirt_teacher_T1_E2: # Snape
         "\"Here are your points, [hermione_name].\"":
             jump end_hg_pr_flirt_teacher
 
-        "\"...I'm afraid you get no points this time.\"":
+        "\"... I'm afraid you get no points this time.\"":
             call her_main("But I did my best...", "annoyed", "narrow", "angry", "R")
             call her_main("And I feel so humiliated now...", "angry", "happyCl", "worried", "mid", emote="sweat")
             call her_main("But I understand and won't argue with your decision...", "normal", "happyCl", "worried", "mid")
@@ -322,7 +322,7 @@ label hg_pr_flirt_teacher_T2_E2:
             her "I..."
             call her_main("Well, alright, but don't get any ideas...", "angry", "base", "angry", "mid")
             pause.5
-            call her_main("Here....", "disgust", "narrow", "base", "down",cheeks="blush")
+            call her_main("Here...", "disgust", "narrow", "base", "down",cheeks="blush")
 
             $ hermione.strip("bottom", "stockings")
             pause.5
@@ -371,7 +371,7 @@ label hg_pr_flirt_teacher_T2_E2:
 
                 call her_main("Well, alright, but don't get any ideas...", "angry", "base", "angry", "mid")
                 pause.5
-                call her_main("Here....", "disgust", "narrow", "base", "down",cheeks="blush")
+                call her_main("Here...", "disgust", "narrow", "base", "down",cheeks="blush")
 
                 $ hermione.strip("bottom", "stockings")
                 pause.5
@@ -459,7 +459,7 @@ label hg_pr_flirt_teacher_T3_E1: # Filch
     call her_main(".............................", "normal", "happyCl", "worried", "mid")
     her "....................................."
     m "[hermione_name]?"
-    call her_main("[genie_name], I.....", "angry", "happyCl", "worried", "mid", emote="sweat")
+    call her_main("[genie_name], I...", "angry", "happyCl", "worried", "mid", emote="sweat")
     m "What is it? What happened?"
     call her_main("Well...", "annoyed", "base", "worried", "R")
     her "It's mister Filch, [genie_name]..."

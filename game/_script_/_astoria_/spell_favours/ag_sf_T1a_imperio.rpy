@@ -694,7 +694,7 @@ label ag_se_imperio_sb_E3:
     call ast_main("And you're not allowed to come out until I say so.","open","closed","base","mid")
     sus "yes..."
     call ast_main("And if you actually are just a slut then let that slut out! Show us you really love it!","clench","narrow","base","down")
-    sus "...Love it?"
+    sus "... Love it?"
     sus "I love it..."
     call ast_main("Good!","clench","base","angry","L")
     m "Isn't that a little much?"

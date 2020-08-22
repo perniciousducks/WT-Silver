@@ -349,7 +349,7 @@ label hg_pf_handjob_1:
             call her_main(".......", "annoyed", "base", "worried", "R")
             m "Don't you want to be done with this as soon as possible?"
             call her_main("............", "normal", "happyCl", "worried", "mid")
-            call her_main("A-ha.....", "open_wide_tongue", "base", "base", "mid")
+            call her_main("A-ha...", "open_wide_tongue", "base", "base", "mid")
             m "Good, [hermione_name]."
             call her_main("..............", "open_wide_tongue", "base", "base", "mid")
             m "Yes, keep on stroking my cock."
@@ -369,7 +369,7 @@ label hg_pf_handjob_1:
             call her_main("Excuse me?", "angry", "base", "angry", "mid")
             m "You know, just a little kiss, right on the tip."
             call her_main(".............", "angry", "base", "angry", "mid")
-            call her_main("...with my lips?", "shock", "wide", "base", "stare")
+            call her_main("... with my lips?", "shock", "wide", "base", "stare")
             m "Sure... That will speed things up, I'm telling you."
             call her_main("*sigh!*..............", "open", "narrow", "worried", "down")
             call her_main("Well, I might as well, I suppose...")
@@ -422,7 +422,7 @@ label hg_pf_handjob_1:
             call her_main("...............", "annoyed", "narrow", "angry", "R")
             m "And then you can just get out and and take care of your business today."
             call her_main(".............", "disgust", "narrow", "base", "mid_soft")
-            call her_main("Well, alright then....", "open", "narrow", "worried", "down")
+            call her_main("Well, alright then...", "open", "narrow", "worried", "down")
             call nar(">Hermione reaches down with her lips again...","start")
             call nar(">She touches the tip of your cock with her lips and keeps them there...","end")
 
@@ -438,7 +438,7 @@ label hg_pf_handjob_1:
             call her_main("............")
             call nar(">You feel the tip of Hermione's tongue warily rubbing against the head of your cock...")
             m "Yes, like this..."
-            call nar(">Hermione wiggles her tongue a little....")
+            call nar(">Hermione wiggles her tongue a little...")
             call her_main("(It tastes weird...)", "disgust", "narrow", "worried", "down")
             m "Yes... Good..."
 
@@ -485,7 +485,7 @@ label hg_pf_handjob_1:
             call her_main(".......................", "angry", "wide", "base", "stare")
             m "....................?"
             call her_main(".......................", "angry", "narrow", "base", "down")
-            m "...What the fuck just happened?"
+            m "... What the fuck just happened?"
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("I don't know... I suppose I just panicked...", "angry", "happyCl", "worried", "mid", emote="sweat")
@@ -584,7 +584,7 @@ label hg_pf_handjob_1:
                     call her_main("My clothes are ruined...", "annoyed", "narrow", "angry", "R")
                 else:
                     call her_main("My pretty face is ruined...", "annoyed", "narrow", "angry", "R")
-                her "...I would like to get paid now."
+                her "... I would like to get paid now."
 
             else:
                 if daytime:
@@ -595,7 +595,7 @@ label hg_pf_handjob_1:
                     call her_main("Classes are about to start and I can't go looking like this!", "open", "narrow", "worried", "down")
                     m "Of course you can, just wipe it off or something..."
                     m "Nobody will even notice."
-                    call her_main("...I would like to get paid now.", "annoyed", "narrow", "annoyed", "mid")
+                    call her_main("... I would like to get paid now.", "annoyed", "narrow", "annoyed", "mid")
                 else:
                     if hermione.is_worn("top"):
                         call her_main("My clothes are ruined!", "annoyed", "narrow", "angry", "R")
@@ -606,7 +606,7 @@ label hg_pf_handjob_1:
                     call her_main("[genie_name]!!!", "annoyed", "narrow", "annoyed", "mid")
                     m "Alright, alright. Just wipe it off or something."
                     m "Nobody will even notice."
-                    call her_main("...I would like to get paid now.", "annoyed", "narrow", "annoyed", "mid")
+                    call her_main("... I would like to get paid now.", "annoyed", "narrow", "annoyed", "mid")
 
     jump end_hg_pf_handjob
 
@@ -645,7 +645,7 @@ label hg_pf_handjob_2:
             g9 "You little minx. You know exactly what to say..."
             call her_main("And yet I lust for it...", "soft", "narrow", "annoyed", "up")
             call her_main("Any woman would be happy to have your huge penis inside of her!")
-            m "...you're good!"
+            m "... you're good!"
             call her_main("There is more!", "scream", "closed", "angry", "mid")
             m "By all means..."
             call her_main("I think your magnificent cock is a blessing to this world!", "scream", "closed", "angry", "mid")
@@ -684,13 +684,13 @@ label hg_pf_handjob_2:
                     call her_main("I live to suck penis, er... I mean cock...", "base", "base", "base", "mid")
                     m "Really? Well why don't you suck on this one then?"
                     call her_main("[genie_name], I am just repeating after you...", "smile", "base", "angry", "mid")
-                    m "Really? Could've fooled me...."
+                    m "Really? Could've fooled me..."
                     call her_main("....................", "angry", "wink", "base", "mid")
                     m ".................."
                 "\"I love to swallow cum!\"":
                     call her_main("I love to... *ehm*... swallow cum.", "angry", "wink", "base", "mid")
                     m "You hesitated there for a moment."
-                    call her_main("Yes, I know....", "angry", "wink", "base", "mid")
+                    call her_main("Yes, I know...", "angry", "wink", "base", "mid")
                     call her_main("Let me try again...")
                     call her_main("I love to swallow cum!", "soft", "narrow", "annoyed", "up")
                     call her_main("It is truly the best to swallow cum!")
@@ -872,7 +872,7 @@ label hg_pf_handjob_2_continue:
                 m "Just say it."
                 call her_main("......", "annoyed", "base", "worried", "R")
                 m "Come on, humour me."
-                call her_main("...Manual user input.", "scream", "closed", "angry", "mid")
+                call her_main("... Manual user input.", "scream", "closed", "angry", "mid")
             elif one_out_of_three == 3:
                 call her_main("...........", "annoyed", "base", "worried", "R")
                 call her_main("Do I really have to?")
@@ -963,7 +963,7 @@ label hg_pf_handjob_2_cumming:
             if daytime:
                 call her_main("Well, I think I'd better go now... my Classes are about to start.", "base", "base", "base", "mid", xpos="right", ypos="base")
             else:
-                call her_main("Well, I think I'd better go now...  It's getting late.", "base", "base", "base", "mid", xpos="right", ypos="base")
+                call her_main("Well, I think I'd better go now... It's getting late.", "base", "base", "base", "mid", xpos="right", ypos="base")
 
             if hermione.is_worn("top"):
                 m "Will you be alright in those clothes?"
@@ -1108,6 +1108,6 @@ label hg_pf_handjob_2_cumming:
 
             m "Yes... With your belly full of semen..."
             call her_main("[genie_name]!", "angry", "base", "base", "mid")
-            her "...Can I just get paid now, please, [genie_name]?"
+            her "... Can I just get paid now, please, [genie_name]?"
 
     jump end_hg_pf_handjob

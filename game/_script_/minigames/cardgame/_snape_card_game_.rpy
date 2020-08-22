@@ -182,7 +182,7 @@ label snape_first_duel:
 
     stop music fadeout 1
     hide screen blkfade
-    call sna_main("Maybe I should've gone over the rules a bit more before trying this game again....","snape_05")
+    call sna_main("Maybe I should've gone over the rules a bit more before trying this game again...","snape_05")
     call sna_main("Well played though.","snape_04")
 
     call play_sound("door")
@@ -296,7 +296,7 @@ label snape_third_duel:
         call sna_main("Impossible, what's wrong with these cards...","snape_05")
         m "They're old, that's what."
         m "Now to the prize..."
-        call sna_main("Fine, here's your tokens and one of my precious cards....","snape_05")
+        call sna_main("Fine, here's your tokens and one of my precious cards...","snape_05")
         call sna_main("(You were a good card my boy. But it's time to grow up.)","snape_05")
         $ snape_third_win = True
         $ unlocked_cards += [card_snape]
@@ -372,7 +372,7 @@ label snape_random_duel:
         if random_choice == 0:
             g9 "Another victory in the bag..."
             call sna_main("I don't get it...","snape_03")
-            call sna_main("...You must've been cheating.","snape_04")
+            call sna_main("... You must've been cheating.","snape_04")
             m "Skill... it's called skill."
         elif random_choice == 1:
             call sna_main("Not again... did you look at my cards before the game?","snape_10")
@@ -404,7 +404,7 @@ label snape_random_duel:
             call sna_main("No... I'll beat you next time.","snape_16")
             g9 "That's the spirit."
         elif random_choice == 4:
-            call sna_main("Maybe I should've gone over the rules a bit more before trying this game again....","snape_05")
+            call sna_main("Maybe I should've gone over the rules a bit more before trying this game again...","snape_05")
             call sna_main("Well played though.","snape_04")
 
         #call give_reward("You've received "+rand_ing_or_pot.name+" from Snape!", "interface/icons/item_potion.png")
@@ -478,7 +478,7 @@ label snape_duel_lost:
                 m "I demand a rematch!"
                 if wine_ITEM.number < 1:
                     sna "Seems like you lost all of your bottles, maybe next time."
-                    g4 "...You evil creature..."
+                    g4 "... You evil creature..."
                     pass
                 else:
                     sna "Fine."

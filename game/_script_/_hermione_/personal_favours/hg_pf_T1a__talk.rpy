@@ -337,7 +337,7 @@ label hg_pf_talk_T3_intro_E1:
     call her_main("Okay...", "annoyed", "base", "worried", "mid")
     m "I'd like you to tell me a bit about your day."
     call her_main("Are you going to...{w=0.8} touch yourself again sir?", "open", "squint", "base", "mid")
-    m "I can't guarantee I won't...."
+    m "I can't guarantee I won't..."
     m "You will be awarded with house points - as usual."
     call her_main("...", "mad", "narrow", "worried", "down", cheeks="blush") #mad Blush
     m "You've not walked out the door, so please, tell me about your day."
@@ -415,7 +415,7 @@ label hg_pf_talk_T3:
     call her_main("Her views on muggle and wizarding relations, and the fact that we're not that different is also quite refreshing...", "base", "happy", "base", "mid_soft")
     call her_main("Not that the Slytherins aren't constantly trying to disrupt her classes...", "annoyed", "happyCl", "base", "mid")
     if masturbating:
-        m "*Hmm* I bet they were...."
+        m "*Hmm* I bet they were..."
         call her_main("*UGH* Do you have to keep touching yourself professor?", "disgust", "narrow", "worried", "down", cheeks="blush")
         m "Just keep talking [hermione_name]..."
         call her_main("Fine...", "annoyed", "narrow", "angry", "R", cheeks="blush")
@@ -767,13 +767,13 @@ label hg_pf_talk_tonks:
                 elif tmp_val >= 30 and tmp_val < 40:
                     call ton_main("Aren't you a sneaky one, *huh*? Almost tricked me with those doe-like eyes of yours - that you're an innocent girl.","horny","base","angry","L", hair="horny")
                     call ton_main("But, as it turns out, you're actually quite high on the list.","open","base","raised","L", hair="basic")
-                    call her_main("(...there's a list...?)", "open", "happyCl", "worried", "mid", cheeks="blush")
+                    call her_main("(... there's a list...?)", "open", "happyCl", "worried", "mid", cheeks="blush")
                     call ton_main("At the the very top!", "silly", "happyCl", "base", "mid")
                     call her_main("...", "angry", "narrow", "base", "down", cheeks="blush")
                 else:
                     call ton_main("Wow! Who would have thought you're the girl from top of the list.", "silly", "happyCl", "base", "mid")
                     call ton_main("Colour me surprised, looks like they were telling the truth after all.","horny","base","angry","L", hair="horny")
-                    call her_main("(...a list ... what list...?)", "angry", "wide", "worried", "stare", cheeks="blush")
+                    call her_main("(... a list ... what list...?)", "angry", "wide", "worried", "stare", cheeks="blush")
                     call ton_main("Congratulations for being a \"top\" student.","horny","base","raised","L")
                     call her_main("...", "disgust", "narrow", "base", "R_soft", cheeks="blush")
 
@@ -1092,7 +1092,7 @@ label hg_pf_talk_tonks:
                     if masturbating:
                         call gen_chibi("jerk_off_behind_desk")
                         m "(This should be good...)"
-                    call her_main("W-...What would you like to know about then?", "open", "base", "base", "R", cheeks="blush")
+                    call her_main("W-... What would you like to know about then?", "open", "base", "base", "R", cheeks="blush")
                     call ton_main("I'd be happy with anything you'd like to tell me...","base","base","base","L")
                     call her_main("Well... it's quite embarrassing.", "disgust", "narrow", "worried", "down", cheeks="blush")
                     call ton_main("Yes?", "soft", "base", "raised", "L")

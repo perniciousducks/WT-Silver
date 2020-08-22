@@ -210,7 +210,7 @@ label hg_pr_grope_T2_E2:
     her "*Ehm*..."
     call her_main("Well, he touched me under my skirt a little...", "angry", "base", "base", "mid")
     her "Then I let him rub my..."
-    call her_main("...my c-crotch through the panties, [genie_name].", "angry", "narrow", "base", "down")
+    call her_main("... my c-crotch through the panties, [genie_name].", "angry", "narrow", "base", "down")
     m "Very good. What happened next?"
     call her_main("Then he sort of started to touch himself [genie_name]...", "open", "happyCl", "worried", "mid")
     her "So, I decided to leave..."
@@ -268,7 +268,7 @@ label hg_pr_grope_T3_E1:
     her "Led him to one of the empty classrooms in the eastern wing..."
     her "He thought I wanted to make out with him..."
     her "But I told him that I just want him to touch me..."
-    call her_main("...so he did.", "normal", "happyCl", "worried", "mid")
+    call her_main("... so he did.", "normal", "happyCl", "worried", "mid")
     m "I see..."
     m "Well done, [hermione_name]."
     call her_main("Will I be getting my points now?", "upset", "wink", "base", "mid")
@@ -337,7 +337,7 @@ label hg_pr_grope_T3_E3:
     call her_main("I led him to the library...", "open", "narrow", "worried", "down")
     her "We found a secluded spot behind one of the book shelves..."
     her "And I told him that he can touch me wherever he wants..."
-    her "And...."
+    her "And..."
     call her_main("..........", "clench", "narrow", "base", "down")
     m "What?"
     call her_main(".....................", "normal", "happyCl", "worried", "mid")
@@ -452,7 +452,7 @@ label hg_pr_grope_T4_E3:
     call her_main("Almost the same way her boyfriend did just a moment ago...", "smile", "base", "angry", "mid")
     her "Then she turned to him and she said..."
     call her_main("\"I love you baby, and I want to share everything with you...\"", "open", "closed", "base", "mid")
-    her "\"...And that includes your whores.\""
+    her "\"... And that includes your whores.\""
     call her_main("I did not appreciate being called a whore of course...", "angry", "base", "base", "mid")
     call her_main("But that was such a sweet and romantic gesture...", "base", "base", "base", "mid")
     her "Wouldn't you agree, [genie_name]?"

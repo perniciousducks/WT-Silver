@@ -70,7 +70,7 @@ label hg_pr_flash:
             m "Of course."
             call her_main("Why would I complain about a simple task like this then?", "open", "closed", "base", "mid")
             her "{number=current_payout} house points is a fair prices for a few seconds of excitement... err..."
-            call her_main("...I mean, embarrassment.", "base", "happyCl", "base", "mid")
+            call her_main("... I mean, embarrassment.", "base", "happyCl", "base", "mid")
             m "{size=-3}(She changed this much already?){/size}"
             g9 "{size=-3}(I'm so good at this training thing that it's starting to get creepy!){/size}"
             call her_main("Classes are about to start... I'd better leave now.", "base", "base", "base", "mid")
@@ -306,7 +306,7 @@ label hg_pr_flash_T4_E1:
     m "You came to me, remember?"
     call her_main("..........", "open", "base", "base", "mid")
     m "You begged me to buy a sexual favour from you."
-    call her_main("...I....", "annoyed", "base", "worried", "R")
+    call her_main("... I...", "annoyed", "base", "worried", "R")
     call her_main("I never said \"sexual\"...", "open", "base", "base", "mid")
     m "Nevertheless, you can stop selling me these favours at any moment, [hermione_name]."
     call her_main("I suppose...", "annoyed", "narrow", "angry", "R")
@@ -378,7 +378,7 @@ label hg_pr_flash_T4_E3:
     m "*Hmm*...?"
     call play_music("playful_tension") # Music
     her "Instead I just went to the library window and..."
-    call her_main("...I just pulled my shirt up and pressed my bare breasts against the glass...", "angry", "narrow", "base", "down")
+    call her_main("... I just pulled my shirt up and pressed my bare breasts against the glass...", "angry", "narrow", "base", "down")
     her "I stood there like that for several seconds..."
     her "To make sure that at least someone sees me from the outside..."
     call her_main("I hope this still counts, [genie_name]...", "angry", "base", "base", "mid")
@@ -459,7 +459,7 @@ label hg_pr_flash_T5_E2:
     call her_main("And then me and Ginny, we licked his hot sperm off of our bodies...", "smile", "base", "angry", "mid")
     m ".............."
     m "Are you making this up, [hermione_name]?"
-    call her_main("...maybe.", "grin", "happyCl", "worried", "mid",emote="sweat")
+    call her_main("... maybe.", "grin", "happyCl", "worried", "mid",emote="sweat")
     call her_main("I just thought that you would like to hear something like that, [genie_name]...", "base", "narrow", "base", "mid_soft")
     m "What I would like to hear, [hermione_name], is the truth."
     call her_main("Even if it's incredibly dull, [genie_name]?", "open", "closed", "base", "mid")
@@ -488,7 +488,7 @@ label hg_pr_flash_T5_E3:
     call her_main("Then there was this other boy from Ravenclaw.", "base", "base", "base", "mid")
     m "???"
     call her_main("After that I flashed my tits to some Gryffindor underclassman by mistake...", "angry", "happyCl", "worried", "mid",emote="sweat")
-    call her_main("No, wait...  the boy from Gryffindor was after that other boy...", "annoyed", "base", "worried", "R")
+    call her_main("No, wait... the boy from Gryffindor was after that other boy...", "annoyed", "base", "worried", "R")
     m "How many boys did you flash your tits to today, [hermione_name]?"
     call her_main("Half a dozen or so?", "angry", "base", "base", "mid")
     call her_main("I had an opening in my schedule...", "angry", "wink", "base", "mid")

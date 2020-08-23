@@ -45,6 +45,7 @@ You can support us on our official [Witch Trainer: Silver Patreon page](https://
 - **Dr. Lupin**:        Networking, Management and Administration.
 - **TropeCode**:        Coder.
 - **CyniclePickle**:    Artist. You can follow them [here](https://twitter.com/CyniclePickle).
+- **perniciousducks**:  Artist.
 
 
 ## Additional Credits (in no particular order):
@@ -55,6 +56,7 @@ You can support us on our official [Witch Trainer: Silver Patreon page](https://
 - **MedicBear**:       Moderator, Proofreader.
 - **Mo**:              Writer, Coder, Artist.
 - **MaiL**:            Writer (Mirror story), Tester.
+- **Ven**:             Proofreader.
 - **Booom313**:        Old mobile ports for Android. You can support them [here](https://www.patreon.com/booom313/).
 - **Sandmaster**:      Advertising.
 - **Pinguino**:        Being a penguin.

@@ -10,7 +10,7 @@ define credits_text = "\n".join([
     credits_title("Director"),
     credits_group("MadMerlin"),
     credits_title("Artists"),
-    credits_group("Soggy", "CyniclePickle", "DostojevskijSTG", "LoafyLemon", "Noodle"),
+    credits_group("Soggy", "CyniclePickle", "DostojevskijSTG", "LoafyLemon", "Noodle", "perniciousducks"),
     credits_title("Writers"),
     credits_group("Johnny", "Mo"),
     credits_title("Programmers"),
@@ -29,7 +29,7 @@ define credits_text = "\n".join([
     credits_group(
         "{size=+4}Akabur{/size}",
         "{color=#808080}{size=-5}{k=0.7}Creator of the original Witch Trainer and other awesome games! {a=https://www.patreon.com/akabur}PATREON{/a}{/size}{/color}{/k}\n",
-        "Dr. Lupin", "Lineup", "MaiL", "MedicBear", "STG Anon", "Boom313", "Sandmaster", "Pinguino", "UE Crew", "Catbug", "CaptainNemo", "Artguy", "Linear", "Amadan", "Anons", "Heretic", "Maverick", "Cleanzo", "Techy", "Zuel32", "Darwin7"
+        "Dr. Lupin", "Lineup", "MaiL", "MedicBear", "STG Anon", "Boom313", "Sandmaster", "Pinguino", "UE Crew", "Catbug", "CaptainNemo", "Artguy", "Linear", "Amadan", "Anons", "Heretic", "Maverick", "Cleanzo", "Techy", "Zuel32", "Darwin7", "Ven"
     ),
 """{vspace=100}
 

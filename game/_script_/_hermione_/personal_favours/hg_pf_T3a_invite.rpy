@@ -328,7 +328,7 @@ label hg_pf_strip_T4_snape:
             call her_main(".........?", "upset", "wink", "base", "mid")
             call sna_main("I would say...","snape_13")
             call her_main("............?!", "base", "narrow", "worried", "down")
-            call sna_main("Yes... \"F minus.\"","snape_09")
+            call sna_main("Yes... \"Dreadful.\"","snape_09")
             call her_main("(What?!)", "shock", "wide", "base", "stare")
             call sna_main("Unsatisfactory...","snape_09")
             sna "Look at that pitiful thing. Tiny and skinny... That's a boy's butt."

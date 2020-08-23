@@ -426,7 +426,7 @@ label cho_quiz_checkpoint:
             $ confidence_meter += 12
             call exp_o_meter(fill=confidence_meter)
             call cho_main("Yes!", "smile", "wide", "base", "mid")
-            g9 "Well then, surely that should show you how superi-"
+            g9 "Well then, surely that should show you how superi--"
             call cho_main("Next question...", "open", "closed", "base", "down")
             $ cho_quiz.correct_answers += 1
 
@@ -453,7 +453,7 @@ label cho_quiz_checkpoint:
             call exp_o_meter(fill=confidence_meter)
             $ renpy.sound.play( "sounds/gasp.mp3")
             call cho_main("Yes!", "smile", "wide", "base", "mid")
-            g9 "Great! Then let's get started with the-"
+            g9 "Great! Then let's get started with the--"
             call cho_main("Next question...", "open", "base", "raised", "down")
             $ cho_quiz.correct_answers += 1
 
@@ -462,7 +462,7 @@ label cho_quiz_checkpoint:
             $ renpy.block_rollback()
             call cho_main("I think you got some letters mixed up there...", "soft", "narrow", "raised", "R")
             m "Quibble and Blodger?"
-            call cho_main("No, that's also not-", "annoyed", "base", "base", "up")
+            call cho_main("No, that's also not--", "annoyed", "base", "base", "up")
             m "Qacker and Blugger?"
             call cho_main("Professor...", "annoyed", "narrow", "angry", "mid")
             $ confidence_meter -= 12

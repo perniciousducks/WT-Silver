@@ -892,7 +892,7 @@ label nt_he_astoria_E1:
     call ton_main("Hey, it makes perfect sense!","open","base","angry","mid")
     call ton_main("...","upset","base","worried","R")
     call ton_main("In any case, I'd like to keep an eye on her - if you don't mind.","open","base","angry","mid")
-    m "Go right ahea-"
+    m "Go right ahea--"
     call ton_main("Maybe even teach her how to cast Imperio properly.", "annoyed", "base", "base", "R")
     m "..."
     with hpunch

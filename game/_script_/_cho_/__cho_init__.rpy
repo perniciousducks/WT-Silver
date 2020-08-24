@@ -67,16 +67,21 @@ default cc_pf_talk = event_class(title = "Talk to me!", start_label = "cc_pf_tal
     ],
     iconset = [["heart_empty", "heart_red"], ["heart_empty", "heart_red"]]
 )
-
+#cc_pf_strip_T3_intro_E3
 default cc_pf_strip = event_class(title = "Inspect her body!", start_label = "cc_pf_strip", start_tier = 2,
     events = [
         [
             ["cc_pf_strip_T1_intro_E1"],
             ["cc_pf_strip_T1_intro_E2"],
             ["cc_pf_strip_T1_intro_E3"], ["cc_pf_strip_T1_E3"]
+        ],
+        [
+            ["cc_pf_strip_T3_intro_E1"],
+            ["cc_pf_strip_T3_intro_E2"],
+            ["cc_pf_strip_T3_intro_E3"], ["cc_pf_strip_T3_repeat"]
         ]
     ],
-    iconset = [["heart_empty", "heart_red"]]
+    iconset = [["heart_empty", "heart_red"], ["heart_empty", "heart_red"]]
 )
 
 default cc_pf_blowjob = event_class(title = "Suck it!", start_label = "cc_pf_blowjob", start_tier = 3,

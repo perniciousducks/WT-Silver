@@ -262,13 +262,15 @@ screen achievement_menu(xx, yy):
 
     add im.Blur(screenshot_image, 2)
 
+    use invisible_button(action=Return("Close"))
     use close_button
 
     frame:
         style "empty"
         pos (xx, yy)
-        xsize 207
-        ysize 454
+        xysize (207, 454)
+
+        use invisible_button()
 
         add "interface/achievements/"+interface_color+"/panel_left.png"
 
@@ -277,9 +279,9 @@ screen achievement_menu(xx, yy):
             for category in achievement_categories_sorted:
                 vbox:
                     if current_category == category:
-                        textbutton category xsize 195 ysize 16 style "empty" background "interface/achievements/"+interface_color+"/highlight_left.png" text_xalign 0.5
+                        textbutton category xysize (195, 16) style "empty" background "interface/achievements/"+interface_color+"/highlight_left.png" text_xalign 0.5
                     else:
-                        textbutton category xsize 195 ysize 16 style "empty" hover_background "interface/achievements/"+interface_color+"/highlight_left.png" text_xalign 0.5 action Return(["category", category])
+                        textbutton category xysize (195, 16) style "empty" hover_background "interface/achievements/"+interface_color+"/highlight_left.png" text_xalign 0.5 action Return(["category", category])
                     add "interface/achievements/"+interface_color+"/spacer_left.png"
         vbox:
             pos (6, 384)
@@ -296,8 +298,9 @@ screen achievement_menuitem(xx, yy):
     frame:
         style "empty"
         pos (xx+217, yy-53)
-        xsize 560
-        ysize 507
+        xysize (560, 507)
+
+        use invisible_button()
 
         add "interface/achievements/star.png"
         add "interface/achievements/"+interface_color+"/panel.png"

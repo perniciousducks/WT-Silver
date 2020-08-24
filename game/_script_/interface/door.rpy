@@ -59,7 +59,9 @@ screen door_menu(xx, yy):
     modal True
     zorder 30
 
+    use invisible_button(action=Return("Close"))
     use close_button
+
     frame:
         style "empty"
         pos (xx, yy)
@@ -68,9 +70,13 @@ screen door_menu(xx, yy):
 
         add "interface/achievements/"+interface_color+"/panel_left.png"
 
+        use invisible_button # Nullifies buttons below
+
         vbox:
             pos (6, 384)
-            button action NullAction() style "empty" xsize 195 ysize 32
+            spacing 32
+
+            null
             frame:
                 style "empty"
                 textbutton "Show Busy:" style "empty" xsize 195 ysize 32 text_align (0.4, 0.5) text_size 12 hover_background btn_hover action ToggleVariable("door_show_busy", True, False)

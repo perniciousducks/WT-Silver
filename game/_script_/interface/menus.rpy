@@ -10,6 +10,7 @@ init python:
 screen list_menu(menu_id, title, toggle_names=tuple(), menu_groups=[]):
     zorder 5
 
+    use invisible_button(action=Return("Close"))
     use close_button
 
     # Store screen variables while hidden
@@ -52,6 +53,8 @@ screen list_menu(menu_id, title, toggle_names=tuple(), menu_groups=[]):
         ysize 544
         xalign 0.5
         yalign 0.5
+
+        use invisible_button()
 
         ground "interface/panels/"+interface_color+"/items_panel.png"
         hover "interface/panels/"+interface_color+"/items_panel_hover.png"
@@ -128,6 +131,7 @@ screen list_menu_item(menu_item, ypos=0):
 screen bottom_menu(menu_id, group_names, menu_groups, func_btn=None):
     zorder 30
 
+    use invisible_button(action=Return("Close"))
     use close_button
 
     # Store screen variables while hidden
@@ -151,8 +155,9 @@ screen bottom_menu(menu_id, group_names, menu_groups, func_btn=None):
     imagemap:
         xpos 0
         ypos 475
-        xsize 1080
-        ysize 548
+        xysize (1080, 548)
+
+        use invisible_button()
 
         ground "interface/panels/"+interface_color+"/bottom_panel.png"
         hover "interface/panels/"+interface_color+"/bottom_panel_hover.png"

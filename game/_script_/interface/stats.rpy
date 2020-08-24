@@ -159,12 +159,16 @@ screen stats_menu(xx, yy):
 
     add im.Blur(screenshot_image, 2)
 
+    use invisible_button(action=Return("Close"))
     use close_button
+
     frame:
         style "empty"
         pos (xx, yy)
         xsize 207
         ysize 454
+
+        use invisible_button()
 
         add "interface/achievements/"+interface_color+"/panel_left.png"
 
@@ -221,6 +225,8 @@ screen stats_menuitem(xx, yy):
         style_prefix interface_style
         pos (xx+217, yy-53)
         xysize (560, 507)
+
+        use invisible_button()
 
         #add "interface/achievements/inventory.png"
         add "interface/achievements/"+interface_color+"/panel.png"

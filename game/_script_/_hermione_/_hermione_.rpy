@@ -129,7 +129,7 @@ screen hermione_main():
         pos hermione_pos
         at hermione_animation
 
-        add hermione_img properties properties
         add hermione_plug_img properties properties # TODO: Remove after buttplug CGs are added
+        add hermione_img properties properties
         if hermione_emote:
             add hermione_emote properties properties

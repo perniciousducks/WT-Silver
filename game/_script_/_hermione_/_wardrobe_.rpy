@@ -77,6 +77,7 @@ default her_robe_school_2 = DollCloth("hermione", ("misc", "robes"), "robe", "ro
 default her_robe_school_3 = DollCloth("hermione", ("misc", "robes"), "robe", "robe_school_3", [[96, 96, 96, 255], [206, 206, 209, 255], [167, 77, 42, 255]], unlocked=True, level=10)
 
 default her_accessory_house_emblem = DollCloth("hermione", ("misc", "accessory"), "accessory0", "house_emblem", [[167, 77, 42, 255], [237, 179, 14, 255]], zorder=16, unlocked=True)
+default her_accessory4_reading_glasses = DollCloth("hermione", ("head", "glasses"), "accessory4", "reading_glasses", [[240, 240, 241, 255]], unlocked=True)
 
 default her_outfit_default = DollOutfit([her_hair_base, her_top_school1, her_bottom_school1, her_panties_base1, her_bra_base1, her_stockings_base1, her_robe_school_1], True)
 default her_outfit_default_no_vest = DollOutfit([her_hair_base, her_top_school3, her_bottom_school1, her_panties_base1, her_bra_base1, her_stockings_base1])

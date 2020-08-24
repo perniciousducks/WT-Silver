@@ -63,3 +63,8 @@ screen clothing_unlock(item):
         else:
             add item align (0.5, 0.5)
 
+screen invisible_button(action=NullAction()):
+    # Actions cannot be passed as transclude, separate parameter is required.
+    button style "empty":
+        action action
+        transclude

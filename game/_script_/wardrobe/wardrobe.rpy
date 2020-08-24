@@ -258,12 +258,15 @@ screen wardrobe_menu(xx, yy):
 
     add im.Blur(screenshot_image, 2)
 
+    use invisible_button(action=Return("Close"))
     use close_button
 
     frame:
         style "empty"
         pos (xx, yy)
         xysize (540, 548)
+
+        use invisible_button()
 
         # Main Categories
         for i, category in enumerate(wardrobe_categories):
@@ -409,6 +412,8 @@ screen wardrobe_menuitem(xx, yy):
         pos (xx, yy)
         xysize (467, 548)
         background wardrobe_background
+
+        use invisible_button()
 
         add "interface/panels/{}/icon_panel.png".format(interface_color)
 
@@ -564,6 +569,8 @@ screen wardrobe_outfit_menuitem(xx, yy):
         pos (xx, yy)
         xysize (467, 548)
         background wardrobe_background
+
+        use invisible_button()
 
         add "interface/panels/"+interface_color+"/icon_panel2.png"
 

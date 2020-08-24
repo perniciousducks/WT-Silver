@@ -51,19 +51,6 @@ default studio_image_body = True
 default studio_image_xx = 1010
 default studio_image_yy = 1200
 
-init python:
-    def character_dropped(drags, drop=None):
-        drags[0].snap(540, 300)
-        return
-
-    # def image_zoom_changed():
-        # global studio_image_offset
-
-        # inc, dec = -1, 1
-        # studio_image_zoom
-        # xoffset =
-        # studio_image_offset = ((), ())
-
 label studio(studio_char):
     python:
         studio_eyebrows_list = [x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyebrows/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x]
@@ -248,20 +235,22 @@ screen studio():
         else:
             add im.MatrixColor("images/rooms/overlays/"+studio_bg_overlay_list[studio_room_overlay]+".png", (im.matrix.hue(studio_room_overlay_hue)*im.matrix.saturation(clamp(studio_room_overlay_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_overlay_brightness-1.0)) ypos studio_room_overlay_yoffset-300 xpos studio_room_overlay_xoffset-540 xzoom studio_room_overlay_flipx yzoom studio_room_overlay_flipy alpha studio_room_overlay_alpha xanchor 0.5 yanchor 0.5
 
+    default char_img = (Flatten(char_active.get_image()) if studio_image_body else studio_outfit_saves.get(active_girl).get_image())
     drag:
-        drag_name "character"
-        #activated character_dropped
-        #dragged character_dropped
         draggable not studio_hide
         drag_offscreen True
         pos(160, -75)
 
-        add (Flatten(char_active.get_image()) if studio_image_body else studio_outfit_saves.get(active_girl).get_image()):
+        add char_img:
+            around (0.6, 1.0)
+            anchor (0.6, 1.0)
+            transform_anchor True
+            events False
+
             zoom studio_image_zoom
             xzoom studio_image_flip
             alpha studio_image_alpha
             rotate studio_image_rotation
-            events False
 
     if not studio_bg_overlay_list[studio_room_overlay2] == None:
         if studio_room_overlay2_blur > 0.0:

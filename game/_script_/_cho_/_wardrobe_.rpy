@@ -70,7 +70,7 @@ default cho_robe_school_1 = DollCloth("cho", ("misc", "robes"), "robe", "robe_sc
 #default cho_neckwear_tie1  = DollCloth("cho", ("head", "neckwear"), "neckwear", "tie_1", [[216, 163, 10, 255], [89, 116, 194, 255]])
 
 default cho_outfit_last = DollOutfit([cho_hair_ponytail1])
-default cho_outfit_default = DollOutfit([cho_hair_ponytail1, cho_top_school1, cho_bottom_school1, cho_bra_basic1, cho_panties_basic1, cho_stockings_house, cho_robe_school_1], True)
+default cho_outfit_default = DollOutfit([cho_hair_ponytail1, cho_top_school1, cho_bottom_school1, cho_bra_basic1, cho_panties_basic1, cho_stockings_house], True)
 
 ##################
 ## Misty Outfit ##

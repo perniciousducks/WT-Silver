@@ -2840,7 +2840,7 @@ label cc_pf_strip_T3_intro_E3:
 
                     # Tonks turns around.
                     call ton_chibi(flip=False)
-                    call ton_main("REMOVE", "base", "base", "base", "mid", hair="horny", cheeks="blush", xpos=215, ypos=base, flip=False, trans=d5)
+                    call ton_main("", "base", "base", "base", "mid", hair="horny", cheeks="blush", xpos=215, ypos=base, flip=False, trans=d5)
                     pause .5
 
                     call ton_main("It's fine, Cho. Just give it a little slap.", "soft", "narrow", "base", "downR", hair="horny", cheeks="blush")
@@ -3033,21 +3033,21 @@ label cc_pf_strip_T3_intro_E3:
 
     call cho_main("{b}Holy shit!{/b}", "open", "wide", "raised", "L", cheeks="heavy_blush")
     m "Watch your language, girl..."
-    call her_main("REMOVE", "soft", "narrow", "angry", "L")
+    call her_main("", "soft", "narrow", "angry", "L")
     ton "Yes. Watch your foul mouth, Chang!"
     call cho_main("I-I'm sorry...", "clench", "happyCl", "worried", "mid", cheeks="heavy_blush")
     m "I'm just kidding... Swear as much as you want -- It's not going to bring up the age-ratings..."
-    call her_main("REMOVE", "annoyed", "narrow", "base", "down")
+    call her_main("", "annoyed", "narrow", "base", "down")
     ton "*Hmm*..."
-    call her_main("REMOVE", "soft", "narrow", "annoyed", "down")
+    call her_main("", "soft", "narrow", "annoyed", "down")
     ton "Miss Granger is a bit heavier in the bosom area than I'm used to..."
-    call her_main("REMOVE", "soft", "narrow", "angry", "L")
+    call her_main("", "soft", "narrow", "angry", "L")
     ton "What do you think, Miss Chang... Do they look that much larger than my own?"
     call cho_main("I...", "clench", "narrow", "worried", "down", cheeks="heavy_blush")
     call cho_main("I'm sorry, this is so weird!", "open", "happyCl", "worried", "mid", cheeks="heavy_blush")
-    call her_main("REMOVE", "grin", "narrow", "base", "down")
+    call her_main("", "grin", "narrow", "base", "down")
     ton "*Hmm*? I thought you'd like them..."
-    call her_main("REMOVE", "crooked_smile", "narrow", "angry", "L")
+    call her_main("", "crooked_smile", "narrow", "angry", "L")
     ton "I've heard rumours that you're quite fond of these tits, Miss Chang."
     call cho_main("Sorry! It's not that... It's just... you look exactly like her!", "disgust", "narrow", "worried", "down", cheeks="heavy_blush")
     call cho_main("You even sound like her!", "soft", "narrow", "worried", "L", cheeks="heavy_blush")
@@ -3060,49 +3060,49 @@ label cc_pf_strip_T3_intro_E3:
     ton "*giggles*..."
 
     $ hermione.get_equipped("hair").set_color([[152, 89, 48, 255], [195, 137, 89, 255], [230, 141, 32, 255]])
-    call her_main("REMOVE", "base", "narrow", "base", "R")
+    call her_main("", "base", "narrow", "base", "R")
     ton "Naturally... That's the intended effect."
     call cho_main("If I didn't know any better, I'd think you were her!", "horny", "narrow", "raised", "down", cheeks="heavy_blush")
-    call her_main("REMOVE", "crooked_smile", "closed", "angry", "mid")
+    call her_main("", "crooked_smile", "closed", "angry", "mid")
     ton "*Mhmm*... Last time I looked like this in front of you, you couldn't tell either."
     call cho_main("What?! When was that?", "soft", "base", "worried", "L", cheeks="heavy_blush")
     m "Right after the last game, if I remember correctly."
-    call her_main("REMOVE", "base", "narrow", "base", "mid")
+    call her_main("", "base", "narrow", "base", "mid")
     ton "Oh, that wasn't the only time, Professor."
     m "It wasn't?"
-    call her_main("REMOVE", "grin", "narrow", "base", "mid")
+    call her_main("", "grin", "narrow", "base", "mid")
     ton "I sometimes stroll around the school grounds, disguised as one of the girls... wearing nothing but a school robe..."
 
     if hg_pr_flash.counter > 1:
-        call her_main("REMOVE", "crooked_smile", "narrow", "base", "down")
+        call her_main("", "crooked_smile", "narrow", "base", "down")
         ton "And If you ever had a boy say he got some tits flashed at him by Miss Granger... then it was most likely me."
         call cho_main("That's awesome!", "grin", "base", "base", "L", cheeks="blush")
         m "Well, I did tell Hermione to do it herself before."
-        call her_main("REMOVE", "open", "wide", "base", "stare", cheeks="heavy_blush")
+        call her_main("", "open", "wide", "base", "stare", cheeks="heavy_blush")
         ton "Seriously? I had no idea!"
         call cho_main("Me neither!", "soft", "wide", "raised", "mid", cheeks="blush")
-        call her_main("REMOVE", "base", "narrow", "base", "down")
+        call her_main("", "base", "narrow", "base", "down")
         ton "I guess that's one less thing to worry about while I do it..."
 
 
     call cho_main("I hope you didn't do that kind of stuff while you looked like me, Professor!", "open", "narrow", "angry", "L", cheeks="blush")
-    call her_main("REMOVE", "annoyed", "base", "base", "R")
+    call her_main("", "annoyed", "base", "base", "R")
     ton "*Uhm*..."
     call cho_main("If I find out you've shown some boys my breasts, then--", "open", "closed", "angry", "mid", cheeks="blush")
-    call her_main("REMOVE", "smile", "happyCl", "worried", "mid", cheeks="blush")
+    call her_main("", "smile", "happyCl", "worried", "mid", cheeks="blush")
     ton "Of course not, sweetie."
     call cho_main("...", "annoyed", "narrow", "angry", "L", cheeks="blush")
-    call her_main("REMOVE", "grin", "base", "base", "R", cheeks="blush") # small text
+    call her_main("", "grin", "base", "base", "R", cheeks="blush") # small text
     ton "It was your ass I showed them..."
     call cho_main("W-What?!", "clench", "wide", "angry", "L", cheeks="heavy_blush")
     g9 "*He-he-he-he*!"
     call cho_main("", "clench", "base", "angry", "L", cheeks="heavy_blush")
-    call her_main("REMOVE", "soft", "closed", "base", "mid")
+    call her_main("", "soft", "closed", "base", "mid")
     ton "It's not like you haven't done that yourself already, have you?"
-    call her_main("REMOVE", "base", "narrow", "base", "L")
+    call her_main("", "base", "narrow", "base", "L")
     ton "In front of the entire school, no less..."
     call cho_main("...", "annoyed", "narrow", "angry", "L", cheeks="heavy_blush") # blush
-    call her_main("REMOVE", "open", "closed", "base", "mid")
+    call her_main("", "open", "closed", "base", "mid")
     ton "Well, that's enough fun for today."
 
     $ tonks.get_equipped("hair").set_color([[152, 89, 48, 255], [195, 137, 89, 255]]) # Hermione brown

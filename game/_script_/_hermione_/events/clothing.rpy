@@ -276,6 +276,59 @@ label hermione_summon_setup:
             # call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_cold_sexy_ITEM)
 
     if hermione_outfits_schedule:
+        if not tutorial_is_done("schedule") and hermione_wardrobe_unlocked:
+            $ hermione.create_outfit()
+            $ her_outfit_last.save()
+
+            default her_outfit_s_clearday = DollOutfit([her_hair_base, her_top_school3, her_bottom_school1, her_panties_base1, her_bra_base1], True)
+            default her_outfit_s_clearnight = DollOutfit([her_hair_base, her_top_casual1, her_bottom_jeans, her_panties_base1, her_bra_base1], True)
+            default her_outfit_s_snow = DollOutfit([her_hair_base, her_top_pullover_1, her_bottom_jeans, her_panties_base1, her_bra_base1], True)
+            default her_outfit_s_overcast = DollOutfit([her_hair_base, her_top_pullover_1, her_bottom_school1, her_panties_base1, her_bra_base1, her_stockings_base1], True)
+            default her_outfit_s_rain = DollOutfit([her_hair_base, her_robe_school_1, her_top_school1, her_bottom_school1, her_panties_base1, her_bra_base1, her_stockings_base1], True)
+
+            $ her_outfit_s_clearday.set_schedule(day=True) # Clear day
+            $ her_outfit_s_clearnight.set_schedule(night=True) # Clear night
+            $ her_outfit_s_snow.set_schedule(day=True, night=True, snowy=True) # Snow, Blizzard
+            $ her_outfit_s_overcast.set_schedule(day=True, night=True, cloudy=True) # Storm, Overcast
+            $ her_outfit_s_rain.set_schedule(day=True, night=True, rainy=True) # Rain
+
+            $ hermione.equip_random_outfit()
+
+            # Reset some variables for the sake of consistency
+            $ her_mood = 0
+
+            call play_sound("door")
+            call her_chibi("stand","mid","base")
+            with d3
+
+            call her_main("Hello, [genie_name].", "open", "base", "base", "R", xpos="base", ypos="base", trans=d3)
+            call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
+            pause 1.0
+            m "You look...{w=0.1} different."
+
+            call play_music("hermione")
+
+            call tutorial("schedule")
+
+            menu:
+                "Turn ON Outfits Scheduling?\n\n{size=-4}(Don't worry, your previous outfit has been saved automatically){/size}"
+
+                "Yes":
+                    "Outfit scheduling turned {b}ON{/b}."
+                "No":
+                    $ hermione_outfits_schedule = False
+                    $ tonks_outfits_schedule = False
+                    $ cho_outfits_schedule = False
+                    $ astoria_outfits_schedule = False
+                    # Luna
+                    # Susan
+
+                    "Outfit scheduling turned {b}Off{/b}."
+
+                    $ hermione.equip(her_outfit_last)
+                    with fade
+
+            return
         $ hermione.equip_random_outfit()
 
     call play_sound("door")

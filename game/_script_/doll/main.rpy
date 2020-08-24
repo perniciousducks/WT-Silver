@@ -293,7 +293,7 @@ init python:
 
         def get_schedule(self):
             """Returns a list of outfits available for current daytime and weather conditions."""
-            global daytime, raining, snowing, blizzard, storm, cloudy
+            global daytime
             schedule = []
 
             for o in self.outfits:

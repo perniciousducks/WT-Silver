@@ -80,7 +80,7 @@ default her_accessory_house_emblem = DollCloth("hermione", ("misc", "accessory")
 default her_accessory4_reading_glasses = DollCloth("hermione", ("head", "glasses"), "accessory4", "reading_glasses", [[240, 240, 241, 255]], unlocked=True)
 default her_accessory4_vintage_glasses = DollCloth("hermione", ("head", "glasses"), "accessory4", "vintage_glasses", [[240, 240, 241, 255]], unlocked=True, zorder=3)
 
-default her_outfit_default = DollOutfit([her_hair_base, her_top_school1, her_bottom_school1, her_panties_base1, her_bra_base1, her_stockings_base1, her_robe_school_1], True)
+default her_outfit_default = DollOutfit([her_hair_base, her_top_school1, her_bottom_school1, her_panties_base1, her_bra_base1, her_stockings_base1], True)
 default her_outfit_default_no_vest = DollOutfit([her_hair_base, her_top_school3, her_bottom_school1, her_panties_base1, her_bra_base1, her_stockings_base1])
 default her_outfit_default_no_tie_open_shirt = DollOutfit([her_hair_base, her_top_school5, her_bottom_school1, her_panties_base1, her_bra_base1, her_stockings_base1])
 default her_outfit_last = DollOutfit([her_hair_base])

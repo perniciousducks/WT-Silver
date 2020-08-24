@@ -164,3 +164,11 @@ init python:
         def get_modname(self):
             """Returns a list of mods contained within the outfit group."""
             return list(set([i.get_modname() for i in self.group if i.is_modded()]))
+
+        def get_schedule(self):
+            """Returns a dictionary with the current schedule."""
+            return self.schedule
+
+        def set_schedule(self, **kwargs):
+            for k, v in kwargs.iteritems():
+                self.schedule[k] = v

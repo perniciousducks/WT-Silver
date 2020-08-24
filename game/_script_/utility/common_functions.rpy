@@ -144,9 +144,21 @@ init -1 python:
             renpy.set_physical_size(s)
 
     def make_revertable(obj):
-      if isinstance(obj, _list):
-        return [make_revertable(x) for x in obj]
-      elif isinstance(obj, _dict):
-        return dict([(make_revertable(k), make_revertable(v)) for (k,v) in obj.iteritems()])
-      else:
-        return obj
+        if isinstance(obj, _list):
+            return [make_revertable(x) for x in obj]
+        elif isinstance(obj, _dict):
+            return dict([(make_revertable(k), make_revertable(v)) for (k,v) in obj.iteritems()])
+        else:
+            return obj
+
+    def is_integer(s):
+        def zero(s):
+            return (len(s) > 1 and s.startswith("0"))
+
+        s = str(s)
+
+        if s and s[0] in ("-", "+"):
+            return (not zero(s[1:]) and s[1:].isdigit())
+        return (not zero(s) and s.isdigit())
+
+

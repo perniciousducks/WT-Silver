@@ -358,10 +358,10 @@ label slytherin_match:
     with d3
     pause 1
 
-    call ton_main("Oh, what a view! Much better than the one from the Hufflepuff stands!", "grin", "wide", "base", "L", xpos="far_left", ypos="head", flip="True")
+    call ton_main("Oh, what a view! Much better than the one from the Hufflepuff stands!", "grin", "wide", "base", "L", xpos="far_left", ypos="head", flip=True)
 
     m "Nice weather too."
-    call ton_main("Indeed!", "base", "wide", "base", "mid", xpos="far_left", ypos="head", flip="True")
+    call ton_main("Indeed!", "base", "wide", "base", "mid", xpos="far_left", ypos="head", flip=True)
 
     $ renpy.sound.play("sounds/thunder.ogg")
     call quidditch_stands(weather="overcast", tree_fire=True, rain=True, puddles=True)
@@ -403,14 +403,14 @@ label slytherin_match:
     #hide screen blktone
     #with d5
 
-    call ton_main("{size=-4}Do I hear some jealousy back there?{/size}", "grin", "narrow", "raised", "R", xpos="far_left", ypos="head", flip="True")
+    call ton_main("{size=-4}Do I hear some jealousy back there?{/size}", "grin", "narrow", "raised", "R", xpos="far_left", ypos="head", flip=True)
     call sna_main("{size=-4}Of course not... just a cough,{w=0.3} {cps=15}Nymphadora{/cps}.{/size}", "snape_03", ypos="head")
-    call ton_main("{size=-2}That's Tonks to you...{w=0.3} {i}dungeon dweller.{/i}{/size}", "open", "wide", "angry", "R", hair="angry", xpos="far_left", ypos="head", flip="True")
+    call ton_main("{size=-2}That's Tonks to you...{w=0.3} {i}dungeon dweller.{/i}{/size}", "open", "wide", "angry", "R", hair="angry", xpos="far_left", ypos="head", flip=True)
     call sna_main("Dungeon dw--", "snape_32", ypos="head")
     call sna_main("I'll give you a dungeon dweller in a minute you--", "snape_08", ypos="head")
 
     call her_main("Professor Tonks, your hair!", "soft", "base", "base", "L", flip=False, xpos="base", ypos="head")
-    call ton_main("Whoopsie...{w=0.5} Miss Granger, so glad to see you!", "base", "happyCl", "base", "L", hair="neutral", xpos="far_left", ypos="head", flip="True")
+    call ton_main("Whoopsie...{w=0.5} Miss Granger, so glad to see you!", "base", "happyCl", "base", "L", hair="neutral", xpos="far_left", ypos="head", flip=True)
     call sna_main("{size=-2}*Hmph*{/size}", "snape_31", ypos="head")
     call her_main("Of course, as you know I take my responsibilities seriously!", "open", "base", "angry", "L")
 
@@ -719,7 +719,7 @@ label slytherin_match:
 
     call sna_main("I'm surprised she didn't swallow that one - with how wide she was blabbing her mouth.", "snape_42", ypos="head")
     call sna_main("To think that liquid luck--", "snape_45")
-    call ton_main("{size=+5}What?{/size}", "scream", "shocked", "base", "stare", hair="neutral", cheeks="blush", ypos="head", flip="True", trans=vpunch_repeat)
+    call ton_main("{size=+5}What?{/size}", "scream", "shocked", "base", "stare", hair="neutral", cheeks="blush", ypos="head", flip=True, trans=vpunch_repeat)
     g4 "What the fuck is liquid luck?"
     call ton_main("You gave those brutes a luck potion?!", "mad", "base", "angry", "L", hair="angry", cheeks="blush")
     call sna_main("Well...", "snape_14")
@@ -1043,7 +1043,7 @@ label slytherin_match:
     pause .5
 
     $ renpy.sound.play("sounds/microphone_feedback.mp3")
-    call her_main("*Ahem*...", "base", "base", "base", "mid", xpos="290", ypos="base", flip="True", trans=dissolve)
+    call her_main("*Ahem*...", "base", "base", "base", "mid", xpos="290", ypos="base", flip=True, trans=dissolve)
     call her_main("{size=-4}Oh, these boobs are so heavy...{/size}", "disgust", "base", "worried", "down", cheeks="blush")
     call her_main("{size=-4}And why is this shirt so hot...{/size}", "soft", "base", "base", "down", cheeks="blush")
 

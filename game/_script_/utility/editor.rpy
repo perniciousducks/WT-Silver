@@ -83,9 +83,9 @@ init python:
             emote = "" if self.args["emote"] == None else "emote=\"{}\", ".format(self.args["emote"])
             face = "" if self.args["face"] == None else "face=\"{}\", ".format(self.args["face"])
 
-            xpos = "" if self.args["xpos"] == None else "xpos=\"{}\", ".format(self.args["xpos"])
-            ypos = "" if self.args["ypos"] == None else "ypos=\"{}\", ".format(self.args["ypos"])
-            flip = "" if self.args["flip"] == None else "flip=\"{}\", ".format(self.args["flip"])
+            xpos = "" if self.args["xpos"] == None else "xpos={}, ".format(self.args["xpos"])
+            ypos = "" if self.args["ypos"] == None else "ypos={}, ".format(self.args["ypos"])
+            flip = "" if self.args["flip"] == None else "flip={}, ".format(self.args["flip"])
 
             trans = "" if self.args["trans"] == None else "trans={}, ".format(self.args["trans"])
             animation = "" if self.args["animation"] == False else "animation={}".format(self.args["animation"])

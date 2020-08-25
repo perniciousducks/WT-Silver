@@ -192,7 +192,7 @@ label wardrobe(char_label):
                         if 'head' in wardrobe_categories:
                             $ char_active.wear("top", "bottom", "robe", "accessory")
 
-                    $ category_items = OrderedDict(sorted(wardrobe_subcategories.get(current_category).iteritems(), key=lambda x: wardrobe_subcategories_sorted.get(x[0], 0), reverse=True))
+                    $ category_items = OrderedDict(sorted(wardrobe_subcategories.get(current_category, {}).iteritems(), key=lambda x: wardrobe_subcategories_sorted.get(x[0], 0), reverse=True))
 
                     # Default subcategory
                     if category_items:

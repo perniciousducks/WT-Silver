@@ -647,21 +647,22 @@ screen wardrobe_outfit_menuitem(xx, yy):
                                 spacing 5
                                 for x in wardrobe_outfit_schedule:
                                     $ _ico = "interface/wardrobe/icons/outfits/"+x.lower()+".png"
-                                    $ _bool = str(menu_items[i].schedule[x.lower()])
+                                    $ _on = menu_items[i].schedule[x.lower()]
+                                    $ _yesno = "yes" if _on else "no"
 
                                     if x in ("Day", "Night"):
-                                        $ _tooltip = "Worn during the "+x+":\n{size=-4}"+_bool+"{/size}"
+                                        $ _tooltip = "Worn during the "+x+":\n{size=-4}"+_yesno+"{/size}"
                                     elif x in ("Rainy", "Cloudy", "Snowy"):
-                                        $ _tooltip = "Worn during "+x+" weather:\n{size=-4}"+_bool+"{/size}"
+                                        $ _tooltip = "Worn during "+x+" weather:\n{size=-4}"+_yesno+"{/size}"
 
                                     button:
                                         style "empty"
                                         xysize (25, 25)
-                                        background gray_tint(_ico)
+                                        background image_alpha(gray_tint(_ico))
                                         hover_background white_tint(_ico)
                                         selected_background _ico
                                         tooltip _tooltip
-                                        action [SelectedIf(menu_items[i].schedule[x.lower()] == True), Return(["tagoutfit", menu_items[i], x.lower()])]
+                                        action [SelectedIf(_on), Return(["tagoutfit", menu_items[i], x.lower()])]
 
                     if menu_items[i].is_modded():
                         textbutton "{color=#00b200}M{/color}":

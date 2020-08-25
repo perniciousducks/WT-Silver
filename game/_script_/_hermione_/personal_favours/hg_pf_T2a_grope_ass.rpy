@@ -668,7 +668,7 @@ label hg_pf_grope_ass_T4_back:
     m "I meant not having to look at me..."
     call her_main("Oh...{w} it doesn't matter to me how you want it...", "soft", "base", "base", "R", cheeks="blush")
     m "Is that so?"
-    call her_main("Of cours-", "soft", "closed", "base", "mid", cheeks="blush")
+    call her_main("Of cours--", "soft", "closed", "base", "mid", cheeks="blush")
     call her_main("!!!", "clench", "wide", "base", "stare", cheeks="blush")
     call nar(">As your hands spread out, you suddenly tighten them firmly around Hermione's Butt cheeks...")
     g9 "..."

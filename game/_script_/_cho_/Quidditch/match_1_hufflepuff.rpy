@@ -1086,7 +1086,7 @@ label hufflepuff_match_return:
     g4 "{size=+10}IT WASN'T ME!{/size}"
     m "..........."
     call cho_main("*huh*?{w=0.5} Are you okay, [cho_genie_name]?", "soft", "narrow", "base", "mid")
-    m "Wha-"
+    m "Wha--"
     g4 "Of course I am!"
     call cho_main("...", "annoyed", "narrow", "raised", "R")
     call cho_main("If you say so...", "annoyed", "narrow", "base", "mid")

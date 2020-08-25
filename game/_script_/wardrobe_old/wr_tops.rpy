@@ -468,7 +468,7 @@ label equip_top:
                     # if her_whoring < 5:
                         # call her_main("My pullover? But that's muggle clothing?", "angry", "wink", "base", "mid")
                         # m "So what? Didn't you already wear it before?"
-                        # call her_main("Well yes, but that was an exception. Because it was raining and-", "open", "base", "base", "R")
+                        # call her_main("Well yes, but that was an exception. Because it was raining and--", "open", "base", "base", "R")
                         # m "Pull it over already..."
                         # call her_main("Fine... Just give me a second...", "annoyed", "narrow", "angry", "R")
                     # else:
@@ -646,7 +646,7 @@ label equip_top:
             # #Rocker Top #Done
             # elif top_choice == "top_rocker":
                 # if her_whoring < 5:
-                    # m "Could you wear this top-"
+                    # m "Could you wear this top--"
                 # else:
                     # m "Could you wear this top for me?"
 
@@ -707,7 +707,7 @@ label equip_top:
                 # else: #Fail
                     # if her_whoring < 5:
                         # call her_main("What? Oh what's this?", "soft", "base", "base", "mid")
-                        # m "It's a fishnet to-"
+                        # m "It's a fishnet to--"
                         # call her_main("Oh, I get it!", "grin", "narrow", "worried", "down")
                         # call her_main("This isn't really a hobby I considered pursuing, [genie_name]...", "open", "base", "base", "R")
                         # call her_main("But if you say it will help me with my grades then I'll try my best.", "soft", "narrow", "worried", "down")
@@ -717,7 +717,7 @@ label equip_top:
                         # m "(Wait, does she want to go fishing with it...?)"
                     # else:
                         # call her_main("Another one of your way too revealing tops?", "disgust", "base", "angry", "mid")
-                        # g9 "Yes, glad you noticed! Now if you don't mind just-"
+                        # g9 "Yes, glad you noticed! Now if you don't mind just--"
                         # call her_main("I'm not going to wear it! You can see everything in this! My nipples would poke right through it!!!", "scream", "closed", "angry", "mid")
                         # m "I wouldn't mind if they did..."
                         # call her_main("That's just... typical!", "clench", "base", "angry", "mid")

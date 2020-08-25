@@ -429,7 +429,7 @@ label chit_chat:
     if her_whoring >= 22:
         if one_of_ten == 1:
             call her_main("If you ever need some \"help\", sir, please let me know.", "open_wide_tongue", "base", "base", "R",cheeks="blush")
-            "-She suggestively jerks her hand-"
+            ">She suggestively jerks her hand"
             call her_main("", "base", "base", "base", "R",cheeks="blush")
 
         elif one_of_ten == 2:

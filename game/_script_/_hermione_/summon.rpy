@@ -831,7 +831,7 @@ label hermione_change:
             call her_main("\"That taste, the texture..\"", "open", "narrow", "annoyed", "up",cheeks="blush")
             call her_main("\"..So warm, sticky and...\"", "silly", "narrow", "base", "up",cheeks="blush")
             m "Are you okay there, [temp_name]?"
-            call her_main("Wha-", "mad", "wide", "base", "stare")
+            call her_main("Wha--", "mad", "wide", "base", "stare")
             call her_main("Of course I am!", "smile", "base", "base", "R",cheeks="blush")
     elif temp_name == "Slytherin Whore":
         if her_whoring >=19 and her_whoring < 21:

@@ -37,12 +37,12 @@ label tentacle_scene_intro:
         m "At the highest point is where I'm hidden..."
         g4 "(fuck, it's a riddle...{w=0.4} Guess I deserved that...)"
 
-        m "At the highest point is where I'm hidden-"
-        m "A place where you will need this key-"
-        m "To use this scroll that is forbidden-"
+        m "At the highest point is where I'm hidden--"
+        m "A place where you will need this key--"
+        m "To use this scroll that is forbidden--"
         m "You'll need to take a piece of me..."
 
-        m "Key... what k-"
+        m "Key... what k--"
         $ renpy.play('sounds/magic1.ogg')
         show screen white
         with d9

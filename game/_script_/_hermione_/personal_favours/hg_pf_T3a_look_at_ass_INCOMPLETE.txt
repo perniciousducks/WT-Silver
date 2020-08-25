@@ -647,7 +647,7 @@ label hg_pr_strip_T4_grope_rear:
 
     call nar(">You pull the cheeks apart in opposite directions and then squish them together...")
 
-    call her_main("Ah...{heart} [genie_name], I really need to go... before I-", "base", "narrow", "base", "up", cheeks="blush")
+    call her_main("Ah...{heart} [genie_name], I really need to go... before I--", "base", "narrow", "base", "up", cheeks="blush")
 
     if daytime:
         call her_main("am late for class... they're about to start...", "open", "base", "base", "R", cheeks="blush")

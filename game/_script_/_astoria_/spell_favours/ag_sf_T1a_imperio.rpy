@@ -140,7 +140,7 @@ label ag_se_imperio_sb_E1:
 
     call nar(">You keep stroking your rock-hard cock whilst marvelling at Susan's heaving chest.")
     g4 "(So big, soft and squishy...)"
-    call sus_main("Sir, what are you?-","upset","base","worried","down")
+    call sus_main("Sir, what are you?--","upset","base","worried","down")
     call ast_main("Alright, I think you're enjoying this a little too much!","clench","base","angry","mid")
     m "Just give me a minute..."
     pause.2

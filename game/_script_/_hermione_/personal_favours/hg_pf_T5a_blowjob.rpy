@@ -268,7 +268,7 @@ label hg_pf_blowjob_T6_intro_E1:
     m "Tell me, [hermione_name]..."
     g9 "Have you been behaving yourself lately?"
     call her_main("Me? Of course, [genie_name].", "open", "base", "base", "mid")
-    call her_main("I'm always trying to behave my best at school-", "open", "base", "base", "R")
+    call her_main("I'm always trying to behave my best at school--", "open", "base", "base", "R")
 
     call her_main("Oh...{w} I mean... No, Sir!", "soft", "narrow", "annoyed", "up")
     call play_music("playful_tension") # SEX THEME.

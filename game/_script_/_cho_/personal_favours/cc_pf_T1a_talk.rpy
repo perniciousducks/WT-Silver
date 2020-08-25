@@ -972,7 +972,7 @@ label cc_pf_talk_T2_intro_E2:
     pause .8
 
     call cho_main("", "clench", "wide", "base", "mid", cheeks="blush")
-    g4 "Nothing, I was just-"
+    g4 "Nothing, I was just--"
     call cho_main("Don't tell me you were...", "disgust", "happyCl", "worried", "mid", cheeks="heavy_blush")
     g4 "I was merely scratching my leg!"
     call cho_main("Don't lie to me, [cho_genie_name]!{w=0.6} I know exactly what you were doing!", "clench", "narrow", "angry", "mid")

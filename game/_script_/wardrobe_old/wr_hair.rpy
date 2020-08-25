@@ -414,7 +414,7 @@ label change_hair:
             # g9 "Why don't you come over here and I give your hair some lotion!"
             # call her_main("[genie_name] you should know that I already used some rather expensive lotion this morning and--", "open", "closed", "base", "mid")
             # m "I just want to shower them in my cum, girl..."
-            # call her_main("Oh-", "soft", "base", "base", "mid")
+            # call her_main("Oh--", "soft", "base", "base", "mid")
             # call her_main("...", "soft", "base", "base", "R",cheeks="blush")
             # call her_main("(What a great idea.)", "base", "happyCl", "base", "mid")
             # call her_main("Maybe next time, [genie_name].", "smile", "base", "base", "R")

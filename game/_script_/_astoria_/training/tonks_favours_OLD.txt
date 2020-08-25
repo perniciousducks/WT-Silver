@@ -228,7 +228,7 @@ label astoria_tonks_5:
     call nar(">Astoria walks into your office in a new skirt, her face a mess from crying...")
 
     ast "I want you to fire Tonks!"
-    m "What-"
+    m "What--"
     ast "FIRE HER!!!"
     m "I'm not sure I can do that... don't forget about Azkaban."
     ast "She's the one that deserves to be locked away! She's an evil, old witch!"

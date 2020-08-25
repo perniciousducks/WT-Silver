@@ -55,7 +55,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
             m "Wanna fool around?"
             call her_main("Oh thank goodness... I thought you were going to murder me for a second there...", "base", "happyCl", "base", "mid",trans=hpunch)
             m "What? How could you think such a thing!"
-            m "I don't know if I'll be able to-"
+            m "I don't know if I'll be able to--"
             call her_main("How about I make it up to you with my mouth then, *hmmm*?", "base", "narrow", "base", "mid")
             m "Done."
             $ forest_BJ_progress = 2

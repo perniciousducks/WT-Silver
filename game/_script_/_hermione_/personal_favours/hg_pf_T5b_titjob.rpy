@@ -100,7 +100,7 @@ label hg_pf_titjob_T5_intro_E1:
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "Have you ever given someone a \"titjob?\""
     call her_main("A \"titjob?\"", "annoyed", "narrow", "annoyed", "mid")
-    m "It's where you wrap those \"fat tits\" of yours around a cock,..."
+    m "It's where you wrap those {i}fat tits{/i} of yours around a cock..."
     g9 "And then shake them up and down, up and--"
     call her_main("[genie_name]!", "angry", "base", "angry", "mid")
     m "Is that a yes?"

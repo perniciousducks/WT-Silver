@@ -13,7 +13,7 @@ label tonks_intro_E1:
     "*Knock-knock-knock*"
     m "(Can't I even have one quiet day here?...)"
     m "Who is it?"
-    ton "It's Tonks-"
+    ton "It's Tonks--"
     ton "*Ugh*..."
     m "..................."
     ton "I meant, Nymphadora Tonks, Sir."

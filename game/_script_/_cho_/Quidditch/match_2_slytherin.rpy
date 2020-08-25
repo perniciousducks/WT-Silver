@@ -34,7 +34,7 @@ label start_slytherin_match:
             call cho_main("sir?", "upset", "base", "raised", "mid")
             g9 "Show me what you got, I want to see what you got!"
             call cho_main("Sir, are you okay?", "open", "narrow", "raised", "mid")
-            m "Show me-"
+            m "Show me--"
         "\"Show me your tits!\"":
             call cho_main("What?", "upset", "base", "raised", "mid")
             g9 "For luck!"
@@ -45,7 +45,7 @@ label start_slytherin_match:
     call cho_main("Most likely...", "annoyed", "base", "worried", "mid")
     g4 "(This might be just what we need!)"
     call cho_main("Professor Trelawney told us to wear our robes tomorrow.", "soft", "base", "base", "R")
-    call cho_main("According to her, there are some heavy rain-clouds approaching...", "open", "narrow", "raised", "mid")
+    call cho_main("According to her, there are some heavy rain clouds approaching...", "open", "narrow", "raised", "mid")
     call cho_main("But that's just Trelawney... She can be a bit inconsistent with her weather forecasts...", "soft", "base", "worried", "down")
     call cho_main("Well, she's quite inconsistent with everything, if we're honest...", "annoyed", "narrow", "base", "R")
     g9 "Let's hope she's right this time!"

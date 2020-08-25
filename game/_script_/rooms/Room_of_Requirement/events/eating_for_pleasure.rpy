@@ -107,7 +107,7 @@ label eating_for_pleasure:
     with d2
     "pizza Hu-*shoo*lut!!!{fast}" with hpunch
     pause 1.0
-    hat "Did you say Pizza-"
+    hat "Did you say Pizza--"
     $ renpy.sound.play("sounds/microphone_feedback.mp3")
     "*static*... Welcome to Pizza slut, may I take your order?"
     hat "Well I'll be damned..."

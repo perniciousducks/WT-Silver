@@ -779,7 +779,7 @@ label cc_pr_manipulate_boys_T3_twins:
         m "I have no clue what you're talking about."
     call cho_main("...", "disgust", "base", "base", "down")
     call cho_main("Don't you have any spare robes or anything?", "open", "base", "worried", "mid")
-    m "I suppo-"
+    m "I suppo--"
 
     menu:
         m "(Actually, I might not get another opportunity like this...)"

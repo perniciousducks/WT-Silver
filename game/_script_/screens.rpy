@@ -17,7 +17,8 @@ screen say(who, what, side_image=None):
     if hkey_chat_hidden:
         use invisible_button(action=SetVariable("hkey_chat_hidden", False))
     else:
-        use invisible_button(action=Function(ui.saybehavior))
+        if not renpy.get_screen("choice"):
+            use invisible_button(action=Function(ui.saybehavior))
 
     if side_image:
         add side_image yalign 1.0 yanchor 1.0 zoom 0.5

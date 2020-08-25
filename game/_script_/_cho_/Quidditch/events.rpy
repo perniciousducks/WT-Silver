@@ -505,7 +505,7 @@ label cho_quid_E6:
     g4 "..."
     m "Wait, so you didn't quit?"
     call her_main("No! Why would I be here telling you this if I did?", "angry", "base", "angry", "mid")
-    m "I guess you would've had to give me a weeks notice..."
+    m "I guess you would've had to give me a two weeks notice..."
     call her_main("You tell me, you're the one that appointed me.", "annoyed", "narrow", "annoyed", "mid")
     m "Oh, right."
     call her_main("And since I didn't sign anything...", "soft", "closed", "base", "mid")
@@ -571,7 +571,7 @@ label cho_quid_E7:
 
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
-    m "[hermione_name], may I change your mind about your role in the Slytherin match?"
+    m "[hermione_name], could I change your mind about your role in the Slytherin match?"
     call her_main("My answer is still no, [genie_name].", "open", "closed", "base", "mid")
     g4 "Come on!"
     call her_main("That's my final answer.", "annoyed", "narrow", "angry", "mid")
@@ -603,7 +603,7 @@ label cho_quid_E7:
 
     m "..."
     call her_main("I wont step a foot on that podium, [genie_name].", "base", "base", "base", "mid")
-    call her_main("There nothing you could tempt me with to change my mind.", "base", "base", "base", "mid")
+    call her_main("There's nothing you could tempt me with that would change my mind.", "base", "base", "base", "mid")
     m "Well then..."
     g4 "(No more mister nice guy...)"
     call her_main("[genie_name]?", "soft", "wink", "base", "mid")
@@ -617,11 +617,10 @@ label cho_quid_E7:
         "\"I heard Cho has a crush on you!\"":
             $ d_flag_01 = True
             call her_main("She has a--{w=0.5} What?", "open", "wide", "base", "stare")
-            pass
+
         "\"I heard you have a crush on Cho!\"":
             $ d_flag_01 = False
             call her_main("But--{w=0.3} That's not true!", "open", "wide", "base", "mid")
-            pass
 
     call her_main("That's a lie!", "clench", "base", "angry", "mid") # angry
     call her_main("Not even Cho would agree to this!", "open", "base", "angry", "mid")
@@ -638,6 +637,7 @@ label cho_quid_E7:
     pause .2
 
     if her_tier < 4: # Hermione changes into her school outfit
+        # TODO Does this even make sense? She's supposed to be comfortable enough to wear her clothes around the school anyway
         call nar(">While Hermione hastily puts on some less revealing clothes.")
         $ her_outfit_last.save()
         $ hermione.equip(her_outfit_default)
@@ -665,7 +665,7 @@ label cho_quid_E7:
     call her_main("...", "annoyed", "base", "angry", "mid", cheeks="blush")
     call cho_main("How can I be of help?", "base", "base", "base", "mid")
     m "I have very good news for you, Miss Chang."
-    m "Miss Granger and I were just discussing -- about who should commentate the next Squidditch game."
+    m "Miss Granger and I were just discussing who should commentate the next Squidditch game."
     call cho_main("Oh, am I sensing a blackmail situation?", "crooked_smile", "base", "base", "mid")
     call her_main("Blackmailing?!{w=0.5} Me?", "open", "wide", "base", "stare") # shocked
     call cho_main("", "annoyed", "narrow", "base", "L")
@@ -967,7 +967,7 @@ label cho_quid_E9:
     call sna_main("I don't know what you're talking about...","snape_47") #Smirk
     g4 "You little weasel..."
     call sna_main("Ha! Do you have another trick up your sleeve?","snape_20")
-    call sna_main("What's it gonna be? An even shorter skirt? Prohibit her of wearing panties?","snape_13")
+    call sna_main("What's it gonna be? An even shorter skirt? Prohibit her from wearing panties?","snape_13")
     call sna_main("Well, we'll see during the game if it has any effect...","snape_46")
     g4 "*Grrrrr*!..."
     g4 "Get your team back on that pitch, you coward!"

@@ -8,7 +8,7 @@ label hg_anal_sex_1:
     with d3
     call bld
     m "[hermione_name]..."
-    call her_main("[genie_name]..?", "annoyed", "squint", "base", "mid", xpos="base", ypos="head")
+    call her_main("[genie_name]...?", "annoyed", "squint", "base", "mid", xpos="base", ypos="head")
     m "How familiar you are with the term \"Anal Sex\"?"
     call her_main("What?!", "soft", "wide", "worried", "shocked")
     m "I asked you a question..."
@@ -31,7 +31,7 @@ label hg_anal_sex_1:
     call her_main("Ouch!", "mad", "happyCl", "worried", "mid",tears="soft_blink")
     m "Just try to loosen up a little, would you?"
     call her_main("I'm trying!", "angry", "base", "base", "mid",tears="soft")
-    m "Okay, what if I do this..?"
+    m "Okay, what if I do this...?"
     call her_main("Ouch! What are you doing, [genie_name]?", "mad", "happyCl", "worried", "mid",tears="soft_blink")
     m "Yeah, this won't work either..."
     m "*Hmm*..."

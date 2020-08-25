@@ -101,7 +101,7 @@ label snape_hangout:
 label ss_he_wine_intro:
     call bld
     m "Look what I've got!"
-    call sna_main("*Hmm*..?","snape_05", ypos="head")
+    call sna_main("*Hmm*...?","snape_05", ypos="head")
     call sna_main("Let me see...")
     pause.1
 

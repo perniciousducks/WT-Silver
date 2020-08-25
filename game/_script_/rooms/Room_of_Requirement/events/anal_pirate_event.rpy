@@ -65,7 +65,7 @@ label anal_pirate_event:
 
 label anal_pirate_event_1: # Call label
     m "lass... I'd like you to roleplay with me."
-    call her_main("captain..?", "annoyed", "squint", "base", "mid")
+    call her_main("captain...?", "annoyed", "squint", "base", "mid")
     m "How familiar ye be wit' th' term \" Swabbing ye poop deck\"?"
 
     call her_main("Ninety galleon points...", "annoyed", "narrow", "annoyed", "mid")
@@ -121,7 +121,7 @@ label anal_pirate_event_common_1_2: # Call label
     call her_main("Ouch!", "mad", "happyCl", "worried", "mid",tears="soft_blink")
     m "Jus' try t' loosen up a wee, would ye?"
     call her_main("I be tryin'!", "angry", "base", "base", "mid",tears="soft")
-    m "Aye, wha' if I do this..?"
+    m "Aye, wha' if I do this...?"
     $ renpy.play('sounds/boing03.mp3')
     call her_main("Ouch! Wha' are ye doin', captain?", "mad", "happyCl", "worried", "mid",tears="soft_blink")
     m "Aye, this won't work either..."

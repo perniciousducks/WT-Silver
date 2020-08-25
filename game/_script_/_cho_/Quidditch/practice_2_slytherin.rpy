@@ -188,20 +188,20 @@ label cc_st_return:
             call cho_main("Good.", "base", "base", "base", "mid")
         else:
             call cho_main("I suppose...", "annoyed", "base", "base", "R")
-        m "The match looms ever so closer... I hope you're ready."
+        m "The match looms ever closer... I hope you're ready."
         call cho_main("You bet your ass I am!", "smile", "base", "angry", "mid")
         m "..."
         call cho_main("Don't even say it...", "upset", "base", "angry", "mid")
         m "I... wasn't--"
         call cho_main("Sure you weren't...", "soft", "closed", "angry", "mid")
         call cho_main("I'll head off to bed then.", "open", "base", "base", "R")
-        g4 "{size=+6}*MHHMMMM*{/size}" #Big text
+        g4 "{size=+6}*MHHMMMM*{/size}"
 
         call cho_walk(action="leave")
 
         g4 "*NNNNGH!!!*"
-        g9 "You'll be betting your ass on it!" #Big text
-        cho "{size=-4}I heard that!{/size}"#Cho outside door (small text)
+        g9 "{b}You'll{/b} be betting your ass on it!"
+        cho "{size=-4}I heard that!{/size}" # Cho outside the door
         m "Dammit..."
 
         $ cho.equip(cho_outfit_last) # Equip last worn clothes

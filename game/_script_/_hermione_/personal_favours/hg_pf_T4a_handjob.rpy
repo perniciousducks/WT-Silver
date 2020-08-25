@@ -707,7 +707,7 @@ label hg_pf_handjob_2:
             call her_main("Among other things...", "smile", "happyCl", "base", "mid", emote="happy")
             m "So those girls of yours, they know a lot about such things?"
             call her_main("Actually, yes. I was surprised myself.", "shock", "wide", "base", "stare")
-            call her_main("All sorts of weird sexual things seem to be happening lately in our school...", "grin", "base", "base", "R")
+            call her_main("All sorts of weird sexual things seem to be happening in our school lately...", "grin", "base", "base", "R")
             call her_main("Can't say I approve of that...")
             call her_main("But they did teach me quite a few... tricks.", "base", "happyCl", "base", "mid")
             m "Really? Like what?"

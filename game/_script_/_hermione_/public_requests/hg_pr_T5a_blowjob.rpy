@@ -258,7 +258,7 @@ label hg_pr_blowjob_T6_intro_E1:
     call play_music("playful_tension") # Music
     call her_main("Today I did something I wanted to do for such a long time now...", "base", "narrow", "base", "up")
     her "But never could muster up enough courage for..."
-    m "*Hmm*..?"
+    m "*Hmm*...?"
     call her_main("Today I sucked off my two best friends in the entire world!", "soft", "narrow", "annoyed", "up")
     call her_main("And it was every bit as exciting as I thought it would be.", "base", "narrow", "worried", "down")
     call her_main("I made their cocks all sloppy with saliva...", "grin", "narrow", "base", "dead")

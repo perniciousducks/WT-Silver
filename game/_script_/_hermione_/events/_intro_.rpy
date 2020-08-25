@@ -376,7 +376,7 @@ label ss_he_hermione_E1:
         call sna_main("You... y-you...","snape_31")
         call sna_main("......","snape_40")
         call sna_main("Ha.... ha-ha... HA-HA-HA!!!","snape_28")
-        m "Wha-..? What did I say?"
+        m "Wha-...? What did I say?"
         call sna_main("Ha-ha-ha! You are amazing!","snape_42")
         call sna_main("Are all genies so... wonderfully nihilistic?","snape_37")
         m "Yeah... We immortals tend to not give a fuck."
@@ -1060,7 +1060,7 @@ label hermione_intro_E6:
     $ renpy.music.set_pause(True, channel="music")
     call her_main("I want you to buy a favour from me!", "open", "happyCl", "worried", "mid")
     call her_main("", "normal", "happyCl", "worried", "mid")
-    g4 "(What in the..?!)"
+    g4 "(What in the...?!)"
     $ renpy.music.set_pause(False, channel="music")
     $ renpy.music.set_volume(1.0, 1.0)
 
@@ -1069,7 +1069,7 @@ label hermione_intro_E6:
             call her_main("*Ehm*... I'm not sure...", "angry", "wink", "worried", "mid", emote="sweat")
             her "The kind that would gain our house additional points..."
             call her_main("I could write an essay for you or...", "open", "base", "worried", "R")
-            call her_main("Or maybe clean your tower..?", "angry", "wink", "worried", "mid", emote="sweat")
+            call her_main("Or maybe clean your tower...?", "angry", "wink", "worried", "mid", emote="sweat")
             m "{size=-4}(Clean my tower? Heh... There's gotta be dirty joke in there somewhere...){/size}"
             m "Well, alright then, I think we can figure something out."
         "\"Well, if you insist...\"":
@@ -1077,7 +1077,7 @@ label hermione_intro_E6:
         "\"I don't think so, miss Granger.\"":
             call her_main("B-but... We need the points...", "open", "base", "worried", "mid")
             call her_main("Professor, please, I am really desperate...", "open", "squint", "low", "mid")
-            m "Desperate you say..?"
+            m "Desperate you say...?"
             m "Well, alright..."
 
     call her_main("Really?", "silly", "base", "base", "mid")

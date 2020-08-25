@@ -598,11 +598,11 @@ label cc_pr_manipulate_boys_T2_intro_E3:
     call cho_main("They questioned me...", "annoyed", "base", "worried", "R")
     call cho_main("About what I'm up to. What my plan is. Why I'm acting...{w=0.8} strangely.", "soft", "narrow", "worried", "downR", cheeks="blush")
     m "Strangely? In what way?"
-    call cho_main("Typically, girls from other houses doesn't talk to boys from Slytherin...", "soft", "happyCl", "worried", "mid", cheeks="blush")
+    call cho_main("Typically, girls from other houses don't talk to boys from Slytherin...", "soft", "happyCl", "worried", "mid", cheeks="blush")
     call cho_main("Not to mention flirt with them!", "mad", "narrow", "worried", "down", cheeks="heavy_blush")
     m "So? What did you do?"
     call cho_main("I panicked, [cho_genie_name]!", "clench", "happyCl", "worried", "mid", cheeks="heavy_blush")
-    call cho_main("I tried to get out of the situation, although in my haste the only solution I could think of was to-...", "soft", "narrow", "base", "downR", cheeks="blush")
+    call cho_main("I tried to get out of the situation, although in my haste the only solution I could think of was to...", "soft", "narrow", "base", "downR", cheeks="blush")
     m "Yes?"
     call cho_main("Flash them, Sir. I flashed them my breasts!", "soft", "narrow", "worried", "mid", cheeks="blush")
     g9 "Nice!"

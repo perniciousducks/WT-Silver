@@ -488,7 +488,7 @@ label hg_pr_flirt_teacher_T3_E1: # Filch
     m "*huh*?"
     call her_main("Well, aren't you going to do something about this?", "open", "base", "base", "mid")
     m "Well..."
-    call her_main("What if I am not the first victim..?", "angry", "base", "angry", "mid")
+    call her_main("What if I am not the first victim...?", "angry", "base", "angry", "mid")
     her "Some unfortunate freshman could be traumatised for life!"
     m "And who wouldn't be really?"
     call her_main("Does this mean you will take action, [genie_name]?", "open", "base", "base", "mid")

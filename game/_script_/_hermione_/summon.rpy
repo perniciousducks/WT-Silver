@@ -491,10 +491,10 @@ label hermione_talk:
             # After talking to Snape.
             jump cho_intro_E3
 
-        "-Ask Hermione to commentate the game-" (icon="interface/icons/small/quidditch.png") if cho_tier == 1 and cho_quid.E3_complete and not cho_quid.E4_complete:
+        "-Ask her to commentate the game-" (icon="interface/icons/small/quidditch.png") if cho_tier == 1 and cho_quid.E3_complete and not cho_quid.E4_complete:
             jump cho_quid_E4
 
-        "-Ask Hermione to commentate the game again...-\n{size=-5}again...{/size}" (icon="interface/icons/small/quidditch.png") if cho_tier == 2 and cho_quid.E6_complete and not cho_quid.E7_complete:
+        "-Ask her to commentate the game again-\n{size=-5}again...{/size}" (icon="interface/icons/small/quidditch.png") if cho_tier == 2 and cho_quid.E6_complete and not cho_quid.E7_complete:
             jump cho_quid_E7
 
         # General.

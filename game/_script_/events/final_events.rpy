@@ -620,13 +620,13 @@ label ball_quest_E4:
     m "So the issue has been resolved then?"
     call her_main("Not really...", "open", "base", "worried", "mid")
     call her_main("Not at all actually...", "annoyed", "narrow", "angry", "R")
-    m "*Hmm*..?"
+    m "*Hmm*...?"
     call her_main("But that is not a big deal...", "annoyed", "narrow", "worried", "down")
     her "I'm just overreacting..."
 
     call play_music("despair")
     call her_main("I won't be able to attend the ball this year... so what?", "annoyed", "narrow", "worried", "down")
-    call her_main("I spent countless hours with organizing the event...", "normal", "happyCl", "worried", "mid")
+    call her_main("I spent countless hours organising the event...", "normal", "happyCl", "worried", "mid")
     call her_main("I worked so hard... and...", "open", "base", "worried", "mid", tears="soft")
     call her_main("And now I will not even be able to... to... *Sob*!", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     call her_main("To... *SOB*!", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")

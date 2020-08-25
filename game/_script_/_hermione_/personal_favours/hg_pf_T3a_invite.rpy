@@ -56,7 +56,7 @@ label hg_pf_strip_T4_snape:
         call her_main("{size=-5}(Which I have oh so little left for you...){/size}", "normal", "squint", "angry", "mid")
         call her_main("I refuse to degrade myself for professor Snape's amusement!", "scream", "closed", "angry", "mid")
         m "No, no, you got it all wrong, [hermione_name]."
-        call her_main("*Hmm*..?", "soft", "base", "base", "mid")
+        call her_main("*Hmm*...?", "soft", "base", "base", "mid")
         m "I want to prove that professor Snape is dirty, and I need your help."
         call her_main("!!!", "shock", "wide", "base", "stare")
         m "Yes, I want to catch him in the act!"

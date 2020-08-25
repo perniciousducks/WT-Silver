@@ -301,12 +301,12 @@ label hermione_summon_setup:
             call her_chibi("stand","mid","base")
             with d3
 
+            call play_music("hermione")
+
             call her_main("Hello, [genie_name].", "open", "base", "base", "R", xpos="base", ypos="base", trans=d3)
             call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
             pause 1.0
             m "You look...{w=0.1} different."
-
-            call play_music("hermione")
 
             call tutorial("schedule")
 

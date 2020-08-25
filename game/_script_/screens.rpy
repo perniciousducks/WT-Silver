@@ -15,7 +15,9 @@ screen say(who, what, side_image=None):
     use hotkeys_say
 
     if hkey_chat_hidden:
-        button style "empty" action SetVariable("hkey_chat_hidden", False)
+        use invisible_button(action=SetVariable("hkey_chat_hidden", False))
+    else:
+        use invisible_button(action=Function(ui.saybehavior))
 
     if side_image:
         add side_image yalign 1.0 yanchor 1.0 zoom 0.5

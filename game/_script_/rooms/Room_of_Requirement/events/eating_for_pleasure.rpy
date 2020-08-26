@@ -94,7 +94,7 @@ label eating_for_pleasure:
     m "*Cough* *Cough*"
     hat "Say the name!"
     $ renpy.play('sounds/sniff.mp3')
-    m "*a-* Pi- *ah-a*"
+    m "*ah* Piz-- *ah-a*"
     $ renpy.play('sounds/sniff.mp3')
     pause 0.5
     $ renpy.play('sounds/sniff.mp3')
@@ -105,9 +105,9 @@ label eating_for_pleasure:
     pause 0.4
     call gen_chibi("stand_alt")
     with d2
-    "pizza Hu-*shoo*lut!!!{fast}" with hpunch
+    "Pizza Hu--*shoo*lut!!!{fast}" with hpunch
     pause 1.0
-    hat "Did you say Pizza--"
+    hat "Did you say Pizza--?"
     $ renpy.sound.play("sounds/microphone_feedback.mp3")
     "*static*... Welcome to Pizza slut, may I take your order?"
     hat "Well I'll be damned..."

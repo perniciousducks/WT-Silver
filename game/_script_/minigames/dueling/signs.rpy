@@ -74,7 +74,7 @@ label magic_tutorial:
     $ _trash.shape = tutorial_shape
     $ test_sign.children.append(_trash)
     $ test_sign.force_redraw()
-    "Magician" "The closer you get to the original shape the more points you gain which translates to higher spell damage your pokem-... subordinate student will deal to their opponent."
+    "Magician" "The closer you get to the original shape the more points you gain which translates to higher spell damage your pokem-- subordinate student will deal to their opponent."
     "Magician" "Now try drawing a shape with your mouse and score at least 50%%, unless you want to be stuck in this tutorial forever."
 
     label .in_tutorial:

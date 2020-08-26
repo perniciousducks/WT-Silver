@@ -112,10 +112,7 @@ label slytherin_match:
         "\"Come in...\"":
             pass
 
-    call ton_walk(action="enter")
-    with d3
-
-    call ton_walk("desk", "base")
+    call ton_walk("desk", "base", action="enter")
 
     call play_music("tonks")
     call ton_main("Hi, [ton_genie_name].", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=d3)
@@ -129,7 +126,7 @@ label slytherin_match:
     call ton_main("So, is Hermione going to show up as well?", "soft", "wide", "shocked", "mid")
     m "Who knows with her, honestly..."
     call ton_main("In that case, may I be allowed to accompany you?", "base", "base", "base", "mid") #sad
-    call ton_main("I'd love to be able to watch her-{w} The game from the commentator booth.", "clench", "narrow", "raised", "R")
+    call ton_main("I'd love to be able to watch her--{w} The game from the commentator booth.", "clench", "narrow", "raised", "R")
     g9 "Of course! I'd be delighted to have you!"
     call ton_main("Thank you, [ton_genie_name].{heart}", "base", "happyCl", "base", "mid", hair="happy")
     call ton_main("Are we to expect another great performance this time around?", "horny", "narrow", "base", "downR", hair="neutral")
@@ -388,7 +385,7 @@ label slytherin_match:
     with d3
     pause .1
 
-    call her_main("Oh- hello, Professor Tonks!", "soft", "base", "base", "L", flip=False, xpos="base", ypos="head")
+    call her_main("Oh, hello, Professor Tonks!", "soft", "base", "base", "L", flip=False, xpos="base", ypos="head")
     pause 1.0
     $ renpy.sound.play("sounds/MaleClearThroat.mp3")
     call sna_main("*ahem*", "snape_09", ypos="head")

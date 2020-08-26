@@ -30,7 +30,7 @@ init python:
             x = self.x + self.padding[0]
             y = self.y + self.padding[1]
             if x + self.width > config.screen_width:
-                x = self.x- self.width - self.padding[0]
+                x = self.x - self.width - self.padding[0]
             if y + self.height > config.screen_height:
                 y = self.y - self.height - self.padding[1]
 

@@ -52,7 +52,7 @@ label cc_pr_spy_boys_start:
         call cho_main("But I was...", "mad", "base", "raised", "mid")
         g9 "..."
         call cho_main("Yes... Merlin's beard.", "soft", "narrow", "base", "downR")
-        call cho_main("What is today's assig-...{w=0.4} mission then?", "open", "base", "base", "mid")
+        call cho_main("What is today's assign--{w=0.4} mission then?", "open", "base", "base", "mid")
         m "Today's mission, if you choose to accept it..."
         m "And by choose I mean there's not really much choice in the matter."
         call cho_main("...", "normal", "narrow", "base", "mid") #rolls eyes, bit pissed off

@@ -67,7 +67,7 @@ label equip_bra:
                     # if her_whoring < 5:
                         # call her_main("A bra?", "shock", "wide", "worried", "shocked")
                         # call her_main("Why on earth would you buy me a bra, [genie_name]?", "disgust", "narrow", "worried", "down")
-                        # m "So you can... uhm... wear it?"
+                        # m "So you can... *uhm*... wear it?"
                         # call her_main("Wear it? Are you out of your mind?", "angry", "base", "angry", "mid")
                         # call her_main("I'm your student! Don't ever request something like that again!", "angry", "base", "angry", "mid")
                         # m "Fine. Forget about it..."
@@ -191,7 +191,7 @@ label equip_bra:
                 # else: #Fail
                     # if her_whoring < 11:
                         # call her_main("Do you ask this from every girl, [genie_name]?", "open", "wink", "base", "mid")
-                        # m "Why uhm... I mean yes. All the girls..."
+                        # m "Why *uhm*... I mean yes. All the girls..."
                         # call her_main("Is this some sort of protection for--", "open", "narrow", "worried", "down")
                         # call her_main("It's those Blast-Ended Skrewts again, isn't it?!", "soft", "wide", "base", "stare",trans=hpunch)
                         # call her_main("[genie_name], are they biting off the student's nipples???", "open", "wide", "base", "mid")
@@ -239,7 +239,7 @@ label equip_bra:
                         # m "I wouldn't mind if they did..."
                         # call her_main("That's just... typical!", "clench", "base", "angry", "mid")
                         # call her_main("You disgust me, [genie_name]!", "clench", "base", "angry", "mid")
-                        # m "Okay- Jeesh... I'm sorry."
+                        # m "Okay. Jeesh... I'm sorry."
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 20."
                     # jump return_to_wardrobe
@@ -389,7 +389,7 @@ label equip_panties:
                     # if her_whoring < 5:
                         # call her_main("Panties?!", "shock", "wide", "worried", "shocked")
                         # call her_main("Why on earth would you buy me panties, [genie_name]?", "disgust", "narrow", "worried", "down")
-                        # m "So you can... uhm... wear them?"
+                        # m "So you can... *uhm*... wear them?"
                         # call her_main("Wear them? Are you out of your mind?", "angry", "base", "angry", "mid")
                         # call her_main("I'm your student! Don't ever request something like that again!", "angry", "base", "angry", "mid")
                         # m "Fine. Forget about it..."
@@ -527,7 +527,7 @@ label equip_panties:
                         # call her_main("This doesn't even cover anything!!!", "soft", "wide", "base", "stare")
                         # call her_main("[genie_name], this is disgusting!", "scream", "closed", "angry", "mid")
                         # call her_main("You can have them back you freak...", "clench", "base", "angry", "mid")
-                        # m "Okay- Jeesh... No need to make a scene..."
+                        # m "Okay. Jeesh... No need to make a scene..."
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 20."
                     # jump return_to_wardrobe

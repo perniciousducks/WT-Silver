@@ -39,7 +39,7 @@ label astoria_tonks_0: #First time astoria sent to tonks.
     if not snape_gave_spellbook:
         m "(Right. I still need that spellbook.)"
         m "Next time, [astoria_name]."
-        m "I've got... uhm-... I've got stuff to take care of, yes."
+        m "I've got... *uhm*... I've got stuff to take care of, yes."
         call ast_main("*I don't believe that one bit...", "annoyed", "narrow","angry", "R")
     else:
         m "Why don't you come over here then and we can start reading over the first one."

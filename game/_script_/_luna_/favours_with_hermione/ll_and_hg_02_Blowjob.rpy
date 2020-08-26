@@ -124,7 +124,7 @@ label luna_favour_6:
         ">A worried, almost scared, look appears over Luna's face."
         pause
         $ ccg2 = 8
-        lun "it's so big... I'm not sure I can-?"
+        lun "it's so big... I'm not sure I can--?"
         her "*shhh*... it's alright. I'm here..."
         ">Hermione places a hand on top of Luna's head."
         $ ccg2 = 11

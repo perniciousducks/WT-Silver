@@ -597,22 +597,22 @@ label hg_pf_grope_ass_T4_front:
     call her_main(".......", "clench", "narrow", "base", "down", cheeks="blush")
     m "Enjoying a bit too much perhaps?"
     call her_main("...", "base", "narrow", "base", "mid_soft", cheeks="blush")
-    call her_main("What do you-{w=0.6}{nw}", "soft", "narrow", "base", "mid_soft", cheeks="blush")
+    call her_main("What do you--", "soft", "narrow", "base", "mid_soft", cheeks="blush")
 
     call her_chibi_scene("behind_desk_front", trans=d7)
     pause.8
 
-    call nar(">Bringing your hands out from between her legs you hold them up in front of Hermione...")
+    call nar(">You bring your hands out from between Hermione's legs and hold them up in front of her...")
     m "What would you call this then, [hermione_name]?"
 
-    call nar(">Hermione embarrassingly looks at you - as you present her with a sticky substance gleaming across your upper hand...")
+    call nar(">Hermione embarrassingly looks at you, as you present her with a sticky substance gleaming across your upper hand...")
     call her_main("Oh...", "disgust", "narrow", "base", "down", cheeks="blush")
-    call her_main("Well, your hands were moving so close and-{w=0.8}{nw}", "soft", "narrow", "worried", "down", cheeks="blush")
+    call her_main("Well, your hands were moving so close and--", "soft", "narrow", "worried", "down", cheeks="blush")
 
     call her_chibi_scene("grope_ass_front", trans=d7)
     pause.8
 
-    call nar(">Before she finishes her sentence you put your hand back in place...")
+    call nar(">Before she can finish her sentence you put your hand back in place...")
     call her_main("...", "clench", "wide", "base", "stare", cheeks="blush")
 
     call nar(">You slowly brush your fingertips across her legs and move your hands to rest on her firm cheeks...")

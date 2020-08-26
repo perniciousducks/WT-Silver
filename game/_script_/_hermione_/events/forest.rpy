@@ -476,9 +476,9 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     $ ccg2 = 38
     her "{size=+10}!!!{/size}"
     $ ccg2 = 37
-    myr "*he-he-he*.. Hi Hermione..."
+    myr "*he-he-he*... Hi Hermione..."
     $ ccg2 = 36
-    her "*glck* Sto-... {w=0.3}*glck*{heart}*glck*"
+    her "*glck* Sto--{w=0.3}! *glck*{heart}*glck*"
     $ ccg2 = 37
     ">Hermione starts to struggle against you in her embarrassment, her face turns a deep red and tears start to roll down her face."
     $ ccg2 = 36
@@ -899,7 +899,7 @@ label hermione_map_sex:
     her "have it your way then..."
     m "I intend to!"
     m "Besides, if you really were worried about people finding out about you then you probably wouldn't be fucking your headmaster in public!"
-    her "Ah...{heart} that's not- ah...{heart} this isn't my fault...{heart}"
+    her "Ah...{heart} that's not-- ah...{heart} this isn't my fault...{heart}"
     m "Really? And just how am I expected to turn up a chance to fuck this tight little cunt!"
     her "A-Ah... {heart}you're Professor{heart} Dumbledore{heart}... you should...{heart}"
     m "The gods themselves wouldn't miss an opportunity like this..."
@@ -940,7 +940,7 @@ label hermione_map_sex:
     myr "And miss the only exciting thing that happens in this dull school? I think not..."
     her "Ah...{heart}"
     myr "Besides... I think you like being watched... Don't you Hermione?"
-    her "Ah...{heart} of course- ugh...{heart} - not..."
+    her "Ah...{heart} of course-- *ugh*...{heart} - not..."
     myr "Really? You mean you don't like me watching you be treated like a filthy little piece of fuckmeat?"
     her "Ah...{heart}{heart}{heart} no..."
     myr "I'm not so sure..."

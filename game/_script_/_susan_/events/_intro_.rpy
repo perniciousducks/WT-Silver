@@ -84,7 +84,7 @@ label susan_intro_E1:
 
         "\"Who's there?\"":
             $ d_flag_01 = True # Knows name.
-            sus "Sus-...{w=0.6} Susan Bones, Sir."
+            sus "Sus--{w=0.3} Susan Bones, Sir."
             g9 "Susan Bones who?"
             sus "... I'm sorry?"
             g9 "*Ha-ha-ha-ha!*"
@@ -121,7 +121,7 @@ label susan_intro_E1:
     menu:
         "\"Hello, Gorgeous!\"":
             call sus_main("*Uhm*...","upset","base","base","down") # Embarrassed.
-            call sus_main("He- Hello...","open","base","worried","mid")
+            call sus_main("H-Hello...","open","base","worried","mid")
 
         "\"Susan! How great to see you!\"" if d_flag_01:
             g9 "Where have you been all my life?"
@@ -140,7 +140,7 @@ label susan_intro_E1:
     g9 "Well, how nice of her."
     call sus_main("Is there anything I can help you with, Professor?","grin","base","base","mid")
     m "..."
-    call sus_main("S- Sir?","open","base","worried","mid")
+    call sus_main("S-Sir?","open","base","worried","mid")
     m "(This must be that girl she wanted me to help with body confidence...)"
     m "Did professor Tonks tell you why I wanted to see you?"
     call sus_main("N-no...{w} I'm not in trouble am I?","upset","base","worried","down")
@@ -151,7 +151,7 @@ label susan_intro_E1:
     m "No miss Bones... You're not in any trouble."
     call sus_main("Very well...","base","base","base","mid")
     call sus_main("I shall return to my dormitory then.","open","base","base","R")
-    call sus_main("Good-{w=0.4} Good day, Sir.","grin","base","base","mid")
+    call sus_main("Good--{w=0.4} Good day, Sir.","grin","base","base","mid")
 
     call sus_walk(action="leave")
 

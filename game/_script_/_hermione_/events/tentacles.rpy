@@ -213,7 +213,7 @@ label tentacle_scene_intro:
     pause 1.0
     call her_chibi("stand", flip=True)
     with d3
-    call her_main("Professo-......?", "open", "base", "worried", "L", flip=True, trans=d3)
+    call her_main("Professo--...?", "open", "base", "worried", "L", flip=True, trans=d3)
     call her_main("I thought I heard him for a second...", "annoyed", "narrow", "worried", "R")
     m "(Read the note already, would you..)"
     pause 1.0
@@ -590,7 +590,7 @@ label tentacle_2: # Personal path
     her "..................*ah*"
     spo ".... She's breathing, thank be Merlin."
     spo "You! Yes, you girls! Take her to the hospital wing at once!"
-    fem "W-wha-.. But..."
+    fem "W-wha-- But..."
     spo "What are you waiting for!"
     fem "{size=-4}Fine...{/size}"
 

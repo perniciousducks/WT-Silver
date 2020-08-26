@@ -358,7 +358,7 @@ label hg_tutor_E5:
     m "And that's it?"
     m "No \"this behaviour must be severely punished?\""
     m "Are you attracted to girls of this sort, Miss Granger?"
-    call her_main("What? I'm not a-... I mean no, Sir.", "open", "base", "worried", "mid", cheeks="blush")
+    call her_main("What? I'm not a-- I mean no, Sir.", "open", "base", "worried", "mid", cheeks="blush")
     m "Alright, alright, back to your report, if you please."
     call her_main("{size=-2}(I'm not a lesbian...{w=0.3} I think...){/size}", "disgust", "narrow", "base", "down", cheeks="blush")
     call her_main("{size=-2}(Hermione, pull yourself together! You're not a harlot!){/size}", "mad", "happyCl", "worried", "mid", cheeks="blush")

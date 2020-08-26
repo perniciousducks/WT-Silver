@@ -710,7 +710,7 @@ label potion_scene_11_3:
         call her_main("Oh...", "base", "narrow", "worried", "down")
         m "You may notice something else start to grow however."
         call her_main("What? Not cat ears again please...", "annoyed", "narrow", "angry", "R")
-        m "Don't worry, it's-- Uhm... it's something else..."
+        m "Don't worry, it's-- *uhm*... it's something else..."
         call her_main("...", "angry", "wide", "base", "stare")
         call her_main("wait...", "angry", "narrow", "base", "down")
         call her_main("you don't mean...", "disgust", "narrow", "base", "down")

@@ -71,7 +71,7 @@ label cc_st_return:
         "*knock knock knock!*"
         pause .2
 
-        m "Wha-...?"
+        m "Wha--?"
 
         call cho_walk(action="enter", xpos="desk", ypos="base")
 

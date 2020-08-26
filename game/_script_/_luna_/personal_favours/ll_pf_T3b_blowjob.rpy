@@ -49,7 +49,7 @@ label ll_pf_blowjob_T1_intro:
     call lun_main("So what does this technique involve?","base","wink","sad","mid")
     m "It involves you sucking the nasty things out of me."
     call lun_main("Sucking them out!?","scream","wide","mad","mid")
-    m "(I'm not sure if she'll fall for th-)"
+    m "(I'm not sure if she'll fall for th--)"
     call lun_main("That's brilliant!","open","happyCl","base","mid")
     m "...{w} It is?"
     call lun_main("Of course!","base","base","sad","L")
@@ -479,7 +479,7 @@ label ll_pf_blowjob_T1_marathon: # Call label
     m "(Oh no...)"
     m "What do you mean by... finished?"
     $ ccg("37")
-    lun "I already told you that I'm going to get {b}ALL{/b} of those tast- eh... nasty wrackspurts out, didn't I?"
+    lun "I already told you that I'm going to get {b}ALL{/b} of those tast-- *ehh*... nasty wrackspurts out, didn't I?"
     $ ccg("39")
     lun "The petrification charm is just so you don't hurt yourself."
     m "Lun--"

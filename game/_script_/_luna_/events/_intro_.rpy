@@ -310,7 +310,7 @@ label luna_reverted_greeting_1:
 
         "\"What in the world are you wearing?\"":
             call lun_main("Oh! These are my spectrespecs, professor!","base","base","sad","crossed")
-            m "(Please don't be mind reading, please don't be mind reading-)"
+            m "(Please don't be mind reading, please don't be mind reading.)"
             call lun_main("They help me see the wrackspurts.","normal","base","sad","mid")
             m "(Thank the great desert sands!)"
             call lun_main("And these are my plum earrings.","base","base","sad","L")

@@ -489,7 +489,7 @@ label purchase_outfit(item):
         maf "A fishnet... outfit, sir?"
         m "Yes, like the stockings but a whole outfit..."
         m "Actually, just a top and underwear shall do."
-        maf "Underwe-... surely something like that wouldn't be very effective as underwear, sir?"
+        maf "Underwe--? surely something like that wouldn't be very effective as underwear, sir?"
         m "Effective enough to catch a fish..."
         maf "What?"
         m "So, could you make this for me?"
@@ -609,18 +609,18 @@ label purchase_outfit(item):
         maf "Sorry?"
         m "Never mind..."
         maf "Once I've asked him I'll get that {i}souvlaki{/i} costume ready for you as soon as possible!"
-        m "Takama-...{w=0.4} I'm sure he'll know what you mean..."
+        m "Takama--{w=0.4} I'm sure he'll know what you mean..."
 
     #
     # Luna lovegood
     #
 
     elif item == ll_stewardess_ITEM:
-            m "Could you make me a stewardess outfit?"
-            maf "The outfit that women wear in those flying muggle metal bird contraptions?"
-            m "Precisely!"
-            maf "I'll see what I can do..."
-            m "Great!"
+        m "Could you make me a stewardess outfit?"
+        maf "The outfit that women wear in those flying muggle metal bird contraptions?"
+        m "Precisely!"
+        maf "I'll see what I can do..."
+        m "Great!"
 
     elif item == ll_dress_orange_ITEM:
         if not ball_quest.E4_complete:

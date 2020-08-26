@@ -46,11 +46,11 @@ label cc_pf_talk_T1_intro_E1:
     m "Do you have a boyfriend, Miss Chang?"
     call cho_main("Excuse me?", "open", "wide", "base", "mid", trans=hpunch) # Shocked
     m "I asked if you have boyfriend. Anybody you fool around with?"
-    call cho_main("Me? Professor? He-{w=0.8} hav-{w=0.5} a boyfriend?", "open", "wide", "base", "R", cheeks="blush") # Reluctant, Embarassed
+    call cho_main("Me? Professor? Ha--{w=0.4} hav--{w=0.4} a boyfriend?", "open", "wide", "base", "R", cheeks="blush") # Reluctant, Embarassed
     g9 "Or a girlfriend! That would be even better, now that I think about it!"
-    call cho_main("Sir that's-{w=0.3} that's not something a headmaster should be concerned about.", "soft", "happyCl", "worried", "L", cheeks="blush")
+    call cho_main("Sir that's--{w=0.3} that's not something a headmaster should be concerned about.", "soft", "happyCl", "worried", "L", cheeks="blush")
     call cho_main("And I don't see how this information would be of importance for my training.", "open", "wide", "raised", "downR", cheeks="blush")
-    call cho_main("Why would it matter if- {w=0.5}Even if I did I'd--", "soft", "wide", "base", "down", cheeks="blush")
+    call cho_main("Why would it matter if--{w=0.5} Even if I did I'd--", "soft", "wide", "base", "down", cheeks="blush")
     g9 "So you don't have one?"
     call cho_main("You're making me nervous, [cho_genie_name]. {heart}", "horny", "narrow", "worried", "R", cheeks="blush")
     m "(So cute.{w=0.5} Perhaps this is something I could push her further on...)"
@@ -345,7 +345,7 @@ label cc_pf_talk_T1_intro_E2:
     call cho_main("When we're in our dormitories they are going out of their way to not cross paths with me...", "annoyed", "narrow", "angry", "R")
     call cho_main("And in the showers they're scared to even look at me!", "angry", "narrow", "angry", "mid")
     if masturbating:
-        g4 "{size=-4}(Yes, yes!{w=0.6} Even in the showers you whore-){/size}"
+        g4 "{size=-4}(Yes, yes!{w=0.5} Even in the showers you whore--){/size}"
         with hpunch
         m "Wait a bloody minute!{w} You shower {b}with{/b} your team?"
     else:
@@ -401,7 +401,7 @@ label cc_pf_talk_T1_intro_E2:
     call cho_main("I've known my team for years.{w=0.6} We're all professionals!", "soft", "narrow", "base", "mid")
     m "Let me ask you a question..."
     m "In the showers,{w=0.3} do they all have their backs turned towards you?"
-    call cho_main("I don't know. Maybe they- *uhm*...", "open", "base", "base", "mid")
+    call cho_main("I don't know. Maybe they-- *uhm*...", "open", "base", "base", "mid")
     call cho_main("!!!", "normal", "wide", "base", "mid") # Cho remembers something?!
     call cho_main("", "normal", "happyCl", "worried", "mid", cheeks="heavy_blush")
     pause .6
@@ -815,7 +815,7 @@ label cc_pf_talk_T2_intro_E2:
             call cho_main("", "soft", "base", "base", "up")
             g4 "*Agh*! Go on!"
             call cho_main("What?", "soft", "narrow", "raised", "mid")
-            call cho_main("Oh- I'm sorry, Sir.{w=0.6} Of course!", "soft", "wide", "base", "mid")
+            call cho_main("Oh, I'm sorry, Sir.{w=0.6} Of course!", "soft", "wide", "base", "mid")
             call cho_main("I had my head in the clouds there for a second.", "smile", "happyCl", "base", "mid")
 
         "-Participate in the conversation-":
@@ -1147,7 +1147,7 @@ label cc_pf_talk_T2_E3:
         g4 "Please?!"
     else:
         m "Anything?"
-    call cho_main("Oh- I know!", "smile", "wide", "base", "mid")
+    call cho_main("Oh, I know!", "smile", "wide", "base", "mid")
     call cho_main("Strip her down, and put her in a pillory!{w=0.8} -- In the middle of the Quidditch pitch!", "smile", "narrow", "angry", "mid")
     g9 "Kinky! I like it!"
     call cho_main("And let the entire school watch her as she's getting pounded by a horde of centaurs!!!", "mad", "narrow", "angry", "mid")

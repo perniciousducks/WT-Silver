@@ -246,7 +246,7 @@ label astoria_talk:
                         jump astoria_talk
                     else:
                         $ ast_genie_name = temp_name
-                        call ast_main("Uhm... ok. I will call you [ast_genie_name].", face="neutral")
+                        call ast_main("*uhm*... ok. I will call you [ast_genie_name].", face="neutral")
                     jump astoria_talk
                 "-Never mind-":
                     jump astoria_talk

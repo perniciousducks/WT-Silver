@@ -136,10 +136,10 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("You came up here and asked the headmaster and me to watch you...","base","base","base","mid")
     call ast_main("Didn't you...","base","base","base","mid")
     ">Susan struggles unsuccessfully against the effect of the imperio spell."
-    call sus_main("I don't- maybe- I- why?...","base","base","base","base")
+    call sus_main("I don't-- maybe-- I-- why...?","base","base","base","base")
     call ast_main("Because you wanted Dumbledore and me to know what a nasty slut you were...","base","base","base","mid")
     call ast_main("You were so proud about being able to cum from just your big gross tits being played with!","base","base","base","mid")
-    call sus_main("I- I'm proud...","base","base","base","base")
+    call sus_main("I-I'm proud...","base","base","base","base")
     ">Astoria has begun humping your lap in earnest, punctuating every word with a little thrust."
     call ast_main("You should be!","base","base","base","mid")
     call ast_main("It's not easy cumming from just your tits...","base","base","base","mid")
@@ -612,7 +612,7 @@ label hornify_spell_3: #third level hornify spell
     call ast_main("This is going to be great! I'm going to chase her around to see what people say.","base","base","base","mid")
     ">Astoria hops off of your lap, ready to chase after the redheaded slut..."
     m "Wait a minute, you don't plan on leaving me like this do you?"
-    call ast_main("You mean your- gross!","base","base","base","mid")
+    call ast_main("You mean your gross!","base","base","base","mid")
     call ast_main("Your lucky I sat on your lap today! If you think I'm going to actually touch that monster of yours...","base","base","base","mid")
     call ast_main("That's what Susie's for!","base","base","base","mid")
     m "Well why didn't you get her to deal with this then?"

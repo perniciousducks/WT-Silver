@@ -180,10 +180,10 @@ label hg_pf_blowjob_T5_intro_E1:
     call her_main("Oh...", "open", "narrow", "worried", "down")
     call her_main("Alright.", "base", "narrow", "worried", "down")
     m "Really? Just like that?"
-    call her_main("Yes. I know I'm supposed feel outraged...", "angry", "narrow", "base", "down")
+    call her_main("Yes. I know I'm supposed to feel outraged...", "angry", "narrow", "base", "down")
     call her_main("But somehow I do not...", "angry", "base", "base", "mid")
     call her_main("I suppose I am just glad that I can help out my house...", "base", "narrow", "worried", "down")
-    call her_main("And if to do that I must put your penis in my mouth so be it...", "upset", "closed", "base", "mid")
+    call her_main("And if to do that I must put your penis in my mouth, then so be it...", "upset", "closed", "base", "mid")
     m "Well, alright then."
     call her_main("Although, now when I say it out loud like this...", "angry", "narrow", "base", "down")
     m "Too late! You already said \"yes\"!"
@@ -202,7 +202,7 @@ label hg_pf_blowjob_T5_intro_E2:
 
     call play_music("playful_tension") # SEX THEME.
     call her_main("[genie_name], how dare you propose such a thing to one of your pupils!", "scream", "base", "angry", "mid", emote="angry")
-    m "Wha-...?"
+    m "Wha--...?"
     call her_main("This is unbecoming of a man of your standing.", "scream", "base", "angry", "mid", emote="angry")
     call her_main("You should be ashamed of yourself [genie_name]!", "angry", "base", "angry", "mid")
     menu:
@@ -454,7 +454,7 @@ label hg_pf_blowjob_1:
             m "But I want to see how much you know."
             m "To test your knowledge on the subject."
             call nar(">As soon as you mention \"test\" Hermione's eyes light up with excitement.")
-            call her_main("OK. But I need a moment gather my thoughts...", "smile", "happyCl", "base", "mid", emote="happy")
+            call her_main("OK. But I need a moment to gather my thoughts...", "smile", "happyCl", "base", "mid", emote="happy")
 
             call her_chibi_scene("bj", trans=d3)
             pause.8
@@ -488,7 +488,7 @@ label hg_pf_blowjob_1:
             call her_main("*Slurp*! *Gulp*! *Slurp*!", "open_wide_tongue", "narrow", "base", "up")
             m "*Hmm*..."
             m "Well, I thought I could turn this around somehow to make fun of you..."
-            call her_main("*Slurp* .....?", "open_wide_tongue", "narrow", "annoyed", "up")
+            call her_main("*Slurp* ...?", "open_wide_tongue", "narrow", "annoyed", "up")
             m "Well, with your house representing courage and righteousness and such..."
             m "And you being a nasty slut..."
 
@@ -579,9 +579,9 @@ label hg_pf_blowjob_1:
             g9 "Yes, I fed you with my cum!"
 
             if daytime:
-                call her_main("I think I may skip the meal and go straight to class today.", "soft", "narrow", "annoyed", "up")
+                call her_main("You did... I think I may skip lunch today...", "soft", "narrow", "annoyed", "up")
             else:
-                call her_main("Yes. I think I may skip supper tonight...", "soft", "narrow", "annoyed", "up")
+                call her_main("You did... I think I may skip supper tonight...", "soft", "narrow", "annoyed", "up")
 
             call her_main("Can I get paid now?", "angry", "wink", "base", "mid")
 
@@ -630,8 +630,8 @@ label hg_pf_blowjob_1:
                 m "You better go before you are late for your classes..."
             else:
                 m "It's getting late..."
-                call her_main("Yes...", "angry", "happyCl", "worried", "mid", emote="sweat")
 
+            call her_main("Yes...", "angry", "happyCl", "worried", "mid", emote="sweat")
             call her_main("Can I get paid before I leave, [genie_name]?", "upset", "wink", "base", "mid")
 
     jump end_hg_pf_blowjob
@@ -875,7 +875,7 @@ label hg_hidden_blowjob_luna:
 
     m "I'm more than familiar with them!"
     call lun_main("You are?","soft","wink","raised","mid")
-    g4 "Those young-{w=0.9} sucking- {w=0.2}.{w=0.2}.{w=0.2}.{w=0.2} UGH! {w=0.2} Troublemakers!"
+    g4 "Those young...{w=0.4} sucking...{w=0.4} *UGH*!{w=0.2} Troublemakers!"
     g4 "Yes. I've got one right here!"
     call lun_main("Oh! Can I see it, [lun_genie_name]?","grin","wide","raised","mid")
     m "I'm afraid not, [lun_name]."
@@ -901,7 +901,7 @@ label hg_hidden_blowjob_luna:
     g9 "Like this?"
     call spit_on_her
 
-    g4 "Take that, you nasty little slu-... *Uhh*, plant."
+    g4 "Take that, you nasty little slu-- *Uhh*, plant."
     call her_main("{size=-4}(What the... *Slurp*... *Slurp*... *Gulp*...){/size}", "open_wide_tongue", "slit", "worried", "ahegao")
     call lun_main("That's right, [lun_genie_name]!","grin","happyCl","raised","mid")
     g4 "This one wants more spit!"

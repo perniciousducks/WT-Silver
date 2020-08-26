@@ -142,7 +142,7 @@ label equip_outfit:
                         # $ birthday_happened = True
                         # call her_main("It is? But I've read in the daily prophet that your birthday is on the--", "open", "base", "base", "R")
                         # m "No no, it's today!"
-                        # call her_main("Uhm. Ok... Happy bithday then, [genie_name].", "soft", "base", "base", "mid")
+                        # call her_main("*uhm*... Ok... Happy bithday then, [genie_name].", "soft", "base", "base", "mid")
                         # m "Would you grant me a wish?"
                         # call her_main("Of course.", "base", "base", "base", "mid")
                         # g9 "Could you dress up as my present?"
@@ -299,7 +299,7 @@ label equip_outfit:
                     # call her_main("Fine, if I have to.", "open", "closed", "base", "mid")
                     # call her_main("Let me go and change.", "annoyed", "base", "base", "R")
                 # else:
-                    # call her_main("Uhm... who?", "soft", "wink", "base", "mid")
+                    # call her_main("*uhm*... who?", "soft", "wink", "base", "mid")
                     # m "She's a video game character."
                     # call her_main("What?", "scream", "wide", "base", "stare")
                     # call her_main("In that case, absolutely not!", "scream", "closed", "angry", "mid")

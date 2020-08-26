@@ -215,7 +215,7 @@ label hg_wager_bj:
                     show screen desk(437) # Desk was shifted during blowjob
                     call gen_chibi("dick_out", 260, 205+250)
                     call her_chibi("stand",220,"base", flip=True)
-                    call sna_main("Miss Granger?! I thou-... I...", face="snape_14", wand=True)
+                    call sna_main("Miss Granger?! I thou-- I...", face="snape_14", wand=True)
                     hide screen snape_main
                     call sna_chibi("stand",460,"base")
                     $ renpy.music.play("music/Dark Fog.mp3")
@@ -418,7 +418,7 @@ label hg_wager_bj:
                             if duel_response == "draw":
                                 m "I'm spent..."
                                 call sna_main("So no rematch?", face="snape_05")
-                                g4 "Wha-..{w=0.5}"
+                                g4 "Wha--"
                                 m "Yes, definitely no rematch..."
                                 m "I'm not sure I could handle another one of those for at least thirty minutes..."
                                 call sna_main("That's oddly specific...", face="snape_04")

@@ -415,7 +415,7 @@ label cho_quid_E4:
     call her_main("Cho will be so mad!", "crooked_smile", "happy", "base", "mid")
     m "I see..."
     g9 "Congratulations then, [hermione_name]! You got the job."
-    call her_main("Ah!!! I better start learning-...{w=0.8} I mean, preparing my opening speech!", "open", "wide", "base", "mid", trans=hpunch)
+    call her_main("Ah!!! I better start learning--{w=0.4} I mean, preparing my opening speech!", "open", "wide", "base", "mid", trans=hpunch)
 
     call her_walk(action="leave", speed=1.5)
 
@@ -470,7 +470,7 @@ label cho_quid_E5:
     call cho_main("...", "base", "base", "base", "mid") # slight smile
     g9 "(And show Snape who's boss.)"
     m "Trust me, our tactics have worked perfectly thus far, haven't they?"
-    call cho_main("I-...{w=0.3} yes...", "soft", "base", "raised", "downR")
+    call cho_main("I--{w=0.3} yes...", "soft", "base", "raised", "downR")
     call cho_main("You're right! Thank you, [cho_genie_name].", "base", "base", "base", "mid") # happy
 
     $ cho_quid.E5_complete = True

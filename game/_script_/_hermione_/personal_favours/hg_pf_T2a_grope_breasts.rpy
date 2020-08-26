@@ -18,7 +18,7 @@ label hg_pf_grope_breasts_T2:
 
     call her_main("??!", "base", "narrow", "base", "up", cheeks="blush")
     call play_music("playful_tension") #SEX THEME.
-    call her_main("[genie_name], what are you-?", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="sweat")
+    call her_main("[genie_name], what are you--?", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="sweat")
     call nar(">She tries to pull away again.")
     call nar(">You squeeze her tits like a vice.")
 

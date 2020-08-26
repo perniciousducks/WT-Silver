@@ -60,7 +60,7 @@ label astoria_chit_chat:
         call ast_main("I found the perfect use for the Wingardium leviosa charm today...", "smile", "base", "base", "mid")
         call ast_main("Granger was being especially annoying, prancing around one of the corridors, so I used it to lift her skirt up!", "open", "base", "angry", "down")
         call ast_main("But she didn't even see that I did it! she just punched that Weasley boy on the arm.", "angry", "narrow", "base", "down", cheeks="blush")
-        call ast_main("Snap-.. {i}Professor{/i} Snape saw it though. I thought I was in trouble for a moment, but he just corrected me on my pronunciation.", "grin", "narrow", "base", "mid")
+        call ast_main("Snap-- {i}Professor{/i} Snape saw it though. I thought I was in trouble for a moment, but he just corrected me on my pronunciation.", "grin", "narrow", "base", "mid")
 
     elif chitchat_number == 6:
         call ast_main("I've still not been able to cast spells properly without saying the words.", "open", "base", "base", "mid")
@@ -118,7 +118,7 @@ label astoria_chit_chat:
 
     elif chitchat_number == 19:
         call ast_main("How come you constantly have me use imperio to make Tonks take her clothes off?", "annoyed", "narrow", "worried", "mid")
-        call ast_main("Let's have her do something more fun like...{w=0.4} Uhm...{w=0.4} bark like a dog or...{w=0.4} step on a lego brick.", "horny", "base", "base", "down")
+        call ast_main("Let's have her do something more fun like...{w=0.4} *uhm*...{w=0.4} bark like a dog or...{w=0.4} step on a lego brick.", "horny", "base", "base", "down")
 
     elif chitchat_number == 20:
         call ast_main("Susan is such a dumb cow.", "clench", "base", "base", "mid")

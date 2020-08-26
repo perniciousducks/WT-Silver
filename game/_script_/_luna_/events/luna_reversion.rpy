@@ -316,7 +316,7 @@ label luna_revert_1:
     $ luna_r_arm = 2
 
     call lun_main("...","upset","wide","sad","mid", xpos="mid",ypos="base")
-    call her_main("But I really need a good-.", "angry", "narrow", "base", "down")
+    call her_main("But I really need a good--", "angry", "narrow", "base", "down")
     call her_main("...", "shock", "wide", "base", "stare")
     call her_main("{size=+5}WHAT{/size}", "annoyed", "narrow", "annoyed", "mid")
     call lun_main("","upset","wide","sad","down")
@@ -651,7 +651,7 @@ label luna_revert_2:
     call her_walk(action="enter", xpos="right", ypos="base")
 
     call her_main("[genie_name], I hope you don't mind me coming in unannounced...", "angry", "closed", "base", "mid",xpos="base",ypos="base")
-    call her_main("But I really need a good-.", "angry", "narrow", "base", "down")
+    call her_main("But I really need a good--", "angry", "narrow", "base", "down")
 
     hide screen luna_main
     $ luna_flip = -1

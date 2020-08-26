@@ -438,7 +438,7 @@ label give_her_gift(gift_item):
             call her_main("Despicable!", "upset", "closed", "base", "mid")
             call her_mood(15)
         elif her_whoring >= 12 and her_whoring <= 17: # Lv 5-6.
-            call her_main("Yes, I know that some girls have uhm...", "upset", "closed", "base", "mid")
+            call her_main("Yes, I know that some girls have *uhm*...", "upset", "closed", "base", "mid")
             call her_main("Have use for things such as these...", "open", "narrow", "annoyed", "mid", cheeks="blush")
             call her_main("But not me, [genie_name].")
             call her_main("No, thank you.", "upset", "closed", "base", "mid")

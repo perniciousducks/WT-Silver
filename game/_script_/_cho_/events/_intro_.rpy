@@ -23,7 +23,7 @@ label cho_intro_E1:
     call play_sound("knocking")
     "*Knock-knock-knock*"
     m "Please, give me a moment..."
-    g4 "I just need to-{w} *urgh*!"
+    g4 "I just need to--{w} *urgh*!"
     call play_sound("equip_inventory")
     m "Adjust my pants...{w} There we go."
 
@@ -117,7 +117,7 @@ label cho_intro_E1:
     g9 "What's on your mind?"
 
     # Talk about her issue with Hermione
-    call cho_main("It's-... It's Hermione Granger, Sir.", "annoyed", "narrow", "worried", "R")
+    call cho_main("It's-- It's Hermione Granger, Sir.", "annoyed", "narrow", "worried", "R")
 
     menu:
         m "(...)"
@@ -683,7 +683,7 @@ label cho_intro_E3:
         g4 "(She's good!)"
         m "Well, I'd like you to stop and that's all that matters..."
         m "And that includes the..."
-        m "Quidditch-...{w} whatever it was...{w} movement."
+        m "Quidditch...{w} whatever it was...{w} movement."
 
     # Repeat
     else:
@@ -691,7 +691,7 @@ label cho_intro_E3:
         call her_main("Is it about Cho again?", "annoyed", "squint", "base", "mid")
         m "Yes indeed."
         m "I'd like you to stop your..."
-        m "Quidditch-...{w} something something...{w} movement."
+        m "Quidditch...{w} something something...{w} movement."
 
     if her_whoring < 4: # If you haven't groped her breasts or ass yet.
         call her_main("My \"Quidditch equality movement\"?", "soft", "base", "base", "mid")
@@ -706,7 +706,7 @@ label cho_intro_E3:
         g4 "Two hundred? Are you nuts?"
         call her_main("And just points isn't going to cut it...", "open", "closed", "base", "mid")
         m "Then what else?"
-        call her_main("Uhm...", "annoyed", "base", "base", "R")
+        call her_main("*uhm*...", "annoyed", "base", "base", "R")
         m "You're testing my patience Miss Granger..."
         call her_main("Oh, I know!{w=0.5} I want a seat in the teacher stands during the Quidditch matches!", "smile", "happyCl", "base", "mid")
         call her_main("Cho would be so jealous if she saw me sitting near the commentator and teachers...", "grin", "narrow", "base", "mid_soft")
@@ -824,7 +824,7 @@ label cho_intro_E3:
     if her_whoring < 18:
         call her_main("Do I really have to do all that?", "upset", "base", "base", "R")
         m "If you want to keep on buying favours from me."
-        call her_main("Ugh-{w=0.4} Very well, I guess...", "soft", "narrow", "worried", "down")
+        call her_main("*Ugh*...{w=0.4} Very well, I guess...", "soft", "narrow", "worried", "down")
     else:
         call her_main("Sure, whatever...", "open", "narrow", "base", "R_soft")
 

@@ -146,7 +146,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     her "ah... here I..."
     $ ccg1 = "luna_7"
     lun "Already?"
-    her "Y-y-yes... {size=+5}I'm- {heart}{heart}{heart}{/size}"
+    her "Y-y-yes... {size=+5}I'm-- {heart}{heart}{heart}{/size}"
     $ ccg2 = "herm_9"
     her "{size=+5}CUMMING!!!{/size}"
     ">Hermione's cunt shakes violently as her eyes roll back into her head..."

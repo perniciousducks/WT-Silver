@@ -207,7 +207,7 @@ label hg_ps_buttplug:
             # Small butt plug (final part)
             call play_music("chipper_doodle")
             m "[hermione_name]..."
-            m "What do you think about wearing a butt pl-?"
+            m "What do you think about wearing a butt pl--?"
             call her_main("I'll do it.", "grin", "base", "base", "R",xpos="right",ypos="base")
             m "You're eager."
             call her_main("well... I mean it is a lot of points and... I've sort of grown fond of how it feels...", "open", "narrow", "worried", "down")
@@ -286,7 +286,7 @@ label hg_ps_buttplug:
             # Medium butt plug (final part)
             call play_music("chipper_doodle")
             m "[hermione_name]..."
-            m "What do you think about wearing a butt pl-?"
+            m "What do you think about wearing a butt pl--?"
             call her_main("I'll do it.", "grin", "base", "base", "R",xpos="right",ypos="base")
             m "You're eager. I haven't even said what one yet..."
             call her_main("oh... can it be the big one... with the long tail...", "open", "narrow", "worried", "down")
@@ -305,7 +305,7 @@ label hg_ps_buttplug:
             # Large buttplug first time
             call play_music("chipper_doodle")
             m "[hermione_name]..."
-            m "What do you think about wearing a butt pl-?"
+            m "What do you think about wearing a butt pl--?"
             call her_main("I'll do it.", "grin", "base", "base", "R",xpos="right",ypos="base")
             m "You're eager. I haven't even said which one yet..."
             call her_main("oh... can it be the big one... with the long tail...", "open", "narrow", "worried", "down")

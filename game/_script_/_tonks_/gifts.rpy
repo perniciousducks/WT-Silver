@@ -85,7 +85,7 @@ label give_ton_gift(gift_item):
         call ton_friendship(1)
 
     elif gift_item == vibrator_ITEM:
-        call ton_main("A vibra-... back massager?",face="disgusted",xpos="mid",ypos="base",trans=d5)
+        call ton_main("A vibra-- back massager?",face="disgusted",xpos="mid",ypos="base",trans=d5)
         call ton_main("Mm, Mine seemingly went missing from my desk. This should do if it doesn't turn up again.",face="annoyed")
         call give_gift(">You give the vibrator to Tonks...", gift_item)
         call ton_main("Thank you, [ton_genie_name].",face="neutral")

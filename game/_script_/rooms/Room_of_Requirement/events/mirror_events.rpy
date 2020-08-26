@@ -97,7 +97,7 @@ label prev_at_hogwarts:
 
     call play_music("stop")
 
-    dum_[2] "\"I don't think I'll ever understa-\""
+    dum_[2] "\"I don't think I'll ever understa--\""
 
     hide screen dumbledore
     call gen_chibi("sit_behind_desk")

@@ -17,7 +17,7 @@ label cc_pr_manipulate_boys_start:
             m "Right...{w=0.3} who was that again?"
             call cho_main("Cedric Diggory. How often do I have to repeat that to you, [cho_genie_name]?", "annoyed", "narrow", "base", "mid")
             m "You will know once you get to be my age..."
-            call cho_main("Oh- I'm sorry, Sir.", "soft", "narrow", "worried", "mid")
+            call cho_main("Oh, I'm sorry, Sir.", "soft", "narrow", "worried", "mid")
             call cho_main("I should be more respectful of your age.", "soft", "narrow", "base", "downR")
             m "(Because at my age you stop giving a damn...)"
             call cho_main("Cedric is a bit of a blockhead, but he's quite a competent seeker.", "open", "base", "raised", "R")
@@ -117,7 +117,7 @@ label cc_pr_manipulate_boys_start:
             call cho_main("Yes, I do believe they can read.{w=0.8} But don't take my word for it...", "soft", "narrow", "worried", "mid")
             m "You need to find a way to convince them to throw the game. It's our only chance..."
             #m "Do you have any ideas how you could accomplish that?"
-            #call cho_main("I- *uhm*...", "annoyed", "base", "base", "R")
+            #call cho_main("I-- *uhm*...", "annoyed", "base", "base", "R")
             #call cho_main("I could still try to flirt with them a bit, I guess.", "soft", "base", "worried", "mid")
             #m "I doubt that that will be enough..."
             #call cho_main("", "annoyed", "base", "worried", "mid")
@@ -655,7 +655,7 @@ label cc_pr_manipulate_boys_T2_E3:
     g9 "[cho_name]! You're back."
     call cho_main("(...)", "annoyed", "narrow", "angry", "down") # Annoyed
     g9 "How was your day? Anything exciting to tell me?"
-    call cho_main("I- *uhm*...", "soft", "narrow", "base", "down")
+    call cho_main("I-- *uhm*...", "soft", "narrow", "base", "down")
     call cho_main("I did what you asked me to...", "soft", "narrow", "worried", "mid")
     g9 "Yes?"
     call cho_main("I... flashed them...", "mad", "closed", "worried", "mid")

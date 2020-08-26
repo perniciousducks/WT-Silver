@@ -463,7 +463,7 @@ label nt_he_story_intro_E7:
     call ton_main("Moody very much believed in learning by doing.", "open", "base", "base", "mid")
     m "Sounds reasonable enough..."
     call ton_main("This is defence against dark magic we're speaking of...","open","base","raised","mid")
-    call ton_main("Some of the spells and situations he put me in are borderline- if not completely- illegal.","open","base","angry","mid")
+    call ton_main("Some of the spells and situations he put me in are borderline -- if not completely -- illegal.","open","base","angry","mid")
     m "Surely in a controlled environment where there's no harm to both parties..."
     call ton_main("Well... That was true most of the time...", "clench", "base", "base", "R")
     call ton_main("(I can't believe I'm talking about this...)","upset","base","worried","down")
@@ -629,8 +629,8 @@ label nt_he_story_E12:
     call ton_main("No. There was just a note on the door, so I ripped it off before the class got there.","open","closed","base","mid")
     m "Seems like a flawed system..."
     call ton_main("Yeah, afterwards a lot of the teachers changed the way they do it. Not the new ones though...", "grin", "base", "base", "downR")
-    m "You haven't told me which class this was, did you turn into Snape and teach potions?"
-    call ton_main("Of course not- Snape would've made my life hell, and I wasn't going to make someone hurt themself. ", "open", "base", "annoyed", "down")
+    m "You haven't told me which class this was. Did you turn into Snape and teach potions?"
+    call ton_main("Of course not! Snape would've made my life hell, and I wasn't going to make someone hurt themself. ", "open", "base", "annoyed", "down")
     call ton_main("It was charms...", "mad", "base", "base", "down")
     m "Right..."
     call ton_main("I had been practising some charms, and taught myself a couple on my own, like the one for invisibility...", "crooked_smile", "base", "base", "down")

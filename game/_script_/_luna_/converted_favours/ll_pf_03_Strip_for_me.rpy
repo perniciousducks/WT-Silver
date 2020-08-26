@@ -553,7 +553,7 @@ label luna_favour_3:
                 m "Now now, [lun_name], a deal's a deal..."
                 call lun_main("...","upset","suspicious","sad","R")
                 call lun_main("At least close your eyes...","normal","angry","sad","mid",tears="soft")
-                m "As you wi-...{w=0.5} command..."
+                m "As you wi-- command..."
                 hide screen luna_main
                 show screen blkfade
                 with d3

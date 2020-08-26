@@ -615,7 +615,7 @@ label equip_top:
                     # else: #23+
                         # call her_main("Of course, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("Should I wear a bra beneath it, or would you like me to really show them off!?", "smile", "narrow", "base", "mid_soft")
-                        # m "Uhm..."
+                        # m "*uhm*..."
                         # call her_main("I'm kidding!", "smile", "happyCl", "base", "mid")
                         # call her_main("The other teachers wouldn't allow that sadly.", "annoyed", "narrow", "worried", "down")
                         # call her_main("(Except for maybe Professor Snape...)", "annoyed", "narrow", "annoyed", "up")
@@ -722,7 +722,7 @@ label equip_top:
                         # m "I wouldn't mind if they did..."
                         # call her_main("That's just... typical!", "clench", "base", "angry", "mid")
                         # call her_main("You disgust me, [genie_name]!", "clench", "base", "angry", "mid")
-                        # m "Alright- Jeesh... I'm sorry."
+                        # m "Alright. Jeesh... I'm sorry."
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 20."
                     # jump return_to_wardrobe

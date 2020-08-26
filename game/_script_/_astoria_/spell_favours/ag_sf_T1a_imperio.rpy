@@ -134,7 +134,7 @@ label ag_se_imperio_sb_E1:
     call ast_main("Oh shut up, [ast_susan_name]!","scream","base","angry","L")
     call sus_main("[ast_susan_name]!? W-why are you always being so mean to me?","open","wide","worried","wide")
     call ast_main("Pfft... you know...","annoyed","narrow","angry","R")
-    call sus_main("A-... Are you just going to let her say that, s-sir?","scream","base","angry","mid")
+    call sus_main("A-{w=0.3}Are you just going to let her say that, s-sir?","scream","base","angry","mid")
     g4 "What's that?"
     m "I was a little...{w=0.4} *ugh*... distracted..."
 
@@ -738,7 +738,7 @@ label ag_se_imperio_sb_E3:
     sus "I don't know... I just can't!"
     call ast_main("*Hmmm*... it must be because you're such a nasty little slut then...","open","closed","base","mid")
     with hpunch
-    sus "I- I am not!"
+    sus "I-- I am not!"
     call ast_main("Are you sure?","grin","base","angry","down")
     sus "I... Y-yes..."
     call ast_main("because it sure doesn't look like that...","open","narrow","base","down")
@@ -866,7 +866,7 @@ label ag_se_imperio_sb_E3:
     else:
         call ast_main("It's getting a bit late Suzy, let's head to Tonks' study...","annoyed","narrow","base","R")
         sus "..."
-        m "Ugh... uhm... good night."
+        m "Ugh... *uhm*... good night."
         call ast_main("Good night, [ast_genie_name]!","grin","closed","base","mid")
 
     call play_sound("door")

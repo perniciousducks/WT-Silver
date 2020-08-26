@@ -376,7 +376,7 @@ label ss_he_hermione_E1:
         call sna_main("You... y-you...","snape_31")
         call sna_main("......","snape_40")
         call sna_main("Ha.... ha-ha... HA-HA-HA!!!","snape_28")
-        m "Wha-...? What did I say?"
+        m "Wha--? What did I say?"
         call sna_main("Ha-ha-ha! You are amazing!","snape_42")
         call sna_main("Are all genies so... wonderfully nihilistic?","snape_37")
         m "Yeah... We immortals tend to not give a fuck."

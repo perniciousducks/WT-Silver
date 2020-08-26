@@ -386,7 +386,7 @@ label hg_pf_admire_breasts_T3_masturbate:
 
         "-Just start cumming-":
             g4 "*Argh*! You whore!"
-            call her_main("Proff- ??", "scream", "wide", "base", "stare", cheeks="blush")
+            call her_main("Proff--?", "scream", "wide", "base", "stare", cheeks="blush")
             call cum_block
             g4 "*Argh*! YES!"
             hide screen bld1

@@ -118,7 +118,7 @@ label ag_st_imperio_E1:
     call ast_main("Get started - with what?","open","narrow","base","R")
     call ton_main("Continuing your training, of course!", "base", "base", "base", "L")
     call ton_main("I'd like you to cast the Imperius curse now... On another person.","base","base","angry","L")
-    call ast_main("Wait- what?","angry","base","base","mid")
+    call ast_main("Wait, what?","angry","base","base","mid")
     call ast_main("I thought I wasn't allowed to ever use it again?", "annoyed", "base", "worried", "R")
     call ton_main("You aren't... That is correct.", "open", "closed", "base", "mid")
     call ton_main("However, you are hereby given special permission!", "smile", "wide", "base", "L")
@@ -987,7 +987,7 @@ label ag_st_imperio_E4:
     call ctc
 
     if tonks_flip == -1: # Facing Astoria
-        call ast_main("Is she-... is she doing it?","clench","closed","worried","mid") # closed eyes
+        call ast_main("Is she... is she doing it?","clench","closed","worried","mid") # closed eyes
         call ton_main(".............", "grin", "wink", "base", "L", cheeks="blush") # horny
         g9 "Why don't you see for yourself?"
         g9 "Open your eyes, girl!"
@@ -1018,8 +1018,8 @@ label ag_st_imperio_E4:
     call ton_main("..............", "horny", "base", "shocked", "ahegao", hair="horny", cheeks="heavy_blush") # angry/horny expression
     g9 "What do you think? Want to give it a try?"
     call ast_main("Would that really be necessary, Sir?","open","base","base","R")
-    m "Yes{w=0.3} - it{w=0.3} - would."
-    call ast_main("We-...{w=0.5} we could try again next time, Professor...","clench","narrow","base","down")
+    m "Yes.{w=0.3} it.{w=0.3} would."
+    call ast_main("We--{w=0.5} we could try again next time, Professor...","clench","narrow","base","down")
     m "Next time?"
     m "Where did your enthusiasm go all of a sudden?"
     m "Weren't you so eager to practise this spell?"
@@ -1033,7 +1033,7 @@ label ag_st_imperio_E4:
     m "..."
     call ast_main("I should go to bed...","open","narrow","base","R")
     m "Is that so..."
-    call ast_main("I- *uhm*...{w=0.5} I'm tired, Sir.","open","narrow","base","mid")
+    call ast_main("I-- *uhm*...{w=0.5} I'm tired, Sir.","open","narrow","base","mid")
     call ast_main("*yaaaaawn*!...","open","closed","worried","mid")
     call ast_main("See?","annoyed","base","base","mid")
     m "..."
@@ -1261,7 +1261,7 @@ label ag_st_imperio_E5:
     call ton_main("","normal","base","shocked","ahegao", hair="horny", cheeks="blush")
     call ast_main("Professor Dumbledore, you knew exactly what her weakness would be!","smile","base","base","mid")
     m "I did?"
-    m "*ahem*... I mean-{w} of course I did!"
+    m "*ahem*... I mean, of course I did!"
     call ast_main("We're taking off her clothes, because that's what she enjoys! But could never do in school!","angry","narrow","angry","L")
     call ast_main("Which makes it easier for me to channel the Imperius curse...","grin","base","angry","mid")
     call ast_main("Because she's nothing but a weak-minded slut!","open","narrow","angry","L") # angry
@@ -1399,7 +1399,7 @@ label ag_st_imperio_E5:
     call ton_main("To give him a blowjob...", "open", "closed", "shocked", "mid") # Tonks answers for Genie
     call ast_main("Professor Tonks!{w} Are you serious?","scream","base","base","L") # shocked
     call ast_main("Why would she want to do that? That's disgusting!!!","clench","base","worried","mid")
-    m "That- *uhm*..."
+    m "That-- *uhm*..."
     m "That wasn't what I would have suggested, but..."
     m "I'm willing to give her a chance to try..."
     m "Try to resist that urge, I mean..."
@@ -1424,7 +1424,7 @@ label ag_st_imperio_E5:
     with d5
 
     # Snape enters...
-    call sna_main("Genie, I was wondering if you could help me with-{w=0.8}{nw}","snape_35", ypos="head")
+    call sna_main("Genie, I was wondering if you could help me with--","snape_35", ypos="head")
     stop music fadeout 2.0
     call play_sound("scratch")
     call sna_main("!!!","snape_11", ypos="head")
@@ -1600,7 +1600,7 @@ label ag_st_imperio_E5:
             m "Everything that we've been doing with the Astoria girl."
             call ton_main("Oh...","upset","base","worried","down")
             call ton_main("Well, we've been helping her haven't we?", "open", "base", "shocked", "down", cheeks="blush")
-            call ton_main("She's such an uptight and oppressed little cute-{w=0.8}... girl.", "upset", "closed", "raised", "down", cheeks="blush")
+            call ton_main("She's such an uptight and oppressed cute little...{w=0.4} girl.", "upset", "closed", "raised", "down", cheeks="blush")
             call ton_main("...", "mad", "narrow", "base", "downR", cheeks="blush")
             call ton_main("How can I not help her, even if she's a Slytherin.", "upset", "closed", "base", "mid", cheeks="blush")
             m "[tonks_name]... You aren't convincing anyone."

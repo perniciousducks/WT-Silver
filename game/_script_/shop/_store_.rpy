@@ -465,7 +465,7 @@ label purchase_forbidden_scroll(item):
     fre "Yes, although it's blank for some reason... not really anything new to us as we used to have a ma--"
     ger "massive amounts of scrolls just like this one!"
     ger "Yep... lot's of them, shame they all burnt."
-    fre "What are you- *HHNG*"
+    fre "What are you-- *HHNG*"
     fre "Oh! I see... Yes, very unfortunate..."
     m "That is unfortunate... Well I'm sure I'll manage."
     m "Ok, well how much is the scroll?"

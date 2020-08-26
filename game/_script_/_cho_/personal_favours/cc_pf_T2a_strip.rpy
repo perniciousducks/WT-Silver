@@ -51,7 +51,7 @@ label cc_pf_strip_T1_intro_E1:
     m "I assume you get complimented often?"
     call cho_main("Sometimes...", "soft", "base", "base", "R")
     g9 "And I suspect you have many admirers?"
-    call cho_main("Oh- *umm*... maybe?", "annoyed", "base", "base", "mid")
+    call cho_main("Oh, *umm*... maybe?", "annoyed", "base", "base", "mid")
     call cho_main("But that's {b}not{/b} why I take such great care of my body, Sir!", "open", "narrow", "angry", "mid")
     m "Of course not..."
     call cho_main("Quidditch is a hard game for anyone, as I'm sure you know...", "open", "closed", "base", "mid")
@@ -96,7 +96,7 @@ label cc_pf_strip_T1_intro_E1:
 
     # Cho stays reluctant.
     call cho_main("Is there no other way I could repay the favour?", "annoyed", "narrow", "worried", "mid")
-    m "Well, yes-{w=0.3} Several.{w} But we'll get to those later..."
+    m "Well, yes.{w=0.3} Several.{w} But we'll get to those later..."
     call cho_main("Later, Sir?", "soft", "base", "raised", "mid")
     g4 "Girl, I wouldn't be asking you this if it wasn't absolutely necessary for your training!"
     call cho_main("Of course, [cho_genie_name].", "annoyed", "base", "base", "down")
@@ -130,7 +130,7 @@ label cc_pf_strip_T1_intro_E1:
         "\"Your posture is remarkable!\"":
             call cho_main("I'm glad you noticed!", "smile", "base", "base", "mid") # Happy
             call cho_main("I'm relieved you actually show interest in my body status, Sir!", "base", "base", "base", "mid")
-            m "(Oh- You have no idea, girl!)"
+            m "(Oh, You have no idea, girl!)"
             call cho_main("I thought you just wanted to gush at my body like all the other teachers...", "soft", "narrow", "worried", "mid", cheeks="blush")
             m "Who?{w} Which other teachers are you talking about?{w} Snape?!"
             call cho_main("No, not Snape...", "annoyed", "narrow", "angry", "R")
@@ -389,10 +389,10 @@ label cc_pf_strip_T1_intro_E2:
     call ctc
 
     call cho_main("After all, I promised I'd do anything to win that Quidditch cup...", "soft", "narrow", "angry", "mid")
-    call cho_main("If stripping for you is what it takes- then...", "soft", "base", "angry", "down")
+    call cho_main("If stripping for you is what it takes, then...", "soft", "base", "angry", "down")
     call play_music("sad")
     call cho_main("Then...", "angry", "base", "worried", "down")
-    call cho_main("I- I'll do it...", "soft", "narrow", "worried", "down", cheeks="blush")
+    call cho_main("I-I'll do it...", "soft", "narrow", "worried", "down", cheeks="blush")
     m "(Shit. Is she crying?)"
     m "(Can she even cry?)"
     m "Are you alright, girl?"
@@ -1170,7 +1170,7 @@ label cc_pf_strip_T1_hermione:
             call cho_main("That's right, I am!", "soft", "wide", "base", "mid")
             call her_main("*Humph*...", "annoyed", "narrow", "angry", "R")
             call cho_main("And? What else?", "smile", "narrow", "base", "L")
-            g4 "And Cho's thighs are probably the most impressive ones I've seen in the last hund-... decade or more!"
+            g4 "And Cho's thighs are probably the most impressive ones I've seen in the last hund-- decade or more!"
             call her_main("Well in that case...", "soft", "closed", "base", "mid")
             call her_main("In that case I'll give you a great opportunity to stare at them indefinitely.", "angry", "base", "angry", "mid")
             call cho_main("What are you talking about, Granger?", "soft", "narrow", "raised", "L")
@@ -1419,7 +1419,7 @@ label cc_pf_strip_T1_hermione:
             call her_main("I do not!!!", "open", "wide", "base", "stare")
             m "Girls, we all know what really counts is how we appear on the inside."
             call her_main("", "angry", "closed", "angry", "mid")
-            call cho_main("Oh- Shut up!", "angry", "narrow", "angry", "mid")
+            call cho_main("Oh shut up!", "angry", "narrow", "angry", "mid")
             call her_main("Professor, you're the one who continuously asks us to expose ourselves!", "soft", "base", "angry", "mid")
             m "Well yes. I also never claimed that {b}I{/b} was pretty on the inside."
             m "You of all people should know better by now..."

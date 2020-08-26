@@ -189,7 +189,7 @@ label cc_pr_spy_girls_T3_showers:
     call cho_main("I found a hole in one of the walls, actually...", "annoyed", "narrow", "raised", "mid")
     m "That's unfortunate, I'll have to look into filling that hole at some point..."
     m "So what were they talking about if it wasn't Quidditch?"
-    call cho_main("Uhm... There wasn't much talking at all...", "disgust", "narrow", "base", "downR", cheeks="blush")
+    call cho_main("*uhm*... There wasn't much talking at all...", "disgust", "narrow", "base", "downR", cheeks="blush")
     call cho_main("They were too preoccupied with kissing, and touching each other.", "open", "happyCl", "base", "mid", cheeks="blush")
     g9 "I knew it!"
     call cho_main("*Hmpf*...", "annoyed", "narrow", "angry", "mid", cheeks="blush") #annoyed

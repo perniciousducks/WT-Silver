@@ -166,8 +166,8 @@ label panty_raid:
         call her_main("Does that mean I've earned some extra house points?", "open", "base", "base", "R")
         m "I think the situation calls for it..."
         call her_main("", "smile", "base", "base", "R")
-        g9 "Ninety points to Gryffi-... {w=0.5}{nw}"
-        g4 "Ninety points to Gryffi-... {fast} wait a second..."
+        g9 "Ninety points to Gryffi--{w=0.5}{nw}"
+        g4 "Ninety points to Gryffi--{fast} wait a second..."
         call her_main("", "smile", "base", "base", "mid")
         "> You take another look at the panties and notice something unusual."
         call her_main("", "base", "base", "base", "mid")
@@ -180,7 +180,7 @@ label panty_raid:
         call her_main("Yes, [genie_name]?", "crooked_smile", "closed", "base", "mid")
         m "Why is there a price tag on these?"
         call her_main("...!", "angry", "wide", "base", "stare")
-        call her_main("Uh.... Well, the person I boug-... {w=0.3}*ahem*{w=0.2} {size=+2}BORROWED{/size} these from must have forgotten to take the price tag off.", "open", "happy", "base", "mid")
+        call her_main("Uh.... Well, the person I bough--{w=0.3} *ahem*{w=0.2} {size=+2}BORROWED{/size} these from must have forgotten to take the price tag off.", "open", "happy", "base", "mid")
         call her_main("", mouth="normal")
         m "I see...{w=0.3} Well whoever you took them from must be a bit slow to forget something like that, don't you agree?"
         call her_main("Uhh...", "normal", "narrow", "worried", "down")
@@ -455,7 +455,7 @@ label panty_raid:
         call her_main("There aren't any in Gryffindor or Ravenclaw I believe, but I'm not sure for some of the other houses.", "open", "base", "base", "mid_soft")
         call her_main("", mouth="normal")
         m "I feel as though there's some context missing."
-        call her_main("Uhmmm... alright, so...{w=0.5} I was in the Gryffindor girl's dorm, working on my \"task.\"", mouth="open")
+        call her_main("*uhm*mm... alright, so...{w=0.5} I was in the Gryffindor girl's dorm, working on my \"task.\"", mouth="open")
         call her_main("", mouth="normal")
         m "The perfect hunting grounds."
         call her_main("I am astonished that I'll have to agree with you, but yes... I had the pick of the litter with no absence of choice.{w=0.3} Speaking of...", "open", "closed", "base", "mid")
@@ -554,7 +554,7 @@ label panty_raid:
         m "Just spit it out!"
         call her_main("I was so nervous with her that I just said yes! She'll be expecting me soon!", "mad", "narrow", "base", "down", cheeks="blush")
         g9 "You better get to it then, [hermione_name]!"
-        call her_main("But I- But I- I couldn't- ", "shock", "narrow", "worried", "down", cheeks="blush")
+        call her_main("But I-- But I-- I couldn't--", "shock", "narrow", "worried", "down", cheeks="blush")
         call her_main("", mouth="angry", cheeks="blush")
         call her_main("I'll just have to inform her that it was a misunderstanding, yes that will have to do.", "shock", "narrow", "base", "mid_soft", cheeks="blush")
         call her_main("", "angry", "narrow", "base", "mid_soft", cheeks="blush")
@@ -613,7 +613,7 @@ label panty_raid:
         her "Why did you lock the door...?!"
         $ renpy.play('sounds/cloth_sound.mp3')
         "> Katie starts taking off her clothes."
-        her "Wha- wha- what-t-t are you d-doing?!"
+        her "Wha-wha-what-t-t are you d-doing?!"
         $ renpy.play('sounds/giggle.mp3')
         "Katie" "Aren't you talkative today?{w=0.5} I would save my breath if I were you. {heart}{heart}{heart}"
         "Katie" "I'm quite{w=0.2} {heart}horny{heart}{w=0.2} so you might be stuck here for a while."

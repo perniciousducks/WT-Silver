@@ -417,7 +417,7 @@ label hg_pp_cumaddict_E1: #Repetitive version where she doesn't faint after the 
     pause.2
 
     call her_main("Take off your pants! No questions!", "scream", "happyCl", "worried", "mid", xpos="mid", ypos="base", trans=hpunch)
-    m "Hold on a minute, what are you-....{w=0.5}{nw}"
+    m "Hold on a minute, what are you--"
     call her_main("Shut it, just let me suck it.", "annoyed", "base", "worried", "R")
     m "...."
 
@@ -551,7 +551,7 @@ label potion_scene_3_3_1:
     call her_main("I-I feel grea--", "annoyed", "narrow", "worried", "down")
     call nar(">Hermione's eyes go blank and she stares forward blankly.")
     call her_main("What am I?", "grin", "narrow", "base", "dead")
-    m "Uhm..."
+    m "*uhm*..."
     m "(Should have thought of something. At least the potion seems to work. Let's see...)"
 
     #TODO Reconsider the use of menu here, there is only one option
@@ -640,7 +640,7 @@ label potion_scene_3_3_1:
             call her_main("Oh no I forgot that!", "soft", "wide", "base", "stare")
             call her_main("I'm soooo sorry!!!", "shock", "happyCl", "worried", "mid", cheeks="blush")
             call her_main("It's this one, isn't it...", "soft", "narrow", "worried", "down")
-            call nar(">Hermione conjures an -I {heart} Cum- badge, which magically attaches itself to her breasts.")
+            call nar(">Hermione conjures an \"I {heart} Cum\" badge, which magically attaches itself to her breasts.")
 
             # TODO: Uncomment once badges have been added.
             # hermione.equip(cumslut_badge)

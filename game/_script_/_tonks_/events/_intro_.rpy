@@ -720,7 +720,7 @@ label ss_he_tonks_E2:
     call sna_main(".........................","snape_31", ypos="head")
     call sna_main("So, here is the plan...","snape_03")
     call sna_main("You get a shovel and a body-bag ready, and I'll do the \"Avada Kedavra\"!","snape_01")
-    m "\"Avra-ka-\"{w} What the fuck are you talking about?"
+    m "\"Avra-ka--\"{w} What the fuck are you talking about?"
     call sna_main("Tonks! We need to get rid of her! Immediately!","snape_10")
     call sna_main("Otherwise things will never go back to how they were!","snape_03")
     m "Have you lost your mind again?"

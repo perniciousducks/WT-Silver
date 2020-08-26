@@ -204,7 +204,7 @@ label hg_pf_grope_ass_T5_back:
     call her_chibi_scene("grope_ass_back")
     with d7
 
-    call her_main("-wait I juuuus-!!!", "base", "base", "base", "R", cheeks="blush", ypos="head")
+    call her_main("wait I juuuus--!!!", "base", "base", "base", "R", cheeks="blush", ypos="head")
     call nar(">Her voice trails off to a squeak as you start to knead her big, round ass")
     m "*Hmm*? what's that? i couldn't hear you, [hermione_name]."
     call her_main("You bastard{heart}", "grin", "narrow", "base", "up", cheeks="blush")

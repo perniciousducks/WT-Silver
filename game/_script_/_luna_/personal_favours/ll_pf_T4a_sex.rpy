@@ -142,7 +142,7 @@ label ll_pf_sex_T1_E2:
     ">Not content to just stand there, you start thrusting back into Luna's tight pussy."
     $ lunCG(pupil='ahegao', eye='seductive', mouth='open_tongue', extra_1='speed')
     lun "{heart}ah...{heart}the wrackspurts...{heart} they're going...{heart}aaaahhh..."
-    m "I already told you- Argh... They're not real!"
+    m "I already told you-- *Argh*... They're not real!"
     $ lunCG('open', 'wide', '', 'dr')
     lun "Ugh... I can see... them... ah...{heart}{heart} with my own two... eyes..."
     $ lunCG('base', 'seductive', '', 'left')
@@ -385,7 +385,7 @@ label ll_pf_sex_T1_E3:
             lun "Are you sure I don't get any wishes, [lun_genie_name]?"
             m "No lamp, no wishes. Those are the rules."
             $ lunCG('pout', 'angry', 'sad', 'right')
-            lun "Hmph... Maybe I should try a- ah...{heart} a summoning spell..."
+            lun "Hmph... Maybe I should try a-- *ah*...{heart} a summoning spell..."
             m "I'm not sure that would work... Besides, what do you need a wish for?"
             ">You grab a hold of Luna's hips and go to town on the needy fuckslut."
             $ lunCG('open_tongue', 'furious', 'sad', 'up')
@@ -1389,7 +1389,7 @@ label ll_pf_sex_T1_ton_2: # Call label
     $ lunCG('open', 'angry', 'sad', 'left')
     call ton_main("Oh... Will that make all my students nice and slutty like you?","horny","base","raised","L")
     $ lunCG('base', 'tired', 'sad', 'up')
-    lun "It- ah... it could."
+    lun "It-- ah... it could."
     $ lunCG('open_tongue', 'angry', 'mad', 'ahegao')
     call ton_main("Mmmm, fantastic...","open","base","angry","mid")
     lun "Fantastic? Why...{w=0.3} ah...{w=0.3} would you..."

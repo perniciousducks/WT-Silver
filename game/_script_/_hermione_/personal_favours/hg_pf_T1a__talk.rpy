@@ -692,7 +692,7 @@ label hg_pf_talk_tonks:
             if masturbating:
                 g9 "(I bet you lapped it all up, slut!)"
             call ton_main("Why bother, the elves would've done it anyway.", "mad", "narrow", "raised", "R")
-            call her_main("About that-{w=0.6}{nw}", "open", "squint", "angry", "mid")
+            call her_main("About that--", "open", "squint", "angry", "mid")
             call ton_main("Actually, let's save that topic for another time...", "normal", "narrow", "base", "L")
             if masturbating:
                 g4 "(You wanted it all for yourself, that's why!)"
@@ -753,7 +753,7 @@ label hg_pf_talk_tonks:
                 m "{size=-4}...[tmp_word]...{/size}"
                 call her_main("*huh*?", "open", "squint", "angry", "mid", cheeks="blush")
                 m "You sold me exactly [tmp_word] favours."
-                call her_main("B-but that's-{w=1.0}{nw}","angry","happy", cheeks="blush")
+                call her_main("B-but that's--","angry","happy", cheeks="blush")
                 if tmp_val < 10:
                     call ton_main("Disappointing, but it's a start.","open","closed","base","mid", hair="basic")
                     call her_main("...", "annoyed", "narrow", "base", "R_soft", cheeks="blush")
@@ -794,7 +794,7 @@ label hg_pf_talk_tonks:
             call her_main("That is why I created the \"M.R.M\"!", "open", "happy", "base", "mid_soft")
             call ton_main("Yes. The \"Men's Reign Movement\"...","open","closed","base","mid")
             call ton_main("","base","base","base","mid")
-            call her_main("But-...{w=0.5} that's not what \"M.R.M\" stands for!", "angry", "base", "worried", "mid")
+            call her_main("But...{w=0.5} that's not what \"M.R.M\" stands for!", "angry", "base", "worried", "mid")
             call her_main("It's the \"Men's Rights Movement!\"", "open", "closed", "base", "mid")
             call her_main("I've told you both about it... In detail!", "annoyed", "base", "angry", "mid")
             call ton_main("I see... I probably wrote it down and put it somewhere in my...{w=0.8} extensive notes folder...", "soft", "base", "raised", "R")
@@ -1086,13 +1086,13 @@ label hg_pf_talk_tonks:
                     m "I'm sure Miss Tonks would be happy to provide additional points, as you'd basically be providing a favour for us both."
                     call ton_main("*Hmmm* Oh yes, I'd love to be of help for the Gryffindor house.", "horny", "base", "base", "mid", hair="horny")
                     call her_main("In that case I want another five points.", "annoyed", "base", "base", "mid")
-                    m "That can be arrange-{w=0.8}{nw}"
+                    m "That can be arrange--"
                     call ton_main("Done!","base","base","angry","mid")
                     $ current_payout = 10
                     if masturbating:
                         call gen_chibi("jerk_off_behind_desk")
                         m "(This should be good...)"
-                    call her_main("W-... What would you like to know about then?", "open", "base", "base", "R", cheeks="blush")
+                    call her_main("W-{w=0.3}What would you like to know about then?", "open", "base", "base", "R", cheeks="blush")
                     call ton_main("I'd be happy with anything you'd like to tell me...","base","base","base","L")
                     call her_main("Well... it's quite embarrassing.", "disgust", "narrow", "worried", "down", cheeks="blush")
                     call ton_main("Yes?", "soft", "base", "raised", "L")
@@ -1144,14 +1144,14 @@ label hg_pf_talk_tonks:
                         call bld
                         g4 "*Ah-Ah*..."
                         call ton_main("What have you been doing back there?", "soft", "narrow", "raised", "mid", hair="horny")
-                        m "I-{w=0.6}{nw}"
+                        m "I--"
                         call her_main("H-{w=0.3}he isn't doing anything! Isn't that right, Professor?", "angry", "happyCl", "worried", "mid", cheeks="blush")
                         call her_main("Just *uhm*...{w=0.5} stretching your leg, as always.", "crooked_smile", "base", "worried", "mid", cheeks="blush")
                         call ton_main("Right...", "normal", "base", "shocked", "R")
                         call ton_main("Well then, since my work here is done... I need to go back to my regular duties.","open","closed","base","mid", hair="basic")
 
                     else:
-                        m "I sure what-{w=0.6}{nw}"
+                        m "I sure what--"
                         call ton_main("I'm asking miss Granger.","upset","base","base","mid")
                         m "Oh, of course!"
 

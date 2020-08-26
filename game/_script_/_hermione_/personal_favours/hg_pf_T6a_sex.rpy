@@ -813,7 +813,7 @@ label hg_sex_luna:
             call her_main("the crazy blonde... *ah*...{heart}... with the nice breasts...", "open", "closed", "base", "mid")
             m "Come on in!"
         "-Tell them to go away-":
-            m "Go aw-!"
+            m "Go aw--!"
             call her_main("No [genie_name]... let them in...", "open", "happyCl", "worried", "mid")
             m "You want to get caught?!"
             call her_main("*Ah*...{heart} yes...{heart}", "shock", "happyCl", "worried", "mid")

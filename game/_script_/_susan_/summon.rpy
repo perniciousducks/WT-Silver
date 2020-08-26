@@ -183,7 +183,7 @@ label susan_talk:
                     call sus_main("The other girls already call me that and I hate it...","open","base","worried","down")
                     m "You poor poor thing!"
                     m "You see, if someone like me would call you that, maybe it wouldn't affect you as much."
-                    call sus_main("I-... You might be right.","upset","narrow","base","down")
+                    call sus_main("I--... You might be right.","upset","narrow","base","down")
                     call sus_main("You can call me a Cow, [sus_genie_name].","base","base","base","mid")
                     jump susan_talk
                 "-Slut-":

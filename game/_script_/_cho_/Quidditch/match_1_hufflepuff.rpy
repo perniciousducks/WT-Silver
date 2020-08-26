@@ -1051,7 +1051,7 @@ label hufflepuff_match:
     pause 0.3
 
     call bld
-    m "I'm hom-...{w=0.8}{nw}"
+    m "I'm hom--"
     g4 "Dammit, I almost said that!"
     m "Anyway, I'm beat, time to hit the hay."
 

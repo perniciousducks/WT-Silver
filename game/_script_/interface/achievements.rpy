@@ -31,7 +31,7 @@ define achievements_dict = {"unlockher": ["Characters", "Granger Danger", "Award
                                    #1.37 HG achievements
                                    "busted": ["Characters", "BUSTED!", "... a nut when got busted for busting a nut.", False, "interface/icons/head/hermione.png", False],
                                    "herstrip": ["Characters", "Dance lessons", "Even elephants have more grace when they're moving, girl.. -Severus Snape", False, "interface/icons/head/hermione.png", False],
-                                   "herkiss": ["Characters", "First Kiss", "Hermione made out with you-...`r cock...", False, "interface/icons/head/hermione.png", False],
+                                   "herkiss": ["Characters", "First Kiss", "Hermione made out with you-- r... cock...", False, "interface/icons/head/hermione.png", False],
                                    "hertits": ["Characters", "Boobs Lover", "*ahem* I mean.. books, yes, books lover!", False, "interface/icons/head/hermione.png", False],
                                    "headlib": ["Characters", "Head Librarian", "Did she just swallow it?", False, "interface/icons/head/hermione.png", False],
                                    "nerdgasm": ["Characters", "Nerdgasm", "Had a very fulfilling moment with Hermione.", False, "interface/icons/head/hermione.png", False]}

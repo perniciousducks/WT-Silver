@@ -109,7 +109,7 @@ label tonks_summon_setup:
                         m "Does one hundred gold sound nice to you?"
                         g9 "With a body like that, you could earn a fortune at a strip club!"
                         call ton_main("Really...","horny","base","raised","mid")
-                        call ton_main("You think a noble teacher like me- an ex-auror... Would quit her highly regarded job to become a cheap stripper?","open","base","base","mid")
+                        call ton_main("You think a noble teacher like me, an ex-auror, would quit her highly regarded job to become a cheap stripper?","open","base","base","mid")
                         m "Well, no. I still want to keep you as a teacher."
                         m "I merely suggested that you could."
                         call ton_main("Maybe the duelling stage could find some extra use...","base","base","base","R")

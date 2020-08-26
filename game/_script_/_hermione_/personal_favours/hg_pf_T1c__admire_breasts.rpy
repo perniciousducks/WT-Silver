@@ -110,7 +110,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
     g9 "How much would it cost me for you to lift up your top?"
     call her_main("My top?!", "shock", "wide", "base", "stare")
     g9 "And show me what's underneath..."
-    call her_main("Why would I-?!", "angry", "wide", "base", "mid")
+    call her_main("Why would I--?!", "angry", "wide", "base", "mid")
 
     call her_main("[genie_name], I refuse to bare my breasts for you!", "open", "closed", "angry", "mid")
     call her_main("How could you even suggest such a thing?!", "angry", "base", "angry", "mid")
@@ -124,7 +124,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
     if hermione.is_worn("bra"):
         m "You can keep your bra on for all I care..."
     call her_main("Three seconds! Not even a second longer!", "angry", "base", "angry", "mid")
-    m "How about fi-.."
+    m "How about fi--"
     call her_main("{size=+4}Not even a second longer!{/size}", "scream", "narrow", "angry", "mid")
     m "(...)"
 
@@ -218,7 +218,7 @@ label hg_pf_admire_breasts_T1_intro_E2:
         "\"Your tits!\"":
             call her_main("W-what?", "shock", "wide", "base", "stare")
             g9 "Your breasts, Miss Granger. I would very much like to see them!"
-            call her_main("M-My-... my breasts?!", "angry", "base", "angry", "mid")
+            call her_main("M-My--... my breasts?!", "angry", "base", "angry", "mid")
 
             # Hermione gets angry
             call her_main("*Tztzzz*!...", "angry", "closed", "angry", "mid", emote="angry")

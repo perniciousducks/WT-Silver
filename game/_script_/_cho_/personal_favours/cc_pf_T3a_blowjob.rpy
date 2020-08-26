@@ -119,7 +119,7 @@ label cc_pf_blowjob_T3_intro_E1:
         cho "..." #worried eyes
         gen "What? Don't tell me this is the first time you've done this..."
         $ camera.set_image("away_blush")
-        cho "O-... of course I've done it before!"
+        cho "O-{w=0.3}of course I've done it before!"
         gen "Then get that arm moving, use those muscles!"
         $ camera.set_image("up")
         cho "..." # annoyed
@@ -263,7 +263,7 @@ label cc_pf_blowjob_1:
             gen "Now, put your hand back..."
             $ camera.set_image("mid_worried")
             cho "..."
-            cho "Al- Alright...!"
+            cho "Al-Alright...!"
             $ camera.set_imagepath("cho_bj/hj/")
             $ camera.set_image("up_worried")
             #Cho puts her hand back on
@@ -287,7 +287,7 @@ label cc_pf_blowjob_1:
                 cho "It still won't fit!"
                 gen "[cho_name]... You're here to push your limits, stop with the whining!"
                 $ camera.set_image("up_worried")
-                cho "I- I'm sorry [cho_genie_name]..."
+                cho "I-I'm sorry [cho_genie_name]..."
                 cho "I... I can't...{w=0.4} It's all happening too fast!"
                 gen "[cho_name]..."
                 $ camera.set_image("mid_worried")
@@ -297,7 +297,7 @@ label cc_pf_blowjob_1:
                 cho "It won't fit!"
                 gen "[cho_name]... You're here to push your limits."
                 $ camera.set_image("up_worried")
-                cho "I- I'm sorry [cho_genie_name]..."
+                cho "I-I'm sorry [cho_genie_name]..."
                 cho "I... need some time to think..."
                 gen "[cho_name]..."
                 $ camera.set_image("mid_worried")
@@ -558,7 +558,7 @@ label cc_pf_blowjob_1:
 
                     gen "*Ah*..."
                     cho "..." # Wide eyed
-                    cho "M-... my face!" #Angry
+                    cho "M-{w=0.3}my face!" #Angry
                     cho "You just came on my face!"
                     gen "*Ahh* At last..."
 

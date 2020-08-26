@@ -286,7 +286,7 @@ label astoria_intro_E1:
 label astoria_intro_E2_hermione:
     m "I require your help with something."
     m "Tonks came by earlier and informed me about a student making a ruckus."
-    m "I- *uhm*...{w} She thought maybe you could be of help finding her?"
+    m "I-- *uhm*...{w} She thought maybe you could be of help finding her?"
     call her_main("Of course, Sir.", "base", "happyCl", "base", "mid")
     m "Apparently a student got hit by an \"unforgivable curse\" here at the school."
     call her_main("AN unforgivable CURSE!!!", "scream", "wide", "base", "stare", trans=hpunch)

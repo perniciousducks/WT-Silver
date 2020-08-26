@@ -1086,7 +1086,7 @@ label hufflepuff_match_return:
     g4 "{size=+10}IT WASN'T ME!{/size}"
     m "..........."
     call cho_main("*huh*?{w=0.5} Are you okay, [cho_genie_name]?", "soft", "narrow", "base", "mid")
-    m "Wha-"
+    m "Wha--"
     g4 "Of course I am!"
     call cho_main("...", "annoyed", "narrow", "raised", "R")
     call cho_main("If you say so...", "annoyed", "narrow", "base", "mid")
@@ -1117,7 +1117,7 @@ label hufflepuff_match_return:
     # (equips skirt again)
     # cho "I gotta go."
     # starts walking out of the office
-    # m "Hey but I ha-..."
+    # m "Hey but I ha--"
     # (cho leaves)
     # m "Oh well.. At least I caught a glimpse of the goodies."
 

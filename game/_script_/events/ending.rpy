@@ -50,7 +50,7 @@ label ball_ending_E1:
     call sna_main("Well, you see, my magic is \"Hogwarts magic\"...","snape_05")
     sna "But I suspect your powers are alien enough to be perceived as a threat."
     m "Interesting..."
-    call sna_main("I think if you manage to get away far enough from the school grounds-","snape_24")
+    call sna_main("I think if you manage to get away far enough from the school grounds--","snape_24")
     m "I will be able to go home!{w=0.5} finally..."
     call sna_main("Yes, and the best time to do that would be tonight.","snape_02")
     call sna_main("While everyone is preoccupied with that bloody Autumn ball, you could sneak out unnoticed...","snape_23")
@@ -767,7 +767,7 @@ label ball_ending_E2:
         her "{size=+5}*Slurp-gulp-slurp-slurp*!!!{/size}"
         g4 "{size=+5}Here it com--{/size}"
         $ dynamic_cg("ball/bj", "background", "base", "eyes_down", "brows", "blush")
-        her "*Slurp*--.........................."
+        her "*Slurp*.........................."
         her "!!!"
         call ctc
 
@@ -1032,7 +1032,7 @@ label ball_ending_E2:
         $ dynamic_cg("ball/bj", "background", "base3_alt", "blush3", "eyes_dead3", "tears_crying3", "brows3", "spit_base3", "spit_forehead3", "spit_nose3", "spit_eye3", "sperm3")
         her "{size=+9}*GULP-GULP-GULP-GULP-GULP*!!!{/size}"
         g4 "{size=+5}Yes, whore! Drink my cum!{/size}"
-        her "*GULP-GULP-GULP-GULP*--......"
+        her "*GULP-GULP-GULP-GULP*......"
         with hpunch
         g4 "Not done yet!{w=0.3} Not... done... *Argh!*"
         $ dynamic_cg("ball/bj", "background", "base3_alt", "blush3", "tears_crying3", "brows3", "spit_base3", "spit_forehead3", "spit_nose3", "spit_eye3", "sperm3")
@@ -1089,7 +1089,7 @@ label ball_ending_E2:
         show screen blktone5
         m "!!!"
         m "Her hairdo looks perfect!"
-        m "I suppose I was wrong and-"
+        m "I suppose I was wrong and--"
         $ dynamic_cg("ball/speech", "background", "base", "mouth_open", "eyes_closed", "cum0", "overlay")
         g4 "Nope, there it is!"
         g4 "Dripping down behind her ear!"

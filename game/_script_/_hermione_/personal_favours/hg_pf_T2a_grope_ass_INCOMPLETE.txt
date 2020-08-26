@@ -304,7 +304,7 @@ label hg_pf_grope_T5_continue:
             ">you slowly start to pump your thumb"
             pause.8
 
-            call her_main("-only {number=current_payout} poin-", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
+            call her_main("-only {number=current_payout} poin--", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
             ">you speed up slightly"
             call her_main("{heart}-my duty-{heart}", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
             ">you rotate thumb as you go"
@@ -317,7 +317,7 @@ label hg_pf_grope_T5_continue:
             call her_main("keep fingering my ass!!", "scream", "base", "angry", "mid", cheeks="blush", tears="messy")
             ">you pull your thumb out of her tight little asshole..."
             call her_main("w-what!?", "scream", "wide", "worried", "stare", cheeks="blush", tears="messy")
-            call her_main("why w-", "scream", "base", "angry", "mid", cheeks="blush", tears="messy")
+            call her_main("why w--", "scream", "base", "angry", "mid", cheeks="blush", tears="messy")
             ">... and replace it with two fingers"
             call her_main("*Aaah*!", "scream", "wide", "worried", "stare", cheeks="blush", tears="messy")
             call her_main("B-Bastard!{heart}", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")

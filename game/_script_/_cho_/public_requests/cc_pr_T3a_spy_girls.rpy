@@ -306,7 +306,7 @@ label cc_pr_spy_girls_T3_alicia:
     pause .8
     call bld
     m "Changed your mind?"
-    call cho_main("N--... no, Good night!", "open", "happyCl", "base", "mid", cheeks="blush") # head
+    call cho_main("N-- no, Good night!", "open", "happyCl", "base", "mid", cheeks="blush") # head
 
     # Cho leaves.
     call cho_walk(action="leave")

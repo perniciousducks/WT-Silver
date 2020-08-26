@@ -772,7 +772,7 @@ label hermione_intro_E3:
             call her_main("Yes, I suppose we will...", "soft", "base", "base", "mid")
         "{size=-3}\"You need to put my cock in your mouth.\"{/size}" if not d_flag_01:
             $ d_flag_01 = True
-            m "You need to put my co-"
+            m "You need to put my co--"
             call her_main("*huh*?", "soft", "base", "base", "mid")
             m "{size=-4}(No, I can't actually say that...){/size}"
             call her_main("......?", "annoyed", "squint", "base", "mid")

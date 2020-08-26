@@ -107,7 +107,7 @@ label eating_for_pleasure:
     with d2
     "pizza Hu-*shoo*lut!!!{fast}" with hpunch
     pause 1.0
-    hat "Did you say Pizza-"
+    hat "Did you say Pizza--"
     $ renpy.sound.play("sounds/microphone_feedback.mp3")
     "*static*... Welcome to Pizza slut, may I take your order?"
     hat "Well I'll be damned..."
@@ -240,7 +240,7 @@ label eating_for_pleasure:
     g4 "Toppings?!"
     g4 "There's only two slices! And they're on your body!"
     call her_main("A-Actually,{w=0.5} sir,{w=0.5} there are three slices...", "open", "base", "base", "R", cheeks="blush")
-    g4 "Don't lie to me, I can clearly see just tw-..."
+    g4 "Don't lie to me, I can clearly see just tw--"
     pause 0.5
     $ hermione.strip("bottom")
     call her_main("", "grin", "base", "base", "mid", cheeks="blush")

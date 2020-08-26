@@ -63,7 +63,7 @@ label open_puzzle_box:
         "{size=32}*Smash*{/size}"
         $ renpy.play('sounds/glass_shatter.mp3')
         m "A broken bottle..."
-        m "Oh well, too late now. Back to my usual-"
+        m "Oh well, too late now. Back to my usual--"
     elif unlocked_7th == False:
         m "Finally... "
         m "What is this?"

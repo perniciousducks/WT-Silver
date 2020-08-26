@@ -263,7 +263,7 @@ label hg_pf_admire_breasts_T3_promise:
             call her_main("", "annoyed", "closed", "base", "mid")
             call ctc
 
-            her "Thank-"
+            her "Thank--"
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("...........", "annoyed", "base", "base", "mid")
             call her_main("You are being inappropriate, [genie_name].", "annoyed", "narrow", "annoyed", "mid")

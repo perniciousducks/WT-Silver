@@ -195,14 +195,14 @@ label give_cho_gift(gift_item):
         elif cho_tier == 2:
             call cho_main("What is this?",pupils="down",face="horny",xpos="mid",ypos="base")
             call cho_main("Porn magazines? Sir, that's too much even for you...", "annoyed", "narrow", "base", "down")
-            call cho_main("Is that a snitch in her sna-... No... just no...","open","wide","raised","down")
+            call cho_main("Is that a snitch in her sna-- No... just no...","open","wide","raised","down")
             call cho_main("","angry","base","angry","down")
             call cho_mood(2)
         elif cho_tier == 3:
             call cho_main("What's this?",face="annoyed",xpos="mid",ypos="base")
             call give_gift(">You give an assortment of porn magazines to Cho...",gift_item)
             call cho_main("What's with these positions? Is that a broom handle up her...",mouth="open",eyes="wide",eyebrows="raised",pupils="down")
-            call cho_main("Oh my-...",mouth="soft",pupils="R",face="disgusted")
+            call cho_main("Oh my...",mouth="soft",pupils="R",face="disgusted")
             call cho_mood(0)
         else:
             call cho_main("Porn magazines?",pupils="down",face="horny",xpos="mid",ypos="base")

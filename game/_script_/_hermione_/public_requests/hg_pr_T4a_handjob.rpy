@@ -331,7 +331,7 @@ label hg_pr_handjob_T5_E1:
     call her_main("Yes... Let me explain, [genie_name]...", "annoyed", "base", "worried", "R")
     call her_main("*Uhm*... Well...", "open", "base", "base", "mid")
     her "I was jerking this one boy off, in one of the empty classrooms..."
-    her "And that nasty ghost Peeves walked in--..."
+    her "And that nasty ghost Peeves walked in..."
     call her_main("Or rather flew in on us...", "annoyed", "base", "worried", "R")
     call her_main("And as soon as he realised what I was doing to the boy...", "open", "base", "base", "mid")
     her "He started to yell obscenities at us..."
@@ -496,7 +496,7 @@ label hg_pr_handjob_T5_E3:
             m "Oh, yes, of course."
             m "Ensuring that Gryffindor gets the house cup this year."
             m "That's the plan And thanks to your hard work, [hermione_name]..."
-            m "All goes according to my--... I mean, our plan..."
+            m "All goes according to my-- I mean, our plan..."
             call her_main("*Hmm*...", "upset", "closed", "base", "mid")
 
             $ her_mood += 5

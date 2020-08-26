@@ -183,7 +183,7 @@ label hg_pf_facefuck_1: # Bondage facefuck scene (NOT IMPLEMENTED)
     her "..."
     m "I guess there are other ways your throat can answer that question. Now, open wide..."
     $ herCG(pupil='up', eye='squint_m', xpos=-renpy.random.randint(0, 50))
-    her "No, please, not again... I can't-"
+    her "No, please, not again... I can't--"
     ">Instead of giving her time to complain, you grab the back of her head and jam your cock back down the poor girls throat."
     $ herCG(pupil='up', eye='squint_m', xpos=0, extra_1='blank', extra_2='cum_2')
     her "!!!"

@@ -13,7 +13,7 @@ label tonks_intro_E1:
     "*Knock-knock-knock*"
     m "(Can't I even have one quiet day here?...)"
     m "Who is it?"
-    ton "It's Tonks-"
+    ton "It's Tonks--"
     ton "*Ugh*..."
     m "..................."
     ton "I meant, Nymphadora Tonks, Sir."
@@ -735,7 +735,7 @@ label ss_he_tonks_E2:
     call sna_main("What a fool I was to believe that she'd be gone by now...","snape_31")
     call sna_main("But of course not! ","snape_32")
     call sna_main("{size=+5}Instead they made that mischievous {b}cunt{/b} a teacher!{/size}","snape_33", trans=hpunch) # Screaming
-    m "Actually, that was-..."
+    m "Actually, that was--"
     call sna_main("The whole universe has turned against me!","snape_43")
     call sna_main("That bloody Ministry! Curse them!","snape_35")
     call sna_main("Of course it was only a matter of time until they got themselves involved...","snape_06")
@@ -762,22 +762,22 @@ label ss_he_tonks_E2:
     m "You don't believe me..."
     call sna_main("Not a single word! *A-Ha-ha-ha*...","snape_28")
     m "Fair enough..."
-    call sna_main("*Ha-ha-ha*--...{w=0.5}{nw}","snape_42")
-    call sna_main("*cough* {w=0.4}*cough* {w=0.6}*cough*{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8}{nw}","snape_17", trans=hpunch)
+    call sna_main("*Ha-ha-ha*--","snape_42")
+    call sna_main("*cough* {w=0.4}*cough* {w=0.4}*cough*...","snape_17", trans=hpunch)
     m "..............."
     call sna_main("...................","snape_31")
 
     call sna_main("But none of this makes any sense!","snape_03")
     m "Well, as it turns out..."
     call sna_main("She's a pervert!","snape_36") # Revelation
-    m "She's a--... wait, how did you know?"
+    m "She's a-- wait, how did you know?"
     call sna_main("How could I've been so ignorant!","snape_08")
     m "Am I missing something here, you're not a mind reader, are you?"
     call sna_main("I'm a very skilled Occlumens, but no...","snape_31")
     m "(Occlu-what?)"
     m "Could you stop making up words..."
     call sna_main("It's quite obvious in hindsight...","snape_35")
-    m "It{w=0.2}.{w=0.2}.{w=0.2}.{w=0.6} is?"
+    m "It...{w=0.4} is?"
     call sna_main("Why would the Ministry have sent a full-fledged Auror, to deal with some eccentric insinuations made by some petty student...","snape_16")
     m "Shouldn't they?"
     call sna_main("Just because of some silly rumour about teachers having sexual intercourse with their students?","snape_34")

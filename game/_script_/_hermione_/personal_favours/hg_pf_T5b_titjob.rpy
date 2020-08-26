@@ -100,7 +100,7 @@ label hg_pf_titjob_T5_intro_E1:
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "Have you ever given someone a \"titjob?\""
     call her_main("A \"titjob?\"", "annoyed", "narrow", "annoyed", "mid")
-    m "It's where you wrap those \"fat tits\" of yours around a cock,..."
+    m "It's where you wrap those {i}fat tits{/i} of yours around a cock..."
     g9 "And then shake them up and down, up and--"
     call her_main("[genie_name]!", "angry", "base", "angry", "mid")
     m "Is that a yes?"
@@ -143,7 +143,7 @@ label hg_pf_titjob_T5_intro_E1:
             call her_main("This could put Gryffindor back in the lead...", "annoyed", "narrow", "worried", "down")
             m "So... Is that a yes?"
             call her_main("It's a yes, [genie_name]...", "open", "closed", "base", "mid")
-            call her_main("{number=current_payout} points sounds like a fair amount for-...", "open", "base", "base", "R")
+            call her_main("{number=current_payout} points sounds like a fair amount for--", "open", "base", "base", "R")
             g9 "For a titjob!"
             call her_main("(...)", "annoyed", "base", "angry", "mid")
 

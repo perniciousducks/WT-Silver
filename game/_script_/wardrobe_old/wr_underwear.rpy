@@ -124,7 +124,7 @@ label equip_bra:
                         # m "So you can wear it for me?"
                         # call her_main("No! I'm not going to wear bras for you!", "angry", "base", "angry", "mid")
                         # call her_main("What is this even made of? I's so rubbery...", "disgust", "narrow", "worried", "down")
-                        # m "It's-"
+                        # m "It's--"
                         # call her_main("I don't care! You can have it back!", "open", "closed", "base", "mid")
                         # m "Fine. Maybe another time then..."
                         # call her_main("(Weirdo...)", "annoyed", "narrow", "angry", "R")
@@ -192,7 +192,7 @@ label equip_bra:
                     # if her_whoring < 11:
                         # call her_main("Do you ask this from every girl, [genie_name]?", "open", "wink", "base", "mid")
                         # m "Why uhm... I mean yes. All the girls..."
-                        # call her_main("Is this some sort of protection for-", "open", "narrow", "worried", "down")
+                        # call her_main("Is this some sort of protection for--", "open", "narrow", "worried", "down")
                         # call her_main("It's those Blast-Ended Skrewts again, isn't it?!", "soft", "wide", "base", "stare",trans=hpunch)
                         # call her_main("[genie_name], are they biting off the student's nipples???", "open", "wide", "base", "mid")
                         # m "What's so bad about biting nipples?"
@@ -223,7 +223,7 @@ label equip_bra:
                 # else: #Fail
                     # if her_whoring < 5:
                         # call her_main("What? Oh, what's this?", "soft", "base", "base", "mid")
-                        # m "It's a fishnet to-"
+                        # m "It's a fishnet to--"
                         # call her_main("Oh, I get it!", "grin", "narrow", "worried", "down")
                         # call her_main("This isn't really a hobby I considered pursuing, [genie_name]...", "open", "base", "base", "R")
                         # call her_main("But if you say it would help me with my grades then I'll try my best.", "soft", "narrow", "worried", "down")
@@ -445,7 +445,7 @@ label equip_panties:
                         # m "So you can wear them for me?"
                         # call her_main("No! I'm not going to wear panties for you!", "angry", "base", "angry", "mid")
                         # call her_main("What are these panties even made of? They're so rubbery...", "disgust", "narrow", "worried", "down")
-                        # m "It's-"
+                        # m "It's--"
                         # call her_main("I don't care! You can have them back!", "open", "closed", "base", "mid")
                         # m "Fine. Maybe another time then..."
                         # call her_main("(Pervert...)", "annoyed", "narrow", "angry", "R")

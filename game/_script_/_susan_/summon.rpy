@@ -134,7 +134,7 @@ label susan_talk:
                     m "I don't want my students to be scared of a name, Susan! It's practice."
                     m "Come on... say it."
                     call sus_main("Okay...","open","narrow","worried","down")
-                    call sus_main("V-Voldemort--...","upset","closed","worried","mid")
+                    call sus_main("V-Voldemort...","upset","closed","worried","mid")
                     jump susan_talk
                 "-Daddy-":
                     $ sus_genie_name = "Daddy"

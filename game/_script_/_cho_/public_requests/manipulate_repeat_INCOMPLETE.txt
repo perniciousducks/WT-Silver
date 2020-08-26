@@ -227,7 +227,7 @@ label cc_pr_spy_boys_T3_repeat1:
     cho "They somehow managed to convince Neville to hand over his pet toad for them to use in one of their tricks."
     cho "They had figured out how to mess up transfiguration magic on purpose, only half transforming it."
     cho "And they turned it into a pickle!"
-    m "Well that’s-"
+    m "Well that’s--"
     cho "Funniest shit I’ve ever seen!"
     m "Yeah, that’s not very useful to us."
     cho "...{w} guess not."

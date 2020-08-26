@@ -503,7 +503,7 @@ label panty_raid:
         call her_main("... What's Cunnilingus?", "open", "base", "worried", "mid")
         call her_main("", mouth="upset")
         m "*Sigh*, she was asking for Dinner beneath the bridge."
-        call her_main("Dinner? But if she wanted to eat with me why didn't she-", "open", "base", "base", "mid")
+        call her_main("Dinner? But if she wanted to eat with me why didn't she--", "open", "base", "base", "mid")
         call her_main("", mouth="upset")
         m "Metaphor, [hermione_name]... She wanted you to sip from her furry cup."
         call her_main("*huh*?", "open", "narrow", "worried", "mid_soft")

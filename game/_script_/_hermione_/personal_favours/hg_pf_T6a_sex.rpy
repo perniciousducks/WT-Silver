@@ -901,7 +901,7 @@ label hg_sex_luna:
     call her_main("..............", "silly", "narrow", "base", "dead")
     call nar(">You start fucking Hermione with renewed determination!")
     call her_main("*Ah*! No! I can't...{heart} not in front of...{heart} *ah*...{heart}{heart}{heart}", "shock", "base", "base", "R", cheeks="blush", tears="soft")
-    lun "Headmaster, are you alr-"
+    lun "Headmaster, are you alr--"
     m "Shut it whore!"
     lun "Yes sir."
     g4 "*Argh*!"

@@ -27,7 +27,7 @@ label hg_pr_flirt_teacher:
             call her_main("I am glad you finally decided to act, [genie_name]!", "open", "base", "base", "mid")
         else:
             call her_main("*huh*?!", "open", "base", "angry", "mid")
-            call her_main("Why would I want to flirt with the teach-...", "angry", "base", "angry", "mid")
+            call her_main("Why would I want to flirt with the teach--", "angry", "base", "angry", "mid")
             call her_main("O-oh... I see...", "grin", "base", "base", "R")
         m "*huh*?"
         call her_main("You are finally ready to investigate the teachers who made a habit out of buying favours from the students, aren't you?", "normal", "squint", "angry", "mid")

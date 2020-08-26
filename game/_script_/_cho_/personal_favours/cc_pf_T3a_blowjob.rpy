@@ -1679,7 +1679,7 @@ label cc_pf_blowjob_T3_E3:
     call cho_main("Your...{w=0.4} Your cum...{w=0.4} was delicious [cho_genie_name]...", "soft", "closed", "base", "mid", cheeks="blush")
     g9 "That's right [cho_name]... and if you keep doing such a good job there's even more where that came from..."
     m "You can stop talking dirty now."
-    call cho_main("I wasn't--...", "open", "narrow", "base", "down", cheeks="heavy_blush") #blush, looking right
+    call cho_main("I wasn't--", "open", "narrow", "base", "down", cheeks="heavy_blush") #blush, looking right
     call cho_main("Yes, [cho_genie_name]...", "upset", "narrow", "base", "R", cheeks="heavy_blush")
     call cho_main("So... Is that all?", "soft", "narrow", "base", "R", cheeks="blush")
     m "For now..."

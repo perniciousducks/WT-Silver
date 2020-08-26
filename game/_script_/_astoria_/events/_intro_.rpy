@@ -636,16 +636,16 @@ label astoria_intro_E3:
     call sna_main("Miss Greengrass, you will not mention this incident to any other student or teacher, am I clear?","snape_35")
     call ast_main("Yes Sir, I promise...","annoyed","narrow","worried","down")
     call sna_main("You should count yourself lucky the ministry hasn't been notified...","snape_31")
-    call sna_main("Miss Tonks has been kind enough to wipe the co-...","snape_01")
+    call sna_main("Miss Tonks has been kind enough to wipe the co--","snape_01")
     call sna_main("Susan's memory of the event.","snape_03")
     call sna_main("You owe her big time...","snape_25")
     call ast_main("Of course...","annoyed","narrow","worried","L")
     call sna_main("I'll leave her punishment to the two of you...","snape_04")
-    call sna_main("I have someone-...","snape_09")
+    call sna_main("I have someone--","snape_09")
     call sna_main("*Uhm*... I've got an appointment to attend to in my office.","snape_35")
     m "Naturally..."
     call sna_main("Until next time... Albus.","snape_09")
-    m "And Albus to you to-..."
+    m "And Albus to you--"
     g4 "I mean..."
     g9 "Until next time!"
     call sna_main("...","snape_04")

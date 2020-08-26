@@ -133,7 +133,7 @@ label snape_potion_menu:
                 call sna_main("Get her to take another!","snape_46")
                 call sna_main("Here, I'll even give you a milker for the slut!","snape_02")
                 ">Snape hands you an odd leather and metal harness."
-                m "What is-"
+                m "What is--"
                 ">Snape quickly pushes another milky potion into your hands."
                 ">Milking potion received!"
                 call sna_main("Don't worry about it, just get her to put it on. It's enchanted so it will handle the rest...","snape_40")

@@ -252,7 +252,7 @@ label purchase_outfit(item):
         if not ball_quest.E4_complete:
             m "Could you make a dress for me?"
             maf "A dress? Do you mean something like a ball dress, or more burlesque?"
-            m "*Hmm*... One for the ball, actually."
+            m "*Hmm*... A ball dress does sound good, actually."
             maf "How surprising..."
             m "I was thinking that I could have a custom one made. For a very good girl of mine."
         else:
@@ -508,7 +508,7 @@ label purchase_outfit(item):
         maf "Are you asking me? You're the one making the order."
         m "Sling bikini it is! Great idea Madam!"
         maf "Of course, sir..."
-        maf "I'll get to it then shall I."
+        maf "I'll get to it then..."
 
     #
     # Cho chang
@@ -600,13 +600,22 @@ label purchase_outfit(item):
             m "Great!"
 
     elif item == ll_dress_orange_ITEM:
-        m "One of the students needs a dress for the upcoming ball."
-        maf "Weren't they required to bring an outfit at the start of the school year?"
-        m "Yes, although you know how scatter-brained students can be."
-        maf "And what kind of style of dress would she like?"
-        m "Something eccentric and weird is what she'd normally go for, I believe..."
-        maf "So this student is the kind of person just to be different then?"
-        m "Yes... she's quite the odd ball..."
+        if not ball_quest.E4_complete:
+            m "Could you make a dress for me?"
+            maf "Certainly, what type of dress would you like?"
+            m "Something weird would do well I think..."
+            m "Something completely out there and non modern..."
+            m "Something--"
+            maf "Are you trying to wind me up, sir?"
+            m "I'm deadly serious..."
+        else:
+            m "One of the students needs a dress for the upcoming ball."
+            maf "Weren't they required to bring an outfit at the start of the school year?"
+            m "Yes, although you know how scatter-brained students can be."
+            maf "And what kind of style of dress would she like?"
+            m "Something eccentric and weird is what she'd normally go for, I believe..."
+            maf "So this student is the kind of person that just likes to be different then?"
+            m "Yes... she's quite the odd ball..."
         maf "Okay then, well... in that case I'll have to throw fashion out the window..."
         maf "I'll see what I can do..."
         m "Good luck!"
@@ -615,6 +624,108 @@ label purchase_outfit(item):
         # m "Could you make me a Ravenclaw Cheerleader outfit?"
         # maf "Certainly..."
         # maf "I'll get it done as soon as possible."
+
+    #
+    # Nymphadora Tonks
+    #
+
+    elif item == nt_school:
+        m "Do you have any spare school uniforms?"
+        maf "There should be a couple lying around..."
+        maf "Did one of the students spill a potion on theirs again?"
+        m "Not exactly... it's for a friend."
+        m "And they'd probably go for something closer to this sketch..."
+        maf "Let me see..."
+        maf "Right...{w=0.4} So what kind of friend is this again?"
+        m "A very good one."
+        maf "Alright then, I'll see what I can do."
+        m "Excellent."
+
+    elif item  == nt_casual:
+        m "I'm looking for something casual and tightfitting."
+        maf "That's pretty vague... could you be more specific of what you had in mind?"
+        m "Well... it should be modern..."
+        $ renpy.play("sounds/scribble.mp3")
+        maf "Right... *scribbles*."
+        maf "What else?"
+        m "How about... One of those tied tops."
+        maf "Tied top... got it."
+        g9 "And latex leggings!"
+        maf "Latex--"
+        maf "Now how is this supposed to be modern?"
+        m "*Err*..."
+        maf "No matter... I'll get to work on it as soon as possible."
+
+    elif item  == nt_nightie:
+        m "I'm looking to acquire a nightgown."
+        maf "Right, any specifications?"
+        m "It should be the type you'd wear on hot summer nights."
+        maf "So, something see-through... got it."
+        m "..."
+        maf "Is that all?"
+        m "Yes, that should be all."
+        maf "One see-through... nightgown coming right up."
+
+    elif item == nt_bunny:
+        m "I need a bunny suit, something similar to what they'd wear at a casino."
+        maf "*Hmm*...{w=0.3} Not sure what casino's you've been to but I think I know what you mean..."
+        g9 "With big bunny ears!"
+        maf "Alright..."
+        maf "If that's all, I need to go source the materials for these...{w=0.3} ears."
+        m "Yes, that will be all."
+
+    elif item == nt_silky:
+        m "I'm looking for something Greek... like a toga."
+        maf "A toga, sir?"
+        m "Yes, although maybe more of a modern take on it."
+        $ renpy.play("sounds/scribble.mp3")
+        maf "Right... *scribbles*..."
+        maf "so, something like this then?"
+        m "*Hmm*... close, but maybe you should remove some of this material and replace it with something like this... *scribbles*."
+        $ renpy.play("sounds/scribble.mp3")
+        maf "Oh...{w=0.8}Oh my..."
+        m "Is that doable?"
+        maf "Doable certainly... although it's a bit..."
+        m "A bit, what?"
+        maf "Never mind... I'll do it."
+        m "Excellent..."
+
+    elif item == nt_bikini_1:
+        m "Could you make be a simple bikini-bra?"
+        maf "Certainly, looking for any particular pattern?"
+        m "A Plain one should be fine."
+        maf "Alright then, I'll get to work on it shortly."
+        m "Thank you very much!"
+
+    elif item == nt_bikini_2:
+        m "Could you make be a simple bikini-bra?"
+        maf "Certainly, looking for any particular pattern?"
+        m "A Striped one would be great."
+        maf "Alright then, I'll get to work on it shortly."
+        m "Thank you very much!"
+
+    elif item == nt_bikini_3:
+        m "Could you make be a bikini-bra?"
+        maf "Certainly, looking for any particular pattern?"
+        m "Something to show off our national heritage."
+        maf "So a Scottish flag?"
+        m "What, no.. I meant the union jack."
+        maf "Oh... righto..."
+        maf "One union jack bikini-bra it is..."
+        m "(Scottish... As if I wouldn't know straight away that we were in Scotland...)"
+
+    elif item == nt_bikini_4:
+        m "Could you make be a bikini-bra?"
+        maf "Certainly, looking for any particular pattern?"
+        m "How about the American flag?"
+        maf "Are you sure? I thought you weren't meant to put it on clothing."
+        m "You're not?"
+        maf "I'm fairly sure I read that somewhere..."
+        m "Well, I think if it's being made into something meant to contain immense greatness we could make an exception."
+        maf "I'm not sure what you mean, sir..."
+        m "Don't worry about it..."
+        maf "Okay then..."
+        maf "One United states of America patterned bikini-bra coming up."
 
     #
     # Universal

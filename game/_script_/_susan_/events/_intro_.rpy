@@ -24,7 +24,7 @@ label nt_he_susan_E1:
     call ton_main("She's lost quite a few points for her house that way.", "upset", "base", "worried", "mid")
     call ton_main("Not in my lessons, of course. I'd never take points from Hufflepuff!", "soft", "base", "worried", "R")
     g9 "Just send her my way and I'll drown her in house points!"
-    m "And show her that her bod-..."
+    m "And show her that her bod--"
     g4 "*Ahem!* Show her that she's appreciated..."
     call ton_main("That's what I was thinking...", "open", "closed", "base", "mid")
     g4 "Wait, you were?"

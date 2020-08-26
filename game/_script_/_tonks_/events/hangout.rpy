@@ -164,7 +164,7 @@ label nt_he_firewhisky_E1:
             call ton_main("Oh don't you worry, [ton_genie_name].", "silly", "happyCl", "base", "mid")
             call ton_main("I could down this entire bottle without anybody being able to notice a thing.","horny","base","base","L")
             m "You're one glass in and swaying like a buoy..."
-            call ton_main("*Hic* Oh well-...","open","base","base","ahegao", trans=hpunch)
+            call ton_main("*Hic* Oh well...","open","base","base","ahegao", trans=hpunch)
             call ton_main("No risk, no fun!","horny","base","base","mid")
         else:
             m "Long day?"

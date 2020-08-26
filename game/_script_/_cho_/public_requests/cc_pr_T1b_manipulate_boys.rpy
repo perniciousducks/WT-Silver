@@ -33,7 +33,7 @@ label cc_pr_manipulate_boys_start:
             m "All you have to do is make him believe something might actually happen."
             call cho_main("What?{w=0.3} I don't want to go out with Cedric again!", "angry", "wide", "base", "mid")
             m "I know, I know, you just have to make him believe that you will."
-            call cho_main("Oh-...", "soft", "base", "base", "downR", cheeks="blush")
+            call cho_main("Oh...", "soft", "base", "base", "downR", cheeks="blush")
             call cho_main("Well... how do I do that?", "annoyed", "base", "base", "mid")
             m "It's a little something called {b}seduction{/b}..."
             m "It should be your gender's bread and butter."
@@ -729,7 +729,7 @@ label cc_pr_manipulate_boys_T3_twins:
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
     stop music fadeout 1.0
-    m "Back so soo-..."
+    m "Back so soo--"
 
     call cho_main(face="angry", xpos="mid", ypos="base", trans=fade)
 
@@ -1126,7 +1126,7 @@ label cc_pr_manipulate_boys_twins_branch:
         call hide_blktone
 
         call cho_main("Such a charmer...", "base", "base", "base", "R")
-        call cho_main("I was worried that you'd pick out something-...", "open", "base", "base", "down")
+        call cho_main("I was worried that you'd pick out something--", "open", "base", "base", "down")
         call cho_main("{size=+5}These are Slytherin colours!{/size}", "open", "wide", "angry", "mid")
         m "They are?"
         m "That's unfortunate!"

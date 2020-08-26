@@ -133,7 +133,7 @@ label hg_tutor_E1:
     call her_main("Please stop that, professor. Nobody considers me a child anymore.", "open", "squint", "worried", "mid")
     m "Yes, technically..."
     call her_main("Technically?!", "annoyed", "base", "base", "mid")
-    g4 "Enough of this. You came to me asking for my help, and if it starts like this--..."
+    g4 "Enough of this. You came to me asking for my help, and if it starts like this--"
     call her_main("Yes, I suppose you are right...", "angry", "base", "worried", "mid")
     call her_main("Alright, I'm ready to study hard with you!", "base", "base", "base", "mid")
     g9 "{size=-2}Yes, we will study hard-on going forward!{/size}"

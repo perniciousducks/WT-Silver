@@ -135,7 +135,7 @@ label tentacle_scene_intro:
             $ d_flag_01.append("take this plant with you to your class.\n\n")
         "\"... take this plant then shove it up your ass...\"" if not d_flag_02:
             $ d_flag_01.append("take this plant then {b}{s}shove it up yo{/s}{/b} bring it to class.\n\n")
-            g9 "Shove it up yo-..."
+            g9 "Shove it up yo--..."
             call gen_chibi("sit_behind_desk")
             with d3
             g4 "I can't write that!"
@@ -147,7 +147,7 @@ label tentacle_scene_intro:
 
         "\"... shove me up your ass...\"" if d_flag_02:
             $ d_flag_01.append("{b}{s}shove me up yo{/s}{/b} take me to class.\n\n")
-            g9 "Shove me up yo-..."
+            g9 "Shove me up yo--..."
             call gen_chibi("sit_behind_desk")
             with d3
             g4 "I can't write that!"
@@ -485,7 +485,7 @@ label tentacle_1: #Public path
         spo "Just take her out."
     else:
         spo "No need, if she feels comfortable parading without panties in MY class, then she should be fine being taken naked to the infirmary."
-        mal "Are you su-..."
+        mal "Are you su--"
         spo "I said take her out!"
         mal "Y-yes ma'am..."
 

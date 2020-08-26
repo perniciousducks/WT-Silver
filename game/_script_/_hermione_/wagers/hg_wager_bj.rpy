@@ -41,7 +41,7 @@ label hg_wager_bj:
 
                 call sna_walk(action="enter", xpos="mid", ypos="base")
 
-                call sna_main( "Hello Geni-...", face="snape_09")
+                call sna_main( "Hello Geni--", face="snape_09")
                 call sna_main( "What do we have here?!?", face="snape_20")
                 call her_main("{size=+5}Professor Snape?!{/size}", "shock", "wide", "worried", "shocked", xpos="left",ypos="base")
                 call her_main("It's not what it looks like!", "scream", "wide", "base", "R")

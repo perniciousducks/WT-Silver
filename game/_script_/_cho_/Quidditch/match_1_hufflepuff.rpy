@@ -1117,7 +1117,7 @@ label hufflepuff_match_return:
     # (equips skirt again)
     # cho "I gotta go."
     # starts walking out of the office
-    # m "Hey but I ha-..."
+    # m "Hey but I ha--"
     # (cho leaves)
     # m "Oh well.. At least I caught a glimpse of the goodies."
 

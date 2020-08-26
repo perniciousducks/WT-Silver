@@ -240,7 +240,7 @@ label eating_for_pleasure:
     g4 "Toppings?!"
     g4 "There's only two slices! And they're on your body!"
     call her_main("A-Actually,{w=0.5} sir,{w=0.5} there are three slices...", "open", "base", "base", "R", cheeks="blush")
-    g4 "Don't lie to me, I can clearly see just tw-..."
+    g4 "Don't lie to me, I can clearly see just tw--"
     pause 0.5
     $ hermione.strip("bottom")
     call her_main("", "grin", "base", "base", "mid", cheeks="blush")

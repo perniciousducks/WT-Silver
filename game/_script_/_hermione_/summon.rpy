@@ -346,7 +346,7 @@ label hermione_favor_menu:
                         g9 "Think about the future..."
                         label hermione_favors_convinced_check:
                         if her_whoring >=20:
-                            m "If you do it now it could secu-..."
+                            m "If you do it now it could secu--"
                             call her_main("I'll do it!", "smile", "happy", "base", "R")
                             m "Just like that?!"
                             call her_main("Yes... just like that.", "smile", "closed", "base", "mid")
@@ -854,13 +854,13 @@ label hermione_change:
                     call her_main("B-but, [genie_name]?!", "mad", "wide", "base", "mid", emote="shocked")
                     call her_main("", "mad", "wide", "base", "mid")
                     m "I must apologise {b}Miss Granger{/b}, I thought we had come to some kind of agreeable arrangement by now..."
-                    call her_main("But I...", "mad", "wide", "worried", "stare")
-                    m "... I should have known better to believe that this sort of thing would work out..."
-                    call her_main("Maybe I coul-...","clench","happyCl")
-                    m "... I thought we both had what we wanted..."
-                    call her_main("List-...", "soft", "narrow", "worried", "down")
+                    call her_main("But I--", "mad", "wide", "worried", "stare")
+                    m "I should have known better to believe that this sort of thing would work out..."
+                    call her_main("Maybe I coul--","clench","happyCl")
+                    m "I thought we both had what we wanted..."
+                    call her_main("Liste--", "soft", "narrow", "worried", "down")
                     call her_main("", "normal", "closed", "angry", "mid")
-                    m "... Might as well hand in my resignation with the ministry and..."
+                    m "Might as well hand in my resignation with the ministry and--"
                     with hpunch
                     call her_main("{size=+10}I AM A SLYTHERIN WHORE!!!{/size}", "scream", "closed", "angry", "mid",cheeks="blush")
                     call her_main("", "normal", "closed", "base", "mid")
@@ -909,7 +909,7 @@ label hermione_change:
                             call her_main("Mass flood?", "soft", "base", "base", "mid")
                             m "Are you deaf or something?"
                             if weather == "rain":
-                                call her_main("I was pretty sure you said-...", "open", "base", "base", "mid")
+                                call her_main("I was pretty sure you said--", "open", "base", "base", "mid")
                                 call her_main("", "normal", "base", "base", "R")
                                 m "Look outside the window, it's raining is it not?"
                                 call her_main("I{w=0.5}...{w=0.5} Yes, you are right [genie_name].", "normal", "closed", "base", "mid")
@@ -974,7 +974,7 @@ label hermione_change:
                     call her_main("", "base", "narrow", "base", "up", tears="mascara")
                     m "And I {b}will{/b} call you however I want!"
                     call her_main("Yes, [genie_name], I understand.", "silly", "narrow", "base", "up", tears="mascara")
-                    call her_main("I am your toy{w=0.6}, your fuckslut{w=0.6}, your cocksleeve, your -...", "grin", "narrow", "base", "dead", tears="mascara")
+                    call her_main("I am your toy{w=0.6}, your fuckslut{w=0.6}, your cocksleeve, your--", "grin", "narrow", "base", "dead", tears="mascara")
                     m "Yes, that you are but it's enough..."
                     call her_main("I fully belong to you... [genie_name].", "silly", "narrow", "base", "dead", tears="mascara")
                     call her_main("", "grin", "narrow", "base", "dead", tears="mascara")

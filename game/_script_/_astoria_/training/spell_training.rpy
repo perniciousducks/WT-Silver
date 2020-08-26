@@ -476,12 +476,12 @@ label ag_st_imperio_E2:
             call ast_main("Okay... Professor Tonks...","open","base","worried","L")
             call ast_main("I want you to repeat after me...","open","closed","base","mid")
             call ton_main("...................................", "horny", "wide", "base", "stare")
-            call ast_main("I -- am -- a--","open","base","worried","L")
-            call ton_main("I am a--...", "soft", "wide", "base", "stare")
-            call ast_main("dirty! -- filthy! -- pig!","open","narrow","base","L")
+            call ast_main("I... am... a...","open","base","worried","L")
+            call ton_main("I am a--", "soft", "wide", "base", "stare")
+            call ast_main("dirty!{w} filthy!{w} pig!","open","narrow","base","L")
             call ton_main("...................................", "soft", "base", "base", "stare", cheeks="blush")
             call ast_main("Go on, say it!","clench","narrow","base","L")
-            call ast_main("I'm a dirty - filthy - pig!","open","closed","base","mid")
+            call ast_main("I'm a dirty... filthy... pig!","open","closed","base","mid")
             call ton_main("*hi-hi*!...", "base", "happyCl", "shocked", "mid", cheeks="blush")
             call ast_main("SAY IT!","scream","base","angry","L") # Scream
             g4 "Time-out!"
@@ -782,7 +782,7 @@ label ag_st_imperio_E3:
 
     call bld
     m "..."
-    g4 "G{w=0.3} E{w=0.3} N{w=0.5} I-..."
+    g4 "G{w=0.3} E{w=0.3} N{w=0.5} I--"
     m "Fuck it..."
 
     $ ast_mood += 12
@@ -970,7 +970,7 @@ label ag_st_imperio_E4:
         m "Go on already!"
 
     g9 "Let's get those tits out!"
-    call ast_main("Professor Tonks, I need you to remove your-...","open","base","worried","R")
+    call ast_main("Professor Tonks, I need you to remove your...","open","base","worried","R")
     call ast_main("Your shirt...","clench","base","base","down")
     call ton_main("................", "normal", "base", "shocked", "stare")
     g9 "!!!"

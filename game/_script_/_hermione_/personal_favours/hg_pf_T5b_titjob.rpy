@@ -143,7 +143,7 @@ label hg_pf_titjob_T5_intro_E1:
             call her_main("This could put Gryffindor back in the lead...", "annoyed", "narrow", "worried", "down")
             m "So... Is that a yes?"
             call her_main("It's a yes, [genie_name]...", "open", "closed", "base", "mid")
-            call her_main("{number=current_payout} points sounds like a fair amount for-...", "open", "base", "base", "R")
+            call her_main("{number=current_payout} points sounds like a fair amount for--", "open", "base", "base", "R")
             g9 "For a titjob!"
             call her_main("(...)", "annoyed", "base", "angry", "mid")
 

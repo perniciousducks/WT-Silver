@@ -713,7 +713,7 @@ label cho_quid_E7:
         m "She sounds pretty convincing to me..."
         call cho_main("Everybody will know that I have a thing for you, Granger!", "open", "narrow", "angry", "L")
         call cho_main("And, sooner or later, I might even mix in some love potion into your pumpkin juice...", "soft", "narrow", "raised", "L")
-        call her_main("You'd--...{w=0.5} do what?", "clench", "wide", "worried", "stare", cheeks="blush")
+        call her_main("You'd...{w=0.5} do what?", "clench", "wide", "worried", "stare", cheeks="blush")
         m "(Pumpkin juice? Sounds disgusting.)"
         call cho_main("You wouldn't want all of your friends to see us finally make out, would you?", "horny", "narrow", "raised", "L", cheeks="blush")
 

@@ -767,7 +767,7 @@ label ball_ending_E2:
         her "{size=+5}*Slurp-gulp-slurp-slurp*!!!{/size}"
         g4 "{size=+5}Here it com--{/size}"
         $ dynamic_cg("ball/bj", "background", "base", "eyes_down", "brows", "blush")
-        her "*Slurp*--.........................."
+        her "*Slurp*.........................."
         her "!!!"
         call ctc
 
@@ -1032,7 +1032,7 @@ label ball_ending_E2:
         $ dynamic_cg("ball/bj", "background", "base3_alt", "blush3", "eyes_dead3", "tears_crying3", "brows3", "spit_base3", "spit_forehead3", "spit_nose3", "spit_eye3", "sperm3")
         her "{size=+9}*GULP-GULP-GULP-GULP-GULP*!!!{/size}"
         g4 "{size=+5}Yes, whore! Drink my cum!{/size}"
-        her "*GULP-GULP-GULP-GULP*--......"
+        her "*GULP-GULP-GULP-GULP*......"
         with hpunch
         g4 "Not done yet!{w=0.3} Not... done... *Argh!*"
         $ dynamic_cg("ball/bj", "background", "base3_alt", "blush3", "tears_crying3", "brows3", "spit_base3", "spit_forehead3", "spit_nose3", "spit_eye3", "sperm3")

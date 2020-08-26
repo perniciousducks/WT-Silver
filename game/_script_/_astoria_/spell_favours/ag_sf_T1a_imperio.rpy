@@ -782,7 +782,7 @@ label ag_se_imperio_sb_E3:
     call ast_main("","smile","narrow","angry","R")
     sus "That cock... that's the best part..."
     sus "I just want to--"
-    call ast_main("(*Eeeegh*--...)","scream","closed","angry","mid",trans=hpunch)
+    call ast_main("(*Eeeegh*...)","scream","closed","angry","mid",trans=hpunch)
 
     sus "..."
     call nar(">You hear Susan's words trail off into nothingness as she takes another breath...")

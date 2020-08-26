@@ -510,6 +510,29 @@ label purchase_outfit(item):
         maf "Of course, sir..."
         maf "I'll get to it then..."
 
+    elif item == hg_cheerleader:
+        m "Could you make me a Gryffindor cheerleader outfit?"
+        maf "You're not showing favouritism towards Gryffindor's Quidditch team again are you, sir?"
+        g4 "Of course not..."
+        maf "Hmm..."
+        m "You have my word that there's no favouritism towards Gryffindor's team going on here."
+        maf "Alright then..."
+    elif item == hg_cheerleader2:
+        m "Could you make me a Gryffindor cheerleader outfit?"
+        maf "You're not showing favouritism towards--"
+        m "Although could you make it more like this *scribbles*."
+        $ renpy.play("sounds/scribble.mp3")
+        maf "Oh...{w=0.6} Oh I see..."
+        maf "You're not planning for this to be used during an actual Quidditch match then I assume."
+        m "I have no idea what you're talking about..."
+        maf "Well, we all do have our fantasies..."
+        m "I thought this was a respectable establishment."
+        m "I didn't come here to be accused of such foul--"
+        maf "Very well, sir."
+        maf "I shall get to work on it shortly."
+        m "..."
+
+
     #
     # Cho chang
     #
@@ -620,10 +643,28 @@ label purchase_outfit(item):
         maf "I'll see what I can do..."
         m "Good luck!"
 
-    # elif item == ll_:
-        # m "Could you make me a Ravenclaw Cheerleader outfit?"
-        # maf "Certainly..."
-        # maf "I'll get it done as soon as possible."
+    elif item == ll_cheer_r_ITEM:
+        m "Could you make me a Ravenclaw Cheerleader outfit?"
+        maf "You're not showing favouritism towards Ravenclaw's Quidditch team are you?"
+        m "I'm merely looking to see if it'd be worth to bring cheerleading to this country."
+        maf "If that's the case then I want some royalties in case these designs are supposed to be wide spread."
+        m "Oh they'll be wide spread alright..."
+        maf "Great then that's settled."
+        m "(Wait, what did she say?)"
+        maf "I'll get it done as soon as possible."
+
+    elif item == ll_lingerie_silk_ITEM:
+        m "I need some silk underwear... Do you happen to have any on hand?"
+        maf "Male or female?"
+        m "*Err*..."
+        maf "Female it is..."
+        maf "Well, it shouldn't take that much material so I'll have them done for you rather quickly."
+        m "Great."
+        maf "And I'll be sure to keep this transaction our little secret..."
+        m "Right..."
+        maf "As long as you're wearing the robes it shouldn't be an issue."
+        m "That's good to know..."
+        g4 "Wait, what?"
 
     #
     # Nymphadora Tonks

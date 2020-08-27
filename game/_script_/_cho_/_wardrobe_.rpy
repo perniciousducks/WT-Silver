@@ -67,6 +67,8 @@ default cho_bra_basic1 = DollCloth("cho", ("bras", "bras"), "bra", "basic_bra_1"
 default cho_panties_basic1 = DollCloth("cho", ("panties", "panties"), "panties", "basic_panties_1", [[230, 230, 231, 255], [89, 116, 194, 255]], unlocked=True)
 default cho_stockings_house = DollCloth("cho", ("legwear", "socks"), "stockings", "house", [[216, 163, 10, 255], [89, 116, 194, 255]], unlocked=True)
 default cho_robe_school_1 = DollCloth("cho", ("misc", "robes"), "robe", "robe_school_1", color=[[96, 96, 96, 255], [206, 206, 209, 255], [89, 116, 194, 255]], level=0, unlocked=True)
+default cho_robe_school_2 = DollCloth("cho", ("misc", "robes"), "robe", "robe_school_2", color=[[96, 96, 96, 255], [206, 206, 209, 255], [89, 116, 194, 255]], level=4, unlocked=True)
+default cho_robe_school_3 = DollCloth("cho", ("misc", "robes"), "robe", "robe_school_3", color=[[96, 96, 96, 255], [206, 206, 209, 255], [89, 116, 194, 255]], level=8, unlocked=True)
 #default cho_neckwear_tie1  = DollCloth("cho", ("head", "neckwear"), "neckwear", "tie_1", [[216, 163, 10, 255], [89, 116, 194, 255]])
 
 default cho_outfit_last = DollOutfit([cho_hair_ponytail1])

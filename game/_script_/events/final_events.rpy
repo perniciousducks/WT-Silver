@@ -659,7 +659,7 @@ label ball_quest_E5:
     stop music fadeout 1.0
     m "Here... This is for you..."
 
-    call give_reward(">You give the ball gown to Hermione...","interface/icons/box_red_1.png")
+    call give_reward(">You give the ball gown to Hermione...","interface/icons/box_red_1.webp")
 
     call her_main("*Hmm*...? What is this?", "base", "base", "base", "mid")
     call her_main("{size=+7}A DRESS?!{/size}", "angry", "wide", "base", "stare")

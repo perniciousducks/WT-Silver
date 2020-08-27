@@ -21,7 +21,7 @@ label give_reward(text=None, gift=None, sound=True):
     if gift:
         $ the_gift = gift
     else:
-        $ the_gift = "interface/icons/box_blue_2.png"
+        $ the_gift = "interface/icons/box_blue_2.webp"
 
     show screen gift(sound)
     show screen blktone5

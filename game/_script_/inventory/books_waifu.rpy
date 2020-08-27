@@ -229,7 +229,7 @@ label waifu_completed:
         m "Wow! What a great book! That was intense!"
         m "Hm...?"
         m "What is that...? A bookmark?"
-        call give_reward(">You found a DAHR's voucher.","interface/icons/item_voucher.png")
+        call give_reward(">You found a DAHR's voucher.","interface/icons/item_voucher.webp")
         m "Hm..."
 
         $ found_voucher = True

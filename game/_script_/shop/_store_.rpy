@@ -4,9 +4,9 @@ screen weasley_store_room():
     tag room_screen
 
     if daytime:
-        add "images/rooms/weasley_store/store_day.png"
+        add "images/rooms/weasley_store/store_day.webp"
     else:
-        add "images/rooms/weasley_store/store_night.png"
+        add "images/rooms/weasley_store/store_night.webp"
 
     use ui_top_bar
 
@@ -180,7 +180,7 @@ label store_chit_chat:
 
             $ shop_profit = renpy.random.randint(50+her_help, 300)
             ger "Here, your weekly cut."
-            call give_reward("You've received "+str(int(shop_profit*twins_profit))+" gold.", "interface/icons/gold.png")
+            call give_reward("You've received "+str(int(shop_profit*twins_profit))+" gold.", "interface/icons/gold.webp")
 
             $ gold += int(shop_profit*twins_profit)
             ger "..."
@@ -195,7 +195,7 @@ label store_chit_chat:
             menu:
                 "-Buy something-":
                     pass
-                "-Let's duel- {image=interface/cards.png}":
+                "-Let's duel- {image=interface/cards.webp}":
                     label twins_duel_menu:
                     if geniecard_level < 2:
                         menu:
@@ -240,9 +240,9 @@ screen weasley_store_menu():
     imagebutton:
         xpos 725 +UI_xpos_offset
         ypos 105
-        idle "interface/general/"+interface_color+"/button_select.png"
+        idle "interface/general/"+interface_color+"/button_select.webp"
         if store_category != 0: # Gifts
-            hover "interface/general/"+interface_color+"/button_select_hover.png"
+            hover "interface/general/"+interface_color+"/button_select_hover.webp"
             action [SetVariable("store_category",0), Jump("gift_shop_menu")]
     if store_category == 0: # Gifts
         text "Gifts" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121 size 16
@@ -253,9 +253,9 @@ screen weasley_store_menu():
     imagebutton:
         xpos 725 +UI_xpos_offset
         ypos 105+44
-        idle "interface/general/"+interface_color+"/button_select.png"
+        idle "interface/general/"+interface_color+"/button_select.webp"
         if store_category != 1: # Books
-            hover "interface/general/"+interface_color+"/button_select_hover.png"
+            hover "interface/general/"+interface_color+"/button_select_hover.webp"
             action [SetVariable("store_category",1), Jump("book_shop_menu")]
     if store_category == 1: # Books
         text "Books" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+44 size 16
@@ -266,9 +266,9 @@ screen weasley_store_menu():
     #imagebutton:
     #    xpos 725 +UI_xpos_offset
     #    ypos 105+88
-    #    idle "interface/general/"+interface_color+"/button_select.png"
+    #    idle "interface/general/"+interface_color+"/button_select.webp"
     #    if store_category != 2:
-    #        hover "interface/general/"+interface_color+"/button_select_hover.png"
+    #        hover "interface/general/"+interface_color+"/button_select_hover.webp"
     #        action [SetVariable("store_category",2), Jump("shop_potion_menu")]
     #if store_category == 2:
     #    text "Potions" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+88 size 16
@@ -280,9 +280,9 @@ screen weasley_store_menu():
         imagebutton:
                 xpos 725+95 +UI_xpos_offset
                 ypos 105
-                idle "interface/general/"+interface_color+"/button_select.png"
+                idle "interface/general/"+interface_color+"/button_select.webp"
                 if store_category != 3:
-                    hover "interface/general/"+interface_color+"/button_select_hover.png"
+                    hover "interface/general/"+interface_color+"/button_select_hover.webp"
                     action [SetVariable("store_category",3), Jump("token_shop_menu")]
         if store_category == 3:
             text "Tokens" xalign 0.5 yalign 0.5 xpos 767+95 +UI_xpos_offset ypos 121 size 16

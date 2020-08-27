@@ -98,7 +98,7 @@ init python:
             self._file.write(bytearray(struct.pack('!i', 0)))
             # Then the chunk type.
             self._file.write(bytearray(self._END_CHUNK_TYPE))
-            
+
             crc = binascii.crc32(bytearray(self._END_CHUNK_TYPE))
             self._file.write(bytearray(struct.pack('!i', crc)))
 
@@ -133,5 +133,5 @@ init python:
                 return True
 
             self._read_next_chunk()
-            
+
     image_payload = ImagePayload()

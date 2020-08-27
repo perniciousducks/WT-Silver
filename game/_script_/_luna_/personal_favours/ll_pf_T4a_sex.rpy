@@ -113,9 +113,9 @@ label ll_pf_sex_T1_E2:
     m "Mmmm"
 
     $ lun_cg_path         = "images/CG/luna_fucking/"
-    $ lun_cg_base         = lun_cg_path+"base.png"
-    $ lun_cg_genie        = lun_cg_path+"blank.png"
-    $ lun_cg_dick         = lun_cg_path+"blank.png"
+    $ lun_cg_base         = lun_cg_path+"base.webp"
+    $ lun_cg_genie        = lun_cg_path+"blank.webp"
+    $ lun_cg_dick         = lun_cg_path+"blank.webp"
     $ lun_cg_xpos_abs     = 0
     $ lun_cg_ypos_abs     = 0
     $ lun_cg_xpos         = 0
@@ -293,9 +293,9 @@ label ll_pf_sex_T1_E3:
     ">Led on by Luna's ignorant desperation, you take the naive girl to her bed, revelling in its softness before guiding the needy slut onto your lap."
 
     $ lun_cg_path         = "images/CG/luna_bedsex/"
-    $ lun_cg_base         = lun_cg_path+"base.png"
-    $ lun_cg_genie        = lun_cg_path+"blank.png"
-    $ lun_cg_dick         = lun_cg_path+"blank.png"
+    $ lun_cg_base         = lun_cg_path+"base.webp"
+    $ lun_cg_genie        = lun_cg_path+"blank.webp"
+    $ lun_cg_dick         = lun_cg_path+"blank.webp"
     $ lun_cg_xpos_abs     = 0
     $ lun_cg_ypos_abs     = 0
     $ lun_cg_xpos         = 0
@@ -521,9 +521,9 @@ label ll_pf_sex_T1_lake_sex: # Call label
     hide screen ccg
     pause .5
     $ lun_cg_path         = "images/CG/luna_fucking/"
-    $ lun_cg_base         = lun_cg_path+"lake_2.png"
-    $ lun_cg_genie        = lun_cg_path+"blank.png"
-    $ lun_cg_dick         = lun_cg_path+"blank.png"
+    $ lun_cg_base         = lun_cg_path+"lake_2.webp"
+    $ lun_cg_genie        = lun_cg_path+"blank.webp"
+    $ lun_cg_dick         = lun_cg_path+"blank.webp"
     $ lun_cg_xpos_abs     = 0
     $ lun_cg_ypos_abs     = 0
     $ lun_cg_xpos         = 0
@@ -650,7 +650,7 @@ label ll_pf_sex_T1_her_1: # Call label
     with d5
 
     $ lun_cg_path         = "images/CG/luna_fucking/"
-    $ lun_cg_base         = lun_cg_path+"base_2.png"
+    $ lun_cg_base         = lun_cg_path+"base_2.webp"
     $ lun_cg_xpos         = -200
 
     $ lunCG('open', 'wide', 'base', 'right', body='base')
@@ -703,7 +703,7 @@ label ll_pf_sex_T1_her_1: # Call label
     show screen blkfade
     with d5
 
-    $ lun_cg_base = lun_cg_path+"base.png"
+    $ lun_cg_base = lun_cg_path+"base.webp"
     $ lun_cg_xpos = 0
 
     ">Hermione shakes her head in disapproval before turning around to leave the room."
@@ -853,7 +853,7 @@ label ll_pf_sex_T1_ast_1: # Call label
     ">Your door bursts open to reveal a troublesome witch."
 
     $ lun_cg_path        = "images/CG/luna_fucking/"
-    $ lun_cg_base        = lun_cg_path+"base_2.png"
+    $ lun_cg_base        = lun_cg_path+"base_2.webp"
     $ lun_cg_xpos        = -200
 
     $ lunCG('open', 'wide', 'base', 'right', body='base')
@@ -960,7 +960,7 @@ label ll_pf_sex_T1_ast_2: # Call label
     #Complains about all big boobed girls being sluts
     #Cum all over her as Astoria watches
     $ lun_cg_path        = "images/CG/luna_fucking/"
-    $ lun_cg_base        = lun_cg_path+"base_2.png"
+    $ lun_cg_base        = lun_cg_path+"base_2.webp"
     $ lun_cg_xpos        = -200
 
     $ lunCG('open', 'wide', 'base', 'right', body='base')
@@ -1067,7 +1067,7 @@ label ll_pf_sex_T1_ton_1: # Call label
     $ ton_seen_lun_sex = True
 
     $ lun_cg_path      = "images/CG/luna_fucking/"
-    $ lun_cg_base      = lun_cg_path+"base_2.png"
+    $ lun_cg_base      = lun_cg_path+"base_2.webp"
     $ lun_cg_xpos      = -200
 
     $ lunCG('open', 'wide', 'base', 'right', body='base')
@@ -1162,8 +1162,8 @@ label ll_pf_sex_T1_ton_1: # Call label
         "Where should you cum?"
         "-On her face-":
             $ lun_cg_path         = "images/CG/luna_desk2/"
-            $ lun_cg_base         = lun_cg_path+"base.png"
-            $ lun_cg_genie        = lun_cg_path+"genie_robe.png"
+            $ lun_cg_base         = lun_cg_path+"base.webp"
+            $ lun_cg_genie        = lun_cg_path+"genie_robe.webp"
             $ lun_cg_xpos_abs     = 0
             $ lun_cg_ypos_abs     = 0
             $ lun_cg_xpos         = 0
@@ -1193,9 +1193,9 @@ label ll_pf_sex_T1_ton_1: # Call label
             with d3
 
             $ lun_cg_path         = "images/CG/luna_fucking/"
-            $ lun_cg_base         = lun_cg_path+"base_2.png"
-            $ lun_cg_genie        = lun_cg_path+"blank.png"
-            $ lun_cg_dick         = lun_cg_path+"blank.png"
+            $ lun_cg_base         = lun_cg_path+"base_2.webp"
+            $ lun_cg_genie        = lun_cg_path+"blank.webp"
+            $ lun_cg_dick         = lun_cg_path+"blank.webp"
             $ lun_cg_xpos_abs     = 0
             $ lun_cg_ypos_abs     = 0
             $ lun_cg_xpos         = -200
@@ -1313,7 +1313,7 @@ label ll_pf_sex_T1_ton_2: # Call label
     with d5
 
     $ lun_cg_path      = "images/CG/luna_fucking/"
-    $ lun_cg_base      = lun_cg_path+"base_2.png"
+    $ lun_cg_base      = lun_cg_path+"base_2.webp"
     $ lun_cg_xpos      = -200
 
     $ lunCG('open', 'wide', 'base', 'right', body='base')
@@ -1432,8 +1432,8 @@ label ll_pf_sex_T1_ton_2: # Call label
             show screen blkfade
             with d5
             $ lun_cg_path         = "images/CG/luna_desk2/"
-            $ lun_cg_base         = lun_cg_path+"base_2.png"
-            $ lun_cg_genie        = lun_cg_path+"blank.png"
+            $ lun_cg_base         = lun_cg_path+"base_2.webp"
+            $ lun_cg_genie        = lun_cg_path+"blank.webp"
             $ lun_cg_xpos_abs     = 0
             $ lun_cg_ypos_abs     = 0
             $ lun_cg_xpos         = -200

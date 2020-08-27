@@ -163,7 +163,7 @@ label susan_intro_E1:
 
     $ susan_unlocked = True
     $ achievement.unlock("unlocksus", True)
-    call popup("{size=-4}You can now summon Susan into your office.{/size}", "Character unlocked!", "interface/icons/head/susan.png")
+    call popup("{size=-4}You can now summon Susan into your office.{/size}", "Character unlocked!", "interface/icons/head/susan.webp")
 
     $ susan_intro.E1_complete = True
     $ ag_event_pause += 2 # Astoria intro starts in 2 days.

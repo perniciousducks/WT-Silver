@@ -48,11 +48,11 @@ label gen_main(text="", face=None, base=None, xpos=None, ypos=None, flip=True, t
             $ genie_zorder = 15
 
     if face:
-        $ genie_face = "characters/genie/face/{}.png".format(face)
+        $ genie_face = "characters/genie/face/{}.webp".format(face)
 
     #TODO Use base parameter instead of setting genie_base in event scripts
     if base:
-        $ genie_base  = "characters/genie/base/{}.png".format(base)
+        $ genie_base  = "characters/genie/base/{}.webp".format(base)
 
     show screen genie_main
     show screen bld1
@@ -69,8 +69,8 @@ label gen_main(text="", face=None, base=None, xpos=None, ypos=None, flip=True, t
     return
 
 label reset_genie:
-    $ genie_face = "characters/genie/face/base.png"
-    $ genie_base  = "characters/genie/base/base.png"
+    $ genie_face = "characters/genie/face/base.webp"
+    $ genie_base  = "characters/genie/base/base.webp"
     return
 
 label update_genie:

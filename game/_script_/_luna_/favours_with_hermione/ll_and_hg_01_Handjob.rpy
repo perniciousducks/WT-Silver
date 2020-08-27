@@ -939,13 +939,13 @@ label luna_favour_5:
         call lun_main("*hmmm*, and you're sure it's safe?","normal","seductive","raised","mid")
         call lun_main("He almost seems like he's in pain...","base","seductive","angry","mid")
         ">Luna gives your cock a hard squeeze as she looks sadistically at your cock."
-        $ genie_face = "characters/genie/face/angry.png"
+        $ genie_face = "characters/genie/face/angry.webp"
         g4 "*ah*!"
-        $ genie_face = "characters/genie/face/grin.png"
+        $ genie_face = "characters/genie/face/grin.webp"
         call her_main("Trust me, he's enjoying it...","open","closed","base","mid")
         call her_main("He will thank you later, once you {i}let{/i} him cum.","grin","narrow","annoyed","up")
         call lun_main("*mmmmm*... I like the sound of that.","base","mad","mad","mid")
-        $ genie_face = "characters/genie/face/angry.png"
+        $ genie_face = "characters/genie/face/angry.webp"
         g4 "(I'm about to explode!)"
         call her_main("Juuuust a while longer...","angry","wink","base","mid")
         call her_main("It can get a little... frustrating if you do it for too long.","base","narrow","worried","down")
@@ -956,7 +956,7 @@ label luna_favour_5:
         show screen blkfade
         with d3
 
-        $ genie_face = "characters/genie/face/base.png"
+        $ genie_face = "characters/genie/face/base.webp"
         ">Hermione slowly stands up and whispers something into Luna's ear before kneeling back down."
         hide screen blkfade
         with d3
@@ -966,19 +966,19 @@ label luna_favour_5:
         m "love what?"
         call lun_main("Quiet, [lun_genie_name]!","normal","mad","angry","mid")
         ">Luna gives your cock another painful squeeze before resuming stroking the length of it."
-        $ genie_face = "characters/genie/face/angry.png"
+        $ genie_face = "characters/genie/face/angry.webp"
         g4 "*Ah*!"
-        $ genie_face = "characters/genie/face/open.png"
+        $ genie_face = "characters/genie/face/open.webp"
         m "can you stop that?"
         call lun_main("I'll stop it once you learn to be quiet.","pout","suspicious","angry","mid")
-        $ genie_face = "characters/genie/face/base.png"
+        $ genie_face = "characters/genie/face/base.webp"
         m "..."
         call her_main("*mmmm*... that's it Luna...","soft","narrow","annoyed","up")
         call her_main("he's almost there... do it now.","grin","narrow","base","dead")
         call her_main("*aahhhh*...","open_wide_tongue","happy","base","R", ypos=230)
         ">Hermione opens her mouth as wide as she can while Luna pulls you forward by your cock into her eager hole."
 
-        $ genie_face = "characters/genie/face/angry.png"
+        $ genie_face = "characters/genie/face/angry.webp"
         g4 "!!!"
         call her_main("*hommmph*...","open_wide_tongue","narrow","annoyed","up")
         call lun_main("there we go...","base","seductive","sad","mid")

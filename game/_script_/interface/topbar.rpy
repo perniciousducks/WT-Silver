@@ -52,7 +52,7 @@ screen ui_top_bar():
     if toggle_menu:
         use ui_menu
 
-    add "interface/topbar/"+str(interface_color)+"/bar.png" zoom 0.5
+    add "interface/topbar/"+str(interface_color)+"/bar.webp" zoom 0.5
     use ui_stats
     use ui_points
 
@@ -61,9 +61,9 @@ screen ui_top_bar():
         # Menu button
         imagebutton:
             xpos 0
-            idle "interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png"
+            idle "interface/topbar/buttons/"+str(interface_color)+"/ui_menu.webp"
             if room_menu_active:
-                hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png")
+                hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_menu.webp")
                 if toggle_menu:
                     tooltip "Close menu"
                 else:
@@ -74,9 +74,9 @@ screen ui_top_bar():
         imagebutton:
             xpos 1080
             xanchor 1.0
-            idle "interface/topbar/buttons/"+str(interface_color)+"/ui_sleep.png"
+            idle "interface/topbar/buttons/"+str(interface_color)+"/ui_sleep.webp"
             if room_menu_active:
-                hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_sleep.png")
+                hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_sleep.webp")
                 if daytime:
                     action Jump("night_start")
                     tooltip "Doze Off (s)"
@@ -93,42 +93,42 @@ screen ui_top_bar():
 
             # Achievements button
             imagebutton:
-                idle "interface/topbar/buttons/"+str(interface_color)+"/ui_achievements.png"
+                idle "interface/topbar/buttons/"+str(interface_color)+"/ui_achievements.webp"
                 if room_menu_active:
-                    hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_achievements.png")
+                    hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_achievements.webp")
                     tooltip "Achievements"
                     action Jump("achievement")
 
             # Stats button
             imagebutton:
-                idle "interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png"
+                idle "interface/topbar/buttons/"+str(interface_color)+"/ui_stats.webp"
                 if room_menu_active:
-                    hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png")
+                    hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_stats.webp")
                     tooltip "Characters (c)"
                     action Jump("stats")
 
             # Inventory button
             imagebutton:
-                idle "interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png"
+                idle "interface/topbar/buttons/"+str(interface_color)+"/ui_inv.webp"
                 if room_menu_active:
-                    hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png")
+                    hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_inv.webp")
                     tooltip "Inventory (i)"
                     action Jump("inventory")
 
             # Work button
             if letter_min_work.read:
                 imagebutton:
-                    idle "interface/topbar/buttons/"+str(interface_color)+"/ui_work.png"
+                    idle "interface/topbar/buttons/"+str(interface_color)+"/ui_work.webp"
                     if room_menu_active:
-                        hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_work.png")
+                        hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_work.webp")
                         tooltip "Work (w)"
                         action Jump("paperwork")
 
         ## Toggle UI lock button
         #imagebutton:
         #    xpos 1047
-        #    idle "interface/topbar/buttons/"+str(interface_color)+"/ui_%s.png" % toggle_ui_lock
-        #    hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_%s.png" % toggle_ui_lock)
+        #    idle "interface/topbar/buttons/"+str(interface_color)+"/ui_%s.webp" % toggle_ui_lock
+        #    hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_%s.webp" % toggle_ui_lock)
         #    action ToggleVariable("toggle_ui_lock", False, True)
 
         #Debug
@@ -156,16 +156,16 @@ screen ui_points():
             xanchor 0.5
 
             if not persistent.toggle_points and not toggle_points:
-                add "interface/topbar/slytherin.png" yanchor housepoints_y[slytherin_place]
-                add "interface/topbar/gryffindor.png" yanchor housepoints_y[gryffindor_place]
-                add "interface/topbar/ravenclaw.png" yanchor housepoints_y[ravenclaw_place]
-                add "interface/topbar/hufflepuff.png" yanchor housepoints_y[hufflepuff_place]
+                add "interface/topbar/slytherin.webp" yanchor housepoints_y[slytherin_place]
+                add "interface/topbar/gryffindor.webp" yanchor housepoints_y[gryffindor_place]
+                add "interface/topbar/ravenclaw.webp" yanchor housepoints_y[ravenclaw_place]
+                add "interface/topbar/hufflepuff.webp" yanchor housepoints_y[hufflepuff_place]
             else:
                 # Add empty banners
-                add "interface/topbar/slytherin_empty.png" yanchor 0
-                add "interface/topbar/gryffindor_empty.png" yanchor 0
-                add "interface/topbar/ravenclaw_empty.png" yanchor 0
-                add "interface/topbar/hufflepuff_empty.png" yanchor 0
+                add "interface/topbar/slytherin_empty.webp" yanchor 0
+                add "interface/topbar/gryffindor_empty.webp" yanchor 0
+                add "interface/topbar/ravenclaw_empty.webp" yanchor 0
+                add "interface/topbar/hufflepuff_empty.webp" yanchor 0
                 # Show points
                 text "{size=-5}{color=#FFF}[slytherin_points]{/color}{/size}" outlines points_outline xpos 17 ypos 30 xanchor 0.5
                 text "{size=-5}{color=#FFF}[gryffindor_points]{/color}{/size}" outlines points_outline xpos 58 ypos 30 xanchor 0.5
@@ -179,7 +179,7 @@ screen ui_points():
 
             if toggle_ui_lock and room_menu_active or renpy.get_screen("room_of_requirement_menu") or renpy.get_screen("floor_7th_menu"):
                 imagebutton:
-                    idle "interface/topbar/hover_zone.png"
+                    idle "interface/topbar/hover_zone.webp"
                     tooltip "House Points\n{size=-2}Click to toggle{/size}"
                     hovered SetVariable("toggle_points", True)
                     unhovered SetVariable("toggle_points", False)
@@ -197,11 +197,11 @@ screen ui_stats():
             xsize 217
             ysize 26
 
-            add "interface/topbar/"+str(interface_color)+"/stats.png" xalign 0.5 yalign 1.0
+            add "interface/topbar/"+str(interface_color)+"/stats.webp" xalign 0.5 yalign 1.0
 
             # Add overlay token icon if needed
             if renpy.get_screen("weasley_store_room") and store_category == 3:
-                add "interface/topbar/icon_token.png" ypos 8 xpos 118
+                add "interface/topbar/icon_token.webp" ypos 8 xpos 118
 
             hbox:
                 xpos 40 ypos 11
@@ -232,7 +232,7 @@ screen ui_menu():
         xsize 102
         ysize 204
 
-        add "interface/topbar/"+str(interface_color)+"/menu.png"
+        add "interface/topbar/"+str(interface_color)+"/menu.webp"
 
         vbox:
             xanchor 0.5
@@ -258,22 +258,22 @@ screen ui_menu():
             spacing 10
             # Discord
             imagebutton:
-                idle Transform("interface/topbar/icon_discord.png", alpha=0.5)
-                hover "interface/topbar/icon_discord.png"
+                idle Transform("interface/topbar/icon_discord.webp", alpha=0.5)
+                hover "interface/topbar/icon_discord.webp"
                 tooltip "Visit {color=#c1c1c1}SilverStudioGames{/color}\ndiscord"
                 action OpenURL("https://discord.gg/7PD57yt")
                 yanchor 0.5
             # Patreon
             imagebutton:
-                idle Transform("interface/topbar/icon_patreon.png", alpha=0.5)
-                hover "interface/topbar/icon_patreon.png"
+                idle Transform("interface/topbar/icon_patreon.webp", alpha=0.5)
+                hover "interface/topbar/icon_patreon.webp"
                 tooltip "Visit {color=#c1c1c1}SilverStudioGames{/color}\npatreon"
                 action OpenURL("https://www.patreon.com/SilverStudioGames")
                 yanchor 0.5
             # Bugfixes
             imagebutton:
-                idle Transform("interface/topbar/icon_bug.png", alpha=0.5)
-                hover "interface/topbar/icon_bug.png"
+                idle Transform("interface/topbar/icon_bug.webp", alpha=0.5)
+                hover "interface/topbar/icon_bug.webp"
                 tooltip "Open bugfix menu"
                 action [SetVariable("toggle_menu", False), Jump("bugfix_menu")]
                 yanchor 0.5

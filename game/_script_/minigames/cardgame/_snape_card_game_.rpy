@@ -300,7 +300,7 @@ label snape_third_duel:
         call sna_main("(You were a good card my boy. But it's time to grow up.)","snape_05")
         $ snape_third_win = True
         $ unlocked_cards += [card_snape]
-        call give_reward("You have received a special card!", "images/cardgame/t1/special/snape_v1.png")
+        call give_reward("You have received a special card!", "images/cardgame/t1/special/snape_v1.webp")
         $ tokens += 3
     else:
         $ tokens += 1
@@ -349,8 +349,8 @@ label snape_random_duel:
         call sna_main("...","snape_04")
         g9 "Now, how about that prize we discussed."
         call sna_main("Ah, yes... something from my collection.","snape_05")
-        call give_reward("You've received a bottle of grape juice from Snape!", "interface/icons/item_potion.png") # <--
-        #call give_reward("You've received "+rand_ing_or_pot.name+" from Snape!", "interface/icons/item_potion.png")
+        call give_reward("You've received a bottle of grape juice from Snape!", "interface/icons/item_potion.webp") # <--
+        #call give_reward("You've received "+rand_ing_or_pot.name+" from Snape!", "interface/icons/item_potion.webp")
         g4 "What the fuck is this..."
         call sna_main("As I said...","snape_01")
         call sna_main("Something from my collection...","snape_02")
@@ -407,8 +407,8 @@ label snape_random_duel:
             call sna_main("Maybe I should've gone over the rules a bit more before trying this game again...","snape_05")
             call sna_main("Well played though.","snape_04")
 
-        #call give_reward("You've received "+rand_ing_or_pot.name+" from Snape!", "interface/icons/item_potion.png")
-        call give_reward("You've received a bottle of grape juice from Snape!", "interface/icons/item_potion.png")
+        #call give_reward("You've received "+rand_ing_or_pot.name+" from Snape!", "interface/icons/item_potion.webp")
+        call give_reward("You've received a bottle of grape juice from Snape!", "interface/icons/item_potion.webp")
 
     call play_sound("door")
     call hide_characters
@@ -565,21 +565,21 @@ label snape_duel_cancel:
 
 screen genie_vs_snape():
     zorder 16
-    add "images/cardgame/VS/background_snape.png" xalign 0.5 yalign 0.5
+    add "images/cardgame/VS/background_snape.webp" xalign 0.5 yalign 0.5
 screen move_genie():
     zorder 16
-    add "images/cardgame/VS/genie_01.png" at move_in(-300, 0.5)
+    add "images/cardgame/VS/genie_01.webp" at move_in(-300, 0.5)
 screen versus():
     zorder 15
-    add "images/cardgame/VS/vs.png"
+    add "images/cardgame/VS/vs.webp"
 screen move_snape():
     zorder 16
-    add "images/cardgame/VS/snape_01.png" at move_in(300, 0.5)
+    add "images/cardgame/VS/snape_01.webp" at move_in(300, 0.5)
 
 screen genie_vs_snape_smile():
     zorder 16
-    add "images/cardgame/VS/genie_02.png"
-    add "images/cardgame/VS/snape_02.png"
+    add "images/cardgame/VS/genie_02.webp"
+    add "images/cardgame/VS/snape_02.webp"
     text "Click to continue" xalign 0.5 yalign 1.0
 
 init python:

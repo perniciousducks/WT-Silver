@@ -22,18 +22,18 @@ init -1 python:
 
         def get_room_image(self):
             if self.room_image_path != "":
-                return "" +str(self.room_image_path)+ "" +str(self.room_image)+ ".png"
+                return "" +str(self.room_image_path)+ "" +str(self.room_image)+ ".webp"
             else:
                 return self.room_image #stored image already has an imagepath. Can be used for animations.
 
         def get_idle_image(self):
             if self.idle_image_path != "":
-                return "" +str(self.idle_image_path)+ "" +str(self.idle_image)+ ".png"
+                return "" +str(self.idle_image_path)+ "" +str(self.idle_image)+ ".webp"
             else:
                 return self.idle_image
 
         def get_hover_image(self):
             if self.hover_image_path != "":
-                return image_hover("" +str(self.hover_image_path)+ "" +str(self.hover_image)+ ".png")
+                return image_hover("" +str(self.hover_image_path)+ "" +str(self.hover_image)+ ".webp")
             else:
                 return self.hover_image

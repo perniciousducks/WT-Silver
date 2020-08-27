@@ -1817,28 +1817,28 @@ image cho_cg quidditch pose1 base:
     size (3840, 2880)
 
     contains: # BG
-        "images/CG/cho_quidditch/background.jpg"
+        "images/CG/cho_quidditch/background.webp"
 
     contains:
         contains: # Cho head
-            "images/CG/cho_quidditch/pose1/head_1.png"
+            "images/CG/cho_quidditch/pose1/head_1.webp"
 
         contains: # Cho eyes
-            "images/CG/cho_quidditch/pose1/eyes_1.png" with dissolve
+            "images/CG/cho_quidditch/pose1/eyes_1.webp" with dissolve
             choice:
                 pause 4
             choice:
                 pause 3
             choice:
                 pause 2
-            "images/CG/cho_quidditch/pose1/eyes_2.png" with dissolve
+            "images/CG/cho_quidditch/pose1/eyes_2.webp" with dissolve
             repeat
 
         contains: # Cho eyebrows
-            "images/CG/cho_quidditch/pose1/eyebrows_1.png"
+            "images/CG/cho_quidditch/pose1/eyebrows_1.webp"
 
         contains: # Cho body
-            "images/CG/cho_quidditch/pose1/body.png"
+            "images/CG/cho_quidditch/pose1/body.webp"
 
         parallel:
             yoffset absolute(110)
@@ -1854,34 +1854,34 @@ image cho_cg quidditch pose1 base:
             repeat
 
     contains: # Overlay
-        "images/CG/cho_quidditch/overlay.png"
+        "images/CG/cho_quidditch/overlay.webp"
 
 image cho_cg quidditch pose1 open:
     size (3840, 2880)
 
     contains: # BG
-        "images/CG/cho_quidditch/background.jpg"
+        "images/CG/cho_quidditch/background.webp"
 
     contains:
         contains: # Cho head
-            "images/CG/cho_quidditch/pose1/head_2.png"
+            "images/CG/cho_quidditch/pose1/head_2.webp"
 
         contains: # Cho eyes
-            "images/CG/cho_quidditch/pose1/eyes_1.png" with dissolve
+            "images/CG/cho_quidditch/pose1/eyes_1.webp" with dissolve
             choice:
                 pause 4
             choice:
                 pause 3
             choice:
                 pause 2
-            "images/CG/cho_quidditch/pose1/eyes_2.png" with dissolve
+            "images/CG/cho_quidditch/pose1/eyes_2.webp" with dissolve
             repeat
 
         contains: # Cho eyebrows
-            "images/CG/cho_quidditch/pose1/eyebrows_2.png"
+            "images/CG/cho_quidditch/pose1/eyebrows_2.webp"
 
         contains: # Cho body
-            "images/CG/cho_quidditch/pose1/body.png"
+            "images/CG/cho_quidditch/pose1/body.webp"
 
         parallel:
             yoffset absolute(110)
@@ -1897,34 +1897,34 @@ image cho_cg quidditch pose1 open:
             repeat
 
     contains: # Overlay
-        "images/CG/cho_quidditch/overlay.png"
+        "images/CG/cho_quidditch/overlay.webp"
 
 image cho_cg quidditch pose1 run:
     size (3840, 2880)
 
     contains: # BG
-        "images/CG/cho_quidditch/background.jpg"
+        "images/CG/cho_quidditch/background.webp"
 
     contains:
         contains: # Cho head
-            "images/CG/cho_quidditch/pose1/head_1.png"
+            "images/CG/cho_quidditch/pose1/head_1.webp"
 
         contains: # Cho eyes
-            "images/CG/cho_quidditch/pose1/eyes_3.png" with dissolve
+            "images/CG/cho_quidditch/pose1/eyes_3.webp" with dissolve
             choice:
                 pause 4
             choice:
                 pause 3
             choice:
                 pause 2
-            "images/CG/cho_quidditch/pose1/eyes_2.png" with dissolve
+            "images/CG/cho_quidditch/pose1/eyes_2.webp" with dissolve
             repeat
 
         contains: # Cho eyebrows
-            "images/CG/cho_quidditch/pose1/eyebrows_1.png"
+            "images/CG/cho_quidditch/pose1/eyebrows_1.webp"
 
         contains: # Cho body
-            "images/CG/cho_quidditch/pose1/body.png"
+            "images/CG/cho_quidditch/pose1/body.webp"
 
         contains:
             "snitch"
@@ -1958,34 +1958,34 @@ image cho_cg quidditch pose1 run:
             ease 3.0 xoffset absolute(-4000) yoffset absolute(-1000)
 
     contains: # Overlay
-        "images/CG/cho_quidditch/overlay.png"
+        "images/CG/cho_quidditch/overlay.webp"
 
 image cho_cg quidditch pose2 smirk:
     size (3840, 2880)
 
     contains: # BG
-        "images/CG/cho_quidditch/background.jpg"
+        "images/CG/cho_quidditch/background.webp"
 
     contains:
         contains: # Cho head
-            "images/CG/cho_quidditch/pose2/head_3.png"
+            "images/CG/cho_quidditch/pose2/head_3.webp"
 
         contains: # Cho eyes
-            "images/CG/cho_quidditch/pose2/eyes_1.png" with dissolve
+            "images/CG/cho_quidditch/pose2/eyes_1.webp" with dissolve
             choice:
                 pause 4
             choice:
                 pause 3
             choice:
                 pause 2
-            "images/CG/cho_quidditch/pose2/eyes_2.png" with dissolve
+            "images/CG/cho_quidditch/pose2/eyes_2.webp" with dissolve
             repeat
 
         contains: # Cho eyebrows
-            "images/CG/cho_quidditch/pose2/eyebrows_1.png"
+            "images/CG/cho_quidditch/pose2/eyebrows_1.webp"
 
         contains: # Cho body
-            "images/CG/cho_quidditch/pose2/body.png"
+            "images/CG/cho_quidditch/pose2/body.webp"
 
         parallel:
             yoffset absolute(110)
@@ -2001,34 +2001,34 @@ image cho_cg quidditch pose2 smirk:
             repeat
 
     contains: # Overlay
-        "images/CG/cho_quidditch/overlay.png"
+        "images/CG/cho_quidditch/overlay.webp"
 
 image cho_cg quidditch pose2 base:
     size (3840, 2880)
 
     contains: # BG
-        "images/CG/cho_quidditch/background.jpg"
+        "images/CG/cho_quidditch/background.webp"
 
     contains:
         contains: # Cho head
-            "images/CG/cho_quidditch/pose2/head_1.png"
+            "images/CG/cho_quidditch/pose2/head_1.webp"
 
         contains: # Cho eyes
-            "images/CG/cho_quidditch/pose2/eyes_3.png" with dissolve
+            "images/CG/cho_quidditch/pose2/eyes_3.webp" with dissolve
             choice:
                 pause 4
             choice:
                 pause 3
             choice:
                 pause 2
-            "images/CG/cho_quidditch/pose2/eyes_2.png" with dissolve
+            "images/CG/cho_quidditch/pose2/eyes_2.webp" with dissolve
             repeat
 
         contains: # Cho eyebrows
-            "images/CG/cho_quidditch/pose2/eyebrows_3.png"
+            "images/CG/cho_quidditch/pose2/eyebrows_3.webp"
 
         contains: # Cho body
-            "images/CG/cho_quidditch/pose2/body.png"
+            "images/CG/cho_quidditch/pose2/body.webp"
 
         parallel:
             yoffset absolute(110)
@@ -2044,34 +2044,34 @@ image cho_cg quidditch pose2 base:
             repeat
 
     contains: # Overlay
-        "images/CG/cho_quidditch/overlay.png"
+        "images/CG/cho_quidditch/overlay.webp"
 
 image cho_cg quidditch pose2 open:
     size (3840, 2880)
 
     contains: # BG
-        "images/CG/cho_quidditch/background.jpg"
+        "images/CG/cho_quidditch/background.webp"
 
     contains:
         contains: # Cho head
-            "images/CG/cho_quidditch/pose2/head_2.png"
+            "images/CG/cho_quidditch/pose2/head_2.webp"
 
         contains: # Cho eyes
-            "images/CG/cho_quidditch/pose2/eyes_1.png" with dissolve
+            "images/CG/cho_quidditch/pose2/eyes_1.webp" with dissolve
             choice:
                 pause 4
             choice:
                 pause 3
             choice:
                 pause 2
-            "images/CG/cho_quidditch/pose2/eyes_2.png" with dissolve
+            "images/CG/cho_quidditch/pose2/eyes_2.webp" with dissolve
             repeat
 
         contains: # Cho eyebrows
-            "images/CG/cho_quidditch/pose2/eyebrows_2.png"
+            "images/CG/cho_quidditch/pose2/eyebrows_2.webp"
 
         contains: # Cho body
-            "images/CG/cho_quidditch/pose2/body.png"
+            "images/CG/cho_quidditch/pose2/body.webp"
 
         parallel:
             yoffset absolute(110)
@@ -2087,4 +2087,4 @@ image cho_cg quidditch pose2 open:
             repeat
 
     contains: # Overlay
-        "images/CG/cho_quidditch/overlay.png"
+        "images/CG/cho_quidditch/overlay.webp"

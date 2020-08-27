@@ -15,7 +15,7 @@ init python:
             sprites = []
 
             # Add body parts and skin layers from clothes, face, cum
-            sprites.extend(("{}{}/{}.png".format(self.imagepath, k, v[0]), v[1]) for k, v in self.body.iteritems() if v[0]) # Body parts
+            sprites.extend(("{}{}/{}.webp".format(self.imagepath, k, v[0]), v[1]) for k, v in self.body.iteritems() if v[0]) # Body parts
             sprites.extend((o[0].skin, self.zorder_skin) for o in self.char.clothes.itervalues() if o[0] and o[0].skin and o[2]) # Clothes skin
             sprites.extend((x, self.zorder_skin) for x in self.char.face.get_skin()) # Face skin
             sprites.extend((x, self.zorder_skin) for x in self.char.cum.get_skin()) # Cum skin
@@ -28,7 +28,7 @@ init python:
             sprites = []
 
             # Add body parts and skin layers from clothes
-            sprites.extend(("{}{}/{}.png".format(self.imagepath, k, v[0]), v[1]) for k, v in self.body.iteritems() if v[0])
+            sprites.extend(("{}{}/{}.webp".format(self.imagepath, k, v[0]), v[1]) for k, v in self.body.iteritems() if v[0])
             if group:
                 sprites.extend((o.skin, self.zorder_skin) for o in group if o and o.skin)
 

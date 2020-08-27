@@ -37,7 +37,7 @@ label gameover(fake=False):
     return
 
 define fake_credits_text = "\n".join([
-    "{image=logo/title.png}{vspace=200}",
+    "{image=logo/title.webp}{vspace=200}",
     credits_title("Director"),
     credits_group("The Orchestrator of Sex"),
     credits_title("Artists"),
@@ -58,9 +58,9 @@ define fake_credits_text = "\n".join([
     ),
     credits_title("Special Thanks"),
     credits_group("{size=+4}Pervert#1{/size}\n{color=#808080}{size=-5}{k=0.7}Creator of the original Witch Trainer and other awesome games! {a=https://www.patreon.com/akabur}PATREON{/a}{/size}{/color}\n{/k}", "Pervert#2", "Pervert#3", "Pervert#4", "Pervert#5", "Pervert#6", "Pervert#7", "Pervert#8", "Pervert#9", "Pervert#10", "Pervert#11", "Pervert#12", "Pervert#13", "Pervert#14", "Pervert#15", "Pervert#16", "Pervert#17", "Pervert#18", "Pervert#19", "Pervert#20", "Pervert#21"),
-    "\nSpecial thanks to our pervs, discord perverators and {a=https://www.patreon.com/SilverStudioGames/}perverted supporters{/a} {image=images/misc/heart.png}\n\n",
-    "{image=logo/silverstudiogames.png}\n"
-    "\n{space=220}{image=characters/genie/mage9.png}{rb}{space=-60}Thanks for cumin!{/rb}"
+    "\nSpecial thanks to our pervs, discord perverators and {a=https://www.patreon.com/SilverStudioGames/}perverted supporters{/a} {image=images/misc/heart.webp}\n\n",
+    "{image=logo/silverstudiogames.webp}\n"
+    "\n{space=220}{image=characters/genie/mage9.webp}{rb}{space=-60}Thanks for cumin!{/rb}"
 ])
 
 screen cartoon_zoom():
@@ -69,7 +69,7 @@ screen cartoon_zoom():
 
     button style "empty" action NullAction()
 
-    add "images/misc/circle_cartoon.png":
+    add "images/misc/circle_cartoon.webp":
         at transform:
             xanchor 0.1
             yanchor 0.9
@@ -93,7 +93,7 @@ screen gameover():
     button style "empty" action NullAction()
 
     add Solid("#000000")
-    add "images/misc/gameover.png":
+    add "images/misc/gameover.webp":
         at transform:
             alpha 0.0
             pause 1.0
@@ -103,13 +103,13 @@ screen gameover():
             alpha 0.5
             pause 4.8
             alpha 0.0
-    add "images/misc/light.png":
+    add "images/misc/light.webp":
         at transform:
             alpha 0.0
             pause 4.8
             alpha 1.0
 
-    add "images/misc/folks.png":
+    add "images/misc/folks.webp":
         at transform:
             alpha 0.0
             pause 4.8

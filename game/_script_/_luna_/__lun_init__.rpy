@@ -6,27 +6,27 @@ default luna_flip = 1
 default use_luna_head = False
 
 # Body
-default luna_base = "characters/luna/body/base/base_01.png"
-default luna_breasts = "characters/luna/body/breasts/breasts_normal.png"
+default luna_base = "characters/luna/body/base/base_01.webp"
+default luna_breasts = "characters/luna/body/breasts/breasts_normal.webp"
 default luna_l_arm = 1
 default luna_r_arm = 1
 
 # Hair
-default luna_hair              = "characters/luna/body/hair/playful_blonde_base.png"
-default luna_hair_shadow       = "characters/luna/body/hair/playful_blonde_top.png"
+default luna_hair              = "characters/luna/body/hair/playful_blonde_base.webp"
+default luna_hair_shadow       = "characters/luna/body/hair/playful_blonde_top.webp"
 default lun_hair_style         = "playful"
 default lun_hair_color         = "blonde"
 
 # Face
-default luna_mouth             = "characters/luna/face/mouth/base.png"
-default luna_eye               = "characters/luna/face/eyes/base.png"
-default luna_eyebrow           = "characters/luna/face/brow/base.png"
-default luna_pupil             = "characters/luna/face/pupil/blue/mid.png"
+default luna_mouth             = "characters/luna/face/mouth/base.webp"
+default luna_eye               = "characters/luna/face/eyes/base.webp"
+default luna_eyebrow           = "characters/luna/face/brow/base.webp"
+default luna_pupil             = "characters/luna/face/pupil/blue/mid.webp"
 default luna_pupil_color       = "blue"
 
-default luna_cheeks            = "characters/luna/face/extras/cheeks_blank.png"
-default luna_tears             = "characters/luna/face/extras/tears_blank.png"
-default luna_emote             = "characters/emotes/blank.png"
+default luna_cheeks            = "characters/luna/face/extras/cheeks_blank.webp"
+default luna_tears             = "characters/luna/face/extras/tears_blank.webp"
+default luna_emote             = "characters/emotes/blank.webp"
 
 # Cum
 default luna_cum               = 1
@@ -80,62 +80,62 @@ default luna_wear_tattoos    = False
 default luna_wear_outfit     = False
 
 # Top
-default luna_top      = "characters/luna/clothes/tops/top_1_r.png"
+default luna_top      = "characters/luna/clothes/tops/top_1_r.webp"
 default lun_top       = "top_1_r"
 default lun_top_color = "base"
 
 # Bottom
-default luna_bottom      = "characters/luna/clothes/bottoms/skirt_1.png"
+default luna_bottom      = "characters/luna/clothes/bottoms/skirt_1.webp"
 default lun_bottom       = "skirt_1"
 
 # Underwear
-default luna_bra      = "characters/luna/clothes/bras/bra_basic.png"
+default luna_bra      = "characters/luna/clothes/bras/bra_basic.webp"
 default lun_bra       = "bra_basic"
 default lun_bra_color = "base"
 
-default luna_panties      = "characters/luna/clothes/panties/panties_basic.png"
+default luna_panties      = "characters/luna/clothes/panties/panties_basic.webp"
 default lun_panties       = "panties_basic"
 default lun_panties_color = "base"
 
-default luna_onepiece      = "characters/luna/clothes/onepieces/blank.png"
+default luna_onepiece      = "characters/luna/clothes/onepieces/blank.webp"
 default lun_onepiece       = "blank"
 default lun_onepiece_color = "base"
 
-default luna_garterbelt      = "characters/luna/clothes/garterbelts/blank.png"
+default luna_garterbelt      = "characters/luna/clothes/garterbelts/blank.webp"
 default lun_garterbelt       = "blank"
 default lun_garterbelt_color = "base"
 
 # Other Clothing
-default luna_neckwear      = "characters/luna/clothes/neckwear/blank.png"
+default luna_neckwear      = "characters/luna/clothes/neckwear/blank.webp"
 default lun_neckwear       = "blank"
 default lun_neckwear_color = "base"
 
 default luna_accs_list = []
 
-default luna_gloves      = "characters/luna/clothes/gloves/blank.png"
+default luna_gloves      = "characters/luna/clothes/gloves/blank.webp"
 default lun_gloves       = "blank"
 default lun_gloves_color = "base"
 
-default luna_stockings      = "characters/luna/clothes/stockings/blank.png"
+default luna_stockings      = "characters/luna/clothes/stockings/blank.webp"
 default lun_stockings       = "blank"
 default lun_stockings_color = "base"
 
-default luna_robe      = "characters/luna/clothes/robe/blank.png"
+default luna_robe      = "characters/luna/clothes/robe/blank.webp"
 default lun_robe       = "blank"
 default lun_robe_color = "base"
 
 # Accessories
 default luna_makeup_list         = []
 
-default luna_hat      = "characters/luna/clothes/hats/hair_playful/blank.png"
+default luna_hat      = "characters/luna/clothes/hats/hair_playful/blank.webp"
 default lun_hat       = "blank"
 default lun_hat_color = "base"
 
-default luna_glasses      = "characters/luna/clothes/glasses/blank.png"
+default luna_glasses      = "characters/luna/clothes/glasses/blank.webp"
 default lun_glasses       = "blank"
 default lun_glasses_color = "base"
 
-default luna_ears = "characters/luna/clothes/ears/blank.png"
+default luna_ears = "characters/luna/clothes/ears/blank.webp"
 default lun_ears  = "blank"
 
 # Outfits
@@ -158,25 +158,25 @@ default lun_robe_transp      = 1
 default lun_outfit_transp    = 1
 
 default lun_cg_path       = "images/CG/luna_desk2/"
-default lun_cg_overlay    = lun_cg_path+"blank.png"
-default lun_cg_base       = lun_cg_path+"base.png"
-default lun_cg_border     = lun_cg_path+"border.png"
-default lun_cg_body       = lun_cg_path+"luna_base.png"
-default lun_cg_hair       = lun_cg_path+str(lun_hair_style)+"_hair.png"
-default lun_cg_cheeks     = lun_cg_path+"c_base.png"
-default lun_cg_mouth      = lun_cg_path+"m_base.png"
-default lun_cg_eyewhite   = lun_cg_path+"eye_white.png"
-default lun_cg_pupil      = lun_cg_path+"pup_base.png"
-default lun_cg_eye        = lun_cg_path+"eye_base.png"
-default lun_cg_eyebrow    = lun_cg_path+"eb_base.png"
-default lun_cg_eyewear    = lun_cg_path+"glasses.png"
-default lun_cg_tears      = lun_cg_path+"blank.png"
-default lun_cg_hairtop    = lun_cg_path+str(lun_hair_style)+"_hair_top.png"
-default lun_cg_extra_1    = lun_cg_path+"blank.png"
-default lun_cg_extra_2    = lun_cg_path+"blank.png"
-default lun_cg_extra_3    = lun_cg_path+"blank.png"
-default lun_cg_dick       = lun_cg_path+"dick_1.png"
-default lun_cg_genie      = lun_cg_path+"genie.png"
+default lun_cg_overlay    = lun_cg_path+"blank.webp"
+default lun_cg_base       = lun_cg_path+"base.webp"
+default lun_cg_border     = lun_cg_path+"border.webp"
+default lun_cg_body       = lun_cg_path+"luna_base.webp"
+default lun_cg_hair       = lun_cg_path+str(lun_hair_style)+"_hair.webp"
+default lun_cg_cheeks     = lun_cg_path+"c_base.webp"
+default lun_cg_mouth      = lun_cg_path+"m_base.webp"
+default lun_cg_eyewhite   = lun_cg_path+"eye_white.webp"
+default lun_cg_pupil      = lun_cg_path+"pup_base.webp"
+default lun_cg_eye        = lun_cg_path+"eye_base.webp"
+default lun_cg_eyebrow    = lun_cg_path+"eb_base.webp"
+default lun_cg_eyewear    = lun_cg_path+"glasses.webp"
+default lun_cg_tears      = lun_cg_path+"blank.webp"
+default lun_cg_hairtop    = lun_cg_path+str(lun_hair_style)+"_hair_top.webp"
+default lun_cg_extra_1    = lun_cg_path+"blank.webp"
+default lun_cg_extra_2    = lun_cg_path+"blank.webp"
+default lun_cg_extra_3    = lun_cg_path+"blank.webp"
+default lun_cg_dick       = lun_cg_path+"dick_1.webp"
+default lun_cg_genie      = lun_cg_path+"genie.webp"
 default lun_cg_xpos       = 0
 default lun_cg_ypos       = 0
 default lun_cg_xpos_abs   = 0

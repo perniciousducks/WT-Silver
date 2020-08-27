@@ -41,7 +41,7 @@ define config.window_title = "Witch Trainer (Silver) {}{}".format(title_version,
 define config.screen_width = 1080
 define config.screen_height = 600
 define config.save_physical_size = True
-define config.window_icon = "interface/icon.png"
+define config.window_icon = "interface/icon.webp"
 
 # User interface settings
 define config.layers = ["master", "transient", "screens", "interface", "overlay"]
@@ -89,7 +89,7 @@ define config.main_menu_music = "music/01 Prologue.mp3"
 define config.quit_action = Quit(True)
 define config.narrator_menu = True
 define config.hard_rollback_limit = 150
-define config.mouse = {"default": [("interface/cursor.png", 0, 0)]} if preferences.customcursor else None
+define config.mouse = {"default": [("interface/cursor.webp", 0, 0)]} if preferences.customcursor else None
 
 # Help (Not implemented)
 define config.help = None

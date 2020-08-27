@@ -202,13 +202,13 @@ init python:
         renpy.transition(Dissolve(0.3))
         renpy.pause(1.0)
         for card in cards_dynamic:
-            card.imagepath = card.imagepath[:-5]+str(tier)+".png"
+            card.imagepath = card.imagepath[:-5]+str(tier)+".webp"
             for card_in_use in playerdeck:
                 if card.title == card_in_use.title:
-                    card_in_use.imagepath = card_in_use.imagepath[:-5]+str(tier)+".png"
+                    card_in_use.imagepath = card_in_use.imagepath[:-5]+str(tier)+".webp"
             for card_in_deck in unlocked_cards:
                 if card.title == card_in_deck.title:
-                    card_in_deck.imagepath = card_in_deck.imagepath[:-5]+str(tier)+".png"
+                    card_in_deck.imagepath = card_in_deck.imagepath[:-5]+str(tier)+".webp"
         geniecard_level = tier
         renpy.play("sounds/magic4.ogg")
         renpy.show_screen("advance_deck")
@@ -221,14 +221,14 @@ init python:
 
 screen card_battle(l_playerdeck, l_enemydeck, shown_cards):
     zorder 13
-    imagebutton idle "images/cardgame/card_table.png" action Return("unselect")
+    imagebutton idle "images/cardgame/card_table.webp" action Return("unselect")
 
     #fix card error when you select the last card
     if not selectenemycard < len(l_enemydeck):
         $ selectenemycard = -1
 
     imagemap:
-        ground "images/cardgame/card_table.png"
+        ground "images/cardgame/card_table.webp"
 
         for y in xrange(0,3):
             for x in xrange(0,3):
@@ -370,7 +370,7 @@ screen rules_display(game_rules_list):
     tag rules
     zorder 16
 
-    add "interface/bld.png" at fade_show_hide(0.15)
+    add "interface/bld.webp" at fade_show_hide(0.15)
 
     vbox:
         ypos 40
@@ -393,7 +393,7 @@ screen rules_display(game_rules_list):
                         background "#625954"
                         xfill True
                         text game_rules_list[i].description yalign 0.5 size 12
-                    add "images/cardgame/spacer.png"
+                    add "images/cardgame/spacer.webp"
 
 label start_duel(opppent_deck, after_enemy = None, rules = None, duel_player_deck = None):
     $ duel_response = start_duel(opppent_deck, after_enemy, rules, duel_player_deck)

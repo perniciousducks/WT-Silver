@@ -226,9 +226,9 @@ screen potions_room():
     tag room_screen
 
     if daytime:
-        add "images/rooms/_bg_/corridor.png" #Need day image.
+        add "images/rooms/_bg_/corridor.webp" #Need day image.
     else:
-        add "images/rooms/_bg_/corridor.png"
+        add "images/rooms/_bg_/corridor.webp"
 
     zorder 0
 

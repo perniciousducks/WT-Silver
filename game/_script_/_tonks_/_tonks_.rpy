@@ -138,7 +138,7 @@ label end_tonks_event:
     $ tonks.wear("all")
 
     $ renpy.stop_predict(tonks.get_image())
-    $ renpy.stop_predict("characters/tonks/face/*.png")
+    $ renpy.stop_predict("characters/tonks/face/*.webp")
 
     call music_block
     jump main_room

@@ -17,7 +17,7 @@ init -1 python:
     def missing_image_func(path):
         global systemerror
         systemerror = ["Missing image", path]
-        return Image("images/blank.png")
+        return Image("images/blank.webp")
 
 
     def missing_label_func(name):
@@ -99,7 +99,7 @@ init -1 python:
         path = posixpath.join(config.basedir, "game")
         imgs = []
         for root, dirs, files in system.walk(path):
-            for file in fnmatch.filter(files, "*.png"):
+            for file in fnmatch.filter(files, "*.webp"):
                 img = posixpath.join(root, file).split("/game/")[1]
                 imgs.append(img)
 

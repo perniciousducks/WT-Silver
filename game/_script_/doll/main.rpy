@@ -43,8 +43,8 @@ init python:
                         if o[0].front_outline:
                             sprites.append([o[0].front_outline, 100+o[0].zorder+o[0].layers])
                     if o[0].armfix:
-                        armleft = im.MatrixColor("{}armleft/{}_fix.png".format(self.body.imagepath, self.body.get_part("armleft")), im.matrix.hue(self.body.hue))
-                        armright = im.MatrixColor("{}armright/{}_fix.png".format(self.body.imagepath, self.body.get_part("armright")), im.matrix.hue(self.body.hue))
+                        armleft = im.MatrixColor("{}armleft/{}_fix.webp".format(self.body.imagepath, self.body.get_part("armleft")), im.matrix.hue(self.body.hue))
+                        armright = im.MatrixColor("{}armright/{}_fix.webp".format(self.body.imagepath, self.body.get_part("armright")), im.matrix.hue(self.body.hue))
 
                         sprites.extend([[armleft, o[0].zorder+0.5], [armright, o[0].zorder+0.5]])
                     if o[0].mask:
@@ -261,7 +261,7 @@ init python:
                 self.apply_transition()
 
         def set_pose(self, pose):
-            if pose is None or renpy.loadable("characters/{}/poses/{}/loadable.png".format(self.name, pose)):
+            if pose is None or renpy.loadable("characters/{}/poses/{}/loadable.webp".format(self.name, pose)):
                 self.pose = pose
                 self.face.set_pose(pose)
                 self.body.set_pose(pose)

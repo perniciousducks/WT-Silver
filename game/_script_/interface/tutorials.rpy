@@ -37,8 +37,8 @@ screen tutorial(entry):
         xysize (500, 300)
         align (0.5, 0.5)
 
-        add "interface/achievements/"+interface_color+"/highlight.png" yoffset -2
-        add "interface/achievements/"+interface_color+"/spacer.png" xalign 0.5 ypos 17
+        add "interface/achievements/"+interface_color+"/highlight.webp" yoffset -2
+        add "interface/achievements/"+interface_color+"/spacer.webp" xalign 0.5 ypos 17
 
         text "Tutorial" size 10 ypos 3
 
@@ -47,8 +47,8 @@ screen tutorial(entry):
 
             text tutorial_dict[entry][0] size 16 xalign 0.5
 
-            if renpy.loadable("interface/tutorials/{}.png".format(entry)):
-                add "interface/tutorials/{}.png".format(entry) xalign 0.5
+            if renpy.loadable("interface/tutorials/{}.webp".format(entry)):
+                add "interface/tutorials/{}.webp".format(entry) xalign 0.5
 
             text tutorial_dict[entry][1] size 12
 

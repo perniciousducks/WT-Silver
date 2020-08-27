@@ -79,7 +79,7 @@ label twins_second_duel:
         fre "Make sure to come back and spend those tokens in our token shop."
         $ card_rand_twins = renpy.random.choice([[card_fred, "fred"], [card_george, "george"]])
         $ unlocked_cards += [card_rand_twins[0]]
-        call give_reward("You have received a special card!", "images/cardgame/t1/special/%s_v1.png" % str(card_rand_twins[1]))
+        call give_reward("You have received a special card!", "images/cardgame/t1/special/%s_v1.webp" % str(card_rand_twins[1]))
         $ twins_second_win = True
         $ tokens += 3
     else:
@@ -209,7 +209,7 @@ label twins_random_duel:
         m "Well, how about a lower percentage? I'll adjust my wager as well."
         ger "We'll think about it..."
 
-        call give_reward("You have received 5%% of the twins profits", "interface/icons/cards.png")
+        call give_reward("You have received 5%% of the twins profits", "interface/icons/cards.webp")
         $ twins_profit += 0.05
         $ twins_random_win = False
         $ tokens += 3
@@ -261,15 +261,15 @@ label twins_duel_cancel:
 
 screen genie_vs_twins():
     zorder 15
-    add "images/cardgame/VS/background_twins.png" xalign 0.5 yalign 0.5
+    add "images/cardgame/VS/background_twins.webp" xalign 0.5 yalign 0.5
 screen move_twins():
     zorder 16
-    add "images/cardgame/VS/twins_01.png" at move_in(300, 1)
+    add "images/cardgame/VS/twins_01.webp" at move_in(300, 1)
 
 screen genie_vs_twins_smile():
     zorder 16
-    add "images/cardgame/VS/genie_04.png"
-    add "images/cardgame/VS/twins_02.png"
+    add "images/cardgame/VS/genie_04.webp"
+    add "images/cardgame/VS/twins_02.webp"
     text "Click to continue" xalign 0.5 yalign 1.0
 
 init python:

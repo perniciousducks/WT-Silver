@@ -153,18 +153,18 @@ screen gallery_screen(gallery):
     imagebutton:
         xpos 928
         ypos 240
-        idle "interface/general/"+interface_color+"/button_arrow_up.png"
+        idle "interface/general/"+interface_color+"/button_arrow_up.webp"
         if not gallery_page <= 0:
-            hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
+            hover "interface/general/"+interface_color+"/button_arrow_up_hover.webp"
             action Return(["dec"])
 
     #Down Button
     imagebutton:
         xpos 928
         ypos 292
-        idle "interface/general/"+interface_color+"/button_arrow_down.png"
+        idle "interface/general/"+interface_color+"/button_arrow_down.webp"
         if gallery_page < math.ceil((len(loadet_gallery)-1)/outfits_displayed):
-            hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
+            hover "interface/general/"+interface_color+"/button_arrow_down_hover.webp"
             action Return(["inc"])
 
     for i in xrange(outfits_displayed):
@@ -178,7 +178,7 @@ screen gallery_image(xx, yy=90, character):
         xsize 207
         ysize 454
 
-        add "interface/achievements/"+interface_color+"/panel_left.png"
+        add "interface/achievements/"+interface_color+"/panel_left.webp"
         vbox:
             pos (6, 6)
 
@@ -215,7 +215,7 @@ screen gallery_character_menu(xx=20, yy=90, menu_info):
         xsize 207
         ysize 454
 
-        add "interface/achievements/"+interface_color+"/panel_left.png"
+        add "interface/achievements/"+interface_color+"/panel_left.webp"
 
         vbox:
             pos (6, 384)
@@ -242,20 +242,20 @@ screen gallery_character_menu(xx=20, yy=90, menu_info):
                             vbox:
                                 vbox:
                                     if not value["active"]:
-                                        textbutton key xsize 195 ysize 48 style "empty" hover_background "interface/achievements/"+interface_color+"/highlight_left_b.png" text_xalign 0.6 text_yalign 0.5 text_xanchor 0.5 text_size 20 action Return(["summon", key, False])
+                                        textbutton key xsize 195 ysize 48 style "empty" hover_background "interface/achievements/"+interface_color+"/highlight_left_b.webp" text_xalign 0.6 text_yalign 0.5 text_xanchor 0.5 text_size 20 action Return(["summon", key, False])
                                     else:
-                                        textbutton key xsize 195 ysize 48 style "empty" hover_background "interface/achievements/"+interface_color+"/highlight_left_b.png" text_xalign 0.6 text_yalign 0.5 text_xanchor 0.5 text_size 20 text_color "#8C8C70" action Return(["summon", key, True])
+                                        textbutton key xsize 195 ysize 48 style "empty" hover_background "interface/achievements/"+interface_color+"/highlight_left_b.webp" text_xalign 0.6 text_yalign 0.5 text_xanchor 0.5 text_size 20 text_color "#8C8C70" action Return(["summon", key, True])
 
-                                add "interface/achievements/"+interface_color+"/spacer_left.png"
-                            add "interface/achievements/"+interface_color+"/iconbox.png" yoffset 1
+                                add "interface/achievements/"+interface_color+"/spacer_left.webp"
+                            add "interface/achievements/"+interface_color+"/iconbox.webp" yoffset 1
                             if not value["active"]:
-                                $ image_zoom = crop_image_zoom("interface/icons/head/"+value.get("ico")+".png", 42, 42)
+                                $ image_zoom = crop_image_zoom("interface/icons/head/"+value.get("ico")+".webp", 42, 42)
                             else:
-                                $ image_zoom = crop_image_zoom("interface/icons/head/"+value.get("ico")+".png", 42, 42, True)
+                                $ image_zoom = crop_image_zoom("interface/icons/head/"+value.get("ico")+".webp", 42, 42, True)
                             frame:
                                 style "empty"
                                 xsize 42
                                 ysize 42
                                 add image_zoom[0] zoom image_zoom[1] align (0.5, 1.0) offset (3, 4)
-                            add "interface/achievements/glass_iconbox.png" pos (3, 3)
+                            add "interface/achievements/glass_iconbox.webp" pos (3, 3)
                             text value["activity"] size 10 xalign 0.625 yalign 0.9 xanchor 0.5

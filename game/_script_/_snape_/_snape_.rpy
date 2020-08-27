@@ -42,7 +42,7 @@ label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, w
 
     $ old_s_sprite = s_sprite
     if face != "":
-        $ s_sprite = "characters/snape/main/"+str(face)+".png"
+        $ s_sprite = "characters/snape/main/"+str(face)+".webp"
 
     if not renpy.get_screen("snape_main"):
         $ old_s_sprite = s_sprite # Forget old sprite if screen is currently hidden
@@ -77,8 +77,8 @@ screen snape_main(old_sprite=s_sprite, new_sprite=s_sprite, wand=False):
         xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom 0.5
 
     if wand:
-        add "characters/snape/main/wand.png" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom 0.5
+        add "characters/snape/main/wand.webp" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom 0.5
 
 screen snape_picture_frame():
-    add "characters/snape/main/picture_frame.png" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom 0.5
+    add "characters/snape/main/picture_frame.webp" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom 0.5
     zorder snape_zorder+1

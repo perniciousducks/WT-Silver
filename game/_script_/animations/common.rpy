@@ -4,74 +4,74 @@
 image blank:
     Null()
 
-image heart_00 = "interface/heart_00.png"
-image heart_01 = "interface/heart_01.png"
-image heart_02 = "interface/heart_02.png"
-image heart_03 = "interface/heart_03.png"
-image heart_04 = "interface/heart_04.png"
+image heart_00 = "interface/heart_00.webp"
+image heart_01 = "interface/heart_01.webp"
+image heart_02 = "interface/heart_02.webp"
+image heart_03 = "interface/heart_03.webp"
+image heart_04 = "interface/heart_04.webp"
 
 image heal:
-    "magic/heal01.png"
+    "magic/heal01.webp"
     pause.06
-    "magic/heal02.png"
+    "magic/heal02.webp"
     pause.06
-    "magic/heal03.png"
+    "magic/heal03.webp"
     pause.06
-    "magic/heal04.png"
+    "magic/heal04.webp"
     pause.06
-    "magic/heal05.png"
+    "magic/heal05.webp"
     pause.06
-    "magic/heal06.png"
+    "magic/heal06.webp"
     pause.06
-    "magic/heal07.png"
+    "magic/heal07.webp"
     pause.06
-    "magic/heal08.png"
+    "magic/heal08.webp"
     pause.06
-    "magic/heal09.png"
+    "magic/heal09.webp"
     pause.06
-    "magic/heal10.png"
+    "magic/heal10.webp"
     pause.06
-    "magic/heal11.png"
+    "magic/heal11.webp"
     pause.06
-    "magic/heal12.png"
+    "magic/heal12.webp"
     pause.06
-    "magic/heal13.png"
+    "magic/heal13.webp"
     pause.06
-    "magic/heal14.png"
+    "magic/heal14.webp"
     pause.06
-    "magic/heal15.png"
+    "magic/heal15.webp"
     pause.06
-    "magic/heal16.png"
+    "magic/heal16.webp"
     pause.06
-    "magic/heal17.png"
+    "magic/heal17.webp"
     pause.06
-    "magic/heal18.png"
+    "magic/heal18.webp"
     pause.06
 
 image love_heart:
-    "magic/love09.png"
+    "magic/love09.webp"
     pause.06
-    "magic/love10.png"
+    "magic/love10.webp"
     pause.06
-    "magic/love11.png"
+    "magic/love11.webp"
     pause.06
-    "magic/love12.png"
+    "magic/love12.webp"
     pause.06
-    "magic/love13.png"
+    "magic/love13.webp"
     pause.06
-    "magic/love14.png"
+    "magic/love14.webp"
     pause.06
-    "magic/love15.png"
+    "magic/love15.webp"
 
 image ctc:
     contains:
         pos (0.99, 0.995)
         anchor (0.8, 1.0)
-        "interface/ctc00.png"
+        "interface/ctc00.webp"
     contains:
         pos (0.99, 0.995)
         anchor (0.8, 1.0)
-        "interface/ctc01.png"
+        "interface/ctc01.webp"
         pause 5.0
         linear 1.0 alpha 0.0
         linear 1.0 alpha 1.0
@@ -80,193 +80,193 @@ image ctc:
 # Emotions ^_^
 
 image emo01:
-    "characters/emotes/animated/ex01.png"
+    "characters/emotes/animated/ex01.webp"
     pause.5
-    "characters/emotes/animated/ex02.png"
+    "characters/emotes/animated/ex02.webp"
     pause.5
-    "characters/emotes/animated/ex03.png"
+    "characters/emotes/animated/ex03.webp"
     pause.5
-    "characters/emotes/animated/ex04.png"
+    "characters/emotes/animated/ex04.webp"
     pause 1
-    "characters/emotes/animated/ex01.png"
+    "characters/emotes/animated/ex01.webp"
     pause.5
-    "characters/emotes/animated/ex00.png"
+    "characters/emotes/animated/ex00.webp"
     repeat
 
 image emo02:
-    "characters/emotes/animated/exl01.png"
+    "characters/emotes/animated/exl01.webp"
     pause.5
-    "characters/emotes/animated/exl02.png"
+    "characters/emotes/animated/exl02.webp"
     pause.5
-    "characters/emotes/animated/exl03.png"
+    "characters/emotes/animated/exl03.webp"
     pause.5
-    "characters/emotes/animated/exl04.png"
+    "characters/emotes/animated/exl04.webp"
     pause.5
-    "characters/emotes/animated/exl05.png"
+    "characters/emotes/animated/exl05.webp"
     pause.5
-    "characters/emotes/animated/exl06.png"
+    "characters/emotes/animated/exl06.webp"
     repeat
 
 image emo03:
-    "characters/emotes/animated/sad_01.png"
+    "characters/emotes/animated/sad_01.webp"
     pause.4
-    "characters/emotes/animated/sad_02.png"
+    "characters/emotes/animated/sad_02.webp"
     pause.4
-    "characters/emotes/animated/sad_03.png"
+    "characters/emotes/animated/sad_03.webp"
     pause.4
-    "characters/emotes/animated/sad_04.png"
+    "characters/emotes/animated/sad_04.webp"
     pause.4
-    "characters/emotes/animated/sad_03.png"
+    "characters/emotes/animated/sad_03.webp"
     pause.4
-    "characters/emotes/animated/sad_02.png"
+    "characters/emotes/animated/sad_02.webp"
     pause.4
     repeat
 
 image emo04:
-    "characters/emotes/animated/hoot_01.png"
+    "characters/emotes/animated/hoot_01.webp"
     pause.4
-    "characters/emotes/animated/hoot_02.png"
+    "characters/emotes/animated/hoot_02.webp"
     pause.4
-    "characters/emotes/animated/hoot_03.png"
+    "characters/emotes/animated/hoot_03.webp"
     pause.4
-    "characters/emotes/animated/hoot_04.png"
+    "characters/emotes/animated/hoot_04.webp"
     pause.4
-    "characters/emotes/animated/hoot_05.png"
+    "characters/emotes/animated/hoot_05.webp"
     pause.4
-    "characters/emotes/animated/hoot_06.png"
+    "characters/emotes/animated/hoot_06.webp"
     pause.4
-    "characters/emotes/animated/hoot_07.png"
+    "characters/emotes/animated/hoot_07.webp"
     pause.4
     repeat
 
 image emoq:
-    "characters/emotes/animated/q1.png"
+    "characters/emotes/animated/q1.webp"
     pause.5
-    "characters/emotes/animated/q2.png"
+    "characters/emotes/animated/q2.webp"
     pause.5
-    "characters/emotes/animated/q3.png"
+    "characters/emotes/animated/q3.webp"
     pause.5
-    "characters/emotes/animated/q4.png"
+    "characters/emotes/animated/q4.webp"
     pause.5
-    "characters/emotes/animated/q1.png"
+    "characters/emotes/animated/q1.webp"
     pause.5
-    "characters/emotes/animated/q2.png"
+    "characters/emotes/animated/q2.webp"
     pause.5
-    "characters/emotes/animated/q3.png"
+    "characters/emotes/animated/q3.webp"
     pause.5
-    "characters/emotes/animated/q4.png"
+    "characters/emotes/animated/q4.webp"
     repeat
 
 image emom:
-    "characters/emotes/animated/emo00.png"
+    "characters/emotes/animated/emo00.webp"
     pause.08
-    "characters/emotes/animated/emo01.png"
+    "characters/emotes/animated/emo01.webp"
 
 image excl:
-    "characters/emotes/animated/excl01.png"
+    "characters/emotes/animated/excl01.webp"
     pause.5
-    "characters/emotes/animated/excl02.png"
+    "characters/emotes/animated/excl02.webp"
     pause.5
-    "characters/emotes/animated/excl03.png"
+    "characters/emotes/animated/excl03.webp"
     pause.5
-    "characters/emotes/animated/excl04.png"
+    "characters/emotes/animated/excl04.webp"
     pause.5
     repeat
 image qu:
-    "characters/emotes/animated/que1.png"
+    "characters/emotes/animated/que1.webp"
     pause.5
-    "characters/emotes/animated/que2.png"
+    "characters/emotes/animated/que2.webp"
     pause.5
-    "characters/emotes/animated/que3.png"
+    "characters/emotes/animated/que3.webp"
     pause.5
-    "characters/emotes/animated/que4.png"
+    "characters/emotes/animated/que4.webp"
     pause.5
-    "characters/emotes/animated/que5.png"
+    "characters/emotes/animated/que5.webp"
     pause.5
-    "characters/emotes/animated/que6.png"
+    "characters/emotes/animated/que6.webp"
     repeat
 
 image an:
-    "characters/emotes/animated/an1.png"
+    "characters/emotes/animated/an1.webp"
     pause.2
-    "characters/emotes/animated/an2.png"
+    "characters/emotes/animated/an2.webp"
     pause.2
-    "characters/emotes/animated/an3.png"
+    "characters/emotes/animated/an3.webp"
     pause.2
-    "characters/emotes/animated/an2.png"
+    "characters/emotes/animated/an2.webp"
     pause.2
     repeat
 
 image sal:
-    "characters/emotes/animated/s1.png"
+    "characters/emotes/animated/s1.webp"
     pause.08
-    "characters/emotes/animated/s2.png"
+    "characters/emotes/animated/s2.webp"
     pause.2
-    "characters/emotes/animated/s3.png"
+    "characters/emotes/animated/s3.webp"
     pause.08
-    "characters/emotes/animated/s4.png"
+    "characters/emotes/animated/s4.webp"
     pause.2
-    "characters/emotes/animated/s5.png"
+    "characters/emotes/animated/s5.webp"
     pause.08
-    "characters/emotes/animated/s6.png"
+    "characters/emotes/animated/s6.webp"
     pause 1
-    "characters/emotes/animated/00.png"
+    "characters/emotes/animated/00.webp"
     pause.08
     repeat
 
 image th:
-    "characters/emotes/animated/t1.png"
+    "characters/emotes/animated/t1.webp"
     pause.2
-    "characters/emotes/animated/t2.png"
+    "characters/emotes/animated/t2.webp"
     pause.2
-    "characters/emotes/animated/t3.png"
+    "characters/emotes/animated/t3.webp"
     pause.2
-    "characters/emotes/animated/t4.png"
+    "characters/emotes/animated/t4.webp"
     pause.2
     repeat
 
 image emo7:
-    "characters/emotes/animated/emotion00.png"
+    "characters/emotes/animated/emotion00.webp"
     pause.5
-    "characters/emotes/animated/emotion01.png"
+    "characters/emotes/animated/emotion01.webp"
     pause.5
-    "characters/emotes/animated/emotion00.png"
+    "characters/emotes/animated/emotion00.webp"
     pause.7
-    "characters/emotes/animated/emotion01.png"
+    "characters/emotes/animated/emotion01.webp"
     pause.7
-    "characters/emotes/animated/emotion00.png"
+    "characters/emotes/animated/emotion00.webp"
     pause.6
-    "characters/emotes/animated/emotion01.png"
+    "characters/emotes/animated/emotion01.webp"
     pause.6
     repeat
 
 image emo8:
-    "characters/emotes/animated/emotion00.png"
+    "characters/emotes/animated/emotion00.webp"
     pause.7
-    "characters/emotes/animated/emotion03.png"
+    "characters/emotes/animated/emotion03.webp"
     pause.7
-    "characters/emotes/animated/emotion00.png"
+    "characters/emotes/animated/emotion00.webp"
     pause.6
-    "characters/emotes/animated/emotion03.png"
+    "characters/emotes/animated/emotion03.webp"
     pause.6
-    "characters/emotes/animated/emotion00.png"
+    "characters/emotes/animated/emotion00.webp"
     pause.5
-    "characters/emotes/animated/emotion03.png"
+    "characters/emotes/animated/emotion03.webp"
     pause.5
     repeat
 
 image sur:
-    "characters/emotes/animated/sur1.png"
+    "characters/emotes/animated/sur1.webp"
     pause.5
-    "characters/emotes/animated/sur2.png"
+    "characters/emotes/animated/sur2.webp"
     pause.5
-    "characters/emotes/animated/sur3.png"
+    "characters/emotes/animated/sur3.webp"
     pause.5
-    "characters/emotes/animated/sur4.png"
+    "characters/emotes/animated/sur4.webp"
     pause.5
-    "characters/emotes/animated/sur5.png"
+    "characters/emotes/animated/sur5.webp"
     pause.5
-    "characters/emotes/animated/sur6.png"
+    "characters/emotes/animated/sur6.webp"
     pause.5
     repeat
 
@@ -274,39 +274,39 @@ image sur:
 image title_ani:
     contains:
         zoom 0.5
-        "title/00.png"
+        "title/00.webp"
         pause 3
-        "title/01.png"
+        "title/01.webp"
         pause.1
-        "title/02.png"
+        "title/02.webp"
         pause.1
-        "title/01.png"
+        "title/01.webp"
         pause.1
-        "title/00.png"
+        "title/00.webp"
         pause 6
-        "title/01.png"
+        "title/01.webp"
         pause.1
-        "title/02b.png"
+        "title/02b.webp"
         pause.1
-        "title/01b.png"
+        "title/01b.webp"
         pause.1
-        "title/00b.png"
+        "title/00b.webp"
         pause 3
-        "title/01b.png"
+        "title/01b.webp"
         pause.1
-        "title/02b.png"
+        "title/02b.webp"
         pause.1
-        "title/01b.png"
+        "title/01b.webp"
         pause.1
-        "title/00b.png"
+        "title/00b.webp"
         pause 6
-        "title/01b.png"
+        "title/01b.webp"
         pause.1
-        "title/02b.png"
+        "title/02b.webp"
         pause.1
-        "title/02.png"
+        "title/02.webp"
         pause.1
-        "title/01.png"
+        "title/01.webp"
         pause.1
         repeat
 
@@ -315,7 +315,7 @@ image title_ani:
         zoom 0.9
         ypos 12
         xoffset -2
-        "logo/title.png"
+        "logo/title.webp"
 
     contains:
         xpos -17
@@ -327,21 +327,21 @@ image title_ani:
         xpos -255
         ypos 100
         zoom 0.8
-        "title/fire00.png"
+        "title/fire00.webp"
         pause.1
-        "title/fire01.png"
+        "title/fire01.webp"
         pause.1
-        "title/fire02.png"
+        "title/fire02.webp"
         pause.1
-        "title/fire03.png"
+        "title/fire03.webp"
         pause.1
-        "title/fire04.png"
+        "title/fire04.webp"
         pause.1
-        "title/fire05.png"
+        "title/fire05.webp"
         pause.1
-        "title/fire06.png"
+        "title/fire06.webp"
         pause.1
-        "title/fire07.png"
+        "title/fire07.webp"
         pause.1
         repeat
 
@@ -352,7 +352,7 @@ image title_ani:
         xanchor 0.5
         yanchor 0.5
         zoom 0.0
-        "title/sparkle.png"
+        "title/sparkle.webp"
         linear 0.8 zoom 1.0
         linear 0.5 zoom 0.0
         pause 5
@@ -365,7 +365,7 @@ image title_ani:
         xanchor 0.5
         yanchor 0.5
         zoom 0.0
-        "title/sparkle.png"
+        "title/sparkle.webp"
         pause 1.3
         linear 0.5 zoom 1.0
         linear 0.5 zoom 0.0
@@ -396,7 +396,7 @@ image title_ani:
 image menu_ani:
     contains:
         zoom 0.5
-        "title/00b.png"
+        "title/00b.webp"
 
     contains:
         alpha 0.8
@@ -424,6 +424,6 @@ define black_magic = Fade(0.2, 0.0, 0.5, color='#7f3590')
 define blackfade = Fade(0.9, 0.5, 1, color='#000000')
 
 define morph = ComposeTransition(Dissolve(0.9), before=Fade(0.1, 0.5, 0.5, color="#fff"), after=Dissolve(0.5))
-define teleport = ImageDissolve("id_teleport.png", 1.0, 0)
+define teleport = ImageDissolve("id_teleport.webp", 1.0, 0)
 
 define vpunch_repeat = Move((0, 10), (0, -10), .5, bounce=True, repeat=True, delay=4.5)

@@ -121,7 +121,7 @@ default ccg2       = 1
 default ccg3       = "gene"
 default loopimage  = None
 default cg_image   = "e2"
-default cg_path    = "images/CG/"+cg_image+".png"
+default cg_path    = "images/CG/"+cg_image+".webp"
 
 # CG or chibis
 default face_on_cg = False # `call her_main(,ypos="head")` will use screen "her_face". Face gets positioned automatically.

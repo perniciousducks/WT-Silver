@@ -143,8 +143,8 @@ style input:
 # Dialogue styles
 style say_window:
     background ConditionSwitch(
-        "interface_style == 'night'", "interface/frames/gray/frame.png",
-        "True", "interface/frames/gold/frame.png"
+        "interface_style == 'night'", "interface/frames/gray/frame.webp",
+        "True", "interface/frames/gold/frame.webp"
     )
     ysize 143
     padding (250, 40, 250, 0)
@@ -153,8 +153,8 @@ style say_window:
 
 style say_who_window is default:
     background ConditionSwitch(
-        "interface_style == 'night'", Frame("interface/frames/gray/namebox.png", 6, 6),
-        "True", Frame("interface/frames/gold/namebox.png", 6, 6)
+        "interface_style == 'night'", Frame("interface/frames/gray/namebox.webp", 6, 6),
+        "True", Frame("interface/frames/gold/namebox.webp", 6, 6)
     )
     xpadding 15
     pos (-15, -50)

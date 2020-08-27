@@ -365,4 +365,4 @@ label a_spaced_out_conversation:
 screen a_spaced_out_conversation_horns():
     zorder 4
 
-    add "images/rooms/room_of_requirement/horns.png" xpos 435 ypos 200 zoom 0.5
+    add "images/rooms/room_of_requirement/horns.webp" xpos 435 ypos 200 zoom 0.5

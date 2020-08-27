@@ -25,7 +25,7 @@ screen susan_main():
         if susan_wear_top and susan_wear_outfit:
             # Outfit
             for i in susan_outfit_GLBL.outfit_layers:
-                add "characters/susan/clothes/"+i+".png"
+                add "characters/susan/clothes/"+i+".webp"
         else:
             # Clothes
             if susan_wear_bra and not (susan_wear_top and (sus_top in ["top_1","top_2","top_3"] or sus_bra in ["bra_chain"])):

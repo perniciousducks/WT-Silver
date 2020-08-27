@@ -25,7 +25,7 @@ init -1 python:
             menu_text = ""
 
             if self.hint:
-                menu_text += "{image=interface/check_True.png}"
+                menu_text += "{image=interface/check_True.webp}"
 
             if self.title:
                 menu_text += "\"{}\"".format(self.title)

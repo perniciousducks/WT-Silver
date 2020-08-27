@@ -154,17 +154,17 @@ init python:
             ret_str = ""
             for c in self.content_characters:
                 if c == "luna":
-                    ret_str += "{image=interface/room_of_req/luna_icon.png}"
+                    ret_str += "{image=interface/room_of_req/luna_icon.webp}"
                 elif c == "hermione":
-                    ret_str += "{image=interface/room_of_req/hermione_icon.png}"
+                    ret_str += "{image=interface/room_of_req/hermione_icon.webp}"
                 elif c == "astoria":
-                    ret_str += "{image=interface/room_of_req/astoria_icon.png}"
+                    ret_str += "{image=interface/room_of_req/astoria_icon.webp}"
                 elif c == "susan":
-                    ret_str += "{image=interface/room_of_req/susan_icon.png}"
+                    ret_str += "{image=interface/room_of_req/susan_icon.webp}"
                 elif c == "cho":
-                    ret_str += "{image=interface/room_of_req/cho_icon.png}"
+                    ret_str += "{image=interface/room_of_req/cho_icon.webp}"
                 elif c == "tonks":
-                    ret_str += "{image=interface/room_of_req/tonks_icon.png}"
+                    ret_str += "{image=interface/room_of_req/tonks_icon.webp}"
                 else:
                     ret_str += "{image=heart_00}"
 
@@ -172,9 +172,9 @@ init python:
 
         def get_image(self):
             if self.unlocked:
-                return Image("interface/unlocked_True.png")
+                return Image("interface/unlocked_True.webp")
             else:
-                return Image("interface/unlocked_False.png")
+                return Image("interface/unlocked_False.webp")
 
         def check_lock(self):
             unlocked = True

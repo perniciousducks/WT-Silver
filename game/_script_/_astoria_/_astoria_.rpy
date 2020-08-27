@@ -122,7 +122,7 @@ label end_astoria_event:
     $ astoria.wear("all")
 
     $ renpy.stop_predict(astoria.get_image())
-    $ renpy.stop_predict("characters/astoria/face/*.png")
+    $ renpy.stop_predict("characters/astoria/face/*.webp")
 
     call music_block
     jump main_room

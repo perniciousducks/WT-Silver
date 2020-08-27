@@ -6,30 +6,30 @@ default susan_flip = 1
 default use_susan_head = False
 
 # Body
-default susan_base     = "characters/susan/body/base/base_01.png"
-default susan_breasts  = "characters/susan/body/base/boobs_nipfix.png"
-default susan_l_arm    = "characters/susan/body/arms/l_arm_back.png"
-default susan_r_arm    = "characters/susan/body/arms/r_arm_thigh.png"
+default susan_base     = "characters/susan/body/base/base_01.webp"
+default susan_breasts  = "characters/susan/body/base/boobs_nipfix.webp"
+default susan_l_arm    = "characters/susan/body/arms/l_arm_back.webp"
+default susan_r_arm    = "characters/susan/body/arms/r_arm_thigh.webp"
 
 # Face
-default susan_mouth  = "characters/susan/face/mouth/base.png"
+default susan_mouth  = "characters/susan/face/mouth/base.webp"
 default sus_mouth    = "base"
 default sus_lipstick = "nude"
 
-default susan_eye     = "characters/susan/face/eyes/base.png"
-default susan_eye_bg  = "characters/susan/face/eyes/_white_.png"
-default susan_pupil   = "characters/susan/face/pupil/mid.png"
+default susan_eye     = "characters/susan/face/eyes/base.webp"
+default susan_eye_bg  = "characters/susan/face/eyes/_white_.webp"
+default susan_pupil   = "characters/susan/face/pupil/mid.webp"
 default sus_eye_color = "green"
 
-default susan_eyebrow = "characters/susan/face/brow/base.png"
+default susan_eyebrow = "characters/susan/face/brow/base.webp"
 
-default susan_cheeks = "characters/susan/face/extras/cheeks_blank.png"
-default susan_tears  = "characters/susan/face/extras/tears_blank.png"
-default susan_emote  = "characters/emotes/blank.png"
+default susan_cheeks = "characters/susan/face/extras/cheeks_blank.webp"
+default susan_tears  = "characters/susan/face/extras/tears_blank.webp"
+default susan_emote  = "characters/emotes/blank.webp"
 
 # Hair
-default susan_hair        = "characters/susan/body/hair/braided_red_base.png"
-default susan_hair_shadow = "characters/susan/body/hair/braided_red_top.png"
+default susan_hair        = "characters/susan/body/hair/braided_red_base.webp"
+default susan_hair_shadow = "characters/susan/body/hair/braided_red_top.webp"
 default sus_hair_style    = "braided"
 default sus_hair_color    = "red"
 
@@ -87,49 +87,49 @@ default susan_wear_tattoos   = False
 default susan_wear_outfit = False
 
 # Top
-default susan_top     = "characters/susan/clothes/tops/top_1.png"
+default susan_top     = "characters/susan/clothes/tops/top_1.webp"
 default sus_top       = "top_1"
 default sus_top_color = "base"
 
 # Bottom
-default susan_bottom     = "characters/susan/clothes/bottoms/skirt_1.png"
+default susan_bottom     = "characters/susan/clothes/bottoms/skirt_1.webp"
 default sus_bottom       = "skirt_1"
 default sus_bottom_color = "base"
 
 # Underwear
-default susan_bra     = "characters/susan/clothes/bras/bra_base.png"
+default susan_bra     = "characters/susan/clothes/bras/bra_base.webp"
 default sus_bra       = "bra_base"
 default sus_bra_color = "base"
 
-default susan_panties     = "characters/susan/clothes/panties/panties_base.png"
+default susan_panties     = "characters/susan/clothes/panties/panties_base.webp"
 default sus_panties       = "panties_base"
 default sus_panties_color = "base"
 
-default susan_onepiece     = "characters/susan/clothes/onepieces/blank.png"
+default susan_onepiece     = "characters/susan/clothes/onepieces/blank.webp"
 default sus_onepiece       = "blank"
 default sus_onepiece_color = "base"
 
-default susan_garterbelt     = "characters/susan/clothes/garterbelts/blank.png"
+default susan_garterbelt     = "characters/susan/clothes/garterbelts/blank.webp"
 default sus_garterbelt       = "blank"
 default sus_garterbelt_color = "base"
 
 
 # Other Clothing
-default susan_neckwear     = "characters/susan/clothes/neckwear/blank.png"
+default susan_neckwear     = "characters/susan/clothes/neckwear/blank.webp"
 default sus_neckwear       = "blank"
 default sus_neckwear_color = "base"
 
 default susan_accs_list = []
 
-default susan_gloves     = "characters/susan/clothes/gloves/blank.png"
+default susan_gloves     = "characters/susan/clothes/gloves/blank.webp"
 default sus_gloves       = "blank"
 default sus_gloves_color = "base"
 
-default susan_stockings     = "characters/susan/clothes/stockings/blank.png"
+default susan_stockings     = "characters/susan/clothes/stockings/blank.webp"
 default sus_stockings       = "blank"
 default sus_stockings_color = "base"
 
-default susan_robe     = "characters/susan/clothes/robe/blank.png"
+default susan_robe     = "characters/susan/clothes/robe/blank.webp"
 default sus_robe       = "blank"
 default sus_robe_color = "base"
 
@@ -137,15 +137,15 @@ default sus_robe_color = "base"
 # Accessories
 default susan_makeup_list = []
 
-default susan_hat     = "characters/susan/clothes/hats/blank.png"
+default susan_hat     = "characters/susan/clothes/hats/blank.webp"
 default sus_hat       = "blank"
 default sus_hat_color = "base"
 
-default susan_glasses     = "characters/susan/clothes/glasses/blank.png"
+default susan_glasses     = "characters/susan/clothes/glasses/blank.webp"
 default sus_glasses       = "blank"
 default sus_glasses_color = "base"
 
-default susan_ears = "characters/susan/clothes/ears/blank.png"
+default susan_ears = "characters/susan/clothes/ears/blank.webp"
 default sus_ears   = "blank"
 
 # Outfits
@@ -154,13 +154,13 @@ default susan_temp_outfit = None
 
 # Cum layers
 default susan_face_covered = False
-default susan_face_cum     = "characters/susan/face/cum/cum_0.png"
+default susan_face_cum     = "characters/susan/face/cum/cum_0.webp"
 
 default susan_body_covered = False
-default susan_body_cum     = "characters/susan/face/cum/cum_3.png"
+default susan_body_cum     = "characters/susan/face/cum/cum_3.webp"
 
 default susan_aftersperm  = False
-default susan_clothes_cum = "characters/susan/face/cum/aftersperm.png"
+default susan_clothes_cum = "characters/susan/face/cum/aftersperm.webp"
 
 # Stats
 default sus_whoring = 0

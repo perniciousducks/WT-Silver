@@ -535,7 +535,7 @@ label hermione_helping_selling_cards:
         m "Sounds like you're doing a great job."
         call her_main("Thanks!","open","happy", cheeks="blush")
         call her_main("Here's your payment.", "open", "base", "base", "mid")
-        call give_reward("You have received twenty gold", "interface/icons/gold.png")
+        call give_reward("You have received twenty gold", "interface/icons/gold.webp")
         $ gold += 20
         m "Well done [hermione_name], fifteen points to Gryffindor."
         $ gryffindor += 15
@@ -562,7 +562,7 @@ label hermione_helping_selling_cards:
         call her_main("I'm fine with them believing they had anything to do with it though.", "smile", "closed", "base", "mid")
         m "How noble of you..."
         call her_main("Here's your payment.", "open", "base", "base", "mid")
-        call give_reward("You have received twenty gold", "interface/icons/gold.png")
+        call give_reward("You have received twenty gold", "interface/icons/gold.webp")
         $ gold += 20
         m "Well done [hermione_name], twenty points to Gryffindor."
         $ gryffindor += 20
@@ -601,7 +601,7 @@ label hermione_helping_selling_cards:
         call her_main("Thank you.", "annoyed", "happyCl", "base", "mid", cheeks="blush")
         call her_main("Anyway...", "base", "base", "base", "mid")
         call her_main("Here's your payment.", "open", "base", "base", "mid")
-        call give_reward("You have received twenty gold", "interface/icons/gold.png")
+        call give_reward("You have received twenty gold", "interface/icons/gold.webp")
         $ gold += 20
         m "Well done [hermione_name], twenty-five points to Gryffindor."
         $ gryffindor += 25
@@ -636,7 +636,7 @@ label hermione_helping_selling_cards:
         call her_main("Anyway...", "normal", "base", "base", "mid")
         call her_main("glad you agree.", "base", "happy", "base", "mid_soft")
         call her_main("Here's your payment.", "open", "base", "base", "mid")
-        call give_reward("You have received twenty gold", "interface/icons/gold.png")
+        call give_reward("You have received twenty gold", "interface/icons/gold.webp")
         $ gold += 20
         m "Well done [hermione_name], twenty-five points to Gryffindor."
         $ gryffindor += 25
@@ -665,7 +665,7 @@ label hermione_helping_selling_cards:
         call her_main("There's no conclusion to be made by just testing a theory once [genie_name].", "normal", "closed", "angry", "mid")
         call her_main("Anyway...", "open", "base", "base", "mid")
         call her_main("Here's your payment.", "open", "base", "base", "mid")
-        call give_reward("You have received twenty gold", "interface/icons/gold.png")
+        call give_reward("You have received twenty gold", "interface/icons/gold.webp")
         $ gold += 20
         m "Well done [hermione_name], thirty points to Gryffindor."
         $ gryffindor += 30

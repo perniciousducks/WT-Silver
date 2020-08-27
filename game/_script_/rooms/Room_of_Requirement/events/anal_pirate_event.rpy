@@ -52,7 +52,7 @@ label anal_pirate_event:
     #     call unlock_clothing(">Congratulations! You have unlocked a new outfit!",hg_outfit_pirate_ITEM)
 
     if not card_exist(unlocked_cards, card_maslab):
-        call give_reward("Ye plundered a special card from 'er cavern.", "images/cardgame/t1/genie_realm/maslab_v1.png")
+        call give_reward("Ye plundered a special card from 'er cavern.", "images/cardgame/t1/genie_realm/maslab_v1.webp")
         $ unlocked_cards += [card_maslab]
 
     call blkfade

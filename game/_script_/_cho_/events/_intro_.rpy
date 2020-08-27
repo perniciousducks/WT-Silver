@@ -915,7 +915,7 @@ label cho_intro_E3:
 
     $ cho_unlocked = True
     $ achievement.unlock("unlockcho", True)
-    call popup("{size=-4}You can now summon Cho into your office.{/size}", "Character unlocked!", "interface/icons/head/cho.png")
+    call popup("{size=-4}You can now summon Cho into your office.{/size}", "Character unlocked!", "interface/icons/head/cho.webp")
 
     # End of Intro.
     $ hermione_busy = True

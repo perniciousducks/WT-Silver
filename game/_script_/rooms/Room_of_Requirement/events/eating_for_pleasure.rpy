@@ -295,20 +295,20 @@ screen fireplace_greenfire():
 
 ### Fireplace ###
 image fireplace_greenfire: #Fireplace fire.
-    im.MatrixColor("images/rooms/_objects_/fireplace/fireplace_fire_01.png", im.matrix.hue(100))
+    im.MatrixColor("images/rooms/_objects_/fireplace/fireplace_fire_01.webp", im.matrix.hue(100))
     pause.1
-    im.MatrixColor("images/rooms/_objects_/fireplace/fireplace_fire_02.png", im.matrix.hue(100))
+    im.MatrixColor("images/rooms/_objects_/fireplace/fireplace_fire_02.webp", im.matrix.hue(100))
     pause.1
-    im.MatrixColor("images/rooms/_objects_/fireplace/fireplace_fire_03.png", im.matrix.hue(100))
+    im.MatrixColor("images/rooms/_objects_/fireplace/fireplace_fire_03.webp", im.matrix.hue(100))
     pause.1
-    im.MatrixColor("images/rooms/_objects_/fireplace/fireplace_fire_04.png", im.matrix.hue(100))
+    im.MatrixColor("images/rooms/_objects_/fireplace/fireplace_fire_04.webp", im.matrix.hue(100))
     pause.1
-    im.MatrixColor("images/rooms/_objects_/fireplace/fireplace_fire_05.png", im.matrix.hue(100))
+    im.MatrixColor("images/rooms/_objects_/fireplace/fireplace_fire_05.webp", im.matrix.hue(100))
     pause.1
-    im.MatrixColor("images/rooms/_objects_/fireplace/fireplace_fire_06.png", im.matrix.hue(100))
+    im.MatrixColor("images/rooms/_objects_/fireplace/fireplace_fire_06.webp", im.matrix.hue(100))
     pause.1
-    im.MatrixColor("images/rooms/_objects_/fireplace/fireplace_fire_07.png", im.matrix.hue(100))
+    im.MatrixColor("images/rooms/_objects_/fireplace/fireplace_fire_07.webp", im.matrix.hue(100))
     pause.1
-    im.MatrixColor("images/rooms/_objects_/fireplace/fireplace_fire_08.png", im.matrix.hue(100))
+    im.MatrixColor("images/rooms/_objects_/fireplace/fireplace_fire_08.webp", im.matrix.hue(100))
     pause.1
     repeat

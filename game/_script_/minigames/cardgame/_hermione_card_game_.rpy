@@ -186,7 +186,7 @@ label hermione_third_duel:
         call her_main("Fine...", "angry", "narrow", "base", "mid_soft")
         call her_main("Here...", "mad", "narrow", "base", "mid_soft")
         $ unlocked_cards += [card_her_librarian]
-        call give_reward("You have received a card!", "images/cardgame/t1/hermione/her_librarian_v1.png")
+        call give_reward("You have received a card!", "images/cardgame/t1/hermione/her_librarian_v1.webp")
         $ her_third_win = True
         $ tokens += 3
     else:
@@ -277,7 +277,7 @@ label hermione_random_duel:
             g9 "That's fine, wouldn't want you to go there looking as defeated as you are at the moment."
             call her_main("...", "normal", "happy", "base", "R", cheeks="blush")
             call her_main("Did you need anything else?", "open", "base", "base", "mid_soft", cheeks="blush")
-            call give_reward("Hermione can now work by helping the twins promote the card game.", "interface/icons/icon_gambler_hat.png")
+            call give_reward("Hermione can now work by helping the twins promote the card game.", "interface/icons/icon_gambler_hat.webp")
             jump hermione_requests
         "-Ask for a blowjob instead-":
             jump hg_wager_bj
@@ -344,15 +344,15 @@ label her_duel_cancel:
 
 screen genie_vs_hermione():
     zorder 15
-    add "images/cardgame/VS/background_twins.png" xalign 0.5 yalign 0.5
+    add "images/cardgame/VS/background_twins.webp" xalign 0.5 yalign 0.5
 screen move_hermione():
     zorder 16
-    add "images/cardgame/VS/hermione_01.png" at move_in(300, 0.5)
+    add "images/cardgame/VS/hermione_01.webp" at move_in(300, 0.5)
 
 screen genie_vs_hermione_smile():
     zorder 16
-    add "images/cardgame/VS/genie_03.png"
-    add "images/cardgame/VS/hermione_02.png"
+    add "images/cardgame/VS/genie_03.webp"
+    add "images/cardgame/VS/hermione_02.webp"
     text "Click to continue" xalign 0.5 yalign 1.0
 
 init python:

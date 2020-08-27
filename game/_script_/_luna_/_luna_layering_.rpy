@@ -14,13 +14,13 @@ screen luna_main():
 
         add luna_base
 
-        add "characters/luna/body/arms/left_"+str(luna_l_arm)+".png"
+        add "characters/luna/body/arms/left_"+str(luna_l_arm)+".webp"
         add luna_breasts
-        add "characters/luna/body/arms/right_"+str(luna_r_arm)+".png"
+        add "characters/luna/body/arms/right_"+str(luna_r_arm)+".webp"
 
         add luna_hair
         add luna_mouth
-        add "characters/luna/face/eyes/_white_.png"
+        add "characters/luna/face/eyes/_white_.webp"
         add luna_pupil
         add luna_eye
         add luna_eyebrow
@@ -29,12 +29,12 @@ screen luna_main():
         add luna_hair_shadow
 
         if luna_wear_cum_under:
-            add "characters/luna/body/cum/cum_"+str(luna_cum)+".png"
+            add "characters/luna/body/cum/cum_"+str(luna_cum)+".webp"
 
         if luna_wear_outfit and luna_wear_top:
             # Outfit
             for i in luna_outfit_GLBL.outfit_layers:
-                add "characters/luna/clothes/"+i+".png" alpha lun_outfit_transp
+                add "characters/luna/clothes/"+i+".webp" alpha lun_outfit_transp
         else:
             # Clothes
             if luna_wear_bra and not luna_wear_top:
@@ -62,22 +62,22 @@ screen luna_main():
         if luna_wear_accs:
             add luna_accs
 
-        add "characters/luna/body/arms/left_"+str(luna_l_arm)+"_2.png" # Left arm
-        add "characters/luna/body/arms/right_"+str(luna_r_arm)+"_2.png" # Right arm
+        add "characters/luna/body/arms/left_"+str(luna_l_arm)+"_2.webp" # Left arm
+        add "characters/luna/body/arms/right_"+str(luna_r_arm)+"_2.webp" # Right arm
 
         if luna_wear_cum:
-            add "characters/luna/body/cum/cum_"+str(luna_cum)+".png"
+            add "characters/luna/body/cum/cum_"+str(luna_cum)+".webp"
 
         # Extra stuff (must be part of fixed so it flips correctly...)
-        if genie_base == "characters/genie/base/hard.png" and renpy.get_screen("genie_main"):
+        if genie_base == "characters/genie/base/hard.webp" and renpy.get_screen("genie_main"):
             if not luna_wear_bottom and not luna_wear_panties:
                 # Add the right leg cover for the dick. What's a thigh job called again?
-                add "characters/luna/body/legs/right_1.png"
+                add "characters/luna/body/legs/right_1.webp"
 
     # Extra stuff
-    if genie_base == "characters/genie/base/hard.png" and renpy.get_screen("genie_main"):
+    if genie_base == "characters/genie/base/hard.webp" and renpy.get_screen("genie_main"):
         # Genie's dick
-        add "characters/genie/dick_1.png" xpos genie_xpos ypos genie_ypos
+        add "characters/genie/dick_1.webp" xpos genie_xpos ypos genie_ypos
         if luna_wear_cum:
             # Cumshot
-            add "characters/luna/body/arms/right_4_2.png" xpos 390 ypos 0 xzoom luna_flip zoom 0.5
+            add "characters/luna/body/arms/right_4_2.webp" xpos 390 ypos 0 xzoom luna_flip zoom 0.5

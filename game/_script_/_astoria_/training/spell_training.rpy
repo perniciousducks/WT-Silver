@@ -1746,7 +1746,7 @@ screen astoria_wand_drop():
     tag wand
     zorder 2
 
-    add "characters/astoria/chibis/wand.png":
+    add "characters/astoria/chibis/wand.webp":
         at transform:
             zoom 0.35
             rotate -25

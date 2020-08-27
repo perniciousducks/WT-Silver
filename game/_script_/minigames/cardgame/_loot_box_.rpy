@@ -10,7 +10,7 @@ screen card_lootbox():
                 style "empty"
                 xpos 110+125*i
                 ypos 116
-                add "interface/achievements/glow.png" align (0.5, 0.5) zoom 0.5 alpha 0.7 at rotate_circular
+                add "interface/achievements/glow.webp" align (0.5, 0.5) zoom 0.5 alpha 0.7 at rotate_circular
         use cardrender(card_loot[i],228+125*i,200, interact=False, cardzoom=0.375)
 
     use ctc

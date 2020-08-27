@@ -22,13 +22,13 @@ transform OBJbutterfly(hue=random.randint(0, 359)):
             ease_circ 1.0 rotate 15
             repeat
         parallel:
-            im.MatrixColor("images/rooms/quidditch_pitch/butterfly/0.png", im.matrix.hue(hue)) with d3
+            im.MatrixColor("images/rooms/quidditch_pitch/butterfly/0.webp", im.matrix.hue(hue)) with d3
             pause .3
-            im.MatrixColor("images/rooms/quidditch_pitch/butterfly/1.png", im.matrix.hue(hue)) with d3
+            im.MatrixColor("images/rooms/quidditch_pitch/butterfly/1.webp", im.matrix.hue(hue)) with d3
             pause .3
-            im.MatrixColor("images/rooms/quidditch_pitch/butterfly/2.png", im.matrix.hue(hue)) with d3
+            im.MatrixColor("images/rooms/quidditch_pitch/butterfly/2.webp", im.matrix.hue(hue)) with d3
             pause .3
-            im.MatrixColor("images/rooms/quidditch_pitch/butterfly/1.png", im.matrix.hue(hue)) with d3
+            im.MatrixColor("images/rooms/quidditch_pitch/butterfly/1.webp", im.matrix.hue(hue)) with d3
             pause .3
             repeat
     choice:
@@ -49,13 +49,13 @@ transform OBJbutterfly(hue=random.randint(0, 359)):
             ease_circ 1.0 rotate -15
             repeat
         parallel:
-            im.MatrixColor("images/rooms/quidditch_pitch/butterfly/0.png", im.matrix.hue(hue)) with d3
+            im.MatrixColor("images/rooms/quidditch_pitch/butterfly/0.webp", im.matrix.hue(hue)) with d3
             pause .3
-            im.MatrixColor("images/rooms/quidditch_pitch/butterfly/1.png", im.matrix.hue(hue)) with d3
+            im.MatrixColor("images/rooms/quidditch_pitch/butterfly/1.webp", im.matrix.hue(hue)) with d3
             pause .3
-            im.MatrixColor("images/rooms/quidditch_pitch/butterfly/2.png", im.matrix.hue(hue)) with d3
+            im.MatrixColor("images/rooms/quidditch_pitch/butterfly/2.webp", im.matrix.hue(hue)) with d3
             pause .3
-            im.MatrixColor("images/rooms/quidditch_pitch/butterfly/1.png", im.matrix.hue(hue)) with d3
+            im.MatrixColor("images/rooms/quidditch_pitch/butterfly/1.webp", im.matrix.hue(hue)) with d3
             pause .3
             repeat
     repeat
@@ -64,7 +64,7 @@ transform OBJcloud(start=(random.randint(270, 800), random.randint(60, 130)), sp
     parallel:
         zoom random.uniform(0.6, 1.0)
         pos start
-        "images/rooms/_weather_/cloud_small.png"
+        "images/rooms/_weather_/cloud_small.webp"
         linear speed xpos 800
         xpos 270
         linear speed xpos start[0]

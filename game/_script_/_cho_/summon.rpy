@@ -22,7 +22,7 @@ label summon_cho:
     menu:
 
         # Main Matches
-        "-Start Hufflepuff Match-" (icon="interface/icons/small/huff.png") if (cho_tier == 1 and hufflepuff_match == "ready"):
+        "-Start Hufflepuff Match-" (icon="interface/icons/small/huff.webp") if (cho_tier == 1 and hufflepuff_match == "ready"):
             if cho_reputation == 0:
                 m "(If I want Cho to do anything in public with those {i}Muffletuffs{/i} I better do it before the Match.)"
                 m "(Although maybe not...)"
@@ -34,7 +34,7 @@ label summon_cho:
                         jump cho_requests
             jump start_hufflepuff_match
 
-        "-Start Slytherin Match-" (icon="interface/icons/small/slyt.png") if (cho_tier == 2 and slytherin_match == "ready" and cho_quid.E7_complete):
+        "-Start Slytherin Match-" (icon="interface/icons/small/slyt.webp") if (cho_tier == 2 and slytherin_match == "ready" and cho_quid.E7_complete):
             if cho_reputation <= 3:
                 m "(If I want Cho to do anything in public with those {i}Slythershits{/i} I better do it before the Match.)"
                 m "(Although maybe not...)"
@@ -46,12 +46,12 @@ label summon_cho:
                         jump cho_requests
             jump start_slytherin_match
 
-        #"-Start Gryffindor Match-" (icon="interface/icons/small/gryf.png") if (cho_tier == 3 and gryffindor_match == "ready"):
+        #"-Start Gryffindor Match-" (icon="interface/icons/small/gryf.webp") if (cho_tier == 3 and gryffindor_match == "ready"):
         #    jump start_gryffindor_match
 
 
         # Talk
-        "-Talk-" (icon="interface/icons/small/talk.png"):
+        "-Talk-" (icon="interface/icons/small/talk.webp"):
             if not cho_chatted:
                 if cho_mood <= 3:
                     $ cho_chatted = True
@@ -64,7 +64,7 @@ label summon_cho:
                 jump cho_talk
 
         # Quidditch Training
-        "-Training-" (icon="interface/icons/small/quidditch.png") if cho_tier < 3 and not cho_quid.lock_training:
+        "-Training-" (icon="interface/icons/small/quidditch.webp") if cho_tier < 3 and not cho_quid.lock_training:
             if cho_mood > 0:
                 m "Ready to get back to training?"
                 if cho_mood >= 5:
@@ -76,25 +76,25 @@ label summon_cho:
 
             jump cho_training
 
-        "{color=[menu_disabled]}-Training-{/color}" (icon="interface/icons/small/quidditch.png") if cho_tier < 3 and cho_quid.lock_training:
+        "{color=[menu_disabled]}-Training-{/color}" (icon="interface/icons/small/quidditch.webp") if cho_tier < 3 and cho_quid.lock_training:
             m "(She's as ready as one can be.)"
             jump cho_requests
 
-        "-Sexual favours-" (icon="interface/icons/small/condom.png") if cho_favors_unlocked:
+        "-Sexual favours-" (icon="interface/icons/small/condom.webp") if cho_favors_unlocked:
             if cho_mood > 0:
                 call cho_main("I'm sorry, [cho_genie_name]. But I don't feel like it today...", "upset", "base", "worried", "mid")
                 jump cho_requests
             else:
                 jump cho_favor_menu
 
-        "{color=[menu_disabled]}-Sexual favours-{/color}" (icon="interface/icons/small/condom.png") if not cho_favors_unlocked:
+        "{color=[menu_disabled]}-Sexual favours-{/color}" (icon="interface/icons/small/condom.webp") if not cho_favors_unlocked:
             if cho_tier == 1:
                 m "(I need to help her with her Quidditch training, before I can ask for something like this.)"
             else:
                 m "(I should ask her about the next Quidditch match first. See who we're up against...)"
             jump cho_requests
 
-        "-Wardrobe-" (icon="interface/icons/small/wardrobe.png") if cho_wardrobe_unlocked:
+        "-Wardrobe-" (icon="interface/icons/small/wardrobe.webp") if cho_wardrobe_unlocked:
             hide screen cho_main with d1
             $ screenshot_image = ScreenshotImage.capture()
             $ renpy.call_in_new_context("wardrobe", "cho_main")
@@ -105,7 +105,7 @@ label summon_cho:
             call nar(">You haven't unlocked this feature yet.")
             jump cho_requests
 
-        "-Gifts-" (icon="interface/icons/small/gift.png") if not gave_cho_gift:
+        "-Gifts-" (icon="interface/icons/small/gift.webp") if not gave_cho_gift:
             call gift_menu
             jump cho_requests
 
@@ -133,7 +133,7 @@ label cho_favor_menu:
     call update_cho_favors
 
     menu:
-        "-Personal Favours-" (icon="interface/icons/small/heart_red.png"):
+        "-Personal Favours-" (icon="interface/icons/small/heart_red.webp"):
             label .personal:
             python:
                 menu_choices = []
@@ -159,14 +159,14 @@ label cho_favor_menu:
             else:
                 $ renpy.jump(result)
 
-        "{color=[menu_disabled]}-Public Requests-{/color}" (icon="interface/icons/small/star_yellow.png") if not daytime or not cho_requests_unlocked:
+        "{color=[menu_disabled]}-Public Requests-{/color}" (icon="interface/icons/small/star_yellow.webp") if not daytime or not cho_requests_unlocked:
             if not cho_requests_unlocked:
                 call nar(">You haven't unlocked this feature yet.")
             elif not daytime:
                 call nar(">Public requests are available during the daytime only.")
             jump cho_favor_menu
 
-        "-Public Requests-" (icon="interface/icons/small/star_yellow.png") if daytime and cho_requests_unlocked:
+        "-Public Requests-" (icon="interface/icons/small/star_yellow.webp") if daytime and cho_requests_unlocked:
             jump cho_requests_menu
 
         "-Never mind-":
@@ -226,7 +226,7 @@ label cho_talk:
     menu:
         #"-Working-":
 
-        "-Discuss Quidditch Training-" (icon="interface/icons/small/quidditch.png") if not cho_quid.lock_training:
+        "-Discuss Quidditch Training-" (icon="interface/icons/small/quidditch.webp") if not cho_quid.lock_training:
             if cho_tier == 1:
                 call cc_ht_talk
             elif cho_tier == 2:

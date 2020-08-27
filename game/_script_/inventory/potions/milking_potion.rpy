@@ -219,7 +219,7 @@ label potion_scene_11_2:
     if hermione_perm_expand_breasts or hermione_expand_breasts:
         pass
     else:
-        $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded.png"
+        $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded.webp"
 
     call her_main("", "shock", "wide", "base", "stare",cheeks="blush",trans=hpunch)
     pause.5
@@ -230,14 +230,14 @@ label potion_scene_11_2:
     m "This is all perfectly normal."
     call her_main("please...", "disgust", "wide", "worried", "shocked",cheeks="blush")
 
-    $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_large.png"
+    $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_large.webp"
     with hpunch
     pause.5
 
     call nar(">Hermione's breasts start to visibly swell again.")
     call her_main("ughhh...", "grin", "narrow", "annoyed", "up")
 
-    $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_xlarge.png"
+    $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_xlarge.webp"
     with hpunch
     pause.5
 
@@ -432,7 +432,7 @@ label potion_scene_11_3:
     if hermione_perm_expand_breasts or hermione_expand_breasts:
         pass
     else:
-        $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded.png"
+        $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded.webp"
         with hpunch
         pause.5
 
@@ -442,14 +442,14 @@ label potion_scene_11_3:
     m "mmmm, just like that."
     call her_main("(this is so weird...)", "angry", "narrow", "base", "down")
 
-    $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_large.png"
+    $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_large.webp"
     with hpunch
     pause.5
 
     call her_main("!!!", "angry", "wide", "base", "stare")
     call nar(">Hermione's breasts start to visibly swell again.")
 
-    $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_xlarge.png"
+    $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_xlarge.webp"
     with hpunch
     pause.5
 
@@ -681,7 +681,7 @@ label potion_scene_11_3:
 
         call nar(">You slowly remove the milk filled harness. There are red marks, surrounding her tender-looking nipples, where the cups were.")
         call set_her_action("none","skip_update")
-        $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_xlarge.png"
+        $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_xlarge.webp"
         m "Hmmm... maybe we overdid it a little today."
         call hide_blkfade
 
@@ -722,7 +722,7 @@ label potion_scene_11_3:
 
         hide screen hermione_main
         call set_her_action("lift_skirt")
-        $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_xlarge.png"
+        $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_xlarge.webp"
         show screen hermione_main
         with d3
         pause.5
@@ -731,7 +731,7 @@ label potion_scene_11_3:
         $ hermione.strip("bottom")
         $ hermione.strip("panties")
         call set_her_action("none","skip_update")
-        $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_xlarge.png"
+        $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_xlarge.webp"
         show screen hermione_main
         with d3
         pause.5

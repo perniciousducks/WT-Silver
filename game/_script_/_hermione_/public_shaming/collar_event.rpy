@@ -165,7 +165,7 @@ label slut_scene: #Locked to her being your slut
     m "That did it. Here it comes!"
     ">You pull out of her mouth and start pumping your cock."
     call her_chibi_scene("bj_cum_out")
-    $ u_sperm = "characters/hermione/face/auto_07.png"
+    $ u_sperm = "characters/hermione/face/auto_07.webp"
     $ uni_sperm = True
     m "Here's your reward you filthy fucking cumslut!"
     ">You explode across her face."

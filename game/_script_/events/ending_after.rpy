@@ -342,7 +342,7 @@ screen big_bang(bang=False):
     add Solid("#000")
 
     showif bang:
-        add "images/misc/bang.png":
+        add "images/misc/bang.webp":
             at transform:
                 zoom 0.0
                 anchor (0.5, 0.5)

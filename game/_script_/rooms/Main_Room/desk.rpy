@@ -2,12 +2,12 @@ screen letter_on_desk():
     tag letter_on_desk
     zorder 3
 
-    add "/images/rooms/_objects_/desk/letter.png" zoom 0.5 xpos 334 ypos 356
+    add "/images/rooms/_objects_/desk/letter.webp" zoom 0.5 xpos 334 ypos 356
 
 screen plant_on_desk():
     zorder 3
 
-    add "/images/rooms/_objects_/desk/plant.png" zoom 0.5 xpos 364 ypos 306
+    add "/images/rooms/_objects_/desk/plant.webp" zoom 0.5 xpos 364 ypos 306
 
 label desk:
     if day == 1:
@@ -184,39 +184,39 @@ screen desk_menu():
     zorder 5
 
     #Background
-    add "interface/desk/_bg_.png"
+    add "interface/desk/_bg_.webp"
 
     if map_unlocked:
         use map_screen
 
     # Ugly hands
-    # add "interface/desk/_hands_.png" xpos 0 ypos -30
+    # add "interface/desk/_hands_.webp" xpos 0 ypos -30
 
     use crystal_ball
     use watch
 
     #Book
     if store_intro_done:
-        add "interface/desk/book.png" xalign 1.0 xpos 1080 ypos 0
+        add "interface/desk/book.webp" xalign 1.0 xpos 1080 ypos 0
         imagebutton:
             xpos 1080
             ypos 0
             xalign 1.0
-            idle "interface/desk/book.png"
-            hover "interface/desk/book_hover.png"
+            idle "interface/desk/book.webp"
+            hover "interface/desk/book_hover.webp"
             hovered SetVariable("ball_hint", "book")
             keysym hkey_book
             unhovered SetVariable("ball_hint", None)
             action Return("read_book_menu")
 
     #Tissue Box
-    add "interface/desk/tissues.png" xalign 1.0 xpos 1080 ypos 320
+    add "interface/desk/tissues.webp" xalign 1.0 xpos 1080 ypos 320
     imagebutton:
         xpos 1080
         ypos 320
         xalign 1.0
-        idle "interface/desk/tissues.png"
-        hover "interface/desk/tissues_hover.png"
+        idle "interface/desk/tissues.webp"
+        hover "interface/desk/tissues_hover.webp"
         hovered SetVariable("ball_hint", "jerk_off")
         keysym hkey_fap
         unhovered SetVariable("ball_hint", None)
@@ -228,8 +228,8 @@ screen desk_menu():
             xpos -10
             ypos 0
             xalign 0.0
-            idle "interface/desk/work.png"
-            hover "interface/desk/work_hover.png"
+            idle "interface/desk/work.webp"
+            hover "interface/desk/work_hover.webp"
             hovered SetVariable("ball_hint", "work")
             keysym hkey_work
             unhovered SetVariable("ball_hint", None)
@@ -242,8 +242,8 @@ screen desk_menu():
             ypos 600
             xalign 0.0
             yalign 1.0
-            idle "interface/desk/cards.png"
-            hover "interface/desk/cards_hover.png"
+            idle "interface/desk/cards.webp"
+            hover "interface/desk/cards_hover.webp"
             hovered SetVariable("ball_hint", "cards")
             unhovered SetVariable("ball_hint", None)
             action Return("deck_builder")
@@ -254,15 +254,15 @@ screen desk_menu():
         yanchor 1.0
         xpos 510
         ypos 600
-        idle "interface/desk/exit_mask.png"
-        hover "interface/desk/exit.png"
+        idle "interface/desk/exit_mask.webp"
+        hover "interface/desk/exit.webp"
         hovered SetVariable("ball_hint", "exit")
         unhovered SetVariable("ball_hint", None)
         action Return("Close")
 
     #Night Overlay
     if not daytime:
-        add "interface/desk/_night_overlay_.png"
+        add "interface/desk/_night_overlay_.webp"
 
     use close_button
 
@@ -272,19 +272,19 @@ screen crystal_ball():
 
     zorder 8
 
-    add "interface/desk/crystal_ball.png" xpos 268 ypos 0
+    add "interface/desk/crystal_ball.webp" xpos 268 ypos 0
     if not ball_hint == None:
-        add "interface/desk/hints/glow.png" xpos 268+40
-        add "interface/desk/hints/"+str(ball_hint)+ ".png" xpos 268+125 xanchor 0.5
+        add "interface/desk/hints/glow.webp" xpos 268+40
+        add "interface/desk/hints/"+str(ball_hint)+ ".webp" xpos 268+125 xanchor 0.5
 
 screen watch():
     #Day/Night Clock
-    add "interface/desk/watch.png" xpos 603 ypos 0
+    add "interface/desk/watch.webp" xpos 603 ypos 0
     imagebutton:
         xpos 603
         ypos 0
-        idle "interface/desk/watch.png"
-        hover "interface/desk/watch_hover.png"
+        idle "interface/desk/watch.webp"
+        hover "interface/desk/watch_hover.webp"
         unhovered SetVariable("ball_hint", None)
         keysym hkey_sleep
         if daytime:
@@ -298,21 +298,21 @@ screen watch():
     $ watch_y = 35
 
     if weather == "rain":
-        add "interface/desk/watch/rain.png" xpos watch_x ypos watch_y
+        add "interface/desk/watch/rain.webp" xpos watch_x ypos watch_y
     elif weather in ("snow", "blizzard"):
-        add "interface/desk/watch/snow.png" xpos watch_x ypos watch_y
+        add "interface/desk/watch/snow.webp" xpos watch_x ypos watch_y
     elif weather == "storm":
-        add "interface/desk/watch/storm.png" xpos watch_x ypos watch_y
+        add "interface/desk/watch/storm.webp" xpos watch_x ypos watch_y
     else:
         if daytime:
-            add "interface/desk/watch/sun.png" xpos watch_x ypos watch_y
+            add "interface/desk/watch/sun.webp" xpos watch_x ypos watch_y
         else:
-            add "interface/desk/watch/moon.png" xpos watch_x ypos watch_y
+            add "interface/desk/watch/moon.webp" xpos watch_x ypos watch_y
 
     if daytime:
-        add "interface/desk/watch/day.png" xpos watch_x+40 ypos watch_y+6 xanchor 0.5
+        add "interface/desk/watch/day.webp" xpos watch_x+40 ypos watch_y+6 xanchor 0.5
     else:
-        add "interface/desk/watch/night.png" xpos watch_x+40 ypos watch_y+6 xanchor 0.5
+        add "interface/desk/watch/night.webp" xpos watch_x+40 ypos watch_y+6 xanchor 0.5
 
 label paperwork:
     if letter_min_report in letter_queue_list:

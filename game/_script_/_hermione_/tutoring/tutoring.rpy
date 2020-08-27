@@ -1048,7 +1048,7 @@ label hg_tutor_E10:
         call set_her_action("None")
         pause .5
 
-        $ u_tears_pic = "characters/hermione/face/e_her_tears_02b.png"
+        $ u_tears_pic = "characters/hermione/face/e_her_tears_02b.webp"
         call ctc
 
         call her_main("And mine is to touch another girl's pussy.", "silly", "narrow", "base", "up", cheeks="blush")
@@ -1227,7 +1227,7 @@ label hg_tutor_E11:
     call play_sound("slap_1")
     with hpunch
 
-    $ u_tears_pic = "characters/hermione/face/e_her_tears_03b.png"
+    $ u_tears_pic = "characters/hermione/face/e_her_tears_03b.webp"
     call her_main("*Aaaah* {heart}", "open_wide_tongue", "narrow", "base", "up", cheeks="blush")
 
     call play_sound("boing")
@@ -1236,7 +1236,7 @@ label hg_tutor_E11:
     with hpunch
 
     m "You can touch yourself too, you know."
-    $ u_tears_pic = "characters/hermione/face/e_her_tears_03d.png"
+    $ u_tears_pic = "characters/hermione/face/e_her_tears_03d.webp"
     call her_main("I can't.", "open_wide_tongue", "narrow", "base", "up", cheeks="blush")
     her "{size=-2}(If I do, I will lose what little dignity I have left){/size}"
     call her_main("{size=-2}(But tonight...){/size}", "open_wide_tongue", "narrow", "base", "up", cheeks="blush")
@@ -1570,9 +1570,9 @@ label hg_tutor_E13:
     #pause .3
 
     #if h_robe in gryffindor_robe_list:
-    #    $ hermione_robe = "characters/hermione/clothes/robe/robe_2_g.png"
+    #    $ hermione_robe = "characters/hermione/clothes/robe/robe_2_g.webp"
     #elif h_robe in slytherin_robe_list:
-    #    $ hermione_robe = "characters/hermione/clothes/robe/robe_2_s.png"
+    #    $ hermione_robe = "characters/hermione/clothes/robe/robe_2_s.webp"
     #call set_her_action("naked") #Removes all clothes.
     #$ hermione_wear_robe = True
 
@@ -1593,9 +1593,9 @@ label hg_tutor_E13:
 
     #hide screen hermione_main
     #if h_robe in gryffindor_robe_list:
-    #    $ hermione_robe = "characters/hermione/clothes/robe/robe_3_g.png"
+    #    $ hermione_robe = "characters/hermione/clothes/robe/robe_3_g.webp"
     #elif h_robe in slytherin_robe_list:
-    #    $ hermione_robe = "characters/hermione/clothes/robe/robe_3_s.png"
+    #    $ hermione_robe = "characters/hermione/clothes/robe/robe_3_s.webp"
     #call her_main("", "open", "happy", "base", "mid", cheeks="blush")
     #call ctc
 
@@ -1606,9 +1606,9 @@ label hg_tutor_E13:
 
     #hide screen hermione_main
     #if h_robe in gryffindor_robe_list:
-    #    $ hermione_robe = "characters/hermione/clothes/robe/robe_open_g.png"
+    #    $ hermione_robe = "characters/hermione/clothes/robe/robe_open_g.webp"
     #elif h_robe in slytherin_robe_list:
-    #    $ hermione_robe = "characters/hermione/clothes/robe/robe_open_s.png"
+    #    $ hermione_robe = "characters/hermione/clothes/robe/robe_open_s.webp"
     #call her_main("", "base", "closed", "base", "mid", cheeks="blush", trans=d5)
     #call ctc
 
@@ -1617,9 +1617,9 @@ label hg_tutor_E13:
 
     #hide screen hermione_main
     #if h_robe in gryffindor_robe_list:
-    #    $ hermione_robe = "characters/hermione/clothes/robe/robe_3_g.png"
+    #    $ hermione_robe = "characters/hermione/clothes/robe/robe_3_g.webp"
     #elif h_robe in slytherin_robe_list:
-    #    $ hermione_robe = "characters/hermione/clothes/robe/robe_3_s.png"
+    #    $ hermione_robe = "characters/hermione/clothes/robe/robe_3_s.webp"
 
 
     call her_main("Alright then, can we start the lesson now?", "smile", "base", "angry", "mid", cheeks="blush")

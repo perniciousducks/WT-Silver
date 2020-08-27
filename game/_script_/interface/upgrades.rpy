@@ -132,7 +132,7 @@ screen upgrades_menu(xx, yy):
         xsize 207
         ysize 454
 
-        add "interface/achievements/"+interface_color+"/panel_left.png"
+        add "interface/achievements/"+interface_color+"/panel_left.webp"
 
         vbox:
             pos (6, 384)
@@ -140,7 +140,7 @@ screen upgrades_menu(xx, yy):
             frame:
                 style "empty"
                 textbutton "Show locked:" style "empty" xsize 195 ysize 32 text_align (0.4, 0.5) text_size 12 hover_background btn_hover action ToggleVariable("upgrades_show_locked", True, False)
-                add "interface/frames/"+str(interface_color)+"/check_"+str(upgrades_show_locked).lower()+".png" xalign 0.8 ypos 4
+                add "interface/frames/"+str(interface_color)+"/check_"+str(upgrades_show_locked).lower()+".webp" xalign 0.8 ypos 4
         vbox:
             pos (6, 6)
             for category in upgrades_categories_sorted:
@@ -156,21 +156,21 @@ screen upgrades_menu(xx, yy):
                                 text_xanchor 0.5
                                 text_size 20
                                 if current_category == category:
-                                    background "interface/achievements/"+interface_color+"/highlight_left_b.png"
+                                    background "interface/achievements/"+interface_color+"/highlight_left_b.webp"
                                 else:
-                                    hover_background "interface/achievements/"+interface_color+"/highlight_left_b.png"
+                                    hover_background "interface/achievements/"+interface_color+"/highlight_left_b.webp"
                                     action Return(["category", category])
 
-                            add "interface/achievements/"+interface_color+"/spacer_left.png"
-                        add "interface/achievements/"+interface_color+"/iconbox.png" yoffset 1
-                        $ image_zoom = crop_image_zoom("interface/icons/head/"+upgrades_dict.get(category).get("ico")+".png", 42, 42)
+                            add "interface/achievements/"+interface_color+"/spacer_left.webp"
+                        add "interface/achievements/"+interface_color+"/iconbox.webp" yoffset 1
+                        $ image_zoom = crop_image_zoom("interface/icons/head/"+upgrades_dict.get(category).get("ico")+".webp", 42, 42)
 
                         frame:
                             style "empty"
                             xsize 42
                             ysize 42
                             add image_zoom[0] zoom image_zoom[1] align (0.5, 1.0) offset (3, 4)
-                        add "interface/achievements/glass_iconbox.png" pos (3, 3)
+                        add "interface/achievements/glass_iconbox.webp" pos (3, 3)
 
 screen upgrades_menuitem(xx, yy):
     tag upgrades_menuitem
@@ -182,16 +182,16 @@ screen upgrades_menuitem(xx, yy):
         pos (xx+217, yy-53)
         xysize (560, 507)
 
-        add "interface/achievements/"+interface_color+"/panel.png"
+        add "interface/achievements/"+interface_color+"/panel.webp"
 
         text "Outfit Upgrades" size 22 xalign 0.5 ypos 65
 
         hbox:
             spacing 5
             pos (18, 70)
-            add "interface/icons/small/gold.png"
+            add "interface/icons/small/gold.webp"
             text str(gold) size 15 ypos 4
-            add "interface/icons/small/tonks.png"
+            add "interface/icons/small/tonks.webp"
             text str(ton_friendship) size 15 ypos 4
 
 
@@ -229,7 +229,7 @@ screen upgrades_menuitem(xx, yy):
                                     if x < len(i):
                                         add Flatten(i[x].get_image()) align (1.0, 1.0) zoom 0.125 alpha (1.0 if ((gold >= actual_price and ton_friendship >= favor_req) or i[x].unlocked) else 0.5)
                                         if i[x].unlocked:
-                                            add "interface/topbar/icon_check.png" zoom 0.75 align (0.85, 1.0)
+                                            add "interface/topbar/icon_check.webp" zoom 0.75 align (0.85, 1.0)
                                         else:
                                             button:
                                                 style "empty"
@@ -244,4 +244,4 @@ screen upgrades_menuitem(xx, yy):
                                         text ("" if (linear_price <= 0) else str(favor_req+25)+"{unicode}\u2764{/unicode}") color ("#b20000" if (ton_friendship < favor_req+25) else "#402313") size 14 align (0.5, 0.25)
                                         text (str(linear_price)+"g" if linear_price > 0 else "Sold!") color ("#b20000" if (0 < linear_price > gold) else "#402313") size 14 align (0.5, 0.7)
                                         text "{unicode}\u0362{/unicode}" size 65 align (1.0, 0.5) xoffset 5
-                        add "interface/achievements/"+interface_color+"/spacer.png" yalign 1.0 xpos 274 xanchor 0.5
+                        add "interface/achievements/"+interface_color+"/spacer.webp" yalign 1.0 xpos 274 xanchor 0.5

@@ -187,7 +187,7 @@ label a_christmas_tale:
 
     if not card_exist(unlocked_cards, card_santa):
         if deck_unlocked:
-            call give_reward("You have received a special card as a gift!", "images/cardgame/t1/special/santa_v1.png")
+            call give_reward("You have received a special card as a gift!", "images/cardgame/t1/special/santa_v1.webp")
         $ unlocked_cards += [card_santa]
 
     show screen blkfade
@@ -207,4 +207,4 @@ label a_christmas_tale:
 screen genie_santa_chibi(x, y, flip=False):
     tag genie_chibi
     zorder 2
-    add "characters/misc/santa/santa_chibi.png" pos (x,y) zoom 0.5 xzoom (-1 if flip else 1)
+    add "characters/misc/santa/santa_chibi.webp" pos (x,y) zoom 0.5 xzoom (-1 if flip else 1)

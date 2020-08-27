@@ -6,28 +6,28 @@ label update_sus_uniform:
     hide screen susan_main
 
     #Hair
-    $ susan_hair         = "characters/susan/body/hair/"+str(sus_hair_style)+"_"+str(sus_hair_color)+"_base.png"
-    $ susan_hair_shadow  = "characters/susan/body/hair/"+str(sus_hair_style)+"_"+str(sus_hair_color)+"_top.png"
+    $ susan_hair         = "characters/susan/body/hair/"+str(sus_hair_style)+"_"+str(sus_hair_color)+"_base.webp"
+    $ susan_hair_shadow  = "characters/susan/body/hair/"+str(sus_hair_style)+"_"+str(sus_hair_color)+"_top.webp"
 
     #Top
-    $ susan_top            = "characters/susan/clothes/tops/"+str(sus_top)+".png"
+    $ susan_top            = "characters/susan/clothes/tops/"+str(sus_top)+".webp"
 
     #Bottom
-    $ susan_bottom          = "characters/susan/clothes/bottoms/"+str(sus_bottom)+".png"
+    $ susan_bottom          = "characters/susan/clothes/bottoms/"+str(sus_bottom)+".webp"
 
     #Underwear
-    $ susan_bra            = "characters/susan/clothes/bras/"+str(sus_bra)+".png"
-    $ susan_onepiece       = "characters/susan/clothes/onepieces/"+str(sus_onepiece)+".png"
-    $ susan_panties        = "characters/susan/clothes/panties/"+str(sus_panties)+".png"
-    $ susan_garterbelt     = "characters/susan/clothes/garterbelts/"+str(sus_garterbelt)+".png"
+    $ susan_bra            = "characters/susan/clothes/bras/"+str(sus_bra)+".webp"
+    $ susan_onepiece       = "characters/susan/clothes/onepieces/"+str(sus_onepiece)+".webp"
+    $ susan_panties        = "characters/susan/clothes/panties/"+str(sus_panties)+".webp"
+    $ susan_garterbelt     = "characters/susan/clothes/garterbelts/"+str(sus_garterbelt)+".webp"
 
-    $ susan_neckwear       = "characters/susan/clothes/neckwear/"+str(sus_neckwear)+".png"
-    $ susan_gloves         = "characters/susan/clothes/gloves/"+str(sus_gloves)+".png"
-    $ susan_stockings      = "characters/susan/clothes/stockings/"+str(sus_stockings)+".png"
-    $ susan_robe           = "characters/susan/clothes/robe/"+str(sus_robe)+".png"
+    $ susan_neckwear       = "characters/susan/clothes/neckwear/"+str(sus_neckwear)+".webp"
+    $ susan_gloves         = "characters/susan/clothes/gloves/"+str(sus_gloves)+".webp"
+    $ susan_stockings      = "characters/susan/clothes/stockings/"+str(sus_stockings)+".webp"
+    $ susan_robe           = "characters/susan/clothes/robe/"+str(sus_robe)+".webp"
 
     #Accessories
-    $ susan_hat            = "characters/susan/clothes/hats/"+str(sus_hat)+".png"
+    $ susan_hat            = "characters/susan/clothes/hats/"+str(sus_hat)+".webp"
 
     call update_susan_body
 
@@ -39,16 +39,16 @@ label update_susan_body:
 
     if susan_wear_top:
         if sus_top in ["top_1","top_2"]:
-            $ susan_breasts               = "characters/susan/body/base/boobs_nipfix.png"
+            $ susan_breasts               = "characters/susan/body/base/boobs_nipfix.webp"
         else:
-            $ susan_breasts               = "characters/susan/body/base/boobs_pressed.png"
+            $ susan_breasts               = "characters/susan/body/base/boobs_pressed.webp"
     elif susan_wear_bra:
         if sus_bra in ["bra_chain"]:
-            $ susan_breasts               = "characters/susan/body/base/boobs_base.png"
+            $ susan_breasts               = "characters/susan/body/base/boobs_base.webp"
         else:
-            $ susan_breasts               = "characters/susan/body/base/boobs_pressed.png"
+            $ susan_breasts               = "characters/susan/body/base/boobs_pressed.webp"
     else:
-        $ susan_breasts                   = "characters/susan/body/base/boobs_base.png"
+        $ susan_breasts                   = "characters/susan/body/base/boobs_base.webp"
 
     return
 

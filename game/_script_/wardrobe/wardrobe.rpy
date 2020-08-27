@@ -33,9 +33,9 @@ label wardrobe(char_label):
         char_level = _char_var_list[active_girl][0]
         char_underwear_allowed = char_level >= _char_var_list[active_girl][1]
 
-        renpy.start_predict("interface/wardrobe/gold/*.png")
-        renpy.start_predict("interface/wardrobe/gray/*.png")
-        renpy.start_predict("interface/wardrobe/icons/*.png")
+        renpy.start_predict("interface/wardrobe/gold/*.webp")
+        renpy.start_predict("interface/wardrobe/gray/*.webp")
+        renpy.start_predict("interface/wardrobe/icons/*.webp")
 
         wardrobe_background = wardrobe_background_day if interface_color == "gold" else wardrobe_background_night
 
@@ -246,9 +246,9 @@ label wardrobe(char_label):
         #$ char_active.clothes_compatible()
         if wardrobe_music:
             call play_music(active_girl)
-        $ renpy.stop_predict("interface/wardrobe/gold/*.png")
-        $ renpy.stop_predict("interface/wardrobe/gray/*.png")
-        $ renpy.stop_predict("interface/wardrobe/icons/*.png")
+        $ renpy.stop_predict("interface/wardrobe/gold/*.webp")
+        $ renpy.stop_predict("interface/wardrobe/gray/*.webp")
+        $ renpy.stop_predict("interface/wardrobe/icons/*.webp")
         return
     jump .after_init
 
@@ -273,8 +273,8 @@ screen wardrobe_menu(xx, yy):
             $ cat_row = (i // 4) % 2
             $ cat_col = i % 4
             if current_category == category:
-                add "interface/wardrobe/{}/frame.png".format(interface_color) xpos 14+411*cat_row ypos 80+110*cat_col zoom 0.5
-                add "interface/wardrobe/icons/categories/{}/{}.png".format(active_girl, category) xpos 14+411*cat_row ypos 80+110*cat_col zoom 0.5
+                add "interface/wardrobe/{}/frame.webp".format(interface_color) xpos 14+411*cat_row ypos 80+110*cat_col zoom 0.5
+                add "interface/wardrobe/icons/categories/{}/{}.webp".format(active_girl, category) xpos 14+411*cat_row ypos 80+110*cat_col zoom 0.5
                 button:
                     style "empty"
                     pos (14+411*cat_row, 80+110*cat_col)
@@ -282,12 +282,12 @@ screen wardrobe_menu(xx, yy):
                     hover_background btn_hover
                     action Return(["category", category])
             else:
-                add "interface/wardrobe/{}/frame.png".format(interface_color) xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
+                add "interface/wardrobe/{}/frame.webp".format(interface_color) xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
                 # Underwear disabled check
                 if category in ("bras", "panties") and not char_underwear_allowed:
-                    add gray_tint("interface/wardrobe/icons/categories/{}/{}.png".format(active_girl, category)) xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
+                    add gray_tint("interface/wardrobe/icons/categories/{}/{}.webp".format(active_girl, category)) xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
                 else:
-                    add "interface/wardrobe/icons/categories/{}/{}.png".format(active_girl, category) xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
+                    add "interface/wardrobe/icons/categories/{}/{}.webp".format(active_girl, category) xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
                 button:
                     style "empty"
                     pos (61+377*cat_row, 80+110*cat_col)
@@ -303,40 +303,40 @@ screen wardrobe_menu(xx, yy):
         add char_active.get_image() yoffset -12 corner1 (238, 200) corner2 (872, 1200) zoom 0.5 align (0.5, 1.0) events False
 
         # Switch to body modifications tab
-        add "interface/frames/{}/circle.png".format(interface_color) pos (373, 62)
+        add "interface/frames/{}/circle.webp".format(interface_color) pos (373, 62)
         button:
             style "empty"
             pos (373, 62)
             xysize (50, 50)
-            background "interface/wardrobe/switch.png"
-            hover_background image_hover("interface/wardrobe/switch.png")
+            background "interface/wardrobe/switch.webp"
+            hover_background image_hover("interface/wardrobe/switch.webp")
             tooltip "Switch tabs"
             action Return("tabswitch")
 
         # Outfits Manager
-        add "interface/frames/{}/circle.png".format(interface_color) pos (373, 117)
+        add "interface/frames/{}/circle.webp".format(interface_color) pos (373, 117)
         button:
             style "empty"
             pos (373, 117)
             xysize (50, 50)
-            background "interface/wardrobe/outfits.png"
-            hover_background image_hover("interface/wardrobe/outfits.png")
+            background "interface/wardrobe/outfits.webp"
+            hover_background image_hover("interface/wardrobe/outfits.webp")
             tooltip "Outfits Manager"
             action Return(["category", "outfits"])
 
         # Studio
         if not renpy.android:
-            add "interface/frames/{}/circle.png".format(interface_color) pos (373, 172)
+            add "interface/frames/{}/circle.webp".format(interface_color) pos (373, 172)
             button:
                 style "empty"
                 pos (373, 172)
                 xysize (50, 50)
-                background "interface/wardrobe/studio.png"
-                hover_background image_hover("interface/wardrobe/studio.png")
+                background "interface/wardrobe/studio.webp"
+                hover_background image_hover("interface/wardrobe/studio.webp")
                 tooltip "Open Studio"
                 action Return("studio")
 
-        add "interface/panels/{}/wardrobe_panel.png".format(interface_color)
+        add "interface/panels/{}/wardrobe_panel.webp".format(interface_color)
 
         #Easter Egg (Headpats, boobs, pussy)
         button style "empty" xysize (120, 80) xalign 0.525 ypos 60 action Return(["erozone", "head"])
@@ -352,28 +352,28 @@ screen wardrobe_menu(xx, yy):
                 $ _bool = _is_worn if _is_equipped else None
                 textbutton "[_item]":
                     style interface_style+"_dropdown"
-                    background "interface/frames/{}/check_{}.png".format(interface_color, _bool)
+                    background "interface/frames/{}/check_{}.webp".format(interface_color, _bool)
                     tooltip "Show/hide "+str(_item)
                     action [SensitiveIf(_is_equipped), Return(["toggle", _item])]
         use dropdown_menu(name="Options", pos=(350, 29), items_offset=(-59, 2)):
             textbutton "Music":
                 style interface_style+"_dropdown"
-                background "interface/frames/{}/check_{}.png".format(interface_color, wardrobe_music)
+                background "interface/frames/{}/check_{}.webp".format(interface_color, wardrobe_music)
                 tooltip "Toggle music"
                 action Return("music")
             textbutton "Background":
                 style interface_style+"_dropdown"
-                background "interface/frames/{}/check_true.png".format(interface_color)
+                background "interface/frames/{}/check_true.webp".format(interface_color)
                 tooltip "Change background colour"
                 action Return("bg_color")
             textbutton "Chit-chats":
                 style interface_style+"_dropdown"
-                background "interface/frames/{}/check_{}.png".format(interface_color, wardrobe_chitchats)
+                background "interface/frames/{}/check_{}.webp".format(interface_color, wardrobe_chitchats)
                 tooltip "Toggle character chit-chats"
                 action ToggleVariable("wardrobe_chitchats", True, False)
             textbutton "Requirements":
                 style interface_style+"_dropdown"
-                background "interface/frames/{}/check_{}.png".format(interface_color, wardrobe_requirements)
+                background "interface/frames/{}/check_{}.webp".format(interface_color, wardrobe_requirements)
                 tooltip "Toggle level requirements display"
                 action ToggleVariable("wardrobe_requirements", True, False)
 
@@ -384,7 +384,7 @@ screen wardrobe_menu(xx, yy):
             # top_gutter 0
             # bottom_gutter 0
 
-        add "interface/general/{}/button_wide.png".format(interface_color) pos (200, -4)
+        add "interface/general/{}/button_wide.webp".format(interface_color) pos (200, -4)
         text char_nickname xalign 0.5 ypos 4 size 16
 
 screen wardrobe_menuitem(xx, yy):
@@ -395,16 +395,16 @@ screen wardrobe_menuitem(xx, yy):
     if menu_items_length > items_shown:
         imagebutton:
             pos (xx+480, yy+190)
-            idle "interface/general/{}/button_arrow_up.png".format(interface_color)
+            idle "interface/general/{}/button_arrow_up.webp".format(interface_color)
             if not current_page <= 0:
-                hover "interface/general/{}/button_arrow_up_hover.png".format(interface_color)
+                hover "interface/general/{}/button_arrow_up_hover.webp".format(interface_color)
                 action Return("dec")
 
         imagebutton:
             pos (xx+480, yy+245)
-            idle "interface/general/{}/button_arrow_down.png".format(interface_color)
+            idle "interface/general/{}/button_arrow_down.webp".format(interface_color)
             if current_page < math.ceil((menu_items_length-1)/items_shown):
-                hover "interface/general/{}/button_arrow_down_hover.png".format(interface_color)
+                hover "interface/general/{}/button_arrow_down_hover.webp".format(interface_color)
                 action Return("inc")
 
     frame:
@@ -415,7 +415,7 @@ screen wardrobe_menuitem(xx, yy):
 
         use invisible_button()
 
-        add "interface/panels/{}/icon_panel.png".format(interface_color)
+        add "interface/panels/{}/icon_panel.webp".format(interface_color)
 
         hbox:
             pos (24, 44)
@@ -430,7 +430,7 @@ screen wardrobe_menuitem(xx, yy):
                 ysize 32
                 pos (270, 37)
                 xanchor 1.0
-                background "interface/page.png"
+                background "interface/page.webp"
                 text_yalign 0.5
                 text_first_indent 26
                 action NullAction()
@@ -459,9 +459,9 @@ screen wardrobe_menuitem(xx, yy):
         if len(category_items) > 0:
             for i, subcategory in enumerate(category_items.keys()):
                 if current_subcategory == subcategory:
-                    add "interface/wardrobe/icons/{}.png".format(subcategory) ypos 95 xpos 19+(90*i) zoom 0.8
+                    add "interface/wardrobe/icons/{}.webp".format(subcategory) ypos 95 xpos 19+(90*i) zoom 0.8
                 else:
-                    add image_alpha("interface/wardrobe/icons/{}.png".format(subcategory), 0.65) ypos 95 xpos 19+(90*i) zoom 0.8
+                    add image_alpha("interface/wardrobe/icons/{}.webp".format(subcategory), 0.65) ypos 95 xpos 19+(90*i) zoom 0.8
                 button:
                     style "empty"
                     pos (10+90*i, 86)
@@ -491,7 +491,7 @@ screen wardrobe_menuitem(xx, yy):
                         tooltip "Take off"
                         action Return(["equip", menu_items[i]])
 
-                    add "interface/topbar/icon_check.png" pos (60+90*col, 225+90*row)
+                    add "interface/topbar/icon_check.webp" pos (60+90*col, 225+90*row)
                 else:
                     button:
                         style "empty"
@@ -554,14 +554,14 @@ screen wardrobe_outfit_menuitem(xx, yy):
         if not current_page <= 0:
             imagebutton:
                 pos (xx+480, yy+190)
-                idle "interface/general/"+interface_color+"/button_arrow_up.png"
-                hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
+                idle "interface/general/"+interface_color+"/button_arrow_up.webp"
+                hover "interface/general/"+interface_color+"/button_arrow_up_hover.webp"
                 action Return("dec")
         if current_page < math.ceil((menu_items_length)/10):
             imagebutton:
                 pos (xx+480, yy+245)
-                idle "interface/general/"+interface_color+"/button_arrow_down.png"
-                hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
+                idle "interface/general/"+interface_color+"/button_arrow_down.webp"
+                hover "interface/general/"+interface_color+"/button_arrow_down_hover.webp"
                 action Return("inc")
 
     frame:
@@ -572,7 +572,7 @@ screen wardrobe_outfit_menuitem(xx, yy):
 
         use invisible_button()
 
-        add "interface/panels/"+interface_color+"/icon_panel2.png"
+        add "interface/panels/"+interface_color+"/icon_panel2.webp"
 
         hbox:
             pos (24, 44)
@@ -587,7 +587,7 @@ screen wardrobe_outfit_menuitem(xx, yy):
                 ysize 32
                 pos (270, 37)
                 xanchor 1.0
-                background "interface/page.png"
+                background "interface/page.webp"
                 text_yalign 0.5
                 text_first_indent 26
                 action NullAction()
@@ -595,9 +595,9 @@ screen wardrobe_outfit_menuitem(xx, yy):
         # Add subcategory list
         for i, subcategory in enumerate(category_items):
             if current_subcategory == subcategory:
-                add "interface/wardrobe/icons/outfits/"+subcategory+".png" ypos 95 xpos 19+(90*i) zoom 0.8
+                add "interface/wardrobe/icons/outfits/"+subcategory+".webp" ypos 95 xpos 19+(90*i) zoom 0.8
             else:
-                add image_alpha("interface/wardrobe/icons/outfits/"+subcategory+".png") ypos 95 xpos 19+(90*i) zoom 0.8
+                add image_alpha("interface/wardrobe/icons/outfits/"+subcategory+".webp") ypos 95 xpos 19+(90*i) zoom 0.8
             button:
                 style "empty"
                 pos (10+90*i, 86)
@@ -646,7 +646,7 @@ screen wardrobe_outfit_menuitem(xx, yy):
                             vbox:
                                 spacing 5
                                 for x in wardrobe_outfit_schedule:
-                                    $ _ico = "interface/wardrobe/icons/outfits/"+x.lower()+".png"
+                                    $ _ico = "interface/wardrobe/icons/outfits/"+x.lower()+".webp"
                                     $ _on = menu_items[i].schedule[x.lower()]
                                     $ _yesno = "yes" if _on else "no"
 
@@ -705,7 +705,7 @@ screen wardrobe_outfit_menuitem(xx, yy):
             textbutton "Outfit scheduling":
                 style interface_style+"_dropdown"
                 pos (290, 42)
-                background "interface/frames/"+str(interface_color)+"/check_"+str(globals()[active_girl+"_outfits_schedule"])+".png"
+                background "interface/frames/"+str(interface_color)+"/check_"+str(globals()[active_girl+"_outfits_schedule"])+".webp"
                 tooltip "{color=#35aae2}[active_girl]{/color} will automatically wear outfits\nbased on set schedule, time of day and weather."
                 action Return("toggle_schedule")
 

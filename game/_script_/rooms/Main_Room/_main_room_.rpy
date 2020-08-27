@@ -20,9 +20,9 @@ screen main_room():
 
     # Walls
     if daytime:
-        add "images/rooms/_bg_/main_room_day.png" zoom 0.5
+        add "images/rooms/_bg_/main_room_day.webp" zoom 0.5
     else:
-        add "images/rooms/_bg_/main_room_night.png" zoom 0.5
+        add "images/rooms/_bg_/main_room_night.webp" zoom 0.5
 
     # Poster
     if poster_OBJ.room_image:
@@ -163,8 +163,8 @@ screen genie_desk_interactive():
             ypos 370
             xanchor 0.5
             yanchor 0.5
-            ground "images/rooms/main_room/desk_small_border.png"
-            hover yellow_tint("images/rooms/main_room/desk_small_border.png")
+            ground "images/rooms/main_room/desk_small_border.webp"
+            hover yellow_tint("images/rooms/main_room/desk_small_border.webp")
             hotspot (0, 10, 128, 160):
                 action Jump("desk")
                 sensitive room_menu_active
@@ -198,7 +198,7 @@ screen phoenix_feather():
 
 screen phoenix_food():
     tag phoenix_food
-    add "images/rooms/_objects_/phoenix/food.png" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/_objects_/phoenix/food.webp" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
     zorder 2
 
 # Fireplace
@@ -245,27 +245,27 @@ screen fireplace_fire():
 screen desk(x=370): # Desk only
     tag desk
     zorder 2
-    add "images/rooms/main_room/desk_with_shadow.png" xpos x ypos 336 xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/main_room/desk_with_shadow.webp" xpos x ypos 336 xanchor 0.5 yanchor 0.5 zoom 0.5
 
 screen dumbledore(): # Dumbledore and desk
     tag dumbledore
-    add "images/rooms/main_room/dum.png" xpos 370 ypos 336 xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/main_room/dum.webp" xpos 370 ypos 336 xanchor 0.5 yanchor 0.5 zoom 0.5
 
 screen chair_left():
     tag chair_left
     zorder 0 # Show main_room first for correct order
-    add "images/rooms/main_room/chair_left_with_shadow.png" xpos 332 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/main_room/chair_left_with_shadow.webp" xpos 332 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
 
 screen chair_right():
     tag chair_right
     zorder 0 # Show main_room first for correct order
-    add "images/rooms/main_room/chair_right.png" xpos 793 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/main_room/chair_right.webp" xpos 793 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
 
 screen cupboard_open():
     tag cupboard
-    add "images/rooms/_objects_/cupboard/cupboard_open.png" xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/_objects_/cupboard/cupboard_open.webp" xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
     if cupboard_deco:
-        add "images/rooms/_objects_/cupboard/cupboard_open" +str(cupboard_deco)+ ".png"  xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5
+        add "images/rooms/_objects_/cupboard/cupboard_open" +str(cupboard_deco)+ ".webp"  xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5
 
 # Owl
 screen owl():

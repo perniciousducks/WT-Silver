@@ -57,8 +57,8 @@ screen quick_menu():
         textbutton _("Preferences") action ShowMenu("preferences")
 
     if renpy.android:
-        imagebutton idle "interface/frames/"+interface_color+"/arrow.png" action Rollback() xoffset -120 yalign 0.5 yanchor 0.5
-        imagebutton idle im.Flip("interface/frames/"+interface_color+"/arrow.png", horizontal=True) action Skip(fast=True, confirm=True) xoffset 600 yalign 0.5 yanchor 0.5
+        imagebutton idle "interface/frames/"+interface_color+"/arrow.webp" action Rollback() xoffset -120 yalign 0.5 yanchor 0.5
+        imagebutton idle im.Flip("interface/frames/"+interface_color+"/arrow.webp", horizontal=True) action Skip(fast=True, confirm=True) xoffset 600 yalign 0.5 yanchor 0.5
 
 screen choice(items):
     tag menu
@@ -66,7 +66,7 @@ screen choice(items):
 
     # Dont add the fade if character or saybox is present (They have their own triggers for fading)
     showif not any(itertools.imap(renpy.get_screen, ["say", "hermione_main", "cho_main", "luna_main", "snape_main", "astoria_main", "tonks_main", "susan_main", "letter"])):
-        add "interface/bld.png" at fade_hide(0.15)
+        add "interface/bld.webp" at fade_hide(0.15)
     window at fade_show_hide(0.15):
         style "empty"
         xalign menu_x
@@ -181,8 +181,8 @@ screen main_menu():
         ypos 560
         xalign 0.5
         yalign 0.5
-        idle "logo/patreon.png"
-        hover "logo/patreon_hover.png"
+        idle "logo/patreon.webp"
+        hover "logo/patreon_hover.webp"
         action OpenURL("https://www.patreon.com/SilverStudioGames")
 
     imagebutton:
@@ -190,8 +190,8 @@ screen main_menu():
         ypos 562
         xalign 0.5
         yalign 0.5
-        idle "logo/discord.png"
-        hover "logo/discord_hover.png"
+        idle "logo/discord.webp"
+        hover "logo/discord_hover.webp"
         action OpenURL("https://discord.gg/7PD57yt")
 
 screen navigation():
@@ -341,7 +341,7 @@ screen preferences():
                 label _("Interface")
                 if not renpy.android:
                     textbutton "Tooltips" action ToggleVariable("preferences.tooltip", True, False)
-                    textbutton _("Custom Cursor") action [ToggleVariable("preferences.customcursor", True, False), ToggleVariable("config.mouse", { 'default' : [ ('interface/cursor.png', 0, 0)] }, None) ]
+                    textbutton _("Custom Cursor") action [ToggleVariable("preferences.customcursor", True, False), ToggleVariable("config.mouse", { 'default' : [ ('interface/cursor.webp', 0, 0)] }, None) ]
                 textbutton _("Nightmode") action [ToggleVariable("preferences.nightmode", True, False), Function(renpy.call_in_new_context, "update_interface_color")]
 
             frame:
@@ -410,8 +410,8 @@ screen preferences():
                     label _("{size=-4}Animation preference{/size}")
                     grid 2 1:
                         xfill True
-                        textbutton _("Chibis") action SetVariable("use_cgs", False) tooltip "{image=interface/chibi.png}"
-                        textbutton _("CGs") action SetVariable("use_cgs", True) tooltip "{image=interface/cg.png}"
+                        textbutton _("Chibis") action SetVariable("use_cgs", False) tooltip "{image=interface/chibi.webp}"
+                        textbutton _("CGs") action SetVariable("use_cgs", True) tooltip "{image=interface/cg.webp}"
 
                 frame:
                     has vbox

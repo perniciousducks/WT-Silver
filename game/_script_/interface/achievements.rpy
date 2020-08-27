@@ -1,40 +1,40 @@
-define achievements_dict = {"unlockher": ["Characters", "Granger Danger", "Awarded for unlocking Hermione Granger.", False, "interface/icons/head/hermione.png", False],
-                                   "unlockcho": ["Characters", "Chang Dynasty", "Awarded for unlocking Cho Chang.", False, "interface/icons/head/cho.png", False],
-                                   "unlocklun": ["Characters", "Looney Tunes", "Awarded for unlocking Luna Lovegood.", False, "interface/icons/head/luna.png", False],
-                                   "unlockast": ["Characters", "Greenpeas", "Awarded for unlocking Astoria Greengrass.", False, "interface/icons/head/astoria.png", False],
-                                   "unlockton": ["Characters", "Nymphadoreador", "Awarded for unlocking Nymphadora Tonks.", False, "interface/icons/head/tonks.png", False],
-                                   "overwhored": ["Characters", "Overwhored", "Hermione reached maximum corruption.", False, "interface/icons/head/hermione.png", False],
-                                   "unlocksus": ["Characters", "Boner", "Awarded for unlocking Susan Bones.", False, "interface/icons/head/susan.png", False],
-                                   "unlocksna": ["Characters", "Strictly colleagues", "Awarded for unlocking Severus Snape.", False, "interface/icons/head/snape.png", False],
-                                   "mirror": ["Mirror", "Mirror, mirror on the wall..", "Awarded for unlocking the Room of Requirements.", False, "images/rooms/room_of_requirement/mirror_hover.png", False],
-                                   "gold": ["General", "Gold Digger", "Awarded for collecting 10000 gold coins.", False, "interface/icons/gold.png", False],
-                                   "drunkard": ["General", "Drunken Master", "Collected 25 bottles of wine.", False, "interface/icons/item_wine.png", True],
-                                   "workaholic": ["General", "Workaholic", "Completed 5 full reports.", False, "interface/icons/item_scroll.png", False],
-                                   "fireplace": ["General", "Feel the Heat", "Started fire 5 times or more.", False, "images/rooms/_objects_/fireplace/fireplace_idle.png", True],
-                                   "peta": ["General", "I think I forgot something...", "Awarded for not feeding the bird for 50 days.... \nYou monster.\n{size=-4}Disclaimer: No real nor fictional animals were harmed in the process.{/size}", False, "images/rooms/_objects_/phoenix/phoenix_01.png", True],
-                                   "petpal": ["General", "Regular stroking", "Awarded for petting the bird 25 times.", False, "images/rooms/_objects_/phoenix/phoenix_01.png", False],
-                                   "postman": ["Cardgame", "Poster Boy", "Bought all posters from the token shop.", False, "interface/icons/posters/agrabah.png", False],
-                                   "hats": ["Cardgame", "Mad Hatter", "Bought all hat decorations from the token shop.", False, "interface/icons/icon_gambler_hat.png", False],
-                                   "daddy": ["Characters", "Who's your daddy?", "Let Hermione call you a {size=-5}(sugar){/size} daddy.", False, "interface/icons/head/hermione.png", True],
-                                   "pantiesfap": ["Characters", "I sneezed on them...", "Rubbed one out on Hermione's panties.", False, "characters/genie/chibis/jerk_off/02.png", False],
-                                   "pantiesfapcho": ["Characters", "Exercise is important", "Rubbed one out on Cho's panties.", False, "characters/genie/chibis/jerk_off/02.png", False],
-                                   "bros": ["Characters", "Bros before hoes", "Became best pals with Snape.", False, "interface/icons/head/snape.png", False],
-                                   "knock": ["Characters", "*Knock* *knock*", "Go away! I'm busy.", False, "images/rooms/_objects_/doors/door_idle.png", True],
-                                   "decorator": ["Cardgame", "Decorator", "Applied decoration in the office.", False, "interface/icons/trophies/stag.png", False],
-                                   "flashback": ["Cardgame", "Flashback", "Totally what happened...", False, "interface/icons/cards.png", True],
-                                   "start": ["General", "Welcome to Hogwarts!", "Awarded upon finishing the intro.", False, "interface/icon.png", False],
-                                   "export": ["General", "Sharing is caring", "Exported an outfit through the wardrobe menu.", False, "interface/wardrobe/icons/outfits/load.png", False],
-                                   "Credits":  ["General", "New game, who this?", "Checked out the Credits Menu", False, "interface/icons/item_scroll_silver.png", False],
-                                   "Cardwin":  ["Cardgame", "Time to duel", "Awarded for winning your first Cardgame duel", False, "interface/icons/cards.png", False],
-                                   "puzzle": ["General", "Down the hatch!", "Wasted a bottle of unbelievably rare phoenix tears by drinking it.", False, "interface/icons/item_potion.png", True],
-                                   "ending": ["General", "Bittersweet Farewell", "Finished the game.", False, "interface/icons/book_silver.png", True],
+define achievements_dict = {"unlockher": ["Characters", "Granger Danger", "Awarded for unlocking Hermione Granger.", False, "interface/icons/head/hermione.webp", False],
+                                   "unlockcho": ["Characters", "Chang Dynasty", "Awarded for unlocking Cho Chang.", False, "interface/icons/head/cho.webp", False],
+                                   "unlocklun": ["Characters", "Looney Tunes", "Awarded for unlocking Luna Lovegood.", False, "interface/icons/head/luna.webp", False],
+                                   "unlockast": ["Characters", "Greenpeas", "Awarded for unlocking Astoria Greengrass.", False, "interface/icons/head/astoria.webp", False],
+                                   "unlockton": ["Characters", "Nymphadoreador", "Awarded for unlocking Nymphadora Tonks.", False, "interface/icons/head/tonks.webp", False],
+                                   "overwhored": ["Characters", "Overwhored", "Hermione reached maximum corruption.", False, "interface/icons/head/hermione.webp", False],
+                                   "unlocksus": ["Characters", "Boner", "Awarded for unlocking Susan Bones.", False, "interface/icons/head/susan.webp", False],
+                                   "unlocksna": ["Characters", "Strictly colleagues", "Awarded for unlocking Severus Snape.", False, "interface/icons/head/snape.webp", False],
+                                   "mirror": ["Mirror", "Mirror, mirror on the wall..", "Awarded for unlocking the Room of Requirements.", False, "images/rooms/room_of_requirement/mirror_hover.webp", False],
+                                   "gold": ["General", "Gold Digger", "Awarded for collecting 10000 gold coins.", False, "interface/icons/gold.webp", False],
+                                   "drunkard": ["General", "Drunken Master", "Collected 25 bottles of wine.", False, "interface/icons/item_wine.webp", True],
+                                   "workaholic": ["General", "Workaholic", "Completed 5 full reports.", False, "interface/icons/item_scroll.webp", False],
+                                   "fireplace": ["General", "Feel the Heat", "Started fire 5 times or more.", False, "images/rooms/_objects_/fireplace/fireplace_idle.webp", True],
+                                   "peta": ["General", "I think I forgot something...", "Awarded for not feeding the bird for 50 days.... \nYou monster.\n{size=-4}Disclaimer: No real nor fictional animals were harmed in the process.{/size}", False, "images/rooms/_objects_/phoenix/phoenix_01.webp", True],
+                                   "petpal": ["General", "Regular stroking", "Awarded for petting the bird 25 times.", False, "images/rooms/_objects_/phoenix/phoenix_01.webp", False],
+                                   "postman": ["Cardgame", "Poster Boy", "Bought all posters from the token shop.", False, "interface/icons/posters/agrabah.webp", False],
+                                   "hats": ["Cardgame", "Mad Hatter", "Bought all hat decorations from the token shop.", False, "interface/icons/icon_gambler_hat.webp", False],
+                                   "daddy": ["Characters", "Who's your daddy?", "Let Hermione call you a {size=-5}(sugar){/size} daddy.", False, "interface/icons/head/hermione.webp", True],
+                                   "pantiesfap": ["Characters", "I sneezed on them...", "Rubbed one out on Hermione's panties.", False, "characters/genie/chibis/jerk_off/02.webp", False],
+                                   "pantiesfapcho": ["Characters", "Exercise is important", "Rubbed one out on Cho's panties.", False, "characters/genie/chibis/jerk_off/02.webp", False],
+                                   "bros": ["Characters", "Bros before hoes", "Became best pals with Snape.", False, "interface/icons/head/snape.webp", False],
+                                   "knock": ["Characters", "*Knock* *knock*", "Go away! I'm busy.", False, "images/rooms/_objects_/doors/door_idle.webp", True],
+                                   "decorator": ["Cardgame", "Decorator", "Applied decoration in the office.", False, "interface/icons/trophies/stag.webp", False],
+                                   "flashback": ["Cardgame", "Flashback", "Totally what happened...", False, "interface/icons/cards.webp", True],
+                                   "start": ["General", "Welcome to Hogwarts!", "Awarded upon finishing the intro.", False, "interface/icon.webp", False],
+                                   "export": ["General", "Sharing is caring", "Exported an outfit through the wardrobe menu.", False, "interface/wardrobe/icons/outfits/load.webp", False],
+                                   "Credits":  ["General", "New game, who this?", "Checked out the Credits Menu", False, "interface/icons/item_scroll_silver.webp", False],
+                                   "Cardwin":  ["Cardgame", "Time to duel", "Awarded for winning your first Cardgame duel", False, "interface/icons/cards.webp", False],
+                                   "puzzle": ["General", "Down the hatch!", "Wasted a bottle of unbelievably rare phoenix tears by drinking it.", False, "interface/icons/item_potion.webp", True],
+                                   "ending": ["General", "Bittersweet Farewell", "Finished the game.", False, "interface/icons/book_silver.webp", True],
                                    #1.37 HG achievements
-                                   "busted": ["Characters", "BUSTED!", "... a nut when got busted for busting a nut.", False, "interface/icons/head/hermione.png", False],
-                                   "herstrip": ["Characters", "Dance lessons", "Even elephants have more grace when they're moving, girl.. -Severus Snape", False, "interface/icons/head/hermione.png", False],
-                                   "herkiss": ["Characters", "First Kiss", "Hermione made out with you-- r... cock...", False, "interface/icons/head/hermione.png", False],
-                                   "hertits": ["Characters", "Boobs Lover", "*ahem* I mean.. books, yes, books lover!", False, "interface/icons/head/hermione.png", False],
-                                   "headlib": ["Characters", "Head Librarian", "Did she just swallow it?", False, "interface/icons/head/hermione.png", False],
-                                   "nerdgasm": ["Characters", "Nerdgasm", "Had a very fulfilling moment with Hermione.", False, "interface/icons/head/hermione.png", False]}
+                                   "busted": ["Characters", "BUSTED!", "... a nut when got busted for busting a nut.", False, "interface/icons/head/hermione.webp", False],
+                                   "herstrip": ["Characters", "Dance lessons", "Even elephants have more grace when they're moving, girl.. -Severus Snape", False, "interface/icons/head/hermione.webp", False],
+                                   "herkiss": ["Characters", "First Kiss", "Hermione made out with you-- r... cock...", False, "interface/icons/head/hermione.webp", False],
+                                   "hertits": ["Characters", "Boobs Lover", "*ahem* I mean.. books, yes, books lover!", False, "interface/icons/head/hermione.webp", False],
+                                   "headlib": ["Characters", "Head Librarian", "Did she just swallow it?", False, "interface/icons/head/hermione.webp", False],
+                                   "nerdgasm": ["Characters", "Nerdgasm", "Had a very fulfilling moment with Hermione.", False, "interface/icons/head/hermione.webp", False]}
 init python:
     if persistent.achievements == None:
         persistent.achievements = achievements_dict.copy()
@@ -136,7 +136,7 @@ screen achievement_window(string="", title="", icon=None, xpos=0, ypos=60):
         xsize 410
         ysize 96
 
-        add "interface/achievements/"+interface_color+"/box.png"
+        add "interface/achievements/"+interface_color+"/box.webp"
         if icon:
             frame:
                 style "empty"
@@ -149,7 +149,7 @@ screen achievement_window(string="", title="", icon=None, xpos=0, ypos=60):
                 else:
                     add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
 
-            add "interface/achievements/glass.png"
+            add "interface/achievements/glass.webp"
         frame:
             style "empty"
             xpos 96
@@ -272,17 +272,17 @@ screen achievement_menu(xx, yy):
 
         use invisible_button()
 
-        add "interface/achievements/"+interface_color+"/panel_left.png"
+        add "interface/achievements/"+interface_color+"/panel_left.webp"
 
         vbox:
             pos (6, 41)
             for category in achievement_categories_sorted:
                 vbox:
                     if current_category == category:
-                        textbutton category xysize (195, 16) style "empty" background "interface/achievements/"+interface_color+"/highlight_left.png" text_xalign 0.5
+                        textbutton category xysize (195, 16) style "empty" background "interface/achievements/"+interface_color+"/highlight_left.webp" text_xalign 0.5
                     else:
-                        textbutton category xysize (195, 16) style "empty" hover_background "interface/achievements/"+interface_color+"/highlight_left.png" text_xalign 0.5 action Return(["category", category])
-                    add "interface/achievements/"+interface_color+"/spacer_left.png"
+                        textbutton category xysize (195, 16) style "empty" hover_background "interface/achievements/"+interface_color+"/highlight_left.webp" text_xalign 0.5 action Return(["category", category])
+                    add "interface/achievements/"+interface_color+"/spacer_left.webp"
         vbox:
             pos (6, 384)
             if current_filter == None:
@@ -302,8 +302,8 @@ screen achievement_menuitem(xx, yy):
 
         use invisible_button()
 
-        add "interface/achievements/star.png"
-        add "interface/achievements/"+interface_color+"/panel.png"
+        add "interface/achievements/star.webp"
+        add "interface/achievements/"+interface_color+"/panel.webp"
 
         text "Achievements" size 22 xalign 0.5 ypos 65
 
@@ -315,22 +315,22 @@ screen achievement_menuitem(xx, yy):
                 xanchor 1.0
                 pos (540, 24)
                 spacing 5
-                add "interface/page.png" yanchor 0.5 ypos 53
+                add "interface/page.webp" yanchor 0.5 ypos 53
                 text str(current_page+1)+"/"+str(int(math.ceil(menu_items_length/items_shown))+1) ypos 44 size 16
             vbox:
                 pos (570, 186)
                 spacing 10
 
                 imagebutton:
-                    idle "interface/frames/"+interface_color+"/arrow_up.png"
+                    idle "interface/frames/"+interface_color+"/arrow_up.webp"
                     if not current_page <= 0:
-                        hover image_hover("interface/frames/"+interface_color+"/arrow_up.png")
+                        hover image_hover("interface/frames/"+interface_color+"/arrow_up.webp")
                         action Return("dec")
 
                 imagebutton:
-                    idle im.Flip("interface/frames/"+interface_color+"/arrow_up.png", vertical=True)
+                    idle im.Flip("interface/frames/"+interface_color+"/arrow_up.webp", vertical=True)
                     if current_page < math.ceil((menu_items_length-1)/items_shown):
-                        hover im.Flip(image_hover("interface/frames/"+interface_color+"/arrow_up.png"), vertical=True)
+                        hover im.Flip(image_hover("interface/frames/"+interface_color+"/arrow_up.webp"), vertical=True)
                         action Return("inc")
 
         # Add items
@@ -343,9 +343,9 @@ screen achievement_menuitem(xx, yy):
                     xsize 48
                     ysize 48
                     pos (24+58*(col), 113+58*(row))
-                    add "interface/achievements/"+interface_color+"/iconbox.png"
+                    add "interface/achievements/"+interface_color+"/iconbox.webp"
                     if current_item and current_item[0] == menu_items[i][0]:
-                        add "interface/achievements/glow.png" align (0.5, 0.5) zoom 0.105 alpha 0.7 at rotate_circular
+                        add "interface/achievements/glow.webp" align (0.5, 0.5) zoom 0.105 alpha 0.7 at rotate_circular
                     if menu_items[i][1][4]:
                         if menu_items[i][1][3]:
                             $ image_zoom = crop_image_zoom(menu_items[i][1][4], 42, 42)
@@ -353,12 +353,12 @@ screen achievement_menuitem(xx, yy):
                             if not menu_items[i][1][5]:
                                 $ image_zoom = crop_image_zoom(menu_items[i][1][4], 42, 42, True)
                             else:
-                                $ image_zoom = crop_image_zoom("interface/achievements/secret.png", 35, 35, True)
+                                $ image_zoom = crop_image_zoom("interface/achievements/secret.webp", 35, 35, True)
                         if menu_items[i][1][0] == "Characters" and not (menu_items[i][1][5] is True and not menu_items[i][1][3] is True):
                             add image_zoom[0] zoom image_zoom[1] align (0.5, 1.0) yoffset -3
                         else:
                             add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
-                    add "interface/achievements/glass_iconbox.png" pos (3, 2)
+                    add "interface/achievements/glass_iconbox.webp" pos (3, 2)
 
                     button:
                         style "empty"
@@ -383,31 +383,31 @@ screen achievement_menuitem(xx, yy):
                 xsize 96
                 ysize 96
                 pos (24, 375)
-                add "interface/achievements/"+interface_color+"/icon_selected.png"
+                add "interface/achievements/"+interface_color+"/icon_selected.webp"
                 if current_item[1][4]:
                     if current_item[1][3]:
                         $ image_zoom = crop_image_zoom(current_item[1][4], 84, 84)
                     else:
                         if current_item[1][5]:
-                            $ image_zoom = crop_image_zoom("interface/achievements/secret.png", 70, 70, True)
+                            $ image_zoom = crop_image_zoom("interface/achievements/secret.webp", 70, 70, True)
                         else:
                             $ image_zoom = crop_image_zoom(current_item[1][4], 84, 84, True)
                     if current_item[1][0] == "Characters" and not (current_item[1][5] is True and not current_item[1][3] is True):
                         add image_zoom[0] zoom image_zoom[1] align (0.5, 1.0) yoffset -7
                     else:
                         add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
-                add "interface/achievements/glass_selected.png" pos (6, 6)
+                add "interface/achievements/glass_selected.webp" pos (6, 6)
 
-            add "interface/achievements/"+interface_color+"/highlight.png" pos (112, 375)
-            add "interface/achievements/"+interface_color+"/spacer.png" pos (120, 398)
+            add "interface/achievements/"+interface_color+"/highlight.webp" pos (112, 375)
+            add "interface/achievements/"+interface_color+"/spacer.webp" pos (120, 398)
             hbox:
                 spacing 5
                 xalign 0.5
                 text current_item[1][1] ypos 380 size 16 xoffset 45
                 if current_item[1][3]:
-                    add "interface/unlocked_True.png" xoffset 45 ypos 377
+                    add "interface/unlocked_True.webp" xoffset 45 ypos 377
                 else:
-                    add "interface/unlocked_False.png" xoffset 45 ypos 377
+                    add "interface/unlocked_False.webp" xoffset 45 ypos 377
             hbox:
                 pos (132, 407)
                 xsize 410

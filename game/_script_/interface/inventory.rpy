@@ -106,7 +106,7 @@ screen inventory_menu(xx, yy):
 
         use invisible_button()
 
-        add "interface/achievements/"+interface_color+"/panel_left.png"
+        add "interface/achievements/"+interface_color+"/panel_left.webp"
 
         vbox:
             pos (6, 41)
@@ -117,11 +117,11 @@ screen inventory_menu(xx, yy):
                         xsize 195 ysize 16
                         text_xalign 0.5
                         if current_category == category:
-                            background "interface/achievements/"+interface_color+"/highlight_left.png"
+                            background "interface/achievements/"+interface_color+"/highlight_left.webp"
                         else:
-                            hover_background "interface/achievements/"+interface_color+"/highlight_left.png"
+                            hover_background "interface/achievements/"+interface_color+"/highlight_left.webp"
                             action Return(["category", category])
-                    add "interface/achievements/"+interface_color+"/spacer_left.png"
+                    add "interface/achievements/"+interface_color+"/spacer_left.webp"
         vbox:
             pos (6, 384)
             button action NullAction() style "empty" xsize 195 ysize 32
@@ -145,8 +145,8 @@ screen inventory_menuitem(xx, yy):
 
         use invisible_button()
 
-        add "interface/achievements/inventory.png"
-        add "interface/achievements/"+interface_color+"/panel.png"
+        add "interface/achievements/inventory.webp"
+        add "interface/achievements/"+interface_color+"/panel.webp"
 
         #Western Egg
         button xsize 90 ysize 60 action Function(renpy.play, "sounds/plushie.mp3") xalign 0.5 style "empty"
@@ -161,22 +161,22 @@ screen inventory_menuitem(xx, yy):
                 xanchor 1.0
                 pos (540, 24)
                 spacing 5
-                add "interface/page.png" yanchor 0.5 ypos 53
+                add "interface/page.webp" yanchor 0.5 ypos 53
                 text str(current_page+1)+"/"+str(int(math.ceil(menu_items_length/items_shown))+1) ypos 44 size 16
             vbox:
                 pos (570, 186)
                 spacing 10
 
                 imagebutton:
-                    idle "interface/frames/"+interface_color+"/arrow_up.png"
+                    idle "interface/frames/"+interface_color+"/arrow_up.webp"
                     if not current_page <= 0:
-                        hover image_hover("interface/frames/"+interface_color+"/arrow_up.png")
+                        hover image_hover("interface/frames/"+interface_color+"/arrow_up.webp")
                         action Return("dec")
 
                 imagebutton:
-                    idle im.Flip("interface/frames/"+interface_color+"/arrow_up.png", vertical=True)
+                    idle im.Flip("interface/frames/"+interface_color+"/arrow_up.webp", vertical=True)
                     if current_page < math.ceil((menu_items_length-1)/items_shown):
-                        hover im.Flip(image_hover("interface/frames/"+interface_color+"/arrow_up.png"), vertical=True)
+                        hover im.Flip(image_hover("interface/frames/"+interface_color+"/arrow_up.webp"), vertical=True)
                         action Return("inc")
 
         # Add items
@@ -189,15 +189,15 @@ screen inventory_menuitem(xx, yy):
                     xsize 48
                     ysize 48
                     pos (24+58*(col), 113+58*(row))
-                    add "interface/achievements/"+interface_color+"/iconbox.png"
+                    add "interface/achievements/"+interface_color+"/iconbox.webp"
                     if not current_item == None and current_item.id == menu_items[i].id:
-                        add "interface/achievements/glow.png" align (0.5, 0.5) zoom 0.105 alpha 0.7 at rotate_circular
+                        add "interface/achievements/glow.webp" align (0.5, 0.5) zoom 0.105 alpha 0.7 at rotate_circular
                     if menu_items[i].number > 0:
                         $ image_zoom = crop_image_zoom(menu_items[i].get_image(), 42, 42)
                     else:
                         $ image_zoom = crop_image_zoom(menu_items[i].get_image(), 42, 42, True)
                     add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
-                    add "interface/achievements/glass_iconbox.png" pos (3, 2)
+                    add "interface/achievements/glass_iconbox.webp" pos (3, 2)
                     if current_category == "Gifts":
                         if menu_items[i].number > 0:
                             text str(menu_items[i].number) size 10 align (0.95, 0.95) anchor (1.0, 1.0) color "#FFFFFF" outlines [ (1, "#000", 0, 0) ]
@@ -225,17 +225,17 @@ screen inventory_menuitem(xx, yy):
                 xsize 96
                 ysize 96
                 pos (24, 375)
-                add "interface/achievements/"+interface_color+"/icon_selected.png"
+                add "interface/achievements/"+interface_color+"/icon_selected.webp"
                 if current_item.number > 0:
                     $ image_zoom = crop_image_zoom(current_item.get_image(), 84, 84)
                 else:
                     $ image_zoom = crop_image_zoom(current_item.get_image(), 84, 84, True)
                 add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
-                add "interface/achievements/glass_selected.png" pos (6, 6)
+                add "interface/achievements/glass_selected.webp" pos (6, 6)
                 text str(current_item.number) size 14 align (0.90, 0.90) anchor (1.0, 1.0) color "#FFFFFF" outlines [ (1, "#000", 0, 0) ]
 
-            add "interface/achievements/"+interface_color+"/highlight.png" pos (112, 375)
-            add "interface/achievements/"+interface_color+"/spacer.png" pos (120, 398)
+            add "interface/achievements/"+interface_color+"/highlight.webp" pos (112, 375)
+            add "interface/achievements/"+interface_color+"/spacer.webp" pos (120, 398)
             hbox:
                 spacing 5
                 xalign 0.5

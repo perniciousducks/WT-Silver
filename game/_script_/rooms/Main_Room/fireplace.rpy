@@ -21,7 +21,7 @@ label fireplace:
                 m "(A loose brick... If only I could..{nw}{w=1.0}"
                 $ renpy.play('sounds/brick_scrape.mp3')
                 m "(A loose brick... If only I could..{fast} *Hhng*... There we go.)"
-                call give_reward("A puzzle box has been added to your quest items in the Inventory!", "interface/icons/icon_puzzle.png")
+                call give_reward("A puzzle box has been added to your quest items in the Inventory!", "interface/icons/icon_puzzle.webp")
                 $ puzzle_box_quest_ITEM.unlocked = True
                 call update_quest_items
                 m "Seems straight forward enough."

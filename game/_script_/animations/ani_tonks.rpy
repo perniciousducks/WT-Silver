@@ -1,74 +1,74 @@
 # Sprite blinking
-image spr_tonks blink = sprite_blink("characters/tonks/face/eyes/closed.png")
+image spr_tonks blink = sprite_blink("characters/tonks/face/eyes/closed.webp")
 
 # Tonks chibi
 
 image ch_ton stand:
-    random_blink("characters/tonks/chibis/nt_stand_blink.png", "characters/tonks/chibis/nt_walk_01.png")
+    random_blink("characters/tonks/chibis/nt_stand_blink.webp", "characters/tonks/chibis/nt_walk_01.webp")
 
 image ch_ton stand_shocked:
     size (200,360)
     contains:
         "ch_ton stand"
     contains:
-        "characters/tonks/chibis/nt_shocked.png"
+        "characters/tonks/chibis/nt_shocked.webp"
 
 image ch_ton walk:
-    "characters/tonks/chibis/nt_walk_01.png"
+    "characters/tonks/chibis/nt_walk_01.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_02.png"
+    "characters/tonks/chibis/nt_walk_02.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_03.png"
+    "characters/tonks/chibis/nt_walk_03.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_02.png"
+    "characters/tonks/chibis/nt_walk_02.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_01.png"
+    "characters/tonks/chibis/nt_walk_01.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_04.png"
+    "characters/tonks/chibis/nt_walk_04.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_05.png"
+    "characters/tonks/chibis/nt_walk_05.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_04.png"
+    "characters/tonks/chibis/nt_walk_04.webp"
     pause.08
 
     repeat
 
 image ch_ton walk shoes: # Walk shoes layer
-    "characters/tonks/chibis/nt_walk_01_shoes.png"
+    "characters/tonks/chibis/nt_walk_01_shoes.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_02_shoes.png"
+    "characters/tonks/chibis/nt_walk_02_shoes.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_03_shoes.png"
+    "characters/tonks/chibis/nt_walk_03_shoes.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_02_shoes.png"
+    "characters/tonks/chibis/nt_walk_02_shoes.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_01_shoes.png"
+    "characters/tonks/chibis/nt_walk_01_shoes.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_04_shoes.png"
+    "characters/tonks/chibis/nt_walk_04_shoes.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_05_shoes.png"
+    "characters/tonks/chibis/nt_walk_05_shoes.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_04_shoes.png"
+    "characters/tonks/chibis/nt_walk_04_shoes.webp"
     pause.08
 
     repeat
 
 image ch_ton walk trousers: # Walk trousers layer
-    "characters/tonks/chibis/nt_walk_01_trousers.png"
+    "characters/tonks/chibis/nt_walk_01_trousers.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_02_trousers.png"
+    "characters/tonks/chibis/nt_walk_02_trousers.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_03_trousers.png"
+    "characters/tonks/chibis/nt_walk_03_trousers.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_02_trousers.png"
+    "characters/tonks/chibis/nt_walk_02_trousers.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_01_trousers.png"
+    "characters/tonks/chibis/nt_walk_01_trousers.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_04_trousers.png"
+    "characters/tonks/chibis/nt_walk_04_trousers.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_05_trousers.png"
+    "characters/tonks/chibis/nt_walk_05_trousers.webp"
     pause.08
-    "characters/tonks/chibis/nt_walk_04_trousers.png"
+    "characters/tonks/chibis/nt_walk_04_trousers.webp"
     pause.08
 
     repeat
@@ -79,44 +79,44 @@ image ch_ton sit_chair:
 
     # Chair
     contains:
-        "characters/tonks/chibis/drinking/chair.png"
+        "characters/tonks/chibis/drinking/chair.webp"
 
 image ch_ton sit:
     zoom 0.5
 
     # Blinking
     contains:
-        "characters/tonks/chibis/drinking/nt_head_01.png"
+        "characters/tonks/chibis/drinking/nt_head_01.webp"
         pause 2
-        "characters/tonks/chibis/drinking/nt_head_02.png"
+        "characters/tonks/chibis/drinking/nt_head_02.webp"
         pause.08
-        "characters/tonks/chibis/drinking/nt_head_01.png"
+        "characters/tonks/chibis/drinking/nt_head_01.webp"
         pause 5
-        "characters/tonks/chibis/drinking/nt_head_02.png"
+        "characters/tonks/chibis/drinking/nt_head_02.webp"
         pause.08
-        "characters/tonks/chibis/drinking/nt_head_01.png"
+        "characters/tonks/chibis/drinking/nt_head_01.webp"
         pause.08
-        "characters/tonks/chibis/drinking/nt_head_02.png"
+        "characters/tonks/chibis/drinking/nt_head_02.webp"
         pause.08
-        "characters/tonks/chibis/drinking/nt_head_01.png"
+        "characters/tonks/chibis/drinking/nt_head_01.webp"
         pause 3
         repeat
 
     # Leg sway
     contains:
-        "characters/tonks/chibis/drinking/nt_sit_01.png"
+        "characters/tonks/chibis/drinking/nt_sit_01.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_02.png"
+        "characters/tonks/chibis/drinking/nt_sit_02.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_03.png"
+        "characters/tonks/chibis/drinking/nt_sit_03.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_04.png"
+        "characters/tonks/chibis/drinking/nt_sit_04.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_03.png"
+        "characters/tonks/chibis/drinking/nt_sit_03.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_02.png"
+        "characters/tonks/chibis/drinking/nt_sit_02.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_01.png"
+        "characters/tonks/chibis/drinking/nt_sit_01.webp"
         pause 2.5
         repeat
 
@@ -125,19 +125,19 @@ image ch_ton sit_trousers:
 
     # Trousers
     contains:
-        "characters/tonks/chibis/drinking/nt_sit_01_trousers.png"
+        "characters/tonks/chibis/drinking/nt_sit_01_trousers.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_02_trousers.png"
+        "characters/tonks/chibis/drinking/nt_sit_02_trousers.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_03_trousers.png"
+        "characters/tonks/chibis/drinking/nt_sit_03_trousers.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_04_trousers.png"
+        "characters/tonks/chibis/drinking/nt_sit_04_trousers.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_03_trousers.png"
+        "characters/tonks/chibis/drinking/nt_sit_03_trousers.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_02_trousers.png"
+        "characters/tonks/chibis/drinking/nt_sit_02_trousers.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_01_trousers.png"
+        "characters/tonks/chibis/drinking/nt_sit_01_trousers.webp"
         pause 2.5
         repeat
 
@@ -146,26 +146,26 @@ image ch_ton sit_shoes:
 
     # Shoes
     contains:
-        "characters/tonks/chibis/drinking/nt_sit_01_shoes.png"
+        "characters/tonks/chibis/drinking/nt_sit_01_shoes.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_02_shoes.png"
+        "characters/tonks/chibis/drinking/nt_sit_02_shoes.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_03_shoes.png"
+        "characters/tonks/chibis/drinking/nt_sit_03_shoes.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_04_shoes.png"
+        "characters/tonks/chibis/drinking/nt_sit_04_shoes.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_03_shoes.png"
+        "characters/tonks/chibis/drinking/nt_sit_03_shoes.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_02_shoes.png"
+        "characters/tonks/chibis/drinking/nt_sit_02_shoes.webp"
         pause.1
-        "characters/tonks/chibis/drinking/nt_sit_01_shoes.png"
+        "characters/tonks/chibis/drinking/nt_sit_01_shoes.webp"
         pause 2.5
         repeat
 
 image ch_ton sit_top:
     zoom 0.5
-    "characters/tonks/chibis/drinking/nt_top.png"
+    "characters/tonks/chibis/drinking/nt_top.webp"
 
 image ch_ton sit_choker:
     zoom 0.5
-    "characters/tonks/chibis/drinking/nt_choker.png"
+    "characters/tonks/chibis/drinking/nt_choker.webp"

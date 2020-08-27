@@ -53,10 +53,10 @@ default studio_image_yy = 1200
 
 label studio(studio_char):
     python:
-        studio_eyebrows_list = [x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyebrows/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x]
-        studio_eyes_list = [x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyes/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x]
-        studio_mouth_list = [x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/mouth/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x]
-        studio_pupils_list = [x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/pupils/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x]
+        studio_eyebrows_list = [x.rsplit(".webp")[0] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyebrows/") if x.endswith(".webp") and not "_mask" in x and not "_skin" in x]
+        studio_eyes_list = [x.rsplit(".webp")[0] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyes/") if x.endswith(".webp") and not "_mask" in x and not "_skin" in x]
+        studio_mouth_list = [x.rsplit(".webp")[0] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/mouth/") if x.endswith(".webp") and not "_mask" in x and not "_skin" in x]
+        studio_pupils_list = [x.rsplit(".webp")[0] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/pupils/") if x.endswith(".webp") and not "_mask" in x and not "_skin" in x]
 
         studio_bg_list = ["wall_day", "castle", "forest", "highlight", "versus", "main_room_day", "main_room_night", "corridor", "custom"]
         studio_bg_overlay_list = [None, "curtains", "card", "g_bottom", "g_left", "g_circular"]
@@ -78,7 +78,7 @@ label studio(studio_char):
 
         studio_hide = False
 
-        image_arrow = "interface/frames/"+interface_color+"/arrow2.png"
+        image_arrow = "interface/frames/"+interface_color+"/arrow2.webp"
 
     label .after_init:
 
@@ -225,15 +225,15 @@ screen studio():
     if studio_bg_list[studio_room_bg] == "custom":
         add Color(hsv=(studio_room_bg_hue/360.0, studio_room_bg_saturation/4.0, studio_room_bg_brightness/2.0))
     elif studio_room_bg_blur > 0.0:
-        add im.Blur(im.MatrixColor("images/rooms/_bg_/"+studio_bg_list[studio_room_bg]+".png", (im.matrix.hue(studio_room_bg_hue)*im.matrix.saturation(clamp(studio_room_bg_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_bg_brightness-1.0)), studio_room_bg_blur) ypos studio_room_bg_yoffset-300 xpos studio_room_bg_xoffset-540 xzoom studio_room_bg_flipx yzoom studio_room_bg_flipy xanchor 0.5 yanchor 0.5
+        add im.Blur(im.MatrixColor("images/rooms/_bg_/"+studio_bg_list[studio_room_bg]+".webp", (im.matrix.hue(studio_room_bg_hue)*im.matrix.saturation(clamp(studio_room_bg_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_bg_brightness-1.0)), studio_room_bg_blur) ypos studio_room_bg_yoffset-300 xpos studio_room_bg_xoffset-540 xzoom studio_room_bg_flipx yzoom studio_room_bg_flipy xanchor 0.5 yanchor 0.5
     else:
-        add im.MatrixColor("images/rooms/_bg_/"+studio_bg_list[studio_room_bg]+".png", (im.matrix.hue(studio_room_bg_hue)*im.matrix.saturation(clamp(studio_room_bg_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_bg_brightness-1.0)) ypos studio_room_bg_yoffset-300 xpos studio_room_bg_xoffset-540 xzoom studio_room_bg_flipx yzoom studio_room_bg_flipy xanchor 0.5 yanchor 0.5
+        add im.MatrixColor("images/rooms/_bg_/"+studio_bg_list[studio_room_bg]+".webp", (im.matrix.hue(studio_room_bg_hue)*im.matrix.saturation(clamp(studio_room_bg_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_bg_brightness-1.0)) ypos studio_room_bg_yoffset-300 xpos studio_room_bg_xoffset-540 xzoom studio_room_bg_flipx yzoom studio_room_bg_flipy xanchor 0.5 yanchor 0.5
 
     if not studio_bg_overlay_list[studio_room_overlay] == None:
         if studio_room_overlay_blur > 0.0:
-            add im.Blur(im.MatrixColor("images/rooms/overlays/"+studio_bg_overlay_list[studio_room_overlay]+".png", (im.matrix.hue(studio_room_overlay_hue)*im.matrix.saturation(clamp(studio_room_overlay_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_overlay_brightness-1.0)), studio_room_overlay_blur) ypos studio_room_overlay_yoffset-300 xpos studio_room_overlay_xoffset-540 xzoom studio_room_overlay_flipx yzoom studio_room_overlay_flipy alpha studio_room_overlay_alpha xanchor 0.5 yanchor 0.5
+            add im.Blur(im.MatrixColor("images/rooms/overlays/"+studio_bg_overlay_list[studio_room_overlay]+".webp", (im.matrix.hue(studio_room_overlay_hue)*im.matrix.saturation(clamp(studio_room_overlay_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_overlay_brightness-1.0)), studio_room_overlay_blur) ypos studio_room_overlay_yoffset-300 xpos studio_room_overlay_xoffset-540 xzoom studio_room_overlay_flipx yzoom studio_room_overlay_flipy alpha studio_room_overlay_alpha xanchor 0.5 yanchor 0.5
         else:
-            add im.MatrixColor("images/rooms/overlays/"+studio_bg_overlay_list[studio_room_overlay]+".png", (im.matrix.hue(studio_room_overlay_hue)*im.matrix.saturation(clamp(studio_room_overlay_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_overlay_brightness-1.0)) ypos studio_room_overlay_yoffset-300 xpos studio_room_overlay_xoffset-540 xzoom studio_room_overlay_flipx yzoom studio_room_overlay_flipy alpha studio_room_overlay_alpha xanchor 0.5 yanchor 0.5
+            add im.MatrixColor("images/rooms/overlays/"+studio_bg_overlay_list[studio_room_overlay]+".webp", (im.matrix.hue(studio_room_overlay_hue)*im.matrix.saturation(clamp(studio_room_overlay_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_overlay_brightness-1.0)) ypos studio_room_overlay_yoffset-300 xpos studio_room_overlay_xoffset-540 xzoom studio_room_overlay_flipx yzoom studio_room_overlay_flipy alpha studio_room_overlay_alpha xanchor 0.5 yanchor 0.5
 
     default char_img = (Flatten(char_active.get_image()) if studio_image_body else studio_outfit_saves.get(active_girl).get_image())
     drag:
@@ -254,9 +254,9 @@ screen studio():
 
     if not studio_bg_overlay_list[studio_room_overlay2] == None:
         if studio_room_overlay2_blur > 0.0:
-            add im.Blur(im.MatrixColor("images/rooms/overlays/"+studio_bg_overlay_list[studio_room_overlay2]+".png", (im.matrix.hue(studio_room_overlay2_hue)*im.matrix.saturation(clamp(studio_room_overlay2_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_overlay2_brightness-1.0)), studio_room_overlay2_blur) ypos studio_room_overlay2_yoffset-300 xpos studio_room_overlay2_xoffset-540 xzoom studio_room_overlay2_flipx yzoom studio_room_overlay2_flipy alpha studio_room_overlay2_alpha xanchor 0.5 yanchor 0.5
+            add im.Blur(im.MatrixColor("images/rooms/overlays/"+studio_bg_overlay_list[studio_room_overlay2]+".webp", (im.matrix.hue(studio_room_overlay2_hue)*im.matrix.saturation(clamp(studio_room_overlay2_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_overlay2_brightness-1.0)), studio_room_overlay2_blur) ypos studio_room_overlay2_yoffset-300 xpos studio_room_overlay2_xoffset-540 xzoom studio_room_overlay2_flipx yzoom studio_room_overlay2_flipy alpha studio_room_overlay2_alpha xanchor 0.5 yanchor 0.5
         else:
-            add im.MatrixColor("images/rooms/overlays/"+studio_bg_overlay_list[studio_room_overlay2]+".png", (im.matrix.hue(studio_room_overlay2_hue)*im.matrix.saturation(clamp(studio_room_overlay2_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_overlay2_brightness-1.0)) ypos studio_room_overlay2_yoffset-300 xpos studio_room_overlay2_xoffset-540 xzoom studio_room_overlay2_flipx yzoom studio_room_overlay2_flipy alpha studio_room_overlay2_alpha xanchor 0.5 yanchor 0.5
+            add im.MatrixColor("images/rooms/overlays/"+studio_bg_overlay_list[studio_room_overlay2]+".webp", (im.matrix.hue(studio_room_overlay2_hue)*im.matrix.saturation(clamp(studio_room_overlay2_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_overlay2_brightness-1.0)) ypos studio_room_overlay2_yoffset-300 xpos studio_room_overlay2_xoffset-540 xzoom studio_room_overlay2_flipx yzoom studio_room_overlay2_flipy alpha studio_room_overlay2_alpha xanchor 0.5 yanchor 0.5
 
     if studio_text:
         drag:
@@ -277,7 +277,7 @@ screen studio():
                             alpha studio_text_alpha
 
     if export_in_progress:
-        add "images/rooms/overlays/card_sp.png"
+        add "images/rooms/overlays/card_sp.webp"
         hbox:
             xalign 1.0
             yalign 1.0

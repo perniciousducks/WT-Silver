@@ -786,7 +786,7 @@ label potion_scene_3_3_1:
             g4 "Here it comes slut!"
             call her_main("{heart}!!!{heart}", "shock", "wide", "base", "stare",cheeks="blush")
             call gen_chibi("cum","desk","base")
-            $ u_sperm = "characters/hermione/face/auto_07.png"
+            $ u_sperm = "characters/hermione/face/auto_07.webp"
             $ uni_sperm = True
             g4 "that's it, all over your face."
             call set_her_action("pinch")
@@ -795,7 +795,7 @@ label potion_scene_3_3_1:
             g4 "Here it comes fuckbunny!"
             call her_main("{heart}{heart}{heart}", "shock", "wide", "base", "stare",cheeks="blush")
             call gen_chibi("cum","desk","base")
-            $ u_sperm = "characters/hermione/face/auto_02.png"
+            $ u_sperm = "characters/hermione/face/auto_02.webp"
             $ uni_sperm = True
             g4 "All over your tits."
             call set_her_action("pinch")
@@ -804,7 +804,7 @@ label potion_scene_3_3_1:
             g4 "Here it comes whore!"
             call her_main("{heart}{heart}{heart}", "shock", "wide", "base", "stare",cheeks="blush")
             call gen_chibi("cum","desk","base")
-            $ u_sperm = "characters/hermione/face/auto_05.png"
+            $ u_sperm = "characters/hermione/face/auto_05.webp"
             $ uni_sperm = True
             g4 "that's right slut, All over you."
             call set_her_action("pinch")
@@ -843,7 +843,7 @@ label potion_scene_3_3_1:
     # Note: these items can also be bought
     $ cum_badge_ITEM.unlocked = True
     $ lipstick_pink_ITEM.unlocked = True
-    call give_reward(">Hermione can now use pink lipstick and wear the \'cum\' badge!","interface/icons/lipstick_pink.png")
+    call give_reward(">Hermione can now use pink lipstick and wear the \'cum\' badge!","interface/icons/lipstick_pink.webp")
 
     call reset_hermione
 

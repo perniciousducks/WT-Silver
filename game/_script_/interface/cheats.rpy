@@ -7,7 +7,7 @@ default skip_to_hermione = False
 
 label cheats:
     menu:
-        "-Hermione Cheats-" (icon="interface/icons/small/hermione.png") if hermione_unlocked:
+        "-Hermione Cheats-" (icon="interface/icons/small/hermione.webp") if hermione_unlocked:
             label .hermione:
             menu:
                 "-Reset Hermione's mood-" if her_mood != 0:
@@ -31,7 +31,7 @@ label cheats:
                 "-Back-":
                     jump cheats
 
-        "-Astoria Cheats-" (icon="interface/icons/small/astoria.png") if astoria_unlocked:
+        "-Astoria Cheats-" (icon="interface/icons/small/astoria.webp") if astoria_unlocked:
             label .astoria:
             menu:
                 "-Reset Astoria's mood-" if ast_mood != 0:
@@ -54,7 +54,7 @@ label cheats:
                 "-Back-":
                     jump cheats
 
-        "-Luna Cheats-" (icon="interface/icons/small/luna.png") if luna_unlocked:
+        "-Luna Cheats-" (icon="interface/icons/small/luna.webp") if luna_unlocked:
             label cheats_luna:
             menu:
                 "-Unlock all outfits & sets-":
@@ -88,7 +88,7 @@ label cheats:
                 "-never mind-":
                     jump cheats
 
-        "-Cho Cheats-" (icon="interface/icons/small/cho.png") if her_tier >= 2 or cho_unlocked:
+        "-Cho Cheats-" (icon="interface/icons/small/cho.webp") if her_tier >= 2 or cho_unlocked:
             label .cho:
             menu:
                 "-Reset Cho's mood-" if cho_mood != 0:
@@ -123,7 +123,7 @@ label cheats:
                 "-Back-":
                     jump cheats
 
-        "-Book Cheats-" (icon="interface/icons/small/book.png") if store_intro_done:
+        "-Book Cheats-" (icon="interface/icons/small/book.webp") if store_intro_done:
             label .books:
             menu:
                 "-Max Imagination":
@@ -144,7 +144,7 @@ label cheats:
                 "-Back-":
                     jump cheats
 
-        "-Potion Cheats-" (icon="interface/icons/small/potion.png"):
+        "-Potion Cheats-" (icon="interface/icons/small/potion.webp"):
             label cheats_potions:
             menu:
                 "-Add all normal potions-":
@@ -158,18 +158,18 @@ label cheats:
             $ unlocked_7th = True
             jump open_puzzle_box
 
-        "-Add Gold-" (icon="interface/icons/small/gold.png"):
+        "-Add Gold-" (icon="interface/icons/small/gold.webp"):
             $ gold += 500
             "You've obtained 500g."
             jump cheats
 
-        "-Add Slytherin Points-" (icon="interface/icons/small/slyt.png"):
+        "-Add Slytherin Points-" (icon="interface/icons/small/slyt.webp"):
             $ slytherin += 200
             call house_points
             "Two hundred points to Slytherin!"
             jump cheats
 
-        "-Wardrobe transparency-" (icon="interface/icons/small/wardrobe.png"):
+        "-Wardrobe transparency-" (icon="interface/icons/small/wardrobe.webp"):
             $ cheat_wardrobe_alpha = not cheat_wardrobe_alpha
             if cheat_wardrobe_alpha:
                 "Wardrobe transparency slider is enabled."
@@ -191,7 +191,7 @@ label cheats:
                             getattr(renpy.store, i).unequip("all")
                     jump cheats.devroom
 
-                "-Unlock all characters-" (icon="interface/icons/small/condom.png"):
+                "-Unlock all characters-" (icon="interface/icons/small/condom.webp"):
                     $ snape_unlocked = True
                     $ tonks_unlocked = True
                     $ hermione_unlocked = True
@@ -203,7 +203,7 @@ label cheats:
                     # voldermort_unlocked = True
                     # hagrid_unlocked = True
                     jump cheats.devroom
-                "-Unlock all characters wardrobe-" (icon="interface/icons/small/wardrobe.png"):
+                "-Unlock all characters wardrobe-" (icon="interface/icons/small/wardrobe.webp"):
                     $ tonks_wardrobe_unlocked = True
                     $ hermione_wardrobe_unlocked = True
                     $ cho_wardrobe_unlocked = True
@@ -214,7 +214,7 @@ label cheats:
                     # voldemort_wardrobe_unlocked = True
                     # hagrid_wardrobe_unlocked = True
                     jump cheats.devroom
-                "-Unlock all characters clothes-" (icon="interface/icons/small/wardrobe.png"):
+                "-Unlock all characters clothes-" (icon="interface/icons/small/wardrobe.webp"):
                     python:
                         for i in ("hermione", "cho", "astoria", "tonks"):
                             for x in getattr(renpy.store, i).wardrobe_list:
@@ -235,7 +235,7 @@ label cheats:
                 "-Skip character progression-":
                     jump cheats.progression_skip
 
-                "-Get 100 of all gift items-" (icon="interface/icons/small/gift.png"):
+                "-Get 100 of all gift items-" (icon="interface/icons/small/gift.webp"):
                     python:
                         for i in candy_gift_list:
                             i.number = 100
@@ -246,7 +246,7 @@ label cheats:
                         for i in toy_gift_list:
                             i.number = 100
                     jump cheats.devroom
-                "-Get all scrolls-" (icon="interface/icons/small/spell.png"):
+                "-Get all scrolls-" (icon="interface/icons/small/spell.webp"):
                     python:
                         for i in scroll_list_A:
                             i.unlocked = True
@@ -255,7 +255,7 @@ label cheats:
                         for i in scroll_list_C:
                             i.unlocked = True
                     jump cheats.devroom
-                "-Get all books-" (icon="interface/icons/small/book.png"):
+                "-Get all books-" (icon="interface/icons/small/book.webp"):
                     python:
                         for i in book_list.read_books:
                             i.unlocked = True
@@ -267,7 +267,7 @@ label cheats:
                             i.unlocked = True
                             i.unlockable = False
                     jump cheats.devroom
-                "-Get all decorations-" (icon="interface/icons/small/gold.png"):
+                "-Get all decorations-" (icon="interface/icons/small/gold.webp"):
                     python:
                         for i in wall_deco_list:
                             i.unlocked = True
@@ -288,7 +288,7 @@ label cheats:
                         lootbox_quest_ITEM.number = 5 # Consumable
                     call update_quest_items
                     jump cheats.devroom
-                "-Read Hermione's Diary-" (icon="interface/icons/small/hermione.png"):
+                "-Read Hermione's Diary-" (icon="interface/icons/small/hermione.webp"):
                     call book_handle(book=hermione_diary)
                     jump cheats.devroom
                 "Gallery test":

@@ -71,7 +71,7 @@ init -1 python:
         return im.MatrixColor(image,  im.matrix.tint(1.2, 1.1, 0.7))
 
     def get_head_icon(name):
-        return "interface/icons/head/"+str(name)+".png"
+        return "interface/icons/head/"+str(name)+".webp"
 
     def image_hover(image):
         """Returns slightly brighter image used during hover events"""

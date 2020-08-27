@@ -188,18 +188,18 @@ init python:
                     box = (450, 310, 280, 240)
 
 
-                sprites = [imagepath+"/game/characters/"+char+"/body/base/front.png"]
+                sprites = [imagepath+"/game/characters/"+char+"/body/base/front.webp"]
 
                 if not "No change" in args["cheeks"]:
-                    sprites.append(imagepath+"/game/characters/"+char+"/face/cheeks/"+args["cheeks"]+".png")
-                sprites.append(imagepath+"/game/characters/"+char+"/face/eyes/"+args["eyes"]+".png")
+                    sprites.append(imagepath+"/game/characters/"+char+"/face/cheeks/"+args["cheeks"]+".webp")
+                sprites.append(imagepath+"/game/characters/"+char+"/face/eyes/"+args["eyes"]+".webp")
                 if not any(x in args["eyes"] for x in ("closed", "happyCl")):
-                    m = imagepath+"/game/characters/"+char+"/face/eyes/"+args["eyes"]+"_mask.png"
-                    sprites.append(AlphaMask(imagepath+"/game/characters/"+char+"/face/pupils/"+args["pupils"]+".png", m))
-                sprites.append(imagepath+"/game/characters/"+char+"/face/eyebrows/"+args["eyebrows"]+".png")
+                    m = imagepath+"/game/characters/"+char+"/face/eyes/"+args["eyes"]+"_mask.webp"
+                    sprites.append(AlphaMask(imagepath+"/game/characters/"+char+"/face/pupils/"+args["pupils"]+".webp", m))
+                sprites.append(imagepath+"/game/characters/"+char+"/face/eyebrows/"+args["eyebrows"]+".webp")
                 if not "No change" in args["tears"]:
-                    sprites.append(imagepath+"/game/characters/"+char+"/face/tears/"+args["tears"]+".png")
-                sprites.append(imagepath+"/game/characters/"+char+"/face/mouth/"+args["mouth"]+".png")
+                    sprites.append(imagepath+"/game/characters/"+char+"/face/tears/"+args["tears"]+".webp")
+                sprites.append(imagepath+"/game/characters/"+char+"/face/mouth/"+args["mouth"]+".webp")
 
                 # Hair
                 sprites.extend(hair.get_back())
@@ -252,17 +252,17 @@ init python:
 
         def define_expressions(self):
             def scan_files(char):
-                mouths = tuple(x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/mouth/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x)
-                eyes = tuple(x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/eyes/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x)
-                eyebrows = tuple(x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/eyebrows/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x)
-                pupils = tuple(x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/pupils/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x)
+                mouths = tuple(x.rsplit(".webp")[0] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/mouth/") if x.endswith(".webp") and not "_mask" in x and not "_skin" in x)
+                eyes = tuple(x.rsplit(".webp")[0] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/eyes/") if x.endswith(".webp") and not "_mask" in x and not "_skin" in x)
+                eyebrows = tuple(x.rsplit(".webp")[0] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/eyebrows/") if x.endswith(".webp") and not "_mask" in x and not "_skin" in x)
+                pupils = tuple(x.rsplit(".webp")[0] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/pupils/") if x.endswith(".webp") and not "_mask" in x and not "_skin" in x)
 
                 cheeks = ["(No change)"]
                 tears = ["(No change)"]
                 hair = ["(No change)", "neutral", "angry", "upset", "happy", "disgusted", "sad", "purple", "scared", "horny"]
 
-                cheeks.extend([x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/cheeks/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x])
-                tears.extend([x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/tears/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x])
+                cheeks.extend([x.rsplit(".webp")[0] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/cheeks/") if x.endswith(".webp") and not "_mask" in x and not "_skin" in x])
+                tears.extend([x.rsplit(".webp")[0] for x in system.listdir(config.basedir+"/game/characters/"+char+"/face/tears/") if x.endswith(".webp") and not "_mask" in x and not "_skin" in x])
 
                 return _dict([("mouths", mouths), ("eyes", eyes), ("eyebrows", eyebrows), ("pupils", pupils), ("cheeks", cheeks), ("tears", tears), ("hair", hair)])
 

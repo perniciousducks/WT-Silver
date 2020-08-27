@@ -53,7 +53,7 @@ label ast_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=
 screen ast_cloth_pile(position=(440, 425)): # Default position: Right of desk, below feet.
     tag ast_cloth_pile
     zorder astoria_chibi.zorder
-    add "characters/chibis/cloth_pile_r.png" pos position zoom 0.5
+    add "characters/chibis/cloth_pile_r.webp" pos position zoom 0.5
 
 # Chibi definition
 default astoria_chibi = Chibi("astoria", ["fix", "base", "bottom", "shoes", "top", "robe", "gloves"], update_astoria_chibi)
@@ -67,13 +67,13 @@ init python:
         # Determine clothing state
 
         if astoria.is_worn("top"):
-            chibi["top"] = "ag_top.png"
+            chibi["top"] = "ag_top.webp"
 
         if astoria.is_worn("bottom") or (astoria.is_worn("top") and astoria.get_equipped("top").id == ast_top_ann.id):
-            chibi["bottom"] = "ag_skirt.png"
+            chibi["bottom"] = "ag_skirt.webp"
 
         if astoria.is_worn("robe") and not chibi.special:
-            chibi["robe"] = "ag_robe.png"
+            chibi["robe"] = "ag_robe.webp"
 
         if astoria.is_any_worn("bottom", "stockings"):
             if chibi.action == "wand_imperio":
@@ -81,4 +81,4 @@ init python:
             elif chibi.action == "walk":
                 chibi["shoes"] = "ch_ast walk_shoes"
             else:
-                chibi["shoes"] = "ag_shoes.png"
+                chibi["shoes"] = "ag_shoes.webp"

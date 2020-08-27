@@ -16,21 +16,21 @@ init python:
             sprites = []
 
             # Add facial expressions
-            sprites.extend(("{}{}/{}.png".format(self.imagepath, k, v[0]), v[1]) for k, v in self.face.iteritems() if not k == "pupils" and v[0])
+            sprites.extend(("{}{}/{}.webp".format(self.imagepath, k, v[0]), v[1]) for k, v in self.face.iteritems() if not k == "pupils" and v[0])
 
             if self.blink and self.face["eyes"][0] not in self.blacklist_blink:
                 sprites.append((self.blink, 10))
 
-            path = "{}eyes/{}_mask.png".format(self.imagepath, self.face["eyes"][0])
+            path = "{}eyes/{}_mask.webp".format(self.imagepath, self.face["eyes"][0])
             if renpy.loadable(path):
-                sprites.append((AlphaMask("{}pupils/{}.png".format(self.imagepath, self.face["pupils"][0]), "{}eyes/{}_mask.png".format(self.imagepath, self.face["eyes"][0])), self.face["pupils"][1]))
+                sprites.append((AlphaMask("{}pupils/{}.webp".format(self.imagepath, self.face["pupils"][0]), "{}eyes/{}_mask.webp".format(self.imagepath, self.face["eyes"][0])), self.face["pupils"][1]))
 
             sprites.sort(key=lambda x: x[1], reverse=False)
             sprites = tuple(itertools.chain.from_iterable(((0,0), x[0]) for x in sprites))
             return sprites
 
         def get_skin(self):
-            return ["{}{}/{}_skin.png".format(self.imagepath, k, v[0]) for k, v in self.face.iteritems() if renpy.loadable("{}{}/{}_skin.png".format(self.imagepath, k, v[0]))]
+            return ["{}{}/{}_skin.webp".format(self.imagepath, k, v[0]) for k, v in self.face.iteritems() if renpy.loadable("{}{}/{}_skin.webp".format(self.imagepath, k, v[0]))]
 
         def get_face(self):
             return dict((k, v[0]) for k, v in self.face.iteritems())

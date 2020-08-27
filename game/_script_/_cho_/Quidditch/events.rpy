@@ -130,7 +130,7 @@ label cho_quid_E1:
     # Cho leaves.
     call cho_walk(action="leave")
 
-    call popup("You've lost the ability to train Cho in Quidditch.", "Congratulations!", "interface/icons/head/cho.png")
+    call popup("You've lost the ability to train Cho in Quidditch.", "Congratulations!", "interface/icons/head/cho.webp")
 
     call bld
     m "She'll get over it..."
@@ -278,7 +278,7 @@ label cho_quid_E2:
     call cho_walk(action="leave")
 
     m "(Now to find out what the boy's into and make sure she's prepared to do what it takes...)"
-    call popup("You've unlocked Cho private favours!", "Congratulations!", "interface/icons/head/cho.png")
+    call popup("You've unlocked Cho private favours!", "Congratulations!", "interface/icons/head/cho.webp")
 
     # Flags
     $ cho.equip(cho_outfit_last)

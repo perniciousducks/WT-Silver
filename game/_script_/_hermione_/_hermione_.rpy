@@ -110,7 +110,7 @@ label end_hermione_event:
     $ hermione.set_cum(None)
 
     $ renpy.stop_predict(hermione.get_image())
-    $ renpy.stop_predict("characters/hermione/face/*.png")
+    $ renpy.stop_predict("characters/hermione/face/*.webp")
 
     call music_block
     jump main_room

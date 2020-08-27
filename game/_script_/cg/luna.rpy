@@ -25,39 +25,39 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
     def lunCG(mouth=None, eye=None, eyebrow=None, pupil=None, xpos=None, ypos=None, cheeks=None, tears=None, extra_1=None, extra_2=None, extra_3=None, pos=None, overlay=None, body=None):
         global lun_cg_body, lun_cg_overlay, lun_cg_hair, lun_cg_cheeks, lun_cg_mouth, lun_cg_eyewhite, lun_cg_eyewear, lun_cg_pupil, lun_cg_eye, lun_cg_eyebrow, lun_cg_eyewear, lun_cg_tears, lun_cg_hairtop, lun_cg_extra_1, lun_cg_extra_2, lun_cg_extra_3, lun_cg_xpos, lun_cg_ypos, lun_cg_dick
 
-        lun_cg_eyewhite     = lun_cg_path+"eye_white.png"
-        lun_cg_eyewear      = lun_cg_path+"glasses.png"
-        lun_cg_hair         = lun_cg_path+lun_hair_style+"_hair.png"
-        lun_cg_hairtop      = lun_cg_path+lun_hair_style+"_hair_top.png"
+        lun_cg_eyewhite     = lun_cg_path+"eye_white.webp"
+        lun_cg_eyewear      = lun_cg_path+"glasses.webp"
+        lun_cg_hair         = lun_cg_path+lun_hair_style+"_hair.webp"
+        lun_cg_hairtop      = lun_cg_path+lun_hair_style+"_hair_top.webp"
 
         if body:
-            lun_cg_body     = lun_cg_path+"luna_base.png"
+            lun_cg_body     = lun_cg_path+"luna_base.webp"
         if cheeks:
-            lun_cg_cheeks   = lun_cg_path+"c_"+str(cheeks)+".png"
+            lun_cg_cheeks   = lun_cg_path+"c_"+str(cheeks)+".webp"
         if mouth:
-            lun_cg_mouth    = lun_cg_path+"m_"+str(mouth)+".png"
+            lun_cg_mouth    = lun_cg_path+"m_"+str(mouth)+".webp"
         if eye:
-            lun_cg_eye      = lun_cg_path+"eye_"+str(eye)+".png"
+            lun_cg_eye      = lun_cg_path+"eye_"+str(eye)+".webp"
         if eyebrow:
-            lun_cg_eyebrow  = lun_cg_path+"eb_"+str(eyebrow)+".png"
+            lun_cg_eyebrow  = lun_cg_path+"eb_"+str(eyebrow)+".webp"
         if pupil:
-            lun_cg_pupil    = lun_cg_path+"pup_"+str(pupil)+".png"
+            lun_cg_pupil    = lun_cg_path+"pup_"+str(pupil)+".webp"
         if tears:
-            lun_cg_tears    = lun_cg_path+str(tears)+".png"
+            lun_cg_tears    = lun_cg_path+str(tears)+".webp"
         if extra_1:
-            lun_cg_extra_1  = lun_cg_path+str(extra_1)+".png"
+            lun_cg_extra_1  = lun_cg_path+str(extra_1)+".webp"
         if extra_2:
-            lun_cg_extra_2  = lun_cg_path+str(extra_2)+".png"
+            lun_cg_extra_2  = lun_cg_path+str(extra_2)+".webp"
         if extra_3:
-            lun_cg_extra_3  = lun_cg_path+str(extra_3)+".png"
+            lun_cg_extra_3  = lun_cg_path+str(extra_3)+".webp"
         if xpos:
             lun_cg_xpos     = xpos
         if ypos:
             lun_cg_ypos     = ypos
         if overlay:
-            lun_cg_overlay  = lun_cg_path+str(overlay)+".png"
+            lun_cg_overlay  = lun_cg_path+str(overlay)+".webp"
 
         if pos != None:
             lun_cg_xpos = lun_loop_xpos[pos]
             lun_cg_ypos = lun_loop_ypos[pos]
-            lun_cg_dick = lun_cg_path+"dick_"+str(pos)+".png"
+            lun_cg_dick = lun_cg_path+"dick_"+str(pos)+".webp"

@@ -36,7 +36,7 @@ init python:
         def set_imagepath(self):
             for x in (self.categories[0], self.categories[1], self.type):
                 path = "{}/characters/{}/clothes/{}/{}/".format(self.modpath, self.name, x, self.id)
-                if renpy.loadable(path + "0.png"):
+                if renpy.loadable(path + "0.webp"):
                     self.imagepath = path
                     break
             if not self.imagepath:
@@ -44,28 +44,28 @@ init python:
 
         def set_layers(self):
             for x in self.layers_special:
-                path = "{}{}.png".format(self.imagepath, x)
+                path = "{}{}.webp".format(self.imagepath, x)
                 self.__dict__[x] = path if renpy.loadable(path) else None
 
             for x in self.layers_additional:
                 self.__dict__[x] = []
                 for i in xrange(self.layers):
-                    path = "{}{}_{}.png".format(self.imagepath, i, x)
+                    path = "{}{}_{}.webp".format(self.imagepath, i, x)
                     if renpy.loadable(path):
                         self.__dict__[x].append(path)
                 if self.__dict__[x]:
-                    path = "{}outline_{}.png".format(self.imagepath, x)
+                    path = "{}outline_{}.webp".format(self.imagepath, x)
                     self.__dict__[x+"_outline"] = path if renpy.loadable(path) else None
 
         def build_image(self):
             sprites = []
 
             # Add colorable layers and color them
-            sprites.extend((self.apply_color("{}{}.png".format(self.imagepath, x), x), x) for x in xrange(self.layers))
+            sprites.extend((self.apply_color("{}{}.webp".format(self.imagepath, x), x), x) for x in xrange(self.layers))
 
             # Add extra layers if exist
             for n, x in enumerate(self.layers_extra):
-                path = "{}{}.png".format(self.imagepath, x)
+                path = "{}{}.webp".format(self.imagepath, x)
                 if renpy.loadable(path):
                     sprites.append((path, self.layers+n))
 
@@ -75,7 +75,7 @@ init python:
 
         def build_icon(self):
             sprites = []
-            sprites.extend((self.apply_color("{}{}.png".format(self.imagepath, x), x), x) for x in xrange(self.layers))
+            sprites.extend((self.apply_color("{}{}.webp".format(self.imagepath, x), x), x) for x in xrange(self.layers))
             sprites.extend((self.apply_color(x, n), n-50) for n, x in enumerate(self.back))
             sprites.extend((self.apply_color(x, n), 50+n) for n, x in enumerate(self.front))
             if self.back_outline:
@@ -84,11 +84,11 @@ init python:
                 sprites.append([self.front_outline, 50+self.zorder+self.layers])
 
             for n, x in enumerate(self.layers_extra):
-                path = "{}{}.png".format(self.imagepath, x)
+                path = "{}{}.webp".format(self.imagepath, x)
                 if renpy.loadable(path):
                     sprites.append((path, self.layers+n))
 
-            bounds = "{}outline.png".format(self.imagepath) if renpy.loadable("{}outline.png".format(self.imagepath)) else "{}0.png".format(self.imagepath)
+            bounds = "{}outline.webp".format(self.imagepath) if renpy.loadable("{}outline.webp".format(self.imagepath)) else "{}0.webp".format(self.imagepath)
 
             sprites.sort(key=lambda x: x[1], reverse=False)
             sprites = tuple(itertools.chain.from_iterable(((0,0), x[0]) for x in sprites))
@@ -150,12 +150,12 @@ init python:
             for x in (self.categories[0], self.categories[1], self.type):
                 if pose is None:
                     path = "{}/characters/{}/clothes/{}/{}/".format(self.modpath, self.name, x, self.id)
-                    if renpy.loadable(path + "0.png"):
+                    if renpy.loadable(path + "0.webp"):
                         self.imagepath = path
                         break
                 else:
                     path = "{}/characters/{}/poses/{}/clothes/{}/{}/".format(self.modpath, self.name, pose, x, self.id)
-                    if renpy.loadable(path + "0.png"):
+                    if renpy.loadable(path + "0.webp"):
                         self.imagepath = path
                         break
 

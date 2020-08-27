@@ -11,7 +11,7 @@ init python:
             for x in self.layers_additional:
                 self.__dict__[x] = []
                 for i in xrange(self.layers):
-                    path = "{}{}_{}.png".format(self.imagepath, i, x)
+                    path = "{}{}_{}.webp".format(self.imagepath, i, x)
                     if renpy.loadable(path):
                         self.__dict__[x].append(path)
                 self.__dict__[x+"_outline"] = None
@@ -20,13 +20,13 @@ init python:
 
         def build_image(self):
             mouth = self.char.face.face["mouth"][0]
-            image = self.apply_color("{}{}.png".format(self.imagepath, mouth), 0)
+            image = self.apply_color("{}{}.webp".format(self.imagepath, mouth), 0)
             sprites = ((0,0), image)
             return sprites
 
         def build_icon(self):
             mouth = self.char.face.face["mouth"][0]
-            bounds = "{}{}.png".format(self.imagepath, mouth)
+            bounds = "{}{}.webp".format(self.imagepath, mouth)
             self.ico = CroppedImage(self.build_image(), bounds)
 
         def set_pose(self, pose):
@@ -35,7 +35,7 @@ init python:
                 self.imagepath = path
             else:
                 path = "{}/characters/{}/poses/{}/clothes/makeup/lipstick/".format(self.modpath, self.name, pose)
-                if renpy.loadable(path + "base.png"):
+                if renpy.loadable(path + "base.webp"):
                     self.imagepath = path
 
             self.rebuild_image()

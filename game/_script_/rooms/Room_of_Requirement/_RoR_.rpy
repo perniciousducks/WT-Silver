@@ -1,4 +1,4 @@
-define mirror_bg = [None, "images/rooms/room_of_requirement/agrabah.png"]
+define mirror_bg = [None, "images/rooms/room_of_requirement/agrabah.webp"]
 default mirror_image = 0
 
 transform mirrage:
@@ -8,7 +8,7 @@ transform mirrage:
 
 screen room_of_requirement():
     zorder 0
-    add im.Flip("images/rooms/room_of_requirement/corridor.png", horizontal=True)
+    add im.Flip("images/rooms/room_of_requirement/corridor.webp", horizontal=True)
     if mirror_image != 0:
         add im.Flip(mirror_bg[mirror_image], horizontal=True) xpos -540 at mirrage
 
@@ -17,11 +17,11 @@ screen room_of_requirement():
     if mirror_chibi:
         add mirror_chibi.copy() xzoom -1 xoffset 450-config.screen_width
 
-    add "images/rooms/room_of_requirement/empty_room.png"
-    add "images/rooms/_objects_/doors/door_idle_night.png" xpos 898 ypos 315 xanchor 0.5 yanchor 0.5 zoom 0.5
-    add "images/rooms/room_of_requirement/mirror.png" xpos 100 ypos 180
+    add "images/rooms/room_of_requirement/empty_room.webp"
+    add "images/rooms/_objects_/doors/door_idle_night.webp" xpos 898 ypos 315 xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/room_of_requirement/mirror.webp" xpos 100 ypos 180
 
-    add "images/rooms/_objects_/candles/candleM.png" xpos 700  ypos 200  xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/_objects_/candles/candleM.webp" xpos 700  ypos 200  xanchor 0.5 yanchor 0.5 zoom 0.5
 
     use ui_top_bar
 
@@ -29,7 +29,7 @@ screen room_of_requirement_overlay():
     tag foreground
     zorder 5
 
-    add "images/rooms/room_of_requirement/foreground.png"
+    add "images/rooms/room_of_requirement/foreground.webp"
     add "candle_fire_01" xpos 592 ypos 85
     add "candle_fire_02" xpos 248 ypos 50
 
@@ -40,8 +40,8 @@ screen room_of_requirement_menu():
     imagebutton: # Mirror
         xpos 100
         ypos 180
-        idle "images/rooms/room_of_requirement/mirror.png"
-        hover "images/rooms/room_of_requirement/mirror_hover.png"
+        idle "images/rooms/room_of_requirement/mirror.webp"
+        hover "images/rooms/room_of_requirement/mirror_hover.webp"
         tooltip "Look into mirror"
 
         action [Hide("room_of_requirement_menu"), Jump("mirror_menu")]
@@ -83,58 +83,58 @@ label mirror_menu:
     jump .interact
 
 screen floor_7th_door():
-    add "images/rooms/_objects_/doors/front_door.png" xpos 420 ypos 105
+    add "images/rooms/_objects_/doors/front_door.webp" xpos 420 ypos 105
     zorder -1
 
 screen floor_7th_screen():
-    add "images/rooms/room_of_requirement/corridor_edit.png"
-    add "images/rooms/_objects_/candles/candle.png" xpos 0 ypos 95 zoom 0.5
+    add "images/rooms/room_of_requirement/corridor_edit.webp"
+    add "images/rooms/_objects_/candles/candle.webp" xpos 0 ypos 95 zoom 0.5
     add "candle_fire_02" xpos 0 ypos 95
-    add "images/rooms/_objects_/candles/candleM.png" xpos 900 ypos 95 zoom 0.5
+    add "images/rooms/_objects_/candles/candleM.webp" xpos 900 ypos 95 zoom 0.5
     add "candle_fire_01" xpos 900 ypos 95
-    add "images/rooms/_objects_/deco/hogwarts_banner.png" xpos 800 ypos 105
+    add "images/rooms/_objects_/deco/hogwarts_banner.webp" xpos 800 ypos 105
     add "fireplace_fire" xpos 575 ypos 60
-    add "images/rooms/_objects_/deco/owlbasin.png" xpos 660 ypos 255 zoom 0.3
+    add "images/rooms/_objects_/deco/owlbasin.webp" xpos 660 ypos 255 zoom 0.3
     add "fireplace_fire" xpos 265 ypos 60
-    add "images/rooms/_objects_/deco/owlbasin.png" xpos 350 ypos 255 zoom 0.3
-    add "images/rooms/_objects_/deco/hogwarts_banner.png" xpos 200 ypos 105
+    add "images/rooms/_objects_/deco/owlbasin.webp" xpos 350 ypos 255 zoom 0.3
+    add "images/rooms/_objects_/deco/hogwarts_banner.webp" xpos 200 ypos 105
     zorder -1
 
     use ui_top_bar
 
 #animation of flower for painting maybe?
 image flower_animation:
-    "images/animation/Bouquet4.png"
+    "images/animation/Bouquet4.webp"
     pause 30
-    "images/animation/BouquetPaf.png"
+    "images/animation/BouquetPaf.webp"
     pause .2
-    "images/animation/Flower1.png"
+    "images/animation/Flower1.webp"
     pause .2
-    "images/animation/Flower2.png"
+    "images/animation/Flower2.webp"
     pause .2
-    "images/animation/Flower3.png"
+    "images/animation/Flower3.webp"
     pause .2
-    "images/animation/Flower4.png"
+    "images/animation/Flower4.webp"
     pause 30
-    "images/animation/FlowerPaf.png"
+    "images/animation/FlowerPaf.webp"
     pause .2
-    "images/animation/Bouquet1.png"
+    "images/animation/Bouquet1.webp"
     pause .2
-    "images/animation/Bouquet1.png"
+    "images/animation/Bouquet1.webp"
     pause .2
-    "images/animation/Bouquet2.png"
+    "images/animation/Bouquet2.webp"
     pause .2
-    "images/animation/Bouquet3.png"
+    "images/animation/Bouquet3.webp"
     pause .2
-    "images/animation/Bouquet4.png"
+    "images/animation/Bouquet4.webp"
     repeat
 
 screen floor_7th_menu():
     imagebutton:
         xpos 420
         ypos 105
-        idle "images/rooms/_objects_/doors/front_door.png"
-        hover "images/rooms/_objects_/doors/front_door_hover.png"
+        idle "images/rooms/_objects_/doors/front_door.webp"
+        hover "images/rooms/_objects_/doors/front_door_hover.webp"
         tooltip "Enter"
 
         action Jump("enter_room_of_req")
@@ -242,7 +242,7 @@ label enter_room_of_req:
 
         hide screen snape_main
         hide screen bld1
-        call give_reward("You've unlocked the room of requirement","images/rooms/room_of_requirement/mirror_hover.png")
+        call give_reward("You've unlocked the room of requirement","images/rooms/room_of_requirement/mirror_hover.webp")
         call sna_chibi("hide")
         call gen_chibi("hide")
     else:

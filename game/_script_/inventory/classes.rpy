@@ -9,7 +9,7 @@ init -1 python:
             self.type = ""
             self.items = []
             self.image = ""
-            self.imagepath = "interface/icons/box_blue_2.png"
+            self.imagepath = "interface/icons/box_blue_2.webp"
             self.unlockable = False # If True, prevents this item to be shown in the shop.
             self.unlocked = False # Set to True once unlocked or purchased.
             self.hidden = False # Not visible in any menus.
@@ -31,7 +31,7 @@ init -1 python:
                 if isinstance(self.image, DollOutfit):
                     return self.image.get_image()
                 else:
-                    self.imagepath = "interface/icons/"+str(self.image)+".png"
+                    self.imagepath = "interface/icons/"+str(self.image)+".webp"
                     return Image(self.imagepath)
             else:
                 return self.imagepath

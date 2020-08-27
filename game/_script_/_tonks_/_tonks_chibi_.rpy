@@ -53,7 +53,7 @@ label ton_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=
 screen ton_cloth_pile(position=(440, 425)): # Default position: Right of desk, below feet.
     tag ton_cloth_pile
     zorder tonks_chibi.zorder
-    add "characters/chibis/cloth_pile_r.png" pos position zoom 0.5
+    add "characters/chibis/cloth_pile_r.webp" pos position zoom 0.5
 
 label ton_sit(xpos=nxpos, ypos=nypos, flip=None, chair=True): # TODO: replace this with the regular chibi call and add a sitting pose/action -- call ton_chibi("sit", chair=False)
 
@@ -122,25 +122,25 @@ init python:
         # Determine clothing state
 
         if tonks.is_worn("top"):
-            chibi["top"] = "nt_top.png"
+            chibi["top"] = "nt_top.webp"
 
         if tonks.is_worn("bottom"):
             if chibi.action == "walk":
                 chibi["bottom"] = "ch_ton walk trousers"
             else:
-                chibi["bottom"] = "nt_trousers.png"
+                chibi["bottom"] = "nt_trousers.webp"
 
         if tonks.is_worn("gloves"):
-            chibi["gloves"] = "nt_gloves.png"
+            chibi["gloves"] = "nt_gloves.webp"
 
         if tonks.is_worn("robe"):
-            chibi["robe"] = "nt_robe.png"
+            chibi["robe"] = "nt_robe.webp"
 
         if tonks.is_worn("bottom") or tonks.is_worn("stockings"):
             if chibi.action == "walk":
                 chibi["shoes"] = "ch_ton walk shoes"
             else:
-                chibi["shoes"] = "nt_shoes.png"
+                chibi["shoes"] = "nt_shoes.webp"
 
         if tonks.is_worn("neckwear"):
-            chibi["neck"] = "nt_choker.png"
+            chibi["neck"] = "nt_choker.webp"

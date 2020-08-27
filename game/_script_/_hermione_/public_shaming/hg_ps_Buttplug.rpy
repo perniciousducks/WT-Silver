@@ -1078,6 +1078,6 @@ default hermione_plug_img = "blank"
 
 label set_hermione_plug(size):
     if size in ("small", "medium", "large"):
-        $ hermione_plug_img = "characters/hermione/clothes/plugs/{}.png".format(size)
+        $ hermione_plug_img = "characters/hermione/clothes/plugs/{}.webp".format(size)
     else:
         $ hermione_plug_img = "blank"

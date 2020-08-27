@@ -4,75 +4,75 @@ init python:
             self.title = title
             self.page = 0
             self.overflow=None
-            
+
             self.title = title
             self.contents = contents
             self.__dict__.update(**kwargs)
-            
+
             self.pages = len(self.contents)-1
-            
+
         def open(self, page=0):
             self.page = max(0, min(page, self.pages))
             self.refresh()
             return
-            
+
         def close(self):
             self.page = 0
             renpy.hide_screen("book_menu")
             return
-            
+
         def next(self):
             self.page = min(self.page+2, self.pages)
             self.refresh()
             return
-            
+
         def prev(self):
             self.page = max(self.page-2, 0)
             self.refresh()
             return
-            
+
         # Max 882 characters per page.
         def get_text(self):
             if self.pages >= self.page+1:
                 return (self.contents[self.page][1][0:880], self.contents[self.page+1][1][0:880])
             return (self.contents[self.page][1][0:880], None)
-            
+
         def get_title(self):
             if self.pages >= self.page+1:
                 return (self.contents[self.page][0], self.contents[self.page+1][0])
             return (self.contents[self.page][0], None)
-            
+
         def refresh(self):
             renpy.show_screen("book_menu", page=self.page, pages=self.pages, title=self.title, page_title=self.get_title(), page_text=self.get_text(), page_overflow=self.overflow)
             return
-            
+
         def append(self, new_page):
             self.contents.append(new_page)
             self.pages = len(self.contents)-1
             return
-            
+
     class diary_class(book_readable_class):
         def __init__(self, title, dictionary):
             super(diary_class, self).__init__(self)
-            
+
             self.title = title
             self.dictionary = dictionary
-            
+
         def append(self, entry, id, branches=None):
             for i in self.contents:
                 if i[2] == id:
                     return
-                    
+
             entry = list(self.dictionary[entry])
-            
+
             if branches:
                 branches = tuple(self.dictionary[str(x)] for x in branches)
                 entry = [entry[0], entry[1].format(*branches)]
-                
+
             self.contents.append(["Day {}\n{}".format(day, entry[0]), str(entry[1]), id])
             self.pages = len(self.contents)-1
             return
-    
+
 label book_handle(book=None):
     $ book.open()
     $ renpy.play('sounds/bookopen.mp3')
@@ -80,7 +80,7 @@ label book_handle(book=None):
     label .after_init:
 
     $ _return = ui.interact()
-    
+
     if _return == "next":
         $ book.next()
         $ renpy.play('sounds/pageflip.mp3')
@@ -101,16 +101,16 @@ label book_handle(book=None):
         $ renpy.play('sounds/bookclose.mp3')
         return
     jump .after_init
-    
+
 screen book_menu(page, pages, title, page_title, page_text, page_overflow):
     tag book_menu
     zorder 30
-    
+
     button style "empty" action NullAction()
-    
+
     add Color("#000", alpha=0.5)
-    add "interface/book/book_open.png"
-            
+    add "interface/book/book_open.webp"
+
     frame:
         style "empty"
         pos (280, 130)
@@ -119,7 +119,7 @@ screen book_menu(page, pages, title, page_title, page_text, page_overflow):
         text page_title[0] ypos -20 size 16 xalign 0.5
         text page_text[0] size 12 ypos 40
         text "{b}"+str(page+1)+"{/b}" xalign 0.5 ypos 350 size 11 # fix page calc
-        
+
     frame:
         style "empty"
         xpos 600 ypos 130
@@ -130,20 +130,20 @@ screen book_menu(page, pages, title, page_title, page_text, page_overflow):
         if page_text[1] != None:
             text page_text[1] size 12 ypos 40
         text "{b}"+str(page+2)+"{/b}" xalign 0.5 ypos 350 size 11
-        
+
     imagebutton:
         pos (878, 100)
         ysize 400
         xalign 1.0
         # Next
         if page < pages:
-            idle im.Alpha("interface/book/hover.png", 0)
-            hover "interface/book/hover.png"
+            idle im.Alpha("interface/book/hover.webp", 0)
+            hover "interface/book/hover.webp"
             action Return("next")
         # Fast Back to start
         else:
-            idle "interface/book/back.png"
-            hover "interface/book/back.png"
+            idle "interface/book/back.webp"
+            hover "interface/book/back.webp"
             action Return("back")
 
     # Previous
@@ -151,68 +151,68 @@ screen book_menu(page, pages, title, page_title, page_text, page_overflow):
         imagebutton:
             pos (242, 100)
             ysize 400
-            idle im.Alpha(im.Flip("interface/book/hover.png", horizontal=True), 0)
-            hover im.Flip("interface/book/hover.png", horizontal=True)
+            idle im.Alpha(im.Flip("interface/book/hover.webp", horizontal=True), 0)
+            hover im.Flip("interface/book/hover.webp", horizontal=True)
             action Return("prev")
-            
+
     use close_button
-    
+
 screen book_animator(img, timer):
     tag animator
     zorder 31
-    
-    add img 
+
+    add img
     button style "empty" action [Hide("book_animator"), With(Dissolve(0.05))]
     timer timer action [Hide("book_animator"), With(Dissolve(0.1))]
-    
+
 image book_page_next:
     contains:
-        "interface/book/book_open.png"
+        "interface/book/book_open.webp"
     contains:
-        #"interface/book_of_secrets/book_anim_01.png"
+        #"interface/book_of_secrets/book_anim_01.webp"
         #pause.1
-        "interface/book/page_02.png"
+        "interface/book/page_02.webp"
         pause.08
-        "interface/book/page_03.png"
+        "interface/book/page_03.webp"
         pause.08
-        "interface/book/page_04.png"
+        "interface/book/page_04.webp"
         pause.08
-        "interface/book/page_05.png"
+        "interface/book/page_05.webp"
         pause.08
-        "interface/book/page_06.png"
+        "interface/book/page_06.webp"
         pause.08
-        "interface/book/page_07.png"
+        "interface/book/page_07.webp"
         pause.08
         "blank"
-        
+
 image book_page_prev:
     contains:
-        "interface/book/book_open.png"
+        "interface/book/book_open.webp"
     contains:
         xoffset 40
-        #"interface/book_of_secrets/book_anim_01.png"
+        #"interface/book_of_secrets/book_anim_01.webp"
         #pause.1
-        im.Flip("interface/book/page_02.png", horizontal=True)
+        im.Flip("interface/book/page_02.webp", horizontal=True)
         pause.08
-        im.Flip("interface/book/page_03.png", horizontal=True)
+        im.Flip("interface/book/page_03.webp", horizontal=True)
         pause.08
-        im.Flip("interface/book/page_04.png", horizontal=True)
+        im.Flip("interface/book/page_04.webp", horizontal=True)
         pause.08
-        im.Flip("interface/book/page_05.png", horizontal=True)
+        im.Flip("interface/book/page_05.webp", horizontal=True)
         pause.08
-        im.Flip("interface/book/page_06.png", horizontal=True)
+        im.Flip("interface/book/page_06.webp", horizontal=True)
         pause.08
-        im.Flip("interface/book/page_07.png", horizontal=True)
+        im.Flip("interface/book/page_07.webp", horizontal=True)
         pause.08
         "blank"
-    
+
 image book_page_start:
     contains:
-        "interface/book/book_open.png"
+        "interface/book/book_open.webp"
     contains:
-        "interface/book/reverse_01.png"
+        "interface/book/reverse_01.webp"
         pause.07
-        "interface/book/reverse_02.png"
+        "interface/book/reverse_02.webp"
         pause.07
         "blank"
         repeat 3 #book_page_max was too slow

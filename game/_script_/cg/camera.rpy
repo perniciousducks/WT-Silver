@@ -111,7 +111,7 @@ init python:
             d = renpy.get_registered_image(self.image)
 
             if d is None:
-                d = Image("{}{}.png".format(self.imagepath, self.image))
+                d = Image("{}{}.webp".format(self.imagepath, self.image))
 
             if isinstance(d, Movie):
                 self.scale = 2.0
@@ -124,7 +124,7 @@ init python:
 
             if self.overlay: # We're assuming the overlay is in 4k as it should be.
                 size = (int(3840/self.scale), int(2160/self.scale))
-                overlay = Transform("{}{}.png".format(self.imagepath, self.overlay), zoom=1.0/self.scale)
+                overlay = Transform("{}{}.webp".format(self.imagepath, self.overlay), zoom=1.0/self.scale)
                 d = Composite(size, (0, 0), d, (0, 0), overlay)
 
             last_zoom = self.last_zoom * self.scale

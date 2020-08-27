@@ -2,7 +2,7 @@ screen dropdown_menu(pos=(0, 0), name="", spacing=0, items_offset=(0, 0), backgr
     modal True
     default visible = False
     default icon = "▾"
-    
+
     if visible:
         button style "empty" action [SetLocalVariable("visible", False), SetLocalVariable("icon", "▾")]
 
@@ -26,15 +26,15 @@ screen dropdown_menu(pos=(0, 0), name="", spacing=0, items_offset=(0, 0), backgr
                 vbox:
                     spacing spacing
                     transclude
-                
+
 #Close Button
 screen close_button(xoffset=0, yoffset=0, close_var="Close", close_action=None):
     imagebutton:
         xalign 1.0
         xanchor 1.0
         offset (xoffset, yoffset)
-        idle "interface/topbar/buttons/"+interface_color+"/ui_close.png"
-        hover image_hover("interface/topbar/buttons/"+interface_color+"/ui_close.png")
+        idle "interface/topbar/buttons/"+interface_color+"/ui_close.webp"
+        hover image_hover("interface/topbar/buttons/"+interface_color+"/ui_close.webp")
         if close_action:
             action close_action
         else:
@@ -51,7 +51,7 @@ screen gfx_effect(start_x=None, start_y=None, target_x=None, target_y=None, img,
     else:
         add img xanchor xanchor yanchor yanchor zoom zoom xpos start_x ypos start_y
     timer timer action Hide("gfx_effect")
-    
+
 screen ctc():
     zorder 30
     add "ctc"

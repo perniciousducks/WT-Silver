@@ -118,7 +118,7 @@ init python:
             menu_text = ""
 
             if self.hint:
-                menu_text += "{image=interface/check_True.png}"
+                menu_text += "{image=interface/check_True.webp}"
 
             if self.title:
                 menu_text += "\"{}\"".format(self.title)
@@ -130,14 +130,14 @@ init python:
 
             icon = None
             if len(self.icons) > 0 and self.icons[self._tier]:
-                icon = imagepath + self.icons[self._tier] + ".png"
+                icon = imagepath + self.icons[self._tier] + ".webp"
 
             progress = []
             for e in self.events[self._tier]:
                 if e[1]:
-                    progress.append(imagepath + self.iconset[self._tier][1] + ".png")
+                    progress.append(imagepath + self.iconset[self._tier][1] + ".webp")
                 else:
-                    progress.append(imagepath + self.iconset[self._tier][0] + ".png")
+                    progress.append(imagepath + self.iconset[self._tier][0] + ".webp")
 
             if return_value is None:
                 return_value = "block" if disabled else self.start_label

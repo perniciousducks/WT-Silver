@@ -53,7 +53,7 @@ label cho_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=
 screen cho_cloth_pile(position=(440, 425)): # Default position: Right of desk, below feet.
     tag cho_cloth_pile
     zorder cho_chibi.zorder
-    add "characters/chibis/cloth_pile_r.png" pos position zoom 0.5
+    add "characters/chibis/cloth_pile_r.webp" pos position zoom 0.5
 
 # Chibi definition
 default cho_chibi = Chibi("cho", ["fix", "base", "bottom", "shoes", "top", "robe", "gloves"], update_cho_chibi)
@@ -68,39 +68,39 @@ init python:
 
         if cho.is_worn("top"):
             if cho.get_equipped("top").id == "top_sweater_1":
-                chibi["top"] = "cc_sweater.png"
+                chibi["top"] = "cc_sweater.webp"
             else:
-                chibi["top"] = "cc_top.png"
+                chibi["top"] = "cc_top.webp"
 
         if cho.is_worn("bottom"):
             if cho.get_equipped("bottom").id in ("pants_long_2", "pants_short_4"):
                 if chibi.action == "walk":
                     chibi["bottom"] = "ch_cho trousers"
                 else:
-                    chibi["bottom"] = "cc_trousers.png"
+                    chibi["bottom"] = "cc_trousers.webp"
             else:
-                chibi["bottom"] = "cc_skirt.png"
+                chibi["bottom"] = "cc_skirt.webp"
 
         if cho.is_worn("gloves"):
             if cho.get_equipped("gloves").id == "quidditch":
-                chibi["gloves"] = "cc_gloves.png"
+                chibi["gloves"] = "cc_gloves.webp"
 
         if cho.is_worn("robe"):
             if cho.get_equipped("robe").id == "robe_quidditch_1":
-                chibi["robe"] = "cc_quid_robe.png"
+                chibi["robe"] = "cc_quid_robe.webp"
                 if not chibi.special:
-                    chibi["fix"] = "cc_quid_robe_fix.png"
+                    chibi["fix"] = "cc_quid_robe_fix.webp"
             else:
-                chibi["robe"] = "cc_robe.png"
+                chibi["robe"] = "cc_robe.webp"
 
         if cho.is_any_worn("bottom", "stockings"):
             if cho.is_worn("gloves") and cho.get_equipped("gloves").id == "quidditch":
                 if chibi.action == "walk":
                     chibi["shoes"] = "ch_cho walk_quid_shoes"
                 else:
-                    chibi["shoes"] = "cc_quid_shoes.png"
+                    chibi["shoes"] = "cc_quid_shoes.webp"
             else:
                 if chibi.action == "walk":
                     chibi["shoes"] = "ch_cho walk_shoes"
                 else:
-                    chibi["shoes"] = "cc_shoes.png"
+                    chibi["shoes"] = "cc_shoes.webp"

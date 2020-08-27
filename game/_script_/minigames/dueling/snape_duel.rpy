@@ -93,52 +93,52 @@ screen duel_buttons():
         yalign 1.0
         focus_mask True
         if not used_tease and not in_action:
-            idle "images/dueling/snape/attack_tease.png"
-            hover image_hover("images/dueling/snape/attack_tease.png")
+            idle "images/dueling/snape/attack_tease.webp"
+            hover image_hover("images/dueling/snape/attack_tease.webp")
             action [Jump("main_tease")]
         else:
-            idle gray_tint("images/dueling/snape/attack_tease.png")
+            idle gray_tint("images/dueling/snape/attack_tease.webp")
             if not in_action:
-                hover image_hover(gray_tint("images/dueling/snape/attack_tease.png"))
+                hover image_hover(gray_tint("images/dueling/snape/attack_tease.webp"))
                 action [Jump("main_tease")]
     imagebutton: # attack
         xpos 802
         yalign 1.0
         focus_mask True
         if not in_action:
-            idle "images/dueling/snape/attack_melee.png"
-            hover image_hover("images/dueling/snape/attack_melee.png")
+            idle "images/dueling/snape/attack_melee.webp"
+            hover image_hover("images/dueling/snape/attack_melee.webp")
             action [Jump("main_attack")]
         else:
-            idle gray_tint("images/dueling/snape/attack_melee.png")
+            idle gray_tint("images/dueling/snape/attack_melee.webp")
             if not in_action:
-                hover image_hover(gray_tint("images/dueling/snape/attack_melee.png"))
+                hover image_hover(gray_tint("images/dueling/snape/attack_melee.webp"))
                 action [Jump("main_attack")]
     imagebutton: # aguard
         xpos 868
         yalign 1.0
         focus_mask True
         if not in_action:
-            idle "images/dueling/snape/attack_defend.png"
-            hover image_hover("images/dueling/snape/attack_defend.png")
+            idle "images/dueling/snape/attack_defend.webp"
+            hover image_hover("images/dueling/snape/attack_defend.webp")
             action [Jump("main_defend")]
         else:
-            idle gray_tint("images/dueling/snape/attack_defend.png")
+            idle gray_tint("images/dueling/snape/attack_defend.webp")
             if not in_action:
-                hover image_hover(gray_tint("images/dueling/snape/attack_defend.png"))
+                hover image_hover(gray_tint("images/dueling/snape/attack_defend.webp"))
                 action [Jump("main_defend")]
     imagebutton: # item
         xpos 954
         yalign 1.0
         focus_mask True
         if potions > 0 and not in_action:
-            idle "images/dueling/snape/attack_item.png"
-            hover image_hover("images/dueling/snape/attack_item.png")
+            idle "images/dueling/snape/attack_item.webp"
+            hover image_hover("images/dueling/snape/attack_item.webp")
             action [Jump("main_potion")]
         else:
-            idle gray_tint("images/dueling/snape/attack_item.png")
+            idle gray_tint("images/dueling/snape/attack_item.webp")
             if not in_action:
-                hover image_hover(gray_tint("images/dueling/snape/attack_item.png"))
+                hover image_hover(gray_tint("images/dueling/snape/attack_item.webp"))
                 action [Jump("main_potion")]
 
 label main_tease:
@@ -458,13 +458,13 @@ screen hp_bar():
     zorder 3
 
     ### health bar is 271 px wide ###
-    add "images/dueling/snape/hp_bar_02.png" xpos int((genie_hp-genie_max_hp)/(genie_max_hp/271.0)) ypos 0
-    add "images/dueling/snape/hp_bar.png" #Genie avatr pic.
+    add "images/dueling/snape/hp_bar_02.webp" xpos int((genie_hp-genie_max_hp)/(genie_max_hp/271.0)) ypos 0
+    add "images/dueling/snape/hp_bar.webp" #Genie avatr pic.
 
     ### health bar is 727 px wide ###
-    add "images/dueling/snape/hp_bar_11.png" #Black background for HP bar.
-    add "images/dueling/snape/hp_bar_12.png" xpos int((snape_max_hp-snape_hp)/(snape_max_hp/727.0)) ypos 0
-    add "images/dueling/snape/hp_bar_10.png" #Snape avatr pic.
+    add "images/dueling/snape/hp_bar_11.webp" #Black background for HP bar.
+    add "images/dueling/snape/hp_bar_12.webp" xpos int((snape_max_hp-snape_hp)/(snape_max_hp/727.0)) ypos 0
+    add "images/dueling/snape/hp_bar_10.webp" #Snape avatr pic.
 
     use duel_buttons
 
@@ -487,7 +487,7 @@ screen duel_damage(value=0, attacking=True):
         else:
             xpos 450
             ypos 120
-        add "images/dueling/damage/"+str(value)+".png"
+        add "images/dueling/damage/"+str(value)+".webp"
 
 screen duel_heal(value=300, player=True):
     tag damage
@@ -500,7 +500,7 @@ screen duel_heal(value=300, player=True):
         else:
             xpos 450
             ypos 120
-        add "images/dueling/damage/plus_"+str(value)+".png"
+        add "images/dueling/damage/plus_"+str(value)+".webp"
 
 ### SNAPE LOSES ###
 label snape_lost:
@@ -525,7 +525,7 @@ label genie_lost:
     hide screen duel
     hide screen hp_bar
     hide screen duel_damage
-    $ cg_image = "images/dueling/snape/game_over.jpg"
+    $ cg_image = "images/dueling/snape/game_over.webp"
     show screen cg
     with flashbulb
     with hpunch

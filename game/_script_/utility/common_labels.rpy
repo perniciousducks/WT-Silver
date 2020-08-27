@@ -311,7 +311,7 @@ label adjust_game_difficulty(dif=None):
         $ firewhisky_ITEM.cost = 160
     return
 
-label unlock_clothing(text="", item="interface/icons/box_blue_1.png"):
+label unlock_clothing(text="", item="interface/icons/box_blue_1.webp"):
 
     $ menu_x = 0.5
     $ menu_y = 0.75 #makes the menu lower so it isn't writing over the image.

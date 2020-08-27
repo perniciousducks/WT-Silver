@@ -480,7 +480,7 @@ label cho_tactics:
             $ cho_quid.lock_tactic = True
             $ cho.equip(cho_outfit_last)
 
-            call popup("Cho's sparring matches have been unlocked.", "Congratulations!", "interface/icons/head/cho.png")
+            call popup("Cho's sparring matches have been unlocked.", "Congratulations!", "interface/icons/head/cho.webp")
 
             jump end_cho_event
 
@@ -567,7 +567,7 @@ label cho_tactics:
             $ cho_quid.hufflepuff_prepared = True
             $ cho.equip(cho_outfit_last)
 
-            call popup("Cho's sparring matches have been unlocked.", "Congratulations!", "interface/icons/head/cho.png")
+            call popup("Cho's sparring matches have been unlocked.", "Congratulations!", "interface/icons/head/cho.webp")
 
             jump end_cho_event
 
@@ -675,7 +675,7 @@ label cho_tactics:
             $ cho_quid.lock_tactic = True
             $ cho.equip(cho_outfit_last)
 
-            call popup("Cho's sparring matches have been unlocked.", "Congratulations!", "interface/icons/head/cho.png")
+            call popup("Cho's sparring matches have been unlocked.", "Congratulations!", "interface/icons/head/cho.webp")
 
             jump end_cho_event
 

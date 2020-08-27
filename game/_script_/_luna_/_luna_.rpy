@@ -161,16 +161,16 @@ init python: ###Method Definition for new characters
 
         ### FACE CONTROL ###
         if mouth is not None:
-            luna_mouth       = "characters/luna/face/mouth/"+str(mouth)+".png"
+            luna_mouth       = "characters/luna/face/mouth/"+str(mouth)+".webp"
         if eye is not None:
-            luna_eye         = "characters/luna/face/eyes/"+str(eye)+".png"
+            luna_eye         = "characters/luna/face/eyes/"+str(eye)+".webp"
         if brows is not None:
-            luna_eyebrow     = "characters/luna/face/brow/"+str(brows)+".png"
+            luna_eyebrow     = "characters/luna/face/brow/"+str(brows)+".webp"
         if pupils is not None:
-            luna_pupil       = "characters/luna/face/pupil/"+str(luna_pupil_color)+"/"+str(pupils)+".png"
+            luna_pupil       = "characters/luna/face/pupil/"+str(luna_pupil_color)+"/"+str(pupils)+".webp"
         if cheeks is not None:
-            luna_cheeks      = "characters/luna/face/extras/cheeks_"+str(cheeks)+".png"
+            luna_cheeks      = "characters/luna/face/extras/cheeks_"+str(cheeks)+".webp"
         if tears is not None:
-            luna_tears       = "characters/luna/face/extras/tears_"+str(tears)+".png"
+            luna_tears       = "characters/luna/face/extras/tears_"+str(tears)+".webp"
         if emote is not None:
-            luna_emote       = "characters/luna/emotes/"+str(emote)+".png"
+            luna_emote       = "characters/luna/emotes/"+str(emote)+".webp"

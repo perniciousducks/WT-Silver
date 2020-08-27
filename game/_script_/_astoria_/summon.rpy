@@ -21,7 +21,7 @@ label summon_astoria:
     menu:
 
         # Talk
-        "-Talk-" (icon="interface/icons/small/talk.png"):
+        "-Talk-" (icon="interface/icons/small/talk.webp"):
             if not chitchated_with_astoria:
                 call astoria_chit_chat
                 jump astoria_talk
@@ -30,19 +30,19 @@ label summon_astoria:
 
 
         # Spells
-        "-Spells-" (icon="interface/icons/small/spell.png"):
+        "-Spells-" (icon="interface/icons/small/spell.webp"):
             if ast_mood != 0:
                 call ast_main("I don't want to today...","annoyed","narrow","base","R")
                 jump astoria_requests
             else:
                 jump astoria_spells
 
-        "{color=[menu_disabled]}-Sexual favours-{/color}" (icon="interface/icons/small/condom.png") if cho_favors_unlocked:
+        "{color=[menu_disabled]}-Sexual favours-{/color}" (icon="interface/icons/small/condom.webp") if cho_favors_unlocked:
             $ TBA_message()
             jump astoria_requests
 
         # Wardrobe
-        "-Wardrobe-" (icon="interface/icons/small/wardrobe.png") if astoria_wardrobe_unlocked:
+        "-Wardrobe-" (icon="interface/icons/small/wardrobe.webp") if astoria_wardrobe_unlocked:
             hide screen astoria_main with d1
             $ screenshot_image = ScreenshotImage.capture()
             $ renpy.call_in_new_context("wardrobe", "ast_main")
@@ -55,11 +55,11 @@ label summon_astoria:
 
 
         # Gifts
-        "-Gifts-" (icon="interface/icons/small/gift.png") if not gave_astoria_gift:
+        "-Gifts-" (icon="interface/icons/small/gift.webp") if not gave_astoria_gift:
             call gift_menu
             jump astoria_requests
 
-        "{color=[menu_disabled]}-Gifts-{/color}" (icon="interface/icons/small/gift.png") if gave_astoria_gift:
+        "{color=[menu_disabled]}-Gifts-{/color}" (icon="interface/icons/small/gift.webp") if gave_astoria_gift:
             m "I already gave her a gift today. Don't want to spoil her too much..."
             jump astoria_requests
 
@@ -134,7 +134,7 @@ label spell_not_known:
 
 label astoria_talk:
     menu:
-        "-Ask about Slytherin Quidditch Team-" (icon="interface/icons/small/quidditch.png") if cho_tier == 2 and cho_quid.lock_practice and cho_quid.E6_complete and not cho_quid.E8_complete:
+        "-Ask about Slytherin Quidditch Team-" (icon="interface/icons/small/quidditch.webp") if cho_tier == 2 and cho_quid.lock_practice and cho_quid.E6_complete and not cho_quid.E8_complete:
             # TODO: Posing
             m "Could you help me with something?"
             ast "Depends what it is."

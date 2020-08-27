@@ -1,6 +1,6 @@
 label start_slide_puzzle:
     $ puzzle_tries = 0
-    $ imagepuzzle = [["images/rooms/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".png" for x in xrange(0,4)] for y in xrange(0,4)]
+    $ imagepuzzle = [["images/rooms/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".webp" for x in xrange(0,4)] for y in xrange(0,4)]
     $ imagepuzzle[3][3] = "empty"
     python:
         for x in xrange(0,16):
@@ -48,7 +48,7 @@ label update_puzzle_slide:
     python:
         for x in xrange(0,4):
             for y in xrange(0,4):
-                if p_move != -2 and ((imagepuzzle[y][x] != "images/rooms/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".png" and (y+1)+(4*(x)) != 16) or imagepuzzle[3][3] != "empty"):
+                if p_move != -2 and ((imagepuzzle[y][x] != "images/rooms/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".webp" and (y+1)+(4*(x)) != 16) or imagepuzzle[3][3] != "empty"):
                     renpy.jump("update_puzzle_slide")
 
     jump open_puzzle_box
@@ -91,12 +91,12 @@ label open_puzzle_box:
     m "\"I was walking around in the seventh floor corridor looking for a bathroom...\""
     m "\"Whilst searching, a room that I had never seen before appeared, filled with chamber pots... But when I returned later, it was gone.\""
     m "(I've seen enough magic to know where this is going... I should investigate that corridor on the seventh floor.)"
-    call give_reward("You've unlocked something on the 7th floor, check your map to get there.","/images/rooms/room_of_requirement/mirror.png")
+    call give_reward("You've unlocked something on the 7th floor, check your map to get there.","/images/rooms/room_of_requirement/mirror.webp")
     $ unlocked_7th = True
     call update_quest_items
     if deck_unlocked:
         m "What's this?"
-        call give_reward("You have found a card at the bottom of the box!", "images/cardgame/t1/other/elf_v1.png")
+        call give_reward("You have found a card at the bottom of the box!", "images/cardgame/t1/other/elf_v1.webp")
     $ unlocked_cards += [card_item_elf]
 
     show screen chair_right
@@ -120,7 +120,7 @@ screen puzzle_board():
         xsize 425
         ysize 425
 
-        add "images/rooms/room_of_requirement/puzzle/lock.png"
+        add "images/rooms/room_of_requirement/puzzle/lock.webp"
 
         for x in xrange(0,4):
             for y in xrange(0,4):

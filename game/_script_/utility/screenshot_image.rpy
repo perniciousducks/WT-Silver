@@ -33,7 +33,7 @@ init -1 python:
             else:
                 return None
 
-    def displayable_to_file(d, fn="output.png", w=2048, h=2048):
+    def displayable_to_file(d, fn="output.webp", w=2048, h=2048):
         import cStringIO
 
         switch_renderer = renpy.get_renderer_info()["renderer"] != "sw"

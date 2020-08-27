@@ -234,9 +234,9 @@ label ll_pf_blowjob_T1_under_desk: # Call label
     pause.5
 
     $ lun_cg_path         = "images/CG/luna_desk2/"
-    $ lun_cg_base         = lun_cg_path+"base.png"
-    $ lun_cg_genie        = lun_cg_path+"genie_robe.png"
-    $ lun_cg_dick         = lun_cg_path+"blank.png"
+    $ lun_cg_base         = lun_cg_path+"base.webp"
+    $ lun_cg_genie        = lun_cg_path+"genie_robe.webp"
+    $ lun_cg_dick         = lun_cg_path+"blank.webp"
     $ lun_cg_xpos_abs     = 0
     $ lun_cg_ypos_abs     = 0
     $ lun_cg_xpos         = 0
@@ -621,7 +621,7 @@ label ll_pf_blowjob_T1_marathon: # Call label
     show screen luna_main
     hide screen ccg
     $ luna_cum = 11
-    $ genie_base = "characters/genie/base/base.png"
+    $ genie_base = "characters/genie/base/base.webp"
     $ luna_wear_cum = True
 
     hide screen blkfade
@@ -638,9 +638,9 @@ label ll_pf_blowjob_T1_slapping: # Call label
     ">You quickly take out your hard cock and slap it against Luna's naive nose a few times."
 
     $ lun_cg_path         = "images/CG/luna_desk2/"
-    $ lun_cg_base         = lun_cg_path+"base.png"
-    $ lun_cg_genie        = lun_cg_path+"genie_robe.png"
-    $ lun_cg_overlay      = lun_cg_path+"blank.png"
+    $ lun_cg_base         = lun_cg_path+"base.webp"
+    $ lun_cg_genie        = lun_cg_path+"genie_robe.webp"
+    $ lun_cg_overlay      = lun_cg_path+"blank.webp"
     $ lun_cg_xpos_abs     = 0
     $ lun_cg_ypos_abs     = 0
     $ lun_cg_xpos         = 0
@@ -907,8 +907,8 @@ label ll_pf_blowjob_T1_facefuck: # Call label
     ">You put your hand on the back of the unsuspecting girl's head..."
 
     $ lun_cg_path         = "images/CG/luna_desk2/"
-    $ lun_cg_base         = lun_cg_path+"base.png"
-    $ lun_cg_overlay      = lun_cg_path+"blank.png"
+    $ lun_cg_base         = lun_cg_path+"base.webp"
+    $ lun_cg_overlay      = lun_cg_path+"blank.webp"
     $ lun_cg_xpos_abs     = 0
     $ lun_cg_ypos_abs     = 0
     $ lun_cg_xpos         = 0
@@ -1111,9 +1111,9 @@ label ll_pf_blowjob_T1_summon:
     with d5
 
     $ lun_cg_path         = "images/CG/luna_desk2/"
-    $ lun_cg_base         = lun_cg_path+"base.png"
-    $ lun_cg_genie        = lun_cg_path+"genie_robe.png"
-    $ lun_cg_overlay      = lun_cg_path+"blank.png"
+    $ lun_cg_base         = lun_cg_path+"base.webp"
+    $ lun_cg_genie        = lun_cg_path+"genie_robe.webp"
+    $ lun_cg_overlay      = lun_cg_path+"blank.webp"
     $ lun_cg_xpos_abs     = 0
     $ lun_cg_ypos_abs     = 0
     $ lun_cg_xpos         = 0
@@ -1199,7 +1199,7 @@ label ll_pf_blowjob_T1_summon:
     #TODO Split screen uses disembodied dick, needs custom image to fix
     hide screen luncg
     $ lun_cg_path         = "images/CG/luna_desk2/"
-    $ lun_cg_base         = lun_cg_path+"base_2.png" # Split-screen
+    $ lun_cg_base         = lun_cg_path+"base_2.webp" # Split-screen
     $ lun_cg_genie        = "blank"
     $ lun_cg_xpos_abs     = -275
     show screen luncg
@@ -1329,8 +1329,8 @@ label ll_pf_blowjob_T1_summon:
     ">Before you can say anything, Hermione walks around your desk to check on Luna."
 
     $ lun_cg_path         = "images/CG/luna_desk2/"
-    $ lun_cg_base         = lun_cg_path+"base.png"
-    $ lun_cg_genie        = lun_cg_path+"genie_robe.png"
+    $ lun_cg_base         = lun_cg_path+"base.webp"
+    $ lun_cg_genie        = lun_cg_path+"genie_robe.webp"
     $ lun_cg_xpos_abs     = 0
     $ lun_cg_ypos_abs     = 0
     $ lun_cg_xpos         = 0
@@ -1367,7 +1367,7 @@ label ll_pf_blowjob_T1_summon:
     ">Without any hesitation, Luna returns to shamelessly sucking your cock in front of Hermione."
 
     $ lun_cg_path         = "images/CG/luna_desk2/"
-    $ lun_cg_base         = lun_cg_path+"base_2.png" # Split-screen
+    $ lun_cg_base         = lun_cg_path+"base_2.webp" # Split-screen
     $ lun_cg_genie        = "blank"
     $ lun_cg_xpos_abs     = -275
 

@@ -170,7 +170,7 @@ screen stats_menu(xx, yy):
 
         use invisible_button()
 
-        add "interface/achievements/"+interface_color+"/panel_left.png"
+        add "interface/achievements/"+interface_color+"/panel_left.webp"
 
         vbox:
             pos (6, 384)
@@ -178,7 +178,7 @@ screen stats_menu(xx, yy):
             frame:
                 style "empty"
                 textbutton "Show locked:" style "empty" xsize 195 ysize 32 text_align (0.4, 0.5) text_size 12 hover_background btn_hover action ToggleVariable("stats_show_locked", True, False)
-                add "interface/frames/"+str(interface_color)+"/check_"+str(stats_show_locked).lower()+".png" xalign 0.8 ypos 4
+                add "interface/frames/"+str(interface_color)+"/check_"+str(stats_show_locked).lower()+".webp" xalign 0.8 ypos 4
         vbox:
             pos (6, 6)
             for category in stats_categories_sorted:
@@ -196,23 +196,23 @@ screen stats_menu(xx, yy):
                                 text_xanchor 0.5
                                 text_size 20
                                 if current_category == category:
-                                    background "interface/achievements/"+interface_color+"/highlight_left_b.png"
+                                    background "interface/achievements/"+interface_color+"/highlight_left_b.webp"
                                 else:
-                                    hover_background "interface/achievements/"+interface_color+"/highlight_left_b.png"
+                                    hover_background "interface/achievements/"+interface_color+"/highlight_left_b.webp"
                                     action Return(["category", category])
 
-                            add "interface/achievements/"+interface_color+"/spacer_left.png"
-                        add "interface/achievements/"+interface_color+"/iconbox.png" yoffset 1
+                            add "interface/achievements/"+interface_color+"/spacer_left.webp"
+                        add "interface/achievements/"+interface_color+"/iconbox.webp" yoffset 1
                         if stats_dict[category]["flag"]:
-                            $ image_zoom = crop_image_zoom("interface/icons/head/"+stats_dict.get(category).get("ico")+".png", 42, 42)
+                            $ image_zoom = crop_image_zoom("interface/icons/head/"+stats_dict.get(category).get("ico")+".webp", 42, 42)
                         else:
-                            $ image_zoom = crop_image_zoom("interface/icons/head/"+stats_dict.get(category).get("ico")+"_locked.png", 42, 42)
+                            $ image_zoom = crop_image_zoom("interface/icons/head/"+stats_dict.get(category).get("ico")+"_locked.webp", 42, 42)
                         frame:
                             style "empty"
                             xsize 42
                             ysize 42
                             add image_zoom[0] zoom image_zoom[1] align (0.5, 1.0) offset (3, 4)
-                        add "interface/achievements/glass_iconbox.png" pos (3, 3)
+                        add "interface/achievements/glass_iconbox.webp" pos (3, 3)
 
 transform at_zoom(zoom=1.0):
     zoom zoom
@@ -228,9 +228,9 @@ screen stats_menuitem(xx, yy):
 
         use invisible_button()
 
-        #add "interface/achievements/inventory.png"
-        add "interface/achievements/"+interface_color+"/panel.png"
-        add "interface/achievements/markup.png"
+        #add "interface/achievements/inventory.webp"
+        add "interface/achievements/"+interface_color+"/panel.webp"
+        add "interface/achievements/markup.webp"
 
         text "Characters" size 22 xalign 0.5 ypos 65
 
@@ -253,27 +253,27 @@ screen stats_menuitem(xx, yy):
             offset (-10, -4)
 
             if current_category == "Genie":
-                add "characters/genie/base/base.png" zoom 0.346 align (1.0, 1.0) xzoom -1
+                add "characters/genie/base/base.webp" zoom 0.346 align (1.0, 1.0) xzoom -1
             elif current_category == "Snape":
                 if current_item["flag"]:
-                    add "characters/snape/main/snape_09.png" zoom 0.34 align (0.9, 1.0)
+                    add "characters/snape/main/snape_09.webp" zoom 0.34 align (0.9, 1.0)
                 else:
-                    add "interface/characters/snape_locked.png" zoom 0.34 align (0.9, 1.0)
+                    add "interface/characters/snape_locked.webp" zoom 0.34 align (0.9, 1.0)
             elif current_category == "Tonks":
                 if current_item["flag"]:
                     add tonks.get_image() zoom 0.4 align (0.7, 1.0)
                 else:
-                    add "interface/characters/tonks_locked.png" zoom 0.4 align (0.7, 1.0)
+                    add "interface/characters/tonks_locked.webp" zoom 0.4 align (0.7, 1.0)
             elif current_category == "Hermione":
                 if current_item["flag"]:
                     add hermione.get_image() zoom 0.4 align (0.7, 1.0)
                 else:
-                    add "interface/characters/hermione_locked.png" zoom 0.38 align (0.65, 1.0)
+                    add "interface/characters/hermione_locked.webp" zoom 0.38 align (0.65, 1.0)
             elif current_category == "Cho":
                 if current_item["flag"]:
                     add cho.get_image() zoom 0.4 align (0.65, 1.0)
                 else:
-                    add "interface/characters/cho_locked.png" zoom 0.4 align (0.65, 1.0)
+                    add "interface/characters/cho_locked.webp" zoom 0.4 align (0.65, 1.0)
             elif current_category == "Luna":
                 if current_item["flag"]:
                     frame:
@@ -284,12 +284,12 @@ screen stats_menuitem(xx, yy):
 
                         use luna_main
                 else:
-                    add "interface/characters/luna_locked.png" zoom 0.38 align (0.75, 1.0)
+                    add "interface/characters/luna_locked.webp" zoom 0.38 align (0.75, 1.0)
             elif current_category == "Astoria":
                 if current_item["flag"]:
                     add astoria.get_image() zoom 0.4 align (0.7, 1.0)
                 else:
-                    add "interface/characters/astoria_locked.png" zoom 0.38 align (0.7, 1.0)
+                    add "interface/characters/astoria_locked.webp" zoom 0.38 align (0.7, 1.0)
             elif current_category == "Susan":
                 if current_item["flag"]:
                     frame:
@@ -300,7 +300,7 @@ screen stats_menuitem(xx, yy):
 
                         use susan_main
                 else:
-                     add "interface/characters/susan_locked.png" zoom 0.385 align (0.65, 1.0)
+                     add "interface/characters/susan_locked.webp" zoom 0.385 align (0.65, 1.0)
 
         frame:
             style "empty"
@@ -482,8 +482,8 @@ screen stat_bar(steps, top_text, bottom_text, stat_number, top_padding=20):
         xalign 0.5
         ysize 30
         xsize 360
-        add Crop((0, 0, steps*36, 600), "interface/stats/"+str(interface_color)+"/bar_full.png")
-        add "interface/stats/"+str(interface_color)+"/bar_empty.png"
+        add Crop((0, 0, steps*36, 600), "interface/stats/"+str(interface_color)+"/bar_full.webp")
+        add "interface/stats/"+str(interface_color)+"/bar_empty.webp"
 
     text bottom_text+" (lvl " +str(stat_number)+ ")" xalign 0.5 size 20
 

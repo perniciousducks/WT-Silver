@@ -6,7 +6,7 @@ init python:
         return "".join(map(lambda x: "{k=1.5}"+x+"{/k}\n", lines))
 
 define credits_text = "\n".join([
-    "{image=logo/title.png}{vspace=200}",
+    "{image=logo/title.webp}{vspace=200}",
     credits_title("Director"),
     credits_group("MadMerlin"),
     credits_title("Artists"),
@@ -34,14 +34,14 @@ define credits_text = "\n".join([
 """{vspace=100}
 
 Special thanks to our fans, discord moderators
-and {a=https://www.patreon.com/SilverStudioGames/}patreon supporters{/a} {image=images/misc/heart.png}
+and {a=https://www.patreon.com/SilverStudioGames/}patreon supporters{/a} {image=images/misc/heart.webp}
 
-{image=logo/silverstudiogames.png}
+{image=logo/silverstudiogames.webp}
 {vspace=100}
 
 Thank you for playing!
 
-{space=100}{image=characters/genie/mage9.png}"""
+{space=100}{image=characters/genie/mage9.webp}"""
 ])
 
 define credits_duration = 30

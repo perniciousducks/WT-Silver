@@ -11,7 +11,7 @@ init -1 python:
             renpy.display.predict.displayable(doll.get_image())
 
         # Predict all facial expression layers
-        images_pattern = "characters/{}/face/*.png".format(doll_name)
+        images_pattern = "characters/{}/face/*.webp".format(doll_name)
         for name in renpy.expand_predict(images_pattern):
             d = renpy.displayable(name)
             renpy.display.predict.displayable(d)

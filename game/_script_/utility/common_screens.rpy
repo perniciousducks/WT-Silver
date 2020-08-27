@@ -24,11 +24,11 @@ screen white():
 screen bld1():
     zorder 10
     if not current_room == "quidditch_stands":
-        add "interface/bld.png"
+        add "interface/bld.webp"
 
 screen bld2():
     zorder 10
-    add im.Flip("interface/bld.png", vertical=True)
+    add im.Flip("interface/bld.webp", vertical=True)
 
 screen notes():
     add "notes" xpos 320+140 ypos 330
@@ -54,7 +54,7 @@ screen clothing_unlock(item):
         ypos 100
         xysize (197, 325)
 
-        add "interface/panels/"+str(interface_color)+"/clothing_panel.png"
+        add "interface/panels/"+str(interface_color)+"/clothing_panel.webp"
 
         if isinstance(item, DollCloth):
             add item.get_icon() align (0.5, 0.5) zoom 0.5

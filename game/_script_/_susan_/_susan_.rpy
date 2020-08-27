@@ -108,16 +108,16 @@ init python:
 
         ### FACE CONTROL ###
         if mouth is not None:
-            susan_mouth       = "characters/susan/face/mouth/"+mouth+".png"
+            susan_mouth       = "characters/susan/face/mouth/"+mouth+".webp"
         if eye is not None:
-            susan_eye         = "characters/susan/face/eyes/"+eye+".png"
+            susan_eye         = "characters/susan/face/eyes/"+eye+".webp"
         if brows is not None:
-            susan_eyebrow     = "characters/susan/face/brow/"+brows+".png"
+            susan_eyebrow     = "characters/susan/face/brow/"+brows+".webp"
         if pupils is not None:
-            susan_pupil       = "characters/susan/face/pupil/"+pupils+".png"
+            susan_pupil       = "characters/susan/face/pupil/"+pupils+".webp"
         if cheeks is not None:
-            susan_cheeks      = "characters/susan/face/extras/"+cheeks+".png"
+            susan_cheeks      = "characters/susan/face/extras/"+cheeks+".webp"
         if tears is not None:
-            susan_tears       = "characters/susan/face/extras/"+tears+".png"
+            susan_tears       = "characters/susan/face/extras/"+tears+".webp"
         if emote is not None:
-            susan_emote       = "characters/susan/emotes/"+str(emote)+".png"
+            susan_emote       = "characters/susan/emotes/"+str(emote)+".webp"

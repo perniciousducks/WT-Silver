@@ -8,7 +8,7 @@ label cg_scene(layer=None, folder=None, trans=d5):
         $ cg_path = "images/CG/"+folder+"/"
 
     if layer != None:
-        $ cg_image = cg_path+layer+".png"
+        $ cg_image = cg_path+layer+".webp"
 
     show screen cg
     with trans
@@ -26,10 +26,10 @@ screen ccg():
     tag cg_screen
     zorder 14
 
-    add "images/CG/"+ccg_folder+"/base.png"          xpos 540 xanchor 0.5 ypos 0 # At Screen Center
-    add "images/CG/"+ccg_folder+"/"+str(ccg1)+".png" xpos 540 xanchor 0.5 ypos 0
-    add "images/CG/"+ccg_folder+"/"+str(ccg2)+".png" xpos 540 xanchor 0.5 ypos 0
-    add "images/CG/"+ccg_folder+"/"+str(ccg3)+".png" xpos 540 xanchor 0.5 ypos 0
+    add "images/CG/"+ccg_folder+"/base.webp"          xpos 540 xanchor 0.5 ypos 0 # At Screen Center
+    add "images/CG/"+ccg_folder+"/"+str(ccg1)+".webp" xpos 540 xanchor 0.5 ypos 0
+    add "images/CG/"+ccg_folder+"/"+str(ccg2)+".webp" xpos 540 xanchor 0.5 ypos 0
+    add "images/CG/"+ccg_folder+"/"+str(ccg3)+".webp" xpos 540 xanchor 0.5 ypos 0
     if loopimage is not None:
         add loopimage
 
@@ -45,19 +45,19 @@ screen sccg(base, a, b, c):
 
 # Snape CG
 screen snape_groping():
-    add "images/CG/scene_01.png" zoom 0.5
+    add "images/CG/scene_01.webp" zoom 0.5
     zorder 14
 
 screen snape_facial():
-    add "images/CG/scene_03.png" zoom 0.5
+    add "images/CG/scene_03.webp" zoom 0.5
     zorder 14
 
 screen snape_sex():
-    add "images/CG/scene_04.png" zoom 0.5
+    add "images/CG/scene_04.webp" zoom 0.5
     zorder 14
 
 screen dual_hand_job():
-    add "images/CG/scene_02.png" zoom 0.5
+    add "images/CG/scene_02.webp" zoom 0.5
     zorder 14
 
 init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
@@ -84,10 +84,10 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         renpy.hide_screen("sccg")
         renpy.hide_screen("blkfade")
 
-        img_base = "images/CG/sc34/{}/base_1.png".format(base) if base else None
-        img_a = "images/CG/sc34/{}/A_{}.png".format(base, a) if a else None
-        img_b = "images/CG/sc34/{}/B_{}.png".format(base, b) if b else None
-        img_c = "images/CG/sc34/{}/C_{}.png".format(base, c) if c else None
+        img_base = "images/CG/sc34/{}/base_1.webp".format(base) if base else None
+        img_a = "images/CG/sc34/{}/A_{}.webp".format(base, a) if a else None
+        img_b = "images/CG/sc34/{}/B_{}.webp".format(base, b) if b else None
+        img_c = "images/CG/sc34/{}/C_{}.webp".format(base, c) if c else None
 
         renpy.show_screen("sccg", img_base, img_a, img_b, img_c)
 
@@ -95,7 +95,7 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
             renpy.with_statement(trans)
 
     def dynamic_cg(folder, *args):
-        d = tuple("images/CG/{}/{}.png".format(folder, file) for file in args)
+        d = tuple("images/CG/{}/{}.webp".format(folder, file) for file in args)
 
         renpy.show_screen("dynamic_cg", d)
         renpy.with_statement(d5)

@@ -22,9 +22,9 @@ label ball_ending_start:
 
 screen genie_snape_shake_hands(shake=False):
     if shake:
-        add "characters/snape/chibis/handshake/hand_01.png" pos (220, 205) zoom 0.5
+        add "characters/snape/chibis/handshake/hand_01.webp" pos (220, 205) zoom 0.5
     else:
-        add "characters/snape/chibis/handshake/hand_00.png" pos (220, 205) zoom 0.5
+        add "characters/snape/chibis/handshake/hand_00.webp" pos (220, 205) zoom 0.5
 
 label ball_ending_E1:
     stop music fadeout 1.0

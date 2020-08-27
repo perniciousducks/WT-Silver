@@ -41,14 +41,14 @@ label rummaging:
     # Dueling potion
     if day <= 3 and rum_times in [1,2]:
         $ potions += 1
-        call give_reward(">You found some sort of healing potion...","interface/icons/item_potion.png")
+        call give_reward(">You found some sort of healing potion...","interface/icons/item_potion.webp")
         jump main_room_menu
 
     # Map and beverages (prologue only)
     if not map_unlocked:
         if hermione_favors:
             $ map_unlocked = True
-            call give_reward(">You found a map of the school grounds...\n>You can now leave the office.","interface/icons/item_scroll.png")
+            call give_reward(">You found a map of the school grounds...\n>You can now leave the office.","interface/icons/item_scroll.webp")
             jump main_room_menu
 
         elif wine_ITEM.number < 1:
@@ -61,7 +61,7 @@ label rummaging:
 
     # Dumbledore card
     if day >= 26 and deck_unlocked and random_percent <= 40 and not card_exist(unlocked_cards,card_dumbledore) :
-        call give_reward("You have found a special card!", "images/cardgame/t1/special/dumbledore_v1.png")
+        call give_reward("You have found a special card!", "images/cardgame/t1/special/dumbledore_v1.webp")
         $ unlocked_cards += [card_dumbledore]
         jump main_room_menu
 
@@ -72,7 +72,7 @@ label rummaging:
 
 label rum_block(item):
     if isinstance(item, int):
-        $ the_gift = "interface/icons/gold.png"
+        $ the_gift = "interface/icons/gold.webp"
         show screen gift(True)
         with d3
         $ gold += item

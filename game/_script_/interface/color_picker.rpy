@@ -67,7 +67,7 @@ screen color_picker(color, alpha, title, pos_xy, color_default):
                     style "empty"
                     xysize (32, 33)
                     if i < len(color_favorites):
-                        add Frame("interface/color_picker/checker.png", tile=True, ysize=31, xsize=31)
+                        add Frame("interface/color_picker/checker.webp", tile=True, ysize=31, xsize=31)
                         if not edit_mode:
                             button:
                                 background Solid(tuple(color_favorites[i]))
@@ -87,11 +87,11 @@ screen color_picker(color, alpha, title, pos_xy, color_default):
                                 style "empty"
                                 margin (6, 6, 6, 6)
                                 align (0.5, 0.5)
-                                background "interface/icons/small/star_yellow.png"
+                                background "interface/icons/small/star_yellow.webp"
                                 tooltip "Add to favourites"
                                 action Return(["add_swatch", list(rgba)])
 
-        add "interface/color_picker/"+str(interface_color)+"/frame_swatches.png" pos (-10, -10)
+        add "interface/color_picker/"+str(interface_color)+"/frame_swatches.webp" pos (-10, -10)
 
 
 
@@ -106,7 +106,7 @@ screen color_picker(color, alpha, title, pos_xy, color_default):
         else:
             background "#7c716a"
 
-        add "interface/color_picker/"+str(interface_color)+"/frame.png" pos (-10, -10)
+        add "interface/color_picker/"+str(interface_color)+"/frame.webp" pos (-10, -10)
 
         text title xalign 0.5 text_align 0.5
 
@@ -117,7 +117,7 @@ screen color_picker(color, alpha, title, pos_xy, color_default):
         imagebutton:
             area (25, 25, 255, 255)
             #idle im.MatrixColor(SVGradientImage(size=(255,255)), color_matrix.hue((1- hue) * 360))
-            idle Frame("interface/color_picker/saturation_value_gradient.png")
+            idle Frame("interface/color_picker/saturation_value_gradient.webp")
             focus_mask None
             keyboard_focus False
             key_events False
@@ -129,7 +129,7 @@ screen color_picker(color, alpha, title, pos_xy, color_default):
             drag:
                 pos (int(saturation * 253), int((1 - value) * 253))
                 anchor (0, 0)
-                child "interface/color_picker/"+str(interface_color)+"/cursor_sq.png"
+                child "interface/color_picker/"+str(interface_color)+"/cursor_sq.webp"
                 focus_mask None
                 activated color_picker_dragged
                 dragged color_picker_dragged
@@ -139,26 +139,26 @@ screen color_picker(color, alpha, title, pos_xy, color_default):
             area (290, 25, 30, 255)
             value ScreenVariableValue("hue", range=1.0, step=0.01, action=Function(color_picker_update_rgba))
             base_bar hue_gradient_image
-            thumb Image("interface/color_picker/"+str(interface_color)+"/cursor_h.png", xalign=0.5)
+            thumb Image("interface/color_picker/"+str(interface_color)+"/cursor_h.webp", xalign=0.5)
             thumb_offset 0
             top_gutter 0
             bottom_gutter 0
 
         if alpha:
             # Alpha slider
-            add "interface/color_picker/"+str(interface_color)+"/alpha.png" xpos 22 ypos 287
-            add Frame("interface/color_picker/checker.png", tile=True, ysize=30, xsize=255) xpos 25 ypos 290
+            add "interface/color_picker/"+str(interface_color)+"/alpha.webp" xpos 22 ypos 287
+            add Frame("interface/color_picker/checker.webp", tile=True, ysize=30, xsize=255) xpos 25 ypos 290
             bar:
                 area (25, 290, 255, 30)
                 value ScreenVariableValue("_alpha", range=1.0, step=0.01, action=Function(color_picker_update_rgba))
                 base_bar im.MatrixColor(alpha_gradient_image, im.matrix.colorize(rgba, rgba))
-                thumb Image("interface/color_picker/"+str(interface_color)+"/cursor_v.png", xalign=0.5)
+                thumb Image("interface/color_picker/"+str(interface_color)+"/cursor_v.webp", xalign=0.5)
                 thumb_offset 0
                 top_gutter 0
                 bottom_gutter 0
 
         # Selected color
-        add Frame("interface/color_picker/checker.png", tile=True, ysize=100, xsize=100) xpos 360 ypos 180
+        add Frame("interface/color_picker/checker.webp", tile=True, ysize=100, xsize=100) xpos 360 ypos 180
         frame:
             area (360, 180, 50, 100)
             background Solid(rgba)

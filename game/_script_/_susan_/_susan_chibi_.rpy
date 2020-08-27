@@ -63,13 +63,13 @@ init python:
             if chibi.action == "walk":
                 chibi["shoes"] = "ch_sus walk_shoes"
             else:
-                chibi["shoes"] = "sb_walk_01_shoes.png"
+                chibi["shoes"] = "sb_walk_01_shoes.webp"
 
         if susan_wear_top:
-            chibi["top"] = "sb_cloth_shirt_h.png"
+            chibi["top"] = "sb_cloth_shirt_h.webp"
 
         if susan_wear_bottom:
-            chibi["bottom"] = "sb_cloth_skirt.png"
+            chibi["bottom"] = "sb_cloth_skirt.webp"
 
         if susan_wear_robe:
-            chibi["robe"] = "sb_cloth_robe_h.png"
+            chibi["robe"] = "sb_cloth_robe_h.webp"

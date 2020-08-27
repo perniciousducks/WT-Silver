@@ -103,7 +103,7 @@ label nt_he_wine_intro:
     pause.1
 
     # Show wine
-    call give_reward(">You hand over a bottle of wine you found in the cupboard to Tonks...", gift="interface/icons/item_wine.png", sound=False)
+    call give_reward(">You hand over a bottle of wine you found in the cupboard to Tonks...", gift="interface/icons/item_wine.webp", sound=False)
 
     call ton_main("Wine?","open","base","raised","down")
     call ton_main("Don't you have anything stronger?","upset","base","base","R")
@@ -126,7 +126,7 @@ label nt_he_firewhisky_intro:
     pause.1
 
     # Show firewhisky
-    call give_reward(">You hand over a bottle of firewhisky to Tonks...", gift="interface/icons/item_whisky.png", sound=False)
+    call give_reward(">You hand over a bottle of firewhisky to Tonks...", gift="interface/icons/item_whisky.webp", sound=False)
 
     call ton_main("Finally, the good stuff!","horny","base","base","down", ypos="head")
     call ton_main("I'm glad you brought out some firewhisky this time...","base","base","base","down")
@@ -240,7 +240,7 @@ label nt_he_favors_E1:
     m "Whatever floats your boat."
 
     $ tonks_requests_unlocked = True
-    call popup("You can now ask Tonks to do \"Public Requests\" with her students!", "Congratulations!", "interface/icons/head/tonks.png")
+    call popup("You can now ask Tonks to do \"Public Requests\" with her students!", "Congratulations!", "interface/icons/head/tonks.webp")
 
     $ nt_he.favors_E1 = True
 
@@ -265,7 +265,7 @@ label nt_he_favors_E2:
     g9 "Promise me you'll reward them if they do."
     call ton_main("I promise, [ton_genie_name].", "base", "wink", "base", "mid")
 
-    call popup("Tonks can now reach the next level!", "Congratulations!", "interface/icons/head/tonks.png", sound=False)
+    call popup("Tonks can now reach the next level!", "Congratulations!", "interface/icons/head/tonks.webp", sound=False)
 
     $ nt_he.favors_E2 = True
 

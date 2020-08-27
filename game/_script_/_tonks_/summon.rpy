@@ -24,7 +24,7 @@ label summon_tonks:
     menu:
 
         # Talk
-        "-Talk-" (icon="interface/icons/small/talk.png"):
+        "-Talk-" (icon="interface/icons/small/talk.webp"):
             if not chitchated_with_tonks:
                 call tonks_chit_chat
                 jump tonks_talk
@@ -33,23 +33,23 @@ label summon_tonks:
 
 
         # Favours
-        "-Sexual favours-" (icon="interface/icons/small/condom.png"):
+        "-Sexual favours-" (icon="interface/icons/small/condom.webp"):
             jump tonks_favor_menu
 
         # Fireplace Chats
-        "-Let's hang-" (icon="interface/icons/small/toast.png") if (wine_ITEM.number > 0 and nt_he_drink.counter == 0) or (firewhisky_ITEM.number > 0 and nt_he_drink.counter > 0):
+        "-Let's hang-" (icon="interface/icons/small/toast.webp") if (wine_ITEM.number > 0 and nt_he_drink.counter == 0) or (firewhisky_ITEM.number > 0 and nt_he_drink.counter > 0):
             jump tonks_hangout
 
-        "{color=[menu_disabled]}-Let's hang-{/color}" (icon="interface/icons/small/toast.png") if (firewhisky_ITEM.number < 1 and nt_he_drink.counter > 0):
+        "{color=[menu_disabled]}-Let's hang-{/color}" (icon="interface/icons/small/toast.webp") if (firewhisky_ITEM.number < 1 and nt_he_drink.counter > 0):
             m "(I don't have any firewhisky...)"
             jump tonks_requests
 
-        "{color=[menu_disabled]}-Let's hang-{/color}" (icon="interface/icons/small/toast.png") if (wine_ITEM.number < 1 and nt_he_drink.counter == 0):
+        "{color=[menu_disabled]}-Let's hang-{/color}" (icon="interface/icons/small/toast.webp") if (wine_ITEM.number < 1 and nt_he_drink.counter == 0):
             m "(I don't have any wine...)"
             jump tonks_requests
 
         # Wardrobe
-        "-Wardrobe-" (icon="interface/icons/small/wardrobe.png") if tonks_wardrobe_unlocked:
+        "-Wardrobe-" (icon="interface/icons/small/wardrobe.webp") if tonks_wardrobe_unlocked:
             hide screen tonks_main with d1
             $ screenshot_image = ScreenshotImage.capture()
             $ renpy.call_in_new_context("wardrobe", "ton_main")
@@ -65,11 +65,11 @@ label summon_tonks:
 
 
         # Gifts
-        "-Gifts-" (icon="interface/icons/small/gift.png") if not gave_tonks_gift:
+        "-Gifts-" (icon="interface/icons/small/gift.webp") if not gave_tonks_gift:
             call gift_menu
             jump tonks_requests
 
-        "{color=[menu_disabled]}-Gifts-{/color}" (icon="interface/icons/small/gift.png") if gave_tonks_gift:
+        "{color=[menu_disabled]}-Gifts-{/color}" (icon="interface/icons/small/gift.webp") if gave_tonks_gift:
             m "I already gave her a gift today."
             jump tonks_requests
 
@@ -116,11 +116,11 @@ label tonks_favor_menu:
     # call update_tonks_favors
 
     menu:
-        "-Level Up-" (icon="interface/icons/small/levelup.png") if ton_level_up != None:
+        "-Level Up-" (icon="interface/icons/small/levelup.webp") if ton_level_up != None:
             call tonks_level_up(tier=ton_level_up)
             jump tonks_requests
 
-        "{color=[menu_disabled]}-Personal Favours-{/color}" (icon="interface/icons/small/heart_red.png"):
+        "{color=[menu_disabled]}-Personal Favours-{/color}" (icon="interface/icons/small/heart_red.webp"):
             call not_available
             jump tonks_favor_menu
             #
@@ -151,10 +151,10 @@ label tonks_favor_menu:
             # else:
                 # $ renpy.jump(result)
 
-        "-Public Requests-" (icon="interface/icons/small/star_yellow.png") if daytime and tonks_requests_unlocked:
+        "-Public Requests-" (icon="interface/icons/small/star_yellow.webp") if daytime and tonks_requests_unlocked:
             jump tonks_requests_menu
 
-        "{color=[menu_disabled]}-Public Requests-{/color}" (icon="interface/icons/small/star_yellow.png") if not daytime or not tonks_requests_unlocked:
+        "{color=[menu_disabled]}-Public Requests-{/color}" (icon="interface/icons/small/star_yellow.webp") if not daytime or not tonks_requests_unlocked:
             if not tonks_requests_unlocked:
                 call nar(">You haven't unlocked this feature yet.")
             elif not daytime:
@@ -201,11 +201,11 @@ label update_ton_requests:
 label tonks_talk:
     menu:
         # TODO: Finish up
-        "-Ask about outfit upgrades-" (icon="interface/icons/small/wardrobe.png"):
+        "-Ask about outfit upgrades-" (icon="interface/icons/small/wardrobe.webp"):
             call clothing_upgrades
             jump tonks_requests
 
-        "-Ask for help with Quidditch-" (icon="interface/icons/small/quidditch.png") if cho_tier == 2 and cho_quid.E6_complete and not cho_quid.E8_complete:
+        "-Ask for help with Quidditch-" (icon="interface/icons/small/quidditch.webp") if cho_tier == 2 and cho_quid.E6_complete and not cho_quid.E8_complete:
             m "Got a moment?"
             call ton_main("Sure, just make it quick...","open","base","base","mid")
             m "I have a problem with--"

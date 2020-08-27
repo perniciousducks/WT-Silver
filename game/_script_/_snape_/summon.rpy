@@ -16,7 +16,7 @@ label summon_snape:
 
     menu:
         # Talk
-        "-Talk-" (icon="interface/icons/small/talk.png"):
+        "-Talk-" (icon="interface/icons/small/talk.webp"):
             if not chitchated_with_snape:
                 $ chitchated_with_snape = True
                 call snape_chitchat
@@ -35,7 +35,7 @@ label summon_snape:
                     $ ag_event_pause = 2
                     jump astoria_intro_E2_snape
 
-                "-Try solving the Quidditch Quarrel-" (icon="interface/icons/small/quidditch.png") if cho_tier == 2 and cho_quid.E6_complete and not cho_quid.E9_complete and not cho_quid.E8_complete:
+                "-Try solving the Quidditch Quarrel-" (icon="interface/icons/small/quidditch.webp") if cho_tier == 2 and cho_quid.E6_complete and not cho_quid.E9_complete and not cho_quid.E8_complete:
                     if daytime:
                         m "I wanted to talk to you about the upcoming Quidditch game."
                         call sna_main("I don't really have time right now...", "snape_05")
@@ -70,10 +70,10 @@ label summon_snape:
 
 
         # Fireplace Chats
-        "-Let's hang-" (icon="interface/icons/small/toast.png") if wine_ITEM.number >= 1 and not daytime:
+        "-Let's hang-" (icon="interface/icons/small/toast.webp") if wine_ITEM.number >= 1 and not daytime:
             jump snape_hangout
 
-        "{color=[menu_disabled]}-Let's hang-{/color}" (icon="interface/icons/small/toast.png") if wine_ITEM.number < 1 or daytime:
+        "{color=[menu_disabled]}-Let's hang-{/color}" (icon="interface/icons/small/toast.webp") if wine_ITEM.number < 1 or daytime:
             if daytime:
                 m "(I'm not sharing my booze with Snape while he still has to teach classes...)"
                 m "(I better ask him during the evening to get drunk...)"
@@ -82,12 +82,12 @@ label summon_snape:
             jump snape_ready
 
         # Potions
-        # "-Get a potion-" (icon="interface/icons/small/potion.png") if her_whoring > 10:
+        # "-Get a potion-" (icon="interface/icons/small/potion.webp") if her_whoring > 10:
         #     jump snape_potion_menu
 
 
         # Cardgame
-        "-Let's Duel-" (icon="interface/cards.png") if deck_unlocked:
+        "-Let's Duel-" (icon="interface/cards.webp") if deck_unlocked:
             jump snape_duel_menu
 
         # Dismiss

@@ -86,7 +86,7 @@ label hufflepuff_match:
     with d3
 
     # Show wine
-    call give_reward(text=">Not grape-juice.",gift="interface/icons/item_wine.png")
+    call give_reward(text=">Not grape-juice.",gift="interface/icons/item_wine.webp")
 
     m "That's all the persuasion I needed my friend!"
     hide screen bld1
@@ -1125,7 +1125,7 @@ label hufflepuff_match_return:
 
     stop music fadeout 1.0
     call unlock_clothing(text=">New clothing items for Cho have been unlocked!", item=cho_outfit_cheerleader)
-    call popup("New favours for Cho have been unlocked!", "Congratulations!", "interface/icons/head/cho.png")
+    call popup("New favours for Cho have been unlocked!", "Congratulations!", "interface/icons/head/cho.webp")
 
     $ hermione_busy = True
     $ snape_busy    = True

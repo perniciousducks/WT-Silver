@@ -50,7 +50,7 @@ label splashscreen:
     return
 
 screen mods_warning():
-    add im.Blur("title/00.png", 4.0) zoom 0.5
+    add im.Blur("title/00.webp", 4.0) zoom 0.5
 
     text "!" size 300 color "#7a0000" ypos 2 xalign 0.5 outlines [(1, "#00000080", 1, 0)]
     frame:

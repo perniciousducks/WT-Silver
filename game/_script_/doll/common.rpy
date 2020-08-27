@@ -4,7 +4,7 @@ init -1 python:
     ### Global Functions ###
 
     def get_character_emote(char, emote):
-        return "characters/{}/emotes/{}.png".format(char, emote) if emote else None
+        return "characters/{}/emotes/{}.webp".format(char, emote) if emote else None
 
     def get_character_pos(char):
         global sprite_pos

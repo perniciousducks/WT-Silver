@@ -25,7 +25,7 @@ label summon_hermione:
     menu:
 
         # Talk
-        "-Talk-" (icon="interface/icons/small/talk.png"):
+        "-Talk-" (icon="interface/icons/small/talk.webp"):
             if not chitchated_with_her:
                 if her_mood <= 3:
                     $ chitchated_with_her = True
@@ -39,7 +39,7 @@ label summon_hermione:
 
 
         # Tutoring
-        "-Tutoring-" (icon="interface/icons/small/book.png") if not daytime and her_tutoring < 15: #14 is last level.
+        "-Tutoring-" (icon="interface/icons/small/book.webp") if not daytime and her_tutoring < 15: #14 is last level.
             if her_mood >=1 and her_mood < 3:
                 her "I'm sorry, maybe tomorrow..."
                 jump hermione_requests
@@ -57,13 +57,13 @@ label summon_hermione:
             else:
                 jump hg_tutor_start
 
-        "{color=[menu_disabled]}-Tutoring-{/color}" (icon="interface/icons/small/book.png") if daytime and her_tutoring < 15:
+        "{color=[menu_disabled]}-Tutoring-{/color}" (icon="interface/icons/small/book.webp") if daytime and her_tutoring < 15:
             call nar("> Tutoring is available during the night only.")
             jump hermione_requests
 
 
         # Favours
-        "-Sexual favours-" (icon="interface/icons/small/condom.png") if hermione_favors:
+        "-Sexual favours-" (icon="interface/icons/small/condom.webp") if hermione_favors:
             if her_mood >=1 and her_mood < 3:
                 her "I'm sorry, [genie_name], Maybe some other time..."
                 jump hermione_requests
@@ -90,7 +90,7 @@ label summon_hermione:
 
 
         # Wardrobe
-        "-Wardrobe-" (icon="interface/icons/small/wardrobe.png") if hermione_wardrobe_unlocked: # Unlocks after first summoning her.
+        "-Wardrobe-" (icon="interface/icons/small/wardrobe.webp") if hermione_wardrobe_unlocked: # Unlocks after first summoning her.
             hide screen hermione_main with d1
             $ screenshot_image = ScreenshotImage.capture()
             $ renpy.call_in_new_context("wardrobe", "her_main")
@@ -98,15 +98,15 @@ label summon_hermione:
             jump hermione_requests
 
         # Card game
-        "-Let's Duel-" (icon="interface/cards.png") if snape_second_win:
+        "-Let's Duel-" (icon="interface/cards.webp") if snape_second_win:
             jump hermione_cardgame_menu
 
         # Gifts
-        "-Gifts-" (icon="interface/icons/small/gift.png") if not gave_hermione_gift:
+        "-Gifts-" (icon="interface/icons/small/gift.webp") if not gave_hermione_gift:
             call gift_menu
             jump hermione_requests
 
-        "{color=[menu_disabled]}-Gifts-{/color}" (icon="interface/icons/small/wardrobe.png") if gave_hermione_gift:
+        "{color=[menu_disabled]}-Gifts-{/color}" (icon="interface/icons/small/wardrobe.webp") if gave_hermione_gift:
             m "I already gave her a gift today. Don't want to spoil her too much..."
             jump hermione_requests
 
@@ -216,11 +216,11 @@ label hermione_favor_menu:
 
         label silver_requests_root:
         menu:
-            "-Level Up-" (icon="interface/icons/small/levelup.png") if her_level_up != None:
+            "-Level Up-" (icon="interface/icons/small/levelup.webp") if her_level_up != None:
                 call hermione_level_up(tier=her_level_up)
                 jump hermione_favor_menu
 
-            "-Personal favours-" (icon="interface/icons/small/heart_red.png"):
+            "-Personal favours-" (icon="interface/icons/small/heart_red.webp"):
                 call tutorial("hearts")
 
                 label .personal:
@@ -248,11 +248,11 @@ label hermione_favor_menu:
                 else:
                     $ renpy.jump(result)
 
-            "{color=[menu_disabled]}-Public requests-{/color}" (icon="interface/icons/small/star_yellow.png") if not daytime:
+            "{color=[menu_disabled]}-Public requests-{/color}" (icon="interface/icons/small/star_yellow.webp") if not daytime:
                 call nar(">Public requests are available during the day only.")
                 jump silver_requests_root
 
-            "-Public requests-" (icon="interface/icons/small/star_yellow.png") if daytime:
+            "-Public requests-" (icon="interface/icons/small/star_yellow.webp") if daytime:
                 if her_reputation >= 16 and not public_whore_ending:
                     # Public whore ending choice
                     $ renpy.choice_for_skipping()
@@ -292,11 +292,11 @@ label hermione_favor_menu:
                 else:
                     $ renpy.jump(result)
 
-            "{color=[menu_disabled]}-Public Shaming-{/color}" (icon="interface/icons/small/star_pink.png") if not daytime:
+            "{color=[menu_disabled]}-Public Shaming-{/color}" (icon="interface/icons/small/star_pink.webp") if not daytime:
                 call nar(">Public Shaming events are available during the day only.")
                 jump silver_requests_root
 
-            "-Public Shaming-" (icon="interface/icons/small/star_pink.png")if daytime:
+            "-Public Shaming-" (icon="interface/icons/small/star_pink.webp")if daytime:
                 label not_now_ps:
                 python:
                     menu_choices = []
@@ -407,7 +407,7 @@ label update_her_requests:
 
 label hermione_talk:
     menu:
-        "-Working-" (icon="interface/icons/small/gold.png"):
+        "-Working-" (icon="interface/icons/small/gold.webp"):
             label working_menu:
             menu:
                 "-Work as a maid-" if daytime and hg_maid.unlocked:
@@ -463,12 +463,12 @@ label hermione_talk:
 
 
         ### Luna ###
-        "-Ask for a new student-" (icon="interface/icons/small/luna.png") if hat_known and not luna_known:
+        "-Ask for a new student-" (icon="interface/icons/small/luna.webp") if hat_known and not luna_known:
             jump hat_intro_2
 
 
         ### Astoria ###
-        "-Ask her to help Tonks-" (icon="interface/icons/small/tonks.png") if astoria_intro.E1_complete and not astoria_intro.E3_complete:
+        "-Ask her to help Tonks-" (icon="interface/icons/small/tonks.webp") if astoria_intro.E1_complete and not astoria_intro.E3_complete:
             if astoria_intro.E2_hermione:
                 call her_main("I'm still looking for that student, [genie_name]!", "open", "closed", "base", "mid")
                 call her_main("Trust in me, I will find that Slytherin scum!", "angry", "base", "angry", "mid")
@@ -481,20 +481,20 @@ label hermione_talk:
 
 
         ### Cho ###
-        "{color=[menu_disabled]}-Solve the matter with Cho-{/color}" (icon="interface/icons/small/cho.png") if cho_intro.E2_complete and not ss_he.cho_E1:
+        "{color=[menu_disabled]}-Solve the matter with Cho-{/color}" (icon="interface/icons/small/cho.webp") if cho_intro.E2_complete and not ss_he.cho_E1:
             # Before talking to Snape.
             m "(I should ask Snape what to do about that Cho girl first. Just to be save.)"
             m "(Might as well have a drink with him...)"
             jump hermione_talk
 
-        "-Solve the matter with Cho-" (icon="interface/icons/small/cho.png") if ss_he.cho_E1 and not cho_intro.E3_complete:
+        "-Solve the matter with Cho-" (icon="interface/icons/small/cho.webp") if ss_he.cho_E1 and not cho_intro.E3_complete:
             # After talking to Snape.
             jump cho_intro_E3
 
-        "-Ask her to commentate the game-" (icon="interface/icons/small/quidditch.png") if cho_tier == 1 and cho_quid.E3_complete and not cho_quid.E4_complete:
+        "-Ask her to commentate the game-" (icon="interface/icons/small/quidditch.webp") if cho_tier == 1 and cho_quid.E3_complete and not cho_quid.E4_complete:
             jump cho_quid_E4
 
-        "-Ask her to commentate the game again-\n{size=-5}again...{/size}" (icon="interface/icons/small/quidditch.png") if cho_tier == 2 and cho_quid.E6_complete and not cho_quid.E7_complete:
+        "-Ask her to commentate the game again-\n{size=-5}again...{/size}" (icon="interface/icons/small/quidditch.webp") if cho_tier == 2 and cho_quid.E6_complete and not cho_quid.E7_complete:
             jump cho_quid_E7
 
         # General.

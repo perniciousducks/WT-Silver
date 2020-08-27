@@ -5,7 +5,7 @@ default snape_zorder = 15
 default snape_flip = 1
 default use_snape_head = False
 
-default s_sprite = "characters/snape/main/snape_01.png"
+default s_sprite = "characters/snape/main/snape_01.webp"
 
 ###SNAPE STATS###
 default snape_busy = False #When True, you can't summon Snape.

@@ -115,16 +115,16 @@ init python:
                 chibi["base"] = "no_panties_dance_pause"
 
         elif chibi.action == "top_naked":
-            chibi["base"] = "dance/03_no_shirt_03.png" #TODO Should be 'stand' action without top clothes (needs layers first)
+            chibi["base"] = "dance/03_no_shirt_03.webp" #TODO Should be 'stand' action without top clothes (needs layers first)
 
         elif chibi.action == "lift_skirt":
             if hermione.is_worn("panties"):
                 #TODO Figure out a better way to determine the expression (so it can be reused in a different event)
                 if hg_pf_admire_panties.counter <= 1:
                     # Reluctant expression
-                    chibi["base"] = "~/lift_skirt/panties_00.png"
+                    chibi["base"] = "~/lift_skirt/panties_00.webp"
                 else:
                     # Happy expression
-                    chibi["base"] = "~/lift_skirt/panties_01.png"
+                    chibi["base"] = "~/lift_skirt/panties_01.webp"
             else:
-                chibi["base"] = "~/lift_skirt/panties_02.png"
+                chibi["base"] = "~/lift_skirt/panties_02.webp"

@@ -418,7 +418,7 @@ label book_complete:
     elif book_choice.id == "quidditch_book_1":
         m "Well, that was quite informative...{w} But who in their right mind wants to watch a game for three months... even with basketball I'd struggle a bit at that point."
         m "Hopefully that's enough information to convince Miss Chang I know what I'm doing...{w} basketball is still better though..."
-        $ cho_quiz.hint = "{image=interface/check_True.png} "
+        $ cho_quiz.hint = "{image=interface/check_True.webp} "
 
     elif book_choice in book_list.read_books:
         $ speed_reading += 1
@@ -469,7 +469,7 @@ label read_scroll_menu:
 
 label read_scroll:
     $ scroll = scroll_choice
-    $ the_gift = "images/misc/extras/"+str(scroll.scroll_image)+".png"
+    $ the_gift = "images/misc/extras/"+str(scroll.scroll_image)+".webp"
     show screen gift
     with d3
 

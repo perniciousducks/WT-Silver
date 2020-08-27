@@ -388,7 +388,7 @@ label potion_scene_2_2:
             call ctc
 
             $ uni_sperm = True
-            $ u_sperm = "characters/hermione/face/auto_08.png"
+            $ u_sperm = "characters/hermione/face/auto_08.webp"
             m "Ughhh"
             m "All over your fucking back."
             call nar(">You fall back into your chair, spent.")

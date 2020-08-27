@@ -381,7 +381,7 @@ label hg_wager_bj:
                                 call her_main("Good night.", "open", "base", "base", "mid")
                                 m "Good night, [hermione_name]"
                             $ uni_sperm = False
-                        "-Try something crazy- {image=interface/cards.png}":
+                        "-Try something crazy- {image=interface/cards.webp}":
                             m "Oh yes, I'm...{w=0.3} ugh...{w=0.3} fine."
                             m "But for some reason I feel like playing some cards."
                             call sna_main("In a moment like this?", face="snape_02")
@@ -401,7 +401,7 @@ label hg_wager_bj:
                     #
                     #
                     menu:
-                        "\"*Hmm*.. Actually..\" {image=interface/cards.png}":
+                        "\"*Hmm*.. Actually..\" {image=interface/cards.webp}":
                             g9 "I don't see why not... I don't have anything else going on at the moment..."
                             label bj_duel_game:
                             call her_main("...", "open_wide_tongue", "narrow", "annoyed", "mid")
@@ -645,7 +645,7 @@ label hg_wager_bj_secret:
 
 screen hg_wager_bj_secret():
     zorder 4
-    add im.MatrixColor("images/rooms/overlays/g_circular.png", im.matrix.saturation(0.0)*im.matrix.brightness(0.7))
+    add im.MatrixColor("images/rooms/overlays/g_circular.webp", im.matrix.saturation(0.0)*im.matrix.brightness(0.7))
 
     text "Replay" pos (50, 50) size 40 color "#FFF" outlines [(5, "#000", 0, 0)] at blink
 

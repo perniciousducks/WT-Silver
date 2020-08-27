@@ -62,10 +62,10 @@ screen with_snape(ani=False):
 
     else:
         if daytime:
-            add "characters/genie/chibis/drinking/01_day.png" xpos 435 ypos 200 zoom 0.5 # Different shadow.
+            add "characters/genie/chibis/drinking/01_day.webp" xpos 435 ypos 200 zoom 0.5 # Different shadow.
         else:
-            add "characters/genie/chibis/drinking/01.png" xpos 435 ypos 200 zoom 0.5
-        add "characters/snape/chibis/drinking/01.png" xpos 618 ypos 200 zoom 0.5
+            add "characters/genie/chibis/drinking/01.webp" xpos 435 ypos 200 zoom 0.5
+        add "characters/snape/chibis/drinking/01.webp" xpos 618 ypos 200 zoom 0.5
 
 # Chibi definition
 default snape_chibi = Chibi("snape", ["base"], update_snape_chibi)

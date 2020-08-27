@@ -111,7 +111,7 @@ label end_cho_event:
     $ cho.wear("all")
 
     $ renpy.stop_predict(cho.get_image())
-    $ renpy.stop_predict("characters/cho/face/*.png")
+    $ renpy.stop_predict("characters/cho/face/*.webp")
 
     call music_block
     jump main_room

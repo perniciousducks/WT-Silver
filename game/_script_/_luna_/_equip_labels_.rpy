@@ -4,30 +4,30 @@ label update_lun_uniform:
     hide screen luna_main
 
     #Hair
-    $ luna_hair         = "characters/luna/body/hair/" +str(lun_hair_style)+ "_" +str(lun_hair_color)+ "_base.png"
-    $ luna_hair_shadow  = "characters/luna/body/hair/" +str(lun_hair_style)+ "_" +str(lun_hair_color)+ "_top.png"
+    $ luna_hair         = "characters/luna/body/hair/" +str(lun_hair_style)+ "_" +str(lun_hair_color)+ "_base.webp"
+    $ luna_hair_shadow  = "characters/luna/body/hair/" +str(lun_hair_style)+ "_" +str(lun_hair_color)+ "_top.webp"
 
     #Top
-    $ luna_top            = "characters/luna/clothes/tops/" +str(lun_top)+ ".png"
+    $ luna_top            = "characters/luna/clothes/tops/" +str(lun_top)+ ".webp"
 
     #Bottom
-    $ luna_bottom         = "characters/luna/clothes/bottoms/" +str(lun_bottom)+ ".png"
+    $ luna_bottom         = "characters/luna/clothes/bottoms/" +str(lun_bottom)+ ".webp"
 
     #Underwear
-    $ luna_bra            = "characters/luna/clothes/bras/" +str(lun_bra)+ ".png"
-    $ luna_onepiece       = "characters/luna/clothes/onepieces/" +str(lun_onepiece)+ ".png"
-    $ luna_panties        = "characters/luna/clothes/panties/" +str(lun_panties)+ ".png"
-    $ luna_garterbelt     = "characters/luna/clothes/garterbelts/" +str(lun_garterbelt)+ ".png"
+    $ luna_bra            = "characters/luna/clothes/bras/" +str(lun_bra)+ ".webp"
+    $ luna_onepiece       = "characters/luna/clothes/onepieces/" +str(lun_onepiece)+ ".webp"
+    $ luna_panties        = "characters/luna/clothes/panties/" +str(lun_panties)+ ".webp"
+    $ luna_garterbelt     = "characters/luna/clothes/garterbelts/" +str(lun_garterbelt)+ ".webp"
 
-    $ luna_neckwear       = "characters/luna/clothes/neckwear/" +str(lun_neckwear)+ ".png"
-    $ luna_gloves         = "characters/luna/clothes/gloves/" +str(lun_gloves)+ ".png"
-    $ luna_stockings      = "characters/luna/clothes/stockings/" +str(lun_stockings)+ ".png"
-    $ luna_robe           = "characters/luna/clothes/robe/" +str(lun_robe)+ ".png"
+    $ luna_neckwear       = "characters/luna/clothes/neckwear/" +str(lun_neckwear)+ ".webp"
+    $ luna_gloves         = "characters/luna/clothes/gloves/" +str(lun_gloves)+ ".webp"
+    $ luna_stockings      = "characters/luna/clothes/stockings/" +str(lun_stockings)+ ".webp"
+    $ luna_robe           = "characters/luna/clothes/robe/" +str(lun_robe)+ ".webp"
 
     #Accessories
-    $ luna_hat            = "characters/luna/clothes/hats/hair_" +str(lun_hair_style)+ "/" +str(lun_hat)+ ".png" #/hair_"+str(lun_hair_style)+"/
-    $ luna_glasses        = "characters/luna/clothes/glasses/" +str(lun_glasses)+ ".png"
-    $ luna_ears           = "characters/luna/clothes/ears/" +str(lun_ears)+ ".png"
+    $ luna_hat            = "characters/luna/clothes/hats/hair_" +str(lun_hair_style)+ "/" +str(lun_hat)+ ".webp" #/hair_"+str(lun_hair_style)+"/
+    $ luna_glasses        = "characters/luna/clothes/glasses/" +str(lun_glasses)+ ".webp"
+    $ luna_ears           = "characters/luna/clothes/ears/" +str(lun_ears)+ ".webp"
 
     $ update_chibi("luna")
 
@@ -41,16 +41,16 @@ label update_luna_body:
 
     if luna_wear_top:
         if lun_top == "top_muggle_3":
-            $ luna_breasts = "characters/luna/body/breasts/breasts_normal.png"
+            $ luna_breasts = "characters/luna/body/breasts/breasts_normal.webp"
         else:
-            $ luna_breasts = "characters/luna/body/breasts/breasts_pressed.png"
+            $ luna_breasts = "characters/luna/body/breasts/breasts_pressed.webp"
     elif luna_wear_bra:
         if lun_bra == "bra_silk":
-            $ luna_breasts = "characters/luna/body/breasts/breasts_normal.png"
+            $ luna_breasts = "characters/luna/body/breasts/breasts_normal.webp"
         else:
-            $ luna_breasts = "characters/luna/body/breasts/breasts_pressed.png"
+            $ luna_breasts = "characters/luna/body/breasts/breasts_pressed.webp"
     else:
-        $ luna_breasts = "characters/luna/body/breasts/breasts_normal.png"
+        $ luna_breasts = "characters/luna/body/breasts/breasts_normal.webp"
 
     if (luna_wear_top and lun_top in luna_arms_up_list) or (luna_wear_outfit and luna_outfit_GLBL.id in luna_arms_up_list):
         $ luna_l_arm = 2

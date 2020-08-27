@@ -18,36 +18,36 @@ define crowd_mid = ["low_1", "low_2", "tower_1"]
 define crowd_full = ["low_1", "low_2", "low_3", "low_4", "tower_1", "tower_2"]
 
 image quidditch_stands rain_heavy:
-    "images/rooms/quidditch_stands/rain/heavy_0.png"
+    "images/rooms/quidditch_stands/rain/heavy_0.webp"
     pause 0.125
-    "images/rooms/quidditch_stands/rain/heavy_1.png"
+    "images/rooms/quidditch_stands/rain/heavy_1.webp"
     pause 0.125
-    "images/rooms/quidditch_stands/rain/heavy_2.png"
+    "images/rooms/quidditch_stands/rain/heavy_2.webp"
     pause 0.125
     repeat
 
 image quidditch_stands rain_heavy_surface_top:
-    "images/rooms/quidditch_stands/rain/heavysurf_top_0.png"
+    "images/rooms/quidditch_stands/rain/heavysurf_top_0.webp"
     pause 0.125
-    "images/rooms/quidditch_stands/rain/heavysurf_top_1.png"
+    "images/rooms/quidditch_stands/rain/heavysurf_top_1.webp"
     pause 0.125
-    "images/rooms/quidditch_stands/rain/heavysurf_top_2.png"
+    "images/rooms/quidditch_stands/rain/heavysurf_top_2.webp"
     pause 0.125
     repeat
 
 image quidditch_stands rain_heavy_surface:
-    "images/rooms/quidditch_stands/rain/heavysurf_0.png"
+    "images/rooms/quidditch_stands/rain/heavysurf_0.webp"
     pause 0.125
-    "images/rooms/quidditch_stands/rain/heavysurf_1.png"
+    "images/rooms/quidditch_stands/rain/heavysurf_1.webp"
     pause 0.125
-    "images/rooms/quidditch_stands/rain/heavysurf_2.png"
+    "images/rooms/quidditch_stands/rain/heavysurf_2.webp"
     pause 0.125
     repeat
 
 image crowd_bj:
-    "images/rooms/quidditch_stands/crowd_bj0.png"
+    "images/rooms/quidditch_stands/crowd_bj0.webp"
     pause 0.5
-    "images/rooms/quidditch_stands/crowd_bj1.png"
+    "images/rooms/quidditch_stands/crowd_bj1.webp"
     pause 0.5
     repeat
 
@@ -67,13 +67,13 @@ label quidditch_stands(hidden=False, reset=False, **kwargs):
 screen quidditch_stands_back(weather, rain=False, crowd=[], crowd_bj=False, crowd_react=[None, None, None], tree_fire=False, puddles=False, **kwargs):
     zorder 0
 
-    add "images/rooms/quidditch_stands/bg_{}.png".format(weather) zoom 0.5
+    add "images/rooms/quidditch_stands/bg_{}.webp".format(weather) zoom 0.5
 
     if tree_fire:
         add "quid_stands_fire" pos (870, -15)
 
     for c in set(crowd):
-        add "images/rooms/quidditch_stands/crowd_{}.png".format(c) zoom 0.5
+        add "images/rooms/quidditch_stands/crowd_{}.webp".format(c) zoom 0.5
 
     if crowd_bj:
         add "crowd_bj" zoom 0.5
@@ -90,19 +90,19 @@ screen quidditch_stands_back(weather, rain=False, crowd=[], crowd_bj=False, crow
 screen quidditch_stands_mid(weather, **kwargs):
     zorder 8
 
-    add "images/rooms/quidditch_stands/podium_{}.png".format(weather) zoom 0.5
+    add "images/rooms/quidditch_stands/podium_{}.webp".format(weather) zoom 0.5
 
 
 screen quidditch_stands_front(weather, spotlight=False, hole=False, rain=False, **kwargs):
     zorder 8
 
-    add "images/rooms/quidditch_stands/fg_{}.png".format(weather) zoom 0.5
+    add "images/rooms/quidditch_stands/fg_{}.webp".format(weather) zoom 0.5
 
     if hole:
-        add "images/rooms/quidditch_stands/hole.png" zoom 0.5
+        add "images/rooms/quidditch_stands/hole.webp" zoom 0.5
 
     if spotlight:
-        add "images/rooms/quidditch_stands/spotlight.png" zoom 0.5
+        add "images/rooms/quidditch_stands/spotlight.webp" zoom 0.5
 
     if rain:
         add "quidditch_stands rain_heavy_surface_top" zoom 0.5
@@ -115,7 +115,7 @@ screen bludger_flying(start, end, t=1.0):
     zorder 4
     tag bludger
 
-    add "images/rooms/quidditch_stands/bludger.png":
+    add "images/rooms/quidditch_stands/bludger.webp":
         at transform:
             anchor (0.5, 0.5)
             align (0.5, 0.5)
@@ -125,9 +125,9 @@ screen bludger_flying(start, end, t=1.0):
 
 image quid_stands_fire:
     zoom 0.5
-    "images/rooms/quidditch_stands/fire/0.png" with d3
+    "images/rooms/quidditch_stands/fire/0.webp" with d3
     pause 0.3
-    "images/rooms/quidditch_stands/fire/1.png" with d3
+    "images/rooms/quidditch_stands/fire/1.webp" with d3
     pause 0.3
     repeat
 

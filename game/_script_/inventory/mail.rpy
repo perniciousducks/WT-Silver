@@ -104,7 +104,7 @@ screen letter():
     zorder 20
     tag letter
 
-    add "interface/letter.png" pos (340, 30)
+    add "interface/letter.webp" pos (340, 30)
     hbox:
         spacing 40 pos (410, 80) xmaximum 250
         text letter.text
@@ -144,7 +144,7 @@ label letter_from_hermione_A:
 label letter_paperwork_unlock:
     m "Payments? Hmm..."
 
-    call give_reward(">From now on you can do paperwork at your desk in order to earn additional gold...","interface/icons/gold.png")
+    call give_reward(">From now on you can do paperwork at your desk in order to earn additional gold...","interface/icons/gold.webp")
     call tutorial("workngold")
 
     return
@@ -176,7 +176,7 @@ label letter_nt_1:
     call nar(">You roll out the poster completely - getting a good look of it.")
     g9 "Nice!"
 
-    call give_reward(text="{heart} {heart} {heart}", gift="interface/icons/posters/tonks.png", sound=True)
+    call give_reward(text="{heart} {heart} {heart}", gift="interface/icons/posters/tonks.webp", sound=True)
     $ poster_tonks_ITEM.unlocked = True
     $ poster_tonks_ITEM.hidden = False
 
@@ -238,7 +238,7 @@ label deck_mail_send:
     with d3
 
     g9 "Hell yes I'm playing this..."
-    call give_reward(">You've unlocked Wizard cards.\nUse the deck builder available on your desk to learn the rules and edit your deck.","interface/icons/cards.png")
+    call give_reward(">You've unlocked Wizard cards.\nUse the deck builder available on your desk to learn the rules and edit your deck.","interface/icons/cards.webp")
 
     return
 
@@ -294,7 +294,7 @@ label get_package:
                     else:
                         txt_gifts += str(item[2])+" "+item[0]+".{/size}"
                 renpy.block_rollback()
-                renpy.call("give_reward","You have received your ordered items:\n"+txt_gifts, "interface/icons/box_brown_"+str(random.randint(1, 4))+".png")
+                renpy.call("give_reward","You have received your ordered items:\n"+txt_gifts, "interface/icons/box_brown_"+str(random.randint(1, 4))+".webp")
 
     hide screen package
     hide screen blktone

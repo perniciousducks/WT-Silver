@@ -21,22 +21,22 @@ screen exp_o_meter(fill, opacity, alt, alt_text):
         xpos 50
         ypos 570
 
-        add "interface/meter/"+interface_color+"/meter.png" yanchor 1.0 alpha opacity
-        add "interface/meter/fill.png" at crop_meter(fill, opacity)
-        add "interface/meter/glass.png" yanchor 1.0 alpha opacity
+        add "interface/meter/"+interface_color+"/meter.webp" yanchor 1.0 alpha opacity
+        add "interface/meter/fill.webp" at crop_meter(fill, opacity)
+        add "interface/meter/glass.webp" yanchor 1.0 alpha opacity
 
     if not alt:
         frame:
             style "empty"
             xpos 150
             ypos 70
-            add "interface/meter/"+interface_color+"/circle.png" alpha opacity
+            add "interface/meter/"+interface_color+"/circle.webp" alpha opacity
             if fill >= 90:
-                add "interface/meter/100.png" alpha opacity
+                add "interface/meter/100.webp" alpha opacity
             elif fill >= 50:
-                add "interface/meter/50.png" alpha opacity
+                add "interface/meter/50.webp" alpha opacity
             else:
-                add "interface/meter/0.png" alpha opacity
+                add "interface/meter/0.webp" alpha opacity
 
     if alt_text:
         text alt_text size 22 vertical True color "#FFF" outlines [ (2, "#000", 0, 0) ] xpos 70 ypos 340 yalign 0.5
@@ -45,7 +45,7 @@ screen swear_bubble(type):
     tag bubble
     zorder 30
 
-    add "interface/meter/bubble/"+str(type)+".png" ypos 100 xpos 100
+    add "interface/meter/bubble/"+str(type)+".webp" ypos 100 xpos 100
     timer 1.0 action Hide("swear_bubble")
 
 
@@ -605,7 +605,7 @@ label cho_quiz_checkpoint:
 
         $ cho_quiz.complete = True
 
-        call popup("You've unlocked the ability to train Cho in Quidditch.", "Congratulations!", "interface/icons/head/cho.png")
+        call popup("You've unlocked the ability to train Cho in Quidditch.", "Congratulations!", "interface/icons/head/cho.webp")
 
     # Failed
     else:

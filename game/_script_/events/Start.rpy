@@ -5,7 +5,7 @@ label start_wt:
     pause 1
 
     hide screen blkfade
-    show image "images/rooms/_bg_/castle.png"
+    show image "images/rooms/_bg_/castle.webp"
     with d9
 
     call update_interface_color("gray")
@@ -96,7 +96,7 @@ label start_wt:
 
     ### GAME STARTS HERE ###
     stop music fadeout 1
-    hide image "images/rooms/_bg_/castle.png"
+    hide image "images/rooms/_bg_/castle.webp"
     call screen loading
     with d7
 

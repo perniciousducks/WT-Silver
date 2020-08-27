@@ -6,8 +6,8 @@ default genie_flip = 1
 default use_genie_head = False
 
 # Body
-default genie_base = "characters/genie/base/base.png"
-default genie_face = "characters/genie/face/base.png"
+default genie_base = "characters/genie/base/base.webp"
+default genie_face = "characters/genie/face/base.webp"
 
 # Stats
 default imagination      = 1

@@ -33,8 +33,8 @@ screen list_menu(menu_id, title, toggle_names=tuple(), menu_groups=[]):
     imagebutton:
         xpos 825
         ypos 240
-        idle "interface/general/"+interface_color+"/button_arrow_up.png"
-        hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
+        idle "interface/general/"+interface_color+"/button_arrow_up.webp"
+        hover "interface/general/"+interface_color+"/button_arrow_up_hover.webp"
         sensitive current_page > 0
         action SetScreenVariable("current_page", max(0, current_page-1))
 
@@ -42,8 +42,8 @@ screen list_menu(menu_id, title, toggle_names=tuple(), menu_groups=[]):
     imagebutton:
         xpos 825
         ypos 292
-        idle "interface/general/"+interface_color+"/button_arrow_down.png"
-        hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
+        idle "interface/general/"+interface_color+"/button_arrow_down.webp"
+        hover "interface/general/"+interface_color+"/button_arrow_down_hover.webp"
         sensitive current_page <= max_page
         action SetScreenVariable("current_page", min(max_page, current_page+1))
 
@@ -56,8 +56,8 @@ screen list_menu(menu_id, title, toggle_names=tuple(), menu_groups=[]):
 
         use invisible_button()
 
-        ground "interface/panels/"+interface_color+"/items_panel.png"
-        hover "interface/panels/"+interface_color+"/items_panel_hover.png"
+        ground "interface/panels/"+interface_color+"/items_panel.webp"
+        hover "interface/panels/"+interface_color+"/items_panel_hover.webp"
 
         # Header
         hbox:
@@ -72,9 +72,9 @@ screen list_menu(menu_id, title, toggle_names=tuple(), menu_groups=[]):
                 if i < len(toggle_names):
                     $ toggle_names[i]
                     if i in toggles:
-                        $ toggle_image = "interface/general/"+interface_color+"/check_true.png"
+                        $ toggle_image = "interface/general/"+interface_color+"/check_true.webp"
                     else:
-                        $ toggle_image = "interface/general/"+interface_color+"/check_false.png"
+                        $ toggle_image = "interface/general/"+interface_color+"/check_false.webp"
                     button:
                         style "empty"
                         xysize (110,22)
@@ -159,12 +159,12 @@ screen bottom_menu(menu_id, group_names, menu_groups, func_btn=None):
 
         use invisible_button()
 
-        ground "interface/panels/"+interface_color+"/bottom_panel.png"
-        hover "interface/panels/"+interface_color+"/bottom_panel_hover.png"
+        ground "interface/panels/"+interface_color+"/bottom_panel.webp"
+        hover "interface/panels/"+interface_color+"/bottom_panel_hover.webp"
 
         # Menu name
         $ title = group_names[current_group][0]
-        add "interface/general/"+interface_color+"/button_wide.png" xpos 130 ypos 0
+        add "interface/general/"+interface_color+"/button_wide.webp" xpos 130 ypos 0
         text title xalign 0.5 yalign 0.5 xpos 130+70 ypos 0+18 size 12
 
         # Categories
@@ -173,8 +173,8 @@ screen bottom_menu(menu_id, group_names, menu_groups, func_btn=None):
             imagebutton:
                 xpos 300+(33*i)
                 ypos 0
-                idle "interface/topbar/buttons/"+interface_color+"/"+group_icon+".png"
-                hover image_hover("interface/topbar/buttons/" +interface_color+ "/" +group_icon+".png")
+                idle "interface/topbar/buttons/"+interface_color+"/"+group_icon+".webp"
+                hover image_hover("interface/topbar/buttons/" +interface_color+ "/" +group_icon+".webp")
                 sensitive current_group != i
                 action [SetScreenVariable("current_group", i), SetScreenVariable("current_page", 0)]
 
@@ -182,8 +182,8 @@ screen bottom_menu(menu_id, group_names, menu_groups, func_btn=None):
             imagebutton:
                 xpos 300+(33*(len(menu_groups)+1))
                 ypos 0
-                idle "interface/topbar/buttons/"+interface_color+"/"+func_btn+".png"
-                hover image_hover("interface/topbar/buttons/"+interface_color+"/"+func_btn+".png")
+                idle "interface/topbar/buttons/"+interface_color+"/"+func_btn+".webp"
+                hover image_hover("interface/topbar/buttons/"+interface_color+"/"+func_btn+".webp")
                 action Return("func")
 
         # Items
@@ -199,8 +199,8 @@ screen bottom_menu(menu_id, group_names, menu_groups, func_btn=None):
     imagebutton:
         xpos 80
         ypos 475+50
-        idle "interface/general/"+interface_color+"/button_arrow_left.png"
-        hover "interface/general/"+interface_color+"/button_arrow_left_hover.png"
+        idle "interface/general/"+interface_color+"/button_arrow_left.webp"
+        hover "interface/general/"+interface_color+"/button_arrow_left_hover.webp"
         sensitive current_page > 0
         action SetScreenVariable("current_page", max(0, current_page-1))
 
@@ -208,8 +208,8 @@ screen bottom_menu(menu_id, group_names, menu_groups, func_btn=None):
     imagebutton:
         xpos 880+80
         ypos 475+50
-        idle "interface/general/"+interface_color+"/button_arrow_right.png"
-        hover "interface/general/"+interface_color+"/button_arrow_right_hover.png"
+        idle "interface/general/"+interface_color+"/button_arrow_right.webp"
+        hover "interface/general/"+interface_color+"/button_arrow_right_hover.webp"
         sensitive current_page <= max_page
         action SetScreenVariable("current_page", min(max_page, current_page+1))
 
@@ -239,7 +239,7 @@ screen icon_menu_item(menu_item, xpos=0, ypos=0):
                 text "{color=#ffffff}" +str(menu_item.number)+ "{/color}"
 
             if menu_item.active:
-                add "interface/topbar/icon_check.png" align (1.0,1.0)
+                add "interface/topbar/icon_check.webp" align (1.0,1.0)
 
 # Clothing Menu #Customizable
 screen clothing_menu(menu_items, character, preview):
@@ -253,36 +253,36 @@ screen clothing_menu(menu_items, character, preview):
     imagebutton:
         xpos 725
         ypos 240
-        idle "interface/general/"+interface_color+"/button_arrow_up.png"
+        idle "interface/general/"+interface_color+"/button_arrow_up.webp"
         if not current_page <= 0:
-            hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
+            hover "interface/general/"+interface_color+"/button_arrow_up_hover.webp"
             action Return("dec")
 
     #Down Button.
     imagebutton:
         xpos 725
         ypos 292
-        idle "interface/general/"+interface_color+"/button_arrow_down.png"
+        idle "interface/general/"+interface_color+"/button_arrow_down.webp"
         if current_page < math.ceil((len(menu_items)-1)/items_shown):
-            hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
+            hover "interface/general/"+interface_color+"/button_arrow_down_hover.webp"
             action Return("inc")
 
     #Left Button (Bottom right of screen).
     imagebutton:
         xpos 977
         ypos 544
-        idle "interface/general/"+interface_color+"/button_arrow_left.png"
+        idle "interface/general/"+interface_color+"/button_arrow_left.webp"
         if character >= character_choice_list[1]:
-            hover "interface/general/"+interface_color+"/button_arrow_left_hover.png"
+            hover "interface/general/"+interface_color+"/button_arrow_left_hover.webp"
             action Return("left")
 
     #Right Button (Bottom right of screen).
     imagebutton:
         xpos 1029
         ypos 544
-        idle "interface/general/"+interface_color+"/button_arrow_right.png"
+        idle "interface/general/"+interface_color+"/button_arrow_right.webp"
         if character < character_choice_list[-1]:
-            hover "interface/general/"+interface_color+"/button_arrow_right_hover.png"
+            hover "interface/general/"+interface_color+"/button_arrow_right_hover.webp"
             action Return("right")
 
     #Bag of Gold Icon
@@ -291,11 +291,11 @@ screen clothing_menu(menu_items, character, preview):
             xpos 705
             ypos 490
             if gold >= preview.cost:
-                idle  "interface/general/gold_bag.png"
-                hover "interface/general/gold_bag_hover.png"
+                idle  "interface/general/gold_bag.webp"
+                hover "interface/general/gold_bag_hover.webp"
             else:
-                idle  gray_tint("interface/general/gold_bag.png")
-                hover gray_tint("interface/general/gold_bag.png")
+                idle  gray_tint("interface/general/gold_bag.webp")
+                hover gray_tint("interface/general/gold_bag.webp")
             action Return("buy") #Buys whatever is currently previewed (item_choice)
 
 
@@ -305,11 +305,11 @@ screen clothing_menu(menu_items, character, preview):
         ypos 0
 
         if preview == None:
-            ground "interface/panels/"+str(interface_color)+"/clothing_panel_main.png"
-            hover "interface/panels/"+str(interface_color)+"/clothing_panel_main_hover.png"
+            ground "interface/panels/"+str(interface_color)+"/clothing_panel_main.webp"
+            hover "interface/panels/"+str(interface_color)+"/clothing_panel_main_hover.webp"
         else:
-            ground "interface/panels/"+str(interface_color)+"/clothing_panel_full.png"
-            hover "interface/panels/"+str(interface_color)+"/clothing_panel_full_hover.png"
+            ground "interface/panels/"+str(interface_color)+"/clothing_panel_full.webp"
+            hover "interface/panels/"+str(interface_color)+"/clothing_panel_full_hover.webp"
 
             #Item Information Display Panel.
             text preview.get_name() xpos 83 ypos 458 size 16
@@ -344,4 +344,4 @@ screen clothing_menu(menu_items, character, preview):
             elif character == 6:
                 add tonks.body.get_mannequin() xpos 600 ypos 0 zoom 0.5
             else:
-                add "interface/icons/outfits/mannequin_"+str(character)+".png" xpos 600 ypos 0 zoom 0.5
+                add "interface/icons/outfits/mannequin_"+str(character)+".webp" xpos 600 ypos 0 zoom 0.5

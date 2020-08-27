@@ -421,7 +421,7 @@ label cc_pf_talk_T1_intro_E2:
     stop music fadeout 1.0
 
     $ cho_requests_unlocked = True
-    call popup("You can now buy \"Public Requests\" from Cho!", "Congratulations!", "interface/icons/head/cho.png")
+    call popup("You can now buy \"Public Requests\" from Cho!", "Congratulations!", "interface/icons/head/cho.webp")
 
     jump end_cho_talk_event
 

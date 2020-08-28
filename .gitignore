@@ -52,3 +52,4 @@ image_cache.txt
 *.psd~
 *.png~
 .android.json
+*.webp~

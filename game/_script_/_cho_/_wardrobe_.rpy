@@ -138,7 +138,7 @@ default cho_outfit_dress1 = DollOutfit([cho_hair_ponytail1, cho_top_dress1, cho_
 ## Cheerleader Outfit ##
 ########################
 
-default cho_hair_pigtails = DollCloth("cho", ("head", "hair"), "hair", "pigtails", [[52, 59, 80, 255], [70, 90, 147, 255], [242, 162, 73, 255]], level=8)
+#default cho_hair_pigtails = DollCloth("cho", ("head", "hair"), "hair", "pigtails", [[52, 59, 80, 255], [70, 90, 147, 255], [242, 162, 73, 255]], level=8)
 default cho_earring_snitch = DollCloth("cho", ("head", "earrings"), "earring", "snitch", [[220, 220, 221, 255], [213, 161, 13, 255]])
 default cho_stockings_quid1 = DollCloth("cho", ("legwear", "socks"), "stockings", "quid1", [[64, 84, 141, 255], [213, 161, 13, 255]], level=10)
 default cho_panties_sport2 = DollCloth("cho", ("panties", "panties"), "panties", "sport_panties_2", [[156, 204, 249, 255]], level=4)
@@ -147,7 +147,7 @@ default cho_top_quid1 = DollCloth("cho", ("tops", "shirts"), "top", "top_quid_1"
 default cho_bottom_quid1 = DollCloth("cho", ("bottoms", "skirts"), "bottom", "quid_skirt_1", [[64, 84, 141, 255], [213, 161, 13, 255]], level=10, armfix=True)
 default cho_makeup0_blush = DollCloth("cho", ("makeup", "blush"), "makeup0", "blush", [[238, 113, 196, 255]], level=2)
 
-default cho_outfit_cheerleader = DollOutfit([cho_hair_pigtails, cho_earring_snitch, cho_stockings_quid1, cho_panties_sport2, cho_bra_sports1, cho_bottom_quid1, cho_top_quid1, cho_makeup0_blush], price=500)
+default cho_outfit_cheerleader = DollOutfit([cho_hair_ponytail1, cho_earring_snitch, cho_stockings_quid1, cho_panties_sport2, cho_bra_sports1, cho_bottom_quid1, cho_top_quid1, cho_makeup0_blush], price=500)
 
 ####################
 ## Trainee Outfit ##

@@ -144,6 +144,19 @@ default ton_panties_base = DollCloth("tonks", ("panties", "bikini panties"), "pa
 default ton_bra_base = DollCloth("tonks", ("bras", "bikini bras"), "bra", "bikini",[[124, 42, 50, 255], [177, 168, 172, 255]], unlocked=True)
 default ton_ruffled_top = DollCloth("tonks", ("tops", "shirts"), "top", "ruffled_top",[[213, 173, 219, 255]], level=25, unlocked=True)
 
+default ton_earring_cartilege = DollCloth("tonks", ("head", "earrings"), "earring", "cartilege", [[161, 159, 159, 255]], unlocked=True)
+default ton_earring_hoops = DollCloth("tonks", ("head", "earrings"), "earring", "hoops", [[161, 159, 159, 255]], unlocked=True)
+default ton_earring_industrial = DollCloth("tonks", ("head", "earrings"), "earring", "industrial", [[161, 159, 159, 255]], unlocked=True)
+
+default ton_piercing0_clit_stud = DollCloth("tonks", ("pelvis", "piercing"), "piercing0", "clit_stud", [[161, 159, 159, 255]], unlocked=True)
+default ton_piercing1_nipple_stud = DollCloth("tonks", ("breasts", "piercing"), "piercing1", "nipple_stud", [[161, 159, 159, 255]], unlocked=True)
+default ton_piercing1_nipple_rings = DollCloth("tonks", ("breasts", "piercing"), "piercing1", "nipple_rings", [[161, 159, 159, 255]], unlocked=True)
+default ton_piercing1_nipple_rings2 = DollCloth("tonks", ("breasts", "piercing"), "piercing1", "nipple_rings2", [[161, 159, 159, 255]], unlocked=True)
+
+default ton_piercing2_belly_stud = DollCloth("tonks", ("torso", "piercing"), "piercing2", "belly_stud", [[161, 159, 159, 255]], unlocked=True)
+default ton_piercing2_belly_heart = DollCloth("tonks", ("torso", "piercing"), "piercing2", "belly_heart", [[161, 159, 159, 255]], unlocked=True)
+default ton_piercing2_belly_dick = DollCloth("tonks", ("torso", "piercing"), "piercing2", "belly_dick", [[161, 159, 159, 255]], unlocked=True)
+
 ################
 ## Pubic Hair ##
 ################

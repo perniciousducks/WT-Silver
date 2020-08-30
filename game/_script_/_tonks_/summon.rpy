@@ -201,9 +201,9 @@ label update_ton_requests:
 label tonks_talk:
     menu:
         # TODO: Finish up
-        "-Ask about outfit upgrades-" (icon="interface/icons/small/wardrobe.webp"):
-            call clothing_upgrades
-            jump tonks_requests
+        #"-Ask about outfit upgrades-" (icon="interface/icons/small/wardrobe.webp"):
+            #call clothing_upgrades
+            #jump tonks_requests
 
         "-Ask for help with Quidditch-" (icon="interface/icons/small/quidditch.webp") if cho_tier == 2 and cho_quid.E6_complete and not cho_quid.E8_complete:
             m "Got a moment?"

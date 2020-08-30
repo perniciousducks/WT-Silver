@@ -181,7 +181,7 @@ label cho_training:
 
                         jump cho_training.choices
 
-                if cho_whoring >= 9:
+                if cho_whoring >= 9 and cc_pf_strip.is_event_complete(2, 3):
                     $ cho_quid.lock_practice = False
 
                     call cho_main("...", "soft", "base", "raised", "mid")

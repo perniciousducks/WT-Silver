@@ -23,7 +23,7 @@ label cc_pf_strip:
 
 ### Tier 1 (pre Slytherin) ###
 
-label cc_pf_strip_T1_intro_E1:
+label cc_pf_strip_T2_intro_E1:
     m "It's time for your next favour, [cho_name]."
     call cho_main("Of course, [cho_genie_name].", "base", "base", "base", "mid")
     call cho_main("What would you like me to do?", "soft", "base", "base", "mid")
@@ -316,7 +316,7 @@ label cc_pf_strip_T1_intro_E1:
     jump end_cho_strip_event
 
 
-label cc_pf_strip_T1_intro_E2:
+label cc_pf_strip_T2_intro_E2:
     call cho_main("", "upset", "base", "base", "R")
     m "[cho_name], to continue your training where we left off..."
     g9 "I'd like you to, once again, undress!"
@@ -703,7 +703,7 @@ label cc_pf_strip_T1_intro_E2:
     jump end_cho_strip_event
 
 
-label cc_pf_strip_T1_intro_E3:
+label cc_pf_strip_T2_intro_E3:
     g9 "[cho_name], how would you like to do another striptease for me?"
     call cho_main("(...)", "annoyed", "narrow", "angry", "mid")
     g9 "You did such a phenomenal job last time!"
@@ -998,21 +998,12 @@ label cc_pf_strip_T1_intro_E3:
 
     $ cho_strip_complete = True # Enables wardrobe strip functions.
     $ d_flag_01 = False # Cho not on desk
-    call cc_pf_strip_T1_hermione
-
-    if cho_strip_complete and cho_slytherin_talk:
-        $ renpy.choice_for_skipping()
-        m "(Anyway..)"
-        m "(I'm running out of time if I want to try and get another commentator for that game...)"
-        m "(Hmm... Blackmailing Miss Granger is a good idea... but... what could I even blackmail her with that isn't going to get me into trouble...)"
-        m "(The fact that she hates Cho isn't really going to sway her towards wanting to comment...{w=0.5} Hold on a second...)"
-        g9 "That's it!"
-        g9 "(Time to \"convince\" miss Granger it's in her best interests to keep commentating.)"
+    call cc_pf_strip_T2_hermione
 
     jump end_cho_strip_event
 
 
-label cc_pf_strip_T1_E3: # Repeats
+label cc_pf_strip_T2_E3: # Repeats
     m "[cho_name], why don't you come a bit closer?"
     call cho_main("Of course, [cho_genie_name]...", "base", "narrow", "base", "mid")
 
@@ -1151,12 +1142,12 @@ label cc_pf_strip_T1_E3: # Repeats
     call her_main("", "annoyed", "base", "angry", "mid")
     call ctc
 
-    call cc_pf_strip_T1_hermione
+    call cc_pf_strip_T2_hermione
 
     jump end_cho_strip_event
 
 
-label cc_pf_strip_T1_hermione:
+label cc_pf_strip_T2_hermione:
 
     menu:
         "\"Definitely!\"":

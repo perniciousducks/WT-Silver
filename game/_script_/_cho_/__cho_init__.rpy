@@ -29,7 +29,6 @@ default has_cho_panties         = False
 default cho_panties_soaked      = False
 default cho_outfits_schedule    = True
 default cho_bj_choice           = None # Dynamic string. Valid choices: failed, swallow, throat, points, taste.
-default cho_slytherin_talk      = False
 
 # Intro
 default jerked_off_during_cho_intro = False
@@ -71,9 +70,9 @@ default cc_pf_talk = event_class(title = "Talk to me!", start_label = "cc_pf_tal
 default cc_pf_strip = event_class(title = "Inspect her body!", start_label = "cc_pf_strip", start_tier = 2,
     events = [
         [
-            ["cc_pf_strip_T1_intro_E1"],
-            ["cc_pf_strip_T1_intro_E2"],
-            ["cc_pf_strip_T1_intro_E3"], ["cc_pf_strip_T1_E3"]
+            ["cc_pf_strip_T2_intro_E1"],
+            ["cc_pf_strip_T2_intro_E2"],
+            ["cc_pf_strip_T2_intro_E3"], ["cc_pf_strip_T2_E3"]
         ],
         [
             ["cc_pf_strip_T3_intro_E1"],
@@ -187,7 +186,6 @@ label reset_cho_progress:
         "has_cho_panties",
         "cho_panties_soaked",
         "cho_bj_choice",
-        "cho_slytherin_talk",
 
         # Intro
         "jerked_off_during_cho_intro",

@@ -1,0 +1,21 @@
+{
+    "package": "wt.silver",
+    "name": "Witch Trainer: Silver",
+    "icon_name": "WT Silver",
+    "version": "1.39",
+    "numeric_version": "139",
+    "layout": null,
+    "orientation": "sensorLandscape",
+    "expansion": false,
+    "update_always": true,
+    "source": false,
+    "store": "none",
+    "update_icons": true,
+    "permissions": [
+        "VIBRATE"
+    ],
+    "include_pil": false,
+    "include_sqlite": false,
+    "google_play_key": null,
+    "google_play_salt": null
+}

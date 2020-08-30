@@ -1,0 +1,198 @@
+#!/bin/sh
+
+usage()
+{
+  echo "Usage: build-release VERSION [ --patch REFERENCE ] [ --no-pack ]
+
+    VERSION              The release version number.
+    --patch REFERENCE    Create patch from a git reference (usually a version tag).
+                         If ./build/android_source exists, it must contain the compressed reference version.
+    --no-pack            Do not perform packaging steps.
+    --no-compress        Do not perform compression of Android project again.
+                         Assumes that ./build/android_srouce exists, and contains the full compressed project.
+    --package PLATFORM   Build a package for a certain platform only. Can be either 'pc' or 'android'.
+"
+  exit 2
+}
+
+# Script settings
+# Note: Directory paths must be relative to the script path and end with /
+
+PC_BUILD_DIR="./build/pc/"
+
+ANDROID_COMPRESSED="true"
+ANDROID_IMAGE_QUALITY=80
+ANDROID_SOURCE_DIR="./build/android_source/"
+ANDROID_BUILD_DIR="./build/android/"
+
+PATCH_MODE="false"
+PATCH_REFERENCE=""
+PATCH_SOURCE_DIR="./build/patch_source/"
+PATCH_BUILD_DIR="./build/patch/"
+
+SKIP_PACKAGE="false"
+PACKAGE_PLATFORM=""
+
+# Parse arguments
+RELEASE_VERSION="$1"
+if [ ! -n "$RELEASE_VERSION" ]; then
+    usage
+    exit
+fi
+shift
+
+PARSED_ARGUMENTS=$(getopt -n build-release -o "" --long patch:,no-pack,no-compress,package: -- "$@")
+if [ "$?" != "0" ]; then
+  usage
+fi
+eval set -- "$PARSED_ARGUMENTS"
+while true; do
+    case "$1" in
+        --patch)
+            PATCH_MODE="true"
+            PATCH_REFERENCE="$2"
+            shift 2
+        ;;
+        --no-pack)
+            SKIP_PACKAGE="true"
+            shift
+        ;;
+        --no-compress)
+            ANDROID_COMPRESSED="false"
+            shift
+        ;;
+        --package)
+            if [ "$2" != "pc" ] && [ "$2" != "android" ]; then
+                echo "Unsupported package platform."
+                exit
+            fi
+            PACKAGE_PLATFORM="$2"
+            shift 2
+        ;;
+        --)
+            # No more arguments
+            shift; break
+        ;;
+        *)
+            echo 'Internal error!' >&2
+            usage
+            exit
+        ;;
+    esac
+done
+
+echo "Checking requirements..."
+
+# Check current working directory
+if [ "$PWD" != $(dirname `readlink -f "$0"`) ]; then
+    echo "build-release must be executed from the project directory."
+    exit
+fi
+BUILD_SCRIPT_DIR="$PWD"
+
+# Check for required tools
+for _tool in renpy cwebp git zip rsync awk xargs
+do
+    if [ ! "$(command -v $_tool)" ]; then
+        echo "$_tool could not be found in PATH."
+        exit
+    fi
+done
+
+# Check for java (JAVA_HOME first, then PATH, following renpy assumptions)
+if [ -n "$JAVA_HOME" ] && [ -x "$JAVA_HOME/bin/java" ];  then
+    _java="$JAVA_HOME/bin/java"
+elif [ "$(command -v java)" ]; then
+    _java=java
+else
+    echo "java could not be found in JAVA_HOME or PATH."
+    exit
+fi
+
+# Check java version (must be JDK8 for renpy)
+_java_version=$("$_java" -version 2>&1 | head -n 1 | cut -d\" -f 2)
+if [ ! -n ${_java_version##1.8*} ]; then
+    echo "JDK8 must be installed and set as default."
+    exit
+fi
+
+# Check if RAPT configuration exists
+if [ ! -f  "./.android.json" ]; then
+    echo "RAPT configuration file .android.json was not found."
+    exit
+fi
+
+# Check if patch can be made from git reference
+if [ "$PATCH_MODE" = "true" ] && [ -n $(git show-ref "$PATCH_REFERENCE") ]; then
+    echo "$PATCH_REFERENCE is not a valid git commit reference"
+    exit
+fi
+
+# Check release version
+_version_found=$(awk 'index($0,"define config.version = \"'$RELEASE_VERSION'\"")' "./game/_script_/options.rpy")
+if [ ! -n "$_version_found" ]; then
+    echo "Version mismatch, options.rpy does not set config.version = \"$RELEASE_VERSION\"."
+    exit
+fi
+
+# Check Android release version
+_version_found=$(awk 'index($0,"\"version\": \"'$RELEASE_VERSION'\"")' "./.android.json")
+if [ ! -n "$_version_found" ]; then
+    echo "Version mismatch, .android.json does not set \"version\": \"$RELEASE_VERSION\"."
+    exit
+fi
+
+echo "OK!"
+
+if [ "$SKIP_PACKAGE" = "true" ] || [ "$PACKAGE_PLATFORM" != "pc" -a -n "$PACKAGE_PLATFORM" ]; then
+    echo "Skipped building PC packages."
+else
+    echo "Building PC packages..."
+    renpy "" distribute --dest "$PC_BUILD_DIR" --package pc --package mac --no-archive --no-update .
+fi
+
+if [ "$PATCH_MODE" = "true" ]; then
+    echo "Creating a patch..."
+
+    # Copy changed files
+    rm -rf "$PATH_SOURCE_DIR"
+    mkdir -p "$PATH_SOURCE_DIR"
+    git diff --name-only --diff-filter=ACMR "$PATCH_REFERENCE" HEAD | xargs cp -t "$PATCH_SOURCE_DIR"
+
+    # Make empty files to replace deleted files
+    git diff --name-only --diff-filter=D "$PATCH_REFERENCE" HEAD | awk "\$0=\"$PATCH_SOURCE_DIR\"\$0" | xargs touch
+
+    # Create patch ZIP file
+    cd "$PATCH_SOURCE_DIR"
+    zip -r "$BUILD_SCRIPT_DIR""$PATCH_BUILD_DIR""patch-$PATCH_REFERENCE-to-$RELEASE_VERSION.zip" ./
+    cd "$BUILD_SCRIPT_DIR"
+fi
+
+if [ "$SKIP_PACKAGE" = "true" ] || [ "$PACKAGE_PLATFORM" != "android" -a -n "$PACKAGE_PLATFORM" ]; then
+    echo "Skipped building Android packages."
+else
+    if [ "$ANDROID_COMPRESSED" = "true" ] ; then
+        echo "Generating compressed project for Android..."
+
+        if [ "$PATCH_MODE" = "true" ] && [ -d "$ANDROID_SOURCE_DIR" ]; then
+            # Copy/compress patched files to Android source directory
+            # This assumes that it contains compressed files from the REFERENCE version
+            rsync -r --exclude "build" --exclude ".git" --exclude "game/cache" --exclude "game/saves" --exclude "*.webp" "$PATCH_SOURCE_DIR" "$ANDROID_SOURCE_DIR"
+            find "$PATCH_SOURCE_DIR" -name "*.webp" -printf "%P\n" -exec \
+            | xargs -t -r -n1 -I{} cwebp -quiet -mt -q $ANDROID_IMAGE_QUALITY "$PATCH_SOURCE_DIR""{}" -o  "$ANDROID_SOURCE_DIR""{}"
+        else
+            rm -rf "$ANDROID_SOURCE_DIR"
+            mkdir -p "$ANDROID_SOURCE_DIR"
+            # Copy all game files to Android source directory
+            rsync -r --exclude "build" --exclude ".git" --exclude "game/cache" --exclude "game/saves" --exclude "*.webp" "./" "$ANDROID_SOURCE_DIR"
+            # Compress webp files and move them seperately
+            find . -not \( -path "./build" -prune \) -name "*.webp" -printf "%P\n" \
+            | xargs -t -r -n1 -I{} cwebp -quiet -mt -q $ANDROID_IMAGE_QUALITY "{}" -o "$ANDROID_SOURCE_DIR""{}"
+        fi
+
+        # TODO Maybe add compression step for webm files
+    fi
+
+    echo "Building Android packages..."
+    renpy "" android_build "$ANDROID_SOURCE_DIR" assembleRelease --destination "$ANDROID_BUILD_DIR"
+fi

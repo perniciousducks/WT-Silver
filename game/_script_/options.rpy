@@ -1,4 +1,4 @@
-################################################
+﻿################################################
 ##                Preferences                 ##
 ################################################
 
@@ -146,5 +146,6 @@ init python:
     build.classify("game/saves/**", None)
     build.classify("game/outfits/**", None)
     build.classify("game/music/not_used/**", None)
+    build.classify("build/", None)
 
     build.allow_integrated_gpu = True # MacOS support Only!

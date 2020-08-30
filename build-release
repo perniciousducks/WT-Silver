@@ -2,15 +2,16 @@
 
 usage()
 {
-  echo "Usage: build-release VERSION [ --patch REFERENCE ] [ --no-pack ]
+  echo "Usage: build-release VERSION [ options ]
 
     VERSION              The release version number.
     --patch REFERENCE    Create patch from a git reference (usually a version tag).
                          If ./build/android_source exists, it must contain the compressed reference version.
     --no-pack            Do not perform packaging steps.
     --no-compress        Do not perform compression of Android project again.
-                         Assumes that ./build/android_srouce exists, and contains the full compressed project.
+                         Assumes that ./build/android_source exists, and contains the full compressed project.
     --package PLATFORM   Build a package for a certain platform only. Can be either 'pc' or 'android'.
+    -y                   Do not prompt for confirmation.
 "
   exit 2
 }
@@ -32,6 +33,7 @@ PATCH_BUILD_DIR="./build/patch/"
 
 SKIP_PACKAGE="false"
 PACKAGE_PLATFORM=""
+NO_PROMPT="false"
 
 # Parse arguments
 RELEASE_VERSION="$1"
@@ -41,7 +43,7 @@ if [ ! -n "$RELEASE_VERSION" ]; then
 fi
 shift
 
-PARSED_ARGUMENTS=$(getopt -n build-release -o "" --long patch:,no-pack,no-compress,package: -- "$@")
+PARSED_ARGUMENTS=$(getopt -n build-release -o y --long patch:,no-pack,no-compress,package: -- "$@")
 if [ "$?" != "0" ]; then
   usage
 fi
@@ -69,6 +71,10 @@ while true; do
             PACKAGE_PLATFORM="$2"
             shift 2
         ;;
+        -y)
+            NO_PROMPT="true"
+            shift
+        ;;
         --)
             # No more arguments
             shift; break
@@ -88,7 +94,7 @@ if [ "$PWD" != $(dirname `readlink -f "$0"`) ]; then
     echo "build-release must be executed from the project directory."
     exit
 fi
-BUILD_SCRIPT_DIR="$PWD"
+BUILD_SCRIPT_DIR="$PWD"/
 
 # Check for required tools
 for _tool in renpy cwebp git zip rsync awk xargs
@@ -123,7 +129,7 @@ if [ ! -f  "./.android.json" ]; then
 fi
 
 # Check if patch can be made from git reference
-if [ "$PATCH_MODE" = "true" ] && [ -n $(git show-ref "$PATCH_REFERENCE") ]; then
+if [ "$PATCH_MODE" = "true" ] && [ -n "$(git show-ref \"${PATCH_REFERENCE}\")" ]; then
     echo "$PATCH_REFERENCE is not a valid git commit reference"
     exit
 fi
@@ -144,6 +150,18 @@ fi
 
 echo "OK!"
 
+# Check for uncommitted changes
+if [ -n "$(git status --porcelain)" ]; then
+    echo "Warning! There are uncommitted changes, which is not recommended during builds."
+    if [ "$NO_PROMPT" = "false" ]; then
+        echo "Do you want to continue? (y/n)"
+        read -r _continue
+        if [ "$_continue" != "y" ]; then
+            exit
+        fi
+    fi
+fi
+
 if [ "$SKIP_PACKAGE" = "true" ] || [ "$PACKAGE_PLATFORM" != "pc" -a -n "$PACKAGE_PLATFORM" ]; then
     echo "Skipped building PC packages."
 else
@@ -152,20 +170,30 @@ else
 fi
 
 if [ "$PATCH_MODE" = "true" ]; then
-    echo "Creating a patch..."
+    _diff=$(git diff --name-only --diff-filter=ACMRD "$PATCH_REFERENCE")
+    if [ -z "$_diff" ]; then
+        echo "No changed files detected."
+        echo "Skipped creating a patch."
+    else
+        echo "Creating a patch..."
 
-    # Copy changed files
-    rm -rf "$PATH_SOURCE_DIR"
-    mkdir -p "$PATH_SOURCE_DIR"
-    git diff --name-only --diff-filter=ACMR "$PATCH_REFERENCE" HEAD | xargs cp -t "$PATCH_SOURCE_DIR"
+        # Copy changed files
+        rm -rf "$PATCH_SOURCE_DIR"
+        mkdir -p "$PATCH_SOURCE_DIR"
+        git diff --name-only --diff-filter=ACMR "$PATCH_REFERENCE" \
+        | xargs -r -I{} sh -c '{ mkdir -p "'$PATCH_SOURCE_DIR'"$(dirname "{}") && cp "{}" "'$PATCH_SOURCE_DIR'""{}"; }'
 
-    # Make empty files to replace deleted files
-    git diff --name-only --diff-filter=D "$PATCH_REFERENCE" HEAD | awk "\$0=\"$PATCH_SOURCE_DIR\"\$0" | xargs touch
+        # Make empty files to replace deleted files
+        git diff --name-only --diff-filter=D "$PATCH_REFERENCE" | awk "\$0=\"$PATCH_SOURCE_DIR\"\$0" \
+        | xargs -r -I{} sh -c '{ mkdir -p $(dirname "{}") && touch "{}"; }'
 
-    # Create patch ZIP file
-    cd "$PATCH_SOURCE_DIR"
-    zip -r "$BUILD_SCRIPT_DIR""$PATCH_BUILD_DIR""patch-$PATCH_REFERENCE-to-$RELEASE_VERSION.zip" ./
-    cd "$BUILD_SCRIPT_DIR"
+        # Create patch ZIP file
+        mkdir -p "$PATCH_BUILD_DIR"
+        rm -f "$PATCH_BUILD_DIR""patch-$PATCH_REFERENCE-to-$RELEASE_VERSION.zip"
+        cd "$PATCH_SOURCE_DIR"
+        zip -r "$BUILD_SCRIPT_DIR""$PATCH_BUILD_DIR""patch-$PATCH_REFERENCE-to-$RELEASE_VERSION.zip" ./
+        cd "$BUILD_SCRIPT_DIR"
+    fi
 fi
 
 if [ "$SKIP_PACKAGE" = "true" ] || [ "$PACKAGE_PLATFORM" != "android" -a -n "$PACKAGE_PLATFORM" ]; then

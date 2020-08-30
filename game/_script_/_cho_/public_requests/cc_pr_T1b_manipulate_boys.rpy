@@ -140,7 +140,7 @@ label cc_pr_manipulate_boys_start:
     elif cho_tier == 3:
         if not cc_pr_manipulate_boys.is_event_complete(3, 1): # Completed The Twins?
 
-            if not cc_pr_spy_boys.is_event_complete(1, 1):
+            if not cc_pr_spy_boys.is_event_complete(3, 1):
                 # Return if player has not spied on the Twins just yet.
 
                 m "Let's try and manipulate the boys on the enemy team!"
@@ -169,7 +169,7 @@ label cc_pr_manipulate_boys_start:
 
         elif not cc_pr_manipulate_boys.is_event_complete(3, 2): # Completed Ron Weasley?
 
-            if not cc_pr_spy_boys.is_event_complete(1, 2):
+            if not cc_pr_spy_boys.is_event_complete(3, 2):
                 # Return if player has not spied on Ron Weasley just yet.
 
                 m "Let's try and manipulate--"
@@ -200,7 +200,7 @@ label cc_pr_manipulate_boys_start:
 
         elif not cc_pr_manipulate_boys.is_event_complete(3, 3): # Completed Harry Potter?
 
-            if not cc_pr_spy_boys.is_event_complete(1, 3):
+            if not cc_pr_spy_boys.is_event_complete(3, 3):
                 # Return if player has not spied on Harry Potter just yet.
                 m "Let's try and manipulate--"
                 call cho_main("I'm going to stop you there...", "angry", "base", "raised", "mid")

@@ -124,7 +124,7 @@ label end_hg_pr_flash:
         hide screen blktone
         with d3
 
-    elif not hg_pr_flash.monologue_glass and hg_pr_flash.is_event_complete(2, 3): # Event specific
+    elif not hg_pr_flash.monologue_glass and hg_pr_flash.is_event_complete(5, 3): # Event specific
         $ hg_pr_flash.monologue_glass = True
 
         show screen blktone

@@ -47,11 +47,11 @@ label cc_pf_blowjob_T3_intro_E1:
         call cho_main("I... yes... I suppose it is.", "soft", "narrow", "base", "R")
         m "Then we should do our best to prepare you for what's out there!"
         m "I won't be your coach forever... Once you're looking for a proper team, you'll be in fierce competition with the other women athletes."
-        m "Women that will stop for nothing to get where they want."
+        m "Women that will stop at nothing to get what they want."
         m "So, as your coach, it's my responsibility to prepare you!"
         call cho_main("And a blowjob is necessary for this?", "angry", "narrow", "raised", "mid")
 
-        if cc_pr_spy_girls.is_event_complete(1, 1):
+        if cc_pr_spy_girls.is_event_complete(3, 1):
             m "You've seen the girls on the Gryffindor team... you think they would hesitate with something as simple as a blowjob?"
             call cho_main("...", "disgust", "closed", "base", "down", cheeks="blush") #Pout
             m "I see how it is..."

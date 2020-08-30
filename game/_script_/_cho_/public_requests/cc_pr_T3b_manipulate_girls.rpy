@@ -7,10 +7,10 @@ label cc_pr_manipulate_girls_start:
 
     call cho_main(xpos="right", ypos="base", trans=fade)
 
-    if not cc_pr_manipulate_girls.is_event_complete(1, 1): # Completed Alicia Spinnet?
+    if not cc_pr_manipulate_girls.is_event_complete(3, 1): # Completed Alicia Spinnet?
         # Alicia Spinnet
 
-        if not cc_pr_spy_girls.is_event_complete(1, 2):
+        if not cc_pr_spy_girls.is_event_complete(3, 2):
             # Return if player has not spied on Alicia just yet.
             m "Let’s try and manipulate the girls on the enemy team!"
             call cho_main("You're expecting me to just jump in blind?", "angry", "base", "base", "mid")
@@ -42,10 +42,10 @@ label cc_pr_manipulate_girls_start:
         call cho_main("Wish me luck...", "horny", "base", "base", "mid")
         g9 "Good luck..."
 
-    elif not cc_pr_manipulate_girls.is_event_complete(1, 2): # Completed Katie Bell - Part 1?
+    elif not cc_pr_manipulate_girls.is_event_complete(3, 2): # Completed Katie Bell - Part 1?
         # Katie Bell - Part 1
 
-        if not cc_pr_spy_girls.is_event_complete(1, 3):
+        if not cc_pr_spy_girls.is_event_complete(3, 3):
             # Return if player has not spied on Katie just yet.
             m "Let's try and manipulate--"
             call cho_main("I'm going to stop you right there...", "soft", "base", "angry", "mid")
@@ -76,7 +76,7 @@ label cc_pr_manipulate_girls_start:
         call cho_main("Yes, I will!", "mad", "base", "raised", "mid")
         g9 "Great, off you go!"
 
-    elif not cc_pr_manipulate_girls.is_event_complete(1, 3): # Completed Katie Bell - Part 2?
+    elif not cc_pr_manipulate_girls.is_event_complete(3, 3): # Completed Katie Bell - Part 2?
         # Katie Bell - Part 2
 
         # No return here since it's just a continuation of previous Katie event.
@@ -91,10 +91,10 @@ label cc_pr_manipulate_girls_start:
         m "Excellent, make sure to come back with an extensive report as usual B."
         call cho_main("Got it...", "soft", "base", "base", "mid", cheeks="blush")
 
-    elif not cc_pr_manipulate_girls.is_event_complete(1, 4): # Completed Angelina Johnson?
+    elif not cc_pr_manipulate_girls.is_event_complete(3, 4): # Completed Angelina Johnson?
         # Angelina Johnson
 
-        if not cc_pr_spy_girls.is_event_complete(1, 4):
+        if not cc_pr_spy_girls.is_event_complete(3, 4):
             # Return if player has not spied on Angelina just yet.
             m "Let's try and manipulate--"
             call cho_main("I'm going to stop you right there...", "soft", "base", "angry", "mid")

@@ -7,10 +7,10 @@ label cc_pr_spy_girls_start:
 
     call cho_main(xpos="right", ypos="base", trans=fade)
 
-    if not cc_pr_spy_girls.is_event_complete(1, 1): # Completed shower event?
+    if not cc_pr_spy_girls.is_event_complete(3, 1): # Completed shower event?
         # Shower event - looking through the glory hole
 
-        if cc_pr_spy_boys.is_event_complete(1, 1):
+        if cc_pr_spy_boys.is_event_complete(3, 1):
             # Player has not spied on boys just yet.
 
             m "Time for some good old espionage!"
@@ -75,7 +75,7 @@ label cc_pr_spy_girls_start:
         m "Good luck!"
         call cho_main("Thanks...", "open", "narrow", "angry", "R")
 
-    elif not cc_pr_spy_girls.is_event_complete(1, 2): # Completed Alicia Spinnet?
+    elif not cc_pr_spy_girls.is_event_complete(3, 2): # Completed Alicia Spinnet?
         # Spy on Alicia Spinnet
 
         m "Ready for some more espionage, B?"
@@ -92,7 +92,7 @@ label cc_pr_spy_girls_start:
         m "Off you go, and good luck!"
         call cho_main("Thanks, [cho_genie_name].", "base", "base", "base", "mid")
 
-    elif not cc_pr_spy_girls.is_event_complete(1, 3): # Completed Katie Bell?
+    elif not cc_pr_spy_girls.is_event_complete(3, 3): # Completed Katie Bell?
         # Spy on Katie Bell
 
         m "Ready for some more espionage, B?"
@@ -124,7 +124,7 @@ label cc_pr_spy_girls_start:
 
         jump end_cho_event
 
-    elif not cc_pr_spy_girls.is_event_complete(1, 4): # Completed Angelina Johnson?
+    elif not cc_pr_spy_girls.is_event_complete(3, 4): # Completed Angelina Johnson?
         # Spy on Angelina Johnson
 
         m "Ready for some more espionage, B?"

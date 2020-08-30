@@ -7,10 +7,10 @@ label cc_pr_spy_boys_start:
 
     call cho_main(xpos="right", ypos="base", trans=fade)
 
-    if not cc_pr_spy_boys.is_event_complete(1, 1): # Completed spying on the Weasley Twins?
+    if not cc_pr_spy_boys.is_event_complete(3, 1): # Completed spying on the Weasley Twins?
         # Weasley Twins - handing over candies that turn people into blueberries
 
-        if not cc_pr_spy_girls.is_event_complete(1, 1):
+        if not cc_pr_spy_girls.is_event_complete(3, 1):
             # Player has not spied on girls just yet.
 
             m "Time to target the boys for a classic espionage mission C."
@@ -67,7 +67,7 @@ label cc_pr_spy_boys_start:
         g9 "Report back to me this evening as usual B!"
         call cho_main("Fine...", "angry", "narrow", "base", "mid")
 
-    elif not cc_pr_spy_boys.is_event_complete(1, 2): # Completed Ron Weasley?
+    elif not cc_pr_spy_boys.is_event_complete(3, 2): # Completed Ron Weasley?
         # Spy on Ron Weasley
 
         m "Ready for some more espionage B?"
@@ -84,7 +84,7 @@ label cc_pr_spy_boys_start:
         m "Quietly, make haste... quietly..."
         call cho_main("As you wish...", "base", "narrow", "base", "downR")
 
-    elif not cc_pr_spy_boys.is_event_complete(1, 3): # Completed Harry Potter?
+    elif not cc_pr_spy_boys.is_event_complete(3, 3): # Completed Harry Potter?
         # Spy on Harry Potter
 
         m "Ready for some more espionage B?"

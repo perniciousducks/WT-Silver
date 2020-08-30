@@ -73,6 +73,10 @@ init python:
             if self.events == []:
                 raise Exception('Events: "events" list was not defined in event_class.')
 
+            # Insert empty list for 'empty' tiers to avoid wrong lookup later on
+            for i in xrange(self.start_tier-1):
+                self.events.insert(0, [])
+
             self._max_tiers = len(self.events)
 
             if self.iconset == []:

@@ -1,0 +1,54 @@
+#!/bin/sh
+
+usage()
+{
+  echo "Usage: build-tools COMMAND [ options ]
+
+    Available commands:
+        clean        Delete all .rpyc and .pyc files.
+        recompile    Clean and compile.
+"
+  exit 2
+}
+
+clean()
+{
+    find . -name "*.rpyc" -name "*.pyc" -delete
+}
+
+recompile()
+{
+    clean
+    renpy . compile
+}
+
+# Check current working directory
+if [ "$PWD" != $(dirname `readlink -f "$0"`) ]; then
+    echo "build-tools must be executed from the project directory."
+    exit
+fi
+BUILD_SCRIPT_DIR="$PWD"/
+
+# Parse arguments
+COMMAND="$1"
+if [ ! -n "$COMMAND" ]; then
+    usage
+    exit
+fi
+shift
+
+case "$COMMAND" in
+    clean)
+        clean
+        exit
+    ;;
+    recompile)
+        recompile
+        exit
+    ;;
+    *)
+        echo 'Unknown command!' >&2
+        usage
+        exit
+    ;;
+esac

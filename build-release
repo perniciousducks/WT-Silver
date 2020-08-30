@@ -97,7 +97,7 @@ fi
 BUILD_SCRIPT_DIR="$PWD"/
 
 # Check for required tools
-for _tool in renpy cwebp git zip rsync awk xargs
+for _tool in renpy cwebp git zip rsync awk xargs sha256sum
 do
     if [ ! "$(command -v $_tool)" ]; then
         echo "$_tool could not be found in PATH."
@@ -167,6 +167,11 @@ if [ "$SKIP_PACKAGE" = "true" ] || [ "$PACKAGE_PLATFORM" != "pc" -a -n "$PACKAGE
 else
     echo "Building PC packages..."
     renpy "" distribute --dest "$PC_BUILD_DIR" --package pc --package mac --no-archive --no-update .
+
+    echo "Computing checksums..."
+    cd "$PC_BUILD_DIR"
+    sha256sum *.zip | tee /dev/tty > checksums.txt
+    cd "$BUILD_SCRIPT_DIR"
 fi
 
 if [ "$PATCH_MODE" = "true" ]; then
@@ -192,6 +197,11 @@ if [ "$PATCH_MODE" = "true" ]; then
         rm -f "$PATCH_BUILD_DIR""patch-$PATCH_REFERENCE-to-$RELEASE_VERSION.zip"
         cd "$PATCH_SOURCE_DIR"
         zip -r "$BUILD_SCRIPT_DIR""$PATCH_BUILD_DIR""patch-$PATCH_REFERENCE-to-$RELEASE_VERSION.zip" ./
+        cd "$BUILD_SCRIPT_DIR"
+
+        echo "Computing checksums..."
+        cd "$PATCH_BUILD_DIR"
+        sha256sum *.zip | tee /dev/tty > checksums.txt
         cd "$BUILD_SCRIPT_DIR"
     fi
 fi
@@ -223,4 +233,9 @@ else
 
     echo "Building Android packages..."
     renpy "" android_build "$ANDROID_SOURCE_DIR" assembleRelease --destination "$ANDROID_BUILD_DIR"
+
+    echo "Computing checksums..."
+    cd "$ANDROID_BUILD_DIR"
+    sha256sum *.apk | tee /dev/tty > checksums.txt
+    cd "$BUILD_SCRIPT_DIR"
 fi

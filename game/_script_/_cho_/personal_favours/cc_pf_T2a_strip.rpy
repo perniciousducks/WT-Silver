@@ -3087,7 +3087,6 @@ label cc_pf_strip_T3_intro_E3:
         call her_main("", "base", "narrow", "base", "down")
         ton "I guess that's one less thing to worry about while I do it..."
 
-
     call cho_main("I hope you didn't do that kind of stuff while you looked like me, Professor!", "open", "narrow", "angry", "L", cheeks="blush")
     call her_main("", "annoyed", "base", "base", "R")
     ton "*Uhm*..."
@@ -3108,8 +3107,6 @@ label cc_pf_strip_T3_intro_E3:
     call her_main("", "open", "closed", "base", "mid")
     ton "Well, that's enough fun for today."
 
-    $ tonks.get_equipped("hair").set_color([[152, 89, 48, 255], [195, 137, 89, 255]]) # Hermione brown
-
     # Tonks transforms back.
     call play_sound("magic")
     hide screen hermione_main
@@ -3117,7 +3114,7 @@ label cc_pf_strip_T3_intro_E3:
     $ cho_chibi.zorder = 3 # Reset to default.
     $ tonks_chibi.zorder = 2 # behind Cho. Default is 3.
     call ton_chibi("stand", flip=False, 370, 360)
-    call ton_main("", "base", "narrow", "base", "mid", xpos=345, ypos="base", flip=False, trans=d5)
+    call ton_main("", "base", "narrow", "base", "mid", xpos=345, ypos="base", hair=[[152, 89, 48, 255], [195, 137, 89, 255]], flip=False, trans=None) # Hermione brown
     with morph
     pause .2
 

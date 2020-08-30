@@ -62,7 +62,9 @@ label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, h
 
 
         if hair:
-            if hair in ("neutral", "basic", "reset"):
+            if isinstance(hair, list):
+                target_color = hair
+            elif hair in ("neutral", "basic", "reset"):
                 target_color = tonks_haircolor
             elif hair in ("red", "angry", "furious"):
                 target_color = [[164, 34, 34, 255], [219, 83, 83, 255]]

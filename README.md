@@ -4,7 +4,7 @@
 
 <p align="center">
     <a href="https://www.patreon.com/SilverStudioGames">
-        <img alt="Patreon" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-patreon.herokuapp.com%2FSilverStudioGames&style=flat"></a>
+        <img alt="Patreon" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fwts-shieldsio-patreon.herokuapp.com%2FSilverStudioGames&style=flat"></a>
     <a href="https://discord.gg/JaEBfYC">
         <img alt="Discord" src="https://img.shields.io/badge/discord-SilverStudioGames-%237289DA?logo=discord"></a>
     <a href="https://twitter.com/RealSilverGames">

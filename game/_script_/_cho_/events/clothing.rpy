@@ -12,8 +12,12 @@ label cho_summon_setup:
 
     # Slytherin Quidditch Intro.
     if cho_tier == 2 and not cho_quid.E5_complete:
-        $ cho_favors_unlocked = True
         jump cho_quid_E5
+
+    # Unlock favours at tier 3
+    # this will probably move to a cho_quid_E# event once we've implemented Gryffindor lead-up events
+    if cho_tier == 3:
+        $ cho_favors_unlocked = True
 
     # Clear Weather.
     if weather == "clear":

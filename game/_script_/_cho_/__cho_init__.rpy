@@ -17,7 +17,6 @@ default cho_jerk_off_counter    = 0
 # Flags
 default cho_known               = False
 default cho_unlocked            = False
-default cho_training_unlocked   = False
 default cho_favors_unlocked     = False
 default cho_requests_unlocked   = False
 default cho_shaming_unlocked    = False
@@ -175,7 +174,6 @@ label reset_cho_progress:
         # Flags
         "cho_known",
         "cho_unlocked",
-        "cho_training_unlocked",
         "cho_favors_unlocked",
         "cho_requests_unlocked",
         "cho_shaming_unlocked",

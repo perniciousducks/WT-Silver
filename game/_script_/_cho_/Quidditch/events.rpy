@@ -284,6 +284,7 @@ label cho_quid_E2:
     $ cho.equip(cho_outfit_last)
     $ cho_quid.E2_complete = True
     $ cho_favors_unlocked = True
+    $ cho_quid.lock_training = False
 
     jump end_cho_event
 
@@ -474,6 +475,7 @@ label cho_quid_E5:
     call cho_main("You're right! Thank you, [cho_genie_name].", "base", "base", "base", "mid") # happy
 
     $ cho_quid.E5_complete = True
+    $ cho_favors_unlocked = True
 
     jump cho_requests
 

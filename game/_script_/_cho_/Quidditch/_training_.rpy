@@ -16,8 +16,6 @@ label cho_training:
 
     # Training Intro 2.
     if not cho_quid.E2_complete:
-        $ cho_training_unlocked = True
-        $ cho_favors_unlocked = True
         jump cho_quid_E2
 
     # Setup

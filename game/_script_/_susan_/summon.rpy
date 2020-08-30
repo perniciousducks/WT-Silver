@@ -44,7 +44,7 @@ label summon_susan:
             else:
                 jump susan_talk
 
-        "{color=[menu_disabled]}-Sexual favours-{/color}" (icon="interface/icons/small/condom.webp") if cho_favors_unlocked:
+        "{color=[menu_disabled]}-Sexual favours-{/color}" (icon="interface/icons/small/condom.webp") if False:
             $ TBA_message()
             jump susan_requests
 

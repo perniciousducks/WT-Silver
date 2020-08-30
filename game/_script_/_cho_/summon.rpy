@@ -237,7 +237,7 @@ label cho_talk:
             jump cho_talk
 
         # Naming
-        "\"Address me only as\"" if cho_training_unlocked:
+        "\"Address me only as\"" if not cho_quid.lock_training:
             menu:
                 "\"Professor\"":
                     $ cho_genie_name = "Professor"
@@ -262,7 +262,7 @@ label cho_talk:
             call cho_main("Of course, [cho_genie_name]...",face="neutral")
             jump cho_talk
 
-        "\"From now on I will refer to you as\"" if cho_training_unlocked:
+        "\"From now on I will refer to you as\"" if not cho_quid.lock_training:
             menu:
                 "\"Miss Chang\"":
                     $ cho_name = "Miss Chang"

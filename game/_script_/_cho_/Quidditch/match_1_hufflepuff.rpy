@@ -1134,7 +1134,7 @@ label hufflepuff_match_return:
     $ cho.equip(cho_outfit_last)
 
     $ cho_tier = 2
-    $ cho_favors_unlocked = False # Need to do next tutoring event first.
+    $ cho_favors_unlocked = False
     $ cho_quid.lock_training = False
     $ cho_quid.lock_practice = True
     $ cho_quid.lock_tactic   = False

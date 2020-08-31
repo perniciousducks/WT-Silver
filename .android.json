@@ -3,7 +3,7 @@
     "name": "Witch Trainer: Silver",
     "icon_name": "WT Silver",
     "version": "1.39",
-    "numeric_version": "139",
+    "numeric_version": "1390",
     "layout": null,
     "orientation": "sensorLandscape",
     "expansion": false,
@@ -12,7 +12,8 @@
     "store": "none",
     "update_icons": true,
     "permissions": [
-        "VIBRATE"
+        "VIBRATE",
+        "INTERNET"
     ],
     "include_pil": false,
     "include_sqlite": false,

@@ -818,7 +818,8 @@ label .transformations:
     with d5
 
     ## Intro Events 1 and 2:
-    if doppler_done == False or succubus_done == False:
+    # TODO: Uncomment actual checks after doppled and succubus content is added for Tonks.
+    if True: #doppler_done == False or succubus_done == False:
 
         # Ask Tonks if she's a Doppler or a Succubus.
         # After asking her both questions, the next time you do the event she'll do some tranformations.
@@ -992,7 +993,6 @@ label .transformations:
 
         # End Event.
         jump cc_pf_strip_T3_tonks.end_event
-
 
 
     ## Repeatable ##

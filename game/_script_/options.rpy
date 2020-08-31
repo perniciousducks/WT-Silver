@@ -1,4 +1,4 @@
-﻿################################################
+################################################
 ##                Preferences                 ##
 ################################################
 
@@ -24,7 +24,7 @@ default preferences.tutorials = True
 ################################################
 
 # Pre-Release related flags and variables
-define is_release = False
+define is_release = True
 define _experimental = "" if is_release else " EXPERIMENTAL"
 define config.autoreload = False
 define config.debug = not is_release

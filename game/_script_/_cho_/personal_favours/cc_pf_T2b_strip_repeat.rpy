@@ -69,6 +69,7 @@ label cc_pf_strip_T3_tonks:
         m "Let me summon her real quick."
         call cho_main("Yes, [cho_genie_name].", "base", "base", "base", "mid")
 
+    call play_music("stop")
     call hide_characters
     hide screen bld1
     with d3
@@ -88,6 +89,7 @@ label cc_pf_strip_T3_tonks:
     # Tonks walks next to Cho.
     call ton_walk(540, "base")
 
+    call play_music("tonks")
     call cho_main("", "base", "narrow", "worried", "L", cheeks="blush", xpos="left", ypos="base", flip=True)
     call ton_main("Hello, Professor.", "soft", "narrow", "base", "mid", xpos="right", ypos="base", flip=False)
     call ton_main("Miss Chang.", "base", "narrow", "raised", "L")
@@ -125,6 +127,7 @@ label cc_pf_strip_T3_tonks:
         call ton_main("Does he now?", "horny", "narrow", "base", "L", hair="horny")
     call ton_main("Well in that case we shouldn't keep him waiting, should we?", "horny", "narrow", "base", "L", hair="horny")
     call ton_main("After you, [tonks_cho_name].", "horny", "narrow", "base", "L", hair="horny")
+    call play_music("stop")
 
     # Cho and Tonks hop onto the desk.
     call hide_characters
@@ -151,6 +154,7 @@ label cc_pf_strip_T3_tonks:
     with d5
     pause .8
 
+    call play_music("cho")
     $ cho_zorder = 16 # in front of Tonks # Default is 15.
     $ tonks_zorder = 15 # reset to default.
     call cho_main("", "base", "narrow", "base", "L", cheeks="heavy_blush", xpos=280, ypos="base", flip=True)
@@ -231,12 +235,14 @@ label .strip_cho:
         pause .2
 
         if cho.is_worn("robe"):
+            call play_sound("equip")
             $ cho.strip("robe")
             with d3
             pause .5
             call cho_main("", "horny", "narrow", "raised", "down", cheeks="blush")
             call ctc
         if cho.is_worn("top"):
+            call play_sound("equip")
             $ cho.strip("top")
             with d3
             pause .5
@@ -520,12 +526,14 @@ label .strip_tonks:
         pause .2
 
         if tonks.is_worn("robe"):
+            call play_sound("equip")
             $ tonks.strip("robe")
             with d3
             pause .5
             call ton_main("", "horny", "narrow", "raised", "down", hair="horny")
             call ctc
         if tonks.is_worn("top"):
+            call play_sound("equip")
             $ tonks.strip("top")
             with d3
             pause .5
@@ -1090,6 +1098,7 @@ label .transformations:
 label .end_event:
 
     # Fade to black.
+    call play_music("stop")
     call hide_characters
     hide screen bld1
     show screen blkfade

@@ -846,7 +846,7 @@ label .transformations:
             call ton_main("*Hmmm*... not so nervous around me anymore, are you, Cho?", "crooked_smile", "narrow", "base", "L")
             call cho_main("Oh, I guess not. It seems like I got used to it...", "crooked_smile", "narrow", "worried", "R", cheeks="blush")
             call cho_main("It's fun doing this sort of thing at school... I'm quite enjoying it.", "smile", "narrow", "base", "downR", cheeks="blush")
-            call ton_main("Well, there's somebody who enjoys it even more than we do, isn't that right, Professor?", "horny", "base", "base", "raised", hair="horny")
+            call ton_main("Well, there's somebody who enjoys it even more than we do, isn't that right, Professor?", "horny", "base", "raised", "mid", hair="horny")
             m "(...)"
             call ton_main("Professor?", "soft", "narrow", "base", "mid")
             call cho_main("", "annoyed", "narrow", "base", "mid", cheeks="blush")

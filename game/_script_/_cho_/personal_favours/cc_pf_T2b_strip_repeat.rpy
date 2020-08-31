@@ -39,30 +39,29 @@ label cc_pf_strip_T3_tonks:
         call cho_main("I only ever heard about this type of transfiguration ability once -- during one of Professor McGonagall's lessons...", "open", "base", "raised", "mid")
         call cho_main("She seemed kind of annoyed by the fact that there are people with natural abilities to change their appearance like that.", "annoyed", "base", "base", "R")
         g9 "Well, not everyone can be as naturally handsome as me."
-        call cho_main("That's not what I meant...", "open", "closed", "angry", "mid")
+        call cho_main("That... Is not what I meant.", "open", "closed", "angry", "mid")
         m "I wonder if she's the only person here who has this \"Metamorphic\" ability..."
         call cho_main("I hope so...", "annoyed", "base", "base", "mid")
         m "You do?"
         call cho_main("You've seen the kind of thing she uses her ability for, haven't you?", "open", "narrow", "base", "mid")
         call cho_main("Surely when you decided to tell me her secret -- you considered what could happen if I told the other students about it?", "open", "closed", "base", "mid")
-        g4 "I... Of course!"
+        g4 "I...{w=0.2} Of course!"
         call cho_main("Don't worry, I won't tell anyone...", "open", "narrow", "base", "mid")
-        call cho_main("Though keep this a secret from Granger at all cost!", "mad", "narrow", "angry", "mid")
+        call cho_main("Though I'd suggest to keep it a secret from Granger at all cost!", "mad", "narrow", "angry", "mid")
         call cho_main("I'm confident she'd come up with some annoying rule to try and keep her teacher in check...", "annoyed", "narrow", "angry", "mid")
-        m "Makes sense..."
-        call cho_main("Well, I'm glad to know that you trust me with her secret, [cho_genie_name].", "smile", "happyCl", "base", "mid")
+        m "Right..."
+        call cho_main("Well, I'm glad to know that you trust me with something like this, [cho_genie_name].", "smile", "happyCl", "base", "mid")
         call cho_main("It'd be quite difficult for her to pretend to be someone else, if everybody knew about it.", "annoyed", "base", "base", "mid")
-        call cho_main("They could easily just let all the blame fall on her, and do as they please.", "normal", "narrow", "angry", "mid")
         m "..."
-        call cho_main("I'm glad there isn't another student with her abilities...", "annoyed", "narrow", "base", "R")
+        call cho_main("I sure am glad there isn't another student with her abilities...", "annoyed", "narrow", "base", "R")
         g9 "*Ha-ha*, yeah..."
-        m "Another student -- preferably female -- with her ability...{w=0.5} That would be horrible..."
-        call cho_main("Could you imagine the chaos that would reign over our school if more people had her abilities?", "angry", "narrow", "raised", "mid")
-        g9 "I don't know... could be fun."
+        m "Another student -- preferably female -- with her abilities...{w=0.5} That would be horrible..."
+        g9 "(Not...)"
+        call cho_main("Yes... If they somehow found out about Tonks, she'd surely receive all the blame.", "angry", "narrow", "raised", "mid")
+        g4 "..."
         call cho_main("...", "annoyed", "narrow", "base", "mid")
         m "Let's just call her up here for now..."
-        g9 "I'm sure she'll make it well worth it to maintain your secrecy."
-        #call cho_main("Oh, It wasn't my intention to make you...", "base", "base", "base", "mid", cheeks="blush") #blush
+        g9 "I'm sure she'll make it well worth it for you to continue keeping her secret safe."
         call cho_main("Yes, [cho_genie_name]...", "smile", "narrow", "base", "mid", cheeks="blush") #glancing away #blush
 
     # Repeat
@@ -95,28 +94,36 @@ label cc_pf_strip_T3_tonks:
 
     # Intro
     if doppler_done == False and succubus_done == False: # First time only.
-        m "You didn't fancy taking the fireplace this time?"
-        call ton_main("Oh no, I only use floo powder when I'm in a hurry.", "open", "base", "base", "mid")
+        m "Didn't fancy taking the fireplace this time?"
+        call ton_main("Not today... I only use floo powder when I'm in a hurry.", "open", "base", "base", "mid")
 
 
     ## Tonks and Cho strip for you ##
-    call ton_main("So... what do you have planned for us today, Professor?", "base", "narrow", "base", "mid")
+    call ton_main("So...{w=0.3} What do you have planned for us today, Professor?", "base", "narrow", "base", "mid")
     m "*Hmm*..."
     g9 "Why don't you tell her what we're doing, Miss Chang?"
-    call cho_main("Yes, Sir.", "soft", "narrow", "base", "mid")
+    call cho_main("You want me to--", "open", "narrow", "base", "mid")
+    g9 "Don't see why not..."
+    call cho_main("Of course, Sir.", "soft", "narrow", "base", "downR")
     if doppler_done == False and succubus_done == False: # First time only.
         call cho_main("...", "annoyed", "narrow", "worried", "down", cheeks="blush") # Embarrassed look down.
         call cho_main("The headmaster wants to see us strip for him again...", "open", "narrow", "worried", "L", cheeks="blush")
         if cho.is_worn("robe") or ( cho.is_worn("top") and cho.is_worn("bottom") ):
             pass
         else: # Cho is in her underwear or naked.
-            m "Not that you'd have much need for that, with how little you're wearing, Miss Chang."
-            call cho_main("You asked me to wear this...", "annoyed", "narrow", "angry", "down", cheeks="heavy_blush") # small text
+            m "Well... A bit of a show should do, seeing what your current state of undress is like..."
+            call cho_main("You're the one that requested it...", "annoyed", "narrow", "angry", "down", cheeks="heavy_blush") # small text
+
+        if tonks.is_worn("robe") or ( tonks.is_worn("top") and tonks.is_worn("bottom") ):
+            pass
+        else: #Tonks in in her underwear or naked.
+            call ton_main("*Hmm*...{w=0.3} Who needs clothing anyway?", "horny", "narrow", "base", "L", hair="horny")
+            call ton_main("But I'll give you a show if that's what you want...{heart}", "horny", "narrow", "base", "mid", hair="horny")
         g9 "..."
     else: # repeat
         call cho_main("The headmaster wants us to strip for him again.", "base", "narrow", "base", "mid", cheeks="blush")
         call ton_main("Does he now?", "horny", "narrow", "base", "L", hair="horny")
-    call ton_main("Well in that case we shouldn't keep him waiting, should we, Miss Chang?", "horny", "narrow", "base", "L", hair="horny")
+    call ton_main("Well in that case we shouldn't keep him waiting, should we?", "horny", "narrow", "base", "L", hair="horny")
     call ton_main("After you, [tonks_cho_name].", "horny", "narrow", "base", "L", hair="horny")
 
     # Cho and Tonks hop onto the desk.
@@ -151,7 +158,7 @@ label cc_pf_strip_T3_tonks:
 
     call ton_main("This feels quite familiar already, doesn't it, Miss Chang?", "crooked_smile", "narrow", "raised", "L", hair="horny")
     call cho_main("...", "horny", "narrow", "base", "mid", cheeks="blush")
-    call ton_main("Let's not waste any time and get out of these clothes...", "horny", "narrow", "base", "L", hair="horny")
+    call ton_main("Let's not waste any more time...", "horny", "narrow", "base", "L", hair="horny")
 
     call ton_main("Who of us would you like to start, Professor?", "base", "narrow", "base", "mid", hair="horny")
     m "*Hmmm*..."
@@ -165,7 +172,7 @@ label cc_pf_strip_T3_tonks:
 
         "\"You go first, Miss Tonks!\"":
             call ton_main("*Hmmm*...", "base", "narrow", "base", "L", hair="horny")
-            call ton_main("Saving the best for last, are you?", "base", "narrow", "raised", "mid", hair="horny")
+            call ton_main("Saving the best for last, are we?", "base", "narrow", "raised", "mid", hair="horny")
             call cho_main("...", "horny", "narrow", "base", "downR", cheeks="blush")
             $ cho_position = 1 # Cho's current positon is in the middle.
 
@@ -206,7 +213,7 @@ label .strip_cho:
         pass
     else: # Cho is already naked.
         call ton_main("Well, since you're not really wearing much already...", "soft", "narrow", "base", "L", hair="horny")
-        call ton_main("There isn't much more for me to help her take off, is there?", "soft", "narrow", "base", "L", hair="horny")
+        call ton_main("There isn't that much more for me to help her take off, is there?", "soft", "narrow", "base", "L", hair="horny")
         call cho_main("...", "base", "narrow", "base", "downR", cheeks="heavy_blush")
         pause .2
         $ cho.strip("all")
@@ -243,17 +250,17 @@ label .strip_cho:
             pause .5
             call cho_main("", "horny", "narrow", "base", "down", cheeks="blush")
             pause .8
-            call nar("A quick tug by her teacher, and Cho's bottoms slips down her muscular things.")
+            call nar("A quick tug by her teacher, and Cho's bottoms slips down her muscular thighs.")
             call ctc
 
     # Remove Bra and Panties.
     if cho.is_worn("bra") or cho.is_worn("panties"):
-        call ton_main("You've really cute underwear, do you know that.", "soft", "narrow", "base", "L", hair="horny")
+        call ton_main("I like your underwear Miss Chang... Very cute!", "soft", "narrow", "base", "L", hair="horny")
         call cho_main("", "horny", "narrow", "base", "down", cheeks="heavy_blush")
         call ton_main("", "base", "narrow", "base", "down", hair="horny", xpos=300, ypos="base", flip=False, trans=d5) # moves closer to Cho.
 
         if cho.is_worn("bra"):
-            call ton_main("*Hmm*... That bra definitely has to come off...", "soft", "narrow", "angry", "down", hair="horny")
+            call ton_main("But...{w=0.3} That bra definitely has to come off.", "soft", "narrow", "angry", "down", hair="horny")
             pause .5
             $ cho.strip("bra")
             with d3
@@ -264,14 +271,14 @@ label .strip_cho:
             pause .2
         if cho.is_worn("panties"):
             call cho_main("...", "mad", "narrow", "base", "down", cheeks="blush")
-            call ton_main("Now why would you be wearing panties? That's just silly...", "crooked_smile", "narrow", "angry", "down", hair="horny")
+            call ton_main("Wearing panties is so silly, let's take those off... {heart}", "crooked_smile", "narrow", "angry", "down", hair="horny")
             pause .5
             $ cho.strip("panties")
             with d3
             pause .5
             call cho_main("", "horny", "narrow", "base", "down", cheeks="heavy_blush")
             pause .8
-            call nar("Eyes fixated onto Cho's little Snitch, Tonks slowly pulls the girl's panties down her thighs.")
+            call nar("Eyes fixated onto Cho's lovely Snitch, Tonks slowly pulls the girl's panties down her thighs.")
             pause .2
 
 
@@ -287,18 +294,18 @@ label .strip_cho:
     $ random_number = renpy.random.randint(1, 3)
     call ctc # remove
     if random_number == 1:
-        call ton_main("Look at all the muscles on this girl!", "horny", "narrow", "raised", "down", hair="horny")
-        call ton_main("I mean... I could have those muscles as well, but not without cheating...", "open", "closed", "base", "mid", hair="horny")
+        call ton_main("Look at all these muscles!", "horny", "narrow", "raised", "down", hair="horny")
+        call ton_main("I mean... I could easily get some muscles as well, but not without cheating...", "open", "closed", "base", "mid", hair="horny")
         call ton_main("I'm quite impressed, Miss Chang.", "base", "narrow", "base", "L", hair="horny")
         call cho_main("Thank you.", "soft", "narrow", "base", "L", cheeks="blush")
     elif random_number == 2:
         call ton_main("You look quite tasty, Miss Chang.", "horny", "narrow", "raised", "down", hair="horny")
         call cho_main("*Uhm*...", "clench", "narrow", "worried", "down", cheeks="heavy_blush")
-        call cho_main("Thanks.", "soft", "narrow", "worried", "L", cheeks="heavy_blush")
+        call cho_main("Thanks?", "soft", "narrow", "worried", "L", cheeks="heavy_blush")
     else:
         call ton_main("Looks like we're done here, Professor.", "horny", "narrow", "raised", "mid", hair="horny")
         m "Excellent!"
-        g9 "I love watching you two strip for me!"
+        g9 "I do love watching you two."
 
     call cc_pf_strip_T3_tonks.spank_cho
 
@@ -337,7 +344,7 @@ label .spank_cho:
                     pass
             call slap_her
             call cho_main("Sir!", "clench", "wide", "base", "mid", cheeks="heavy_blush")
-            g9 "I need to get these cushions ready for the next game!"
+            g9 "I need to get these cushions ready for your next flight!"
             g9 "Spank them tender so you're more comfortable on your broom-stick!"
             call cho_main("I don't think that will be necessary.", "open", "happyCl", "angry", "mid", cheeks="blush")
 
@@ -358,10 +365,10 @@ label .spank_cho:
             g9 "You'd probably enjoy it more if your other teacher were to spank you, wouldn't you?"
             call cho_main("...", "annoyed", "narrow", "base", "L", cheeks="blush")
             call ton_main("", "base", "narrow", "base", "L", hair="horny")
-            call cho_main("Maybe...", "annoyed", "narrow", "raised", "mid", cheeks="heavy_blush")
+            call cho_main("*Ehm*...", "annoyed", "narrow", "raised", "mid", cheeks="heavy_blush")
             call play_sound("giggle")
             call ton_main("*Giggles*... {heart}{heart}{heart}", "base", "happyCl", "base", "mid", hair="horny", cheeks="heavy_blush")
-            call ton_main("I won't be gentle on your either, Miss Chang.", "soft", "narrow", "base", "L", hair="horny")
+            call ton_main("I won't be gentle on you either, Miss Chang.", "soft", "narrow", "base", "L", hair="horny")
             call cho_main("...", "horny", "narrow", "worried", "down", cheeks="heavy_blush")
 
             return
@@ -385,18 +392,19 @@ label .spank_cho:
 
             call slap_her
             call cho_main("", "normal", "happyCl", "worried", "mid", cheeks="blush")
-            call ton_main("What a firm ass you got, Miss Chang!", "horny", "narrow", "raised", "down", hair="horny")
+            call ton_main("Such a firm ass you have, Miss Chang!", "horny", "narrow", "raised", "down", hair="horny")
             call cho_main("", "mad", "narrow", "worried", "downR", cheeks="blush")
             call ctc
 
             m "..."
-            call ton_main("Very lovely indeed. {heart}", "grin", "narrow", "base", "down", hair="horny")
+            call ton_main("Lovely indeed... {heart}", "grin", "narrow", "base", "down", hair="horny")
             m ".........."
             m "I don't hear any spanking."
-            call ton_main("Don't worry, Sir. I'll get to that as well... {heart}", "open", "narrow", "annoyed", "mid", hair="horny")
+            call ton_main("Don't worry, Sir. I'll get to that eventually... {heart}", "open", "narrow", "annoyed", "mid", hair="horny")
+            m "Building up the suspense are--"
             call slap_her
             call cho_main("", "horny", "narrow", "worried", "downR", cheeks="heavy_blush")
-            call ton_main("I wanted to get a good feel of it first, before I--", "crooked_smile", "narrow", "annoyed", "down", hair="horny")
+            call ton_main("You should get a good feel of it first, before you--", "crooked_smile", "narrow", "annoyed", "down", hair="horny")
             call slap_her
             call cho_main("", "mad", "wide", "base", "mid", cheeks="heavy_blush")
             call ton_main("", "horny", "narrow", "angry", "down", hair="angry")
@@ -408,15 +416,15 @@ label .spank_cho:
             call ton_main("", "horny", "narrow", "angry", "down", hair="horny")
             call cho_main("Please!", "clench", "happyCl", "base", "mid", cheeks="heavy_blush")
             call ton_main("What's wrong, Miss Chang?", "open", "narrow", "angry", "mid", hair="horny")
-            call ton_main("You weren't this whimsical when you got hit by a bludger...", "open", "narrow", "angry", "down", hair="horny")
+            call ton_main("You never get this flustered when you get hit by a bludger...", "open", "narrow", "angry", "down", hair="horny")
             call slap_her
-            call ton_main("You can take it, can't you?", "horny", "narrow", "base", "mid", hair="horny")
+            call ton_main("Surely a bit of a spanking isn't enough for you to...", "horny", "narrow", "base", "mid", hair="horny")
             call cho_main("...", "clench", "narrow", "worried", "down", cheeks="blush")
             call ton_main("Ask me nicely and I'll do it again, [tonks_cho_name].", "crooked_smile", "narrow", "base", "mid", hair="horny")
-            g9 "Go on, Cho. Ask your teacher to spank you."
+            g9 "Go on, Cho... Ask your teacher to spank you."
             call cho_main("...", "disgust", "narrow", "worried", "downR", cheeks="heavy_blush")
             call cho_main("Please spank me again, Professor.", "soft", "narrow", "worried", "R", cheeks="heavy_blush")
-            call ton_main("Yes... That's more like it.", "base", "narrow", "base", "L", hair="horny")
+            call ton_main("Of course sweetie...{w=0.4} Since you're asking so nicely.", "base", "narrow", "base", "L", hair="horny")
             call ton_main("", "base", "narrow", "base", "down", hair="horny")
             call slap_her
             call cho_main("", "angry", "narrow", "worried", "up", cheeks="heavy_blush")
@@ -429,10 +437,10 @@ label .spank_cho:
 
             call cho_main("...", "horny", "narrow", "base", "R", cheeks="heavy_blush")
             call ton_main("*Hmmm*...", "annoyed", "narrow", "shocked", "down", hair="horny")
-            call ton_main("A well behaved girl like you should get a reward. {heart}", "crooked_smile", "narrow", "raised", "L", hair="horny")
+            call ton_main("A well behaved girl like you should be rewarded. {heart}", "crooked_smile", "narrow", "raised", "L", hair="horny")
             call ton_main("Ten points for Ravenclaw, Miss Chang.", "soft", "narrow", "base", "L", hair="horny")
             $ ravenclaw += 10
-            call cho_main("Thank you--", "crooked_smile", "narrow", "worried", "R", cheeks="heavy_blush")
+            call cho_main("Thank you I guess--", "crooked_smile", "narrow", "worried", "R", cheeks="heavy_blush")
             call ton_main("", "horny", "narrow", "angry", "down", hair="horny")
             call slap_her
             call cho_main("!!!", "clench", "wide", "base", "mid", cheeks="heavy_blush")
@@ -458,7 +466,7 @@ label .strip_tonks:
     # Check their positions. If Tonks stands to the right she'll get moved to the middle.
     if cho_position == 1: # middle.
         call ton_main("Cho, would you mind if I stood between you two?", "open", "narrow", "base", "L", hair="horny")
-        call ton_main("To give the headmaster a better view of my body.", "base", "narrow", "base", "mid", hair="horny")
+        call ton_main("I'd like to give the headmaster a better view of my body.", "base", "narrow", "base", "mid", hair="horny")
         call cho_main("Not at all, Professor.", "smile", "narrow", "base", "L", cheeks="blush")
         call ton_main("Thank you, [tonks_cho_name].", "soft", "narrow", "shocked", "L", hair="horny")
         call hide_characters
@@ -504,7 +512,7 @@ label .strip_tonks:
 
         jump cc_pf_strip_T3_tonks.strip_check # label checks if both are nude.
 
-    # RemoveTop and Bottom.
+    # Remove Top and Bottom.
     if tonks.is_worn("robe") or tonks.is_worn("top") or tonks.is_worn("bottom"):
         call ton_main("Help me get out of these clothes, Miss Chang.", "soft", "narrow", "base", "L", hair="horny")
         call cho_main("Yes, Professor.", "soft", "narrow", "base", "down", cheeks="blush")
@@ -526,7 +534,7 @@ label .strip_tonks:
             call nar("Cho eagerly helps her teacher take off her top.")
             pause .2
         if tonks.is_worn("bottom"):
-            call ton_main("Remember, always take your time when undressing in front of somebody...", "soft", "narrow", "base", "L", hair="horny")
+            call ton_main("Remember... Always take your time when undressing in front of somebody.", "soft", "narrow", "base", "L", hair="horny")
             call ton_main("", "base", "narrow", "base", "mid", hair="horny")
             call nar("Slowly, and with gracile movements, Tonks takes off her bottom piece of clothing.")
             $ tonks.strip("bottom")
@@ -534,13 +542,13 @@ label .strip_tonks:
             pause .5
             call ton_main("", "horny", "narrow", "raised", "mid", hair="horny", cheeks="blush")
             pause .8
-            call nar("And forces it off her body with one swift motion.")
+            call nar("And then flicks it out of sigh with one swift motion.")
             call ctc
 
     # Remove Bra and Panties.
     if tonks.is_worn("bra") or tonks.is_worn("panties"):
         call ton_main("*Hmmm*... It's been a while since I had to remove underwear.", "annoyed", "narrow", "base", "down", hair="horny")
-        call ton_main("Help me take it off, [tonks_cho_name].", "base", "narrow", "base", "down", hair="horny")
+        call ton_main("Help me take them off, [tonks_cho_name].", "base", "narrow", "base", "down", hair="horny")
         call cho_main("Of course...", "smile", "narrow", "base", "down", cheeks="blush")
         call cho_main("", "horny", "narrow", "base", "down", cheeks="blush", xpos=315, ypos="base", flip=False, trans=d5) # Cho moves closer to Tonks.
 
@@ -606,8 +614,8 @@ label .spank_tonks:
 
     call slap_her
     call ton_main("!!!", "clench", "shocked", "base", "stare", hair="scared", cheeks="heavy_blush") # shocked
-    call ton_main("*Mhmm*... Professor!", "silly", "narrow", "angry", "mid", hair="horny", cheeks="blush")
-    call ton_main("Not in front of a student.", "base", "narrow", "base", "mid", hair="horny", cheeks="blush")
+    call ton_main("*Mmm*... You're so naughty, Professor!", "silly", "narrow", "angry", "mid", hair="horny", cheeks="blush")
+    call ton_main("Right in front of a student and everything...", "base", "narrow", "base", "mid", hair="horny", cheeks="blush")
     call slap_her
     call ton_main("Ouch... {heart}{heart}{heart}", "silly", "happyCl", "base", "mid", hair="horny", cheeks="blush")
     call cho_main("...", "grin", "narrow", "base", "mid", cheeks="blush")
@@ -645,7 +653,7 @@ label .spank_tonks:
             return
 
         "-Ask Cho to spank her.-":
-            g9 "Miss Chang, would you be so kind and slap your teacher's ass for me."
+            g9 "Miss Chang, would you be so kind and slap your teacher's ass for me?"
             call ton_main("", "base", "narrow", "base", "mid", hair="horny")
             call cho_main("Yes, Sir.", "open", "narrow", "angry", "mid", cheeks="blush")
             call ton_main("Do it, [tonks_cho_name]!", "base", "narrow", "base", "L", hair="horny")
@@ -656,15 +664,15 @@ label .spank_tonks:
             call ton_main("", "base", "base", "base", "mid", hair="horny", cheeks="blush", xpos=215, ypos="base", flip=False, trans=d5)
             pause .5
 
-            call ton_main("Slap this slutty teacher's ass!", "crooked_smile", "narrow", "angry", "R", hair="horny", cheeks="blush")
+            call ton_main("Slap this naughty teacher's ass!", "crooked_smile", "narrow", "angry", "R", hair="horny", cheeks="blush")
             call cho_main("...", "base", "narrow", "angry", "down", cheeks="blush")
             call slap_her
             call ton_main("Surely you can do better than that, Cho.", "soft", "narrow", "base", "downR", hair="horny")
             call cho_main("", "annoyed", "narrow", "angry", "down", cheeks="blush")
             call slap_her
-            call ton_main("*hngh*...", "crooked_smile", "narrow", "base", "mid", hair="horny", cheeks="blush")
-            call ton_main("Do I have to get a beater bat for you, Miss Chang, so you can hit it properly?", "open", "narrow", "annoyed", "downR", hair="angry")
-            call ton_main("I asked you to slap it harder!", "scream", "narrow", "angry", "downR", hair="angry")
+            call ton_main("*Hngh*...", "crooked_smile", "narrow", "base", "mid", hair="horny", cheeks="blush")
+            call ton_main("Do I have to fetch a beaters bat so you can hit it properly, Miss Chang?", "open", "narrow", "annoyed", "downR", hair="angry")
+            call ton_main("I thought I asked you to slap it harder!", "scream", "narrow", "angry", "downR", hair="angry")
             call cho_main("", "clench", "narrow", "angry", "down", cheeks="blush")
             call slap_her
             call ton_main("", "mad", "wide", "shocked", "stare", hair="scared")
@@ -675,8 +683,8 @@ label .spank_tonks:
             pause .2
             call slap_her
             call ton_main("!!!", "clench", "narrow", "base", "ahegao", hair="horny", cheeks="heavy_blush")
-            call cho_main("Was that good enough, Professor?", "open", "narrow", "angry", "L", cheeks="blush")
-            call ton_main("Yes, [tonks_cho_name]. I'd say that was quite--", "open", "narrow", "worried", "R", hair="horny")
+            call cho_main("Good enough for you, Professor?", "open", "narrow", "angry", "L", cheeks="blush")
+            call ton_main("*Ah*...{w=0.4} Yes, [tonks_cho_name]... I'd say that was quite--", "open", "narrow", "worried", "R", hair="horny")
             call cho_main("", "annoyed", "narrow", "angry", "down", cheeks="blush")
             call slap_her
             call ton_main("", "clench", "narrow", "base", "ahegao", hair="scared")
@@ -689,7 +697,7 @@ label .spank_tonks:
             call ton_main("", "horny", "narrow", "base", "ahegao", hair="horny", cheeks="heavy_blush")
             call ctc
 
-            m "That's enough, Miss Chang."
+            m "That's enough."
             call cho_main("Oh wow, it's really red now...", "grin", "narrow", "base", "down", cheeks="blush")
             call ton_main("Very good, Miss Chang. {heart}", "horny", "narrow", "worried", "R", hair="horny", cheeks="heavy_blush")
             pause .2
@@ -720,7 +728,7 @@ label .strip_check:
         jump cc_pf_strip_T3_tonks.transformations
 
 
-## Hermione Strips ##
+## Hermione Strips ## WIP- not in 1.39.0
 label .strip_hermione:
     ton "Move aside, Chang!" # angry
     ton "The headmaster wants me to strip for him."
@@ -1001,12 +1009,12 @@ label .transformations:
 
     menu:
         m "I want you to shapeshift into..."
-        "\"Hermione!\"":
+        # "\"Hermione!\"":
             # Hermione has to stand in the middle.
-            ton ""
-            label .choice_hermione: # If you asked Tonks to strip as Hermione earlier, the event will jump here.
-            call nar("Event not yet added.")
-            pass
+            # ton ""
+            # label .choice_hermione: # If you asked Tonks to strip as Hermione earlier, the event will jump here.
+            # call nar("Event not yet added.")
+            # pass
 
         #"\"Luna!\"":
 

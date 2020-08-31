@@ -2324,9 +2324,9 @@ label cc_pf_strip_T3_intro_E2:
 
     $ tonks_zorder = 15 # Reset to default.
     $ cho_zorder = 16 # In front of Tonks. Default is 15.
+    call sna_main("", "snape_13")
     call ton_main("", "annoyed", "shocked", "raised", "stare", hair="horny", xpos=310, ypos="base", flip=True)
     call cho_main("First you're going to explain yourself!", "clench", "base", "angry", "L", xpos=415, ypos="base", flip=True, trans=hpunch)
-    call sna_main("", "snape_13")
     call ton_main("", "clench", "wide", "shocked", "L", hair="horny", cheeks="blush")
     call cho_main("You somehow tricked them! They played far better than usual.", "mad", "base", "angry", "L")
     call ton_main("", "horny", "narrow", "worried", "down", hair="horny", cheeks="heavy_blush")
@@ -2381,8 +2381,8 @@ label cc_pf_strip_T3_intro_E2:
     with d3
     pause .5
 
-    call sna_main("Until then, Albus... Miss Chang...", "snape_20")
-    call sna_main("{cps=5}Nymphadora...{/cps}", "snape_41")
+    call sna_main("Until then, Albus... Miss Chang...", "snape_20", xpos="base", ypos="head")
+    call sna_main("{cps=7}Nymphadora...{/cps}", "snape_41", xpos="base", ypos="head")
     call ton_main("Stop calling me--", "clench", "closed", "angry", "mid", hair="angry", xpos="far_left", ypos="head")
 
     # Snape leaves.
@@ -3191,14 +3191,18 @@ label cc_pf_strip_T3_intro_E3:
 
 
 label cc_pf_strip_T3_repeat:
-    call nar("This event hasn't been added yet!") # PLACEHOLDER
+    m "I'm in the mood for another strip-show, [cho_name]."
+    call cho_main("Of course you are, [cho_genie_name].", "base", "narrow", "raised", "mid")
+    call cho_main("Who's going to watch me this time?", "soft", "narrow", "base", "mid")
+    m "*Hmmm*... how about--"
+
     menu:
-        "Replay Event 1":
-            jump cc_pf_strip_T3_intro_E1
-        "Replay Event 2":
-            jump cc_pf_strip_T3_intro_E2
-        "Replay Event 3":
-            jump cc_pf_strip_T3_intro_E3
+        #"\"Miss Granger\"":
+        #    jump cc_pf_strip_T3_hermione
+
+        "\"Miss Tonks\"":
+            call cho_main("Alright then...", "grin", "narrow", "base", "mid")
+            jump cc_pf_strip_T3_tonks
 
 
     ## Chibi Pos - for multiple people ##

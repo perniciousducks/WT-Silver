@@ -28,6 +28,8 @@ default has_cho_panties         = False
 default cho_panties_soaked      = False
 default cho_outfits_schedule    = True
 default cho_bj_choice           = None # Dynamic string. Valid choices: failed, swallow, throat, points, taste.
+default doppler_done            = False # For Strip event with Tonks.
+default succubus_done           = False # For Strip event with Tonks.
 
 # Intro
 default jerked_off_during_cho_intro = False
@@ -45,6 +47,7 @@ default cho_content_complete  = False
 # Names
 default cho_genie_name = "Professor"
 default cho_name = "Cho"
+default tonks_cho_name = "Sweetie"
 
 default gave_cho_gift      = False
 
@@ -184,6 +187,8 @@ label reset_cho_progress:
         "has_cho_panties",
         "cho_panties_soaked",
         "cho_bj_choice",
+        "doppler_done",
+        "succubus_done",
 
         # Intro
         "jerked_off_during_cho_intro",
@@ -211,6 +216,7 @@ label reset_cho_progress:
         # Names
         "cho_genie_name",
         "cho_name",
+        "tonks_cho_name",
         "gave_cho_gift"
     )
     return

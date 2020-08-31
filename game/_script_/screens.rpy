@@ -497,6 +497,7 @@ screen preferences():
                     textbutton _("Inventory - [hkey_inventory]") action None
                     textbutton _("Sleep - [hkey_sleep]") action None
                     textbutton _("Jerk off - [hkey_fap]") action None
+                    textbutton _("Summon - [hkey_summon]") action None
 
 screen notify(message):
     layer "interface"

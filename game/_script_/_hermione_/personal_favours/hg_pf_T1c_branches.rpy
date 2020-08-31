@@ -461,7 +461,7 @@ label hg_pf_admire_breasts_T4:
             call hg_pf_admire_breasts_T4_touch
 
         "-Keep promise. Admire visually-":
-            call hg_pf_admire_breasts_T4_promise
+            call hg_pf_admire_breasts_T4_look
 
         "-Start jerking off-":
             call hg_pf_admire_breasts_T4_masturbate

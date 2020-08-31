@@ -2478,6 +2478,9 @@ label cc_pf_strip_T3_intro_E2:
     $ cho.equip(cho_outfit_last)
     $ tonks.equip(ton_outfit_last)
 
+    $ tonks_busy = True
+    $ snape_busy = True
+
     # End event.
     jump end_cho_strip_event
 
@@ -3185,6 +3188,8 @@ label cc_pf_strip_T3_intro_E3:
     #$ cho.equip(cho_outfit_last)
     $ tonks.equip(ton_outfit_last)
     $ hermione.equip(her_outfit_last)
+
+    $ tonks_busy = True
 
     # End event.
     jump end_cho_strip_event

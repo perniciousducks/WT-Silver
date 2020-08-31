@@ -107,6 +107,7 @@ label cc_pf_strip_T3_tonks:
     call cho_main("You want me to--", "open", "narrow", "base", "mid")
     g9 "Don't see why not..."
     call cho_main("Of course, Sir.", "soft", "narrow", "base", "downR")
+
     if doppler_done == False and succubus_done == False: # First time only.
         call cho_main("...", "annoyed", "narrow", "worried", "down", cheeks="blush") # Embarrassed look down.
         call cho_main("The headmaster wants to see us strip for him again...", "open", "narrow", "worried", "L", cheeks="blush")
@@ -122,9 +123,22 @@ label cc_pf_strip_T3_tonks:
             call ton_main("*Hmm*...{w=0.3} Who needs clothing anyway?", "horny", "narrow", "base", "L", hair="horny")
             call ton_main("But I'll give you a show if that's what you want...{heart}", "horny", "narrow", "base", "mid", hair="horny")
         g9 "..."
+
     else: # repeat
         call cho_main("The headmaster wants us to strip for him again.", "base", "narrow", "base", "mid", cheeks="blush")
         call ton_main("Does he now?", "horny", "narrow", "base", "L", hair="horny")
+        if cho.is_worn("robe") or ( cho.is_worn("top") and cho.is_worn("bottom") ):
+            pass
+        else:
+            m "Well, since you're not wearing much... I'd at least like a show..."
+            call cho_main("Very well...", "annoyed", "narrow", "angry", "down", cheeks="heavy_blush") # small text
+
+        if tonks.is_worn("robe") or ( tonks.is_worn("top") and tonks.is_worn("bottom") ):
+            pass
+        else: #Tonks in in her underwear or naked.
+            call ton_main("Stripping's out of the question for me that's for sure...", "horny", "narrow", "base", "L", hair="horny")
+            call ton_main("But I'll give you a good view at the very least...{heart}", "horny", "narrow", "base", "mid", hair="horny")
+
     call ton_main("Well in that case we shouldn't keep him waiting, should we?", "horny", "narrow", "base", "L", hair="horny")
     call ton_main("After you, [tonks_cho_name].", "horny", "narrow", "base", "L", hair="horny")
     call play_music("stop")

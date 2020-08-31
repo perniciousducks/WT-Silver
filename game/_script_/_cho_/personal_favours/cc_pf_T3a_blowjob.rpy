@@ -1070,7 +1070,7 @@ label cc_pf_blowjob_T3_E2:
 
                     $ camera.set_image("cho_bj topless suck closed")
 
-                    cho "(By the gods...)" #blush
+                    cho "(Oh god...)" #blush
                     gen "Here it comes!"
 
                     $ camera.set_image("cho_bj topless suck medium")

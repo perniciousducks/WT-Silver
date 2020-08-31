@@ -1018,6 +1018,7 @@ label cc_pf_strip_T2_E3: # Repeats
     pause .4
 
     # Remove top & robe.
+    call play_sound("equip")
     $ cho.strip("robe", "top")
     show screen cho_cloth_pile
     with d3
@@ -1267,6 +1268,7 @@ label cc_pf_strip_T2_hermione:
             call her_main("Here...", "base", "narrow", "base", "mid_soft")
 
             # Hermione shows her breasts.
+            call play_sound("equip")
             $ hermione.strip("robe", "top", "bra")
             with d3
             pause .5
@@ -1295,6 +1297,7 @@ label cc_pf_strip_T2_hermione:
 
             g9 "For exposing those magnificent breasts."
 
+            call play_sound("equip")
             $ hermione.wear("all")
             with d3
             pause .5
@@ -1453,6 +1456,7 @@ label cc_pf_strip_T2_hermione:
             pause .4
 
             # Cho gets dressed.
+            call play_sound("equip")
             $ cho.wear("all")
             hide screen cho_cloth_pile
             with d3
@@ -1551,6 +1555,7 @@ label cc_pf_strip_T3_intro_E1:
     pause .2
 
     # Remove top.
+    call play_sound("equip")
     $ cho.strip("robe", "top", "bra")
     show screen cho_cloth_pile
     with d3
@@ -1735,9 +1740,9 @@ label cc_pf_strip_T3_intro_E1:
 
     # Cho puts her clothes back on.
     call play_sound("equip")
-    hide screen cho_main
     $ cho.wear("all")
     hide screen cho_cloth_pile
+    with d3
     pause .8
 
     call cho_main("Until next time, [cho_genie_name].", "base", "narrow", "base", "mid", cheeks="blush", xpos="right", ypos="base")
@@ -1792,6 +1797,7 @@ label cc_pf_strip_T3_intro_E2:
     g9 "Oh boy, you're in for a treat!"
     m "Just wait here at my desk while I summon her..."
     call cho_main("Yes, [cho_genie_name].", "base", "narrow", "base", "mid")
+    call play_music("stop")
 
     call hide_characters
     hide screen bld1
@@ -1819,6 +1825,7 @@ label cc_pf_strip_T3_intro_E2:
     # Tonks walks next to Cho.
     call ton_walk(540, "base")
 
+    call play_music("tonks")
     call cho_main("", "soft", "narrow", "worried", "L", cheeks="blush", xpos="left", ypos="base", flip=True)
     if daytime:
         call ton_main("Hello, Professor.", "base", "base", "base", "mid", xpos="right", ypos="base")
@@ -1875,6 +1882,7 @@ label cc_pf_strip_T3_intro_E2:
 
 
     # Cho starts stripping.
+    call play_music("stop")
     call hide_characters
     hide screen bld1
     show screen blkfade
@@ -1900,6 +1908,7 @@ label cc_pf_strip_T3_intro_E2:
     with d3
     pause .3
 
+    call play_music("cho")
     call cho_main("", "quiver", "narrow", "worried", "L", cheeks="blush", xpos=330, ypos="base", flip=True)
     call ton_main("", "base", "narrow", "base", "L", xpos=460, ypos="base")
     g9 "Are you more into the girl's tits... or her ass?"
@@ -1929,6 +1938,7 @@ label cc_pf_strip_T3_intro_E2:
     pause .2
 
     # Remove top.
+    call play_sound("equip")
     $ cho.strip("robe", "top")
     show screen cho_cloth_pile
     with d3
@@ -1971,11 +1981,13 @@ label cc_pf_strip_T3_intro_E2:
     call ton_main("You don't need large breasts. Especially not if you want to have a career in Quidditch.", "open", "base", "base", "L")
     call cho_main("", "annoyed", "narrow", "base", "L", cheeks="blush")
     call ton_main("Just have a look at mine... They're bothersome to fly with even at my size...", "soft", "base", "shocked", "down")
+    call play_music("stop")
     pause .2
 
     # Tonks starts stripping.
 
     # Remove robe.
+    call play_sound("equip")
     $ tonks.strip("robe")
     with d3
     pause .5
@@ -1988,7 +2000,8 @@ label cc_pf_strip_T3_intro_E2:
     pause .2
 
     # Remove top and bra.
-    $ tonks.strip("top","bra")
+    call play_sound("equip")
+    $ tonks.strip("top", "bra")
     with d3
     pause .5
 
@@ -2042,6 +2055,7 @@ label cc_pf_strip_T3_intro_E2:
     call cho_main("", "horny", "narrow", "raised", "R", cheeks="heavy_blush")
     call ctc
 
+    call play_music("cho")
     g9 "Quite firm, aren't they?"
     call play_sound("giggle")
     call ton_main("*giggles*", "base", "happyCl", "base", "mid", hair="horny")
@@ -2086,6 +2100,8 @@ label cc_pf_strip_T3_intro_E2:
     ## Tonks wants to strip too. ##
     call ton_main("Excellent, since that question has been answered...", "base", "happyCl", "base", "mid", hair="horny")
     call ton_main("I assume you don't mind if I joined you on that desk, do you?", "horny", "narrow", "angry", "L", hair="horny")
+
+    call play_music("stop")
     call cho_main("What?!", "soft", "wide", "raised", "mid", cheeks="blush") # blushing
     g9 "!!!"
     call ton_main("*Hmmm*... Or is that snitch of yours going to dart off after all?", "soft", "narrow", "base", "down", hair="horny")
@@ -2112,6 +2128,7 @@ label cc_pf_strip_T3_intro_E2:
     pause .8
 
     $ cho_zorder = 16 # in front of Tonks. 15 is default.
+    call play_music("tonks")
     call ton_main("", "base", "narrow", "base", "L", hair="horny", xpos=345, ypos="base")
     call cho_main("T-Tonks!", "clench", "happyCl", "raised", "L", cheeks="heavy_blush", xpos=280, ypos="base", flip=True) #Closed eyes, embarrassed
     call ton_main("That's {b}Professor Tonks{/b} to you, Miss Chang.", "open", "narrow", "angry", "L", hair="angry") # stern look
@@ -2160,13 +2177,15 @@ label cc_pf_strip_T3_intro_E2:
     call play_music("stop")
     call hide_characters
     hide screen bld1
+    with d3
 
     call play_sound("door")
     call sna_chibi("stand", "door", "base")
     with d3
-    pause .2
+    pause .1
 
-    show screen bld1
+    call bld
+    m "*Hmm*...?"
     with hpunch
     g4 "{b}Balls!{/b}"
     call sna_main("...", "snape_47", ypos="head") #smirk
@@ -2189,7 +2208,7 @@ label cc_pf_strip_T3_intro_E2:
     # Position Cho's sprite behind Tonks.
     $ cho_zorder = 15 # reset to default.
     $ tonks_zorder = 16 # in front of Cho. 15 is default.
-
+    call play_music("snape")
     call sna_main("", "snape_40", xpos=560, ypos="base")
     call cho_main("", "normal", "wide", "base", "L", xpos=275, ypos="base", flip=True)
     call ton_main("", "annoyed", "narrow", "annoyed", "L", xpos=390, ypos="base", flip=True)
@@ -2297,6 +2316,7 @@ label cc_pf_strip_T3_intro_E2:
     call cho_main("What?!", "angry", "happyCl", "angry", "mid", cheeks="blush")
 
     # Cho stops hiding behind Tonks.
+    call play_music("stop")
     $ cho_chibi.zorder = 3 # Reset to default.
     call cho_chibi("stand", flip=True, 314, 366)
     call ton_main("", "annoyed", "narrow", "raised", "downR")
@@ -2324,6 +2344,7 @@ label cc_pf_strip_T3_intro_E2:
 
     $ tonks_zorder = 15 # Reset to default.
     $ cho_zorder = 16 # In front of Tonks. Default is 15.
+    call play_music("cho")
     call sna_main("", "snape_13")
     call ton_main("", "annoyed", "shocked", "raised", "stare", hair="horny", xpos=310, ypos="base", flip=True)
     call cho_main("First you're going to explain yourself!", "clench", "base", "angry", "L", xpos=415, ypos="base", flip=True, trans=hpunch)
@@ -2368,6 +2389,7 @@ label cc_pf_strip_T3_intro_E2:
     call sna_main("You lot look like you're going to need it...", "snape_42")
     call cho_main("*Hmpf*...", "annoyed", "base", "angry", "L")
     m "(...)"
+    call play_music("stop")
     call hide_characters
     hide screen bld1
     with d3
@@ -2392,6 +2414,7 @@ label cc_pf_strip_T3_intro_E2:
     pause .5
 
     call bld
+    m "Fucking guy..."
     m "Who does he think he is?"
     m "Besmirching a classic such as Space Jam, like it was nothing..."
 
@@ -2525,6 +2548,7 @@ label cc_pf_strip_T3_intro_E3:
 
     call cho_chibi("stand", "desk", "base", flip=True)
 
+    call play_music("stop")
     hide screen blkfade
     with d5
     pause .8
@@ -2570,6 +2594,7 @@ label cc_pf_strip_T3_intro_E3:
     with d5
     pause .2
 
+    call play_music("tonks")
     call cho_main("", "base", "narrow", "worried", "L", cheeks="blush", xpos="left", ypos="base", flip=True)
     call ton_main("You called?", "base", "narrow", "base", "mid", xpos="right", ypos="base")
 
@@ -2640,6 +2665,7 @@ label cc_pf_strip_T3_intro_E3:
     call play_sound("climb_desk")
     pause 2
 
+    call play_music("cho")
     hide screen blkfade
     with d5
     pause .8
@@ -2662,7 +2688,9 @@ label cc_pf_strip_T3_intro_E3:
     if cho.is_worn("top"):
         pause .2
 
+        call play_sound("equip")
         $ cho.strip("top")
+        show screen cho_cloth_pile
         with d3
         pause .5
 
@@ -2677,6 +2705,7 @@ label cc_pf_strip_T3_intro_E3:
         pause .2
 
         $ cho.strip("bottom")
+        show screen cho_cloth_pile
         with d3
         pause .5
 
@@ -2691,20 +2720,22 @@ label cc_pf_strip_T3_intro_E3:
         call ton_main("*Hmm*... Okay then.", "base", "narrow", "raised", "mid", hair="horny")
         call ton_main("I'll go next, shall I?", "grin", "narrow", "base", "mid", hair="horny")
     else: # Cho was already in underwear or nude.
-        call ton_main("Couldn't you have waited for me, Miss Chang?", "base", "base", "base", "mid")
-        call ton_main("I would have loved to help you undress...", "base", "base", "base", "mid")
+        call ton_main("Couldn't you have waited for me, Miss Chang?", "soft", "narrow", "base", "L", hair="horny")
+        call ton_main("I would have loved to help you undress...", "base", "narrow", "base", "L", hair="horny")
         m "No, that's just the girl's regular dress code around my office."
-        call cho_main("", "base", "base", "base", "mid")
-        call ton_main("Is that so...", "base", "base", "base", "mid")
-        call ton_main("*Hmmm*... I suppose I should follow suit, then?", "base", "base", "base", "mid")
-        call cho_main("...", "base", "base", "base", "mid") # embarrassed
+        call cho_main("", "clench", "narrow", "base", "downR", cheeks="heavy_blush")
+        call ton_main("Is that so...", "soft", "narrow", "raised", "mid", hair="horny")
+        call ton_main("*Hmmm*... I suppose I should follow suit, then?", "base", "narrow", "base", "mid", hair="horny")
+        call cho_main("...", "horny", "narrow", "base", "R", cheeks="blush") # embarrassed
 
     g9 "Go right ahead!"
     call ton_main("I've been dying to get out of this stuffy coat.", "open", "base", "shocked", "down")
+    call play_music("tonks")
     call ton_main("", "base", "base", "base", "down")
     pause .2
 
     # Tonks removes her coat.
+    call play_sound("equip")
     $ tonks.strip("robe")
     with d3
     pause .8
@@ -2740,6 +2771,7 @@ label cc_pf_strip_T3_intro_E3:
     pause .2
 
     # Remove Tonks top.
+    call play_sound("equip")
     $ tonks.strip("top")
     with d3
     pause .5
@@ -2893,6 +2925,8 @@ label cc_pf_strip_T3_intro_E3:
     call play_sound("giggle")
     call ton_main("*giggles*...", "base", "happyCl", "base", "mid", hair="horny", cheeks="blush")
     call ton_main("Enough with the small talk -- let's get these clothes off!", "soft", "base", "annoyed", "mid", hair="horny", cheeks="blush")
+
+    call play_music("stop")
     call ton_main("", "horny", "narrow", "base", "mid", hair="horny")
     pause .1
 
@@ -2909,6 +2943,7 @@ label cc_pf_strip_T3_intro_E3:
     call cho_main("...", "clench", "narrow", "worried", "downR", cheeks="heavy_blush")
     call ton_main("Get in front of me, Miss Chang.", "open", "narrow", "base", "L", hair="horny")
 
+    call play_music("cho")
     if cho.is_worn("bra"):
         call ton_main("It's time you show your headmaster your cute little breasts as well.", "soft", "narrow", "base", "mid", hair="horny")
     else:
@@ -2984,6 +3019,7 @@ label cc_pf_strip_T3_intro_E3:
     call ton_main("*Hmm*... I can't decide which teacher has the best view now...", "horny", "narrow", "base", "mid", hair="horny", cheeks="blush")
     g9 "Looking pretty good from where I'm sitting..."
     call cho_main("...", "smile", "narrow", "worried", "mid", cheeks="heavy_blush")
+    call play_music("stop")
 
 
     ## Transformation Section ##
@@ -2998,6 +3034,8 @@ label cc_pf_strip_T3_intro_E3:
     call ton_main("Did I just spoil the surprise myself?{w=0.5} Whoopsie!", "mad", "narrow", "worried", "downR", hair="horny", cheeks="heavy_blush")
     m "Well... I didn't exactly tell her that much."
     call ton_main("Well, what's done is done...", "upset", "narrow", "worried", "downR", hair="horny", cheeks="blush")
+
+    call play_music("trance")
     #call ton_main("Can I have your word that you won't tell anyone, Cho?", "base", "base", "base", "mid")
     #call cho_main("Yes, you have my word! I promise I won't tell anyone!", "base", "base", "base", "mid")
     #call ton_main("*Hmm*... Well, seeing the circumstances I guess that's good--", "base", "base", "base", "mid")
@@ -3011,6 +3049,7 @@ label cc_pf_strip_T3_intro_E3:
     call cho_main("Wicked!... What else can you do?", "grin", "base", "base", "L", cheeks="blush")
     g9 "How about a busty, stuck-up Gryffindor slut!"
     call ton_main("Gladly.", "grin", "narrow", "base", "mid")
+    stop music
     pause .8
 
     # Transforms into Hermione
@@ -3028,6 +3067,7 @@ label cc_pf_strip_T3_intro_E3:
     call cho_main("", "open", "wide", "raised", "L", cheeks="heavy_blush")
     call ctc
 
+    call play_music("trance")
     call cho_main("{b}Holy shit!{/b}", "open", "wide", "raised", "L", cheeks="heavy_blush")
     m "Watch your language, girl..."
     call her_main("", "soft", "narrow", "angry", "L")
@@ -3150,6 +3190,7 @@ label cc_pf_strip_T3_intro_E3:
     call play_sound("climb_desk")
     pause 2
 
+    call play_music("stop")
     hide screen blkfade
     with d5
     pause .5

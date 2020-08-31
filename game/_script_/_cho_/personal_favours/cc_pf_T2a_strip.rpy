@@ -3075,7 +3075,7 @@ label cc_pf_strip_T3_intro_E3:
         ton "And If you ever had a boy say he got some tits flashed at him by Miss Granger... then it was most likely me."
         call cho_main("That's awesome!", "grin", "base", "base", "L", cheeks="blush")
         m "Well, I did tell Hermione to do it herself before."
-        call her_main("", "open", "wide", "base", "stare", cheeks="heavy_blush")
+        call her_main("", "open", "wide", "base", "stare", cheeks="blush")
         ton "Seriously? I had no idea!"
         call cho_main("Me neither!", "soft", "wide", "raised", "mid", cheeks="blush")
         call her_main("", "base", "narrow", "base", "down")

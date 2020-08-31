@@ -493,7 +493,7 @@ label cc_pf_blowjob_1:
                             $ camera.set_image("away", trans=d3)
                             $ camera.set(zoom=0.45, pos=(150, 70), t=1.0)
 
-                            gen "*ARGH!* Here comes, you slut!"
+                            gen "*ARGH!* Here it comes, you slut!"
 
                             with vpunch
                             $ camera.set_image("cho_hj cum tits")
@@ -765,13 +765,13 @@ label cc_pf_blowjob_T3_E2:
 
     call ctc
 
-    gen "Now you're getting into it... {w=0.5} Speaking of--"
-    gen "Time to put that mouth to work..."
+    gen "Now you're getting into it..."
+    gen "Speaking of...{w=0.2} Time to put that mouth to work..."
 
     $ camera.set_image("topless_up_worried")
 
     cho "Already?"
-    gen "Not this again--"
+    gen "Not this again."
     gen "Didn't you say you wanted to {i}reward{/i} me a second ago?"
 
     $ camera.set_image("topless_away_blush")
@@ -903,7 +903,7 @@ label cc_pf_blowjob_T3_E2:
     $ camera.set_image("cho_hj topless up blush")
     call ctc
 
-    cho "Am I doing good [cho_genie_name]?"
+    cho "Am I doing it right, [cho_genie_name]?"
     gen "Yes, It feels--"
 
     $ camera.set_imagepath("cho_bj/bj/")
@@ -946,7 +946,7 @@ label cc_pf_blowjob_T3_E2:
     #Faster Blowjob
     cho "{heart}{heart}{heart}"
 
-    gen "[cho_name], if you do that-- oh fuck--"
+    gen "[cho_name], if you do that-- oh fuck!"
 
     menu:
         "-Warn her-":
@@ -1070,7 +1070,7 @@ label cc_pf_blowjob_T3_E2:
 
                     $ camera.set_image("cho_bj topless suck closed")
 
-                    cho "(Oh god...)" #blush
+                    cho "(By the gods...)" #blush
                     gen "Here it comes!"
 
                     $ camera.set_image("cho_bj topless suck medium")
@@ -1093,7 +1093,7 @@ label cc_pf_blowjob_T3_E2:
                     $ camera.set_image("topless_mid_surprised_cum_mouth")
 
                     #Cho opens her mouth and lets the cum dribble out
-                    cho "*kho*...{w=0.4} *kho mush*...."
+                    cho "*sho*...{w=0.4} *sho mush*...."
 
                     $ camera.set_image("topless_away_blush_cum_mouth")
 
@@ -1135,7 +1135,7 @@ label cc_pf_blowjob_T3_E2:
                     call cho_main("Did you have to cum this much...", "disgust", "narrow", "base", "down", cheeks="blush", trans=d3)
                     m "I can't exactly control it..."
                     m "If you don't swallow, you'll have to deal with the mess."
-                    call cho_main("Swallow [cho_genie_name]'s...", "upset", "base", "base", "downR", cheeks="blush") #Blush
+                    call cho_main("Swallow [cho_genie_name]'s--", "upset", "base", "base", "downR", cheeks="blush") #Blush
                     call cho_main("I don't know...", "soft", "narrow", "base", "downR", cheeks="blush") #Blush
                     m "In any case, you've excelled today [cho_name]."
                     call cho_main("I think I need to lie down for a bit...", "open", "narrow", "base", "down", cheeks="blush")
@@ -1321,7 +1321,7 @@ label cc_pf_blowjob_T3_E2:
 
             $ camera.set(zoom=0.6, pos=(220, 180), t=5.0)
 
-            cho "You asshole--"
+            cho "You asshole!"
 
             show screen blkfade
             with d5
@@ -1478,38 +1478,38 @@ label cc_pf_blowjob_T3_E3:
 
     $ camera.set_image("cho_hj topless up blush")
 
-    cho "And when it twitches happily... It makes me glad, knowing I am making you feel good--"
+    cho "And when it twitches happily... It makes me glad, knowing I am making you feel good..."
 
     $ camera.set_image("cho_hj topless mid smile")
 
-    cho "The look of pleasure on your face once you cum in my mouth--"
+    cho "The look of pleasure on your face once you cum in my mouth..."
     if cho_bj_choice in ("swallow", "throat"):
-        cho "The sensation of your jizz going down my throat is so--" #Looks at dick
+        cho "The sensation of your jizz going down my throat is so..." #Looks at dick
 
         $ camera.set_image("cho_bj topless lick success")
         pause 1
         $ camera.set_image("topless_mid_dreamy")
 
-        "--addicting! {heart}{heart}"
+        "addicting! {heart}{heart}"
     elif cho_bj_choice == "points":
-        cho "To finally feel your jizz slide down my throat, I--"
+        cho "To finally feel your jizz slide down my throat, I..."
 
         $ camera.set_image("cho_bj topless lick success")
         pause 1
         $ camera.set_image("topless_mid_dreamy")
 
-        "--can't wait! {heart}{heart}"
+        "can't wait! {heart}{heart}"
 
     else:
-        cho "And the taste of your jizz is so--"
+        cho "And the taste of your jizz is so..."
 
         $ camera.set_image("cho_bj topless lick success")
         pause 1
         $ camera.set_image("topless_mid_dreamy")
 
-        "--delicious! {heart}{heart}"
+        "delicious! {heart}{heart}"
 
-    gen "(If she keeps going like this, I'll blow before an actual blow-job...)"
+    gen "(If she keeps going like this, I'll blow before an actual blowjob...)"
 
     $ camera.set_image("topless_up_blush2")
 
@@ -1524,7 +1524,7 @@ label cc_pf_blowjob_T3_E3:
     $ camera.set_image("topless_up_blush2")
 
     cho "[cho_genie_name]?"
-    gen "Tell me how badly you want -- no, how badly you {i}need{/i} cock in your mouth."
+    gen "Tell me how badly you want-- no, how badly you {i}need{/i} cock in your mouth."
 
     $ camera.set_image("topless_up_cringe")
 
@@ -1559,7 +1559,7 @@ label cc_pf_blowjob_T3_E3:
 
     $ camera.set_image("topless_up_blush2")
 
-    cho "I need your cock in my mouth, and to feel your cum going down my throat..."
+    cho "I need your cock in my mouth...{w=0.2} and I need to feel your cum going down my throat..."
     gen "(She sure is a quick learner...)"
     gen "That's it [cho_name]... Now work that mouth of yours for your reward..."
 
@@ -1583,7 +1583,7 @@ label cc_pf_blowjob_T3_E3:
     $ camera.set_image("cho_bj topless suck deep")
 
     cho "*glick* *glick* *glick*" #Looks back down on cock
-    gen "*Argh* You slut, I'm almost there--"
+    gen "*Argh* You slut, I'm almost there..."
 
     call ctc
 
@@ -1653,7 +1653,7 @@ label cc_pf_blowjob_T3_E3:
     pause 1.5
     $ camera.set_image("topless_mid_full_swallowed")
 
-    gen "I hope the reward was to your liking."
+    gen "I hope you liked your reward."
     gen "Now... On your feet, [cho_name]."
 
     $ camera.set(zoom=1.0, pos=(300, 400), t=5.0, pause=True)

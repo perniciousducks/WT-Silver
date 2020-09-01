@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="Witch Trainer: Silver" height="275" src="https://raw.githubusercontent.com/SilverStudioGames/WT-Silver/master/game/logo/title.png">
+    <img alt="Witch Trainer: Silver" height="275" src="https://raw.githubusercontent.com/SilverStudioGames/WT-Silver/master/game/logo/title.webp">
 </p>
 
 <p align="center">

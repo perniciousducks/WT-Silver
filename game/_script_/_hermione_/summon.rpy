@@ -390,8 +390,7 @@ label hermione_favor_menu:
 label update_her_favors:
     python:
         for i in hg_favor_list:
-            if i.tier != her_tier and i.max_tiers >= her_tier:
-                i.tier = her_tier
+            i.tier = her_tier
 
     return
 
@@ -399,8 +398,7 @@ label update_her_favors:
 label update_her_requests:
     python:
         for i in hg_requests_list:
-            if i.tier != her_tier and i.max_tiers >= her_tier:
-                i.tier = her_tier
+            i.tier = her_tier
 
     return
 

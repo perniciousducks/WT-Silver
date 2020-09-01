@@ -193,8 +193,7 @@ label update_ton_requests:
     # Set event tier to current Tonks tier if they are different
     python:
         for i in nt_requests_list:
-            if i.tier != ton_tier and i.max_tiers >= ton_tier:
-                i.tier = ton_tier
+            i.tier = ton_tier
 
     return
 

@@ -53,5 +53,15 @@ init -1 python:
 
                 card.imagepath = card.imagepath.split("_v")[0] + "_v{}.webp".format(geniecard_level)
 
+            # Fix events with empty event tiers and/or zero start_tier
+            all_events = [hg_pf_talk_tonks] + list(hg_favor_list) + list(hg_requests_list) + list(cc_favor_list) + list(cc_requests_list) + [ag_st_imperio, ag_se_imperio_sb] + [ll_pf_masturbate, ll_pf_blowjob, ll_pf_sex] + [nt_he_drink, nt_he_story] + list(nt_requests_list)
+
+            for ev in all_events:
+                if ev.start_tier == 0:
+                    ev.start_tier = 1
+                for i, l in enumerate(ev.events):
+                    if not l:
+                        del ev.events[i]
+
             save_internal_version = 1.391
             renpy.block_rollback()

@@ -51,12 +51,12 @@ init python:
         """
 
         def __init__(self, **kwargs):
-            self.title     = ""
-            self.hint      = ""
-            self.counter   = 0
+            self.title = ""
+            self.hint = ""
+            self.counter = 0
 
             self.start_label = ""
-            self.start_tier = 0
+            self.start_tier = 1
             self.inProgress = False
 
             self.events = []
@@ -64,22 +64,18 @@ init python:
             self.icons = []
             self.iconset = []
 
-            # Private attributes
-            self._tier     = 0
-            self._points    = 0
-
             self.__dict__.update(kwargs)
 
-            if self.events == []:
-                raise Exception('Events: "events" list was not defined in event_class.')
+            # _tier is relative to start_tier
+            self._tier = 0
+            self._points = 0
 
-            # Insert empty list for 'empty' tiers to avoid wrong lookup later on
-            for i in xrange(self.start_tier-1):
-                self.events.insert(0, [])
+            if not self.events:
+                raise Exception('Events: "events" list was not defined in event_class.')
 
             self._max_tiers = len(self.events)
 
-            if self.iconset == []:
+            if not self.iconset:
                 raise Exception('Events: "iconset" list was not defined in event_class. You need to add at least one set of icons.')
             elif len(self.iconset) < self._max_tiers:
                 for i in xrange(self._max_tiers-len(self.iconset)):
@@ -96,14 +92,8 @@ init python:
                 if self.events[self._tier][i][1] == False:
                     self.events[self._tier][i][1] = True
                     return renpy.jump(self.events[self._tier][i][0])
-            events_filtered = filter(lambda x: '_intro' not in x[0], self.events[self._tier])
-            random_event = events_filtered[random.randint(0, len(events_filtered)-1)][0]
-            return renpy.jump(random_event)
 
-        def change_icon(self, a="heart_half", b="heart_red"):
-            for icon in self.iconset:
-                if icon[1] == a:
-                    icon[1] = b
+            self.start_random()
 
         def start_advance(self):
             self.counter += 1
@@ -114,9 +104,18 @@ init python:
                         self.events[i][j][1] = True
                         self._tier = i
                         return renpy.jump(self.events[i][j][0])
+
+            self.start_random()
+
+        def start_random(self):
             events_filtered = filter(lambda x: '_intro' not in x[0], self.events[self._tier])
             random_event = events_filtered[random.randint(0, len(events_filtered)-1)][0]
             return renpy.jump(random_event)
+
+        def change_icon(self, a="heart_half", b="heart_red"):
+            for icon in self.iconset:
+                if icon[1] == a:
+                    icon[1] = b
 
         def get_menu_item(self, disabled=False, return_value=None):
             menu_text = ""
@@ -173,13 +172,19 @@ init python:
             return status_list
 
         def is_complete(self, ignore_in_progress=False):
-            return self.tier == len(self.events) and self.is_tier_complete(ignore_in_progress=ignore_in_progress)
+            is_last_tier = (self._tier == self._max_tiers - 1)
+            return is_last_tier and self.is_tier_complete(ignore_in_progress=ignore_in_progress)
 
         def is_tier_complete(self, ignore_in_progress=False):
-            return self.points == len(self.events[self._tier]) and (not self.inProgress or ignore_in_progress)
+            event_count = len(self.events[self._tier])
+            return self.points == event_count and (not self.inProgress or ignore_in_progress)
 
         def is_event_complete(self, tier, event):
-            return bool(self.events[tier-1][event-1][1])
+            relative_tier = tier - self.start_tier
+            try:
+                return bool(self.events[relative_tier][event-1][1])
+            except IndexError:
+                return False
 
         @property
         def points(self):
@@ -191,21 +196,15 @@ init python:
 
         @property
         def tier(self):
-            return self._tier+1
+            return self._tier + self.start_tier
 
         @tier.setter
         def tier(self, value):
-            if value > self._tier+1:
+            relative_tier = max(0, min(value - self.start_tier, self._max_tiers - 1))
+            if relative_tier != self._tier:
+                # Change tier and reset progress
                 self._points = 0
-            self._tier = max(0, min(value-1, self._max_tiers-1))
-
-        @property
-        def max_tiers(self):
-            return self._max_tiers
-
-        @max_tiers.setter
-        def max_tiers(self, value):
-            pass
+                self._tier = relative_tier
 
     class stats_class(dict):
 

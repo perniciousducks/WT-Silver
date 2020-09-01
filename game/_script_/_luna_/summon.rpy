@@ -144,6 +144,5 @@ label luna_favor_menu:
 label update_luna_favors:
     python:
         for i in ll_favor_list:
-            if i.tier != lun_tier and i.max_tiers >= lun_tier:
-                i.tier = lun_tier
+            i.tier = lun_tier
     return

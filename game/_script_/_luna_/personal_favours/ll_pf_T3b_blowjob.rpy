@@ -1235,12 +1235,13 @@ label ll_pf_blowjob_T1_summon:
     call her_main("Oh... alright then...", "soft", "narrow", "worried", "mid_soft")
 
     call play_music("playful_tension") # SEX THEME.
+    $ hermione.strip("robe", "accessory")
     $ hermione.strip("top")
     with d5
-    pause.5
-
+    pause .5
     call her_main("", "soft", "narrow", "base", "down")
     call ctc
+
     $ lunCG('sucking', 'seductive', 'sad', 'dick', pos=13)
     m "Ugh... that's it, slut..."
     $ lunCG(pos=8)

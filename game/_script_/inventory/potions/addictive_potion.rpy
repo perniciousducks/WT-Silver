@@ -584,19 +584,19 @@ label potion_scene_3_3_1:
     call her_main("Aaaaaaah!!!!", "shock", "happyCl", "worried", "mid",cheeks="blush")
     call her_main("What happened to my outfit?!", "shock", "narrow", "base", "down")
     call her_main("I can't be seen wearing all this stuff!!!", "disgust", "narrow", "worried", "down")
+    $ hermione.strip("robe", "accessory")
 
-    if hermione_wear_top:
-
+    if hermione.is_worn("top"):
         call set_her_action("lift_top")
-        pause.5
+        pause .5
 
         $ hermione.strip("top")
         call set_her_action("none","skip_update")
-        pause.5
+        pause .5
 
         call her_main("That's soooooo much better!", "soft", "narrow", "annoyed", "up")
 
-    if hermione_wear_bottom:
+    if hermione.is_worn("bottom"):
         call her_main("It really suuuuucks that I have to wear anything at all in this boring nunnery...", "annoyed", "narrow", "annoyed", "up")
         call her_main("(Why can't I wear something shorter. A skirt, but...)")
         call her_main("(A reeealy short one!!!{heart}{heart}{heart})",face="horny")
@@ -673,10 +673,11 @@ label potion_scene_3_3_1:
     call her_main("Even happier? {size=+10}YAY!{/size}", "smile", "happyCl", "base", "mid",emote="happy")
     call her_main("So how am I going to be happier? Am I going to get naked?", "grin", "base", "base", "R")
     m "That'd be a good start."
+    $ hermione.strip("robe", "accessory")
     call her_main("{heart}AAAAAAWWWEEESOOOOOOOOMMME!{heart}", "grin", "narrow", "annoyed", "up")
 
     call set_her_action("lift_top")
-    pause.5
+    pause .5
 
     $ hermione.strip("top")
     $ hermione.strip("bra")

@@ -131,6 +131,7 @@ label hg_pf_strip_T4_snape:
     call sna_main("","snape_13")
     pause.8
 
+    $ hermione.strip("robe", "accessory")
     hide screen snape_main
     show screen blkfade
     with d5

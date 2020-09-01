@@ -216,7 +216,7 @@ label hg_pf_strip_T3_intro_E1: # Complete
     call her_main(".............................................................", "disgust", "narrow", "base", "down", cheeks="blush")
     call nar(">Hermione gives you a confused look...")
 
-    pause.5
+    pause .5
     show screen blktone
     call her_main("{size=-5}(Am I really going to do this?){/size}", "angry", "happyCl", "worried", "mid", cheeks="blush", xpos="base", ypos="base", trans=fade)
     hide screen blktone
@@ -233,11 +233,11 @@ label hg_pf_strip_T3_intro_E1: # Complete
 
             call her_main("{size=-5}(Here it comes then...){/size}", "angry", "happyCl", "worried", "mid", cheeks="blush")
             call her_main("{size=-5}(For the honour of Gryffindor....){/size}", "angry", "happyCl", "worried", "mid", cheeks="blush")
-            pause.2
+            pause .2
 
             $ hermione.strip("bottom")
             call ctc
-            pause.5
+            pause .5
 
             m "..............."
             call her_main("{size=-5}(.........................................){/size}", "angry", "happyCl", "worried", "mid", cheeks="blush")
@@ -258,7 +258,7 @@ label hg_pf_strip_T3_intro_E1: # Complete
 
             call her_main("{size=-5}(Alright, here it comes...){/size}", "angry", "happyCl", "worried", "mid", cheeks="blush")
             call her_main("{size=-5}(For the honour of the Gryffindor!){/size}", "angry", "base", "worried", "mid", cheeks="blush")
-            pause.2
+            pause .2
 
             $ hermione.strip("top")
             call ctc
@@ -394,7 +394,7 @@ label hg_pf_strip_T3_intro_E2:
     $ hermione.strip("robe", "accessory")
     call her_main("*groan*", "clench", "narrow", "base", "down")
 
-    if hermione.is_worn("top"):
+    if hermione.is_any_worn("top"):
         call nar(">Hermione begins taking off her top...")
         call nar(">Pulling at the fabric in anger, making it more difficult than it should be...")
         call her_main("Why won't it....?!")
@@ -711,18 +711,17 @@ label hg_pf_strip_T3_E2:
     call her_main("I still consider this a highly inappropriate favour to be buying from one of your students, [genie_name].", "annoyed", "squint", "base", "mid")
     m "Right. And an equally inappropriate favour to be selling to your headmaster. Wouldn't you agree?"
     call her_main("..........", "annoyed", "narrow", "angry", "R")
-
     $ hermione.strip("robe", "accessory")
 
     if hermione.is_worn("top"):
         call nar(">Hermione shifts her body towards you and starts taking off her top...")
         $ hermione.strip("top")
-        pause.5
+        pause .5
     if hermione.is_worn("bra"):
         call nar(">She takes off her bra somewhat clumsily...")
         $ hermione.strip("bra")
 
-    pause.2
+    pause .2
     call ctc
 
     g9 "Yes! The tits!"

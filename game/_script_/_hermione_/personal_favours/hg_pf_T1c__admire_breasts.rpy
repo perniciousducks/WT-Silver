@@ -156,9 +156,10 @@ label hg_pf_admire_breasts_T1_intro_E1:
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("(................)", "annoyed", "narrow", "angry", "R")
-    pause.4
+    $ hermione.strip("robe", "accessory")
+    pause .4
 
-    $ hermione.strip("top", "accessory")
+    $ hermione.strip("top")
     call her_main("", "annoyed", "narrow", "angry", "R")
     call ctc
 
@@ -258,9 +259,10 @@ label hg_pf_admire_breasts_T1_E2:
 label hg_pf_admire_breasts_T1: # Call label
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main(".............", "annoyed", "base", "worried", "R")
-    pause.4
+    $ hermione.strip("robe", "accessory")
+    pause .4
 
-    $ hermione.strip("top", "accessory")
+    $ hermione.strip("top")
     call her_main("", "annoyed", "base", "worried", "R")
     call ctc
 

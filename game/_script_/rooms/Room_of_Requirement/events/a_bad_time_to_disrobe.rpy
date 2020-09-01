@@ -139,6 +139,7 @@ label a_bad_time_to_disrobe_part_1:
     nar "Later that evening a distraught-looking Hermione enters the office. "
 
     call her_chibi("top_naked","desk","base")
+    $ hermione.strip("robe", "accessory")
     $ hermione.strip("top")
 
     hide screen day_to_night

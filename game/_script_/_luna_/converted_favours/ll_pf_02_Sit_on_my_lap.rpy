@@ -1369,6 +1369,7 @@ label luna_favour_2:
         call her_main("so the only reason you'd bring me up here, to show off my tits...", "base", "narrow", "base", "mid_soft")
         call her_main("is so you can get a look at them as well...", "base", "squint", "base", "mid")
         call her_main("not that I mind...", "smile", "base", "base", "R")
+        $ hermione.strip("robe", "accessory")
         call her_main("I just want you to be honest...", "base", "happy", "base", "mid")
         call lun_main("...","normal","mad","sad","R", cheeks="blush")
         call lun_main("Fine...","upset","mad","sad","down", cheeks="blush")

@@ -84,6 +84,7 @@ label hg_pf_grope_breasts_T2:
 label hg_pf_grope_breasts_T3: # Favor fails if you Slap them.
     stop music fadeout 1.0
     call her_chibi_scene("behind_desk_front", trans=d7)
+    $ hermione.strip("robe", "accessory")
 
     if hg_strip.trigger:
         menu:
@@ -193,6 +194,8 @@ label hg_pf_grope_breasts_T4:
     call her_main("............", "base", "narrow", "worried", "down", cheeks="blush", ypos="head")
 
     call play_music("playful_tension") # SEX THEME.
+    $ hermione.strip("robe", "accessory")
+
     if hermione.is_any_worn("top", "bra"):
         call nar(">Hermione shifts to start undoing her clothes...")
 

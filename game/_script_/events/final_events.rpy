@@ -199,8 +199,8 @@ label ball_quest_E1:
             # call her_chibi("lift_top","mid","base")
             # with d3
             # pause 2.0
-
-            $ hermione.strip("top", "robe", "accessory")
+            $ hermione.strip("robe", "accessory")
+            $ hermione.strip("top")
 
             show screen hermione_main
             with d5

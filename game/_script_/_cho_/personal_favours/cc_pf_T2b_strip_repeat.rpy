@@ -227,7 +227,7 @@ label .strip_cho:
 
 
     # Cho is wearing at least one clothing piece:
-    if cho.is_worn("robe") or cho.is_worn("top") or cho.is_worn("bottom") or cho.is_worn("bra") or cho.is_worn("panties"):
+    if cho.is_any_worn("robe", "top", "bottom", "bra", "panties"):
         pass
     else: # Cho is already naked.
         call ton_main("Well, since you're not really wearing much already...", "soft", "narrow", "base", "L", hair="horny")
@@ -242,7 +242,7 @@ label .strip_cho:
         jump cc_pf_strip_T3_tonks.strip_check # label checks if both are nude.
 
     # Remove Top and Bottom.
-    if cho.is_worn("robe") or cho.is_worn("top") or cho.is_worn("bottom"):
+    if cho.is_any_worn("robe", "top", "bottom"):
         call ton_main("Let me help you get out of these clothes, Miss Chang.", "soft", "narrow", "base", "L", hair="horny")
         call cho_main("Yes, Professor.", "base", "narrow", "base", "down", cheeks="heavy_blush")
         call ton_main("", "base", "narrow", "base", "down", hair="horny", xpos=300, ypos="base", flip=False, trans=d5) # moves closer to Cho.
@@ -274,7 +274,7 @@ label .strip_cho:
             call ctc
 
     # Remove Bra and Panties.
-    if cho.is_worn("bra") or cho.is_worn("panties"):
+    if cho.is_any_worn("bra", "panties"):
         call ton_main("I like your underwear Miss Chang... Very cute!", "soft", "narrow", "base", "L", hair="horny")
         call cho_main("", "horny", "narrow", "base", "down", cheeks="heavy_blush")
         call ton_main("", "base", "narrow", "base", "down", hair="horny", xpos=300, ypos="base", flip=False, trans=d5) # moves closer to Cho.
@@ -740,10 +740,10 @@ label .spank_tonks:
 # Check if Tonks and Cho are naked. Proceed to transformation section if they are.
 label .strip_check:
     # Cho is wearing at least one clothing piece:
-    if cho.is_worn("robe") or cho.is_worn("top") or cho.is_worn("bottom") or cho.is_worn("bra") or cho.is_worn("panties"):
+    if cho.is_any_worn("robe", "top", "bottom", "bra", "panties"):
         jump cc_pf_strip_T3_tonks.strip_cho
     # Tonks is wearing at least one clothing piece:
-    elif tonks.is_worn("robe") or tonks.is_worn("top") or tonks.is_worn("bottom") or tonks.is_worn("bra") or tonks.is_worn("panties"):
+    elif tonks.is_any_worn("robe", "top", "bottom", "bra", "panties"):
         jump cc_pf_strip_T3_tonks.strip_tonks
     # Both are naked; Proceed with event.
     else:

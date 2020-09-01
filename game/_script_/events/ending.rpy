@@ -2878,6 +2878,7 @@ Farewell, my little [word_03].{/size}
         dum_[2] "Miss Granger, would you mind to guard your tongue when--"
 
         ### TITS ###
+        $ hermione.strip("robe", "accessory")
         $ hermione.strip("top", "bra")
         call her_main("", "annoyed", "narrow", "annoyed", "mid")
         stop music

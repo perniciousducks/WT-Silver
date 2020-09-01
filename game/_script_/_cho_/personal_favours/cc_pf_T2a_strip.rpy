@@ -1265,11 +1265,12 @@ label cc_pf_strip_T2_hermione:
             g9 "Yes Miss Granger!{w=0.5} Your very round{w=0.5}, handsomely spheroid{w=0.5}, perfectly sized{w=0.5}, very voluptuous and--"
             call her_main("I got it, Professor!", "clench", "happyCl", "worried", "mid", cheeks="blush")
             call cho_main("(Cow tits...)", "annoyed", "narrow", "angry", "R", cheeks="blush")
+            $ hermione.strip("robe", "accessory")
             call her_main("Here...", "base", "narrow", "base", "mid_soft")
 
             # Hermione shows her breasts.
             call play_sound("equip")
-            $ hermione.strip("robe", "top", "bra")
+            $ hermione.strip("top", "bra")
             with d3
             pause .5
 
@@ -2679,21 +2680,29 @@ label cc_pf_strip_T3_intro_E3:
 
     # Cho and Tonks undress.
     $ temp_var = False
-    if cho.is_worn("top") or cho.is_worn("bottom"):
+    if cho.is_any_worn("robe", "top", "bottom"):
         $ temp_var = True
         call ton_main("Let me help you with that, Miss Chang.", "soft", "narrow", "base", "L", hair="horny")
         call ton_main("", "base", "narrow", "base", "L", hair="horny")
 
+    # Remove Cho's robe.
+    if cho.is_worn("robe"):
+        pause .2
+        call play_sound("equip")
+        $ cho.strip("robe")
+        with d3
+        pause .5
+        call cho_main("", "base", "narrow", "base", "R", cheeks="blush")
+        pause .8
+
     # Remove Cho's top.
     if cho.is_worn("top"):
         pause .2
-
         call play_sound("equip")
         $ cho.strip("top")
         show screen cho_cloth_pile
         with d3
         pause .5
-
         call cho_main("", "horny", "narrow", "raised", "R", cheeks="heavy_blush")
         pause .8
 
@@ -2703,12 +2712,10 @@ label cc_pf_strip_T3_intro_E3:
     if cho.is_worn("bottom"):
         call cho_main("...", "horny", "narrow", "base", "mid", cheeks="heavy_blush") # embarrassed
         pause .2
-
         $ cho.strip("bottom")
         show screen cho_cloth_pile
         with d3
         pause .5
-
         call cho_main("", "horny", "narrow", "raised", "R", cheeks="heavy_blush")
         pause .8
 

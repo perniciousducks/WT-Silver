@@ -665,7 +665,7 @@ label hg_tutor_E8:
     m "You can't have both points and lessons."
     call her_main("Okay...", "angry", "happyCl", "worried", "mid", cheeks="blush", emote="sweat")
 
-    $ hermione.strip("robe")
+    $ hermione.strip("robe", "accessory")
     call her_chibi("lift_top")
 
     call set_her_action("lift_top")
@@ -815,7 +815,7 @@ label hg_tutor_E9:
     call her_walk("desk", "base", reduce=0.8)
     call blkfade
 
-    $ hermione.strip("robe")
+    $ hermione.strip("robe", "accessory")
     $ hermione.strip("top")
 
     if hermione.is_worn("bra"):
@@ -997,7 +997,7 @@ label hg_tutor_E10:
         call set_her_action("lift_top")
         pause .5
 
-        $ hermione.strip("robe")
+        $ hermione.strip("robe", "accessory")
         $ hermione.strip("top")
         $ hermione.strip("bra")
         call set_her_action("None")
@@ -1010,7 +1010,7 @@ label hg_tutor_E10:
         call set_her_action("lift_top")
         pause .5
 
-        $ hermione.strip("robe")
+        $ hermione.strip("robe", "accessory")
         $ hermione.strip("top")
         call set_her_action("None")
         pause .5
@@ -1166,7 +1166,7 @@ label hg_tutor_E11:
     call set_her_action("lift_top")
     pause .2
 
-    $ hermione.strip("robe")
+    $ hermione.strip("robe", "accessory")
     $ hermione.strip("top")
     pause .5
     $ hermione.strip("bra")
@@ -1362,7 +1362,7 @@ label hg_tutor_E12:
     call set_her_action("lift_top")
     pause .5
 
-    $ hermione.strip("robe")
+    $ hermione.strip("robe", "accessory")
     $ hermione.strip("top")
     with d3
     pause .5

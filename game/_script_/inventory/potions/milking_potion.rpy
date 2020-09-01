@@ -191,6 +191,7 @@ label potion_scene_11_2:
     call her_main("*Hmmm*...", "annoyed", "narrow", "worried", "down")
     call her_main("well how are you going to solve the milk problem, [genie_name]?", "open", "narrow", "worried", "down")
     call her_main("Am I going to have to stand here...", "base", "narrow", "base", "up")
+    $ hermione.strip("robe", "accessory")
     call her_main("With my shirt off...", "soft", "happy", "base", "R")
 
     call set_her_action("lift_top")
@@ -414,11 +415,12 @@ label potion_scene_11_3:
     m "Speaking of milkshakes!"
     call nar(">You notice hermione's breasts start to swell...")
     call her_main("Ugh... this always feels so weird...", "angry", "narrow", "base", "down")
+    $ hermione.strip("robe", "accessory")
 
-    if hermione_wear_top:
+    if hermione.is_worn("top"):
         call her_main("I better take my shirt off before it rips...", "normal", "squint", "angry", "mid")
     else:
-        if hermione_wear_bra:
+        if hermione.is_worn("bra"):
             call her_main("I better take my bra off before it rips...", "normal", "squint", "angry", "mid")
 
     call set_her_action("lift_top")

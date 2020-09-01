@@ -82,9 +82,10 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
                 jump end_hermione_event
 
         m "Alright, alright..."
-        if hermione.is_any_worn("top", "bottom", "panties", "bra"):
+        if hermione.is_any_worn("robe", "top", "bottom", "panties", "bra"):
             g9 "Just get naked already!"
             call her_main("...","annoyed","narrow", "annoyed", "mid", xpos="mid", ypos="base")
+            $ hermione.strip("robe", "accessory")
             call her_main("{size=-5}(I can't believe I'm going to strip for him...){/size}", "disgust", "narrow", "base", "down", cheeks="blush")
 
             if hermione.is_worn("top"):
@@ -151,9 +152,10 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
         else:
             call her_main("anything for you [genie_name]", "base", "narrow", "base", "up", cheeks="blush")
 
-        if hermione.is_any_worn("top", "bottom", "panties", "bra"):
+        if hermione.is_any_worn("robe", "top", "bottom", "panties", "bra"):
             g9 "Just get naked already!"
             call her_main("...","annoyed","narrow", "annoyed", "mid", xpos="mid", ypos="base")
+            $ hermione.strip("robe", "accessory")
             call her_main("{size=-5}(I can't believe I'm going to strip for him...){/size}", "disgust", "narrow", "base", "down", cheeks="blush")
 
             if hermione.is_worn("top"):
@@ -342,8 +344,7 @@ label hg_pr_strip_T2_masturbate_rear:
     show screen blkfade
     with d5
 
-    $ hermione.strip("top")
-    $ hermione.strip("bottom")
+    $ hermione.strip("robe", "accessory", "top", "bottom")
 
     call gen_chibi("jerk_off_behind_desk")
     call play_music("chipper_doodle")
@@ -513,8 +514,7 @@ label hg_pr_strip_T3_masturbate_rear:
     show screen blkfade
     with d5
 
-    $ hermione.strip("top")
-    $ hermione.strip("bottom")
+    $ hermione.strip("robe", "accessory", "top", "bottom")
 
     call gen_chibi("jerk_off_behind_desk")
     call play_music("chipper_doodle")
@@ -692,8 +692,7 @@ label hg_pr_strip_T4_masturbate_rear:
     show screen blkfade
     with d5
 
-    $ hermione.strip("top")
-    $ hermione.strip("bottom")
+    $ hermione.strip("robe", "accessory", "top", "bottom")
 
     call gen_chibi("jerk_off_behind_desk")
     call play_music("chipper_doodle")

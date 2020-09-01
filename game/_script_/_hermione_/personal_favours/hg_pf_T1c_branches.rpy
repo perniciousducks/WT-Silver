@@ -9,13 +9,11 @@ label hg_pf_admire_breasts_transition:
     pause.2
 
     # Setup Pose
-    $ hermione.strip("top", "bra", "robe", "accessory")
+    $ hermione.strip("robe", "top", "bra", "accessory")
     call her_chibi("lift_top","mid","base")
-
     pause 2.0
 
     call her_main("", "angry", "happyCl", "base", "down", cheeks="blush", trans=d3)
-
     call ctc
 
     m "*Hmm*..."

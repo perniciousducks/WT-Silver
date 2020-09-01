@@ -7,11 +7,6 @@ label set_sus_face(change=None, mouth=None, eyes=None, brows=None, pupils=None):
     $ temp_eyes     = None
     $ temp_eyebrows = None
     $ temp_pupils   = None
-    $ temp_cheeks   = None
-    $ temp_tears    = None
-    $ temp_extra    = None
-    $ temp_emote    = None
-
 
     #Face emotions
     if mouth != None:
@@ -89,7 +84,7 @@ label set_sus_face(change=None, mouth=None, eyes=None, brows=None, pupils=None):
             call set_sus_face(mouth="happy",eyes="happy",brows="happy",pupils="happy")
 
 
-    $ changeSusan(temp_mouth, temp_eyes, temp_eyebrows, temp_pupils, temp_cheeks, temp_tears, temp_extra, temp_emote)
+    $ changeSusan(temp_mouth, temp_eyes, temp_eyebrows, temp_pupils)
 
     return
 

@@ -67,14 +67,13 @@ define loading_step_list = [
         "Insert disc 2"
         ]
 
-init python:
-    config.after_load_callbacks.append(load_assets)
-    #config.per_frame_screens.append("loading")
-
-init -1 python:
+init 1 python: # Needs to be appended AFTER update_savefile
     def load_assets():
         renpy.call_in_new_context("loading")
         return
+
+    config.after_load_callbacks.append(load_assets)
+    #config.per_frame_screens.append("loading")
 
 label loading:
     call screen loading()

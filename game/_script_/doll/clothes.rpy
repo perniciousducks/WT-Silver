@@ -38,9 +38,8 @@ init python:
                 path = "{}/characters/{}/clothes/{}/{}/".format(self.modpath, self.name, x, self.id)
                 if renpy.loadable(path + "0.webp"):
                     self.imagepath = path
-                    break
-            if not self.imagepath:
-                raise Exception("Path for cloth not found\n{}".format(path))
+                    return
+            raise IOError("Couldn't find file \"{}/characters/{}/clothes/{}/{}/0.webp\"".format(self.modpath, self.name, self.categories[0], self.id))
 
         def set_layers(self):
             for x in self.layers_special:

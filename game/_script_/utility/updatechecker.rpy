@@ -63,5 +63,36 @@ init -1 python:
                     if not l:
                         del ev.events[i]
 
+            # Update bra and glasses
+
+            # Remove old references to avoid doubling items.
+            for c in (her_accessory4_vintage_glasses, her_bra_base1):
+                cat, subcat = c.categories
+
+                hermione.wardrobe_list.remove(c)
+                hermione.wardrobe[cat][subcat].remove(c)
+
+            # Re-initialize
+            her_accessory4_vintage_glasses.__init__("hermione", ("head", "glasses"), "accessory4", "vintage_glasses", [[255, 255, 255, 50], [36, 36, 36, 255], [116, 116, 116, 255]], unlocked=True, zorder=3)
+            her_bra_base1.__init__("hermione", ("bras", "bras"), "bra", "basic_bra_1", [[232, 232, 232, 255], [202, 60, 1, 255]], unlocked=True)
+
+            # Replace old clones in outfits that contain the above items.
+            for o in hermione.outfits:
+                for item in o.group:
+                    if any((x.type == item.type and x.id == item.id) for x in (her_accessory4_vintage_glasses, her_bra_base1)):
+                        indx = o.group.index(item)
+
+                        if item.id == "vintage_glasses":
+                            o.group[indx] = her_accessory4_vintage_glasses.clone()
+                        elif item.id == "basic_bra_1":
+                            o.group[indx] = her_bra_base1.clone()
+
+            hermione.rebuild()
+
+            # Need to update the screen scope or face IOErrors
+            if renpy.get_screen("hermione_main"):
+                scope = renpy.get_screen("hermione_main").scope
+                scope["hermione_img"] = apply_doll_transition(hermione.get_image(), "hermione_main", use_hermione_head)
+
             save_internal_version = 1.391
             renpy.block_rollback()

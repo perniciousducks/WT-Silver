@@ -71,7 +71,7 @@ default her_bottom_school3 = DollCloth("hermione", ("bottoms", "skirts"), "botto
 default her_bottom_school4 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "school_skirt_4", [[103, 90, 108, 255], [232, 177, 13, 255]], unlocked=True, level=19)
 default her_stockings_base1 = DollCloth("hermione", ("legwear", "socks"), "stockings", "stockings_1", [[219, 165, 13, 255], [146, 63, 30, 255]], unlocked=True)
 default her_panties_base1 = DollCloth("hermione", ("panties", "panties"), "panties", "basic_panties_1", [[232, 232, 232, 255], [202, 60, 1, 255]], unlocked=True)
-default her_bra_base1 = DollCloth("hermione", ("bras", "bras"), "bra", "basic_bra_1", [[232, 232, 232, 255], [202, 60, 1, 255], [167, 77, 42, 255], [237, 179, 14, 255]], unlocked=True)
+default her_bra_base1 = DollCloth("hermione", ("bras", "bras"), "bra", "basic_bra_1", [[232, 232, 232, 255], [202, 60, 1, 255]], unlocked=True)
 default her_robe_school_1 = DollCloth("hermione", ("misc", "robes"), "robe", "robe_school_1", [[96, 96, 96, 255], [206, 206, 209, 255], [167, 77, 42, 255]], unlocked=True, level=0)
 default her_robe_school_2 = DollCloth("hermione", ("misc", "robes"), "robe", "robe_school_2", [[96, 96, 96, 255], [206, 206, 209, 255], [167, 77, 42, 255]], unlocked=True, level=4)
 default her_robe_school_3 = DollCloth("hermione", ("misc", "robes"), "robe", "robe_school_3", [[96, 96, 96, 255], [206, 206, 209, 255], [167, 77, 42, 255]], unlocked=True, level=10)

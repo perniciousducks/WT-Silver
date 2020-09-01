@@ -104,7 +104,7 @@ label ag_st_imperio_E1:
     call ton_main("It went very well, I'd say.", "crooked_smile", "happyCl", "base", "mid")
     call ton_main("I instructed her on how to cast the curse - properly.", "base", "closed", "base", "mid")
     call ton_main("The right wand movement... The correct pronunciation...", "open", "wide", "base", "R")
-    call ton_main("There's a lot to it!", "smile", "wide", "base", "mid")
+    call ton_main("There's a lot to it!", "grin", "wide", "base", "mid")
     call ton_main("One mishap with those - and the curse might backfire!", "normal", "shocked", "shocked", "mid")
     call ton_main("Sending you straight to St. Mungo's hospital - quacking like a duck!", "annoyed", "shocked", "base", "mid")
     m "..........."
@@ -121,7 +121,7 @@ label ag_st_imperio_E1:
     call ast_main("Wait, what?","angry","base","base","mid")
     call ast_main("I thought I wasn't allowed to ever use it again?", "annoyed", "base", "worried", "R")
     call ton_main("You aren't... That is correct.", "open", "closed", "base", "mid")
-    call ton_main("However, you are hereby given special permission!", "smile", "wide", "base", "L")
+    call ton_main("However, you are hereby given special permission!", "grin", "wide", "base", "L")
     call ast_main("Really?", "smile", "narrow", "base", "down") # happy
     call ton_main("Yes, dear!","base","base","base","L")
     call ton_main("I believe our Professor would have no objection to that...","open","closed","base","mid")
@@ -1277,7 +1277,7 @@ label ag_st_imperio_E5:
     call play_sound("equip")
     $ tonks.strip("stockings")
     $ tonks.strip("gloves")
-    call ton_main("", "smile", "base", "base", "ahegao", hair="horny", cheeks="blush")
+    call ton_main("", "grin", "base", "base", "ahegao", hair="horny", cheeks="blush")
     call ast_main("", "horny", "narrow", "angry", "L")
     call ctc
 

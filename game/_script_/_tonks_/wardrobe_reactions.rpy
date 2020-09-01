@@ -25,7 +25,7 @@ label tonks_wardrobe_check(section, arg=None):
 
         # Outfit outrage score check
         if ton_friendship < temp_count[0]:
-            call ton_main("It looks lovely, but you'd have to prove yourself a bit more before I put that on...",face="annoyed",eyebrows="angry",mouth="smile")
+            call ton_main("It looks lovely, but you'd have to prove yourself a bit more before I put that on...",face="annoyed",eyebrows="angry",mouth="grin")
             $ temp_score += 1
         if temp_count[2] < 2 and ton_friendship < ton_requirements["unequip_underwear"]:
             if temp_score > 0:
@@ -131,11 +131,11 @@ label tonks_wardrobe_check(section, arg=None):
                         elif random_number == 2:
                             call ton_main("If you'd like to keep these hands intact I suggest you stop it right now, [ton_genie_name].",face="annoyed")
                         elif random_number == 3:
-                            call ton_main("Hey, who said you had permission to approach the chamber of secrets?",face="annoyed",eyebrows="angry",mouth="smile")
+                            call ton_main("Hey, who said you had permission to approach the chamber of secrets?",face="annoyed",eyebrows="angry",mouth="grin")
                         elif random_number == 4:
-                            call ton_main("That place is reserved for good boys and girls...",face="annoyed",eyebrows="angry",mouth="smile")
+                            call ton_main("That place is reserved for good boys and girls...",face="annoyed",eyebrows="angry",mouth="grin")
                         elif random_number == 5:
-                            call ton_main("That forest is forbidden entry for first years... let's get to know each other a bit better first...",face="annoyed",eyebrows="angry",mouth="smile")
+                            call ton_main("That forest is forbidden entry for first years... let's get to know each other a bit better first...",face="annoyed",eyebrows="angry",mouth="grin")
                     return
             $ mouse_heart()
             call ton_main("", face="horny")
@@ -155,7 +155,7 @@ label tonks_wardrobe_check(section, arg=None):
             elif arg in ("top", "bottom"):
                 if ton_friendship < ton_requirements["unequip_clothes"]:
                     if wardrobe_chitchats:
-                        call ton_main("Someone's being naughty... I might have to give you a spanking for that.",face="annoyed",eyebrows="angry",mouth="smile")
+                        call ton_main("Someone's being naughty... I might have to give you a spanking for that.",face="annoyed",eyebrows="angry",mouth="grin")
                         call ton_main("Just kidding! Sure, have a quick look, [ton_genie_name].",face="annoyed",eyebrows="raised",mouth="horny")
                         $ char_active.toggle_wear(arg)
                         $ char_active.strip("robe")
@@ -167,7 +167,7 @@ label tonks_wardrobe_check(section, arg=None):
                         $ char_active.toggle_wear(arg)
                         $ char_active.wear("robe")
                         g4 "What gives?!"
-                        call ton_main("Time's up.",face="annoyed",eyebrows="angry",mouth="smile")
+                        call ton_main("Time's up.",face="annoyed",eyebrows="angry",mouth="grin")
                         m "......"
                     #Hint
                     $ wardrobe_fail_hint(ton_requirements["unequip_clothes"])
@@ -180,7 +180,7 @@ label tonks_wardrobe_check(section, arg=None):
                     if char_active.get_equipped("bra"):
                         if arg.id == char_active.get_equipped("bra").id:
                             if wardrobe_chitchats:
-                                call ton_main("If you behave maybe I'll let you take a peek later, [ton_genie_name].",face="annoyed",eyebrows="angry",mouth="smile")
+                                call ton_main("If you behave maybe I'll let you take a peek later, [ton_genie_name].",face="annoyed",eyebrows="angry",mouth="grin")
                             #Hint
                             $ wardrobe_fail_hint(ton_requirements["unequip_underwear"])
                             return
@@ -189,7 +189,7 @@ label tonks_wardrobe_check(section, arg=None):
                             if wardrobe_chitchats:
                                 call ton_main("",face="happy")
                                 nar "> Tonks clicks her tongue, staring at you in a disapproving manner."
-                                call ton_main("Getting ahead of ourselves are we? You're bold, I'll give you that much.",face="annoyed",eyebrows="angry",mouth="smile")
+                                call ton_main("Getting ahead of ourselves are we? You're bold, I'll give you that much.",face="annoyed",eyebrows="angry",mouth="grin")
                             #Hint
                             $ wardrobe_fail_hint(ton_requirements["unequip_underwear"])
                             return
@@ -202,7 +202,7 @@ label tonks_wardrobe_check(section, arg=None):
                         if char_active.get_equipped("top"):
                             if arg.id == char_active.get_equipped("top").id:
                                 if wardrobe_chitchats:
-                                    call ton_main("*Mmm*... I like where your head is at, but I have to refuse.",face="annoyed",eyebrows="angry",mouth="smile")
+                                    call ton_main("*Mmm*... I like where your head is at, but I have to refuse.",face="annoyed",eyebrows="angry",mouth="grin")
                                 #Hint
                                 $ wardrobe_fail_hint(ton_requirements["unequip_clothes"])
                                 return
@@ -219,9 +219,9 @@ label tonks_wardrobe_check(section, arg=None):
                     if wardrobe_chitchats:
                         $ random_number = renpy.random.randint(1, 3)
                         if random_number == 1:
-                            call ton_main("Not yet big boy, perhaps once this scheme of ours comes more into fruition...",face="annoyed",eyebrows="angry",mouth="smile")
+                            call ton_main("Not yet big boy, perhaps once this scheme of ours comes more into fruition...",face="annoyed",eyebrows="angry",mouth="grin")
                         elif random_number == 2:
-                            call ton_main("It does look nice but you need to deserve it...",face="annoyed",eyebrows="angry",mouth="smile")
+                            call ton_main("It does look nice but you need to deserve it...",face="annoyed",eyebrows="angry",mouth="grin")
                         else:
                             call ton_main("Hmm, what would you think of me if I wore this...? Later perhaps.",face="annoyed",eyebrows="raised",mouth="horny")
                     #Hint

@@ -165,7 +165,7 @@ label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
                 jump end_tonks_event
 
     m "So, how are you finding the education industry?"
-    call ton_main("Fun!", "smile", "happyCl", "base", "mid")
+    call ton_main("Fun!", "grin", "happyCl", "base", "mid")
     call ton_main("I never thought lesson planning and marking tests would actually be enjoyable, but there's something rather cathartic to it...", "base", "base", "base", "mid")
     m "And your... other tasks?"
     call ton_main("Oh, of course messing around with our students is a nice bonus!", "grin", "narrow", "base", "mid")

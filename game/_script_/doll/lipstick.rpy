@@ -40,3 +40,7 @@ init python:
 
             self.rebuild_image()
             return
+
+        def clone(self):
+            """Creates a clone of this lipstick object. Since it requires a parent object it should be used internally only to avoid object depth issue."""
+            return DollLipstick(self.name, self.categories, self.type, self.id, [x[:] for x in self.color], self.zorder, self.unlocked, self.level, self.blacklist, self, self.armfix, self.modpath)

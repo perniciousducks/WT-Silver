@@ -40,7 +40,7 @@ init python:
                     self.imagepath = path
                     break
             if not self.imagepath:
-                raise Exception("Path for cloth not found")
+                raise Exception("Path for cloth not found\n{}".format(path))
 
         def set_layers(self):
             for x in self.layers_special:

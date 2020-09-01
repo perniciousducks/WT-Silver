@@ -8,10 +8,6 @@ label common_start(set_daytime):
 
     call update_interface_color
 
-    # Set save filename
-    $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(her_whoring)
-    $ save_name = temp_name
-
     # Update various time-based values
     if daytime:
         call update_day_values
@@ -19,6 +15,10 @@ label common_start(set_daytime):
 
     call points_changes # Calculates points
     call house_points   # Updates points
+
+    # Set save filename
+    $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(her_whoring)
+    $ save_name = temp_name
 
     # Reset character appearances (chibis, clothing, etc.)
     call reset_luna

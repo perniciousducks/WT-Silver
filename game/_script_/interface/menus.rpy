@@ -35,7 +35,6 @@ screen list_menu(menu_id, title, toggle_names=tuple(), menu_groups=[]):
         ypos 240
         idle "interface/general/"+interface_color+"/button_arrow_up.webp"
         hover "interface/general/"+interface_color+"/button_arrow_up_hover.webp"
-        sensitive current_page > 0
         action SetScreenVariable("current_page", max(0, current_page-1))
 
     # Page down
@@ -44,7 +43,6 @@ screen list_menu(menu_id, title, toggle_names=tuple(), menu_groups=[]):
         ypos 292
         idle "interface/general/"+interface_color+"/button_arrow_down.webp"
         hover "interface/general/"+interface_color+"/button_arrow_down_hover.webp"
-        sensitive current_page <= max_page
         action SetScreenVariable("current_page", min(max_page, current_page+1))
 
     # Main window

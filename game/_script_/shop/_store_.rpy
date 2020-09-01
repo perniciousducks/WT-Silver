@@ -1,5 +1,4 @@
 
-
 screen weasley_store_room():
     tag room_screen
 
@@ -11,8 +10,6 @@ screen weasley_store_room():
     use ui_top_bar
 
     zorder 0
-
-
 
 label open_weasley_store:
     show screen blkfade
@@ -42,8 +39,6 @@ label open_weasley_store:
     $ store_menu = True #Displays item's gold value.
 
     jump gift_shop_menu
-
-
 
 label store_chit_chat:
     if not store_intro_done:
@@ -213,11 +208,25 @@ label store_chit_chat:
 
     return
 
-
-
 label close_weasley_store:
     hide screen weasley_store_menu
+    hide screen list_menu
     hide screen gift
+    with d1
+
+
+
+    menu:
+        ger "Are you finished professor?"
+
+        "-Yes-":
+            pass
+        "-No-":
+
+            jump gift_shop_menu
+
+    fre "Goodbye then!"
+
     show screen blkfade
     with d5
 
@@ -225,71 +234,46 @@ label close_weasley_store:
 
     jump main_room
 
-
-
 screen weasley_store_menu():
     tag store_menu
-    $ UI_xpos_offset = 100
+    zorder 6
 
-    zorder 4
+    vbox:
+        pos (825, 120)
+        spacing 5
 
-    # Close Button
-    use close_button
+        button:
+            xysize (84, 34)
+            idle_background "interface/general/"+interface_color+"/button_select.webp"
+            hover_background "interface/general/"+interface_color+"/button_select_hover.webp"
 
-    # Gifts Button
-    imagebutton:
-        xpos 725 +UI_xpos_offset
-        ypos 105
-        idle "interface/general/"+interface_color+"/button_select.webp"
-        if store_category != 0: # Gifts
-            hover "interface/general/"+interface_color+"/button_select_hover.webp"
-            action [SetVariable("store_category",0), Jump("gift_shop_menu")]
-    if store_category == 0: # Gifts
-        text "Gifts" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121 size 16
-    else:
-        text "Gifts" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121 size 14
+            text "Gifts" align (0.5, 0.5) size 16
+            action [SetVariable("store_category", 0), Jump("gift_shop_menu")]
 
-    # Books Button & Scrolls + Tentacle Scroll
-    imagebutton:
-        xpos 725 +UI_xpos_offset
-        ypos 105+44
-        idle "interface/general/"+interface_color+"/button_select.webp"
-        if store_category != 1: # Books
-            hover "interface/general/"+interface_color+"/button_select_hover.webp"
-            action [SetVariable("store_category",1), Jump("book_shop_menu")]
-    if store_category == 1: # Books
-        text "Books" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+44 size 16
-    else:
-        text "Books" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+44 size 14
+        button:
+            xysize (84, 34)
+            idle_background "interface/general/"+interface_color+"/button_select.webp"
+            hover_background "interface/general/"+interface_color+"/button_select_hover.webp"
 
-    # Potions
-    #imagebutton:
-    #    xpos 725 +UI_xpos_offset
-    #    ypos 105+88
-    #    idle "interface/general/"+interface_color+"/button_select.webp"
-    #    if store_category != 2:
-    #        hover "interface/general/"+interface_color+"/button_select_hover.webp"
-    #        action [SetVariable("store_category",2), Jump("shop_potion_menu")]
-    #if store_category == 2:
-    #    text "Potions" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+88 size 16
-    #else:
-    #    text "Potions" xalign 0.5 yalign 0.5 xpos 767 +UI_xpos_offset ypos 121+88 size 14
+            text "Books" align (0.5, 0.5) size 16
+            action [SetVariable("store_category", 1), Jump("book_shop_menu")]
 
-    # Token Shop
-    if twins_cards_stocked:
-        imagebutton:
-                xpos 725+95 +UI_xpos_offset
-                ypos 105
-                idle "interface/general/"+interface_color+"/button_select.webp"
-                if store_category != 3:
-                    hover "interface/general/"+interface_color+"/button_select_hover.webp"
-                    action [SetVariable("store_category",3), Jump("token_shop_menu")]
-        if store_category == 3:
-            text "Tokens" xalign 0.5 yalign 0.5 xpos 767+95 +UI_xpos_offset ypos 121 size 16
-        else:
-            text "Tokens" xalign 0.5 yalign 0.5 xpos 767+95 +UI_xpos_offset ypos 121 size 14
+        #button:
+            #xysize (84, 34)
+            #idle_background "interface/general/"+interface_color+"/button_select.webp"
+            #hover_background "interface/general/"+interface_color+"/button_select_hover.webp"
 
+            #text "Potions" align (0.5, 0.5) size 16
+            #action [SetVariable("store_category", 2), Jump("shop_potion_menu")]
 
+        if twins_cards_stocked:
+            button:
+                xysize (84, 34)
+                idle_background "interface/general/"+interface_color+"/button_select.webp"
+                hover_background "interface/general/"+interface_color+"/button_select_hover.webp"
+
+                text "Tokens" align (0.5, 0.5) size 16
+                action [SetVariable("store_category", 3), Jump("token_shop_menu")]
 
 #Gifts
 label gift_shop_menu:

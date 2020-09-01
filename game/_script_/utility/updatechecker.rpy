@@ -34,87 +34,24 @@ init -1 python:
 
     # Save compatibility patches
     def update_savefile():
-        # Check for version variable
         global save_internal_version
+
         try:
             if save_internal_version:
                 pass
         except NameError:
-            save_internal_version = 1.38
+            save_internal_version = 1.39
 
         # Apply update to old save
 
-        if float(save_internal_version) < 1.381:
+        if float(save_internal_version) < 1.391:
 
-            ton_top_corset.blacklist=["bra"]
-            ast_stockings_ann.blacklist=["bottom"]
+            # Fix cardgame images
+            for card in cards_dynamic:
+                if renpy.loadable(card.imagepath):
+                    continue
 
-            reset_variables("ll_pf_masturbate", "ll_pf_blowjob")
+                card.imagepath = card.imagepath.split("_v")[0] + "_v{}.webp".format(geniecard_level)
 
-            for i, e in enumerate(ll_favor_list):
-                if e.title == "Suck it!":
-                    ll_favor_list[i] = ll_pf_blowjob
-                elif e.title == "Masturbate for me!":
-                    ll_favor_list[i] = ll_pf_masturbate
-
-            save_internal_version = 1.381
-
-        if float(save_internal_version) < 1.382:
-            save_internal_version = 1.382
-
-        if float(save_internal_version) < 1.383:
-            save_internal_version = 1.383
-
-        if float(save_internal_version) < 1.384:
-
-            ag_se_imperio_sb.change_icon() # Fill all half hearts
-
-            # Add neck layer to Tonks chibi
-            tonks_chibi.layers_order = ["fix", "base", "bottom", "shoes", "top", "robe", "gloves", "neck"]
-            tonks_chibi.layers["neck"] = None
-
-            # Replace current/default hair on Tonks doll
-            reset_variables("tonks_haircolor")
-            ton_outfit_default.group[0] = ton_hair_base_new.clone()
-            ton_outfit_last.group[0] = ton_hair_base_new.clone()
-            tonks.equip(ton_hair_base_new)
-
-            # Valuefix
-            if renpy.store.twins_profit > 1.2:
-                renpy.store.twins_profit = 1.2
-
-            # Clothes
-            reset_variables("outfit_linking", "hermione_outfits_list")
-            her_tattoo3_lockhart.categories = ("legs", "tattoos")
-            her_outfit_bikini1.price = 350
-            her_outfit_bikini2.price = 350
-            her_outfit_bunny.price = 350
-            her_outfit_latex_dress.price = 350
-            her_outfit_nightie.price = 350
-            her_outfit_yennefer.price = 400
-            her_outfit_bioshock.price = 400
-            her_outfit_egypt.price = 400
-            her_outfit_maid.price = 450
-            her_outfit_poker.price = 450
-            cho_panties_sport1.armfix = True
-            cho_panties_sport1.rebuild_image()
-            cho.rebuild_image()
-
-            achievement_fix()
-
-            save_internal_version = 1.384
-
-        if float(save_internal_version) < 1.385:
-
-            hermione.rebuild()
-            cho.rebuild()
-            astoria.rebuild()
-            tonks.rebuild()
-
-            if her_whoring < 18 and hermione.is_equipped("tattoo3") and hermione.get_equipped("tattoo3").id == "lockhart_tattoo":
-                if hg_pr_flirt.is_event_complete(2, 2):
-                    hermione.unequip("tattoo3")
-
-            save_internal_version = 1.385
-
+            save_internal_version = 1.391
             renpy.block_rollback()

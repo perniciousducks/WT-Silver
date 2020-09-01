@@ -197,18 +197,16 @@ init python:
 
     def advance_tier(tier):
         global geniecard_level
+
         renpy.show_screen("blktone")
         renpy.show_screen("advance_deck")
         renpy.transition(Dissolve(0.3))
         renpy.pause(1.0)
+
+        # Change card image for each respective card.
         for card in cards_dynamic:
-            card.imagepath = card.imagepath[:-5]+str(tier)+".webp"
-            for card_in_use in playerdeck:
-                if card.title == card_in_use.title:
-                    card_in_use.imagepath = card_in_use.imagepath[:-5]+str(tier)+".webp"
-            for card_in_deck in unlocked_cards:
-                if card.title == card_in_deck.title:
-                    card_in_deck.imagepath = card_in_deck.imagepath[:-5]+str(tier)+".webp"
+            card.imagepath = card.imagepath.split("_v")[0] + "_v{}.webp".format(geniecard_level)
+
         geniecard_level = tier
         renpy.play("sounds/magic4.ogg")
         renpy.show_screen("advance_deck")
@@ -217,6 +215,7 @@ init python:
         renpy.hide_screen("blktone")
         renpy.hide_screen("advance_deck")
         renpy.transition(Dissolve(0.3))
+
         return
 
 screen card_battle(l_playerdeck, l_enemydeck, shown_cards):

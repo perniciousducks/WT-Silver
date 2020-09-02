@@ -723,6 +723,7 @@ label potion_scene_11_3:
         call her_main("Please tell me I'm not going to grow a damn di--", "angry", "narrow", "base", "down")
 
         hide screen hermione_main
+        $ hermione.strip("robe", "accessory")
         call set_her_action("lift_skirt")
         $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_xlarge.webp"
         show screen hermione_main

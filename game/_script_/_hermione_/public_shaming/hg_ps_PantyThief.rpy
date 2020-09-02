@@ -53,10 +53,11 @@ label hg_ps_get_panties:
         with d3
 
         if hermione.is_worn("panties"):
+            $ hermione.strip("robe", "accessory")
             $ hermione.strip("panties")
             call nar(">Suddenly Hermione bends forward and takes off her panties.","start")
         else:
-            if hermione.is_any_worn("top", "bottom"):
+            if hermione.is_any_worn("robe", "top", "bottom"):
                 call nar(">Suddenly Hermione reaches inside one of her hidden pockets.","start")
             else:
                 call nar(">Suddenly Hermione reaches inside--","start")
@@ -90,11 +91,12 @@ label hg_ps_get_panties:
             with d3
 
             if hermione.is_worn("panties"):
+                $ hermione.strip("robe", "accessory")
                 $ hermione.strip("panties")
-                call nar(">Suddenly Hermione bends forward and takes off her panties.")
+                call nar(">Suddenly Hermione bends forward and takes off her panties.", "start")
             else:
                 if hermione.is_any_worn("top", "bottom"):
-                    call nar(">Hermione pulls her panties out of her pocket.")
+                    call nar(">Hermione pulls her panties out of her pocket.", "start")
                 else:
                     call nar(">Suddenly Hermione reaches inside--","start")
                     call nar(">Wait, she's not exactly clothed...{w=0.4} Well then...")
@@ -115,6 +117,7 @@ label hg_ps_get_panties:
             with d3
 
             if hermione.is_worn("panties"):
+                $ hermione.strip("robe", "accessory")
                 $ hermione.strip("panties")
                 call nar(">Hermione takes off her panties without hesitation.", "start")
             else:

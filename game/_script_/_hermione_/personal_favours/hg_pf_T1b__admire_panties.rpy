@@ -373,10 +373,11 @@ label hg_pf_admire_panties_T3_E2:
     hide screen bld1
     with d3
 
+    $ hermione.strip("robe", "accessory")
     $ hermione.strip("bottom")
     call her_chibi("lift_skirt","mid","base")
     with d3
-    pause.8
+    pause .8
 
     show screen blktone
     call her_main("", "base", "narrow", "base", "mid_soft", xpos="mid", ypos="base")

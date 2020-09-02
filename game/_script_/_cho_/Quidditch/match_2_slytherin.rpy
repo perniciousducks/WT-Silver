@@ -1486,7 +1486,7 @@ label slytherin_match_return:
 
     # Hermione (Tonks) starts stripping
     call play_sound("equip")
-    $ hermione.strip("robe", "top")
+    $ hermione.strip("robe", "accessory", "top")
     show screen hermione_main
     with d5
     pause .8

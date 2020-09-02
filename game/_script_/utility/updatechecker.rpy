@@ -96,3 +96,30 @@ init -1 python:
 
             save_internal_version = 1.391
             renpy.block_rollback()
+
+        if float(save_internal_version) < 1.392:
+
+            # Fix events with empty event tiers and/or zero start_tier, but do it properly this time...
+            # We need to iterate over a copy of the events list if we aim to remove elements from the original list.
+            all_events = [hg_pf_talk_tonks] + list(hg_favor_list) + list(hg_requests_list) + list(cc_favor_list) + list(cc_requests_list) + [ag_st_imperio, ag_se_imperio_sb] + [ll_pf_masturbate, ll_pf_blowjob, ll_pf_sex] + [nt_he_drink, nt_he_story] + list(nt_requests_list)
+
+            for ev in all_events:
+                # Remove empty lists
+                for l in list(ev.events):
+                    if not l:
+                        ev.events.remove(l)
+
+                # Fix start_tiers
+                if ev.start_tier == 0:
+                    ev.start_tier = 1
+
+                # Fix max tiers integer
+                if ev._max_tiers != len(ev.events):
+                    ev._max_tiers = len(ev.events)
+
+                # Fix actual tier integer, using correct setter function
+                if ev._tier > (ev._max_tiers-1):
+                    ev.tier = ev._max_tiers
+
+            save_internal_version = 1.392
+            renpy.block_rollback()

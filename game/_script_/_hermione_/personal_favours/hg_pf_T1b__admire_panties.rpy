@@ -126,6 +126,7 @@ label hg_pf_admire_panties_T1: # Call label
     hide screen bld1
     with d3
 
+    $ hermione.strip("robe", "accessory")
     $ hermione.strip("bottom")
     call her_chibi("lift_skirt","mid","base")
     with d3
@@ -193,6 +194,7 @@ label hg_pf_admire_panties_T2: # Call label
     hide screen bld1
     with d3
 
+    $ hermione.strip("robe", "accessory")
     $ hermione.strip("bottom")
     call her_chibi("lift_skirt","mid","base")
     with d3
@@ -237,6 +239,7 @@ label hg_pf_admire_panties_T3_intro_E1:
     hide screen bld1
     with d3
 
+    $ hermione.strip("robe", "accessory")
     $ hermione.strip("bottom", "panties")
     call her_chibi("lift_skirt","mid","base")
     with d3
@@ -292,6 +295,7 @@ label hg_pf_admire_panties_T3_E1:
     hide screen bld1
     with d3
 
+    $ hermione.strip("robe", "accessory")
     $ hermione.strip("bottom", "panties")
     call her_chibi("lift_skirt","mid","base")
     with d3

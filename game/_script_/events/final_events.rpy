@@ -231,7 +231,7 @@ label ball_quest_E1:
             $ d_flag_02 = True
 
             call play_music("playful_tension") # SEX THEME.
-
+            $ hermione.strip("robe", "accessory")
             if not hermione.is_worn("bottom"):
                 call her_main("I would if you'd let me wear any!", "angry", "base", "angry", "mid")
                 if not hermione.is_worn("panties"):
@@ -254,7 +254,7 @@ label ball_quest_E1:
             # with d3
             # pause 2.0
 
-            $ hermione.strip("bottom", "accessory")
+            $ hermione.strip("bottom")
 
             show screen hermione_main
             with d5

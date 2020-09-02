@@ -96,6 +96,7 @@ label hg_pf_sex_T6_intro_E1:
         call her_main("Gryffindor is falling behind again...", "open", "closed", "base", "mid")
     else:
         call her_main("I have to make sure Gryffindor stays in the lead...", "open", "closed", "base", "mid")
+    $ hermione.strip("robe", "accessory")
     her "What choice do I have...?"
     m "Great!"
 
@@ -113,6 +114,7 @@ label hg_pf_sex_T6_intro_E2:
     call her_main("Did I happen to receive sixty-five house points afterwards?", "angry", "base", "angry", "mid")
     g9 "Why yes, you did, [hermione_name]."
     call her_main("...............................", "disgust", "narrow", "base", "mid_soft")
+    $ hermione.strip("robe", "accessory")
     if hermione.is_worn("panties"):
         her "Let me just take my panties off..."
         $ hermione.strip("panties")
@@ -134,6 +136,7 @@ label hg_pf_sex_T6_intro_E3:
     call her_walk("desk", "base", reduce=0.8)
     call blkfade
 
+    $ hermione.strip("robe", "accessory")
     call her_chibi_scene("lie_on_desk")
     with fade
     pause.5
@@ -166,6 +169,7 @@ label hg_pf_sex_T6_E3: # repeats
     stop music fadeout 1.0
 
     hide screen hermione_main
+    $ hermione.strip("robe", "accessory")
     call her_chibi_scene("lie_on_desk")
     with fade
     pause.5
@@ -193,6 +197,7 @@ label hg_sex_1:
     call her_walk("desk", "base", reduce=0.8)
     call blkfade
 
+    $ hermione.strip("robe", "accessory")
     call her_chibi_scene("grope_ass_back", trans=fade)
     pause.5
 

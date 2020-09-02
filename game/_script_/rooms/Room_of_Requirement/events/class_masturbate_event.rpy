@@ -380,6 +380,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 hide screen hermione_main
                 with d3
 
+                $ hermione.strip("robe", "accessory")
                 $ hermione.strip("stockings")
                 $ hermione.strip("bottom")
                 $ hermione.strip("panties")

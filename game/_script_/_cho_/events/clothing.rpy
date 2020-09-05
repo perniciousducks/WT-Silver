@@ -41,7 +41,7 @@ label cho_summon_setup:
             g9 "Got a new outfit, [cho_name]?"
             call cho_main("Yes, [cho_genie_name].", "smile", "base", "raised", "R")
             call cho_main("I thought about our Quidditch training a bit more, and how effective it is.", "open", "base", "base", "downR")
-            call cho_main("So I figured, maybe, if I applied those training methods to my daily school life,...", "soft", "base", "worried", "mid")
+            call cho_main("So I figured, maybe, if I applied those training methods to my daily school life...", "soft", "base", "worried", "mid")
             call cho_main("It will help me get even more popular...", "quiver", "base", "raised", "down")
             g9 "You most certainly will, [cho_name]! I can promise you that!"
             call cho_main("I hope so too...", "soft", "base", "raised", "mid")

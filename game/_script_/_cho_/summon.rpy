@@ -280,7 +280,7 @@ label cho_talk:
                 "\"Never mind\"":
                     jump cho_talk
 
-            call cho_main("Very well,...",face="neutral")
+            call cho_main("Very well...",face="neutral")
             jump cho_talk
 
         "\"Never mind\"":

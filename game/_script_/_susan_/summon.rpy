@@ -6,6 +6,8 @@ label summon_susan:
 
     $ susan_busy = True
 
+    call update_susan
+
     call play_music("susan")
     call play_sound("door")
 

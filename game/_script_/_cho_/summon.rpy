@@ -8,6 +8,7 @@ label summon_cho:
 
     $ cho_busy = True
     #call update_cho_tier
+    call update_cho
 
     # Clothes Events
     call cho_summon_setup

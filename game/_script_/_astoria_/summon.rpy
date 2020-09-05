@@ -7,6 +7,7 @@ label summon_astoria:
     $ astoria_busy = True
 
     #call update_ast_tier
+    call update_astoria
 
     # Clothes Events
     call astoria_summon_setup

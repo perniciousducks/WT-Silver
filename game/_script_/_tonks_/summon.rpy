@@ -7,6 +7,7 @@ label summon_tonks:
     $ tonks_busy = True
 
     call update_ton_tier
+    call update_tonks
 
     call play_music("tonks")
     call play_sound("door")

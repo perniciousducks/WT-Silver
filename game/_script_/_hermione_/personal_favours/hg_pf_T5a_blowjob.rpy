@@ -87,7 +87,7 @@ label hg_pf_blowjob_fail:
     m "I plan to grant Gryffindor {number=current_payout} house points today..."
     m "If you suck me off..."
 
-    $ hg_pf_blowjob.counter -= 1
+    $ hg_pf_blowjob.fail()
 
     jump too_much
 
@@ -129,7 +129,7 @@ label hg_pf_blowjob_T4_fail_intro:
     m "Tough luck..."
 
     $ her_mood += 6
-    $ hg_pf_blowjob.counter -= 1
+    $ hg_pf_blowjob.fail()
 
     jump end_hermione_event
 
@@ -161,7 +161,7 @@ label hg_pf_blowjob_T4_fail_repeat:
     call her_walk(action="leave")
 
     $ her_mood += 6
-    $ hg_pf_blowjob.counter -= 1
+    $ hg_pf_blowjob.fail()
 
     jump end_hermione_event
 

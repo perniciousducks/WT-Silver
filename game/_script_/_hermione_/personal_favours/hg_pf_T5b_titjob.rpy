@@ -85,7 +85,7 @@ label hg_pf_titjob_fail:
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "Have you ever given somebody a \"titjob\"?"
 
-    $ hg_pf_titjob.counter -= 1
+    $ hg_pf_titjob.fail()
 
     jump too_much
 

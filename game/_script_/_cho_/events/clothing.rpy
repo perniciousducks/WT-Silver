@@ -7,13 +7,6 @@ label cho_summon_setup:
     $ cho.set_cum(None)
     $ cho_animation = None
 
-    if has_cho_panties:
-        jump cho_panties_response_T2
-
-    # Slytherin Quidditch Intro.
-    if cho_tier == 2 and not cho_quid.E5_complete:
-        jump cho_quid_E5
-
     # Unlock favours at tier 3
     # this will probably move to a cho_quid_E# event once we've implemented Gryffindor lead-up events
     if cho_tier == 3:
@@ -125,6 +118,6 @@ label cho_summon_setup:
         if daytime:
             call cho_main("Good morning, [cho_genie_name].", "base", "base", "base", "mid", xpos="base", ypos="base", trans=d3)
         else:
-             call cho_main("Good evening, [cho_genie_name].", "base", "base", "base", "mid", xpos="base", ypos="base", trans=d3)
+            call cho_main("Good evening, [cho_genie_name].", "base", "base", "base", "mid", xpos="base", ypos="base", trans=d3)
 
     return

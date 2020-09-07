@@ -537,7 +537,7 @@ label ss_he_cho_E1:
             call sna_main("I can't agree to that, Genie. As much as I'd like to see the Potter boy demoralised by losing to a girl...", "snape_10")
             call sna_main("Or Malfoy for that matter... He's been way too cocky lately.", "snape_08")
             m "Who?"
-            call sna_main("A student of mine... Rich parents, bought his way into our Quidditch team,... Spoiled beyond belief.", "snape_29")
+            call sna_main("A student of mine... Rich parents, bought his way into our Quidditch team... Spoiled beyond belief.", "snape_29")
             m "Didn't you say you don't care much about Quidditch?"
             call sna_main("Of course I don't. But a win is a win.", "snape_09")
             call sna_main("Besides, Ravenclaw doesn't have a chance against Slytherin.", "snape_03")

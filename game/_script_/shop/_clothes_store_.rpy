@@ -563,7 +563,7 @@ label purchase_outfit(item):
 
     elif item == cc_japanese_school_uniform_ITEM:
         m "Can you make me a school girl uniform?"
-        maf "Make you? Don't you mean repair a uniform?"
+        maf "Make you one? Don't you mean repair a uniform?"
         m "No, I'd like a Japanese school girl uniform."
         maf "I see..."
         m "One of the Japanese wizarding schools require a new design."

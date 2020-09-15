@@ -1,0 +1,14 @@
+
+
+
+
+				Base		Darker		Darkest		Highlight			Mod Color
+H Vest			f9f9f9		bababa		7b7b7b		ffffff
+H Shirt			f4f4f4		b8b8b8		9a9a9a		f9f9f9
+H Primary		d7d7d7		bcbcbc		8e8e8e		f9f9f9
+H Secondary		f9f9f9		dfdfdf		a9a9a9		ffffff
+
+C Vest			f4f4f4		a1a1a1		606060		ffffff
+C Shirt			f3f3f3		cccccc		aaaaaa		ffffff
+C Primary		d4d4d4		c3c3c3		9b9b9b		e9e9e9
+C Secondary		f0f0f0		e2e2e2		c4c4c4		ffffff
